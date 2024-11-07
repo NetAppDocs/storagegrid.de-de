@@ -1,0 +1,63 @@
+---
+permalink: maintain/selecting-start-recovery-to-configure-storage-node.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, storage node 
+summary: Nachdem Sie einen Speicherknoten ersetzt haben, müssen Sie im Grid Manager die Option Wiederherstellung starten auswählen, um den neuen Knoten als Ersatz für den ausgefallenen Knoten zu konfigurieren. 
+---
+= Wählen Sie Wiederherstellung starten, um Speicherknoten zu konfigurieren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nachdem Sie einen Speicherknoten ersetzt haben, müssen Sie im Grid Manager die Option Wiederherstellung starten auswählen, um den neuen Knoten als Ersatz für den ausgefallenen Knoten zu konfigurieren.
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben die link:../admin/admin-group-permissions.html["Berechtigung für Wartung oder Root-Zugriff"].
+* Sie haben die Provisionierungs-Passphrase.
+* Sie haben den Ersatzknoten bereitgestellt und konfiguriert.
+* Sie haben das Startdatum aller Reparaturaufträge für Daten, die mit dem Verfahren zur Fehlerkorrektur codiert wurden.
+* Sie haben überprüft, ob der Speicher-Node innerhalb der letzten 15 Tage nicht neu erstellt wurde.
+
+
+.Über diese Aufgabe
+Wenn der Storage-Node als Container auf einem Linux-Host installiert ist, müssen Sie diesen Schritt nur ausführen, wenn einer dieser Schritte zutrifft:
+
+* Sie mussten das Flag zum Importieren des Knotens verwenden `--force`, oder Sie haben es ausgegeben `storagegrid node force-recovery _node-name_`
+* Sie mussten eine vollständige Neuinstallation des Knotens durchführen oder /var/local wiederherstellen.
+
+
+.Schritte
+. Wählen Sie im Grid Manager *MAINTENANCE* > *Tasks* > *Recovery*.
+. Wählen Sie in der Liste Ausstehende Knoten den Rasterknoten aus, den Sie wiederherstellen möchten.
++
+Nodes werden in der Liste angezeigt, wenn sie fehlschlagen. Sie können jedoch keinen Node auswählen, bis er neu installiert wurde und für die Wiederherstellung bereit ist.
+
+. Geben Sie die *Provisioning-Passphrase* ein.
+. Klicken Sie Auf *Wiederherstellung Starten*.
++
+image::../media/4b_select_recovery_node.png[Screenshot mit der Seite Wartung > Wiederherstellung]
+
+. Überwachen Sie den Fortschritt der Wiederherstellung in der Tabelle „Netzknoten wiederherstellen“.
++
+
+NOTE: Während der Wiederherstellungsvorgang läuft, können Sie auf *Zurücksetzen* klicken, um eine neue Wiederherstellung zu starten. Es wird ein Dialogfeld angezeigt, das anzeigt, dass der Knoten in einem unbestimmten Zustand bleibt, wenn Sie das Verfahren zurücksetzen.
+
++
+image::../media/recovery_reset_warning.gif[Screenshot mit dem Dialogfeld Warnung zum Zurücksetzen der Wiederherstellung]
+
++
+Wenn Sie die Recovery nach dem Zurücksetzen der Prozedur erneut versuchen möchten, müssen Sie den Node in einen vorinstallierten Status wiederherstellen:
+
++
+** *VMware*: Den bereitgestellten virtuellen Grid-Knoten löschen. Wenn Sie bereit sind, die Recovery neu zu starten, implementieren Sie den Node erneut.
+** *Linux*: Starten Sie den Knoten neu, indem Sie diesen Befehl auf dem Linux-Host ausführen: `storagegrid node force-recovery _node-name_`
+
+
+. Wenn der Speicher-Node die Phase „Warten auf manuelle Schritte“ erreicht, fahren Sie mit link:remounting-and-reformatting-storage-volumes-manual-steps.html["Speicher-Volumes neu einbinden und formatieren (manuelle Schritte)"]fort.
++
+image::../media/recovery_reset_button.gif[Screenshot mit der Bühne „Warten auf manuelle Schritte“]
+
+

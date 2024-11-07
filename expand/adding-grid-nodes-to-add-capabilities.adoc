@@ -1,0 +1,31 @@
+---
+permalink: expand/adding-grid-nodes-to-add-capabilities.html 
+sidebar: sidebar 
+keywords: grid nodes, expand, expansion, site, add 
+summary: Einem StorageGRID-System können Sie Redundanz oder zusätzliche Funktionen hinzufügen, indem Sie vorhandenen Standorten neue Grid-Nodes hinzufügen. 
+---
+= Grid-Nodes werden hinzugefügt, um Funktionen zu Ihrem System hinzuzufügen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Einem StorageGRID-System können Sie Redundanz oder zusätzliche Funktionen hinzufügen, indem Sie vorhandenen Standorten neue Grid-Nodes hinzufügen.
+
+Beispielsweise können Sie Gateway-Nodes hinzufügen, die in einer HA-Gruppe (High Availability) verwendet werden sollen, oder Sie können einen Admin-Node an einem Remote-Standort hinzufügen, um die Überwachung mithilfe eines lokalen Knotens zu ermöglichen.
+
+In einem einzigen Erweiterungsvorgang können Sie mindestens einen der folgenden Node-Typen zu einem oder mehreren bestehenden Standorten hinzufügen:
+
+* Nicht primäre Admin-Nodes
+* Storage-Nodes
+* Gateway-Nodes
+
+
+Beachten Sie bei der Vorbereitung des Hinzufügens von Grid-Knoten die folgenden Einschränkungen:
+
+* Der primäre Admin-Node wird während der Erstinstallation bereitgestellt. Sie können während einer Erweiterung keinen primären Admin-Node hinzufügen.
+* Sie können Storage-Nodes und andere Node-Typen in der gleichen Erweiterung hinzufügen.
+* Beim Hinzufügen von Speicherknoten müssen Sie die Anzahl und Position der neuen Knoten sorgfältig planen. Siehe link:../expand/guidelines-for-adding-object-capacity.html["Richtlinien zum Hinzufügen von Objektkapazität"].
+* Wenn die Option *set New Node default* auf der Registerkarte UnTrusted Client Networks auf der Seite Firewall Control die Option *set New Node default* ist, müssen sich Client-Anwendungen, die sich über das Client-Netzwerk mit einem Load Balancer-Endpunkt-Port verbinden (*CONFIGURATION* > *Security* > *Firewall control*), mit einem Load Balancer-Endpunkt-Port verbinden. Siehe die Anweisungen zu link:../admin/configure-firewall-controls.html["Ändern Sie die Sicherheitseinstellung für den neuen Knoten"] und zu link:../admin/configuring-load-balancer-endpoints.html["Konfigurieren Sie die Endpunkte des Load Balancer"].
+

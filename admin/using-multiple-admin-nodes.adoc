@@ -1,0 +1,30 @@
+---
+permalink: admin/using-multiple-admin-nodes.html 
+sidebar: sidebar 
+keywords: admin nodes, more than one admin node, multiple admin nodes 
+summary: Ein StorageGRID-System kann mehrere Admin-Knoten enthalten, damit Sie Ihr StorageGRID-System kontinuierlich überwachen und konfigurieren können, auch wenn ein Admin-Knoten ausfällt. 
+---
+= Verwenden Sie mehrere Admin-Nodes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ein StorageGRID-System kann mehrere Admin-Knoten enthalten, damit Sie Ihr StorageGRID-System kontinuierlich überwachen und konfigurieren können, auch wenn ein Admin-Knoten ausfällt.
+
+Wenn ein Administratorknoten nicht mehr verfügbar ist, wird die Attributverarbeitung fortgesetzt, Warnmeldungen werden weiterhin ausgelöst und E-Mail-Benachrichtigungen und AutoSupport-Pakete werden weiterhin gesendet. Wenn Sie jedoch mehrere Administratorknoten haben, bietet dieser keinen Failover-Schutz außer Benachrichtigungen und AutoSupport-Paketen.
+
+image::../media/admin_node_redundancy.png[Admin-Node-Redundanzdiagramm]
+
+Es gibt zwei Optionen, um das StorageGRID-System weiterhin anzuzeigen und zu konfigurieren, wenn ein Admin-Knoten ausfällt:
+
+* Webclients können sich mit jedem anderen verfügbaren Admin-Node verbinden.
+* Wenn ein Systemadministrator eine Hochverfügbarkeitsgruppe von Admin-Nodes konfiguriert hat, können Webclients unter Verwendung der virtuellen IP-Adresse der HA-Gruppe weiterhin auf den Grid Manager oder den Mandanten Manager zugreifen. Siehe link:managing-high-availability-groups.html["Management von Hochverfügbarkeitsgruppen"].
++
+
+NOTE: Bei Verwendung einer HA-Gruppe wird der Zugriff unterbrochen, wenn der aktive Admin-Node ausfällt. Benutzer müssen sich erneut anmelden, nachdem die virtuelle IP-Adresse der HA-Gruppe auf einen anderen Admin-Node in der Gruppe Failover erfolgt.
+
+
+
+Einige Wartungsarbeiten können nur mit dem primären Admin-Node ausgeführt werden. Wenn der primäre Admin-Node ausfällt, muss er wiederhergestellt werden, bevor das StorageGRID System wieder voll funktionsfähig ist.

@@ -1,0 +1,36 @@
+---
+permalink: maintain/downloading-recovery-package.html 
+sidebar: sidebar 
+keywords: storagegrid, recovery package 
+summary: Die Wiederherstellungspakedatei ermöglicht Ihnen die Wiederherstellung des StorageGRID-Systems bei einem Fehler. 
+---
+= Recovery Package Herunterladen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Wiederherstellungspakedatei ermöglicht Ihnen die Wiederherstellung des StorageGRID-Systems bei einem Fehler.
+
+.Bevor Sie beginnen
+* Vom primären Admin-Knoten aus werden Sie mit einem beim Grid-Manager angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben die Provisionierungs-Passphrase.
+* Sie haben link:../admin/admin-group-permissions.html["Bestimmte Zugriffsberechtigungen"].
+
+
+Laden Sie die aktuelle Recovery Package-Datei herunter, bevor Sie Grid-Topologieänderungen am StorageGRID-System vornehmen oder bevor Sie Software aktualisieren. Laden Sie anschließend eine neue Kopie des Wiederherstellungspakets herunter, nachdem Sie Änderungen an der Grid-Topologie vorgenommen haben oder nachdem Sie die Software aktualisiert haben.
+
+.Schritte
+. Wählen Sie *WARTUNG* > *System* > *Wiederherstellungspaket*.
+. Geben Sie die Provisionierungs-Passphrase ein, und wählen Sie *Download starten*.
++
+Der Download startet sofort.
+
+. Öffnen Sie nach Abschluss des Downloads die `.zip` Datei, und bestätigen Sie, dass Sie auf den Inhalt einschließlich der Datei zugreifen können `Passwords.txt`.
+. Kopieren Sie die heruntergeladene Wiederherstellungspaket-Datei (`.zip`) in zwei sichere und separate Speicherorte.
++
+
+CAUTION: Die Recovery Package-Datei muss gesichert sein, weil sie Verschlüsselungsschlüssel und Passwörter enthält, die zum Abrufen von Daten vom StorageGRID-System verwendet werden können.
+
+

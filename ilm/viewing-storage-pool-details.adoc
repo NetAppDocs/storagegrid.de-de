@@ -1,0 +1,58 @@
+---
+permalink: ilm/viewing-storage-pool-details.html 
+sidebar: sidebar 
+keywords: storage pool, view details 
+summary: Sie können die Details eines Speicherpools anzeigen, um zu bestimmen, wo der Speicherpool verwendet wird, und um zu sehen, welche Nodes und Speicherklassen enthalten sind. 
+---
+= Zeigen Sie Details zum Speicherpool an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Details eines Speicherpools anzeigen, um zu bestimmen, wo der Speicherpool verwendet wird, und um zu sehen, welche Nodes und Speicherklassen enthalten sind.
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben link:../admin/admin-group-permissions.html["Bestimmte Zugriffsberechtigungen"].
+
+
+.Schritte
+. Wählen Sie *ILM* > *Storage Pools* aus.
++
+Die Tabelle Speicherpools enthält die folgenden Informationen für jeden Speicherpool, der Speicher-Nodes umfasst:
+
++
+** *Name*: Der eindeutige Anzeigename des Speicherpools.
+** *Knotenanzahl*: Die Anzahl der Knoten im Speicherpool.
+** *Speichernutzung*: Der Prozentsatz des gesamten nutzbaren Speicherplatzes, der für Objektdaten auf diesem Knoten verwendet wurde. Dieser Wert enthält keine Objektmetadaten.
+** *Gesamtkapazität*: Die Größe des Speicherpools, die der Gesamtmenge des nutzbaren Speicherplatzes für Objektdaten für alle Knoten im Speicherpool entspricht.
+** *ILM-Nutzung*: Wie der Speicherpool derzeit genutzt wird. Ein Storage-Pool wird möglicherweise nicht verwendet, oder er kann in einem oder mehreren ILM-Regeln, Erasure-Coding-Profilen oder beiden verwendet werden.
+
+
+. Um Details zu einem bestimmten Speicherpool anzuzeigen, wählen Sie dessen Namen aus.
++
+Die Detailseite für den Speicherpool wird angezeigt.
+
+. Sehen Sie sich die Registerkarte *Nodes* an, um mehr über die im Speicherpool enthaltenen Speicher-Nodes zu erfahren.
++
+Die Tabelle enthält die folgenden Informationen für jeden Node:
+
++
+** Node-Name
+** Standortname
+** Storage-Klasse
+** Speichernutzung: Der Prozentsatz des gesamten nutzbaren Speicherplatzes für Objektdaten, der für den Speicher-Node verwendet wurde.
++
+
+NOTE: Der gleiche Wert für die Speichernutzung (%) wird auch im Diagramm Speicher verwendet - Objektdaten für jeden Speicherknoten angezeigt (wählen Sie *NODES* > *_Storage Node_* > *Storage*).
+
+
+
+. Prüfen Sie auf der Registerkarte *ILM-Nutzung*, ob der Speicherpool derzeit in ILM-Regeln oder Erasure-Coding-Profilen verwendet wird.
+. Optional können Sie auf der Seite *ILM-Regeln* weitere Informationen zu den Regeln erhalten, die den Speicherpool verwenden.
++
+Siehe link:working-with-ilm-rules-and-ilm-policies.html["Anweisungen zum Arbeiten mit ILM-Regeln"].
+
+

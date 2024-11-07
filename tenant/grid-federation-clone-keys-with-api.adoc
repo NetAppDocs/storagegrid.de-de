@@ -1,0 +1,94 @@
+---
+permalink: tenant/grid-federation-clone-keys-with-api.html 
+sidebar: sidebar 
+keywords: s3 access key, secret key id, account clone, tenant manager api 
+summary: Wenn Ihr Mandantenkonto über die Berechtigung zum Verwenden der Grid-Federation-Verbindung verfügt, können Sie die Mandantenmanagement-API verwenden, um S3-Zugriffsschlüssel vom Mandanten im Quellraster manuell auf den Mandanten im Zielraster zu klonen. 
+---
+= Klonen von S3-Zugriffsschlüsseln mithilfe der API
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Ihr Mandantenkonto über die Berechtigung *Grid Federation connection* verwenden verfügt, können Sie die Tenant Management API verwenden, um S3-Zugriffsschlüssel vom Mandanten im Quellraster manuell auf den Mandanten im Zielraster zu klonen.
+
+.Bevor Sie beginnen
+* Das Mandantenkonto hat die Berechtigung *Grid Federation connection* verwenden.
+* Die Netzverbundverbindung hat einen *Verbindungsstatus* von *Verbunden*.
+* Sie sind im Tenant Manager im Quellraster des Mandanten mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie gehören zu einer Benutzergruppe mit dem link:tenant-management-permissions.html["Managen Sie Ihre eigenen S3-Anmeldedaten oder Root-Zugriffsberechtigungen"].
+* Wenn Sie Zugriffsschlüssel für einen lokalen Benutzer klonen, ist der Benutzer bereits in beiden Grids vorhanden.
++
+
+NOTE: Wenn Sie S3-Zugriffsschlüssel für einen föderierten Benutzer klonen, werden sowohl der Benutzer als auch die S3-Zugriffsschlüssel zum Zielmandanten hinzugefügt.
+
+
+
+
+
+== Eigene Zugriffsschlüssel klonen
+
+Sie können Ihre eigenen Zugriffsschlüssel klonen, wenn Sie auf dieselben Buckets in beiden Rastern zugreifen müssen.
+
+.Schritte
+. Verwenden des Tenant Manager auf dem Quellraster, link:creating-your-own-s3-access-keys.html["Erstellen Sie Ihre eigenen Zugriffsschlüssel"] und laden Sie die Datei herunter `.csv`.
+. Wählen Sie oben im Tenant Manager das Hilfesymbol aus und wählen Sie *API-Dokumentation*.
+. Wählen Sie im Abschnitt *s3* den folgenden Endpunkt aus:
++
+`POST /org/users/current-user/replicate-s3-access-key`
+
++
+image::../media/grid-federation-post-current-user-replicate.png[POST-Endpunkt für die Replikation des eigenen Zugriffsschlüssels]
+
+. Wählen Sie *Probieren Sie es aus*.
+. Ersetzen Sie im Textfeld *body* die Beispieleinträge für *accesskey* und *secretAccessKey* durch die Werte aus der heruntergeladenen *.csv*-Datei.
++
+Achten Sie darauf, dass die doppelten Anführungszeichen um jede Zeichenfolge herum beibehalten werden.
+
++
+image::../media/grid-federation-clone-access-key.png[Die Mandanten-Manager-API gibt Werte zum Klonen des Zugriffsschlüssels ein]
+
+. Wenn der Schlüssel abläuft, ersetzen Sie den Beispieleintrag für *expires* durch das Ablaufdatum und die Zeit als String im ISO 8601-Datenzeitformat (z.B. `2024-02-28T22:46:33-08:00` ). Wenn der Schlüssel nicht abläuft, geben Sie *null* als Wert für den Eintrag *expires* ein (oder entfernen Sie die Zeile *expires* und das vorangegangene Komma).
+. Wählen Sie *Ausführen*.
+. Bestätigen Sie, dass der Server-Antwortcode *204* lautet, was darauf hinweist, dass der Schlüssel erfolgreich in das Zielraster geklont wurde.
+
+
+
+
+== Die Zugriffsschlüssel eines anderen Benutzers klonen
+
+Sie können die Zugriffsschlüssel eines anderen Benutzers klonen, wenn er auf dieselben Buckets in beiden Rastern zugreifen muss.
+
+.Schritte
+. Verwenden des Tenant Manager auf dem Quellraster, link:creating-another-users-s3-access-keys.html["Erstellen Sie die S3-Zugriffsschlüssel des anderen Benutzers"] und laden Sie die Datei herunter `.csv`.
+. Wählen Sie oben im Tenant Manager das Hilfesymbol aus und wählen Sie *API-Dokumentation*.
+. Die Benutzer-ID abrufen. Sie benötigen diesen Wert, um die Zugriffsschlüssel des anderen Benutzers zu klonen.
++
+.. Wählen Sie im Abschnitt *Users* den folgenden Endpunkt aus:
++
+`GET /org/users`
+
+.. Wählen Sie *Probieren Sie es aus*.
+.. Geben Sie alle Parameter an, die beim Suchen von Benutzern verwendet werden sollen.
+.. Wählen Sie *Ausführen*.
+.. Suchen Sie den Benutzer, dessen Schlüssel Sie klonen möchten, und kopieren Sie die Nummer in das Feld *id*.
+
+
+. Wählen Sie im Abschnitt *s3* den folgenden Endpunkt aus:
++
+`POST /org/users/{userId}/replicate-s3-access-key`
+
++
+image::../media/grid-federation-post-other-user.png[POST-Endpunkt zur Replikation des Zugriffsschlüssels eines anderen Benutzers]
+
+. Wählen Sie *Probieren Sie es aus*.
+. Fügen Sie im Textfeld *userid* die von Ihnen kopierte Benutzer-ID ein.
+. Ersetzen Sie im Textfeld *body* die Beispieleinträge für *example Access key* und *secret Access key* durch die Werte aus der *.csv*-Datei für diesen Benutzer.
++
+Achten Sie darauf, dass die doppelten Anführungszeichen um die Zeichenfolge herum beibehalten werden.
+
+. Wenn der Schlüssel abläuft, ersetzen Sie den Beispieleintrag für *expires* durch das Ablaufdatum und die Zeit als String im ISO 8601-Datenzeitformat (z.B. `2023-02-28T22:46:33-08:00` ). Wenn der Schlüssel nicht abläuft, geben Sie *null* als Wert für den Eintrag *expires* ein (oder entfernen Sie die Zeile *expires* und das vorangegangene Komma).
+. Wählen Sie *Ausführen*.
+. Bestätigen Sie, dass der Server-Antwortcode *204* lautet, was darauf hinweist, dass der Schlüssel erfolgreich in das Zielraster geklont wurde.
+

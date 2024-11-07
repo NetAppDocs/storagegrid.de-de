@@ -1,0 +1,101 @@
+---
+permalink: admin/kms-considerations-and-requirements.html 
+sidebar: sidebar 
+keywords: Key Management Interoperability Protocol, kmip version, kms requirements, use key management server 
+summary: 'Bevor Sie einen externen Verschlüsselungsmanagement-Server \(KMS\) konfigurieren, müssen Sie die Überlegungen und Anforderungen verstehen.' 
+---
+= Überlegungen und Anforderungen für die Verwendung eines Verschlüsselungsmanagement-Servers
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor Sie einen externen KMS (Key Management Server) konfigurieren, müssen Sie die Überlegungen und Anforderungen verstehen.
+
+
+
+== Welche Version von KMIP wird unterstützt?
+
+StorageGRID unterstützt KMIP Version 1.4.
+
+http://docs.oasis-open.org/kmip/spec/v1.4/os/kmip-spec-v1.4-os.html["Spezifikation Des Key Management Interoperability Protocol Version 1.4"^]
+
+
+
+== Was sind die Netzwerküberlegungen?
+
+Die Netzwerk-Firewall-Einstellungen müssen es jedem Appliance-Node ermöglichen, über den Port zu kommunizieren, der für KMIP-Kommunikation (Key Management Interoperability Protocol) verwendet wird. Der KMIP-Standardport ist 5696.
+
+Sie müssen sicherstellen, dass jeder Appliance-Node, der Node-Verschlüsselung verwendet, Netzwerkzugriff auf den für den Standort konfigurierten KMS- oder KMS-Cluster hat.
+
+
+
+== Welche Versionen von TLS werden unterstützt?
+
+Für die Kommunikation zwischen den Appliance-Nodes und dem konfigurierten KMS werden sichere TLS-Verbindungen verwendet. StorageGRID unterstützt entweder das TLS 1.2- oder TLS 1.3-Protokoll, wenn KMIP-Verbindungen zu einem KMS- oder KMS-Cluster hergestellt werden, basierend auf den von KMS unterstützten und von link:manage-tls-ssh-policy.html["TLS- und SSH-Richtlinie"] Ihnen verwendeten Komponenten.
+
+StorageGRID verhandelt das Protokoll und die Chiffre (TLS 1.2) oder die Chiffre-Suite (TLS 1.3) mit dem KMS, wenn die Verbindung hergestellt wird. Um zu sehen, welche Protokollversionen und Chiffren/Chiffren-Suites verfügbar sind, lesen Sie den `tlsOutbound` Abschnitt der aktiven TLS- und SSH-Richtlinie des Grids (*CONFIGURATION* > *Security* *Security settings*).
+
+
+
+== Welche Appliances werden unterstützt?
+
+Sie können einen Schlüsselverwaltungsserver (KMS) verwenden, um Verschlüsselungsschlüssel für jede StorageGRID-Appliance in Ihrem Grid zu verwalten, auf der die Einstellung *Node-Verschlüsselung* aktiviert ist. Diese Einstellung kann nur während der Hardware-Konfigurationsphase der Appliance-Installation mithilfe des StorageGRID Appliance Installer aktiviert werden.
+
+
+NOTE: Nach dem Hinzufügen einer Appliance zum Grid kann die Node-Verschlüsselung nicht aktiviert werden. Zudem kann kein externes Verschlüsselungsmanagement für Appliances verwendet werden, bei denen die Node-Verschlüsselung nicht aktiviert ist.
+
+Sie können das konfigurierte KMS für StorageGRID-Appliances und Appliance-Nodes verwenden.
+
+Sie können das konfigurierte KMS nicht für softwarebasierte (nicht-Appliance-)Knoten verwenden, einschließlich der folgenden:
+
+* Als Virtual Machines (VMs) implementierte Nodes
+* Nodes, die in Container-Engines auf Linux Hosts implementiert sind
+
+
+Auf diesen anderen Plattformen implementierte Nodes können Verschlüsselung außerhalb von StorageGRID auf Datenspeicher- oder Festplattenebene verwenden.
+
+
+
+== Wann sollte ich wichtige Management-Server konfigurieren?
+
+Bei einer neuen Installation sollten Sie in der Regel einen oder mehrere Schlüsselverwaltungsserver im Grid Manager einrichten, bevor Sie Mandanten erstellen. Diese Reihenfolge stellt sicher, dass die Nodes geschützt sind, bevor Objektdaten auf ihnen gespeichert werden.
+
+Sie können die Schlüsselverwaltungsserver im Grid Manager vor oder nach der Installation der Appliance-Knoten konfigurieren.
+
+
+
+== Wie viele wichtige Management Server brauche ich?
+
+Sie können einen oder mehrere externe Verschlüsselungsmanagementserver konfigurieren, um die Appliance-Nodes in Ihrem StorageGRID-System Verschlüsselungen bereitzustellen. Jeder KMS stellt den StorageGRID Appliance-Nodes an einem einzelnen Standort oder einer Gruppe von Standorten einen einzelnen Verschlüsselungsschlüssel zur Verfügung.
+
+StorageGRID unterstützt die Verwendung von KMS-Clustern. Jeder KMS-Cluster enthält mehrere replizierte Verschlüsselungsmanagement-Server, die Konfigurationseinstellungen und Verschlüsselungen teilen. Die Verwendung von KMS-Clustern für das Verschlüsselungsmanagement wird empfohlen, da dadurch die Failover-Funktionen einer Hochverfügbarkeitskonfiguration verbessert werden.
+
+Nehmen Sie beispielsweise an, Ihr StorageGRID System verfügt über drei Datacenter-Standorte. Sie können ein KMS-Cluster konfigurieren, um allen Appliance-Nodes in Datacenter 1 und einem zweiten KMS-Cluster einen Schlüssel für alle Appliance-Nodes an allen anderen Standorten bereitzustellen. Wenn Sie den zweiten KMS-Cluster hinzufügen, können Sie einen Standard-KMS für Datacenter 2 und Datacenter 3 konfigurieren.
+
+Beachten Sie, dass Sie kein KMS für nicht-Appliance-Knoten oder für alle Appliance-Knoten verwenden können, für die die Einstellung *Node Encryption* während der Installation nicht aktiviert war.
+
+image::../media/kms_per_site.png[KM pro Standort]
+
+
+
+== Was passiert, wenn eine Taste gedreht wird?
+
+Als bewährte Sicherheitsverfahren sollten Sie regelmäßig link:kms-managing.html#rotate-key["Drehen Sie den Verschlüsselungsschlüssel"]von jedem konfigurierten KMS verwendet werden.
+
+Wenn die neue Schlüsselversion verfügbar ist:
+
+* Die Appliance wird automatisch auf die verschlüsselten Appliance-Nodes am Standort oder an den dem KMS zugeordneten Standorten verteilt. Die Verteilung sollte innerhalb einer Stunde erfolgen, wenn der Schlüssel gedreht wird.
+* Wenn der Node der verschlüsselten Appliance offline ist, wenn die neue Schlüsselversion verteilt ist, erhält der Node den neuen Schlüssel, sobald er neu gebootet wird.
+* Wenn die neue Schlüsselversion aus irgendeinem Grund nicht zur Verschlüsselung von Appliance-Volumes verwendet werden kann, wird der Alarm *KMS-Schlüsselrotation fehlgeschlagen* für den Appliance-Knoten ausgelöst. Möglicherweise müssen Sie sich an den technischen Support wenden, um Hilfe bei der Lösung dieses Alarms zu erhalten.
+
+
+
+
+== Kann ich einen Appliance-Knoten nach der Verschlüsselung wiederverwenden?
+
+Wenn Sie eine verschlüsselte Appliance in einem anderen StorageGRID System installieren müssen, müssen Sie zuerst den Grid-Node außer Betrieb nehmen, um Objektdaten auf einen anderen Node zu verschieben. Anschließend können Sie das Installationsprogramm der StorageGRID-Appliance für verwenden https://docs.netapp.com/us-en/storagegrid-appliances/commonhardware/monitoring-node-encryption-in-maintenance-mode.html["Löschen Sie die KMS-Konfiguration"^]. Durch das Löschen der KMS-Konfiguration wird die *Node Encryption*-Einstellung deaktiviert und die Zuordnung zwischen dem Appliance-Knoten und der KMS-Konfiguration für den StorageGRID-Standort wird aufgehoben.
+
+
+NOTE: Der Zugriff auf den KMS-Verschlüsselungsschlüssel ist ausgeschlossen, dass alle Daten, die auf der Appliance verbleiben, nicht mehr zugänglich sind und dauerhaft gesperrt werden.

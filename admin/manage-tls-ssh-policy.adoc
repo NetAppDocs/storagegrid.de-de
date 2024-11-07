@@ -1,0 +1,135 @@
+---
+permalink: admin/manage-tls-ssh-policy.html 
+sidebar: sidebar 
+keywords: TLS and SSH policy, secure connection, FIPS, Common Criteria 
+summary: Die TLS- und SSH-Richtlinie legt fest, welche Protokolle und Chiffren verwendet werden, um sichere TLS-Verbindungen mit Clientanwendungen und sichere SSH-Verbindungen zu internen StorageGRID-Diensten herzustellen. 
+---
+= Verwalten Sie die TLS- und SSH-Richtlinie
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die TLS- und SSH-Richtlinie legt fest, welche Protokolle und Chiffren verwendet werden, um sichere TLS-Verbindungen mit Clientanwendungen und sichere SSH-Verbindungen zu internen StorageGRID-Diensten herzustellen.
+
+Die Sicherheitsrichtlinie steuert, wie TLS und SSH Daten in Bewegung verschlüsseln. Verwenden Sie im Allgemeinen die moderne Kompatibilitätsrichtlinie (Standard), es sei denn, Ihr System muss Common Criteria-konform sein oder Sie müssen andere Chiffren verwenden.
+
+
+NOTE: Einige StorageGRID-Dienste wurden nicht aktualisiert, um die Chiffren in diesen Richtlinien zu verwenden.
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben die link:admin-group-permissions.html["Root-Zugriffsberechtigung"].
+
+
+
+
+== Wählen Sie eine Sicherheitsrichtlinie aus
+
+.Schritte
+. Wählen Sie *CONFIGURATION* > *Security* > *Security settings*.
++
+Auf der Registerkarte *TLS und SSH Policies* werden die verfügbaren Richtlinien angezeigt. Die derzeit aktive Richtlinie wird durch ein grünes Häkchen auf der Kachel „Richtlinie“ gekennzeichnet.
+
++
+image::../media/securitysettings_tls_ssh_policies_current.png[TLS- und SSH-Richtlinien]
+
+. Lesen Sie die Kacheln, um mehr über die verfügbaren Richtlinien zu erfahren.
++
+[cols="1a,2a"]
+|===
+| Richtlinie | Beschreibung 
+
+
+ a| 
+Moderne Kompatibilität (Standard)
+ a| 
+Verwenden Sie die Standardrichtlinie, wenn Sie eine starke Verschlüsselung benötigen und wenn Sie keine besonderen Anforderungen haben. Diese Richtlinie ist mit den meisten TLS- und SSH-Clients kompatibel.
+
+
+
+ a| 
+Kompatibilität mit älteren Systemen
+ a| 
+Verwenden Sie diese Richtlinie, wenn Sie zusätzliche Kompatibilitätsoptionen für ältere Clients benötigen. Die zusätzlichen Optionen in dieser Richtlinie machen sie möglicherweise weniger sicher als die moderne Kompatibilitätsrichtlinie.
+
+
+
+ a| 
+Gemeinsame Kriterien
+ a| 
+Verwenden Sie diese Richtlinie, wenn Sie eine Common Criteria-Zertifizierung benötigen.
+
+
+
+ a| 
+FIPS-strikt
+ a| 
+Verwenden Sie diese Richtlinie, wenn Sie eine Common Criteria-Zertifizierung benötigen und das Cryptographic Security Module 3.0.8 von NetApp für externe Clientverbindungen zu Load Balancer-Endpunkten, Mandantenmanager und Grid Manager verwenden müssen. Die Verwendung dieser Richtlinie kann die Performance beeinträchtigen.
+
+*Hinweis*: Nachdem Sie diese Richtlinie ausgewählt haben, müssen alle Knoten link:../maintain/rolling-reboot-procedure.html["Neu gestartet in einer rollenden Art und Weise"]das NetApp Cryptographic Sicherheitsmodul aktivieren. Verwenden Sie *Maintenance* > *Rolling reboot*, um Neustarts zu initiieren und zu überwachen.
+
+
+
+ a| 
+Individuell
+ a| 
+Erstellen Sie eine benutzerdefinierte Richtlinie, wenn Sie Ihre eigenen Chiffren anwenden müssen.
+
+|===
+. Um Details zu den Chiffren, Protokollen und Algorithmen der einzelnen Richtlinien anzuzeigen, wählen Sie *Details anzeigen*.
+. Um die aktuelle Richtlinie zu ändern, wählen Sie *Richtlinie verwenden*.
++
+Ein grünes Häkchen erscheint neben *Aktuelle Richtlinie* auf der Policy-Kachel.
+
+
+
+
+
+== Erstellen Sie eine benutzerdefinierte Sicherheitsrichtlinie
+
+Sie können eine benutzerdefinierte Richtlinie erstellen, wenn Sie Ihre eigenen Chiffren anwenden müssen.
+
+.Schritte
+. Wählen Sie auf der Kachel der Richtlinie, die der benutzerdefinierten Richtlinie, die Sie erstellen möchten, am ähnlichsten ist, *Details anzeigen* aus.
+. Wählen Sie *in Zwischenablage kopieren*, und wählen Sie dann *Abbrechen*.
++
+image::../media/securitysettings-custom-security-policy-copy.png[Kopieren einer vorhandenen Richtlinie zum Erstellen einer benutzerdefinierten Richtlinie]
+
+. Wählen Sie in der Kachel *Benutzerdefinierte Richtlinie* die Option *Konfigurieren und Verwenden* aus.
+. Fügen Sie die JSON ein, die Sie kopiert haben, und nehmen Sie alle erforderlichen Änderungen vor.
+. Wählen Sie *Richtlinie verwenden*.
++
+Auf der Kachel „Benutzerdefinierte Richtlinie“ wird ein grünes Häkchen neben *Aktuelle Richtlinie* angezeigt.
+
+. Wählen Sie optional *Konfiguration bearbeiten*, um weitere Änderungen an der neuen benutzerdefinierten Richtlinie vorzunehmen.
+
+
+
+
+== Vorübergehendes Zurücksetzen auf die Standard-Sicherheitsrichtlinie
+
+Wenn Sie eine benutzerdefinierte Sicherheitsrichtlinie konfiguriert haben, können Sie sich möglicherweise nicht beim Grid Manager anmelden, wenn die konfigurierte TLS-Richtlinie nicht mit dem kompatibel istlink:global-certificate-types.html["Serverzertifikat konfiguriert"].
+
+Sie können vorübergehend auf die Standard-Sicherheitsrichtlinie zurücksetzen.
+
+.Schritte
+. Melden Sie sich bei einem Admin-Knoten an:
++
+.. Geben Sie den folgenden Befehl ein: `ssh admin@_Admin_Node_IP_`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+.. Geben Sie den folgenden Befehl ein, um zu root zu wechseln: `su -`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
++
+Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `#`.
+
+
+
+. Führen Sie den folgenden Befehl aus:
++
+`restore-default-cipher-configurations`
+
+. Greifen Sie über einen Webbrowser auf den Grid Manager auf demselben Admin-Node zu.
+. Befolgen Sie die Schritte unter<<select-a-security-policy,Wählen Sie eine Sicherheitsrichtlinie aus>>, um die Richtlinie erneut zu konfigurieren.
+

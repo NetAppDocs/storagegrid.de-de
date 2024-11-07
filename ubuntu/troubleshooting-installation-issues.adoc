@@ -1,0 +1,31 @@
+---
+permalink: ubuntu/troubleshooting-installation-issues.html 
+sidebar: sidebar 
+keywords: how to troubleshoot ubuntu or debian installation 
+summary: Falls bei der Installation des StorageGRID-Systems Probleme auftreten, können Sie auf die Installationsprotokolldateien zugreifen. Der technische Support muss möglicherweise auch die Installations-Log-Dateien verwenden, um Probleme zu beheben. 
+---
+= Fehlerbehebung bei Installationsproblemen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Falls bei der Installation des StorageGRID-Systems Probleme auftreten, können Sie auf die Installationsprotokolldateien zugreifen. Der technische Support muss möglicherweise auch die Installations-Log-Dateien verwenden, um Probleme zu beheben.
+
+Die folgenden Installationsprotokolldateien sind über den Container verfügbar, auf dem jeder Node ausgeführt wird:
+
+* `/var/local/log/install.log` (Auf allen Grid-Nodes vorhanden)
+* `/var/local/log/gdu-server.log` (Auf dem primären Admin-Node gefunden)
+
+
+Die folgenden Installationsprotokolldateien sind vom Host verfügbar:
+
+* `/var/log/storagegrid/daemon.log`
+* `/var/log/storagegrid/nodes/<node-name>.log`
+
+
+Informationen zum Zugriff auf die Protokolldateien finden Sie unter link:../monitor/collecting-log-files-and-system-data.html["Erfassen von Protokolldateien und Systemdaten"].
+
+.Verwandte Informationen
+link:../troubleshoot/index.html["Fehler in einem StorageGRID System beheben"]

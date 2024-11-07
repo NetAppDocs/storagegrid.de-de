@@ -1,0 +1,62 @@
+---
+permalink: monitor/viewing-overview-tab.html 
+sidebar: sidebar 
+keywords: overview tab 
+summary: Die Registerkarte Übersicht enthält grundlegende Informationen zu den einzelnen Knoten. Es werden zudem alle Meldungen angezeigt, die derzeit den Node betreffen. 
+---
+= Zeigen Sie die Registerkarte Übersicht an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Registerkarte Übersicht enthält grundlegende Informationen zu den einzelnen Knoten. Es werden zudem alle Meldungen angezeigt, die derzeit den Node betreffen.
+
+Die Registerkarte Übersicht wird für alle Knoten angezeigt.
+
+
+
+== Node-Informationen
+
+Im Abschnitt „Knoteninformationen“ der Registerkarte „Übersicht“ werden grundlegende Informationen zum Knoten aufgeführt.
+
+image::../media/nodes_page_overview_tab.png[Registerkarte „Knotenübersicht“]
+
+Die Übersichtsinformationen für einen Knoten umfassen Folgendes:
+
+* *Anzeigename* (wird nur angezeigt, wenn der Knoten umbenannt wurde): Der aktuelle Anzeigename für den Knoten. Verwenden Sie das link:../maintain/rename-grid-site-node-overview.html["Benennen Sie Raster, Standorte und Nodes um"] Verfahren, um diesen Wert zu aktualisieren.
+* *Systemname*: Der Name, den Sie während der Installation für den Knoten eingegeben haben. Systemnamen werden für interne StorageGRID-Vorgänge verwendet und können nicht geändert werden.
+* *Typ*: Der Typ des Knotens -- Admin-Knoten, primärer Admin-Knoten, Speicher-Knoten oder Gateway-Knoten.
+* *ID*: Die eindeutige Kennung für den Knoten, die auch als UUID bezeichnet wird.
+* *Verbindungsstatus*: Einer von drei Zuständen. Das Symbol für den schwersten Zustand wird angezeigt.
++
+** *Unbekannt* image:../media/icon_alarm_blue_unknown.png["Blaues Fragezeichen-Symbol"]: aus einem unbekannten Grund ist der Knoten nicht mit dem Grid verbunden, oder ein oder mehrere Dienste sind unerwartet ausgefallen. Beispielsweise wurde die Netzwerkverbindung zwischen den Knoten unterbrochen, der Strom ist ausgefallen oder ein Dienst ist ausgefallen. Die Warnung * kann nicht mit Node* kommunizieren. Auch andere Warnmeldungen können aktiv sein. Diese Situation erfordert sofortige Aufmerksamkeit.
++
+
+NOTE: Ein Node wird möglicherweise während des verwalteten Herunterfahrens als „Unbekannt“ angezeigt. In diesen Fällen können Sie den Status Unbekannt ignorieren.
+
+** *Administrativ unten* image:../media/icon_alarm_gray_administratively_down.png["Graues Fragensymbol"]: der Knoten ist aus einem erwarteten Grund nicht mit dem Raster verbunden. Beispielsweise wurde der Node oder die Services für den Node ordnungsgemäß heruntergefahren, der Node neu gebootet oder die Software wird aktualisiert. Mindestens ein Alarm ist möglicherweise auch aktiv.
+** *Connected* image:../media/icon_alert_green_checkmark.png["Symbol Warnung grünes Häkchen"]: der Knoten ist mit dem Raster verbunden.
+
+
+* *Verwendeter Speicher*: Nur für Speicherknoten.
++
+** *Objektdaten*: Der Prozentsatz des gesamten nutzbaren Speicherplatzes für Objektdaten, der auf dem Speicherknoten verwendet wurde.
+** *Objektmetadaten*: Der Prozentsatz des insgesamt zulässigen Speicherplatzes für Objektmetadaten, die auf dem Speicherknoten verwendet wurden.
+
+
+* *Software-Version*: Die Version von StorageGRID, die auf dem Knoten installiert ist.
+* *HA-Gruppen*: Nur für Admin-Node und Gateway-Nodes. Wird angezeigt, wenn eine Netzwerkschnittstelle auf dem Knoten in einer Hochverfügbarkeitsgruppe enthalten ist und ob diese Schnittstelle die primäre Schnittstelle ist.
+* *IP-Adressen*: Die IP-Adressen des Knotens. Klicken Sie auf *zusätzliche IP-Adressen anzeigen*, um die IPv4- und IPv6-Adressen und Schnittstellenzuordnungen des Knotens anzuzeigen.
+
+
+
+
+== Meldungen
+
+Im Abschnitt Warnungen der Registerkarte Übersicht werden alle aufgelistetlink:monitoring-system-health.html#view-current-and-resolved-alerts["Warnmeldungen, die sich derzeit auf diesen Knoten auswirken, die nicht stummgeschaltet wurden"]. Wählen Sie den Namen der Warnmeldung aus, um weitere Details und empfohlene Aktionen anzuzeigen.
+
+image::../media/nodes_page_alerts_table.png[Tabelle „Knotenpunkte“]
+
+Warnungen sind auch für enthaltenlink:monitoring-system-health.html#monitor-node-connection-states["Status der Node-Verbindung"].

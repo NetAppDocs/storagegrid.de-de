@@ -1,0 +1,190 @@
+---
+permalink: admin/managing-admin-groups.html 
+sidebar: sidebar 
+keywords: what are admin groups, user permissions 
+summary: Sie können Administratorgruppen erstellen, um die Sicherheitsberechtigungen für einen oder mehrere Admin-Benutzer zu verwalten. Benutzer müssen zu einer Gruppe gehören, die Zugriff auf das StorageGRID-System gewährt. 
+---
+= Managen von Admin-Gruppen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Administratorgruppen erstellen, um die Sicherheitsberechtigungen für einen oder mehrere Admin-Benutzer zu verwalten. Benutzer müssen zu einer Gruppe gehören, die Zugriff auf das StorageGRID-System gewährt.
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben link:admin-group-permissions.html["Bestimmte Zugriffsberechtigungen"].
+* Wenn Sie eine föderierte Gruppe importieren möchten, haben Sie einen Identitätsverbund konfiguriert, und die föderierte Gruppe ist bereits in der konfigurierten Identitätsquelle vorhanden.
+
+
+
+
+== Erstellen einer Admin-Gruppe
+
+Administratorgruppen ermöglichen es Ihnen, festzulegen, welche Benutzer auf welche Funktionen und Vorgänge im Grid Manager und in der Grid Management API zugreifen können.
+
+
+
+=== Greifen Sie auf den Assistenten zu
+
+.Schritte
+. Wählen Sie *KONFIGURATION* > *Zugriffskontrolle* > *Admin-Gruppen*.
+. Wählen Sie *Gruppe erstellen*.
+
+
+
+
+=== Wählen Sie einen Gruppentyp aus
+
+Sie können eine lokale Gruppe erstellen oder eine föderierte Gruppe importieren.
+
+* Erstellen Sie eine lokale Gruppe, wenn Sie lokalen Benutzern Berechtigungen zuweisen möchten.
+* Erstellen Sie eine föderierte Gruppe, um Benutzer aus der Identitätsquelle zu importieren.
+
+
+[role="tabbed-block"]
+====
+.Lokale Gruppe
+--
+.Schritte
+. Wählen Sie *Lokale Gruppe*.
+. Geben Sie einen Anzeigenamen für die Gruppe ein, den Sie bei Bedarf später aktualisieren können. Beispiel: „Maintenance Users“ oder „ILM Administrators“.
+. Geben Sie einen eindeutigen Namen für die Gruppe ein, den Sie später nicht mehr aktualisieren können.
+. Wählen Sie *Weiter*.
+
+
+--
+.Föderierte Gruppe
+--
+.Schritte
+. Wählen Sie *Federated Group*.
+. Geben Sie den Namen der Gruppe ein, die importiert werden soll, genau so, wie sie in der konfigurierten Identitätsquelle angezeigt wird.
++
+** Verwenden Sie für Active Directory und Azure den sAMAccountName.
+** Verwenden Sie für OpenLDAP das CN (Common Name).
+** Verwenden Sie für einen anderen LDAP den entsprechenden eindeutigen Namen für den LDAP-Server.
+
+
+. Wählen Sie *Weiter*.
+
+
+--
+====
+
+
+=== Gruppenberechtigungen verwalten
+
+.Schritte
+. Wählen Sie unter *Zugriffsmodus* aus, ob Benutzer in der Gruppe Einstellungen ändern und Vorgänge im Grid Manager und der Grid Management API ausführen können oder ob sie nur Einstellungen und Funktionen anzeigen können.
++
+** *Lesen-Schreiben* (Standard): Benutzer können Einstellungen ändern und die Operationen durchführen, die durch ihre Verwaltungsberechtigungen erlaubt sind.
+** *Schreibgeschützt*: Benutzer können nur Einstellungen und Funktionen anzeigen. Sie können keine Änderungen an der Grid Manager- oder Grid-Management-API vornehmen oder Vorgänge ausführen. Lokale schreibgeschützte Benutzer können ihre eigenen Passwörter ändern.
++
+
+NOTE: Wenn ein Benutzer zu mehreren Gruppen gehört und eine beliebige Gruppe auf *schreibgeschützt* gesetzt ist, hat der Benutzer schreibgeschützten Zugriff auf alle ausgewählten Einstellungen und Features.
+
+
+
+. Wählen Sie eine oder mehrere link:admin-group-permissions.html["Berechtigungen für Administratorgruppen"].
++
+Sie müssen jeder Gruppe mindestens eine Berechtigung zuweisen. Andernfalls können sich Benutzer der Gruppe nicht bei StorageGRID anmelden.
+
+. Wenn Sie eine lokale Gruppe erstellen, wählen Sie *Weiter*. Wenn Sie eine Verbundgruppe erstellen, wählen Sie *Gruppe erstellen* und *Fertig stellen* aus.
+
+
+
+
+=== Benutzer hinzufügen (nur lokale Gruppen)
+
+.Schritte
+. Wählen Sie optional einen oder mehrere lokale Benutzer für diese Gruppe aus.
++
+Wenn Sie noch keine lokalen Benutzer erstellt haben, können Sie die Gruppe speichern, ohne Benutzer hinzuzufügen. Sie können diese Gruppe dem Benutzer auf der Seite Benutzer hinzufügen. Weitere Informationen finden Sie unter link:managing-users.html["Benutzer managen"] .
+
+. Wählen Sie *Gruppe erstellen* und *Fertig stellen*.
+
+
+
+
+== Anzeigen und Bearbeiten von Admin-Gruppen
+
+Sie können Details für vorhandene Gruppen anzeigen, eine Gruppe ändern oder eine Gruppe duplizieren.
+
+* Um grundlegende Informationen für alle Gruppen anzuzeigen, überprüfen Sie die Tabelle auf der Seite Gruppen.
+* Um alle Details für eine bestimmte Gruppe anzuzeigen oder eine Gruppe zu bearbeiten, verwenden Sie das Menü *Aktionen* oder die Detailseite.
++
+[cols="1a, 2a,2a"]
+|===
+| Aufgabe | Menü „Aktionen“ | Detailseite 
+
+
+ a| 
+Zeigen Sie Gruppendetails an
+ a| 
+.. Aktivieren Sie das Kontrollkästchen für die Gruppe.
+.. Wählen Sie *Aktionen* > *Gruppendetails anzeigen*.
+
+ a| 
+Wählen Sie den Gruppennamen in der Tabelle aus.
+
+
+
+ a| 
+Anzeigename bearbeiten (nur lokale Gruppen)
+ a| 
+.. Aktivieren Sie das Kontrollkästchen für die Gruppe.
+.. Wählen Sie *Aktionen* > *Gruppenname bearbeiten*.
+.. Geben Sie den neuen Namen ein.
+.. Wählen Sie *Änderungen speichern*.
+
+ a| 
+.. Wählen Sie den Gruppennamen aus, um die Details anzuzeigen.
+.. Wählen Sie das Symbol Bearbeiten image:../media/icon_edit_tm.png["Symbol bearbeiten"].
+.. Geben Sie den neuen Namen ein.
+.. Wählen Sie *Änderungen speichern*.
+
+
+
+
+ a| 
+Zugriffsmodus oder Berechtigungen bearbeiten
+ a| 
+.. Aktivieren Sie das Kontrollkästchen für die Gruppe.
+.. Wählen Sie *Aktionen* > *Gruppendetails anzeigen*.
+.. Ändern Sie optional den Zugriffsmodus der Gruppe.
+.. Wählen oder löschen Sie optional link:admin-group-permissions.html["Berechtigungen für Administratorgruppen"].
+.. Wählen Sie *Änderungen speichern*.
+
+ a| 
+.. Wählen Sie den Gruppennamen aus, um die Details anzuzeigen.
+.. Ändern Sie optional den Zugriffsmodus der Gruppe.
+.. Wählen oder löschen Sie optional link:admin-group-permissions.html["Berechtigungen für Administratorgruppen"].
+.. Wählen Sie *Änderungen speichern*.
+
+
+|===
+
+
+
+
+== Duplizieren einer Gruppe
+
+.Schritte
+. Aktivieren Sie das Kontrollkästchen für die Gruppe.
+. Wählen Sie *Aktionen* > *Gruppe duplizieren*.
+. Schließen Sie den Assistenten für die doppelte Gruppe ab.
+
+
+
+
+== Gruppe löschen
+
+Sie können eine Admin-Gruppe löschen, wenn Sie die Gruppe aus dem System entfernen möchten, und alle mit der Gruppe verknüpften Berechtigungen entfernen. Durch das Löschen einer Admin-Gruppe werden alle Benutzer aus der Gruppe entfernt, die Benutzer jedoch nicht gelöscht.
+
+.Schritte
+. Aktivieren Sie auf der Seite Gruppen das Kontrollkästchen für jede Gruppe, die Sie entfernen möchten.
+. Wählen Sie *Aktionen* > *Gruppe löschen*.
+. Wählen Sie *Gruppen löschen*.
+

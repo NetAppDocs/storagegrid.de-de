@@ -1,0 +1,258 @@
+---
+permalink: troubleshoot/verifying-object-integrity.html 
+sidebar: sidebar 
+keywords: how to verify object integrity, object existence check, background verification 
+summary: Das StorageGRID System überprüft die Integrität der Objektdaten auf Storage-Nodes und überprüft sowohl beschädigte als auch fehlende Objekte. 
+---
+= Überprüfen Sie die Objektintegrität
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das StorageGRID System überprüft die Integrität der Objektdaten auf Storage-Nodes und überprüft sowohl beschädigte als auch fehlende Objekte.
+
+Es gibt zwei Verifizierungsverfahren: Hintergrundüberprüfung und Objektexistenz-Prüfung (früher als Vordergrundüberprüfung bezeichnet). Sie arbeiten zusammen, um die Datenintegrität sicherzustellen. Die Hintergrundüberprüfung wird automatisch ausgeführt und überprüft kontinuierlich die Korrektheit von Objektdaten. Die Überprüfung der ObjektExistenz kann von einem Benutzer ausgelöst werden, um die Existenz (obwohl nicht die Richtigkeit) von Objekten schneller zu überprüfen.
+
+
+
+== Was ist Hintergrundüberprüfung?
+
+Die Hintergrundüberprüfung überprüft Storage Nodes automatisch und kontinuierlich auf beschädigte Kopien von Objektdaten und versucht automatisch, alle gefundenen Probleme zu beheben.
+
+Bei der Hintergrundüberprüfung werden die Integrität replizierter Objekte und Objekte mit Erasure-Coding-Verfahren überprüft:
+
+* *Replizierte Objekte*: Findet der Hintergrundverifizierungsvorgang ein beschädigtes Objekt, wird die beschädigte Kopie vom Speicherort entfernt und an anderer Stelle auf dem Speicherknoten isoliert. Anschließend wird eine neue, nicht beschädigte Kopie generiert und gemäß den aktiven ILM-Richtlinien abgelegt. Die neue Kopie wird möglicherweise nicht auf dem Speicherknoten abgelegt, der für die ursprüngliche Kopie verwendet wurde.
+
+
+
+NOTE: Beschädigte Objektdaten werden nicht aus dem System gelöscht, sondern in Quarantäne verschoben, sodass weiterhin darauf zugegriffen werden kann. Weitere Informationen zum Zugriff auf gesperrte Objektdaten erhalten Sie vom technischen Support.
+
+* *Erasure-codierte Objekte*: Erkennt der Hintergrund-Verifizierungsprozess, dass ein Fragment eines Löschungscodierten Objekts beschädigt ist, versucht StorageGRID automatisch, das fehlende Fragment auf demselben Speicherknoten unter Verwendung der verbleibenden Daten- und Paritätsfragmente neu zu erstellen. Wenn das beschädigte Fragment nicht neu erstellt werden kann, wird versucht, eine weitere Kopie des Objekts abzurufen. Wenn der Abruf erfolgreich ist, wird eine ILM-Bewertung durchgeführt, um eine Ersatzkopie des Objekts, das mit der Fehlerkorrektur codiert wurde, zu erstellen.
++
+Bei der Hintergrundüberprüfung werden nur Objekte auf Speicherknoten überprüft. Es werden keine Objekte in einem Cloud-Speicherpool überprüft. Objekte müssen älter als vier Tage sein, um sich für die Hintergrundüberprüfung zu qualifizieren.
+
+
+
+Die Hintergrundüberprüfung läuft mit einer kontinuierlichen Geschwindigkeit, die nicht auf normale Systemaktivitäten ausgerichtet ist. Die Hintergrundüberprüfung kann nicht angehalten werden. Sie können jedoch die Hintergrundverifizierungsrate erhöhen, um falls Sie vermuten, dass ein Problem vorliegt, den Inhalt eines Storage-Nodes schneller zu überprüfen.
+
+
+
+=== Warnmeldungen zur Hintergrundüberprüfung
+
+Wenn das System ein beschädigtes Objekt erkennt, das nicht automatisch korrigiert werden kann (weil die Beschädigung verhindert, dass das Objekt identifiziert wird), wird die Warnmeldung *Unidentified Corrupt Object Detected* ausgelöst.
+
+Wenn eine Hintergrundüberprüfung ein beschädigtes Objekt nicht ersetzen kann, weil es keine weitere Kopie finden kann, wird die Warnmeldung *Objects lost* ausgelöst.
+
+
+
+=== Ändern Sie die Hintergrundverifizierungsrate
+
+Sie können die Rate ändern, mit der die Hintergrundüberprüfung replizierte Objektdaten auf einem Storage-Node überprüft, wenn Sie Bedenken hinsichtlich der Datenintegrität haben.
+
+.Bevor Sie beginnen
+* Sie müssen im Grid-Manager mit einem angemeldet seinlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben link:../admin/admin-group-permissions.html["Bestimmte Zugriffsberechtigungen"].
+
+
+.Über diese Aufgabe
+Sie können die Verifizierungsrate für die Hintergrundüberprüfung eines Speicherknoten ändern:
+
+* Adaptiv: Standardeinstellung. Die Aufgabe wurde entwickelt, um maximal 4 MB/s oder 10 Objekte/s zu überprüfen (je nachdem, welcher Wert zuerst überschritten wird).
+* Hoch: Die Storage-Verifizierung verläuft schnell und kann zu einer Geschwindigkeit führen, die normale Systemaktivitäten verlangsamen kann.
+
+
+Verwenden Sie die hohe Überprüfungsrate nur, wenn Sie vermuten, dass ein Hardware- oder Softwarefehler beschädigte Objektdaten aufweisen könnte. Nach Abschluss der Hintergrundüberprüfung mit hoher Priorität wird die Verifizierungsrate automatisch auf Adaptive zurückgesetzt.
+
+.Schritte
+. Wählen Sie *SUPPORT* > *Tools* > *Grid-Topologie* aus.
+. Wählen Sie *_Storage Node_* > *LDR* > *Verifizierung* aus.
+. Wählen Sie *Konfiguration* > *Main*.
+. Gehen Sie zu *LDR* > *Verifizierung* > *Konfiguration* > *Main*.
+. Wählen Sie unter Hintergrundüberprüfung die Option *Verifizierungsrate* > *hoch* oder *Verifizierungsrate* > *adaptiv* aus.
++
+image::../media/background_verification_rate.png[Festlegen der Überprüfungsrate]
+
+. Klicken Sie Auf *Änderungen Übernehmen*.
+. Überwachen der Ergebnisse der Hintergrundüberprüfung replizierter Objekte
++
+.. Wechseln Sie zu *NODES* > *_Storage Node_* > *Objects*.
+.. Überwachen Sie im Abschnitt Überprüfung die Werte für *beschädigte Objekte* und *beschädigte Objekte nicht identifiziert*.
++
+Wenn bei der Hintergrundüberprüfung beschädigte replizierte Objektdaten gefunden werden, wird die Metrik *beschädigte Objekte* erhöht und StorageGRID versucht, die Objektkennung aus den Daten zu extrahieren, wie folgt:
+
++
+*** Wenn die Objekt-ID extrahiert werden kann, erstellt StorageGRID automatisch eine neue Kopie der Objektdaten. Die neue Kopie kann an jedem beliebigen Ort im StorageGRID System erstellt werden, der die aktiven ILM-Richtlinien erfüllt.
+*** Wenn der Objektbezeichner nicht extrahiert werden kann (weil er beschädigt wurde), wird die Metrik *korrupte Objekte nicht identifiziert* erhöht und die Warnung *nicht identifiziertes beschädigtes Objekt erkannt* ausgelöst.
+
+
+.. Wenn beschädigte replizierte Objektdaten gefunden werden, wenden Sie sich an den technischen Support, um die Ursache der Beschädigung zu ermitteln.
+
+
+. Überwachen Sie die Ergebnisse der Hintergrundüberprüfung von Objekten, die mit Erasure Coding codiert wurden.
++
+Wenn bei der Hintergrundüberprüfung beschädigte Fragmente von Objektdaten gefunden werden, die mit dem Erasure-Coding-Verfahren codiert wurden, wird das Attribut „beschädigte Fragmente erkannt“ erhöht. StorageGRID stellt sich wieder her, indem das beschädigte Fragment auf demselben Speicherknoten wiederhergestellt wird.
+
++
+.. Wählen Sie *SUPPORT* > *Tools* > *Grid-Topologie* aus.
+.. Wählen Sie *_Storage Node_* > *LDR* > *Erasure Coding* aus.
+.. Überwachen Sie in der Tabelle „Ergebnisse der Überprüfung“ das Attribut „beschädigte Fragmente erkannt“ (ECCD).
+
+
+. Nachdem das StorageGRID System beschädigte Objekte automatisch wiederhergestellt hat, setzen Sie die Anzahl beschädigter Objekte zurück.
++
+.. Wählen Sie *SUPPORT* > *Tools* > *Grid-Topologie* aus.
+.. Wählen Sie *_Storage Node_* > *LDR* > *Verifizierung* > *Konfiguration*.
+.. Wählen Sie *Anzahl Der Beschädigten Objekte Zurücksetzen*.
+.. Klicken Sie Auf *Änderungen Übernehmen*.
+
+
+. Wenn Sie sicher sind, dass isolierte Objekte nicht erforderlich sind, können Sie sie löschen.
++
+
+NOTE: Wenn die Warnmeldung *Objects lost* ausgelöst wurde, möchte der technische Support möglicherweise auf isolierte Objekte zugreifen, um das zugrunde liegende Problem zu debuggen oder die Datenwiederherstellung zu versuchen.
+
++
+.. Wählen Sie *SUPPORT* > *Tools* > *Grid-Topologie* aus.
+.. Wählen Sie *_Storage Node_* > *LDR* > *Verifizierung* > *Konfiguration*.
+.. Wählen Sie *Gesperrte Objekte Löschen*.
+.. Wählen Sie *Änderungen Anwenden*.
+
+
+
+
+
+
+== Was ist Objektexistenz-Prüfung?
+
+Die ObjektExistenz überprüft, ob alle erwarteten replizierten Kopien von Objekten und mit Erasure Coding verschlüsselten Fragmenten auf einem Storage Node vorhanden sind. Die Objektüberprüfung überprüft nicht die Objektdaten selbst (Hintergrundüberprüfung führt das durch); stattdessen bietet sie eine Möglichkeit, die Integrität von Speichergeräten zu überprüfen, insbesondere wenn ein kürzlich auftretende Hardwareproblem die Datenintegrität beeinträchtigen könnte.
+
+Im Gegensatz zur automatischen Hintergrundüberprüfung müssen Sie einen Auftrag zur Überprüfung der Objektexistenz manuell starten.
+
+Die Objektexistenz prüft die Metadaten für jedes in StorageGRID gespeicherte Objekt und überprüft, ob es sich um replizierte Objektkopien sowie um Erasure Coding verschlüsselte Objektfragmente handelt. Fehlende Daten werden wie folgt behandelt:
+
+* *Replizierte Kopien*: Fehlt eine Kopie replizierter Objektdaten, versucht StorageGRID automatisch, die Kopie von einer an anderer Stelle im System gespeicherten Kopie zu ersetzen. Der Storage-Node führt eine vorhandene Kopie durch eine ILM-Evaluierung aus. Damit wird festgestellt, dass die aktuelle ILM-Richtlinie für dieses Objekt nicht mehr erfüllt wird, da eine weitere Kopie fehlt. Es wird eine neue Kopie erzeugt und abgelegt, um den aktiven ILM-Richtlinien des Systems zu entsprechen. Diese neue Kopie kann nicht an derselben Stelle platziert werden, an der die fehlende Kopie gespeichert wurde.
+* *Erasure-codierte Fragmente*: Fehlt ein Fragment eines Objekts mit Löschungscode, versucht StorageGRID automatisch, das fehlende Fragment auf demselben Speicherknoten mithilfe der verbleibenden Fragmente neu zu erstellen. Wenn das fehlende Fragment nicht neu aufgebaut werden kann (weil zu viele Fragmente verloren gegangen sind), versucht ILM, eine andere Kopie des Objekts zu finden, mit der es ein neues, lösercodiertes Fragment generieren kann.
+
+
+
+
+=== Überprüfung der ObjektExistenz ausführen
+
+Sie erstellen und führen jeweils einen Job für die Überprüfung der Objektexistenz aus. Wenn Sie einen Job erstellen, wählen Sie die Speicherknoten und -Volumes aus, die Sie überprüfen möchten. Sie wählen auch die Konsistenz für den Job aus.
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben die link:../admin/admin-group-permissions.html["Berechtigung für Wartung oder Root-Zugriff"].
+* Sie haben sichergestellt, dass die zu prüfenden Speicherknoten online sind. Wählen Sie *NODES*, um die Tabelle der Knoten anzuzeigen. Stellen Sie sicher, dass neben dem Knotennamen für die Knoten, die Sie überprüfen möchten, keine Warnsymbole angezeigt werden.
+* Sie haben sichergestellt, dass die folgenden Verfahren auf den Knoten, die Sie überprüfen möchten, *nicht* ausgeführt werden:
++
+** Grid-Erweiterung, um einen Storage-Node hinzuzufügen
+** Deaktivierung des Storage Node
+** Recovery eines ausgefallenen Storage-Volumes
+** Wiederherstellung eines Speicherknoten mit einem ausgefallenen Systemlaufwerk
+** EC-Ausgleich
+** Appliance-Node-Klon
+
+
+
+
+Die Objektprüfung bietet keine nützlichen Informationen, während diese Verfahren ausgeführt werden.
+
+.Über diese Aufgabe
+Ein Prüfauftrag für eine Objektexistenz kann Tage oder Wochen dauern, abhängig von der Anzahl der Objekte im Grid, den ausgewählten Storage-Nodes und Volumes und der ausgewählten Konsistenz. Sie können nur einen Job gleichzeitig ausführen, aber Sie können mehrere Speicherknoten und Volumes gleichzeitig auswählen.
+
+.Schritte
+. Wählen Sie *WARTUNG* > *Aufgaben* > *Objekt Existenzprüfung*.
+. Wählen Sie *Job erstellen*. Der Assistent Job-Prüfung für Objektexistenz erstellen wird angezeigt.
+. Wählen Sie die Nodes aus, die die Volumes enthalten, die Sie überprüfen möchten. Um alle Online-Knoten auszuwählen, aktivieren Sie das Kontrollkästchen *Knotenname* in der Spaltenüberschrift.
++
+Sie können nach Node-Namen oder Site suchen.
+
++
+Sie können keine Knoten auswählen, die nicht mit dem Raster verbunden sind.
+
+. Wählen Sie *Weiter*.
+. Wählen Sie für jeden Knoten in der Liste ein oder mehrere Volumes aus. Sie können mithilfe der Storage-Volume-Nummer oder des Node-Namens nach Volumes suchen.
++
+Um alle Volumes für jeden ausgewählten Knoten auszuwählen, aktivieren Sie das Kontrollkästchen *Speichervolume* in der Spaltenüberschrift.
+
+. Wählen Sie *Weiter*.
+. Wählen Sie die Konsistenz für den Job aus.
++
+Die Konsistenz legt fest, wie viele Kopien von Objektmetadaten für die Prüfung der Objektexistenz verwendet werden.
+
++
+** *Strong-site*: Zwei Kopien von Metadaten an einem einzigen Standort.
+** *Stark-global*: Zwei Kopien von Metadaten an jedem Standort.
+** *Alle* (Standard): Alle drei Kopien von Metadaten an jedem Standort.
++
+Weitere Informationen zur Konsistenz finden Sie in den Beschreibungen im Assistenten.
+
+
+
+. Wählen Sie *Weiter*.
+. Ihre Auswahl überprüfen und überprüfen. Sie können *Zurück* auswählen, um zu einem vorherigen Schritt im Assistenten zu wechseln, um Ihre Auswahl zu aktualisieren.
++
+Ein Job zur Überprüfung der Objektexistenz wird erstellt und wird ausgeführt, bis einer der folgenden Aktionen ausgeführt wird:
+
++
+** Der Job ist abgeschlossen.
+** Sie unterbrechen oder abbrechen den Job. Sie können einen angehaltenen Job fortsetzen, aber einen abgebrochenen Job nicht wieder aufnehmen.
+** Der Job wird abgestellt. Die Warnung * Objektexistenz ist blockiert* wird ausgelöst. Befolgen Sie die für die Meldung angegebenen Korrekturmaßnahmen.
+** Der Job schlägt fehl. Die Warnung * Objektexistenz ist fehlgeschlagen* wird ausgelöst. Befolgen Sie die für die Meldung angegebenen Korrekturmaßnahmen.
+** Es wird die Meldung „Service nicht verfügbar“ oder „interner Serverfehler“ angezeigt. Aktualisieren Sie nach einer Minute die Seite, um mit der Überwachung des Jobs fortzufahren.
++
+
+NOTE: Sie können bei Bedarf von der Seite „Objektexistenz“ wegnavigieren und mit der Überwachung des Jobs fortfahren.
+
+
+
+. Zeigen Sie während der Ausführung des Jobs die Registerkarte *aktiver Job* an, und notieren Sie den Wert fehlender Objektkopien.
++
+Dieser Wert stellt die Gesamtzahl der fehlenden Kopien replizierter Objekte und Objekte mit Erasure-Coding-Code mit einem oder mehreren fehlenden Fragmenten dar.
+
++
+Wenn die Anzahl der erkannten fehlenden Objektkopien größer als 100 ist, kann es zu einem Problem mit dem Speicher des Speicherknotens kommen.
+
++
+image::../media/oec_active.png[Aktiver OEC-Job]
+
+. Nehmen Sie nach Abschluss des Jobs alle weiteren erforderlichen Maßnahmen vor:
++
+** Wenn fehlende Objektkopien gefunden wurden, ist Null, dann wurden keine Probleme gefunden. Es ist keine Aktion erforderlich.
+** Wenn fehlende Objektkopien erkannt sind größer als Null und die Warnung *Objekte verloren* nicht ausgelöst wurde, wurden alle fehlenden Kopien vom System repariert. Überprüfen Sie, ob Hardwareprobleme behoben wurden, um zukünftige Schäden an Objektkopien zu vermeiden.
+** Wenn fehlende Objektkopien erkannt sind größer als Null und die Warnung *Objekte verloren* ausgelöst wurde, könnte die Datenintegrität beeinträchtigt werden. Wenden Sie sich an den technischen Support.
+** Sie können verlorene Objektkopien untersuchen, indem Sie mit grep die LLST-Überwachungsmeldungen extrahieren: `grep LLST audit_file_name`.
++
+Dieses Verfahren ist ähnlich wie das für link:../troubleshoot/investigating-lost-objects.html["Untersuchung verlorener Objekte"], obwohl für Objektkopien Sie suchen nach `LLST` anstelle von `OLST`.
+
+
+
+. Wenn Sie die strong-site- oder strong-global-Konsistenz für den Job ausgewählt haben, warten Sie etwa drei Wochen auf die Metadatenkonsistenz, und führen Sie den Job erneut auf denselben Volumes aus.
++
+Wenn StorageGRID Zeit hatte, konsistente Metadaten für die im Job enthaltenen Nodes und Volumes zu erzielen, konnte eine erneute Ausführung des Jobs fälschlicherweise gemeldete fehlende Objektkopien löschen oder zusätzliche Objektkopien veranlassen, dass sie nicht verwendet wurden.
+
++
+.. Wählen Sie *WARTUNG* > *Objekt Existenzprüfung* > *Jobverlauf*.
+.. Legen Sie fest, welche Jobs für die erneute Ausführung bereit sind:
++
+... Sehen Sie sich die Spalte *Endzeit* an, um festzustellen, welche Jobs vor mehr als drei Wochen ausgeführt wurden.
+... Überprüfen Sie für diese Jobs die Spalte Consistency Control auf Strong-site oder strong-global.
+
+
+.. Aktivieren Sie das Kontrollkästchen für jeden Job, den Sie erneut ausführen möchten, und wählen Sie dann *erneut ausführen*.
++
+image::../media/oec_rerun.png[OEC erneut ausführen]
+
+.. Überprüfen Sie im Assistenten Jobs erneut ausführen die ausgewählten Knoten und Volumes sowie die Konsistenz.
+.. Wenn Sie bereit sind, die Jobs erneut auszuführen, wählen Sie *Rerun*.
+
+
+
+
+Die Registerkarte „aktiver Job“ wird angezeigt. Alle von Ihnen ausgewählten Jobs werden als ein Job an einer Konsistenz von strong-site erneut ausgeführt. In einem Feld mit * Related Jobs* im Bereich Details werden die Job-IDs für die ursprünglichen Jobs angezeigt.
+
+.Nachdem Sie fertig sind
+Wenn Sie noch Bedenken bezüglich der Datenintegrität haben, gehen Sie zu *SUPPORT* > *Tools* > *Grid-Topologie* > *_Site_* > *_Storage-Node_* > *LDR* > *Verifizierung* > *Konfiguration* > *Main* und erhöhen Sie die Hintergrundverifizierungsrate. Die Hintergrundüberprüfung überprüft die Richtigkeit aller gespeicherten Objektdaten und repariert sämtliche gefundenen Probleme. Das schnelle Auffinden und Reparieren potenzieller Probleme verringert das Risiko von Datenverlusten.

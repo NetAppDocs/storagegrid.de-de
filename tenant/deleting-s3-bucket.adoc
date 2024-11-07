@@ -1,0 +1,58 @@
+---
+permalink: tenant/deleting-s3-bucket.html 
+sidebar: sidebar 
+keywords: how to delete S3 bucket 
+summary: Sie können den Mandanten-Manager verwenden, um einen leeren S3-Bucket zu löschen. 
+---
+= S3-Bucket löschen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mit dem Tenant Manager können Sie eine oder mehrere leere S3-Buckets löschen.
+
+.Bevor Sie beginnen
+* Sie sind beim Tenant Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie gehören zu einer Benutzergruppe mit dem link:tenant-management-permissions.html["Managen aller Buckets oder Root-Zugriffsberechtigungen"]. Diese Berechtigungen überschreiben die Berechtigungseinstellungen in Gruppen- oder Bucket-Richtlinien.
+* Die Buckets, die Sie löschen möchten, sind leer. Wenn Buckets, die Sie löschen möchten, _Not_ leer sind, link:../tenant/deleting-s3-bucket-objects.html["Löschen von Objekten aus dem Bucket"].
+
+
+.Über diese Aufgabe
+Diese Anweisungen beschreiben das Löschen eines S3-Buckets mithilfe von Tenant Manager. Sie können auch S3-Buckets mithilfe der  oder der löschenlink:understanding-tenant-management-api.html["Mandantenmanagement-API"]link:../s3/operations-on-buckets.html["S3-REST-API"].
+
+Sie können einen S3-Bucket nicht löschen, wenn er Objekte, nicht aktuelle Objektversionen enthält oder Markierungen löscht. Informationen zum Löschen von S3 versionierten Objekten finden Sie unter link:../ilm/how-objects-are-deleted.html["So werden Objekte gelöscht"].
+
+.Schritte
+. Wählen Sie *View Buckets* aus dem Dashboard, oder wählen Sie *STORAGE (S3)* > *Buckets*.
++
+Die Seite Buckets wird angezeigt und zeigt alle vorhandenen S3-Buckets an.
+
+. Verwenden Sie das Menü *Aktionen* oder die Detailseite für einen bestimmten Bucket.
++
+[role="tabbed-block"]
+====
+.Menü „Aktionen“
+--
+.. Aktivieren Sie das Kontrollkästchen für jeden Bucket, den Sie löschen möchten.
+.. Wählen Sie *Actions* > *Eimer löschen*.
+
+
+--
+.Detailseite
+--
+.. Wählen Sie einen Bucket-Namen aus, um die Details anzuzeigen.
+.. Wählen Sie *Eimer löschen*.
+
+
+--
+====
+. Wenn das Bestätigungsdialogfeld angezeigt wird, wählen Sie *Ja*.
++
+StorageGRID bestätigt, dass jeder Bucket leer ist und löscht dann jeden Bucket. Dieser Vorgang kann einige Minuten dauern.
+
++
+Wenn ein Bucket nicht leer ist, wird eine Fehlermeldung angezeigt. Sie müssen link:../tenant/deleting-s3-bucket-objects.html["Löschen Sie alle Objekte und alle Löschmarkierungen im Bucket"]den Bucket löschen, bevor Sie ihn löschen können.
+
+

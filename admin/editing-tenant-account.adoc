@@ -1,0 +1,89 @@
+---
+permalink: admin/editing-tenant-account.html 
+sidebar: sidebar 
+keywords: edit tenant account, change tenant name, allow platform services, tenant quota 
+summary: Sie können ein Mandantenkonto bearbeiten, um den Anzeigenamen, das Speicherkontingent oder die Berechtigungen für Mandanten zu ändern. 
+---
+= Mandantenkonto bearbeiten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können ein Mandantenkonto bearbeiten, um den Anzeigenamen, das Speicherkontingent oder die Berechtigungen für Mandanten zu ändern.
+
+
+TIP: Wenn ein Mandant über die Berechtigung *Grid Federation connection* verwenden verfügt, können Sie die Mandantendetails von beiden Rastergittern in der Verbindung bearbeiten. Änderungen, die Sie an einem Raster in der Verbindung vornehmen, werden jedoch nicht in das andere Raster kopiert. Wenn Sie die Details der Serviceeinheit zwischen den Rastern exakt synchronisieren möchten, nehmen Sie die gleichen Änderungen an beiden Rastern vor. Siehe link:grid-federation-manage-tenants.html["Verwalten Sie die zulässigen Mandanten für die Grid Federation-Verbindung"].
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben die link:admin-group-permissions.html["Berechtigung für Root-Zugriff oder Mandantenkonten"].
+
+
+
+NOTE: Das Anwenden von Mandanteneinstellungen für das Grid kann je nach Netzwerkkonnektivität, Node-Status und Cassandra-Vorgängen 15 Minuten oder länger dauern.
+
+.Schritte
+. Wählen Sie *MIETER*.
++
+image::../media/tenant_accounts_page.png[Seite „Mandantenkonten“]
+
+. Suchen Sie das Mandantenkonto, das Sie bearbeiten möchten.
++
+Verwenden Sie das Suchfeld, um nach einem Mandanten anhand des Namens oder der Mandanten-ID zu suchen.
+
+. Wählen Sie den Mandanten aus. Sie können eine der folgenden Aktionen ausführen:
++
+** Aktivieren Sie das Kontrollkästchen für den Mandanten und wählen Sie *actions* > *Edit*.
+** Wählen Sie den Namen des Mandanten aus, um die Detailseite anzuzeigen, und wählen Sie *Bearbeiten*.
+
+
+. Ändern Sie optional die Werte für diese Felder:
++
+** *Name*
+** *Beschreibung*
+** *Speicherquote*
+
+
+. Wählen Sie *Weiter*.
+. Wählen oder deaktivieren Sie die Berechtigungen für das Mandantenkonto.
++
+** Wenn Sie *Platform Services* für einen Mandanten deaktivieren, der diese bereits nutzt, werden die Dienste, die er für seine S3-Buckets konfiguriert hat, nicht mehr funktionieren. Es wird keine Fehlermeldung an den Mandanten gesendet. Wenn der Mandant beispielsweise die Replizierung von CloudMirror für einen S3-Bucket konfiguriert hat, können sie Objekte weiterhin im Bucket speichern, doch werden Kopien dieser Objekte nicht mehr im externen S3-Bucket erstellt, den sie als Endpunkt konfiguriert haben. Siehe link:manage-platform-services-for-tenants.html["Management von Plattform-Services für S3-Mandantenkonten"].
+** Ändern Sie die Einstellung *eigene Identitätsquelle verwenden*, um zu bestimmen, ob das Mandantenkonto seine eigene Identitätsquelle oder die für den Grid Manager konfigurierte Identitätsquelle verwendet.
++
+Wenn *eigene Identitätsquelle verwenden* ist:
+
++
+*** Deaktiviert und ausgewählt, hat der Mandant bereits seine eigene Identitätsquelle aktiviert. Ein Mandant muss seine Identitätsquelle deaktivieren, bevor er die für den Grid Manager konfigurierte Identitätsquelle verwenden kann.
+*** Deaktiviert und nicht ausgewählt, SSO ist für das StorageGRID-System aktiviert. Der Mandant muss die Identitätsquelle verwenden, die für den Grid Manager konfiguriert wurde.
+
+
+** Wählen oder deaktivieren Sie die Berechtigung *allow S3 Select* nach Bedarf. Siehe link:manage-s3-select-for-tenant-accounts.html["Management von S3 Select für Mandantenkonten"].
+** So entfernen Sie die Berechtigung *Grid Federation connection*:
++
+... Wählen Sie die Registerkarte *Grid Federation* aus.
+... Wählen Sie *Berechtigung entfernen*.
+
+
+** So fügen Sie die Berechtigung *Grid Federation connection* ein:
++
+... Wählen Sie die Registerkarte *Grid Federation* aus.
+... Aktivieren Sie das Kontrollkästchen *Grid Federation connection* verwenden.
+... Wählen Sie optional *vorhandene lokale Benutzer und Gruppen klonen* aus, um sie in das Remote Grid zu klonen. Wenn Sie möchten, können Sie den Klonvorgang anhalten oder das Klonen erneut versuchen, wenn einige lokale Benutzer oder Gruppen nach Abschluss des letzten Klonvorgangs nicht geklont wurden.
+
+
+** So legen Sie eine maximale Aufbewahrungsfrist fest oder erlauben Sie den Compliance-Modus:
++
+
+NOTE: Die S3-Objektsperre muss im Raster aktiviert sein, bevor Sie diese Einstellungen verwenden können.
+
++
+... Wählen Sie die Registerkarte *S3 Object Lock*.
+... Geben Sie für *Set Maximum Retention Period* einen Wert ein und wählen Sie den Zeitraum aus dem Pulldown-Menü aus.
+... Aktivieren Sie für *allow Compliance Mode* das Kontrollkästchen.
+
+
+
+
+

@@ -1,0 +1,144 @@
+---
+permalink: upgrade/estimating-time-to-complete-upgrade.html 
+sidebar: sidebar 
+keywords: upgrade, time estimate, duration, cassandra upgrade 
+summary: Ziehen Sie den Zeitpunkt für ein Upgrade in Betracht, basierend auf der Dauer, die das Upgrade dauern könnte. Achten Sie darauf, welche Vorgänge Sie in jeder Phase des Upgrades durchführen können und nicht. 
+---
+= Schätzen Sie den Zeitaufwand für die Durchführung eines Upgrades ein
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ziehen Sie den Zeitpunkt für ein Upgrade in Betracht, basierend auf der Dauer, die das Upgrade dauern könnte. Achten Sie darauf, welche Vorgänge Sie in jeder Phase des Upgrades durchführen können und nicht.
+
+.Über diese Aufgabe
+Die erforderliche Zeit zur Durchführung eines StorageGRID Upgrades hängt von verschiedenen Faktoren ab, beispielsweise von Client-Last und Hardware-Performance.
+
+Die Tabelle fasst die wichtigsten Upgrade-Aufgaben zusammen und zeigt die ungefähre Zeit, die für jede Aufgabe erforderlich ist. Die Schritte nach der Tabelle enthalten Anweisungen zur Schätzung der Aktualisierungszeit für Ihr System.
+
+[cols="1a,2a,2a,4a"]
+|===
+| Aufgabe aktualisieren | Beschreibung | Ungefähre Zeit erforderlich | Während dieser Aufgabe 
+
+
+ a| 
+Führen Sie Vorabprüfungen durch und aktualisieren Sie den primären Admin-Node
+ a| 
+Die Upgrade-Vorabprüfungen werden ausgeführt, und der primäre Admin-Node wird angehalten, aktualisiert und neu gestartet.
+ a| 
+30 Minuten bis 1 Stunde, bei Service-Appliance-Nodes, die die meiste Zeit benötigen.
+
+Ungelöste Vorabprüffehler erhöhen sich diesmal.
+ a| 
+Sie können nicht auf den primären Admin-Node zugreifen. Möglicherweise werden Verbindungsfehler gemeldet, die Sie ignorieren können.
+
+Durch die Durchführung der Vorabprüfungen des Upgrades vor dem Start des Upgrades können Sie Fehler vor dem Wartungsfenster für geplante Upgrades beheben.
+
+
+
+ a| 
+Starten Sie den Upgrade Service
+ a| 
+Die Softwaredatei wird verteilt, und der Upgrade-Service wird gestartet.
+ a| 
+3 Minuten pro Grid-Node
+ a| 
+
+
+
+ a| 
+Upgrade anderer Grid-Nodes
+ a| 
+Die Software auf allen anderen Grid-Knoten wird aktualisiert, in der Reihenfolge, in der Sie die Knoten genehmigen. Jeder Knoten im System wird einzeln heruntergefahren.
+ a| 
+15 Minuten bis 1 Stunde pro Node, wobei Appliance-Nodes die höchste Zeit erfordern
+
+*Hinweis*: Für Appliance-Knoten wird der StorageGRID-Appliance-Installer automatisch auf die neueste Version aktualisiert.
+ a| 
+* Ändern Sie nicht die Grid-Konfiguration.
+* Ändern Sie nicht die Konfiguration auf Audit-Ebene.
+* Aktualisieren Sie nicht die ILM-Konfiguration.
+* Sie können keine weiteren Wartungsvorgänge wie Hotfix, Stilllegung oder Erweiterung durchführen.
+
+
+*Hinweis*: Wenn Sie eine Wiederherstellung durchführen müssen, wenden Sie sich an den technischen Support.
+
+
+
+ a| 
+Aktivieren von Funktionen
+ a| 
+Die neuen Funktionen für die neue Version sind aktiviert.
+ a| 
+Weniger als 5 Minuten
+ a| 
+* Ändern Sie nicht die Grid-Konfiguration.
+* Ändern Sie nicht die Konfiguration auf Audit-Ebene.
+* Aktualisieren Sie nicht die ILM-Konfiguration.
+* Ein weiterer Wartungsvorgang ist nicht möglich.
+
+
+
+
+ a| 
+Datenbank aktualisieren
+ a| 
+Der Upgrade-Prozess überprüft jeden Knoten, um zu überprüfen, ob die Cassandra-Datenbank nicht aktualisiert werden muss.
+ a| 
+10 Sekunden pro Node oder einige Minuten für das gesamte Grid
+ a| 
+Für das Upgrade von StorageGRID 11.8 auf 11.9 ist kein Cassandra-Datenbank-Upgrade erforderlich. Der Cassandra-Service wird jedoch auf jedem Speicherknoten angehalten und neu gestartet.
+
+Bei künftigen StorageGRID-Funktionsversionen kann der Schritt für das Update der Cassandra-Datenbank mehrere Tage dauern.
+
+
+
+ a| 
+Abschließende Upgrade-Schritte
+ a| 
+Temporäre Dateien werden entfernt und das Upgrade auf die neue Version wird abgeschlossen.
+ a| 
+5 Minuten
+ a| 
+Wenn die Aufgabe *Letzte Aktualisierungsschritte* abgeschlossen ist, können Sie alle Wartungsverfahren durchführen.
+
+|===
+.Schritte
+. Schätzen Sie die für das Upgrade aller Grid-Nodes erforderliche Zeit ein.
++
+.. Multiplizieren Sie die Anzahl der Nodes in Ihrem StorageGRID System um 1 Stunde/Node.
++
+In der Regel dauert das Upgrade von Appliance-Nodes länger als softwarebasierte Nodes.
+
+.. Fügen Sie dieser Zeit 1 Stunde hinzu, um die erforderliche Zeit zum Herunterladen der Datei zu berücksichtigen `.upgrade`, führen Sie Vorabprüfungen durch und führen Sie die letzten Aktualisierungsschritte durch.
+
+
+. Wenn Sie Linux-Knoten haben, fügen Sie 15 Minuten für jeden Knoten hinzu, um die Zeit zu berücksichtigen, die zum Herunterladen und Installieren des RPM- oder DEB-Pakets erforderlich ist.
+. Berechnen Sie die geschätzte Gesamtdauer für das Upgrade, indem Sie die Ergebnisse der Schritte 1 und 2 hinzufügen.
+
+
+
+
+== Beispiel: Geschätzte Dauer für ein Upgrade auf StorageGRID 11.9
+
+Angenommen, Ihr System verfügt über 14 Grid-Nodes, von denen 8 Linux-Nodes sind.
+
+. 14 mit 1 Stunde/Node multiplizieren.
+. Fügen Sie 1 Stunde hinzu, um den Download, die Vorabprüfung und die abschließenden Schritte zu berücksichtigen.
++
+Die geschätzte Zeit für ein Upgrade aller Nodes beträgt 15 Stunden.
+
+. Multiplizieren Sie 8 x 15 Minuten/Node, um die Zeit für die Installation des RPM- oder DEB-Pakets auf den Linux-Knoten zu berücksichtigen.
++
+Die voraussichtliche Zeit für diesen Schritt beträgt 2 Stunden.
+
+. Fügen Sie die Werte zusammen.
++
+Für das Upgrade Ihres Systems auf StorageGRID 11.9 sollten Sie bis zu 17 Stunden benötigen.
+
+
+
+
+NOTE: Bei Bedarf können Sie das Wartungsfenster in kleinere Fenster aufteilen, indem Sie Untergruppen von Rasterknoten für die Aktualisierung in mehreren Sitzungen genehmigen. Sie sollten beispielsweise die Knoten an Standort A in einer Sitzung aktualisieren und dann die Knoten an Standort B in einer späteren Sitzung aktualisieren. Wenn Sie das Upgrade in mehr als einer Sitzung durchführen möchten, beachten Sie, dass Sie die neuen Funktionen erst verwenden können, wenn alle Knoten aktualisiert wurden.

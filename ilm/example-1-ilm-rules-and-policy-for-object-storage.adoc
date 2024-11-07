@@ -1,0 +1,125 @@
+---
+permalink: ilm/example-1-ilm-rules-and-policy-for-object-storage.html 
+sidebar: sidebar 
+keywords: example ILM rule, information lifecycle rule examples 
+summary: Die folgenden Beispielregeln und -Richtlinien dienen als Ausgangspunkt bei der Definition einer ILM-Richtlinie zur Erfüllung der Anforderungen an Objektschutz und -Aufbewahrung. 
+---
+= Beispiel 1: ILM-Regeln und -Richtlinie für Objekt-Storage
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die folgenden Beispielregeln und -Richtlinien dienen als Ausgangspunkt bei der Definition einer ILM-Richtlinie zur Erfüllung der Anforderungen an Objektschutz und -Aufbewahrung.
+
+
+CAUTION: Die folgenden ILM-Regeln und -Richtlinien sind nur Beispiele. Es gibt viele Möglichkeiten zur Konfiguration von ILM-Regeln. Simulieren Sie vor der Aktivierung einer neuen Richtlinie, um zu bestätigen, dass sie so funktioniert, wie sie zum Schutz von Inhalten vor Verlust vorgesehen ist.
+
+
+
+== ILM-Regel 1, z. B. 1: Objektdaten an zwei Standorte kopieren
+
+Dieses Beispiel einer ILM-Regel kopiert Objektdaten in Storage-Pools an zwei Standorten.
+
+[cols="1a,2a"]
+|===
+| Regeldefinition | Beispielwert 
+
+
+ a| 
+Speicherpools an einem Standort
+ a| 
+Zwei Speicherpools, die jeweils unterschiedliche Standorte mit den Namen Standort 1 und Standort 2 enthalten.
+
+
+
+ a| 
+Regelname
+ a| 
+Zwei Kopien Zwei Standorte
+
+
+
+ a| 
+Referenzzeit
+ a| 
+Aufnahmezeit
+
+
+
+ a| 
+Platzierungen
+ a| 
+Bewahren Sie an Tag 0 bis für immer eine replizierte Kopie an Standort 1 und eine replizierte Kopie an Standort 2 auf.
+
+|===
+Im Abschnitt Regelanalyse des Aufbewahrungsdiagramms steht Folgendes:
+
+* Für die Dauer dieser Regel gilt eine StorageGRID-Sicherung gegen vor-Ort-Verlust.
+* Von dieser Regel verarbeitete Objekte werden nicht durch ILM gelöscht.
+
+
+image::../media/ilm_rule_two_copies_two_data_centers.png[ILM-Regel 1, z. B. 1: Objektdaten an zwei Standorte kopieren]
+
+
+
+== ILM-Regel 2 beispielsweise 1: Profil für Erasure Coding mit Bucket-Matching
+
+Diese ILM-Regel verwendet ein Profil zur Fehlerkorrektur und einen S3-Bucket, um zu bestimmen, wo und wie lange das Objekt gespeichert ist.
+
+[cols="1a,2a"]
+|===
+| Regeldefinition | Beispielwert 
+
+
+ a| 
+Speicherpool mit mehreren Standorten
+ a| 
+* Ein Speicherpool an drei Standorten (Standorte 1, 2, 3)
+* Verwenden Sie das Erasure Coding-Schema für 6+3
+
+
+
+
+ a| 
+Regelname
+ a| 
+S3 Bucket-Finanzdaten
+
+
+
+ a| 
+Referenzzeit
+ a| 
+Aufnahmezeit
+
+
+
+ a| 
+Platzierungen
+ a| 
+Erstellen Sie für Objekte in dem S3-Bucket mit dem Namen „Finance-Records“ eine Kopie, die nach Erasure-Coding-Profil angegeben ist und nach der Erasure-Coding-Code codiert wurde. Bewahren Sie diese Kopie für immer auf.
+
+|===
+image::../media/ilm_rule_ec_for_s3_bucket_finance_records.png[ILM-Regel 2 beispielsweise 1: Profil für Erasure Coding mit Bucket-Matching]
+
+
+
+== ILM-Richtlinie für Beispiel 1
+
+In der Praxis sind die meisten ILM-Richtlinien einfach, obwohl das StorageGRID System Ihnen die Entwicklung ausgefeilter und komplexer ILM-Richtlinien ermöglicht.
+
+Eine typische ILM-Richtlinie für ein Grid mit mehreren Standorten kann beispielsweise folgende ILM-Regeln umfassen:
+
+* Speichern Sie bei der Aufnahme alle Objekte, die zum S3-Bucket gehören und in einem Storage-Pool mit drei Standorten benannt `finance-records` sind. Verwenden Sie 6+3 Erasure Coding.
+* Wenn ein Objekt nicht mit der ersten ILM-Regel übereinstimmt, verwenden Sie die standardmäßige ILM-Regel der Richtlinie, zwei Kopien von zwei Rechenzentren, um eine Kopie dieses Objekts an Standort 1 und eine Kopie an Standort 2 zu speichern.
++
+image::../media/policy_1_configured_policy.png[ILM-Richtlinie für Beispiel 1]
+
+
+
+.Verwandte Informationen
+* link:ilm-policy-overview.html["Verwenden Sie ILM-Richtlinien"]
+* link:creating-ilm-policy.html["Erstellen von ILM-Richtlinien"]
+

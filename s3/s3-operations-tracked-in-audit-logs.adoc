@@ -1,0 +1,53 @@
+---
+permalink: s3/s3-operations-tracked-in-audit-logs.html 
+sidebar: sidebar 
+keywords: audit log, auditing bucket and object operations, S3 audit messages 
+summary: Audit-Meldungen werden von StorageGRID-Diensten generiert und in Text-Log-Dateien gespeichert. Sie können die S3-spezifischen Audit-Meldungen im Revisionsprotokoll prüfen, um Details zu Bucket- und Objektvorgängen zu abrufen. 
+---
+= S3-Vorgänge werden in den Audit-Protokollen protokolliert
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Audit-Meldungen werden von StorageGRID-Diensten generiert und in Text-Log-Dateien gespeichert. Sie können die S3-spezifischen Audit-Meldungen im Revisionsprotokoll prüfen, um Details zu Bucket- und Objektvorgängen zu abrufen.
+
+
+
+== Bucket-Vorgänge werden in den Audit-Protokollen protokolliert
+
+* CreateBucket
+* DeleteBucket
+* DeleteBucketTagging
+* Objekte deObjekteObjekte
+* GetBucketTagging
+* HeadBucket
+* ListObjekte
+* ListObjectVersions
+* BUCKET-Compliance
+* PutBucketTagging
+* PutBucketVersioning
+
+
+
+
+== Objektvorgänge werden in den Audit-Protokollen protokolliert
+
+* CompleteMultipartUpload
+* CopyObject
+* DeleteObject
+* GetObject
+* HeadObject
+* PutObject
+* Objekt restoreObject
+* Wählen Sie Objekt aus
+* UploadPart (wenn eine ILM-Regel ausgeglichene oder strikte Aufnahme verwendet)
+* UploadPartCopy (wenn eine ILM-Regel ausgeglichene oder strikte Aufnahme verwendet)
+
+
+.Verwandte Informationen
+* link:../audit/accessing-audit-log-file.html["Zugriff auf die Audit-Log-Datei"]
+* link:../audit/client-write-audit-messages.html["Audit-Meldungen des Clients schreiben"]
+* link:../audit/client-read-audit-messages.html["Client liest Audit-Meldungen"]
+

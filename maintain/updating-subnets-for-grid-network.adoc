@@ -1,0 +1,83 @@
+---
+permalink: maintain/updating-subnets-for-grid-network.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, subnet, grid network, update subnets 
+summary: 'StorageGRID pflegt eine Liste der für die Kommunikation zwischen Grid-Nodes im Grid Network \(eth0\) verwendeten Subnetze. Zu diesen Einträgen gehören die Subnetze, die von jedem Standort im StorageGRID-System für das Grid-Netzwerk verwendet werden, sowie alle Subnetze, die für NTP, DNS, LDAP oder andere externe Server verwendet werden, auf die über das Grid-Netzwerk-Gateway zugegriffen wird. Wenn Sie Grid-Nodes oder einen neuen Standort in einer Erweiterung hinzufügen, müssen Sie möglicherweise Subnetze zum Grid-Netzwerk aktualisieren oder hinzufügen.' 
+---
+= Subnetze für Grid Network aktualisieren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID pflegt eine Liste der für die Kommunikation zwischen den Grid-Nodes im Grid-Netzwerk (eth0) verwendeten Subnetze. Zu diesen Einträgen gehören die Subnetze, die von jedem Standort im StorageGRID-System für das Grid-Netzwerk verwendet werden, sowie alle Subnetze, die für NTP, DNS, LDAP oder andere externe Server verwendet werden, auf die über das Grid-Netzwerk-Gateway zugegriffen wird. Wenn Sie Grid-Nodes oder einen neuen Standort in einer Erweiterung hinzufügen, müssen Sie möglicherweise Subnetze zum Grid-Netzwerk aktualisieren oder hinzufügen.
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben die link:../admin/admin-group-permissions.html["Berechtigung für Wartung oder Root-Zugriff"].
+* Sie haben die Provisionierungs-Passphrase.
+* Sie haben die Netzwerkadressen in CIDR-Notation der Subnetze, die Sie konfigurieren möchten.
+
+
+.Über diese Aufgabe
+Wenn Sie eine Erweiterungsaktivität durchführen, die das Hinzufügen eines neuen Subnetzes einschließt, müssen Sie der Netznetznetznetznetznetznetznetznetznetznetznetznetznetznetznetznetznetznetznetznetzliste ein neues Subnetz hinzufügen, bevor Sie mit dem Erweiterungsverfahren beginnen. Andernfalls müssen Sie die Erweiterung abbrechen, das neue Subnetz hinzufügen und die Erweiterung erneut starten.
+
+
+
+== Fügen Sie ein Subnetz hinzu
+
+.Schritte
+. Wählen Sie *WARTUNG* > *Netzwerk* > *Grid-Netzwerk*.
+. Wählen Sie *Add another subnet*, um ein neues Subnetz in CIDR-Notation hinzuzufügen.
++
+Geben Siez. B. `10.96.104.0/22` .
+
+. Geben Sie die Provisionierungs-Passphrase ein, und wählen Sie *Speichern*.
+. Warten Sie, bis die Änderungen übernommen wurden, und laden Sie dann ein neues Wiederherstellungspaket herunter.
++
+.. Wählen Sie *WARTUNG* > *System* > *Wiederherstellungspaket*.
+.. Geben Sie die *Provisioning-Passphrase* ein.
++
+
+CAUTION: Die Recovery Package-Datei muss gesichert sein, weil sie Verschlüsselungsschlüssel und Passwörter enthält, die zum Abrufen von Daten vom StorageGRID-System verwendet werden können. Er wird auch zur Wiederherstellung des primären Admin-Knotens verwendet.
+
+
+
+
+
+Die angegebenen Subnetze werden automatisch für Ihr StorageGRID System konfiguriert.
+
+
+
+== Bearbeiten Sie ein Subnetz
+
+.Schritte
+. Wählen Sie *WARTUNG* > *Netzwerk* > *Grid-Netzwerk*.
+. Wählen Sie das Subnetz aus, das Sie bearbeiten möchten, und nehmen Sie die erforderlichen Änderungen vor.
+. Geben Sie die Provisionierungs-Passphrase ein, und wählen Sie *Speichern*.
+. Wählen Sie im Bestätigungsdialogfeld * Ja* aus.
+. Warten Sie, bis die Änderungen übernommen wurden, und laden Sie dann ein neues Wiederherstellungspaket herunter.
++
+.. Wählen Sie *WARTUNG* > *System* > *Wiederherstellungspaket*.
+.. Geben Sie die *Provisioning-Passphrase* ein.
+
+
+
+
+
+
+== Löschen Sie ein Subnetz
+
+.Schritte
+. Wählen Sie *WARTUNG* > *Netzwerk* > *Grid-Netzwerk*.
+. Wählen Sie das Löschsymbol image:../media/icon-x-to-remove.png["Symbol Löschen"] neben dem Subnetz aus.
+. Geben Sie die Provisionierungs-Passphrase ein, und wählen Sie *Speichern*.
+. Wählen Sie im Bestätigungsdialogfeld * Ja* aus.
+. Warten Sie, bis die Änderungen übernommen wurden, und laden Sie dann ein neues Wiederherstellungspaket herunter.
++
+.. Wählen Sie *WARTUNG* > *System* > *Wiederherstellungspaket*.
+.. Geben Sie die *Provisioning-Passphrase* ein.
+
+
+

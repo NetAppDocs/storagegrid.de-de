@@ -1,0 +1,124 @@
+---
+permalink: ilm/example-3-ilm-rules-and-policy-for-better-protection-for-image-files.html 
+sidebar: sidebar 
+keywords: example ILM rule, information lifecycle rule examples 
+summary: Anhand der folgenden Beispielregeln und -Richtlinien können Sie sicherstellen, dass Bilder mit mehr als 1 MB Löschcode erhalten und dass zwei Kopien aus kleineren Bildern erstellt werden. 
+---
+= Beispiel 3: ILM-Regeln und -Richtlinie für besseren Schutz von Image-Dateien
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Anhand der folgenden Beispielregeln und -Richtlinien können Sie sicherstellen, dass Bilder mit mehr als 1 MB Löschcode erhalten und dass zwei Kopien aus kleineren Bildern erstellt werden.
+
+
+CAUTION: Die folgenden ILM-Regeln und -Richtlinien sind nur Beispiele. Es gibt viele Möglichkeiten zur Konfiguration von ILM-Regeln. Simulieren Sie vor der Aktivierung einer neuen Richtlinie, um zu bestätigen, dass sie so funktioniert, wie sie zum Schutz von Inhalten vor Verlust vorgesehen ist.
+
+
+
+== ILM-Regel 1 beispielsweise 3: Verwenden Sie EC für Bilddateien über 1 MB
+
+Diese Beispiel ILM-Regel verwendet erweiterte Filterung zur Löschung von Code aller Bilddateien größer als 1 MB.
+
+
+NOTE: Das Verfahren zur Einhaltung von Datenkonsistenz eignet sich am besten für Objekte mit einer Größe von mehr als 1 MB. Verwenden Sie kein Erasure Coding für Objekte, die kleiner als 200 KB sind, um zu vermeiden, dass man sehr kleine Fragmente, die zur Fehlerkorrektur codiert wurden, managen muss.
+
+[cols="1a,2a"]
+|===
+| Regeldefinition | Beispielwert 
+
+
+ a| 
+Regelname
+ a| 
+EC-Bilddateien > 1 MB
+
+
+
+ a| 
+Referenzzeit
+ a| 
+Aufnahmezeit
+
+
+
+ a| 
+Erweiterter Filter für Objektgröße
+ a| 
+Objektgröße größer als 1 MB
+
+
+
+ a| 
+Erweiterte Filter für Schlüssel
+ a| 
+* Endet mit .jpg
+* Endet mit .png
+
+
+
+
+ a| 
+Platzierungen
+ a| 
+Erstellen Sie eine Kopie mit 2+1-Verfahren zur Fehlerkorrektur mit drei Standorten
+
+|===
+image::../media/policy_3_rule_1_ec_images_adv_filtering.png[ILM-Regel 1 beispielsweise 3: Verwenden Sie EC für Bilddateien über 1 MB]
+
+Da diese Regel als erste Regel in der Richtlinie konfiguriert ist, gilt die Anweisung für die Platzierung von Löschcodes nur für Dateien mit einer Größe von mehr als 1 MB.
+
+
+
+== ILM-Regel 2 beispielsweise 3: Erstellen Sie 2 replizierte Kopien für alle verbleibenden Image-Dateien
+
+Diese Beispiel-ILM-Regel verwendet erweiterte Filterung, um anzugeben, dass kleinere Bilddateien repliziert werden. Da die erste Regel in der Richtlinie bereits Bilddateien mit einer Größe von mehr als 1 MB übereinstimmt, gilt diese Regel für Bilddateien mit einer Größe von 1 MB.
+
+[cols="1a,2a"]
+|===
+| Regeldefinition | Beispielwert 
+
+
+ a| 
+Regelname
+ a| 
+2 Kopien für Bilddateien
+
+
+
+ a| 
+Referenzzeit
+ a| 
+Aufnahmezeit
+
+
+
+ a| 
+Erweiterte Filter für Schlüssel
+ a| 
+* Endet mit .jpg
+* Endet mit .png
+
+
+
+
+ a| 
+Platzierungen
+ a| 
+Erstellung von 2 replizierten Kopien in zwei Storage Pools
+
+|===
+
+
+== ILM-Richtlinie beispielsweise 3: Besserer Schutz für Image-Dateien
+
+Dieses Beispiel enthält drei Regeln für die ILM-Richtlinie:
+
+* Die erste Löschregel kodiert alle Bilddateien größer als 1 MB.
+* Die zweite Regel erstellt zwei Kopien aller verbleibenden Bilddateien (d. h. Bilder, die 1 MB oder kleiner sind).
+* Die Standardregel gilt für alle übrigen Objekte (d. h. alle nicht-Image-Dateien).
+
+
+image::../media/policy_3_configured_policy.png[ILM-Richtlinie beispielsweise 3: Besserer Schutz für Image-Dateien]

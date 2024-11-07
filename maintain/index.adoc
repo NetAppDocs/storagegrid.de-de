@@ -1,0 +1,33 @@
+---
+permalink: maintain/index.html 
+sidebar: sidebar 
+keywords: maintain overview, maintenance overview, about maintain, about maintenance 
+summary: Zu den Grid-Wartungsaufgaben gehören die Stilllegung eines Node oder Standorts, die Umbenennung eines Grid, eines Node oder Standorts und die Wartung des Netzwerks. Sie können auch Host- und Middleware-Verfahren sowie Grid-Node-Verfahren durchführen. 
+---
+= Netzwartung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Zu den Grid-Wartungsaufgaben gehören die Stilllegung eines Node oder Standorts, die Umbenennung eines Grid, eines Node oder Standorts und die Wartung von Netzwerken. Sie können auch Host- und Middleware-Verfahren sowie Grid-Node-Verfahren durchführen.
+
+
+NOTE: In dieser Anleitung bezieht sich "Linux" auf eine Red hat® Enterprise Linux®-, Ubuntu®- oder Debian®-Bereitstellung. Eine Liste der unterstützten Versionen finden Sie im https://imt.netapp.com/matrix/#welcome["NetApp Interoperabilitäts-Matrix-Tool"^].
+
+
+
+== Bevor Sie beginnen
+
+* Sie verfügen über ein umfassendes Verständnis des StorageGRID Systems.
+* Sie haben die Topologie Ihres StorageGRID Systems überprüft und sich mit der Grid-Konfiguration vertraut gemacht.
+* Ihr versteht, dass ihr alle Anweisungen genau befolgen und alle Warnungen beachten müsst.
+* Sie wissen, dass nicht beschriebene Wartungsverfahren nicht unterstützt werden oder eine Serviceerbringung erfordern.
+
+
+
+
+== Wartungsverfahren für Geräte
+
+Informationen zu Hardware-Verfahren finden Sie im https://docs.netapp.com/us-en/storagegrid-appliances/commonhardware/index.html["Wartungsanleitung für Ihr StorageGRID-Gerät"^].

@@ -1,0 +1,114 @@
+---
+section: s3
+title: S3-REST-API VERWENDEN
+entries:
+- title: Unterstützte Versionen und Updates
+  pdf-filename: Verwendung von S3 mit StorageGRID
+  url: "/s3/index.html"
+- title: Kurzreferenz
+  url: "/s3/quick-reference-support-for-aws-apis.html"
+- title: Testen von S3-REST-API-Verbindungen
+  url: "/s3/configuring-tenant-accounts-and-connections.html"
+- title: So implementiert StorageGRID die S3-REST-API
+  entries:
+  - title: In Konflikt stehende Clientanforderungen
+    url: "/s3/conflicting-client-requests.html"
+  - title: Konsistenzwerte
+    url: "/s3/consistency-controls.html"
+  - title: Objektversionierung
+    url: "/s3/object-versioning.html"
+  - title: Konfigurieren Sie die S3-Objektsperre über die S3-REST-API
+    url: "/s3/use-s3-api-for-s3-object-lock.html"
+  - title: S3-Lebenszykluskonfiguration erstellen
+    url: "/s3/create-s3-lifecycle-configuration.html"
+  - title: Empfehlungen für die Implementierung der S3-REST-API
+    url: "/s3/recommendations-for-implementing-s3-rest-api.html"
+- title: Unterstützung für Amazon S3-REST-API
+  entries:
+  - title: Implementierungsdetails
+    url: "/s3/s3-rest-api-supported-operations-and-limitations.html"
+  - title: Authentifizieren von Anfragen
+    url: "/s3/authenticating-requests.html"
+  - title: Betrieb auf dem Service
+    url: "/s3/operations-on-the-service.html"
+  - title: Operationen auf Buckets
+    url: "/s3/operations-on-buckets.html"
+  - title: Operationen für Objekte
+    entries:
+    - title: S3-Objektvorgänge
+      url: "/s3/operations-on-objects.html"
+    - title: Verwenden Sie S3 Select
+      url: "/s3/use-s3-select.html"
+    - title: Serverseitige Verschlüsselung
+      url: "/s3/using-server-side-encryption.html"
+    - title: CopyObject
+      url: "/s3/put-object-copy.html"
+    - title: GetObject
+      url: "/s3/get-object.html"
+    - title: HeadObject
+      url: "/s3/head-object.html"
+    - title: PutObject
+      url: "/s3/put-object.html"
+    - title: Objekt restoreObject
+      url: "/s3/post-object-restore.html"
+    - title: SelektierObjectContent
+      url: "/s3/select-object-content.html"
+  - title: Vorgänge für mehrteilige Uploads
+    entries:
+    - title: Mehrteilige Uploads
+      pdf-filename: Vorgänge für mehrteilige Uploads
+      url: "/s3/operations-for-multipart-uploads.html"
+    - title: CompleteMultipartUpload
+      url: "/s3/complete-multipart-upload.html"
+    - title: CreateMultipartUpload
+      url: "/s3/initiate-multipart-upload.html"
+    - title: ListMultipartUploads
+      url: "/s3/list-multipart-uploads.html"
+    - title: UploadTeil
+      url: "/s3/upload-part.html"
+    - title: UploadPartCopy
+      url: "/s3/upload-part-copy.html"
+  - title: Fehlerantworten
+    url: "/s3/error-responses.html"
+- title: Benutzerdefinierte Operationen von StorageGRID
+  entries:
+  - title: Liste der benutzerdefinierten Vorgänge
+    pdf-filename: Benutzerdefinierte Operationen von StorageGRID
+    url: "/s3/custom-operations-on-buckets.html"
+  - title: Get Bucket-Konsistenz
+    url: "/s3/get-bucket-consistency-request.html"
+  - title: PUT Bucket-Konsistenz
+    url: "/s3/put-bucket-consistency-request.html"
+  - title: ZEITPUNKT des letzten Zugriffs FÜR den Bucket ABRUFEN
+    url: "/s3/get-bucket-last-access-time-request.html"
+  - title: PUT Bucket-Zeit für den letzten Zugriff
+    url: "/s3/put-bucket-last-access-time-request.html"
+  - title: Konfiguration für die Benachrichtigung über Bucket-Metadaten LÖSCHEN
+    url: "/s3/delete-bucket-metadata-notification-configuration-request.html"
+  - title: Konfiguration der Bucket-Metadaten-Benachrichtigungen ABRUFEN
+    url: "/s3/get-bucket-metadata-notification-configuration-request.html"
+  - title: PUT Bucket-Metadaten-Benachrichtigungskonfiguration
+    url: "/s3/put-bucket-metadata-notification-configuration-request.html"
+  - title: GET Storage-Auslastung
+    url: "/s3/get-storage-usage-request.html"
+  - title: Veraltete Bucket-Anforderungen für ältere Compliance
+    entries:
+    - title: Veraltete Funktionen und Anforderungen
+      pdf-filename: Veraltete Bucket-Anforderungen für ältere Compliance
+      url: "/s3/deprecated-bucket-requests-for-legacy-compliance.html"
+    - title: Veraltet – CreateBucket fordert Änderungen für Compliance an
+      url: "/s3/deprecated-put-bucket-request-modifications-for-compliance.html"
+    - title: Veraltet – ANFORDERUNG zur Bucket-Compliance ABRUFEN
+      url: "/s3/deprecated-get-bucket-compliance-request.html"
+    - title: Veraltet – PUT Bucket-Compliance-Anforderung
+      url: "/s3/deprecated-put-bucket-compliance-request.html"
+- title: Bucket- und Gruppenzugriffsrichtlinien
+  entries:
+  - title: Verwendung von Bucket- und Gruppenzugriffsrichtlinien
+    url: "/s3/bucket-and-group-access-policies.html"
+  - title: Beispiel für Bucket-Richtlinien
+    url: "/s3/example-bucket-policies.html"
+  - title: Beispiel für Gruppenrichtlinien
+    url: "/s3/example-group-policies.html"
+- title: S3-Vorgänge werden in Prüfprotokollen nachverfolgt
+  url: "/s3/s3-operations-tracked-in-audit-logs.html"

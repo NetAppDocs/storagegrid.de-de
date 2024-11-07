@@ -1,0 +1,38 @@
+---
+permalink: ilm/what-erasure-coding-is.html 
+sidebar: sidebar 
+keywords: what is erasure coding, what is ec 
+summary: Erasure Coding ist eine von zwei Methoden, die StorageGRID zum Speichern von Objektdaten verwendet. Wenn Objekte mit einer ILM-Regel übereinstimmen, die Erasure Coding verwendet, werden diese Objekte in Datenfragmente geteilt, weitere Paritätsfragmente werden berechnet und jedes Fragment wird auf einem anderen Storage Node gespeichert. 
+---
+= Was ist Erasure Coding?
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Erasure Coding ist eine von zwei Methoden, die StorageGRID zum Speichern von Objektdaten verwendet (bei der Replizierung handelt es sich um die andere Methode). Wenn Objekte mit einer ILM-Regel übereinstimmen, die Erasure Coding verwendet, werden diese Objekte in Datenfragmente geteilt, weitere Paritätsfragmente werden berechnet und jedes Fragment wird auf einem anderen Storage Node gespeichert.
+
+Wenn auf ein Objekt zugegriffen wird, wird es anhand der gespeicherten Fragmente neu zusammengesetzt. Wenn ein Daten oder ein Paritätsfragment beschädigt wird oder verloren geht, kann der Algorithmus zur Fehlerkorrektur dieses Fragment mit einer Teilmenge der verbleibenden Daten und Paritätsfragmente neu erstellen.
+
+Beim Erstellen von ILM-Regeln erstellt StorageGRID Profile zur Einhaltung von Datenkonsistenz, die diese Regeln unterstützen. Sie können eine Liste von Erasure-Coding-Profilen anzeigen, link:manage-erasure-coding-profiles.html#rename-an-erasure-coding-profile["Umbenennen eines Profils für die Erasure Coding"], oder link:manage-erasure-coding-profiles.html#deactivate-an-erasure-coding-profile["Deaktivieren Sie ein Erasure Coding-Profil, wenn es derzeit nicht in ILM-Regeln verwendet wird"].
+
+Im folgenden Beispiel wird der Algorithmus zur Einhaltung von Datenkonsistenz (Erasure Coding) für Objektdaten dargestellt. In diesem Beispiel verwendet die ILM-Regel ein 4+2-Schema zur Einhaltung von Datenkonsistenz. Jedes Objekt wird in vier gleiche Datenfragmente geteilt und aus den Objektdaten werden zwei Paritätsfragmente berechnet. Jedes der sechs Fragmente wird auf einem anderen Node über drei Datacenter-Standorte gespeichert, um Daten bei Node-Ausfällen oder Standortausfällen zu sichern.
+
+image::../media/ec_three_sites_4_plus_2.png[Verfahren Zur Einhaltung Von Datenkonsistenz An Drei Standorten 4 Plus 2]
+
+Das 4+2 Erasure Coding-Schema kann auf verschiedene Weise konfiguriert werden. Sie können beispielsweise einen Speicherpool mit einem Standort konfigurieren, der sechs Storage-Nodes enthält. Für link:using-multiple-storage-pools-for-cross-site-replication.html["Schutz vor Standortausfällen"]können Sie einen Speicherpool verwenden, der drei Standorte mit drei Storage-Nodes an jedem Standort enthält. Ein Objekt kann abgerufen werden, solange vier der sechs Fragmente (Daten oder Parität) verfügbar sind. Bis zu zwei Fragmente können ohne Verlust der Objektdaten verloren gehen. Wenn ein ganzer Standort verloren geht, kann das Objekt dennoch abgerufen oder repariert werden, solange alle anderen Fragmente zugänglich bleiben.
+
+image::../media/ec_recoverable_4_plus_2.png[Erasure Coding Wiederherstellbar 4 Plus 2]
+
+Wenn mehr als zwei Speicherknoten verloren gehen, kann das Objekt nicht abgerufen werden.
+
+image::../media/ec_unrecoverable_4_plus_2.png[Erasure Coding Nicht Behebbar 4 Plus 2]
+
+.Verwandte Informationen
+* link:what-replication-is.html["Was ist Replikation"]
+* link:what-storage-pool-is.html["Was ist ein Speicherpool"]
+* link:what-erasure-coding-schemes-are.html["Was sind Erasure Coding-Systeme"]
+* link:manage-erasure-coding-profiles.html#rename-an-erasure-coding-profile["Umbenennen eines Profils für die Erasure Coding"]
+* link:manage-erasure-coding-profiles.html#deactivate-an-erasure-coding-profile["Deaktivieren Sie ein Erasure Coding-Profil"]
+

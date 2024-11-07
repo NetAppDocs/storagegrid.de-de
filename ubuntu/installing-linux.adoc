@@ -1,0 +1,102 @@
+---
+permalink: ubuntu/installing-linux.html 
+sidebar: sidebar 
+keywords: how to install Linux 
+summary: Sie müssen StorageGRID auf allen Ubuntu- oder Debian-Grid-Hosts installieren. Eine Liste der unterstützten Versionen finden Sie im NetApp Interoperabilitäts-Matrix-Tool. 
+---
+= Installieren Sie Linux
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen StorageGRID auf allen Ubuntu- oder Debian-Grid-Hosts installieren. Eine Liste der unterstützten Versionen finden Sie im NetApp Interoperabilitäts-Matrix-Tool.
+
+.Bevor Sie beginnen
+Stellen Sie sicher, dass Ihr Betriebssystem die Mindestanforderungen für die Kernel-Version von StorageGRID erfüllt, wie unten aufgeführt. Verwenden Sie den Befehl `uname -r`, um die Kernel-Version Ihres Betriebssystems zu erhalten, oder wenden Sie sich an den Hersteller Ihres Betriebssystems.
+
+*Hinweis:* die Unterstützung für Ubuntu Versionen 18.04 und 20.04 ist veraltet und wird in einer zukünftigen Version entfernt.
+
+[cols="1a,2a,3a"]
+|===
+| Ubuntu-Version | Minimale Kernel-Version | Name des Kernel-Pakets 
+
+
+ a| 
+18.04.6 (veraltet)
+ a| 
+5.4.0-150-generisch
+ a| 
+linux-image-5.4.0-150-generic/bionic-Updates,bionic-Security,now 5.4.0-150.167~18.04.1
+
+
+
+ a| 
+20.04.5 (veraltet)
+ a| 
+5.4.0-131-generisch
+ a| 
+linux-image-5.4.0-131-generisch/focal-Updates,jetzt 5.4.0-131.147
+
+
+
+ a| 
+22.04.1
+ a| 
+5.15.0-47-generisch
+ a| 
+linux-image-5.15.0-47-generic/jammy-Updates,jammy-Security,now 5.15.0-47.51
+
+
+
+ a| 
+24,04
+ a| 
+6.8.0-31-generisch
+ a| 
+linux-image-6.8.0-31-generisch/edel, jetzt 6.8.0-31.31
+
+|===
+*Anmerkung:* die Unterstützung für Debian Version 11 wurde veraltet und wird in einer zukünftigen Version entfernt.
+
+[cols="1a,2a,2a"]
+|===
+| Debian-Version | Minimale Kernel-Version | Name des Kernel-Pakets 
+
+
+ a| 
+11 (veraltet)
+ a| 
+5.10.0-18-amd64
+ a| 
+linux-image-5.10.0-18-amd64/stable, jetzt 5.10.150-1
+
+
+
+ a| 
+12
+ a| 
+6.1.0-9-amd64
+ a| 
+linux-image-6.1.0-9-amd64/stable,now 6.1.27-1
+
+|===
+.Schritte
+. Installieren Sie Linux auf allen physischen oder virtuellen Grid-Hosts gemäß den Anweisungen des Distributors oder dem Standardverfahren.
++
+
+NOTE: Installieren Sie keine grafischen Desktop-Umgebungen. Bei der Installation von Ubuntu müssen Sie *Standard-Systemdienstprogramme* auswählen. Die Auswahl von *OpenSSH-Server* wird empfohlen, um SSH-Zugriff auf Ihre Ubuntu-Hosts zu aktivieren. Alle anderen Optionen können gelöscht bleiben.
+
+. Stellen Sie sicher, dass alle Hosts Zugriff auf Ubuntu- oder Debian-Paket-Repositorys haben.
+. Wenn Swap aktiviert ist:
++
+.. Führen Sie den folgenden Befehl aus: `$ sudo swapoff --all`
+.. Entfernen Sie alle Swap-Einträge aus `/etc/fstab`, um die Einstellungen beizubehalten.
++
+
+NOTE: Wenn Sie den Auslagerungsaustausch nicht vollständig deaktivieren, kann die Leistung erheblich gesenkt werden.
+
+
+
+

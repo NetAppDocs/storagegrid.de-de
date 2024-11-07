@@ -1,0 +1,150 @@
+---
+permalink: expand/rebalancing-erasure-coded-data-after-adding-storage-nodes.html 
+sidebar: sidebar 
+keywords: erasure coding, EC, rebalancing, site rebalance procedure 
+summary: Nachdem Sie Storage Nodes hinzugefügt haben, können Sie mithilfe des Ausgleichs bei Erasure Coding Fragmente zwischen vorhandenen und neuen Storage Nodes verteilen, die mit Erasure Coding codiert wurden. 
+---
+= Ausgleich von Daten, die im Erasure Coding ausgeführt werden, nach dem Hinzufügen von Storage-Nodes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nach dem Hinzufügen von Storage Nodes können Sie das Ausgleichen von Fragmenten, die mit Erasure Coding (EC) codiert wurden, mithilfe der vorhandenen und neuen Storage Nodes verteilen.
+
+.Bevor Sie beginnen
+* Sie haben die Erweiterungsschritte zum Hinzufügen der neuen Speicherknoten abgeschlossen.
+* Sie haben die überprüftlink:considerations-for-rebalancing-erasure-coded-data.html["Überlegungen zur Lastverteilung bei Daten, die mit Erasure Coding versehen sind"].
+* Sie wissen, dass replizierte Objektdaten bei diesem Verfahren nicht verschoben werden und dass beim EC-Ausgleichverfahren die replizierte Datennutzung auf jedem Storage Node nicht berücksichtigt wird, wenn festgestellt wird, wo Daten mit Erasure Coding verschoben werden.
+* Sie haben die `Passwords.txt` Datei.
+
+
+.Was passiert, wenn dieses Verfahren ausgeführt wird
+Beachten Sie vor dem Starten des Verfahrens Folgendes:
+
+* Das EC-Ausgleichverfahren startet nicht, wenn ein oder mehrere Volumes offline (unmounted) sind oder online (gemountet) sind, sondern sich in einem Fehlerzustand befinden.
+* Das EG-Ausgleichverfahren reserviert vorübergehend einen großen Speicher. Storage-Warnmeldungen werden möglicherweise ausgelöst, aber nach Abschluss des Ausgleichs werden sie gelöst. Wenn nicht genügend Speicherplatz für die Reservierung vorhanden ist, schlägt das EC-Ausgleichverfahren fehl. Speicherreservierungen werden freigegeben, wenn der EC-Ausgleichvorgang abgeschlossen ist, unabhängig davon, ob der Vorgang fehlgeschlagen oder erfolgreich war.
+* Wenn ein Volume offline geschaltet wird, während der EC-Neuausgleich ausgeführt wird, wird der Neuausgleich beendet. Alle bereits verschobenen Datenfragmente bleiben an ihren neuen Speicherorten und es gehen keine Daten verloren.
++
+Sie können den Vorgang erneut ausführen, nachdem alle Volumes wieder online sind.
+
+* Wenn das EC-Ausgleichverfahren ausgeführt wird, kann die Performance von ILM-Vorgängen und S3 Client-Operationen beeinträchtigt werden.
++
+
+NOTE: S3-API-Operationen zum Hochladen von Objekten (oder Objektteilen) können während des EC-Ausgleichs fehlschlagen, wenn ihr Abschluss mehr als 24 Stunden erfordert. PUT-Vorgänge mit langer Dauer schlagen fehl, wenn die geltende ILM-Regel eine ausgewogene oder strikte Platzierung bei der Aufnahme verwendet. Der folgende Fehler wird gemeldet: `500 Internal Server Error`.
+
+* Bei diesem Verfahren haben alle Knoten eine Speicherkapazitätsgrenze von 80 %. Knoten, die diese Grenze überschreiten, aber immer noch unterhalb der Zieldatenpartition gespeichert werden, werden von folgenden Elementen ausgeschlossen:
++
+** Der Wert für die Unwucht des Standorts
+** Alle Bedingungen für den Abschluss eines Jobs
++
+
+NOTE: Die Zieldatenpartition wird berechnet, indem die Gesamtdaten für einen Standort durch die Anzahl der Knoten dividiert werden.
+
+
+
+* *Bedingungen für die Fertigstellung des Jobs*. Das EC-Ausgleichverfahren gilt als abgeschlossen, wenn eine der folgenden Bedingungen erfüllt ist:
++
+** Es können keine Daten mit Erasure Coded verschoben werden.
+** Die Daten in allen Knoten liegen innerhalb einer Abweichung von 5% von der Zieldatenpartition.
+** Das Verfahren läuft seit 30 Tagen.
+
+
+
+
+.Schritte
+. [[review_object_Storage]]Überprüfen Sie die aktuellen Objekt-Storage-Details für den Standort, den Sie ausgleichen möchten.
++
+.. Wählen Sie *KNOTEN*.
+.. Wählen Sie den ersten Speicherknoten am Standort aus.
+.. Wählen Sie die Registerkarte *Storage* aus.
+.. Bewegen Sie den Mauszeiger über das Diagramm Speicher verwendet – Objektdaten, um die aktuelle Menge replizierter Daten und mit Löschungscodes versehene Daten auf dem Speicher-Node anzuzeigen.
+.. Wiederholen Sie diese Schritte, um die anderen Speicherknoten am Standort anzuzeigen.
+
+
+. Melden Sie sich beim primären Admin-Node an:
++
+.. Geben Sie den folgenden Befehl ein: `ssh admin@_primary_Admin_Node_IP_`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+.. Geben Sie den folgenden Befehl ein, um zu root zu wechseln: `su -`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
++
+Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `#`.
+
+
+
+. Starten Sie den Vorgang:
++
+`reBalance-Data Start --site "_site-Name_"
+
++
+Geben Sie für „_site-Name_“ den ersten Standort an, an dem Sie einen oder mehrere neue Storage-Nodes hinzugefügt haben. In Angebote einschließen `site-name`.
+
++
+Der EC-Ausgleichvorgang startet, und eine Job-ID wird zurückgegeben.
+
+. Kopieren Sie die Job-ID.
+. [[view-Status]]Überwachen Sie den Status des EC-Ausgleichs.
++
+** So zeigen Sie den Status eines einzelnen EC-Ausgleichs an:
++
+`rebalance-data status --job-id _job-id_`
+
++
+Geben Sie für `_job-id_` die ID an, die beim Starten des Verfahrens zurückgegeben wurde.
+
+** So zeigen Sie den Status des aktuellen EC-Ausgleichs und aller zuvor abgeschlossenen Verfahren an:
++
+`rebalance-data status`
+
++
+[NOTE]
+====
+Hilfe zum Befehl zum Ausgleich von Daten erhalten:
+
+`rebalance-data --help`
+
+====
+
+
+. Führen Sie weitere Schritte aus, basierend auf dem zurückgegebenen Status:
++
+** Wenn `State` dies der Fall ist `In progress`, wird der EC-Ausgleichsoperation noch ausgeführt. Sie sollten das Verfahren regelmäßig überwachen, bis es abgeschlossen ist.
++
+Verwenden Sie den `Site Imbalance` Wert, um zu beurteilen, wie unausgewogen Daten aus dem Löschcode in den Storage-Nodes am Standort verwendet werden. Dieser Wert kann zwischen 1.0 und 0 liegen, wobei 0 bedeutet, dass die Datennutzung für das Erasure Coding vollständig auf alle Storage-Nodes am Standort verteilt ist.
+
++
+Der EC-Neuausgleich-Job gilt als abgeschlossen und wird angehalten, wenn sich die Daten in allen Knoten innerhalb einer Abweichung von 5 % von der Zieldatenpartition befinden.
+
+** Wenn `State` ist `Success`, optional<<review_object_storage,Prüfen von Objekt-Storage>>, um die aktualisierten Details für die Website anzuzeigen.
++
+Daten mit Erasure-Coding-Verfahren sollten nun besser auf die Storage-Nodes am Standort abgestimmt sein.
+
+** Wenn `State` `Failure`:
++
+... Vergewissern Sie sich, dass alle Speicherknoten am Standort mit dem Raster verbunden sind.
+... Überprüfen Sie, ob Warnmeldungen vorliegen, die sich auf diese Speicherknoten auswirken könnten, und beheben Sie sie.
+... Starten Sie das EC-Neuausgleich-Verfahren neu:
++
+`rebalance-data start –-job-id _job-id_`
+
+... <<view-status,Den Status anzeigen>> Des neuen Verfahrens. Falls `State` noch vorhanden `Failure`, wenden Sie sich an den technischen Support.
+
+
+
+
+. Wenn das EC-Ausgleichverfahren zu viel Last generiert (beispielsweise sind Ingest-Operationen betroffen), unterbrechen Sie den Vorgang.
++
+`rebalance-data pause --job-id _job-id_`
+
+. Wenn Sie das EC-Ausgleichverfahren beenden müssen (z. B. um ein StorageGRID-Software-Upgrade durchzuführen), geben Sie Folgendes ein:
++
+`rebalance-data terminate --job-id _job-id_`
+
++
+
+NOTE: Wenn Sie eine EC-Neuverteilung beenden, bleiben alle Datenfragmente, die bereits verschoben wurden, an ihren neuen Speicherorten. Daten werden nicht zurück an den ursprünglichen Speicherort verschoben.
+
+. Wenn Sie Erasure Coding an mehreren Standorten verwenden, führen Sie dieses Verfahren für alle anderen betroffenen Standorte aus.
+

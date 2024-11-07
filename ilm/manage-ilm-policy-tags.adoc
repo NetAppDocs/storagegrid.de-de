@@ -1,0 +1,65 @@
+---
+permalink: ilm/manage-ilm-policy-tags.html 
+sidebar: sidebar 
+keywords: ILM policy tag 
+summary: Sie können die Details der ILM-Richtlinien-Tags anzeigen, ein Tag bearbeiten oder ein Tag entfernen. 
+---
+= Managen von ILM-Richtlinien-Tags
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Details der ILM-Richtlinien-Tags anzeigen, ein Tag bearbeiten oder ein Tag entfernen.
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben die link:../admin/admin-group-permissions.html["Erforderliche Zugriffsberechtigungen"].
+
+
+
+
+== Zeigen Sie die Details des ILM-Richtlinien-Tags an
+
+So zeigen Sie die Details für ein Tag an:
+
+. Wählen Sie *ILM* > *Policy-Tags* aus.
+. Wählen Sie den Namen der Richtlinie aus der Tabelle aus. Die Detailseite für das Tag wird angezeigt.
+. Zeigen Sie auf der Detailseite den vorherigen Verlauf der zugewiesenen Richtlinien an.
+. Zeigen Sie eine Richtlinie an, indem Sie sie auswählen.
+
+
+
+
+== ILM-Richtlinien-Tag bearbeiten
+
+
+NOTE: Tag-Namen und -Beschreibungen sind für Mandanten sichtbar. Wählen Sie Werte aus, die Mandanten bei der Auswahl von Richtlinien-Tags helfen, die ihren Buckets zugewiesen werden sollen, eine fundierte Entscheidung zu treffen. Wenn die zugewiesene Richtlinie beispielsweise Objekte nach einem bestimmten Zeitraum löscht, können Sie dies in der Beschreibung mitteilen. Nehmen Sie in diesen Feldern keine vertraulichen Informationen auf.
+
+So bearbeiten Sie die Beschreibung eines vorhandenen Tags:
+
+. Wählen Sie *ILM* > *Policy-Tags* aus.
+. Aktivieren Sie das Kontrollkästchen für das Tag, und wählen Sie dann *Bearbeiten*.
++
+Alternativ können Sie den Namen des Tags auswählen. Die Detailseite für das Tag wird angezeigt, und Sie können auf dieser Seite *Bearbeiten* auswählen.
+
+. Ändern Sie die Tag-Beschreibung nach Bedarf
+. Wählen Sie *Speichern*.
+
+
+
+
+== Entfernen Sie das ILM-Richtlinien-Tag
+
+Wenn Sie ein Policy-Tag entfernen, wird für alle Buckets, denen dieses Tag zugewiesen ist, die Standard-Richtlinie angewendet.
+
+So entfernen Sie ein Tag:
+
+. Wählen Sie *ILM* > *Policy-Tags* aus.
+. Aktivieren Sie das Kontrollkästchen für das Tag, und wählen Sie dann *Entfernen*. Ein Bestätigungsdialogfeld wird angezeigt.
++
+Alternativ können Sie den Namen des Tags auswählen. Die Detailseite für das Tag wird angezeigt, und Sie können auf dieser Seite *Entfernen* auswählen.
+
+. Wählen Sie *Ja*, um das Tag zu löschen.
+

@@ -1,0 +1,53 @@
+---
+permalink: fabricpool/remove-fabricpool-data.html 
+sidebar: sidebar 
+keywords: fabricPool, ontap, remove data from storagegrid 
+summary: Wenn Sie die derzeit in StorageGRID gespeicherten FabricPool-Daten entfernen müssen, führen Sie die folgenden Schritte aus. 
+---
+= FabricPool-Daten aus StorageGRID entfernen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Falls Sie die aktuell in StorageGRID gespeicherten FabricPool-Daten entfernen müssen, müssen Sie mithilfe von ONTAP alle Daten des FabricPool Volumes abrufen und in die Performance-Tier verschieben.
+
+.Bevor Sie beginnen
+* Sie haben die Anweisungen und Überlegungen in geprüft https://docs.netapp.com/us-en/ontap/fabricpool/promote-data-performance-tier-task.html["Daten auf die Performance-Tier übertragen"^].
+* Sie verwenden ONTAP 9.8 oder höher.
+* Sie verwenden einen link:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie gehören einer StorageGRID-Benutzergruppe für das FabricPool-Mandantenkonto an, das den hatlink:../tenant/tenant-management-permissions.html["Managen aller Buckets oder Root-Zugriffsberechtigungen"].
+
+
+.Über diese Aufgabe
+Im Folgenden wird erläutert, wie Daten von StorageGRID zurück zu FabricPool verschoben werden. Sie führen dieses Verfahren mit ONTAP und StorageGRID Tenant Manager durch.
+
+.Schritte
+. Geben Sie in ONTAP den Befehl ein `volume modify`.
++
+Legen Sie fest `tiering-policy` `none`, dass das neue Tiering angehalten wird und `cloud-retrieval-policy` `promote` alle Daten zurückgegeben werden, die zuvor auf StorageGRID Tiering gespeichert wurden.
+
++
+Siehe https://docs.netapp.com/us-en/ontap/fabricpool/promote-all-data-performance-tier-task.html["Sämtliche Daten von einem FabricPool Volume auf die Performance-Tier übertragen"^].
+
+. Warten Sie, bis der Vorgang abgeschlossen ist.
++
+Sie können den Befehl mit der `tiering` Option auf https://docs.netapp.com/us-en/ontap/fabricpool/check-status-performance-tier-promotion-task.html["Überprüfen Sie den Status der Performance-Tier-Promotion"^] verwenden `volume object-store`.
+
+. Wenn der Hochstufen-Vorgang abgeschlossen ist, melden Sie sich beim StorageGRID-Mandanten-Manager für das FabricPool-Mandanten-Konto an.
+. Wählen Sie *View Buckets* aus dem Dashboard, oder wählen Sie *STORAGE (S3)* > *Buckets*.
+. Vergewissern Sie sich, dass der FabricPool-Bucket jetzt leer ist.
+. Wenn der Eimer leer ist, link:../tenant/deleting-s3-bucket.html["Löschen Sie den Bucket"].
+
+
+.Nachdem Sie fertig sind
+Wenn Sie den Bucket löschen, kann das Tiering von FabricPool zu StorageGRID nicht mehr fortgesetzt werden. Da die lokale Tier jedoch nach wie vor mit dem StorageGRID-Cloud-Tier verbunden ist, gibt ONTAP System Manager Fehlermeldungen aus, die darauf hinweisen, dass der Bucket nicht verfügbar ist.
+
+Um diese Fehlermeldungen zu vermeiden, führen Sie einen der folgenden Schritte aus:
+
+* Verwenden Sie FabricPool Mirror, um ein anderes Cloud-Tier zum Aggregat zu verbinden.
+* Verschieben Sie die Daten aus dem FabricPool-Aggregat in ein nicht-FabricPool-Aggregat und löschen Sie dann das ungenutzte Aggregat.
+
+
+Anweisungen dazu finden Sie im https://docs.netapp.com/us-en/ontap/fabricpool/index.html["ONTAP-Dokumentation für FabricPool"^].

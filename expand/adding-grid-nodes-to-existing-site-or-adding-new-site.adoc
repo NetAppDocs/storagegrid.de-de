@@ -1,0 +1,30 @@
+---
+permalink: expand/adding-grid-nodes-to-existing-site-or-adding-new-site.html 
+sidebar: sidebar 
+keywords: grid node, add node, add site, expand, expansion 
+summary: Gehen Sie wie folgt vor, um bestehenden Standorten Grid-Nodes hinzuzufügen oder einen neuen Standort hinzuzufügen. Sie können jeweils nur einen Erweiterungstyp ausführen. 
+---
+= Grid-Nodes zu vorhandenem Standort hinzufügen oder neuen Standort hinzufügen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Gehen Sie wie folgt vor, um bestehenden Standorten Grid-Nodes hinzuzufügen oder einen neuen Standort hinzuzufügen. Sie können jeweils nur einen Erweiterungstyp ausführen.
+
+.Bevor Sie beginnen
+* Sie haben die link:../admin/admin-group-permissions.html["Root-Zugriff oder Wartungsberechtigung"].
+* Alle bestehenden Nodes im Grid sind über alle Standorte hinweg betriebsbereit.
+* Alle vorherigen Erweiterungs-, Upgrade-, Stilllegungs- oder Recovery-Verfahren sind abgeschlossen.
++
+
+NOTE: Sie können eine Erweiterung nicht starten, während noch ein weiteres Verfahren zur Erweiterung, Aktualisierung, Wiederherstellung oder aktiven Deaktivierung ausgeführt wird. Sie können jedoch bei Bedarf eine Deaktivierung unterbrechen, um eine Erweiterung zu starten.
+
+
+
+.Schritte
+. link:updating-subnets-for-grid-network.html["Subnetze für Grid Network aktualisieren"].
+. link:deploying-new-grid-nodes.html["Neue Grid-Nodes implementieren"].
+. link:performing-expansion.html["Erweiterung durchführen"].
+

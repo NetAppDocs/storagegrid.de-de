@@ -1,0 +1,174 @@
+---
+permalink: admin/configuring-client-connections.html 
+sidebar: sidebar 
+keywords: s3 connection, connect to storagegrid, s3 setup wizard 
+summary: Als Grid-Administrator managen Sie die Konfigurationsoptionen, die steuern, wie S3-Client-Applikationen zum Speichern und Abrufen von Daten mit Ihrem StorageGRID System verbunden sind. 
+---
+= S3-Client-Verbindungen konfigurieren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Als Grid-Administrator managen Sie die Konfigurationsoptionen, die steuern, wie S3-Client-Applikationen zum Speichern und Abrufen von Daten mit Ihrem StorageGRID System verbunden sind.
+
+
+TIP: Swift-Details wurden aus dieser Version der doc-Site entfernt. Siehe https://docs.netapp.com/us-en/storagegrid-118/admin/configuring-client-connections.html["StorageGRID 11.8: Konfigurieren Sie S3- und Swift-Client-Verbindungen"^].
+
+
+
+== Konfigurationsaufgaben
+
+. Führen Sie erforderliche Aufgaben in StorageGRID aus, je nachdem, wie die Clientanwendung eine Verbindung zu StorageGRID herstellt.
+
+
+[role="tabbed-block"]
+====
+.Erforderliche Aufgaben
+--
+Sie müssen Folgendes erhalten:
+
+* IP-Adressen
+* Domain-Namen
+* SSL-Zertifikat
+
+
+--
+.Optionale Aufgaben
+--
+Optional konfigurieren:
+
+* Identitätsföderation
+* SSO
+
+
+--
+====
+. Verwenden Sie StorageGRID, um die Werte abzurufen, die die Anwendung für die Verbindung mit dem Grid benötigt. Sie können entweder den S3-Einrichtungsassistenten verwenden oder jede StorageGRID-Einheit manuell konfigurieren. +
+
+
+[role="tabbed-block"]
+====
+.Verwenden Sie den S3-Einrichtungsassistenten
+--
+Befolgen Sie die Schritte im S3-Einrichtungsassistenten.
+
+--
+.Manuell konfigurieren
+--
+. Erstellen Sie eine Hochverfügbarkeitsgruppe
+. Lastausgleichsendpunkt erstellen
+. Erstellen eines Mandantenkontos
+. Erstellen von Buckets und Zugriffsschlüsseln
+. Konfigurieren Sie die ILM-Regel und -Richtlinie
+
+
+--
+====
+. Verwenden Sie die S3-Anwendung, um die Verbindung zu StorageGRID abzuschließen. Erstellen Sie DNS-Einträge, um IP-Adressen mit beliebigen Domänennamen zu verknüpfen, die Sie verwenden möchten.
++
+Führen Sie bei Bedarf zusätzliche Anwendungseinstellungen durch.
+
+. Laufende Aufgaben in der Applikation und in StorageGRID werden durchgeführt, um Objekt-Storage über einen längeren Zeitraum zu managen und zu überwachen.
+
+
+
+
+== Informationen, die zum Anhängen von StorageGRID an eine Client-Applikation erforderlich sind
+
+Bevor Sie StorageGRID an eine S3-Client-Anwendung anhängen können, müssen Sie die Konfigurationsschritte in StorageGRID ausführen und einen bestimmten Wert erhalten.
+
+
+
+=== Welche Werte brauche ich?
+
+In der folgenden Tabelle sind die Werte aufgeführt, die Sie in StorageGRID konfigurieren müssen und bei denen diese Werte von der S3-Anwendung und dem DNS-Server verwendet werden.
+
+[cols="1a,1a,1a"]
+|===
+| Wert | Wobei der Wert konfiguriert ist | Wo Wert verwendet wird 
+
+
+ a| 
+Virtuelle IP-Adressen (VIP)
+ a| 
+StorageGRID > HA-Gruppe
+ a| 
+DNS-Eintrag
+
+
+
+ a| 
+Port
+ a| 
+StorageGRID > Endpunkt des Load Balancer
+ a| 
+Client-Anwendung
+
+
+
+ a| 
+SSL-Zertifikat
+ a| 
+StorageGRID > Endpunkt des Load Balancer
+ a| 
+Client-Anwendung
+
+
+
+ a| 
+Servername (FQDN)
+ a| 
+StorageGRID > Endpunkt des Load Balancer
+ a| 
+* Client-Anwendung
+* DNS-Eintrag
+
+
+
+
+ a| 
+S3 Zugriffsschlüssel-ID und geheimer Zugriffsschlüssel
+ a| 
+StorageGRID > Mandant und Bucket
+ a| 
+Client-Anwendung
+
+
+
+ a| 
+Bucket/Container-Name
+ a| 
+StorageGRID > Mandant und Bucket
+ a| 
+Client-Anwendung
+
+|===
+
+
+=== Wie erhalte ich diese Werte?
+
+Je nach Ihren Anforderungen können Sie eine der folgenden Möglichkeiten nutzen, um die benötigten Informationen zu erhalten:
+
+* *Verwenden Sie die link:use-s3-setup-wizard.html["S3-Einrichtungsassistent"]*. Der S3-Einrichtungsassistent unterstützt Sie beim schnellen Konfigurieren der erforderlichen Werte in StorageGRID und gibt eine oder zwei Dateien aus, die Sie bei der Konfiguration der S3-Anwendung verwenden können. Der Assistent führt Sie durch die erforderlichen Schritte und stellt sicher, dass Ihre Einstellungen den StorageGRID Best Practices entsprechen.
++
+
+NOTE: Wenn Sie eine S3-Applikation konfigurieren, wird die Verwendung des S3-Setup-Assistenten von empfohlen, es sei denn, Sie verfügen über besondere Anforderungen oder Ihre Implementierung erfordert eine umfangreiche Anpassung.
+
+* *Verwenden Sie die link:../fabricpool/use-fabricpool-setup-wizard.html["FabricPool Setup-Assistent"]*. Ähnlich wie der S3-Einrichtungsassistent unterstützt Sie der FabricPool-Einrichtungsassistent bei der schnellen Konfiguration der erforderlichen Werte und gibt eine Datei aus, die Sie bei der Konfiguration eines FabricPool-Cloud-Tiers in ONTAP verwenden können.
++
+
+NOTE: Wenn Sie StorageGRID als Objekt-Storage-System für eine FabricPool Cloud-Tier nutzen möchten, empfiehlt sich die Verwendung des FabricPool Setup-Assistenten, es sei denn, Sie haben besondere Anforderungen oder Ihre Implementierung erfordert erhebliche Anpassungen.
+
+* *Elemente manuell konfigurieren*. Wenn Sie eine Verbindung zu einer S3-Anwendung herstellen und den S3-Einrichtungsassistenten nicht verwenden möchten, können Sie die erforderlichen Werte abrufen, indem Sie die Konfiguration manuell durchführen. Führen Sie hierzu folgende Schritte aus:
++
+.. Konfigurieren Sie die HA-Gruppe (High Availability, Hochverfügbarkeit), die Sie für die S3-Applikation verwenden möchten. Siehe link:configure-high-availability-group.html["Konfigurieren Sie Hochverfügbarkeitsgruppen"].
+.. Erstellen Sie den Load Balancer-Endpunkt, den die S3-Applikation verwenden wird. Siehe link:configuring-load-balancer-endpoints.html["Konfigurieren von Load Balancer-Endpunkten"].
+.. Erstellen Sie das Mandantenkonto, das die S3-Anwendung verwenden wird. Siehe link:creating-tenant-account.html["Erstellen Sie ein Mandantenkonto"].
+.. Melden Sie sich für einen S3-Mandanten beim Mandantenkonto an und generieren Sie für jeden Benutzer, der auf die Applikation zugreift, eine Zugriffsschlüssel-ID und einen geheimen Zugriffsschlüssel. Siehe link:../tenant/creating-your-own-s3-access-keys.html["Erstellen Sie Ihre eigenen Zugriffsschlüssel"].
+.. Erstellen Sie einen oder mehrere S3-Buckets innerhalb des Mandantenkontos. Für S3 siehe link:../tenant/creating-s3-bucket.html["S3-Bucket erstellen"].
+.. Um Anweisungen zur Platzierung von Objekten, die zu dem neuen Mandanten oder Bucket/Container gehören, hinzuzufügen, erstellen Sie eine neue ILM-Regel und aktivieren Sie zur Verwendung dieser Regel eine neue ILM-Richtlinie. Siehe link:../ilm/access-create-ilm-rule-wizard.html["ILM-Regel erstellen"] und link:../ilm/creating-ilm-policy.html["ILM-Richtlinie erstellen"].
+
+
+

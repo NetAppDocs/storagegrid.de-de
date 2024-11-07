@@ -1,0 +1,69 @@
+---
+permalink: admin/viewing-network-traffic-metrics.html 
+sidebar: sidebar 
+keywords: network traffic, traffic classification policy, monitor traffic 
+summary: Sie können den Netzwerkverkehr überwachen, indem Sie die Diagramme anzeigen, die auf der Seite für die Verkehrsklassifizierungsrichtlinien verfügbar sind. 
+---
+= Zeigen Sie Metriken zum Netzwerkverkehr an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können den Netzwerkverkehr überwachen, indem Sie die Diagramme anzeigen, die auf der Seite für die Verkehrsklassifizierungsrichtlinien verfügbar sind.
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben die link:admin-group-permissions.html["Berechtigung für Root-Zugriff oder Mandantenkonten"].
+
+
+.Über diese Aufgabe
+Für alle vorhandenen Richtlinien zur Verkehrsklassifizierung können Sie Metriken für den Load Balancer-Dienst anzeigen, um zu ermitteln, ob die Richtlinie den Datenverkehr im Netzwerk erfolgreich einschränkt. Anhand der Daten in den Diagrammen können Sie feststellen, ob Sie die Richtlinie anpassen müssen.
+
+Auch wenn für eine Richtlinie zur Klassifizierung von Datenverkehr keine Grenzen gesetzt wurden, werden Kennzahlen erfasst und die Diagramme bieten nützliche Informationen zum Verständnis von Verkehrstrends.
+
+.Schritte
+. Wählen Sie *CONFIGURATION* > *Network* > *traffic classification*.
++
+Die Seite für die Verkehrsklassifizierungsrichtlinien wird angezeigt, und die vorhandenen Richtlinien werden in der Tabelle aufgeführt.
+
+. Wählen Sie den Richtliniennamen für die Verkehrsklassifizierung aus, für den Sie Metriken anzeigen möchten.
+. Wählen Sie die Registerkarte *Metriken*.
++
+Die Richtliniendiagramme für die Verkehrsklassifizierung werden angezeigt. Die Diagramme zeigen Metriken nur für den Datenverkehr an, der mit der ausgewählten Richtlinie übereinstimmt.
+
++
+Die folgenden Diagramme sind auf der Seite enthalten.
+
++
+** Anforderungsrate: Dieses Diagramm zeigt die Bandbreite an, die dieser Richtlinie entspricht, die von allen Load Balancern verarbeitet wird. Die empfangenen Daten umfassen Anforderungskopfzeilen für alle Anfragen und die Körperdatengröße für Antworten mit Körperdaten. „Gesendet“ enthält Antwortkopfzeilen für alle Anfragen und die Größe der Antwortkörperdaten für Anforderungen, die Körperdaten in die Antwort einschließen.
++
+
+NOTE: Wenn die Anforderungen abgeschlossen sind, zeigt dieses Diagramm nur die Bandbreitennutzung an. Bei langsamen oder großen Objektanforderungen kann die tatsächliche unmittelbare Bandbreite von den in diesem Diagramm gemeldeten Werten abweichen.
+
+** Fehlerreaktionsrate: Dieses Diagramm bietet eine ungefähre Rate, mit der Anfragen, die dieser Richtlinie entsprechen, Fehler (HTTP-Statuscode >= 400) an Clients zurückgeben.
+** Durchschnittliche Anforderungsdauer (kein Fehler): Diese Grafik bietet eine durchschnittliche Dauer erfolgreicher Anfragen, die dieser Richtlinie entsprechen.
+** Verwendung der Richtlinienbandbreite: Dieses Diagramm gibt die Bandbreite an, die dieser Richtlinie entspricht, die von allen Lastverteilern verarbeitet wird. Die empfangenen Daten umfassen Anforderungskopfzeilen für alle Anfragen und die Körperdatengröße für Antworten mit Körperdaten. „Gesendet“ enthält Antwortkopfzeilen für alle Anfragen und die Größe der Antwortkörperdaten für Anforderungen, die Körperdaten in die Antwort einschließen.
+
+
+. Positionieren Sie den Cursor über einem Liniendiagramm, um ein Popup-Fenster mit Werten für einen bestimmten Teil des Diagramms anzuzeigen.
+. Wählen Sie *Grafana Dashboard* direkt unter dem Metrics-Titel, um alle Diagramme für eine Richtlinie anzuzeigen. Zusätzlich zu den vier Diagrammen aus der Registerkarte *Metriken* können Sie zwei weitere Diagramme anzeigen:
++
+** Schreibanforderungsrate nach Objektgröße: Die Rate für PUT/POST/DELETE-Anfragen, die dieser Richtlinie entsprechen. Die Positionierung auf einer einzelnen Zelle zeigt die Raten pro Sekunde an. Die in der Hover-Ansicht angezeigten Raten werden auf Ganzzahlen gekürzt und können 0 melden, wenn im Bucket Anfragen ohne Null angezeigt werden.
+** Leseanforderungsrate nach Objektgröße: Die Rate für GET/HEAD-Anfragen, die dieser Richtlinie entsprechen. Die Positionierung auf einer einzelnen Zelle zeigt die Raten pro Sekunde an. Die in der Hover-Ansicht angezeigten Raten werden auf Ganzzahlen gekürzt und können 0 melden, wenn im Bucket Anfragen ohne Null angezeigt werden.
+
+
+. Alternativ können Sie über das Menü * SUPPORT* auf die Diagramme zugreifen.
++
+.. Wählen Sie *SUPPORT* > *Tools* > *Metriken*.
+.. Wählen Sie im Abschnitt *Grafana* die Option *Richtlinie zur Traffic-Klassifizierung* aus.
+.. Wählen Sie die Richtlinie aus dem Menü oben links auf der Seite aus.
+.. Positionieren Sie den Cursor über einem Diagramm, um ein Popup-Fenster anzuzeigen, in dem Datum und Uhrzeit der Probe, Objektgrößen, die in der Anzahl zusammengefasst werden, und die Anzahl der Anfragen pro Sekunde in diesem Zeitraum angezeigt werden.
++
+Richtlinien für die Verkehrsklassifizierung werden anhand ihrer ID identifiziert. Richtlinien-IDs werden auf der Seite für die Verkehrsklassifizierungsrichtlinien aufgeführt.
+
+
+
+. Analysieren Sie die Diagramme, um zu ermitteln, wie oft die Richtlinie den Datenverkehr einschränkt und ob Sie die Richtlinie anpassen müssen.
+

@@ -1,0 +1,210 @@
+---
+permalink: admin/admin-group-permissions.html 
+sidebar: sidebar 
+keywords: admin group permissions 
+summary: Beim Erstellen von Admin-Benutzergruppen wählen Sie eine oder mehrere Berechtigungen, um den Zugriff auf bestimmte Funktionen des Grid Manager zu steuern. Sie können dann jeden Benutzer einer oder mehreren dieser Admin-Gruppen zuweisen, um zu bestimmen, welche Aufgaben der Benutzer ausführen kann. 
+---
+= Berechtigungen für Admin-Gruppen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Beim Erstellen von Admin-Benutzergruppen wählen Sie eine oder mehrere Berechtigungen, um den Zugriff auf bestimmte Funktionen des Grid Manager zu steuern. Sie können dann jeden Benutzer einer oder mehreren dieser Admin-Gruppen zuweisen, um zu bestimmen, welche Aufgaben der Benutzer ausführen kann.
+
+Sie müssen jeder Gruppe mindestens eine Berechtigung zuweisen. Andernfalls können sich Benutzer, die dieser Gruppe angehören, nicht beim Grid Manager oder der Grid Management API anmelden.
+
+Standardmäßig kann jeder Benutzer, der zu einer Gruppe mit mindestens einer Berechtigung gehört, die folgenden Aufgaben ausführen:
+
+* Melden Sie sich beim Grid Manager an
+* Dashboard anzeigen
+* Zeigen Sie die Seiten Knoten an
+* Anzeige aktueller und aufgelöster Warnmeldungen
+* Eigenes Kennwort ändern (nur lokale Benutzer)
+* Zeigen Sie bestimmte Informationen auf den Seiten Konfiguration und Wartung an
+
+
+
+
+== Interaktion zwischen Berechtigungen und Zugriffsmodus
+
+Für alle Berechtigungen bestimmt die Einstellung *Zugriffsmodus* der Gruppe, ob Benutzer Einstellungen ändern und Vorgänge ausführen können oder ob sie nur die zugehörigen Einstellungen und Funktionen anzeigen können. Wenn ein Benutzer zu mehreren Gruppen gehört und eine beliebige Gruppe auf *schreibgeschützt* gesetzt ist, hat der Benutzer schreibgeschützten Zugriff auf alle ausgewählten Einstellungen und Features.
+
+In den folgenden Abschnitten werden die Berechtigungen beschrieben, die Sie beim Erstellen oder Bearbeiten einer Admin-Gruppe zuweisen können. Jede Funktion, die nicht explizit erwähnt wird, erfordert die *Root Access*-Berechtigung.
+
+
+
+== Root-Zugriff
+
+Mit dieser Berechtigung erhalten Sie Zugriff auf alle Grid-Administrationsfunktionen.
+
+
+
+== Root-Passwort des Mandanten ändern
+
+Diese Berechtigung bietet Zugriff auf die Option *Root-Passwort ändern* auf der Seite der Mieter, so dass Sie steuern können, wer das Passwort für den lokalen Root-Benutzer des Mandanten ändern kann. Diese Berechtigung wird auch für die Migration von S3-Schlüsseln verwendet, wenn die S3-Key-Importfunktion aktiviert ist. Benutzer, die diese Berechtigung nicht besitzen, können die Option *root-Passwort ändern* nicht sehen.
+
+
+NOTE: Um Zugriff auf die Seite Mieter zu gewähren, die die Option *Root Passwort ändern* enthält, weisen Sie auch die Berechtigung *Mandantenkonten* zu.
+
+
+
+== Konfiguration der Seite der Grid-Topologie
+
+Mit dieser Berechtigung können Sie auf der Seite *SUPPORT* > *Tools* > *Grid Topology* auf die Registerkarten Konfiguration zugreifen.
+
+
+NOTE: Die Seite „Grid Topology“ wurde veraltet und wird in einem zukünftigen Release entfernt.
+
+
+
+== ILM
+
+Diese Berechtigung bietet Zugriff auf die folgenden *ILM* Menüoptionen:
+
+* Regeln
+* Richtlinien
+* Richtlinien-Tags
+* Storage-Pools
+* Lagergüten
+* Regionen
+* Suche nach Objektmetadaten
+
+
+
+NOTE: Benutzer müssen über die Berechtigung *andere Grid-Konfiguration* und *Grid-Topologiekonfiguration* verfügen, um Speicherklassen zu verwalten.
+
+
+
+== Wartung
+
+Benutzer müssen über die Berechtigung zur Wartung verfügen, um folgende Optionen verwenden zu können:
+
+* *KONFIGURATION* > *Zugangskontrolle*:
++
+** Grid-Passwörter
+
+
+* *KONFIGURATION* > *Netzwerk*:
++
+** Domänennamen des S3-Endpunkts
+
+
+* *WARTUNG* > *Aufgaben*:
++
+** Ausmustern
+** Erweiterung
+** Überprüfung der Objektexistenz
+** Recovery
+
+
+* *WARTUNG* > *System*:
++
+** Recovery-Paket
+** Software-Update
+
+
+* *SUPPORT* > *Tools*:
++
+** Protokolle
+
+
+
+
+Benutzer, die nicht über die Berechtigung Wartung verfügen, können diese Seiten anzeigen, aber nicht bearbeiten:
+
+* *WARTUNG* > *Netzwerk*:
++
+** DNS-Server
+** Grid-Netzwerk
+** NTP-Server
+
+
+* *WARTUNG* > *System*:
++
+** Lizenz
+
+
+* *KONFIGURATION* > *Netzwerk*:
++
+** Domänennamen des S3-Endpunkts
+
+
+* *KONFIGURATION* > *Sicherheit*:
++
+** Zertifikate
+
+
+* *KONFIGURATION* > *Überwachung*:
++
+** Audit- und Syslog-Server
+
+
+
+
+
+
+== Verwalten von Meldungen
+
+Mit dieser Berechtigung erhalten Sie Zugriff auf Optionen zum Verwalten von Warnmeldungen. Benutzer müssen über diese Berechtigung verfügen, um Stille, Warnmeldungen und Alarmregeln zu verwalten.
+
+
+
+== Abfrage von Kennzahlen
+
+Diese Berechtigung bietet Zugriff auf:
+
+* *SUPPORT* > *Tools* > *Metrics* Seite
+* Benutzerdefinierte Prometheus-Metrikabfragen mit dem Abschnitt *Metrics* der Grid Management API
+* Dashboard-Karten von Grid Manager, die Metriken enthalten
+
+
+
+
+== Suche nach Objektmetadaten
+
+Mit dieser Berechtigung erhalten Sie Zugriff auf die Seite *ILM* > *Objekt-Metadaten-Lookup*.
+
+
+
+== Andere Grid-Konfiguration
+
+Diese Berechtigung ermöglicht den Zugriff auf zusätzliche Grid-Konfigurationsoptionen.
+
+
+TIP: Um diese zusätzlichen Optionen zu sehen, müssen Benutzer auch über die Berechtigung *Grid Topology Page Configuration* verfügen.
+
+* *ILM*:
++
+** Lagergüten
+
+
+* *KONFIGURATION* > *System*:
+* *SUPPORT* > *andere*:
++
+** Verbindungskosten
+
+
+
+
+
+
+== Storage Appliance-Administrator
+
+Diese Berechtigung bietet:
+
+* Zugriff auf den E-Series SANtricity System Manager auf Storage Appliances über den Grid Manager
+* Die Möglichkeit zur Durchführung von Fehlerbehebungs- und Wartungsaufgaben auf der Registerkarte Laufwerke managen für Appliances, die diese Vorgänge unterstützen.
+
+
+
+
+== Mandantenkonten
+
+Mit dieser Berechtigung können Sie:
+
+* Öffnen Sie die Seite Tenants, auf der Sie Mandantenkonten erstellen, bearbeiten und entfernen können
+* Zeigen Sie vorhandene Richtlinien zur Verkehrsklassifizierung an
+* Dashboard-Karten von Grid Manager anzeigen, die Mandantendetails enthalten
+

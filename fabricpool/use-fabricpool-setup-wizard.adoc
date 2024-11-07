@@ -1,0 +1,122 @@
+---
+permalink: fabricpool/use-fabricpool-setup-wizard.html 
+sidebar: sidebar 
+keywords: fabricPool, FabricPool setup wizard, ontap system manager 
+summary: Mit dem FabricPool-Einrichtungsassistenten können Sie StorageGRID als Objekt-Storage-System für eine FabricPool Cloud-Tier konfigurieren. Nach Abschluss des Setup-Assistenten können Sie die erforderlichen Details in den ONTAP System Manager eingeben. 
+---
+= Überlegungen und Anforderungen im FabricPool Setup-Assistenten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mit dem FabricPool-Einrichtungsassistenten können Sie StorageGRID als Objekt-Storage-System für eine FabricPool Cloud-Tier konfigurieren. Nach Abschluss des Setup-Assistenten können Sie die erforderlichen Details in den ONTAP System Manager eingeben.
+
+
+
+== Wann der FabricPool-Einrichtungsassistent verwendet werden soll
+
+Der FabricPool Setup-Assistent führt Sie durch die einzelnen Schritte der Konfiguration von StorageGRID für die Verwendung mit FabricPool und konfiguriert automatisch bestimmte Einheiten, z. B. ILM- und Traffic-Klassifizierungsrichtlinien. Im Rahmen der Ausführung des Assistenten laden Sie eine Datei herunter, mit der Sie Werte in den ONTAP System Manager eingeben können. Mit dem Assistenten konfigurieren Sie Ihr System schneller und stellen sicher, dass Ihre Einstellungen den Best Practices von StorageGRID und FabricPool entsprechen.
+
+Wenn Sie über die Berechtigung für den Stammzugriff verfügen, können Sie den FabricPool-Einrichtungsassistenten abschließen, wenn Sie den StorageGRID-Grid-Manager verwenden, oder Sie können den Assistenten zu einem späteren Zeitpunkt aufrufen und abschließen. Je nach Ihren Anforderungen können Sie auch einige oder alle erforderlichen Elemente manuell konfigurieren und dann mithilfe des Assistenten die von ONTAP benötigten Werte in einer einzigen Datei zusammenfügen.
+
+
+TIP: Verwenden Sie den FabricPool Setup-Assistenten, es sei denn, Sie wissen, dass Sie besondere Anforderungen haben oder dass Ihre Implementierung umfangreiche Anpassungen erfordern wird.
+
+
+
+== Bevor Sie den Assistenten verwenden
+
+Bestätigen Sie, dass Sie die erforderlichen Schritte abgeschlossen haben.
+
+
+
+=== Besprechen der Best Practices
+
+* Sie haben ein allgemeines Verständnis der link:information-needed-to-attach-storagegrid-as-cloud-tier.html["Erforderliche Informationen zum Hinzufügen von StorageGRID als Cloud-Tier"].
+* Sie haben die FabricPool Best Practices für folgende Zwecke überprüft:
++
+** link:best-practices-for-high-availability-groups.html["Hochverfügbarkeitsgruppen (High Availability groups, HA-Gruppen"]
+** link:best-practices-for-load-balancing.html["Lastverteilung"]
+** link:best-practices-ilm.html["ILM-Regeln und -Richtlinie"]
+
+
+
+
+
+
+=== Beziehen Sie IP-Adressen, und richten Sie VLAN-Schnittstellen ein
+
+Wenn Sie eine HA-Gruppe konfigurieren, wissen Sie, mit welchen Nodes ONTAP eine Verbindung herstellen und welches StorageGRID-Netzwerk verwendet werden soll. Sie wissen auch, welche Werte für das Subnetz CIDR, die Gateway-IP-Adresse und die virtuelle IP (VIP)-Adresse eingegeben werden sollen.
+
+Wenn Sie planen, einen virtuellen LAN zur Trennung des FabricPool-Datenverkehrs zu verwenden, haben Sie die VLAN-Schnittstelle bereits konfiguriert. Siehe link:../admin/configure-vlan-interfaces.html["Konfigurieren Sie die VLAN-Schnittstellen"].
+
+
+
+=== Konfigurieren Sie Identity Federation und SSO
+
+Wenn Sie planen, Identity Federation oder Single Sign-On (SSO) für Ihr StorageGRID-System zu verwenden, haben Sie diese Funktionen aktiviert. Sie wissen auch, welche föderierte Gruppe Root-Zugriff für das Mandantenkonto haben soll, das ONTAP verwenden wird. Siehe link:../admin/using-identity-federation.html["Verwenden Sie den Identitätsverbund"] und link:../admin/configuring-sso.html["Konfigurieren Sie Single Sign-On"].
+
+
+
+=== Abrufen und Konfigurieren von Domänennamen
+
+* Sie wissen, welcher vollständig qualifizierte Domänenname (FQDN) für StorageGRID verwendet werden soll. DNS-Einträge (Domain Name Server) weisen diesen FQDN den virtuellen IP-Adressen (VIP) der HA-Gruppe zu, die Sie mit dem Assistenten erstellen. Siehe link:../fabricpool/configure-dns-server.html["DNS-Server konfigurieren"].
+* Wenn Sie Anforderungen im virtuellen Hosted-Style von S3 verwenden möchten, haben Sie link:../admin/configuring-s3-api-endpoint-domain-names.html["Domänennamen des S3-Endpunkts wurden konfiguriert"]. ONTAP verwendet standardmäßig URLs im Pfadstil, es wird jedoch empfohlen, Anforderungen im virtuellen Hosted-Stil zu verwenden.
+
+
+
+
+=== Anforderungen für Load Balancer und Sicherheitszertifikate prüfen
+
+Wenn Sie planen, den StorageGRID Load Balancer zu verwenden, haben Sie die allgemeine link:../admin/managing-load-balancing.html["Überlegungen zum Lastausgleich"]. Sie verfügen über die hochgeladenen Zertifikate oder die Werte, die Sie zum Generieren eines Zertifikats benötigen.
+
+Wenn Sie einen externen (Drittanbieter-)Load Balancer-Endpunkt verwenden möchten, verfügen Sie über den vollständig qualifizierten Domänennamen (FQDN), den Port und das Zertifikat für diesen Load Balancer.
+
+
+
+=== Bestätigen Sie die ILM-Speicherpoolkonfiguration
+
+Wenn Sie StorageGRID 11.6 oder eine frühere Version installiert haben, haben Sie den zu verwendenden Speicherpool konfiguriert. Im Allgemeinen sollten Sie für jeden StorageGRID-Standort, den Sie zum Speichern von ONTAP-Daten verwenden, einen Speicherpool erstellen.
+
+
+NOTE: Diese Voraussetzung gilt nicht, wenn Sie zunächst StorageGRID 11.7 oder 11.8 installiert haben. Wenn Sie eine dieser Versionen zuerst installieren, werden Speicherpools automatisch für jeden Standort erstellt.
+
+
+
+== Beziehung zwischen ONTAP und StorageGRID Cloud-Tier
+
+Der FabricPool Assistent führt Sie durch die Erstellung einer einzelnen StorageGRID-Cloud-Tier mit einem StorageGRID-Mandanten, einem Satz an Zugriffsschlüsseln und einem StorageGRID-Bucket. Sie können diese StorageGRID-Cloud-Tier an eine oder mehrere lokale ONTAP-Tiers anbinden.
+
+Die allgemeine Best Practice ist die Anbindung einer einzelnen Cloud-Tier an mehrere lokale Tiers in einem Cluster. Je nach Anforderungen sollten Sie jedoch möglicherweise mehr als einen Bucket oder sogar mehr als einen StorageGRID-Mandanten für die lokalen Tiers in einem einzelnen Cluster verwenden. Die Verwendung verschiedener Buckets und Mandanten ermöglicht die Isolierung von Daten und Datenzugriff zwischen lokalen ONTAP Tiers, allerdings ist die Konfiguration und das Management etwas komplexer.
+
+NetApp empfiehlt, keine einzelne Cloud-Tier an lokale Tiers in mehreren Clustern anzubinden.
+
+
+NOTE: Best Practices für die Verwendung von StorageGRID mit NetApp MetroCluster™ und FabricPool Mirror finden Sie unter https://www.netapp.com/pdf.html?item=/media/17239-tr4598pdf.pdf["TR-4598: FabricPool Best Practices in ONTAP"^].
+
+
+
+=== Optional: Verwenden Sie einen anderen Bucket für jeden lokalen Tier
+
+Wenn Sie mehr als einen Bucket für die lokalen Tiers in einem ONTAP-Cluster verwenden möchten, fügen Sie mehr als eine StorageGRID-Cloud-Tier in ONTAP hinzu. Jede Cloud-Tier verwendet dieselbe HA-Gruppe, denselben Load-Balancer-Endpunkt, dieselben Mandanten und Zugriffsschlüssel, verwendet jedoch einen anderen Container (StorageGRID Bucket). Führen Sie die folgenden allgemeinen Schritte aus:
+
+. Vervollständigen Sie über den StorageGRID Grid Manager den FabricPool-Einrichtungsassistenten für die erste Cloud-Tier.
+. Fügen Sie im ONTAP System Manager eine Cloud-Ebene hinzu und verwenden Sie die von StorageGRID heruntergeladene Datei, um die erforderlichen Werte bereitzustellen.
+. Melden Sie sich über den StorageGRID-Mandantenmanager bei dem Mandanten an, der vom Assistenten erstellt wurde, und erstellen Sie einen zweiten Bucket.
+. Schließen Sie den FabricPool-Assistenten erneut ab. Wählen Sie die vorhandene HA-Gruppe, den Load-Balancer-Endpunkt und den Mandanten aus. Wählen Sie dann den neuen Bucket aus, den Sie manuell erstellt haben. Erstellen einer neuen ILM-Regel für den neuen Bucket und Aktivieren einer ILM-Richtlinie, um diese Regel aufzunehmen
+. Fügen Sie in ONTAP eine zweite Cloud-Tier hinzu, geben Sie aber den neuen Bucket-Namen an.
+
+
+
+
+=== Optional: Verwenden Sie einen anderen Mandanten und Bucket für jede lokale Tier
+
+Wenn Sie mehr als einen Mandanten und unterschiedliche Zugriffssätze für die lokalen Tiers in einem ONTAP-Cluster verwenden möchten, fügen Sie mehr als ein StorageGRID-Cloud-Tier in ONTAP hinzu. Jede Cloud-Tier verwendet dieselbe HA-Gruppe und denselben Load-Balancer-Endpunkt, verwendet jedoch einen anderen Mandanten, Zugriffsschlüssel und Container (StorageGRID Bucket). Führen Sie die folgenden allgemeinen Schritte aus:
+
+. Vervollständigen Sie über den StorageGRID Grid Manager den FabricPool-Einrichtungsassistenten für die erste Cloud-Tier.
+. Fügen Sie im ONTAP System Manager eine Cloud-Ebene hinzu und verwenden Sie die von StorageGRID heruntergeladene Datei, um die erforderlichen Werte bereitzustellen.
+. Schließen Sie den FabricPool-Assistenten erneut ab. Wählen Sie die vorhandene HA-Gruppe und den Endpunkt des Load Balancer aus. Erstellen eines neuen Mandanten und Buckets Erstellen einer neuen ILM-Regel für den neuen Bucket und Aktivieren einer ILM-Richtlinie, um diese Regel aufzunehmen
+. Von ONTAP fügen Sie eine zweite Cloud-Tier hinzu, liefern aber den neuen Zugriffsschlüssel, den geheimen Schlüssel und den Bucket-Namen.
+

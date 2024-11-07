@@ -1,0 +1,71 @@
+---
+permalink: audit/etaf-security-authentication-failed.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, ETAF, Security Authentication Failed 
+summary: 'Diese Meldung wird erzeugt, wenn ein Verbindungsversuch mit Transport Layer Security \(TLS\) fehlgeschlagen ist.' 
+---
+= ETAF: Sicherheitsauthentifizierung fehlgeschlagen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Diese Meldung wird erzeugt, wenn ein Verbindungsversuch mit Transport Layer Security (TLS) fehlgeschlagen ist.
+
+[cols="1a,1a,4a"]
+|===
+| Codieren | Feld | Beschreibung 
+
+
+ a| 
+CNID
+ a| 
+Verbindungskennung
+ a| 
+Die eindeutige Systemkennung für die TCP/IP-Verbindung, über die die Authentifizierung fehlgeschlagen ist.
+
+
+
+ a| 
+RUID
+ a| 
+Benutzeridentität
+ a| 
+Eine dienstabhängige Kennung, die die Identität des Remote-Benutzers darstellt.
+
+
+
+ a| 
+RSLT
+ a| 
+Ursachencode
+ a| 
+Der Grund für den Fehler:
+
+SCNI: Sichere Verbindungseinrichtung fehlgeschlagen.
+
+CERM: Zertifikat fehlt.
+
+Zertifikat: Zertifikat war ungültig.
+
+CERE: Das Zertifikat ist abgelaufen.
+
+CERR: Zertifikat wurde widerrufen.
+
+CSGN: Die Zertifikatsignatur war ungültig.
+
+CSGU: Zertifikatssignator war unbekannt.
+
+UCRM: Benutzerkennungen fehlten.
+
+UCRI: Die Benutzeranmeldeinformationen waren ungültig.
+
+UCRU: Benutzeranmeldeinformationen wurden nicht zulässig.
+
+TOUT: Zeitüberschreitung bei der Authentifizierung.
+
+|===
+Wenn eine Verbindung zu einem sicheren Service hergestellt wird, der TLS verwendet, werden die Anmeldeinformationen der Remote-Einheit mithilfe des TLS-Profils und der zusätzlichen Logik, die in den Service integriert ist, überprüft. Wenn diese Authentifizierung aufgrund ungültiger, unerwarteter oder unzulässiger Zertifikate oder Anmeldeinformationen fehlschlägt, wird eine Überwachungsmeldung protokolliert. Dies ermöglicht Abfragen für nicht autorisierte Zugriffsversuche und andere sicherheitsrelevante Verbindungsprobleme.
+
+Die Meldung kann dazu führen, dass eine Remoteineinheit eine falsche Konfiguration hat oder dass versucht wird, ungültige oder unzulässige Anmeldedaten für das System vorzulegen. Diese Überwachungsmeldung sollte überwacht werden, um Versuche zu erkennen, unbefugten Zugriff auf das System zu erlangen.

@@ -1,0 +1,19 @@
+= 
+:allow-uri-read: 
+
+
+Sie können den Identitätsverbund für Gruppen und Benutzer vorübergehend oder dauerhaft deaktivieren. Wenn die Identitätsföderation deaktiviert ist, besteht keine Kommunikation zwischen StorageGRID und der Identitätsquelle. Allerdings bleiben alle von Ihnen konfigurierten Einstellungen erhalten, sodass Sie die Identitätsföderation zukünftig einfach wieder aktivieren können.
+
+.Über diese Aufgabe
+Bevor Sie die Identitätsföderation deaktivieren, sollten Sie Folgendes beachten:
+
+* Verbundene Benutzer können sich nicht anmelden.
+* Föderierte Benutzer, die sich derzeit anmelden, erhalten bis zu ihrem Ablauf Zugriff auf das StorageGRID-System, können sich jedoch nach Ablauf der Sitzung nicht anmelden.
+* Die Synchronisierung zwischen dem StorageGRID-System und der Identitätsquelle wird nicht durchgeführt, und für Konten, die nicht synchronisiert wurden, werden keine Warnmeldungen ausgegeben.
+* Das Kontrollkästchen *Enable Identity Federation* ist deaktiviert, wenn Single Sign-On (SSO) auf *enabled* oder *Sandbox Mode* eingestellt ist. Der SSO-Status auf der Seite Single Sign-On muss *deaktiviert* sein, bevor Sie die Identitätsföderation deaktivieren können. Siehe link:../admin/disabling-single-sign-on.html["Deaktivieren Sie Single Sign-On"].
+
+
+.Schritte
+. Rufen Sie die Seite Identity Federation auf.
+. Deaktivieren Sie das Kontrollkästchen *Enable Identity Federation*.
+

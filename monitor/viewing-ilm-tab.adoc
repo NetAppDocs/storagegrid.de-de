@@ -1,0 +1,25 @@
+---
+permalink: monitor/viewing-ilm-tab.html 
+sidebar: sidebar 
+keywords: ilm tab 
+summary: 'Die Registerkarte ILM bietet Informationen zu Information Lifecycle Management \(ILM\)-Vorgängen.' 
+---
+= Zeigen Sie die Registerkarte ILM an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Registerkarte ILM bietet Informationen zu Operationen des Information Lifecycle Management (ILM).
+
+Die ILM-Registerkarte wird für jeden Storage-Node, jeden Standort und das gesamte Grid angezeigt. Auf der Registerkarte ILM wird für jeden Standort und das Grid ein Diagramm der ILM-Warteschlange im Laufe der Zeit angezeigt. In dieser Registerkarte wird auch die voraussichtliche Zeit zum Abschluss eines vollständigen ILM-Scans aller Objekte bereitgestellt.
+
+Für Storage-Nodes bietet die Registerkarte ILM Details zur ILM-Bewertung und zur Hintergrundüberprüfung von Objekten, die zur Fehlerkorrektur codiert wurden.
+
+image::../media/nodes_page_ilm_tab.png[Knoten Seite ILM Registerkarte]
+
+.Verwandte Informationen
+* link:monitoring-information-lifecycle-management.html["Überwachung des Information Lifecycle Management"]
+* link:../admin/index.html["StorageGRID verwalten"]
+

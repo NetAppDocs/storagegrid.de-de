@@ -1,0 +1,42 @@
+---
+permalink: audit/gnur-gnds-unregistration.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, GNUR, GNDS Unregistration 
+summary: Der CMN-Dienst generiert diese Prüfmeldung, wenn ein Dienst nicht registrierte Informationen über sich selbst vom StorageGRID-System enthält. 
+---
+= GNUR: GNDS Registrierung aufheben
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der CMN-Dienst generiert diese Prüfmeldung, wenn ein Dienst nicht registrierte Informationen über sich selbst vom StorageGRID-System enthält.
+
+[cols="1a,1a,4a"]
+|===
+| Codieren | Feld | Beschreibung 
+
+
+ a| 
+RSLT
+ a| 
+Ergebnis
+ a| 
+Das Ergebnis der Aktualisierungsanfrage:
+
+* ERFOLGREICH
+* SUNV: Dienst nicht verfügbar
+* GERR: Anderer Fehler
+
+
+
+
+ a| 
+GNID
+ a| 
+Node-ID
+ a| 
+Die Node-ID des Service, der die Update-Anforderung initiiert hat.
+
+|===

@@ -1,0 +1,104 @@
+---
+permalink: rhel/configuring-host-storage.html 
+sidebar: sidebar 
+keywords: how to configure host storage 
+summary: Jedem Host müssen Block Storage Volumes zugewiesen werden. 
+---
+= Hostspeicher konfigurieren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Jedem Host müssen Block Storage Volumes zugewiesen werden.
+
+.Bevor Sie beginnen
+Sie haben die folgenden Themen behandelt, die Ihnen Informationen liefern, die Sie für diese Aufgabe benötigen:
+
+* link:storage-and-performance-requirements.html["Storage- und Performance-Anforderungen erfüllt"]
+* link:node-container-migration-requirements.html["Anforderungen für die Container-Migration für Nodes"]
+
+
+.Über diese Aufgabe
+Wenn Sie Blockspeicher-Volumes (LUNs) Hosts zuweisen, verwenden Sie die Tabellen unter „Speicheranforderungen“, um Folgendes festzulegen:
+
+* Anzahl der erforderlichen Volumes für jeden Host (basierend auf der Anzahl und den Typen der Nodes, die auf diesem Host bereitgestellt werden)
+* Storage-Kategorie für jedes Volume (d. h. Systemdaten oder Objektdaten)
+* Größe jedes Volumes
+
+
+Sie verwenden diese Informationen sowie den permanenten Namen, der Linux jedem physischen Volume zugewiesen ist, wenn Sie StorageGRID-Nodes auf dem Host implementieren.
+
+
+NOTE: Sie müssen diese Volumes nicht partitionieren, formatieren oder mounten, sondern müssen nur sicherstellen, dass sie für die Hosts sichtbar sind.
+
+
+NOTE: Für nur Metadaten verwendete Storage-Nodes ist nur eine Objektdaten-LUN erforderlich.
+
+Vermeiden Sie es, "RAW" spezielle Gerätedateien (`/dev/sdb`zu verwenden, zum Beispiel), wenn Sie Ihre Liste von Volume-Namen zusammenstellen. Diese Dateien können sich bei einem Neustart des Hosts ändern, was sich auf den ordnungsgemäßen Betrieb des Systems auswirkt. Wenn Sie iSCSI-LUNs und Device Mapper Multipathing verwenden, sollten Sie Multipath-Aliase im Verzeichnis in Erwägung ziehen `/dev/mapper`, insbesondere wenn Ihre SAN-Topologie redundante Netzwerkpfade zum gemeinsam genutzten Speicher umfasst. Alternativ können Sie die vom System erstellten Softlinks unter für Ihre dauerhaften Gerätenamen verwenden `/dev/disk/by-path/`.
+
+Beispiel:
+
+[listing]
+----
+ls -l
+$ ls -l /dev/disk/by-path/
+total 0
+lrwxrwxrwx 1 root root  9 Sep 19 18:53 pci-0000:00:07.1-ata-2 -> ../../sr0
+lrwxrwxrwx 1 root root  9 Sep 19 18:53 pci-0000:03:00.0-scsi-0:0:0:0 -> ../../sda
+lrwxrwxrwx 1 root root 10 Sep 19 18:53 pci-0000:03:00.0-scsi-0:0:0:0-part1 -> ../../sda1
+lrwxrwxrwx 1 root root 10 Sep 19 18:53 pci-0000:03:00.0-scsi-0:0:0:0-part2 -> ../../sda2
+lrwxrwxrwx 1 root root  9 Sep 19 18:53 pci-0000:03:00.0-scsi-0:0:1:0 -> ../../sdb
+lrwxrwxrwx 1 root root  9 Sep 19 18:53 pci-0000:03:00.0-scsi-0:0:2:0 -> ../../sdc
+lrwxrwxrwx 1 root root  9 Sep 19 18:53 pci-0000:03:00.0-scsi-0:0:3:0 -> ../../sdd
+----
+Die Ergebnisse unterscheiden sich bei jeder Installation.
+
+Zuweisung freundlicher Namen zu jedem dieser Block-Storage-Volumes zur Vereinfachung der Erstinstallation von StorageGRID und zukünftiger Wartungsarbeiten Wenn Sie den Device Mapper Multipath-Treiber für redundanten Zugriff auf freigegebene Speicher-Volumes verwenden, können Sie das Feld in Ihrer `/etc/multipath.conf` Datei verwenden `alias`.
+
+Beispiel:
+
+[listing]
+----
+multipaths {
+     multipath {
+          wwid 3600a09800059d6df00005df2573c2c30
+          alias docker-storage-volume-hostA
+     }
+     multipath {
+          wwid 3600a09800059d6df00005df3573c2c30
+          alias sgws-adm1-var-local
+     }
+     multipath {
+          wwid 3600a09800059d6df00005df4573c2c30
+          alias sgws-adm1-audit-logs
+     }
+     multipath {
+          wwid 3600a09800059d6df00005df5573c2c30
+          alias sgws-adm1-tables
+     }
+     multipath {
+          wwid 3600a09800059d6df00005df6573c2c30
+          alias sgws-gw1-var-local
+     }
+     multipath {
+          wwid 3600a09800059d6df00005df7573c2c30
+          alias sgws-sn1-var-local
+     }
+     multipath {
+          wwid 3600a09800059d6df00005df7573c2c30
+          alias sgws-sn1-rangedb-0
+     }
+     …
+----
+Wenn Sie das Aliasfeld auf diese Weise verwenden, werden die Aliase als Blockgeräte im Verzeichnis auf dem Host angezeigt `/dev/mapper`. Sie können einen benutzerfreundlichen, leicht validierten Namen angeben, wenn für einen Konfigurations- oder Wartungsvorgang ein Blockspeichervolume angegeben werden muss.
+
+
+NOTE: Wenn Sie gemeinsam genutzten Speicher zur Unterstützung der StorageGRID-Node-Migration einrichten und Device Mapper Multipathing verwenden, können Sie ein Common auf allen zusammengelegenen Hosts erstellen und installieren `/etc/multipath.conf`. Stellen Sie einfach sicher, dass Sie auf jedem Host einen anderen Container-Engine-Storage-Volume verwenden. Die Verwendung von Aliases und das Einschließen des Ziel-Hostnamen in den Alias für jede Container-Engine Speicher-Volume LUN wird dies leicht zu merken machen und empfohlen.
+
+
+NOTE: Die Unterstützung für Docker als Container-Engine für rein softwarebasierte Implementierungen ist veraltet. Docker wird in einer zukünftigen Version durch eine weitere Container-Engine ersetzt.
+
+.Verwandte Informationen
+link:configuring-docker-storage-volume.html["Konfigurieren des Container Engine Storage Volume"]

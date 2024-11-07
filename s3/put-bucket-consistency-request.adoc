@@ -1,0 +1,80 @@
+---
+permalink: s3/put-bucket-consistency-request.html 
+sidebar: sidebar 
+keywords: S3 REST API, S3 operations, PUT bucket consistency request 
+summary: Mit der Konsistenzanforderung für PUT-Bucket können Sie die Konsistenz angeben, die auf Vorgänge angewendet werden soll, die auf einen Bucket ausgeführt wurden. 
+---
+= PUT Bucket-Konsistenz
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mit der Konsistenzanforderung für PUT-Bucket können Sie die Konsistenz angeben, die auf Vorgänge angewendet werden soll, die auf einen Bucket ausgeführt wurden.
+
+Die Standardkonsistenz ist so festgelegt, dass „Read-after-write“ für neu erstellte Objekte garantiert wird.
+
+.Bevor Sie beginnen
+Sie müssen über die berechtigung s3:PutBucketConsistency verfügen oder als Account root vorliegen, um diesen Vorgang abzuschließen.
+
+
+
+== Anfrage
+
+Der `x-ntap-sg-consistency` Parameter muss einen der folgenden Werte enthalten:
+
+[cols="1a,2a"]
+|===
+| Konsistenz | Beschreibung 
+
+
+ a| 
+Alle
+ a| 
+Alle Nodes erhalten die Daten sofort, sonst schlägt die Anfrage fehl.
+
+
+
+ a| 
+Stark global
+ a| 
+Garantierte Konsistenz bei Lese-nach-Schreibvorgängen für alle Client-Anfragen an allen Standorten.
+
+
+
+ a| 
+Stark vor Ort
+ a| 
+Garantiert Konsistenz bei Lese-nach-Schreibvorgängen für alle Client-Anfragen innerhalb eines Standorts.
+
+
+
+ a| 
+Read-after-New-Write-Funktion
+ a| 
+(Standard) konsistente Lese-/Schreibvorgänge für neue Objekte und eventuelle Konsistenz bei Objekt-Updates. Hochverfügbarkeit und garantierte Datensicherung Empfohlen für die meisten Fälle.
+
+
+
+ a| 
+Verfügbar
+ a| 
+Bietet eventuelle Konsistenz für neue Objekte und Objektaktualisierungen. Verwenden Sie für S3-Buckets nur nach Bedarf (z. B. für einen Bucket mit Protokollwerten, die nur selten gelesen werden, oder für HEAD- oder GET-Vorgänge für nicht vorhandene Schlüssel). Nicht unterstützt für S3 FabricPool-Buckets.
+
+|===
+*Anmerkung:* im Allgemeinen sollten Sie die "Read-after-New-write" Konsistenz verwenden. Wenn die Anforderungen nicht korrekt funktionieren, ändern Sie das Client-Verhalten der Anwendung, wenn möglich. Oder konfigurieren Sie den Client so, dass die Konsistenz für jede API-Anforderung angegeben wird. Legen Sie die Konsistenz auf Bucket-Ebene nur als letzte Option fest.
+
+
+
+== Anforderungsbeispiel
+
+[listing, subs="specialcharacters,quotes"]
+----
+PUT /bucket?x-ntap-sg-consistency=strong-global HTTP/1.1
+Date: _date_
+Authorization: _authorization string_
+Host: _host_
+----
+.Verwandte Informationen
+link:consistency-controls.html["Konsistenzwerte"]

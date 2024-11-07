@@ -1,0 +1,46 @@
+---
+permalink: maintain/pausing-and-resuming-decommission-process-for-storage-nodes.html 
+sidebar: sidebar 
+keywords: how to pause decommission 
+summary: Wenn Sie einen zweiten Wartungsvorgang durchführen müssen, können Sie das Verfahren zur Deaktivierung eines Storage Nodes während bestimmter Phasen unterbrechen. Nachdem das andere Verfahren abgeschlossen ist, können Sie die Stilllegung fortsetzen. 
+---
+= Anhalten und Fortsetzen des Stilllegen-Prozesses für Storage-Nodes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie einen zweiten Wartungsvorgang durchführen müssen, können Sie das Verfahren zur Deaktivierung eines Storage Nodes während bestimmter Phasen unterbrechen. Nachdem das andere Verfahren abgeschlossen ist, können Sie die Stilllegung fortsetzen.
+
+
+NOTE: Die Schaltfläche *Pause* ist nur aktiviert, wenn die ILM-Bewertung oder die mit Erasure Coding versehenen Phasen der Datenauswertung erreicht sind. Die ILM-Evaluierung (Datenmigration) wird jedoch weiterhin im Hintergrund ausgeführt.
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben die link:../admin/admin-group-permissions.html["Berechtigung für Wartung oder Root-Zugriff"].
+
+
+.Schritte
+. Wählen Sie *MAINTENANCE* > *Tasks* > *Decommission*.
++
+Die Seite Decommission wird angezeigt.
+
+. Wählen Sie *Decommission Nodes*.
++
+Die Seite Decommission Nodes wird angezeigt. Wenn die Deaktivierung eine der folgenden Stufen erreicht, ist die Schaltfläche *Pause* aktiviert.
+
++
+** ILM-Evaluierung
+** Ausmustern Von Daten Mit Erasure-Code
+
+
+. Wählen Sie *Pause*, um den Vorgang zu unterbrechen.
++
+Die aktuelle Phase wird angehalten, und die Schaltfläche *Fortsetzen* ist aktiviert.
+
++
+image::../media/decommission_nodes_procedure_paused.png[Verfahren Für Die Deaktivierung Von Knoten Angehalten]
+
+. Nachdem der andere Wartungsvorgang abgeschlossen ist, wählen Sie *Fortsetzen* aus, um mit der Stilllegung fortzufahren.
+

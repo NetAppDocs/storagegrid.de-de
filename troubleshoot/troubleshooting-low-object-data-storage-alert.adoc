@@ -1,0 +1,84 @@
+---
+permalink: troubleshoot/troubleshooting-low-object-data-storage-alert.html 
+sidebar: sidebar 
+keywords: how to troubleshoot the Low object data storage alert 
+summary: Der Alarm * Low Object Data Storage* überwacht, wie viel Speicherplatz zum Speichern von Objektdaten auf jedem Storage Node verfügbar ist. 
+---
+= Beheben Sie die Warnung „Niedrig Object Data Storage“
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der Alarm * Low Object Data Storage* überwacht, wie viel Speicherplatz zum Speichern von Objektdaten auf jedem Storage Node verfügbar ist.
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben link:../admin/admin-group-permissions.html["Bestimmte Zugriffsberechtigungen"].
+
+
+.Über diese Aufgabe
+Die Warnmeldung *Low Object Data Storage* wird ausgelöst, wenn die Gesamtanzahl der replizierten und Erasure-coded Objektdaten auf einem Storage Node eine der in der Warnungsregel konfigurierten Bedingungen erfüllt.
+
+Standardmäßig wird eine wichtige Warnmeldung ausgelöst, wenn diese Bedingung als „true“ bewertet wird:
+
+[listing]
+----
+(storagegrid_storage_utilization_data_bytes/
+(storagegrid_storage_utilization_data_bytes + storagegrid_storage_utilization_usable_space_bytes)) >=0.90
+----
+In diesem Zustand:
+
+* `storagegrid_storage_utilization_data_bytes` Ist eine Schätzung der Gesamtgröße replizierter und Erasure-Coded-Objektdaten für einen Storage Node.
+* `storagegrid_storage_utilization_usable_space_bytes` Ist die Gesamtmenge des für einen Storage-Node verbleibenden Objektspeichers.
+
+
+Wenn ein Major oder Minor *Low Object Data Storage*-Alarm ausgelöst wird, sollten Sie so schnell wie möglich eine Erweiterung durchführen.
+
+.Schritte
+. Wählen Sie *ALERTS* > *Current*.
++
+Die Seite „Meldungen“ wird angezeigt.
+
+. Erweitern Sie bei Bedarf aus der Warnmeldungstabelle die Warnungsgruppe *Low Object Data Storage* und wählen Sie die Warnung aus, die angezeigt werden soll.
++
+
+NOTE: Wählen Sie die Meldung und nicht die Überschrift einer Gruppe von Warnungen aus.
+
+. Überprüfen Sie die Details im Dialogfeld, und beachten Sie Folgendes:
++
+** Auslösezeit
+** Der Name des Standorts und des Nodes
+** Die aktuellen Werte der Metriken für diese Meldung
+
+
+. Wählen Sie *NODES* > *_Storage Node oder Standort_* > *Storage* aus.
+. Bewegen Sie den Cursor über die Grafik „verwendeter Speicher – Objektdaten“.
++
+Die folgenden Werte werden angezeigt:
+
++
+** *Used (%)*: Der Prozentsatz des gesamten nutzbaren Speicherplatzes, der für Objektdaten verwendet wurde.
+** *Verwendet*: Die Menge des gesamten nutzbaren Speicherplatzes, der für Objektdaten verwendet wurde.
+** *Replizierte Daten*: Eine Schätzung der Menge der replizierten Objektdaten auf diesem Knoten, Standort oder Grid.
+** *Erasure-codierte Daten*: Eine Schätzung der Menge der mit der Löschung codierten Objektdaten auf diesem Knoten, Standort oder Grid.
+** *Gesamt*: Die Gesamtmenge an nutzbarem Speicherplatz auf diesem Knoten, Standort oder Grid. Der verwendete Wert ist die `storagegrid_storage_utilization_data_bytes` Metrik.
+
+
++
+image::../media/nodes_page_storage_used_object_data.png[Knoten Seite Speicher Verwendete Objektdaten]
+
+. Wählen Sie die Zeitsteuerelemente über dem Diagramm aus, um die Speichernutzung über verschiedene Zeiträume anzuzeigen.
++
+Mit einem Blick auf die Storage-Nutzung im Laufe der Zeit können Sie nachvollziehen, wie viel Storage vor und nach der Warnmeldung genutzt wurde, und Sie können schätzen, wie lange es dauern könnte, bis der verbleibende Speicherplatz des Node voll ist.
+
+. So bald wie möglich, link:../expand/guidelines-for-adding-object-capacity.html["Ergänzen Sie die Speicherkapazität"] in Ihr Raster.
++
+Sie können Storage-Volumes (LUNs) zu vorhandenen Storage-Nodes hinzufügen oder neue Storage-Nodes hinzufügen.
+
++
+
+NOTE: Weitere Informationen finden Sie unter link:../admin/managing-full-storage-nodes.html["Management vollständiger Storage-Nodes"].
+
+

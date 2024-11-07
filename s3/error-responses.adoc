@@ -1,0 +1,378 @@
+---
+permalink: s3/error-responses.html 
+sidebar: sidebar 
+keywords: error, error responses 
+summary: Das StorageGRID System unterstützt alle zutreffenden S3-REST-API-Standardfehlerantworten. Darüber hinaus fügt die StorageGRID Implementierung mehrere individuelle Antworten hinzu. 
+---
+= Fehlerantworten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das StorageGRID System unterstützt alle zutreffenden S3-REST-API-Standardfehlerantworten. Darüber hinaus fügt die StorageGRID Implementierung mehrere individuelle Antworten hinzu.
+
+
+
+== Unterstützte S3-API-Fehlercodes
+
+[cols="1a,1a"]
+|===
+| Name | HTTP-Status 
+
+
+ a| 
+AccessDenied
+ a| 
+403 Verbotene
+
+
+
+ a| 
+BadDigest
+ a| 
+400 Fehlerhafte Anfrage
+
+
+
+ a| 
+BucketAlreadyExists
+ a| 
+409 Konflikt
+
+
+
+ a| 
+BucketNotEmpty
+ a| 
+409 Konflikt
+
+
+
+ a| 
+IncompleteBody
+ a| 
+400 Fehlerhafte Anfrage
+
+
+
+ a| 
+Interner Fehler
+ a| 
+500 Fehler Des Internen Servers
+
+
+
+ a| 
+InvalidAccessKey ID
+ a| 
+403 Verbotene
+
+
+
+ a| 
+InvalidArgument
+ a| 
+400 Fehlerhafte Anfrage
+
+
+
+ a| 
+InvalidBucketName
+ a| 
+400 Fehlerhafte Anfrage
+
+
+
+ a| 
+InvalidBucketState
+ a| 
+409 Konflikt
+
+
+
+ a| 
+InvalidDigest
+ a| 
+400 Fehlerhafte Anfrage
+
+
+
+ a| 
+InvalidVerschlüsselungAlgorithmFehler
+ a| 
+400 Fehlerhafte Anfrage
+
+
+
+ a| 
+InvalidTeil
+ a| 
+400 Fehlerhafte Anfrage
+
+
+
+ a| 
+InvalidPartOrder
+ a| 
+400 Fehlerhafte Anfrage
+
+
+
+ a| 
+InvalidRange
+ a| 
+416 Angeforderter Bereich Nicht Zu Unterprüfbar
+
+
+
+ a| 
+InvalidRequest
+ a| 
+400 Fehlerhafte Anfrage
+
+
+
+ a| 
+InvalidStorageClass
+ a| 
+400 Fehlerhafte Anfrage
+
+
+
+ a| 
+InvalidTag
+ a| 
+400 Fehlerhafte Anfrage
+
+
+
+ a| 
+InvalidURI
+ a| 
+400 Fehlerhafte Anfrage
+
+
+
+ a| 
+KeyTooLong
+ a| 
+400 Fehlerhafte Anfrage
+
+
+
+ a| 
+MalformedXML
+ a| 
+400 Fehlerhafte Anfrage
+
+
+
+ a| 
+MetadataTooLarge
+ a| 
+400 Fehlerhafte Anfrage
+
+
+
+ a| 
+MethodenAlled
+ a| 
+405 Methode Nicht Zulässig
+
+
+
+ a| 
+MissingContentLänge
+ a| 
+411 Länge Erforderlich
+
+
+
+ a| 
+MissingRequestBodyError
+ a| 
+400 Fehlerhafte Anfrage
+
+
+
+ a| 
+MissingSecurityHeader
+ a| 
+400 Fehlerhafte Anfrage
+
+
+
+ a| 
+NoSuchBucket
+ a| 
+404 Nicht Gefunden
+
+
+
+ a| 
+NoSuchKey
+ a| 
+404 Nicht Gefunden
+
+
+
+ a| 
+NoSuchUpload
+ a| 
+404 Nicht Gefunden
+
+
+
+ a| 
+NotImplemsted
+ a| 
+501 Nicht Implementiert
+
+
+
+ a| 
+NoSuchBucketRichtlinien
+ a| 
+404 Nicht Gefunden
+
+
+
+ a| 
+ObjektLockKonfigurationNotgefundenFehler
+ a| 
+404 Nicht Gefunden
+
+
+
+ a| 
+Vorbedingungen nicht möglich
+ a| 
+412 Voraussetzung Fehlgeschlagen
+
+
+
+ a| 
+AnforderungTimeTooSkewed
+ a| 
+403 Verbotene
+
+
+
+ a| 
+Servicenicht verfügbar
+ a| 
+503 Service Nicht Verfügbar
+
+
+
+ a| 
+SignalDoesNotMatch
+ a| 
+403 Verbotene
+
+
+
+ a| 
+TooManyDickets
+ a| 
+400 Fehlerhafte Anfrage
+
+
+
+ a| 
+UserKeyMustBespezifiziert
+ a| 
+400 Fehlerhafte Anfrage
+
+|===
+
+
+== Benutzerdefinierte StorageGRID-Fehlercodes
+
+[cols="2a,2a,1a"]
+|===
+| Name | Beschreibung | HTTP-Status 
+
+
+ a| 
+XBucketLifecycleNotAlled
+ a| 
+In einem zuvor konformen Bucket ist die Konfiguration des Bucket-Lebenszyklus nicht zulässig
+ a| 
+400 Fehlerhafte Anfrage
+
+
+
+ a| 
+XBucketPolicyParseException
+ a| 
+Fehler beim Parsen der JSON der empfangenen Bucket-Richtlinie.
+ a| 
+400 Fehlerhafte Anfrage
+
+
+
+ a| 
+XComplianceKonflict
+ a| 
+Vorgang aufgrund von Compliance-Einstellungen abgelehnt.
+ a| 
+403 Verbotene
+
+
+
+ a| 
+XComplianceReducedRAID-RedundanzVerbotenen
+ a| 
+Reduzierte Redundanz ist in einem älteren, konformen Bucket nicht zulässig
+ a| 
+400 Fehlerhafte Anfrage
+
+
+
+ a| 
+XMaxBucketPolicyLengthexceed
+ a| 
+Ihre Richtlinie überschreitet die maximal zulässige Länge der Bucket-Richtlinie.
+ a| 
+400 Fehlerhafte Anfrage
+
+
+
+ a| 
+XMissingInternRequestHeader
+ a| 
+Eine Kopfzeile einer internen Anforderung fehlt.
+ a| 
+400 Fehlerhafte Anfrage
+
+
+
+ a| 
+XNoSuchBucketCompliance
+ a| 
+Für den angegebenen Bucket ist die veraltete Compliance nicht aktiviert.
+ a| 
+404 Nicht Gefunden
+
+
+
+ a| 
+XNotAcceptable
+ a| 
+Die Anforderung enthält mindestens einen Übernehmen-Header, der nicht erfüllt werden konnte.
+ a| 
+406 Nicht Akzeptabel
+
+
+
+ a| 
+XNotImplemsted
+ a| 
+Die von Ihnen gestellte Anfrage beinhaltet Funktionen, die nicht implementiert sind.
+ a| 
+501 Nicht Implementiert
+
+|===

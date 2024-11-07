@@ -1,0 +1,95 @@
+---
+permalink: admin/requirements-for-sso.html 
+sidebar: sidebar 
+keywords: sso requirements, single sign on requirements, identity federation requirements for sso, pingfederate, azure ad, ad fs 
+summary: Bevor Sie die einmalige Anmeldung für ein StorageGRID-System aktivieren, lesen Sie die Anforderungen und Überlegungen. 
+---
+= Voraussetzungen und Überlegungen für Single Sign-On
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor Sie Single Sign-On (SSO) für ein StorageGRID-System aktivieren, lesen Sie die Anforderungen und Überlegungen.
+
+
+
+== Anforderungen an Identitätsanbieter
+
+StorageGRID unterstützt die folgenden SSO-Identitätsanbieter (IdP):
+
+* Active Directory Federation Service (AD FS)
+* Azure Active Directory (Azure AD)
+* PingFederate
+
+
+Sie müssen die Identitätsföderation für Ihr StorageGRID-System konfigurieren, bevor Sie einen SSO-Identitätsanbieter konfigurieren können. Der Typ des LDAP-Service, den Sie für die Identitätsföderation verwenden, steuert, welcher SSO-Typ Sie implementieren können.
+
+[cols="1a,1a"]
+|===
+| Konfigurierter LDAP-Servicetyp | Optionen für SSO-Identitätsanbieter 
+
+
+ a| 
+Active Directory
+ a| 
+* Active Directory
+* Azure
+* PingFederate
+
+
+
+
+ a| 
+Azure
+ a| 
+Azure
+
+|===
+
+
+=== AD-FS-Anforderungen
+
+Sie können eine der folgenden Versionen von AD FS verwenden:
+
+* Windows Server 2022 AD FS
+* Windows Server 2019 AD FS
+* Windows Server 2016 AD FS
+
+
+
+NOTE: Windows Server 2016 sollte , oder höher verwenden https://support.microsoft.com/en-us/help/3201845/cumulative-update-for-windows-10-version-1607-and-windows-server-2016["KB3201845-Update"^].
+
+
+
+=== Zusätzlichen Anforderungen
+
+* Transport Layer Security (TLS) 1.2 oder 1.3
+* Microsoft .NET Framework, Version 3.5.1 oder höher
+
+
+
+
+=== Überlegungen zu Azure
+
+Wenn Sie Azure als SSO-Typ verwenden und Benutzer über Hauptbenutzernamen verfügen, die den sAMAccountName nicht als Präfix verwenden, können Anmeldeprobleme auftreten, wenn StorageGRID seine Verbindung mit dem LDAP-Server verliert. Damit Benutzer sich anmelden können, müssen Sie die Verbindung zum LDAP-Server wiederherstellen.
+
+
+
+== Serverzertifikate-Anforderungen
+
+Standardmäßig verwendet StorageGRID auf jedem Admin-Node ein Zertifikat der Managementoberfläche, um den Zugriff auf den Grid Manager, den Mandanten-Manager, die Grid-Management-API und die Mandanten-Management-API zu sichern. Wenn Sie Trusts (AD FS), Enterprise-Anwendungen (Azure) oder Service Provider Connections (PingFederate) für StorageGRID konfigurieren, verwenden Sie das Serverzertifikat als Signaturzertifikat für StorageGRID-Anfragen.
+
+Wenn Sie noch nichtlink:configuring-custom-server-certificate-for-grid-manager-tenant-manager.html["Ein benutzerdefiniertes Zertifikat für die Managementoberfläche konfiguriert"], sollten Sie dies jetzt tun. Wenn Sie ein benutzerdefiniertes Serverzertifikat installieren, wird es für alle Administratorknoten verwendet, und Sie können es in allen StorageGRID-Vertrauensstellungen, Unternehmensanwendungen oder SP-Verbindungen verwenden.
+
+
+NOTE: Es wird nicht empfohlen, das Standardserverzertifikat eines Admin Node in einer Vertrauensstelle, einer Unternehmensanwendungen oder einer SP-Verbindung zu verwenden. Wenn der Knoten ausfällt und Sie ihn wiederherstellen, wird ein neues Standard-Serverzertifikat generiert. Bevor Sie sich beim wiederhergestellten Knoten anmelden können, müssen Sie das Vertrauensverhältnis der zu bestellenden Partei, die Enterprise-Anwendung oder die SP-Verbindung mit dem neuen Zertifikat aktualisieren.
+
+Sie können auf das Serverzertifikat eines Admin-Knotens zugreifen, indem Sie sich bei der Befehlsshell des Knotens anmelden und zum Verzeichnis wechseln `/var/local/mgmt-api`. Ein benutzerdefiniertes Serverzertifikat wird benannt `custom-server.crt`. Das Standardserverzertifikat des Knotens lautet `server.crt` .
+
+
+
+== Port-Anforderungen
+
+Single Sign-On (SSO) ist auf den Ports Restricted Grid Manager oder Tenant Manager nicht verfügbar. Sie müssen den Standard-HTTPS-Port (443) verwenden, wenn Benutzer sich mit Single Sign-On authentifizieren möchten. Siehe link:controlling-access-through-firewalls.html["Kontrolle des Zugriffs über externe Firewall"].

@@ -1,0 +1,31 @@
+---
+permalink: admin/viewing-ip-addresses.html 
+sidebar: sidebar 
+keywords: ip address, view ip addresses for nodes, what is node ip address 
+summary: Sie können die IP-Adresse für jeden Grid-Node im StorageGRID System anzeigen. Sie können sich dann mithilfe dieser IP-Adresse am Grid Node an der Befehlszeile anmelden und verschiedene Wartungsverfahren durchführen. 
+---
+= Zeigen Sie IP-Adressen an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die IP-Adresse für jeden Grid-Node im StorageGRID System anzeigen. Sie können sich dann mithilfe dieser IP-Adresse am Grid Node an der Befehlszeile anmelden und verschiedene Wartungsverfahren durchführen.
+
+.Bevor Sie beginnen
+Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+
+.Über diese Aufgabe
+Informationen zum Ändern von IP-Adressen finden Sie unter link:../maintain/configuring-ip-addresses.html["Konfigurieren Sie IP-Adressen"].
+
+.Schritte
+. Wählen Sie *NODES* > *_Grid Node_* > *Übersicht* aus.
+. Wählen Sie *Mehr anzeigen* rechts neben dem Titel der IP-Adressen.
++
+Die IP-Adressen für diesen Grid-Node werden in einer Tabelle aufgeführt.
+
++
+image::../media/nodes_page_overview_tab_extended.png[Knoten Seite IP-Adressen]
+
+

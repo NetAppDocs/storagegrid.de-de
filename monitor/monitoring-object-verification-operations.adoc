@@ -1,0 +1,70 @@
+---
+permalink: monitor/monitoring-object-verification-operations.html 
+sidebar: sidebar 
+keywords: object, verification 
+summary: Das StorageGRID System kann die Integrität von Objektdaten auf Storage-Nodes überprüfen und sowohl beschädigte als auch fehlende Objekte prüfen. 
+---
+= Überwachen von Objektverifizierungsvorgängen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das StorageGRID System kann die Integrität von Objektdaten auf Storage-Nodes überprüfen und sowohl beschädigte als auch fehlende Objekte prüfen.
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben die link:../admin/admin-group-permissions.html["Berechtigung für Wartung oder Root-Zugriff"].
+
+
+.Über diese Aufgabe
+Zwei link:../troubleshoot/verifying-object-integrity.html["Verifizierungsprozesse"] arbeiten zusammen, um die Datenintegrität zu gewährleisten:
+
+* *Hintergrundüberprüfung* läuft automatisch und überprüft kontinuierlich die Richtigkeit der Objektdaten.
++
+Hintergrund-Verifizierung überprüft automatisch und kontinuierlich alle Storage-Nodes, um festzustellen, ob es beschädigte Kopien von replizierten und mit Erasure Coding verschlüsselten Objektdaten gibt. Falls Probleme gefunden werden, versucht das StorageGRID System automatisch, die beschädigten Objektdaten durch Kopien zu ersetzen, die an anderer Stelle im System gespeichert sind. Die Hintergrundüberprüfung wird nicht für Objekte in einem Cloud-Storage-Pool ausgeführt.
+
++
+
+NOTE: Die Warnung *Unidentified Corrupt Object Detected* wird ausgelöst, wenn das System ein korruptes Objekt erkennt, das nicht automatisch korrigiert werden kann.
+
+* *Objektexistenz-Prüfung* kann von einem Nutzer ausgelöst werden, um die Existenz (obwohl nicht die Richtigkeit) von Objektdaten schneller zu überprüfen.
++
+Die ObjektExistenz überprüft, ob alle erwarteten replizierten Kopien von Objekten und mit Erasure Coding verschlüsselten Fragmenten auf einem Storage Node vorhanden sind. Die Prüfung des Objektbestandes bietet eine Möglichkeit zur Überprüfung der Integrität von Speichergeräten, insbesondere dann, wenn kürzlich Probleme mit der Hardware die Datenintegrität beeinträchtigen könnten.
+
+
+
+Sie sollten die Ergebnisse aus Hintergrundverifizierungen und Objektprüfungen regelmäßig überprüfen. Untersuchen Sie alle Instanzen beschädigter oder fehlender Objektdaten sofort, um die Ursache zu ermitteln.
+
+.Schritte
+. Prüfen Sie die Ergebnisse aus Hintergrundverifizierungen:
++
+.. Wählen Sie *NODES* > *_Storage Node_* > *Objekte* aus.
+.. Überprüfen Sie die Überprüfungsergebnisse:
++
+*** Um die Verifizierung replizierter Objektdaten zu prüfen, sehen Sie sich die Attribute im Abschnitt Überprüfung an.
++
+image::../media/nodes_storage_node_object_verification.png[Nodes > Storage Node > Objekt > Verifizierung]
+
+*** Um die Überprüfung von Fragment mit Löschungscode zu überprüfen, wählen Sie *_Storage Node_* > *ILM* aus, und sehen Sie sich die Attribute im Abschnitt zur Verifizierung von Erasure-Coding an.
++
+image::../media/nodes_storage_node_ilm_ec_verification.png[Nodes > Storage Node > ILM > EC-Überprüfung]
+
++
+Wählen Sie das Fragezeichen  neben dem Namen eines Attributs ausimage:../media/icon_nms_question.png["Fragezeichen"], um Hilfetext anzuzeigen.
+
+
+
+
+
+. Überprüfen Sie die Ergebnisse von Objektprüfaufträgen:
++
+.. Wählen Sie *WARTUNG* > *Objekt Existenzprüfung* > *Jobverlauf*.
+.. Scannen Sie die Spalte „fehlende Objektkopien erkannt“. Wenn bei Jobs 100 oder mehr fehlende Objektkopien vorhanden waren und die Warnmeldung *Objects lost* ausgelöst wurde, wenden Sie sich an den technischen Support.
++
+image::../media/oec_job_history.png[Jobverlauf der Objektexistenz-Prüfung]
+
+
+
+

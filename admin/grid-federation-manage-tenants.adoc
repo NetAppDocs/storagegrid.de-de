@@ -1,0 +1,208 @@
+---
+permalink: admin/grid-federation-manage-tenants.html 
+sidebar: sidebar 
+keywords: grid federation, manage tenant, use grid federation permission, remove permission, cross grid replication 
+summary: Sie können S3-Mandantenkonten die Verwendung einer Grid-Federation-Verbindung zwischen zwei StorageGRID-Systemen erlauben. Wenn Mandanten eine Verbindung verwenden dürfen, sind spezielle Schritte erforderlich, um die Details der Serviceeinheit zu bearbeiten oder die Berechtigung der Serviceeinheit dauerhaft zu entfernen, um die Verbindung zu verwenden. 
+---
+= Verwalten Sie die zulässigen Mandanten für den Grid-Verbund
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können S3-Mandantenkonten die Verwendung einer Grid-Federation-Verbindung zwischen zwei StorageGRID-Systemen erlauben. Wenn Mandanten eine Verbindung verwenden dürfen, sind spezielle Schritte erforderlich, um die Mandantendetails zu bearbeiten oder die Berechtigung eines Mandanten zur Verwendung der Verbindung dauerhaft zu entfernen.
+
+.Bevor Sie beginnen
+* Sie sind auf beiden Rastergitten mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben die link:admin-group-permissions.html["Root-Zugriffsberechtigung"] für das Raster, bei dem Sie angemeldet sind.
+* Sie haben link:grid-federation-create-connection.html["Grid Federation-Verbindung erstellt"] zwischen zwei Rastern.
+* Sie haben die Workflows für  und überprüftlink:grid-federation-what-is-account-clone.html["Konto-Klon"]link:grid-federation-what-is-cross-grid-replication.html["Grid-übergreifende Replizierung"].
+* Bei Bedarf haben Sie bereits Single Sign-On (SSO) oder Identify Federation für beide Grids in der Verbindung konfiguriert. Siehe link:grid-federation-what-is-account-clone.html["Was ist Account-Klon"].
+
+
+
+
+== Erstellen Sie eine zulässige Serviceeinheit
+
+Wenn Sie einem neuen oder vorhandenen Mandantenkonto die Verwendung einer Grid-Federation-Verbindung für Account-Klonen und Grid-Replizierung erlauben möchten, befolgen Sie die allgemeinen Anweisungen zu link:creating-tenant-account.html["Erstellen Sie einen neuen S3-Mandanten"] bzw. link:editing-tenant-account.html["Bearbeiten Sie ein Mandantenkonto"] und beachten Sie Folgendes:
+
+* Sie können die Serviceeinheit aus jedem Raster der Verbindung erstellen. Das Raster, in dem ein Mandant erstellt wird, ist das Quellraster des _Mandanten_.
+* Der Status der Verbindung muss *connected* sein.
+* Wenn der Mandant erstellt oder bearbeitet wird, um die Berechtigung *use Grid Federation connection* zu aktivieren und dann im ersten Grid zu speichern, wird automatisch ein identischer Mandant in das andere Grid repliziert. Das Grid, in dem der Mandant repliziert wird, ist das Zielraster des _Mandanten_.
+* Die Mandanten in beiden Grids haben die gleiche 20-stellige Konto-ID, den gleichen Namen, die gleiche Beschreibung, das gleiche Kontingent und die gleichen Berechtigungen. Optional können Sie das Feld *Beschreibung* verwenden, um zu ermitteln, welcher Quellmandant und welcher Zielmandant ist. Beispielsweise wird diese Beschreibung für einen Mandanten, der in Grid 1 erstellt wurde, auch für den Mandanten angezeigt, der in Grid 2 repliziert wurde: „Dieser Mandant wurde in Grid 1 erstellt.“
+* Aus Sicherheitsgründen wird das Kennwort für einen lokalen Root-Benutzer nicht in das Zielraster kopiert.
++
+
+TIP: Bevor ein lokaler Root-Benutzer sich beim replizierten Mandanten im Zielraster anmelden kann, muss ein Grid-Administrator für dieses Grid angemeldet link:changing-password-for-tenant-local-root-user.html["Ändern Sie das Passwort für den lokalen Root-Benutzer"]sein.
+
+* Nachdem der neue oder bearbeitete Mandant auf beiden Grids verfügbar ist, können Mandantenbenutzer die folgenden Vorgänge ausführen:
++
+** Erstellen Sie im Quellraster des Mandanten Gruppen und lokale Benutzer, die automatisch im Zielraster des Mandanten geklont werden. Siehe link:../tenant/grid-federation-account-clone.html["Klonen von Mandantengruppen und Benutzern"].
+** Erstellen neuer S3-Zugriffsschlüssel, die optional im Zielraster des Mandanten geklont werden können Siehe link:../tenant/grid-federation-clone-keys-with-api.html["Klonen von S3-Zugriffsschlüsseln mithilfe der API"].
+** Erstellen Sie auf beiden Grids in der Verbindung identische Buckets und ermöglichen Sie die Grid-übergreifende Replizierung in eine oder beide Richtungen. Siehe link:../tenant/grid-federation-manage-cross-grid-replication.html["Grid-übergreifende Replizierung managen"].
+
+
+
+
+
+
+== Zeigen Sie eine zulässige Serviceeinheit an
+
+Sie können Details zu einem Mandanten anzeigen, der eine Verbindung mit dem Grid Federation verwenden darf.
+
+.Schritte
+. Wählen Sie *MIETER*.
+. Wählen Sie auf der Seite Tenants den Namen der Serviceeinheit aus, um die Seite mit den Details der Serviceeinheit anzuzeigen.
++
+Wenn es sich hierbei um das Quellraster für den Mandanten handelt (d. h. wenn der Mandant in diesem Raster erstellt wurde), wird ein Banner angezeigt, das Sie daran erinnert, dass der Mandant in einem anderen Raster geklont wurde. Wenn Sie diesen Mandanten bearbeiten oder löschen, werden Ihre Änderungen nicht mit dem anderen Raster synchronisiert.
+
++
+image::../media/grid-federation-tenant-detail.png[Registerkarte „Grid Federation“ auf der Seite „Tenant Details“]
+
+. Wählen Sie optional die Registerkarte *Grid Federation* auf link:../monitor/grid-federation-monitor-connections.html["Überwachen der Netzverbundverbindung"].
+
+
+
+
+== Bearbeiten Sie eine zulässige Serviceeinheit
+
+Wenn Sie einen Mandanten bearbeiten müssen, der über die Berechtigung *Grid Federation connection* verfügt, befolgen Sie die allgemeinen Anweisungen für link:editing-tenant-account.html["Bearbeiten eines Mandantenkontos"] und beachten Sie Folgendes:
+
+* Wenn ein Mandant über die Berechtigung *Grid Federation connection* verwenden verfügt, können Sie die Mandantendetails von beiden Rastergittern in der Verbindung bearbeiten. Alle Änderungen, die Sie vornehmen, werden jedoch nicht in das andere Raster kopiert. Wenn Sie die Details der Serviceeinheit zwischen den Rastern synchronisieren möchten, müssen Sie die gleichen Änderungen an beiden Rastern vornehmen.
+* Sie können die Berechtigung *Grid Federation connection* verwenden* nicht löschen, wenn Sie einen Mandanten bearbeiten.
+* Sie können keine andere Grid Federation-Verbindung auswählen, wenn Sie eine Serviceeinheit bearbeiten.
+
+
+
+
+== Löschen Sie eine zulässige Serviceeinheit
+
+Wenn Sie einen Mandanten entfernen müssen, der über die Berechtigung *Grid Federation connection* verfügt, befolgen Sie die allgemeinen Anweisungen für link:deleting-tenant-account.html["Löschen eines Mandantenkontos"] und beachten Sie Folgendes:
+
+* Bevor Sie den ursprünglichen Mandanten im Quellraster entfernen können, müssen Sie alle Buckets für das Konto im Quellraster entfernen.
+* Bevor Sie den geklonten Mandanten im Zielraster entfernen können, müssen Sie alle Buckets für das Konto im Zielraster entfernen.
+* Wenn Sie den ursprünglichen oder den geklonten Mandanten entfernen, kann das Konto nicht mehr für die Grid-übergreifende Replizierung verwendet werden.
+* Wenn Sie den ursprünglichen Mandanten im Quellraster entfernen, werden alle Mandantengruppen, Benutzer oder Schlüssel, die im Zielraster geklont wurden, nicht beeinträchtigt. Sie können den geklonten Mandanten entweder löschen oder seiner eigenen Gruppe, Benutzern, Zugriffsschlüsseln und Buckets verwalten.
+* Wenn Sie den geklonten Mandanten im Zielraster entfernen, treten Klonfehler auf, wenn dem ursprünglichen Mandanten neue Gruppen oder Benutzer hinzugefügt werden.
++
+Um diese Fehler zu vermeiden, entfernen Sie die Berechtigung des Mandanten zur Verwendung der Grid Federation-Verbindung, bevor Sie den Mandanten aus diesem Raster löschen.
+
+
+
+
+
+== [[remove-Grid-Federation-connection-permission]]Remove Use Grid Federation connection permission
+
+Um zu verhindern, dass ein Mandant eine Netzverbundverbindung verwendet, müssen Sie die Berechtigung *Grid Federation Connection* verwenden entfernen.
+
+image::../media/grid-federation-remove-permission.png[Schritte zum Entfernen der Netzverbundverbindung]
+
+Beachten Sie Folgendes, bevor Sie die Berechtigung eines Mandanten zur Verwendung einer Grid-Federation-Verbindung entfernen:
+
+* Sie können die Berechtigung *use Grid Federation connection* nicht entfernen, wenn eine der Buckets des Mandanten Grid-übergreifende Replikation aktiviert hat. Das Mandantenkonto muss zunächst die Grid-übergreifende Replizierung für alle Buckets deaktivieren.
+* Wenn Sie die Berechtigung *Grid Federation connection* verwenden entfernen, werden keine Elemente gelöscht, die bereits zwischen den Rastern repliziert wurden. So werden beispielsweise alle Mandantenbenutzer, -Gruppen und -Objekte, die auf beiden Grids vorhanden sind, nicht aus beiden Grids gelöscht, wenn die Berechtigung des Mandanten entfernt wird. Wenn Sie diese Elemente löschen möchten, müssen Sie sie manuell aus beiden Rastern löschen.
+* Wenn Sie diese Berechtigung mit derselben Grid Federation-Verbindung erneut aktivieren möchten, löschen Sie diesen Mandanten zuerst im Zielraster. Andernfalls führt die erneute Aktivierung dieser Berechtigung zu einem Fehler.
+
+
+
+NOTE: Durch die erneute Aktivierung der Berechtigung *use Grid Federation connection* wird das lokale Grid zum Quellraster und löst das Klonen auf das Remote Grid aus, das von der ausgewählten Grid Federation-Verbindung angegeben wird. Wenn das Mandantenkonto bereits im Remote-Grid vorhanden ist, führt das Klonen zu einem Konfliktfehler.
+
+.Bevor Sie beginnen
+* Sie verwenden einen link:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben die link:admin-group-permissions.html["Root-Zugriffsberechtigung"] für beide Raster.
+
+
+
+
+=== Deaktivieren Sie die Replizierung für Mandanten-Buckets
+
+Deaktivieren Sie als ersten Schritt die Grid-übergreifende Replizierung für alle Mandanten-Buckets.
+
+.Schritte
+. Melden Sie sich vom primären Admin-Node aus an einem der beiden Raster beim Grid Manager an.
+. Wählen Sie *CONFIGURATION* > *System* > *Grid Federation*.
+. Wählen Sie den Verbindungsnamen aus, um die zugehörigen Details anzuzeigen.
+. Bestimmen Sie auf der Registerkarte *zulässige Mieter*, ob der Mieter die Verbindung nutzt.
+. Wenn der Mieter aufgeführt ist, weisen Sie ihn anlink:../tenant/grid-federation-manage-cross-grid-replication.html["Deaktivieren Sie die Grid-übergreifende Replizierung"], alle seine Eimer auf beiden Rastern in der Verbindung zu besetzen.
++
+
+TIP: Sie können die Berechtigung *use Grid Federation connection* nicht entfernen, wenn in einem Mandanten-Buckets die Grid-übergreifende Replikation aktiviert ist. Der Mandant muss die Grid-übergreifende Replizierung für seine Buckets auf beiden Grids deaktivieren.
+
+
+
+
+
+=== Berechtigung für Serviceeinheit entfernen
+
+Nachdem die Grid-übergreifende Replizierung für Mandanten-Buckets deaktiviert ist, können Sie die Berechtigung des Mandanten zur Verwendung der Grid-Verbundverbindung entfernen.
+
+.Schritte
+. Melden Sie sich über den primären Admin-Knoten beim Grid-Manager an.
+. Entfernen Sie die Berechtigung von der Seite „Grid Federation“ oder der Seite „Tenants“.
++
+[role="tabbed-block"]
+====
+.Seite „Grid Federation“
+--
+.. Wählen Sie *CONFIGURATION* > *System* > *Grid Federation*.
+.. Wählen Sie den Verbindungsnamen aus, um die Detailseite anzuzeigen.
+.. Wählen Sie auf der Registerkarte *zulässige Mieter* die Optionsschaltfläche für den Mieter aus.
+.. Wählen Sie *Berechtigung entfernen*.
+
+
+--
+.Mandanten werden gestartet
+--
+.. Wählen Sie *MIETER*.
+.. Wählen Sie den Namen des Mandanten aus, um die Detailseite anzuzeigen.
+.. Wählen Sie auf der Registerkarte *Grid Federation* das Optionsfeld für die Verbindung aus.
+.. Wählen Sie *Berechtigung entfernen*.
+
+
+--
+====
+. Überprüfen Sie die Warnungen im Bestätigungsdialogfeld, und wählen Sie *Entfernen*.
++
+** Wenn die Berechtigung entfernt werden kann, kehren Sie zur Detailseite zurück, und eine Erfolgsmeldung wird angezeigt. Dieser Mandant kann die Grid Federation-Verbindung nicht mehr verwenden.
+** Wenn für einen oder mehrere Mandanten-Buckets die Grid-übergreifende Replizierung weiterhin aktiviert ist, wird ein Fehler angezeigt.
++
+image::../media/grid-federation-remove-permission-error.png[Es wird eine Fehlermeldung angezeigt, wenn der Mandant cgr für einen Bucket aktiviert hat]
+
++
+Sie können eine der folgenden Aktionen ausführen:
+
++
+*** (Empfohlen.) Melden Sie sich beim Tenant Manager an und deaktivieren Sie die Replikation für jeden Buckets des Mandanten. Siehe link:../tenant/grid-federation-manage-cross-grid-replication.html["Grid-übergreifende Replizierung managen"]. Wiederholen Sie dann die Schritte, um die Berechtigung *Grid-Verbindung verwenden* zu entfernen.
+*** Entfernen Sie die Berechtigung mit Gewalt. Siehe nächster Abschnitt.
+
+
+
+
+. Gehen Sie zum anderen Raster, und wiederholen Sie diese Schritte, um die Berechtigung für denselben Mandanten auf dem anderen Raster zu entfernen.
+
+
+
+
+== [[Force_remove_permission]]Entfernen Sie die Berechtigung mit Gewalt
+
+Bei Bedarf können Sie das Entfernen der Berechtigung eines Mandanten zur Verwendung einer Grid-Verbundverbindung erzwingen, selbst wenn für Mandanten-Buckets die Grid-übergreifende Replizierung aktiviert ist.
+
+Bevor Sie die Erlaubnis eines Mandanten gewaltsam entfernen, notieren Sie sich die allgemeinen Überlegungen sowie die <<remove-grid-federation-connection-permission,Entfernen der Berechtigung>>folgenden zusätzlichen Überlegungen:
+
+* Wenn Sie die Berechtigung *use Grid Federation connection* per Force entfernen, werden alle Objekte, die eine Replikation auf das andere Grid ausstehen (aufgenommen, aber noch nicht repliziert), weiterhin repliziert. Um zu verhindern, dass diese in-Process-Objekte den Ziel-Bucket erreichen, müssen Sie auch die Berechtigung des Mandanten für das andere Raster entfernen.
+* Alle Objekte, die in den Quell-Bucket aufgenommen wurden, nachdem Sie die Berechtigung *Grid Federation Connection* verwenden entfernt haben, werden niemals in den Ziel-Bucket repliziert.
+
+
+.Schritte
+. Melden Sie sich über den primären Admin-Knoten beim Grid-Manager an.
+. Wählen Sie *CONFIGURATION* > *System* > *Grid Federation*.
+. Wählen Sie den Verbindungsnamen aus, um die Detailseite anzuzeigen.
+. Wählen Sie auf der Registerkarte *zulässige Mieter* die Optionsschaltfläche für den Mieter aus.
+. Wählen Sie *Berechtigung entfernen*.
+. Überprüfen Sie die Warnungen im Bestätigungsdialogfeld, und wählen Sie *Entfernen erzwingen*.
++
+Eine Erfolgsmeldung wird angezeigt. Dieser Mandant kann die Grid Federation-Verbindung nicht mehr verwenden.
+
+. Gehen Sie bei Bedarf zum anderen Raster, und wiederholen Sie diese Schritte, um die Berechtigung für das gleiche Mandantenkonto im anderen Raster zu erzwingen. Sie sollten diese Schritte beispielsweise auf dem anderen Raster wiederholen, um zu verhindern, dass in-Process-Objekte den Ziel-Bucket erreichen.
+

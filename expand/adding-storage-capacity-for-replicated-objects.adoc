@@ -1,0 +1,24 @@
+---
+permalink: expand/adding-storage-capacity-for-replicated-objects.html 
+sidebar: sidebar 
+keywords: replication, replicated, copies, capacity, storage nodes, expand, expansion 
+summary: 'Wenn die Information Lifecycle Management \(ILM\)-Richtlinie für Ihre Bereitstellung eine Regel umfasst, die replizierte Kopien von Objekten erstellt, müssen Sie berücksichtigen, wie viel Storage hinzugefügt werden muss und wo die neuen Storage-Volumes oder Storage-Nodes hinzugefügt werden müssen.' 
+---
+= Storage-Kapazitäten für replizierte Objekte hinzufügen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn die Information Lifecycle Management-Richtlinie (ILM) für Ihre Implementierung eine Regel umfasst, die replizierte Kopien von Objekten erstellt, müssen Sie berücksichtigen, wie viel Storage hinzugefügt werden muss und wo die neuen Storage Volumes oder Storage-Nodes hinzugefügt werden müssen.
+
+Anweisungen zum Hinzufügen von zusätzlichem Storage finden Sie in den ILM-Regeln, die replizierte Kopien erstellen. Wenn ILM-Regeln zwei oder mehr Objektkopien erstellen, planen Sie das Hinzufügen von Storage an jedem Speicherort, an dem Objektkopien erstellt werden. Wenn Sie beispielsweise über ein Grid mit zwei Standorten und eine ILM-Regel verfügen, die an jedem Standort eine Objektkopie erstellt, müssen Sie link:../expand/adding-storage-volumes-to-storage-nodes.html["Fügen Sie Speicher hinzu"]zu jedem Standort gehen, um die Objektkapazität des Grids insgesamt zu erhöhen. Informationen zur Objektreplikation finden Sie unter link:../ilm/what-replication-is.html["Was ist Replikation"].
+
+Aus Performance-Gründen sollten Sie versuchen, die Storage-Kapazität und die Rechenleistung über die Standorte hinweg gleichmäßig zu verteilen. In diesem Beispiel sollten Sie also jedem Standort die gleiche Anzahl an Storage-Nodes oder an jedem Standort zusätzliche Storage-Volumes hinzufügen.
+
+Falls Sie eine komplexere ILM-Richtlinie haben, die Regeln enthält, die Objekte basierend auf Kriterien wie Bucket-Name oder Regeln, die Objektorte im Laufe der Zeit ändern, wird Ihre Analyse, wo Storage für die Erweiterung erforderlich ist, ähnlich, aber komplexer.
+
+Wenn Sie verstehen, wie schnell die insgesamt genutzte Storage-Kapazität verbraucht wird, können Sie verstehen, wie viel Storage in der Erweiterung hinzugefügt werden muss und wann der zusätzliche Speicherplatz erforderlich ist. Mit dem Grid-Manager können link:../monitor/monitoring-storage-capacity.html["Überwachen und graten Sie die Speicherkapazität"]Sie .
+
+Denken Sie bei der Planung des Zeitpunkts einer Erweiterung daran, wie lange die Beschaffung und Installation von zusätzlichem Storage dauern könnte.

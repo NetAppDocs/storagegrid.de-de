@@ -1,0 +1,49 @@
+---
+permalink: audit/gted-grid-task-ended.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, GTED, Grid Task Ended 
+summary: Diese Überwachungsmeldung zeigt an, dass der CMN-Dienst die Verarbeitung der angegebenen Rasteraufgabe abgeschlossen hat und die Aufgabe in die Tabelle „Historisch“ verschoben hat. Wenn es sich um SUCS, ABRT oder ROLF handelt, wird eine entsprechende Überwachungsmeldung für die mit Grid Task gestartete Aufgabe angezeigt. Die anderen Ergebnisse zeigen, dass die Verarbeitung dieser Grid-Aufgabe nie gestartet wurde. 
+---
+= GTED: Grid Task beendet
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Diese Überwachungsmeldung zeigt an, dass der CMN-Dienst die Verarbeitung der angegebenen Rasteraufgabe abgeschlossen hat und die Aufgabe in die Tabelle „Historisch“ verschoben hat. Wenn es sich um SUCS, ABRT oder ROLF handelt, wird eine entsprechende Überwachungsmeldung für die mit Grid Task gestartete Aufgabe angezeigt. Die anderen Ergebnisse zeigen, dass die Verarbeitung dieser Grid-Aufgabe nie gestartet wurde.
+
+[cols="1a,1a,4a"]
+|===
+| Codieren | Feld | Beschreibung 
+
+
+ a| 
+TSID
+ a| 
+Task-ID
+ a| 
+Dieses Feld identifiziert eine generierte Grid-Aufgabe eindeutig und ermöglicht die Verwaltung der Grid-Aufgabe über den gesamten Lebenszyklus.
+
+*Hinweis:* die Task-ID wird zum Zeitpunkt der Erstellung einer Grid-Aufgabe zugewiesen, nicht zum Zeitpunkt der Einreichung. Es ist möglich, dass eine bestimmte Grid-Aufgabe mehrfach eingereicht wird. In diesem Fall reicht das Feld Task-ID nicht aus, um die übermittelten, gestarteten und beendeten Audit-Meldungen eindeutig zu verknüpfen.
+
+
+
+ a| 
+RSLT
+ a| 
+Ergebnis
+ a| 
+Das endgültige Statusergebnis der Grid-Aufgabe:
+
+* SUCS: Die Grid-Aufgabe wurde erfolgreich abgeschlossen.
+* ABRT: Die Grid-Aufgabe wurde ohne Rollback-Fehler beendet.
+* ROLF: Die Grid-Aufgabe wurde beendet und konnte den Rollback-Vorgang nicht abschließen.
+* STORNO: Die Grid-Aufgabe wurde vom Benutzer vor dem Start abgebrochen.
+* EXPR: Der Grid-Task ist vor dem Start abgelaufen.
+* IVLD: Die Grid-Aufgabe war ungültig.
+* AUTH: Die Grid-Aufgabe war nicht zulässig.
+* DUPL: Die Grid-Aufgabe wurde als Duplikat abgelehnt.
+
+
+|===

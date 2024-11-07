@@ -1,0 +1,26 @@
+---
+permalink: vmware/adding-sites.html 
+sidebar: sidebar 
+keywords: how to add sites 
+summary: Sie müssen mindestens einen Standort erstellen, wenn Sie StorageGRID installieren. Sie können weitere Standorte erstellen, um die Zuverlässigkeit und Storage-Kapazität Ihres StorageGRID Systems zu erhöhen. 
+---
+= Fügen Sie Sites hinzu
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen mindestens einen Standort erstellen, wenn Sie StorageGRID installieren. Sie können weitere Standorte erstellen, um die Zuverlässigkeit und Storage-Kapazität Ihres StorageGRID Systems zu erhöhen.
+
+.Schritte
+. Geben Sie auf der Seite Sites den *Standortnamen* ein.
+. Um weitere Sites hinzuzufügen, klicken Sie auf das Pluszeichen neben dem Eintrag der letzten Site und geben den Namen in das neue Textfeld *Standortname* ein.
++
+Fügen Sie so viele zusätzliche Standorte wie für Ihre Grid-Topologie hinzu. Sie können bis zu 16 Standorte hinzufügen.
+
++
+image::../media/3_gmi_installer_sites_page.gif[Dieses Bild wird durch den umgebenden Text erläutert.]
+
+. Klicken Sie Auf *Weiter*.
+

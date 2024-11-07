@@ -1,0 +1,512 @@
+---
+permalink: troubleshoot/index.html 
+sidebar: sidebar 
+keywords: how to troubleshoot a StorageGRID system 
+summary: Wenn bei der Verwendung eines StorageGRID-Systems ein Problem auftritt, finden Sie in den Tipps und Richtlinien dieses Abschnitts Hilfe zum ermitteln und Beheben des Problems. 
+---
+= Fehler in einem StorageGRID System beheben
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn bei der Verwendung eines StorageGRID-Systems ein Problem auftritt, finden Sie in den Tipps und Richtlinien dieses Abschnitts Hilfe zum ermitteln und Beheben des Problems.
+
+Häufig können Sie Probleme selbst lösen. Unter Umständen müssen Sie jedoch einige Probleme an den technischen Support eskalieren.
+
+
+
+== [[define_Problem]]Definieren Sie das Problem
+
+Der erste Schritt zur Lösung eines Problems besteht darin, das Problem klar zu definieren.
+
+Diese Tabelle enthält Beispiele für die Arten von Informationen, die Sie erfassen können, um ein Problem zu definieren:
+
+[cols="1a,1a"]
+|===
+| Frage | Beispielantwort 
+
+
+ a| 
+Was macht das StorageGRID-System? Was sind die Symptome?
+ a| 
+Client-Applikationen berichten, dass Objekte nicht in StorageGRID aufgenommen werden können.
+
+
+
+ a| 
+Wann hat das Problem begonnen?
+ a| 
+Die Objektaufnahme wurde am 8. Januar 2020 um 14:50 Uhr verweigert.
+
+
+
+ a| 
+Wie haben Sie das Problem zum ersten Mal bemerkt?
+ a| 
+Durch Client-Anwendung benachrichtigt. Auch Benachrichtigung per E-Mail erhalten.
+
+
+
+ a| 
+Tritt das Problem konsequent oder nur in manchen Fällen auf?
+ a| 
+Das Problem ist noch nicht behoben.
+
+
+
+ a| 
+Wenn das Problem regelmäßig auftritt, welche Schritte dazu führen, dass es auftritt
+ a| 
+Das Problem tritt jedes Mal auf, wenn ein Client versucht, ein Objekt aufzunehmen.
+
+
+
+ a| 
+Wenn das Problem zeitweise auftritt, wann tritt es auf? Notieren Sie die Zeiten der einzelnen Vorfälle, die Sie kennen.
+ a| 
+Das Problem ist nicht intermittierend.
+
+
+
+ a| 
+Haben Sie dieses Problem schon einmal gesehen? Wie oft hatten Sie dieses Problem in der Vergangenheit?
+ a| 
+Dies ist das erste Mal, dass ich dieses Thema gesehen habe.
+
+|===
+
+
+== Bewerten Sie das Risiko und die Auswirkungen auf das System
+
+Bewerten Sie nach Definition des Problems sein Risiko und die Auswirkungen auf das StorageGRID System. Beispielsweise bedeutet das Vorhandensein kritischer Warnmeldungen nicht zwangsläufig, dass das System keine Kernservices liefert.
+
+In dieser Tabelle sind die Auswirkungen eines Beispielproblems auf Systemvorgänge zusammengefasst:
+
+[cols="1a,1a"]
+|===
+| Frage | Beispielantwort 
+
+
+ a| 
+Kann das StorageGRID System Inhalte aufnehmen?
+ a| 
+Nein
+
+
+
+ a| 
+Können Client-Anwendungen Inhalte abrufen?
+ a| 
+Einige Objekte können abgerufen werden, andere nicht.
+
+
+
+ a| 
+Sind Daten gefährdet?
+ a| 
+Nein
+
+
+
+ a| 
+Ist die Fähigkeit, Geschäfte zu führen, stark beeinträchtigt?
+ a| 
+Ja, da Client-Applikationen keine Objekte im StorageGRID System speichern können und Daten nicht konsistent abgerufen werden können.
+
+|===
+
+
+== Datenerfassung
+
+Nach dem Definition des Problems und der Bewertung der Risiken und Auswirkungen können Sie Daten zur Analyse sammeln. Die Art der Daten, die am nützlichsten zu erfassen sind, hängt von der Art des Problems ab.
+
+[cols="1a,2a,1a"]
+|===
+| Art der zu erfassenden Daten | Warum diese Daten sammeln | Anweisungen 
+
+
+ a| 
+Zeitplan der neuesten Änderungen erstellen
+ a| 
+Änderungen an Ihrem StorageGRID System, seiner Konfiguration oder seiner Umgebung können zu neuem Verhalten führen.
+ a| 
+* <<create_timeline,Erstellen Sie eine Zeitleiste der neuesten Änderungen>>
+
+
+
+
+ a| 
+Prüfen von Warnmeldungen
+ a| 
+Mithilfe von Warnmeldungen können Sie die Ursache eines Problems schnell ermitteln, indem Sie wichtige Hinweise zu den zugrunde liegenden Problemen geben, die das Problem verursachen könnten.
+
+Prüfen Sie die Liste der aktuellen Meldungen, um festzustellen, ob StorageGRID die Ursache eines Problems für Sie ermittelt hat.
+
+Prüfen Sie in der Vergangenheit ausgelöste Warnmeldungen, um zusätzliche Informationen zu erhalten.
+ a| 
+* link:../monitor/monitoring-system-health.html#view-current-and-resolved-alerts["Anzeige aktueller und aufgelöster Warnmeldungen"]
+
+
+
+
+ a| 
+Monitoring von Ereignissen
+ a| 
+Ereignisse umfassen Systemfehler oder Fehlerereignisse für einen Node, einschließlich Fehler wie Netzwerkfehler. Überwachen Sie Ereignisse, um weitere Informationen zu Problemen zu erhalten oder um Hilfe bei der Fehlerbehebung zu erhalten.
+ a| 
+* link:../monitor/monitoring-events.html["Monitoring von Ereignissen"]
+
+
+
+
+ a| 
+Identifizieren von Trends mithilfe von Diagrammen und Textberichten
+ a| 
+Trends liefern wertvolle Hinweise darauf, wann Probleme zuerst auftraten, und können Ihnen helfen zu verstehen, wie schnell sich die Dinge ändern.
+ a| 
+* link:../monitor/using-charts-and-reports.html["Verwenden Sie Diagramme und Diagramme"]
+* link:../monitor/types-of-text-reports.html["Verwenden Sie Textberichte"]
+
+
+
+
+ a| 
+Basispläne erstellen
+ a| 
+Sammeln von Informationen über die normalen Stufen verschiedener Betriebswerte. Diese Basiswerte und Abweichungen von diesen Grundlinien können wertvolle Hinweise liefern.
+ a| 
+* <<establish-baselines,Basispläne erstellen>>
+
+
+
+
+ a| 
+Durchführen von Einspeisung und Abruf von Tests
+ a| 
+Zur Fehlerbehebung von Performance-Problemen bei Aufnahme und Abruf können Objekte auf einer Workstation gespeichert und abgerufen werden. Vergleichen Sie die Ergebnisse mit denen, die bei der Verwendung der Client-Anwendung angezeigt werden.
+ a| 
+* link:../monitor/monitoring-put-and-get-performance.html["PUT- und GET-Performance werden überwacht"]
+
+
+
+
+ a| 
+Audit-Meldungen prüfen
+ a| 
+Überprüfen Sie Audit-Meldungen, um StorageGRID Vorgänge im Detail zu befolgen. Die Details in Audit-Meldungen können bei der Behebung vieler Arten von Problemen, einschließlich von Performance-Problemen, nützlich sein.
+ a| 
+* link:../monitor/reviewing-audit-messages.html["Audit-Meldungen prüfen"]
+
+
+
+
+ a| 
+Überprüfen Sie Objektstandorte und Storage-Integrität
+ a| 
+Wenn Sie Speicherprobleme haben, stellen Sie sicher, dass Objekte an der gewünschten Stelle platziert werden. Überprüfen Sie die Integrität von Objektdaten auf einem Storage-Node.
+ a| 
+* link:../monitor/monitoring-object-verification-operations.html["Überwachen von Objektverifizierungsvorgängen"]
+* link:../troubleshoot/confirming-object-data-locations.html["Bestätigen Sie den Speicherort der Objektdaten"]
+* link:../troubleshoot/verifying-object-integrity.html["Überprüfen Sie die Objektintegrität"]
+
+
+
+
+ a| 
+Datenerfassung für technischen Support
+ a| 
+Vom technischen Support werden Sie möglicherweise aufgefordert, Daten zu sammeln oder bestimmte Informationen zu überprüfen, um Probleme zu beheben.
+ a| 
+* link:../monitor/collecting-log-files-and-system-data.html["Erfassen von Protokolldateien und Systemdaten"]
+* link:../monitor/manually-triggering-autosupport-message.html["Starten Sie manuell ein AutoSupport-Paket"]
+* link:../monitor/reviewing-support-metrics.html["Prüfen von Support-Kennzahlen"]
+
+
+|===
+
+
+=== [[create_Timeline]]Erstellen Sie eine Zeitleiste der neuesten Änderungen
+
+Wenn ein Problem auftritt, sollten Sie berücksichtigen, was sich kürzlich geändert hat und wann diese Änderungen aufgetreten sind.
+
+* Änderungen an Ihrem StorageGRID System, seiner Konfiguration oder seiner Umgebung können zu neuem Verhalten führen.
+* Durch eine Zeitleiste von Änderungen können Sie feststellen, welche Änderungen für ein Problem verantwortlich sein könnten und wie jede Änderung ihre Entwicklung beeinflusst haben könnte.
+
+
+Erstellen Sie eine Tabelle mit den letzten Änderungen an Ihrem System, die Informationen darüber enthält, wann jede Änderung stattgefunden hat und welche relevanten Details über die Änderung angezeigt werden, und Informationen darüber, was während der Änderung noch passiert ist:
+
+[cols="1a,1a,2a"]
+|===
+| Zeit der Änderung | Art der Änderung | Details 
+
+
+ a| 
+Beispiel:
+
+* Wann haben Sie die Node-Wiederherstellung gestartet?
+* Wann wurde das Software-Upgrade abgeschlossen?
+* Haben Sie den Prozess unterbrochen?
+
+ a| 
+Was ist los? Was haben Sie gemacht?
+ a| 
+Dokumentieren Sie alle relevanten Details zu der Änderung. Beispiel:
+
+* Details zu den Netzwerkänderungen.
+* Welcher Hotfix wurde installiert.
+* Änderungen bei Client-Workloads
+
+
+Achten Sie darauf, zu beachten, ob mehrere Änderungen gleichzeitig durchgeführt wurden. Wurde diese Änderung beispielsweise vorgenommen, während ein Upgrade durchgeführt wurde?
+
+|===
+
+
+==== Beispiele für signifikante aktuelle Änderungen
+
+Hier einige Beispiele für potenziell signifikante Änderungen:
+
+* Wurde das StorageGRID System kürzlich installiert, erweitert oder wiederhergestellt?
+* Wurde kürzlich ein Upgrade des Systems durchgeführt? Wurde ein Hotfix angewendet?
+* Wurde irgendeine Hardware in letzter Zeit repariert oder geändert?
+* Wurde die ILM-Richtlinie aktualisiert?
+* Hat sich der Client-Workload geändert?
+* Hat sich die Client-Applikation oder deren Verhalten geändert?
+* Haben Sie den Lastausgleich geändert oder eine Hochverfügbarkeitsgruppe aus Admin-Nodes oder Gateway-Nodes hinzugefügt oder entfernt?
+* Wurden Aufgaben gestartet, die ein sehr langer Zeitaufwand beanspruchen können? Beispiele:
++
+** Wiederherstellung eines fehlerhaften Speicherknotens
+** Ausmusterung von Storage-Nodes
+
+
+* Wurden Änderungen an der Benutzerauthentifizierung vorgenommen, beispielsweise beim Hinzufügen eines Mandanten oder bei der Änderung der LDAP-Konfiguration?
+* Findet eine Datenmigration statt?
+* Wurden Plattform-Services kürzlich aktiviert oder geändert?
+* Wurde die Compliance in letzter Zeit aktiviert?
+* Wurden Cloud-Storage-Pools hinzugefügt oder entfernt?
+* Wurden Änderungen an der Storage-Komprimierung oder -Verschlüsselung vorgenommen?
+* Wurden Änderungen an der Netzwerkinfrastruktur vorgenommen? Beispiel: VLANs, Router oder DNS.
+* Wurden Änderungen an NTP-Quellen vorgenommen?
+* Wurden Änderungen an den Grid-, Admin- oder Client-Netzwerkschnittstellen vorgenommen?
+* Wurden weitere Änderungen am StorageGRID System bzw. an der zugehörigen Umgebung vorgenommen?
+
+
+
+
+=== Basispläne erstellen
+
+Sie können Basislinien für Ihr System einrichten, indem Sie die normalen Ebenen verschiedener Betriebswerte erfassen. In Zukunft können Sie aktuelle Werte mit diesen Basiswerten vergleichen, um ungewöhnliche Werte zu erkennen und zu beheben.
+
+[cols="1a,1a,2a"]
+|===
+| Eigenschaft | Wert | Wie zu erhalten 
+
+
+ a| 
+Durchschnittlicher Storage-Verbrauch
+ a| 
+GB verbrauchen/Tag
+
+Prozent verbraucht/Tag
+ a| 
+Wechseln Sie zum Grid Manager. Wählen Sie auf der Seite Knoten das gesamte Raster oder eine Site aus, und wechseln Sie zur Registerkarte Speicher.
+
+Suchen Sie im Diagramm Speicher verwendet - Objektdaten einen Zeitraum, in dem die Linie ziemlich stabil ist. Bewegen Sie den Mauszeiger über das Diagramm, um zu schätzen, wie viel Speicherplatz jeden Tag verbraucht wird
+
+Sie können diese Informationen für das gesamte System oder für ein bestimmtes Rechenzentrum erfassen.
+
+
+
+ a| 
+Durchschnittlicher Metadatenkverbrauch
+ a| 
+GB verbrauchen/Tag
+
+Prozent verbraucht/Tag
+ a| 
+Wechseln Sie zum Grid Manager. Wählen Sie auf der Seite Knoten das gesamte Raster oder eine Site aus, und wechseln Sie zur Registerkarte Speicher.
+
+Suchen Sie im Diagramm „verwendete Speicher - Objektmetadaten“ einen Zeitraum, in dem die Zeile ziemlich stabil ist. Bewegen Sie den Mauszeiger über das Diagramm, um zu schätzen, wie viel Metadaten-Storage täglich belegt wird
+
+Sie können diese Informationen für das gesamte System oder für ein bestimmtes Rechenzentrum erfassen.
+
+
+
+ a| 
+Geschwindigkeit von S3/Swift Operationen
+ a| 
+Vorgänge/Sekunde
+ a| 
+Wählen Sie im Dashboard von Grid Manager *Performance* > *S3 Operations* oder *Performance* > *Swift Operations* aus.
+
+Um die Aufnahme- und Abrufraten für einen bestimmten Standort oder Knoten anzuzeigen, wählen Sie *NODES* > *_Site oder Storage Node_* > *Objects* aus. Positionieren Sie den Cursor auf dem Diagramm „Aufnahme und Abruf“ für S3.
+
+
+
+ a| 
+S3/Swift-Vorgänge sind fehlgeschlagen
+ a| 
+Betrieb
+ a| 
+Wählen Sie *SUPPORT* > *Tools* > *Grid-Topologie* aus. Zeigen Sie auf der Registerkarte Übersicht im Abschnitt API-Vorgänge den Wert für S3-Operationen an – Fehlgeschlagen oder Swift-Vorgänge – Fehlgeschlagen.
+
+
+
+ a| 
+ILM-Auswertungsrate
+ a| 
+Objekte/Sekunde
+ a| 
+Wählen Sie auf der Seite Knoten *_GRID_* > *ILM* aus.
+
+Suchen Sie im ILM-Queue-Diagramm einen Zeitraum, in dem die Zeile ziemlich stabil ist. Bewegen Sie den Cursor über das Diagramm, um einen Basislinienwert für *Bewertungsrate* für Ihr System zu schätzen.
+
+
+
+ a| 
+ILM-Scan-Rate
+ a| 
+Objekte/Sekunde
+ a| 
+Wählen Sie *NODES* > *_Grid_* > *ILM* aus.
+
+Suchen Sie im ILM-Queue-Diagramm einen Zeitraum, in dem die Zeile ziemlich stabil ist. Bewegen Sie den Cursor über das Diagramm, um einen Basislinienwert für *Scan-Rate* für Ihr System abzuschätzen.
+
+
+
+ a| 
+Objekte, die sich aus Client-Vorgängen in Warteschlange befinden
+ a| 
+Objekte/Sekunde
+ a| 
+Wählen Sie *NODES* > *_Grid_* > *ILM* aus.
+
+Suchen Sie im ILM-Queue-Diagramm einen Zeitraum, in dem die Zeile ziemlich stabil ist. Bewegen Sie den Cursor über das Diagramm, um einen Basislinienwert für *Objekte in der Warteschlange (von Client-Operationen)* für Ihr System abzuschätzen.
+
+
+
+ a| 
+Durchschnittliche Abfragelatenz
+ a| 
+Millisekunden
+ a| 
+Wählen Sie *NODES* > *_Storage Node_* > *Objekte* aus. Zeigen Sie in der Tabelle Abfragen den Wert für durchschnittliche Latenz an.
+
+|===
+
+
+== Analysieren von Daten
+
+Verwenden Sie die gesammelten Informationen, um die Ursache des Problems und der potenziellen Lösungen zu ermitteln.
+
+Die Analyse ist Problem‐abhängig, aber im Allgemeinen:
+
+* Ermitteln Sie mithilfe der Warnmeldungen Points of Failure und Engpässe.
+* Rekonstruieren Sie den Problemverlauf mithilfe des Alarmverlaufs und der Diagramme.
+* Verwenden Sie Diagramme, um Anomalien zu finden und die Problemsituation mit dem normalen Betrieb zu vergleichen.
+
+
+
+
+== Checkliste für Eskalationsinformationen
+
+Wenn Sie das Problem nicht alleine lösen können, wenden Sie sich an den technischen Support. Bevor Sie sich an den technischen Support wenden, müssen Sie die in der folgenden Tabelle aufgeführten Informationen zur Erleichterung der Problembehebung nutzen.
+
+[cols="1a,2a,4a"]
+|===
+| image:../media/feature_checkmark.gif["Häkchen"] | Element | Hinweise 
+
+
+ a| 
+ a| 
+Problemstellung
+ a| 
+Was sind die Problemsymptome? Wann hat das Problem begonnen? Passiert es konsequent oder intermittierend? Welche Zeiten hat es gelegentlich gegeben?
+
+<<define_problem,Definieren Sie das Problem>>
+
+
+
+ a| 
+ a| 
+Folgenabschätzung
+ a| 
+Wo liegt der Schweregrad des Problems? Welche Auswirkungen hat dies auf die Client-Applikation?
+
+* Ist der Client bereits erfolgreich verbunden?
+* Kann der Client Daten aufnehmen, abrufen und löschen?
+
+
+
+
+ a| 
+ a| 
+StorageGRID System-ID
+ a| 
+Wählen Sie *WARTUNG* > *System* > *Lizenz*. Die StorageGRID System-ID wird im Rahmen der aktuellen Lizenz angezeigt.
+
+
+
+ a| 
+ a| 
+Softwareversion
+ a| 
+Wählen Sie oben im Grid Manager das Hilfesymbol aus, und wählen Sie *über*, um die StorageGRID-Version anzuzeigen.
+
+
+
+ a| 
+ a| 
+Anpassbarkeit
+ a| 
+Fassen Sie zusammen, wie Ihr StorageGRID System konfiguriert ist. Nehmen Sie z. B. Folgendes auf:
+
+* Verwendet das Grid Storage-Komprimierung, Storage-Verschlüsselung oder Compliance?
+* Werden replizierte oder Erasure-Coded-Objekte von ILM erstellt? Stellt ILM Standortredundanz sicher? Nutzen ILM-Regeln das ausgewogene, strikte oder duale Commit-Aufnahmverhalten?
+
+
+
+
+ a| 
+ a| 
+Log-Dateien und Systemdaten
+ a| 
+Erfassen von Protokolldateien und Systemdaten für Ihr System Wählen Sie *SUPPORT* > *Extras* > *Protokolle*.
+
+Sie können Protokolle für das gesamte Grid oder für ausgewählte Nodes sammeln.
+
+Wenn Sie Protokolle nur für ausgewählte Knoten erfassen, müssen Sie mindestens einen Speicherknoten mit dem ADC-Service einschließen. (Die ersten drei Storage-Nodes an einem Standort enthalten den ADC-Service.)
+
+link:../monitor/collecting-log-files-and-system-data.html["Erfassen von Protokolldateien und Systemdaten"]
+
+
+
+ a| 
+ a| 
+Basisinformationen
+ a| 
+Sammeln von Basisinformationen über Erfassungs-, Abrufvorgänge und Storage-Verbrauch
+
+<<establish-baselines,Basispläne erstellen>>
+
+
+
+ a| 
+ a| 
+Zeitachse der letzten Änderungen
+ a| 
+Erstellen Sie eine Zeitleiste, in der alle letzten Änderungen am System oder seiner Umgebung zusammengefasst sind.
+
+<<create_timeline,Erstellen Sie eine Zeitleiste der neuesten Änderungen>>
+
+
+
+ a| 
+ a| 
+Verlauf der Bemühungen zur Diagnose des Problems
+ a| 
+Wenn Sie Schritte zur Diagnose oder Behebung des Problems selbst ergriffen haben, achten Sie darauf, die Schritte und das Ergebnis zu notieren.
+
+|===

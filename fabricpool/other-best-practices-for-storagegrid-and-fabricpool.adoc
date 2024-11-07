@@ -1,0 +1,51 @@
+---
+permalink: fabricpool/other-best-practices-for-storagegrid-and-fabricpool.html 
+sidebar: sidebar 
+keywords: fabricPool, best practices, audit log, encryption, compressions, tiering, ontap, consistency 
+summary: Wenn Sie ein StorageGRID-System für die Verwendung mit FabricPool konfigurieren, müssen Sie möglicherweise andere StorageGRID-Optionen ändern. Bevor Sie eine globale Einstellung ändern, überlegen Sie, wie sich die Änderung auf andere S3-Anwendungen auswirkt. 
+---
+= Weitere Best Practices für StorageGRID und FabricPool
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie ein StorageGRID-System für die Verwendung mit FabricPool konfigurieren, müssen Sie möglicherweise andere StorageGRID-Optionen ändern. Bevor Sie eine globale Einstellung ändern, überlegen Sie, wie sich die Änderung auf andere S3-Anwendungen auswirkt.
+
+
+
+== Überwachungsmeldung und Protokollziele
+
+FabricPool-Workloads verfügen oft über eine hohe Rate an Lesevorgängen, die ein hohes Volumen an Audit-Nachrichten erzeugen können.
+
+* Wenn Sie keine Aufzeichnung von Client-Leseoperationen für FabricPool oder eine andere S3-Anwendung benötigen, gehen Sie optional zu *CONFIGURATION* > *Monitoring* > *Audit und Syslog-Server*. Ändern Sie die Einstellung *Client reads* auf *Error*, um die Anzahl der im Auditprotokoll aufgezeichneten Überwachungsmeldungen zu verringern. Weitere Informationen finden Sie unter link:../monitor/configure-audit-messages.html["Konfigurieren von Überwachungsmeldungen und Protokollzielen"] .
+* Wenn Sie über ein großes Grid verfügen, mehrere Arten von S3-Applikationen verwenden oder alle Audit-Daten behalten möchten, konfigurieren Sie einen externen Syslog-Server und speichern Sie Audit-Informationen Remote. Durch die Verwendung eines externen Servers werden die Auswirkungen der Protokollierung von Audit-Nachrichten auf die Performance minimiert, ohne dass die Vollständigkeit der Audit-Daten reduziert wird. Weitere Informationen finden Sie unter link:../monitor/considerations-for-external-syslog-server.html["Überlegungen für externen Syslog-Server"] .
+
+
+
+
+== Objektverschlüsselung
+
+Bei der Konfiguration von StorageGRID können Sie optional den aktivierenlink:../admin/changing-network-options-object-encryption.html["Globale Option für Verschlüsselung gespeicherter Objekte"], wenn eine Datenverschlüsselung für andere StorageGRID-Clients erforderlich ist. Die Daten, die von FabricPool zu StorageGRID verschoben werden, sind bereits verschlüsselt, d. h. die Aktivierung der StorageGRID-Einstellung ist nicht erforderlich. Die Client-seitige Verschlüsselung ist Eigentum von ONTAP.
+
+
+
+== Objektkomprimierung
+
+Aktivieren Sie beim Konfigurieren von StorageGRID nicht link:../admin/configuring-stored-object-compression.html["Globale Option zum Komprimieren gespeicherter Objekte"]. Die Daten, die von FabricPool zu StorageGRID verschoben werden, werden bereits komprimiert. Durch Verwendung der Option StorageGRID wird die Größe eines Objekts nicht weiter reduziert.
+
+
+
+== Bucket-Konsistenz
+
+Für FabricPool-Buckets lautet die empfohlene Bucket-Konsistenz *Read-after-New-write*, was die Standardkonsistenz für einen neuen Bucket ist. Bearbeiten Sie FabricPool Buckets nicht, um *available* oder *strong-site* zu verwenden.
+
+
+
+== FabricPool Tiering
+
+Wenn ein StorageGRID Node Storage verwendet, der von einem NetApp ONTAP System zugewiesen wurde, vergewissern Sie sich, dass auf dem Volume keine FabricPool-Tiering-Richtlinie aktiviert ist. Wenn beispielsweise ein StorageGRID Node auf einem VMware Host ausgeführt wird, stellen Sie sicher, dass für das Volume, das den Datastore für den StorageGRID Node unterstützt, keine FabricPool-Tiering-Richtlinie aktiviert ist. Das Deaktivieren von FabricPool Tiering für Volumes, die in Verbindung mit StorageGRID Nodes verwendet werden, vereinfacht die Fehlerbehebung und Storage-Vorgänge.
+
+
+CAUTION: Verwenden Sie FabricPool niemals, um StorageGRID-bezogene Daten in das Tiering zurück zu StorageGRID selbst zu verschieben. Das Tiering von StorageGRID-Daten zurück in die StorageGRID verbessert die Fehlerbehebung und reduziert die Komplexität von betrieblichen Abläufen.

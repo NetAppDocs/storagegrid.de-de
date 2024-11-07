@@ -1,0 +1,52 @@
+---
+indexpage:
+  title: Erweitern Sie ein Raster
+  summary: Sie können die Kapazität oder Funktionen Ihres StorageGRID Systems ohne
+    Unterbrechung des Systembetriebs erweitern.
+  keywords: expand grid, add volume, add node, add site
+  lead: Sie können die Kapazität oder Funktionen Ihres StorageGRID Systems ohne Unterbrechung
+    des Systembetriebs erweitern.
+  tiles:
+  - title: Los geht's
+    links:
+    - title: Erweiterungsarten
+      url: "../expand/index.html"
+    - title: 'Richtlinien: Hinzufügen von Objektkapazität'
+      url: "../expand/guidelines-for-adding-object-capacity.html"
+    - title: 'Richtlinien: Hinzufügen von Metadaten-Kapazität'
+      url: "../expand/adding-metadata-capacity.html"
+    - title: 'Richtlinien: Hinzufügen von Redundanz oder neuen Funktionen'
+      url: "../expand/adding-grid-nodes-to-add-capabilities.html"
+    - title: 'Richtlinien: Fügen Sie eine Website hinzu'
+      url: "../expand/adding-new-site.html"
+    - title: Sammeln Sie die erforderlichen Materialien
+      url: "../expand/gather-required-materials.html"
+  - title: Hinzufügen von Storage-Volumes
+    links:
+    - title: Fügen Sie Storage-Volumes zu Storage-Nodes hinzu
+      url: "../expand/adding-storage-volumes-to-storage-nodes.html"
+    - title: 'VMware: Hinzufügen von Storage Volumes zum Storage-Node'
+      url: "../expand/vmware-adding-storage-volumes-to-storage-node.html"
+    - title: 'Linux: Hinzufügen von Direct-Attached oder SAN-Volumes zu Storage Node'
+      url: "../expand/linux-adding-direct-attached-or-san-volumes-to-storage-node.html"
+  - title: Grid-Nodes oder Standort hinzufügen
+    links:
+    - title: Grid-Nodes zu vorhandenem Standort hinzufügen
+      url: "../expand/adding-grid-nodes-to-existing-site-or-adding-new-site.html"
+    - title: Neuen Standort hinzufügen
+      url: "../expand/adding-grid-nodes-to-existing-site-or-adding-new-site.html"
+    - title: Subnetze für Grid Network aktualisieren
+      url: "../expand/updating-subnets-for-grid-network.html"
+    - title: Neue Grid-Nodes implementieren
+      url: "../expand/deploying-new-grid-nodes.html"
+    - title: Erweiterung durchführen
+      url: "../expand/performing-expansion.html"
+  - title: Konfiguration und Fehlerbehebung
+    links:
+    - title: Konfigurationsschritte
+      url: "../expand/configuring-expanded-storagegrid-system.html"
+    - title: Ausgleich von Daten, die im Erasure Coding ausgeführt werden, nach dem
+        Hinzufügen von Storage-Nodes
+      url: "../expand/rebalancing-erasure-coded-data-after-adding-storage-nodes.html"
+    - title: 'Fehlerbehebung: Sammeln Sie Protokolldateien'
+      url: "../expand/contacting-technical-support.html"

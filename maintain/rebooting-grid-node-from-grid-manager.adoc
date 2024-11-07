@@ -1,0 +1,56 @@
+---
+permalink: maintain/rebooting-grid-node-from-grid-manager.html 
+sidebar: sidebar 
+keywords: reboot grid node, tasks tab 
+summary: Sie können einen einzelnen Grid-Node über die Registerkarte Aufgaben auf der Seite Nodes neu booten. 
+---
+= Starten Sie den Grid-Node über die Registerkarte Aufgaben neu
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können einen einzelnen Grid-Node über die Registerkarte Aufgaben auf der Seite Nodes neu booten.
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben die link:../admin/admin-group-permissions.html["Berechtigung für Wartung oder Root-Zugriff"].
+* Sie haben die Provisionierungs-Passphrase.
+* Wenn Sie den primären Admin-Node oder einen beliebigen Storage-Node neu starten, haben Sie die folgenden Überlegungen überprüft:
++
+** Wenn Sie den primären Admin-Node neu starten, verliert Ihr Browser vorübergehend den Zugriff auf den Grid-Manager.
+** Wenn Sie zwei oder mehr Storage-Nodes an einem bestimmten Standort neu starten, können Sie möglicherweise während des Neustarts nicht auf bestimmte Objekte zugreifen. Dieses Problem kann auftreten, wenn eine ILM-Regel die Option *Dual Commit* Ingest verwendet (oder eine Regel *Balanced* angibt und es nicht möglich ist, sofort alle erforderlichen Kopien zu erstellen). In diesem Fall legt StorageGRID neu aufgenommene Objekte auf zwei Storage-Nodes am selben Standort fest und evaluiert später ILM.
+** Um sicherzustellen, dass Sie während des Neubootens eines Storage-Node auf alle Objekte zugreifen können, beenden Sie die Verarbeitung von Objekten an einem Standort etwa eine Stunde lang, bevor Sie den Node neu booten.
+
+
+
+
+.Über diese Aufgabe
+Wenn StorageGRID einen Grid-Node neu gebootet, führt dies den `reboot` Befehl auf dem Node aus, wodurch der Node heruntergefahren und neu gestartet wird. Alle Dienste werden automatisch neu gestartet.
+
+* Durch Neubooten eines VMware-Node wird die virtuelle Maschine neu gebootet.
+* Durch Neubooten eines Linux Node wird der Container neu gebootet.
+* Durch Neubooten eines Node der StorageGRID-Appliance wird der Computing-Controller neu gebootet.
+
+
+
+TIP: Wenn Sie mehr als einen Node neu booten müssen, können Sie den verwendenlink:../maintain/rolling-reboot-procedure.html["Ein Neustart wird durchgeführt"].
+
+.Schritte
+. Wählen Sie *KNOTEN*.
+. Wählen Sie den Grid-Node aus, den Sie neu booten möchten.
+. Wählen Sie die Registerkarte *Aufgaben* aus.
+. Wählen Sie *Neustart*.
++
+Ein Bestätigungsdialogfeld wird angezeigt. Wenn Sie den primären Admin-Knoten neu starten, wird im Bestätigungsdialogfeld darauf hingewiesen, dass die Verbindung Ihres Browsers zum Grid Manager vorübergehend verloren geht, wenn Dienste beendet werden.
+
+. Geben Sie die Provisionierungs-Passphrase ein, und wählen Sie *OK*.
+. Warten Sie, bis der Node neu gebootet wird.
++
+Es kann einige Zeit dauern, bis Dienste heruntergefahren werden.
+
++
+Wenn der Node neu gestartet wird, wird auf der Seite Nodes das graue Symbol (Administratorabwärts) für den Node angezeigt. Wenn alle Dienste neu gestartet wurden und der Knoten erfolgreich mit dem Raster verbunden wurde, sollte auf der Seite Knoten der normale Status angezeigt werden (keine Symbole links neben dem Knotennamen), was darauf hinweist, dass keine Warnungen aktiv sind und der Knoten mit dem Raster verbunden ist.
+
+

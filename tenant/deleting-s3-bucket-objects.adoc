@@ -1,0 +1,109 @@
+---
+permalink: tenant/deleting-s3-bucket-objects.html 
+sidebar: sidebar 
+keywords: how to delete bucket objects, empty bucket 
+summary: Sie können den Tenant Manager verwenden, um die Objekte in einem oder mehreren Buckets zu löschen. 
+---
+= Löschen von Objekten in Bucket
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können den Tenant Manager verwenden, um die Objekte in einem oder mehreren Buckets zu löschen.
+
+.Überlegungen und Anforderungen
+Bevor Sie diese Schritte durchführen, beachten Sie Folgendes:
+
+* Wenn Sie die Objekte in einem Bucket löschen, entfernt StorageGRID endgültig alle Objekte und alle Objektversionen in jedem ausgewählten Bucket von allen Nodes und Standorten im StorageGRID System. StorageGRID entfernt auch alle zugehörigen Objekt-Metadaten. Sie können diese Informationen nicht wiederherstellen.
+* Das Löschen aller Objekte in einem Bucket kann je nach Anzahl der Objekte, Objektkopien und gleichzeitigen Vorgängen Minuten, Tage oder sogar Wochen dauern.
+* Wenn ein Bucket hatlink:using-s3-object-lock.html["S3-Objektsperre aktiviert"], könnte er für _Jahre_ im Status *delete objects: Read-only* verbleiben.
++
+
+TIP: Ein Bucket, der S3 Object Lock verwendet, bleibt im Zustand *delete Objects: Read-only*, bis das Aufbewahrungsdatum für alle Objekte erreicht ist und alle Legal Holds entfernt werden.
+
+* Während Objekte gelöscht werden, ist der Zustand des Buckets *delete objects: Read-only*. In diesem Status können Sie dem Bucket keine neuen Objekte hinzufügen.
+* Nachdem alle Objekte gelöscht wurden, verbleibt der Bucket im schreibgeschützten Status. Sie haben folgende Möglichkeiten:
++
+** Versetzen Sie den Bucket in den Schreibmodus und verwenden Sie ihn für neue Objekte wieder
+** Löschen Sie den Bucket
+** Belassen Sie den Bucket im schreibgeschützten Modus, um seinen Namen für eine zukünftige Verwendung zu reservieren
+
+
+* Wenn für einen Bucket die Objektversionierung aktiviert ist, können Löschmarkierungen, die in StorageGRID 11.8 oder höher erstellt wurden, mithilfe der Option Objekte löschen in Bucket-Operationen entfernt werden.
+* Wenn für einen Bucket die Objektversionierung aktiviert ist, entfernt der Vorgang „Objekte löschen“ keine Löschmarkierungen, die in StorageGRID 11.7 oder früher erstellt wurden. Siehe Informationen zum Löschen von Objekten in einem Bucket in link:../ilm/how-objects-are-deleted.html#delete-s3-versioned-objects["Löschen von S3-versionierten Objekten"].
+* Wenn Sie verwendenlink:grid-federation-manage-cross-grid-replication.html["Grid-übergreifende Replizierung"], beachten Sie Folgendes:
++
+** Mit dieser Option werden keine Objekte aus dem Bucket auf dem anderen Raster gelöscht.
+** Wenn Sie diese Option für den Quell-Bucket auswählen, wird die Warnung *gitterübergreifender Replikationsfehler* ausgelöst, wenn Sie dem Ziel-Bucket auf dem anderen Grid Objekte hinzufügen. Wenn Sie nicht garantieren können, dass niemand dem Bucket auf dem anderen Raster Objekte für diesen Bucket hinzufügt, link:../tenant/grid-federation-manage-cross-grid-replication.html["Deaktivieren Sie die Grid-übergreifende Replizierung"]bevor alle Bucket-Objekte gelöscht werden.
+
+
+
+
+.Bevor Sie beginnen
+* Sie sind beim Tenant Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie gehören zu einer Benutzergruppe mit dem link:tenant-management-permissions.html["Root-Zugriffsberechtigung"]. Diese Berechtigung überschreibt die Berechtigungseinstellungen in Gruppen- oder Bucket-Richtlinien.
+
+
+.Schritte
+. Wählen Sie *View Buckets* aus dem Dashboard, oder wählen Sie *STORAGE (S3)* > *Buckets*.
++
+Die Seite Buckets wird angezeigt und zeigt alle vorhandenen S3-Buckets an.
+
+. Verwenden Sie das Menü *Aktionen* oder die Detailseite für einen bestimmten Bucket.
++
+[role="tabbed-block"]
+====
+.Menü „Aktionen“
+--
+.. Aktivieren Sie das Kontrollkästchen für jeden Bucket, aus dem Sie Objekte löschen möchten.
+.. Wählen Sie *actions* > *Delete objects in bucket*.
+
+
+--
+.Detailseite
+--
+.. Wählen Sie einen Bucket-Namen aus, um die Details anzuzeigen.
+.. Wählen Sie *Objekte im Bucket löschen*.
+
+
+--
+====
+. Wenn das Bestätigungsdialogfeld angezeigt wird, überprüfen Sie die Details, geben Sie *Ja* ein und wählen Sie *OK*.
+. Warten Sie, bis der Löschvorgang beginnt.
++
+Nach ein paar Minuten:
+
++
+** Auf der Seite mit den Bucket-Details wird ein gelbes Statusbanner angezeigt. Der Fortschrittsbalken gibt an, wie viel Prozent der Objekte gelöscht wurden.
+** *(read-only)* erscheint nach dem Namen des Buckets auf der Seite mit den Bucket-Details.
+** *(Objekte löschen: Schreibgeschützt)* erscheint neben dem Namen des Buckets auf der Buckets-Seite.
+
+
++
+image::../media/delete-bucket-objects-in-progress.png[Screenshot mit den zu löschenden Bucket-Objekten]
+
+. Wählen Sie, wie erforderlich, während der Vorgang ausgeführt wird, *Löschen von Objekten stoppen*, um den Prozess anzuhalten. Wählen Sie dann optional *Objekte im Bucket löschen* aus, um den Prozess fortzusetzen.
++
+Wenn Sie *Löschen von Objekten stoppen* auswählen, wird der Bucket in den Schreibmodus zurückversetzt. Sie können jedoch nicht auf Objekte zugreifen oder diese wiederherstellen.
+
+. Warten Sie, bis der Vorgang abgeschlossen ist.
++
+Wenn der Bucket leer ist, wird das Statusbanner aktualisiert, der Bucket bleibt jedoch weiterhin schreibgeschützt.
+
++
+image::../media/delete-bucket-objects-complete.png[Screenshot mit allen gelöschten Bucket-Objekten]
+
+. Führen Sie einen der folgenden Schritte aus:
++
+** Schließen Sie die Seite, um den Bucket im schreibgeschützten Modus zu belassen. Beispielsweise können Sie einen leeren Bucket im schreibgeschützten Modus belassen, um den Bucket-Namen für die zukünftige Verwendung zu reservieren.
+** Löschen Sie den Bucket. Sie können *Eimer löschen* auswählen, um einen einzelnen Eimer zu löschen, oder die Buckets-Seite zurücksenden und *Aktionen* > *Eimer löschen auswählen, um mehr als einen Eimer zu entfernen.
++
+
+NOTE: Wenn Sie einen versionierten Bucket nicht löschen können, nachdem alle Objekte gelöscht wurden, bleiben möglicherweise Löschmarkierungen erhalten. Um den Bucket zu löschen, müssen Sie alle verbleibenden Löschmarkierungen entfernen.
+
+** Versetzen Sie den Bucket in den Schreibmodus und verwenden Sie ihn optional für neue Objekte wieder. Sie können für einen einzelnen Bucket *Stop delete objects* auswählen oder zur Buckets-Seite zurückkehren und für mehr als einen Bucket *Action* > *Stop delete objects* auswählen.
+
+
+

@@ -1,0 +1,282 @@
+---
+permalink: ilm/creating-ilm-policy.html 
+sidebar: sidebar 
+keywords: how to create ILM policy 
+summary: Erstellen Sie eine oder mehrere ILM-Richtlinien, um Ihre Quality-of-Service-Anforderungen zu erfüllen. 
+---
+= Erstellen von ILM-Richtlinien
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Erstellen Sie eine oder mehrere ILM-Richtlinien, um Ihre Quality-of-Service-Anforderungen zu erfüllen.
+
+Dank einer aktiven ILM-Richtlinie können Sie dieselben ILM-Regeln auf alle Mandanten und Buckets anwenden.
+
+Durch mehrere aktive ILM-Richtlinien können Sie die entsprechenden ILM-Regeln auf bestimmte Mandanten und Buckets anwenden, um mehrere Quality-of-Service-Anforderungen zu erfüllen.
+
+
+
+== ILM-Richtlinie erstellen
+
+.Über diese Aufgabe
+Vergewissern Sie sich vor dem Erstellen Ihrer eigenen Richtlinie, dass der die link:ilm-policy-overview.html#default-ilm-policy["Standardmäßige ILM-Richtlinie"]Storage-Anforderungen nicht erfüllt.
+
+
+NOTE: Verwenden Sie in Testsystemen nur die vom System bereitgestellten Richtlinien, 2 Kopien Policy (für Raster mit einem Standort) oder 1 Kopie pro Standort (für Raster mit mehreren Standorten). Für StorageGRID 11.6 und früher verwendet die Standardregel in dieser Richtlinie den Speicherpool Alle Speicherknoten, der alle Standorte enthält. Wenn Ihr StorageGRID System über mehrere Standorte verfügt, können zwei Kopien eines Objekts an demselben Standort platziert werden.
+
+
+NOTE: Wenn der link:enabling-s3-object-lock-globally.html["Die Einstellung für die globale S3-Objektsperre wurde aktiviert"], müssen Sie sicherstellen, dass die ILM-Richtlinie den Anforderungen von Buckets entspricht, für die S3 Object Lock aktiviert ist. Befolgen Sie in diesem Abschnitt die Anweisungen, die erwähnen, dass S3 Object Lock aktiviert ist.
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben die link:../admin/admin-group-permissions.html["Erforderliche Zugriffsberechtigungen"].
+* Sie link:access-create-ilm-rule-wizard.html["ILM-Regeln wurden erstellt"]basieren darauf, ob S3 Object Lock aktiviert ist.
++
+[role="tabbed-block"]
+====
+.S3 Objektsperre nicht aktiviert
+--
+** Sie müssen link:what-ilm-rule-is.html["ILM-Regeln erstellt"]der Richtlinie hinzufügen. Nach Bedarf können Sie eine Richtlinie speichern, zusätzliche Regeln erstellen und die Richtlinie dann bearbeiten, um die neuen Regeln hinzuzufügen.
+** Sie habenlink:creating-default-ilm-rule.html["Eine Standard-ILM-Regel wurde erstellt"], dass keine Filter enthält.
+
+
+--
+.S3-Objektsperre aktiviert
+--
+** Der link:enabling-s3-object-lock-globally.html["Die Einstellung für die globale S3-Objektsperre ist bereits aktiviert"] für das StorageGRID-System.
+** Sie müssen link:what-ilm-rule-is.html["Erstellung der konformen und nicht konformen ILM-Regeln"]der Richtlinie hinzufügen. Nach Bedarf können Sie eine Richtlinie speichern, zusätzliche Regeln erstellen und die Richtlinie dann bearbeiten, um die neuen Regeln hinzuzufügen.
+** Sie haben link:creating-default-ilm-rule.html["Eine Standard-ILM-Regel wurde erstellt"] für die Richtlinie, die konform ist.
+
+
+--
+====
+* Optional haben Sie sich das Video angesehen: https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=e768d4da-da88-413c-bbaa-b1ff00874d10["Video: ILM-Richtlinien im Überblick"^]
++
+[link=https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=e768d4da-da88-413c-bbaa-b1ff00874d10]
+image::../media/video-screenshot-ilm-policies-118.png[Video: ILM-Richtlinien im Überblick]
+
+
+
+Siehe auch link:ilm-policy-overview.html["Verwenden Sie ILM-Richtlinien"].
+
+.Schritte
+. Wählen Sie *ILM* > *Richtlinien*.
++
+Wenn die globale S3 Object Lock-Einstellung aktiviert ist, gibt die Seite ILM-Richtlinien an, welche ILM-Regeln konform sind.
+
+. Legen Sie fest, wie die ILM-Richtlinie erstellt werden soll.
++
+[role="tabbed-block"]
+====
+.Erstellen einer neuen Richtlinie
+--
+.. Wählen Sie *Richtlinie erstellen*.
+
+
+--
+.Vorhandene Richtlinie klonen
+--
+.. Aktivieren Sie das Kontrollkästchen für die Richtlinie, mit der Sie beginnen möchten, und wählen Sie dann *Clone* aus.
+
+
+--
+.Vorhandene Richtlinie bearbeiten
+.. Wenn eine Richtlinie inaktiv ist, können Sie sie bearbeiten. Aktivieren Sie das Kontrollkästchen für die inaktive Richtlinie, mit der Sie beginnen möchten, und wählen Sie dann *Bearbeiten* aus.
+
+
+====
+
+
+. Geben Sie im Feld *Richtlinienname* einen eindeutigen Namen für die Richtlinie ein.
+. Geben Sie optional im Feld *Änderungsgrund* den Grund ein, aus dem Sie eine neue Richtlinie erstellen.
+. Um der Richtlinie Regeln hinzuzufügen, wählen Sie *Regeln auswählen*. Wählen Sie einen Regelnamen aus, um die Einstellungen für diese Regel anzuzeigen.
++
+--
+Beim Klonen einer Richtlinie:
+
+** Die von der Richtlinie, die Sie klonen, verwendeten Regeln sind ausgewählt.
+** Wenn die Richtlinie, die Sie klonen, Regeln ohne Filter verwendet hat, die nicht die Standardregel waren, werden Sie aufgefordert, alle Regeln außer einer dieser Regeln zu entfernen.
+** Wenn die Standardregel einen Filter verwendet hat, werden Sie aufgefordert, eine neue Standardregel auszuwählen.
+** Wenn die Standardregel nicht die letzte Regel war, können Sie die Regel an das Ende der neuen Richtlinie verschieben.
+
+
+--
++
+[role="tabbed-block"]
+====
+.S3 Objektsperre nicht aktiviert
+--
+.. Wählen Sie eine Standardregel für die Richtlinie aus. Um eine neue Standardregel zu erstellen, wählen Sie *ILM-Regelseite* aus.
++
+Die Standardregel gilt für alle Objekte, die nicht mit einer anderen Regel in der Richtlinie übereinstimmen. Die Standardregel kann keine Filter verwenden und wird immer zuletzt ausgewertet.
+
++
+
+NOTE: Verwenden Sie nicht die Regel 2 Kopien erstellen als Standardregel für eine Richtlinie. Die Regel 2 Kopien erstellen verwendet einen einzelnen Speicherpool, alle Speicherknoten, der alle Standorte enthält. Wenn Ihr StorageGRID System über mehrere Standorte verfügt, können zwei Kopien eines Objekts an demselben Standort platziert werden.
+
+
+
+--
+.S3-Objektsperre aktiviert
+--
+.. Wählen Sie eine Standardregel für die Richtlinie aus. Um eine neue Standardregel zu erstellen, wählen Sie *ILM-Regelseite* aus.
++
+Die Liste der Regeln enthält nur die Regeln, die konform sind und keine Filter verwenden.
+
++
+
+NOTE: Verwenden Sie nicht die Regel 2 Kopien erstellen als Standardregel für eine Richtlinie. Die Regel 2 Kopien erstellen verwendet einen einzelnen Speicherpool, alle Speicherknoten, der alle Standorte enthält. Wenn Sie diese Regel verwenden, können mehrere Kopien eines Objekts auf demselben Standort platziert werden.
+
+.. Wenn Sie eine andere "Standard"-Regel für Objekte in nicht konformen S3-Buckets benötigen, wählen Sie *eine Regel ohne Filter für nicht konforme S3-Buckets* aus und wählen Sie eine nicht konforme Regel aus, die keinen Filter verwendet.
++
+Sie können beispielsweise einen Cloud-Storage-Pool verwenden, um Objekte in Buckets zu speichern, für die die S3-Objektsperre nicht aktiviert ist.
+
++
+
+NOTE: Sie können nur eine nicht kompatible Regel auswählen, die keinen Filter verwendet.
+
+
+
+Siehe auch link:example-7-compliant-ilm-policy-for-s3-object-lock.html["Beispiel 7: Konforme ILM-Richtlinie für S3 Object Lock"].
+
+--
+====
+
+
+. Wenn Sie mit der Auswahl der Standardregel fertig sind, wählen Sie *Weiter*.
+. Wählen Sie für den Schritt andere Regeln alle anderen Regeln aus, die Sie der Richtlinie hinzufügen möchten. Diese Regeln verwenden mindestens einen Filter (Mandantenkonto, Bucket-Name, erweiterter Filter oder nicht aktuelle Referenzzeit). Wählen Sie dann *Select*.
++
+Im Fenster Richtlinie erstellen werden nun die ausgewählten Regeln aufgelistet. Die Standardregel ist am Ende, mit den anderen Regeln darüber.
+
++
+Wenn S3 Object Lock aktiviert ist und Sie auch eine nicht konforme "Standard"-Regel ausgewählt haben, wird diese Regel als die vorletzte Regel in der Richtlinie hinzugefügt.
+
++
+
+NOTE: Eine Warnung wird angezeigt, wenn eine Regel Objekte nicht für immer behält. Wenn Sie diese Richtlinie aktivieren, müssen Sie bestätigen, dass StorageGRID Objekte löschen soll, wenn die Platzierungsanweisungen für die Standardregel abgelaufen sind (es sei denn, ein Bucket-Lebenszyklus hält die Objekte für einen längeren Zeitraum).
+
+. Ziehen Sie die Zeilen für die nicht standardmäßigen Regeln, um die Reihenfolge zu bestimmen, in der diese Regeln ausgewertet werden.
++
+Sie können die Standardregel nicht verschieben. Wenn S3 Object Lock aktiviert ist, können Sie die nicht konforme Standardregel auch nicht verschieben, wenn eine ausgewählt wurde.
+
++
+
+NOTE: Sie müssen sich vergewissern, dass die ILM-Regeln in der richtigen Reihenfolge sind. Wenn die Richtlinie aktiviert ist, werden neue und vorhandene Objekte anhand der Regeln in der angegebenen Reihenfolge bewertet, die oben beginnen.
+
+. Wählen Sie bei Bedarf *Regeln auswählen*, um Regeln hinzuzufügen oder zu entfernen.
+. Wenn Sie fertig sind, wählen Sie *Speichern*.
+. Wiederholen Sie diese Schritte, um zusätzliche ILM-Richtlinien zu erstellen.
+. <<simulate-ilm-policy,Simulation einer ILM-Richtlinie>>. Sie sollten eine Richtlinie immer simulieren, bevor Sie sie aktivieren, um sicherzustellen, dass sie wie erwartet funktioniert.
+
+
+
+
+== Simulieren Sie eine Richtlinie
+
+Simulieren Sie eine Richtlinie für Testobjekte, bevor Sie die Richtlinie aktivieren und auf Ihre Produktionsdaten anwenden.
+
+.Bevor Sie beginnen
+* Sie kennen den S3-Bucket/Objektschlüssel für jedes Objekt, das Sie testen möchten.
+
+
+.Schritte
+. Mit einem S3-Client oder dem link:../tenant/use-s3-console.html["S3-Konsole"], die Objekte aufnehmen, die zum Testen jeder Regel erforderlich sind.
+. Aktivieren Sie auf der Seite ILM Policies das Kontrollkästchen für die Policy, und wählen Sie dann *Simulate* aus.
+. Geben Sie im Feld *Objekt* den S3 für ein Testobjekt ein `bucket/object-key`.  `bucket-01/filename.png`Beispiel: .
+. Wenn die S3-Versionierung aktiviert ist, geben Sie optional eine Versions-ID für das Objekt in das Feld *Versions-ID* ein.
+. Wählen Sie *Simulieren*.
+. Bestätigen Sie im Abschnitt Simulationsergebnisse, dass jedes Objekt mit der richtigen Regel abgeglichen wurde.
+. Um festzustellen, welches Profil für den Speicherpool oder die Erasure Coding-Funktion verwendet wird, wählen Sie den Namen der übereinstimmenden Regel aus, um zur Seite mit den Regeldetails zu gelangen.
+
+
+
+CAUTION: Prüfen Sie alle Änderungen an der Platzierung vorhandener replizierter und Erasure Coded Objekte. Das Ändern des Speicherorts eines vorhandenen Objekts kann zu vorübergehenden Ressourcenproblemen führen, wenn die neuen Platzierungen ausgewertet und implementiert werden.
+
+.Ergebnisse
+Alle Änderungen an den Regeln der Richtlinie werden in den Simulationsergebnissen angezeigt und zeigen den neuen Match und den vorherigen Match an. Das Fenster Richtlinie simulieren behält die getesteten Objekte bei, bis Sie entweder *Alle löschen* oder das Symbol Entfernen für jedes Objekt in der Liste Simulationsergebnisse auswählenimage:../media/icon-x-to-remove.png["Symbol entfernen"].
+
+.Verwandte Informationen
+link:simulating-ilm-policy-examples.html["Beispiele für ILM-Richtliniensimulationen"]
+
+
+
+== Aktivieren Sie eine Richtlinie
+
+Wenn Sie eine einzelne neue ILM-Richtlinie aktivieren, werden vorhandene Objekte und neu aufgenommene Objekte von dieser Richtlinie gemanagt. Wenn Sie mehrere Richtlinien aktivieren, bestimmen die zu verwaltenden Objekte anhand von ILM-Richtlinien-Tags, die Buckets zugewiesen sind.
+
+Bevor Sie eine neue Richtlinie aktivieren, gehen Sie wie folgt vor:
+
+. Simulieren Sie die Richtlinie, um zu bestätigen, dass sie sich wie erwartet verhält.
+. Prüfen Sie alle Änderungen an der Platzierung vorhandener replizierter und Erasure Coded Objekte. Das Ändern des Speicherorts eines vorhandenen Objekts kann zu vorübergehenden Ressourcenproblemen führen, wenn die neuen Platzierungen ausgewertet und implementiert werden.
+
+
+
+CAUTION: Fehler in einer ILM-Richtlinie können zu nicht wiederherstellbaren Datenverlusten führen.
+
+.Über diese Aufgabe
+Wenn Sie eine ILM-Richtlinie aktivieren, verteilt das System die neue Richtlinie auf alle Nodes. Die neue aktive Richtlinie tritt jedoch möglicherweise erst in Kraft, wenn alle Grid-Nodes zur Verfügung stehen, um die neue Richtlinie zu erhalten. In einigen Fällen wartet das System auf die Implementierung einer neuen aktiven Richtlinie, um sicherzustellen, dass Grid-Objekte nicht versehentlich entfernt werden. Im Detail:
+
+* Wenn Sie Richtlinienänderungen vornehmen, die *Datenredundanz oder Datenaufbewahrungszeit erhöhen*, werden diese Änderungen sofort implementiert. Wenn Sie beispielsweise eine neue Richtlinie aktivieren, die eine Regel mit drei Kopien anstelle einer Regel mit zwei Kopien enthält, wird diese Richtlinie sofort implementiert, da sie die Datenredundanz erhöht.
+* Wenn Sie Richtlinienänderungen vornehmen, die *Datenredundanz oder Datenaufbewahrungszeit verringern könnten*, werden diese Änderungen erst implementiert, wenn alle Grid-Knoten verfügbar sind. Wenn Sie beispielsweise eine neue Richtlinie aktivieren, die eine Regel mit zwei Kopien anstelle einer Regel mit drei Kopien verwendet, wird die neue Richtlinie auf der Registerkarte „Aktive Richtlinie“ angezeigt. Sie wird jedoch erst wirksam, wenn alle Nodes online und verfügbar sind.
+
+
+.Schritte
+Führen Sie die Schritte zum Aktivieren einer oder mehrerer Richtlinien aus:
+
+[role="tabbed-block"]
+====
+.Aktivieren Sie eine Richtlinie
+--
+Führen Sie diese Schritte aus, wenn nur eine aktive Richtlinie vorhanden ist. Wenn Sie bereits über eine oder mehrere aktive Richtlinien verfügen und zusätzliche Richtlinien aktivieren, befolgen Sie die Schritte zum Aktivieren mehrerer Richtlinien.
+
+. Wenn Sie bereit sind, eine Richtlinie zu aktivieren, wählen Sie *ILM* > *Richtlinien* aus.
++
+Alternativ können Sie eine einzelne Richtlinie auf der Seite *ILM* > *Richtlinien-Tags* aktivieren.
+
+. Aktivieren Sie auf der Registerkarte Policies das Kontrollkästchen für die Richtlinie, die Sie aktivieren möchten, und wählen Sie dann *Activate* aus.
+. Befolgen Sie den entsprechenden Schritt:
++
+** Wenn Sie in einer Warnmeldung aufgefordert werden, zu bestätigen, dass Sie die Richtlinie aktivieren möchten, wählen Sie *OK*.
+** Wenn eine Warnmeldung mit Details zur Richtlinie angezeigt wird:
++
+... Überprüfen Sie die Details, um sicherzustellen, dass die Richtlinie Daten wie erwartet managt.
+... Wenn die Standardregel Objekte für eine begrenzte Anzahl von Tagen speichert, überprüfen Sie das Aufbewahrungsdiagramm, und geben Sie diese Anzahl von Tagen in das Textfeld ein.
+... Wenn die Standardregel Objekte für immer speichert, aber eine oder mehrere andere Regeln eine eingeschränkte Aufbewahrung haben, geben Sie *yes* in das Textfeld ein.
+... Wählen Sie *Richtlinie aktivieren*.
+
+
+
+
+
+
+--
+.Aktivieren Sie mehrere Richtlinien
+--
+Um mehrere Richtlinien zu aktivieren, müssen Sie Tags erstellen und jedem Tag eine Richtlinie zuweisen.
+
+
+TIP: Wenn mehrere Tags verwendet werden und Mandanten häufig Richtlinien-Tags Buckets zuweisen, kann die Grid-Performance beeinträchtigt werden. Wenn Sie nicht vertrauenswürdige Mandanten haben, sollten Sie nur das Standard-Tag verwenden.
+
+. Wählen Sie *ILM* > *Policy-Tags* aus.
+. Wählen Sie *Erstellen*.
+. Geben Sie im Dialogfeld Create Policy Tag einen Tag-Namen und optional eine Beschreibung für das Tag ein.
++
+
+NOTE: Tag-Namen und -Beschreibungen sind für Mandanten sichtbar. Wählen Sie Werte aus, die Mandanten bei der Auswahl von Richtlinien-Tags helfen, die ihren Buckets zugewiesen werden sollen, eine fundierte Entscheidung zu treffen. Wenn die zugewiesene Richtlinie beispielsweise Objekte nach einem bestimmten Zeitraum löscht, können Sie dies in der Beschreibung mitteilen. Nehmen Sie in diesen Feldern keine vertraulichen Informationen auf.
+
+. Wählen Sie *Tag erstellen*.
+. Wählen Sie in der Tabelle ILM-Richtlinien-Tags mit dem Pulldown-Menü eine Richtlinie aus, die dem Tag zugewiesen werden soll.
+. Wenn Warnungen in der Spalte Richtlinieneinschränkungen angezeigt werden, wählen Sie *Richtliniendetails anzeigen*, um die Richtlinie zu überprüfen.
+. Stellen Sie sicher, dass jede Richtlinie die Daten wie erwartet managt.
+. Wählen Sie *zugewiesene Richtlinien aktivieren*. Oder wählen Sie *Änderungen löschen*, um die Richtlinienzuweisung zu entfernen.
+. Überprüfen Sie im Dialogfeld „Richtlinien mit neuen Tags aktivieren“ die Beschreibungen, wie die einzelnen Tags, Richtlinien und Regeln Objekte verwalten. Nehmen Sie bei Bedarf Änderungen vor, um sicherzustellen, dass die Objekte in den Richtlinien wie erwartet gemanagt werden.
+. Wenn Sie sicher sind, dass Sie die Richtlinien aktivieren möchten, geben Sie *yes* in das Textfeld ein, und wählen Sie dann *Activate Policies* aus.
+
+
+--
+====
+.Verwandte Informationen
+link:example-6-changing-ilm-policy.html["Beispiel 6: Ändern einer ILM-Richtlinie"]

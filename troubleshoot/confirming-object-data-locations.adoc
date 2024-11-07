@@ -1,0 +1,57 @@
+---
+permalink: troubleshoot/confirming-object-data-locations.html 
+sidebar: sidebar 
+keywords: how to confirm object location, object metadata lookup 
+summary: Je nach Problem sollten Sie überprüfen, wo Objektdaten gespeichert werden. Beispielsweise möchten Sie überprüfen, ob die ILM-Richtlinie wie erwartet funktioniert und Objektdaten dort gespeichert werden, wo sie geplant sind. 
+---
+= Bestätigen Sie den Speicherort der Objektdaten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Je nach dem Problem möchten Sie vielleicht link:../audit/object-ingest-transactions.html["Bestätigen Sie, wo Objektdaten gespeichert werden"]. Beispielsweise möchten Sie überprüfen, ob die ILM-Richtlinie wie erwartet funktioniert und Objektdaten dort gespeichert werden, wo sie geplant sind.
+
+.Bevor Sie beginnen
+* Sie müssen über eine Objektkennung verfügen, die einer der folgenden sein kann:
++
+** *UUID*: Der Universally Unique Identifier des Objekts. Geben Sie die UUID in Großbuchstaben ein.
+** *CBID*: Die eindeutige Kennung des Objekts in StorageGRID. Sie können die CBID eines Objekts aus dem Prüfprotokoll abrufen. Geben Sie die CBID in Großbuchstaben ein.
+** *S3-Bucket und Objektschlüssel*: Wenn ein Objekt über das aufgenommen wirdlink:../s3/operations-on-objects.html["S3 Schnittstelle"], verwendet die Client-Anwendung eine Bucket- und Objektschlüsselkombination, um das Objekt zu speichern und zu identifizieren.
+
+
+
+
+.Schritte
+. Wählen Sie *ILM* > *Object Metadata Lookup*.
+. Geben Sie die Kennung des Objekts in das Feld *Kennung* ein.
++
+Sie können eine UUID, CBID, S3 Bucket/Objektschlüssel oder Swift Container/Objektname eingeben.
+
+. Wenn Sie eine bestimmte Version des Objekts suchen möchten, geben Sie die Version-ID ein (optional).
++
+image::../media/object_lookup.png[Objekt-Lookup-Seite]
+
+. Wählen Sie *Look Up*.
++
+Die link:../ilm/verifying-ilm-policy-with-object-metadata-lookup.html["Ergebnisse der Suche nach Objektmetadaten"] wird angezeigt. Auf dieser Seite werden die folgenden Informationstypen aufgeführt:
+
++
+** Systemmetadaten, einschließlich Objekt-ID (UUID), Version-ID (optional), Objektname, Name des Containers, Mandantenkontoname oder -ID, logische Größe des Objekts, Datum und Uhrzeit der ersten Erstellung des Objekts sowie Datum und Uhrzeit der letzten Änderung des Objekts.
+** Alle mit dem Objekt verknüpften Schlüssel-Wert-Paare für benutzerdefinierte Benutzer-Metadaten.
+** Bei S3-Objekten sind alle dem Objekt zugeordneten Objekt-Tag-Schlüsselwert-Paare enthalten.
+** Der aktuelle Storage-Standort jeder Kopie für replizierte Objektkopien
+** Für Objektkopien mit Erasure-Coding-Verfahren wird der aktuelle Speicherort der einzelnen Fragmente gespeichert.
+** Bei Objektkopien in einem Cloud Storage Pool befindet sich der Speicherort des Objekts, einschließlich des Namens des externen Buckets und der eindeutigen Kennung des Objekts.
+** Für segmentierte Objekte und mehrteilige Objekte, eine Liste von Objektsegmenten einschließlich Segment-IDs und Datengrößen. Bei Objekten mit mehr als 100 Segmenten werden nur die ersten 100 Segmente angezeigt.
+** Alle Objekt-Metadaten im nicht verarbeiteten internen Speicherformat. Diese RAW-Metadaten enthalten interne System-Metadaten, die nicht garantiert werden, dass sie über Release bis Release beibehalten werden.
++
+Das folgende Beispiel zeigt die Ergebnisse für die Suche nach Objektmetadaten für ein S3-Testobjekt, das als zwei replizierte Kopien gespeichert ist.
+
+
+
++
+image::../media/object_lookup_results.png[Ergebnisse Für Objekt-Lookup]
+
+

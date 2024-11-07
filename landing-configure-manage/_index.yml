@@ -1,0 +1,73 @@
+---
+indexpage:
+  title: Konfiguration und Management eines StorageGRID Systems
+  summary: Die Konfigurationsaufgaben, die Sie für ein neues StorageGRID-System durchführen
+    müssen, hängen davon ab, wie Sie Ihr Grid verwenden. Sie richten mindestens den
+    Systemzugriff ein, verwenden die FabricPool- und S3-Assistenten und managen verschiedene
+    Storage- und Sicherheitseinstellungen.
+  keywords: configure, sign in, manage admin groups, manage admin users, use identity
+    federation, use ILM, create tenants, manage client connections, secure system,
+    harden system
+  lead: Die Konfigurationsaufgaben, die Sie für ein neues StorageGRID-System durchführen
+    müssen, hängen davon ab, wie Sie Ihr Grid verwenden. Sie richten mindestens den
+    Systemzugriff ein, verwenden die FabricPool- und S3-Assistenten und managen verschiedene
+    Storage- und Sicherheitseinstellungen.
+  tiles:
+  - title: Los geht's
+    links:
+    - title: Melden Sie sich beim Grid Manager an
+      url: "../admin/signing-in-to-grid-manager.html"
+    - title: Konfigurieren Sie AutoSupport
+      url: "../admin/configure-autosupport-grid-manager.html"
+    - title: Verwenden Sie die Grid-Management-API
+      url: "../admin/using-grid-management-api.html"
+  - title: Managen von Administratorgruppen und Benutzern
+    links:
+    - title: Verwenden Sie den Identitätsverbund
+      url: "../admin/using-identity-federation.html"
+    - title: Managen von Admin-Gruppen
+      url: "../admin/managing-admin-groups.html"
+    - title: Berechtigungen für Admin-Gruppen
+      url: "../admin/admin-group-permissions.html"
+    - title: Konfigurieren Sie Single Sign-On
+      url: "../admin/configuring-sso.html"
+  - title: Grid-Verbund verwenden
+    links:
+    - title: Was ist Grid Federation?
+      url: "../admin/grid-federation-overview.html"
+    - title: Vergleichen Sie Grid-übergreifende Replizierung mit CloudMirror
+      url: "../admin/grid-federation-compare-cgr-to-cloudmirror.html"
+    - title: Erstellen von Grid Federation-Verbindungen
+      url: "../admin/grid-federation-create-connection.html"
+    - title: Management zulässiger Mandanten
+      url: "../admin/grid-federation-manage-tenants.html"
+  - title: Management von Client-Verbindungen und Mandanten
+    links:
+    - title: Konfigurieren Sie die Domänennamen des S3-Endpunkts
+      url: "../admin/configuring-s3-api-endpoint-domain-names.html"
+    - title: Verwenden Sie den S3-Einrichtungsassistenten
+      url: "../admin/use-s3-setup-wizard.html"
+    - title: Verwenden Sie den FabricPool-Einrichtungsassistenten
+      url: "../fabricpool/use-fabricpool-setup-wizard.html"
+    - title: Erstellen von Mandanten
+      url: "../admin/creating-tenant-account.html"
+  - title: Verwenden von Information Lifecycle Management (ILM)
+    links:
+    - title: Erfahren Sie mehr über den ILM-Lebenszyklus
+      url: "../ilm/how-ilm-operates-throughout-objects-life.html"
+    - title: Managen von ILM-Regeln
+      url: "../ilm/what-ilm-rule-is.html"
+    - title: Managen von ILM-Richtlinien
+      url: "../ilm/creating-ilm-policy.html"
+    - title: Beispiele für ILM
+      url: "../ilm/example-1-ilm-rules-and-policy-for-object-storage.html"
+  - title: Sichern Sie Ihr System
+    links:
+    - title: Warum die Systemhärtung entscheidend ist
+      url: "../harden/index.html"
+    - title: Überprüfen Sie die Verschlüsselungsmethoden
+      url: "../admin/reviewing-storagegrid-encryption-methods.html"
+    - title: Verwalten von Sicherheitszertifikaten
+      url: "../admin/using-storagegrid-security-certificates.html"
+    - title: TLS- und SSH-Richtlinie verwalten
+      url: "../admin/manage-tls-ssh-policy.html"

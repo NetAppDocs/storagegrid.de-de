@@ -1,0 +1,302 @@
+---
+permalink: primer/nodes-and-services.html 
+sidebar: sidebar 
+keywords: services, grid nodes, primary admin, storage, gateway 
+summary: Der grundlegende Baustein eines StorageGRID Systems ist der Grid-Node. Nodes enthalten Services. Dies sind Softwaremodule, die einen Grid-Node mit einem Satz von Funktionen ausstatten. 
+---
+= Grid Nodes und Services
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der grundlegende Baustein eines StorageGRID Systems ist der Grid-Node. Nodes enthalten Services. Dies sind Softwaremodule, die einen Grid-Node mit einem Satz von Funktionen ausstatten.
+
+
+
+== Typen von Grid-Nodes
+
+Das StorageGRID System nutzt vier Typen von Grid-Nodes:
+
+Admin-Nodes:: Bereitstellen von Managementservices wie Systemkonfiguration, Monitoring und Protokollierung Wenn Sie sich beim Grid Manager anmelden, stellen Sie eine Verbindung zu einem Admin-Node her. Jedes Grid muss über einen primären Admin-Node verfügen und möglicherweise über zusätzliche nicht-primäre Admin-Nodes für Redundanz verfügen. Sie können eine Verbindung zu einem beliebigen Admin-Knoten herstellen, und jeder Admin-Knoten zeigt eine ähnliche Ansicht des StorageGRID-Systems an. Wartungsverfahren müssen jedoch mit dem primären Admin-Node durchgeführt werden.
++
+--
+Admin-Nodes können auch zum Lastausgleich für S3-Client-Traffic verwendet werden.
+
+Siehe link:what-admin-node-is.html["Was ist ein Admin-Node?"]
+
+--
+Storage-Nodes:: Management und Speicherung von Objektdaten und Metadaten Jeder Standort im StorageGRID-System muss über mindestens drei Storage-Nodes verfügen.
++
+--
+Siehe link:what-storage-node-is.html["Was ist ein Storage-Node?"]
+
+--
+Gateway-Nodes (optional):: Stellen Sie eine Schnittstelle für den Lastausgleich bereit, über die Client-Anwendungen eine Verbindung zu StorageGRID herstellen können. Ein Load Balancer leitet die Clients nahtlos an einen optimalen Storage Node weiter, sodass der Ausfall von Nodes oder sogar einem gesamten Standort transparent ist.
++
+--
+Siehe link:what-gateway-node-is.html["Was ist ein Gateway Node?"]
+
+--
+
+
+
+
+== Hardware- und Software-Nodes
+
+StorageGRID Nodes können als StorageGRID-Appliance-Nodes oder als softwarebasierte Nodes implementiert werden.
+
+
+
+=== StorageGRID Appliance-Nodes
+
+StorageGRID Hardware-Appliances wurden speziell für den Einsatz in einem StorageGRID System entwickelt. Einige Geräte können als Storage-Nodes verwendet werden. Andere Appliances können als Admin-Nodes oder Gateway-Nodes verwendet werden. Die Appliance-Nodes können mit softwarebasierten Nodes kombiniert oder vollständig entwickelten Appliance-Grids ohne Abhängigkeiten von externen Hypervisoren, Storage- oder Computing-Hardware implementiert werden.
+
+Im Folgenden erfahren Sie mehr über die verfügbaren Appliances:
+
+* https://docs.netapp.com/us-en/storagegrid-appliances/["StorageGRID Appliance-Dokumentation"^]
+* https://hwu.netapp.com["NetApp Hardware Universe"^]
+
+
+
+
+=== Softwarebasierte Nodes
+
+Softwarebasierte Grid-Nodes können als VMware Virtual Machines oder in Container-Engines auf einem Linux-Host implementiert werden.
+
+* Virtuelle Maschine (VM) in VMware vSphere: Siehe link:../vmware/index.html["Installieren Sie StorageGRID auf VMware"].
+* Innerhalb einer Container-Engine auf Red hat Enterprise Linux: Siehe link:../rhel/index.html["Installieren Sie StorageGRID unter Red hat Enterprise Linux"].
+* Innerhalb einer Container-Engine auf Ubuntu oder Debian: Siehe link:../ubuntu/index.html["Installieren Sie StorageGRID auf Ubuntu oder Debian"].
+
+
+Verwenden Sie die https://imt.netapp.com/matrix/#welcome["NetApp Interoperabilitäts-Matrix-Tool (IMT)"^], um die unterstützten Versionen zu bestimmen.
+
+Bei der Erstinstallation eines neuen softwarebasierten Storage-Knotens können Sie angeben, dass er nur für verwendet werden link:../primer/what-storage-node-is.html#types-of-storage-nodes["Speichern von Metadaten"]soll.
+
+
+
+== StorageGRID Services
+
+Nachfolgend finden Sie eine vollständige Liste der StorageGRID Services.
+
+[cols="2a,3a,2a"]
+|===
+| Service | Beschreibung | Standort 
+
+
+ a| 
+Kontendienst-Forwarder
+ a| 
+Stellt eine Schnittstelle für den Load Balancer-Service bereit, über die der Kontodienst auf Remote-Hosts abgefragt werden kann, und informiert über Änderungen bei der Konfiguration des Load Balancer-Endpunkts am Load Balancer-Service.
+ a| 
+Load Balancer-Service auf Admin-Nodes und Gateway-Nodes
+
+
+
+ a| 
+ADC (Administrative Domain Controller)
+ a| 
+Verwaltet Topologiedaten, bietet Authentifizierungsservices und reagiert auf Anfragen aus den LDR- und CMN-Diensten.
+ a| 
+Mindestens drei Storage Nodes, die den ADC-Dienst an jedem Standort enthalten
+
+
+
+ a| 
+AMS (Audit Management System)
+ a| 
+Überwacht und protokolliert alle geprüften Systemereignisse und Transaktionen in einer Textdatei.
+ a| 
+Admin-Nodes
+
+
+
+ a| 
+Cassandra Reaper
+ a| 
+Führt automatische Reparaturen von Objektmetadaten durch.
+ a| 
+Storage-Nodes
+
+
+
+ a| 
+Chunk-Service
+ a| 
+Verwaltet Erasure-codierte Daten und Paritätsfragmente.
+ a| 
+Storage-Nodes
+
+
+
+ a| 
+CMN (Knoten für die Konfigurationsverwaltung)
+ a| 
+Management systemweiter Konfigurationen und Grid-Aufgaben Jedes Grid hat einen CMN-Dienst.
+ a| 
+Primärer Admin-Node
+
+
+
+ a| 
+DDS (Distributed Data Store)
+ a| 
+Schnittstellen zur Cassandra-Datenbank zum Management von Objektmetadaten
+ a| 
+Storage-Nodes
+
+
+
+ a| 
+DMV (Data Mover)
+ a| 
+Verschiebt Daten in Cloud-Endpunkte
+ a| 
+Storage-Nodes
+
+
+
+ a| 
+Dynamische IP (dynap)
+ a| 
+Überwacht das Raster auf dynamische IP-Änderungen und aktualisiert lokale Konfigurationen.
+ a| 
+Alle Nodes
+
+
+
+ a| 
+Grafana
+ a| 
+Wird für die Darstellung von Kennzahlen im Grid Manager verwendet.
+ a| 
+Admin-Nodes
+
+
+
+ a| 
+Hochverfügbarkeit
+ a| 
+Verwaltet virtuelle Hochverfügbarkeits-IPs auf Knoten, die auf der Seite „Hochverfügbarkeitsgruppen“ konfiguriert sind. Dieser Service wird auch als „Keepalived Service“ bezeichnet.
+ a| 
+Admin- und Gateway-Nodes
+
+
+
+ a| 
+Identität (idnt)
+ a| 
+Föderiert Benutzeridentitäten von LDAP und Active Directory
+ a| 
+Storage-Nodes, die den ADC-Dienst verwenden
+
+
+
+ a| 
+Lambda-Schiedsrichter
+ a| 
+Verwalten von S3 Select SelectObjectContent Requests.
+ a| 
+Alle Nodes
+
+
+
+ a| 
+Load Balancer (nginx-gw)
+ a| 
+Bietet Lastausgleich für S3-Datenverkehr von Clients zu Storage-Nodes. Der Lastverteilungsservice kann über die Konfigurationsseite Load Balancer Endpoints konfiguriert werden. Dieser Service wird auch als nginx-gw-Service bezeichnet.
+ a| 
+Admin- und Gateway-Nodes
+
+
+
+ a| 
+LDR (Local Distribution Router)
+ a| 
+Verwaltet die Speicherung und Übertragung von Inhalten innerhalb des Grids.
+ a| 
+Storage-Nodes
+
+
+
+ a| 
+MISCd Information Service Control Daemon
+ a| 
+Stellt eine Schnittstelle zum Abfragen und Managen von Services auf anderen Nodes sowie zum Managen von Umgebungskonfigurationen auf dem Node bereit, beispielsweise zum Abfragen des Status von Services, die auf anderen Nodes ausgeführt werden.
+ a| 
+Alle Nodes
+
+
+
+ a| 
+Nginx
+ a| 
+Fungiert als Authentifizierungs- und sicherer Kommunikationsmechanismus für verschiedene Grid Services (wie Prometheus und Dynamic IP), der die Möglichkeit zur Kommunikation mit Services auf anderen Knoten über HTTPS-APIs ermöglicht.
+ a| 
+Alle Nodes
+
+
+
+ a| 
+Nginx-gw
+ a| 
+Schaltet den Lastverteilungsservice ein.
+ a| 
+Admin- und Gateway-Nodes
+
+
+
+ a| 
+NMS (Network Management System)
+ a| 
+Gibt die Überwachungs-, Berichterstellungs- und Konfigurationsoptionen an, die über den Grid Manager angezeigt werden.
+ a| 
+Admin-Nodes
+
+
+
+ a| 
+Persistenz
+ a| 
+Verwaltet Dateien auf dem Root-Laufwerk, die über einen Neustart bestehen müssen.
+ a| 
+Alle Nodes
+
+
+
+ a| 
+Prometheus
+ a| 
+Erfasst Zeitreihungskennzahlen von Services auf allen Knoten.
+ a| 
+Admin-Nodes
+
+
+
+ a| 
+RSM (Replicated State Machine)
+ a| 
+Stellt sicher, dass Plattformserviceanforderungen an die jeweiligen Endpunkte gesendet werden.
+ a| 
+Storage-Nodes, die den ADC-Dienst verwenden
+
+
+
+ a| 
+SSM (Server Status Monitor)
+ a| 
+Überwacht Hardwarebedingungen und Berichte an den NMS-Service.
+ a| 
+Auf jedem Grid-Node ist eine Instanz vorhanden
+
+
+
+ a| 
+Trace-Kollektor
+ a| 
+Führt eine Trace-Erfassung durch, um Informationen für den technischen Support zu sammeln. Der Trace Collector-Dienst verwendet die Open-Source-Jaeger-Software.
+ a| 
+Admin-Nodes
+
+|===

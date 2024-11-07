@@ -1,0 +1,38 @@
+---
+permalink: monitor/viewing-storage-tab.html 
+sidebar: sidebar 
+keywords: storage tab 
+summary: Die Registerkarte „Storage“ fasst Storage-Verfügbarkeit und andere Storage-Metriken zusammen. 
+---
+= Öffnen Sie die Registerkarte „Speicher“
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Registerkarte „Storage“ fasst Storage-Verfügbarkeit und andere Storage-Metriken zusammen.
+
+Die Registerkarte Storage wird für alle Nodes, jeden Standort und das gesamte Raster angezeigt.
+
+
+
+== Verwendete Diagramme im Storage
+
+Für Storage-Nodes, jeden Standort und das gesamte Raster enthält die Registerkarte Storage Diagramme, die zeigen, wie viel Storage von Objektdaten und Objekt-Metadaten im Laufe der Zeit verwendet wurde.
+
+
+NOTE: Wenn ein Knoten nicht mit dem Raster verbunden ist, z. B. während eines Upgrades oder eines getrennten Status, sind bestimmte Metriken möglicherweise nicht verfügbar oder von den Gesamtsummen des Standorts und des Rasters ausgeschlossen. Nachdem sich ein Node wieder mit dem Grid verbunden hat, warten Sie einige Minuten, bis sich die Werte stabilisieren.
+
+image::../media/nodes_storage_node_storage_tab.png[„Nodes“ > „Storage Node“ > Registerkarte „Storage“]
+
+
+
+== Festplattengeräte, Volumes und Objektspeichern Tabellen
+
+Für alle Nodes enthält die Registerkarte Storage Details zu den Festplattengeräten und Volumes auf dem Node. Für Speicherknoten bietet die Objektspeichertabelle Informationen über jedes Speichervolumen.
+
+image::../media/nodes_page_storage_tables.png[Knoten Seitentabellen]
+
+.Verwandte Informationen
+link:monitoring-storage-capacity.html["Monitoring der Storage-Kapazität"]

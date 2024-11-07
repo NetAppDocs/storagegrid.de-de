@@ -1,0 +1,135 @@
+---
+permalink: admin/creating-traffic-classification-policies.html 
+sidebar: sidebar 
+keywords: traffic classification, network traffic, traffic limits, policy 
+summary: Sie erstellen Traffic-Klassifizierungsrichtlinien, wenn Sie den Netzwerkverkehr nach Bucket, Mandanten, IP-Subnetz oder Load Balancer-Endpunkt überwachen und optional begrenzen möchten. Optional können Sie Obergrenzen für eine Richtlinie basierend auf der Bandbreite, der Anzahl gleichzeitiger Anfragen oder der Anfragerate festlegen. 
+---
+= Richtlinien für die Verkehrsklassifizierung erstellen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Richtlinien zur Verkehrsklassifizierung erstellen, wenn Sie den Netzwerk-Traffic nach Bucket, Bucket-Regex, CIDR, Load-Balancer-Endpunkt oder Mandant überwachen und optional begrenzen möchten. Optional können Sie Obergrenzen für eine Richtlinie basierend auf der Bandbreite, der Anzahl gleichzeitiger Anfragen oder der Anfragerate festlegen.
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben die link:admin-group-permissions.html["Root-Zugriffsberechtigung"].
+* Sie haben alle Load Balancer-Endpunkte erstellt, die übereinstimmen sollen.
+* Sie haben alle Mandanten erstellt, denen Sie entsprechen möchten.
+
+
+.Schritte
+. Wählen Sie *CONFIGURATION* > *Network* > *traffic classification*.
+. Wählen Sie *Erstellen*.
+. Geben Sie einen Namen und eine Beschreibung (optional) für die Richtlinie ein und wählen Sie *Weiter*.
++
+Beschreiben Sie beispielsweise, auf welche Weise diese Richtlinie zur Klassifizierung von Verkehrsdaten zutrifft und welche Begrenzung sie hat.
+
+. Wählen Sie *Regel hinzufügen* und geben Sie die folgenden Details an, um eine oder mehrere übereinstimmende Regeln für die Richtlinie zu erstellen. Jede Richtlinie, die Sie erstellen, sollte mindestens eine übereinstimmende Regel haben. Wählen Sie *Weiter*.
++
+[cols="1a,3a"]
+|===
+| Feld | Beschreibung 
+
+
+ a| 
+Typ
+ a| 
+Wählen Sie die Verkehrstypen aus, für die die entsprechende Regel gilt. Traffic-Typen sind Bucket, Bucket-Regex, CIDR, Load Balancer-Endpunkt und Mandant.
+
+
+
+ a| 
+Match-Wert
+ a| 
+Geben Sie den Wert ein, der dem ausgewählten Typ entspricht.
+
+** Bucket: Geben Sie einen oder mehrere Bucket-Namen ein.
+** Bucket-regex: Geben Sie einen oder mehrere reguläre Ausdrücke ein, die für einen Satz von Bucket-Namen verwendet werden.
++
+Der reguläre Ausdruck ist nicht verankert. Verwenden Sie den Anker ^, um am Anfang des Bucket-Namens zu übereinstimmen, und verwenden Sie den Anker €, um am Ende des Namens zu übereinstimmen. Die Übereinstimmung mit regulären Ausdrücken unterstützt eine Teilmenge der PCRE-Syntax (Perl Compatible Regular Expression).
+
+** CIDR: Geben Sie ein oder mehrere IPv4-Subnetze in CIDR-Notation ein, die mit dem gewünschten Subnetz übereinstimmen.
+** Load-Balancer-Endpunkt: Wählen Sie einen Endpunktnamen aus. Dies sind die Lastausgleichsendpunkte, die Sie auf der definiert link:../admin/configuring-load-balancer-endpoints.html["Konfigurieren von Load Balancer-Endpunkten"]haben.
+** Tenant: Tenant Matching verwendet die Zugriffsschlüssel-ID. Wenn die Anforderung keine Zugriffsschlüssel-ID enthält (z. B. anonymer Zugriff), wird die Eigentümerschaft des abgerufenen Buckets verwendet, um den Mandanten zu bestimmen.
+
+
+
+
+ a| 
+Umgekehrtes Match
+ a| 
+Wenn Sie den gesamten Netzwerkverkehr _except_ mit dem gerade definierten Typ und Match-Wert abstimmen möchten, aktivieren Sie das Kontrollkästchen *inverse Übereinstimmung*. Andernfalls lassen Sie das Kontrollkästchen deaktiviert.
+
+Wenn Sie beispielsweise möchten, dass diese Richtlinie auf alle Endpunkte mit Ausnahme eines Lastausgleichs angewendet wird, geben Sie den auszuschließenden Lastausgleichsendpunkt an, und wählen Sie *inverse Übereinstimmung* aus.
+
+Bei einer Richtlinie, die mehrere Matriken enthält, bei denen mindestens eine inverse Matrix ist, sollten Sie darauf achten, keine Richtlinie zu erstellen, die allen Anforderungen entspricht.
+
+|===
+. Wählen Sie optional *Limit hinzufügen* und wählen Sie die folgenden Details aus, um eine oder mehrere Grenzwerte hinzuzufügen, um den Netzwerkverkehr zu steuern, der von einer Regel abgeglichen wird.
++
+
+NOTE: StorageGRID sammelt Kennzahlen, auch wenn Sie keine Limits hinzufügen, sodass Sie Verkehrstrends besser verstehen können.
+
++
+[cols="1a,3a"]
+|===
+| Feld | Beschreibung 
+
+
+ a| 
+Typ
+ a| 
+Die Art der Begrenzung, die auf den Netzwerkverkehr angewendet werden soll, der der Regel entspricht. Beispielsweise können Sie die Bandbreite oder die Anforderungsrate begrenzen.
+
+*Hinweis*: Sie können Richtlinien erstellen, um die Gesamtbandbreite zu begrenzen oder die Bandbreite pro Anfrage zu begrenzen. StorageGRID kann jedoch nicht beide Bandbreitenarten gleichzeitig einschränken. Wenn die aggregierte Bandbreite verwendet wird, ist die Bandbreite pro Anforderung nicht verfügbar. Umgekehrt ist die aggregierte Bandbreite nicht verfügbar, wenn die Bandbreite pro Anforderung verwendet wird. Eine Einschränkung der Bandbreite im Aggregat kann eine zusätzliche geringfügige Auswirkung auf die Performance des nicht begrenzten Datenverkehrs haben.
+
+Bei Bandbreitenbeschränkungen wendet StorageGRID die Richtlinie an, die der jeweils festgelegten Grenzwertart am besten entspricht. Wenn Sie beispielsweise eine Richtlinie haben, die Datenverkehr in nur eine Richtung begrenzt, ist der Datenverkehr in die entgegengesetzte Richtung unbegrenzt, selbst wenn der Datenverkehr mit zusätzlichen Richtlinien mit Bandbreitenbeschränkungen übereinstimmt. StorageGRID implementiert die „besten“ Matches für Bandbreitenlimits in der folgenden Reihenfolge:
+
+** Exakte IP-Adresse (/32-Maske)
+** Exakter Bucket-Name
+** Eimer-Regex
+** Mandant
+** Endpunkt
+** Nicht exakte CIDR-Übereinstimmungen (nicht /32)
+** Umgekehrte Übereinstimmungen
+
+
+
+
+ a| 
+Gilt für
+ a| 
+Gibt an, ob diese Begrenzung auf Client-Leseanforderungen (GET oder HEAD) oder Schreibanforderungen (PUT, POST oder DELETE) zutrifft.
+
+
+
+ a| 
+Wert
+ a| 
+Der Wert, auf den der Netzwerkverkehr begrenzt wird, abhängig von der ausgewählten Einheit. Geben Sie beispielsweise 10 ein, und wählen Sie MiB/s aus, um zu verhindern, dass der Netzwerkverkehr, der dieser Regel entspricht, 10 MiB/s überschreitet
+
+*Hinweis*: Je nach Einstellung der Einheiten sind die verfügbaren Einheiten entweder binär (z. B. gib) oder dezimal (z. B. GB). Um die Einstellung Einheiten zu ändern, wählen Sie oben rechts im Grid-Manager das Dropdown-Menü Benutzer aus, und wählen Sie dann *Benutzereinstellungen* aus.
+
+
+
+ a| 
+Einheit
+ a| 
+Die Einheit, die den eingegebenen Wert beschreibt.
+
+|===
++
+Wenn Sie beispielsweise eine Bandbreitenbegrenzung von 40 GB/s für eine SLA-Ebene erstellen möchten, erstellen Sie zwei aggregierte Bandbreitenlimits: GET/HEAD bei 40 GB/s und PUT/POST/DELETE bei 40 GB/s.
+
+. Wählen Sie *Weiter*.
+. Lesen und prüfen Sie die Richtlinie zur Verkehrsklassifizierung. Verwenden Sie die Schaltfläche * Zurück*, um zurückzugehen und Änderungen vorzunehmen. Wenn Sie mit der Richtlinie zufrieden sind, wählen Sie *Speichern und fortfahren*.
++
+S3-Client-Traffic wird nun gemäß der Traffic-Klassifizierungsrichtlinie behandelt.
+
+
+
+.Nachdem Sie fertig sind
+link:viewing-network-traffic-metrics.html["Zeigen Sie Metriken zum Netzwerkverkehr an"] Um zu überprüfen, ob die Richtlinien die von Ihnen erwarteten Verkehrsgrenzwerte durchsetzen.

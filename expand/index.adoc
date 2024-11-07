@@ -1,0 +1,74 @@
+---
+permalink: expand/index.html 
+sidebar: sidebar 
+keywords: expand grid 
+summary: Sie können die Kapazität oder Funktionen Ihres StorageGRID Systems ohne Unterbrechung des Systembetriebs erweitern. 
+---
+= Erweiterungsarten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Kapazität oder Funktionen Ihres StorageGRID Systems ohne Unterbrechung des Systembetriebs erweitern.
+
+Eine StorageGRID-Erweiterung ermöglicht Folgendes:
+
+* Storage-Volumes auf Storage-Nodes
+* Neue Grid-Nodes zu einem vorhandenen Standort
+* Eine völlig neue Website
+
+
+Der Grund für die Erweiterung ist ausschlaggebend dafür, wie viele neue Nodes jeden Typs Sie hinzufügen müssen, und Speicherort dieser neuen Nodes. Beispielsweise bestehen unterschiedliche Node-Anforderungen, wenn Sie eine Erweiterung zur Erhöhung der Storage-Kapazität, das Hinzufügen von Metadaten-Kapazität oder das Hinzufügen von Redundanz oder neuen Funktionen durchführen.
+
+Befolgen Sie die Schritte für die Art der Erweiterung, die Sie durchführen:
+
+[role="tabbed-block"]
+====
+.Hinzufügen von Storage-Volumes
+--
+Folgen Sie den Schritten für link:adding-storage-volumes-to-storage-nodes.html["Hinzufügen von Storage-Volumes zu Storage-Nodes"].
+
+--
+.Grid-Nodes hinzufügen
+--
+. Folgen Sie den Schritten für link:adding-grid-nodes-to-existing-site-or-adding-new-site.html["Hinzufügen von Grid-Nodes zu einem vorhandenen Standort"].
+. link:updating-subnets-for-grid-network.html["Aktualisieren Sie die Subnetze"].
+. Implementierung von Grid-Nodes:
++
+** link:deploying-new-grid-nodes.html#appliances-deploying-storage-gateway-or-non-primary-admin-nodes["Appliances"]
+** link:deploying-new-grid-nodes.html#vmware-deploy-grid-nodes["VMware"]
+** link:deploying-new-grid-nodes.html#linux-deploy-grid-nodes["Linux"]
++
+
+NOTE: „Linux“ bezieht sich auf eine Red hat Enterprise Linux-, Ubuntu- oder Debian-Bereitstellung. Eine Liste der unterstützten Versionen finden Sie im https://imt.netapp.com/matrix/#welcome["NetApp Interoperabilitäts-Matrix-Tool (IMT)"^].
+
+
+
+. link:performing-expansion.html["Führen Sie die Erweiterung durch"].
+. link:configuring-expanded-storagegrid-system.html["Erweitertes System konfigurieren"].
+
+
+--
+.Neuen Standort hinzufügen
+--
+. Folgen Sie den Schritten für link:adding-grid-nodes-to-existing-site-or-adding-new-site.html["Hinzufügen eines neuen Standorts"].
+. link:updating-subnets-for-grid-network.html["Aktualisieren Sie die Subnetze"].
+. Implementierung von Grid-Nodes:
++
+** link:deploying-new-grid-nodes.html#appliances-deploying-storage-gateway-or-non-primary-admin-nodes["Appliances"]
+** link:deploying-new-grid-nodes.html#vmware-deploy-grid-nodes["VMware"]
+** link:deploying-new-grid-nodes.html#linux-deploy-grid-nodes["Linux"]
++
+
+NOTE: „Linux“ bezieht sich auf eine Red hat Enterprise Linux-, Ubuntu- oder Debian-Bereitstellung. Eine Liste der unterstützten Versionen finden Sie im https://imt.netapp.com/matrix/#welcome["NetApp Interoperabilitäts-Matrix-Tool (IMT)"^].
+
+
+
+. link:performing-expansion.html["Führen Sie die Erweiterung durch"].
+. link:configuring-expanded-storagegrid-system.html["Erweitertes System konfigurieren"].
+
+
+--
+====

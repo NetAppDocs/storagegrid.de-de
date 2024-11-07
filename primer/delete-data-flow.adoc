@@ -1,0 +1,62 @@
+---
+permalink: primer/delete-data-flow.html 
+sidebar: sidebar 
+keywords: object, delete, deletion, object lock, bucket lifecycle, expiration, ilm, placement instruction 
+summary: Alle Objektkopien werden aus dem StorageGRID System entfernt, wenn ein Client oder Mandant einen Löschvorgang ausführt oder wenn die Nutzungsdauer des Objekts abgelaufen ist, wobei die automatische Entfernung ausgelöst wird. Es gibt einen definierten Datenfluss zum Löschen von Objekten. 
+---
+= Löschen des Datenflusses
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Alle Objektkopien werden aus dem StorageGRID System entfernt, wenn ein Client einen Löschvorgang durchführt oder die Lebensdauer des Objekts abgelaufen ist. Dies wird automatisch entfernt. Es gibt einen definierten Datenfluss zum Löschen von Objekten.
+
+
+
+== Löschhierarchie
+
+StorageGRID bietet verschiedene Methoden zur Steuerung der Aufbewahrung oder Löschung von Objekten. Objekte können nach Client-Anforderung oder automatisch gelöscht werden. StorageGRID priorisiert alle S3 Object Lock-Einstellungen bei Löschanfragen von Clients, die nach ihrer Wichtigkeit über den S3-Bucket-Lebenszyklus und die Anweisungen zur ILM-Platzierung priorisiert werden.
+
+* *S3 Object Lock*: Wenn die globale S3 Object Lock-Einstellung für das Grid aktiviert ist, können S3-Clients Buckets mit aktivierter S3-Objektsperre erstellen und dann über die S3-REST-API Aufbewahrungseinstellungen für jede Objektversion festlegen, die diesem Bucket hinzugefügt wurde.
++
+** Eine Objektversion, die sich unter einem Legal Hold befindet, kann mit keiner Methode gelöscht werden.
+** Bevor das Aufbewahrungsdatum einer Objektversion erreicht ist, kann diese Version nicht mit einer Methode gelöscht werden.
+** Objekte in Buckets mit aktivierter S3 Objektsperre werden von ILM „ewig“ aufbewahrt. Nachdem jedoch eine Aufbewahrungsfrist erreicht ist, kann eine Objektversion durch eine Client-Anfrage oder den Ablauf des Bucket-Lebenszyklus gelöscht werden.
+** Wenn S3-Clients ein Standarddatum für die Aufbewahrung bis auf den Bucket anwenden, müssen sie für jedes Objekt kein „bis zur Aufbewahrung“ angeben.
+
+
+* *Client delete Request*: Ein S3-Client kann eine delete-Objekt-Anfrage ausgeben. Wenn ein Client ein Objekt löscht, werden alle Kopien des Objekts aus dem StorageGRID System entfernt.
+* *Objekte in Bucket löschen*: Tenant Manager-Benutzer können diese Option verwenden, um alle Kopien der Objekte und Objektversionen in ausgewählten Buckets dauerhaft aus dem StorageGRID-System zu entfernen.
+* *S3-Bucket-Lebenszyklus*: S3-Clients können eine Lebenszykluskonfiguration zu ihren Buckets hinzufügen, die eine Ablaufaktion angibt. Wenn ein Bucket-Lebenszyklus vorhanden ist, löscht StorageGRID automatisch alle Kopien eines Objekts, wenn das in der Aktion „Ablaufdatum“ angegebene Datum oder die Anzahl der Tage erfüllt werden, es sei denn, der Client löscht das Objekt zuerst.
+* *ILM-Platzierungsanweisungen*: Vorausgesetzt, dass für den Bucket keine S3-Objektsperre aktiviert ist und es keinen Bucket-Lebenszyklus gibt, löscht StorageGRID automatisch ein Objekt, wenn der letzte Zeitraum der ILM-Regel endet und es keine weiteren Platzierungen für das Objekt gibt.
++
+
+NOTE: Wenn ein S3-Bucket-Lebenszyklus konfiguriert ist, überschreiben die Lifecycle-Ablaufaktionen die ILM-Richtlinie für Objekte, die mit dem Lifecycle-Filter übereinstimmen. Aus diesem Grund kann ein Objekt auch dann im Grid verbleiben, wenn ILM-Anweisungen zum Auflegen des Objekts verfallen sind.
+
+
+
+Weitere Informationen finden Sie unter link:../ilm/how-objects-are-deleted.html["So werden Objekte gelöscht"] .
+
+
+
+== Datenfluss für Clientlöschungen
+
+image::../media/delete_data_flow.png[Client löscht den Datenfluss]
+
+. Der LDR-Dienst erhält eine Löschanforderung von der Client-Anwendung.
+. Der LDR-Service aktualisiert den Metadatenspeicher, sodass das Objekt auf die Client-Anforderungen gelöscht wird, und weist die ILM-Engine an, alle Kopien von Objektdaten zu entfernen.
+. Das Objekt wurde aus dem System entfernt. Der Metadatenspeicher wird aktualisiert, um Objektmetadaten zu entfernen.
+
+
+
+
+== Datenfluss für ILM-Löschungen
+
+image::../media/automatic_deletion_data_flow.png[Automatisches Löschen des Datenflusses]
+
+. Die ILM-Engine legt fest, dass das Objekt gelöscht werden muss.
+. Die ILM-Engine benachrichtigt den Metadatenspeicher. Der Metadatenspeicher aktualisiert Objektmetadaten, sodass das Objekt auf Client-Anforderungen gelöscht aussieht.
+. Die ILM-Engine entfernt alle Kopien des Objekts. Der Metadatenspeicher wird aktualisiert, um Objektmetadaten zu entfernen.
+

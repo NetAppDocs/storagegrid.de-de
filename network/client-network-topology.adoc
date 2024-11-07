@@ -1,0 +1,27 @@
+---
+permalink: network/client-network-topology.html 
+sidebar: sidebar 
+keywords: client network topology 
+summary: 'Ein Client-Netzwerk ist optional. Durch die Verwendung eines Client-Netzwerks kann der Client-Netzwerk-Traffic \ (z.B. S3\) vom internen Grid-Datenverkehr getrennt werden, wodurch die Sicherheit der Grid-Netzwerke gewährleistet wird. Wenn das Admin-Netzwerk nicht konfiguriert ist, kann der administrative Datenverkehr entweder vom Client oder vom Grid-Netzwerk verarbeitet werden.' 
+---
+= Client-Netzwerktopologie
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ein Client-Netzwerk ist optional. Durch die Verwendung eines Client-Netzwerks kann der Client-Netzwerk-Traffic (beispielsweise S3) vom internen Grid-Traffic getrennt werden, sodass Grid-Netzwerke sicherer sind. Wenn das Admin-Netzwerk nicht konfiguriert ist, kann der administrative Datenverkehr entweder vom Client oder vom Grid-Netzwerk verarbeitet werden.
+
+Wenn Sie das Client-Netzwerk konfigurieren, stellen Sie die Host-IP-Adresse, die Subnetzmaske und die Gateway-IP-Adresse für die eth2-Schnittstelle für den konfigurierten Node fest. Das Client-Netzwerk jedes Knotens kann unabhängig vom Client-Netzwerk auf jedem anderen Knoten sein.
+
+Wenn Sie während der Installation ein Client-Netzwerk für einen Node konfigurieren, wechselt das Standard-Gateway des Node vom Grid Network Gateway zum Client Network Gateway, wenn die Installation abgeschlossen ist. Wenn später ein Client-Netzwerk hinzugefügt wird, wechselt das Standard-Gateway des Node auf die gleiche Weise.
+
+In diesem Beispiel wird das Client-Netzwerk für S3-Clientanforderungen und für Administrationsfunktionen verwendet, während das Grid-Netzwerk für interne Objektverwaltungsvorgänge reserviert ist.
+
+image::../media/grid_client_networks.png[Grid Client-Netzwerke]
+
+image::../media/grid_client_networks_ips.png[Grid Client Networks-IPs]
+
+.Verwandte Informationen
+link:../maintain/changing-nodes-network-configuration.html["Ändern der Node-Netzwerkkonfiguration"]

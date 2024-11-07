@@ -1,0 +1,79 @@
+---
+permalink: maintain/linux-adding-trunk-or-access-interfaces-to-node.html 
+sidebar: sidebar 
+keywords: add extra interface to node, trunk interface, access interface 
+summary: Nach der Installation können Sie einem Linux-Knoten zusätzliche Trunk- oder Zugangsschnittstellen hinzufügen. Die fügen Sie Schnittstellen hinzu, werden auf der Seite VLAN-Schnittstellen und auf der Seite HA-Gruppen angezeigt. 
+---
+= Linux: Hinzufügen von Trunk- oder Zugriffsschnittstellen zu einem Node
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nach der Installation können Sie einem Linux-Knoten zusätzliche Trunk- oder Zugangsschnittstellen hinzufügen. Die fügen Sie Schnittstellen hinzu, werden auf der Seite VLAN-Schnittstellen und auf der Seite HA-Gruppen angezeigt.
+
+.Bevor Sie beginnen
+* Sie haben Zugriff auf die Anweisungen für die Installation von StorageGRID auf Ihrer Linux-Plattform.
++
+** link:../rhel/index.html["Installieren Sie StorageGRID unter Red hat Enterprise Linux"]
+** link:../ubuntu/index.html["Installieren Sie StorageGRID auf Ubuntu oder Debian"]
+
+
+* Sie haben die `Passwords.txt` Datei.
+* Sie haben link:../admin/admin-group-permissions.html["Bestimmte Zugriffsberechtigungen"].
+
+
+
+CAUTION: Versuchen Sie nicht, einem Node Schnittstellen hinzuzufügen, während ein Software-Upgrade, ein Recovery-Verfahren oder ein Erweiterungsvorgang aktiv ist.
+
+.Über diese Aufgabe
+Verwenden Sie diese Schritte, um einem Linux-Knoten eine oder mehrere zusätzliche Schnittstellen hinzuzufügen, nachdem der Knoten installiert wurde. Beispielsweise möchten Sie einem Admin oder Gateway Node eine Trunk-Schnittstelle hinzufügen, sodass Sie den Datenverkehr zwischen verschiedenen Applikationen oder Mandanten über VLAN-Schnittstellen trennen können. Oder auch, wenn Sie eine Access-Schnittstelle hinzufügen möchten, um sie in einer HA-Gruppe (High Availability, Hochverfügbarkeit) zu verwenden.
+
+Wenn Sie eine Trunk-Schnittstelle hinzufügen, müssen Sie eine VLAN-Schnittstelle in StorageGRID konfigurieren. Wenn Sie eine Zugriffsschnittstelle hinzufügen, können Sie die Schnittstelle direkt einer HA-Gruppe hinzufügen. Sie müssen keine VLAN-Schnittstelle konfigurieren.
+
+Der Node ist für kurze Zeit nicht verfügbar, wenn Sie Schnittstellen hinzufügen. Sie sollten dieses Verfahren auf jeweils einem Knoten durchführen.
+
+.Schritte
+. Melden Sie sich beim Linux-Server an, auf dem der Node gehostet wird.
+. Bearbeiten Sie mit einem Texteditor wie vim oder pico die Konfigurationsdatei des Knotens:
++
+`/etc/storagegrid/nodes/_node-name_.conf`
+
+. Fügen Sie der Datei einen Eintrag hinzu, um den Namen und optional die Beschreibung jeder zusätzlichen Schnittstelle anzugeben, die Sie dem Node hinzufügen möchten. Verwenden Sie dieses Format.
++
+`INTERFACE_TARGET_nnnn=_value_`
+
++
+Geben Sie für _nnnn_ für jeden Eintrag, den Sie hinzufügen, eine eindeutige Zahl `INTERFACE_TARGET` an.
+
++
+Geben Sie unter _value_ den Namen der physischen Schnittstelle auf dem Bare-Metal-Host an. Fügen Sie dann optional ein Komma hinzu und geben Sie eine Beschreibung der Schnittstelle an, die auf der Seite VLAN-Schnittstellen und der Seite HA-Gruppen angezeigt wird.
+
++
+Beispiel:
+
++
+`INTERFACE_TARGET_0001=ens256, Trunk`
+
++
+
+NOTE: Geben Sie keine anderen Netzwerkparameter an, da sonst ein Validierungsfehler auftritt.
+
+. Führen Sie den folgenden Befehl aus, um Ihre Änderungen an der Node-Konfigurationsdatei zu validieren:
++
+`sudo storagegrid node validate _node-name_`
+
++
+Beheben Sie Fehler oder Warnungen, bevor Sie mit dem nächsten Schritt fortfahren.
+
+. Führen Sie den folgenden Befehl aus, um die Konfiguration des Node zu aktualisieren:
++
+`sudo storagegrid node reload _node-name_`
+
+
+
+.Nachdem Sie fertig sind
+* Wenn Sie eine oder mehrere Trunk-Schnittstellen hinzugefügt haben, gehen Sie zulink:../admin/configure-vlan-interfaces.html["Konfigurieren Sie die VLAN-Schnittstellen"], um eine oder mehrere VLAN-Schnittstellen für jede neue übergeordnete Schnittstelle zu konfigurieren.
+* Wenn Sie eine oder mehrere Zugriffsschnittstellen hinzugefügt haben, gehen Sie zulink:../admin/configure-high-availability-group.html["Konfigurieren Sie Hochverfügbarkeitsgruppen"], um die neuen Schnittstellen direkt HA-Gruppen hinzuzufügen.
+

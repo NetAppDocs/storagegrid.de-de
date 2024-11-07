@@ -1,0 +1,185 @@
+---
+permalink: expand/considerations-for-rebalancing-erasure-coded-data.html 
+sidebar: sidebar 
+keywords: erasure coding, rebalance, ec rebalance, site rebalance 
+summary: Wenn Sie eine Erweiterung zum Hinzufügen von Storage Nodes durchführen und ILM-Regeln zum Löschen von Code-Daten verwenden, müssen Sie möglicherweise das EC-Ausgleichs-Verfahren durchführen, wenn Sie nicht genügend Storage Nodes für das von Ihnen verwendete Erasure-Coding-Schema hinzufügen können. 
+---
+= Überlegungen zur Lastverteilung bei Daten, die mit Erasure Coding versehen sind
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie eine Erweiterung zum Hinzufügen von Storage-Nodes durchführen und ILM-Regeln zum Löschen von Code-Daten verwenden, müssen Sie möglicherweise das Verfahren zum Ausgleich des Erasure Coding (EC) durchführen, wenn Sie nicht genügend Storage Nodes für das von Ihnen verwendete Erasure Coding-Schema hinzufügen können.
+
+Nachdem Sie diese Überlegungen überprüft haben, führen Sie die Erweiterung durch, und fahren Sie dann mit link:rebalancing-erasure-coded-data-after-adding-storage-nodes.html["Ausgleich von Daten, die im Erasure Coding ausgeführt werden, nach dem Hinzufügen von Storage-Nodes"]fort, um das Verfahren auszuführen.
+
+
+
+== Was ist die Neuausrichtung der EG?
+
+Bei der EC-Ausbalancierung handelt es sich um ein StorageGRID-Verfahren, das nach einer Erweiterung des Storage-Nodes erforderlich sein kann. Das Verfahren wird als Kommandozeilenskript vom primären Admin-Knoten ausgeführt. Beim Ausführen des EC-Ausgleichs verteilt StorageGRID Fragmente, die mit Löschvorgängen codiert wurden, auf die vorhandenen und die neu hinzugefügten Storage-Nodes an einem Standort.
+
+Das EC-Ausgleichverfahren:
+
+* Verschiebt nur Objektdaten, die Erasure Coding verwenden. Es werden keine replizierten Objektdaten verschoben.
+* Verteilt die Daten an einem Standort neu. Es werden keine Daten zwischen Standorten verschoben.
+* Verteilt Daten auf alle Storage-Nodes an einem Standort neu. Daten werden nicht innerhalb von Storage Volumes neu verteilt.
+* Berücksichtigt nicht die Verwendung replizierter Daten auf jedem Storage Node bei der Festlegung, wo Daten mit Erasure Coding verschoben werden sollen.
+* Verteilt Daten, die mit Erasure Coding codiert wurden, gleichmäßig zwischen Storage-Nodes, ohne die relativen Kapazitäten jedes Nodes zu berücksichtigen.
+* Die Daten, die nach einer Erasure Coded codiert wurden, werden nicht an Storage-Nodes verteilt, die zu mehr als 80 % voll sind.
+* Könnte die Performance von ILM-Vorgängen und S3-Client-Operationen beeinträchtigen, wenn sie ausgeführt wird&#8212;zusätzliche Ressourcen sind erforderlich, um die Fragmente des Erasure-Coding neu zu verteilen.
+
+
+Wenn das EC-Ausgleichverfahren abgeschlossen ist:
+
+* Daten, die mit Erasure coded werden, werden von Storage-Nodes mit weniger verfügbarem Speicherplatz auf Storage-Nodes mit mehr verfügbarem Speicherplatz verschoben.
+* Die Datensicherung von Objekten, die mit Erasure Coding versehen sind, wird unverändert beibehalten.
+* Die verwendeten (%) Werte können zwischen den Storage-Nodes aus zwei Gründen unterschiedlich sein:
++
+** Replizierte Objektkopien verbrauchen weiterhin Speicherplatz auf den vorhandenen Nodes&#8212;beim EC-Ausgleichverfahren werden keine replizierten Daten verschoben.
+** Nodes mit höherer Kapazität sind relativ weniger voll als Nodes mit geringerer Kapazität, obwohl alle Nodes am Ende ungefähr das gleiche Volumen an Daten mit Erasure-Coded-Verfahren aufweisen.
++
+Angenommen, drei 200-TB-Nodes werden jeweils zu 80 % gefüllt (200 &#215; 0.8 = 160 TB auf jedem Node oder 480 TB für den Standort). Wenn Sie einen 400-TB-Node hinzufügen und das Ausgleichs-Verfahren ausführen, verfügen alle Nodes nun über ungefähr die gleiche Menge an Daten aus dem Löschcode (480/4 = 120 TB). Der verwendete Wert (%) für den größeren Knoten ist jedoch kleiner als der verwendete Wert (%) für die kleineren Knoten.
+
++
+image::../media/used_space_with_larger_node.png[Vor der Erweiterung verwendeter Speicherplatz]
+
+
+
+
+
+
+
+== Zeitpunkt für den Ausgleich von Daten, die mit Erasure Coding codiert wurden
+
+Betrachten wir das folgende Szenario:
+
+* StorageGRID wird an einem Standort ausgeführt, der drei Storage-Nodes enthält.
+* Die ILM-Richtlinie verwendet eine 2+1-Regel zur Einhaltung von Datenkonsistenz für alle Objekte, die größer als 1.0 MB sind, und eine Replizierungsregel mit 2 Kopien für kleinere Objekte.
+* Alle Storage-Nodes sind vollständig voll geworden. Der Alarm *Low Object Storage* wurde auf dem Hauptschweregrad ausgelöst.
++
+image::../media/used_space_before_expansion.png[Vor der Erweiterung verwendeter Speicherplatz]
+
+
+
+
+
+=== Eine Neuverteilung ist nicht erforderlich, wenn genügend Nodes hinzugefügt werden
+
+Um zu verstehen, wann EC-Lastausgleich nicht erforderlich ist, nehmen wir an, Sie haben drei (oder mehr) neue Storage-Nodes hinzugefügt. In diesem Fall müssen Sie keine EC-Ausbalancierung durchführen. Die ursprünglichen Speicher-Nodes bleiben voll, aber neue Objekte verwenden nun die drei neuen Knoten für 2+1 Erasure Coding&#8212;die beiden Datenfragmente und das eine Parity Fragment können jeweils auf einem anderen Knoten gespeichert werden.
+
+image::../media/used_space_after_3_node_expansion.png[Genutzter Speicherplatz nach Erweiterung mit 3 Nodes]
+
+
+CAUTION: In diesem Fall können Sie zwar das Verfahren zum Lastausgleich der EC ausführen, jedoch wird durch das Verschieben der vorhandenen Daten, die nach der Löschung codiert wurden, die Performance des Grids vorübergehend beeinträchtigt, was sich auf die Client-Operationen auswirken kann.
+
+
+
+=== Eine Neuverteilung ist erforderlich, wenn nicht genügend Nodes hinzugefügt werden können
+
+Um zu verstehen, wann EC-Lastausgleich erforderlich ist, nehmen wir an, dass Sie nur zwei Storage Nodes anstelle von drei hinzufügen können. Da für das Schema 2+1 mindestens drei Speicher-Nodes Speicherplatz verfügbar sein muss, können die leeren Knoten nicht für neue mit Löschcode codierte Daten verwendet werden.
+
+image::../media/used_space_after_2_node_expansion.png[Genutzter Speicherplatz nach Erweiterung mit 2 Nodes]
+
+Um die neuen Storage-Nodes zu verwenden, sollten Sie das EC-Neuausgleich-Verfahren ausführen. Wenn dieses Verfahren ausgeführt wird, verteilt StorageGRID vorhandene Daten und Paritätsfragmente über alle Storage Nodes am Standort. In diesem Beispiel sind alle fünf Nodes nach Abschluss des EC-Ausgleichs nur zu 60 % voll, und Objekte können weiterhin auf allen Storage Nodes in das Erasure Coding-Schema 2+1 aufgenommen werden.
+
+image::../media/used_space_after_ec_rebalance.png[Genutzter Speicherplatz nach EC-Ausgleich]
+
+
+
+== Empfehlungen für eine Neuverteilung der EG
+
+NetApp erfordert eine Ausbalancierung anhand von EC-Vorgaben, wenn _alle_ der folgenden Aussagen treffen:
+
+* Sie verwenden das Erasure Coding für Ihre Objektdaten.
+* Die Warnung *Low Object Storage* wurde für einen oder mehrere Storage Nodes an einem Standort ausgelöst, was darauf hinweist, dass die Knoten zu mindestens 80 % voll sind.
+* Sie können nicht genügend neue Storage-Nodes für das verwendete Erasure-Coding-Schema hinzufügen. Siehe link:adding-storage-capacity-for-erasure-coded-objects.html["Erweitern Sie Storage-Kapazität für Objekte, die nach dem Erasure-Coding-Verfahren codiert wurden"].
+* Ihre S3-Clients können eine niedrigere Performance für Schreib- und Lesevorgänge tolerieren, während der EC-Ausgleichvorgang ausgeführt wird.
+
+
+Sie können optional das EC-Ausgleichverfahren ausführen, wenn Storage Nodes auf ähnliche Ebenen gefüllt werden sollen und Ihre S3-Clients eine niedrigere Performance für ihre Schreib- und Lesevorgänge tolerieren können, während das EC-Ausgleichverfahren ausgeführt wird.
+
+
+
+== Wie EC-Ausgleichs-Verfahren mit anderen Wartungsaufgaben interagiert
+
+Sie können bestimmte Wartungsverfahren nicht gleichzeitig durchführen, während Sie das EC-Ausgleichs-Verfahren ausführen.
+
+[cols="1a,2a"]
+|===
+| Verfahren | Während des EC-Ausgleichs erlaubt? 
+
+
+ a| 
+Weitere EC-Ausgleichverfahren
+ a| 
+Nein
+
+Sie können nur ein EC-Ausgleichverfahren gleichzeitig ausführen.
+
+
+
+ a| 
+Verfahren zur Deaktivierung
+
+EC-Datenreparaturauftrag
+ a| 
+Nein
+
+* Während des EC-Ausgleichs werden Sie daran gehindert, eine Stilllegung oder eine EC-Datenreparatur zu starten.
+* Sie können den EC-Ausgleichvorgang nicht starten, während ein Ausmustern von Storage Nodes oder eine EC-Datenreparatur ausgeführt wird.
+
+
+
+
+ a| 
+Expansionsverfahren
+ a| 
+Nein
+
+Wenn Sie neue Storage-Nodes in einer Erweiterung hinzufügen müssen, führen Sie nach dem Hinzufügen aller neuen Nodes das Verfahren zur EC-Neuverteilung aus.
+
+
+
+ a| 
+Upgrade-Verfahren
+ a| 
+Nein
+
+Wenn Sie ein Upgrade der StorageGRID-Software durchführen müssen, führen Sie das Upgrade vor oder nach dem Ausführen des EC-Ausgleichs durch. Bei Bedarf können Sie den EC-Ausgleichvorgang beenden, um ein Software-Upgrade durchzuführen.
+
+
+
+ a| 
+Klonvorgang für Appliance-Node
+ a| 
+Nein
+
+Wenn Sie einen Appliance-Storage-Node klonen müssen, führen Sie nach dem Hinzufügen des neuen Node das Verfahren zur EC-Neuverteilung aus.
+
+
+
+ a| 
+Hotfix-Verfahren
+ a| 
+Ja.
+
+Sie können einen StorageGRID-Hotfix anwenden, während der EC-Ausgleichvorgang ausgeführt wird.
+
+
+
+ a| 
+Andere Wartungsarbeiten
+ a| 
+Nein
+
+Sie müssen das EC-Ausgleichverfahren beenden, bevor Sie andere Wartungsverfahren durchführen.
+
+|===
+
+
+== Wechselwirkungen zwischen EC-Ausgleichsoperationen und ILM
+
+Während des EC-Ausgleichs ausgeführt wird, vermeiden Sie ILM-Änderungen, die den Standort vorhandener Objekte, die mit Erasure-Coding-Verfahren codiert wurden, ändern könnten. Verwenden Sie beispielsweise nicht eine ILM-Regel mit einem anderen Profil für Erasure Coding. Wenn Sie solche ILM-Änderungen vornehmen müssen, sollten Sie das EC-Neuausgleich-Verfahren beenden.

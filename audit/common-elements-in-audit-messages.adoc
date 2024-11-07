@@ -1,0 +1,106 @@
+---
+permalink: audit/common-elements-in-audit-messages.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, messages, message, common elements, AMID, ANID, ASES, ASQN, ATID, ATIM, ATYP, AVER, RSLT 
+summary: Alle Meldungen enthalten die allgemeinen Elemente. 
+---
+= Gemeinsame Elemente in Audit-Meldungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Alle Meldungen enthalten die allgemeinen Elemente.
+
+[cols="1a,1a,4a"]
+|===
+| Codieren | Typ | Beschreibung 
+
+
+ a| 
+INMITTEN
+ a| 
+FC32
+ a| 
+Modul-ID: Eine vierstellige Kennung der Modul-ID, die die Nachricht generiert hat. Dies gibt das Codesegment an, in dem die Überwachungsmeldung generiert wurde.
+
+
+
+ a| 
+ANID
+ a| 
+UI32
+ a| 
+Node-ID: Die Grid-Node-ID, die dem Service zugewiesen wurde, der die Meldung generiert hat. Jedem Service wird bei Konfiguration und Installation des StorageGRID-Systems eine eindeutige Kennung zugewiesen. Diese ID kann nicht geändert werden.
+
+
+
+ a| 
+ASES
+ a| 
+UI64
+ a| 
+Kennung der Auditsitzung: In vorherigen Releases gab dieses Element die Zeit an, zu der das Audit-System nach dem Start des Dienstes initialisiert wurde. Dieser Zeitwert wurde in Mikrosekunden seit der Betriebssystemepoche gemessen (00:00:00 UTC am 1. Januar 1970).
+
+*Hinweis:* Dieses Element ist veraltet und wird nicht mehr in Audit-Nachrichten angezeigt.
+
+
+
+ a| 
+ASQN
+ a| 
+UI64
+ a| 
+Sequenzanzahl: In vorherigen Releases wurde dieser Zähler für jede erzeugte Überwachungsmeldung auf dem Grid-Node (ANID) erhöht und beim Neustart des Dienstes auf Null zurückgesetzt.
+
+*Hinweis:* Dieses Element ist veraltet und wird nicht mehr in Audit-Nachrichten angezeigt.
+
+
+
+ a| 
+ATID
+ a| 
+UI64
+ a| 
+Trace-ID: Eine Kennung, die von den Nachrichten, die von einem einzelnen Ereignis ausgelöst wurden, gemeinsam genutzt wird.
+
+
+
+ a| 
+ATIM
+ a| 
+UI64
+ a| 
+Zeitstempel: Die Zeit, zu der das Ereignis generiert wurde, das die Audit-Nachricht auslöste, gemessen in Mikrosekunden seit der Betriebssystemepoche (00:00:00 UTC am 1. Januar, 1970). Beachten Sie, dass die meisten verfügbaren Tools zum Konvertieren des Zeitstempels in lokales Datum und Uhrzeit auf Millisekunden basieren.
+
+Möglicherweise ist ein Aufrundung oder Verkürzung des protokollierten Zeitstempels erforderlich. Die vom Benutzer lesbare Zeit, die am Anfang der Überwachungsmeldung in der Datei angezeigt `audit.log` wird, ist das ATIM-Attribut im ISO 8601-Format. Datum und Uhrzeit werden als, dargestellt `_YYYY-MMDDTHH:MM:SS.UUUUUU_`, wobei das ein literales Zeichenkette ist, das `T` den Beginn des Zeitsegments des Datums angibt. `_UUUUUU_` Mikrosekunden.
+
+
+
+ a| 
+ATYP
+ a| 
+FC32
+ a| 
+Ereignistyp: Eine vierstellige Kennung des zu protokollierenden Ereignisses. Dies regelt den "Nutzlastinhalt" der Nachricht: Die Attribute, die enthalten sind.
+
+
+
+ a| 
+AVER
+ a| 
+UI32
+ a| 
+Version: Die Version der Audit-Nachricht. Wenn die StorageGRID Software weiterentwickelt wird, können neue Serviceversionen neue Funktionen in die Audit-Berichte integrieren. Dieses Feld ermöglicht die Abwärtskompatibilität im AMS-Dienst zur Verarbeitung von Meldungen aus älteren Serviceversionen.
+
+
+
+ a| 
+RSLT
+ a| 
+FC32
+ a| 
+Ergebnis: Das Ergebnis von Ereignis, Prozess oder Transaktion. Wenn für eine Nachricht nicht relevant ist, WIRD KEINE verwendet, sondern SUCS, damit die Nachricht nicht versehentlich gefiltert wird.
+
+|===

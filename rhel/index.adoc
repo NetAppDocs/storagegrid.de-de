@@ -1,0 +1,59 @@
+---
+permalink: rhel/index.html 
+sidebar: sidebar 
+keywords: red hat enterprise linux, rhel, quick start 
+summary: 'Führen Sie diese allgemeinen Schritte aus, um einen Red hat Enterprise Linux \(RHEL\) Linux StorageGRID-Knoten zu installieren.' 
+---
+= Schnellstart für die Installation von StorageGRID unter Red hat Enterprise Linux
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Führen Sie diese allgemeinen Schritte aus, um einen Red hat Enterprise Linux (RHEL) Linux StorageGRID-Knoten zu installieren.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"] Vorbereitung
+[role="quick-margin-list"]
+* Erfahren Sie mehr über link:../primer/storagegrid-architecture-and-network-topology.html["StorageGRID Architektur und Netzwerktopologie"].
+* Erfahren Sie mehr über die Besonderheiten von link:../network/index.html["StorageGRID Networking"].
+* Sammeln und bereiten Sie die link:required-materials.html["Erforderliche Informationen und Materialien"].
+* Bereiten Sie die erforderlichen link:cpu-and-ram-requirements.html["CPU und RAM"].
+* Vorsehen für link:storage-and-performance-requirements.html["Storage- und Performance-Anforderungen erfüllt"].
+* link:how-host-wide-settings-change.html["Bereiten Sie die Linux-Server vor"] Damit werden Ihre StorageGRID Nodes gehostet.
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"] Einsatz
+[role="quick-margin-para"]
+Implementieren von Grid-Nodes Wenn Sie Grid-Nodes implementieren, werden diese als Teil des StorageGRID Systems erstellt und mit einem oder mehreren Netzwerken verbunden.
+
+[role="quick-margin-list"]
+* Um softwarebasierte Grid-Nodes auf den Hosts bereitzustellen, die Sie in Schritt 1 vorbereitet haben, verwenden Sie die Linux-Befehlszeile und link:creating-node-configuration-files.html["Dateien für die Node-Konfiguration"].
+* Um StorageGRID-Appliance-Nodes bereitzustellen, folgen Sie den https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/index.html["Schnellstart für die Hardwareinstallation"^].
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"] Konfiguration
+[role="quick-margin-para"]
+Wenn alle Knoten bereitgestellt wurden, verwenden Sie den Grid Manager für link:navigating-to-grid-manager.html["Konfigurieren Sie das Raster und schließen Sie die Installation ab"].
+
+
+
+== Automatisieren Sie die Installation
+
+Um Zeit zu sparen und Konsistenz zu gewährleisten, können Sie die Installation des StorageGRID Host-Service und die Konfiguration der Grid-Nodes automatisieren.
+
+* Nutzen Sie ein Standard-Orchestrierungs-Framework wie Ansible, Puppet oder Chef für die Automatisierung von:
++
+** Installation von RHEL
+** Konfiguration von Netzwerk und Storage
+** Installation der Container-Engine und des StorageGRID-Host-Service
+** Implementierung von Virtual Grid-Nodes
+
+
++
+Siehe link:automating-installation.html#automate-the-installation-and-configuration-of-the-storagegrid-host-service["Automatisieren Sie die Installation und Konfiguration des StorageGRID-Host-Service"].
+
+* Nachdem Sie Grid-Nodes bereitgestellt haben, link:automating-installation.html#automate-the-configuration-of-storagegrid["Automatisieren Sie die Konfiguration des StorageGRID Systems"] verwenden Sie das im Installationsarchiv bereitgestellte Python-Konfigurationsskript.
+* https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/automating-appliance-installation-and-configuration.html["Automatisieren Sie die Installation und Konfiguration der Appliance Grid Nodes"^]
+* Wenn Sie ein fortgeschrittener Entwickler von StorageGRID-Bereitstellungen sind, automatisieren Sie die Installation von Grid-Nodes mithilfe der link:overview-of-installation-rest-api.html["REST-API für die Installation"].
+

@@ -1,0 +1,60 @@
+---
+permalink: admin/web-browser-requirements.html 
+sidebar: sidebar 
+keywords: web browser requirements, supported browser, chrome, edge, firefox 
+summary: Sie müssen einen unterstützten Webbrowser verwenden. 
+---
+= Anforderungen an einen Webbrowser
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen einen unterstützten Webbrowser verwenden.
+
+[cols="2a,2a"]
+|===
+| Webbrowser | Unterstützte Mindestversion 
+
+
+ a| 
+Google Chrome
+ a| 
+119
+
+
+
+ a| 
+Microsoft Edge
+ a| 
+119
+
+
+
+ a| 
+Mozilla Firefox
+ a| 
+119
+
+|===
+Sie sollten das Browserfenster auf eine empfohlene Breite einstellen.
+
+[cols="3a,1a"]
+|===
+| Browserbreite | Pixel 
+
+
+ a| 
+Minimum
+ a| 
+1024
+
+
+
+ a| 
+Optimal
+ a| 
+1280
+
+|===

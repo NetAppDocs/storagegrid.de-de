@@ -1,0 +1,46 @@
+---
+permalink: admin/configuring-stored-object-compression.html 
+sidebar: sidebar 
+keywords: object compression, compress stored objects 
+summary: Sie können die Objektkomprimierung aktivieren, um die Größe der in StorageGRID gespeicherten Objekte zu reduzieren und so weniger Storage zu belegen. 
+---
+= Gespeicherte Objekte komprimieren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Objektkomprimierung aktivieren, um die Größe der in StorageGRID gespeicherten Objekte zu reduzieren und so weniger Storage zu belegen.
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben link:admin-group-permissions.html["Bestimmte Zugriffsberechtigungen"].
+
+
+.Über diese Aufgabe
+Standardmäßig ist die Objektkomprimierung deaktiviert. Wenn Sie die Komprimierung aktivieren, versucht StorageGRID beim Speichern jedes Objekts mithilfe einer verlustfreien Komprimierung zu komprimieren.
+
+
+NOTE: Wenn Sie diese Einstellung ändern, dauert es etwa eine Minute, bis die neue Einstellung angewendet wird. Der konfigurierte Wert wird für Performance und Skalierung zwischengespeichert.
+
+Bevor Sie die Objektkomprimierung aktivieren, beachten Sie Folgendes:
+
+* Sie sollten nicht *komprimieren gespeicherte Objekte* auswählen, es sei denn, Sie wissen, dass die gespeicherten Daten komprimierbar sind.
+* Applikationen, die Objekte in StorageGRID speichern, komprimieren möglicherweise Objekte, bevor sie gespeichert werden. Wenn eine Client-Anwendung ein Objekt bereits komprimiert hat, bevor es in StorageGRID gespeichert wird, verringert die Auswahl dieser Option die Größe eines Objekts nicht weiter.
+* Wählen Sie nicht *gespeicherte Objekte komprimieren* wenn Sie NetApp FabricPool mit StorageGRID verwenden.
+* Wenn *Compress Stored Objects* ausgewählt ist, sollten S3-Client-Anwendungen die Ausführung von GetObject-Operationen vermeiden, die einen Bereich von Bytes angeben, die zurückgegeben werden sollen. Diese Vorgänge beim Lesen von Range sind ineffizient, da StorageGRID Objekte effektiv dekomprimieren muss, um auf die angeforderten Bytes zuzugreifen. GetObject Operationen, die einen kleinen Bereich von Bytes von einem sehr großen Objekt anfordern, sind besonders ineffizient; zum Beispiel ist es ineffizient, einen 10 MB Bereich von einem 50 GB komprimierten Objekt zu lesen.
++
+Wenn Bereiche von komprimierten Objekten gelesen werden, können Client-Anforderungen eine Zeitdauer haben.
+
++
+
+NOTE: Wenn Sie Objekte komprimieren müssen und Ihre Client-Applikation Bereichslesevorgänge verwenden muss, erhöhen Sie die Zeitüberschreitung beim Lesen der Anwendung.
+
+
+
+.Schritte
+. Wählen Sie *CONFIGURATION* > *System* > *Storage settings* > *Object compression*.
+. Aktivieren Sie das Kontrollkästchen *gespeicherte Objekte komprimieren*.
+. Wählen Sie *Speichern*.
+

@@ -1,0 +1,55 @@
+---
+permalink: audit/ebkr-empty-bucket-request.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, EBKR, Empty Bucket Request 
+summary: 'Diese Meldung zeigt an, dass ein Benutzer eine Anforderung zum ein- und Ausschalten von leeren Buckets gesendet hat (d. h. zum Löschen von Bucket-Objekten oder zum Beenden des Löschens von Objekten).' 
+---
+= EBKR: Anforderung für leeren Bucket
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Diese Meldung zeigt an, dass ein Benutzer eine Anforderung zum ein- und Ausschalten von leeren Buckets gesendet hat (d. h. zum Löschen von Bucket-Objekten oder zum Beenden des Löschens von Objekten).
+
+[cols="1a,1a,4a"]
+|===
+| Codieren | Feld | Beschreibung 
+
+
+ a| 
+BUID
+ a| 
+Bucket-UUID
+ a| 
+Die Bucket-ID.
+
+
+
+ a| 
+EBJS
+ a| 
+Leere Bucket-JSON-Konfiguration
+ a| 
+Enthält den JSON, der die aktuelle leere Bucket-Konfiguration darstellt.
+
+
+
+ a| 
+S3AI
+ a| 
+S3-Mandantenkonto-ID
+ a| 
+Die Mandanten-Konto-ID des Benutzers, der die Anforderung gesendet hat. Ein leerer Wert zeigt anonymen Zugriff an.
+
+
+
+ a| 
+S3BK
+ a| 
+S3-Bucket
+ a| 
+Der S3-Bucket-Name
+
+|===

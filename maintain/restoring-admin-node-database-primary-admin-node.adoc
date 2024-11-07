@@ -1,0 +1,71 @@
+---
+permalink: maintain/restoring-admin-node-database-primary-admin-node.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, restore admin node database, restore database, primary admin node 
+summary: Wenn Sie die historischen Informationen zu Attributen und Warnmeldungen auf einem primären Admin-Knoten beibehalten möchten, der fehlgeschlagen ist, können Sie die Admin-Knoten-Datenbank wiederherstellen. Sie können diese Datenbank nur wiederherstellen, wenn Ihr StorageGRID-System einen anderen Admin-Knoten enthält. 
+---
+= Stellen Sie die Admin-Knoten-Datenbank wieder her, wenn Sie den primären Admin-Knoten wiederherstellen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie die historischen Informationen zu Attributen und Warnmeldungen auf einem primären Admin-Knoten beibehalten möchten, der fehlgeschlagen ist, können Sie die Admin-Knoten-Datenbank wiederherstellen. Sie können diese Datenbank nur wiederherstellen, wenn Ihr StorageGRID-System einen anderen Admin-Knoten enthält.
+
+.Bevor Sie beginnen
+* Der wiederhergestellte Admin-Knoten wird installiert und ausgeführt.
+* Das StorageGRID-System enthält mindestens zwei Admin-Nodes.
+* Sie haben die `Passwords.txt` Datei.
+* Sie haben die Provisionierungs-Passphrase.
+
+
+.Über diese Aufgabe
+Wenn ein Admin-Knoten ausfällt, gehen die in seiner Admin-Knoten-Datenbank gespeicherten historischen Informationen verloren. Diese Datenbank enthält folgende Informationen:
+
+* Meldungsverlauf
+* Historische Attributdaten, die in Diagrammen im Legacy-Stil auf der Seite Knoten verwendet werden
+
+
+Wenn Sie einen Admin-Knoten wiederherstellen, erstellt der Software-Installationsprozess eine leere Admin-Knoten-Datenbank auf dem wiederhergestellten Knoten. Die neue Datenbank enthält jedoch nur Informationen für Server und Services, die derzeit Teil des Systems sind oder später hinzugefügt werden.
+
+Wenn Sie einen primären Admin-Knoten wiederhergestellt haben und Ihr StorageGRID-System einen anderen Admin-Knoten hat, können Sie die historischen Informationen wiederherstellen, indem Sie die Admin-Knoten-Datenbank von einem nicht-primären Admin-Knoten (der_Quell-Admin-Knoten_) auf den wiederhergestellten primären Admin-Knoten kopieren. Wenn Ihr System nur über einen primären Admin-Knoten verfügt, können Sie die Admin-Knoten-Datenbank nicht wiederherstellen.
+
+
+NOTE: Das Kopieren der Admin-Node-Datenbank kann mehrere Stunden dauern. Einige Grid Manager-Funktionen sind nicht verfügbar, während Dienste auf dem Quell-Admin-Node angehalten werden.
+
+.Schritte
+. Melden Sie sich beim Quell-Admin-Node an:
++
+.. Geben Sie den folgenden Befehl ein: `ssh admin@_grid_node_IP_`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+.. Geben Sie den folgenden Befehl ein, um zu root zu wechseln: `su -`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+
+
+. Beenden Sie den MI-Dienst vom Quell-Admin-Node aus: `service mi stop`
+. Beenden Sie vom Quell-Admin-Node aus den Management Application Program Interface (mgmt-API)-Service: `service mgmt-api stop`
+. Führen Sie die folgenden Schritte auf dem wiederhergestellten Admin-Knoten aus:
++
+.. Melden Sie sich beim wiederhergestellten Admin-Knoten an:
++
+... Geben Sie den folgenden Befehl ein: `ssh admin@_grid_node_IP_`
+... Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+... Geben Sie den folgenden Befehl ein, um zu root zu wechseln: `su -`
+... Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+
+
+.. Halten Sie den MI-Dienst an: `service mi stop`
+.. Stoppen Sie den Management-API-Service: `service mgmt-api stop`
+.. Fügen Sie den SSH-privaten Schlüssel zum SSH-Agenten hinzu. Eingabe:``ssh-add``
+.. Geben Sie das in der Datei aufgeführte SSH-Zugriffspasswort ein `Passwords.txt`.
+.. Kopieren Sie die Datenbank vom Quell-Admin-Node auf den wiederhergestellten Admin-Node: `/usr/local/mi/bin/mi-clone-db.sh Source_Admin_Node_IP`
+.. Wenn Sie dazu aufgefordert werden, bestätigen Sie, dass Sie die MI-Datenbank auf dem wiederhergestellten Admin-Knoten überschreiben möchten.
++
+Die Datenbank und ihre historischen Daten werden auf den wiederhergestellten Admin-Knoten kopiert. Wenn der Kopiervorgang abgeschlossen ist, startet das Skript den wiederhergestellten Admin-Knoten.
+
+.. Wenn Sie keinen passwortlosen Zugriff auf andere Server mehr benötigen, entfernen Sie den privaten Schlüssel vom SSH-Agent. Eingabe:``ssh-add -D``
+
+
+. Starten Sie die Dienste auf dem Quell-Admin-Node neu: `service servermanager start`
+

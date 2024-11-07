@@ -1,0 +1,172 @@
+---
+permalink: audit/system-audit-messages.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, messages, system, ECOC, ETAF, GNRG, GNUR, GTED, GTST, GTSU, LLST, OLST, SADD, SADE, SVRF, SVRU, SYSD, SYST, SYSU, VLST 
+summary: 'Die Audit-Meldungen, die zur Systemauditkategorie gehören, werden für Ereignisse verwendet, die mit dem Auditsystem selbst, Grid-Node-Status, der systemweiten Task-Aktivität \(Grid-Aufgaben\) und den Service-Backup-Vorgängen zusammenhängen.' 
+---
+= Systemaudits Meldungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Audit-Meldungen, die zur Systemauditkategorie gehören, werden für Ereignisse im Zusammenhang mit dem Überwachungssystem selbst, Grid-Node-Status, systemweiter Aufgabenaktivität (Grid-Aufgaben) und Service-Backup-Vorgängen verwendet.
+
+[cols="1a,2a,1a"]
+|===
+| Codieren | Titel und Beschreibung der Nachricht | Siehe 
+
+
+ a| 
+ECMC
+ a| 
+Fehlende Datenfragment mit Erasure-Code: Gibt an, dass ein fehlendes Datenfragment mit Erasure-Code erkannt wurde.
+ a| 
+link:ecmc-missing-erasure-coded-data-fragment.html["ECMC: Fehlende Datenfragment mit Erasure-Code"]
+
+
+
+ a| 
+ECOC
+ a| 
+Beschädigte Datenfragment mit Erasure-Code: Gibt an, dass ein beschädigtes Datenfragment mit Erasure-Code erkannt wurde.
+ a| 
+link:ecoc-corrupt-erasure-coded-data-fragment.html["ECOC: Beschädigtes Datenfragment mit Erasure-Code"]
+
+
+
+ a| 
+ETAF
+ a| 
+Sicherheitsauthentifizierung fehlgeschlagen: Verbindungsversuch mit TLS (Transport Layer Security) fehlgeschlagen.
+ a| 
+link:etaf-security-authentication-failed.html["ETAF: Sicherheitsauthentifizierung fehlgeschlagen"]
+
+
+
+ a| 
+GNRG
+ a| 
+GNDS Registrierung: Ein Dienst aktualisiert oder registriert Informationen über sich selbst im StorageGRID-System.
+ a| 
+link:gnrg-gnds-registration.html["GNRG: GNDS Registrierung"]
+
+
+
+ a| 
+GNUR
+ a| 
+GNDS Unregistrierung: Ein Dienst hat sich vom StorageGRID-System nicht registriert.
+ a| 
+link:gnur-gnds-unregistration.html["GNUR: GNDS Registrierung aufheben"]
+
+
+
+ a| 
+GTED
+ a| 
+Grid Task beendet: Der CMN-Dienst hat die Verarbeitung der Grid-Aufgabe abgeschlossen.
+ a| 
+link:gted-grid-task-ended.html["GTED: Grid Task beendet"]
+
+
+
+ a| 
+GTST
+ a| 
+Grid Task gestartet: Der CMN-Dienst hat mit der Verarbeitung der Grid-Aufgabe begonnen.
+ a| 
+link:gtst-grid-task-started.html["GTST: Grid Task gestartet"]
+
+
+
+ a| 
+GSU
+ a| 
+Grid Task übermittelt: Eine Grid-Aufgabe wurde an den CMN-Dienst übermittelt.
+ a| 
+link:gtsu-grid-task-submitted.html["GTSU: Grid Task übermittelt"]
+
+
+
+ a| 
+LLST
+ a| 
+Standort verloren: Diese Überwachungsmeldung wird generiert, wenn ein Standort verloren geht.
+ a| 
+link:llst-location-lost.html["LLST: Standort verloren"]
+
+
+
+ a| 
+OLST
+ a| 
+Objekt verloren: Ein angeforderter Gegenstand kann nicht innerhalb des StorageGRID Systems gefunden werden.
+ a| 
+link:olst-system-detected-lost-object.html["OLST: System hat Lost Object erkannt"]
+
+
+
+ a| 
+SADD
+ a| 
+Sicherheitsüberprüfung deaktivieren: Die Protokollierung von Überwachungsnachrichten wurde deaktiviert.
+ a| 
+link:sadd-security-audit-disable.html["SADD: Security Audit deaktiviert"]
+
+
+
+ a| 
+SADE
+ a| 
+Sicherheitsüberprüfung aktivieren: Die Protokollierung von Prüfnachrichten wurde wiederhergestellt.
+ a| 
+link:sade-security-audit-enable.html["SADE: Sicherheits-Audit aktivieren"]
+
+
+
+ a| 
+SVRF
+ a| 
+Objektspeicherüberprüfung fehlgeschlagen: Überprüfung durch einen Inhaltsblock fehlgeschlagen.
+ a| 
+link:svrf-object-store-verify-fail.html["SVRF: Objektspeicherüberprüfung fehlgeschlagen"]
+
+
+
+ a| 
+SVRU
+ a| 
+Objektspeicher Verify Unbekannt: Unerwartete Objektdaten im Objektspeicher erkannt.
+ a| 
+link:svru-object-store-verify-unknown.html["SVRU: Objektspeicher überprüfen Unbekannt"]
+
+
+
+ a| 
+SYSD
+ a| 
+Knotenstopp: Es wurde ein Herunterfahren angefordert.
+ a| 
+link:sysd-node-stop.html["SYSD: Knoten stoppen"]
+
+
+
+ a| 
+SYST
+ a| 
+Knoten stoppen: Ein Dienst hat einen graziösen Stopp initiiert.
+ a| 
+link:syst-node-stopping.html["SYST: Knoten wird angehalten"]
+
+
+
+ a| 
+SYSU
+ a| 
+Node Start: Ein Dienst gestartet. In der Meldung wird der Charakter des vorherigen Herunterfahrens angezeigt.
+ a| 
+link:sysu-node-start.html["SYSU: Knoten Start"]
+
+|===

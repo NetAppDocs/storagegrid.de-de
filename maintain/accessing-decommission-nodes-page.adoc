@@ -1,0 +1,145 @@
+---
+permalink: maintain/accessing-decommission-nodes-page.html 
+sidebar: sidebar 
+keywords: storagegrid, decommission nodes, decommissioning nodes, maintenance task 
+summary: Wenn Sie im Grid Manager auf die Seite Decommission Nodes zugreifen, sehen Sie auf einen Blick, welche Knoten deaktiviert werden können. 
+---
+= Öffnen Sie die Seite Decommission Nodes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie im Grid Manager auf die Seite Decommission Nodes zugreifen, sehen Sie auf einen Blick, welche Knoten deaktiviert werden können.
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben die link:../admin/admin-group-permissions.html["Berechtigung für Wartung oder Root-Zugriff"].
+
+
+
+CAUTION: Gehen Sie mit Vorsicht vor, wenn Sie Storage-Nodes in einem Grid stilllegen, das rein softwarebasierte Metadaten-Nodes enthält. Wenn Sie alle Knoten außer Betrieb nehmen, die für den Speicher _sowohl_ Objekte als auch Metadaten konfiguriert sind, wird die Fähigkeit zum Speichern von Objekten aus dem Raster entfernt. Weitere Informationen zu nur Metadaten-Storage-Nodes finden Sie unterlink:../primer/what-storage-node-is.html#types-of-storage-nodes["Typen von Storage-Nodes"].
+
+.Schritte
+. Wählen Sie *MAINTENANCE* > *Tasks* > *Decommission*.
+. Wählen Sie *Decommission Nodes*.
++
+Die Seite Decommission Nodes wird angezeigt. Auf dieser Seite können Sie:
+
++
+** Legen Sie fest, welche Grid-Nodes derzeit deaktiviert werden können.
+** Den Systemzustand aller Grid-Nodes anzeigen
+** Sortieren Sie die Liste in aufsteigender oder absteigender Reihenfolge nach *Name*, *Standort*, *Typ* oder *hat ADC*.
+** Geben Sie Suchbegriffe ein, um bestimmte Nodes schnell zu finden.
++
+In diesem Beispiel zeigt die Spalte Decommission possible an, dass Sie den Gateway Node und einen der vier Storage Nodes stilllegen können.
+
++
+image::../media/decommission_nodes_page_all_connected.png[Die Seite Knoten ausmustern]
+
+
+
+. Überprüfen Sie die Spalte *Decommission möglich* für jeden Knoten, den Sie stilllegen möchten.
++
+Wenn ein Gitterknoten außer Betrieb genommen werden kann, enthält diese Spalte ein grünes Häkchen, und die linke Spalte enthält ein Kontrollkästchen. Wenn ein Node nicht stillgelegt werden kann, wird in dieser Spalte das Problem beschrieben. Wenn mehr als ein Grund dafür besteht, dass ein Node nicht ausgemustert werden kann, wird der kritischsten Grund angezeigt.
+
++
+[cols="1a,1a,1a"]
+|===
+| Möglichen Grund einer Deaktivierung | Beschreibung | Schritte zur Lösung 
+
+
+ a| 
+Nein, _Node type_ Decommissioning wird nicht unterstützt.
+ a| 
+Der primäre Admin-Node kann nicht stillgelegt werden.
+ a| 
+Keine.
+
+
+
+ a| 
+Nein, mindestens ein Grid-Node ist getrennt.
+
+*Hinweis:* Diese Meldung wird nur für verbundene Grid-Knoten angezeigt.
+ a| 
+Ein verbundener Grid-Node kann nicht stillgelegt werden, wenn ein Grid-Node getrennt wird.
+
+Die Spalte *Health* enthält eines der folgenden Symbole für getrennte Grid-Knoten:
+
+** image:../media/icon_alarm_gray_administratively_down.png["Graues Fragensymbol"] (Grau): Administrativ nach unten
+** image:../media/icon_alarm_blue_unknown.png["Blaues Fragezeichen-Symbol"] (Blau): Unbekannt
+
+ a| 
+Sie müssen alle getrennten Knoten wieder online schalten oder link:decommissioning-disconnected-grid-nodes.html["Alle getrennten Nodes werden deaktiviert"] bevor Sie einen verbundenen Knoten entfernen können.
+
+*Hinweis*: Wenn Ihr Grid mehrere getrennte Knoten enthält, müssen Sie diese alle gleichzeitig stilllegen, was das Potenzial für unerwartete Ergebnisse erhöht.
+
+
+
+ a| 
+Nein, ein oder mehrere erforderliche Nodes sind derzeit getrennt und müssen wiederhergestellt werden.
+
+*Hinweis:* Diese Meldung wird nur für getrennte Gitterknoten angezeigt.
+ a| 
+Ein getrennter Grid-Node kann nicht stillgelegt werden, wenn ein oder mehrere erforderliche Nodes ebenfalls getrennt sind (z. B. ein Storage Node, der für das ADC-Quorum erforderlich ist).
+ a| 
+.. Überprüfen Sie die möglichen Meldungen zur Dekommission für alle nicht verbundenen Knoten.
+.. Ermitteln Sie, welche Nodes nicht stillgelegt werden können, da sie erforderlich sind.
++
+*** Wenn der Status eines erforderlichen Knotens „Administrativ ausgefallen“ ist, stellen Sie den Knoten wieder in den Online-Modus.
+*** Wenn der Systemzustand eines erforderlichen Node Unbekannt ist, führen Sie einen Wiederherstellungsvorgang für den Node durch, um den erforderlichen Node wiederherzustellen.
+
+
+
+
+
+
+ a| 
+Nein, Mitglied der HA-Gruppe(n): _Group Name_. Bevor Sie diesen Node außer Betrieb nehmen können, müssen Sie ihn aus allen HA-Gruppen entfernen.
+ a| 
+Sie können einen Admin-Node und einen Gateway-Node nicht stilllegen, wenn eine Node-Schnittstelle zu einer HA-Gruppe (High Availability, Hochverfügbarkeit) gehört.
+ a| 
+Bearbeiten Sie die HA-Gruppe, um die Schnittstelle des Node zu entfernen, oder entfernen Sie die gesamte HA-Gruppe. Siehe link:../admin/configure-high-availability-group.html["Konfigurieren Sie Hochverfügbarkeitsgruppen"].
+
+
+
+ a| 
+Nein, Standort _x_ erfordert mindestens _n_ Storage Nodes mit ADC-Services.
+ a| 
+*Nur Storage Nodes.* Ein Storage-Node kann nicht stillgelegt werden, wenn nicht genügend Nodes am Standort verbleiben, um die ADC-Quorum-Anforderungen zu unterstützen.
+ a| 
+Eine Erweiterung durchführen. Fügen Sie dem Standort einen neuen Speicherknoten hinzu, und geben Sie an, dass ein ADC-Dienst vorhanden sein soll. Siehe Informationen zum link:understanding-adc-service-quorum.html["ADC-Quorum"].
+
+
+
+ a| 
+Nein, mindestens ein Profil mit Erasure Coding benötigt mindestens _n_ Storage Nodes. Wenn das Profil in einer ILM-Regel nicht verwendet wird, können Sie es deaktivieren.
+ a| 
+*Nur Storage Nodes.* Sie können einen Storage Node nur dann stilllegen, wenn für die vorhandenen Profile für Erasure Coding genügend Nodes vorhanden sind.
+
+Wenn z. B. ein Profil für die Erasure Coding 4+2 für das Erasure Coding vorhanden ist, müssen mindestens 6 Storage Nodes verbleiben.
+ a| 
+Führen Sie für jedes betroffene Löschungsprofil einen der folgenden Schritte aus, je nachdem, wie das Profil verwendet wird:
+
+** *Wird in aktiven ILM-Richtlinien verwendet*: Eine Erweiterung durchführen. Fügen Sie genügend neue Storage-Nodes hinzu, um das Erasure Coding-Verfahren fortzusetzen. Siehe die Anleitung für link:../expand/index.html["Erweitern Sie Ihr Raster"].
+** *Wird in einer ILM-Regel verwendet, aber nicht in aktiven ILM-Richtlinien*: Bearbeiten oder löschen Sie die Regel und deaktivieren Sie dann das Erasure-Coding-Profil.
+** *In keiner ILM-Regel verwendet*: Deaktivieren Sie das Erasure-Coding-Profil.
+
+
+*Hinweis:* eine Fehlermeldung erscheint, wenn Sie versuchen, ein Erasure-Coding-Profil zu deaktivieren und Objektdaten noch mit dem Profil verknüpft sind. Sie müssen möglicherweise mehrere Wochen warten, bevor Sie den Deaktivierungsprozess erneut versuchen.
+
+Erfahren Sie mehr über link:../ilm/manage-erasure-coding-profiles.html["Deaktivieren eines Erasure Coding-Profils"].
+
+
+
+ a| 
+Nein, Sie können einen Archivknoten erst dann stilllegen, wenn der Knoten getrennt ist.
+ a| 
+Wenn ein Archivknoten weiterhin verbunden ist, können Sie ihn nicht entfernen.
+ a| 
+*Hinweis*: Unterstützung für Archive Nodes wurde entfernt. Informationen zum Stilllegen eines Archivknoten finden Sie unter https://docs.netapp.com/us-en/storagegrid-118/maintain/grid-node-decommissioning.html["Stilllegung von Grid-Nodes (StorageGRID 11.8-Dokumentstandort)"^]
+
+|===
+

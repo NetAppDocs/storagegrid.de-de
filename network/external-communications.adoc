@@ -1,0 +1,581 @@
+---
+permalink: network/external-communications.html 
+sidebar: sidebar 
+keywords: storagegrid, network port, external communications, ports, TCP, UDP, client communications 
+summary: Die Clients müssen mit den Grid-Nodes kommunizieren, um Inhalte aufzunehmen und abzurufen. Die verwendeten Ports hängen von den ausgewählten Objekt-Storage-Protokollen ab. Diese Ports müssen dem Client zugänglich sein. 
+---
+= Externe Kommunikation
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Clients müssen mit den Grid-Nodes kommunizieren, um Inhalte aufzunehmen und abzurufen. Die verwendeten Ports hängen von den ausgewählten Objekt-Storage-Protokollen ab. Diese Ports müssen dem Client zugänglich sein.
+
+
+
+== Eingeschränkter Zugriff auf Ports
+
+Wenn die Netzwerkrichtlinien des Unternehmens den Zugriff auf einen der Ports einschränken, können Sie einen der folgenden Schritte ausführen:
+
+* Mit link:../admin/configuring-load-balancer-endpoints.html["Load Balancer-Endpunkte"] können Sie den Zugriff auf benutzerdefinierte Ports zulassen.
+* Weisen Sie bei der Implementierung von Nodes Ports neu zu. Sie sollten jedoch die Load Balancer-Endpunkte nicht neu zuordnen. Weitere Informationen zur Port-Neuzuweisung für den StorageGRID-Node finden Sie unter:
++
+** link:../rhel/creating-node-configuration-files.html#port-remap-keys["Port-Neuzuordnungsschlüssel für StorageGRID auf Red hat Enterprise Linux"]
+** link:../ubuntu/creating-node-configuration-files.html#port-remap-keys["Port-Neuzuordnungsschlüssel für StorageGRID auf Ubuntu oder Debian"]
+** link:../vmware/deploying-storagegrid-node-as-virtual-machine.html#vmware-remap-ports["Ports für StorageGRID auf VMware neu zuordnen"]
+** https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/optional-remapping-network-ports-for-appliance.html["Optional: Netzwerkports für Appliance neu zuordnen"^]
+
+
+
+
+
+
+== Anschlüsse für externe Kommunikation
+
+In der folgenden Tabelle werden die Ports für den Datenverkehr zu den Nodes aufgeführt.
+
+
+NOTE: Diese Liste enthält keine Ports, die möglicherweise als konfiguriert werdenlink:../admin/configuring-load-balancer-endpoints.html["Load Balancer-Endpunkte"].
+
+[cols="1a,1a,1a,1a,1a,4a"]
+|===
+| Port | TCP oder UDP | Protokoll | Von | Bis | Details 
+
+
+ a| 
+22
+ a| 
+TCP
+ a| 
+SSH
+ a| 
+Service-Laptop
+ a| 
+Alle Nodes
+ a| 
+Für Verfahren mit Konsolenschritten ist ein SSH- oder Konsolenzugriff erforderlich. Optional können Sie Port 2022 anstelle von 22 verwenden.
+
+
+
+ a| 
+25
+ a| 
+TCP
+ a| 
+SMTP
+ a| 
+Admin-Nodes
+ a| 
+E-Mail-Server
+ a| 
+Wird für Warnungen und E-Mail-basierte AutoSupport verwendet. Sie können die Standard-Porteinstellung von 25 über die Seite „E-Mail-Server“ außer Kraft setzen.
+
+
+
+ a| 
+53
+ a| 
+TCP/UDP
+ a| 
+DNS
+ a| 
+Alle Nodes
+ a| 
+DNS-Server
+ a| 
+Wird für DNS verwendet.
+
+
+
+ a| 
+67
+ a| 
+UDP
+ a| 
+DHCP
+ a| 
+Alle Nodes
+ a| 
+DHCP-Service
+ a| 
+Optional zur Unterstützung einer DHCP-basierten Netzwerkkonfiguration. Der dhclient-Dienst wird nicht für statisch konfigurierte Grids ausgeführt.
+
+
+
+ a| 
+68
+ a| 
+UDP
+ a| 
+DHCP
+ a| 
+DHCP-Service
+ a| 
+Alle Nodes
+ a| 
+Optional zur Unterstützung einer DHCP-basierten Netzwerkkonfiguration. Der dhclient-Dienst wird nicht für Raster ausgeführt, die statische IP-Adressen verwenden.
+
+
+
+ a| 
+80
+ a| 
+TCP
+ a| 
+HTTP
+ a| 
+Browser
+ a| 
+Admin-Nodes
+ a| 
+Port 80 wird für die Admin-Node-Benutzeroberfläche an Port 443 umgeleitet.
+
+
+
+ a| 
+80
+ a| 
+TCP
+ a| 
+HTTP
+ a| 
+Browser
+ a| 
+Appliances
+ a| 
+Port 80 wird für das Installationsprogramm der StorageGRID-Appliance an Port 8443 umgeleitet.
+
+
+
+ a| 
+80
+ a| 
+TCP
+ a| 
+HTTP
+ a| 
+Storage-Nodes mit ADC
+ a| 
+AWS
+ a| 
+Wird für Plattform-Services-Nachrichten verwendet, die an AWS oder andere externe Services gesendet werden, die HTTP verwenden. Mandanten können beim Erstellen eines Endpunkts die Standard-HTTP-Porteinstellung 80 außer Kraft setzen.
+
+
+
+ a| 
+80
+ a| 
+TCP
+ a| 
+HTTP
+ a| 
+Storage-Nodes
+ a| 
+AWS
+ a| 
+Cloud-Storage-Pools-Anfragen werden an AWS-Ziele mit HTTP gesendet. Grid-Administratoren können die HTTP-Porteinstellung von 80 bei der Konfiguration eines Cloud-Storage-Pools außer Kraft setzen.
+
+
+
+ a| 
+111
+ a| 
+TCP/UDP
+ a| 
+Rpcbind
+ a| 
+NFS-Client
+ a| 
+Admin-Nodes
+ a| 
+Wird vom NFS-basierten Audit-Export verwendet (Portmap).
+
+*Hinweis:* dieser Port ist nur erforderlich, wenn NFS-basierter Audit-Export aktiviert ist.
+
+*Hinweis:* die Unterstützung für NFS wurde veraltet und wird in einer zukünftigen Version entfernt.
+
+
+
+ a| 
+123
+ a| 
+UDP
+ a| 
+NTP
+ a| 
+Primäre NTP-Knoten
+ a| 
+Externe NTP
+ a| 
+Netzwerkzeitprotokolldienst. Als primäre NTP-Quellen ausgewählte Nodes synchronisieren auch die Uhrzeiten mit den externen NTP-Zeitquellen.
+
+
+
+ a| 
+161
+ a| 
+TCP/UDP
+ a| 
+SNMP
+ a| 
+SNMP-Client
+ a| 
+Alle Nodes
+ a| 
+Wird für SNMP-Abfrage verwendet. Alle Nodes bieten grundlegende Informationen, Admin-Nodes stellen auch Warnungsdaten bereit. Standardmäßig auf UDP-Port 161 gesetzt, wenn konfiguriert.
+
+*Hinweis:* dieser Port ist nur erforderlich und wird nur auf der Knoten-Firewall geöffnet, wenn SNMP konfiguriert ist. Wenn Sie SNMP verwenden möchten, können Sie alternative Ports konfigurieren.
+
+*Hinweis:* um Informationen zur Verwendung von SNMP mit StorageGRID zu erhalten, wenden Sie sich an Ihren NetApp Ansprechpartner.
+
+
+
+ a| 
+162
+ a| 
+TCP/UDP
+ a| 
+SNMP-Benachrichtigungen
+ a| 
+Alle Nodes
+ a| 
+Benachrichtigungsziele
+ a| 
+Ausgehende SNMP-Benachrichtigungen und Traps standardmäßig auf UDP-Port 162.
+
+*Hinweis:* dieser Port ist nur erforderlich, wenn SNMP aktiviert ist und Benachrichtigungsziele konfiguriert sind. Wenn Sie SNMP verwenden möchten, können Sie alternative Ports konfigurieren.
+
+*Hinweis:* um Informationen zur Verwendung von SNMP mit StorageGRID zu erhalten, wenden Sie sich an Ihren NetApp Ansprechpartner.
+
+
+
+ a| 
+389
+ a| 
+TCP/UDP
+ a| 
+LDAP
+ a| 
+Storage-Nodes mit ADC
+ a| 
+Active Directory/LDAP
+ a| 
+Wird zur Verbindung mit einem Active Directory- oder LDAP-Server für Identity Federation verwendet.
+
+
+
+ a| 
+443
+ a| 
+TCP
+ a| 
+HTTPS
+ a| 
+Browser
+ a| 
+Admin-Nodes
+ a| 
+Wird von Webbrowsern und Management-API-Clients für den Zugriff auf Grid Manager und Tenant Manager verwendet.
+
+*Hinweis*: Wenn Sie die Grid Manager-Ports 443 oder 8443 schließen, verlieren alle Benutzer, die derzeit an einem blockierten Port angeschlossen sind, einschließlich Ihnen, den Zugriff auf den Grid Manager, es sei denn, ihre IP-Adresse wurde der Liste der privilegierten Adressen hinzugefügt. Informationen zum Konfigurieren privilegierter IP-Adressen finden Sie unterlink:../admin/configure-firewall-controls.html["Konfigurieren Sie die Firewall-Steuerelemente"].
+
+
+
+ a| 
+443
+ a| 
+TCP
+ a| 
+HTTPS
+ a| 
+Admin-Nodes
+ a| 
+Active Directory
+ a| 
+Wird von Admin-Nodes verwendet, die eine Verbindung zu Active Directory herstellen, wenn Single Sign-On (SSO) aktiviert ist.
+
+
+
+ a| 
+443
+ a| 
+TCP
+ a| 
+HTTPS
+ a| 
+Storage-Nodes mit ADC
+ a| 
+AWS
+ a| 
+Wird für Plattform-Services-Nachrichten verwendet, die an AWS oder andere externe Services gesendet werden, die HTTPS verwenden. Mandanten können beim Erstellen eines Endpunkts die Standard-HTTP-Porteinstellung 443 außer Kraft setzen.
+
+
+
+ a| 
+443
+ a| 
+TCP
+ a| 
+HTTPS
+ a| 
+Storage-Nodes
+ a| 
+AWS
+ a| 
+Cloud-Storage-Pools-Anfragen werden an AWS-Ziele mit HTTPS gesendet. Grid-Administratoren können die HTTPS-Porteinstellung von 443 bei der Konfiguration eines Cloud-Storage-Pools außer Kraft setzen.
+
+
+
+ a| 
+903
+ a| 
+TCP
+ a| 
+NFS
+ a| 
+NFS-Client
+ a| 
+Admin-Nodes
+ a| 
+Verwendet durch NFS-basierten Audit Export (`rpc.mountd`).
+
+*Hinweis:* dieser Port ist nur erforderlich, wenn NFS-basierter Audit-Export aktiviert ist.
+
+*Hinweis:* die Unterstützung für NFS wurde veraltet und wird in einer zukünftigen Version entfernt.
+
+
+
+ a| 
+2022
+ a| 
+TCP
+ a| 
+SSH
+ a| 
+Service-Laptop
+ a| 
+Alle Nodes
+ a| 
+Für Verfahren mit Konsolenschritten ist ein SSH- oder Konsolenzugriff erforderlich. Optional können Sie Port 22 anstelle von 2022 verwenden.
+
+
+
+ a| 
+2049
+ a| 
+TCP
+ a| 
+NFS
+ a| 
+NFS-Client
+ a| 
+Admin-Nodes
+ a| 
+Wird vom NFS-basierten Audit-Export verwendet (nfs).
+
+*Hinweis:* dieser Port ist nur erforderlich, wenn NFS-basierter Audit-Export aktiviert ist.
+
+*Hinweis:* die Unterstützung für NFS wurde veraltet und wird in einer zukünftigen Version entfernt.
+
+
+
+ a| 
+5353
+ a| 
+UDP
+ a| 
+MDNS
+ a| 
+Alle Nodes
+ a| 
+Alle Nodes
+ a| 
+Stellt den Multicast-DNS-Service (mDNS) bereit, der für vollständige IP-Änderungen am Grid und für die Erkennung des primären Admin-Knotens während der Installation, Erweiterung und Wiederherstellung verwendet wird.
+
+
+
+ a| 
+5696
+ a| 
+TCP
+ a| 
+KMIP
+ a| 
+Appliance
+ a| 
+KMS
+ a| 
+KMIP (Key Management Interoperability Protocol): Externer Datenverkehr von Appliances, die für die Node-Verschlüsselung auf den Verschlüsselungsmanagement-Server (Key Management Interoperability Protocol) konfiguriert sind, es sei denn, ein anderer Port wird auf der KMS-Konfigurationsseite des StorageGRID Appliance Installer angegeben.
+
+
+
+ a| 
+8022
+ a| 
+TCP
+ a| 
+SSH
+ a| 
+Service-Laptop
+ a| 
+Alle Nodes
+ a| 
+SSH auf Port 8022 gewährt Zugriff auf das Betriebssystem auf Appliance- und virtuellen Node-Plattformen zur Unterstützung und Fehlerbehebung. Dieser Port wird nicht für Linux-basierte (Bare Metal-)Nodes verwendet und muss nicht zwischen Grid-Nodes oder während des normalen Betriebs zugänglich sein.
+
+
+
+ a| 
+8443
+ a| 
+TCP
+ a| 
+HTTPS
+ a| 
+Browser
+ a| 
+Admin-Nodes
+ a| 
+Optional Wird von Webbrowsern und Management-API-Clients für den Zugriff auf den Grid Manager verwendet. Kann zur Trennung der Kommunikation zwischen Grid Manager und Tenant Manager verwendet werden.
+
+*Hinweis*: Wenn Sie die Grid Manager-Ports 443 oder 8443 schließen, verlieren alle Benutzer, die derzeit an einem blockierten Port angeschlossen sind, einschließlich Ihnen, den Zugriff auf den Grid Manager, es sei denn, ihre IP-Adresse wurde der Liste der privilegierten Adressen hinzugefügt. Informationen zum Konfigurieren privilegierter IP-Adressen finden Sie unterlink:../admin/configure-firewall-controls.html["Konfigurieren Sie die Firewall-Steuerelemente"].
+
+
+
+ a| 
+9022
+ a| 
+TCP
+ a| 
+SSH
+ a| 
+Service-Laptop
+ a| 
+Appliances
+ a| 
+Gewährt Zugriff auf StorageGRID Appliances im Vorkonfigurationsmodus für Support und Fehlerbehebung. Dieser Port muss während des normalen Betriebs nicht zwischen Grid-Nodes oder auf diesen zugreifen können.
+
+
+
+ a| 
+9091
+ a| 
+TCP
+ a| 
+HTTPS
+ a| 
+Externer Grafana-Service
+ a| 
+Admin-Nodes
+ a| 
+Wird von externen Grafana Services für sicheren Zugriff auf den StorageGRID Prometheus Service verwendet.
+
+*Hinweis:* dieser Port wird nur benötigt, wenn der zertifikatbasierte Prometheus-Zugriff aktiviert ist.
+
+
+
+ a| 
+9092
+ a| 
+TCP
+ a| 
+Kafka
+ a| 
+Storage-Nodes mit ADC
+ a| 
+Kafka-Cluster
+ a| 
+Wird für Meldungen über Plattformdienste verwendet, die an ein Kafka-Cluster gesendet werden. Mandanten können beim Erstellen eines Endpunkts die Standard-Kafka-Porteinstellung 9092 außer Kraft setzen.
+
+
+
+ a| 
+9443
+ a| 
+TCP
+ a| 
+HTTPS
+ a| 
+Browser
+ a| 
+Admin-Nodes
+ a| 
+Optional Wird von Webbrowsern und Management-API-Clients für den Zugriff auf den Mandanten-Manager verwendet. Kann zur Trennung der Kommunikation zwischen Grid Manager und Tenant Manager verwendet werden.
+
+
+
+ a| 
+18082
+ a| 
+TCP
+ a| 
+HTTPS
+ a| 
+S3-Clients
+ a| 
+Storage-Nodes
+ a| 
+S3-Client-Traffic direkt zu Storage-Nodes (HTTPS).
+
+
+
+ a| 
+18083
+ a| 
+TCP
+ a| 
+HTTPS
+ a| 
+Swift Clients
+ a| 
+Storage-Nodes
+ a| 
+Swift-Client-Datenverkehr direkt zu Storage-Nodes (HTTPS).
+
+
+
+ a| 
+18084
+ a| 
+TCP
+ a| 
+HTTP
+ a| 
+S3-Clients
+ a| 
+Storage-Nodes
+ a| 
+S3-Client-Traffic direkt zu Storage-Nodes (HTTP).
+
+
+
+ a| 
+18085
+ a| 
+TCP
+ a| 
+HTTP
+ a| 
+Swift Clients
+ a| 
+Storage-Nodes
+ a| 
+Swift-Client-Datenverkehr direkt zu Storage-Nodes (HTTP).
+
+
+
+ a| 
+23000-23999
+ a| 
+TCP
+ a| 
+HTTPS
+ a| 
+Alle Nodes im Quell-Grid für die Grid-übergreifende Replizierung
+ a| 
+Admin Nodes und Gateway Nodes im Ziel-Grid für Grid-übergreifende Replizierung
+ a| 
+Dieser Port-Bereich ist für Grid Federation-Verbindungen reserviert. Beide Grids in einer bestimmten Verbindung verwenden den gleichen Port.
+
+|===

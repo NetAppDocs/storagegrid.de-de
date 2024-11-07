@@ -1,0 +1,60 @@
+---
+permalink: admin/deactivate-features-from-api.html 
+sidebar: sidebar 
+keywords: deactivate features from api 
+summary: Mithilfe der Grid Management API können Sie bestimmte Funktionen im StorageGRID-System komplett deaktivieren. Wenn ein Feature deaktiviert ist, kann niemand Berechtigungen zum Ausführen der Aufgaben zugewiesen werden, die mit diesem Feature verbunden sind. 
+---
+= Deaktivieren Sie Funktionen mit der API
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mithilfe der Grid Management API können Sie bestimmte Funktionen im StorageGRID-System komplett deaktivieren. Wenn ein Feature deaktiviert ist, kann niemand Berechtigungen zum Ausführen der Aufgaben zugewiesen werden, die mit diesem Feature verbunden sind.
+
+.Über diese Aufgabe
+Mit dem deaktivierten Features-System können Sie den Zugriff auf bestimmte Funktionen im StorageGRID-System verhindern. Die Deaktivierung einer Funktion ist der einzige Weg, um zu verhindern, dass Root-Benutzer oder Benutzer, die zu Admin-Gruppen mit *Root Access*-Berechtigung gehören, diese Funktion verwenden können.
+
+Um zu verstehen, wie diese Funktionalität nützlich sein kann, gehen Sie folgendermaßen vor:
+
+_Unternehmen A ist ein Service Provider, der durch die Erstellung von Mandantenkonten die Storage-Kapazität ihres StorageGRID Systems least. Um die Sicherheit der Objekte ihrer Eigentümer zu schützen, möchte Unternehmen A sicherstellen, dass die eigenen Mitarbeiter nach der Bereitstellung des Kontos niemals auf ein Mandantenkonto zugreifen können._
+
+_Unternehmen A kann dieses Ziel mithilfe des Systems Funktionen deaktivieren in der Grid Management API erreichen. Durch die vollständige Deaktivierung der Funktion *Change Tenant root password* im Grid Manager (sowohl die Benutzeroberfläche als auch die API) stellt Unternehmen A sicher, dass Admin-Benutzer - einschließlich des Root-Benutzers und Benutzer, die zu Gruppen mit der Berechtigung *Root-Zugriff* gehören - das Passwort für den Root-Benutzer eines Mandantenkontos nicht ändern können._
+
+.Schritte
+. Rufen Sie die Swagger-Dokumentation für die Grid Management API auf. Siehe link:using-grid-management-api.html["Verwenden Sie die Grid-Management-API"].
+. Suchen Sie den Endpunkt zum Deaktivieren von Funktionen.
+. Um eine Funktion, wie z.B. das Root-Passwort des Mandanten ändern, zu deaktivieren, senden Sie einen Text wie folgt an die API:
++
+`{ "grid": {"changeTenantRootPassword": true} }`
+
++
+Nach Abschluss der Anforderung ist die Funktion Root-Passwort ändern deaktiviert. Die Verwaltungsberechtigung *Change Tenant root password* wird nicht mehr in der Benutzeroberfläche angezeigt, und jede API-Anforderung, die versucht, das Root-Passwort für einen Mandanten zu ändern, schlägt mit "403 Verboten" fehl.
+
+
+
+
+
+== Deaktivieren Funktionen erneut aktivieren
+
+Standardmäßig können Sie mit der Grid Management API eine deaktivierte Funktion reaktivieren. Wenn Sie jedoch verhindern möchten, dass deaktivierte Funktionen jemals wieder aktiviert werden, können Sie die *activateFeatures*-Funktion selbst deaktivieren.
+
+
+CAUTION: Die Funktion *activateFeatures* kann nicht reaktiviert werden. Wenn Sie sich entscheiden, diese Funktion zu deaktivieren, beachten Sie, dass Sie die Möglichkeit verlieren, alle anderen deaktivierten Funktionen dauerhaft zu reaktivieren. Sie müssen sich an den technischen Support wenden, um verlorene Funktionen wiederherzustellen.
+
+.Schritte
+. Rufen Sie die Swagger-Dokumentation für die Grid Management API auf.
+. Suchen Sie den Endpunkt zum Deaktivieren von Funktionen.
+. Um alle Funktionen erneut zu aktivieren, senden Sie einen Text wie folgt an die API:
++
+`{ "grid": null }`
+
++
+Wenn diese Anfrage abgeschlossen ist, werden alle Funktionen, einschließlich der Funktion Root-Passwort ändern, reaktiviert. Die Berechtigung zur Verwaltung von Stammpasswort* des Mandanten wird jetzt in der Benutzeroberfläche angezeigt, und jede API-Anforderung, die versucht, das Root-Passwort für einen Mandanten zu ändern, wird erfolgreich sein, vorausgesetzt der Benutzer hat die Berechtigung * Root Access* oder *Change Tenant Root password* Management.
+
+
+
+
+TIP: Das vorherige Beispiel führt dazu, dass _all_ deaktivierte Funktionen reaktiviert werden. Wenn andere Features deaktiviert wurden, die deaktiviert bleiben sollen, müssen Sie diese explizit in der PUT-Anforderung angeben. Wenn Sie beispielsweise die Funktion zum Ändern des Stammkennworts für den Mandanten erneut aktivieren und die Berechtigung zum Verwalten von storageAdmin deaktivieren möchten, senden Sie diese PUT-Anforderung: +
+`{ "grid": {"storageAdmin": true} }`

@@ -1,0 +1,29 @@
+---
+permalink: admin/identifying-primary-admin-node.html 
+sidebar: sidebar 
+keywords: primary admin node, configuration management node 
+summary: Der primäre Admin-Node bietet mehr Funktionen als nicht-primäre Admin-Nodes. Beispielsweise müssen einige Wartungsverfahren mit dem primären Admin-Node durchgeführt werden. 
+---
+= Identifizieren Sie den primären Admin-Node
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der primäre Admin-Node bietet mehr Funktionen als nicht-primäre Admin-Nodes. Beispielsweise müssen einige Wartungsverfahren mit dem primären Admin-Node durchgeführt werden.
+
+Weitere Informationen zu Admin-Knoten finden Sie unter link:../primer/what-admin-node-is.html["Was ist ein Admin-Node"].
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben link:admin-group-permissions.html["Bestimmte Zugriffsberechtigungen"].
+
+
+.Schritte
+. Wählen Sie *KNOTEN*.
+. Geben Sie *primary* in das Suchfeld ein.
++
+Identifizieren Sie in den Suchergebnissen den Knoten mit dem in der Spalte Typ angezeigten „Primary Admin Node“. Ein primärer Admin-Knoten sollte aufgelistet werden.
+
+

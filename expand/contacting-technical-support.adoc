@@ -1,0 +1,60 @@
+---
+permalink: expand/contacting-technical-support.html 
+sidebar: sidebar 
+keywords: troubleshoot expansion, contact technical support 
+summary: Wenn während der Rastererweiterung Fehler auftreten, die nicht behoben werden können, oder wenn eine Rasteraufgabe fehlschlägt, erfassen Sie die Protokolldateien, und wenden Sie sich an den technischen Support. 
+---
+= Fehler bei Erweiterung beheben
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn während der Rastererweiterung Fehler auftreten, die nicht behoben werden können, oder wenn eine Rasteraufgabe fehlschlägt, erfassen Sie die Protokolldateien, und wenden Sie sich an den technischen Support.
+
+Bevor Sie sich an den technischen Support wenden, sammeln Sie die erforderlichen Protokolldateien, um die Fehlerbehebung zu unterstützen.
+
+.Schritte
+. Stellen Sie eine Verbindung mit dem Erweiterungs-Node her, bei dem es zu Ausfällen kommt:
++
+.. Geben Sie den folgenden Befehl ein:``ssh -p 8022 admin@_grid_node_IP_``
++
+
+NOTE: Port 8022 ist der SSH-Port des Basis-OS, während Port 22 der SSH-Port der Container-Engine ist, auf der StorageGRID ausgeführt wird.
+
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+.. Geben Sie den folgenden Befehl ein, um zu root zu wechseln: `su -`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+
+
++
+Nachdem Sie sich als root angemeldet haben, wechselt die Eingabeaufforderung von `$` zu `#`.
+
+. Je nach der erreichten Stufe der Installation können Sie eines der folgenden Protokolle abrufen, die auf dem Grid-Knoten verfügbar sind:
++
+[cols="1a,2a"]
+|===
+| Plattform | Protokolle 
+
+
+ a| 
+VMware
+ a| 
+** `/var/log/daemon.log`
+** `/var/log/storagegrid/daemon.log`
+** `/var/log/storagegrid/nodes/<node-name>.log`
+
+
+
+
+ a| 
+Linux
+ a| 
+** `/var/log/storagegrid/daemon.log`
+** `/etc/storagegrid/nodes/<node-name>.conf` (Für jeden ausgefallenen Knoten)
+** `/var/log/storagegrid/nodes/<node-name>.log` (Für jeden ausgefallenen Node; möglicherweise nicht vorhanden)
+
+
+|===
+

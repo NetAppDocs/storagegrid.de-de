@@ -1,0 +1,72 @@
+---
+permalink: fabricpool/creating-s3-bucket-and-access-key.html 
+sidebar: sidebar 
+keywords: fabricPool, S3 bucket, bucket, access key, secret access key 
+summary: Bevor Sie StorageGRID mit einem FabricPool-Workload verwenden, müssen Sie einen S3-Bucket für Ihre FabricPool-Daten erstellen. Außerdem müssen Sie einen Zugriffsschlüssel und einen geheimen Zugriffsschlüssel für das Mandantenkonto erhalten, das Sie für FabricPool verwenden werden. 
+---
+= Erstellen eines S3-Buckets und Abrufen von Zugriffsschlüsseln
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor Sie StorageGRID mit einem FabricPool-Workload verwenden, müssen Sie einen S3-Bucket für Ihre FabricPool-Daten erstellen. Außerdem müssen Sie einen Zugriffsschlüssel und einen geheimen Zugriffsschlüssel für das Mandantenkonto erhalten, das Sie für FabricPool verwenden werden.
+
+Weitere Informationen zu dieser Aufgabe finden Sie unter link:../tenant/creating-s3-bucket.html["S3-Bucket erstellen"] und link:../tenant/creating-your-own-s3-access-keys.html["Erstellen Ihrer eigenen S3-Zugriffsschlüssel"]. Um diese Aufgabe mithilfe des FabricPool-Setup-Assistenten abzuschließen, gehen Sie zu link:use-fabricpool-setup-wizard-steps.html["Öffnen und Abschließen des FabricPool Setup-Assistenten"].
+
+.Bevor Sie beginnen
+* Sie haben ein Mandantenkonto für die Nutzung von FabricPool erstellt.
+* Sie haben Root-Zugriff auf das Mandantenkonto.
+
+
+.Schritte
+. Melden Sie sich beim Tenant Manager an.
++
+Sie können eine der folgenden Aktionen ausführen:
+
++
+** Wählen Sie auf der Seite Mandantenkonten im Grid Manager den Link *Anmelden* für den Mieter aus, und geben Sie Ihre Anmeldedaten ein.
+** Geben Sie die URL für das Mandantenkonto in einem Webbrowser ein, und geben Sie Ihre Anmeldedaten ein.
+
+
+. Erstellung eines S3-Buckets für FabricPool-Daten
++
+Sie müssen für jedes zu verwendende ONTAP Cluster einen eindeutigen Bucket erstellen.
+
++
+.. Wählen Sie *View Buckets* aus dem Dashboard, oder wählen Sie *STORAGE (S3)* > *Buckets*.
+.. Wählen Sie *Eimer erstellen*.
+.. Geben Sie den Namen des StorageGRID-Buckets ein, den Sie mit FabricPool verwenden möchten.  `fabricpool-bucket`Beispiel: .
++
+
+TIP: Sie können den Bucket-Namen nach dem Erstellen des Buckets nicht ändern.
+
+.. Wählen Sie die Region für diesen Bucket aus.
++
+Standardmäßig werden alle Buckets in der Region erstellt `us-east-1`.
+
+.. Wählen Sie *Weiter*.
+.. Wählen Sie *Eimer erstellen*.
++
+
+NOTE: Wählen Sie nicht *enable object Versioning* für den FabricPool Bucket aus. Bearbeiten Sie einen FabricPool-Bucket nicht, um *verfügbar* oder eine nicht standardmäßige Konsistenz zu verwenden. Die empfohlene Bucket-Konsistenz für FabricPool-Buckets ist *Read-after-New-write*, was die Standardkonsistenz für einen neuen Bucket ist.
+
+
+
+. Erstellen Sie einen Zugriffsschlüssel und einen geheimen Zugriffsschlüssel.
++
+.. Wählen Sie *STORAGE (S3)* > *Meine Zugriffsschlüssel* aus.
+.. Wählen Sie *Schlüssel erstellen*.
+.. Wählen Sie *Zugriffsschlüssel erstellen*.
+.. Kopieren Sie die Zugriffsschlüssel-ID und den Schlüssel für den geheimen Zugriff an einen sicheren Ort, oder wählen Sie *.csv herunterladen*, um eine Tabellenkalkulationsdatei mit der Zugriffsschlüssel-ID und dem geheimen Zugriffsschlüssel zu speichern.
++
+Sie geben diese Werte in ONTAP ein, wenn Sie StorageGRID als FabricPool Cloud-Tier konfigurieren.
+
++
+
+TIP: Wenn Sie in Zukunft in StorageGRID einen neuen Zugriffsschlüssel und einen geheimen Zugriffsschlüssel generieren, geben Sie die neuen Schlüssel in ONTAP ein, bevor Sie die alten Werte aus StorageGRID löschen. Andernfalls könnte ONTAP vorübergehend seinen Zugriff auf StorageGRID verlieren.
+
+
+
+

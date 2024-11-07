@@ -1,0 +1,349 @@
+---
+permalink: ilm/what-erasure-coding-schemes-are.html 
+sidebar: sidebar 
+keywords: erasure-coding scheme 
+summary: Erasure Coding steuert die Anzahl von Datenfragmenten und die Anzahl der Parity-Fragmente für jedes Objekt. 
+---
+= Was sind Erasure Coding-Systeme?
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Erasure Coding steuert die Anzahl von Datenfragmenten und die Anzahl der Parity-Fragmente für jedes Objekt.
+
+Wenn Sie eine ILM-Regel erstellen oder bearbeiten, wählen Sie ein verfügbares Schema für die Einhaltung von Datenkonsistenz aus. StorageGRID erstellt automatisch Schemata für die Einhaltung von Datenkonsistenz anhand der Anzahl der Storage-Nodes und Standorte des Storage-Pools, die Sie verwenden möchten.
+
+
+
+== Datensicherung
+
+Das StorageGRID-System verwendet den Reed-Solomon-Erasure-Coding-Algorithmus. Der Algorithmus unterteilt ein Objekt in `k` Datenfragmente und berechnet `m` Paritätsfragmente.
+
+Die `k + m = n` Fragmente werden über Storage-Nodes verteilt `n`, um folgende Datensicherungsmaßnahmen zu ermöglichen:
+
+* Um ein Objekt abzurufen oder zu reparieren, `k` werden Fragmente benötigt.
+* Ein Objekt kann verlorene oder beschädigte Fragmente erhalten `m`. Je höher der Wert von `m`, desto höher die Ausfalltoleranz.
+
+
+Die beste Datensicherung wird durch das Erasure Coding-Schema mit der höchsten Ausfalltoleranz für Nodes oder Volumes innerhalb eines Storage-Pools erreicht.
+
+
+
+== Storage Overhead
+
+Der Speicher-Overhead eines Erasure-Coding-Schemas wird berechnet, indem die Anzahl der Paritäts-Fragmente (`m`durch die Anzahl der Datenfragmente geteilt wird (`k`). Der Storage Overhead lässt sich ermitteln, wie viel Festplattenspeicher jedes mit Erasure-Coding-Objekt benötigt:
+
+`_disk space_ = _object size_ + (_object size_ * _storage overhead_)`
+
+Wenn Sie beispielsweise ein Objekt mit 10 MB unter Verwendung des Schemas von 4+2 speichern (mit einem Mehraufwand von 50 %), verbraucht das Objekt 15 MB Grid Storage. Wenn Sie dasselbe 10 MB große Objekt mit dem Schema 6+2 speichern (mit einem Mehraufwand von 33 %), verbraucht das Objekt etwa 13.3 MB.
+
+Wählen Sie das Erasure Coding-Schema mit dem niedrigsten Gesamtwert `k+m`, der Ihren Anforderungen entspricht. Erasure Coding-Schemata mit einer geringeren Anzahl von Fragmenten sind aus folgenden Gründen recheneffizienter:
+
+* Pro Objekt werden weniger Fragmente erstellt und verteilt (oder abgerufen)
+* Sie zeigen eine bessere Performance, da die Fragmentgröße größer ist
+* Das Hinzufügen von weniger Nodes in einem ist möglich link:../expand/index.html["Erweiterung, wenn mehr Storage benötigt wird"]
+
+
+
+
+== Richtlinien für Speicherpools
+
+Verwenden Sie bei der Auswahl des Speicherpools für eine Regel, die eine Kopie mit Verfahren zur Fehlerkorrektur erstellt, die folgenden Richtlinien für Speicherpools:
+
+* Der Speicherpool muss drei oder mehr Standorte oder exakt einen Standort umfassen.
++
+
+NOTE: Sie können kein Erasure Coding verwenden, wenn der Storage-Pool zwei Standorte umfasst.
+
++
+** <<Verfahren zur Einhaltung von Datenkonsistenz für Storage-Pools mit drei oder mehr Standorten,Verfahren zur Einhaltung von Datenkonsistenz für Storage-Pools mit drei oder mehr Standorten>>
+** <<Verfahren zur Einhaltung von Datenkonsistenz für Storage-Pools an einem Standort,Verfahren zur Einhaltung von Datenkonsistenz für Storage-Pools an einem Standort>>
+
+
+* Verwenden Sie keinen Speicherpool, der den Standort „Alle Standorte“ umfasst.
+* Der Speicherpool sollte mindestens Storage Nodes enthalten `_k+m_ +1`, die Objektdaten speichern können.
++
+
+NOTE: Storage-Nodes können während der Installation so konfiguriert werden, dass sie nur Objektmetadaten und keine Objektdaten enthalten. Weitere Informationen finden Sie unter link:../primer/what-storage-node-is.html#types-of-storage-nodes["Typen von Storage-Nodes"].
+
++
+Die Mindestanzahl der erforderlichen Storage-Nodes ist `k+m`. Durch mindestens einen zusätzlichen Storage-Node können jedoch Ingest- oder ILM-Backlogs verhindert werden, wenn ein erforderlicher Storage-Node vorübergehend nicht verfügbar ist.
+
+
+
+
+
+== Verfahren zur Einhaltung von Datenkonsistenz für Storage-Pools mit drei oder mehr Standorten
+
+Die folgende Tabelle beschreibt die von StorageGRID derzeit unterstützten Erasure Coding-Schemata für Storage-Pools, die drei oder mehr Standorte umfassen. Alle diese Maßnahmen bieten einen Standortausfallschutz. Ein Standort kann verloren gehen, und das Objekt ist weiterhin verfügbar.
+
+Für Erasure Coding-Schemata, die Schutz vor Standortausfällen bieten, übersteigt die empfohlene Anzahl von Storage-Nodes im Speicherpool `_k+m_ +1`, da für jeden Standort mindestens drei Storage-Nodes erforderlich sind.
+
+[cols="1a,1a,1a,1a,1a,1a"]
+|===
+| Schema zur Einhaltung von Datenkonsistenz (Erasure Coding) (_k+m_) | Mindestanzahl der bereitgestellten Standorte | Empfohlene Anzahl von Storage-Nodes an jedem Standort | Insgesamt empfohlene Anzahl von Storage-Nodes | Schutz vor Standortausfällen? | Storage Overhead 
+
+
+ a| 
+4+2
+ a| 
+3
+ a| 
+3
+ a| 
+9
+ a| 
+Ja.
+ a| 
+50 % erreicht
+
+
+
+ a| 
+6+2
+ a| 
+4
+ a| 
+3
+ a| 
+12
+ a| 
+Ja.
+ a| 
+33 % erreicht
+
+
+
+ a| 
+8+2
+ a| 
+5
+ a| 
+3
+ a| 
+15
+ a| 
+Ja.
+ a| 
+25 % erreicht
+
+
+
+ a| 
+6+3
+ a| 
+3
+ a| 
+4
+ a| 
+12
+ a| 
+Ja.
+ a| 
+50 % erreicht
+
+
+
+ a| 
+9+3
+ a| 
+4
+ a| 
+4
+ a| 
+16
+ a| 
+Ja.
+ a| 
+33 % erreicht
+
+
+
+ a| 
+2+1
+ a| 
+3
+ a| 
+3
+ a| 
+9
+ a| 
+Ja.
+ a| 
+50 % erreicht
+
+
+
+ a| 
+4+1
+ a| 
+5
+ a| 
+3
+ a| 
+15
+ a| 
+Ja.
+ a| 
+25 % erreicht
+
+
+
+ a| 
+6+1
+ a| 
+7
+ a| 
+3
+ a| 
+21
+ a| 
+Ja.
+ a| 
+17 % erreicht
+
+
+
+ a| 
+7+5
+ a| 
+3
+ a| 
+5
+ a| 
+15
+ a| 
+Ja.
+ a| 
+71 % erreicht
+
+|===
+
+NOTE: StorageGRID erfordert mindestens drei Storage-Nodes pro Standort. Für die Verwendung des Schemas 7+5 benötigt jeder Standort mindestens vier Speicherknoten. Es wird empfohlen, fünf Storage-Nodes pro Standort zu verwenden.
+
+Bei der Auswahl eines Löschungsschemas, das Standortschutz bietet, sollte die relative Bedeutung der folgenden Faktoren in Einklang gestellt werden:
+
+* *Anzahl der Fragmente*: Leistung und Expansionsflexibilität sind im Allgemeinen besser, wenn die Gesamtzahl der Fragmente geringer ist.
+* *Fehlertoleranz*: Die Fehlertoleranz wird durch mehr Paritätssegmente erhöht (d.h. wenn `m` einen höheren Wert hat).
+* *Netzwerkverkehr*: Bei der Wiederherstellung nach Ausfällen erzeugt die Verwendung eines Schemas mit mehr Fragmenten (also einer höheren Summe für `k+m`) mehr Netzwerkverkehr.
+* *Storage Overhead*: Bei Systemen mit höherem Overhead wird mehr Speicherplatz pro Objekt benötigt.
+
+
+Wenn Sie beispielsweise zwischen einem Schema 4+2 und dem Schema 6+3 (mit jeweils 50 % Storage Overhead) entscheiden, wählen Sie das Schema 6+3 aus, wenn eine zusätzliche Fehlertoleranz erforderlich ist. Wählen Sie das Schema 4+2 aus, wenn die Netzwerkressourcen begrenzt sind. Wenn alle anderen Faktoren gleich sind, wählen Sie 4+2 aus, da die Gesamtzahl der Fragmente geringer ist.
+
+
+NOTE: Wenn Sie sich nicht sicher sind, welches Schema Sie verwenden möchten, wählen Sie 4+2 oder 6+3 aus, oder wenden Sie sich an den technischen Support.
+
+
+
+== Verfahren zur Einhaltung von Datenkonsistenz für Storage-Pools an einem Standort
+
+Ein Storage-Pool an einem Standort unterstützt alle Erasure Coding-Schemata, die für drei oder mehr Standorte definiert sind, sofern der Standort über ausreichend Storage-Nodes verfügt.
+
+Die Mindestanzahl der erforderlichen Storage-Nodes ist `k+m`, jedoch wird ein Speicherpool mit `k+m +1` Storage-Nodes empfohlen. Zum Beispiel erfordert das Verfahren zur Einhaltung von Datenkonsistenz (Erasure Coding) 2+1 einen Speicherpool mit mindestens drei Storage-Nodes, es werden jedoch vier Storage-Nodes empfohlen.
+
+[cols="1a,1a,1a,1a"]
+|===
+| Schema zur Einhaltung von Datenkonsistenz (Erasure Coding) (_k+m_) | Mindestanzahl Storage-Nodes | Empfohlene Anzahl von Storage-Nodes | Storage Overhead 
+
+
+ a| 
+4+2
+ a| 
+6
+ a| 
+7
+ a| 
+50 % erreicht
+
+
+
+ a| 
+6+2
+ a| 
+8
+ a| 
+9
+ a| 
+33 % erreicht
+
+
+
+ a| 
+8+2
+ a| 
+10
+ a| 
+11
+ a| 
+25 % erreicht
+
+
+
+ a| 
+6+3
+ a| 
+9
+ a| 
+10
+ a| 
+50 % erreicht
+
+
+
+ a| 
+9+3
+ a| 
+12
+ a| 
+13
+ a| 
+33 % erreicht
+
+
+
+ a| 
+2+1
+ a| 
+3
+ a| 
+4
+ a| 
+50 % erreicht
+
+
+
+ a| 
+4+1
+ a| 
+5
+ a| 
+6
+ a| 
+25 % erreicht
+
+
+
+ a| 
+6+1
+ a| 
+7
+ a| 
+8
+ a| 
+17 % erreicht
+
+
+
+ a| 
+7+5
+ a| 
+12
+ a| 
+13
+ a| 
+71 % erreicht
+
+|===

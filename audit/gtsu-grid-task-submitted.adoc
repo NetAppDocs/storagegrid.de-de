@@ -1,0 +1,114 @@
+---
+permalink: audit/gtsu-grid-task-submitted.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, GTSU, Grid Task Submitted 
+summary: Diese Überwachungsmeldung zeigt an, dass eine Grid-Aufgabe an den CMN-Dienst gesendet wurde. 
+---
+= GTSU: Grid Task übermittelt
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Diese Überwachungsmeldung zeigt an, dass eine Grid-Aufgabe an den CMN-Dienst gesendet wurde.
+
+[cols="1a,1a,4a"]
+|===
+| Codieren | Feld | Beschreibung 
+
+
+ a| 
+TSID
+ a| 
+Task-ID
+ a| 
+Identifiziert eindeutig eine generierte Grid-Aufgabe und ermöglicht die Verwaltung der Aufgabe über den gesamten Lebenszyklus.
+
+*Hinweis:* die Task-ID wird zum Zeitpunkt der Erstellung einer Grid-Aufgabe zugewiesen, nicht zum Zeitpunkt der Einreichung. Es ist möglich, dass eine bestimmte Grid-Aufgabe mehrfach eingereicht wird. In diesem Fall reicht das Feld Task-ID nicht aus, um die übermittelten, gestarteten und beendeten Audit-Meldungen eindeutig zu verknüpfen.
+
+
+
+ a| 
+TTYP
+ a| 
+Aufgabentyp
+ a| 
+Der Typ der Rasteraufgabe.
+
+
+
+ a| 
+TVER
+ a| 
+Aufgabenversion
+ a| 
+Eine Zahl, die die Version der Grid-Aufgabe angibt.
+
+
+
+ a| 
+TDSC
+ a| 
+Aufgabenbeschreibung
+ a| 
+Eine vom Menschen lesbare Beschreibung der Grid-Aufgabe.
+
+
+
+ a| 
+VATS
+ a| 
+Gültig Nach Zeitstempel
+ a| 
+Die früheste Zeit (UINT64 Mikrosekunden ab 1. Januar 1970 - UNIX-Zeit), zu der die Grid-Aufgabe gültig ist.
+
+
+
+ a| 
+VBTS
+ a| 
+Gültig Vor Zeitstempel
+ a| 
+Die letzte Zeit (UINT64 Mikrosekunden ab 1. Januar 1970 - UNIX Zeit), zu der die Grid-Aufgabe gültig ist.
+
+
+
+ a| 
+TSRC
+ a| 
+Quelle
+ a| 
+Die Quelle der Aufgabe:
+
+* TXTB: Die Grid-Aufgabe wurde über das StorageGRID-System als signierter Textblock gesendet.
+* GRID: Die Grid-Aufgabe wurde über den internen Grid Task Submit Service übermittelt.
+
+
+
+
+ a| 
+ACTV
+ a| 
+Aktivierungstyp
+ a| 
+Die Art der Aktivierung:
+
+* AUTO: Die Grid-Aufgabe wurde zur automatischen Aktivierung eingereicht.
+* PEND: Die Grid-Aufgabe wurde in die ausstehende Tabelle übermittelt. Dies ist die einzige Möglichkeit für die TXTB-Quelle.
+
+
+
+
+ a| 
+RSLT
+ a| 
+Ergebnis
+ a| 
+Das Ergebnis der Einreichung:
+
+* SUCS: Die Grid-Aufgabe wurde erfolgreich übermittelt.
+* FAIL: Die Aufgabe wurde direkt in die historische Tabelle verschoben.
+
+
+|===

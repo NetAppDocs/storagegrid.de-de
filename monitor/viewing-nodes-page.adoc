@@ -1,0 +1,98 @@
+---
+permalink: monitor/viewing-nodes-page.html 
+sidebar: sidebar 
+keywords: nodes page 
+summary: Wenn Sie detailliertere Informationen über das StorageGRID-System benötigen, als das Dashboard bietet, können Sie auf der Seite Nodes Metriken für das gesamte Grid, jeden Standort im Raster und jeden Node an einem Standort anzeigen. 
+---
+= Zeigen Sie die Seite Knoten an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie detailliertere Informationen über das StorageGRID-System benötigen, als das Dashboard bietet, können Sie auf der Seite Nodes Metriken für das gesamte Grid, jeden Standort im Raster und jeden Node an einem Standort anzeigen.
+
+In der Tabelle Nodes werden Zusammenfassungsinformationen für das gesamte Raster, jeden Standort und jeden Node aufgeführt. Wenn ein Knoten getrennt ist oder eine aktive Warnmeldung hat, wird neben dem Knotennamen ein Symbol angezeigt. Wenn der Knoten verbunden ist und keine aktiven Warnmeldungen enthält, wird kein Symbol angezeigt.
+
+
+NOTE: Wenn ein Knoten nicht mit dem Raster verbunden ist, z. B. während eines Upgrades oder eines getrennten Status, sind bestimmte Metriken möglicherweise nicht verfügbar oder von den Gesamtsummen des Standorts und des Rasters ausgeschlossen. Nachdem sich ein Node wieder mit dem Grid verbunden hat, warten Sie einige Minuten, bis sich die Werte stabilisieren.
+
+
+NOTE: Um die Einheiten für die im Grid-Manager angezeigten Speicherwerte zu ändern, wählen Sie das Benutzer-Dropdown oben rechts im Grid-Manager aus, und wählen Sie dann *Benutzereinstellungen* aus.
+
+
+NOTE: Die gezeigten Screenshots sind Beispiele. Die Ergebnisse können je nach StorageGRID-Version variieren.
+
+image::../media/nodes_table.png[Knoten-Menü]
+
+
+
+== Symbole für Verbindungsstatus
+
+Wenn ein Knoten vom Raster getrennt wird, wird neben dem Knotennamen eines der folgenden Symbole angezeigt.
+
+[cols="1a,3a,3a"]
+|===
+| Symbol | Beschreibung | Handeln erforderlich 
+
+
+ a| 
+image:../media/icon_alarm_blue_unknown.png["Blaues Fragezeichen-Symbol"]
+ a| 
+*Nicht verbunden - Unbekannt*
+
+Aus einem unbekannten Grund ist die Verbindung zu einem Node unterbrochen, oder Dienste auf dem Node wurden unerwartet heruntergefahren. Beispielsweise wird ein Service auf dem Node möglicherweise angehalten, oder der Node hat aufgrund eines Stromausfalls oder eines unerwarteten Ausfalls seine Netzwerkverbindung verloren.
+
+Die Warnung * kann nicht mit Node* kommunizieren. Andere Warnmeldungen können ebenfalls aktiv sein.
+ a| 
+Erfordert sofortige Aufmerksamkeit. link:monitoring-system-health.html#view-current-and-resolved-alerts["Wählen Sie jede Warnmeldung aus"] Und befolgen Sie die empfohlenen Maßnahmen.
+
+Beispielsweise müssen Sie einen Dienst neu starten, der angehalten wurde, oder den Host für den Node neu starten.
+
+*Hinweis*: Ein Knoten kann während des verwalteten Herunterfahrens als Unbekannt erscheinen. In diesen Fällen können Sie den Status Unbekannt ignorieren.
+
+
+
+ a| 
+image:../media/icon_alarm_gray_administratively_down.png["Graues Fragensymbol"]
+ a| 
+*Nicht verbunden - Administrativ unten*
+
+Aus einem erwarteten Grund ist der Node nicht mit dem Grid verbunden.
+
+Beispielsweise wurde der Node oder die Services für den Node ordnungsgemäß heruntergefahren, der Node neu gebootet oder die Software wird aktualisiert. Mindestens ein Alarm ist möglicherweise auch aktiv.
+
+Aufgrund des zugrunde liegenden Problems sind diese Nodes oft ohne Eingriff wieder online.
+ a| 
+Ermitteln Sie, ob Warnmeldungen Auswirkungen auf diesen Node haben.
+
+Wenn eine oder mehrere Warnungen aktiv sind, link:monitoring-system-health.html#view-current-and-resolved-alerts["Wählen Sie jede Warnmeldung aus"] und befolgen Sie die empfohlenen Maßnahmen.
+
+|===
+Wenn ein Knoten vom Raster getrennt wird, liegt möglicherweise eine zugrunde liegende Warnmeldung vor, aber nur das Symbol „nicht verbunden“ wird angezeigt. Um die aktiven Warnmeldungen für einen Node anzuzeigen, wählen Sie den Node aus.
+
+
+
+== Warnungssymbole
+
+Wenn eine aktive Warnmeldung für einen Node vorhanden ist, wird neben dem Node-Namen eines der folgenden Symbole angezeigt:
+
+image:../media/icon_alert_red_critical.png["Symbol Warnung Rot Kritisch"] *Kritisch*: Es existiert eine anormale Bedingung, die den normalen Betrieb eines StorageGRID-Knotens oder -Dienstes gestoppt hat. Sie müssen das zugrunde liegende Problem sofort lösen. Wenn das Problem nicht behoben ist, kann es zu Serviceunterbrechungen und Datenverlusten kommen.
+
+image:../media/icon_alert_orange_major.png["Icon Alert Orange Major"] *Major*: Es gibt einen anormalen Zustand, der entweder den aktuellen Betrieb beeinträchtigt oder sich dem Schwellenwert für einen kritischen Alarm nähert. Sie sollten größere Warnmeldungen untersuchen und alle zugrunde liegenden Probleme beheben, um sicherzustellen, dass die anormale Bedingung den normalen Betrieb eines StorageGRID Node oder Service nicht beendet.
+
+image:../media/icon_alert_yellow_minor.png["Symbol Alarm Gelb Minor"] *Minor*: Das System funktioniert normal, aber es gibt einen ungewöhnlichen Zustand, der die Fähigkeit des Systems beeinflussen könnte, wenn es weitergeht. Sie sollten kleinere Warnmeldungen überwachen und beheben, die nicht von selbst geklärt werden, um sicherzustellen, dass sie nicht zu einem schwerwiegenderen Problem führen.
+
+
+
+== Zeigt Details zu einem System, Standort oder Node an
+
+Um die in der Tabelle Knoten angezeigten Informationen zu filtern, geben Sie einen Suchstring in das Feld *Suche* ein. Sie können nach Systemnamen, Anzeigenamen oder Typ suchen (z. B. *gat* eingeben, um alle Gateway-Knoten schnell zu finden).
+
+So zeigen Sie Informationen für das Raster, den Standort oder den Knoten an:
+
+* Wählen Sie den Grid-Namen aus, um eine Zusammenfassung der Statistiken für Ihr gesamtes StorageGRID System anzuzeigen.
+* Wählen Sie einen bestimmten Datacenter-Standort aus, um eine aggregierte Zusammenfassung der Statistiken für alle Nodes an diesem Standort anzuzeigen.
+* Wählen Sie einen bestimmten Node aus, um detaillierte Informationen zu diesem Node anzuzeigen.
+

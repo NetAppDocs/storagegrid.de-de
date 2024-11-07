@@ -1,0 +1,208 @@
+---
+permalink: ilm/create-ilm-rule-enter-details.html 
+sidebar: sidebar 
+keywords: ILM rule step 1, define basics 
+summary: 'Schritt 1 \(Details eingeben\) des Assistenten zum Erstellen einer ILM-Regel ermöglicht Ihnen, einen Namen und eine Beschreibung für die Regel einzugeben und Filter für die Regel zu definieren.' 
+---
+= Schritt 1 von 3: Details eingeben
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Im Schritt *Details eingeben* des Assistenten zum Erstellen einer ILM-Regel können Sie einen Namen und eine Beschreibung für die Regel eingeben und Filter für die Regel definieren.
+
+Die Eingabe einer Beschreibung und das Definieren von Filtern für die Regel sind optional.
+
+.Über diese Aufgabe
+Bei der Auswertung eines Objekts link:what-ilm-rule-is.html["ILM-Regel"]mit einem vergleicht StorageGRID die Objektmetadaten mit den Filtern der Regel. Wenn die Objektmetadaten mit allen Filtern übereinstimmen, verwendet StorageGRID die Regel, um das Objekt abzulegen. Sie können eine Regel für alle Objekte entwerfen oder grundlegende Filter angeben, z. B. ein oder mehrere Mandantenkonten und Bucket-Namen oder erweiterte Filter, wie z. B. Größe des Objekts oder Benutzermetadaten.
+
+.Schritte
+. Geben Sie im Feld *Name* einen eindeutigen Namen für die Regel ein.
+. Geben Sie optional im Feld *Beschreibung* eine kurze Beschreibung für die Regel ein.
++
+Sie sollten den Zweck oder die Funktion der Regel beschreiben, damit Sie die Regel später erkennen können.
+
+. Wählen Sie optional ein oder mehrere S3-Mandantenkonten aus, auf die diese Regel angewendet wird. Wenn diese Regel für alle Mandanten gilt, lassen Sie dieses Feld leer.
++
+Wenn Sie weder über die Berechtigung für den Root-Zugriff noch über die Berechtigung für die Mandantenkonten verfügen, können Sie keine Mandanten aus der Liste auswählen. Geben Sie stattdessen die Mandanten-ID ein, oder geben Sie mehrere IDs als durch Komma getrennte Zeichenfolge ein.
+
+. Optional können Sie die S3-Buckets angeben, für die diese Regel gilt.
++
+Wenn *gilt für alle Buckets* ausgewählt ist (Standard), gilt die Regel für alle S3 Buckets.
+
+. Wählen Sie für S3-Mandanten optional *Yes* aus, um die Regel nur auf ältere Objektversionen in S3-Buckets anzuwenden, für die die Versionierung aktiviert ist.
++
+Wenn Sie *Yes* auswählen, wird automatisch für die Referenzzeit in die Option „Zeitdauer nicht aktuell“ ausgewähltlink:create-ilm-rule-define-placements.html["Schritt 2 des Assistenten zum Erstellen einer ILM-Regel"].
+
++
+
+NOTE: Die nicht aktuelle Zeit gilt nur für S3 Objekte in versionierungsfähigen Buckets. Siehe link:../s3/operations-on-buckets.html["Operationen auf Buckets, PutketVersioning"] und link:managing-objects-with-s3-object-lock.html["Objekte managen mit S3 Object Lock"].
+
++
+Mit dieser Option können Sie die Auswirkungen versionierter Objekte auf den Speicher reduzieren, indem Sie nach nicht aktuellen Objektversionen filtern. Siehe link:example-4-ilm-rules-and-policy-for-s3-versioned-objects.html["Beispiel 4: ILM-Regeln und -Richtlinie für versionierte Objekte mit S3"].
+
+. Wählen Sie optional *Erweiterten Filter hinzufügen*, um weitere Filter festzulegen.
++
+Wenn Sie keine erweiterte Filterung konfigurieren, gilt die Regel für alle Objekte, die den Grundfiltern entsprechen. Weitere Informationen zum erweiterten Filtern finden Sie unter <<Verwenden Sie erweiterte Filter in ILM-Regeln>> und <<Geben Sie mehrere Metadatentypen und -Werte an>>.
+
+. Wählen Sie *Weiter*. link:create-ilm-rule-define-placements.html["Schritt 2 (Platzierungen definieren)"] Des Assistenten zum Erstellen einer ILM-Regel wird angezeigt.
+
+
+
+
+== Verwenden Sie erweiterte Filter in ILM-Regeln
+
+Mit der erweiterten Filterung können Sie ILM-Regeln erstellen, die sich nur auf bestimmte Objekte anwenden lassen, basierend auf ihren Metadaten. Wenn Sie die erweiterte Filterung für eine Regel einrichten, wählen Sie den Metadatentyp aus, der übereinstimmen soll, wählen Sie einen Operator aus und geben einen Metadatenwert an. Wenn Objekte ausgewertet werden, wird die ILM-Regel nur auf Objekte angewendet, die Metadaten enthalten, die dem erweiterten Filter entsprechen.
+
+Die Tabelle zeigt die Metadatentypen, die Sie in den erweiterten Filtern angeben können, die Operatoren, die Sie für jeden Metadatentyp verwenden können, und die erwarteten Metadaten.
+
+[cols="1a,1a,2a"]
+|===
+| Metadatentyp | Unterstützte Operatoren | Metadatenwert 
+
+
+ a| 
+Aufnahmezeit
+ a| 
+* Ist
+* Ist es nicht
+* Ist vorher
+* Ist ein oder vorher
+* Ist nachher
+* Ist ein oder nach
+
+ a| 
+Uhrzeit und Datum, an dem das Objekt aufgenommen wurde.
+
+*Hinweis:* um Ressourcenprobleme bei der Aktivierung einer neuen ILM-Richtlinie zu vermeiden, können Sie den erweiterten Filter für die Einspielzeit in jeder Regel verwenden, die den Speicherort einer großen Anzahl vorhandener Objekte ändern könnte. Legen Sie für die Aufnahme-Zeit den Wert fest, der ungefähr der Zeit entspricht, zu der die neue Richtlinie in Kraft tritt, um sicherzustellen, dass vorhandene Objekte nicht unnötig verschoben werden.
+
+
+
+ a| 
+Taste
+ a| 
+* Gleich
+* Ist nicht gleich
+* Enthält
+* Enthält nicht
+* Beginnt mit
+* Startet nicht mit
+* Endet mit
+* Endet nicht mit
+
+ a| 
+Ein eindeutiger S3-Objektschlüssel oder Teile davon.
+
+Sie können z. B. Objekte zuordnen, die mit enden `.txt` oder mit beginnen `test-object/`.
+
+
+
+ a| 
+Zeitpunkt des letzten Zugriffs
+ a| 
+* Ist
+* Ist es nicht
+* Ist vorher
+* Ist ein oder vorher
+* Ist nachher
+* Ist ein oder nach
+
+ a| 
+Uhrzeit und Datum, an dem das Objekt zuletzt abgerufen wurde (gelesen oder angezeigt).
+
+*Hinweis:* Wenn Sie einen erweiterten Filter verwenden möchtenlink:using-last-access-time-in-ilm-rules.html["Letzte Zugriffszeit verwenden"], müssen die Updates für die Uhrzeit des letzten Zugriffs für den S3-Bucket aktiviert sein.
+
+
+
+ a| 
+Speicherortbeschränkung (nur S3)
+ a| 
+* Gleich
+* Ist nicht gleich
+
+ a| 
+Die Region, in der ein S3-Bucket erstellt wurde. Verwenden Sie *ILM* > *Regionen*, um die angezeigten Regionen zu definieren.
+
+*Hinweis:* Ein Wert von US-East-1 entspricht Objekten in Eimern, die in der Region US-East-1 erstellt wurden, sowie Objekten in Buckets, die keine Region angegeben haben. Siehe link:configuring-regions-optional-and-s3-only.html["Regionen konfigurieren (nur optional und S3)"].
+
+
+
+ a| 
+Objektgröße
+ a| 
+* Gleich
+* Ist nicht gleich
+* Kleiner als
+* Kleiner als oder gleich
+* Größer als
+* Größer als oder gleich
+
+ a| 
+Die Größe des Objekts.
+
+Das Verfahren zur Einhaltung von Datenkonsistenz eignet sich am besten für Objekte mit einer Größe von mehr als 1 MB. Verwenden Sie kein Erasure Coding für Objekte, die kleiner als 200 KB sind, um zu vermeiden, dass man sehr kleine Fragmente, die zur Fehlerkorrektur codiert wurden, managen muss.
+
+
+
+ a| 
+Benutzer-Metadaten
+ a| 
+* Enthält
+* Endet mit
+* Gleich
+* Vorhanden
+* Beginnt mit
+* Enthält nicht
+* Endet nicht mit
+* Ist nicht gleich
+* Nicht vorhanden
+* Startet nicht mit
+
+ a| 
+Schlüssel-Wert-Paar, wobei *Benutzer-Metadaten-Name* der Schlüssel und *Metadaten-Wert* der Wert ist.
+
+Wenn Sie beispielsweise nach Objekten filtern möchten, die Benutzermetadaten von haben `color=blue`, geben Sie für *Name der Benutzermetadaten*, für den Operator und `blue` für *Metadatenwert `equals`* an `color`.
+
+*Hinweis:* Benutzer-Metadaten-Namen sind nicht zwischen Groß- und Kleinschreibung zu beachten; Benutzer-Metadaten-Werte sind Groß- und Kleinschreibung zu beachten.
+
+
+
+ a| 
+Objekt-Tag (nur S3)
+ a| 
+* Enthält
+* Endet mit
+* Gleich
+* Vorhanden
+* Beginnt mit
+* Enthält nicht
+* Endet nicht mit
+* Ist nicht gleich
+* Nicht vorhanden
+* Startet nicht mit
+
+ a| 
+Schlüssel-Wert-Paar, wobei *Objekt-Tag-Name* der Schlüssel und *Objekt-Tag-Wert* der Wert ist.
+
+Wenn Sie beispielsweise nach Objekten filtern möchten, die ein Objekt-Tag von haben `Image=True`, geben Sie für *Objekt-Tag-Name*, `equals` für den Operator und `True` für *Objekt-Tag-Wert* an `Image`.
+
+*Hinweis:* Objekt-Tag-Namen und Objekt-Tag-Werte sind Groß- und Kleinschreibung. Sie müssen diese Elemente genau so eingeben, wie sie für das Objekt definiert wurden.
+
+|===
+
+
+== Geben Sie mehrere Metadatentypen und -Werte an
+
+Wenn Sie die erweiterte Filterung definieren, können Sie mehrere Metadatentypen und mehrere Metadatenwerte angeben. Wenn Sie beispielsweise eine Regel mit Objekten zwischen 10 MB und 100 MB Größe vergleichen möchten, wählen Sie den Metadatentyp *Objektgröße* aus und geben zwei Metadatenwerte an.
+
+* Der erste Metadatenwert gibt Objekte an, die größer oder gleich 10 MB sind.
+* Der zweite Metadatenwert gibt Objekte an, die kleiner als oder gleich 100 MB sind.
+
+
+image::../media/advanced_filtering_size_between.png[Erweitertes Filterbeispiel für Objektgröße]
+
+Durch die Verwendung mehrerer Einträge können Sie genau steuern, welche Objekte abgeglichen werden. Im folgenden Beispiel gilt die Regel für Objekte, die Marke A oder Marke B als Wert der Benutzermetadaten Camera_type haben. Die Regel gilt jedoch nur für Objekte der Marke B, die kleiner als 10 MB sind.
+
+image::../media/advanced_filtering_multiple_rows.png[Beispiel für die erweiterte Filterung von Benutzermetadaten]

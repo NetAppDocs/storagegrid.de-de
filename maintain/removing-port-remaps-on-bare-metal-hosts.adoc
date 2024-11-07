@@ -1,0 +1,92 @@
+---
+permalink: maintain/removing-port-remaps-on-bare-metal-hosts.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, linux, linux host, bare metal host, baremetal host, remove port remap, removing port remap, port remap 
+summary: Wenn Sie einen Endpunkt für den Load Balancer-Dienst konfigurieren möchten und einen Port verwenden möchten, der bereits als Port mit dem Port einer Port-Remap konfiguriert wurde, müssen Sie zunächst die vorhandene Port-Remap entfernen, oder der Endpunkt ist nicht wirksam. 
+---
+= Entfernen Sie die Port-Remaps auf Bare-Metal-Hosts
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie einen Endpunkt für den Load Balancer-Dienst konfigurieren möchten und einen Port verwenden möchten, der bereits als Port mit dem Port einer Port-Remap konfiguriert wurde, müssen Sie zunächst die vorhandene Port-Remap entfernen, oder der Endpunkt ist nicht wirksam.
+
+.Über diese Aufgabe
+Wenn Sie StorageGRID auf Bare-Metal-Hosts ausführen, führen Sie dieses Verfahren anstelle des allgemeinen Verfahrens zum Entfernen von Port-Remaps durch. Sie müssen die Node-Konfigurationsdatei für jeden Admin-Node und Gateway-Node bearbeiten, der über widersprüchliche neu zugeordnete Ports verfügt, um alle Port-Neuzuordnungen des Node zu entfernen und den Node neu zu starten.
+
+
+CAUTION: Durch dieses Verfahren werden alle Port-Remaps entfernt. Wenden Sie sich an den technischen Support, wenn Sie einige der Rückpläne aufbewahren müssen.
+
+Informationen über das Konfigurieren von Endpunkten für den Load Balancer finden Sie in den Anweisungen zur Verwaltung von StorageGRID.
+
+
+NOTE: Dieses Verfahren kann zu einem vorübergehenden Serviceverlust führen, wenn Knoten neu gestartet werden.
+
+.Schritte
+. Melden Sie sich bei dem Host an, der den Node unterstützt. Melden Sie sich als root oder mit einem Konto an, das über sudo-Berechtigung verfügt.
+. Führen Sie den folgenden Befehl aus, um den Node vorübergehend zu deaktivieren: `sudo storagegrid node stop _node-name_`
+. Bearbeiten Sie mithilfe eines Texteditors wie vim oder pico die Konfigurationsdatei des Knotens für den Knoten.
++
+Die Node-Konfigurationsdatei finden Sie unter `/etc/storagegrid/nodes/_node-name_.conf`.
+
+. Suchen Sie den Abschnitt der Node-Konfigurationsdatei, die die Port-Zuordnungen enthält.
++
+Siehe die letzten beiden Zeilen im folgenden Beispiel.
+
++
+[listing, subs="specialcharacters,quotes"]
+----
+ADMIN_NETWORK_CONFIG = STATIC
+ADMIN_NETWORK_ESL = 10.0.0.0/8, 172.19.0.0/16, 172.21.0.0/16
+ADMIN_NETWORK_GATEWAY = 10.224.0.1
+ADMIN_NETWORK_IP = 10.224.5.140
+ADMIN_NETWORK_MASK = 255.255.248.0
+ADMIN_NETWORK_MTU = 1400
+ADMIN_NETWORK_TARGET = eth1
+ADMIN_NETWORK_TARGET_TYPE = Interface
+BLOCK_DEVICE_VAR_LOCAL = /dev/sda2
+CLIENT_NETWORK_CONFIG = STATIC
+CLIENT_NETWORK_GATEWAY = 47.47.0.1
+CLIENT_NETWORK_IP = 47.47.5.140
+CLIENT_NETWORK_MASK = 255.255.248.0
+CLIENT_NETWORK_MTU = 1400
+CLIENT_NETWORK_TARGET = eth2
+CLIENT_NETWORK_TARGET_TYPE = Interface
+GRID_NETWORK_CONFIG = STATIC
+GRID_NETWORK_GATEWAY = 192.168.0.1
+GRID_NETWORK_IP = 192.168.5.140
+GRID_NETWORK_MASK = 255.255.248.0
+GRID_NETWORK_MTU = 1400
+GRID_NETWORK_TARGET = eth0
+GRID_NETWORK_TARGET_TYPE = Interface
+NODE_TYPE = VM_API_Gateway
+*PORT_REMAP = client/tcp/8082/443*
+*PORT_REMAP_INBOUND = client/tcp/8082/443*
+----
+. BEARBEITEN Sie DIE Einträge PORT_REMAP und PORT_REMAP_INBOUND, um Port-Remaps zu entfernen.
++
+[listing]
+----
+PORT_REMAP =
+PORT_REMAP_INBOUND =
+----
+. Führen Sie den folgenden Befehl aus, um Ihre Änderungen an der Node-Konfigurationsdatei für den Node zu validieren: ``sudo storagegrid node validate _node-name_``
++
+Beheben Sie Fehler oder Warnungen, bevor Sie mit dem nächsten Schritt fortfahren.
+
+. Führen Sie den folgenden Befehl aus, um den Node ohne Port-Neuzuordnungen neu zu starten: `sudo storagegrid node start _node-name_`
+. Melden Sie sich mit dem in der Datei aufgeführten Passwort beim Node als Administrator an `Passwords.txt`.
+. Überprüfen Sie, ob die Dienste richtig starten.
++
+.. Anzeigen einer Liste der Status aller Dienste auf dem Server:``sudo storagegrid-status``
++
+Der Status wird automatisch aktualisiert.
+
+.. Warten Sie, bis alle Dienste den Status „wird ausgeführt“ oder „verifiziert“ aufweisen.
+.. Statusbildschirm verlassen:``Ctrl+C``
+
+
+. Wiederholen Sie diese Schritte auf jedem Admin-Node und Gateway-Node mit gegensätzlichen neu zugeordneten Ports.
+

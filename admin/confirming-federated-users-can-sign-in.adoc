@@ -1,0 +1,68 @@
+---
+permalink: admin/confirming-federated-users-can-sign-in.html 
+sidebar: sidebar 
+keywords: sso configuration 
+summary: 'Bevor Sie Single Sign-On \(SSO\) aktivieren, müssen Sie bestätigen, dass sich mindestens ein verbundener Benutzer beim Grid Manager und beim Tenant Manager für alle bestehenden Mandantenkonten anmelden kann.' 
+---
+= Bestätigen Sie, dass verbundene Benutzer sich anmelden können
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor Sie Single Sign-On (SSO) aktivieren, müssen Sie bestätigen, dass sich mindestens ein verbundener Benutzer beim Grid Manager und beim Tenant Manager für alle bestehenden Mandantenkonten anmelden kann.
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben link:admin-group-permissions.html["Bestimmte Zugriffsberechtigungen"].
+* Sie haben bereits einen Identitätsverbund konfiguriert.
+
+
+.Schritte
+. Falls bereits vorhandene Mandantenkonten vorhanden sind, bestätigen Sie, dass kein Mandant seine eigene Identitätsquelle verwendet.
++
+
+TIP: Wenn Sie SSO aktivieren, wird eine im Mandantenmanager konfigurierte Identitätsquelle von der im Grid Manager konfigurierten Identitätsquelle außer Kraft gesetzt. Benutzer, die zur Identitätsquelle des Mandanten gehören, können sich nicht mehr anmelden, es sei denn, sie verfügen über ein Konto bei der Identitätsquelle des Grid Manager.
+
++
+.. Melden Sie sich für jedes Mandantenkonto bei Tenant Manager an.
+.. Wählen Sie * ACCESS MANAGEMENT* > *Identity Federation*.
+.. Bestätigen Sie, dass das Kontrollkästchen *Enable Identity Federation* nicht aktiviert ist.
+.. Wenn dies der Fall ist, bestätigen Sie, dass keine föderierten Gruppen mehr für dieses Mandantenkonto benötigt werden, deaktivieren Sie das Kontrollkästchen und wählen Sie *Speichern*.
+
+
+. Bestätigen Sie, dass ein verbundener Benutzer auf den Grid Manager zugreifen kann:
++
+.. Wählen Sie im Grid Manager die Option *KONFIGURATION* > *Zugriffskontrolle* > *Admin-Gruppen* aus.
+.. Stellen Sie sicher, dass mindestens eine föderierte Gruppe aus der Active Directory-Identitätsquelle importiert wurde und dass ihr die Root-Zugriffsberechtigung zugewiesen wurde.
+.. Abmelden.
+.. Bestätigen Sie, dass Sie sich wieder bei Grid Manager als Benutzer in der föderierten Gruppe anmelden können.
+
+
+. Wenn es bereits bestehende Mandantenkonten gibt, bestätigen Sie, dass sich ein föderaler Benutzer mit Root-Zugriffsberechtigung anmelden kann:
++
+.. Wählen Sie im Grid Manager die Option *MITERS* aus.
+.. Wählen Sie das Mandantenkonto aus und wählen Sie *Aktionen* > *Bearbeiten*.
+.. Wählen Sie auf der Registerkarte Details eingeben die Option *Weiter*.
+.. Wenn das Kontrollkästchen *eigene Identitätsquelle verwenden* aktiviert ist, deaktivieren Sie das Kontrollkästchen und wählen Sie *Speichern* aus.
++
+image::../media/sso_uses_own_identity_source_for_tenant.png[Mandantenkonto bearbeiten > Kontrollkästchen eigene Identitätsquelle verwenden ist nicht ausgewählt]
+
++
+Die Seite Mandant wird angezeigt.
+
+.. Wählen Sie das Mandantenkonto aus, wählen Sie *Anmelden* und melden Sie sich als lokaler Root-Benutzer beim Mandantenkonto an.
+.. Wählen Sie im Mandantenmanager die Option *ZUGRIFFSVERWALTUNG* > *Gruppen* aus.
+.. Stellen Sie sicher, dass mindestens eine föderierte Gruppe aus dem Grid Manager die Root-Zugriffsberechtigung für diesen Mandanten zugewiesen wurde.
+.. Abmelden.
+.. Bestätigen Sie, dass Sie sich wieder bei dem Mandanten als Benutzer in der föderierten Gruppe anmelden können.
+
+
+
+
+.Verwandte Informationen
+* link:requirements-for-sso.html["Voraussetzungen und Überlegungen für Single Sign-On"]
+* link:managing-admin-groups.html["Managen von Admin-Gruppen"]
+* link:../tenant/index.html["Verwenden Sie ein Mandantenkonto"]
+

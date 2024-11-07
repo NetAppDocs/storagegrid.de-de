@@ -1,0 +1,300 @@
+---
+permalink: ilm/example-7-compliant-ilm-policy-for-s3-object-lock.html 
+sidebar: sidebar 
+keywords: ILM policy,S3 Object Lock 
+summary: Sie können den S3-Bucket, ILM-Regeln und ILM-Richtlinie in diesem Beispiel als Ausgangspunkt verwenden, wenn Sie eine ILM-Richtlinie definieren, um die Objektschutz- und Aufbewahrungsanforderungen für Objekte in Buckets zu erfüllen, wenn S3-Objektsperre aktiviert ist. 
+---
+= Beispiel 7: Konforme ILM-Richtlinie für S3 Object Lock
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können den S3-Bucket, ILM-Regeln und ILM-Richtlinie in diesem Beispiel als Ausgangspunkt verwenden, wenn Sie eine ILM-Richtlinie definieren, um die Objektschutz- und Aufbewahrungsanforderungen für Objekte in Buckets zu erfüllen, wenn S3-Objektsperre aktiviert ist.
+
+
+NOTE: Wenn Sie die Funktion „ältere Compliance“ in früheren StorageGRID Versionen verwendet haben, können Sie dieses Beispiel auch zur Verwaltung vorhandener Buckets verwenden, in denen die alte Compliance-Funktion aktiviert ist.
+
+
+CAUTION: Die folgenden ILM-Regeln und -Richtlinien sind nur Beispiele. Es gibt viele Möglichkeiten zur Konfiguration von ILM-Regeln. Simulieren Sie vor der Aktivierung einer neuen Richtlinie, um zu bestätigen, dass sie so funktioniert, wie sie zum Schutz von Inhalten vor Verlust vorgesehen ist.
+
+.Verwandte Informationen
+* link:managing-objects-with-s3-object-lock.html["Objekte managen mit S3 Object Lock"]
+* link:creating-ilm-policy.html["ILM-Richtlinie erstellen"]
+
+
+
+
+== Bucket und Objekte für S3 Object Lock Beispiel
+
+In diesem Beispiel hat ein S3-Mandantenkonto mit der Bezeichnung „Bank of ABC“ durch den Mandanten-Manager einen Bucket erstellt, der mit S3-Objektsperre aktiviert wurde, um kritische Bankdatensätze zu speichern.
+
+[cols="2a,2a"]
+|===
+| Bucket-Definition | Beispielwert 
+
+
+ a| 
+Name Des Mandantenkontos
+ a| 
+Bank von ABC
+
+
+
+ a| 
+Bucket-Name
+ a| 
+bankaufzeichnungen
+
+
+
+ a| 
+Bucket-Region
+ a| 
+US-East-1 (Standard)
+
+|===
+Für jedes Objekt und jede Objektversion, die dem Bucket für Bankdatensätze hinzugefügt wird, werden die folgenden Werte für und `legal hold`-Einstellungen verwendet `retain-until-date`.
+
+[cols="1a,2a"]
+|===
+| Einstellung für jedes Objekt | Beispielwert 
+
+
+ a| 
+`retain-until-date`
+ a| 
+„2030-12-30T23:59:59Z“ (30. Dezember 2030)
+
+Jede Objektversion hat eine eigene `retain-until-date` Einstellung. Diese Einstellung kann erhöht, aber nicht verringert werden.
+
+
+
+ a| 
+`legal hold`
+ a| 
+„AUS“ (nicht in Kraft)
+
+Eine gesetzliche Aufbewahrungsphase kann jederzeit während der Aufbewahrungsfrist auf jeder Objektversion platziert oder aufgehoben werden. Befindet sich ein Objekt unter einem Legal Hold, kann das Objekt auch dann nicht gelöscht werden, wenn das `retain-until-date` erreicht wurde.
+
+|===
+
+
+== ILM-Regel 1 für S3 Object Lock – Beispiel: Profil für Erasure Coding mit Bucket-Matching
+
+Diese Beispiel-ILM-Regel gilt nur für das S3-Mandantenkonto namens Bank of ABC. Die Applikation wird einem beliebigen Objekt im `bank-records` Bucket zugeordnet und das Objekt dann mithilfe eines 6+3 Erasure Coding-Profils auf Storage Nodes an drei Datacenter-Standorten gespeichert. Diese Regel erfüllt die Anforderungen von Buckets mit aktivierter S3 Object Lock: Eine Kopie wird auf Storage-Nodes vom Tag 0 bis dauerhaft aufbewahrt. Als Referenzzeit wird die Aufnahmezeit verwendet.
+
+[cols="1a,2a"]
+|===
+| Regeldefinition | Beispielwert 
+
+
+ a| 
+Regelname
+ a| 
+Konforme Regel: EC-Objekte in Bank-Records Bucket - Bank of ABC
+
+
+
+ a| 
+Mandantenkonto
+ a| 
+Bank von ABC
+
+
+
+ a| 
+Bucket-Name
+ a| 
+`bank-records`
+
+
+
+ a| 
+Erweiterter Filter
+ a| 
+Objektgröße (MB) größer als 1
+
+*Hinweis:* dieser Filter sorgt dafür, dass das Erasure Coding nicht für Objekte mit einer Größe von 1 MB verwendet wird.
+
+|===
+[cols="1a,2a"]
+|===
+| Regeldefinition | Beispielwert 
+
+
+ a| 
+Referenzzeit
+ a| 
+Aufnahmezeit
+
+
+
+ a| 
+Platzierungen
+ a| 
+Ab Tag 0 dauerhaft speichern
+
+
+
+ a| 
+Profil für Erasure Coding
+ a| 
+* Erstellen einer mit Erasure Coding verschlüsselten Kopie auf Storage-Nodes an drei Datacenter-Standorten
+* Verwendet das Erasure Coding-Schema 6+3
+
+
+|===
+
+
+== ILM-Regel 2 für S3 Object Lock Beispiel: Nicht konforme Regel
+
+Diese Beispiel-ILM-Regel speichert zunächst zwei replizierte Objektkopien auf Storage Nodes. Nach einem Jahr wird für immer eine Kopie auf einem Cloud-Storage-Pool gespeichert. Da diese Regel einen Cloud-Storage-Pool verwendet, ist diese nicht konform und gilt nicht für Objekte in Buckets, deren S3-Objektsperre aktiviert ist.
+
+[cols="1a,2a"]
+|===
+| Regeldefinition | Beispielwert 
+
+
+ a| 
+Regelname
+ a| 
+Nicht konforme Regel: Cloud Storage Pool
+
+
+
+ a| 
+Mandantenkonten
+ a| 
+Nicht angegeben
+
+
+
+ a| 
+Bucket-Name
+ a| 
+Nicht angegeben, gilt aber nur für Buckets, für die die S3-Objektsperre (oder die ältere Compliance-Funktion) nicht aktiviert ist.
+
+
+
+ a| 
+Erweiterter Filter
+ a| 
+Nicht angegeben
+
+|===
+[cols="1a,2a"]
+|===
+| Regeldefinition | Beispielwert 
+
+
+ a| 
+Referenzzeit
+ a| 
+Aufnahmezeit
+
+
+
+ a| 
+Platzierungen
+ a| 
+* Halten Sie am Tag 0 zwei replizierte Kopien auf Storage Nodes in Datacenter 1 und Datacenter 2 für 365 Tage
+* Nach einem Jahr sollte eine replizierte Kopie immer in einem Cloud-Storage-Pool aufbewahrt werden
+
+
+|===
+
+
+== ILM-Regel 3 für S3 Object Lock Beispiel: Standardregel
+
+Diese Beispiel-ILM-Regel kopiert Objektdaten in Storage-Pools in zwei Datacentern. Diese konforme Regel wurde als Standardregel in der ILM-Richtlinie konzipiert. Es enthält keine Filter, verwendet keine nicht aktuelle Referenzzeit und erfüllt die Anforderungen von Buckets mit aktivierter S3 Objektsperre: Zwei Objektkopien werden auf Storage-Nodes aufbewahrt von Tag 0 bis für immer und verwenden die Aufnahme als Referenzzeit.
+
+[cols="1a,2a"]
+|===
+| Regeldefinition | Beispielwert 
+
+
+ a| 
+Regelname
+ a| 
+Standard-konforme Regel: Zwei Kopien zwei Rechenzentren
+
+
+
+ a| 
+Mandantenkonto
+ a| 
+Nicht angegeben
+
+
+
+ a| 
+Bucket-Name
+ a| 
+Nicht angegeben
+
+
+
+ a| 
+Erweiterter Filter
+ a| 
+Nicht angegeben
+
+|===
+[cols="1a,2a"]
+|===
+| Regeldefinition | Beispielwert 
+
+
+ a| 
+Referenzzeit
+ a| 
+Aufnahmezeit
+
+
+
+ a| 
+Platzierungen
+ a| 
+Halten Sie von Tag 0 bis für immer zwei replizierte Kopien bereit – eins auf Storage-Nodes im Datacenter 1 und eins auf Storage-Nodes im Datacenter 2.
+
+|===
+
+
+== Konforme ILM-Richtlinie für S3 Object Lock Beispiel
+
+Zum Erstellen einer ILM-Richtlinie, die alle Objekte in Ihrem System effektiv schützt, auch in Buckets, deren S3-Objektsperre aktiviert ist, müssen Sie ILM-Regeln auswählen, die die Storage-Anforderungen für alle Objekte erfüllen. Anschließend müssen Sie die Richtlinie simulieren und aktivieren.
+
+
+
+=== Fügen Sie der Richtlinie Regeln hinzu
+
+In diesem Beispiel umfasst die ILM-Richtlinie drei ILM-Regeln in der folgenden Reihenfolge:
+
+. Eine konforme Regel, die Erasure Coding verwendet, um Objekte mit einer Größe von mehr als 1 MB in einem bestimmten Bucket zu schützen. Dabei ist S3 Object Lock aktiviert. Die Objekte werden von Tag 0 bis für immer auf Speicherknoten gespeichert.
+. Eine nicht konforme Regel, die zwei replizierte Objektkopien auf Storage-Nodes für ein Jahr erstellt und dann eine Objektkopie für immer in einen Cloud Storage Pool verschiebt. Diese Regel gilt nicht für Buckets, für die S3-Objektsperre aktiviert ist, da sie einen Cloud-Storage-Pool verwendet.
+. Die standardmäßige, konforme Regel, die zwei replizierte Objektkopien auf Storage-Nodes erstellt, von Tag 0 bis für immer.
+
+
+
+
+=== Simulieren Sie die Richtlinie
+
+Nachdem Sie Ihrer Richtlinie Regeln hinzugefügt, eine Standard-konforme Regel ausgewählt und die anderen Regeln angeordnet haben, sollten Sie die Richtlinie simulieren, indem Sie Objekte aus dem Bucket mit aktivierter S3 Object Lock und aus anderen Buckets testen. Wenn Sie beispielsweise die Beispielrichtlinie simulieren, erwarten Sie, dass Testobjekte wie folgt bewertet werden:
+
+* Die erste Regel entspricht nur Testobjekten, die mehr als 1 MB in den Bucket-Bankdatensätzen für den Mandanten der Bank of ABC enthalten sind.
+* Die zweite Regel entspricht allen Objekten in allen nicht-konformen Buckets für alle anderen Mandantenkonten.
+* Die Standardregel stimmt mit den folgenden Objekten überein:
++
+** Objekte mit einer Größe von 1 MB oder kleiner in den Bucket-Bankaufzeichnungen für den Mandanten der Bank of ABC
+** Objekte in jedem anderen Bucket, bei dem die S3-Objektsperre für alle anderen Mandantenkonten aktiviert ist
+
+
+
+
+
+
+=== Aktivieren Sie die Richtlinie
+
+Wenn Sie mit der neuen Richtlinie zufrieden sind, dass Objektdaten wie erwartet geschützt werden, können Sie sie aktivieren.

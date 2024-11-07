@@ -1,0 +1,36 @@
+---
+permalink: maintain/starting-server-manager-and-all-services.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, server manager, start server manager, start services, start all services 
+summary: Möglicherweise müssen Sie Server Manager starten, der auch alle Dienste auf dem Grid-Knoten startet. 
+---
+= Starten Sie Server Manager und alle Dienste
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Möglicherweise müssen Sie Server Manager starten, der auch alle Dienste auf dem Grid-Knoten startet.
+
+.Bevor Sie beginnen
+Sie haben die `Passwords.txt` Datei.
+
+.Über diese Aufgabe
+Der Start von Server Manager auf einem Grid-Knoten, auf dem er bereits ausgeführt wird, führt zu einem Neustart des Server-Managers und aller Dienste auf dem Grid-Knoten.
+
+.Schritte
+. Melden Sie sich beim Grid-Node an:
++
+.. Geben Sie den folgenden Befehl ein: `ssh admin@_grid_node_IP_`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+.. Geben Sie den folgenden Befehl ein, um zu root zu wechseln: `su -`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+
+
++
+Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `#`.
+
+. Server-Manager Starten: `service servermanager start`
+. Melden Sie sich von der Befehls-Shell ab: `exit`
+

@@ -1,0 +1,70 @@
+---
+permalink: tenant/changing-bucket-versioning.html 
+sidebar: sidebar 
+keywords: how to change bucket versioning, disabled versioning, enabled versioning, suspended versioning 
+summary: Wenn Sie einen S3-Mandanten verwenden, können Sie den Versionsstatus für S3-Buckets ändern. 
+---
+= Ändern Sie die Objektversionierung für einen Bucket
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie einen S3-Mandanten verwenden, können Sie den Versionsstatus für S3-Buckets ändern.
+
+.Bevor Sie beginnen
+* Sie sind beim Tenant Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie gehören zu einer Benutzergruppe mit dem link:tenant-management-permissions.html["Managen aller Buckets oder Root-Zugriffsberechtigungen"]. Diese Berechtigungen überschreiben die Berechtigungseinstellungen in Gruppen- oder Bucket-Richtlinien.
+* Sie haben überprüft, ob die erforderliche Anzahl an Storage Nodes und Standorten verfügbar ist. Wenn zwei oder mehr Storage-Nodes innerhalb eines Standorts nicht verfügbar sind oder ein Standort nicht verfügbar ist, sind Änderungen an diesen Einstellungen möglicherweise nicht verfügbar.
+
+
+.Über diese Aufgabe
+Sie können die Objektversionierung für einen Bucket aktivieren oder aussetzen. Nachdem Sie die Versionierung für einen Bucket aktiviert haben, kann dieser nicht in den Status „unversioniert“ zurückkehren. Sie können die Versionierung für den Bucket jedoch unterbrechen.
+
+* Deaktiviert: Versionierung wurde noch nie aktiviert
+* Aktiviert: Versionierung ist aktiviert
+* Suspendiert: Die Versionierung war zuvor aktiviert und wird ausgesetzt
+
+
+Weitere Informationen finden Sie im Folgenden:
+
+* link:../s3/object-versioning.html["Objektversionierung"]
+* link:../ilm/example-4-ilm-rules-and-policy-for-s3-versioned-objects.html["ILM-Regeln und Richtlinien für versionierte S3-Objekte (Beispiel 4)"]
+* link:../ilm/how-objects-are-deleted.html["So werden Objekte gelöscht"]
+
+
+.Schritte
+. Wählen Sie *View Buckets* aus dem Dashboard, oder wählen Sie *STORAGE (S3)* > *Buckets*.
+. Wählen Sie den Bucket-Namen aus der Tabelle aus.
++
+Die Seite mit den Bucket-Details wird angezeigt.
+
+. Wählen Sie auf der Registerkarte *Bucket options* das Akkordeon *Object Versioning* aus.
+. Wählen Sie einen Versionierungsstatus für die Objekte in diesem Bucket aus.
++
+Die Objektversionierung muss für einen Bucket aktiviert bleiben, der für die Grid-übergreifende Replizierung verwendet wurde. Wenn die S3-Objektsperre oder die ältere Compliance aktiviert ist, sind die Optionen *Objektversionierung* deaktiviert.
+
++
+[cols="1a,3a"]
+|===
+| Option | Beschreibung 
+
+
+ a| 
+Aktivieren Sie die Versionierung
+ a| 
+Aktivieren Sie die Objektversionierung, wenn Sie jede Version jedes Objekts in diesem Bucket speichern möchten. Sie können dann nach Bedarf frühere Versionen eines Objekts abrufen.
+
+Objekte, die sich bereits im Bucket befanden, werden versioniert, wenn sie von einem Benutzer geändert werden.
+
+
+
+ a| 
+Die Versionierung unterbrechen
+ a| 
+Unterbrechen Sie die Objektversionierung, wenn Sie keine neuen Objektversionen mehr erstellen möchten. Sie können weiterhin alle vorhandenen Objektversionen abrufen.
+
+|===
+. Wählen Sie *Änderungen speichern*.
+

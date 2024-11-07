@@ -1,0 +1,47 @@
+---
+permalink: audit/audit-message-format.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message formats, message format 
+summary: Im StorageGRID-System ausgetauschte Audit-Meldungen enthalten Standardinformationen, die für alle Meldungen und spezifische Inhalte zur Beschreibung des Ereignisses oder der Aktivität üblich sind. 
+---
+= Überwachungsmeldungsformat
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Im StorageGRID-System ausgetauschte Audit-Meldungen enthalten Standardinformationen, die für alle Meldungen und spezifische Inhalte zur Beschreibung des Ereignisses oder der Aktivität üblich sind.
+
+Wenn die zusammenfassenden Informationen, die von den  undlink:using-audit-sum-tool.html["Audit-Summe"]-Tools bereitgestellt link:using-audit-explain-tool.html["Audit-Erklärung"]werden, nicht ausreichen, finden Sie in diesem Abschnitt Informationen zum allgemeinen Format aller Überwachungsmeldungen.
+
+Im Folgenden finden Sie eine Beispielmeldung, wie sie in der Audit-Log-Datei angezeigt werden kann:
+
+[listing]
+----
+2014-07-17T03:50:47.484627
+[AUDT:[RSLT(FC32):VRGN][AVER(UI32):10][ATIM(UI64):1405569047484627][ATYP(FC32):SYSU][ANID(UI32):11627225][AMID(FC32):ARNI][ATID(UI64):9445736326500603516]]
+----
+Jede Überwachungsmeldung enthält eine Zeichenfolge von Attributelementen. Der gesamte String ist in Klammern eingeschlossen (`[ ]`), und jedes Attribut-Element im String hat die folgenden Eigenschaften:
+
+* In Klammern eingeschlossen `[ ]`
+* Wird durch den String, der eine Audit-Nachricht anzeigt, eingeführt `AUDT`
+* Ohne Trennzeichen (keine Kommata oder Leerzeichen) vor oder nach
+* Beendet durch Zeilenvorschubzeichen `\n`
+
+
+Jedes Element umfasst einen Attributcode, einen Datentyp und einen Wert, der in diesem Format angegeben wird:
+
+[listing]
+----
+[ATTR(type):value][ATTR(type):value]...
+[ATTR(type):value]\n
+----
+Die Anzahl der Attributelemente in der Nachricht hängt vom Ereignistyp der Nachricht ab. Die Attributelemente werden in keiner bestimmten Reihenfolge aufgeführt.
+
+In der folgenden Liste werden die Attributelemente beschrieben:
+
+* `ATTR` Ist ein vierstelliger Code für das gemeldete Attribut. Es gibt einige Attribute, die für alle Audit-Meldungen und andere, die ereignisspezifisch sind, gelten.
+* `type` Ist eine vierstellige Kennung des Programmierdatentyps des Werts, z. B. UI64, FC32 usw. Der Typ ist in Klammern eingeschlossen `( )`.
+* `value` Ist der Inhalt des Attributs, in der Regel ein numerischer Wert oder ein Textwert. Werte folgen immer einem Doppelpunkt (`:`). Die Werte des Datentyps CSTR sind von doppelten Anführungszeichen umgeben.
+

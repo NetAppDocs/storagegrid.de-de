@@ -1,0 +1,66 @@
+---
+permalink: admin/configuration-options-for-ha-groups.html 
+sidebar: sidebar 
+keywords: ha groups, best practices, high availability group options 
+summary: Das folgende Diagramm enthält Beispiele für die verschiedenen Möglichkeiten zur Konfiguration von HA-Gruppen. Jede Option hat vor- und Nachteile. 
+---
+= Konfigurationsoptionen für HA-Gruppen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die folgenden Diagramme bieten Beispiele für verschiedene Möglichkeiten zum Konfigurieren von HA-Gruppen. Jede Option hat vor- und Nachteile.
+
+In den Diagrammen zeigt blau die primäre Schnittstelle in der HA-Gruppe an und gelb gibt die Backup-Schnittstelle in der HA-Gruppe an.
+
+image::../media/high_availability_examples.png[HA-Beispiele]
+
+Die Tabelle enthält eine Zusammenfassung der Vorteile der einzelnen HA-Konfigurationen, die in der Abbildung dargestellt sind.
+
+[cols="1a,2a,2a"]
+|===
+| Konfiguration | Vorteile | Nachteile 
+
+
+ a| 
+Aktiv/Backup HA
+ a| 
+* Management über StorageGRID ohne externe Abhängigkeiten
+* Schnelles Failover.
+
+ a| 
+* In einer HA-Gruppe ist nur ein Node aktiv. Mindestens ein Node pro HA-Gruppe bleibt im Ruhezustand.
+
+
+
+
+ a| 
+DNS Round Robin
+ a| 
+* Erhöhter Aggregatdurchsatz:
+* Keine leerlaufenden Hosts
+
+ a| 
+* Langsamer Failover, der vom Client-Verhalten abhängen kann.
+* Konfiguration von Hardware außerhalb von StorageGRID erforderlich
+* Benötigt eine vom Kunden implementierte Zustandsprüfung.
+
+
+
+
+ a| 
+Aktiv/aktiv-HA
+ a| 
+* Der Datenverkehr wird über mehrere HA-Gruppen verteilt.
+* Hoher Aggregatdurchsatz, der mit der Anzahl der HA-Gruppen skaliert werden kann
+* Schnelles Failover.
+
+ a| 
+* Komplexer zu konfigurieren.
+* Konfiguration von Hardware außerhalb von StorageGRID erforderlich
+* Benötigt eine vom Kunden implementierte Zustandsprüfung.
+
+
+|===

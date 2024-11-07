@@ -1,0 +1,65 @@
+---
+permalink: expand/guidelines-for-adding-object-capacity.html 
+sidebar: sidebar 
+keywords: adding storage capacity, guidelines, storage volumes, expansion 
+summary: 'Sie können die Objekt-Storage-Kapazität Ihres StorageGRID Systems erweitern, indem Sie vorhandenen Storage-Nodes Storage-Volumes hinzufügen oder vorhandenen Standorten neue Storage-Nodes hinzufügen. Sie müssen Storage-Kapazität so hinzufügen, dass sie den Anforderungen Ihrer Information Lifecycle Management \(ILM\)-Richtlinie entspricht.' 
+---
+= Richtlinien zum Hinzufügen von Objektkapazität
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Objekt-Storage-Kapazität Ihres StorageGRID Systems erweitern, indem Sie vorhandenen Storage-Nodes Storage-Volumes hinzufügen oder vorhandenen Standorten neue Storage-Nodes hinzufügen. Storage-Kapazität muss so hinzugefügt werden, dass sie den Anforderungen Ihrer Information Lifecycle Management (ILM)-Richtlinie entspricht.
+
+
+
+== Richtlinien für das Hinzufügen von Storage Volumes
+
+Lesen Sie vor dem Hinzufügen von Storage-Volumes zu vorhandenen Storage-Nodes die folgenden Richtlinien und Einschränkungen:
+
+* Sie müssen Ihre aktuellen ILM-Regeln prüfen, um zu bestimmen, wo und wann der verfügbare Speicher für  oder vergrößert link:../ilm/what-replication-is.html["Replizierte Objekte"]link:../ilm/what-erasure-coding-schemes-are.html["Objekte, die mit Erasure Coding codiert wurden"]werden solllink:../expand/adding-storage-volumes-to-storage-nodes.html["Storage-Volumes hinzufügen"].
+* Die Metadatenkapazität des Systems kann nicht durch Hinzufügen von Storage-Volumes erhöht werden, da Objekt-Metadaten nur auf Volume 0 gespeichert werden.
+* Jeder softwarebasierte Storage Node kann maximal 16 Storage Volumes unterstützen. Wenn Sie darüber hinaus Kapazität hinzufügen möchten, müssen Sie neue Storage-Nodes hinzufügen.
+* Sie können jeder SG6060 Appliance ein oder zwei Erweiterungs-Shelfs hinzufügen. Jedes Erweiterungs-Shelf enthält 16 Storage Volumes. Wenn beide Erweiterungs-Shelfs installiert sind, kann das SG6060 insgesamt 48 Storage-Volumes unterstützen.
+* Sie können jeder SG6160 Appliance ein oder zwei Erweiterungs-Shelfs hinzufügen. Jedes Erweiterungs-Shelf enthält 60 Storage Volumes. Wenn beide Erweiterungs-Shelfs installiert sind, kann das SG6160 insgesamt 180 Storage-Volumes unterstützen.
+* Storage Volumes können keiner anderen Storage Appliance hinzugefügt werden.
+* Sie können die Größe eines vorhandenen Storage Volumes nicht vergrößern.
+* Storage Volumes können nicht gleichzeitig zu einem Storage Node hinzugefügt werden, wenn Sie ein System-Upgrade, einen Wiederherstellungsvorgang oder eine andere Erweiterung durchführen.
+
+
+Nachdem Sie sich entschieden haben, Storage Volumes hinzuzufügen und festgestellt haben, welche Storage Nodes Sie erweitern müssen, um Ihre ILM-Richtlinie zu erfüllen, befolgen Sie die Anweisungen für Ihren Storage Node-Typ:
+
+* Wenn Sie einer SG6060 Storage-Appliance ein oder zwei Erweiterungseinschübe hinzufügen möchten, besuchen https://docs.netapp.com/us-en/storagegrid-appliances/sg6000/adding-expansion-shelf-to-deployed-sg6060.html["Erweiterungs-Shelf zu implementiertem SG6060 hinzufügen"^] Sie .
+* Um eine oder zwei Erweiterungseinschübe zu einer SG6160 Storage Appliance hinzuzufügen, gehen Sie zu https://docs.netapp.com/us-en/storagegrid-appliances/sg6100/adding-expansion-shelf-to-deployed-sg6160.html["Erweiterungs-Shelf zu implementiertem SG6160 hinzufügen"^]
+* Befolgen Sie bei einem softwarebasierten Knoten die Anweisungen für link:adding-storage-volumes-to-storage-nodes.html["Hinzufügen von Storage-Volumes zu Storage-Nodes"].
+
+
+
+
+== Richtlinien zum Hinzufügen von Speicherknoten
+
+Lesen Sie vor dem Hinzufügen von Speicherknoten zu vorhandenen Standorten die folgenden Richtlinien und Einschränkungen durch:
+
+* Sie müssen Ihre aktuellen ILM-Regeln prüfen, um zu bestimmen, wo und wann Storage Nodes hinzugefügt werden müssen, um den für  oder verfügbaren Speicher link:../ilm/what-erasure-coding-schemes-are.html["Objekte, die mit Erasure Coding codiert wurden"]zu erhöhenlink:../ilm/what-replication-is.html["Replizierte Objekte"].
+* Sie sollten nicht mehr als 10 Speicherknoten in einem einzigen Erweiterungsverfahren hinzufügen.
+* Sie können Speicherknoten zu mehr als einem Standort in einem einzigen Erweiterungsverfahren hinzufügen.
+* Sie können Storage-Nodes und andere Node-Typen in einem einzigen Erweiterungsverfahren hinzufügen.
+* Bevor Sie mit dem Erweiterungsvorgang beginnen, müssen Sie bestätigen, dass alle Datenreparaturvorgänge, die im Rahmen einer Wiederherstellung durchgeführt werden, abgeschlossen sind. Siehe link:../maintain/checking-data-repair-jobs.html["Prüfen Sie die Reparatur von Daten"].
+* Wenn Sie Storage-Nodes vor oder nach einer Erweiterung entfernen müssen, sollten Sie nicht mehr als 10 Storage-Nodes in einem einzigen Dekommissions-Node-Verfahren außer Betrieb nehmen.
+
+
+
+
+== Richtlinien für ADC-Service auf Storage-Nodes
+
+Beim Konfigurieren der Erweiterung müssen Sie festlegen, ob der Dienst Administrative Domain Controller (ADC) auf jedem neuen Speicherknoten enthalten soll. Der ADC-Dienst verfolgt den Standort und die Verfügbarkeit von Grid-Services.
+
+* Für das StorageGRID System muss ein System link:../maintain/understanding-adc-service-quorum.html["Quorum von ADC-Services"]jederzeit und an jedem Standort verfügbar sein.
+* Mindestens drei Storage-Nodes an jedem Standort müssen den ADC-Service enthalten.
+* Es wird nicht empfohlen, jedem Speicherknoten den ADC-Dienst hinzuzufügen. Die Einbeziehung von zu vielen ADC-Services kann zu Verlangsamungen führen, da die Kommunikation zwischen den Knoten größer ist.
+* Ein einzelnes Grid sollte nicht mehr als 48 Storage-Nodes mit dem ADC-Dienst aufweisen. Dies entspricht 16 Standorten mit drei ADC-Diensten an jedem Standort.
+* Wenn Sie im Allgemeinen die Einstellung *ADC-Dienst* für einen neuen Knoten auswählen, sollten Sie *automatisch* wählen. Wählen Sie *Ja* nur aus, wenn der neue Knoten einen anderen Speicherknoten ersetzt, der den ADC-Dienst enthält. Da ein Storage Node nicht stillgelegt werden kann, wenn zu wenige ADC-Dienste verbleiben, wird dadurch sichergestellt, dass ein neuer ADC-Service verfügbar ist, bevor der alte Service entfernt wird.
+* Sie können den ADC-Dienst nicht zu einem Knoten hinzufügen, nachdem er bereitgestellt wurde.
+

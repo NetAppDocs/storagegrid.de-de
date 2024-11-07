@@ -1,0 +1,82 @@
+---
+section: rhel
+title: Installieren Sie StorageGRID unter Red hat Enterprise Linux
+entries:
+- title: Schnellstart
+  pdf-filename: Installieren Sie StorageGRID unter Red hat Enterprise Linux
+  url: "/rhel/index.html"
+- title: Planung und Vorbereitung der Installation auf Red hat
+  entries:
+  - title: Erforderliche Informationen und Materialien
+    url: "/rhel/required-materials.html"
+  - title: Laden Sie StorageGRID-Installationsdateien herunter und extrahieren Sie
+      sie
+    url: "/rhel/downloading-and-extracting-storagegrid-installation-files.html"
+  - title: Überprüfen Sie die Installationsdateien manuell
+    url: "/rhel/download-files-verify.html"
+  - title: Softwareanforderungen
+    url: "/rhel/software-requirements.html"
+  - title: CPU- und RAM-Anforderungen erfüllt
+    url: "/rhel/cpu-and-ram-requirements.html"
+  - title: Storage- und Performance-Anforderungen erfüllt
+    url: "/rhel/storage-and-performance-requirements.html"
+  - title: Anforderungen für die Container-Migration für Nodes
+    url: "/rhel/node-container-migration-requirements.html"
+  - title: Vorbereiten der Hosts (Red hat)
+    entries:
+    - title: Wie sich die Einstellungen für den gesamten Host ändern
+      url: "/rhel/how-host-wide-settings-change.html"
+    - title: Installieren Sie Linux
+      url: "/rhel/installing-linux.html"
+    - title: Konfiguration des Hostnetzwerks (Red hat)
+      url: "/rhel/configuring-host-network.html"
+    - title: Hostspeicher konfigurieren
+      url: "/rhel/configuring-host-storage.html"
+    - title: Konfigurieren des Container Engine Storage Volume
+      url: "/rhel/configuring-docker-storage-volume.html"
+    - title: Installation der StorageGRID Host Services
+      url: "/rhel/installing-storagegrid-webscale-host-service.html"
+- title: Installation automatisieren (Red hat)
+  url: "/rhel/automating-installation.html"
+- title: Bereitstellung von virtuellen Grid-Nodes (Red hat)
+  entries:
+  - title: Erstellen von Node-Konfigurationsdateien für Red hat Implementierungen
+    url: "/rhel/creating-node-configuration-files.html"
+  - title: Ermitteln der primären Admin-Node durch Grid-Nodes
+    url: "/rhel/how-grid-nodes-discover-primary-admin-node.html"
+  - title: Beispiel für die Node-Konfigurationsdateien
+    url: "/rhel/example-node-configuration-files.html"
+  - title: StorageGRID-Konfiguration validieren
+    url: "/rhel/validating-storagegrid-configuration.html"
+  - title: Starten Sie den StorageGRID Host Service
+    url: "/rhel/starting-storagegrid-host-service.html"
+- title: Grid konfigurieren und Installation abschließen (Red hat)
+  entries:
+  - title: Navigieren Sie zum Grid Manager
+    url: "/rhel/navigating-to-grid-manager.html"
+  - title: Geben Sie Lizenzinformationen an
+    url: "/rhel/specifying-storagegrid-license-information.html"
+  - title: Fügen Sie Sites hinzu
+    url: "/rhel/adding-sites.html"
+  - title: Grid-Netzwerk-Subnetze angeben
+    url: "/rhel/specifying-grid-network-subnets.html"
+  - title: Ausstehende Grid-Nodes genehmigen
+    url: "/rhel/approving-pending-grid-nodes.html"
+  - title: Geben Sie die NTP-Serverinformationen an
+    url: "/rhel/specifying-network-time-protocol-server-information.html"
+  - title: Geben Sie die DNS-Serverinformationen an
+    url: "/rhel/specifying-domain-name-system-server-information.html"
+  - title: Geben Sie die Systemkennwörter an
+    url: "/rhel/specifying-storagegrid-system-passwords.html"
+  - title: Überprüfen Sie die Konfiguration und schließen Sie die Installation ab
+    url: "/rhel/reviewing-your-configuration-and-completing-installation.html"
+  - title: Richtlinien nach der Installation
+    url: "/rhel/post-installation-guidelines.html"
+- title: REST-API für die Installation
+  url: "/rhel/overview-of-installation-rest-api.html"
+- title: Weitere Schritte
+  url: "/rhel/where-to-go-next.html"
+- title: Fehlerbehebung bei Installationsproblemen
+  url: "/rhel/troubleshooting-installation-issues.html"
+- title: Beispiel /etc/sysconfig/Network-scripts
+  url: "/rhel/example-etc-sysconfig-network-scripts.html"

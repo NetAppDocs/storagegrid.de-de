@@ -1,0 +1,87 @@
+---
+permalink: admin/manage-link-costs.html 
+sidebar: sidebar 
+keywords: link cost, site latency, manage link costs, prioritize sites 
+summary: Durch die Verbindungskosten können Sie festlegen, welcher Datacenter-Standort einen angeforderten Service bereitstellt, wenn zwei oder mehr Datacenter-Standorte vorhanden sind. Sie können die Verbindungskosten anpassen, um die Latenz zwischen Standorten reflektieren. 
+---
+= Verwalten Sie Verbindungskosten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Durch die Verbindungskosten können Sie festlegen, welcher Datacenter-Standort einen angeforderten Service bereitstellt, wenn zwei oder mehr Datacenter-Standorte vorhanden sind. Sie können die Verbindungskosten anpassen, um die Latenz zwischen Standorten reflektieren.
+
+
+
+== Was sind Verbindungskosten?
+
+* Die Link-Kosten werden verwendet, um Prioritäten zu setzen, welche Objektkopie für die Bearbeitung von Objektabrufungen verwendet wird.
+* Die Link-Kosten werden von der Grid-Management-API und der Mandanten-Management-API verwendet, um festzustellen, welche internen StorageGRID-Services verwendet werden sollen.
+* Verbindungskosten werden vom Load Balancer-Service auf Admin-Nodes und Gateway-Nodes zum direkten Client-Verbindungen verwendet. Siehe link:../admin/managing-load-balancing.html["Überlegungen zum Lastausgleich"].
+
+
+Das Diagramm zeigt ein drei Standortraster mit Verbindungskosten, die zwischen Standorten konfiguriert sind:
+
+image::../media/link_costs.gif[Konzeptdiagramm für die Verknüpfung von Kosten zwischen Datacentern]
+
+* Der Load Balancer auf Admin-Nodes und Gateway-Nodes verteilt Client-Verbindungen zu allen Storage-Nodes am selben Datacenter-Standort und zu allen Datacenter-Standorten, für die keine Linkkosten anfallen.
++
+Im Beispiel verteilt ein Gateway-Node am Datacenter-Standort 1 (DC1) Client-Verbindungen gleichmäßig auf Storage-Nodes an DC1 und Storage Nodes an DC2. Ein Gateway-Node bei DC3 sendet Client-Verbindungen nur zu Storage-Nodes an DC3.
+
+* Beim Abrufen eines Objekts, das als mehrere replizierte Kopien vorhanden ist, ruft StorageGRID die Kopie im Datacenter ab, das die niedrigsten Verbindungskosten bietet.
++
+Wenn in dem Beispiel eine Client-Anwendung bei DC2 ein Objekt abruft, das sowohl bei DC1 als auch bei DC3 gespeichert ist, wird das Objekt von DC1 abgerufen, da die Verbindungskosten von DC1 zu DC2 0 sind, was niedriger ist als die Verbindungskosten von DC3 zu DC2 (25).
+
+
+
+Verbindungskosten sind willkürliche relative Zahlen ohne spezifische Maßeinheit. So werden beispielsweise die Linkkosten von 50 weniger bevorzugt genutzt als eine Linkkosten von 25. In der Tabelle sind die häufig verwendeten Verbindungskosten aufgeführt.
+
+[cols="1a,1a,2a"]
+|===
+| Verlinken | Verbindungskosten | Hinweise 
+
+
+ a| 
+Zwischen physischen Datacenter-Standorten zu wechseln
+ a| 
+25 (Standard)
+ a| 
+Über WAN-Verbindung verbundene Datacenter.
+
+
+
+ a| 
+Zwischen logischen Datacenter-Standorten am selben physischen Standort
+ a| 
+0
+ a| 
+Logische Rechenzentren befinden sich in demselben physischen Gebäude oder Campus, das über ein LAN verbunden ist.
+
+|===
+
+
+== Verbindungskosten aktualisieren
+
+Sie können die Verbindungskosten zwischen Datacenter-Standorten aktualisieren, um die Latenz zwischen Standorten wiederzugeben.
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben die link:admin-group-permissions.html["Berechtigung zur Konfiguration der Grid-Topologie-Seite"].
+
+
+.Schritte
+. Wählen Sie *SUPPORT* > *Other* > *Link Cost*.
++
+image::../media/configuring_link_costs.png[Verbindungskosten]
+
+. Wählen Sie eine Website unter *Link Source* aus, und geben Sie unter *Link Destination* einen Kostenwert zwischen 0 und 100 ein.
++
+Sie können die Verbindungskosten nicht ändern, wenn die Quelle mit dem Ziel identisch ist.
+
++
+Um die Änderungen zu verwerfen, wählen Sie image:../media/nms_revert.gif["Symbol rückgängig machen"]*Rückgängig*.
+
+. Wählen Sie *Änderungen Anwenden*.
+

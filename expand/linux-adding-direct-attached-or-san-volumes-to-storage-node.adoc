@@ -1,0 +1,186 @@
+---
+permalink: expand/linux-adding-direct-attached-or-san-volumes-to-storage-node.html 
+sidebar: sidebar 
+keywords: expansion, Linux, add storage volumes 
+summary: Wenn ein Speicherknoten weniger als 16 Speicher-Volumes umfasst, können Sie seine Kapazität erhöhen, indem Sie neue Block-Speichergeräte hinzufügen, sie für die Linux-Hosts sichtbar machen und die neuen Blockgeräte-Zuordnungen zur StorageGRID-Konfigurationsdatei hinzufügen, die für den Speicherknoten verwendet wurde. 
+---
+= Linux: Hinzufügen von Direct-Attached oder SAN-Volumes zu Storage Node
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn ein Speicherknoten weniger als 16 Speicher-Volumes umfasst, können Sie seine Kapazität erhöhen, indem Sie neue Block-Speichergeräte hinzufügen, sie für die Linux-Hosts sichtbar machen und die neuen Blockgeräte-Zuordnungen zur StorageGRID-Konfigurationsdatei hinzufügen, die für den Speicherknoten verwendet wurde.
+
+.Bevor Sie beginnen
+* Sie haben Zugriff auf die Anweisungen für die Installation von StorageGRID für Ihre Linux-Plattform.
++
+** link:../rhel/index.html["Installieren Sie StorageGRID unter Red hat Enterprise Linux"]
+** link:../ubuntu/index.html["Installieren Sie StorageGRID auf Ubuntu oder Debian"]
+
+
+* Sie haben die `Passwords.txt` Datei.
+* Sie haben link:../admin/admin-group-permissions.html["Bestimmte Zugriffsberechtigungen"].
+
+
+
+CAUTION: Versuchen Sie nicht, Speicher-Volumes zu einem Speicher-Node hinzuzufügen, während ein Softwareupgrade, ein Wiederherstellungsverfahren oder ein anderer Erweiterungsvorgang aktiv ist.
+
+.Über diese Aufgabe
+Der Storage-Node ist für kurze Zeit nicht verfügbar, wenn Sie Storage Volumes hinzufügen. Sie sollten dieses Verfahren jeweils auf einem Storage-Knoten durchführen, um die Grid-Services für Clients zu beeinträchtigen.
+
+.Schritte
+. Installieren Sie die neue Speicherhardware.
++
+Weitere Informationen finden Sie in der Dokumentation Ihres Hardware-Anbieters.
+
+. Erstellung neuer Block-Storage-Volumes der gewünschten Größe
++
+** Schließen Sie die neuen Laufwerke an, und aktualisieren Sie die RAID-Controller-Konfiguration nach Bedarf, oder weisen Sie die neuen SAN-LUNs auf den gemeinsam genutzten Speicher-Arrays zu, und erlauben Sie dem Linux-Host, darauf zuzugreifen.
+** Verwenden Sie dasselbe persistente Benennungsschema, das Sie für die Storage Volumes auf dem vorhandenen Storage Node verwendet haben.
+** Wenn Sie die Funktion StorageGRID-Node-Migration verwenden, machen Sie die neuen Volumes für andere Linux-Hosts sichtbar, die Migrationsziele für diesen Storage-Node sind. Weitere Informationen finden Sie in den Anweisungen zum Installieren von StorageGRID für Ihre Linux-Plattform.
+
+
+. Melden Sie sich beim Linux-Host an, der den Storage Node unterstützt, als root oder mit einem Konto, das über Sudo-Berechtigung verfügt.
+. Vergewissern Sie sich, dass die neuen Speicher-Volumes auf dem Linux-Host sichtbar sind.
++
+Möglicherweise müssen Sie nach Geräten erneut suchen.
+
+. Führen Sie den folgenden Befehl aus, um den Speicherknoten vorübergehend zu deaktivieren:
++
+`sudo storagegrid node stop <node-name>`
+
+. Bearbeiten Sie mit einem Texteditor wie Vim oder Pico die Node-Konfigurationsdatei für den Storage Node, die Sie unter finden `/etc/storagegrid/nodes/<node-name>.conf`.
+. Suchen Sie den Abschnitt der Node-Konfigurationsdatei, die die vorhandenen Objekt-Storage-Block-Gerätezuordnungen enthält.
++
+In dem Beispiel `BLOCK_DEVICE_RANGEDB_00` `BLOCK_DEVICE_RANGEDB_03` sind die vorhandenen Objekt-Storage-Block-Gerätezuordnungen.
+
++
+[listing, subs="specialcharacters,quotes"]
+----
+NODE_TYPE = VM_Storage_Node
+ADMIN_IP = 10.1.0.2
+BLOCK_DEVICE_VAR_LOCAL = /dev/mapper/sgws-sn1-var-local
+*BLOCK_DEVICE_RANGEDB_00 = /dev/mapper/sgws-sn1-rangedb-0*
+*BLOCK_DEVICE_RANGEDB_01 = /dev/mapper/sgws-sn1-rangedb-1*
+*BLOCK_DEVICE_RANGEDB_02 = /dev/mapper/sgws-sn1-rangedb-2*
+*BLOCK_DEVICE_RANGEDB_03 = /dev/mapper/sgws-sn1-rangedb-3*
+GRID_NETWORK_TARGET = bond0.1001
+ADMIN_NETWORK_TARGET = bond0.1002
+CLIENT_NETWORK_TARGET = bond0.1003
+GRID_NETWORK_IP = 10.1.0.3
+GRID_NETWORK_MASK = 255.255.255.0
+GRID_NETWORK_GATEWAY = 10.1.0.1
+----
+. Fügen Sie neue Objekt-Storage-Block-Gerätezuordnungen hinzu, die den Block-Speicher-Volumes entsprechen, die Sie für diesen Storage-Node hinzugefügt haben.
++
+Stellen Sie sicher, dass Sie beim nächsten beginnen `BLOCK_DEVICE_RANGEDB_nn`. Lassen Sie keine Lücke.
+
++
+** Anhand des obigen Beispiels beginnen Sie bei `BLOCK_DEVICE_RANGEDB_04`.
+** Im folgenden Beispiel wurden dem Knoten vier neue Blockspeicher-Volumes hinzugefügt: `BLOCK_DEVICE_RANGEDB_04` Zu `BLOCK_DEVICE_RANGEDB_07`.
+
+
++
+[listing, subs="specialcharacters,quotes"]
+----
+NODE_TYPE = VM_Storage_Node
+ADMIN_IP = 10.1.0.2
+BLOCK_DEVICE_VAR_LOCAL = /dev/mapper/sgws-sn1-var-local
+BLOCK_DEVICE_RANGEDB_00 = /dev/mapper/sgws-sn1-rangedb-0
+BLOCK_DEVICE_RANGEDB_01 = /dev/mapper/sgws-sn1-rangedb-1
+BLOCK_DEVICE_RANGEDB_02 = /dev/mapper/sgws-sn1-rangedb-2
+BLOCK_DEVICE_RANGEDB_03 = /dev/mapper/sgws-sn1-rangedb-3
+*BLOCK_DEVICE_RANGEDB_04 = /dev/mapper/sgws-sn1-rangedb-4*
+*BLOCK_DEVICE_RANGEDB_05 = /dev/mapper/sgws-sn1-rangedb-5*
+*BLOCK_DEVICE_RANGEDB_06 = /dev/mapper/sgws-sn1-rangedb-6*
+*BLOCK_DEVICE_RANGEDB_07 = /dev/mapper/sgws-sn1-rangedb-7*
+GRID_NETWORK_TARGET = bond0.1001
+ADMIN_NETWORK_TARGET = bond0.1002
+CLIENT_NETWORK_TARGET = bond0.1003
+GRID_NETWORK_IP = 10.1.0.3
+GRID_NETWORK_MASK = 255.255.255.0
+GRID_NETWORK_GATEWAY = 10.1.0.1
+----
+. Führen Sie den folgenden Befehl aus, um Ihre Änderungen an der Node-Konfigurationsdatei für den Storage Node zu validieren:
++
+`sudo storagegrid node validate <node-name>`
+
++
+Beheben Sie Fehler oder Warnungen, bevor Sie mit dem nächsten Schritt fortfahren.
+
++
+[NOTE]
+====
+Wenn Sie einen ähnlichen Fehler wie den folgenden feststellen, bedeutet dies, dass die Node-Konfigurationsdatei versucht, das von verwendete Blockgerät `<PURPOSE>` dem im Linux-Dateisystem angegebenen `<path-name>` zuzuordnen `<node-name>`, aber es gibt keine gültige Block-Device-Sonderdatei (oder Softlink zu einer Block-Device-Sonderdatei) an diesem Speicherort.
+
+[listing]
+----
+Checking configuration file for node <node-name>…
+ERROR: BLOCK_DEVICE_<PURPOSE> = <path-name>
+<path-name> is not a valid block device
+----
+Vergewissern Sie sich, dass Sie die richtige eingegeben `<path-name>` haben.
+
+====
+. Führen Sie den folgenden Befehl aus, um den Knoten mit den neuen Blockgerätzuordnungen neu zu starten:
++
+`sudo storagegrid node start <node-name>`
+
+. Melden Sie sich mit dem in der Datei angegebenen Passwort beim Storage Node als Administrator an `Passwords.txt`.
+. Überprüfen Sie, ob die Dienste richtig starten:
++
+.. Eine Liste des Status aller Dienste auf dem Server anzeigen: +
+`sudo storagegrid-status`
++
+Der Status wird automatisch aktualisiert.
+
+.. Warten Sie, bis alle Dienste ausgeführt oder verifiziert sind.
+.. Statusbildschirm verlassen:
++
+`Ctrl+C`
+
+
+
+. Konfigurieren Sie den neuen Speicher für die Verwendung durch den Speicherknoten:
++
+.. Konfiguration der neuen Storage Volumes:
++
+`sudo add_rangedbs.rb`
+
++
+Dieses Skript sucht neue Speicher-Volumes und fordert Sie zur Formatierung auf.
+
+.. Geben Sie *y* ein, um die Speicher-Volumes zu formatieren.
+.. Wenn eines der Volumes zuvor formatiert wurde, entscheiden Sie, ob Sie sie neu formatieren möchten.
++
+*** Geben Sie * y* ein, um die Formatierung neu zu formatieren.
+*** Geben Sie *n* ein, um die Neuformatierung zu überspringen.
+
+
+
+
++
+Das `setup_rangedbs.sh` Skript wird automatisch ausgeführt.
+
+. Überprüfen Sie, ob der Speicherstatus des Storage-Node online ist:
++
+.. Melden Sie sich mit einem beim Grid-Manager anlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+.. Wählen Sie *SUPPORT* > *Tools* > *Grid-Topologie* aus.
+.. Wählen Sie *_site_* > *_Storage Node_* > *LDR* > *Storage* aus.
+.. Wählen Sie die Registerkarte *Konfiguration* und dann die Registerkarte *Main*.
+.. Wenn die Dropdown-Liste *Speicherstatus - gewünscht* auf schreibgeschützt oder offline gesetzt ist, wählen Sie *Online* aus.
+.. Klicken Sie Auf *Änderungen Übernehmen*.
+
+
+. So sehen Sie die neuen Objektspeicher:
++
+.. Wählen Sie *NODES* > *_site_* > *_Storage Node_* > *Storage* aus.
+.. Sehen Sie sich die Details in der Tabelle *Object Stores* an.
+
+
+
+
+.Ergebnis
+Sie können jetzt die erweiterte Kapazität der Speicherknoten zum Speichern von Objektdaten verwenden.

@@ -1,0 +1,220 @@
+---
+permalink: maintain/restoring-existing-nodes.html 
+sidebar: sidebar 
+keywords: recover, restore node to host, node configuration file, start host service 
+summary: Um einen fehlerhaften Grid-Knoten auf einem neuen Linux-Host wiederherzustellen, führen Sie die folgenden Schritte aus, um die Node-Konfigurationsdatei wiederherzustellen. 
+---
+= Stellen Sie die Grid-Nodes für den Host wieder her
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um einen fehlerhaften Grid-Knoten auf einem neuen Linux-Host wiederherzustellen, führen Sie die folgenden Schritte aus, um die Node-Konfigurationsdatei wiederherzustellen.
+
+. <<restore-validate-grid-nodes,Stellen Sie den Knoten wieder her und validieren Sie diesen>> Durch Wiederherstellen der Node-Konfigurationsdatei. Für eine neue Installation erstellen Sie für jeden Grid-Node, der auf einem Host installiert werden soll, eine Node-Konfigurationsdatei. Beim Wiederherstellen eines Grid-Node auf einem Ersatzhost stellen Sie die Node-Konfigurationsdatei für ausgefallene Grid-Nodes wieder her oder ersetzen sie.
+. <<start-storagegrid-host-service,Starten Sie den StorageGRID Host Service>>.
+. Bei Bedarf, <<recover-nodes-fail-start,Stellen Sie alle Nodes wieder her, die nicht gestartet werden können>>.
+
+
+Falls alle Block-Storage-Volumes vom vorherigen Host erhalten würden, müssen möglicherweise weitere Recovery-Verfahren durchgeführt werden. Mit den Befehlen in diesem Abschnitt können Sie ermitteln, welche zusätzlichen Verfahren erforderlich sind.
+
+
+
+== Wiederherstellung und Validierung der Grid Nodes
+
+Sie müssen die Grid-Konfigurationsdateien für alle ausgefallenen Grid-Nodes wiederherstellen, dann die Grid-Konfigurationsdateien validieren und Fehler beheben.
+
+.Über diese Aufgabe
+Sie können jeden Grid-Node importieren, der auf dem Host vorhanden sein sollte, solange sein `/var/local` Volume aufgrund des Ausfalls des vorherigen Hosts nicht verloren gegangen ist. Ein Volume kann beispielsweise `/var/local` noch vorhanden sein, wenn Sie gemeinsam genutzten Storage für Daten-Volumes des StorageGRID-Systems verwendet haben. Diese Daten werden in der Installationsanleitung für das Linux-Betriebssystem von StorageGRID beschrieben. Durch das Importieren des Knotens wird seine Knotenkonfigurationsdatei auf den Host wiederhergestellt.
+
+Wenn es nicht möglich ist, fehlende Knoten zu importieren, müssen Sie die zugehörigen Grid-Konfigurationsdateien neu erstellen.
+
+Sie müssen dann die Grid-Konfigurationsdatei validieren und alle Netzwerk- oder Storage-Probleme beheben, bevor Sie StorageGRID neu starten. Wenn Sie die Konfigurationsdatei für einen Node neu erstellen, müssen Sie denselben Namen für den Austausch-Node verwenden, der für den wiederherzuenden Node verwendet wurde.
+
+Weitere Informationen zum Speicherort des Volumes für einen Node finden Sie in der Installationsanleitung `/var/local`.
+
+* link:../rhel/index.html["Installieren Sie StorageGRID unter Red hat Enterprise Linux"]
+* link:../ubuntu/index.html["Installieren Sie StorageGRID auf Ubuntu oder Debian"]
+
+
+.Schritte
+. Führen Sie in der Befehlszeile des wiederhergestellten Hosts alle derzeit konfigurierten StorageGRID-Knoten auf:``sudo storagegrid node list``
++
+Wenn keine Grid-Nodes konfiguriert sind, wird keine Ausgabe ausgegeben. Wenn einige Grid-Nodes konfiguriert sind, erwarten Sie die Ausgabe im folgenden Format:
+
++
+[listing]
+----
+Name               Metadata-Volume
+================================================================
+dc1-adm1           /dev/mapper/sgws-adm1-var-local
+dc1-gw1            /dev/mapper/sgws-gw1-var-local
+dc1-sn1            /dev/mapper/sgws-sn1-var-local
+dc1-arc1           /dev/mapper/sgws-arc1-var-local
+----
++
+Wenn einige oder alle Grid-Nodes, die auf dem Host konfiguriert werden sollen, nicht aufgeführt sind, müssen Sie die fehlenden Grid-Nodes wiederherstellen.
+
+. So importieren Sie Grid-Nodes mit einem `/var/local` Volume:
++
+.. Führen Sie den folgenden Befehl für jeden Node aus, den Sie importieren möchten:``sudo storagegrid node import node-var-local-volume-path``
++
+Der `storagegrid node import` Befehl ist nur dann erfolgreich, wenn der Zielknoten auf dem Host, auf dem er zuletzt ausgeführt wurde, ordnungsgemäß heruntergefahren wurde. Wenn dies nicht der Fall ist, beobachten Sie einen Fehler, der dem folgenden ähnlich ist:
+
++
+`This node (_node-name_) appears to be owned by another host (UUID host-uuid).`
+
++
+`Use the --force flag if you are sure import is safe.`
+
+.. Wenn der Fehler angezeigt wird, dass der Node im Besitz eines anderen Hosts ist, führen Sie den Befehl erneut mit dem `--force` Flag aus, um den Import abzuschließen:``sudo storagegrid --force node import node-var-local-volume-path``
++
+
+NOTE: Alle mit dem Flag importierten Knoten `--force` erfordern zusätzliche Wiederherstellungsschritte, bevor sie erneut in das Raster eingearbeitet werden können, wie unter beschrieben.link:whats-next-performing-additional-recovery-steps-if-required.html["Nächste Schritte: Falls erforderlich, zusätzliche Recovery-Schritte durchführen"]
+
+
+
+. Erstellen Sie für Grid-Nodes ohne `/var/local` Volume die Konfigurationsdatei des Node neu, um sie auf dem Host wiederherzustellen. Anweisungen hierzu finden Sie unter:
++
+** link:../rhel/creating-node-configuration-files.html["Erstellen Sie Node-Konfigurationsdateien für Red hat Enterprise Linux"]
+** link:../ubuntu/creating-node-configuration-files.html["Erstellen Sie Knoten-Konfigurationsdateien für Ubuntu oder Debian"]
++
+
+NOTE: Wenn Sie die Konfigurationsdatei für einen Node neu erstellen, müssen Sie denselben Namen für den Austausch-Node verwenden, der für den wiederherzuenden Node verwendet wurde. Stellen Sie bei Linux-Bereitstellungen sicher, dass der Name der Konfigurationsdatei den Node-Namen enthält. Sie sollten, wenn möglich, dieselben Netzwerkschnittstellen, Gerätezuordnungen blockieren und IP-Adressen verwenden. Dieses Verfahren minimiert die Datenmenge, die während des Recovery auf den Node kopiert werden muss. Dadurch kann die Recovery erheblich schneller (in manchen Fällen nur Minuten statt Wochen) erfolgen.
+
++
+
+NOTE: Wenn Sie neue Blockgeräte (Geräte, die der StorageGRID-Knoten zuvor nicht verwendet hat) als Werte für eine der Konfigurationsvariablen verwenden, die mit beginnen `BLOCK_DEVICE_`, wenn Sie die Konfigurationsdatei für einen Knoten neu erstellen, befolgen Sie die Richtlinien in <<fix-block-errors,Beheben Sie fehlende Blockgerätfehler>>.
+
+
+
+. Führen Sie den folgenden Befehl auf dem wiederhergestellten Host aus, um alle StorageGRID Knoten aufzulisten.
++
+`sudo storagegrid node list`
+
+. Überprüfen Sie die Node-Konfigurationsdatei für jeden Grid-Node, dessen Name in der Ausgabe der StorageGRID-Node-Liste angezeigt wurde:
++
+`sudo storagegrid node validate _node-name_`
+
++
+Sie müssen alle Fehler oder Warnungen beheben, bevor Sie den StorageGRID-Hostdienst starten. In den folgenden Abschnitten werden Fehler näher erläutert, die bei der Wiederherstellung möglicherweise eine besondere Bedeutung haben.
+
+
+
+
+
+=== Beheben Sie fehlende Fehler an der Netzwerkschnittstelle
+
+Wenn das Hostnetzwerk nicht richtig konfiguriert ist oder ein Name falsch geschrieben wurde, tritt ein Fehler auf, wenn StorageGRID die in der Datei angegebene Zuordnung überprüft `/etc/storagegrid/nodes/_node-name_.conf`.
+
+Möglicherweise wird ein Fehler oder eine Warnung angezeigt, die diesem Muster entspricht:
+
+[listing]
+----
+Checking configuration file /etc/storagegrid/nodes/<node-name>.conf for node <node-name>...
+ERROR: <node-name>: GRID_NETWORK_TARGET = <host-interface-name>
+       <node-name>: Interface <host-interface-name>' does not exist
+----
+Der Fehler konnte für das Grid-Netzwerk, das Admin-Netzwerk oder das Client-Netzwerk gemeldet werden. Dieser Fehler bedeutet, dass die `/etc/storagegrid/nodes/_node-name_.conf` Datei das angegebene StorageGRID-Netzwerk der Host-Schnittstelle namens zuordnet `_host-interface-name_`, aber es gibt keine Schnittstelle mit diesem Namen auf dem aktuellen Host.
+
+Wenn Sie diesen Fehler erhalten, überprüfen Sie, ob Sie die Schritte in abgeschlossen link:deploying-new-linux-hosts.html["Implementieren Sie neue Linux-Hosts"]haben. Verwenden Sie dieselben Namen für alle Host-Schnittstellen, die auf dem ursprünglichen Host verwendet wurden.
+
+Wenn Sie die Host-Schnittstellen nicht benennen können, die mit der Node-Konfigurationsdatei übereinstimmen, können Sie die Node-Konfigurationsdatei bearbeiten und den Wert des GRID_NETWORK_TARGET, DES ADMIN_NETWORK_TARGET oder DES CLIENT_NETWORK_TARGET ändern, um einer vorhandenen Hostschnittstelle zu entsprechen.
+
+Stellen Sie sicher, dass die Host-Schnittstelle Zugriff auf den entsprechenden physischen Netzwerk-Port oder VLAN bietet und dass die Schnittstelle keinen direkten Bezug auf ein Bond- oder Bridge-Gerät hat. Sie müssen entweder ein VLAN (oder eine andere virtuelle Schnittstelle) auf dem Bond-Gerät auf dem Host konfigurieren oder ein Bridge- und virtuelles Ethernet-Paar (veth) verwenden.
+
+
+
+=== Beheben Sie fehlende Blockgerätfehler
+
+Das System überprüft, ob jeder wiederhergestellte Knoten einer gültigen Blockgerätespezialldatei oder einem gültigen Softlink zu einer speziellen Blockgerätedatei zugeordnet wird. Wenn StorageGRID eine ungültige Zuordnung in der Datei findet `/etc/storagegrid/nodes/_node-name_.conf`, wird ein Fehler bei einem fehlenden Blockgerät angezeigt.
+
+Wenn Sie einen Fehler beobachten, der diesem Muster entspricht:
+
+[listing]
+----
+Checking configuration file /etc/storagegrid/nodes/<node-name>.conf for node <node-name>...
+ERROR: <node-name>: BLOCK_DEVICE_PURPOSE = <path-name>
+       <node-name>: <path-name> does not exist
+----
+Das bedeutet, dass `/etc/storagegrid/nodes/_node-name_.conf` das von _Node-Name_ für verwendete Blockgerät dem angegebenen Pfadnamen im Linux-Dateisystem zugeordnet wird, aber es gibt an diesem Ort keine gültige Block Device- `PURPOSE`Sonderdatei oder Softlink zu einer Block Device-Sonderdatei.
+
+Überprüfen Sie, ob Sie die Schritte in abgeschlossen link:deploying-new-linux-hosts.html["Implementieren Sie neue Linux-Hosts"]haben. Verwenden Sie für alle Blockgeräte dieselben persistenten Gerätenamen, die auf dem ursprünglichen Host verwendet wurden.
+
+Wenn Sie die fehlende Blockdevice-Sonderdatei nicht wiederherstellen oder neu erstellen können, können Sie ein neues Blockdevice mit der entsprechenden Größe und Speicherkategorie zuweisen und die Knotenkonfigurationsdatei bearbeiten, um den Wert zu ändern `BLOCK_DEVICE_PURPOSE`, auf die neue Blockdevice-Sonderdatei zu verweisen.
+
+Ermitteln Sie mithilfe der Tabellen für Ihr Linux-Betriebssystem die geeignete Größe und Storage-Kategorie:
+
+* link:../rhel/storage-and-performance-requirements.html["Storage- und Performance-Anforderungen für Red hat Enterprise Linux"]
+* link:../ubuntu/storage-and-performance-requirements.html["Speicher- und Leistungsanforderungen für Ubuntu oder Debian"]
+
+
+Überprüfen Sie die Empfehlungen zur Konfiguration des Hostspeichers, bevor Sie mit dem Austausch des Blockgeräts fortfahren:
+
+* link:../rhel/configuring-host-storage.html["Konfiguration des Hostspeichers für Red hat Enterprise Linux"]
+* link:../ubuntu/configuring-host-storage.html["Konfigurieren Sie den Hostspeicher für Ubuntu oder Debian"]
+
+
+
+NOTE: Wenn Sie ein neues Blockspeichergerät für eine der Variablen der Konfigurationsdatei angeben müssen, die mit beginnen `BLOCK_DEVICE_`, weil das ursprüngliche Blockgerät mit dem ausgefallenen Host verloren gegangen ist, stellen Sie sicher, dass das neue Blockgerät nicht formatiert ist, bevor Sie weitere Wiederherstellungsverfahren versuchen. Das neue Blockgerät wird unformatiert, wenn Sie gemeinsam genutzten Speicher verwenden und ein neues Volume erstellt haben. Wenn Sie sich nicht sicher sind, führen Sie den folgenden Befehl gegen neue Spezialdateien für das Blockspeichergerät aus.
+
+[CAUTION]
+====
+Führen Sie den folgenden Befehl nur für neue Block Storage-Geräte aus. Führen Sie diesen Befehl nicht aus, wenn Sie glauben, dass der Blockspeicher weiterhin gültige Daten für den wiederhergestellten Knoten enthält, da alle Daten auf dem Gerät verloren gehen.
+
+`sudo dd if=/dev/zero of=/dev/mapper/my-block-device-name bs=1G count=1`
+
+====
+
+
+== Starten Sie den StorageGRID Host Service
+
+Um die StorageGRID Nodes zu starten und sicherzustellen, dass sie nach einem Neustart des Hosts neu gestartet werden, müssen Sie den StorageGRID Host Service aktivieren und starten.
+
+.Schritte
+. Führen Sie auf jedem Host folgende Befehle aus:
++
+[listing]
+----
+sudo systemctl enable storagegrid
+sudo systemctl start storagegrid
+----
+. Führen Sie den folgenden Befehl aus, um sicherzustellen, dass die Bereitstellung fortgesetzt wird:
++
+[listing]
+----
+sudo storagegrid node status node-name
+----
+. Wenn ein Knoten den Status „nicht ausgeführt“ oder „angehalten“ zurückgibt, führen Sie den folgenden Befehl aus:
++
+[listing]
+----
+sudo storagegrid node start node-name
+----
+. Wenn Sie zuvor den StorageGRID-Hostdienst aktiviert und gestartet haben (oder wenn Sie sich nicht sicher sind, ob der Dienst aktiviert und gestartet wurde), führen Sie auch den folgenden Befehl aus:
++
+[listing]
+----
+sudo systemctl reload-or-restart storagegrid
+----
+
+
+
+
+== Wiederherstellung von Nodes, die nicht ordnungsgemäß gestartet werden können
+
+Wenn ein StorageGRID Node nicht normal dem Grid neu beigetreten ist und nicht als wiederherstellbar angezeigt wird, ist er möglicherweise beschädigt. Sie können den Node in den Recovery-Modus erzwingen.
+
+.Schritte
+. Vergewissern Sie sich, dass die Netzwerkkonfiguration des Node korrekt ist.
++
+Der Node konnte aufgrund falscher Netzwerkschnittstellen-Zuordnungen oder einer falschen Grid-Netzwerk-IP-Adresse oder eines falschen Gateways möglicherweise nicht erneut dem Grid beitreten.
+
+. Wenn die Netzwerkkonfiguration korrekt ist, geben Sie den `force-recovery` folgenden Befehl ein:
++
+`sudo storagegrid node force-recovery _node-name_`
+
+. Führen Sie die zusätzlichen Wiederherstellungsschritte für den Node durch. Siehe link:whats-next-performing-additional-recovery-steps-if-required.html["Nächste Schritte: Falls erforderlich, zusätzliche Recovery-Schritte durchführen"].
+

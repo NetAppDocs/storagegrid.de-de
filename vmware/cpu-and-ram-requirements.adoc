@@ -1,0 +1,36 @@
+---
+permalink: vmware/cpu-and-ram-requirements.html 
+sidebar: sidebar 
+keywords: cpu, ram, cpu cores 
+summary: Überprüfen und konfigurieren Sie vor dem Installieren der StorageGRID Software die Hardware so, dass sie zur Unterstützung des StorageGRID Systems bereit ist. 
+---
+= CPU- und RAM-Anforderungen erfüllt
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Überprüfen und konfigurieren Sie vor dem Installieren der StorageGRID Software die Hardware so, dass sie zur Unterstützung des StorageGRID Systems bereit ist.
+
+Jeder StorageGRID Node benötigt die folgenden Mindestanforderungen:
+
+* CPU-Cores: 8 pro Node
+* RAM: Abhängig vom gesamten verfügbaren RAM und der Anzahl der nicht-StorageGRID-Software, die auf dem System ausgeführt wird
++
+** Im Allgemeinen mindestens 24 GB pro Knoten und 2 bis 16 GB weniger als der gesamte System-RAM
+** Mindestens 64 GB für jeden Mandanten mit ca. 5,000 Buckets
+
+
+
+
+VMware unterstützt einen Node pro virtueller Maschine. Stellen Sie sicher, dass der StorageGRID-Knoten den verfügbaren physischen Arbeitsspeicher nicht überschreitet. Jede virtuelle Maschine muss dem Ausführen von StorageGRID zugewiesen sein.
+
+
+CAUTION: Überwachen Sie Ihre CPU- und Arbeitsspeicherauslastung regelmäßig, um sicherzustellen, dass diese Ressourcen Ihre Workloads weiterhin erfüllen. Beispielsweise würde eine Verdoppelung der RAM- und CPU-Zuweisung für virtuelle Storage-Nodes ähnliche Ressourcen bereitstellen wie für die StorageGRID Appliance-Nodes. Wenn die Menge der Metadaten pro Node 500 GB überschreitet, sollten Sie darüber hinaus den RAM pro Node auf 48 GB oder mehr erhöhen. Informationen zum Management von Objekt-Metadaten-Storage, zum Erhöhen der Einstellung für reservierten Speicherplatz für Metadaten und zum Monitoring der CPU- und Arbeitsspeicherauslastung finden Sie in den Anweisungen für link:../admin/index.html["Administration"], link:../monitor/index.html["Monitoring"]und link:../upgrade/index.html["Aktualisierung"]StorageGRID.
+
+Wenn Hyper-Threading auf den zugrunde liegenden physischen Hosts aktiviert ist, können Sie 8 virtuelle Kerne (4 physische Kerne) pro Node bereitstellen. Wenn Hyperthreading auf den zugrunde liegenden physischen Hosts nicht aktiviert ist, müssen Sie 8 physische Kerne pro Node bereitstellen.
+
+Wenn Sie Virtual Machines als Hosts verwenden und die Größe und Anzahl der VMs kontrollieren können, sollten Sie für jeden StorageGRID Node eine einzelne VM verwenden und die Größe der VM entsprechend festlegen.
+
+Siehe auch link:storage-and-performance-requirements.html["Storage- und Performance-Anforderungen erfüllt"].

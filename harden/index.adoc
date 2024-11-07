@@ -1,0 +1,28 @@
+---
+permalink: harden/index.html 
+sidebar: sidebar 
+keywords: Hardening guidelines, system, security 
+summary: Systemhärtung ist der Prozess, bei dem so viele Sicherheitsrisiken wie möglich durch ein StorageGRID System beseitigt werden. 
+---
+= Allgemeine Überlegungen zur Systemhärtung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Systemhärtung ist der Prozess, bei dem so viele Sicherheitsrisiken wie möglich durch ein StorageGRID System beseitigt werden.
+
+Nutzen Sie bei der Installation und Konfiguration von StorageGRID diese Richtlinien, um alle vorgegebenen Sicherheitsziele für Vertraulichkeit, Integrität und Verfügbarkeit zu erfüllen.
+
+Sie sollten bereits branchenübliche Best Practices für die Systemhärtung verwenden. Sie verwenden beispielsweise starke Passwörter für StorageGRID, verwenden HTTPS statt HTTP und aktivieren, sofern verfügbar, die zertifikatbasierte Authentifizierung.
+
+StorageGRID folgt dem https://security.netapp.com/policy/["NetApp Richtlinie zur Bearbeitung von Schwachstellen"^]. Gemeldete Schwachstellen werden gemäß dem Prozess der Reaktion auf Produktsicherheitsvorfälle überprüft und behoben.
+
+Beachten Sie beim Härten eines StorageGRID-Systems Folgendes:
+
+* *Welches der drei StorageGRID-Netzwerke* haben Sie implementiert? Alle StorageGRID-Systeme müssen das Grid-Netzwerk verwenden, aber Sie können auch das Admin-Netzwerk, das Client-Netzwerk oder beide verwenden. Jedes Netzwerk weist unterschiedliche Sicherheitsüberlegungen auf.
+* *Die Art der Plattformen* verwenden Sie für die einzelnen Knoten in Ihrem StorageGRID-System. StorageGRID Nodes können auf VMware Virtual Machines innerhalb einer Container-Engine auf Linux-Hosts oder als dedizierte Hardware-Appliances implementiert werden. Jeder Plattformtyp verfügt über eigene Best Practices zur Härtung.
+* *Wie vertrauenswürdig sind die Mandantenkonten*. Wenn Sie ein Service-Provider mit nicht vertrauenswürdigen Mandantenkonten sind, haben Sie andere Sicherheitsbedenken als, wenn Sie nur vertrauenswürdige interne Mandanten verwenden.
+* *Welche Sicherheitsanforderungen und Konventionen* erfüllt Ihr Unternehmen? Möglicherweise müssen Sie bestimmte gesetzliche oder unternehmensbezogene Anforderungen einhalten.
+

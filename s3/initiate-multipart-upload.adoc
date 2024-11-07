@@ -1,0 +1,154 @@
+---
+permalink: s3/initiate-multipart-upload.html 
+sidebar: sidebar 
+keywords: initiate multipart upload, CreateMultipartUpload, upload ID 
+summary: Der CreateMultipartUpload-Vorgang initiiert einen mehrteiligen Upload für ein Objekt und gibt eine Upload-ID zurück. 
+---
+= CreateMultipartUpload
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Der Vorgang CreateMultipartUpload (zuvor Multipart-Upload initiieren) initiiert einen mehrteiligen Upload für ein Objekt und gibt eine Upload-ID zurück.
+
+Der `x-amz-storage-class` Anforderungskopf wird unterstützt. Der für eingereichte Wert `x-amz-storage-class` hat einen Einfluss darauf, wie StorageGRID Objektdaten bei der Aufnahme schützt, und nicht darauf, wie viele persistente Kopien des Objekts im StorageGRID System gespeichert werden (durch ILM bestimmt).
+
+Wenn die ILM-Regel, die einem aufgenommenen Objekt entsprichtlink:../ilm/data-protection-options-for-ingest.html["Aufnahme-Option"], das Strict verwendet, hat der `x-amz-storage-class` Header keine Wirkung.
+
+Folgende Werte können verwendet werden für `x-amz-storage-class`:
+
+* `STANDARD` (Standard)
++
+** *Dual Commit*: Wenn die ILM-Regel die Option Dual Commit Ingest angibt, wird, sobald ein Objekt aufgenommen wird, eine zweite Kopie dieses Objekts erstellt und an einen anderen Storage Node verteilt (Dual Commit). Bei Bewertung des ILM bestimmt StorageGRID, ob diese ersten Zwischenkopien die Anweisungen zur Platzierung in der Regel erfüllen. Ist dies nicht der Fall, müssen möglicherweise neue Objektkopien an unterschiedlichen Standorten erstellt werden, und die ersten Zwischenkopien müssen eventuell gelöscht werden.
+** *Ausgeglichen*: Wenn die ILM-Regel die Option ausgeglichen angibt und StorageGRID nicht sofort alle in der Regel angegebenen Kopien erstellen kann, erstellt StorageGRID zwei Zwischenkopien auf verschiedenen Speicherknoten.
++
+Wenn StorageGRID sofort alle in der ILM-Regel angegebenen Objektkopien erstellen kann (synchrone Platzierung), hat der `x-amz-storage-class` Header keine Auswirkungen.
+
+
+
+* `REDUCED_REDUNDANCY`
++
+** *Dual Commit*: Wenn die ILM-Regel die Option Dual Commit angibt, erstellt StorageGRID bei Aufnahme des Objekts eine einzige Zwischenkopie (Single Commit).
+** *Ausgeglichen*: Wenn die ILM-Regel die Option ausgeglichen angibt, erstellt StorageGRID nur eine Zwischenkopie, wenn das System nicht sofort alle in der Regel angegebenen Kopien erstellen kann. Wenn StorageGRID eine synchrone Platzierung durchführen kann, hat diese Kopfzeile keine Auswirkung. Diese `REDUCED_REDUNDANCY` Option ist am besten geeignet, wenn die mit dem Objekt übereinstimmende ILM-Regel eine einzige replizierte Kopie erstellt. In diesem Fall `REDUCED_REDUNDANCY` entfällt bei jedem Einspielvorgang die unnötige Erstellung und Löschung einer zusätzlichen Objektkopie.
+
+
++
+Die Verwendung der `REDUCED_REDUNDANCY` Option wird in anderen Fällen nicht empfohlen. `REDUCED_REDUNDANCY` Erhöhtes Risiko von Objektdatenverlusten bei der Aufnahme. Beispielsweise können Sie Daten verlieren, wenn die einzelne Kopie zunächst auf einem Storage Node gespeichert wird, der ausfällt, bevor eine ILM-Evaluierung erfolgen kann.
+
+
+
+
+CAUTION: Da nur eine Kopie zu einem beliebigen Zeitpunkt repliziert werden kann, sind Daten einem ständigen Verlust ausgesetzt. Wenn nur eine replizierte Kopie eines Objekts vorhanden ist, geht dieses Objekt verloren, wenn ein Speicherknoten ausfällt oder einen beträchtlichen Fehler hat. Während Wartungsarbeiten wie Upgrades verlieren Sie auch vorübergehend den Zugriff auf das Objekt.
+
+Die Angabe `REDUCED_REDUNDANCY` wirkt sich nur darauf aus, wie viele Kopien erstellt werden, wenn ein Objekt zum ersten Mal aufgenommen wird. Sie wirkt sich nicht darauf aus, wie viele Kopien des Objekts erstellt werden, wenn das Objekt durch die aktiven ILM-Richtlinien evaluiert wird, und führt nicht dazu, dass Daten mit niedrigerer Redundanz im StorageGRID System gespeichert werden.
+
+
+NOTE: Wenn Sie ein Objekt in einen Bucket mit aktivierter S3-Objektsperrung aufnehmen, wird die `REDUCED_REDUNDANCY` Option ignoriert. Wenn Sie ein Objekt in einen Legacy-konformen Bucket aufnehmen, gibt die `REDUCED_REDUNDANCY` Option einen Fehler zurück. StorageGRID führt immer eine doppelte Einspeisung durch, um Compliance-Anforderungen zu erfüllen.
+
+
+
+== Unterstützte Anfrageheader
+
+Die folgenden Anfragezeilen werden unterstützt:
+
+* `Content-Type`
+* `x-amz-checksum-algorithm`
++
+Derzeit wird nur der SHA256-Wert für `x-amz-checksum-algorithm` unterstützt.
+
+* `x-amz-meta-`, Gefolgt von einem Name-Wert-Paar, das benutzerdefinierte Metadaten enthält
++
+Verwenden Sie bei der Angabe des Name-value-Paars für benutzerdefinierte Metadaten dieses allgemeine Format:
+
++
+[listing]
+----
+x-amz-meta-_name_: `value`
+----
++
+Wenn Sie die Option *Benutzerdefinierte Erstellungszeit* als Referenzzeit für eine ILM-Regel verwenden möchten, müssen Sie als Name der Metadaten verwenden, `creation-time` die beim Erstellen des Objekts aufgezeichnet werden. Beispiel:
+
++
+[listing]
+----
+x-amz-meta-creation-time: 1443399726
+----
++
+Der Wert für `creation-time` wird seit dem 1. Januar 1970 als Sekunden ausgewertet.
+
++
+
+NOTE: Das Hinzufügen `creation-time` als benutzerdefinierte Metadaten ist nicht zulässig, wenn Sie einem Bucket ein Objekt hinzufügen, für das ältere Compliance-Funktionen aktiviert sind. Ein Fehler wird zurückgegeben.
+
+* S3-Objektsperrungs-Anfrageheader:
++
+** `x-amz-object-lock-mode`
+** `x-amz-object-lock-retain-until-date`
+** `x-amz-object-lock-legal-hold`
++
+Wenn eine Anfrage ohne diese Header erstellt wird, werden die Bucket-Standardeinstellungen zur Aufbewahrung der Objektversion herangezogen, um die Aufbewahrung bis dato zu berechnen.
+
++
+link:../s3/use-s3-api-for-s3-object-lock.html["Konfigurieren Sie die S3-Objektsperre über die S3-REST-API"]
+
+
+
+* SSE-Anfragezeilen:
++
+** `x-amz-server-side-encryption`
+** `x-amz-server-side-encryption-customer-key-MD5`
+** `x-amz-server-side-encryption-customer-key`
+** `x-amz-server-side-encryption-customer-algorithm`
++
+<<Anforderungsheader für serverseitige Verschlüsselung>>
+
+
+
++
+
+NOTE: Informationen darüber, wie StorageGRID UTF-8-Zeichen verarbeitet, finden Sie unter link:put-object.html["PutObject"].
+
+
+
+
+
+== Anforderungsheader für serverseitige Verschlüsselung
+
+Sie können die folgenden Anforderungsheader verwenden, um ein mehrteitiges Objekt mit serverseitiger Verschlüsselung zu verschlüsseln. Die Optionen SSE und SSE-C schließen sich gegenseitig aus.
+
+* *SSE*: Verwenden Sie den folgenden Header in der CreateMultipartUpload-Anfrage, wenn Sie das Objekt mit einem eindeutigen Schlüssel verschlüsseln möchten, der von StorageGRID verwaltet wird. Geben Sie diesen Header in keiner der UploadPart-Anforderungen an.
++
+** `x-amz-server-side-encryption`
+
+
+* *SSE-C*: Verwenden Sie alle drei dieser Header in der CreateMultipartUpload-Anfrage (und in jeder nachfolgenden UploadPart-Anfrage), wenn Sie das Objekt mit einem eindeutigen Schlüssel verschlüsseln möchten, den Sie bereitstellen und verwalten.
++
+** `x-amz-server-side-encryption-customer-algorithm`: Spezifizieren `AES256`.
+** `x-amz-server-side-encryption-customer-key`: Geben Sie Ihren Verschlüsselungsschlüssel für das neue Objekt an.
+** `x-amz-server-side-encryption-customer-key-MD5`: Geben Sie den MD5-Digest des Verschlüsselungsschlüssels des neuen Objekts an.
+
+
+
+
+
+CAUTION: Die von Ihnen zur Verfügung gelegten Schlüssel werden niemals gespeichert. Wenn Sie einen Verschlüsselungsschlüssel verlieren, verlieren Sie das entsprechende Objekt. Bevor Sie vom Kunden bereitgestellte Schlüssel zum Schutz von Objektdaten verwenden, lesen Sie die Überlegungen für link:using-server-side-encryption.html["Serverseitige Verschlüsselung"].
+
+
+
+== Nicht unterstützte Anforderungsheader
+
+Der folgende Anforderungskopf wird nicht unterstützt:
+
+* `x-amz-website-redirect-location`
++
+Der `x-amz-website-redirect-location` Header gibt zurück `XNotImplemented`.
+
+
+
+
+
+== Versionierung
+
+Mehrteilige Uploads bestehen aus separaten Vorgängen zum Initiieren des Uploads, Auflisten von Uploads, Hochladen von Teilen, Zusammenbauen der hochgeladenen Teile und Abschließen des Uploads. Objekte werden erstellt (und ggf. versioniert), wenn der CompleteMultipartUpload-Vorgang ausgeführt wird.

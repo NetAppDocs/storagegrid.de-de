@@ -1,0 +1,20 @@
+---
+permalink: maintain/all-node-types-replacing-linux-node.html 
+sidebar: sidebar 
+keywords: replace linux node 
+summary: Wenn ein Fehler erfordert, dass Sie einen oder mehrere neue physische oder virtuelle Hosts bereitstellen oder Linux auf einem vorhandenen Host neu installieren, stellen Sie den Ersatz-Host bereit und konfigurieren Sie ihn, bevor Sie den Grid-Node wiederherstellen können. Dieses Verfahren ist ein Schritt der Wiederherstellung des Grid-Nodes für alle Arten von Grid-Nodes. 
+---
+= Ersetzen Sie den Linux-Knoten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn ein Fehler erfordert, dass Sie einen oder mehrere neue physische oder virtuelle Hosts bereitstellen oder Linux auf einem vorhandenen Host neu installieren, stellen Sie den Ersatz-Host bereit und konfigurieren Sie ihn, bevor Sie den Grid-Node wiederherstellen können. Dieses Verfahren ist ein Schritt der Wiederherstellung des Grid-Nodes für alle Arten von Grid-Nodes.
+
+"Linux" bezieht sich auf eine Red hat® Enterprise Linux®-, Ubuntu®- oder Debian®-Bereitstellung. Eine Liste der unterstützten Versionen finden Sie im https://imt.netapp.com/matrix/#welcome["NetApp Interoperabilitäts-Matrix-Tool (IMT)"^].
+
+Dieses Verfahren wird nur als ein Schritt bei der Wiederherstellung von softwarebasierten Storage-Nodes, primären oder nicht primären Admin-Nodes oder Gateway-Nodes durchgeführt. Die Schritte sind unabhängig vom Typ des wiederherenden Grid-Node identisch.
+
+Wenn mehr als ein Grid-Node auf einem physischen oder virtuellen Linux-Host gehostet wird, können Sie die Grid-Nodes in beliebiger Reihenfolge wiederherstellen. Die Wiederherstellung eines primären Admin-Knotens zuerst verhindert jedoch, falls vorhanden, dass die Wiederherstellung anderer Grid-Knoten abstuckt, während sie versuchen, den primären Admin-Knoten zu kontaktieren, um sich für die Wiederherstellung zu registrieren.

@@ -1,0 +1,69 @@
+---
+permalink: expand/copying-prometheus-metrics.html 
+sidebar: sidebar 
+keywords: prometheus, copy metrics, Admin Node expansion 
+summary: Nach dem Hinzufügen eines neuen Admin-Knotens können Sie optional die historischen Metriken kopieren, die von Prometheus vom primären Admin-Node erhalten wurden, zum neuen Admin-Node. Durch das Kopieren der Metriken wird sichergestellt, dass historische Metriken zwischen Admin-Nodes konsistent sind. 
+---
+= Kopieren Sie die Prometheus-Kennzahlen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nach dem Hinzufügen eines neuen Admin-Knotens können Sie optional die historischen Metriken kopieren, die von Prometheus vom primären Admin-Node erhalten wurden, zum neuen Admin-Node. Durch das Kopieren der Metriken wird sichergestellt, dass historische Metriken zwischen Admin-Nodes konsistent sind.
+
+.Bevor Sie beginnen
+* Der neue Admin-Node wird installiert und ausgeführt.
+* Sie haben die `Passwords.txt` Datei.
+* Sie haben die Provisionierungs-Passphrase.
+
+
+.Über diese Aufgabe
+Wenn Sie einen Admin-Knoten hinzufügen, erstellt der Software-Installationsprozess eine neue Prometheus-Datenbank. Sie können die historischen Kennzahlen zwischen den Knoten konsistent halten, indem Sie die Prometheus-Datenbank vom primären Admin-Node (den_Source Admin-Node_) auf den neuen Admin-Node kopieren.
+
+
+NOTE: Das Kopieren der Prometheus-Datenbank dauert möglicherweise ein Stunde oder länger. Einige Grid Manager-Funktionen sind nicht verfügbar, während Dienste auf dem Quell-Admin-Node angehalten werden.
+
+.Schritte
+. Melden Sie sich beim Quell-Admin-Node an:
++
+.. Geben Sie den folgenden Befehl ein: `ssh admin@_grid_node_IP_`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+.. Geben Sie den folgenden Befehl ein, um zu root zu wechseln: `su -`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+
+
+. Beenden Sie vom Quell-Admin-Node den Prometheus-Service: `service prometheus stop`
+. Führen Sie auf dem neuen Admin-Knoten die folgenden Schritte aus:
++
+.. Melden Sie sich beim neuen Admin-Knoten an:
++
+... Geben Sie den folgenden Befehl ein: `ssh admin@_grid_node_IP_`
+... Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+... Geben Sie den folgenden Befehl ein, um zu root zu wechseln: `su -`
+... Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+
+
+.. Stoppen Sie den Prometheus-Service: `service prometheus stop`
+.. Fügen Sie den SSH-privaten Schlüssel zum SSH-Agenten hinzu. Eingabe:``ssh-add``
+.. Geben Sie das in der Datei aufgeführte SSH-Zugriffspasswort ein `Passwords.txt`.
+.. Kopieren Sie die Prometheus-Datenbank vom Quell-Admin-Node auf den neuen Admin-Node: `/usr/local/prometheus/bin/prometheus-clone-db.sh _Source_Admin_Node_IP_`
+.. Wenn Sie dazu aufgefordert werden, drücken Sie *Enter*, um zu bestätigen, dass Sie die neue Prometheus-Datenbank auf dem neuen Admin-Knoten zerstören möchten.
++
+Die ursprüngliche Prometheus-Datenbank und ihre historischen Daten werden auf den neuen Admin-Knoten kopiert. Wenn der Kopiervorgang abgeschlossen ist, startet das Skript den neuen Admin-Knoten. Der folgende Status wird angezeigt:
+
++
+`Database cloned, starting services`
+
+.. Wenn Sie keinen passwortlosen Zugriff auf andere Server mehr benötigen, entfernen Sie den privaten Schlüssel vom SSH-Agent. Geben Sie Ein:
++
+`ssh-add -D`
+
+
+
+. Starten Sie den Prometheus-Service auf dem Quell-Admin-Node neu.
++
+`service prometheus start`
+
+

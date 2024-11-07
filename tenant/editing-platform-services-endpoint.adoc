@@ -1,0 +1,58 @@
+---
+permalink: tenant/editing-platform-services-endpoint.html 
+sidebar: sidebar 
+keywords: how to edit platform services endpoint 
+summary: Sie können die Konfiguration für einen Endpunkt für Plattformdienste bearbeiten, um seinen Namen, URI oder andere Details zu ändern. Beispielsweise müssen Sie möglicherweise abgelaufene Anmeldedaten aktualisieren oder den URI so ändern, dass er zu einem Backup-Elasticsearch-Index für ein Failover weist. Sie können den URN für einen Endpunkt für Plattformdienste nicht ändern. 
+---
+= Endpunkt der Plattformdienste bearbeiten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Konfiguration für einen Endpunkt für Plattformdienste bearbeiten, um seinen Namen, URI oder andere Details zu ändern. Beispielsweise müssen Sie möglicherweise abgelaufene Anmeldedaten aktualisieren oder den URI so ändern, dass er zu einem Backup-Elasticsearch-Index für ein Failover weist. Sie können die URN für einen Endpunkt für Plattformdienste nicht ändern.
+
+.Bevor Sie beginnen
+* Sie sind beim Tenant Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie gehören zu einer Benutzergruppe mit dem link:tenant-management-permissions.html["Verwalten von Endpunkten oder Root-Zugriffsberechtigungen"].
+
+
+.Schritte
+. Wählen Sie *STORAGE (S3)* > *Plattform-Services-Endpunkte* aus.
++
+Die Seite Endpunkte der Plattformservices wird angezeigt und zeigt die Liste der bereits konfigurierten Endpunkte der Plattformservices an.
+
+. Wählen Sie den Endpunkt aus, den Sie bearbeiten möchten.
++
+Die Seite mit den Details des Endpunkts wird angezeigt.
+
+. Wählen Sie *Konfiguration*.
+. Ändern Sie bei Bedarf die Konfiguration des Endpunkts.
++
+
+NOTE: Sie können die URN eines Endpunkts nicht ändern, nachdem der Endpunkt erstellt wurde.
+
++
+.. Um den Anzeigenamen für den Endpunkt zu ändern, wählen Sie das Symbol Bearbeiten image:../media/icon_edit_tm.png["Symbol Bearbeiten"].
+.. Ändern Sie bei Bedarf den URI.
+.. Ändern Sie bei Bedarf den Authentifizierungstyp.
++
+*** Zur Authentifizierung des Zugriffsschlüssels ändern Sie den Schlüssel ggf. durch Auswahl von *S3-Schlüssel bearbeiten* und Einfügen einer neuen Zugriffsschlüssel-ID und eines geheimen Zugriffsschlüssels. Wenn Sie Ihre Änderungen abbrechen müssen, wählen Sie *S3-Taste Edit* rückgängig machen.
+*** Für die CAP-Authentifizierung (C2S Access Portal) ändern Sie die URL für temporäre Anmeldeinformationen oder die optionale private Passphrase für Clientschlüssel und laden Sie nach Bedarf neue Zertifikate und Schlüsseldateien hoch.
++
+
+NOTE: Der private Client-Schlüssel muss im OpenSSL-verschlüsselten Format oder unverschlüsseltem privaten Schlüssel vorliegen.
+
+
+
+.. Ändern Sie bei Bedarf die Methode zur Überprüfung des Servers.
+
+
+. Wählen Sie *Test und speichern Sie die Änderungen*.
++
+** Eine Erfolgsmeldung wird angezeigt, wenn der Endpunkt mit den angegebenen Anmeldeinformationen erreicht werden kann. Die Verbindung zum Endpunkt wird von einem Knoten an jedem Standort überprüft.
+** Wenn die Endpoint-Validierung fehlschlägt, wird eine Fehlermeldung angezeigt. Ändern Sie den Endpunkt, um den Fehler zu beheben, und wählen Sie dann *Änderungen testen und speichern*.
+
+
+

@@ -1,0 +1,161 @@
+---
+permalink: troubleshoot/troubleshoot-low-watermark-alert.html 
+sidebar: sidebar 
+keywords: troubleshoot low soft read-only watermark override alert, optimized watermarks 
+summary: Wenn Sie benutzerdefinierte Werte für Speichervolumen-Wasserzeichen verwenden, müssen Sie möglicherweise die Warnmeldung zur Überbrückung des Schreibschutzzeichens mit geringem Schreibschutzwert lösen. Wenn möglich, sollten Sie Ihr System aktualisieren, um mit den optimierten Werten zu beginnen. 
+---
+= Fehlerbehebung bei Warnungen zur Überbrückung von nur geringem Lesezugriff
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie benutzerdefinierte Werte für Speichervolumen-Wasserzeichen verwenden, müssen Sie möglicherweise die Warnung *Low read-only Watermark override* auflösen. Wenn möglich, sollten Sie Ihr System aktualisieren, um mit den optimierten Werten zu beginnen.
+
+In früheren Versionen handelte es sich bei den drei link:../admin/what-storage-volume-watermarks-are.html["Wasserzeichen für Storage-Volumes"] um globale Einstellungen &#8212; dieselben Werte gelten für jedes Speicher-Volume auf jedem Speicher-Node. Ab StorageGRID 11.6 kann die Software diese Wasserzeichen für jedes Storage Volume optimieren, basierend auf der Größe des Storage-Nodes und der relativen Kapazität des Volumes.
+
+Wenn Sie ein Upgrade auf StorageGRID 11.6 oder höher durchführen, werden die optimierten Wasserzeichen für Lese- und Schreibzugriff automatisch auf alle Speicher-Volumes angewendet, es sei denn, eine der folgenden Aussagen trifft zu:
+
+* Ihr System ist in der Nähe der Kapazität und kann keine neuen Daten akzeptieren, wenn optimierte Wasserzeichen angewendet wurden. StorageGRID ändert in diesem Fall keine Wasserzeichen-Einstellungen.
+* Sie haben zuvor eine der Storage-Volume-Wasserzeichen auf einen benutzerdefinierten Wert gesetzt. StorageGRID überschreibt keine benutzerdefinierten Wasserzeichen-Einstellungen mit optimierten Werten. StorageGRID löst jedoch möglicherweise die Warnung *Low read-only Watermark override* aus, wenn Ihr benutzerdefinierter Wert für das Speichervolumen-Softread-only-Wasserzeichen zu klein ist.
+
+
+
+
+== Analysieren Sie die Meldung
+
+Wenn Sie benutzerdefinierte Werte für Speichervolumen-Wasserzeichen verwenden, wird möglicherweise für einen oder mehrere Speicherknoten die Warnung *Low read-only Watermark override* ausgelöst.
+
+Jede Instanz der Warnmeldung gibt an, dass der benutzerdefinierte Wert des Speichervolumes mit weichem Lesezugriff kleiner ist als der minimale optimierte Wert für diesen Speicher-Node. Wenn Sie die benutzerdefinierte Einstellung weiterhin verwenden, wird der Speicherknoten möglicherweise kritisch wenig Speicherplatz ausgeführt, bevor er sicher in den schreibgeschützten Zustand übergehen kann. Einige Speicher-Volumes sind möglicherweise nicht mehr zugänglich (automatisch abgehängt), wenn der Node die Kapazität erreicht.
+
+Angenommen, Sie haben zuvor das Speichervolumen-Softread-Wasserzeichen auf 5 GB gesetzt. Nehmen Sie nun an, dass StorageGRID die folgenden optimierten Werte für die vier Storage-Volumes in Storage Node A berechnet hat:
+
+[cols="2a,2a"]
+|===
+
+
+ a| 
+Band 0
+ a| 
+12GB
+
+
+
+ a| 
+Band 1
+ a| 
+12GB
+
+
+
+ a| 
+Band 2
+ a| 
+11GB
+
+
+
+ a| 
+Band 3
+ a| 
+15GB
+
+|===
+Die Warnung *Low read-only Watermark override* wird für Storage Node A ausgelöst, da Ihr benutzerdefinierter Wasserzeichen (5 GB) kleiner als der für alle Volumes in diesem Knoten optimierte Mindestwert ist (11 GB). Wenn Sie die benutzerdefinierte Einstellung weiterhin verwenden, wird der Node möglicherweise schwer mit wenig Speicherplatz ausgeführt, bevor er sicher in den schreibgeschützten Zustand übergeht.
+
+
+
+== Beheben Sie die Meldung
+
+Befolgen Sie diese Schritte, wenn eine oder mehrere *Low Read-Only-Wasserzeichen überschreiben*-Warnungen ausgelöst wurden. Sie können diese Anweisungen auch verwenden, wenn Sie derzeit benutzerdefinierte Wasserzeichen-Einstellungen verwenden und optimierte Einstellungen auch dann verwenden möchten, wenn keine Warnungen ausgelöst wurden.
+
+.Bevor Sie beginnen
+* Sie haben das Upgrade auf StorageGRID 11.6 oder höher abgeschlossen.
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben die link:../admin/admin-group-permissions.html["Root-Zugriffsberechtigung"].
+
+
+.Über diese Aufgabe
+Sie können die Warnung *Low read-only Watermark override* lösen, indem Sie benutzerdefinierte Wasserzeichen-Einstellungen auf die neuen Wasserzeichen-Überschreibungen aktualisieren. Wenn jedoch ein oder mehrere Speicherknoten nahe voll sind oder Sie spezielle ILM-Anforderungen haben, sollten Sie zunächst die optimierten Speicherabdrücke anzeigen und feststellen, ob sie sicher verwendet werden können.
+
+
+
+=== Bewertung der Nutzung von Objektdaten für das gesamte Grid
+
+.Schritte
+. Wählen Sie *KNOTEN*.
+. Erweitern Sie für jeden Standort im Raster die Liste der Nodes.
+. Überprüfen Sie die Prozentwerte, die in der Spalte *Objektdaten verwendet* für jeden Speicherknoten an jedem Standort angezeigt werden.
++
+image::../media/nodes_page_object_data_used_with_alert.png[Seite Knoten mit Objektdaten, die für 3 SNS verwendet werden]
+
+. Befolgen Sie den entsprechenden Schritt:
++
+.. Wenn keiner der Speicherknoten fast voll ist (zum Beispiel sind alle *Objektdaten verwendet* Werte kleiner als 80%), können Sie die Überschreibeinstellungen verwenden. Gehen Sie zu <<use-optimized-watermarks,Verwenden Sie optimierte Wasserzeichen>>.
+.. Wenn ILM-Regeln strikte Aufnahme-Verhalten verwenden oder bestimmte Storage-Pools nahezu voll sind, führen Sie die Schritte in <<view-optimized-watermarks,Anzeigen optimierter Speicherabdrücke>> und <<determine-optimized-watermarks,Bestimmen Sie, ob Sie optimierte Wasserzeichen verwenden können>>aus.
+
+
+
+
+
+
+=== [[View-optimized-Watermarks]]Anzeigen optimierter Storage-Wasserzeichen
+
+StorageGRID verwendet zwei Prometheus-Kennzahlen, um die optimierten Werte anzuzeigen, die es für das schreibgeschützte weiche Wasserzeichen des Storage-Volumes berechnet hat. Sie können die minimalen und maximalen optimierten Werte für jeden Speicherknoten in Ihrem Raster anzeigen.
+
+.Schritte
+. Wählen Sie *SUPPORT* > *Tools* > *Metriken*.
+. Wählen Sie im Abschnitt Prometheus den Link aus, um auf die Benutzeroberfläche von Prometheus zuzugreifen.
+. Um das empfohlene Mindestwasserzeichen für weichen, schreibgeschützten Wert anzuzeigen, geben Sie die folgende Prometheus-Metrik ein, und wählen Sie *Ausführen*:
++
+`storagegrid_storage_volume_minimum_optimized_soft_readonly_watermark`
+
++
+In der letzten Spalte wird der minimale optimierte Wert des weichen schreibgeschützten Wasserzeichens für alle Speicher-Volumes auf jedem Storage Node angezeigt. Wenn dieser Wert größer ist als die benutzerdefinierte Einstellung für das Speichervolume-Softread-only-Wasserzeichen, wird die Warnmeldung *Low read-only Watermark override* für den Speicherknoten ausgelöst.
+
+. Um das empfohlene maximale Softread-only-Wasserzeichen anzuzeigen, geben Sie die folgende Prometheus-Metrik ein und wählen Sie *Ausführen*:
++
+`storagegrid_storage_volume_maximum_optimized_soft_readonly_watermark`
+
++
+In der letzten Spalte wird der maximale optimierte Wert des weichen schreibgeschützten Wasserzeichens für alle Speicher-Volumes auf jedem Storage Node angezeigt.
+
+. [[Maximum_optimized_value]]Beachten Sie den maximal optimierten Wert für jeden Speicherknoten.
+
+
+
+
+=== [[Bestimmen-optimiert-Wasserzeichen]]Bestimmen Sie, ob Sie optimierte Wasserzeichen verwenden können
+
+.Schritte
+. Wählen Sie *KNOTEN*.
+. Wiederholen Sie diese Schritte für jeden Online-Speicherknoten:
++
+.. Wählen Sie *_Storage-Node_* > *Storage* Aus.
+.. Scrollen Sie nach unten zur Tabelle „Objektspeichern“.
+.. Vergleichen Sie den *verfügbaren*-Wert für jeden Objektspeicher (Volumen) mit dem für diesen Speicherknoten angegebenen maximalen optimierten Wasserzeichen.
+
+
+. Wenn mindestens ein Volume auf jedem Online-Storage-Node mehr Speicherplatz als das maximal optimierte Wasserzeichen für diesen Node zur Verfügung steht, wechseln Sie zu, um die optimierten Wasserzeichen zu <<use-optimized-watermarks,Verwenden Sie optimierte Wasserzeichen>>verwenden.
++
+Andernfalls erweitern Sie das Raster so schnell wie möglich. Entweder link:../expand/adding-storage-volumes-to-storage-nodes.html["Storage-Volumes hinzufügen"] zu einem vorhandenen Knoten oder link:../expand/adding-grid-nodes-to-existing-site-or-adding-new-site.html["Neue Storage-Nodes hinzufügen"]. Gehen Sie dann zu, um die Wasserzeicheneinstellungen zu <<use-optimized-watermarks,Verwenden Sie optimierte Wasserzeichen>>aktualisieren.
+
+. Wenn Sie weiterhin benutzerdefinierte Werte für die Wasserzeichen des Speichervolumes verwenden müssen, link:../monitor/silencing-alert-notifications.html["Stille"] oder link:../monitor/disabling-alert-rules.html["Deaktivieren"] die Warnung *Low read-only Watermark override*.
++
+
+NOTE: Auf jedes Storage Volume auf jedem Storage Node werden dieselben benutzerdefinierten Werte angewendet. Die Verwendung kleinerer Werte als empfohlen für Speichervolumen-Wasserzeichen kann dazu führen, dass einige Speicher-Volumes nicht mehr zugänglich sind (automatisch abgehängt), wenn der Node die Kapazität erreicht.
+
+
+
+
+
+=== [[use-optimized-Watermarks]]optimierte Wasserzeichen verwenden
+
+.Schritte
+. Gehen Sie zu *SUPPORT* > *andere* > *Speicherwasserzeichen*.
+. Aktivieren Sie das Kontrollkästchen *optimierte Werte verwenden*.
+. Wählen Sie *Speichern*.
+
+
+Für jedes Storage Volume gelten nun optimierte Wasserzeichen, basierend auf der Größe des Storage Nodes und der relativen Kapazität des Volumes.

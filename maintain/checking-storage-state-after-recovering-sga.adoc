@@ -1,0 +1,35 @@
+---
+permalink: maintain/checking-storage-state-after-recovering-sga.html 
+sidebar: sidebar 
+keywords: storagegrid, recovery, node recovery, storage state 
+summary: Nach der Wiederherstellung eines Appliance Storage Node müssen Sie überprüfen, ob der gewünschte Status des Appliance Storage Node auf „Online“ gesetzt ist, und vergewissern Sie sich, dass der Status bei jedem Neustart des Storage Node-Servers standardmäßig online ist. 
+---
+= Überprüfen Sie den Speicherstatus nach der Wiederherstellung des Appliance-Speicherknoten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nach der Wiederherstellung eines Appliance Storage Node müssen Sie überprüfen, ob der gewünschte Status des Appliance Storage Node auf „Online“ gesetzt ist, und vergewissern Sie sich, dass der Status bei jedem Neustart des Storage Node-Servers standardmäßig online ist.
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Der Speicherknoten wurde wiederhergestellt und die Datenwiederherstellung ist abgeschlossen.
+
+
+.Schritte
+. Wählen Sie *SUPPORT* > *Tools* > *Grid-Topologie* aus.
+. Überprüfen Sie die Werte von *wiederhergestellten Speicherknoten* > *LDR* > *Storage* > *Speicherzustand -- gewünscht* und *Speicherstatus -- Strom*.
++
+Der Wert beider Attribute sollte Online sein.
+
+. Wenn der Speicherstatus -- gewünscht auf schreibgeschützt eingestellt ist, führen Sie die folgenden Schritte aus:
++
+.. Klicken Sie auf die Registerkarte *Konfiguration*.
+.. Wählen Sie aus der Dropdown-Liste *Storage State -- gewünschte* die Option *Online* aus.
+.. Klicken Sie Auf *Änderungen Übernehmen*.
+.. Klicken Sie auf die Registerkarte *Übersicht* und bestätigen Sie, dass die Werte von *Speicherzustand -- gewünscht* und *Speicherzustand -- Aktuell* auf Online aktualisiert werden.
+
+
+

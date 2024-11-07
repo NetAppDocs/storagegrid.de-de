@@ -1,0 +1,84 @@
+---
+permalink: tenant/manage-bucket-consistency.html 
+sidebar: sidebar 
+keywords: how to manage bucket consistency, how to change bucket consistency, read after new write, read-after-new-write, strong site, strong-site, strong global, strong-global 
+summary: Mithilfe von Konsistenzwerten können Änderungen an den Bucket-Einstellungen festgelegt und ein Gleichgewicht zwischen der Verfügbarkeit der Objekte in einem Bucket und der Konsistenz dieser Objekte in verschiedenen Storage-Nodes und Standorten sichergestellt werden. Sie können die Konsistenzwerte so ändern, dass sie sich von den Standardwerten unterscheiden, damit Client-Anwendungen ihre betrieblichen Anforderungen erfüllen können. 
+---
+= Management der Bucket-Konsistenz
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mithilfe von Konsistenzwerten können Änderungen an den Bucket-Einstellungen festgelegt und ein Gleichgewicht zwischen der Verfügbarkeit der Objekte in einem Bucket und der Konsistenz dieser Objekte in verschiedenen Storage-Nodes und Standorten sichergestellt werden. Sie können die Konsistenzwerte so ändern, dass sie sich von den Standardwerten unterscheiden, damit Client-Anwendungen ihre betrieblichen Anforderungen erfüllen können.
+
+.Bevor Sie beginnen
+* Sie sind beim Tenant Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie gehören zu einer Benutzergruppe mit dem link:tenant-management-permissions.html["Managen aller Buckets oder Root-Zugriffsberechtigungen"]. Diese Berechtigungen überschreiben die Berechtigungseinstellungen in Gruppen- oder Bucket-Richtlinien.
+
+
+
+
+== Bucket-Konsistenzrichtlinien
+
+Die Bucket-Konsistenz wird verwendet, um die Konsistenz von Client-Applikationen zu bestimmen, die sich auf Objekte in diesem S3 Bucket auswirken. Im Allgemeinen sollten Sie die Konsistenz *Read-after-New-write* für Ihre Buckets verwenden.
+
+
+
+== [[Change-Bucket-Consistency]]Bucket-Konsistenz ändern
+
+Wenn die Konsistenz *Read-after-New-write* nicht den Anforderungen der Client-Anwendung entspricht, können Sie die Konsistenz ändern, indem Sie die Bucket-Konsistenz oder den Header festlegen `Consistency-Control`. Die `Consistency-Control` Kopfzeile überschreibt die Bucket-Konsistenz.
+
+
+NOTE: Wenn Sie die Konsistenz eines Buckets ändern, erfüllen nur die Objekte, die nach der Änderung aufgenommen werden, die überarbeitete Einstellung.
+
+.Schritte
+. Wählen Sie *View Buckets* aus dem Dashboard, oder wählen Sie *STORAGE (S3)* > *Buckets*.
+. Wählen Sie den Bucket-Namen aus der Tabelle aus.
++
+Die Seite mit den Bucket-Details wird angezeigt.
+
+. Wählen Sie auf der Registerkarte *Bucket options* die Option ** accordion aus.
+. Wählen Sie eine Konsistenz für Vorgänge aus, die an den Objekten in diesem Bucket ausgeführt werden.
++
+** *All*: Bietet die höchste Konsistenz. Alle Nodes erhalten die Daten sofort, sonst schlägt die Anfrage fehl.
+** *Strong-global*: Garantiert Lese-nach-Schreiben-Konsistenz für alle Client-Anfragen über alle Standorte hinweg.
+** *Strong-site*: Garantiert Lese-nach-Schreiben Konsistenz für alle Client-Anfragen innerhalb einer Site.
+** *Read-after-New-write* (default): Bietet Read-after-write-Konsistenz für neue Objekte und eventuelle Konsistenz für Objektaktualisierungen. Hochverfügbarkeit und garantierte Datensicherung Empfohlen für die meisten Fälle.
+** *Verfügbar*: Bietet eventuelle Konsistenz für neue Objekte und Objekt-Updates. Verwenden Sie für S3-Buckets nur nach Bedarf (z. B. für einen Bucket mit Protokollwerten, die nur selten gelesen werden, oder für HEAD- oder GET-Vorgänge für nicht vorhandene Schlüssel). Nicht unterstützt für S3 FabricPool-Buckets.
+
+
+. Wählen Sie *Änderungen speichern*.
+
+
+
+
+== Was passiert, wenn Sie Bucket-Einstellungen ändern
+
+Buckets verfügen über mehrere Einstellungen, die sich auf das Verhalten der Buckets und der Objekte in diesen Buckets auswirken.
+
+Die folgenden Bucket-Einstellungen verwenden standardmäßig *strong*-Konsistenz. Wenn zwei oder mehr Storage-Nodes innerhalb eines Standorts nicht verfügbar sind oder ein Standort nicht verfügbar ist, sind Änderungen an diesen Einstellungen möglicherweise nicht verfügbar.
+
+* link:deleting-s3-bucket-objects.html["Löschen von leeren Buckets im Hintergrund"]
+* link:enabling-or-disabling-last-access-time-updates.html["Zeitpunkt Des Letzten Zugriffs"]
+* link:../s3/create-s3-lifecycle-configuration.html["Bucket-Lebenszyklus"]
+* link:../s3/bucket-and-group-access-policies.html["Bucket-Richtlinie"]
+* link:../s3/operations-on-buckets.html["Bucket-Tagging"]
+* link:changing-bucket-versioning.html["Bucket-Versionierung"]
+* link:using-s3-object-lock.html["S3-Objektsperre"]
+* link:../admin/reviewing-storagegrid-encryption-methods.html#bucket-encryption-table["Bucket-Verschlüsselung"]
+
+
+
+NOTE: Der Konsistenzwert für Bucket-Versionierung, S3 Object Lock- und Bucket-Verschlüsselung kann nicht auf einen Wert festgelegt werden, der nicht stark konsistent ist.
+
+Die folgenden Bucket-Einstellungen verwenden keine starke Konsistenz und weisen eine höhere Verfügbarkeit für Änderungen auf. Änderungen an diesen Einstellungen können einige Zeit dauern, bevor sie wirksam werden.
+
+* link:considerations-for-platform-services.html["Konfiguration von Plattform-Services: Benachrichtigung, Replikation oder Suchintegration"]
+* link:configuring-cross-origin-resource-sharing-cors.html["CORS-Konfiguration"]
+* <<change-bucket-consistency,Änderung der Bucket-Konsistenz>>
+
+
+
+TIP: Wenn die Standardkonsistenz, die beim Ändern von Bucket-Einstellungen verwendet wird, nicht den Anforderungen der Client-Anwendung entspricht, können Sie die Konsistenz ändern, indem Sie den `Consistency-Control` Header für link:../s3/put-bucket-consistency-request.html["S3-REST-API"]oder verwenden, indem Sie die Optionen oder `force` im verwenden `reducedConsistency`link:understanding-tenant-management-api.html["Mandantenmanagement-API"].

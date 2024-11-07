@@ -1,0 +1,49 @@
+= 
+:allow-uri-read: 
+
+
+[cols="2a,2a"]
+|===
+| Webbrowser | Unterstützte Mindestversion 
+
+
+ a| 
+Google Chrome
+ a| 
+119
+
+
+
+ a| 
+Microsoft Edge
+ a| 
+119
+
+
+
+ a| 
+Mozilla Firefox
+ a| 
+119
+
+|===
+Sie sollten das Browserfenster auf eine empfohlene Breite einstellen.
+
+[cols="3a,1a"]
+|===
+| Browserbreite | Pixel 
+
+
+ a| 
+Minimum
+ a| 
+1024
+
+
+
+ a| 
+Optimal
+ a| 
+1280
+
+|===

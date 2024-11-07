@@ -1,0 +1,62 @@
+---
+permalink: maintain/selecting-node-recovery-procedure.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, procedure 
+summary: Sie müssen den korrekten Wiederherstellungsvorgang für den Typ des fehlgeschlagenen Knotens auswählen. 
+---
+= Wählen Sie die Knotenwiederherstellung aus
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen den korrekten Wiederherstellungsvorgang für den Typ des fehlgeschlagenen Knotens auswählen.
+
+[cols="1a,2a"]
+|===
+| Grid-Node | Wiederherstellungsvorgang 
+
+
+ a| 
+Mehr als ein Storage-Node
+ a| 
+Wenden Sie sich an den technischen Support. Wenn mehrere Storage-Nodes ausgefallen sind, muss der technische Support bei der Recovery Unterstützung leisten, um Inkonsistenzen zu Datenbanken zu vermeiden, die zu Datenverlusten führen können. Möglicherweise ist ein Wiederherstellungsverfahren für Standorte erforderlich.
+
+link:how-site-recovery-is-performed-by-technical-support.html["Wie der technische Support eine Site wiederherstellt"]
+
+
+
+ a| 
+Ein einzelner Storage-Node
+ a| 
+Das Speicherknoten-Wiederherstellungsverfahren hängt vom Typ und der Dauer des Ausfalls ab.
+
+link:recovering-from-storage-node-failures.html["Wiederherstellung nach Ausfällen der Storage-Nodes"]
+
+
+
+ a| 
+Admin-Node
+ a| 
+Das Verfahren Admin-Knoten hängt davon ab, ob Sie den primären Admin-Knoten oder einen nicht-primären Admin-Knoten wiederherstellen müssen.
+
+link:recovering-from-admin-node-failures.html["Wiederherstellung bei Ausfällen des Admin-Nodes"]
+
+
+
+ a| 
+Gateway-Node
+ a| 
+link:replacing-gateway-node.html["Wiederherstellung nach Gateway-Node-Ausfällen"]
+
+
+
+ a| 
+Archiv-Node
+ a| 
+https://docs.netapp.com/us-en/storagegrid-118/maintain/recovering-from-archive-node-failures.html["Wiederherstellung nach Ausfällen des Archivierungs-Nodes (StorageGRID 11.8-Dokumentstandort)"^]
+
+|===
+
+NOTE: Wenn ein Server, der mehr als einen Grid-Node hostet, ausfällt, können Sie die Knoten in beliebiger Reihenfolge wiederherstellen. Wenn der ausgefallene Server jedoch den primären Admin-Node hostet, müssen Sie diesen Knoten zuerst wiederherstellen. Die Wiederherstellung des primären Admin-Knotens verhindert, dass andere Knoten-Wiederherstellungen angehalten werden, während sie warten, bis der primäre Admin-Node kontaktiert wird.

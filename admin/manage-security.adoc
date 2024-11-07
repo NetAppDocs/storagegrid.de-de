@@ -1,0 +1,47 @@
+---
+permalink: admin/manage-security.html 
+sidebar: sidebar 
+keywords: how to manage security 
+summary: Sie können verschiedene Sicherheitseinstellungen über den Grid-Manager konfigurieren, um das StorageGRID-System zu sichern. 
+---
+= Sicherheitsmanagement
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können verschiedene Sicherheitseinstellungen über den Grid-Manager konfigurieren, um das StorageGRID-System zu sichern.
+
+
+
+== Verschlüsselung managen
+
+StorageGRID bietet verschiedene Optionen zur Datenverschlüsselung. Sie sollten link:reviewing-storagegrid-encryption-methods.html["Überprüfen Sie die verfügbaren Verschlüsselungsmethoden"]herausfinden, welche davon Ihre Datensicherungsanforderungen erfüllen.
+
+
+
+== Verwalten von Zertifikaten
+
+Sie können link:using-storagegrid-security-certificates.html["Konfigurieren und verwalten Sie die Serverzertifikate"]für HTTP-Verbindungen oder die Clientzertifikate verwendet werden, mit denen eine Client- oder Benutzeridentität beim Server authentifiziert wird.
+
+
+
+== Konfigurieren von Verschlüsselungsmanagement-Servern
+
+Mit einem link:kms-configuring.html["Verschlüsselungsmanagement-Server"] können Sie StorageGRID Daten sichern, selbst wenn eine Appliance aus dem Datacenter entfernt wird. Nachdem die Appliance-Volumes verschlüsselt wurden, können Sie nur auf Daten auf der Appliance zugreifen, wenn der Node mit dem KMS kommunizieren kann.
+
+
+NOTE: Um die Verschlüsselungsschlüsselverwaltung zu verwenden, müssen Sie während der Installation die Einstellung *Node Encryption* für jedes Gerät aktivieren, bevor das Gerät zum Grid hinzugefügt wird.
+
+
+
+== Proxy-Einstellungen verwalten
+
+Wenn Sie S3-Plattformservices oder Cloud Storage-Pools verwenden, können Sie ein  zwischen Storage-Nodes und den externen S3-Endpunkten konfigurierenlink:configuring-storage-proxy-settings.html["Storage-Proxyserver"]. Wenn Sie AutoSupport-Pakete über HTTPS oder HTTP senden, können Sie ein  zwischen Admin-Knoten und technischem Support konfigurierenlink:configuring-admin-proxy-settings.html["Admin-Proxyserver"].
+
+
+
+== Kontrollieren Sie Firewalls
+
+Um die Sicherheit Ihres Systems zu erhöhen, können Sie den Zugriff auf StorageGRID-Administratorknoten steuern, indem Sie bestimmte Ports am öffnen oder schließenlink:controlling-access-through-firewalls.html["Externe Firewall"]. Sie können auch den Netzwerkzugriff auf jeden Knoten steuern, indem Sie dessen konfigurierenlink:manage-firewall-controls.html["Interne Firewall"]. Sie können den Zugriff auf alle Ports außer den für Ihre Bereitstellung benötigten verhindern.

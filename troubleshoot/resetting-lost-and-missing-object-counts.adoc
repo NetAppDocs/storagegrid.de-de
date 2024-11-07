@@ -1,0 +1,58 @@
+---
+permalink: troubleshoot/resetting-lost-and-missing-object-counts.html 
+sidebar: sidebar 
+keywords: how to reset lost object count, how to reset missing object count 
+summary: Nachdem Sie das StorageGRID-System untersucht und überprüft haben, ob alle aufgezeichneten verlorenen Objekte dauerhaft verloren gehen oder dass es sich um einen falschen Alarm handelt, können Sie den Wert des Attributs Lost Objects auf Null zurücksetzen. 
+---
+= Verlorene und fehlende Objektanzahl zurücksetzen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nachdem Sie das StorageGRID-System untersucht und überprüft haben, ob alle aufgezeichneten verlorenen Objekte dauerhaft verloren gehen oder dass es sich um einen falschen Alarm handelt, können Sie den Wert des Attributs Lost Objects auf Null zurücksetzen.
+
+.Bevor Sie beginnen
+* Sie müssen im Grid-Manager mit einem angemeldet seinlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben link:../admin/admin-group-permissions.html["Bestimmte Zugriffsberechtigungen"].
+
+
+.Über diese Aufgabe
+Sie können den Zähler „Lost Objects“ von einer der folgenden Seiten zurücksetzen:
+
+* *SUPPORT* > *Tools* > *Grid-Topologie* > *_Site_* > *_Storage Node_* > *LDR* > *Data Store* > *Übersicht* > *Main*
+* *SUPPORT* > *Tools* > *Grid-Topologie* > *_Site_* > *_Storage Node_* > *DDS* > *Data Store* > *Übersicht* > *Main*
+
+
+Diese Anleitung zeigt das Zurücksetzen des Zählers von der Seite *LDR* > *Data Store*.
+
+.Schritte
+. Wählen Sie *SUPPORT* > *Tools* > *Grid-Topologie* aus.
+. Wählen Sie *_Site_* > *_Storage Node_* > *LDR* > *Data Store* > *Konfiguration* für den Speicherknoten, der die Meldung *Objekte verloren* oder DEN VERLORENEN Alarm hat.
+. Wählen Sie *Anzahl Der Verlorenen Objekte Zurücksetzen*.
++
+image::../media/reset_ldr_lost_object_count.gif[Screenshot von LDR Zurücksetzen Anzahl verloren gegangener Objekte]
+
+. Klicken Sie Auf *Änderungen Übernehmen*.
++
+Das Attribut Lost Objects wird auf 0 zurückgesetzt und die Warnung *Objects lost* und DIE VERLORENE Alarmfunktion werden gelöscht, was einige Minuten dauern kann.
+
+. Setzen Sie optional andere zugehörige Attributwerte zurück, die beim Identifizieren des verlorenen Objekts möglicherweise erhöht wurden.
++
+.. Wählen Sie *_Site_* > *_Storage Node_* > *LDR* > *Erasure Coding* > *Konfiguration* aus.
+.. Wählen Sie *Reset reads Failure Count* und *Reset corrupte Kopien Detected Count* aus.
+.. Klicken Sie Auf *Änderungen Übernehmen*.
+.. Wählen Sie *_Site_* > *_Storage Node_* > *LDR* > *Verifizierung* > *Konfiguration* aus.
+.. Wählen Sie *Anzahl der fehlenden Objekte zurücksetzen* und *Anzahl der beschädigten Objekte zurücksetzen*.
+.. Wenn Sie sicher sind, dass isolierte Objekte nicht benötigt werden, können Sie *gesperrte Objekte löschen* auswählen.
++
+Isolierte Objekte werden erstellt, wenn die Hintergrundüberprüfung eine beschädigte replizierte Objektkopie identifiziert. In den meisten Fällen ersetzt StorageGRID das beschädigte Objekt automatisch, und es ist sicher, die isolierten Objekte zu löschen. Wenn jedoch die Meldung *Objects lost* oder DER VERLORENE Alarm ausgelöst wird, kann der technische Support auf die isolierten Objekte zugreifen.
+
+.. Klicken Sie Auf *Änderungen Übernehmen*.
+
+
++
+Es kann einige Momente dauern, bis die Attribute zurückgesetzt werden, nachdem Sie auf *Änderungen anwenden* klicken.
+
+

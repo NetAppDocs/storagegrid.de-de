@@ -1,0 +1,26 @@
+---
+permalink: network/post-installation-guidelines.html 
+sidebar: sidebar 
+keywords: networking after installation, dhcp networking 
+summary: Befolgen Sie nach Abschluss der Implementierung und Konfiguration des Grid-Node die folgenden Richtlinien für DHCP-Adressen und Änderungen der Netzwerkkonfiguration. 
+---
+= Richtlinien nach der Installation
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Befolgen Sie nach Abschluss der Implementierung und Konfiguration des Grid-Node die folgenden Richtlinien für DHCP-Adressen und Änderungen der Netzwerkkonfiguration.
+
+* Wenn DHCP zum Zuweisen von IP-Adressen verwendet wurde, konfigurieren Sie für jede IP-Adresse in den verwendeten Netzwerken eine DHCP-Reservierung.
++
+Sie können DHCP nur während der Bereitstellungsphase einrichten. DHCP kann während der Konfiguration nicht eingerichtet werden.
+
++
+
+CAUTION: Nodes werden neu gebootet, wenn die Grid-Netzwerkkonfiguration durch DHCP geändert wird. Dies kann zu Ausfällen führen, wenn eine DHCP-Änderung sich auf mehrere Nodes gleichzeitig auswirkt.
+
+* Sie müssen die Verfahren zum Ändern der IP-Adresse verwenden, wenn Sie IP-Adressen, Subnetzmaske und Standard-Gateways für einen Grid-Node ändern möchten. Siehe link:../maintain/configuring-ip-addresses.html["Konfigurieren Sie IP-Adressen"].
+* Wenn Sie Änderungen an der Netzwerkkonfiguration vornehmen, einschließlich Routing- und Gateway-Änderungen, geht die Client-Verbindung zum primären Admin-Node und anderen Grid-Nodes unter Umständen verloren. Je nach den vorgenommenen Änderungen müssen Sie diese Verbindungen möglicherweise erneut herstellen.
+

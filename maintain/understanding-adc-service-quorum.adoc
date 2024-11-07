@@ -1,0 +1,29 @@
+---
+permalink: maintain/understanding-adc-service-quorum.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, adc, adc quorum 
+summary: 'Sie können bestimmte Speicher-Nodes an einem Standort möglicherweise nicht stilllegen, wenn nach der Stilllegung zu wenige Dienste des Administrative Domain Controller \(ADC\) verbleiben würden.' 
+---
+= Was ist das ADC-Quorum?
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Möglicherweise können Sie bestimmte Speicher-Nodes an einem Standort nicht stilllegen, wenn nach der Stilllegung zu wenige ADC-Dienste (Administrative Domain Controller) verbleiben würden.
+
+Der ADC-Dienst, der auf einigen Storage Nodes zu finden ist, verwaltet Informationen zur Grid-Topologie und stellt Konfigurationsdienste für das Grid bereit. Das StorageGRID System erfordert, dass an jedem Standort und zu jeder Zeit ein Quorum von ADC-Services verfügbar ist.
+
+Sie können einen Speicher-Node nicht stilllegen, wenn das Entfernen des Knotens dazu führen würde, dass das ADC-Quorum nicht mehr erfüllt wird. Um das ADC-Quorum während einer Stilllegung zu erfüllen, müssen mindestens drei Storage Nodes an jedem Standort über den ADC-Service verfügen. Wenn ein Standort über mehr als drei Storage Nodes mit dem ADC-Dienst verfügt, muss eine einfache Mehrheit dieser Nodes nach der Stilllegung verfügbar bleiben: `((0.5 * _Storage Nodes with ADC_) + 1)`
+
+
+CAUTION: Gehen Sie mit Vorsicht vor, wenn Sie Storage-Nodes in einem Grid stilllegen, das rein softwarebasierte Metadaten-Nodes enthält. Wenn Sie alle Knoten außer Betrieb nehmen, die für den Speicher _sowohl_ Objekte als auch Metadaten konfiguriert sind, wird die Fähigkeit zum Speichern von Objekten aus dem Raster entfernt. Weitere Informationen zu nur Metadaten-Storage-Nodes finden Sie unterlink:../primer/what-storage-node-is.html#types-of-storage-nodes["Typen von Storage-Nodes"].
+
+Angenommen, ein Standort umfasst derzeit sechs Storage Nodes mit ADC-Diensten und Sie möchten drei Storage Nodes stilllegen. Aufgrund der Quorum-Anforderung des ADC müssen Sie zwei Verfahren zur Deaktivierung durchführen:
+
+* Bei der ersten Stilllegung müssen Sie sicherstellen, dass vier Speicher-Nodes mit ADC-Diensten verfügbar bleiben: `((0.5 * 6) + 1)`. Das bedeutet, dass Sie zunächst nur zwei Storage-Nodes außer Betrieb nehmen können.
+* Bei der zweiten Stilllegung können Sie den dritten Speicher-Node entfernen, da für das ADC-Quorum jetzt nur noch drei ADC-Services verfügbar bleiben müssen: `((0.5 * 4) + 1)`.
+
+
+Wenn Sie einen Storage Node stilllegen müssen, aber aufgrund der ADC-Quorum-Anforderung nicht dazu in der Lage sind, fügen Sie einen neuen Storage Node in ein hinzu link:../expand/index.html["Expansion"]und geben Sie an, dass er einen ADC-Service haben soll. Setzen Sie dann den vorhandenen Storage-Node aus.

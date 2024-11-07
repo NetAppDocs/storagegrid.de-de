@@ -1,0 +1,154 @@
+---
+permalink: admin/kms-adding.html 
+sidebar: sidebar 
+keywords: add kms, key management server 
+summary: Mithilfe des Assistenten für den StorageGRID-Verschlüsselungsmanagement-Server können Sie jeden KMS- oder KMS-Cluster hinzufügen. 
+---
+= Hinzufügen eines Verschlüsselungsmanagement-Servers (KMS)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mithilfe des Assistenten für den StorageGRID-Verschlüsselungsmanagement-Server können Sie jeden KMS- oder KMS-Cluster hinzufügen.
+
+.Bevor Sie beginnen
+* Sie haben die überprüftlink:kms-considerations-and-requirements.html["Überlegungen und Anforderungen für die Verwendung eines Verschlüsselungsmanagement-Servers"].
+* Sie haben link:kms-configuring-storagegrid-as-client.html["StorageGRID wurde als Client im KMS konfiguriert"], und Sie haben die erforderlichen Informationen für jeden KMS oder KMS Cluster.
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben die link:admin-group-permissions.html["Root-Zugriffsberechtigung"].
+
+
+.Über diese Aufgabe
+Konfigurieren Sie, falls möglich, Site-spezifische Verschlüsselungsmanagement-Server, bevor Sie einen Standard-KMS konfigurieren, der für alle Standorte gilt, die nicht von einem anderen KMS gemanagt werden. Wenn Sie zuerst den Standard-KMS erstellen, werden alle Node-verschlüsselten Appliances im Grid durch den Standard-KMS verschlüsselt. Wenn Sie später einen Site-spezifischen KMS erstellen möchten, müssen Sie zuerst die aktuelle Version des Verschlüsselungsschlüssels vom Standard-KMS auf den neuen KMS kopieren. Weitere Informationen finden Sie unter link:kms-considerations-for-changing-for-site.html["Überlegungen für das Ändern des KMS für einen Standort"] .
+
+
+
+== Schritt 1: KM Details
+
+In Schritt 1 (KMS-Details) des Assistenten zum Hinzufügen eines Schlüsselverwaltungsservers geben Sie Details zum KMS- oder KMS-Cluster an.
+
+.Schritte
+. Wählen Sie *KONFIGURATION* > *Sicherheit* > *Schlüsselverwaltungsserver* aus.
++
+Die Seite Key Management Server wird angezeigt, und die Registerkarte Configuration Details ist ausgewählt.
+
+. Wählen Sie *Erstellen*.
++
+Schritt 1 (KMS-Details) des Assistenten zum Hinzufügen eines Schlüsselverwaltungsservers wird angezeigt.
+
+. Geben Sie die folgenden Informationen für den KMS und den StorageGRID-Client ein, den Sie in diesem KMS konfiguriert haben.
++
+[cols="1a,2a"]
+|===
+| Feld | Beschreibung 
+
+
+ a| 
+Kms-Name
+ a| 
+Einen beschreibenden Namen, der Ihnen bei der Identifizierung dieses KMS hilft. Muss zwischen 1 und 64 Zeichen lang sein.
+
+
+
+ a| 
+Schlüsselname
+ a| 
+Der exakte Schlüssel-Alias für den StorageGRID-Client im KMS. Muss zwischen 1 und 255 Zeichen lang sein.
+
+*Hinweis*: Wenn Sie keinen Schlüssel mit Ihrem KMS-Produkt erstellt haben, werden Sie aufgefordert, StorageGRID den Schlüssel erstellen zu lassen.
+
+
+
+ a| 
+Verwaltet Schlüssel für
+ a| 
+Der StorageGRID-Site, die diesem KMS zugeordnet wird. Wenn möglich, sollten Sie alle standortspezifischen Verschlüsselungsmanagement-Server konfigurieren, bevor Sie einen Standard-KMS konfigurieren, der für alle Standorte gilt, die nicht von einem anderen KMS verwaltet werden.
+
+** Wählen Sie einen Standort aus, wenn dieser KMS Verschlüsselungen für die Appliance-Nodes an einem bestimmten Standort managt.
+** Wählen Sie *Sites Not Managed by another KMS (default KMS)* aus, um ein Standard-KMS zu konfigurieren, das für alle Sites gilt, die kein dediziertes KMS haben, und für alle Sites, die Sie in nachfolgenden Erweiterungen hinzufügen.
++
+*Hinweis:* beim Speichern der KMS-Konfiguration Tritt Ein Validierungsfehler auf, wenn Sie eine Site auswählen, die zuvor durch den Standard-KMS verschlüsselt wurde, aber Sie haben die aktuelle Version des ursprünglichen Verschlüsselungsschlüssels nicht dem neuen KMS zur Verfügung gestellt.
+
+
+
+
+
+ a| 
+Port
+ a| 
+Der Port, den der KMS-Server für die KMIP-Kommunikation (Key Management Interoperability Protocol) verwendet. Die Standardeinstellung ist 5696, d. h. der KMIP-Standardport.
+
+
+
+ a| 
+Hostname
+ a| 
+Der vollständig qualifizierte Domänenname oder die IP-Adresse für den KMS.
+
+*Hinweis:* das Feld Subject Alternative Name (SAN) des Serverzertifikats muss den FQDN oder die IP-Adresse enthalten, die Sie hier eingeben. Andernfalls kann StorageGRID keine Verbindung zum KMS oder zu allen Servern eines KMS-Clusters herstellen.
+
+|===
+. Wenn Sie einen KMS-Cluster konfigurieren, wählen Sie *Add another hostname*, um einen Hostnamen für jeden Server im Cluster hinzuzufügen.
+. Wählen Sie *Weiter*.
+
+
+
+
+== Schritt 2: Serverzertifikat hochladen
+
+In Schritt 2 (Serverzertifikat hochladen) des Assistenten zum Hinzufügen eines Schlüsselverwaltungsservers laden Sie das Serverzertifikat (oder Zertifikatpaket) für das KMS hoch. Das Serverzertifikat ermöglicht es dem externen KMS, sich bei StorageGRID zu authentifizieren.
+
+.Schritte
+. Navigieren Sie aus *Schritt 2 (Serverzertifikat hochladen)* zum Speicherort des gespeicherten Serverzertifikats oder Zertifikatbündels.
+. Laden Sie die Zertifikatdatei hoch.
++
+Die Metadaten des Serverzertifikats werden angezeigt.
+
++
+
+NOTE: Wenn Sie ein Zertifikatbündel hochgeladen haben, werden die Metadaten für jedes Zertifikat auf der eigenen Registerkarte angezeigt.
+
+. Wählen Sie *Weiter*.
+
+
+
+
+== [[sg-create-key]]Schritt 3: Client-Zertifikate hochladen
+
+In Schritt 3 (Clientzertifikate hochladen) des Assistenten zum Hinzufügen eines Schlüsselverwaltungsservers laden Sie das Clientzertifikat und den privaten Schlüssel des Clientzertifikats hoch. Das Client-Zertifikat ermöglicht StorageGRID, sich am KMS zu authentifizieren.
+
+.Schritte
+. Navigieren Sie unter *Schritt 3 (Client-Zertifikate hochladen)* zum Speicherort des Client-Zertifikats.
+. Laden Sie die Clientzertifikatdatei hoch.
++
+Die Metadaten des Client-Zertifikats werden angezeigt.
+
+. Navigieren Sie zum Speicherort des privaten Schlüssels für das Clientzertifikat.
+. Laden Sie die Datei mit dem privaten Schlüssel hoch.
+. Wählen Sie *Test und Speichern*.
++
+Wenn kein Schlüssel vorhanden ist, werden Sie aufgefordert, einen Schlüssel von StorageGRID zu erstellen.
+
++
+Die Verbindungen zwischen dem Verschlüsselungsmanagement-Server und den Appliance-Nodes werden getestet. Wenn alle Verbindungen gültig sind und der korrekte Schlüssel auf dem KMS gefunden wird, wird der neue Schlüsselverwaltungsserver der Tabelle auf der Seite des Key Management Servers hinzugefügt.
+
++
+
+NOTE: Unmittelbar nach dem Hinzufügen eines KMS wird der Zertifikatsstatus auf der Seite Key Management Server als Unbekannt angezeigt. Es kann StorageGRID bis zu 30 Minuten dauern, bis der aktuelle Status eines jeden Zertifikats angezeigt wird. Sie müssen Ihren Webbrowser aktualisieren, um den aktuellen Status anzuzeigen.
+
+. Wenn bei der Auswahl von *Test und Speichern* eine Fehlermeldung angezeigt wird, überprüfen Sie die Nachrichtendetails und wählen Sie dann *OK* aus.
++
+Beispiel: Wenn ein Verbindungstest fehlgeschlagen ist, können Sie einen Fehler bei unbearbeitbarer Einheit mit 422: Nicht verarbeitbarer Einheit erhalten.
+
+. Wenn Sie die aktuelle Konfiguration speichern müssen, ohne die externe Verbindung zu testen, wählen Sie *Speichern erzwingen*.
++
+
+CAUTION: Wenn Sie *Force save* auswählen, wird die KMS-Konfiguration gespeichert, aber die externe Verbindung von jedem Gerät zu diesem KMS wird nicht getestet. Wenn Probleme mit der Konfiguration bestehen, können Sie Appliance-Nodes, für die die Node-Verschlüsselung am betroffenen Standort aktiviert ist, möglicherweise nicht neu starten. Wenn der Zugriff auf Ihre Daten nicht mehr vollständig ist, können Sie diese Probleme beheben.
+
+. Überprüfen Sie die Bestätigungswarnung, und wählen Sie *OK*, wenn Sie sicher sind, dass Sie das Speichern der Konfiguration erzwingen möchten.
++
+Die KMS-Konfiguration wird gespeichert, die Verbindung zum KMS wird jedoch nicht getestet.
+
+

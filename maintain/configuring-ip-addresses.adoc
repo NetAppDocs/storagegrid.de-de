@@ -1,0 +1,49 @@
+---
+permalink: maintain/configuring-ip-addresses.html 
+sidebar: sidebar 
+keywords: configure ip address, change IP tool, ethernet, dhcp, ha group 
+summary: Sie können eine Netzwerkkonfiguration durchführen, indem Sie IP-Adressen für Grid-Nodes mithilfe des Tools IP ändern konfigurieren. 
+---
+= Richtlinien für IP-Adressen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können eine Netzwerkkonfiguration durchführen, indem Sie IP-Adressen für Grid-Nodes mithilfe des Tools IP ändern konfigurieren.
+
+Sie müssen das Change IP-Tool verwenden, um die meisten Änderungen an der Netzwerkkonfiguration vorzunehmen, die ursprünglich während der Grid-Implementierung festgelegt wurde. Manuelle Änderungen unter Verwendung von standardmäßigen Linux-Netzwerkbefehlen und Dateien werden möglicherweise nicht an allen StorageGRID-Diensten weitergegeben. Dabei bleiben Upgrades, Neustarts oder Recovery-Verfahren für Knoten nicht erhalten.
+
+
+NOTE: Das IP-Änderungsverfahren kann eine UnterbrechungsMaßnahme sein. Teile des Rasters sind möglicherweise erst verfügbar, wenn die neue Konfiguration angewendet wird.
+
+
+NOTE: Wenn Sie nur Änderungen an der Netznetzwerksubnetz-Liste vornehmen, verwenden Sie den Grid-Manager, um die Netzwerkkonfiguration hinzuzufügen oder zu ändern. Verwenden Sie andernfalls das Change IP-Tool, wenn der Grid Manager aufgrund eines Netzwerkkonfigurationsproblem nicht erreichbar ist, oder Sie führen gleichzeitig eine Änderung des Grid Network Routing und andere Netzwerkänderungen durch.
+
+
+TIP: Wenn Sie die IP-Adresse des Grid-Netzwerks für alle Knoten in der Tabelle ändern möchten, verwenden Sie die link:changing-ip-addresses-and-mtu-values-for-all-nodes-in-grid.html["Sonderverfahren für netzweite Änderungen"].
+
+
+
+== Ethernet-Schnittstellen
+
+Die eth0 zugewiesene IP-Adresse ist immer die Grid-Netzwerk-IP-Adresse des Grid-Node. Die eth1 zugewiesene IP-Adresse ist immer die Admin-Netzwerk-IP-Adresse des Grid-Node. Die eth2 zugewiesene IP-Adresse ist immer die Client-Netzwerk-IP-Adresse des Grid-Node.
+
+Beachten Sie, dass auf einigen Plattformen, z. B. StorageGRID Appliances, eth0, eth1 und eth2, aggregierte Schnittstellen bestehen, die aus untergeordneten Bridges oder Bindungen von physischen oder VLAN-Schnittstellen bestehen. Auf diesen Plattformen zeigt die Registerkarte *SSM* > *Resources* möglicherweise die Grid-, Admin- und Client-Netzwerk-IP-Adresse an, die anderen Schnittstellen zusätzlich zu eth0, eth1 oder eth2 zugewiesen ist.
+
+
+
+== DHCP
+
+Sie können DHCP nur während der Bereitstellungsphase einrichten. DHCP kann während der Konfiguration nicht eingerichtet werden. Sie müssen die Änderungsverfahren für die IP-Adresse verwenden, wenn Sie IP-Adressen, Subnetzmaske und Standard-Gateways für einen Grid-Node ändern möchten. Wenn Sie das Tool IP ändern verwenden, werden DHCP-Adressen statisch.
+
+
+
+== Hochverfügbarkeitsgruppen (High Availability groups, HA-Gruppen
+
+* Wenn eine Client-Netzwerkschnittstelle in einer HA-Gruppe enthalten ist, können Sie die Client-Netzwerk-IP-Adresse für diese Schnittstelle nicht in eine Adresse ändern, die sich außerhalb des für die HA-Gruppe konfigurierten Subnetzes befindet.
+* Sie können die Client-Netzwerk-IP-Adresse nicht in den Wert einer vorhandenen virtuellen IP-Adresse ändern, die einer HA-Gruppe zugewiesen ist, die auf der Client-Netzwerk-Schnittstelle konfiguriert ist.
+* Wenn eine Grid-Netzwerkschnittstelle in einer HA-Gruppe vorhanden ist, können Sie die Grid-Netzwerk-IP-Adresse für diese Schnittstelle nicht in eine Adresse ändern, die sich außerhalb des für die HA-Gruppe konfigurierten Subnetzes befindet.
+* Sie können die Grid-Netzwerk-IP-Adresse nicht in den Wert einer vorhandenen virtuellen IP-Adresse ändern, die einer auf der Grid-Netzwerkschnittstelle konfigurierten HA-Gruppe zugewiesen ist.
+

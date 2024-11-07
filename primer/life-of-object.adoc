@@ -1,0 +1,29 @@
+---
+permalink: primer/life-of-object.html 
+sidebar: sidebar 
+keywords: what is the object lifecycle 
+summary: Das Leben eines Objekts besteht aus verschiedenen Etappen. Jede Phase stellt die Vorgänge dar, die mit dem Objekt auftreten. 
+---
+= Das Leben eines Objekts
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Leben eines Objekts besteht aus verschiedenen Etappen. Jede Phase stellt die Vorgänge dar, die mit dem Objekt auftreten.
+
+Der Lebenszyklus eines Objekts umfasst das Aufnehmen, das Kopieren-Management, das Abrufen und Löschen von Objekten.
+
+* *Ingest*: Der Prozess einer S3-Client-Anwendung, die ein Objekt über HTTP im StorageGRID-System speichert. In dieser Phase beginnt das StorageGRID-System mit der Verwaltung des Objekts.
+* *Copy-Management*: Management replizierter und mit Erasure-Coded-Kopien in StorageGRID, wie in den ILM-Regeln der aktiven ILM-Richtlinien beschrieben. Während der Phase des Copy-Managements schützt StorageGRID Objektdaten vor Verlust, indem die angegebene Anzahl und der Typ der Objektkopien auf Storage Nodes oder in einem Cloud-Storage-Pool erstellt und aufrechterhalten wird.
+* *Retrieve*: Der Prozess einer Client-Anwendung, die auf ein vom StorageGRID-System gespeichertes Objekt zugreift. Der Client liest das Objekt, das aus einem Storage Node oder Cloud Storage Pool abgerufen wird.
+* *Löschen*: Der Vorgang, bei dem alle Objektkopien aus dem Raster entfernt werden. Objekte können entweder gelöscht werden, wenn eine Client-Applikation eine Löschanfrage an das StorageGRID System sendet, oder infolge eines automatischen Prozesses, der StorageGRID nach Ablauf der Nutzungsdauer des Objekts durchführt.
+
+
+image::../media/object_lifecycle.png[Diagramm mit der Lebensdauer eines Objekts]
+
+.Verwandte Informationen
+* link:../ilm/index.html["Objektmanagement mit ILM"]
+* link:using-information-lifecycle-management.html["Verwenden Sie das Information Lifecycle Management"]
+

@@ -1,0 +1,24 @@
+---
+permalink: admin/per-site-delivery-of-platform-services-messages.html 
+sidebar: sidebar 
+keywords: platform services message delivery 
+summary: Alle Vorgänge von Plattform-Services werden am Standort durchgeführt. 
+---
+= Bereitstellung von Plattform-Services am Standort
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Alle Vorgänge von Plattform-Services werden am Standort durchgeführt.
+
+Wenn ein Mandant einen Client verwendet, um einen S3 API Create-Vorgang für ein Objekt durch eine Verbindung zu einem Gateway-Node an Datacenter Standort 1 durchzuführen, wird die Benachrichtigung über diese Aktion von Datacenter Standort 1 ausgelöst und gesendet.
+
+image::../media/notification_multiple_sites.gif[Das Diagramm zeigt, dass die Aktion auf Objekt an Standort 1 eine Benachrichtigung von Standort 1 auslöst]
+
+Wenn der Client anschließend einen S3-API-Löschvorgang auf demselben Objekt von Data Center Site 2 aus durchführt, wird die Benachrichtigung über die Löschaktion ausgelöst und von Data Center Site 2 gesendet.
+
+image::../media/notifications_site_2.gif[Das Diagramm zeigt die Aktion für das Objekt von Standort 2 löst Benachrichtigungen von Standort 2 aus]
+
+Stellen Sie sicher, dass das Netzwerk an jedem Standort so konfiguriert ist, dass Plattformdienste-Meldungen an ihre Ziele gesendet werden können.

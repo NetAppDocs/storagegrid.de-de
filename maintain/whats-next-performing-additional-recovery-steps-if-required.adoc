@@ -1,0 +1,78 @@
+---
+permalink: maintain/whats-next-performing-additional-recovery-steps-if-required.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, corrective action, additional recovery 
+summary: Abhängig von den spezifischen Aktionen, die Sie unternommen haben, um die StorageGRID Nodes auf dem Ersatzhost auszuführen, müssen Sie möglicherweise zusätzliche Recovery-Schritte für jeden Node durchführen. 
+---
+= Was ist weiter: Führen Sie zusätzliche Recovery-Schritte, wenn erforderlich
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Abhängig von den spezifischen Aktionen, die Sie unternommen haben, um die StorageGRID Nodes auf dem Ersatzhost auszuführen, müssen Sie möglicherweise zusätzliche Recovery-Schritte für jeden Node durchführen.
+
+Die Node-Recovery ist abgeschlossen, wenn Sie keine Korrekturmaßnahmen vornehmen müssen, während Sie den Linux Host ersetzt oder den ausgefallenen Grid Node auf dem neuen Host wiederhergestellt haben.
+
+
+
+== Korrekturmaßnahmen und nächste Schritte
+
+Während des Austauschs von Nodes müssen Sie möglicherweise eine der folgenden Korrekturmaßnahmen ergreifen:
+
+* Sie mussten das Flag verwenden `--force`, um den Knoten zu importieren.
+* Bei any `<PURPOSE>` bezieht sich der Wert der Variablen der `BLOCK_DEVICE_<PURPOSE>` Konfigurationsdatei auf ein Blockgerät, das nicht die gleichen Daten enthält, die es vor dem Host-Ausfall gemacht hat.
+* Sie haben für den Knoten ausgegeben `storagegrid node force-recovery _node-name_`.
+* Sie haben ein neues Blockgerät hinzugefügt.
+
+
+Wenn Sie *eine* dieser Korrekturmaßnahmen ergriffen haben, müssen Sie zusätzliche Wiederherstellungsschritte durchführen.
+
+[cols="2a,1a"]
+|===
+| Art der Wiederherstellung | Nächster Schritt 
+
+
+ a| 
+Primärer Admin-Node
+ a| 
+link:configuring-replacement-primary-admin-node.html["Primären Ersatzadministrator-Knoten konfigurieren"]
+
+
+
+ a| 
+Nicht primärer Admin-Node
+ a| 
+link:selecting-start-recovery-to-configure-non-primary-admin-node.html["Wählen Sie Wiederherstellung starten, um einen nicht-primären Admin-Node zu konfigurieren"]
+
+
+
+ a| 
+Gateway-Node
+ a| 
+link:selecting-start-recovery-to-configure-gateway-node.html["Wählen Sie Wiederherstellung starten, um Gateway-Node zu konfigurieren"]
+
+
+
+ a| 
+Storage-Node (softwarebasiert):
+
+* Wenn Sie den Knoten mit dem Flag importieren mussten `--force`, oder Sie haben ausgegeben `storagegrid node force-recovery _node-name_`
+* Wenn Sie eine vollständige Neuinstallation des Knotens durchführen mussten, oder Sie müssen /var/local wiederherstellen
+
+ a| 
+link:selecting-start-recovery-to-configure-storage-node.html["Wählen Sie Wiederherstellung starten, um Speicherknoten zu konfigurieren"]
+
+
+
+ a| 
+Storage-Node (softwarebasiert):
+
+* Wenn Sie ein neues Blockgerät hinzugefügt haben.
+* Wenn für any der Wert der Variablen der `BLOCK_DEVICE_<PURPOSE>` Konfigurationsdatei auf ein Blockgerät verweist, das nicht die gleichen Daten enthält, `<PURPOSE>` die es vor dem Host-Ausfall gemacht hat.
+
+ a| 
+link:recovering-from-storage-volume-failure-where-system-drive-is-intact.html["Wiederherstellung nach einem Storage-Volume-Ausfall bei intaktem Systemlaufwerk"]
+
+|===

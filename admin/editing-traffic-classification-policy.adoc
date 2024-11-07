@@ -1,0 +1,52 @@
+---
+permalink: admin/editing-traffic-classification-policy.html 
+sidebar: sidebar 
+keywords: edit traffic classification policy 
+summary: Sie können eine Traffic-Klassifizierungsrichtlinie bearbeiten, um ihren Namen oder ihre Beschreibung zu ändern oder um Regeln oder Grenzen für die Richtlinie zu erstellen, zu bearbeiten oder zu löschen. 
+---
+= Richtlinie zur Verkehrsklassifizierung bearbeiten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können eine Traffic-Klassifizierungsrichtlinie bearbeiten, um ihren Namen oder ihre Beschreibung zu ändern oder um Regeln oder Grenzen für die Richtlinie zu erstellen, zu bearbeiten oder zu löschen.
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben die link:admin-group-permissions.html["Root-Zugriffsberechtigung"].
+
+
+.Schritte
+. Wählen Sie *CONFIGURATION* > *Network* > *traffic classification*.
++
+Die Seite für die Verkehrsklassifizierungsrichtlinien wird angezeigt, und die vorhandenen Richtlinien werden in einer Tabelle aufgeführt.
+
+. Bearbeiten Sie die Richtlinie über das Menü Aktionen oder die Detailseite. Siehe link:../admin/creating-traffic-classification-policies.html["Erstellen von Richtlinien zur Verkehrsklassifizierung"] für das, was Sie teilnehmen.
++
+[role="tabbed-block"]
+====
+.Menü „Aktionen“
+--
+.. Aktivieren Sie das Kontrollkästchen für die Richtlinie.
+.. Wählen Sie *Actions* > *Edit*.
+
+
+--
+.Detailseite
+--
+.. Wählen Sie den Richtliniennamen aus.
+.. Klicken Sie neben dem Richtliniennamen auf die Schaltfläche *Bearbeiten*.
+
+
+--
+====
+. Bearbeiten Sie für den Schritt Richtliniennamen eingeben optional den Richtliniennamen oder die Beschreibung, und wählen Sie *Weiter* aus.
+. Fügen Sie für den Schritt übereinstimmende Regeln hinzufügen optional eine Regel hinzu oder bearbeiten Sie die Werte *Typ* und *Match* der bestehenden Regel und wählen Sie *Weiter*.
+. Für den Schritt Grenzen festlegen können Sie optional ein Limit hinzufügen, bearbeiten oder löschen und dann *Weiter* auswählen.
+. Überprüfen Sie die aktualisierte Richtlinie, und wählen Sie *Speichern und fortfahren*.
++
+Die an der Richtlinie vorgenommenen Änderungen werden gespeichert, und der Netzwerkverkehr wird nun gemäß den Richtlinien zur Klassifizierung von Verkehrsmeldungen verarbeitet. Sie können Verkehrsdiagramme anzeigen und überprüfen, ob die Richtlinien die von Ihnen erwarteten Verkehrsgrenzwerte durchsetzen.
+
+

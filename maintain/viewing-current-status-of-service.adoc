@@ -1,0 +1,38 @@
+---
+permalink: maintain/viewing-current-status-of-service.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, service, status 
+summary: Sie können jederzeit den aktuellen Status einer auf einem Grid-Node ausgeführten Services anzeigen. 
+---
+= Zeigt den aktuellen Servicestatus an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können jederzeit den aktuellen Status einer auf einem Grid-Node ausgeführten Services anzeigen.
+
+.Bevor Sie beginnen
+Sie haben die `Passwords.txt` Datei.
+
+.Schritte
+. Melden Sie sich beim Grid-Node an:
++
+.. Geben Sie den folgenden Befehl ein: `ssh admin@_grid_node_IP_`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+.. Geben Sie den folgenden Befehl ein, um zu root zu wechseln: `su -`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+
+
++
+Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `#`.
+
+. Den aktuellen Status eines Dienstes anzeigen, der auf einem Grid-Knoten ausgeführt wird: `*Service_servicename_ Status* der aktuelle Status des angeforderten Dienstes, der auf dem Grid-Knoten ausgeführt wird, wird gemeldet (wird ausgeführt oder nicht). Beispiel:
++
+[listing]
+----
+cmn running for 1d, 14h, 21m, 2s
+----
+. Melden Sie sich von der Befehls-Shell ab: `*exit*`
+

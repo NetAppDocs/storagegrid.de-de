@@ -1,0 +1,66 @@
+---
+permalink: maintain/restoring-prometheus-metrics-primary-admin-node.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, restore metrics, restore prometheus, primary admin node 
+summary: Optional können Sie die historischen Metriken aufbewahren, die von Prometheus auf einem primären Admin-Node gewartet wurden, der ausgefallen ist. Die Prometheus Kennzahlen können nur wiederhergestellt werden, wenn Ihr StorageGRID System einen anderen Admin-Knoten enthält. 
+---
+= Stellen Sie bei der Wiederherstellung des primären Admin-Knotens Prometheus-Kennzahlen wieder her
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Optional können Sie die historischen Metriken aufbewahren, die von Prometheus auf einem primären Admin-Node gewartet wurden, der ausgefallen ist. Die Prometheus Kennzahlen können nur wiederhergestellt werden, wenn Ihr StorageGRID System einen anderen Admin-Knoten enthält.
+
+.Bevor Sie beginnen
+* Der wiederhergestellte Admin-Knoten wird installiert und ausgeführt.
+* Das StorageGRID-System enthält mindestens zwei Admin-Nodes.
+* Sie haben die `Passwords.txt` Datei.
+* Sie haben die Provisionierungs-Passphrase.
+
+
+.Über diese Aufgabe
+Wenn ein Admin-Knoten ausfällt, gehen die in der Prometheus-Datenbank auf dem Admin-Knoten gepflegten Kennzahlen verloren. Wenn Sie den Admin-Knoten wiederherstellen, erstellt der Software-Installationsprozess eine neue Prometheus-Datenbank. Nachdem der wiederhergestellte Admin-Node gestartet wurde, zeichnet er die Metriken auf, als ob Sie eine neue Installation des StorageGRID-Systems durchgeführt hatten.
+
+Wenn Sie einen primären Admin-Knoten wiederhergestellt haben und Ihr StorageGRID-System einen anderen Admin-Knoten hat, können Sie die historischen Metriken wiederherstellen, indem Sie die Prometheus-Datenbank von einem nicht-primären Admin-Knoten (den _Source Admin-Knoten_) auf den wiederhergestellten primären Admin-Knoten kopieren. Wenn Ihr System nur über einen primären Admin-Knoten verfügt, können Sie die Prometheus-Datenbank nicht wiederherstellen.
+
+
+NOTE: Das Kopieren der Prometheus-Datenbank dauert möglicherweise ein Stunde oder länger. Einige Grid Manager-Funktionen sind nicht verfügbar, während Dienste auf dem Quell-Admin-Node angehalten werden.
+
+.Schritte
+. Melden Sie sich beim Quell-Admin-Node an:
++
+.. Geben Sie den folgenden Befehl ein: `ssh admin@_grid_node_IP_`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+.. Geben Sie den folgenden Befehl ein, um zu root zu wechseln: `su -`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+
+
+. Beenden Sie vom Quell-Admin-Node den Prometheus-Service: `service prometheus stop`
+. Führen Sie die folgenden Schritte auf dem wiederhergestellten Admin-Knoten aus:
++
+.. Melden Sie sich beim wiederhergestellten Admin-Knoten an:
++
+... Geben Sie den folgenden Befehl ein: `ssh admin@_grid_node_IP_`
+... Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+... Geben Sie den folgenden Befehl ein, um zu root zu wechseln: `su -`
+... Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+
+
+.. Stoppen Sie den Prometheus-Service: `service prometheus stop`
+.. Fügen Sie den SSH-privaten Schlüssel zum SSH-Agenten hinzu. Eingabe:``ssh-add``
+.. Geben Sie das in der Datei aufgeführte SSH-Zugriffspasswort ein `Passwords.txt`.
+.. Kopieren Sie die Prometheus-Datenbank vom Quell-Admin-Knoten auf den wiederhergestellten Admin-Knoten: `/usr/local/prometheus/bin/prometheus-clone-db.sh Source_Admin_Node_IP`
+.. Wenn Sie dazu aufgefordert werden, drücken Sie *Enter*, um zu bestätigen, dass Sie die neue Prometheus-Datenbank auf dem wiederhergestellten Admin-Knoten zerstören möchten.
++
+Die ursprüngliche Prometheus-Datenbank und ihre historischen Daten werden auf den wiederhergestellten Admin-Knoten kopiert. Wenn der Kopiervorgang abgeschlossen ist, startet das Skript den wiederhergestellten Admin-Knoten. Der folgende Status wird angezeigt:
+
++
+Datenbank geklont, Dienste starten
+
+.. Wenn Sie keinen passwortlosen Zugriff auf andere Server mehr benötigen, entfernen Sie den privaten Schlüssel vom SSH-Agent. Eingabe:``ssh-add -D``
+
+
+. Starten Sie den Prometheus-Dienst auf dem Quell-Admin-Knoten neu.`service prometheus start`
+

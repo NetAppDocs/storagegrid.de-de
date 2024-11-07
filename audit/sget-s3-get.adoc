@@ -1,0 +1,241 @@
+---
+permalink: audit/sget-s3-get.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, SGET, S3 GET 
+summary: Wenn ein S3-Client eine GET-Transaktion ausgibt, wird eine Anfrage gestellt, um ein Objekt abzurufen oder die Objekte in einem Bucket aufzulisten. Diese Meldung wird vom Server ausgegeben, wenn die Transaktion erfolgreich ist. 
+---
+= SGET S3 ABRUFEN
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn ein S3-Client eine GET-Transaktion ausgibt, wird eine Anforderung gestellt, ein Objekt abzurufen, die Objekte in einem Bucket aufzulisten oder eine Bucket/Objektunterressource zu entfernen. Diese Meldung wird vom Server ausgegeben, wenn die Transaktion erfolgreich ist.
+
+[cols="1a,1a,4a"]
+|===
+| Codieren | Feld | Beschreibung 
+
+
+ a| 
+CBID
+ a| 
+Kennung Für Inhaltsblock
+ a| 
+Die eindeutige Kennung des angeforderten Inhaltsblocks. Wenn die CBID unbekannt ist, ist dieses Feld auf 0 gesetzt. Vorgänge in Buckets enthalten dieses Feld nicht.
+
+
+
+ a| 
+CNCH.
+ a| 
+Kopfzeile Der Konsistenzgruppe
+ a| 
+Der Wert der Kopfzeile der Consistency-Control HTTP-Anfrage, wenn diese in der Anforderung vorhanden ist.
+
+
+
+ a| 
+CNID
+ a| 
+Verbindungskennung
+ a| 
+Die eindeutige Systemkennung für die TCP/IP-Verbindung.
+
+
+
+ a| 
+CSIZ
+ a| 
+Inhaltsgröße
+ a| 
+Die Größe des abgerufenen Objekts in Byte. Vorgänge in Buckets enthalten dieses Feld nicht.
+
+
+
+ a| 
+HTRH
+ a| 
+HTTP-Anforderungskopf
+ a| 
+Liste der während der Konfiguration ausgewählten Namen und Werte für protokollierte HTTP-Anfragen.
+
+ `X-Forwarded-For` Wird automatisch einbezogen, wenn er in der Anfrage vorhanden ist und wenn der `X-Forwarded-For` Wert von der IP-Adresse des Absenders der Anfrage (SAIP-Überwachungsfeld) abweicht.
+
+
+
+ a| 
+LITY
+ a| 
+ListObjekteV2
+ a| 
+Eine _v2 Format_ Antwort wurde angefordert. Weitere Informationen finden Sie unter https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjectsV2.html["AWS ListObjectsV2"^]. Nur für GET Bucket-Vorgänge.
+
+
+
+ a| 
+NCHD
+ a| 
+Anzahl der Kinder
+ a| 
+Enthält Schlüssel und allgemeine Präfixe. Nur für GET Bucket-Vorgänge.
+
+
+
+ a| 
+KLINGELTE
+ a| 
+Bereichsleser
+ a| 
+Nur für Bereichslesevorgänge. Gibt den Bereich der Bytes an, die von dieser Anforderung gelesen wurden. Der Wert nach dem Schrägstrich (/) zeigt die Größe des gesamten Objekts an.
+
+
+
+ a| 
+RSLT
+ a| 
+Ergebniscode
+ a| 
+Ergebnis der GET-Transaktion. Das Ergebnis ist immer:
+
+ERFOLGREICH
+
+
+
+ a| 
+S3AI
+ a| 
+S3-Mandantenkonto-ID (Absender anfordern)
+ a| 
+Die Mandanten-Konto-ID des Benutzers, der die Anforderung gesendet hat. Ein leerer Wert zeigt anonymen Zugriff an.
+
+
+
+ a| 
+S3AK
+ a| 
+S3 Access Key ID (Absender anfordern)
+ a| 
+Die gehashte S3-Zugriffsschlüssel-ID für den Benutzer, der die Anforderung gesendet hat. Ein leerer Wert zeigt anonymen Zugriff an.
+
+
+
+ a| 
+S3BK
+ a| 
+S3-Bucket
+ a| 
+Der S3-Bucket-Name
+
+
+
+ a| 
+S3KY
+ a| 
+S3-Schlüssel
+ a| 
+Der S3-Schlüsselname, nicht einschließlich des Bucket-Namens. Vorgänge in Buckets enthalten dieses Feld nicht.
+
+
+
+ a| 
+S3SR
+ a| 
+S3-Unterressource
+ a| 
+Der Bucket oder die Objektunterressource, an der sie betrieben wird, falls zutreffend
+
+
+
+ a| 
+SACC
+ a| 
+S3-Mandantenkontoname (Absender der Anfrage)
+ a| 
+Der Name des Mandantenkontos für den Benutzer, der die Anforderung gesendet hat. Für anonyme Anfragen leer.
+
+
+
+ a| 
+SAIP
+ a| 
+IP-Adresse (Absender anfordern)
+ a| 
+Die IP-Adresse der Client-Anwendung, die die Anforderung gestellt hat.
+
+
+
+ a| 
+SBAC
+ a| 
+S3-Mandantenkontoname (Bucket-Eigentümer)
+ a| 
+Der Mandantenkontoname für den Bucket-Eigentümer. Wird zur Identifizierung von Account- oder anonymen Zugriffen verwendet.
+
+
+
+ a| 
+SBAI
+ a| 
+S3-Mandantenkonto-ID (Bucket-Eigentümer)
+ a| 
+Die Mandanten-Account-ID des Eigentümers des Ziel-Buckets. Wird zur Identifizierung von Account- oder anonymen Zugriffen verwendet.
+
+
+
+ a| 
+SUSR
+ a| 
+S3-Benutzer-URN (Absender anfordern)
+ a| 
+Die Mandanten-Account-ID und der Benutzername des Benutzers, der die Anforderung macht. Der Benutzer kann entweder ein lokaler Benutzer oder ein LDAP-Benutzer sein. Beispiel: `urn:sgws:identity::03393893651506583485:root`
+
+Für anonyme Anfragen leer.
+
+
+
+ a| 
+ZEIT
+ a| 
+Zeit
+ a| 
+Gesamtbearbeitungszeit für die Anfrage in Mikrosekunden.
+
+
+
+ a| 
+TLIP
+ a| 
+Vertrauenswürdige Load Balancer-IP-Adresse
+ a| 
+Wenn die Anforderung von einem vertrauenswürdigen Layer 7 Load Balancer weitergeleitet wurde, ist die IP-Adresse des Load Balancer.
+
+
+
+ a| 
+TRNC
+ a| 
+Abgeschnitten oder nicht abgeschnitten
+ a| 
+Setzen Sie auf false, wenn alle Ergebnisse zurückgegeben wurden. Setzen Sie auf wahr, wenn weitere Ergebnisse verfügbar sind, um zurückzukehren. Nur für GET Bucket-Vorgänge.
+
+
+
+ a| 
+UUID
+ a| 
+Universell Eindeutige Kennung
+ a| 
+Die Kennung des Objekts im StorageGRID System.
+
+
+
+ a| 
+VSID
+ a| 
+Version-ID
+ a| 
+Die Version-ID der spezifischen Version eines Objekts, das angefordert wurde. Für Vorgänge in Buckets und Objekten mit nicht versionierten Buckets wird dieses Feld nicht berücksichtigt.
+
+|===

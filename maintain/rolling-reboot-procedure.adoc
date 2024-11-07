@@ -1,0 +1,134 @@
+---
+permalink: maintain/rolling-reboot-procedure.html 
+sidebar: sidebar 
+keywords: reboot nodes, rolling reboot procedure 
+summary: Sie können einen Rolling Reboot durchführen, um mehrere Grid-Nodes ohne Serviceunterbrechung neu zu starten. 
+---
+= Führen Sie einen Rolling-Neustart durch
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können einen Rolling Reboot durchführen, um mehrere Grid-Nodes ohne Serviceunterbrechung neu zu starten.
+
+.Bevor Sie beginnen
+* Sie sind beim Grid Manager auf dem primären Admin-Knoten angemeldet und verwenden einen link:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
++
+
+NOTE: Sie müssen beim primären Admin-Knoten angemeldet sein, um dieses Verfahren durchführen zu können.
+
+* Sie haben die link:../admin/admin-group-permissions.html["Berechtigung für Wartung oder Root-Zugriff"].
+
+
+.Über diese Aufgabe
+Gehen Sie wie folgt vor, wenn Sie mehrere Nodes gleichzeitig neu booten müssen. Sie können dieses Verfahren beispielsweise nach dem Ändern des FIPS-Modus für das Grid verwendenlink:../admin/manage-tls-ssh-policy.html["TLS- und SSH-Sicherheitsrichtlinie"]. Wenn der FIPS-Modus geändert wird, müssen Sie alle Nodes neu booten, damit die Änderung wirksam wird.
+
+
+TIP: Wenn Sie nur einen Node neu booten müssen, können Sie link:../maintain/rebooting-grid-node-from-grid-manager.html["Booten Sie den Node über die Registerkarte Aufgaben neu"].
+
+Wenn StorageGRID Grid-Nodes neu gebootet, führt dies den `reboot` Befehl auf jedem Node aus, wodurch der Node heruntergefahren und neu gestartet wird. Alle Dienste werden automatisch neu gestartet.
+
+* Durch Neubooten eines VMware-Node wird die virtuelle Maschine neu gebootet.
+* Durch Neubooten eines Linux Node wird der Container neu gebootet.
+* Durch Neubooten eines Node der StorageGRID-Appliance wird der Computing-Controller neu gebootet.
+
+
+Beim Rolling Reboot-Verfahren können mehrere Nodes gleichzeitig neu gebootet werden, mit folgenden Ausnahmen:
+
+* Zwei Nodes desselben Typs werden nicht gleichzeitig neu gebootet.
+* Gateway Nodes und Admin-Nodes werden nicht gleichzeitig neu gestartet.
+
+
+Stattdessen werden diese Nodes sequenziell neu gebootet, um sicherzustellen, dass HA-Gruppen, Objektdaten und kritische Node-Services immer verfügbar bleiben.
+
+Wenn Sie den primären Admin-Node neu starten, verliert Ihr Browser vorübergehend den Zugriff auf den Grid-Manager, sodass Sie den Vorgang nicht mehr überwachen können. Aus diesem Grund wird der primäre Admin-Node zuletzt neu gestartet.
+
+
+
+== Führen Sie einen Rolling-Neustart durch
+
+Wählen Sie die Knoten aus, die neu gestartet werden sollen, überprüfen Sie Ihre Auswahl, starten Sie den Neustart und überwachen Sie den Fortschritt.
+
+
+
+=== Wählen Sie Nodes aus
+
+Öffnen Sie als ersten Schritt die Seite Rolling Reboot, und wählen Sie die Knoten aus, die neu gestartet werden sollen.
+
+.Schritte
+. Wählen Sie *MAINTENANCE* > *Tasks* > *Rolling reboot*.
+. Überprüfen Sie den Verbindungsstatus und die Warnsymbole in der Spalte *Knotenname*.
++
+
+TIP: Sie können einen Node nicht neu booten, wenn er vom Grid getrennt ist. Die Kontrollkästchen sind für Knoten mit den folgenden Symbolen deaktiviert: image:../media/icon_alarm_gray_administratively_down.png["Graues Fragezeichen-Symbol"] Oder image:../media/icon_alarm_blue_unknown.png["Blaues Fragezeichen-Symbol"].
+
+. Wenn Knoten aktive Warnungen haben, überprüfen Sie die Liste der Warnungen in der Spalte *Alert summary*.
++
+
+TIP: Um alle aktuellen Warnungen für einen Knoten anzuzeigen, können Sie auch die link:../monitor/viewing-overview-tab.html["Knoten > Registerkarte Übersicht"].
+
+. Führen Sie optional die empfohlenen Aktionen durch, um aktuelle Warnmeldungen zu beheben.
+. Wenn alle Knoten verbunden sind und Sie alle neu starten möchten, aktivieren Sie optional das Kontrollkästchen in der Tabellenüberschrift und wählen Sie *alles auswählen*. Wählen Sie andernfalls jeden Node aus, der neu gebootet werden soll.
++
+Sie können die Filteroptionen der Tabelle verwenden, um Untergruppen von Knoten anzuzeigen. Beispielsweise können Sie nur Storage Nodes oder alle Nodes an einem bestimmten Standort anzeigen und auswählen.
+
+. Wählen Sie *Auswahl überprüfen*.
+
+
+
+
+=== Auswahl überprüfen
+
+In diesem Schritt können Sie bestimmen, wie lange das gesamte Neustarten dauern könnte, und bestätigen, dass Sie die richtigen Nodes ausgewählt haben.
+
+. Überprüfen Sie auf der Seite „Auswahl prüfen“ die Zusammenfassung, die angibt, wie viele Knoten neu gestartet werden sollen, und die geschätzte Gesamtzeit für den Neustart aller Knoten.
+. Um einen bestimmten Knoten aus der Liste des Neustarts zu entfernen, wählen Sie optional *Entfernen*.
+. Wenn Sie weitere Knoten hinzufügen möchten, wählen Sie *Vorheriger Schritt*, wählen Sie die zusätzlichen Knoten aus und wählen Sie *Auswahl prüfen*.
+. Wenn Sie bereit sind, den Rolling Reboot-Vorgang für alle ausgewählten Knoten zu starten, wählen Sie *Reboot Nodes*.
+. Wenn Sie den primären Admin-Knoten neu starten möchten, lesen Sie die Informationsmeldung und wählen Sie *Ja* aus.
++
+
+NOTE: Der primäre Admin-Node ist der letzte neu zu bootende Node. Während dieses Knotens neu gestartet wird, geht die Verbindung Ihres Browsers verloren. Wenn der primäre Admin-Knoten wieder verfügbar ist, müssen Sie die Seite Rolling Reboot neu laden.
+
+
+
+
+
+=== Überwachen Sie einen laufenden Neustart
+
+Während das Rolling-Reboot-Verfahren ausgeführt wird, können Sie es vom primären Admin-Node aus überwachen.
+
+.Schritte
+. Überprüfen Sie den Gesamtfortschritt des Vorgangs, der folgende Informationen enthält:
++
+** Anzahl der neu gebooteten Nodes
+** Anzahl der Nodes, die gerade neu gebootet werden
+** Anzahl der Nodes, die noch neu gebootet werden müssen
+
+
+. Überprüfen Sie die Tabelle für jeden Node-Typ.
++
+Die Tabellen bieten einen Fortschrittsbalken des Vorgangs auf jedem Node und zeigen die Neubootphase für diesen Node an. Dabei kann eine der folgenden sein:
+
++
+** Warten auf Neustart
+** Dienste werden angehalten
+** System wird neu gestartet
+** Dienste werden gestartet
+** Neustart abgeschlossen
+
+
+
+
+
+
+== Stoppen Sie den Rolling-Neustart
+
+Sie können das Rolling-Reboot-Verfahren vom primären Admin-Node aus stoppen. Wenn Sie das Verfahren beenden, schließen alle Knoten mit dem Status „Dienste anhalten“, „System neu starten“ oder „Dienste starten“ den Neustartvorgang ab. Diese Knoten werden jedoch nicht mehr im Rahmen des Verfahrens nachverfolgt.
+
+.Schritte
+. Wählen Sie *MAINTENANCE* > *Tasks* > *Rolling reboot*.
+. Wählen Sie im Schritt *Monitor reboot* die Option *Neustart stoppen*.
+

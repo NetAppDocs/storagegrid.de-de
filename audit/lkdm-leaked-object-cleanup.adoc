@@ -1,0 +1,96 @@
+---
+permalink: audit/lkdm-leaked-object-cleanup.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, LKDM, Leaked Object Cleanup 
+summary:  
+---
+= LKDM: Leaked Object Cleanup
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Diese Meldung wird generiert, wenn ein durchgesicktes Stück bereinigt oder gelöscht wurde. Ein Chunk kann Teil eines replizierten Objekts oder eines Erasure-Coding-Objekts sein.
+
+[cols="1a,1a,4a"]
+|===
+| Codieren | Feld | Beschreibung 
+
+
+ a| 
+KLOK
+ a| 
+Chunk-Position
+ a| 
+Der Dateipfad des durchgesickerten Blocks, der gelöscht wurde.
+
+
+
+ a| 
+CTYP
+ a| 
+Chunk-Typ
+ a| 
+Typ des Chunk:
+
+`ec: Erasure-coded object chunk`
+
+`repl: Replicated object chunk`
+
+
+
+ a| 
+LTYP
+ a| 
+Lecktyp
+ a| 
+Die fünf Arten von Leckagen, die erkannt werden können:
+
+`object_leaked: Object doesn’t exist in the grid`
+
+`location_leaked: Object exists in the grid, but found location doesn’t belong to object`
+
+`mup_seg_leaked: Multipart upload was stopped or not completed, and the segment/part was left out`
+
+`segment_leaked: Parent UUID/CBID (associated container object) is valid but doesn't contain this segment`
+
+`no_parent: Container object is deleted, but object segment was left out and not deleted`
+
+
+
+ a| 
+CTIM
+ a| 
+Chunk-Erstellungszeit
+ a| 
+Die Zeit, zu der der durchgesickerte Block erstellt wurde.
+
+
+
+ a| 
+UUID
+ a| 
+Universell Eindeutige Kennung
+ a| 
+Die Kennung des Objekts, zu dem das Chunk gehört.
+
+
+
+ a| 
+CBID
+ a| 
+Kennung Für Inhaltsblock
+ a| 
+CBID des Objekts, zu dem der durchgesickerte Block gehört.
+
+
+
+ a| 
+CSIZ
+ a| 
+Inhaltsgröße
+ a| 
+Die Größe des Chunk in Byte.
+
+|===

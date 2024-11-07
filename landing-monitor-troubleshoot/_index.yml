@@ -1,0 +1,51 @@
+---
+indexpage:
+  title: Überwachung und Fehlerbehebung für ein StorageGRID System
+  summary: Wenn Ihr System betriebsbereit ist, sollten Sie seine Aktivitäten regelmäßig
+    überwachen und etwaige Warnmeldungen beheben und beheben. Sie können auch einen
+    externen Syslog-Server konfigurieren, SNMP-Überwachung verwenden oder zusätzliche
+    Daten sammeln.
+  keywords: monitor, troubleshoot
+  lead: Wenn Ihr System betriebsbereit ist, sollten Sie seine Aktivitäten regelmäßig
+    überwachen und etwaige Warnmeldungen beheben und beheben. Sie können auch einen
+    externen Syslog-Server konfigurieren, SNMP-Überwachung verwenden oder zusätzliche
+    Daten sammeln.
+  tiles:
+  - title: Überwachen Sie Ihr System
+    links:
+    - title: Management-Dashboard
+      url: "../monitor/viewing-dashboard.html"
+    - title: Seite Knoten anzeigen
+      url: "../monitor/viewing-nodes-page.html"
+    - title: Systemzustand überwachen
+      url: "../monitor/monitoring-system-health.html"
+    - title: Monitoring der Storage-Kapazität
+      url: "../monitor/monitoring-storage-capacity.html"
+  - title: Verwalten von Warnmeldungen und Benachrichtigungen
+    links:
+    - title: Verwalten von Meldungen
+      url: "../monitor/managing-alerts.html"
+    - title: Erstellen benutzerdefinierter Warnmeldungen
+      url: "../monitor/creating-custom-alert-rules.html"
+    - title: Verwalten von Warn-E-Mails
+      url: "../monitor/email-alert-notifications.html"
+    - title: Verwenden Sie SNMP-Überwachung
+      url: "../monitor/using-snmp-monitoring.html"
+  - title: Verwenden Sie Überwachungsmeldungen und andere Protokolle
+    links:
+    - title: Konfigurieren Sie Überwachungsmeldungen
+      url: "../monitor/configure-audit-messages.html"
+    - title: Verwenden Sie einen externen Syslog-Server
+      url: "../monitor/considerations-for-external-syslog-server.html"
+    - title: Prüfung von Audit-Protokollen
+      url: "../audit/index.html"
+    - title: Referenz für Protokolldateien
+      url: "../monitor/logs-files-reference.html"
+  - title: Diagnose und Fehlerbehebung
+    links:
+    - title: Prüfen von Support-Kennzahlen
+      url: "../monitor/reviewing-support-metrics.html"
+    - title: Führen Sie eine Diagnose aus
+      url: "../monitor/running-diagnostics.html"
+    - title: Fehlerbehebung bei häufigen Problemen
+      url: "../troubleshoot/index.html"

@@ -1,0 +1,211 @@
+---
+permalink: upgrade/removed-or-deprecated-features.html 
+sidebar: sidebar 
+keywords:  
+summary: Einige Funktionen wurden in dieser Version entfernt oder veraltet. Überprüfen Sie diese Elemente, um zu verstehen, ob Sie Clientanwendungen aktualisieren oder Ihre Konfiguration vor dem Upgrade ändern müssen. 
+---
+= Entfernte oder veraltete Funktionen und Fähigkeiten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Einige Funktionen wurden in dieser Version entfernt oder veraltet. Überprüfen Sie diese Elemente, um zu verstehen, ob Sie Clientanwendungen aktualisieren oder Ihre Konfiguration vor dem Upgrade ändern müssen.
+
+
+
+== Begriffsbestimmung
+
+Veraltet:: Das Feature *sollte nicht* in neuen Produktionsumgebungen verwendet werden. Vorhandene Produktionsumgebungen können die Funktion weiterhin nutzen.
+Ende des Supports:: Zuletzt ausgelieferte Version, die das Feature unterstützt. In einigen Fällen kann die Dokumentation für das Feature zu diesem Zeitpunkt entfernt werden.
+Entfernt:: Erste Version, die *das Feature nicht unterstützt.
+
+
+
+
+== StorageGRID Support-Einstellung des Features
+
+Veraltete Funktionen werden in den Hauptversionen von N+2 entfernt. Wenn beispielsweise ein Feature in Version N veraltet ist (z. B. 6.3), ist die letzte Version, in der das Feature vorhanden ist, N+1 (z. B. 6.4). Version N+2 (z. B. 6.5) ist die erste Version, wenn das Feature im Produkt nicht vorhanden ist.
+
+Weitere Informationen finden Sie im https://mysupport.netapp.com/site/info/version-support["Seite „Software Version Support“"^].
+
+
+NOTE: In bestimmten Situationen stellt NetApp den Support für bestimmte Funktionen möglicherweise früher als angegeben ein.
+
+[cols="2a,1a,1a,1a,3a"]
+|===
+| Funktion | Veraltet | Ende des Supports | Entfernt | Links zu früheren Dokumenten 
+
+
+ a| 
+Alte Alarme (_Not Alerts_)
+ a| 
+11,7
+ a| 
+11,8
+ a| 
+11,9
+ a| 
+https://docs.netapp.com/us-en/storagegrid-118/monitor/alarms-reference.html["Alarmreferenz (StorageGRID 11.8)"^]
+
+
+
+ a| 
+Unterstützung für Archive Node
+ a| 
+11,7
+ a| 
+11,8
+ a| 
+11,9
+ a| 
+https://docs.netapp.com/us-en/storagegrid-118/maintain/considerations-for-decommissioning-admin-or-gateway-nodes.html["Überlegungen bei der Stilllegung von Archivierungs-Nodes (StorageGRID 11.8)"^]
+
+*Hinweis*: Vor dem Upgrade müssen Sie:
+
+. Alle Archive Nodes werden stillgelegt. Siehe https://docs.netapp.com/us-en/storagegrid-118/maintain/grid-node-decommissioning.html["Stilllegung von Grid-Nodes (StorageGRID 11.8-Dokumentstandort)"^].
+. Entfernen Sie alle Archive Node-Referenzen aus Speicherpools und ILM-Richtlinien. Siehe https://kb.netapp.com/hybrid/StorageGRID/Maintenance/StorageGRID_11.9_software_upgrade_resolution_guide["NetApp Knowledge Base: Leitfaden zur Lösung von StorageGRID 11.9-Software-Upgrades"^].
+
+
+
+
+ a| 
+Audit-Export über CIFS/Samba
+ a| 
+11,1
+ a| 
+11,6
+ a| 
+11,7
+ a| 
+
+
+
+ a| 
+CLB-Service
+ a| 
+11,4
+ a| 
+11,6
+ a| 
+11,7
+ a| 
+
+
+
+ a| 
+Docker Container-Engine
+ a| 
+11,8
+ a| 
+11,9
+ a| 
+NOCH AUSSTEHEND
+ a| 
+Die Unterstützung für Docker als Container-Engine für rein softwarebasierte Implementierungen ist veraltet. Docker wird in einer zukünftigen Version durch eine weitere Container-Engine ersetzt. Siehe link:../ubuntu/software-requirements.html#docker-versions-tested["Liste der derzeit unterstützten Docker-Versionen"].
+
+
+
+ a| 
+NFS-Audit-Export
+ a| 
+11,8
+ a| 
+11,9
+ a| 
+12,0
+ a| 
+https://docs.netapp.com/us-en/storagegrid-118/admin/configuring-audit-client-access.html["Audit-Client-Zugriff für NFS konfigurieren (StorageGRID 11.8)"^]
+
+
+
+ a| 
+Swift API-Unterstützung
+ a| 
+11,7
+ a| 
+11,9
+ a| 
+12,0
+ a| 
+https://docs.netapp.com/us-en/storagegrid-118/swift/index.html["Verwendung der Swift REST API (StorageGRID 11.8)"^]
+
+
+
+ a| 
+RHEL 8,8
+ a| 
+11,9
+ a| 
+11,9
+ a| 
+12,0
+ a| 
+
+
+
+ a| 
+RHEL 9,0
+ a| 
+11,9
+ a| 
+11,9
+ a| 
+12,0
+ a| 
+
+
+
+ a| 
+RHEL 9,2
+ a| 
+11,9
+ a| 
+11,9
+ a| 
+12,0
+ a| 
+
+
+
+ a| 
+Ubuntu 18.04
+ a| 
+11,9
+ a| 
+11,9
+ a| 
+12,0
+ a| 
+
+
+
+ a| 
+Ubuntu 20.04
+ a| 
+11,9
+ a| 
+11,9
+ a| 
+12,0
+ a| 
+
+
+
+ a| 
+Debian 11
+ a| 
+11,9
+ a| 
+11,9
+ a| 
+12,0
+ a| 
+
+|===
+Siehe auch:
+
+* link:../upgrade/changes-to-grid-management-api.html["Änderungen an der Grid-Management-API"]
+* link:../upgrade/changes-to-tenant-management-api.html["Änderungen an der Mandantenmanagement-API"]
+

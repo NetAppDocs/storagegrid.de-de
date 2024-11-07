@@ -1,0 +1,106 @@
+---
+permalink: vmware/collecting-information-about-your-deployment-environment.html 
+sidebar: sidebar 
+keywords: how to collect information about your deployment environment 
+summary: Bevor Sie Grid-Nodes bereitstellen, müssen Sie Informationen über Ihre Netzwerkkonfiguration und die VMware Umgebung erfassen. 
+---
+= Erfassen von Informationen über die Bereitstellungsumgebung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor Sie Grid-Nodes bereitstellen, müssen Sie Informationen über Ihre Netzwerkkonfiguration und die VMware Umgebung erfassen.
+
+
+NOTE: Es ist effizienter, eine einzelne Installation aller Nodes durchzuführen, anstatt zu einem späteren Zeitpunkt einige Nodes zu installieren.
+
+
+
+== VMware Informationen
+
+Sie müssen in die Bereitstellungsumgebung zugreifen und Informationen über die VMware Umgebung, die für Grid, Administrator und Client-Netzwerke erstellten Netzwerke und die Storage-Volume-Typen, die Sie für Storage-Nodes verwenden möchten, sammeln.
+
+Sie müssen Informationen über Ihre VMware Umgebung erfassen. Dazu gehören folgende:
+
+* Benutzername und Passwort für ein VMware vSphere-Konto mit entsprechenden Berechtigungen zum Abschließen der Bereitstellung.
+* Informationen zur Host-, Datastore- und Netzwerkkonfiguration für die einzelnen virtuellen StorageGRID-Nodes
+
+
+
+NOTE: VMware Live vMotion bewirkt, dass die Taktzeit der Virtual Machine zu springen und nicht für Grid-Nodes jeglicher Art unterstützt wird. Obwohl selten, falsche Uhrzeiten können zum Verlust von Daten oder Konfigurations-Updates führen.
+
+
+
+== Informationen zum Grid-Netzwerk
+
+Sie müssen Informationen über das für das StorageGRID Grid-Netzwerk erstellte VMware-Netzwerk erfassen (erforderlich), darunter:
+
+* Der Netzwerkname.
+* Die Methode zum Zuweisen von IP-Adressen entweder statisch oder DHCP.
++
+** Wenn Sie statische IP-Adressen verwenden, sind die erforderlichen Netzwerkdetails für jeden Grid-Node (IP-Adresse, Gateway, Netzwerkmaske) erforderlich.
+** Wenn Sie DHCP verwenden, ist die IP-Adresse des primären Admin-Knotens im Grid-Netzwerk angegeben. Weitere Informationen finden Sie unter link:how-grid-nodes-discover-primary-admin-node.html["Ermitteln der primären Admin-Node durch Grid-Nodes"] .
+
+
+
+
+
+
+== Informationen zum Admin-Netzwerk
+
+Bei Nodes, die mit dem optionalen StorageGRID-Admin-Netzwerk verbunden werden sollen, müssen Sie Informationen über das für dieses Netzwerk erstellte VMware-Netzwerk erfassen. Dazu gehören:
+
+* Der Netzwerkname.
+* Die Methode zum Zuweisen von IP-Adressen entweder statisch oder DHCP.
++
+** Wenn Sie statische IP-Adressen verwenden, sind die erforderlichen Netzwerkdetails für jeden Grid-Node (IP-Adresse, Gateway, Netzwerkmaske) erforderlich.
+** Wenn Sie DHCP verwenden, ist die IP-Adresse des primären Admin-Knotens im Grid-Netzwerk angegeben. Weitere Informationen finden Sie unter link:how-grid-nodes-discover-primary-admin-node.html["Ermitteln der primären Admin-Node durch Grid-Nodes"] .
+
+
+* Die externe Subnetz-Liste (ESL) für das Admin-Netzwerk.
+
+
+
+
+== Informationen zum Client-Netzwerk
+
+Bei Nodes, die mit dem optionalen StorageGRID-Clientnetzwerk verbunden werden sollen, müssen Sie Informationen über das für dieses Netzwerk erstellte VMware-Netzwerk erfassen. Dazu gehören:
+
+* Der Netzwerkname.
+* Die Methode zum Zuweisen von IP-Adressen entweder statisch oder DHCP.
+* Wenn Sie statische IP-Adressen verwenden, sind die erforderlichen Netzwerkdetails für jeden Grid-Node (IP-Adresse, Gateway, Netzwerkmaske) erforderlich.
+
+
+
+
+== Informationen zu zusätzlichen Schnittstellen
+
+Nach der Installation des Node können Sie optional Trunk oder Zugriffschnittstellen zur VM in vCenter hinzufügen. Beispielsweise möchten Sie einem Admin oder Gateway Node eine Trunk-Schnittstelle hinzufügen, sodass Sie den Datenverkehr zwischen verschiedenen Applikationen oder Mandanten über VLAN-Schnittstellen trennen können. Oder auch, wenn Sie eine Access-Schnittstelle hinzufügen möchten, um sie in einer HA-Gruppe (High Availability, Hochverfügbarkeit) zu verwenden.
+
+Die Schnittstellen, die Sie hinzufügen, werden auf der Seite VLAN-Schnittstellen und auf der Seite HA-Gruppen im Grid Manager angezeigt.
+
+* Wenn Sie eine Trunk-Schnittstelle hinzufügen, konfigurieren Sie eine oder mehrere VLAN-Schnittstellen für jede neue übergeordnete Schnittstelle. Siehe link:../admin/configure-vlan-interfaces.html["Konfigurieren Sie die VLAN-Schnittstellen"].
+* Wenn Sie eine Zugriffsoberfläche hinzufügen, müssen Sie sie direkt HA-Gruppen hinzufügen. Siehe link:../admin/configure-high-availability-group.html["Konfigurieren Sie Hochverfügbarkeitsgruppen"].
+
+
+
+
+== Storage Volumes für virtuelle Storage-Nodes
+
+Sie müssen die folgenden Informationen für virtuelle Maschinen-basierte Speicherknoten sammeln:
+
+* Die Anzahl und Größe der Speicher-Volumes (Speicher-LUNs), die Sie hinzufügen möchten. Siehe link:storage-and-performance-requirements.html["Storage- und Performance-Anforderungen erfüllt"].
+
+
+
+
+== Informationen zur Grid-Konfiguration
+
+Sie müssen Informationen erfassen, um Ihr Raster zu konfigurieren:
+
+* Grid-Lizenz
+* IP-Adressen des Network Time Protocol-Servers (NTP
+* IP-Adressen des DNS-Servers
+

@@ -1,0 +1,152 @@
+---
+permalink: s3/use-s3-select.html 
+sidebar: sidebar 
+keywords: use S3 Select, S3 Select 
+summary: StorageGRID unterstützt die folgenden Amazon S3 Select-Klauseln, Datentypen, Operatoren und reservierten Schlüsselwörter für den Befehl SelectObjectContent. 
+---
+= Verwenden Sie S3 Select
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID unterstützt die folgenden Amazon S3 Select-Klauseln, Datentypen und Operatoren für die link:select-object-content.html["SelectObjectContent, Befehl"].
+
+
+NOTE: Nicht aufgeführte Elemente werden nicht unterstützt.
+
+Syntax siehe link:select-object-content.html["SelektierObjectContent"]. Weitere Informationen zu S3 Select finden Sie im https://docs.aws.amazon.com/AmazonS3/latest/userguide/selecting-content-from-objects.html["AWS-Dokumentation für S3 Select"^].
+
+Nur Mandantenkonten, für die S3 Select aktiviert ist, können SelectObjectContent-Abfragen ausgeben. Siehe link:../admin/manage-s3-select-for-tenant-accounts.html["Überlegungen und Anforderungen bei der Verwendung von S3 Select"].
+
+
+
+== Klauseln
+
+* Wählen Sie die Liste aus
+* FROM-Klausel
+* WHERE-Klausel
+* BEGRENZUNGSKLAUSEL
+
+
+
+
+== Datentypen
+
+* bool
+* Ganzzahl
+* Zeichenfolge
+* Schweben
+* Dezimal, numerisch
+* Zeitstempel
+
+
+
+
+== Operatoren
+
+
+
+=== Logische Operatoren
+
+* UND
+* NICHT
+* ODER
+
+
+
+
+=== Vergleichsoperatoren
+
+* <
+* >
+* &Lt;=
+* >=
+* =
+* =
+* <>
+* !=
+* ZWISCHEN
+* IN
+
+
+
+
+=== Operatoren für die Musteranpassung
+
+* GEFÄLLT MIR
+* _
+* %
+
+
+
+
+=== Einheitliche Operatoren
+
+* IST NULL
+* IST NICHT NULL
+
+
+
+
+=== Mathematische Operatoren
+
+* +
+* -
+* *
+* /
+* %
+
+
+StorageGRID folgt der Priorität des Amazon S3 Select-Operators.
+
+
+
+== Aggregatfunktionen
+
+* DURCHSCHN.()
+* ANZAHL (*)
+* MAX.()
+* MIN.()
+* SUMME()
+
+
+
+
+== Bedingte Funktionen
+
+* FALL
+* ZUSAMMENSCHMELZEN
+* NULL LIF
+
+
+
+
+== Konvertierungsfunktionen
+
+* CAST (für unterstützten Datentyp)
+
+
+
+
+== Datumsfunktionen
+
+* DATUM_HINZUFÜGEN
+* DATE_DIFF
+* EXTRAHIEREN
+* TO_STRING
+* TO_ZEITSTEMPEL
+* UTCNOW
+
+
+
+
+== Zeichenfolgenfunktionen
+
+* CHAR_LENGTH, CHARACTER_LENGTH
+* NIEDRIGER
+* TEILSTRING
+* TRIMMEN
+* OBEN
+

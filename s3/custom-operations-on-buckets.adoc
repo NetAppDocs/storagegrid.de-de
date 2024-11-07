@@ -1,0 +1,98 @@
+---
+permalink: s3/custom-operations-on-buckets.html 
+sidebar: sidebar 
+keywords: operations, buckets, custom, storagegrid bucket operations 
+summary: Das StorageGRID System unterstützt benutzerdefinierte Vorgänge, die zur S3-REST-API hinzugefügt werden. 
+---
+= Benutzerdefinierte Operationen von StorageGRID
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das StorageGRID System unterstützt benutzerdefinierte Vorgänge, die zur S3-REST-API hinzugefügt werden.
+
+In der folgenden Tabelle sind die von StorageGRID unterstützten benutzerdefinierten Vorgänge aufgeführt.
+
+[cols="1a,2a"]
+|===
+| Betrieb | Beschreibung 
+
+
+ a| 
+link:get-bucket-consistency-request.html["Get Bucket-Konsistenz"]
+ a| 
+Gibt die Konsistenz zurück, die auf einen bestimmten Bucket angewendet wird.
+
+
+
+ a| 
+link:put-bucket-consistency-request.html["PUT Bucket-Konsistenz"]
+ a| 
+Legt die Konsistenz fest, die auf einen bestimmten Bucket angewendet wird.
+
+
+
+ a| 
+link:get-bucket-last-access-time-request.html["ZEITPUNKT des letzten Zugriffs FÜR den Bucket ABRUFEN"]
+ a| 
+Gibt an, ob Updates der letzten Zugriffszeit für einen bestimmten Bucket aktiviert oder deaktiviert wurden.
+
+
+
+ a| 
+link:put-bucket-last-access-time-request.html["PUT Bucket-Zeit für den letzten Zugriff"]
+ a| 
+Hiermit können Sie Updates der letzten Zugriffszeit für einen bestimmten Bucket aktivieren oder deaktivieren.
+
+
+
+ a| 
+link:delete-bucket-metadata-notification-configuration-request.html["Konfiguration für die Benachrichtigung über Bucket-Metadaten LÖSCHEN"]
+ a| 
+Löscht die XML-Konfiguration für die Metadatenbenachrichtigung, die mit einem bestimmten Bucket verknüpft ist.
+
+
+
+ a| 
+link:get-bucket-metadata-notification-configuration-request.html["Konfiguration der Bucket-Metadaten-Benachrichtigungen ABRUFEN"]
+ a| 
+Gibt die XML-XML-Benachrichtigungskonfiguration für Metadaten zurück, die einem bestimmten Bucket zugeordnet ist.
+
+
+
+ a| 
+link:put-bucket-metadata-notification-configuration-request.html["PUT Bucket-Metadaten-Benachrichtigungskonfiguration"]
+ a| 
+Konfiguriert den Metadaten-Benachrichtigungsdienst für einen Bucket
+
+
+
+ a| 
+link:get-storage-usage-request.html["GET Storage-Auslastung"]
+ a| 
+Gibt an, wie viel Speicherplatz von einem Konto und für jeden mit dem Konto verknüpften Bucket insgesamt verwendet wird.
+
+
+
+ a| 
+link:deprecated-put-bucket-request-modifications-for-compliance.html["Veraltet: CreateBucket mit Compliance-Einstellungen"]
+ a| 
+Veraltet und nicht unterstützt: Sie können keine neuen Buckets mit aktivierter Compliance mehr erstellen.
+
+
+
+ a| 
+link:deprecated-get-bucket-compliance-request.html["Veraltet: EINHALTUNG von Bucket ABRUFEN"]
+ a| 
+Veraltet, aber unterstützt: Gibt die Compliance-Einstellungen zurück, die derzeit für einen vorhandenen Legacy-konformen Bucket wirksam sind.
+
+
+
+ a| 
+link:deprecated-put-bucket-compliance-request.html["Veraltet: EINHALTUNG VON PUT Bucket"]
+ a| 
+Veraltet, aber unterstützt: Ermöglicht es Ihnen, die Compliance-Einstellungen für einen vorhandenen, älteren konformen Bucket zu ändern.
+
+|===

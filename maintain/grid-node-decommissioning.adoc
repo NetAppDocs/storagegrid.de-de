@@ -1,0 +1,62 @@
+---
+permalink: maintain/grid-node-decommissioning.html 
+sidebar: sidebar 
+keywords: storagegrid, decommission, remove grid node 
+summary: Mithilfe der Node-Deaktivierung können Sie einen oder mehrere Grid-Nodes an einem oder mehreren Standorten entfernen. Sie können den primären Admin-Node nicht stilllegen. 
+---
+= Der Grid-Node wird deaktiviert
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mithilfe der Node-Deaktivierung können Sie einen oder mehrere Grid-Nodes an einem oder mehreren Standorten entfernen. Der primäre Admin-Node kann nicht stillgelegt werden.
+
+
+
+== Wann ein Node stillgelegt werden soll
+
+Wenn einer der folgenden Optionen zutrifft, wird das Verfahren zur Deaktivierung des Nodes ausgeführt:
+
+* Sie haben in einer Erweiterung einen größeren Storage Node hinzugefügt und möchten einen oder mehrere kleinere Storage Nodes entfernen, während gleichzeitig Objekte erhalten bleiben.
++
+
+TIP: Wenn Sie eine ältere Appliance durch eine neuere Appliance ersetzen möchten, erwägen Sie das https://docs.netapp.com/us-en/storagegrid-appliances/commonhardware/how-appliance-node-cloning-works.html["Klonen des Appliance-Node"^] Hinzufügen einer neuen Appliance zur Erweiterung und das Ausmustern der alten Appliance.
+
+* Sie benötigen weniger Storage insgesamt.
+* Sie benötigen keinen Gateway-Node mehr.
+* Sie benötigen keinen nicht mehr primären Admin-Node.
+* Das Raster enthält einen getrennten Knoten, den Sie nicht wiederherstellen oder wieder in den Online-Modus versetzen können.
+* Ihr Raster enthält einen Archivknoten.
+
+
+
+
+== Deaktivieren eines Node
+
+Verbundene Grid-Nodes oder getrennte Grid-Nodes können deaktiviert werden.
+
+Verbundene Nodes werden stillgelegt:: Im Allgemeinen sollten Sie Grid-Knoten nur dann stilllegen, wenn sie mit dem StorageGRID-System verbunden sind, und nur dann, wenn sich alle Knoten in einem normalen Zustand befinden (grüne Symbole auf den Seiten *NODES* und auf der Seite *Decommissionsknoten*).
++
+--
+Anweisungen hierzu finden Sie unter link:decommissioning-connected-grid-nodes.html["Verbundene Grid-Nodes ausmustern"].
+
+--
+Getrennte Nodes ausmustern:: In einigen Fällen müssen Sie möglicherweise einen Grid-Node außer Betrieb nehmen, der derzeit nicht mit dem Grid verbunden ist (einen Node, dessen Systemzustand Unbekannt oder Administrativ inaktiv ist).
++
+--
+Anweisungen hierzu finden Sie unter link:decommissioning-disconnected-grid-nodes.html["Die getrennten Grid-Nodes werden deaktiviert"].
+
+--
+
+
+
+
+== Was vor der Stilllegung eines Knotens zu beachten ist
+
+Bevor Sie eines der beiden Verfahren durchführen, sollten Sie die Überlegungen für jeden Node-Typ überprüfen:
+
+* link:considerations-for-decommissioning-admin-or-gateway-nodes.html["Überlegungen bei der Deaktivierung von Admin oder Gateway Node"]
+* link:considerations-for-decommissioning-storage-nodes.html["Überlegungen zur Deaktivierung von Storage Node"]
+

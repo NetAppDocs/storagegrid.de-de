@@ -1,0 +1,47 @@
+---
+permalink: audit/audit-messages-and-object-lifecycle.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, log, object lifecycle, ingest, retrieve, delete, s3, timing, ILM, Information lifecycle management 
+summary: Audit-Nachrichten werden bei jeder Aufnahme, jedem Abruf oder jedem Löschen eines Objekts generiert. Sie können diese Transaktionen im Revisionsprotokoll identifizieren, indem Sie S3-API-spezifische Audit-Meldungen suchen. 
+---
+= Wann werden Audit-Meldungen generiert?
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Audit-Nachrichten werden bei jeder Aufnahme, jedem Abruf oder jedem Löschen eines Objekts generiert. Sie können diese Transaktionen im Revisionsprotokoll identifizieren, indem Sie S3-API-spezifische Audit-Meldungen suchen.
+
+Überwachungsmeldungen werden durch Kennungen verknüpft, die für jedes Protokoll spezifisch sind.
+
+[cols="1a,1a"]
+|===
+| Protokoll | Codieren 
+
+
+ a| 
+Verknüpfen von S3-Vorgängen
+ a| 
+S3BK (Eimer), S3KY (Schlüssel) oder beide
+
+
+
+ a| 
+Swift-Vorgänge verknüpfen
+ a| 
+WCON (Container), WOBJ (Object) oder beides
+
+
+
+ a| 
+Verknüpfen interner Vorgänge
+ a| 
+CBID (interne Kennung des Objekts)
+
+|===
+
+
+== Timing von Audit-Meldungen
+
+Aufgrund von Faktoren wie Zeitunterschieden zwischen Grid-Nodes, Objektgröße und Netzwerkverzögerungen kann die Reihenfolge der durch die verschiedenen Services erzeugten Audit-Meldungen von den Beispielen in diesem Abschnitt abweichen.

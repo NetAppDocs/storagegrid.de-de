@@ -1,0 +1,37 @@
+---
+permalink: tenant/manage-bucket-policy.html 
+sidebar: sidebar 
+keywords: how to create S3 tenant groups, federated group, local group 
+summary: Sie können den Benutzerzugriff für einen S3-Bucket und die Objekte in diesem Bucket steuern. 
+---
+= Management von Bucket-Richtlinien
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können den Benutzerzugriff für einen S3-Bucket und die Objekte in diesem Bucket steuern.
+
+.Bevor Sie beginnen
+* Sie sind beim Tenant Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie gehören zu einer Benutzergruppe mit dem link:tenant-management-permissions.html["Root-Zugriffsberechtigung"]. Die Berechtigungen Alle Buckets anzeigen und alle Buckets verwalten erlauben nur die Anzeige.
+* Sie haben überprüft, ob die erforderliche Anzahl an Storage Nodes und Standorten verfügbar ist. Wenn zwei oder mehr Storage-Nodes innerhalb eines Standorts nicht verfügbar sind oder ein Standort nicht verfügbar ist, sind Änderungen an diesen Einstellungen möglicherweise nicht verfügbar.
+
+
+.Schritte
+. Wählen Sie *Buckets* aus, und wählen Sie dann den Bucket aus, den Sie verwalten möchten.
+. Wählen Sie auf der Seite mit den Bucket-Details *Bucket Access* > *Bucket Policy* aus.
+. Führen Sie einen der folgenden Schritte aus:
++
+** Geben Sie eine Bucket Policy ein, indem Sie das Kontrollkästchen *enable Policy* aktivieren. Geben Sie dann eine gültige JSON-formatierte Zeichenfolge ein.
++
+Jede Bucket-Richtlinie hat ein Größenlimit von 20,480 Byte.
+
+** Ändern Sie eine vorhandene Richtlinie, indem Sie die Zeichenfolge bearbeiten.
+** Deaktivieren Sie eine Richtlinie, indem Sie die Option *Richtlinie aktivieren* deaktivieren.
+
+
+
+
+Ausführliche Informationen zu Bucket-Richtlinien, einschließlich Sprachtyntax und Beispielen, finden Sie unter link:../s3/example-bucket-policies.html["Beispiel für Bucket-Richtlinien"].

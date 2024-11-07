@@ -1,0 +1,134 @@
+---
+permalink: audit/mgau-management-audit-message.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, MGAU, Management audit message 
+summary: Die Kategorie Management protokolliert Benutzeranfragen an die Management-API. Jede Anfrage, die keine GET- oder HEAD-Anforderung an die API ist, protokolliert eine Antwort mit dem Benutzernamen, der IP und der Art der Anfrage an die API. 
+---
+= MGAU: Management-Audit-Nachricht
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Kategorie Management protokolliert Benutzeranfragen an die Management-API. Jede HTTP-Anforderung, die keine GET- oder HEAD-Anforderung an einen gültigen API-URI ist, protokolliert eine Antwort, die den Benutzernamen, die IP und den Anforderungstyp an die API enthält. Ungültige API-URIs (z. B. /API/v3-authorize) und ungültige Anforderungen an gültige API-URIs werden nicht protokolliert.
+
+[cols="1a,1a,4a"]
+|===
+| Codieren | Feld | Beschreibung 
+
+
+ a| 
+MDIP
+ a| 
+Ziel-IP-Adresse
+ a| 
+Die IP-Adresse des Servers (Ziel).
+
+
+
+ a| 
+MDNA
+ a| 
+Domain-Name
+ a| 
+Der Host-Domain-Name.
+
+
+
+ a| 
+MPAT
+ a| 
+AnfraPfad
+ a| 
+Der Anfraspfad.
+
+
+
+ a| 
+MPQP
+ a| 
+Abfrageparameter anfordern
+ a| 
+Die Abfrageparameter für die Anforderung.
+
+
+
+ a| 
+MRBD
+ a| 
+Text anfordern
+ a| 
+Der Inhalt des Anforderungsinstanz. Während der Antwortkörper standardmäßig protokolliert wird, wird der Anforderungskörper in bestimmten Fällen protokolliert, wenn der Antwortkörper leer ist. Da die folgenden Informationen im Antwortkörper nicht verfügbar sind, werden sie von der Anforderungsstelle für die folgenden POST-Methoden übernommen:
+
+* Benutzername und Konto-ID in *POST authorize*
+* Neue Subnetze-Konfiguration in *POST /Grid/Grid-Networks/Update*
+* Neue NTP-Server in *POST /grid/ntp-Servers/Update*
+* Ausgemusterte Server-IDs in *POST /Grid/Servers/Decommission*
+
+
+*Hinweis:* sensible Daten werden entweder gelöscht (z. B. ein S3-Zugriffsschlüssel) oder mit Sternchen (z. B. ein Passwort) maskiert.
+
+
+
+ a| 
+MRMD
+ a| 
+Anforderungsmethode
+ a| 
+Die HTTP-Anforderungsmethode:
+
+* POST
+* PUT
+* Löschen
+* PATCH
+
+
+
+
+ a| 
+MRSC
+ a| 
+Antwortcode
+ a| 
+Der Antwortcode.
+
+
+
+ a| 
+MRSP
+ a| 
+Antwortkörper
+ a| 
+Der Inhalt der Antwort (der Antwortkörper) wird standardmäßig protokolliert.
+
+*Hinweis:* sensible Daten werden entweder gelöscht (z. B. ein S3-Zugriffsschlüssel) oder mit Sternchen (z. B. ein Passwort) maskiert.
+
+
+
+ a| 
+MSIP
+ a| 
+Quell-IP-Adresse
+ a| 
+Die Client (Quell-) IP-Adresse.
+
+
+
+ a| 
+MUUN
+ a| 
+User-URN
+ a| 
+Der URN (einheitlicher Ressourcenname) des Benutzers, der die Anforderung gesendet hat.
+
+
+
+ a| 
+RSLT
+ a| 
+Ergebnis
+ a| 
+Gibt erfolgreich (SUCS) oder den Fehler zurück, der vom Backend gemeldet wurde.
+
+|===

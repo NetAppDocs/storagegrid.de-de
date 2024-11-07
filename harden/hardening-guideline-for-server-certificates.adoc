@@ -1,0 +1,53 @@
+---
+permalink: harden/hardening-guideline-for-server-certificates.html 
+sidebar: sidebar 
+keywords: Hardening guidelines, certificates 
+summary: Sie sollten die während der Installation erstellten Standardzertifikate ersetzen und die entsprechende Sicherheitsrichtlinie für TLS- und SSH-Verbindungen auswählen. 
+---
+= Härtungsrichtlinien für TLS und SSH
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie sollten die während der Installation erstellten Standardzertifikate ersetzen und die entsprechende Sicherheitsrichtlinie für TLS- und SSH-Verbindungen auswählen.
+
+
+
+== Richtlinien für die Härtung von Zertifikaten
+
+Sie sollten die während der Installation erstellten Standardzertifikate durch eigene benutzerdefinierte Zertifikate ersetzen.
+
+Für viele Unternehmen entspricht das selbstsignierte digitale Zertifikat für den StorageGRID-Webzugriff nicht den Richtlinien für die Informationssicherheit. Auf Produktionssystemen sollten Sie ein CA-signiertes digitales Zertifikat zur Verwendung bei der Authentifizierung von StorageGRID installieren.
+
+Sie sollten insbesondere anstelle der folgenden Standardzertifikate benutzerdefinierte Serverzertifikate verwenden:
+
+* *Zertifikat der Verwaltungsschnittstelle*: Zur Sicherung des Zugriffs auf den Grid Manager, den Tenant Manager, die Grid Management API und die Tenant Management API.
+* *S3-API-Zertifikat*: Wird verwendet, um den Zugriff auf Storage Nodes und Gateway Nodes zu sichern, die S3-Client-Anwendungen zum Hochladen und Herunterladen von Objektdaten verwenden.
+
+
+Weitere Informationen und Anweisungen finden Sie unterlink:../admin/using-storagegrid-security-certificates.html["Verwalten von Sicherheitszertifikaten"].
+
+
+NOTE: StorageGRID managt die für Load Balancer-Endpunkte verwendeten Zertifikate separat. Informationen zum Konfigurieren von Load Balancer-Zertifikaten finden Sie unter link:../admin/configuring-load-balancer-endpoints.html["Konfigurieren von Load Balancer-Endpunkten"].
+
+Wenn Sie benutzerdefinierte Serverzertifikate verwenden, befolgen Sie die folgenden Richtlinien:
+
+* Zertifikate sollten über eine verfügen `_subjectAltName_`, die den DNS-Einträgen für StorageGRID entspricht. Weitere Informationen finden Sie in Abschnitt 4.2.1.6, „alternativer Antragstellername“ in https://tools.ietf.org/html/rfc5280#section-4.2.1.6["RFC 5280: PKIX-Zertifikat und CRL-Profil"^].
+* Wenn möglich, vermeiden Sie die Verwendung von Platzhalterzertifikaten. Eine Ausnahme dieser Richtlinie ist das Zertifikat für einen S3-Endpunkt im virtuellen Hosted-Stil, der die Verwendung eines Platzhalters erfordert, wenn Bucket-Namen nicht im Voraus bekannt sind.
+* Wenn Sie Wildcards in Zertifikaten verwenden müssen, sollten Sie weitere Schritte zur Reduzierung der Risiken Unternehmen. Verwenden Sie ein Platzhaltermuster wie `*.s3.example.com`, und verwenden Sie das Suffix nicht `s3.example.com` für andere Anwendungen. Dieses Muster funktioniert auch mit Pfad-Stil S3-Zugriff, wie `dc1-s1.s3.example.com/mybucket` .
+* Legen Sie die Ablaufzeiten für das Zertifikat auf kurz (z. B. 2 Monate) fest, und automatisieren Sie die Zertifikatrotation mithilfe der Grid Management API. Dies ist besonders wichtig für Platzhalterzertifikate.
+
+
+Darüber hinaus sollten Kunden bei der Kommunikation mit StorageGRID strenge Hostnamen-Kontrollen verwenden.
+
+
+
+== Richtlinien für die Härtung von TLS- und SSH-Richtlinien
+
+Sie können eine Sicherheitsrichtlinie auswählen, um festzulegen, welche Protokolle und Chiffren zum Aufbau sicherer TLS-Verbindungen mit Clientanwendungen und sicherer SSH-Verbindungen zu internen StorageGRID-Diensten verwendet werden.
+
+Die Sicherheitsrichtlinie steuert, wie TLS und SSH Daten in Bewegung verschlüsseln. Als Best Practice sollten Sie Verschlüsselungsoptionen deaktivieren, die für die Anwendungskompatibilität nicht erforderlich sind. Verwenden Sie die moderne Standardrichtlinie, es sei denn, Ihr System muss Common Criteria-konform sein oder Sie müssen andere Chiffren verwenden.
+
+Weitere Informationen und Anweisungen finden Sie unterlink:../admin/manage-tls-ssh-policy.html["Verwalten Sie die TLS- und SSH-Richtlinie"].

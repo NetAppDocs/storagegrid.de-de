@@ -1,0 +1,33 @@
+---
+permalink: fabricpool/configure-dns-server.html 
+sidebar: sidebar 
+keywords: dns, vip, virtual ip, fqdn, server name 
+summary: Nach der Konfiguration von Hochverfügbarkeitsgruppen, Lastausgleichsendpunkten und S3-Domänennamen müssen Sie sicherstellen, dass der DNS die erforderlichen Einträge für StorageGRID enthält. 
+---
+= Konfigurieren Sie den DNS-Server
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nach der Konfiguration von Hochverfügbarkeitsgruppen, Load Balancer-Endpunkten und S3-Endpunkt-Domänennamen müssen Sie sicherstellen, dass der DNS die erforderlichen Einträge für StorageGRID enthält. Sie müssen einen DNS-Eintrag für jeden Namen im Sicherheitszertifikat und für jede IP-Adresse angeben, die Sie verwenden können.
+
+Siehe link:../admin/managing-load-balancing.html["Überlegungen zum Lastausgleich"].
+
+
+
+== DNS-Einträge für den StorageGRID-Servernamen
+
+Fügen Sie DNS-Einträge hinzu, um den Namen des StorageGRID-Servers (vollständig qualifizierter Domänenname) jeder verwendeten StorageGRID-IP-Adresse zuzuordnen. Die im DNS eingegebenen IP-Adressen hängen davon ab, ob Sie eine HA-Gruppe der Load-Balancing-Nodes verwenden:
+
+* Wenn Sie eine HA-Gruppe konfiguriert haben, stellt ONTAP eine Verbindung zu den virtuellen IP-Adressen dieser HA-Gruppe her.
+* Wenn Sie keine HA-Gruppe verwenden, kann sich ONTAP mithilfe der IP-Adresse eines beliebigen Gateway-Node oder Admin-Node mit dem StorageGRID Load Balancer-Service verbinden.
+* Wenn der Servername auf mehr als eine IP-Adresse aufgelöst wird, baut ONTAP Client-Verbindungen mit allen IP-Adressen auf (bis zu maximal 16 IP-Adressen). Die IP-Adressen werden bei Verbindungsaufbau in einer Round-Robin-Methode erfasst.
+
+
+
+
+== DNS-Einträge für Anforderungen im virtuellen Hosted-Stil
+
+Wenn Sie Anforderungen im virtuellen Hosted-Stil definiert haben link:../admin/configuring-s3-api-endpoint-domain-names.html["Domänennamen des S3-Endpunkts"]und verwenden, fügen Sie DNS-Einträge für alle erforderlichen S3-Endpunkt-Domain-Namen hinzu, einschließlich aller Platzhalternamen.

@@ -1,0 +1,86 @@
+= Welches Verfahren sollte ich verwenden?
+:allow-uri-read: 
+
+
+
+
+== Welches Verfahren sollte ich verwenden?
+
+Stellen Sie nach Möglichkeit Objektdaten mithilfe der Seite *Volume-Wiederherstellung* im Grid Manager wieder her.
+
+* Wenn die Volumes unter *MAINTENANCE* > *Volume-Wiederherstellung* > *zu wiederherstellende Knoten* aufgeführt sind, stellen Sie Objektdaten mithilfe des link:../maintain/restoring-volume.html["Seite zur Volume-Wiederherstellung im Grid Manager"]wieder her.
+* Wenn die Volumes nicht unter *MAINTENANCE* > *Volume-Wiederherstellung* > *zu wiederherstellende Knoten* aufgeführt sind, befolgen Sie die nachstehenden Schritte, um das Skript zur Wiederherstellung von Objektdaten zu verwenden `repair-data`.
++
+Wenn der wiederhergestellte Speicher-Node weniger Volumes enthält als der Knoten, den er ersetzt, müssen Sie das Skript verwenden `repair-data`.
+
+
+
+
+NOTE: Das Repair-Data-Skript ist veraltet und wird in einer zukünftigen Version entfernt. Wenn möglich, verwenden Sie die link:../maintain/restoring-volume.html["Verfahren zur Volume-Wiederherstellung im Grid Manager"].
+
+
+
+== Verwenden Sie das `repair-data` Skript, um Objektdaten wiederherzustellen
+
+.Bevor Sie beginnen
+* Sie haben bestätigt, dass der wiederhergestellte Storage Node auf der Registerkarte *NODES* > *Übersicht* im Grid Manager den Verbindungsstatus *connected* hatimage:../media/icon_alert_green_checkmark.png["Symbol Warnung grünes Häkchen"].
+
+
+.Über diese Aufgabe
+Objektdaten können von anderen Storage Nodes oder einem Cloud Storage Pool wiederhergestellt werden, vorausgesetzt, die ILM-Regeln des Grids wurden so konfiguriert, dass Objektkopien verfügbar sind.
+
+Beachten Sie Folgendes:
+
+* Wenn eine ILM-Regel so konfiguriert wurde, dass nur eine replizierte Kopie gespeichert wird und sich diese Kopie auf einem ausgefallenen Storage Volume befand, können Sie das Objekt nicht wiederherstellen.
+* Wenn sich die einzige verbleibende Kopie eines Objekts in einem Cloud Storage Pool befindet, muss StorageGRID mehrere Anfragen an den Cloud Storage Pool Endpunkt stellen, um Objektdaten wiederherzustellen. Bevor Sie dieses Verfahren durchführen, wenden Sie sich an den technischen Support, um Hilfe bei der Schätzung des Recovery-Zeitrahmens und der damit verbundenen Kosten zu erhalten.
+
+
+
+
+== Informationen zum `repair-data` Skript
+
+Um Objektdaten wiederherzustellen, führen Sie das Skript aus `repair-data`. Dieses Skript startet den Prozess der Wiederherstellung von Objektdaten und arbeitet mit ILM-Scans zusammen, um sicherzustellen, dass ILM-Regeln eingehalten werden.
+
+Wählen Sie unten *replizierte Daten* oder *Eradure-coded (EC) Data* aus, um die verschiedenen Optionen für das Skript zu erfahren, je nachdem, ob Sie replizierte Daten wiederherstellen oder Daten mit Erasure- `repair-data`coded-Code wiederherstellen. Wenn Sie beide Datentypen wiederherstellen müssen, müssen Sie beide Befehlssets ausführen.
+
+
+NOTE: Weitere Informationen zum Skript erhalten `repair-data` Sie `repair-data --help` über die Befehlszeile des primären Admin-Knotens.
+
+
+NOTE: Das Repair-Data-Skript ist veraltet und wird in einer zukünftigen Version entfernt. Wenn möglich, verwenden Sie die link:../maintain/restoring-volume.html["Verfahren zur Volume-Wiederherstellung im Grid Manager"].
+
+[role="tabbed-block"]
+====
+.Replizierte Daten
+--
+Zwei Befehle sind zum Wiederherstellen replizierter Daten verfügbar, unabhängig davon, ob Sie den gesamten Node oder nur bestimmte Volumes auf dem Node reparieren müssen:
+
+`repair-data start-replicated-node-repair`
+
+`repair-data start-replicated-volume-repair`
+
+Sie können Reparaturen replizierter Daten mit diesem Befehl verfolgen:
+
+`repair-data show-replicated-repair-status`
+
+--
+.EC-Daten (Erasure Coded)
+--
+Zwei Befehle sind zum Wiederherstellen von Erasure-codierten Daten verfügbar. Dabei basiert es darauf, ob Sie den gesamten Node reparieren müssen oder nur bestimmte Volumes auf dem Node:
+
+`repair-data start-ec-node-repair`
+
+`repair-data start-ec-volume-repair`
+
+Sie können Reparaturen von Daten, die auf Erasure-Coding-Verfahren codiert wurden, mit diesem Befehl verfolgen:
+
+`repair-data show-ec-repair-status`
+
+
+NOTE: Reparaturen von Daten, die auf Löschung codiert wurden, können beginnen, während einige Storage-Nodes offline sind. Wenn jedoch nicht alle mit Löschcode gekennzeichneten Daten berücksichtigt werden können, kann die Reparatur nicht abgeschlossen werden. Die Reparatur ist abgeschlossen, wenn alle Nodes verfügbar sind.
+
+
+NOTE: Der EC-Reparaturauftrag reserviert vorübergehend eine große Menge an Lagerung. Storage-Warnmeldungen können zwar ausgelöst werden, werden aber nach Abschluss der Reparatur behoben. Wenn nicht genügend Speicherplatz für die Reservierung vorhanden ist, schlägt der EC-Reparaturauftrag fehl. Speicherreservierungen werden freigegeben, wenn der EC-Reparaturauftrag abgeschlossen wurde, unabhängig davon, ob der Job fehlgeschlagen oder erfolgreich war.
+
+--
+====

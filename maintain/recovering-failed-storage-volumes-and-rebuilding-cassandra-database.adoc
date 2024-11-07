@@ -1,0 +1,100 @@
+---
+permalink: maintain/recovering-failed-storage-volumes-and-rebuilding-cassandra-database.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, maintenance, maintain, failed storage volumes, failed volumes, cassandra, cassandra rebuild, rebuild cassandra, cassandra database 
+summary: Sie müssen ein Skript ausführen, das den Speicher auf ausgefallenen Storage-Volumes neu formatiert und neu einbindet, und die Cassandra-Datenbank auf dem Storage-Node neu erstellen, falls das System den Bedarf ermittelt. 
+---
+= Recovery ausgefallener Storage-Volumes und Wiederherstellung der Cassandra-Datenbank
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen ein Skript ausführen, das den Speicher auf ausgefallenen Storage-Volumes neu formatiert und neu einbindet, und die Cassandra-Datenbank auf dem Storage-Node neu erstellen, falls das System den Bedarf ermittelt.
+
+.Bevor Sie beginnen
+* Sie haben die `Passwords.txt` Datei.
+* Die Systemlaufwerke auf dem Server sind intakt.
+* Die Fehlerursache wurde erkannt und ggf. Ersatz-Storage-Hardware bereits angeschafft.
+* Die Gesamtgröße des Ersatzspeichers ist mit dem Original identisch.
+* Sie haben überprüft, dass keine Ausmusterung von Storage-Nodes ausgeführt wird oder Sie den Vorgang zur Deaktivierung eines Node angehalten haben. (Wählen Sie im Grid Manager *MAINTENANCE* > *Tasks* > *Decommission*.)
+* Sie haben überprüft, dass keine Erweiterung ausgeführt wird. (Wählen Sie im Grid Manager *MAINTENANCE* > *Tasks* > *Expansion*.)
+* Sie haben link:reviewing-warnings-about-storage-volume-recovery.html["Die Warnungen zur Wiederherstellung des Speichervolumens wurden überprüft"].
+
+
+.Schritte
+. Ersetzen Sie bei Bedarf den fehlerhaften physischen oder virtuellen Speicher, der mit den fehlerhaften Speicher-Volumes verbunden ist, die Sie zuvor ermittelt und abgehängt haben.
++
+Volumes sollten in diesem Schritt nicht erneut bereitgestellt werden. Der Speicher wird neu eingebunden und in einem späteren Schritt hinzugefügt `/etc/fstab`.
+
+. Gehen Sie im Grid Manager zu *NODES* > > *Hardware* `*appliance Storage Node*`. Überprüfen Sie im Abschnitt StorageGRID-Gerät auf der Seite, ob der Speicher-RAID-Modus ordnungsgemäß funktioniert.
+. Melden Sie sich beim fehlgeschlagenen Speicherknoten an:
++
+.. Geben Sie den folgenden Befehl ein: `ssh admin@_grid_node_IP_`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+.. Geben Sie den folgenden Befehl ein, um zu root zu wechseln: `su -`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
++
+Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `#`.
+
+
+
+. Verwenden Sie einen Texteditor (vi oder vim), um fehlerhafte Volumes aus der Datei zu löschen `/etc/fstab` und die Datei zu speichern.
++
+
+NOTE: Das Auskommentieren eines fehlerhaften Volumes in der `/etc/fstab` Datei ist nicht ausreichend. Das Volume muss gelöscht werden `fstab`, während der Wiederherstellungsprozess überprüft, ob alle Zeilen in der `fstab` Datei mit den gemounteten Dateisystemen übereinstimmen.
+
+. Formatieren Sie alle ausgefallenen Storage-Volumes neu und stellen Sie ggf. die Cassandra-Datenbank wieder her. Eingabe: `reformat_storage_block_devices.rb`
++
+** Wenn Speicher-Volume 0 abgehängt ist, werden Eingabeaufforderungen und Meldungen darauf hinweisen, dass der Cassandra-Dienst angehalten wird.
+** Sie werden aufgefordert, die Cassandra-Datenbank bei Bedarf neu aufzubauen.
++
+*** Überprüfen Sie die Warnungen. Falls keines dieser Beispiele zutreffend ist, bauen Sie die Cassandra-Datenbank neu aus. Geben Sie ein: *Y*
+*** Wenn mehr als ein Speicherknoten offline ist oder wenn ein anderer Speicherknoten in den letzten 15 Tagen wieder aufgebaut wurde. Geben Sie: *N* ein
++
+Das Skript wird beendet, ohne dass Cassandra neu aufgebaut werden muss. Wenden Sie sich an den technischen Support.
+
+
+
+** Geben Sie für jedes rangedb-Laufwerk auf dem Storage Node, wenn Sie gefragt werden, `Reformat the rangedb drive _<name>_ (device _<major number>:<minor number>_)? [y/n]?` eine der folgenden Antworten ein:
++
+*** *Y* um ein Laufwerk neu zu formatieren, das Fehler hatte. Dadurch wird das Speichervolume neu formatiert und das neu formatierte Speichervolume zur Datei hinzugefügt `/etc/fstab`.
+*** *N* wenn das Laufwerk keine Fehler enthält und Sie es nicht neu formatieren möchten.
++
+
+NOTE: Durch Auswahl von *n* wird das Skript beendet. Entweder montieren Sie das Laufwerk (wenn Sie denken, dass die Daten auf dem Laufwerk beibehalten werden sollten und das Laufwerk fehlerhaft abgehängt wurde) oder entfernen Sie das Laufwerk. Führen Sie den Befehl dann `reformat_storage_block_devices.rb` erneut aus.
+
++
+
+NOTE: Einige StorageGRID-Wiederherstellungsverfahren verwenden Reaper für die Bearbeitung von Cassandra-Reparaturen. Reparaturen werden automatisch ausgeführt, sobald die entsprechenden oder erforderlichen Services gestartet wurden. Sie können die Skriptausgabe bemerken, die „Reaper“ oder „Cassandra Repair“ erwähnt. Wenn eine Fehlermeldung angezeigt wird, dass die Reparatur fehlgeschlagen ist, führen Sie den Befehl aus, der in der Fehlermeldung angezeigt wird.
+
++
+In der folgenden Beispielausgabe muss das Laufwerk `/dev/sdf` neu formatiert werden, und Cassandra musste nicht neu erstellt werden:
+
++
+[listing]
+----
+root@DC1-S1:~ # reformat_storage_block_devices.rb
+Formatting devices that are not in use...
+Skipping in use device /dev/sdc
+Skipping in use device /dev/sdd
+Skipping in use device /dev/sde
+Reformat the rangedb drive /dev/sdf (device 8:64)? [Y/n]? y
+Successfully formatted /dev/sdf with UUID b951bfcb-4804-41ad-b490-805dfd8df16c
+All devices processed
+Running: /usr/local/ldr/setup_rangedb.sh 12368435
+Cassandra does not need rebuilding.
+Starting services.
+Informing storage services of new volume
+
+Reformatting done.  Now do manual steps to
+restore copies of data.
+----
+
+
+
+
+
+
+Nachdem die Speicher-Volumes neu formatiert und neu gemountet wurden und die erforderlichen Cassandra-Vorgänge abgeschlossen sind, können Sie link:../maintain/restoring-volume.html["Stellen Sie Objektdaten mithilfe von Grid Manager wieder her"].

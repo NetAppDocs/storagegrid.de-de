@@ -1,0 +1,67 @@
+---
+permalink: maintain/how-site-recovery-is-performed-by-technical-support.html 
+sidebar: sidebar 
+keywords: storagegrid, site recovery, technical support, tech support 
+summary: Falls eine gesamte StorageGRID Site ausfällt oder mehrere Storage Nodes ausfallen, müssen Sie sich an den technischen Support wenden. Der technische Support analysiert das Unternehmen, entwickelt einen Recovery-Plan und stellt die ausgefallenen Nodes oder Standorte dann auf eine Art und Weise wieder her, die Ihre Geschäftsziele erfüllt. Die Recovery-Zeit wird optimiert und unnötige Datenverluste werden vermieden. 
+---
+= Wie der technische Support eine Site wiederherstellt
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Falls eine gesamte StorageGRID Site ausfällt oder mehrere Storage Nodes ausfallen, müssen Sie sich an den technischen Support wenden. Der technische Support analysiert das Unternehmen, entwickelt einen Recovery-Plan und stellt die ausgefallenen Nodes oder Standorte dann auf eine Art und Weise wieder her, die Ihre Geschäftsziele erfüllt. Die Recovery-Zeit wird optimiert und unnötige Datenverluste werden vermieden.
+
+
+CAUTION: Das Standort-Recovery kann nur durch den technischen Support durchgeführt werden.
+
+StorageGRID Systeme sind für die unterschiedlichsten Fehler anfällig und viele Recovery- und Wartungsvorgänge können problemlos selbst durchgeführt werden. Es ist jedoch schwierig, ein einfaches, generalisiertes Standortwiederherstellungsverfahren zu erstellen, da die detaillierten Schritte von Faktoren abhängen, die spezifisch für Ihre Situation sind. Beispiel:
+
+* *Ihre Geschäftsziele*: Nach dem vollständigen Verlust einer StorageGRID-Website sollten Sie bewerten, wie Sie Ihre Geschäftsziele am besten erreichen können. Möchten Sie beispielsweise den verlorenen Standort neu aufbauen? Möchten Sie die verlorene StorageGRID Site an einem neuen Standort ersetzen? Jede Kundensituation ist anders, und Ihr Recovery-Plan muss Ihre Prioritäten berücksichtigen.
+* *Exakte Art des Fehlers*: Stellen Sie vor Beginn einer Standortwiederherstellung fest, ob Knoten am ausgefallenen Standort intakt sind oder ob ein Speicher-Knoten wiederherstellbare Objekte enthält. Wenn Sie Nodes oder Storage Volumes neu erstellen, die gültige Daten enthalten, kann es zu unnötigen Datenverlusten kommen.
+* *Aktive ILM-Richtlinien*: Anzahl, Typ und Speicherort der Objektkopien in Ihrem Grid werden durch Ihre aktiven ILM-Richtlinien gesteuert. Die Einzelheiten Ihrer ILM-Richtlinien können sich auf die Menge der wiederherstellbaren Daten sowie auf die spezifischen Techniken auswirken, die für die Recovery erforderlich sind.
++
+
+CAUTION: Wenn ein Standort die einzige Kopie eines Objekts enthält und der Standort verloren geht, geht das Objekt verloren.
+
+* *Konsistenz von Buckets (oder Containern)*: Die auf einen Bucket (oder Container) angewandte Konsistenz beeinflusst, ob StorageGRID Objektmetadaten vollständig auf allen Nodes und Standorten repliziert, bevor einem Client mitgeteilt wird, dass die Objektaufnahme erfolgreich war. Wenn der Konsistenzwert eine mögliche Konsistenz ermöglicht, sind möglicherweise einige Objektmetadaten im Standortfehler verloren gegangen. Dies kann sich auf die Menge der wiederherstellbaren Daten und möglicherweise auf die Details des Recovery-Verfahrens auswirken.
+* *Verlauf der letzten Änderungen*: Die Details Ihres Wiederherstellungsverfahrens können davon beeinflusst werden, ob zum Zeitpunkt des Ausfalls Wartungsverfahren durchgeführt wurden oder ob kürzlich Änderungen an Ihren ILM-Richtlinien vorgenommen wurden. Der technische Support muss den aktuellen Verlauf des Grid sowie dessen aktuelle Situation vor Beginn einer Wiederherstellung des Standorts beurteilen.
+
+
+
+CAUTION: Das Standort-Recovery kann nur durch den technischen Support durchgeführt werden.
+
+Dies ist ein allgemeiner Überblick über den Prozess, den der technische Support zur Wiederherstellung eines fehlerhaften Standorts verwendet:
+
+. Technischer Support:
++
+.. Führt eine detaillierte Bewertung des Fehlers durch.
+.. Arbeitet mit Ihnen zusammen, um Ihre Geschäftsziele zu überprüfen.
+.. Entwickelt einen Recovery-Plan, der auf Ihre Situation zugeschnitten ist.
+
+
+. Wenn der primäre Admin-Node ausgefallen ist, wird er vom technischen Support wiederhergestellt.
+. Der technische Support stellt alle Storage-Knoten wieder her, folgt dieser Beschreibung:
++
+.. Ersetzen Sie bei Bedarf Storage Node Hardware oder Virtual Machines.
+.. Wiederherstellung von Objektmetadaten am ausgefallenen Standort
+.. Wiederherstellung von Objektdaten auf den wiederhergestellten Storage-Nodes
++
+
+CAUTION: Wenn die Wiederherstellungsverfahren für einen einzelnen ausgefallenen Speicherknoten verwendet werden, kann es zu Datenverlusten kommen.
+
++
+
+NOTE: Wenn ein ganzer Standort ausgefallen ist, verwendet der technische Support spezielle Befehle, um Objekte und Objektmetadaten erfolgreich wiederherzustellen.
+
+
+
+. Der technische Support stellt andere ausgefallene Nodes wieder her.
++
+Nachdem Objekt-Metadaten und -Daten wiederhergestellt wurden, verwendet der technische Support Standardverfahren zur Wiederherstellung ausgefallener Gateway-Nodes oder nicht primärer Admin-Nodes.
+
+
+
+.Verwandte Informationen
+link:site-decommissioning.html["Deaktivierung der Website"]

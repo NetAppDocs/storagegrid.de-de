@@ -1,0 +1,130 @@
+---
+permalink: admin/manage-firewall-controls.html 
+sidebar: sidebar 
+keywords: firewall controls, untrusted client network, privileged address, manage external access 
+summary: StorageGRID umfasst für jeden Node eine interne Firewall, die die Sicherheit Ihres Grids erhöht, indem Sie den Zugriff auf das Grid-Netzwerk, das Admin-Netzwerk und das Client-Netzwerk anpassen können. 
+---
+= Interne Firewall-Kontrollen verwalten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID verfügt über eine interne Firewall auf jedem Node, die die Sicherheit Ihres Grids erhöht, indem Sie den Netzwerkzugriff auf den Node kontrollieren können. Verwenden Sie die Firewall, um den Netzwerkzugriff auf allen Ports zu verhindern, außer den für Ihre spezifische Grid-Bereitstellung erforderlichen Ports. Die Konfigurationsänderungen, die Sie auf der Seite Firewall-Steuerung vornehmen, werden für jeden Knoten bereitgestellt.
+
+Verwenden Sie die drei Registerkarten auf der Seite „Firewall-Steuerung“, um den für Ihr Raster erforderlichen Zugriff anzupassen.
+
+* *Privilegierte Adressliste*: Verwenden Sie diese Registerkarte, um ausgewählten Zugriff auf geschlossene Ports zu ermöglichen. Sie können IP-Adressen oder Subnetze in CIDR-Notation hinzufügen, die über die Registerkarte externen Zugriff managen auf geschlossene Ports zugreifen können.
+* *Externen Zugriff verwalten*: Verwenden Sie diese Registerkarte, um Ports zu schließen, die standardmäßig geöffnet sind, oder um zuvor geschlossene Ports wieder zu öffnen.
+* *Nicht vertrauenswürdiges Client-Netzwerk*: Verwenden Sie diese Registerkarte, um anzugeben, ob ein Knoten eingehenden Datenverkehr vom Client-Netzwerk anvertraut.
++
+Die Einstellungen auf dieser Registerkarte überschreiben die Einstellungen auf der Registerkarte externen Zugriff verwalten.
+
++
+** Ein Knoten mit einem nicht vertrauenswürdigen Client-Netzwerk akzeptiert nur Verbindungen auf den an diesem Knoten konfigurierten Load-Balancer-Endpunktports (global, Knotenschnittstelle und Knotentyp gebundene Endpunkte).
+** Load Balancer-Endpunkt-Ports _sind die einzigen offenen Ports_ in nicht vertrauenswürdigen Client-Netzwerken, unabhängig von den Einstellungen auf der Registerkarte Externe Netzwerke verwalten.
+** Wenn vertrauenswürdig, sind alle Ports, die auf der Registerkarte externen Zugriff managen geöffnet sind, sowie alle im Client-Netzwerk geöffneten Load Balancer-Endpunkte zugänglich.
+
+
+
+
+
+NOTE: Die Einstellungen, die Sie auf einer Registerkarte vornehmen, können sich auf die Zugriffsänderungen auswirken, die Sie auf einer anderen Registerkarte vornehmen. Überprüfen Sie die Einstellungen auf allen Registerkarten, um sicherzustellen, dass sich Ihr Netzwerk wie erwartet verhält.
+
+Informationen zum Konfigurieren der internen Firewall-Steuerelemente finden Sie unter link:../admin/configure-firewall-controls.html["Konfigurieren Sie die Firewall-Steuerelemente"].
+
+Weitere Informationen zu externen Firewalls und Netzwerksicherheit finden Sie unter link:../admin/controlling-access-through-firewalls.html["Kontrolle des Zugriffs über externe Firewall"].
+
+
+
+== Liste privilegierter Adressen und Verwaltung externer Zugriffsregisterkarten
+
+Auf der Registerkarte Liste der privilegierten Adressen können Sie eine oder mehrere IP-Adressen registrieren, denen Zugriff auf geschlossene Grid-Ports gewährt wird. Auf der Registerkarte externen Zugriff verwalten können Sie den externen Zugriff auf ausgewählte externe Ports oder alle offenen externen Ports schließen (externe Ports sind Ports, auf die standardmäßig nicht-Grid-Nodes zugreifen können). Diese beiden Registerkarten können häufig zusammen verwendet werden, um den genauen Netzwerkzugriff anzupassen, den Sie für Ihr Raster benötigen.
+
+
+NOTE: Privilegierte IP-Adressen haben standardmäßig keinen internen Grid-Port-Zugriff.
+
+
+
+=== Beispiel 1: Verwenden Sie einen Jump-Host für Wartungsaufgaben
+
+Angenommen, Sie möchten einen Jump-Host (einen sicherheitsgesicherten Host) für die Netzwerkadministration verwenden. Sie können die folgenden allgemeinen Schritte verwenden:
+
+. Verwenden Sie die Registerkarte Liste der privilegierten Adressen, um die IP-Adresse des Jump-Hosts hinzuzufügen.
+. Verwenden Sie die Registerkarte externen Zugriff verwalten, um alle Ports zu blockieren.
+
+
+
+CAUTION: Fügen Sie die privilegierte IP-Adresse hinzu, bevor Sie die Ports 443 und 8443 blockieren. Alle Benutzer, die derzeit mit einem blockierten Port verbunden sind, einschließlich Ihnen, verlieren den Zugriff auf Grid Manager, es sei denn, ihre IP-Adresse wurde der Liste der privilegierten Adressen hinzugefügt.
+
+Nachdem Sie Ihre Konfiguration gespeichert haben, werden alle externen Ports auf dem Admin-Knoten in Ihrem Grid für alle Hosts außer dem Jump-Host gesperrt. Sie können dann den Jump-Host verwenden, um Wartungsarbeiten am Grid sicherer durchzuführen.
+
+
+
+=== Beispiel 2: Sperren sensibler Ports
+
+Angenommen, Sie möchten sensible Ports und den Dienst auf diesem Port sperren (z. B. SSH an Port 22). Sie können die folgenden allgemeinen Schritte verwenden:
+
+. Verwenden Sie die Registerkarte Liste der privilegierten Adressen, um nur den Hosts Zugriff zu gewähren, die Zugriff auf den Dienst benötigen.
+. Verwenden Sie die Registerkarte externen Zugriff verwalten, um alle Ports zu blockieren.
+
+
+
+CAUTION: Fügen Sie die privilegierte IP-Adresse hinzu, bevor Sie den Zugriff auf alle Ports blockieren, die dem Zugriff auf Grid Manager und Tenant Manager zugewiesen sind (voreingestellte Ports sind 443 und 8443). Alle Benutzer, die derzeit mit einem blockierten Port verbunden sind, einschließlich Ihnen, verlieren den Zugriff auf Grid Manager, es sei denn, ihre IP-Adresse wurde der Liste der privilegierten Adressen hinzugefügt.
+
+Nachdem Sie die Konfiguration gespeichert haben, stehen den Hosts auf der Liste der privilegierten Adressen Port 22 und SSH-Dienst zur Verfügung. Allen anderen Hosts wird der Zugriff auf den Dienst verweigert, unabhängig davon, von welcher Schnittstelle die Anforderung stammt.
+
+
+
+=== Beispiel 3: Deaktivieren Sie den Zugriff auf nicht verwendete Dienste
+
+Auf Netzwerkebene können Sie einige Dienste deaktivieren, die Sie nicht verwenden möchten. Um beispielsweise den HTTP S3-Clientverkehr zu blockieren, verwenden Sie den Umschalter auf der Registerkarte „externen Zugriff verwalten“, um Port 18084 zu blockieren.
+
+
+
+== Registerkarte nicht vertrauenswürdige Client-Netzwerke
+
+Wenn Sie ein Client-Netzwerk verwenden, können Sie StorageGRID vor feindlichen Angriffen schützen, indem Sie eingehenden Client-Datenverkehr nur auf explizit konfigurierten Endpunkten akzeptieren.
+
+Standardmäßig ist das Client-Netzwerk auf jedem Grid-Knoten _Trusted_. Das heißt, standardmäßig vertraut StorageGRID eingehende Verbindungen zu jedem Grid-Knoten auf allen link:../network/external-communications.html["Verfügbare externe Ports"].
+
+Sie können die Bedrohung durch feindliche Angriffe auf Ihrem StorageGRID-System verringern, indem Sie angeben, dass das Client-Netzwerk auf jedem Knoten _unvertrauenswürdig_ ist. Wenn das Client-Netzwerk eines Node nicht vertrauenswürdig ist, akzeptiert der Knoten nur eingehende Verbindungen an Ports, die explizit als Load Balancer-Endpunkte konfiguriert sind. Siehe link:../admin/configuring-load-balancer-endpoints.html["Konfigurieren von Load Balancer-Endpunkten"] und link:../admin/configure-firewall-controls.html["Konfigurieren Sie die Firewall-Steuerelemente"].
+
+
+
+=== Beispiel 1: Der Gateway-Node akzeptiert nur HTTPS-S3-Anforderungen
+
+Angenommen, ein Gateway-Node soll den gesamten eingehenden Datenverkehr im Client-Netzwerk mit Ausnahme von HTTPS S3-Anforderungen ablehnen. Sie würden folgende allgemeine Schritte durchführen:
+
+. Konfigurieren Sie auf der link:../admin/configuring-load-balancer-endpoints.html["Load Balancer-Endpunkte"] Seite einen Load Balancer-Endpunkt für S3 über HTTPS an Port 443.
+. Wählen Sie auf der Seite Firewall-Steuerung die Option nicht vertrauenswürdig aus, um anzugeben, dass das Client-Netzwerk auf dem Gateway-Knoten nicht vertrauenswürdig ist.
+
+
+Nachdem Sie Ihre Konfiguration gespeichert haben, wird der gesamte eingehende Datenverkehr im Client-Netzwerk des Gateway-Knotens außer HTTPS-S3-Anfragen auf Port 443- und ICMP-Echo-(Ping-)Anfragen verworfen.
+
+
+
+=== Beispiel 2: Storage-Node sendet Anforderungen von S3-Plattform-Services
+
+Angenommen, Sie möchten den ausgehenden Datenverkehr der S3-Plattformdienste von einem Storage-Node aktivieren, möchten jedoch eingehende Verbindungen zu diesem Storage-Node im Client-Netzwerk verhindern. Sie würden diesen allgemeinen Schritt durchführen:
+
+* Geben Sie auf der Registerkarte nicht vertrauenswürdige Client-Netzwerke der Seite Firewall-Steuerung an, dass das Client-Netzwerk auf dem Storage Node nicht vertrauenswürdig ist.
+
+
+Nachdem Sie die Konfiguration gespeichert haben, akzeptiert der Storage Node keinen eingehenden Datenverkehr mehr im Client-Netzwerk, erlaubt jedoch weiterhin ausgehende Anfragen an konfigurierte Plattformdienstziele.
+
+
+
+=== Beispiel 3: Zugriff auf Grid Manager auf ein Subnetz beschränken
+
+Angenommen, Sie möchten den Zugriff des Grid-Managers nur auf ein bestimmtes Subnetz zulassen. Führen Sie die folgenden Schritte aus:
+
+. Verbinden Sie das Client-Netzwerk Ihrer Admin-Knoten mit dem Subnetz.
+. Verwenden Sie die Registerkarte nicht vertrauenswürdiges Clientnetzwerk, um das Clientnetzwerk als nicht vertrauenswürdig zu konfigurieren.
+. Wenn Sie einen Load Balancer-Endpunkt der Managementoberfläche erstellen, geben Sie den Port ein und wählen Sie die Managementoberfläche aus, auf die der Port zugreifen soll.
+. Wählen Sie *Ja* für nicht vertrauenswürdiges Client-Netzwerk aus.
+. Verwenden Sie die Registerkarte externen Zugriff verwalten, um alle externen Ports zu blockieren (mit oder ohne privilegierte IP-Adressen für Hosts außerhalb dieses Subnetzes).
+
+
+Nachdem Sie die Konfiguration gespeichert haben, können nur Hosts in dem von Ihnen angegebenen Subnetz auf den Grid Manager zugreifen. Alle anderen Hosts sind blockiert.

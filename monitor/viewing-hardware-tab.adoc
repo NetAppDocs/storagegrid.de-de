@@ -1,0 +1,725 @@
+---
+permalink: monitor/viewing-hardware-tab.html 
+sidebar: sidebar 
+keywords: hardware tab 
+summary: Auf der Registerkarte Hardware werden für jeden Node CPU-Auslastung und Arbeitsspeicherauslastung sowie zusätzliche Hardware-Informationen über Appliances angezeigt. 
+---
+= Zeigen Sie die Registerkarte Hardware an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Auf der Registerkarte Hardware werden für jeden Node CPU-Auslastung und Arbeitsspeicherauslastung sowie zusätzliche Hardware-Informationen über Appliances angezeigt.
+
+
+NOTE: Der Grid Manager wird mit jeder Version aktualisiert und stimmt möglicherweise nicht mit den Beispielbildern auf dieser Seite überein.
+
+Die Registerkarte Hardware wird für alle Nodes angezeigt.
+
+image::../media/nodes_page_hardware_tab_graphs.png[Registerkarte Knoten Hardware]
+
+Um ein anderes Zeitintervall anzuzeigen, wählen Sie eines der Steuerelemente oberhalb des Diagramms oder Diagramms aus. Sie können die verfügbaren Informationen für Intervalle von 1 Stunde, 1 Tag, 1 Woche oder 1 Monat anzeigen. Sie können auch ein benutzerdefiniertes Intervall festlegen, mit dem Sie Datum und Zeitbereiche festlegen können.
+
+Um Details zur CPU-Auslastung und Speicherauslastung anzuzeigen, setzen Sie den Mauszeiger auf die einzelnen Diagramme.
+
+image::../media/nodes_page_memory_usage_details.png[Seite „Nodes“ > „Hardware > Speichernutzung“]
+
+Wenn der Knoten ein Appliance-Node ist, enthält diese Registerkarte auch einen Abschnitt mit weiteren Informationen zur Appliance-Hardware.
+
+
+
+== Zeigen Sie Informationen zu Appliance Storage Nodes an
+
+Auf der Seite Nodes werden Informationen zum Serviczustand sowie alle Computing-, Festplattengeräte- und Netzwerkressourcen für jeden Appliance Storage Node aufgeführt. Außerdem können Sie den Arbeitsspeicher, die Storage-Hardware, die Controller-Firmware-Version, Netzwerkressourcen, Netzwerkschnittstellen, Netzwerkadressen und empfangen und übertragen Daten.
+
+.Schritte
+. Wählen Sie auf der Seite Knoten einen Appliance-Speicherknoten aus.
+. Wählen Sie *Übersicht*.
++
+Im Abschnitt Node-Informationen auf der Registerkarte Übersicht werden zusammenfassende Informationen für den Node, z. B. Name, Typ, ID und Verbindungsstatus des Node, angezeigt. Die Liste der IP-Adressen umfasst den Namen der Schnittstelle für jede Adresse:
+
++
+** *eth*: Das Grid-Netzwerk, das Admin-Netzwerk oder das Client-Netzwerk.
+** *Hic*: Einer der physischen 10-, 25- oder 100-GbE-Ports auf dem Gerät. Diese Ports können miteinander verbunden und mit dem StorageGRID-Grid-Netzwerk (eth0) und dem Client-Netzwerk (eth2) verbunden werden.
+** *mtc*: Einer der physischen 1-GbE-Ports auf der Appliance. Eine oder mehrere mtc-Schnittstellen bilden die StorageGRID Admin-Netzwerkschnittstelle (eth1). Für den Techniker im Rechenzentrum können Sie andere mtc-Schnittstellen zur temporären lokalen Konnektivität zur Verfügung stellen.
++
+image::../media/nodes_page_overview_tab_extended.png[Knotenübersicht Erweitert]
+
++
+Im Abschnitt „Meldungen“ der Registerkarte „Übersicht“ werden alle aktiven Meldungen für den Node angezeigt.
+
+
+
+. Wählen Sie *Hardware*, um weitere Informationen über das Gerät anzuzeigen.
++
+.. Sehen Sie sich die CPU-Auslastung und die Speicherdiagramme an, um den Prozentsatz der CPU- und Arbeitsspeicherauslastung im Laufe der Zeit zu ermitteln. Um ein anderes Zeitintervall anzuzeigen, wählen Sie eines der Steuerelemente oberhalb des Diagramms oder Diagramms aus. Sie können die verfügbaren Informationen für Intervalle von 1 Stunde, 1 Tag, 1 Woche oder 1 Monat anzeigen. Sie können auch ein benutzerdefiniertes Intervall festlegen, mit dem Sie Datum und Zeitbereiche festlegen können.
++
+image::../media/nodes_page_hardware_tab_graphs.png[Hardware-Grafiken]
+
+.. Blättern Sie nach unten, um die Komponententabelle für das Gerät anzuzeigen. Diese Tabelle enthält Informationen, z. B. den Modellnamen der Appliance, Controller-Namen, Seriennummern und IP-Adressen und den Status der einzelnen Komponenten.
++
+
+NOTE: Einige Felder, wie BMC IP- und Computing-Hardware des Rechencontrollers, werden nur für Geräte mit dieser Funktion angezeigt.
+
++
+Komponenten für Storage-Shelfs und Erweiterungs-Shelfs, wenn sie Teil der Installation sind, werden in einer separaten Tabelle unter der Appliance-Tabelle aufgeführt.
+
++
+image::../media/nodes_page_hardware_tab_for_appliance.png[Registerkarte Knoten Hardware für Appliance]
+
++
+[cols="1a,2a"]
+|===
+| Feld in der Appliance-Tabelle | Beschreibung 
+
+
+ a| 
+Appliance-Modell
+ a| 
+Die Modellnummer für diese StorageGRID Appliance wird in SANtricity OS angezeigt.
+
+
+
+ a| 
+Name des Storage Controllers
+ a| 
+Der Name dieser StorageGRID-Appliance wird in SANtricity OS angezeigt.
+
+
+
+ a| 
+Storage Controller A Management-IP
+ a| 
+IP-Adresse für Management-Port 1 auf Storage Controller A. Sie verwenden diese IP, um auf das SANtricity OS zuzugreifen, um Storage-Probleme zu beheben.
+
+
+
+ a| 
+Storage-Controller B Management-IP
+ a| 
+IP-Adresse für Management-Port 1 auf Storage Controller B. Sie verwenden diese IP, um auf das SANtricity OS zuzugreifen, um Storage-Probleme zu beheben.
+
+Einige Appliance-Modelle besitzen keinen Storage Controller B.
+
+
+
+ a| 
+WWID des Storage Controller
+ a| 
+Die weltweite Kennung des im SANtricity OS gezeigten Storage Controllers.
+
+
+
+ a| 
+Seriennummer des Storage-Appliance-Chassis
+ a| 
+Die Seriennummer des Gehäuses des Geräts.
+
+
+
+ a| 
+Version der Storage Controller-Firmware
+ a| 
+Die Version der Firmware auf dem Storage Controller für dieses Gerät.
+
+
+
+ a| 
+SANtricity OS-Version des Storage-Controllers
+ a| 
+Die SANtricity OS-Version von Storage Controller A
+
+
+
+ a| 
+NVSRAM-Version des Storage-Controllers
+ a| 
+NVSRAM-Version des Storage Controllers, wie vom SANtricity System Manager gemeldet.
+
+Wenn bei den SG6060 und SG6160 die NVSRAM-Version zwischen den beiden Controllern nicht übereinstimmt, wird die Version von Controller A angezeigt. Wenn Controller A nicht installiert oder betriebsbereit ist, wird die Version von Controller B angezeigt.
+
+
+
+ a| 
+Storage-Hardware
+ a| 
+Der Gesamtstatus der Hardware des Storage Controllers. Wenn SANtricity System Manager einen Status als Warnung für die Storage-Hardware meldet, meldet das StorageGRID System diesen Wert ebenfalls.
+
+Wenn der Status „erfordert Aufmerksamkeit“ lautet, überprüfen Sie zuerst den Storage Controller mit SANtricity OS. Stellen Sie dann sicher, dass keine weiteren Warnmeldungen für den Compute-Controller vorhanden sind.
+
+
+
+ a| 
+Anzahl der Laufwerke bei Ausfall des Storage-Controllers
+ a| 
+Die Anzahl der Laufwerke, die nicht optimal sind.
+
+
+
+ a| 
+Storage Controller A
+ a| 
+Der Status von Speicher-Controller A.
+
+
+
+ a| 
+Storage Controller B
+ a| 
+Der Status von Storage Controller B. einige Appliance-Modelle verfügen über keinen Storage Controller B.
+
+
+
+ a| 
+Netzteil A für Storage-Controller
+ a| 
+Der Status von Netzteil A für den Storage Controller.
+
+
+
+ a| 
+Netzteil B für Storage Controller
+ a| 
+Der Status von Netzteil B für den Speicher-Controller.
+
+
+
+ a| 
+Typ des Speicherdatenspeichers
+ a| 
+Der Laufwerkstyp in der Appliance, z. B. HDD (Festplatte) oder SSD (Solid State Drive).
+
+
+
+ a| 
+Größe der Speicherdatenlaufwerk
+ a| 
+Die effektive Größe eines Datenlaufwerks.
+
+Beim SG6160 wird auch die Größe des Cache-Laufwerks angezeigt.
+
+*Hinweis*: Für Knoten mit Erweiterungs-Shelfs verwenden Sie stattdessen den<<shelf_data_drive_size,Datenlaufwerk-Größe für jedes Shelf>>. Die effektive Laufwerksgröße kann je nach Shelf abweichen.
+
+
+
+ a| 
+Storage RAID-Modus
+ a| 
+Der für die Appliance konfigurierte RAID-Modus.
+
+
+
+ a| 
+Storage-Konnektivität
+ a| 
+Der Status der Storage-Konnektivität.
+
+
+
+ a| 
+Gesamtnetzteil
+ a| 
+Der Status aller Netzteile für das Gerät.
+
+
+
+ a| 
+BMC IP für Computing Controller
+ a| 
+Die IP-Adresse des Ports für das Baseboard Management Controller (BMC) im Computing-Controller. Mit dieser IP können Sie eine Verbindung zur BMC-Schnittstelle herstellen, um die Appliance-Hardware zu überwachen und zu diagnostizieren.
+
+Dieses Feld wird nicht für Gerätelodelle angezeigt, die keinen BMC enthalten.
+
+
+
+ a| 
+Seriennummer des Computing-Controllers
+ a| 
+Die Seriennummer des Compute-Controllers.
+
+
+
+ a| 
+Computing-Hardware
+ a| 
+Der Status der Compute-Controller-Hardware Dieses Feld wird nicht für Appliance-Modelle angezeigt, die über keine separate Computing-Hardware und Speicher-Hardware verfügen.
+
+
+
+ a| 
+CPU-Temperatur des Compute-Controllers
+ a| 
+Der Temperaturstatus der CPU des Compute-Controllers.
+
+
+
+ a| 
+Temperatur im Computing-Controller-Chassis
+ a| 
+Der Temperaturstatus des Compute-Controllers.
+
+|===
++
+[cols="1a,2a"]
+|===
+| Spalte in der Tabelle „Storage Shelfs“ | Beschreibung 
+
+
+ a| 
+Seriennummer des Shelf Chassis
+ a| 
+Die Seriennummer für das Storage Shelf-Chassis.
+
+
+
+ a| 
+Shelf-ID
+ a| 
+Die numerische Kennung für das Storage-Shelf.
+
+*** 99: Storage Controller Shelf
+*** 0: Erstes Erweiterungs-Shelf
+*** 1: Zweites Erweiterungs-Shelf
+
+
+*Hinweis:* Erweiterungseinschübe gelten nur für die SG6060 und SG6160.
+
+
+
+ a| 
+Der Shelf-Status
+ a| 
+Der Gesamtstatus des Storage Shelf.
+
+
+
+ a| 
+EAM-Status
+ a| 
+Der Status der ein-/Ausgangsmodule (IOMs) in beliebigen Erweiterungs-Shelfs. K. A., wenn es sich nicht um ein Erweiterungs-Shelf handelt
+
+
+
+ a| 
+Netzteilstatus
+ a| 
+Der Gesamtstatus der Netzteile für das Storage Shelf.
+
+
+
+ a| 
+Status der Schublade
+ a| 
+Der Zustand der Schubladen im Lagerregal. N/A, wenn das Regal keine Schubladen enthält.
+
+
+
+ a| 
+Lüfterstatus
+ a| 
+Der Gesamtstatus der Lüfter im Storage Shelf.
+
+
+
+ a| 
+Laufwerksschächte
+ a| 
+Die Gesamtzahl der Laufwerksschächte im Storage-Shelf.
+
+
+
+ a| 
+Datenlaufwerke
+ a| 
+Die Anzahl der Laufwerke im Storage Shelf, die für den Datenspeicher verwendet werden.
+
+
+
+ a| 
+[[Shelf_Data_Drive_size]]Größe des Datenlaufwerks
+ a| 
+Die effektive Größe eines Datenlaufwerks im Storage Shelf.
+
+
+
+ a| 
+Cache-Laufwerke
+ a| 
+Die Anzahl der Laufwerke im Storage Shelf, die als Cache verwendet werden.
+
+
+
+ a| 
+Größe des Cache-Laufwerks
+ a| 
+Die Größe des kleinsten Cache-Laufwerks im Storage-Shelf. Normalerweise haben Cache-Laufwerke dieselbe Größe.
+
+
+
+ a| 
+Konfigurationsstatus
+ a| 
+Der Konfigurationsstatus des Storage Shelf.
+
+|===
+.. Bestätigen Sie, dass alle Status „nominal“ sind.
++
+Wenn ein Status nicht „nominal“ lautet, prüfen Sie alle aktuellen Warnmeldungen. Weitere Informationen zu einigen dieser Hardware-Werte finden Sie auch mit SANtricity System Manager. Informationen zur Installation und Wartung des Geräts finden Sie in den Anweisungen.
+
+
+
+. Wählen Sie *Netzwerk*, um Informationen für jedes Netzwerk anzuzeigen.
++
+Das Diagramm „Netzwerkverkehr“ bietet eine Zusammenfassung des gesamten Netzwerkverkehr.
+
++
+image::../media/nodes_page_network_traffic_graph.png[Knoten Seite Netzwerk Verkehr Diagramm]
+
++
+.. Lesen Sie den Abschnitt Netzwerkschnittstellen.
++
+image::../media/nodes_page_network_interfaces.png[Knoten Seite Netzwerkschnittstellen]
+
++
+Verwenden Sie die folgende Tabelle mit den Werten in der Spalte *Geschwindigkeit* in der Tabelle Netzwerkschnittstellen, um festzustellen, ob die 10/25-GbE-Netzwerkanschlüsse auf dem Gerät für den aktiven/Backup-Modus oder den LACP-Modus konfiguriert wurden.
+
++
+
+NOTE: Die in der Tabelle aufgeführten Werte gehen davon aus, dass alle vier Links verwendet werden.
+
++
+[cols="1a,1a,1a,1a"]
+|===
+| Verbindungsmodus | Bond-Modus | Einzelne HIC-Verbindungsgeschwindigkeit (Schluck1, 2, Schluck3, Schluck4) | Erwartete Grid-/Client-Netzwerkgeschwindigkeit (eth0,eth2) 
+
+
+ a| 
+Aggregat
+ a| 
+LACP
+ a| 
+25
+ a| 
+100
+
+
+
+ a| 
+Fest
+ a| 
+LACP
+ a| 
+25
+ a| 
+50
+
+
+
+ a| 
+Fest
+ a| 
+Aktiv/Backup
+ a| 
+25
+ a| 
+25
+
+
+
+ a| 
+Aggregat
+ a| 
+LACP
+ a| 
+10
+ a| 
+40
+
+
+
+ a| 
+Fest
+ a| 
+LACP
+ a| 
+10
+ a| 
+20
+
+
+
+ a| 
+Fest
+ a| 
+Aktiv/Backup
+ a| 
+10
+ a| 
+10
+
+|===
++
+Weitere Informationen zum Konfigurieren der 10/25-GbE-Ports finden Sie unter https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/configuring-network-links.html["Netzwerkverbindungen konfigurieren"^].
+
+.. Lesen Sie den Abschnitt Netzwerkkommunikation.
++
+Die Tabellen „Empfangen und Senden“ zeigen, wie viele Bytes und Pakete über jedes Netzwerk empfangen und gesendet wurden, sowie andere Empfangs- und Übertragungs-Metriken.
+
++
+image::../media/nodes_page_network_communication.png[Knoten Seite Netzwerk Komm]
+
+
+
+. Wählen Sie *Storage* aus, um Diagramme anzuzeigen, die den Prozentsatz des im Zeitverlauf für Objektdaten und Objektmetadaten verwendeten Speichers sowie Informationen zu Festplattengeräten, Volumes und Objektspeichern anzeigen.
++
+image::../media/nodes_page_storage_used_object_data.png[Speicher Verwendet - Objektdaten]
+
++
+image::../media/storage_used_object_metadata.png[Verwendeter Storage: Objekt-Metadaten]
+
++
+.. Blättern Sie nach unten, um die verfügbaren Speichermengen für jedes Volume und jeden Objektspeicher anzuzeigen.
++
+Der weltweite Name jeder Festplatte stimmt mit der WWID (World-Wide Identifier) des Volumes überein, die angezeigt wird, wenn Sie die Standard-Volume-Eigenschaften in SANtricity OS (der mit dem Storage Controller der Appliance verbundenen Managementsoftware) anzeigen.
+
++
+Um Ihnen bei der Auswertung von Datenträger-Lese- und Schreibstatistiken zu Volume-Mount-Punkten zu helfen, entspricht der erste Teil des Namens, der in der Spalte *Name* der Tabelle Disk Devices (d. h. _sdc_, _sdd_, _sde_ usw.) in der Spalte *Gerät* der Tabelle Volumes angezeigt wird.
+
++
+image::../media/nodes_page_storage_tables.png[Knoten Seitentabellen]
+
+
+
+
+
+
+
+== Zeigen Sie Informationen zu Appliance Admin Nodes und Gateway Nodes an
+
+Auf der Seite Nodes werden Informationen zum Serviczustand sowie alle Computing-, Festplatten- und Netzwerkressourcen für jede Service-Appliance, die als Admin-Node oder Gateway-Node verwendet wird, aufgeführt. Außerdem können Sie Arbeitsspeicher, Storage-Hardware, Netzwerkressourcen, Netzwerkschnittstellen, Netzwerkadressen, Daten empfangen und übertragen.
+
+.Schritte
+. Wählen Sie auf der Seite Knoten einen Appliance Admin Node oder einen Appliance Gateway Node aus.
+. Wählen Sie *Übersicht*.
++
+Im Abschnitt Node-Informationen auf der Registerkarte Übersicht werden zusammenfassende Informationen für den Node, z. B. Name, Typ, ID und Verbindungsstatus des Node, angezeigt. Die Liste der IP-Adressen umfasst den Namen der Schnittstelle für jede Adresse:
+
++
+** *Adlb* und *adlli*: Wird angezeigt, wenn Active/Backup Bonding für die Admin Network Interface verwendet wird
+** *eth*: Das Grid-Netzwerk, das Admin-Netzwerk oder das Client-Netzwerk.
+** *Hic*: Einer der physischen 10-, 25- oder 100-GbE-Ports auf dem Gerät. Diese Ports können miteinander verbunden und mit dem StorageGRID-Grid-Netzwerk (eth0) und dem Client-Netzwerk (eth2) verbunden werden.
+** *mtc*: Einer der physischen 1-GbE-Ports auf der Appliance. Eine oder mehrere mtc-Schnittstellen bilden die Admin-Netzwerkschnittstelle (eth1). Für den Techniker im Rechenzentrum können Sie andere mtc-Schnittstellen zur temporären lokalen Konnektivität zur Verfügung stellen.
++
+image::../media/nodes_page_overview_tab_services_appliance.png[Registerkarte Knoten der Registerkarte Überblick für Services Appliance]
+
+
+
++
+Im Abschnitt „Meldungen“ der Registerkarte „Übersicht“ werden alle aktiven Meldungen für den Node angezeigt.
+
+. Wählen Sie *Hardware*, um weitere Informationen über das Gerät anzuzeigen.
++
+.. Sehen Sie sich die CPU-Auslastung und die Speicherdiagramme an, um den Prozentsatz der CPU- und Arbeitsspeicherauslastung im Laufe der Zeit zu ermitteln. Um ein anderes Zeitintervall anzuzeigen, wählen Sie eines der Steuerelemente oberhalb des Diagramms oder Diagramms aus. Sie können die verfügbaren Informationen für Intervalle von 1 Stunde, 1 Tag, 1 Woche oder 1 Monat anzeigen. Sie können auch ein benutzerdefiniertes Intervall festlegen, mit dem Sie Datum und Zeitbereiche festlegen können.
++
+image::../media/nodes_page_hardware_tab_graphs_services_appliance.png[Knoten Seite Hardware Registerkarte Diagramme für Services Appliance]
+
+.. Blättern Sie nach unten, um die Komponententabelle für das Gerät anzuzeigen. Diese Tabelle enthält Informationen, z. B. den Modellnamen, die Seriennummer, die Controller-Firmware-Version und den Status jeder Komponente.
++
+image::../media/nodes_page_hardware_tab_services_appliance.png[Registerkarte Knoten Hardware für Service Appliance]
+
++
+[cols="1a,2a"]
+|===
+| Feld in der Appliance-Tabelle | Beschreibung 
+
+
+ a| 
+Appliance-Modell
+ a| 
+Die Modellnummer für diese StorageGRID Appliance.
+
+
+
+ a| 
+Anzahl der Laufwerke bei Ausfall des Storage-Controllers
+ a| 
+Die Anzahl der Laufwerke, die nicht optimal sind.
+
+
+
+ a| 
+Typ des Speicherdatenspeichers
+ a| 
+Der Laufwerkstyp in der Appliance, z. B. HDD (Festplatte) oder SSD (Solid State Drive).
+
+
+
+ a| 
+Größe der Speicherdatenlaufwerk
+ a| 
+Die effektive Größe eines Datenlaufwerks.
+
+
+
+ a| 
+Storage RAID-Modus
+ a| 
+Der RAID-Modus für die Appliance.
+
+
+
+ a| 
+Gesamtnetzteil
+ a| 
+Der Status aller Netzteile im Gerät.
+
+
+
+ a| 
+BMC IP für Computing Controller
+ a| 
+Die IP-Adresse des Ports für das Baseboard Management Controller (BMC) im Computing-Controller. Mit dieser IP können Sie eine Verbindung zur BMC-Schnittstelle herstellen, um die Appliance-Hardware zu überwachen und zu diagnostizieren.
+
+Dieses Feld wird nicht für Gerätelodelle angezeigt, die keinen BMC enthalten.
+
+
+
+ a| 
+Seriennummer des Computing-Controllers
+ a| 
+Die Seriennummer des Compute-Controllers.
+
+
+
+ a| 
+Computing-Hardware
+ a| 
+Der Status der Compute-Controller-Hardware
+
+
+
+ a| 
+CPU-Temperatur des Compute-Controllers
+ a| 
+Der Temperaturstatus der CPU des Compute-Controllers.
+
+
+
+ a| 
+Temperatur im Computing-Controller-Chassis
+ a| 
+Der Temperaturstatus des Compute-Controllers.
+
+|===
+.. Bestätigen Sie, dass alle Status „nominal“ sind.
++
+Wenn ein Status nicht „nominal“ lautet, prüfen Sie alle aktuellen Warnmeldungen.
+
+
+
+. Wählen Sie *Netzwerk*, um Informationen für jedes Netzwerk anzuzeigen.
++
+Das Diagramm „Netzwerkverkehr“ bietet eine Zusammenfassung des gesamten Netzwerkverkehr.
+
++
+image::../media/nodes_page_network_traffic_graph.png[Knoten Seite Netzwerk Verkehr Diagramm]
+
++
+.. Lesen Sie den Abschnitt Netzwerkschnittstellen.
++
+image::../media/nodes_page_hardware_tab_network_services_appliance.png[Registerkarte Knoten Hardware Network Services Appliance]
+
++
+Verwenden Sie die folgende Tabelle mit den Werten in der Spalte *Geschwindigkeit* in der Tabelle Netzwerkschnittstellen, um festzustellen, ob die vier 40/100-GbE-Netzwerkanschlüsse auf der Appliance für den aktiven/Backup-Modus oder den LACP-Modus konfiguriert wurden.
+
++
+
+NOTE: Die in der Tabelle aufgeführten Werte gehen davon aus, dass alle vier Links verwendet werden.
+
++
+[cols="1a,1a,1a,1a"]
+|===
+| Verbindungsmodus | Bond-Modus | Einzelne HIC-Verbindungsgeschwindigkeit (Schluck1, 2, Schluck3, Schluck4) | Erwartete Grid-/Client-Netzwerkgeschwindigkeit (eth0, eth2) 
+
+
+ a| 
+Aggregat
+ a| 
+LACP
+ a| 
+100
+ a| 
+400
+
+
+
+ a| 
+Fest
+ a| 
+LACP
+ a| 
+100
+ a| 
+200
+
+
+
+ a| 
+Fest
+ a| 
+Aktiv/Backup
+ a| 
+100
+ a| 
+100
+
+
+
+ a| 
+Aggregat
+ a| 
+LACP
+ a| 
+40
+ a| 
+160
+
+
+
+ a| 
+Fest
+ a| 
+LACP
+ a| 
+40
+ a| 
+80
+
+
+
+ a| 
+Fest
+ a| 
+Aktiv/Backup
+ a| 
+40
+ a| 
+40
+
+|===
+.. Lesen Sie den Abschnitt Netzwerkkommunikation.
++
+Die Tabellen „Empfangen und Senden“ zeigen, wie viele Bytes und Pakete über jedes Netzwerk empfangen und gesendet wurden, sowie andere Empfangs- und Übertragungstabellen.
+
++
+image::../media/nodes_page_network_communication.png[Knoten Seite Netzwerk Komm]
+
+
+
+. Wählen Sie *Storage* aus, um Informationen zu den Festplattengeräten und Volumes auf der Services Appliance anzuzeigen.
++
+image::../media/nodes_page_storage_tab_services_appliance.png[Knoten Seite Speicher Registerkarte Dienste Appliance]
+
+

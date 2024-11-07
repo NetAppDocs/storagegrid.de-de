@@ -1,0 +1,161 @@
+---
+permalink: tenant/creating-groups-for-s3-tenant.html 
+sidebar: sidebar 
+keywords: how to create S3 tenant groups, federated group, local group 
+summary: Sie können Berechtigungen für S3-Benutzergruppen managen, indem Sie föderierte Gruppen importieren oder lokale Gruppen erstellen. 
+---
+= Erstellen von Gruppen für einen S3-Mandanten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Berechtigungen für S3-Benutzergruppen managen, indem Sie föderierte Gruppen importieren oder lokale Gruppen erstellen.
+
+.Bevor Sie beginnen
+* Sie sind beim Tenant Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie gehören zu einer Benutzergruppe mit dem link:tenant-management-permissions.html["Root-Zugriffsberechtigung"].
+* Wenn Sie planen, eine föderierte Gruppe link:using-identity-federation.html["Konfigurierte Identitätsföderation"]zu importieren, haben Sie , und die föderierte Gruppe ist bereits in der konfigurierten Identitätsquelle vorhanden.
+* Wenn Ihr Mandantenkonto die Berechtigung *Grid Federation connection* verwenden hat, haben Sie den Workflow und die Überlegungen für überprüft link:grid-federation-account-clone.html["Klonen von Mandantengruppen und Benutzern"]und Sie sind im Quellraster des Mandanten angemeldet.
+
+
+
+
+== Rufen Sie den Assistenten zum Erstellen von Gruppen auf
+
+Rufen Sie als ersten Schritt den Assistenten zum Erstellen von Gruppen auf.
+
+.Schritte
+. Wählen Sie *ZUGRIFFSVERWALTUNG* > *Gruppen*.
+. Wenn Ihr Mandantenkonto über die Berechtigung *Grid Federation connection* verfügt, bestätigen Sie, dass ein blaues Banner erscheint, das anzeigt, dass neue Gruppen, die in diesem Raster erstellt werden, auf demselben Mandanten auf dem anderen Raster der Verbindung geklont werden. Wenn dieses Banner nicht angezeigt wird, werden Sie möglicherweise im Zielraster des Mandanten angemeldet.
++
+image::../media/grid-federation-tenant-group-banner.png[Abbildung des blauen Banners auf der Seite Gruppen des Quellenrasters für Mandanten]
+
+. Wählen Sie *Gruppe erstellen*.
+
+
+
+
+== Wählen Sie einen Gruppentyp aus
+
+Sie können eine lokale Gruppe erstellen oder eine föderierte Gruppe importieren.
+
+.Schritte
+. Wählen Sie die Registerkarte *Lokale Gruppe* aus, um eine lokale Gruppe zu erstellen, oder wählen Sie die Registerkarte *Federated Group* aus, um eine Gruppe aus der zuvor konfigurierten Identitätsquelle zu importieren.
++
+Wenn Single Sign-On (SSO) für Ihr StorageGRID-System aktiviert ist, können sich Benutzer, die zu lokalen Gruppen gehören, nicht beim Mandanten-Manager anmelden, obwohl sie sich mithilfe von Client-Applikationen die Ressourcen des Mandanten basierend auf Gruppenberechtigungen managen können.
+
+. Geben Sie den Namen der Gruppe ein.
++
+** *Lokale Gruppe*: Geben Sie einen Anzeigenamen und einen eindeutigen Namen ein. Sie können den Anzeigenamen später bearbeiten.
++
+
+NOTE: Wenn Ihr Mandantenkonto über die Berechtigung *Grid Federation connection* verwenden verfügt, tritt ein Klonfehler auf, wenn der gleiche *eindeutige Name* bereits für den Mandanten im Zielraster vorhanden ist.
+
+** *Federated Group*: Geben Sie den eindeutigen Namen ein. Bei Active Directory ist der eindeutige Name der Name, der dem Attribut zugeordnet `sAMAccountName` ist. Bei OpenLDAP ist der eindeutige Name der dem Attribut zugeordnete Name `uid`.
+
+
+. Wählen Sie *Weiter*.
+
+
+
+
+== Gruppenberechtigungen verwalten
+
+Gruppenberechtigungen steuern, welche Aufgaben Benutzer in Tenant Manager und Tenant Management API durchführen können.
+
+.Schritte
+. Wählen Sie für *Access Mode* eine der folgenden Optionen aus:
++
+** *Lesen-Schreiben* (Standard): Benutzer können sich beim Tenant Manager anmelden und die Konfiguration des Mandanten verwalten.
+** *Schreibgeschützt*: Benutzer können nur Einstellungen und Funktionen anzeigen. Sie können keine Änderungen vornehmen oder keine Vorgänge in der Tenant Manager- oder Mandantenmanagement-API ausführen. Lokale schreibgeschützte Benutzer können ihre eigenen Passwörter ändern.
++
+
+NOTE: Wenn ein Benutzer zu mehreren Gruppen gehört und eine beliebige Gruppe auf schreibgeschützt eingestellt ist, hat der Benutzer schreibgeschützten Zugriff auf alle ausgewählten Einstellungen und Funktionen.
+
+
+
+. Wählen Sie eine oder mehrere Berechtigungen für diese Gruppe aus.
++
+Siehe link:../tenant/tenant-management-permissions.html["Mandantenmanagement-Berechtigungen"].
+
+. Wählen Sie *Weiter*.
+
+
+
+
+== Legen Sie die S3-Gruppenrichtlinie fest
+
+Die Gruppenrichtlinie legt fest, über welche S3-Zugriffsberechtigungen Benutzer verfügen.
+
+.Schritte
+. Wählen Sie die Richtlinie aus, die Sie für diese Gruppe verwenden möchten.
++
+[cols="1a,2a"]
+|===
+| Gruppenrichtlinie | Beschreibung 
+
+
+ a| 
+Kein S3-Zugriff
+ a| 
+Standard. Benutzer in dieser Gruppe haben keinen Zugriff auf S3-Ressourcen, es sei denn, der Zugriff wird über eine Bucket-Richtlinie gewährt. Wenn Sie diese Option auswählen, hat nur der Root-Benutzer standardmäßig Zugriff auf S3-Ressourcen.
+
+
+
+ a| 
+Schreibgeschützter Zugriff
+ a| 
+Benutzer in dieser Gruppe haben schreibgeschützten Zugriff auf S3-Ressourcen. Benutzer in dieser Gruppe können beispielsweise Objekte auflisten und Objektdaten, Metadaten und Tags lesen. Wenn Sie diese Option auswählen, wird im Textfeld der JSON-String für eine schreibgeschützte Gruppenrichtlinie angezeigt. Diese Zeichenfolge kann nicht bearbeitet werden.
+
+
+
+ a| 
+Voller Zugriff
+ a| 
+Benutzer in dieser Gruppe haben vollständigen Zugriff auf S3-Ressourcen, einschließlich Buckets. Wenn Sie diese Option auswählen, wird im Textfeld der JSON-String für eine Richtlinie mit vollem Zugriff angezeigt. Diese Zeichenfolge kann nicht bearbeitet werden.
+
+
+
+ a| 
+Ransomware-Minimierung
+ a| 
+Diese Beispielrichtlinie gilt für alle Buckets für diesen Mandanten. Benutzer in dieser Gruppe können allgemeine Aktionen ausführen, aber Objekte aus Buckets, für die die Objektversionierung aktiviert ist, nicht dauerhaft löschen.
+
+Tenant Manager-Benutzer mit der Berechtigung *Alle Buckets verwalten* können diese Gruppenrichtlinie überschreiben. Beschränken Sie die Berechtigung zum Verwalten aller Buckets auf vertrauenswürdige Benutzer und verwenden Sie die Multi-Faktor-Authentifizierung (MFA), sofern verfügbar.
+
+
+
+ a| 
+Individuell
+ a| 
+Benutzer in der Gruppe erhalten die Berechtigungen, die Sie im Textfeld angeben.
+
+|===
+. Wenn Sie *Benutzerdefiniert* ausgewählt haben, geben Sie die Gruppenrichtlinie ein. Jede Gruppenrichtlinie hat eine Größenbeschränkung von 5,120 Byte. Sie müssen einen gültigen JSON-formatierten String eingeben.
++
+Ausführliche Informationen zu Gruppenrichtlinien, einschließlich Sprachsyntax und Beispiele, finden Sie unter link:../s3/example-group-policies.html["Beispiel für Gruppenrichtlinien"].
+
+. Wenn Sie eine lokale Gruppe erstellen, wählen Sie *Weiter*. Wenn Sie eine Verbundgruppe erstellen, wählen Sie *Gruppe erstellen* und *Fertig stellen* aus.
+
+
+
+
+== Benutzer hinzufügen (nur lokale Gruppen)
+
+Sie können die Gruppe speichern, ohne Benutzer hinzuzufügen, oder Sie können optional alle bereits vorhandenen lokalen Benutzer hinzufügen.
+
+
+NOTE: Wenn Ihr Mandantenkonto über die Berechtigung *Grid Federation connection* verfügt, werden alle Benutzer, die Sie beim Erstellen einer lokalen Gruppe im Quellraster auswählen, nicht berücksichtigt, wenn die Gruppe im Zielraster geklont wird. Wählen Sie aus diesem Grund keine Benutzer aus, wenn Sie die Gruppe erstellen. Wählen Sie stattdessen die Gruppe aus, wenn Sie die Benutzer erstellen.
+
+.Schritte
+. Wählen Sie optional einen oder mehrere lokale Benutzer für diese Gruppe aus.
+. Wählen Sie *Gruppe erstellen* und *Fertig stellen*.
++
+Die von Ihnen erstellte Gruppe wird in der Gruppenliste angezeigt.
+
++
+Wenn Ihr Mandantenkonto die Berechtigung *Grid Federation connection* verwenden hat und Sie sich im Quellraster des Mandanten befinden, wird die neue Gruppe im Zielraster des Mandanten geklont. *Success* erscheint als *Klonstatus* im Abschnitt Übersicht der Detailseite der Gruppe.
+
+

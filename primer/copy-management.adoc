@@ -1,0 +1,69 @@
+---
+permalink: primer/copy-management.html 
+sidebar: sidebar 
+keywords: object data, ilm policy, ilm rules, replicated copy, replication, erasure-coded copy, ec, cloud storage pool 
+summary: Objektdaten werden von der aktiven ILM-Richtlinie und ihren ILM-Regeln gemanagt. Mithilfe von ILM-Regeln werden replizierte oder unter Erasure-Coding-Kopien erstellt, um Objektdaten vor Verlust zu schützen. 
+---
+= Verwaltung von Kopien
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Objektdaten werden über die aktiven ILM-Richtlinien und zugehörigen ILM-Regeln gemanagt. Mithilfe von ILM-Regeln werden replizierte oder unter Erasure-Coding-Kopien erstellt, um Objektdaten vor Verlust zu schützen.
+
+Unterschiedliche Typen und Standorte von Objektkopien können zu unterschiedlichen Zeiten der Lebensdauer des Objekts erforderlich sein. ILM-Regeln werden regelmäßig überprüft, um sicherzustellen, dass Objekte nach Bedarf platziert werden.
+
+Objektdaten werden vom LDR-Service gemanagt.
+
+
+
+== Content-Schutz: Replikation
+
+Wenn für die Anweisungen zur Content-Platzierung einer ILM-Regel replizierte Kopien von Objektdaten erforderlich sind, werden von den Storage-Nodes, die den konfigurierten Storage-Pool bilden, Kopien auf Festplatte erstellt und gespeichert.
+
+Die ILM-Engine im LDR-Service steuert die Replikation und stellt sicher, dass die korrekte Anzahl von Kopien an den richtigen Standorten und für die richtige Zeit gespeichert wird.
+
+image::../media/replication_data_flow.png[Diagramm mit dem im umgebenden Text beschriebenen Prozess]
+
+. Die ILM-Engine fragt den ADC-Service ab, um den besten Ziel-LDR-Service innerhalb des durch die ILM-Regel festgelegten Storage-Pools zu ermitteln. Er sendet dann diesen LDR-Service einen Befehl, um die Replikation zu initiieren.
+. Der Ziel-LDR-Dienst fragt den ADC-Dienst nach dem besten Quellspeicherort ab. Anschließend sendet er eine Replikationsanfrage an den Quell-LDR-Service.
+. Der Quell-LDR-Service sendet eine Kopie an den Ziel-LDR-Service.
+. Der Ziel-LDR-Service benachrichtigt die ILM Engine, dass die Objektdaten gespeichert wurden.
+. Die ILM-Engine aktualisiert den Metadatenspeicher mit Objektspeichermetadaten.
+
+
+
+
+== Content Protection: Erasure Coding
+
+Falls eine ILM-Regel Anweisungen zur Erstellung von Kopien von Objektdaten enthält, die nach Erasure-Coding-Verfahren codiert wurden, werden Objektdaten in Daten- und Paritätsfragmente unterteilt und diese Fragmente über die Storage Nodes verteilt, die im Profil zur Fehlerkorrektur konfiguriert sind.
+
+Die ILM-Engine, eine Komponente des LDR-Service, steuert das Erasure Coding und stellt sicher, dass das Erasure Coding-Profil auf Objektdaten angewendet wird.
+
+image::../media/erasure_coding_data_flow.png[Verfahren Zur Einhaltung Von Datenkonsistenz]
+
+. Die ILM-Engine fragt den ADC-Service ab, um zu bestimmen, welcher DDS-Service den Erasure Coding-Vorgang am besten ausführen kann. Wenn festgestellt, sendet die ILM-Engine eine „Initiierung“-Anforderung an diesen Service.
+. Der DDS-Dienst weist ein LDR an, den Code der Objektdaten zu löschen.
+. Der Quell-LDR-Service sendet eine Kopie an den für das Erasure Coding ausgewählten LDR-Service.
+. Nach der Erstellung der entsprechenden Anzahl von Parität und Datenfragmenten verteilt der LDR-Service diese Fragmente auf die Storage Nodes (Chunk-Services), aus denen der Speicherpool des Erasure-Coding-Profils besteht.
+. Der LDR-Service benachrichtigt die ILM-Engine und bestätigt, dass Objektdaten erfolgreich verteilt werden.
+. Die ILM-Engine aktualisiert den Metadatenspeicher mit Objektspeichermetadaten.
+
+
+
+
+== Content-Sicherung: Cloud Storage Pool
+
+Wenn für die Anweisungen zur Content-Platzierung einer ILM-Regel eine replizierte Kopie von Objektdaten in einem Cloud Storage-Pool gespeichert wird, werden Objektdaten in den externen S3-Bucket oder Azure Blob-Storage-Container dupliziert, der für den Cloud Storage-Pool angegeben wurde.
+
+Die ILM-Engine, die eine Komponente des LDR-Service ist, und der Data Mover-Service steuern die Verschiebung von Objekten in den Cloud-Speicherpool.
+
+image::../media/cloud_storage_pool_data_flow.png[Datenfluss In Den Cloud-Storage-Pool]
+
+. Die ILM-Engine wählt einen Data Mover-Service zur Replizierung in den Cloud-Storage-Pool aus.
+. Der Data Mover-Service sendet die Objektdaten an den Cloud-Speicherpool.
+. Der Data Mover-Service benachrichtigt die ILM-Engine, dass die Objektdaten gespeichert wurden.
+. Die ILM-Engine aktualisiert den Metadatenspeicher mit Objektspeichermetadaten.
+

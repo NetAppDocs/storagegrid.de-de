@@ -1,0 +1,99 @@
+---
+permalink: audit/llst-location-lost.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, LLST, Location Lost 
+summary: 'Diese Meldung wird immer dann generiert, wenn ein Speicherort für eine Objektkopie \(replizierte oder Erasure-coded\) nicht gefunden werden kann.' 
+---
+= LLST: Standort verloren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Diese Meldung wird immer dann generiert, wenn ein Speicherort für eine Objektkopie (repliziert oder Erasure-coded) nicht gefunden werden kann.
+
+[cols="1a,1a,4a"]
+|===
+| Codieren | Feld | Beschreibung 
+
+
+ a| 
+CBIL
+ a| 
+CBID
+ a| 
+Die betroffene CBID.
+
+
+
+ a| 
+ECPR
+ a| 
+Erasure-Coding-Profil
+ a| 
+Für Erasure-Coding-Objektdaten. Die ID des verwendeten Erasure-Coding-Profils.
+
+
+
+ a| 
+LTYP
+ a| 
+Positionstyp
+ a| 
+CLDI (Online): Für replizierte Objektdaten
+
+CLEC (Online): Für Erasure-codierte Objektdaten
+
+CLNL (Nearline): Für archivierte replizierte Objektdaten
+
+
+
+ a| 
+NID
+ a| 
+Quell-Node-ID
+ a| 
+Die Knoten-ID, auf der die Speicherorte verloren waren.
+
+
+
+ a| 
+PCLD
+ a| 
+Pfad zu repliziertem Objekt
+ a| 
+Der vollständige Pfad zum Speicherort der verlorenen Objektdaten. Wird nur zurückgegeben, wenn LTYP einen Wert von CLDI (d.h. für replizierte Objekte) hat.
+
+Nimmt die Form an `/var/local/rangedb/2/p/13/13/00oJs6X%{h{U)SeUFxE@`
+
+
+
+ a| 
+RSLT
+ a| 
+Ergebnis
+ a| 
+Immer KEINE. RSLT ist ein Pflichtfeld, ist aber für diese Nachricht nicht relevant. KEINE wird verwendet, anstatt SUCS, damit diese Meldung nicht gefiltert wird.
+
+
+
+ a| 
+TSRC
+ a| 
+Auslösequelle
+ a| 
+BENUTZER: Benutzer ausgelöst
+
+SYST: System ausgelöst
+
+
+
+ a| 
+UUID
+ a| 
+Universally Unique ID
+ a| 
+Die Kennung des betroffenen Objekts im StorageGRID-System.
+
+|===

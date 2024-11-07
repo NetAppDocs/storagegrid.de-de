@@ -1,0 +1,33 @@
+---
+permalink: maintain/checking-systems-condition-before-applying-hotfix.html 
+sidebar: sidebar 
+keywords: storagegrid, hotfix 
+summary: Sie müssen überprüfen, ob das System bereit ist, um den Hotfix aufzunehmen. 
+---
+= Überprüfen Sie den Zustand des Systems, bevor Sie Hotfix anwenden
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen überprüfen, ob das System bereit ist, um den Hotfix aufzunehmen.
+
+. Melden Sie sich mit einem beim Grid-Manager anlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+. Stellen Sie, falls möglich, sicher, dass das System ordnungsgemäß ausgeführt wird und dass alle Grid-Nodes mit dem Grid verbunden sind.
++
+Verbundene Knoten haben grüne Häkchen image:../media/icon_alert_green_checkmark.png["Symbol Warnung grünes Häkchen"]auf der Seite Knoten.
+
+. Überprüfen Sie, ob und beheben Sie alle aktuellen Warnmeldungen, wenn möglich.
+. Stellen Sie sicher, dass keine weiteren Wartungsverfahren wie Upgrades, Wiederherstellungen, Erweiterungen oder Stillstandsmaßnahmen ausgeführt werden.
++
+Sie sollten warten, bis alle aktiven Wartungsvorgänge abgeschlossen sind, bevor Sie einen Hotfix anwenden.
+
++
+Ein StorageGRID-Hotfix kann nicht angewendet werden, wenn ein anderer Wartungsvorgang ausgeführt wird. Sie können beispielsweise keinen Hotfix anwenden, während eine Stilllegung, Erweiterung oder Wiederherstellung ausgeführt wird.
+
++
+
+NOTE: Wenn ein Knoten oder Standort link:pausing-and-resuming-decommission-process-for-storage-nodes.html["Die Stilllegungsvorgang wird angehalten"], können Sie sicher einen Hotfix anwenden. Darüber hinaus können Sie in der Lage sein, einen Hotfix in den letzten Phasen eines StorageGRID-Upgrade-Verfahrens anzuwenden. Siehe die Anleitung für link:../upgrade/index.html["Aktualisieren von StorageGRID Software"].
+
+

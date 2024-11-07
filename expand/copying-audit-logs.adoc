@@ -1,0 +1,98 @@
+---
+permalink: expand/copying-audit-logs.html 
+sidebar: sidebar 
+keywords: copy audit log, Admin Node expansion, 
+summary: Wenn Sie einen neuen Admin-Node durch ein Erweiterungsverfahren hinzufügen, protokolliert sein AMS-Service nur Ereignisse und Aktionen, die nach dem Beitritt zum System auftreten. Nach Bedarf können Sie Audit-Protokolle von einem zuvor installierten Admin-Node auf den neuen Erweiterungs-Admin-Node kopieren, sodass er mit dem Rest des StorageGRID Systems synchronisiert ist. 
+---
+= Prüfprotokolle kopieren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie einen neuen Admin-Node durch ein Erweiterungsverfahren hinzufügen, protokolliert sein AMS-Service nur Ereignisse und Aktionen, die nach dem Beitritt zum System auftreten. Nach Bedarf können Sie Audit-Protokolle von einem zuvor installierten Admin-Node auf den neuen Erweiterungs-Admin-Node kopieren, sodass er mit dem Rest des StorageGRID Systems synchronisiert ist.
+
+.Bevor Sie beginnen
+* Sie haben die erforderlichen Erweiterungsschritte zum Hinzufügen eines Admin-Knotens abgeschlossen.
+* Sie haben die `Passwords.txt` Datei.
+
+
+.Über diese Aufgabe
+Um historische Audit-Meldungen auf einem neuen Admin-Knoten verfügbar zu machen, müssen Sie die Audit-Log-Dateien manuell von einem vorhandenen Admin-Knoten in den Erweiterungs-Admin-Knoten kopieren.
+
+[NOTE]
+====
+Standardmäßig werden Audit-Informationen an das Audit-Protokoll auf Admin-Knoten gesendet. Sie können diese Schritte überspringen, wenn eine der folgenden Maßnahmen zutrifft:
+
+* Sie haben einen externen Syslog-Server konfiguriert und Audit-Protokolle werden jetzt an den Syslog-Server anstatt an Admin-Knoten gesendet.
+* Sie haben ausdrücklich angegeben, dass Audit-Meldungen nur auf den lokalen Knoten gespeichert werden sollten, die sie generiert haben.
+
+
+Weitere Informationen finden Sie unter link:../monitor/configure-audit-messages.html["Konfigurieren von Überwachungsmeldungen und Protokollzielen"] .
+
+====
+.Schritte
+. Melden Sie sich beim primären Admin-Node an:
++
+.. Geben Sie den folgenden Befehl ein: `ssh _admin@_primary_Admin_Node_IP_`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+.. Geben Sie den folgenden Befehl ein, um zu root zu wechseln: `su -`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
++
+Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `#`.
+
+
+
+. Beenden Sie den AMS-Dienst, um zu verhindern, dass er eine neue Datei erstellt: `service ams stop`
+. Navigieren Sie zum Verzeichnis für den Audit-Export:
++
+`cd /var/local/log`
+
+. Benennen Sie die Quelldatei `audit.log` um, um sicherzustellen, dass die Datei auf dem Erweiterungsadministratorknoten, in den Sie kopieren, nicht überschrieben wird:
++
+[listing]
+----
+ls -l
+mv audit.log _new_name_.txt
+----
+. Kopieren Sie alle Audit-Log-Dateien in den Zielspeicherort auf dem Erweiterungs-Admin-Node:
++
+`scp -p * _IP_address_:/var/local/log`
+
+. Wenn Sie zur Eingabe der Passphrase für aufgefordert `/root/.ssh/id_rsa` werden, geben Sie das SSH-Zugriffspasswort für den in der Datei aufgeführten primären Admin-Knoten ein `Passwords.txt`.
+. Originaldatei wiederherstellen `audit.log`:
++
+`mv _new_name_.txt audit.log`
+
+. AMS-Dienst starten:
++
+`service ams start`
+
+. Melden Sie sich vom Server ab:
++
+`exit`
+
+. Melden Sie sich beim Erweiterungs-Admin-Knoten an:
++
+.. Geben Sie den folgenden Befehl ein: `ssh admin@_expansion_Admin_Node_IP_`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+.. Geben Sie den folgenden Befehl ein, um zu root zu wechseln: `su -`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
++
+Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `#`.
+
+
+
+. Benutzer- und Gruppeneinstellungen für die Audit-Log-Dateien aktualisieren:
++
+`cd /var/local/log`
+
++
+`chown ams-user:bycast *`
+
+. Melden Sie sich vom Server ab:
++
+`exit`
+
+

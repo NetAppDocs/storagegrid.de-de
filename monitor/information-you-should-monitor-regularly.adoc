@@ -1,0 +1,83 @@
+---
+permalink: monitor/information-you-should-monitor-regularly.html 
+sidebar: sidebar 
+keywords: when to monitor, what to monitor 
+summary: Das StorageGRID System funktioniert auch dann weiter, wenn Fehler auftreten oder Teile des Grids nicht verfügbar sind, sollten Sie potenzielle Probleme überwachen und beheben, bevor sie die Effizienz oder Verfügbarkeit des Grids beeinträchtigen. 
+---
+= Was und wann zu überwachen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das StorageGRID System funktioniert auch dann weiter, wenn Fehler auftreten oder Teile des Grids nicht verfügbar sind, sollten Sie potenzielle Probleme überwachen und beheben, bevor sie die Effizienz oder Verfügbarkeit des Grids beeinträchtigen.
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben link:../admin/admin-group-permissions.html["Bestimmte Zugriffsberechtigungen"].
+
+
+.Über Überwachungsaufgaben
+Ein überlasttes System generiert große Datenmengen. Die folgende Liste enthält Anleitungen zu den wichtigsten Informationen, die fortlaufend überwacht werden müssen.
+
+[cols="1a,1a"]
+|===
+| Was überwacht werden soll | Frequenz 
+
+
+ a| 
+link:monitoring-system-health.html["Systemstatus"]
+ a| 
+Täglich
+
+
+
+ a| 
+Rate, mit der link:monitoring-storage-capacity.html["Objekt- und Metadatenkapazität des Storage-Node"]verbraucht wird
+ a| 
+Wöchentlich
+
+
+
+ a| 
+link:monitoring-information-lifecycle-management.html["Information Lifecycle Management-Operationen"]
+ a| 
+Wöchentlich
+
+
+
+ a| 
+link:monitoring-network-connections-and-performance.html["Netzwerk- und Systemressourcen"]
+ a| 
+Wöchentlich
+
+
+
+ a| 
+link:monitoring-tenant-activity.html["Mandantenaktivität"]
+ a| 
+Wöchentlich
+
+
+
+ a| 
+link:monitoring-object-ingest-and-retrieval-rates.html["S3-Client-Vorgänge"]
+ a| 
+Wöchentlich
+
+
+
+ a| 
+link:monitoring-load-balancing-operations.html["Lastverteilung"]
+ a| 
+Nach der Erstkonfiguration und nach Konfigurationsänderungen
+
+
+
+ a| 
+link:grid-federation-monitor-connections.html["Netzverbundverbindungen"]
+ a| 
+Wöchentlich
+
+|===

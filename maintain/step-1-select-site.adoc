@@ -1,0 +1,107 @@
+---
+permalink: maintain/step-1-select-site.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, select site 
+summary: Um zu bestimmen, ob eine Site deaktiviert werden kann, öffnen Sie zunächst den Assistenten zur Deaktivierung der Site. 
+---
+= Schritt 1: Standort Auswählen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um zu bestimmen, ob eine Site deaktiviert werden kann, öffnen Sie zunächst den Assistenten zur Deaktivierung der Site.
+
+.Bevor Sie beginnen
+* Sie haben alle erforderlichen Materialien erhalten.
+* Sie haben die Überlegungen zum Entfernen eines Standorts überprüft.
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben die link:../admin/admin-group-permissions.html["Root-Zugriffsberechtigungen oder die Wartungs- und ILM-Berechtigungen"].
+
+
+.Schritte
+. Wählen Sie *MAINTENANCE* > *Tasks* > *Decommission*.
+. Wählen Sie *Decommission Site*.
++
+Schritt 1 (Standort auswählen) des Assistenten für die Dekommission-Site wird angezeigt. Dieser Schritt enthält eine alphabetische Liste der Sites in Ihrem StorageGRID-System.
+
++
+image::../media/decommission_site_step_select_site.png[Deaktivieren Sie Site Schritt 1 Select Site]
+
+. Zeigen Sie die Werte in der Spalte *verwendete Storage-Kapazität* an, um festzustellen, wie viel Storage derzeit für Objektdaten an den einzelnen Standorten verwendet wird.
++
+Die genutzte Storage-Kapazität ist eine Schätzung. Wenn Knoten offline sind, ist die verwendete Speicherkapazität der letzte bekannte Wert für den Standort.
+
++
+** Um eine zusammenhängende Website außer Betrieb zu nehmen, gibt dieser Wert an, wie viele Objektdaten zu anderen Standorten verschoben oder durch ILM gelöscht werden müssen, bevor Sie diese Website zur sicheren Deaktivierung verwenden können.
+** Im Falle einer Deaktivierung einer Website stellt dieser Wert dar, auf welchen Anteil der Datenspeicher Ihres Systems beim Deaktivierung dieser Website nicht mehr zugegriffen werden kann.
++
+
+NOTE: Falls Ihre ILM-Richtlinie zum Schutz vor dem Verlust eines einzelnen Standorts ausgelegt wurde, sollten weiterhin Kopien der Objektdaten auf den übrigen Standorten vorhanden sein.
+
+
+
+. Prüfen Sie die Gründe in der Spalte *Dekommission möglich*, um festzustellen, welche Standorte derzeit außer Betrieb genommen werden können.
++
+
+NOTE: Wenn es mehr als einen Grund gibt, warum ein Standort nicht stillgelegt werden kann, wird der kritischsten Grund angezeigt.
+
++
+[cols="1a,1a,1a"]
+|===
+| Möglichen Grund einer Deaktivierung | Beschreibung | Nächster Schritt 
+
+
+ a| 
+Grünes Häkchen (image:../media/icon_alert_green_checkmark.png["Symbol Warnung Grün Häkchen"])
+ a| 
+Sie können diese Website außer Betrieb nehmen.
+ a| 
+Gehen Sie zu <<decommission_possible,Im nächsten Schritt>>.
+
+
+
+ a| 
+Nein. Dieser Standort enthält den primären Admin-Node.
+ a| 
+Sie können einen Standort, der den primären Admin-Node enthält, nicht stilllegen.
+ a| 
+Keine. Sie können diesen Vorgang nicht ausführen.
+
+
+
+ a| 
+Nein. Dieser Standort enthält mindestens einen Archivknoten.
+ a| 
+Sie können eine Site, die einen Archivknoten enthält, nicht stilllegen.
+ a| 
+Keine. Sie können diesen Vorgang nicht ausführen.
+
+
+
+ a| 
+Nein. Alle Knoten an diesem Standort sind getrennt. Wenden Sie sich an Ihren NetApp Account-Ansprechpartner.
+ a| 
+Sie können keine verbundene Website-Deaktivierung durchführen, wenn nicht jeder Knoten in der Site verbunden ist (image:../media/icon_alert_green_checkmark.png["Symbol Warnung Grün Häkchen"]).
+ a| 
+Um eine getrennte Website außer Betrieb zu nehmen, müssen Sie sich an Ihren NetApp Ansprechpartner wenden. Dieser überprüft Ihre Anforderungen und aktiviert den Rest des Assistenten zur Decommission Site.
+
+*WICHTIG*: Nehmen Sie niemals Online-Knoten offline, so dass Sie eine Seite entfernen können. Sie verlieren Daten.
+
+|===
++
+Das Beispiel zeigt ein StorageGRID System mit drei Standorten. Das grüne Häkchen (image:../media/icon_alert_green_checkmark.png["Symbol Warnung Grün Häkchen"]) für die Raleigh- und Sunnyvale-Standorte zeigt an, dass Sie diese Standorte ausmustern können. Sie können die Vancouver-Website jedoch nicht stilllegen, da sie den primären Admin-Knoten enthält.
+
+
+
+[[decommission_possible]]
+. Wenn eine Deaktivierung möglich ist, aktivieren Sie das Optionsfeld für die Website.
++
+Die Schaltfläche *Weiter* ist aktiviert.
+
+. Wählen Sie *Weiter*.
++
+Schritt 2 (Details anzeigen) wird angezeigt.
+
+

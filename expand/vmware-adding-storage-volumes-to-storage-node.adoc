@@ -1,0 +1,112 @@
+---
+permalink: expand/vmware-adding-storage-volumes-to-storage-node.html 
+sidebar: sidebar 
+keywords: expand, expansion, storage node, add storage volumes, VMware 
+summary: Wenn ein Storage-Node weniger als 16 Storage-Volumes enthält, können Sie seine Kapazität mithilfe von VMware vSphere erhöhen, um Volumes hinzuzufügen. 
+---
+= VMware: Hinzufügen von Storage Volumes zum Storage-Node
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn ein Storage-Node weniger als 16 Storage-Volumes enthält, können Sie seine Kapazität mithilfe von VMware vSphere erhöhen, um Volumes hinzuzufügen.
+
+.Bevor Sie beginnen
+* Sie haben Zugriff auf die Anweisungen zur Installation von StorageGRID für VMware Implementierungen.
++
+** link:../vmware/index.html["Installieren Sie StorageGRID auf VMware"]
+
+
+* Sie haben die `Passwords.txt` Datei.
+* Sie haben link:../admin/admin-group-permissions.html["Bestimmte Zugriffsberechtigungen"].
+
+
+
+CAUTION: Versuchen Sie nicht, Speicher-Volumes zu einem Speicher-Node hinzuzufügen, während ein Softwareupgrade, ein Wiederherstellungsverfahren oder ein anderer Erweiterungsvorgang aktiv ist.
+
+.Über diese Aufgabe
+Der Storage-Node ist für kurze Zeit nicht verfügbar, wenn Sie Storage Volumes hinzufügen. Sie sollten dieses Verfahren jeweils auf einem Storage-Knoten durchführen, um die Grid-Services für Clients zu beeinträchtigen.
+
+.Schritte
+. Installieren Sie bei Bedarf neue Storage Hardware und erstellen Sie neue VMware Datenspeicher.
+. Fügen Sie eine oder mehrere Festplatten zur virtuellen Maschine als Speicher hinzu (Objektspeicher).
++
+.. Öffnen Sie den VMware vSphere Client.
+.. Bearbeiten Sie die Einstellungen der virtuellen Maschine, um eine oder mehrere zusätzliche Festplatten hinzuzufügen.
+
+
++
+Die Festplatten werden in der Regel als Virtual Machine Disks (VMDKs) konfiguriert. VMDKs werden häufiger verwendet und sind einfacher zu managen. RDMs bieten dagegen eine bessere Performance für Workloads, die größere Objektgrößen verwenden (beispielsweise mehr als 100 MB). Weitere Informationen über das Hinzufügen von Festplatten zu virtuellen Maschinen finden Sie in der Dokumentation zu VMware vSphere.
+
+. Starten Sie die virtuelle Maschine neu, indem Sie im VMware vSphere Client die Option *Restart Guest OS* verwenden oder den folgenden Befehl in einer ssh-Sitzung für die virtuelle Maschine eingeben:``sudo reboot``
++
+
+NOTE: Verwenden Sie nicht *Power Off* oder *Reset*, um die virtuelle Maschine neu zu starten.
+
+. Konfigurieren Sie den neuen Speicher für die Verwendung durch den Speicherknoten:
++
+.. Melden Sie sich beim Grid-Node an:
++
+... Geben Sie den folgenden Befehl ein: `ssh admin@_grid_node_IP_`
+... Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+... Geben Sie den folgenden Befehl ein, um zu root zu wechseln: `su -`
+... Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`. Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `#`.
+
+
+.. Konfiguration der neuen Storage Volumes:
++
+`sudo add_rangedbs.rb`
+
++
+Dieses Skript sucht neue Speicher-Volumes und fordert Sie zur Formatierung auf.
+
+.. Geben Sie *y* ein, um die Formatierung zu akzeptieren.
+.. Wenn eines der Volumes zuvor formatiert wurde, entscheiden Sie, ob Sie sie neu formatieren möchten.
++
+*** Geben Sie * y* ein, um die Formatierung neu zu formatieren.
+*** Geben Sie *n* ein, um die Neuformatierung zu überspringen.
+
+
+
+
++
+Das `setup_rangedbs.sh` Skript wird automatisch ausgeführt.
+
+. Überprüfen Sie, ob die Dienste richtig starten:
++
+.. Eine Liste des Status aller Dienste auf dem Server anzeigen:
++
+`sudo storagegrid-status`
+
++
+Der Status wird automatisch aktualisiert.
+
+.. Warten Sie, bis alle Dienste ausgeführt oder verifiziert sind.
+.. Statusbildschirm verlassen:
++
+`Ctrl+C`
+
+
+
+. Vergewissern Sie sich, dass der Speicherknoten online ist:
++
+.. Melden Sie sich mit einem beim Grid-Manager anlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+.. Wählen Sie *SUPPORT* > *Tools* > *Grid-Topologie* aus.
+.. Wählen Sie *_site_* > *_Storage Node_* > *LDR* > *Storage* aus.
+.. Wählen Sie die Registerkarte *Konfiguration* und dann die Registerkarte *Main*.
+.. Wenn die Dropdown-Liste *Speicherstatus - gewünscht* auf schreibgeschützt oder offline gesetzt ist, wählen Sie *Online* aus.
+.. Wählen Sie *Änderungen Anwenden*.
+
+
+. So sehen Sie die neuen Objektspeicher:
++
+.. Wählen Sie *NODES* > *_site_* > *_Storage Node_* > *Storage* aus.
+.. Sehen Sie sich die Details in der Tabelle *Object Stores* an.
+
+
+
+
+.Ergebnis
+Sie können die erweiterte Kapazität der Speicherknoten zum Speichern von Objektdaten verwenden.

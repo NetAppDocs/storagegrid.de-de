@@ -1,0 +1,27 @@
+---
+permalink: primer/retrieve-data-flow.html 
+sidebar: sidebar 
+keywords: object data, retrieve 
+summary: Ein Abrufvorgang besteht aus einem definierten Datenfluss zwischen dem StorageGRID-System und dem Client. Das System verwendet Attribute, um den Abruf des Objekts von einem Storage Node oder, falls erforderlich, einem Cloud-Storage-Pool nachzuverfolgen. 
+---
+= Abrufen des Datenflusses
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ein Abrufvorgang besteht aus einem definierten Datenfluss zwischen dem StorageGRID-System und dem Client. Das System verwendet Attribute, um den Abruf des Objekts von einem Storage Node oder, falls erforderlich, einem Cloud-Storage-Pool nachzuverfolgen.
+
+Der LDR-Service des Storage Node fragt den Metadatenspeicher nach dem Speicherort der Objektdaten ab und ruft ihn vom Quell-LDR-Service ab. Bevorzugt wird der Abruf von einem Storage Node durchgeführt. Wenn das Objekt auf einem Storage-Node nicht verfügbar ist, wird die Abrufanforderung an einen Cloud-Speicherpool weitergeleitet.
+
+
+NOTE: Wenn sich die einzige Objektkopie auf AWS Glacier Storage oder in der Azure Archiv-Tier befindet, muss die Client-Applikation eine Anfrage für S3 RestoreObject ausgeben, um eine abrufbare Kopie im Cloud-Storage-Pool wiederherzustellen.
+
+image::../media/retrieve_data_flow.png[Abrufen]
+
+. Der LDR-Service erhält eine Abrufanforderung von der Client-Anwendung.
+. Der LDR-Service fragt den Metadatenspeicher nach dem Objektdatenstandort und den Metadaten ab.
+. Der LDR-Service leitet die Abfrage an den Quell-LDR-Service weiter.
+. Der Quell-LDR-Dienst gibt die Objektdaten aus dem abgefragten LDR-Dienst zurück und das System gibt das Objekt an die Client-Anwendung zurück.
+

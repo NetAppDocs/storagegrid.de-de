@@ -1,0 +1,129 @@
+---
+permalink: admin/summary-ip-addresses-and-ports-for-client-connections.html 
+sidebar: sidebar 
+keywords: ip addresses for client, how to connect to storagegrid, ports, vip 
+summary: 'Zum Speichern oder Abrufen von Objekten stellen S3-Clientanwendungen eine Verbindung zum Load Balancer-Dienst her, der auf allen Admin-Knoten und Gateway-Knoten enthalten ist, oder zum Local Distribution Router (LDR)-Dienst, der auf allen Storage-Nodes enthalten ist.' 
+---
+= Zusammenfassung: IP-Adressen und Ports für Client-Verbindungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Zum Speichern oder Abrufen von Objekten stellen S3-Clientanwendungen eine Verbindung zum Load Balancer-Dienst her, der auf allen Admin-Knoten und Gateway-Knoten enthalten ist, oder zum Local Distribution Router (LDR)-Dienst, der auf allen Storage-Nodes enthalten ist.
+
+Client-Applikationen können mithilfe der IP-Adresse eines Grid-Node und der Portnummer des Service auf diesem Node eine Verbindung zu StorageGRID herstellen. Optional können Sie Gruppen für Hochverfügbarkeit (High Availability, HA) von Load-Balancing-Nodes erstellen, um hochverfügbare Verbindungen bereitzustellen, die virtuelle IP-Adressen (VIP) verwenden. Wenn Sie eine Verbindung zu StorageGRID über einen vollständig qualifizierten Domänennamen (FQDN) anstelle einer IP- oder VIP-Adresse herstellen möchten, können Sie DNS-Einträge konfigurieren.
+
+In dieser Tabelle sind die verschiedenen Verbindungsmethoden aufgeführt, mit denen Clients eine Verbindung zu StorageGRID herstellen können, sowie die für den jeweiligen Verbindungstyp verwendeten IP-Adressen und Ports. Wenn Sie bereits Load Balancer-Endpunkte und HA-Gruppen (Hochverfügbarkeitsgruppen) erstellt haben, finden Sie unter <<Wo finden Sie IP-Adressen>>diese Werte im Grid Manager.
+
+[cols="1a,1a,1a,1a"]
+|===
+| Wo eine Verbindung hergestellt wird | Dienst, mit dem der Client verbunden ist | IP-Adresse | Port 
+
+
+ a| 
+HA-Gruppe
+ a| 
+Lastausgleich
+ a| 
+Virtuelle IP-Adresse einer HA-Gruppe
+ a| 
+Port, der dem Endpunkt des Lastausgleichs zugewiesen ist
+
+
+
+ a| 
+Admin-Node
+ a| 
+Lastausgleich
+ a| 
+IP-Adresse des Admin-Knotens
+ a| 
+Port, der dem Endpunkt des Lastausgleichs zugewiesen ist
+
+
+
+ a| 
+Gateway-Node
+ a| 
+Lastausgleich
+ a| 
+IP-Adresse des Gateway-Node
+ a| 
+Port, der dem Endpunkt des Lastausgleichs zugewiesen ist
+
+
+
+ a| 
+Storage-Node
+ a| 
+LDR
+ a| 
+IP-Adresse des Speicherknoten
+ a| 
+S3-Standard-Ports:
+
+* HTTPS: 18082
+* HTTP: 18084
+
+
+|===
+
+
+== Beispiel-URLs
+
+Um eine Client-Applikation mit dem Endpunkt Load Balancer einer HA-Gruppe von Gateway Nodes zu verbinden, verwenden Sie eine wie unten gezeigt strukturierte URL:
+
+`https://_VIP-of-HA-group:LB-endpoint-port_`
+
+Wenn beispielsweise die virtuelle IP-Adresse der HA-Gruppe 192.0.2.5 lautet und die Portnummer des Endpunkts des Load Balancer 10443 lautet, könnte eine Applikation die folgende URL verwenden, um eine Verbindung zum StorageGRID herzustellen:
+
+`\https://192.0.2.5:10443`
+
+
+
+== Wo finden Sie IP-Adressen
+
+. Melden Sie sich mit einem beim Grid-Manager anlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+. So suchen Sie die IP-Adresse eines Grid-Knotens:
++
+.. Wählen Sie *KNOTEN*.
+.. Wählen Sie den Admin-Node, Gateway-Node oder Storage-Node aus, mit dem Sie eine Verbindung herstellen möchten.
+.. Wählen Sie die Registerkarte *Übersicht*.
+.. Notieren Sie im Abschnitt Node-Informationen die IP-Adressen für den Node.
+.. Wählen Sie *Mehr anzeigen*, um IPv6-Adressen und Schnittstellen-Zuordnungen anzuzeigen.
++
+Sie können Verbindungen von Client-Anwendungen zu einer beliebigen IP-Adresse in der Liste herstellen:
+
++
+*** *Eth0:* Grid Network
+*** *Eth1:* Admin-Netzwerk (optional)
+*** *Eth2:* Client-Netzwerk (optional)
++
+
+NOTE: Wenn ein Admin-Node oder ein Gateway-Node angezeigt wird und dieser in einer Hochverfügbarkeitsgruppe der aktive Node ist, wird auf eth2 die virtuelle IP-Adresse der HA-Gruppe angezeigt.
+
+
+
+
+
+. So finden Sie die virtuelle IP-Adresse einer Hochverfügbarkeitsgruppe:
++
+.. Wählen Sie *CONFIGURATION* > *Network* > *High Availability groups*.
+.. Notieren Sie in der Tabelle die virtuelle IP-Adresse der HA-Gruppe.
+
+
+. So finden Sie die Portnummer eines Load Balancer-Endpunkts:
++
+.. Wählen Sie *CONFIGURATION* > *Network* > *Load Balancer Endpunkte*.
+.. Notieren Sie sich die Portnummer für den zu verwendenden Endpunkt.
++
+
+NOTE: Wenn die Portnummer 80 oder 443 ist, wird der Endpunkt nur auf Gateway-Nodes konfiguriert, da diese Ports auf Admin-Nodes reserviert sind. Alle anderen Ports werden sowohl an Gateway-Knoten als auch an Admin-Nodes konfiguriert.
+
+.. Wählen Sie den Namen des Endpunkts aus der Tabelle aus.
+.. Bestätigen Sie, dass der *Client-Typ* (S3) mit der Client-Anwendung übereinstimmt, die den Endpunkt verwendet.
+
+
+

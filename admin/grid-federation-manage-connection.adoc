@@ -1,0 +1,282 @@
+---
+permalink: admin/grid-federation-manage-connection.html 
+sidebar: sidebar 
+keywords: grid federation, edit connection, remove connection, rotate certificates 
+summary: Das Management von Grid-Verbindungen zwischen StorageGRID Systemen umfasst das Bearbeiten von Verbindungsdetails, das Drehen der Zertifikate, das Entfernen von Mandantenberechtigungen und das Entfernen nicht verwendeter Verbindungen. 
+---
+= Grid-Verbindungen verwalten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Management von Grid-Verbindungen zwischen StorageGRID Systemen umfasst das Bearbeiten von Verbindungsdetails, das Drehen der Zertifikate, das Entfernen von Mandantenberechtigungen und das Entfernen nicht verwendeter Verbindungen.
+
+.Bevor Sie beginnen
+* Sie sind auf beiden Rastergitten mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben die link:admin-group-permissions.html["Root-Zugriffsberechtigung"] für das Raster, bei dem Sie angemeldet sind.
+
+
+
+
+== [[edit_Grid_Fed_Connection]]Bearbeiten einer Verbindung zum Grid Federation
+
+Sie können eine Grid Federation-Verbindung bearbeiten, indem Sie sich beim primären Admin-Node auf einem der beiden Raster der Verbindung anmelden. Nachdem Sie Änderungen am ersten Raster vorgenommen haben, müssen Sie eine neue Überprüfungsdatei herunterladen und in das andere Raster hochladen.
+
+
+NOTE: Während die Verbindung bearbeitet wird, werden Kontoklone- oder Grid-übergreifende Replikationsanforderungen weiterhin die vorhandenen Verbindungseinstellungen verwenden. Alle Änderungen, die Sie am ersten Raster vornehmen, werden lokal gespeichert, aber erst dann verwendet, wenn sie in das zweite Raster hochgeladen, gespeichert und getestet wurden.
+
+
+
+=== Beginnen Sie mit der Bearbeitung der Verbindung
+
+.Schritte
+. Melden Sie sich über den primären Admin-Node auf beiden Grids beim Grid-Manager an.
+. Wählen Sie *NODES* aus und bestätigen Sie, dass alle anderen Admin-Knoten in Ihrem System online sind.
++
+
+NOTE: Wenn Sie eine Grid-Federation-Verbindung bearbeiten, versucht StorageGRID, eine Datei mit der Kandidatenkonfiguration auf allen Admin-Knoten im ersten Grid zu speichern. Wenn diese Datei nicht in allen Admin-Knoten gespeichert werden kann, wird eine Warnmeldung angezeigt, wenn Sie *Speichern und Testen* auswählen.
+
+. Wählen Sie *CONFIGURATION* > *System* > *Grid Federation*.
+. Bearbeiten Sie die Verbindungsdetails über das Menü *actions* auf der Seite Grid Federation oder über die Detailseite für eine bestimmte Verbindung. Siehe link:grid-federation-create-connection.html["Erstellen von Grid Federation-Verbindungen"] für das, was Sie teilnehmen.
++
+[role="tabbed-block"]
+====
+.Menü „Aktionen“
+--
+.. Wählen Sie das Optionsfeld für die Verbindung aus.
+.. Wählen Sie *Actions* > *Edit*.
+.. Geben Sie die neuen Informationen ein.
+
+
+--
+.Detailseite
+--
+.. Wählen Sie einen Verbindungsnamen aus, um dessen Details anzuzeigen.
+.. Wählen Sie *Bearbeiten*.
+.. Geben Sie die neuen Informationen ein.
+
+
+--
+====
+. Geben Sie die Provisionierungs-Passphrase für das Raster ein, bei dem Sie angemeldet sind.
+. Wählen Sie *Speichern und fortfahren*.
++
+Die neuen Werte werden gespeichert, werden aber erst dann auf die Verbindung angewendet, wenn Sie die neue Überprüfungsdatei auf das andere Raster hochgeladen haben.
+
+. Wählen Sie *Überprüfungsdatei herunterladen*.
++
+Um diese Datei zu einem späteren Zeitpunkt herunterzuladen, gehen Sie zur Detailseite für die Verbindung.
+
+. Suchen Sie die heruntergeladene Datei (`_connection-name_.grid-federation`), und speichern Sie sie an einem sicheren Ort.
++
+
+CAUTION: Die Überprüfungsdatei enthält Geheimnisse und muss sicher gespeichert und übertragen werden.
+
+. Wählen Sie *Schließen*, um zur Seite Grid Federation zurückzukehren.
+. Bestätigen Sie, dass der *Verbindungsstatus* *ausstehende Bearbeitung* ist.
++
+
+NOTE: Wenn der Verbindungsstatus etwas anderes als *Verbunden* war, als Sie mit der Bearbeitung der Verbindung begonnen haben, ändert er sich nicht in *Ausstehende Bearbeitung*.
+
+. Geben Sie die Datei dem Grid-Administrator für das andere Grid an `_connection-name_.grid-federation`.
+
+
+
+
+=== Schließen Sie die Bearbeitung der Verbindung ab
+
+Schließen Sie die Bearbeitung der Verbindung ab, indem Sie die Überprüfungsdatei auf das andere Raster hochladen.
+
+.Schritte
+. Melden Sie sich über den primären Admin-Knoten beim Grid-Manager an.
+. Wählen Sie *CONFIGURATION* > *System* > *Grid Federation*.
+. Wählen Sie *Upload Verification file*, um auf die Upload-Seite zuzugreifen.
+. Wählen Sie *Überprüfungsdatei hochladen*. Navigieren Sie dann zu der Datei, die aus dem ersten Raster heruntergeladen wurde, und wählen Sie sie aus.
+. Geben Sie die Provisionierungs-Passphrase für das Raster ein, bei dem Sie derzeit angemeldet sind.
+. Wählen Sie *Speichern und testen*.
++
+Wenn die Verbindung über die bearbeiteten Werte hergestellt werden kann, wird eine Erfolgsmeldung angezeigt. Andernfalls wird eine Fehlermeldung angezeigt. Überprüfen Sie die Nachricht und beheben Sie alle Probleme.
+
+. Schließen Sie den Assistenten, um zur Seite „Grid Federation“ zurückzukehren.
+. Bestätigen Sie, dass der *Verbindungsstatus* *verbunden* ist.
+. Rufen Sie die Seite Grid Federation im ersten Raster auf, und aktualisieren Sie den Browser. Bestätigen Sie, dass der *Verbindungsstatus* jetzt *verbunden* ist.
+. Löschen Sie nach dem Verbindungsaufbau alle Kopien der Überprüfungsdatei sicher.
+
+
+
+
+== [[Test_Grid_Fed_Connection]]Testen einer Netzverbundverbindung
+
+.Schritte
+. Melden Sie sich über den primären Admin-Knoten beim Grid-Manager an.
+. Wählen Sie *CONFIGURATION* > *System* > *Grid Federation*.
+. Testen Sie die Verbindung mit dem Menü *actions* auf der Seite Grid Federation oder der Detailseite für eine bestimmte Verbindung.
++
+[role="tabbed-block"]
+====
+.Menü „Aktionen“
+--
+.. Wählen Sie das Optionsfeld für die Verbindung aus.
+.. Wählen Sie *Actions* > *Test*.
+
+
+--
+.Detailseite
+--
+.. Wählen Sie einen Verbindungsnamen aus, um dessen Details anzuzeigen.
+.. Wählen Sie *Verbindung testen*.
+
+
+--
+====
+. Überprüfen Sie den Verbindungsstatus:
++
+[cols="1a,2a"]
+|===
+| Verbindungsstatus | Beschreibung 
+
+
+ a| 
+Verbunden
+ a| 
+Beide Netze sind angeschlossen und kommunizieren normal.
+
+
+
+ a| 
+Fehler
+ a| 
+Die Verbindung befindet sich in einem Fehlerzustand. Beispielsweise ist ein Zertifikat abgelaufen oder ein Konfigurationswert ist nicht mehr gültig.
+
+
+
+ a| 
+Bearbeitung ausstehend
+ a| 
+Sie haben die Verbindung in diesem Raster bearbeitet, aber die Verbindung verwendet weiterhin die vorhandene Konfiguration. Um die Bearbeitung abzuschließen, laden Sie die neue Überprüfungsdatei in das andere Raster hoch.
+
+
+
+ a| 
+Warten auf Verbindung
+ a| 
+Sie haben die Verbindung in diesem Raster konfiguriert, aber die Verbindung wurde auf dem anderen Raster nicht abgeschlossen. Laden Sie die Überprüfungsdatei von diesem Raster herunter, und laden Sie sie in das andere Raster hoch.
+
+
+
+ a| 
+Unbekannt
+ a| 
+Die Verbindung befindet sich in einem unbekannten Zustand, möglicherweise aufgrund eines Netzwerkproblems oder eines Offline-Knotens.
+
+|===
+. Wenn der Verbindungsstatus *Error* lautet, beheben Sie alle Probleme. Wählen Sie dann erneut *Verbindung testen* aus, um zu bestätigen, dass das Problem behoben wurde.
+
+
+
+
+== [[roate_Grid_Fed_certificates]]Verbindungszertifikate drehen
+
+Jede Grid Federation-Verbindung verwendet vier automatisch generierte SSL-Zertifikate, um die Verbindung zu sichern. Wenn die beiden Zertifikate für jedes Raster in der Nähe ihres Ablaufdatums liegen, erinnert die Warnung *Ablauf des Grid Federation Certificate* Sie daran, die Zertifikate zu drehen.
+
+
+CAUTION: Wenn die Zertifikate an einem der beiden Enden der Verbindung ablaufen, wird die Verbindung unterbrochen und Replikationen stehen aus, bis die Zertifikate aktualisiert werden.
+
+.Schritte
+. Melden Sie sich über den primären Admin-Node auf beiden Grids beim Grid-Manager an.
+. Wählen Sie *CONFIGURATION* > *System* > *Grid Federation*.
+. Wählen Sie auf einer der Registerkarten auf der Seite Grid Federation den Verbindungsnamen aus, um die zugehörigen Details anzuzeigen.
+. Wählen Sie die Registerkarte *Zertifikate* aus.
+. Wählen Sie *Zertifikate drehen*.
+. Geben Sie an, wie viele Tage die neuen Zertifikate gültig sein sollen.
+. Geben Sie die Provisionierungs-Passphrase für das Raster ein, bei dem Sie angemeldet sind.
+. Wählen Sie *Zertifikate drehen*.
+. Wiederholen Sie diese Schritte bei Bedarf auf dem anderen Raster der Verbindung.
++
+Verwenden Sie im Allgemeinen die gleiche Anzahl von Tagen für die Zertifikate auf beiden Seiten der Verbindung.
+
+
+
+
+
+== [[remove_Grid_Fed_Connection]]Entfernen Sie eine Netzverbundverbindung
+
+Sie können eine Netzverbundverbindung aus jedem Raster der Verbindung entfernen. Wie in der Abbildung gezeigt, müssen Sie auf beiden Rastern erforderliche Schritte ausführen, um zu bestätigen, dass die Verbindung nicht von einem Mandanten in einem der beiden Raster verwendet wird.
+
+image::../media/grid-federation-remove-connection.png[Schritte zum Entfernen der Netzverbundverbindung]
+
+Beachten Sie vor dem Entfernen einer Verbindung Folgendes:
+
+* Durch das Entfernen einer Verbindung werden keine Elemente gelöscht, die bereits zwischen den Rastern kopiert wurden. So werden beispielsweise Mandantenbenutzer, -Gruppen und -Objekte, die auf beiden Grids vorhanden sind, nicht aus beiden Grids gelöscht, wenn die Berechtigung des Mandanten entfernt wird. Wenn Sie diese Elemente löschen möchten, müssen Sie sie manuell aus beiden Rastern löschen.
+* Wenn Sie eine Verbindung entfernen, wird die Replikation aller Objekte, die noch nicht repliziert werden (aufgenommen, aber noch nicht in das andere Grid repliziert), dauerhaft fehlgeschlagen.
+
+
+
+
+=== Deaktivieren Sie die Replizierung für alle Mandanten-Buckets
+
+.Schritte
+. Melden Sie sich vom primären Admin-Node aus an einem der beiden Raster beim Grid Manager an.
+. Wählen Sie *CONFIGURATION* > *System* > *Grid Federation*.
+. Wählen Sie den Verbindungsnamen aus, um die zugehörigen Details anzuzeigen.
+. Bestimmen Sie auf der Registerkarte *zulässige Mieter*, ob die Verbindung von einem Mieter verwendet wird.
+. Wenn Mandanten aufgeführt sind, weisen Sie alle Mandanten anlink:../tenant/grid-federation-manage-cross-grid-replication.html["Deaktivieren Sie die Grid-übergreifende Replizierung"], für alle ihre Buckets auf beiden Rastern in der Verbindung zu verwenden.
++
+
+TIP: Sie können die Berechtigung *use Grid Federation connection* nicht entfernen, wenn in einem Mandanten-Buckets die Grid-übergreifende Replikation aktiviert ist. Jedes Mandantenkonto muss die Grid-übergreifende Replizierung für seine Buckets auf beiden Grids deaktivieren.
+
+
+
+
+
+=== Berechtigung für jeden Mandanten entfernen
+
+Nachdem die Grid-übergreifende Replikation für alle Mandanten-Buckets deaktiviert wurde, entfernen Sie die *use Grid Federation permission* von allen Mandanten auf beiden Grids.
+
+.Schritte
+. Wählen Sie *CONFIGURATION* > *System* > *Grid Federation*.
+. Wählen Sie den Verbindungsnamen aus, um die zugehörigen Details anzuzeigen.
+. Entfernen Sie für jeden Mandanten auf der Registerkarte *zulässige Mieter* die Berechtigung *Grid Federation connection* von jedem Mandanten. Siehe link:grid-federation-manage-tenants.html["Management zulässiger Mandanten"].
+. Wiederholen Sie diese Schritte für die zulässigen Mandanten im anderen Raster.
+
+
+
+
+=== Verbindung entfernen
+
+.Schritte
+. Wenn keine Mieter in einem der beiden Raster die Verbindung verwenden, wählen Sie *Entfernen*.
+. Überprüfen Sie die Bestätigungsmeldung, und wählen Sie *Entfernen*.
++
+** Wenn die Verbindung entfernt werden kann, wird eine Erfolgsmeldung angezeigt. Die Netzverbundverbindung wird nun aus beiden Grids entfernt.
+** Wenn die Verbindung nicht entfernt werden kann (z. B. wird sie noch verwendet oder es liegt ein Verbindungsfehler vor), wird eine Fehlermeldung angezeigt. Sie können eine der folgenden Aktionen ausführen:
++
+*** Beheben Sie den Fehler (empfohlen). Siehe link:grid-federation-troubleshoot.html["Fehler beim Grid-Verbund beheben"].
+*** Entfernen Sie die Verbindung mit Gewalt. Siehe nächster Abschnitt.
+
+
+
+
+
+
+
+
+== [[Force-remove_Grid_Fed_Connection]]Entfernen Sie eine Verbindung zum Grid-Verbund mit Gewalt
+
+Bei Bedarf können Sie das Entfernen einer Verbindung erzwingen, die nicht den Status *Verbunden* hat.
+
+Das Entfernen erzwingen löscht nur die Verbindung aus dem lokalen Grid. Um die Verbindung vollständig zu entfernen, führen Sie die gleichen Schritte auf beiden Rastern aus.
+
+.Schritte
+. Wählen Sie im Bestätigungsdialogfeld *Entfernen erzwingen* aus.
++
+Eine Erfolgsmeldung wird angezeigt. Diese Netzverbundverbindung kann nicht mehr verwendet werden. Allerdings ist für Mandanten-Buckets möglicherweise weiterhin die Grid-übergreifende Replizierung aktiviert, und einige Objektkopien wurden möglicherweise bereits zwischen den Grids in der Verbindung repliziert.
+
+. Melden Sie sich vom anderen Raster der Verbindung aus über den primären Admin-Node beim Grid Manager an.
+. Wählen Sie *CONFIGURATION* > *System* > *Grid Federation*.
+. Wählen Sie den Verbindungsnamen aus, um die zugehörigen Details anzuzeigen.
+. Wählen Sie *Entfernen* und *Ja*.
+. Wählen Sie *Entfernen erzwingen*, um die Verbindung aus diesem Raster zu entfernen.
+

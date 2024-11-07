@@ -1,0 +1,78 @@
+---
+permalink: audit/object-delete-transactions.html 
+sidebar: sidebar 
+keywords: object delete transaction, S3 delete, SDEL, WDEL 
+summary: Sie können Objektlöschtransaktionen im Revisionsprotokoll identifizieren, indem Sie S3-API-spezifische Audit-Meldungen suchen. 
+---
+= Löschen von Objekttransaktionen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können Objektlöschtransaktionen im Revisionsprotokoll identifizieren, indem Sie S3-API-spezifische Audit-Meldungen suchen.
+
+In den folgenden Tabellen sind nicht alle während einer Löschtransaktion generierten Überwachungsmeldungen aufgeführt. Es werden nur Nachrichten enthalten, die zum Verfolgen der Löschtransaktion erforderlich sind.
+
+
+
+== S3-Audit-Nachrichten löschen
+
+[cols="1a,1a,2a,1a,2a"]
+|===
+| Codieren | Name | Beschreibung | Verfolgen | Siehe 
+
+
+ a| 
+SDEL
+ a| 
+S3 Löschen
+ a| 
+Anforderung zum Löschen des Objekts aus einem Bucket gemacht.
+ a| 
+CBID, S3KY
+ a| 
+link:sdel-s3-delete.html["SDEL: S3 LÖSCHEN"]
+
+|===
+
+
+== Swift Audit-Nachrichten löschen
+
+[cols="1a,1a,2a,1a,2a"]
+|===
+| Codieren | Name | Beschreibung | Verfolgen | Siehe 
+
+
+ a| 
+WDEL
+ a| 
+Swift Löschen
+ a| 
+Anforderung gemacht, das Objekt aus einem Container oder Container zu löschen.
+ a| 
+CBID, WOBJ
+ a| 
+link:wdel-swift-delete.html["WDEL: Swift LÖSCHEN"]
+
+|===
+
+
+== Beispiel: S3-Objektlöschung
+
+Wenn ein S3-Client ein Objekt aus einem Storage-Node (LDR-Service) löscht, wird eine Überwachungsmeldung generiert und im Revisionsprotokoll gespeichert.
+
+
+NOTE: Im folgenden Beispiel sind nicht alle während einer Löschtransaktion generierten Audit-Meldungen aufgeführt. Es werden nur diejenigen aufgelistet, die mit der S3-Löschtransaktion (SDEL) in Verbindung stehen.
+
+
+
+=== SDEL: S3 Löschen
+
+Das Löschen von Objekten beginnt, wenn der Client eine DeleteObject-Anforderung an einen LDR-Dienst sendet. Die Meldung enthält den Bucket, aus dem das Objekt gelöscht werden soll, und den S3-Schlüssel des Objekts, der zur Identifizierung des Objekts verwendet wird.
+
+[listing, subs="specialcharacters,quotes"]
+----
+2017-07-17T21:17:58.959669[AUDT:[RSLT(FC32):SUCS][TIME(UI64):14316][SAIP(IPAD):"10.96.112.29"][S3AI(CSTR):"70899244468554783528"][SACC(CSTR):"test"][S3AK(CSTR):"SGKHyalRU_5cLflqajtaFmxJn946lAWRJfBF33gAOg=="][SUSR(CSTR):"urn:sgws:identity::70899244468554783528:root"][SBAI(CSTR):"70899244468554783528"][SBAC(CSTR):"test"]\[S3BK\(CSTR\):"example"\]\[S3KY\(CSTR\):"testobject-0-7"\][CBID\(UI64\):0x339F21C5A6964D89][CSIZ(UI64):30720][AVER(UI32):10][ATIM(UI64):150032627859669][ATYP\(FC32\):SDEL][ANID(UI32):12086324][AMID(FC32):S3RQ][ATID(UI64):4727861330952970593]]
+----

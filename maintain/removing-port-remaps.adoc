@@ -1,0 +1,46 @@
+---
+permalink: maintain/removing-port-remaps.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, remove port remap, removing port remap, port remap 
+summary: Wenn Sie einen Endpunkt für den Load Balancer-Dienst konfigurieren möchten und einen Port verwenden möchten, der bereits als Port mit dem Port einer Port-Remap konfiguriert wurde, müssen Sie zunächst die vorhandene Port-Remap entfernen, oder der Endpunkt ist nicht wirksam. Sie müssen ein Skript auf jedem Admin-Knoten und Gateway-Knoten ausführen, der über widersprüchliche neu zugeordnete Ports verfügt, um alle Port-Remaps des Node zu entfernen. 
+---
+= Entfernen Sie die Port-Remaps
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie einen Endpunkt für den Load Balancer-Dienst konfigurieren möchten und einen Port verwenden möchten, der bereits als Port mit dem Port einer Port-Remap konfiguriert wurde, müssen Sie zunächst die vorhandene Port-Remap entfernen, oder der Endpunkt ist nicht wirksam. Sie müssen auf jedem Admin-Node und Gateway-Node ein Skript ausführen, das über widersprüchliche neu zugeordnete Ports verfügt, um alle Port-Remaps des Node zu entfernen.
+
+.Über diese Aufgabe
+Durch dieses Verfahren werden alle Port-Remaps entfernt. Wenden Sie sich an den technischen Support, wenn Sie einige der Rückpläne aufbewahren müssen.
+
+Informationen über das Konfigurieren von Endpunkten des Load Balancer finden Sie unter link:../admin/configuring-load-balancer-endpoints.html["Konfigurieren von Load Balancer-Endpunkten"].
+
+
+NOTE: Wenn die Port-Neuzuordnung Client-Zugriff ermöglicht, konfigurieren Sie den Client neu, damit er einen anderen Port als Load-Balancer-Endpunkt verwendet, um einen Dienstausfall zu vermeiden. Andernfalls führt das Entfernen der Port-Zuordnung zum Verlust des Client-Zugriffs und sollte entsprechend geplant werden.
+
+
+NOTE: Dieses Verfahren ist bei einem StorageGRID System, das als Container auf Bare-Metal-Hosts bereitgestellt wird, nicht möglich. Siehe die Anleitung für link:removing-port-remaps-on-bare-metal-hosts.html["Entfernen von Port-Remaps auf Bare-Metal-Hosts"].
+
+.Schritte
+. Melden Sie sich bei dem Node an.
++
+.. Geben Sie den folgenden Befehl ein: `ssh -p 8022 admin@node_IP`
++
+Port 8022 ist der SSH-Port des Basis-OS, während Port 22 der SSH-Port der Container-Engine ist, auf der StorageGRID ausgeführt wird.
+
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+.. Geben Sie den folgenden Befehl ein, um zu root zu wechseln: `su -`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
++
+Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `#`.
+
+
+
+. Führen Sie das folgende Skript aus: `remove-port-remap.sh`
+. Booten Sie den Node neu: `reboot`
+. Melden Sie sich von der Befehls-Shell ab: `exit`
+. Wiederholen Sie diese Schritte auf jedem Admin-Node und Gateway-Node mit gegensätzlichen neu zugeordneten Ports.
+

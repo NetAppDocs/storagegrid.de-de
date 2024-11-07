@@ -1,0 +1,44 @@
+---
+permalink: admin/changing-provisioning-passphrase.html 
+sidebar: sidebar 
+keywords: provisioning passphrase, change passphrase 
+summary: Verwenden Sie dieses Verfahren, um die StorageGRID-Provisionierungs-Passphrase zu ändern. Die Passphrase wird für Recovery-, Erweiterungs- und Wartungsvorgänge benötigt. Die Passphrase ist außerdem erforderlich, um Backups im Recovery-Paket herunterzuladen, die Grid-Topologiedaten, Passwörter für die Grid-Node-Konsole und Verschlüsselungsschlüssel für das StorageGRID-System enthalten. 
+---
+= Ändern Sie die Provisionierungs-Passphrase
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Verwenden Sie dieses Verfahren, um die StorageGRID-Provisionierungs-Passphrase zu ändern. Die Passphrase ist für Recovery-, Erweiterungs- und Wartungsvorgänge erforderlich. Die Passphrase ist außerdem erforderlich, um Backups im Recovery-Paket herunterzuladen, die Grid-Topologiedaten, Passwörter für die Grid-Node-Konsole und Verschlüsselungsschlüssel für das StorageGRID-System enthalten.
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie verfügen über Wartungs- oder Root-Zugriffsberechtigungen.
+* Sie haben die aktuelle Provisionierungs-Passphrase.
+
+
+.Über diese Aufgabe
+Die Provisionierungs-Passphrase ist für viele Installations- und Wartungsverfahren und für erforderlichlink:../maintain/downloading-recovery-package.html["Herunterladen des Wiederherstellungspakets"]. Die Provisionierungs-Passphrase ist in der Datei nicht aufgeführt `Passwords.txt`. Achten Sie darauf, die Provisionierungs-Passphrase zu dokumentieren und an einem sicheren Ort zu halten.
+
+.Schritte
+. Wählen Sie *KONFIGURATION* > *Zugangskontrolle*> *Grid-Passwörter*.
+. Wählen Sie unter *Change Provisioning Passphrase* die Option *make a change* aus
+. Geben Sie Ihre aktuelle Provisionierungs-Passphrase ein.
+. Geben Sie die neue Passphrase ein. Die Passphrase muss mindestens 8 und maximal 32 Zeichen enthalten. Passphrases sind Groß-/Kleinschreibung.
+. Speichern Sie die neue Provisionierungs-Passphrase an einem sicheren Ort. Sie ist für Installations-, Erweiterungs- und Wartungsverfahren erforderlich.
+. Geben Sie die neue Passphrase erneut ein, und wählen Sie *Speichern*.
++
+Das System zeigt ein grünes Erfolgsbanner an, wenn die Änderung der Provisionierungs-Passphrase abgeschlossen ist.
+
++
+image::../media/change_provisioning_passphrase_success.png[Erfolgsmeldung für das Provisioning der Passphrase geändert]
+
+. Wählen Sie *Wiederherstellungspaket*.
+. Geben Sie die neue Provisionierungs-Passphrase ein, um das neue Wiederherstellungspaket herunterzuladen.
++
+
+CAUTION: Nachdem Sie die Provisionierungs-Passphrase geändert haben, müssen Sie sofort ein neues Wiederherstellungspaket herunterladen. Die Recovery Package-Datei ermöglicht es Ihnen, das System wiederherzustellen, wenn ein Fehler auftritt.
+
+

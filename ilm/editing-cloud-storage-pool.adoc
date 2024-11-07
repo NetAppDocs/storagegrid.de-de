@@ -1,0 +1,49 @@
+---
+permalink: ilm/editing-cloud-storage-pool.html 
+sidebar: sidebar 
+keywords: edit cloud storage pool 
+summary: Sie können einen Cloud Storage Pool bearbeiten, um seinen Namen, seinen Service-Endpunkt oder andere Details zu ändern. Es ist jedoch nicht möglich, den S3-Bucket oder den Azure-Container für einen Cloud-Storage-Pool zu ändern. 
+---
+= Bearbeiten eines Cloud-Speicherpools
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können einen Cloud-Storage-Pool bearbeiten, um dessen Namen, Service-Endpunkt oder andere Details zu ändern. Sie können jedoch nicht den S3-Bucket oder Azure-Container für einen Cloud-Storage-Pool ändern.
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben link:../admin/admin-group-permissions.html["Bestimmte Zugriffsberechtigungen"].
+* Sie haben die überprüftlink:considerations-for-cloud-storage-pools.html["Überlegungen zu Cloud-Storage-Pools"].
+
+
+.Schritte
+. Wählen Sie *ILM* > *Speicherpools* > *Cloud-Speicherpools*.
++
+In der Tabelle Cloud-Storage-Pools werden die vorhandenen Cloud-Storage-Pools aufgeführt.
+
+. Aktivieren Sie das Kontrollkästchen für den Cloud-Speicherpool, den Sie bearbeiten möchten, und wählen Sie dann *actions* > *Edit* aus.
++
+Alternativ wählen Sie den Namen des Cloud Storage Pools aus und wählen dann *Bearbeiten*.
+
+. Ändern Sie ggf. den Namen, den Service-Endpunkt, die Authentifizierungsdaten oder die Zertifizierungsverifizierungsmethode des Cloud Storage Pools.
++
+
+NOTE: Sie können den Provider-Typ oder den S3-Bucket oder Azure-Container für einen Cloud-Storage-Pool nicht ändern.
+
++
+Wenn Sie zuvor ein Server- oder Client-Zertifikat hochgeladen haben, können Sie das Akkordeon *Certificate Details* erweitern, um das aktuell verwendete Zertifikat zu überprüfen.
+
+. Wählen Sie *Speichern*.
++
+Wenn Sie einen Cloud-Storage-Pool speichern, überprüft StorageGRID, ob der Bucket oder Container und der Service-Endpunkt vorhanden sind. Ob sie mit den von Ihnen angegebenen Zugangsdaten erreicht werden können.
+
++
+Wenn die Validierung des Cloud-Speicherpools fehlschlägt, wird eine Fehlermeldung angezeigt. Ein Fehler kann z. B. gemeldet werden, wenn ein Zertifikatfehler vorliegt.
+
++
+Lesen Sie die Anweisungen für link:troubleshooting-cloud-storage-pools.html["Fehlerbehebung bei Cloud Storage Pools"], Beheben Sie das Problem, und versuchen Sie dann erneut, den Cloud-Speicherpool zu speichern.
+
+

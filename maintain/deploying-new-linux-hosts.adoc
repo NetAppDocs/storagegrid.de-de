@@ -1,0 +1,44 @@
+---
+permalink: maintain/deploying-new-linux-hosts.html 
+sidebar: sidebar 
+keywords: storagegrid, deploy linux host, new host, new linux host 
+summary: Bis auf ein paar Ausnahmen bereiten Sie die neuen Hosts wie während der Erstinstallation vor. 
+---
+= Implementieren Sie neue Linux-Hosts
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bis auf ein paar Ausnahmen bereiten Sie die neuen Hosts wie während der Erstinstallation vor.
+
+Um neue oder neu installierte physische oder virtuelle Linux-Hosts bereitzustellen, gehen Sie wie folgt vor, um die Hosts in den StorageGRID-Installationsanweisungen für Ihr Linux-Betriebssystem vorzubereiten:
+
+* link:../rhel/installing-linux.html["Installation Von Linux (Red Hat Enterprise Linux)"]
+* link:../ubuntu/installing-linux.html["Linux installieren (Ubuntu oder Debian)"]
+
+
+Dieses Verfahren umfasst Schritte zur Durchführung folgender Aufgaben:
+
+. Installieren Sie Linux.
+. Konfigurieren Sie das Hostnetzwerk.
+. Hostspeicher konfigurieren.
+. Die Container-Engine einbauen.
+. Installieren Sie den StorageGRID Host Service.
++
+
+CAUTION: Stoppen Sie, nachdem Sie den Task „StorageGRID-Hostdienst installieren“ in den Installationsanweisungen ausgeführt haben. Starten Sie nicht die Aufgabe „Bereitstellen von Grid Nodes“.
+
+
+
+Beachten Sie bei der Durchführung dieser Schritte die folgenden wichtigen Richtlinien:
+
+* Verwenden Sie die gleichen Hostnamen, die Sie auf dem ursprünglichen Host verwendet haben.
+* Wenn Sie StorageGRID-Nodes mit Shared Storage unterstützen oder einige oder alle Laufwerke oder SSDs von den ausgefallenen zu den Ersatz-Nodes verschoben haben, müssen Sie dieselben Storage-Zuordnungen wiederherstellen, die auf dem ursprünglichen Host vorhanden waren. Wenn Sie beispielsweise WWIDs und Aliase in wie in den Installationsanweisungen empfohlen verwendet `/etc/multipath.conf` haben, müssen Sie auf dem Ersatzhost dieselben Alias-/WWID-Paare verwenden `/etc/multipath.conf`.
+* Wenn der StorageGRID Node Storage verwendet, der aus einem NetApp ONTAP System zugewiesen wurde, vergewissern Sie sich, dass auf dem Volume keine FabricPool-Tiering-Richtlinie aktiviert ist. Das Deaktivieren von FabricPool Tiering für Volumes, die in Verbindung mit StorageGRID Nodes verwendet werden, vereinfacht die Fehlerbehebung und Storage-Vorgänge.
++
+
+CAUTION: Verwenden Sie FabricPool niemals, um StorageGRID-bezogene Daten in das Tiering zurück zu StorageGRID selbst zu verschieben. Das Tiering von StorageGRID-Daten zurück in die StorageGRID verbessert die Fehlerbehebung und reduziert die Komplexität von betrieblichen Abläufen.
+
+

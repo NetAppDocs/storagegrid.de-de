@@ -1,0 +1,39 @@
+---
+permalink: tenant/editing-group-name.html 
+sidebar: sidebar 
+keywords: how to edit tenant group name 
+summary: Sie können den Anzeigenamen für eine Gruppe bearbeiten. Sie können den eindeutigen Namen für eine Gruppe nicht bearbeiten. 
+---
+= Gruppenname bearbeiten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können den Anzeigenamen für eine Gruppe bearbeiten. Sie können den eindeutigen Namen einer Gruppe nicht bearbeiten.
+
+.Bevor Sie beginnen
+* Sie sind beim Tenant Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie gehören einer Benutzergruppe an, die über die Root-Zugriffsberechtigung verfügt. Siehe link:tenant-management-permissions.html["Mandantenmanagement-Berechtigungen"].
+
+
+.Schritte
+. Wählen Sie *ZUGRIFFSVERWALTUNG* > *Gruppen*.
+. Aktivieren Sie das Kontrollkästchen für die Gruppe, deren Anzeigename Sie bearbeiten möchten.
+. Wählen Sie *Aktionen* > *Gruppenname bearbeiten*.
++
+Das Dialogfeld Gruppenname bearbeiten wird angezeigt.
+
++
+image::../media/edit_group_name.png[Gruppenname bearbeiten]
+
+. Wenn Sie eine lokale Gruppe bearbeiten, aktualisieren Sie den Anzeigenamen nach Bedarf.
++
+Sie können den eindeutigen Namen einer Gruppe nicht ändern. Der Anzeigename für eine verbundene Gruppe kann nicht bearbeitet werden.
+
+. Wählen Sie *Änderungen speichern*.
++
+In der oberen rechten Ecke der Seite wird eine Bestätigungsmeldung angezeigt.
+
+

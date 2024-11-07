@@ -1,0 +1,306 @@
+---
+permalink: tenant/configuring-search-integration-service.html 
+sidebar: sidebar 
+keywords: how to configure search integration service 
+summary: Sie aktivieren die Suchintegration für einen Bucket, indem Sie XML für die Suchintegration erstellen und den Tenant Manager verwenden, um die XML-Datei auf einen Bucket anzuwenden. 
+---
+= Konfigurieren Sie den Suchintegrationsdienst
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie aktivieren die Suchintegration für einen Bucket, indem Sie XML für die Suchintegration erstellen und den Tenant Manager zum Anwenden des XML-Codes auf den Bucket verwenden.
+
+.Bevor Sie beginnen
+* Die Plattformservices wurden für Ihr Mandantenkonto von einem StorageGRID-Administrator aktiviert.
+* Sie haben bereits einen S3-Bucket erstellt, dessen Inhalt Sie indizieren möchten.
+* Der Endpunkt, den Sie als Ziel für den Suchintegrationsdienst verwenden möchten, ist bereits vorhanden, und Sie haben seinen URN.
+* Sie gehören zu einer Benutzergruppe mit dem link:tenant-management-permissions.html["Managen aller Buckets oder Root-Zugriffsberechtigungen"]. Diese Berechtigungen überschreiben die Berechtigungseinstellungen in Gruppen- oder Bucket-Richtlinien bei der Konfiguration des Buckets mithilfe des Mandanten-Manager.
+
+
+.Über diese Aufgabe
+Nachdem Sie den Such-Integrationsservice für einen Quell-Bucket konfiguriert haben, werden beim Erstellen eines Objekts oder beim Aktualisieren der Metadaten oder Tags eines Objekts Objektmetadaten ausgelöst, die an den Ziel-Endpunkt gesendet werden.
+
+Wenn Sie den Suchintegrationsservice für einen Bucket aktivieren, der bereits Objekte enthält, werden Metadatenbenachrichtigungen nicht automatisch für vorhandene Objekte gesendet. Aktualisieren Sie diese vorhandenen Objekte, um sicherzustellen, dass ihre Metadaten zum Zielsuchindex hinzugefügt werden.
+
+.Schritte
+. Suchintegration für einen Bucket aktivieren:
++
+** Verwenden Sie einen Texteditor, um die XML-XML-Metadatenbenachrichtigung zu erstellen, die für die Integration der Suche erforderlich ist.
+** Verwenden Sie beim Konfigurieren des XML den URN eines Endpunkt zur Integration der Suche als Ziel.
++
+Objekte können nach dem Präfix des Objektnamens gefiltert werden. Beispielsweise können Sie Metadaten für Objekte mit dem Präfix an ein Ziel und Metadaten für Objekte mit `videos` dem Präfix an ein anderes senden `images`. Konfigurationen mit überlappenden Präfixen sind nicht gültig und werden bei der Übermittlung abgelehnt. Beispielsweise ist eine Konfiguration, die eine Regel für Objekte mit dem Präfix und eine zweite Regel für Objekte mit dem Präfix `test2` enthält `test`, nicht zulässig.
+
++
+Bei Bedarf siehe <<example-notification-config,Beispiele für die Metadatenkonfiguration XML>>.
+
++
+[listing]
+----
+<MetadataNotificationConfiguration>
+ <Rule>
+    <Status>Enabled</Status>
+    <Prefix></Prefix>
+    <Destination>
+       <Urn>/Urn>
+       </Destination>
+ </Rule>
+</MetadataNotificationConfiguration>
+----
++
+Elemente in der XML-Konfigurationskonfiguration für Metadatenbenachrichtigungen:
+
++
+[cols="1a,3a,1a"]
+|===
+| Name | Beschreibung | Erforderlich 
+
+
+ a| 
+MetadataNotificationKonfiguration
+ a| 
+Container-Tag für Regeln zur Angabe von Objekten und Zielen für Metadatenbenachrichtigungen
+
+Enthält mindestens ein Regelelement.
+ a| 
+Ja.
+
+
+
+ a| 
+Regel
+ a| 
+Container-Tag für eine Regel, die die Objekte identifiziert, deren Metadaten zu einem bestimmten Index hinzugefügt werden sollen.
+
+Regeln mit überlappenden Präfixen werden abgelehnt.
+
+Im MetadataNotificationConfiguration Element enthalten.
+ a| 
+Ja.
+
+
+
+ a| 
+ID
+ a| 
+Eindeutige Kennung für die Regel.
+
+In das Element Regel aufgenommen.
+ a| 
+Nein
+
+
+
+ a| 
+Status
+ a| 
+Der Status kann „aktiviert“ oder „deaktiviert“ sein. Für deaktivierte Regeln wird keine Aktion durchgeführt.
+
+In das Element Regel aufgenommen.
+ a| 
+Ja.
+
+
+
+ a| 
+Präfix
+ a| 
+Objekte, die mit dem Präfix übereinstimmen, werden von der Regel beeinflusst und ihre Metadaten werden an das angegebene Ziel gesendet.
+
+Geben Sie ein leeres Präfix an, um alle Objekte zu entsprechen.
+
+In das Element Regel aufgenommen.
+ a| 
+Ja.
+
+
+
+ a| 
+Ziel
+ a| 
+Container-Tag für das Ziel einer Regel.
+
+In das Element Regel aufgenommen.
+ a| 
+Ja.
+
+
+
+ a| 
+Urne
+ a| 
+URNE des Ziels, an dem Objektmetadaten gesendet werden. Muss der URN eines StorageGRID-Endpunkts mit den folgenden Eigenschaften sein:
+
+*** `es` Muss das dritte Element sein.
+*** Die URN muss mit dem Index und dem Typ enden, in dem die Metadaten gespeichert sind, in der Form `domain-name/myindex/mytype`.
+
+
+Endpunkte werden mithilfe der Mandanten-Manager oder der Mandanten-Management-API konfiguriert. Sie nehmen folgende Form:
+
+*** `arn:aws:es:region:account-ID:domain/mydomain/myindex/mytype`
+*** `urn:mysite:es:::mydomain/myindex/mytype`
+
+
+Der Endpunkt muss konfiguriert werden, bevor die Konfigurations-XML gesendet wird, oder die Konfiguration schlägt mit einem Fehler 404 fehl.
+
+URNE ist im Element Ziel enthalten.
+ a| 
+Ja.
+
+|===
+
+
+. Wählen Sie im Mandantenmanager *STORAGE (S3)* > *Buckets* aus.
+. Wählen Sie den Namen des Quell-Buckets aus.
++
+Die Seite mit den Bucket-Details wird angezeigt.
+
+. Wählen Sie *Plattform-Services* > *Integration suchen*
+. Aktivieren Sie das Kontrollkästchen *Enable search Integration*.
+. Fügen Sie die Konfiguration der Metadatenbenachrichtigung in das Textfeld ein, und wählen Sie *Änderungen speichern*.
++
+
+NOTE: Plattformservices müssen für jedes Mandantenkonto von einem StorageGRID-Administrator aktiviert werden, der den Grid Manager oder die Management-API verwendet. Wenden Sie sich an Ihren StorageGRID-Administrator, wenn beim Speichern der Konfigurations-XML ein Fehler auftritt.
+
+. Überprüfen Sie, ob der Suchintegrationsdienst richtig konfiguriert ist:
++
+.. Fügen Sie dem Quell-Bucket ein Objekt hinzu, das die Anforderungen für das Auslösen einer Metadatenbenachrichtigung erfüllt, wie in der Konfigurations-XML angegeben.
++
+In dem zuvor gezeigten Beispiel lösen alle Objekte, die dem Bucket hinzugefügt wurden, eine Metadatenbenachrichtigung aus.
+
+.. Bestätigen Sie, dass ein JSON-Dokument, das die Metadaten und Tags des Objekts enthält, zum im Endpunkt angegebenen Suchindex hinzugefügt wurde.
+
+
+
+
+.Nachdem Sie fertig sind
+Bei Bedarf können Sie die Suchintegration für einen Bucket mithilfe einer der folgenden Methoden deaktivieren:
+
+* Wählen Sie *STORAGE (S3)* > *Buckets* und deaktivieren Sie das Kontrollkästchen *Enable search Integration*.
+* Wenn Sie die S3-API direkt verwenden, verwenden Sie eine Benachrichtigungsanforderung FÜR DELETE-Bucket-Metadaten. Anweisungen zur Implementierung von S3-Client-Applikationen finden Sie in der Anleitung.
+
+
+
+
+== [[example-notification-config]]Beispiel: Konfiguration der Metadatenbenachrichtigung, die für alle Objekte gilt
+
+In diesem Beispiel werden die Objektmetadaten für alle Objekte an dasselbe Ziel gesendet.
+
+[listing]
+----
+<MetadataNotificationConfiguration>
+    <Rule>
+        <ID>Rule-1</ID>
+        <Status>Enabled</Status>
+        <Prefix></Prefix>
+        <Destination>
+           <Urn>urn:myes:es:::sgws-notifications/test1/all</Urn>
+        </Destination>
+    </Rule>
+</MetadataNotificationConfiguration>
+----
+
+
+== Beispiel: Konfiguration der Metadatenbenachrichtigung mit zwei Regeln
+
+In diesem Beispiel werden Objektmetadaten für Objekte mit dem Präfix `/images` an ein Ziel gesendet, während Objektmetadaten für Objekte mit dem Präfix `/videos` an ein zweites Ziel gesendet werden.
+
+[listing]
+----
+
+<MetadataNotificationConfiguration>
+    <Rule>
+        <ID>Images-rule</ID>
+        <Status>Enabled</Status>
+        <Prefix>/images</Prefix>
+        <Destination>
+           <Urn>arn:aws:es:us-east-1:3333333:domain/es-domain/graphics/imagetype</Urn>
+        </Destination>
+    </Rule>
+    <Rule>
+        <ID>Videos-rule</ID>
+        <Status>Enabled</Status>
+        <Prefix>/videos</Prefix>
+        <Destination>
+           <Urn>arn:aws:es:us-west-1:22222222:domain/es-domain/graphics/videotype</Urn>
+        </Destination>
+    </Rule>
+</MetadataNotificationConfiguration>
+----
+
+
+== Benachrichtigungsformat für Metadaten
+
+Wenn Sie den Such-Integrationsservice für einen Bucket aktivieren, wird ein JSON-Dokument generiert und an den Zielendpunkt gesendet, wenn Metadaten oder Tags hinzugefügt, aktualisiert oder gelöscht werden.
+
+Dieses Beispiel zeigt ein Beispiel für den JSON, der generiert werden könnte, wenn ein Objekt mit dem Schlüssel in einem Bucket mit `SGWS/Tagging.txt` dem Namen erstellt wird `test`. Der `test` Bucket ist nicht versioniert, daher ist das `versionId` Tag leer.
+
+[listing]
+----
+{
+  "bucket": "test",
+  "key": "SGWS/Tagging.txt",
+  "versionId": "",
+  "accountId": "86928401983529626822",
+  "size": 38,
+  "md5": "3d6c7634a85436eee06d43415012855",
+  "region":"us-east-1",
+  "metadata": {
+    "age": "25"
+  },
+  "tags": {
+    "color": "yellow"
+  }
+}
+----
+
+
+=== Im JSON-Dokument enthaltene Felder
+
+Der Dokumentname umfasst, falls vorhanden, den Bucket-Namen, den Objektnamen und die Version-ID.
+
+Bucket- und Objektinformationen::
++
+--
+`bucket`: Name des Eimer
+
+`key`: Name des Objektschlüssels
+
+`versionID`: Objektversion, für Objekte in versionierten Buckets
+
+`region`: Bucket-Region, zum Beispiel `us-east-1`
+
+--
+System-Metadaten::
++
+--
+`size`: Objektgröße (in Bytes) als für einen HTTP-Client sichtbar
+
+`md5`: Objekt-Hash
+
+--
+Benutzer-Metadaten::
++
+--
+`metadata`: Alle Benutzermetadaten für das Objekt, als Schlüssel-Wert-Paare
+
+`key:value`
+
+--
+Tags::
++
+--
+`tags`: Alle Objektanhänger, die für das Objekt definiert sind, als Schlüssel-Wert-Paare
+
+`key:value`
+
+--
+
+
+
+
+=== So zeigen Sie Ergebnisse in Elasticsearch an
+
+Für Tags und Benutzer-Metadaten gibt StorageGRID Daten und Nummern an Elasticsearch als Strings oder als S3-Ereignisbenachrichtigungen weiter. Um Elasticsearch so zu konfigurieren, dass diese Strings als Daten oder Zahlen interpretiert werden, befolgen Sie die Elasticsearch-Anweisungen für die dynamische Feldzuordnung und die Zuordnung von Datumsformaten. Aktivieren Sie die dynamischen Feldzuordnungen auf dem Index, bevor Sie den Suchintegrationsdienst konfigurieren. Nachdem ein Dokument indiziert wurde, können Sie die Feldtypen des Dokuments im Index nicht mehr bearbeiten.

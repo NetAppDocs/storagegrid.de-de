@@ -1,0 +1,21 @@
+---
+permalink: monitor/using-task-tab-to-reboot-grid-node.html 
+sidebar: sidebar 
+keywords: Tasks tab, rename node, reboot node, maintenance mode 
+summary: Die Registerkarte Aufgaben wird für alle Nodes angezeigt. Sie können auf dieser Registerkarte einen Node umbenennen oder neu booten oder einen Appliance-Node in den Wartungsmodus versetzen. 
+---
+= Verwenden Sie die Registerkarte Aufgaben
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Registerkarte Aufgaben wird für alle Nodes angezeigt. Sie können auf dieser Registerkarte einen Node umbenennen oder neu booten oder einen Appliance-Node in den Wartungsmodus versetzen.
+
+Die vollständigen Anforderungen und Anweisungen für die einzelnen Optionen auf dieser Registerkarte finden Sie im Folgenden:
+
+* link:../maintain/rename-grid-site-node-overview.html["Benennen Sie Raster, Standorte und Nodes um"]
+* link:../maintain/rebooting-grid-node-from-grid-manager.html["Grid-Node neu booten"]
+* https://docs.netapp.com/us-en/storagegrid-appliances/commonhardware/placing-appliance-into-maintenance-mode.html["Stellen Sie das Gerät in den Wartungsmodus"^]
+

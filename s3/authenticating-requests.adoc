@@ -1,0 +1,32 @@
+---
+permalink: s3/authenticating-requests.html 
+sidebar: sidebar 
+keywords: authenticate requests, authenticating, requests 
+summary: Das StorageGRID-System unterstützt über die S3-API sowohl authentifizierten als auch anonymen Zugriff auf Objekte. 
+---
+= Authentifizieren von Anfragen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das StorageGRID-System unterstützt über die S3-API sowohl authentifizierten als auch anonymen Zugriff auf Objekte.
+
+Die S3-API unterstützt Signature Version 2 und Signature Version 4 zur Authentifizierung von S3-API-Anforderungen.
+
+Authentifizierte Anfragen müssen mit Ihrer Zugriffsschlüssel-ID und Ihrem geheimen Zugriffsschlüssel signiert werden.
+
+Das StorageGRID-System unterstützt zwei Authentifizierungsmethoden: Den HTTP- `Authorization`Header und die Abfrageparameter.
+
+
+
+== Verwenden Sie den HTTP-Autorisierungskopf
+
+Der HTTP- `Authorization`Header wird von allen S3-API-Operationen außer „Anonyme Anfragen“ verwendet, sofern dies durch die Bucket-Richtlinie zulässig ist. Die `Authorization` Kopfzeile enthält alle erforderlichen Signaturinformationen zur Authentifizierung einer Anforderung.
+
+
+
+== Abfrageparameter verwenden
+
+Sie können Abfrageparameter verwenden, um Authentifizierungsinformationen zu einer URL hinzuzufügen. Dies wird als Vorsignierung der URL bezeichnet, mit der ein temporärer Zugriff auf bestimmte Ressourcen gewährt werden kann. Benutzer mit der vorgeschichteten URL müssen den geheimen Zugriffsschlüssel nicht kennen, um auf die Ressource zuzugreifen. So können Sie beschränkten Zugriff von Drittanbietern auf eine Ressource bereitstellen.

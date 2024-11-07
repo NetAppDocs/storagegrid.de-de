@@ -1,0 +1,124 @@
+---
+permalink: upgrade/how-your-system-is-affected-during-upgrade.html 
+sidebar: sidebar 
+keywords: upgrade, firmware, appliance, alert 
+summary: Erfahren Sie, wie Ihr StorageGRID-System bei einem Upgrade beeinträchtigt wird. 
+---
+= Auswirkungen des Upgrades auf Ihr System
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Erfahren Sie, wie Ihr StorageGRID-System bei einem Upgrade beeinträchtigt wird.
+
+
+
+== StorageGRID Upgrades sind unterbrechungsfrei
+
+Das StorageGRID System ist in der Lage, während des Upgrades Daten von Client-Applikationen aufzunehmen und abzurufen. Wenn Sie alle Nodes desselben Typs für das Upgrade genehmigen (z. B. Storage Nodes), werden die Nodes nacheinander heruntergefahren. Es ist also keine Zeit, wenn alle Grid-Nodes oder alle Grid-Nodes eines bestimmten Typs nicht verfügbar sind.
+
+Um die kontinuierliche Verfügbarkeit zu gewährleisten, stellen Sie sicher, dass Ihre ILM-Richtlinie Regeln enthält, die das Speichern mehrerer Kopien jedes Objekts festlegen. Außerdem müssen Sie sicherstellen, dass alle externen S3-Clients so konfiguriert sind, dass sie Anforderungen an einen der folgenden senden:
+
+* Eine virtuelle IP-Adresse einer HA-Gruppe (High Availability, Hochverfügbarkeit)
+* Einen hochverfügbaren Drittanbieter-Load Balancer
+* Mehrere Gateway-Nodes für jeden Client
+* Mehrere Storage-Nodes für jeden Client
+
+
+
+
+== Bei Client-Applikationen kommt es unter Umständen zu kurzfristigen Unterbrechungen
+
+Das StorageGRID System kann Daten aus Client-Applikationen während des Upgrades aufnehmen und abrufen. Es kann jedoch vorübergehend zu Client-Verbindungen zu einzelnen Gateway Nodes oder Storage Nodes unterbrochen werden, wenn das Upgrade die Services auf diesen Nodes neu starten muss. Die Konnektivität wird nach Abschluss des Upgrade-Vorgangs wiederhergestellt und die Services auf den einzelnen Nodes wieder aufgenommen.
+
+Möglicherweise müssen Sie Ausfallzeiten planen, um ein Upgrade durchzuführen, wenn der Verbindungsverlust für einen kurzen Zeitraum nicht akzeptabel ist. Sie können eine selektive Genehmigung verwenden, um die Planung für die Aktualisierung bestimmter Knoten zu planen.
+
+
+NOTE: Mehrere Gateways und Hochverfügbarkeitsgruppen (High Availability, HA) ermöglichen automatisches Failover während des Upgrades. Siehe die Anleitung für link:../admin/configure-high-availability-group.html["Konfigurieren von Hochverfügbarkeitsgruppen"].
+
+
+
+== Die Appliance-Firmware wird aktualisiert
+
+Während der StorageGRID 11.9-Aktualisierung:
+
+* Alle StorageGRID Appliance Nodes werden automatisch auf die StorageGRID Appliance Installer-Firmware-Version 3.9 aktualisiert.
+* SG6060 und SGF6024 Appliances werden automatisch auf die BIOS-Firmware-Version 3B08.EX und BMC-Firmware-Version 4.00.07 aktualisiert.
+* SG100 und SG1000 Appliances werden automatisch auf die BIOS-Firmware-Version 3B13.EC und BMC-Firmware-Version 4.74.07 aktualisiert.
+* Appliances der SGF6112, SG6160, SG110 und SG1100 werden automatisch auf die BMC-Firmware-Version 3.16.07 aktualisiert.
+
+
+
+
+== ILM-Richtlinien werden je nach Status unterschiedlich gehandhabt
+
+* Die aktive Richtlinie bleibt nach dem Upgrade unverändert.
+* Nur die letzten 10 historischen Richtlinien bleiben bei der Aktualisierung erhalten.
+* Wenn eine vorgeschlagene Richtlinie vorhanden ist, wird sie während des Upgrades gelöscht.
+
+
+
+
+== Möglicherweise werden Benachrichtigungen ausgelöst
+
+Warnmeldungen können ausgelöst werden, wenn Services gestartet und beendet werden und wenn das StorageGRID System als Umgebung mit gemischten Versionen funktioniert (einige Grid-Nodes mit einer früheren Version, während andere auf eine neuere Version aktualisiert wurden). Nach Abschluss des Upgrades können weitere Warnmeldungen ausgelöst werden.
+
+Beispielsweise wird möglicherweise die Warnmeldung *Unable to communicate with Node* angezeigt, wenn Dienste angehalten werden, oder Sie sehen möglicherweise die Warnmeldung *Cassandra-Kommunikationsfehler*, wenn einige Knoten auf StorageGRID 11.9 aktualisiert wurden, aber andere Knoten noch StorageGRID 11.8 ausführen. Im Allgemeinen werden diese Meldungen nach Abschluss des Upgrades gelöscht.
+
+Die Warnung *ILM-Platzierung nicht erreichbar* kann ausgelöst werden, wenn Speicherknoten während des Upgrades auf StorageGRID 11.9 gestoppt werden. Dieser Alarm wird möglicherweise einen Tag nach Abschluss des Upgrades andauern.
+
+Nachdem das Upgrade abgeschlossen ist, können Sie alle Upgrade-bezogenen Warnmeldungen überprüfen, indem Sie im Grid Manager-Dashboard *Kürzlich aufgelöste Warnmeldungen* oder *Aktuelle Warnmeldungen* auswählen.
+
+
+
+== Viele SNMP-Benachrichtigungen werden erzeugt
+
+Beachten Sie, dass möglicherweise eine große Anzahl von SNMP-Benachrichtigungen generiert werden kann, wenn Grid-Knoten angehalten und während des Upgrades neu gestartet werden. Um zu viele Benachrichtigungen zu vermeiden, deaktivieren Sie das Kontrollkästchen *Enable SNMP Agent Notifications* (*CONFIGURATION* > *Monitoring* > *SNMP Agent*), um SNMP-Benachrichtigungen vor dem Start des Upgrades zu deaktivieren. Aktivieren Sie dann die Benachrichtigungen wieder, nachdem das Upgrade abgeschlossen ist.
+
+
+
+== Konfigurationsänderungen sind eingeschränkt
+
+
+NOTE: Diese Liste gilt insbesondere für Upgrades von StorageGRID 11.8 auf StorageGRID 11.9. Wenn Sie ein Upgrade auf eine andere StorageGRID-Version durchführen, lesen Sie die Liste der eingeschränkten Änderungen in den Upgrade-Anweisungen für diese Version.
+
+Bis die Aufgabe *Neues Feature* aktivieren abgeschlossen ist:
+
+* Nehmen Sie keine Änderungen an der Grid-Konfiguration vor.
+* Aktivieren oder deaktivieren Sie keine neuen Funktionen.
+* Aktualisieren Sie nicht die ILM-Konfiguration. Andernfalls kann es zu inkonsistenten und unerwarteten ILM-Verhaltensweisen kommen.
+* Wenden Sie keinen Hotfix an, und stellen Sie keinen Grid-Knoten wieder her.
++
+
+NOTE: Wenden Sie sich an den technischen Support, wenn Sie einen Node während des Upgrades wiederherstellen müssen.
+
+* Während Sie ein Upgrade auf StorageGRID 11.9 durchführen, sollten Sie keine HA-Gruppen, VLAN-Schnittstellen oder Load Balancer-Endpunkte managen.
+* Löschen Sie keine HA-Gruppen, bevor Sie das Upgrade auf StorageGRID 11.9 abgeschlossen haben. Auf virtuelle IP-Adressen in anderen HA-Gruppen kann möglicherweise nicht mehr zugegriffen werden.
+
+
+Bis die Aufgabe * Final Upgrade Steps* abgeschlossen ist:
+
+* Führen Sie keine Erweiterungsschritte durch.
+* Führen Sie keine Stilllegungsverfahren durch.
+
+
+
+
+== Sie können keine Bucket-Details anzeigen oder Buckets im Tenant Manager managen
+
+Während des Upgrades auf StorageGRID 11.9 (d. h. während das System als Umgebung mit gemischten Versionen läuft) können Sie keine Bucket-Details anzeigen oder Buckets mithilfe des Tenant Manager managen. Auf der Seite Buckets in Tenant Manager wird einer der folgenden Fehler angezeigt:
+
+* Sie können diese API nicht verwenden, während Sie ein Upgrade auf 11.9 durchführen.
+* Sie können keine Details zur Bucket-Versionierung im Tenant Manager anzeigen, während Sie ein Upgrade auf 11.9 durchführen.
+
+
+Dieser Fehler wird behoben, nachdem die Aktualisierung auf 11.9 abgeschlossen ist.
+
+.Behelfslösung
+Solange das Upgrade 11.9 läuft, können Sie mit den folgenden Tools Bucket-Details anzeigen oder Buckets managen, anstatt den Tenant Manager zu verwenden:
+
+* Zum Durchführen von Standard-S3-Operationen für einen Bucket verwenden Sie entweder die link:../s3/operations-on-buckets.html["S3-REST-API"] oder die link:../tenant/understanding-tenant-management-api.html["Mandantenmanagement-API"].
+* Verwenden Sie die Mandantenmanagement-API, um benutzerdefinierte StorageGRID-Vorgänge für einen Bucket auszuführen (z. B. Anzeigen und Ändern der Bucket-Konsistenz, Aktivieren oder Deaktivieren von Updates der letzten Zugriffszeit oder Konfigurieren der Suchintegration).
+

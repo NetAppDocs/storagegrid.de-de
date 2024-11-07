@@ -1,0 +1,30 @@
+= 
+:allow-uri-read: 
+
+
+[cols="1a,2a"]
+|===
+| Standardaufbewahrungsmodus | Beschreibung 
+
+
+ a| 
+Governance
+ a| 
+* Benutzer mit der `s3:BypassGovernanceRetention` Berechtigung können den Anforderungskopf verwenden `x-amz-bypass-governance-retention: true`, um die Aufbewahrungseinstellungen zu umgehen.
+* Diese Benutzer können eine Objektversion löschen, bevor das Aufbewahrungsdatum erreicht ist.
+* Diese Benutzer können das Aufbewahrungsdatum eines Objekts erhöhen, verringern oder entfernen.
+
+
+
+
+ a| 
+Compliance
+ a| 
+* Das Objekt kann erst gelöscht werden, wenn das Aufbewahrungsdatum erreicht ist.
+* Das Aufbewahrungsdatum des Objekts kann erhöht, aber nicht verringert werden.
+* Das Aufbewahrungsdatum des Objekts kann erst entfernt werden, wenn dieses Datum erreicht ist.
+
+
+*Hinweis*: Ihr Grid-Administrator muss Ihnen erlauben, den Compliance-Modus zu verwenden.
+
+|===

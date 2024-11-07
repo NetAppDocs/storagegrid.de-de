@@ -1,0 +1,65 @@
+---
+permalink: ilm/creating-and-assigning-storage-grades.html 
+sidebar: sidebar 
+keywords: what is a storage grade, create storage grade 
+summary: Speicherklassen identifizieren den Speichertyp, der von einem Speicherknoten verwendet wird. Sie können Storage-Klassen erstellen, wenn ILM-Regeln bestimmte Objekte auf bestimmten Storage-Nodes platzieren sollen. 
+---
+= Speicherklassen erstellen und zuweisen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Speicherklassen identifizieren den Speichertyp, der von einem Speicherknoten verwendet wird. Sie können Storage-Klassen erstellen, wenn ILM-Regeln bestimmte Objekte auf bestimmten Storage-Nodes platzieren sollen.
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben link:../admin/admin-group-permissions.html["Bestimmte Zugriffsberechtigungen"].
+
+
+.Über diese Aufgabe
+Wenn Sie StorageGRID zum ersten Mal installieren, wird die Speicherklasse *Default* automatisch jedem Speicherknoten in Ihrem System zugewiesen. Nach Bedarf können Sie optional benutzerdefinierte Storage-Klassen definieren und sie verschiedenen Storage-Nodes zuweisen.
+
+Mit benutzerdefinierten Speicherqualitäten können Sie ILM-Speicherpools erstellen, die nur einen bestimmten Typ von Speicher-Node enthalten. Möglicherweise möchten Sie beispielsweise bestimmte Objekte auf Ihren schnellsten Storage-Nodes wie z. B. StorageGRID All-Flash Storage Appliances speichern.
+
+
+NOTE: Storage-Nodes können während der Installation so konfiguriert werden, dass sie nur Objektmetadaten und keine Objektdaten enthalten. Storage-Nodes, die nur Metadaten enthalten, können keiner Storage-Klasse zugewiesen werden. Weitere Informationen finden Sie unter link:../primer/what-storage-node-is.html#types-of-storage-nodes["Typen von Storage-Nodes"].
+
+Wenn die Speichergüte kein Problem ist (zum Beispiel sind alle Speicherknoten identisch), können Sie dieses Verfahren überspringen und die Auswahl *includes all Storage grades* für die Speicherklasse verwenden, wenn Sie link:creating-storage-pool.html["Erstellen von Speicherpools"]. Mit dieser Auswahl wird sichergestellt, dass der Speicherpool jeden Storage Node am Standort umfasst, unabhängig von seiner Speicherklasse.
+
+
+NOTE: Erstellen Sie nicht mehr Storage-Klassen als erforderlich. Erstellen Sie beispielsweise keine Storage-Klasse für jeden Storage-Node. Weisen Sie jede Storage-Klasse zwei oder mehr Nodes zu. Storage-Klassen, die nur einem Node zugewiesen sind, können ILM-Backlogs verursachen, wenn der Node nicht mehr verfügbar ist.
+
+.Schritte
+. Wählen Sie *ILM* > *Speicherklassen*.
+. Benutzerdefinierte Storage-Klassen definieren:
++
+.. Wählen Sie für jede benutzerdefinierte Speicherklasse, die Sie hinzufügen möchten, *Einfügen*image:../media/icon_nms_insert.gif["Symbol einfügen"], um eine Zeile hinzuzufügen.
+.. Geben Sie eine beschreibende Bezeichnung ein.
++
+image::../media/editing_storage_grades.gif[Seite „Speicherstufen“]
+
+.. Wählen Sie *Änderungen Anwenden*.
+.. Wenn Sie ein gespeichertes Label ändern möchten, wählen Sie optional *Bearbeiten*  und dann *Änderungen übernehmen*image:../media/icon_nms_edit.gif["Symbol bearbeiten"].
++
+
+NOTE: Speicherqualitäten können nicht gelöscht werden.
+
+
+
+. Storage-Nodes neue Storage-Klassen zuweisen:
++
+.. Suchen Sie den Storage Node in der LDR-Liste und wählen Sie das entsprechende Symbol ausimage:../media/icon_nms_edit.gif["Symbol bearbeiten"].
+.. Wählen Sie den entsprechenden Speichergrad aus der Liste aus.
++
+image::../media/assigning_storage_grades_to_storage_nodes.gif[Seite „Speicherstufen“]
+
++
+
+NOTE: Weisen Sie einem bestimmten Speicherknoten nur einmal eine Speicherklasse zu. Bei einem nach einem Ausfall wiederhergestellten Storage-Node wird die zuvor zugewiesene Storage-Klasse erhalten. Ändern Sie diese Zuweisung nicht, nachdem die ILM-Richtlinie aktiviert wurde. Wenn die Zuweisung geändert wird, werden die Daten auf Basis der neuen Speicherklasse gespeichert.
+
+.. Wählen Sie *Änderungen Anwenden*.
+
+
+

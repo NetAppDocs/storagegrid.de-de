@@ -1,0 +1,53 @@
+---
+permalink: maintain/stopping-service.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, stop service, service 
+summary: Einige Wartungsvorgänge erfordern, dass Sie einen einzelnen Service beenden und gleichzeitig andere Services auf dem Grid-Node ausgeführt werden. Stoppen Sie nur einzelne Dienste, wenn Sie dazu durch ein Wartungsverfahren angewiesen werden. 
+---
+= Dienst stoppen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Einige Wartungsvorgänge erfordern, dass Sie einen einzelnen Service beenden und gleichzeitig andere Services auf dem Grid-Node ausgeführt werden. Stoppen Sie nur einzelne Dienste, wenn Sie dazu durch ein Wartungsverfahren angewiesen werden.
+
+.Bevor Sie beginnen
+Sie haben die `Passwords.txt` Datei.
+
+.Über diese Aufgabe
+Wenn Sie diese Schritte zum „administrativen Anhalten“ eines Dienstes verwenden, startet Server Manager den Dienst nicht automatisch neu. Sie müssen entweder den einzelnen Dienst manuell starten oder Server Manager neu starten.
+
+Wenn Sie den LDR-Dienst auf einem Speicherknoten anhalten müssen, beachten Sie, dass es möglicherweise eine Weile dauern kann, bis der Dienst beendet wird, wenn aktive Verbindungen vorhanden sind.
+
+.Schritte
+. Melden Sie sich beim Grid-Node an:
++
+.. Geben Sie den folgenden Befehl ein: `ssh admin@_grid_node_IP_`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+.. Geben Sie den folgenden Befehl ein, um zu root zu wechseln: `su -`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+
+
++
+Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `#`.
+
+. Stoppen eines einzelnen Dienstes: `service _servicename_ stop`
++
+Beispiel:
+
++
+[listing]
+----
+service ldr stop
+----
++
+
+NOTE: Der Service kann bis zu 11 Minuten dauern.
+
+. Melden Sie sich von der Befehls-Shell ab: `exit`
+
+
+.Verwandte Informationen
+link:forcing-service-to-terminate.html["Dienst zum Beenden erzwingen"]

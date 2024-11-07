@@ -1,0 +1,78 @@
+---
+permalink: admin/how-ha-groups-are-used.html 
+sidebar: sidebar 
+keywords: ha groups, high availability group 
+summary: 'Es können HA-Gruppen (High Availability, Hochverfügbarkeit) verwendet werden, um hochverfügbare Verbindungen zu StorageGRID für Objektdaten und zur Verwendung durch den Administrator zur Verfügung zu stellen.' 
+---
+= Wie werden HA-Gruppen verwendet?
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Es können HA-Gruppen (High Availability, Hochverfügbarkeit) verwendet werden, um hochverfügbare Verbindungen zu StorageGRID für Objektdaten und zur Verwendung durch den Administrator zur Verfügung zu stellen.
+
+* Eine HA-Gruppe kann hochverfügbare administrative Verbindungen mit dem Grid Manager oder dem Mandanten Manager bereitstellen.
+* Eine HA-Gruppe kann hochverfügbare Datenverbindungen für S3-Clients bereitstellen.
+* Eine HA-Gruppe, die nur eine Schnittstelle enthält, ermöglicht es Ihnen, viele VIP-Adressen bereitzustellen und explizit IPv6-Adressen festzulegen.
+
+
+Eine HA-Gruppe kann nur Hochverfügbarkeit bieten, wenn alle Nodes in der Gruppe dieselben Services bereitstellen. Wenn Sie eine HA-Gruppe erstellen, fügen Sie Schnittstellen von den Typen von Nodes hinzu, die die erforderlichen Services bereitstellen.
+
+* *Admin Nodes*: Schließen Sie den Load Balancer Service ein und ermöglichen Sie den Zugriff auf den Grid Manager oder den Tenant Manager.
+* *Gateway Nodes*: Fügen Sie den Load Balancer Service ein.
+
+
+[cols="1a,2a"]
+|===
+| Zweck der HA-Gruppe | Fügen Sie diesem Typ Nodes der HA-Gruppe hinzu 
+
+
+ a| 
+Zugriff auf Grid Manager
+ a| 
+* Primärer Admin-Node (*Primär*)
+* Nicht primäre Admin-Nodes
+
+
+*Hinweis:* der primäre Admin-Knoten muss die primäre Schnittstelle sein. Einige Wartungsvorgänge können nur vom primären Admin-Node ausgeführt werden.
+
+
+
+ a| 
+Zugriff nur auf Tenant Manager
+ a| 
+* Primäre oder nicht primäre Admin-Nodes
+
+
+
+
+ a| 
+S3-Client-Zugriff – Load Balancer-Service
+ a| 
+* Admin-Nodes
+* Gateway-Nodes
+
+
+
+
+ a| 
+S3-Client-Zugriff für link:../admin/manage-s3-select-for-tenant-accounts.html["S3 Select"]
+ a| 
+* Service-Appliances
+* VMware-basierte Software-Nodes
+
+
+*Hinweis*: HA-Gruppen werden bei der Verwendung von S3 Select empfohlen, aber nicht erforderlich.
+
+|===
+
+
+== Einschränkungen bei der Verwendung von HA-Gruppen mit Grid Manager oder Tenant Manager
+
+Wenn ein Grid Manager oder der Tenant Manager-Dienst ausfällt, wird das Failover von HA-Gruppen nicht ausgelöst.
+
+Wenn Sie sich bei einem Failover beim Grid Manager oder beim Tenant Manager angemeldet haben, werden Sie abgemeldet und müssen sich erneut anmelden, um Ihre Aufgabe fortzusetzen.
+
+Einige Wartungsverfahren können nicht durchgeführt werden, wenn der primäre Admin-Node nicht verfügbar ist. Während des Failovers können Sie Ihr StorageGRID-System mit dem Grid-Manager überwachen.

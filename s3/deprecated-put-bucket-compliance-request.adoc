@@ -1,0 +1,111 @@
+---
+permalink: s3/deprecated-put-bucket-compliance-request.html 
+sidebar: sidebar 
+keywords: S3 REST API, S3 operations, PUT deprecated compliance requests 
+summary: Die ANFORDERUNG „PUT Bucket-Compliance“ ist veraltet. Sie können diese Anforderung jedoch weiterhin verwenden, um die Compliance-Einstellungen für einen vorhandenen Bucket zu ändern, der die Compliance-Anforderungen erfüllt. 
+---
+= Veraltet: PUT Bucket Compliance Request
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die ANFORDERUNG „PUT Bucket-Compliance“ ist veraltet. Sie können diese Anforderung jedoch weiterhin verwenden, um die Compliance-Einstellungen für einen vorhandenen Bucket zu ändern, der die Compliance-Anforderungen erfüllt. Sie können beispielsweise einen vorhandenen Bucket auf „Legal Hold“ platzieren oder den Aufbewahrungszeitraum erhöhen.
+
+[NOTE]
+====
+Die in früheren StorageGRID-Versionen verfügbare Funktion für die StorageGRID-Konformität ist veraltet und wurde durch S3-Objektsperre ersetzt. Im Folgenden finden Sie weitere Informationen:
+
+* link:../s3/use-s3-api-for-s3-object-lock.html["Konfigurieren Sie die S3-Objektsperre über die S3-REST-API"]
+* https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["NetApp Knowledge Base: Management älterer, konformer Buckets für StorageGRID 11.5"^]
+
+
+====
+Sie müssen über die s3:PutBucketCompliance-Berechtigung verfügen oder als Kontoroot vorliegen, um diesen Vorgang abzuschließen.
+
+Wenn Sie eine PUT Bucket-Compliance-Anforderung ausgeben, müssen Sie für jedes Feld der Compliance-Einstellungen einen Wert angeben.
+
+
+
+== Anforderungsbeispiel
+
+In dieser Beispielanforderung werden die Compliance-Einstellungen für den Bucket mit dem Namen geändert `mybucket`. In diesem Beispiel werden Objekte in nun für zwei Jahre (1,051,200 Minuten) statt für ein Jahr aufbewahrt, beginnend bei der Aufnahme des Objekts in `mybucket` das Raster. Es gibt keine gesetzliche Aufbewahrungspflichten auf diesem Bucket. Jedes Objekt wird nach zwei Jahren automatisch gelöscht.
+
+[listing, subs="specialcharacters,quotes"]
+----
+PUT /mybucket/?x-ntap-sg-compliance HTTP/1.1
+Date: _date_
+Authorization: _authorization name_
+Host: _host_
+Content-Length: 152
+
+<SGCompliance>
+  <RetentionPeriodMinutes>1051200</RetentionPeriodMinutes>
+  <LegalHold>false</LegalHold>
+  <AutoDelete>true</AutoDelete>
+</SGCompliance>
+----
+[cols="1a,2a"]
+|===
+| Name | Beschreibung 
+
+
+ a| 
+WiederholungPeriodMinuten
+ a| 
+Die Länge des Aufbewahrungszeitraums für Objekte, die diesem Bucket hinzugefügt wurden, in Minuten Der Aufbewahrungszeitraum beginnt, wenn das Objekt in das Raster aufgenommen wird.
+
+*Wichtig* Wenn Sie einen neuen Wert für RetentionPeriodMinutes angeben, müssen Sie einen Wert angeben, der der aktuellen Aufbewahrungsfrist des Buckets entspricht oder größer ist. Nachdem die Aufbewahrungsfrist des Buckets festgelegt wurde, können Sie diesen Wert nicht verringern, sondern nur erhöhen.
+
+
+
+ a| 
+LegalAlte
+ a| 
+* Wahr: Dieser Bucket befindet sich derzeit in einer gesetzlichen Aufbewahrungspflichten. Objekte in diesem Bucket können erst gelöscht werden, wenn der Legal Hold aufgehoben wurde, auch wenn ihre Aufbewahrungsfrist abgelaufen ist.
+* Falsch: Dieser Eimer steht derzeit nicht unter einer gesetzlichen Aufbewahrungspflichten. Objekte in diesem Bucket können nach Ablauf ihres Aufbewahrungszeitraums gelöscht werden.
+
+
+
+
+ a| 
+Automatisches Löschen
+ a| 
+* Wahr: Die Objekte in diesem Bucket werden automatisch gelöscht, sobald ihre Aufbewahrungsfrist abgelaufen ist, es sei denn, der Bucket unterliegt einer gesetzlichen Aufbewahrungspflichten.
+* False: Die Objekte in diesem Bucket werden nicht automatisch gelöscht, wenn die Aufbewahrungsfrist abgelaufen ist. Sie müssen diese Objekte manuell löschen, wenn Sie sie löschen müssen.
+
+
+|===
+
+
+== Konsistenz für Compliance-Einstellungen
+
+Wenn Sie die Compliance-Einstellungen für einen S3-Bucket mit EINER PUT-Bucket-Compliance-Anforderung aktualisieren, versucht StorageGRID, die Metadaten des Buckets im Grid zu aktualisieren. Standardmäßig verwendet StorageGRID die *strong-global*-Konsistenz, um sicherzustellen, dass alle Datacenter-Standorte und alle Speicher-Nodes, die Bucket-Metadaten enthalten, für die geänderten Compliance-Einstellungen eine Lese-nach-Schreiben-Konsistenz aufweisen.
+
+Wenn StorageGRID die *strong-global*-Konsistenz nicht erreichen kann, weil ein Rechenzentrum oder mehrere Speicherknoten an einem Standort nicht verfügbar sind, lautet der HTTP-Statuscode für die Antwort `503 Service Unavailable.`
+
+Wenn Sie diese Antwort erhalten, müssen Sie sich an den Grid-Administrator wenden, um sicherzustellen, dass die erforderlichen Storage-Services so schnell wie möglich verfügbar gemacht werden. Wenn der Grid-Administrator nicht in der Lage ist, genügend Speicher-Nodes an jedem Standort zur Verfügung zu stellen, kann der technische Support Sie auffordern, die fehlgeschlagene Anforderung erneut zu versuchen, indem Sie die Konsistenz von *strong-site* erzwingen.
+
+
+CAUTION: Erzwingen Sie niemals die * strong-site* Konsistenz für PUT Bucket Compliance, es sei denn, Sie wurden von der technischen Unterstützung dazu angewiesen, und es sei denn, Sie verstehen die möglichen Konsequenzen, die sich aus der Verwendung dieses Levels ergeben.
+
+Wenn die Konsistenz auf *strong-site* reduziert wird, garantiert StorageGRID, dass aktualisierte Compliance-Einstellungen nur für Client-Anforderungen innerhalb eines Standorts Lese-nach-Schreiben-Konsistenz aufweisen. Das bedeutet, dass das StorageGRID System vorübergehend mehrere inkonsistente Einstellungen für diesen Bucket bietet, bis alle Standorte und Storage-Nodes verfügbar sind. Die inkonsistenten Einstellungen können zu unerwarteten und unerwünschten Verhaltensweisen führen. Wenn Sie beispielsweise einen Bucket unter einen Legal Hold setzen und eine niedrigere Konsistenz erzwingen, könnten die vorherigen Compliance-Einstellungen des Buckets (d. h. Legal Hold off) an einigen Rechenzentrumsstandorten weiterhin wirksam sein. Aus diesem Grund können Objekte, die Ihrer Meinung nach in einer gesetzlichen Wartefrist liegen, nach Ablauf ihres Aufbewahrungszeitraums entweder durch den Benutzer oder durch AutoDelete gelöscht werden, sofern diese Option aktiviert ist.
+
+Um die Verwendung der Konsistenz von *strong-site* zu erzwingen, geben Sie die Anforderung für die Einhaltung von PUT Bucket erneut aus und fügen Sie den `Consistency-Control` HTTP-Anforderungsheader wie folgt ein:
+
+[listing]
+----
+PUT /mybucket/?x-ntap-sg-compliance HTTP/1.1
+Consistency-Control: strong-site
+----
+
+
+== Fehlerantworten
+
+* Wenn der Bucket nicht für die Konformität erstellt wurde, lautet der HTTP-Statuscode für die Antwort `404 Not Found` .
+* Wenn `RetentionPeriodMinutes` in der Anforderung weniger als die aktuelle Aufbewahrungsfrist des Buckets liegt, lautet der HTTP-Statuscode `400 Bad Request` .
+
+
+.Verwandte Informationen
+link:deprecated-put-bucket-request-modifications-for-compliance.html["Veraltet: PUT Bucket-Request-Änderungen aus Compliance-Gründen"]

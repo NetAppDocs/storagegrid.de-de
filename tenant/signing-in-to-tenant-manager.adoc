@@ -1,0 +1,104 @@
+---
+permalink: tenant/signing-in-to-tenant-manager.html 
+sidebar: sidebar 
+keywords: how to sign in to tenant manager 
+summary: Sie greifen auf den Tenant Manager zu, indem Sie die URL für den Mandanten in die Adressleiste eines unterstützten Webbrowsers eingeben. 
+---
+= Melden Sie sich bei Tenant Manager an
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie greifen auf den Tenant Manager zu, indem Sie die URL für den Tenant in die Adressleiste eines eingebenlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+
+.Bevor Sie beginnen
+* Sie haben Ihre Anmeldedaten.
+* Sie verfügen über eine URL für den Zugriff auf den Mandanten-Manager, die vom Grid-Administrator bereitgestellt wird. Die URL sieht wie ein Beispiel aus:
++
+`\https://FQDN_or_Admin_Node_IP/`
+
++
+`\https://FQDN_or_Admin_Node_IP:port/`
+
++
+`\https://FQDN_or_Admin_Node_IP/?accountId=20-digit-account-id`
+
++
+`\https://FQDN_or_Admin_Node_IP:port/?accountId=20-digit-account-id`
+
++
+Die URL enthält immer einen vollständig qualifizierten Domänennamen (FQDN), die IP-Adresse eines Admin-Knotens oder die virtuelle IP-Adresse einer HA-Gruppe von Admin-Knoten. Sie kann auch eine Portnummer, die 20-stellige Mandanten-Account-ID oder beides enthalten.
+
+* Wenn die URL nicht die 20-stellige Konto-ID des Mandanten enthält, haben Sie diese Konto-ID.
+* Sie verwenden einen link:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Cookies sind in Ihrem Webbrowser aktiviert.
+* Sie gehören zu einer Benutzergruppe mit link:tenant-management-permissions.html["Bestimmte Zugriffsberechtigungen"].
+
+
+.Schritte
+. Starten Sie A link:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+. Geben Sie in der Adressleiste des Browsers die URL für den Zugriff auf Tenant Manager ein.
+. Wenn Sie aufgefordert werden, eine Sicherheitswarnung zu erhalten, installieren Sie das Zertifikat mithilfe des Browser-Installationsassistenten.
+. Melden Sie sich beim Tenant Manager an.
++
+Der angezeigte Anmeldebildschirm hängt von der eingegebenen URL und davon ab, ob Single Sign-On (SSO) für StorageGRID konfiguriert wurde.
+
++
+[role="tabbed-block"]
+====
+.SSO wird nicht verwendet
+--
+Wenn StorageGRID SSO nicht verwendet, wird einer der folgenden Bildschirme angezeigt:
+
+** Die Anmeldeseite des Grid Manager. Wählen Sie den Link *Tenant Sign-in*.
++
+image::../media/tenant_login_link.png[Link für die Anmeldung eines Mandanten auf der Anmeldeseite des Grid Manager]
+
+** Die Anmeldeseite von Tenant Manager. Das Feld *Account* ist möglicherweise bereits ausgefüllt, wie unten gezeigt.
++
+image::../media/tenant_user_sign_in.png[Anmeldeseite für Mandanten-Manager]
+
++
+... Wenn die 20-stellige Konto-ID des Mandanten nicht angezeigt wird, wählen Sie den Namen des Mandantenkontos aus, wenn er in der Liste der letzten Konten angezeigt wird, oder geben Sie die Konto-ID ein.
+... Geben Sie Ihren Benutzernamen und Ihr Kennwort ein.
+... Wählen Sie *Anmelden*.
++
+Das Dashboard von Tenant Manager wird angezeigt.
+
+... Wenn Sie ein erstes Passwort von einer anderen Person erhalten haben, wählen Sie *_username_* > *Passwort ändern*, um Ihr Konto zu sichern.
+
+
+
+
+--
+.SSO wird verwendet
+--
+Wenn StorageGRID SSO verwendet, wird einer der folgenden Bildschirme angezeigt:
+
+** Die SSO-Seite Ihres Unternehmens. Beispiel:
++
+image::../media/sso_organization_page.gif[Beispiel für die Anmeldeseite der Organisation für SSO]
+
++
+Geben Sie Ihre Standard-SSO-Anmeldeinformationen ein, und wählen Sie *Anmelden*.
+
+** Die SSO-Anmeldeseite für den Tenant Manager.
++
+image::../media/sign_in_sso.png[Melden Sie sich bei einem Mandantenkonto an, wenn SSO aktiviert ist]
+
++
+... Wenn die 20-stellige Konto-ID des Mandanten nicht angezeigt wird, wählen Sie den Namen des Mandantenkontos aus, wenn er in der Liste der letzten Konten angezeigt wird, oder geben Sie die Konto-ID ein.
+... Wählen Sie *Anmelden*.
+... Melden Sie sich mit Ihren Standard-SSO-Anmeldedaten auf der SSO-Anmeldeseite Ihres Unternehmens an.
++
+Das Dashboard von Tenant Manager wird angezeigt.
+
+
+
+
+
+--
+====
+

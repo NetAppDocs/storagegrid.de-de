@@ -1,0 +1,36 @@
+---
+permalink: maintain/considerations-for-decommissioning-admin-or-gateway-nodes.html 
+sidebar: sidebar 
+keywords: storagegrid, decommission admin node, decommission gateway node 
+summary: Prüfen Sie die Überlegungen für die Stilllegung eines Admin-Node oder Gateway-Node. 
+---
+= Überlegungen bei der Stilllegung von Admin- oder Gateway-Nodes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Prüfen Sie die Überlegungen für die Stilllegung eines Admin-Node oder Gateway-Node.
+
+
+
+== Überlegungen zu Admin-Knoten
+
+* Der primäre Admin-Node kann nicht stillgelegt werden.
+* Sie können einen Admin-Node nicht ausmustern, wenn eine seiner Netzwerkschnittstellen Teil einer HA-Gruppe (High Availability, Hochverfügbarkeit) ist. Sie müssen zuerst die Netzwerkschnittstellen aus der HA-Gruppe entfernen. Siehe die Anleitung für link:../admin/managing-high-availability-groups.html["Verwalten von HA-Gruppen"].
+* Bei Bedarf können Sie ILM-Richtlinien sicher ändern und gleichzeitig einen Admin-Node stilllegen.
+* Wenn Sie einen Admin-Node deaktivieren und Single Sign-On (SSO) für Ihr StorageGRID-System aktiviert ist, müssen Sie daran denken, das Vertrauen des Knotens zu entfernen, das auf die Grundlage von Active Directory Federation Services (AD FS) basiert.
+* Wenn Sie verwendenlink:../admin/grid-federation-overview.html["Grid-Verbund"], stellen Sie sicher, dass die IP-Adresse des Node, den Sie decommissionieren, nicht für eine Netzverbundverbindung angegeben wurde.
+* Wenn Sie einen getrennten Admin-Node stilllegen, verlieren Sie die Audit-Protokolle von diesem Node. Diese Protokolle sollten jedoch auch im primären Admin-Node vorhanden sein.
+
+
+
+
+== Überlegungen zu Gateway Node
+
+* Sie können einen Gateway-Node nicht stilllegen, wenn eine seiner Netzwerkschnittstellen Teil einer HA-Gruppe (High Availability, Hochverfügbarkeit) ist. Sie müssen zuerst die Netzwerkschnittstellen aus der HA-Gruppe entfernen. Siehe die Anleitung für link:../admin/managing-high-availability-groups.html["Verwalten von HA-Gruppen"].
+* Bei Bedarf können Sie ILM-Richtlinien sicher ändern und gleichzeitig einen Gateway Node stilllegen.
+* Wenn Sie verwendenlink:../admin/grid-federation-overview.html["Grid-Verbund"], stellen Sie sicher, dass die IP-Adresse des Node, den Sie decommissionieren, nicht für eine Netzverbundverbindung angegeben wurde.
+* Sie können einen Gateway-Node sicher außer Betrieb setzen, während er getrennt ist.
+

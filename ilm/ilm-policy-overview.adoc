@@ -1,0 +1,134 @@
+---
+permalink: ilm/ilm-policy-overview.html 
+sidebar: sidebar 
+keywords: ILM policy, information lifecycle policy considerations 
+summary: 'Eine Information Lifecycle Management \ (ILM\)-Richtlinie ist ein bestellter Satz von ILM-Regeln, die bestimmen, wie das StorageGRID System Objektdaten über einen längeren Zeitraum verwaltet.' 
+---
+= Verwenden Sie ILM-Richtlinien
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Eine Information Lifecycle Management-Richtlinie (ILM) ist ein bestellter Satz von ILM-Regeln, die bestimmen, wie das StorageGRID System Objektdaten über einen längeren Zeitraum managt.
+
+
+CAUTION: Eine falsch konfigurierte ILM-Richtlinie kann zu nicht wiederherstellbaren Datenverlusten führen. Prüfen Sie vor der Aktivierung einer ILM-Richtlinie die ILM-Richtlinie und ihre ILM-Regeln sorgfältig und simulieren Sie anschließend die ILM-Richtlinie. Vergewissern Sie sich immer, dass die ILM-Richtlinie wie vorgesehen funktioniert.
+
+
+
+== Standardmäßige ILM-Richtlinie
+
+Bei der Installation von StorageGRID und dem Hinzufügen von Standorten wird automatisch eine standardmäßige ILM-Richtlinie erstellt:
+
+* Wenn Ihr Raster einen Standort enthält, enthält die Standardrichtlinie eine Standardregel, die zwei Kopien jedes Objekts an diesem Standort repliziert.
+* Wenn Ihr Raster mehr als einen Standort enthält, repliziert die Standardregel eine Kopie jedes Objekts an jedem Standort.
+
+
+Entspricht die Standardrichtlinie nicht Ihren Storage-Anforderungen, können Sie eigene Regeln und Richtlinien erstellen. Siehe link:what-ilm-rule-is.html["Erstellen einer ILM-Regel"] und link:creating-ilm-policy.html["ILM-Richtlinie erstellen"].
+
+
+
+== Eine oder viele aktive ILM-Richtlinien?
+
+Sie können eine oder mehrere aktive ILM-Richtlinien gleichzeitig haben.
+
+
+
+=== Eine Richtlinie
+
+Wenn Ihr Grid ein einfaches Datensicherungsschema mit wenigen mandantenspezifischen und bucketspezifischen Regeln verwenden wird, verwenden Sie eine einzelne aktive ILM-Richtlinie. Die ILM-Regeln können Filter für das Management verschiedener Buckets oder Mandanten enthalten.
+
+image::../media/ilm-policies-single.png[Einzelnes ILM-Richtliniendiagramm]
+
+Wenn sich nur eine Richtlinie und die Anforderungen eines Mandanten ändern, müssen Sie eine neue ILM-Richtlinie erstellen oder die vorhandene Richtlinie klonen, um Änderungen anzuwenden, zu simulieren und dann die neue ILM-Richtlinie zu aktivieren. Änderungen an der ILM-Richtlinie können zu Objektverschiebungen führen, die viele Tage in Anspruch nehmen können und zu Systemlatenz führen.
+
+
+
+=== Mehrere Richtlinien
+
+Um Mandanten verschiedene Quality-of-Service-Optionen zur Verfügung zu stellen, können Sie mehrere aktive Richtlinien gleichzeitig bereitstellen. Jede Richtlinie kann bestimmte Mandanten, S3 Buckets und Objekte managen. Wenn Sie eine Richtlinie für einen bestimmten Satz von Mandanten oder Objekten anwenden oder ändern, werden die auf andere Mandanten und Objekte angewendeten Richtlinien nicht beeinträchtigt.
+
+ILM-Richtlinien-Tags:: Wenn Mandanten einfach pro Bucket zwischen mehreren Datensicherungsrichtlinien wechseln möchten, verwenden Sie mehrere ILM-Richtlinien mit _ILM-Richtlinien-Tags_. Sie weisen jede ILM-Richtlinie einem Tag zu und markieren dann Mandanten einen Bucket, um die Richtlinie auf diesen Bucket anzuwenden. Sie können ILM-Richtlinien-Tags nur für S3 Buckets festlegen.
++
+--
+Sie können beispielsweise drei Tags mit den Namen Gold, Silber und Bronze haben. Sie können jedem Tag eine ILM-Richtlinie zuweisen. Diese richtet sich nach der Dauer und dem Speicherort von Objekten, die in dieser Richtlinie gespeichert sind. Mandanten können durch Tagging ihrer Buckets die zu verwendende Richtlinie auswählen. Ein mit Gold gekennzeichneter Bucket wird durch die Gold-Richtlinie gemanagt und erhält das Gold-Level für Datensicherung und Performance.
+
+--
+Standard-ILM-Richtlinien-Tag:: Bei der Installation von StorageGRID wird automatisch ein Standard-ILM-Richtlinien-Tag erstellt. Jedes Raster muss über eine aktive Richtlinie verfügen, die dem Standard-Tag zugewiesen ist. Die Standardrichtlinie gilt für alle S3-Buckets ohne Tag.
+
+
+image::../media/ilm-policies-tags-conceptual.png[Diagramm mit mehreren ILM-Richtlinien]
+
+
+
+== Wie evaluiert eine ILM-Richtlinie Objekte?
+
+Eine aktive ILM-Richtlinie steuert die Platzierung, Dauer und Datensicherung von Objekten.
+
+Wenn Clients Objekte auf StorageGRID speichern, werden die Objekte anhand der in der Richtlinie festgelegten ILM-Regeln bewertet:
+
+. Wenn die Filter für die erste Regel in der Richtlinie mit einem Objekt übereinstimmen, wird das Objekt gemäß dem Aufnahmeverhalten der Regel aufgenommen und gemäß den Anweisungen zur Platzierung dieser Regel gespeichert.
+. Wenn die Filter für die erste Regel nicht mit dem Objekt übereinstimmen, wird das Objekt anhand jeder nachfolgenden Regel in der Richtlinie bewertet, bis eine Übereinstimmung vorgenommen wird.
+. Stimmen keine Regeln mit einem Objekt überein, werden das Aufnahmeverhalten und die Anweisungen zur Platzierung der Standardregel in der Richtlinie angewendet. Die Standardregel ist die letzte Regel in einer Richtlinie. Die Standardregel muss für alle Mandanten, alle S3-Buckets und alle Objektversionen gelten und kann keine erweiterten Filter verwenden.
+
+
+
+
+== Beispiel für eine ILM-Richtlinie
+
+Eine ILM-Richtlinie könnte beispielsweise drei ILM-Regeln enthalten, die Folgendes angeben:
+
+* *Regel 1: Replizierte Kopien für Mandant A*
++
+** Alle Objekte, die zu Mandant A gehören, abgleichen
+** Speichern Sie diese Objekte als drei replizierte Kopien an drei Standorten.
+** Objekte, die zu anderen Mandanten gehören, werden nicht mit Regel 1 abgeglichen, daher werden sie mit Regel 2 verglichen.
+
+
+* *Regel 2: Erasure Coding für Objekte größer als 1 MB*
++
+** Alle Objekte von anderen Mandanten abgleichen, aber nur, wenn sie größer als 1 MB sind. Diese größeren Objekte werden mithilfe von 6+3 Erasure Coding an drei Standorten gespeichert.
+** Entspricht nicht Objekten mit einer Größe von 1 MB oder weniger, daher werden diese Objekte mit Regel 3 verglichen.
+
+
+* *Regel 3: 2 Exemplare 2 Rechenzentren* (Standard)
++
+** Ist die letzte und Standardregel in der Richtlinie. Verwendet keine Filter.
+** Erstellen Sie zwei replizierte Kopien aller Objekte, die nicht mit Regel 1 oder Regel 2 übereinstimmen (Objekte, die nicht zu Mandant A gehören und mindestens 1 MB groß sind).
+
+
+
+
+image::../media/ilm_policy_and_rules.png[ILM-Richtlinie und -Regeln]
+
+
+
+== Was sind aktive und inaktive Richtlinien?
+
+Jedes StorageGRID System muss über mindestens eine aktive ILM-Richtlinie verfügen. Wenn Sie mehr als eine aktive ILM-Richtlinie festlegen möchten, erstellen Sie ILM-Richtlinien-Tags und weisen jedem Tag eine Richtlinie zu. Mandanten wenden dann Tags auf S3-Buckets an. Die Standardrichtlinie wird auf alle Objekte in Buckets angewendet, denen kein Richtlinien-Tag zugewiesen ist.
+
+Beim ersten Erstellen einer ILM-Richtlinie wählen Sie eine oder mehrere ILM-Regeln aus und ordnen sie in einer bestimmten Reihenfolge an. Nachdem Sie die Richtlinie simuliert haben, um ihr Verhalten zu bestätigen, aktivieren Sie sie.
+
+Wenn Sie eine ILM-Richtlinie aktivieren, verwendet StorageGRID diese Richtlinie für das Management aller Objekte, einschließlich vorhandener Objekte und neu aufgenommenen Objekte. Vorhandene Objekte können an neue Standorte verschoben werden, wenn die ILM-Regeln der neuen Richtlinie implementiert werden.
+
+Wenn Sie mehrere ILM-Richtlinien gleichzeitig aktivieren und Mandanten Richtlinien-Tags auf S3-Buckets anwenden, werden die Objekte in jedem Bucket gemäß der Richtlinie gemanagt, die dem Tag zugewiesen ist.
+
+Ein StorageGRID-System verfolgt den Verlauf der aktivierten oder deaktivierten Richtlinien.
+
+
+
+== Überlegungen bei der Erstellung einer ILM-Richtlinie
+
+* Verwenden Sie die vom System bereitgestellte Richtlinie, Richtlinie für Baseline 2 Kopien, nur in Testsystemen. Für StorageGRID 11.6 und frühere Versionen verwendet die Regel 2 Kopien erstellen in dieser Richtlinie den Speicherpool Alle Speicherknoten, der alle Standorte enthält. Wenn Ihr StorageGRID System über mehrere Standorte verfügt, können zwei Kopien eines Objekts an demselben Standort platziert werden.
++
+
+NOTE: Der Speicherpool Alle Speicherknoten wird automatisch während der Installation von StorageGRID 11.6 und früher erstellt. Wenn Sie ein Upgrade auf eine höhere Version von StorageGRID durchführen, ist der Pool Alle Storage-Nodes weiterhin vorhanden. Wenn Sie StorageGRID 11.7 oder höher als neue Installation installieren, wird der Pool Alle Speicherknoten nicht erstellt.
+
+* Berücksichtigen Sie beim Entwurf einer neuen Richtlinie alle unterschiedlichen Objekttypen, die in das Grid aufgenommen werden können. Stellen Sie sicher, dass die Richtlinie Regeln enthält, die mit diesen Objekten übereinstimmen und sie nach Bedarf platziert werden können.
+* Halten Sie die ILM-Richtlinie so einfach wie möglich. Dadurch werden potenziell gefährliche Situationen vermieden, in denen Objektdaten nicht wie vorgesehen geschützt werden, wenn im Laufe der Zeit Änderungen am StorageGRID System vorgenommen werden.
+* Stellen Sie sicher, dass die Regeln in der Richtlinie in der richtigen Reihenfolge sind. Wenn die Richtlinie aktiviert ist, werden neue und vorhandene Objekte anhand der Regeln in der angegebenen Reihenfolge bewertet, die oben beginnen. Wenn z. B. die erste Regel in einer Richtlinie mit einem Objekt übereinstimmt, wird dieses Objekt nicht von einer anderen Regel bewertet.
+* Die letzte Regel in jeder ILM-Richtlinie ist die standardmäßige ILM-Regel, die keine Filter verwenden kann. Wenn ein Objekt nicht mit einer anderen Regel übereinstimmt, steuert die Standardregel, wo das Objekt platziert wird und wie lange es aufbewahrt wird.
+* Überprüfen Sie vor der Aktivierung einer neuen Richtlinie alle Änderungen, die die Richtlinie an der Platzierung vorhandener Objekte vornimmt. Das Ändern des Speicherorts eines vorhandenen Objekts kann zu vorübergehenden Ressourcenproblemen führen, wenn die neuen Platzierungen ausgewertet und implementiert werden.
+

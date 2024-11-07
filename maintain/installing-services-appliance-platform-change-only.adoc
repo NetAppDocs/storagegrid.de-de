@@ -1,0 +1,29 @@
+---
+permalink: maintain/installing-services-appliance-platform-change-only.html 
+sidebar: sidebar 
+keywords: storagegrid, recover services appliance, recover appliance, recovering appliance, recovering services appliance, install services appliance, installing services appliance, services appliance 
+summary: 'Wenn Sie einen fehlerhaften Grid-Node wiederherstellen, der auf VMware oder einem Linux-Host gehostet wurde, und Sie eine Services-Appliance für den Ersatz-Node verwenden, müssen Sie zuerst die neue Appliance-Hardware installieren und dabei denselben Node-Namen (Systemname) wie der ausgefallene Node verwenden.' 
+---
+= Installation der Services Appliance (nur Plattformänderung)
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie einen fehlerhaften Grid-Node wiederherstellen, der auf VMware oder einem Linux-Host gehostet wurde, und Sie eine Services-Appliance für den Ersatz-Node verwenden, müssen Sie zuerst die neue Appliance-Hardware installieren und dabei denselben Node-Namen (Systemname) wie der ausgefallene Node verwenden.
+
+.Bevor Sie beginnen
+Sie haben die folgenden Informationen über den ausgefallenen Node:
+
+* *Knotenname*: Sie müssen die Services-Appliance mit dem gleichen Knotennamen wie der ausgefallene Knoten installieren. Der Node-Name ist der Hostname (Systemname).
+* *IP-Adressen*: Sie können dem Services-Gerät dieselben IP-Adressen zuweisen wie dem ausgefallenen Knoten, was die bevorzugte Option ist, oder Sie können eine neue ungenutzte IP-Adresse in jedem Netzwerk auswählen.
+
+
+.Über diese Aufgabe
+Führen Sie diese Vorgehensweise nur aus, wenn Sie einen ausgefallenen Node, der auf VMware oder Linux gehostet wurde, wiederherstellen und diesen durch einen Node ersetzen, der auf einer Services Appliance gehostet wird.
+
+.Schritte
+. Befolgen Sie die Anweisungen zum Installieren eines neuen Service-Geräts. Siehe https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/index.html["Schnellstart für die Hardwareinstallation"^].
+. Verwenden Sie bei der Aufforderung zu einem Node-Namen den Node-Namen des ausgefallenen Node.
+

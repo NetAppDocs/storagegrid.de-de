@@ -1,0 +1,123 @@
+---
+permalink: maintain/shutting-down-grid-node.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, node shutdown, shut down node, node shut down 
+summary: Sie können einen Grid-Node von der Befehlshülle des Node herunterfahren. 
+---
+= Fahren Sie den Grid-Node herunter
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können einen Grid-Node über die Befehlshaber des Node herunterfahren.
+
+.Bevor Sie beginnen
+* Sie haben die `Passwords.txt` Datei.
+
+
+.Über diese Aufgabe
+Bevor Sie dieses Verfahren durchführen, sollten Sie folgende Punkte beachten:
+
+* Im Allgemeinen sollten Sie nicht mehr als einen Node gleichzeitig herunterfahren, um Unterbrechungen zu vermeiden.
+* Fahren Sie einen Node während eines Wartungsverfahrens nicht herunter, es sei denn, Sie werden in der Dokumentation oder vom technischen Support ausdrücklich dazu aufgefordert.
+* Das Herunterfahren basiert auf dem Installationsort des Node, wie folgt:
++
+** Durch das Herunterfahren eines VMware-Knotens wird die virtuelle Maschine heruntergefahren.
+** Durch das Herunterfahren eines Linux-Node wird der Container heruntergefahren.
+** Durch das Herunterfahren eines StorageGRID-Appliance-Node wird der Computing-Controller heruntergefahren.
+
+
+* Wenn Sie planen, mehr als einen Storage-Node an einem Standort herunterzufahren, beenden Sie die Aufnahme von Objekten an diesem Standort ca. eine Stunde lang, bevor Sie die Nodes herunterfahren.
++
+Wenn eine ILM-Regel die Option *Dual Commit* Ingest verwendet (oder wenn eine Regel die Option *Balanced* verwendet und alle erforderlichen Kopien nicht sofort erstellt werden können), überträgt StorageGRID alle neu aufgenommenen Objekte sofort auf zwei Speicher-Nodes auf derselben Seite und wertet ILM später aus. Wenn mehr als ein Storage-Node an einem Standort heruntergefahren wird, sind Sie möglicherweise während des Herunterfahrens nicht in der Lage, auf neu aufgenommene Objekte zuzugreifen. Schreibvorgänge können auch fehlschlagen, wenn am Standort zu wenige Speicherknoten verfügbar bleiben. Siehe link:../ilm/index.html["Objektmanagement mit ILM"].
+
+
+
+.Schritte
+. Melden Sie sich beim Grid-Node an:
++
+.. Geben Sie den folgenden Befehl ein: `ssh admin@_grid_node_IP_`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+.. Geben Sie den folgenden Befehl ein, um zu root zu wechseln: `su -`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+
+
++
+Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `#`.
+
+. Alle Dienste beenden: `service servermanager stop`
++
+Die Dienste können bis zu 15 Minuten zum Herunterfahren dauern. Außerdem können Sie sich möglicherweise per Remote-Zugriff beim System anmelden, um den Shutdown-Prozess zu überwachen.
+
+. Wenn der Node auf einer virtuellen VMware-Maschine ausgeführt wird oder es sich um einen Appliance-Node handelt, geben Sie den Befehl shutdown ein: `shutdown -h now`
++
+Führen Sie diesen Schritt unabhängig vom Ergebnis des `service servermanager stop` Befehls aus.
+
++
+
+NOTE: Nachdem Sie den Befehl an einem Appliance-Node ausgegeben `shutdown -h now` haben, müssen Sie die Appliance aus- und wieder einschalten, um den Node neu zu starten.
+
++
+Bei diesem Befehl wird der Controller heruntergefahren, das Gerät ist jedoch weiterhin eingeschaltet. Sie müssen den nächsten Schritt abschließen.
+
+. Wenn Sie einen Appliance-Node herunterfahren, befolgen Sie die Schritte für Ihre Appliance.
++
+[role="tabbed-block"]
+====
+.SG6160
+--
+.. Schalten Sie den SG6100-CN-Speicher-Controller aus.
+.. Warten Sie, bis die blaue LED-Betriebsanzeige am SG6100-CN-Speicher-Controller ausgeschaltet ist.
+
+
+--
+.SGF6112
+--
+.. Schalten Sie das Gerät aus.
+.. Warten Sie, bis die blaue Betriebs-LED erlischt.
+
+
+--
+.SG6000
+--
+.. Warten Sie, bis die grüne LED Cache Active auf der Rückseite der Storage Controller ausgeschaltet ist.
++
+Diese LED leuchtet, wenn zwischengespeicherte Daten auf die Laufwerke geschrieben werden müssen. Sie müssen warten, bis diese LED ausgeschaltet ist, bevor Sie den Strom ausschalten.
+
+.. Schalten Sie das Gerät aus und warten Sie, bis die blaue Strom-LED ausgeschaltet ist.
+
+
+--
+.SG5800
+--
+.. Warten Sie, bis die grüne LED Cache Active auf der Rückseite des Storage Controllers ausgeschaltet ist.
++
+Diese LED leuchtet, wenn zwischengespeicherte Daten auf die Laufwerke geschrieben werden müssen. Sie müssen warten, bis diese LED ausgeschaltet ist, bevor Sie den Strom ausschalten.
+
+.. Wählen Sie auf der Startseite des SANtricity System Managers die Option *Vorgänge in Bearbeitung anzeigen*.
+.. Bestätigen Sie, dass alle Vorgänge abgeschlossen wurden, bevor Sie mit dem nächsten Schritt fortfahren.
+.. Schalten Sie beide Netzschalter am Controller Shelf aus und warten Sie, bis alle LEDs am Controller Shelf ausgeschaltet sind.
+
+
+--
+.SG5700
+--
+.. Warten Sie, bis die grüne LED Cache Active auf der Rückseite des Storage Controllers ausgeschaltet ist.
++
+Diese LED leuchtet, wenn zwischengespeicherte Daten auf die Laufwerke geschrieben werden müssen. Sie müssen warten, bis diese LED ausgeschaltet ist, bevor Sie den Strom ausschalten.
+
+.. Schalten Sie das Gerät aus und warten Sie, bis alle LED- und siebensegmentreichen Anzeigeaktivitäten angehalten sind.
+
+
+--
+.SG100 oder SG1000
+--
+.. Schalten Sie das Gerät aus.
+.. Warten Sie, bis die blaue Betriebs-LED erlischt.
+
+
+--
+====
+

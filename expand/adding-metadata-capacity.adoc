@@ -1,0 +1,55 @@
+---
+permalink: expand/adding-metadata-capacity.html 
+sidebar: sidebar 
+keywords: metadata capacity, add, adding, expand, expansion, guidelines, Storage Nodes, metadata storage 
+summary: Um sicherzustellen, dass ausreichend Speicherplatz für Objektmetadaten verfügbar ist, müssen Sie möglicherweise ein Erweiterungsverfahren durchführen, um neue Storage-Nodes an jedem Standort hinzuzufügen. 
+---
+= Hinzufügen von Metadatenkapazität
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um sicherzustellen, dass ausreichend Speicherplatz für Objektmetadaten verfügbar ist, müssen Sie möglicherweise ein Erweiterungsverfahren durchführen, um neue Storage-Nodes an jedem Standort hinzuzufügen.
+
+StorageGRID reserviert Speicherplatz für Objekt-Metadaten auf Volume 0 jedes Storage-Nodes. An jedem Standort werden drei Kopien aller Objektmetadaten aufbewahrt und gleichmäßig auf alle Storage-Nodes verteilt.
+
+Mit Grid Manager lässt sich die Metadatenkapazität von Storage Nodes überwachen und schätzen, wie schnell Metadaten verbraucht werden. Darüber hinaus wird die Warnung *Low Metadaten Storage* für einen Speicherknoten ausgelöst, wenn der verwendete Metadatenspeicherplatz bestimmte Schwellenwerte erreicht.
+
+Beachten Sie, dass die Objekt-Metadatenkapazität eines Grid je nach Verwendung des Grid möglicherweise schneller belegt als die Objekt-Storage-Kapazität. Wenn Sie beispielsweise normalerweise eine große Anzahl kleiner Objekte aufnehmen oder Objekte mit großen Mengen von Benutzer-Metadaten oder -Tags versehen, müssen Sie möglicherweise Storage-Nodes hinzufügen, um die Metadaten-Kapazität zu erhöhen, obwohl weiterhin ausreichend Objekt-Storage-Kapazität vorhanden ist.
+
+Weitere Informationen finden Sie im Folgenden:
+
+* link:../admin/managing-object-metadata-storage.html["Management von Objekt-Metadaten-Storage"]
+* link:../monitor/monitoring-storage-capacity.html#monitor-object-metadata-capacity-for-each-storage-node["Überwachen der Objekt-Metadaten-Kapazität für jeden Storage Node"]
+
+
+
+
+== Richtlinien zur Erhöhung der Metadaten-Kapazität
+
+Bevor Sie Storage-Nodes hinzufügen, um die Metadatenkapazität zu steigern, lesen Sie die folgenden Richtlinien und Einschränkungen:
+
+* Wenn eine ausreichende Objekt-Storage-Kapazität verfügbar ist, erhöht sich aufgrund der Verfügbarkeit von mehr Speicherplatz für Objekt-Metadaten die Anzahl der Objekte, die Sie in Ihrem StorageGRID System speichern können.
+* Die Metadatenkapazität eines Grids lässt sich erhöhen, indem jedem Standort ein oder mehrere Storage-Nodes hinzugefügt werden.
+* Der tatsächlich für Objektmetadaten auf einem bestimmten Storage-Node reservierte Speicherplatz hängt von der Option Metadaten reservierter Speicherplatz (systemweite Einstellung), der RAM-Größe des Node und der Größe des Volumes 0 des Node ab.
+* Die Metadatenkapazität kann nicht durch das Hinzufügen von Storage Volumes zu vorhandenen Storage Nodes erhöht werden, da Metadaten nur auf Volume 0 gespeichert werden.
+* Die Metadatenkapazität kann nicht durch das Hinzufügen eines neuen Standorts erhöht werden.
+* StorageGRID speichert drei Kopien aller Objektmetadaten an jedem Standort. Daher wird die Metadaten-Kapazität Ihres Systems durch die Metadaten-Kapazität Ihres kleinsten Standorts begrenzt.
+* Wenn Sie Metadaten hinzufügen, sollten Sie jedem Standort die gleiche Anzahl an Storage-Nodes hinzufügen.
+
+
+Siehe link:../admin/managing-object-metadata-storage.html["beschreibung des reservierten Speicherplatzes für Metadaten"].
+
+
+
+== Verteilung von Metadaten beim Hinzufügen von Storage-Nodes
+
+Wenn Sie Storage-Nodes zu einer Erweiterung hinzufügen, verteilt StorageGRID die vorhandenen Objekt-Metadaten an die neuen Nodes an jedem Standort, wodurch die allgemeine Metadaten des Grid erhöht werden. Es ist keine Benutzeraktion erforderlich.
+
+Die folgende Abbildung zeigt, wie StorageGRID Objektmetadaten neu verteilt, wenn Sie Storage-Nodes in einer Erweiterung hinzufügen. Die linke Seite der Abbildung zeigt das Volumen 0 von drei Storage-Nodes vor einer Erweiterung. Metadaten verbrauchen einen relativ großen Teil des verfügbaren Metadaten-Speicherplatzes jedes Nodes und die Warnung *Low Metadaten Storage* wurde ausgelöst.
+
+Die rechte Seite der Abbildung zeigt, wie die vorhandenen Metadaten nach dem Hinzufügen von zwei Storage-Nodes zum Standort neu verteilt werden. Die Menge der Metadaten auf jedem Node ist gesunken, die Warnung * Storage mit niedrigen Metadaten* wird nicht mehr ausgelöst, und der für Metadaten verfügbare Platz hat sich erhöht.
+
+image::../media/metadata_space_after_expansion.png[Diagramm der neu verteilten Metadaten nach dem Hinzufügen von zwei Storage-Nodes]

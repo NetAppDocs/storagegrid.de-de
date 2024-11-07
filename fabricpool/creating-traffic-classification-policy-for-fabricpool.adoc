@@ -1,0 +1,67 @@
+---
+permalink: fabricpool/creating-traffic-classification-policy-for-fabricpool.html 
+sidebar: sidebar 
+keywords: fabricPool, traffic classification, traffic policy, QoS, quality of service 
+summary: Optional können Sie eine StorageGRID Traffic-Klassifizierungsrichtlinie entwerfen, um die Servicequalität für den FabricPool-Workload zu optimieren. 
+---
+= Erstellen einer Traffic-Klassifizierungsrichtlinie für FabricPool
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Optional können Sie eine StorageGRID Traffic-Klassifizierungsrichtlinie entwerfen, um die Servicequalität für den FabricPool-Workload zu optimieren.
+
+Weitere Informationen zu dieser Aufgabe finden Sie unter link:../admin/managing-traffic-classification-policies.html["Verwalten von Richtlinien zur Verkehrsklassifizierung"]. Um diese Aufgabe mithilfe des FabricPool-Setup-Assistenten abzuschließen, gehen Sie zu link:use-fabricpool-setup-wizard-steps.html["Öffnen und Abschließen des FabricPool Setup-Assistenten"].
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben die link:../admin/admin-group-permissions.html["Root-Zugriffsberechtigung"].
+
+
+.Über diese Aufgabe
+Die Best Practices für das Erstellen einer Traffic-Klassifizierungsrichtlinie für FabricPool hängen vom Workload ab:
+
+* Bei der Planung, primäre FabricPool Workload-Daten auf StorageGRID zu verschieben, sollte sichergestellt werden, dass der FabricPool-Workload den größten Teil der Bandbreite hat. Sie können eine Traffic-Klassifizierungsrichtlinie erstellen, um alle anderen Workloads einzuschränken.
++
+
+NOTE: Im Allgemeinen sind FabricPool-Lesevorgänge wichtiger als Schreibvorgänge.
+
++
+Wenn beispielsweise andere S3-Clients dieses StorageGRID-System verwenden, sollten Sie eine Traffic-Klassifizierungsrichtlinie erstellen. Der Netzwerk-Traffic kann für die anderen Buckets, Mandanten, IP-Subnetze oder Load Balancer Endpunkte begrenzt werden.
+
+* Im Allgemeinen sollten Sie keinen FabricPool-Workloads wegen Quality of Service einschränken, sondern nur die anderen Workloads begrenzen.
+* Die Einschränkungen, die für andere Workloads gelten, sollten das Verhalten dieser Workloads berücksichtigen. Die auferlegten Einschränkungen hängen auch von der Größe und den Funktionen des Grids und der erwarteten Auslastung ab.
+
+
+.Schritte
+. Wählen Sie *CONFIGURATION* > *Network* > *traffic classification*.
+. Wählen Sie *Erstellen*.
+. Geben Sie einen Namen und eine Beschreibung (optional) für die Richtlinie ein und wählen Sie *Weiter*.
+. Fügen Sie für den Schritt übereinstimmende Regeln hinzufügen mindestens eine Regel hinzu.
++
+.. Wählen Sie *Regel hinzufügen*
+.. Wählen Sie unter Typ * Load Balancer Endpunkt* aus, und wählen Sie den Load Balancer Endpunkt aus, den Sie für FabricPool erstellt haben.
++
+Sie können auch das FabricPool-Mandantenkonto oder den Bucket auswählen.
+
+.. Wenn diese Datenverkehrsrichtlinie den Datenverkehr für die anderen Endpunkte einschränken soll, wählen Sie *inverse Übereinstimmung*.
+
+
+. Fügen Sie optional eine oder mehrere Grenzwerte hinzu, um den Netzwerkverkehr zu steuern, der der Regel entspricht.
++
+
+NOTE: StorageGRID sammelt Kennzahlen, auch wenn Sie keine Limits hinzufügen, sodass Sie Verkehrstrends besser verstehen können.
+
++
+.. Wählen Sie *Limit hinzufügen*.
+.. Wählen Sie den zu begrenzenden Verkehrstyp und die anzuwählenden Grenzwerte aus.
+
+
+. Wählen Sie *Weiter*.
+. Lesen und prüfen Sie die Richtlinie zur Verkehrsklassifizierung. Verwenden Sie die Schaltfläche * Zurück*, um zurückzugehen und Änderungen vorzunehmen. Wenn Sie mit der Richtlinie zufrieden sind, wählen Sie *Speichern und fortfahren*.
+
+
+.Nach dem Ende
+link:../admin/viewing-network-traffic-metrics.html["Zeigen Sie Metriken zum Netzwerkverkehr an"] Um zu überprüfen, ob die Richtlinien die von Ihnen erwarteten Verkehrsgrenzwerte durchsetzen.

@@ -1,0 +1,79 @@
+---
+permalink: ilm/using-multiple-storage-pools-for-cross-site-replication.html 
+sidebar: sidebar 
+keywords: site-loss protection, cross-site replication, storage pools 
+summary: Wenn die Implementierung von StorageGRID mehrere Standorte umfasst, können Sie für den Schutz vor Standortausfällen Replizierung und Erasure Coding mit entsprechend konfigurierten Storage-Pools verwenden. 
+---
+= Schutz vor Standortausfällen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn die Implementierung von StorageGRID mehrere Standorte umfasst, können Sie für den Schutz vor Standortausfällen Replizierung und Erasure Coding mit entsprechend konfigurierten Storage-Pools verwenden.
+
+Für Replizierung und Erasure Coding sind unterschiedliche Storage-Pool-Konfigurationen erforderlich:
+
+* Um die Replikation zum Schutz vor Standortausfällen zu verwenden, verwenden Sie die standortspezifischen Speicherpools, die bei der StorageGRID-Installation automatisch erstellt werden. Erstellen Sie dann ILM-Regeln, mit link:create-ilm-rule-define-placements.html["Anweisungen zur Platzierung"] denen mehrere Storage-Pools angegeben werden, sodass von jedem Objekt eine Kopie an jedem Standort platziert wird.
+* Um das Verfahren zum Schutz vor Standortausfällen zu verwenden, link:guidelines-for-creating-storage-pools.html#guidelines-for-storage-pools-used-for-erasure-coded-copies["Erstellen Sie Speicherpools, die aus mehreren Standorten bestehen"]. Erstellen Sie dann ILM-Regeln, die einen Storage-Pool verwenden, der aus mehreren Standorten und einem beliebigen verfügbaren Erasure-Coding-Schema besteht.
+
+
+
+CAUTION: Wenn Sie Ihre StorageGRID-Bereitstellung für den Schutz vor Standortausfällen konfigurieren, müssen Sie auch die Auswirkungen von  und berücksichtigenlink:data-protection-options-for-ingest.html["Aufnahmeoptionen"]link:../s3/consistency-controls.html["Konsistenz"].
+
+
+
+== Beispiel für die Replikation
+
+Standardmäßig wird während der StorageGRID-Installation ein Speicherpool für jeden Standort erstellt. Wenn Speicherpools nur aus einem Standort bestehen, können Sie ILM-Regeln konfigurieren, die die Replikation für den Schutz vor Standortausfällen verwenden. In diesem Beispiel:
+
+* Speicherpool 1 enthält Standort 1
+* Speicherpool 2 enthält Standort 2
+* Die ILM-Regel enthält zwei Platzierungen:
++
+** Speichern Sie Objekte, indem Sie 1 Kopie an Standort 1 replizieren
+** Speichern Sie Objekte, indem Sie 1 Kopie an Standort 2 replizieren
+
+
+
+
+ILM-Regelplatzierungen:
+
+image::../media/ilm_replication_at_2_sites.png[Es wird jeweils 1 Kopie an 2 Standorten repliziert]
+
+image::../media/ilm_replication_make_2_copies_2_pools_2_sites.png[Erstellen Sie 1 Kopie an jedem der 2 Standorte – standortspezifischer Speicherpool]
+
+Wenn ein Standort verloren geht, sind Kopien der Objekte am anderen Standort verfügbar.
+
+
+
+== Beispiel für Erasure Coding
+
+Wenn Storage-Pools aus mehr als einem Standort pro Storage-Pool bestehen, können Sie ILM-Regeln konfigurieren, die Erasure Coding für Site-Loss-Schutz verwenden. In diesem Beispiel:
+
+* Speicherpool 1 enthält die Standorte 1 bis 3
+* Die ILM-Regel enthält eine Platzierung: Speichern Sie Objekte mithilfe eines Erasure Coding mithilfe eines 4+2 EC-Schemas in Storage Pool 1, das drei Standorte enthält
+
+
+ILM-Regelplatzierungen:
+
+image::../media/ilm_erasure_coding_site_loss_protection_4+2.png[EC 1 Storage-Pool 9 Storage-Nodes 3 Standorte]
+
+In diesem Beispiel:
+
+* Die ILM-Regel verwendet ein 4+2 Erasure Coding-Schema.
+* Jedes Objekt wird in vier gleiche Datenfragmente geteilt und aus den Objektdaten werden zwei Paritätsfragmente berechnet.
+* Jedes der sechs Fragmente wird auf einem anderen Node über drei Datacenter-Standorte gespeichert, um Daten bei Node-Ausfällen oder Standortausfällen zu sichern.
+
+
+
+NOTE: Erasure Coding ist in Speicherpools erlaubt, die eine beliebige Anzahl von Standorten mit Ausnahme von zwei Standorten enthalten.
+
+ILM-Regel gemäß 4+2 Erasure-Coding-Schema:
+
+image::../media/ec_three_sites_4_plus_2_site_loss_example_template.png[Speichern Sie Objekte durch Erasure Coding mithilfe eines 4+2-EC-Schemas an 3 Standorten]
+
+Wenn ein Standort verloren geht, können die Daten immer noch wiederhergestellt werden:
+
+image::../media/ec_three_sites_4_plus_2_site_loss_example.png[Erasure Coding 4+2 EG-Schema 1 Standort verloren]

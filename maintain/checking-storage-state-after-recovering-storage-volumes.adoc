@@ -1,0 +1,35 @@
+---
+permalink: maintain/checking-storage-state-after-recovering-storage-volumes.html 
+sidebar: sidebar 
+keywords: storagegrid, storage volume recovery, storage state, storage volume 
+summary: Nach der Wiederherstellung von Speichervolumes müssen Sie überprüfen, ob der gewünschte Status des Speicherknoten auf „Online“ gesetzt ist, und sicherstellen, dass der Status beim Neustart des Speicherknotenservers standardmäßig online ist. 
+---
+= Überprüfen Sie den Speicherstatus nach der Wiederherstellung von Storage Volumes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nach der Wiederherstellung von Speichervolumes müssen Sie überprüfen, ob der gewünschte Status des Speicherknoten auf „Online“ gesetzt ist, und sicherstellen, dass der Status beim Neustart des Speicherknotenservers standardmäßig online ist.
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Der Speicherknoten wurde wiederhergestellt und die Datenwiederherstellung ist abgeschlossen.
+
+
+.Schritte
+. Wählen Sie *SUPPORT* > *Tools* > *Grid-Topologie* aus.
+. Überprüfen Sie die Werte von *wiederhergestellten Speicherknoten* > *LDR* > *Storage* > *Speicherzustand -- gewünscht* und *Speicherstatus -- Strom*.
++
+Der Wert beider Attribute sollte Online sein.
+
+. Wenn der Speicherstatus -- gewünscht auf schreibgeschützt eingestellt ist, führen Sie die folgenden Schritte aus:
++
+.. Klicken Sie auf die Registerkarte *Konfiguration*.
+.. Wählen Sie aus der Dropdown-Liste *Storage State -- gewünschte* die Option *Online* aus.
+.. Klicken Sie Auf *Änderungen Übernehmen*.
+.. Klicken Sie auf die Registerkarte *Übersicht* und bestätigen Sie, dass die Werte von *Speicherzustand -- gewünscht* und *Speicherzustand -- Aktuell* auf Online aktualisiert werden.
+
+
+

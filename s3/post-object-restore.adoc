@@ -1,0 +1,83 @@
+---
+permalink: s3/post-object-restore.html 
+sidebar: sidebar 
+keywords: post, RestoreObject, object 
+summary: Sie können die S3-Wiederherstellungs-Objekt-Anforderung verwenden, um ein Objekt wiederherzustellen, das in einem Cloud-Storage-Pool gespeichert ist. 
+---
+= Objekt restoreObject
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die S3-Wiederherstellungs-Objekt-Anforderung verwenden, um ein Objekt wiederherzustellen, das in einem Cloud-Storage-Pool gespeichert ist.
+
+
+
+== Unterstützter Anforderungstyp
+
+StorageGRID unterstützt nur RestoreObject-Anfragen zur Wiederherstellung eines Objekts. Die Art der Wiederherstellung wird nicht unterstützt `SELECT`. Wählen Sie Rückgabeanforderungen `XNotImplemented`.
+
+
+
+== Versionierung
+
+Optional können Sie angeben `versionId`, eine bestimmte Version eines Objekts in einem versionierten Bucket wiederherzustellen. Wenn Sie nicht angeben `versionId`, wird die neueste Version des Objekts wiederhergestellt
+
+
+
+== Verhalten von RestoreObject auf Cloud-Storage-Pool-Objekten
+
+Wenn ein Objekt in einem gespeichert wurdelink:../ilm/what-cloud-storage-pool-is.html["Cloud-Storage-Pool"], hat eine RestoreObject-Anforderung das folgende Verhalten, basierend auf dem Zustand des Objekts. Weitere Informationen finden Sie unterlink:head-object.html["HeadObject"].
+
+
+NOTE: Wenn ein Objekt in einem Cloud-Storage-Pool gespeichert ist und eine oder mehrere Kopien des Objekts auch im Raster vorhanden sind, besteht keine Notwendigkeit, das Objekt durch Ausgabe einer RestoreObject-Anforderung wiederherzustellen. Stattdessen kann die lokale Kopie mithilfe einer GetObject-Anforderung direkt abgerufen werden.
+
+[cols="1a,2a"]
+|===
+| Status des Objekts | Verhalten von RestoreObject 
+
+
+ a| 
+Objekt wird in StorageGRID aufgenommen, aber noch nicht durch ILM evaluiert oder Objekt befindet sich nicht in einem Cloud-Storage-Pool
+ a| 
+`403 Forbidden`, `InvalidObjectState`
+
+
+
+ a| 
+Objekt in Cloud-Storage-Pool, ist aber noch nicht in einen Zustand übergegangen, der nicht abrufbar ist
+ a| 
+`200 OK` Es werden keine Änderungen vorgenommen.
+
+*Hinweis*: Bevor ein Objekt in einen nicht-abrufbaren Zustand überführt wurde, kann es nicht geändert werden `expiry-date`.
+
+
+
+ a| 
+Das Objekt wurde in einen nicht aufrufbaren Zustand überführt
+ a| 
+`202 Accepted` Stellt eine abrufbare Kopie des Objekts für die im Anforderungskörper angegebene Anzahl von Tagen im Cloud-Speicherpool wieder her. Am Ende dieses Zeitraums wird das Objekt in einen nicht aufrufbaren Zustand zurückgeführt.
+
+Verwenden Sie optional das `Tier` Anforderungselement, um festzulegen, wie lange der Wiederherstellungsjob dauern wird(`Expedited` `Standard`, bis er beendet ist, , oder `Bulk`). Wenn Sie nicht angeben `Tier`, wird der `Standard` Tier verwendet.
+
+*Wichtig*: Wenn ein Objekt in S3 Glacier Deep Archive migriert wurde oder der Cloud Storage Pool Azure Blob Storage verwendet, können Sie es nicht mithilfe der Tier wiederherstellen `Expedited`. Der folgende Fehler wird zurückgegeben `403 Forbidden`, `InvalidTier`: `Retrieval option is not supported by this storage class`.
+
+
+
+ a| 
+Objekt wird aus einem nicht aufrufbaren Zustand wiederhergestellt
+ a| 
+`409 Conflict`, `RestoreAlreadyInProgress`
+
+
+
+ a| 
+Das Objekt wird im Cloud-Storage-Pool vollständig wiederhergestellt
+ a| 
+`200 OK`
+
+*Hinweis:* Wenn ein Objekt in einen abrufbaren Zustand zurückgestellt wurde, können Sie es ändern `expiry-date`, indem Sie die RestoreObject-Anfrage mit einem neuen Wert für neu ausgeben `Days`. Das Wiederherstellungsdatum wird zum Zeitpunkt der Anfrage aktualisiert.
+
+|===

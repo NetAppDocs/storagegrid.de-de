@@ -1,0 +1,236 @@
+---
+permalink: maintain/rename-grid-site-node.html 
+sidebar: sidebar 
+keywords: rename grid, rename sites, rename node, change display name, bulk rename tool 
+summary: Mit diesem Verfahren können Sie die Anzeigenamen für Ihr Raster, Ihre Standorte und Knoten hinzufügen oder aktualisieren. Sie können ein einzelnes Element, mehrere Namen oder sogar alle Elemente gleichzeitig umbenennen. Das Definieren oder Aktualisieren eines Anzeigenamens hat keinerlei Auswirkungen auf StorageGRID-Vorgänge. 
+---
+= Anzeigenamen hinzufügen oder aktualisieren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mit diesem Verfahren können Sie die Anzeigenamen für Ihr Raster, Ihre Standorte und Knoten hinzufügen oder aktualisieren. Sie können ein einzelnes Element, mehrere Elemente oder sogar alle Elemente gleichzeitig umbenennen. Das Definieren oder Aktualisieren eines Anzeigenamens hat keinerlei Auswirkungen auf StorageGRID-Vorgänge.
+
+.Bevor Sie beginnen
+* Vom *primären Admin-Knoten* aus werden Sie mit einem beim Grid-Manager angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
++
+
+NOTE: Sie können Anzeigenamen von einem nicht-primären Admin-Node hinzufügen oder aktualisieren, müssen jedoch beim primären Admin-Node angemeldet sein, um ein Wiederherstellungspaket herunterzuladen.
+
+* Sie haben die link:../admin/admin-group-permissions.html["Berechtigung für Wartung oder Root-Zugriff"].
+* Sie haben die Provisionierungs-Passphrase.
+* Sie kennen die Anforderungen und Best Practices für Anzeigenamen. Siehe link:../maintain/rename-grid-site-node-overview.html["Benennen Sie Raster, Standorte und Nodes um"].
+
+
+
+
+== Umbenennen von Rastergitten, Standorten oder Nodes
+
+Sie können das StorageGRID-System, einen oder mehrere Standorte oder einen oder mehrere Nodes umbenennen.
+
+Sie können einen Anzeigenamen verwenden, der zuvor von einem anderen Node verwendet wurde, solange die Umbenennung nicht zu einem doppelten Anzeigenamen oder Systemnamen führt.
+
+
+
+=== Wählen Sie die umzubenennenden Elemente aus
+
+Wählen Sie zum Starten die Elemente aus, die Sie umbenennen möchten.
+
+.Schritte
+. Wählen Sie *MAINTENANCE* > *Tasks* > *Raster, Standorte und Knoten umbenennen*.
+. Wählen Sie im Schritt *Namen auswählen* die Elemente aus, die Sie umbenennen möchten.
++
+[cols="1a,2a"]
+|===
+| Zu ändernde Position | Anweisung 
+
+
+ a| 
+Namen von allem (oder fast allem) in Ihrem System
+ a| 
+.. Wählen Sie *Alle auswählen*.
+.. Löschen Sie optional alle Elemente, die Sie nicht umbenennen möchten.
+
+
+
+
+ a| 
+Name des Rasters
+ a| 
+Aktivieren Sie das Kontrollkästchen für das Raster.
+
+
+
+ a| 
+Name eines Standorts und einige oder alle seiner Knoten
+ a| 
+.. Aktivieren Sie das Kontrollkästchen in der Tabellenüberschrift für den Standort.
+.. Löschen Sie optional alle Nodes, die Sie nicht umbenennen möchten.
+
+
+
+
+ a| 
+Name einer Site
+ a| 
+Aktivieren Sie das Kontrollkästchen für den Standort.
+
+
+
+ a| 
+Name eines Node
+ a| 
+Aktivieren Sie das Kontrollkästchen für den Knoten.
+
+|===
+. Wählen Sie *Weiter*.
+. Überprüfen Sie die Tabelle, die die ausgewählten Elemente enthält.
++
+** Die Spalte *Anzeigename* zeigt den aktuellen Namen für jedes Element an. Wenn das Element nie umbenannt wurde, ist sein Anzeigename mit dem Systemnamen identisch.
+** Die Spalte *Systemname* zeigt den Namen an, den Sie für jedes Element während der Installation eingegeben haben. Systemnamen werden für interne StorageGRID-Vorgänge verwendet und können nicht geändert werden. Beispielsweise kann der Systemname für einen Node sein Hostname sein.
+** Die Spalte *Typ* gibt den Typ des Elements an: Grid, Site oder den spezifischen Typ des Knotens.
+
+
+
+
+
+
+=== Schlagen Sie neue Namen vor
+
+Für den Schritt *Neue Namen vorschlagen* können Sie einen Anzeigenamen für jedes Element einzeln eingeben oder Elemente in großen Mengen umbenennen.
+
+[role="tabbed-block"]
+====
+.Benennen Sie Elemente einzeln um
+--
+Führen Sie die folgenden Schritte aus, um für jedes Element, das Sie umbenennen möchten, einen Anzeigenamen einzugeben.
+
+.Schritte
+. Geben Sie in das Feld *Anzeigename* einen vorgeschlagenen Anzeigenamen für jedes Element in der Liste ein.
++
+Unter finden Sie link:../maintain/rename-grid-site-node-overview.html["Benennen Sie Raster, Standorte und Nodes um"]weitere Informationen zu den Namensanforderungen.
+
+. Um Elemente zu entfernen, die Sie nicht umbenennen möchten, wählen Sie image:../media/icon-x-to-remove.png["X-Symbol"] in der Spalte *aus Liste entfernen* aus.
++
+Wenn Sie keinen neuen Namen für ein Element vorschlagen, müssen Sie es aus der Tabelle entfernen.
+
+. Wenn Sie neue Namen für alle Elemente in der Tabelle vorgeschlagen haben, wählen Sie *Umbenennen*.
++
+Eine Erfolgsmeldung wird angezeigt. Die neuen Anzeigenamen werden nun im gesamten Grid Manager verwendet.
+
+
+
+--
+.Umbenennen von Elementen in Massen
+--
+Verwenden Sie das Tool zum Umbenennen mehrerer Elemente, wenn Elementnamen eine gemeinsame Zeichenfolge verwenden, die Sie durch eine andere Zeichenfolge ersetzen möchten.
+
+.Schritte
+. Wählen Sie für den Schritt *Neue Namen vorschlagen* *Bulk Rename Tool verwenden*.
++
+Die Vorschau *Umbenennen* enthält alle Elemente, die für den Schritt *Neue Namen vorschlagen* angezeigt wurden. Sie können die Vorschau verwenden, um zu sehen, wie Anzeigenamen aussehen, nachdem Sie eine freigegebene Zeichenfolge ersetzt haben.
+
+. Geben Sie im Feld *existing string* den freigegebenen String ein, den Sie ersetzen möchten. Wenn der String, den Sie ersetzen möchten, z.B. ist `Data-Center-1`, geben Sie *Data-Center-1* ein.
++
+Während der Eingabe wird Ihr Text überall dort hervorgehoben, wo er in den Namen auf der linken Seite zu finden ist.
+
+. Wählen Sie diese Option ausimage:../media/icon-x-to-remove.png["X-Symbol"], um alle Elemente zu entfernen, die Sie mit diesem Tool nicht umbenennen möchten.
++
+Angenommen, Sie möchten alle Knoten umbenennen, die den String enthalten `Data-Center-1`, aber Sie möchten den Standort nicht selbst umbenennen `Data-Center-1`. Wählen Sie diese Option image:../media/icon-x-to-remove.png["X-Symbol"]aus, um die Site aus der Vorschau zum Umbenennen zu entfernen.
+
++
+image::../media/rename-bulk-rename-tool.png[Tool zum Umbenennen mehrerer Dateien vorher]
+
+. Geben Sie im Feld *New string* den Ersatzstring ein, den Sie stattdessen verwenden möchten. Geben Sie beispielsweise *DC1* ein.
++
+Unter finden Sie link:../maintain/rename-grid-site-node-overview.html["Benennen Sie Raster, Standorte und Nodes um"]weitere Informationen zu den Namensanforderungen.
+
++
+Wenn Sie die Ersatzzeichenfolge eingeben, werden die Namen auf der linken Seite aktualisiert, sodass Sie überprüfen können, ob die neuen Namen korrekt sind.
+
++
+image::../media/rename-bulk-rename-tool-after.png[Tool zum Umbenennen von Massen nach]
+
+. Wenn Sie mit den in der Vorschau angezeigten Namen zufrieden sind, wählen Sie *Namen hinzufügen*, um die Namen der Tabelle für den Schritt *Neue Namen vorschlagen* hinzuzufügen.
+. Nehmen Sie zusätzliche Änderungen vor, oder entfernen Sie image:../media/icon-x-to-remove.png["X-Symbol"]alle Elemente, die Sie nicht umbenennen möchten.
+. Wenn Sie alle Elemente in der Tabelle umbenennen möchten, wählen Sie *Umbenennen*.
++
+Eine Erfolgsmeldung wird angezeigt. Die neuen Anzeigenamen werden nun im gesamten Grid Manager verwendet.
+
+
+
+--
+====
+
+
+=== [[download-Recovery-package]]Laden Sie das Wiederherstellungspaket herunter
+
+Wenn Sie die Umbenennung der Elemente abgeschlossen haben, laden Sie ein neues Wiederherstellungspaket herunter und speichern Sie es. Die neuen Anzeigenamen für die Elemente, die Sie umbenannt haben, werden in die Datei aufgenommen `Passwords.txt`.
+
+.Schritte
+. Geben Sie die Provisionierungs-Passphrase ein.
+. Wählen Sie *Download Recovery Package*.
++
+Der Download startet sofort.
+
+. Wenn der Download abgeschlossen ist, öffnen Sie die `Passwords.txt` Datei, um den Servernamen für alle Knoten und die Anzeigenamen für alle umbenannten Knoten anzuzeigen.
+. Kopieren Sie die `sgws-recovery-package-_id-revision_.zip` Datei an zwei sichere und separate Speicherorte.
++
+
+CAUTION: Die Recovery Package-Datei muss gesichert sein, weil sie Verschlüsselungsschlüssel und Passwörter enthält, die zum Abrufen von Daten vom StorageGRID-System verwendet werden können.
+
+. Wählen Sie *Fertig*, um zum ersten Schritt zurückzukehren.
+
+
+
+
+== Zurücksetzen der Anzeigenamen auf Systemnamen
+
+Sie können ein umbenanntes Raster, eine Site oder einen Node auf den ursprünglichen Systemnamen zurücksetzen. Wenn Sie ein Element auf seinen Systemnamen zurücksetzen, werden auf den Seiten des Grid-Managers und anderen StorageGRID-Speicherorten kein *Anzeigename* für dieses Element mehr angezeigt. Es wird nur der Systemname des Elements angezeigt.
+
+.Schritte
+. Wählen Sie *MAINTENANCE* > *Tasks* > *Raster, Standorte und Knoten umbenennen*.
+. Wählen Sie im Schritt *Namen auswählen* alle Elemente aus, die Sie auf Systemnamen zurücksetzen möchten.
+. Wählen Sie *Weiter*.
+. Für den Schritt *Neue Namen vorschlagen*, stellen Sie Anzeigenamen einzeln oder in Massen zurück auf Systemnamen.
++
+[role="tabbed-block"]
+====
+.Individuelle Wiederherstellung auf Systemnamen
+--
+.. Kopieren Sie den ursprünglichen Systemnamen jedes Elements und fügen Sie ihn in das Feld *Anzeigename* ein, oder wählen Sie ausimage:../media/icon-x-to-remove.png["X-Symbol"], um alle Elemente zu entfernen, die Sie nicht zurücksetzen möchten.
++
+Um einen Anzeigenamen rückgängig zu machen, muss der Systemname im Feld *Anzeigename* angezeigt werden, der Name muss jedoch nicht zwischen Groß- und Kleinschreibung unterschieden werden.
+
+.. Wählen Sie *Umbenennen*.
++
+Eine Erfolgsmeldung wird angezeigt. Die Anzeigenamen für diese Elemente werden nicht mehr verwendet.
+
+
+
+--
+.Zurücksetzen auf Systemnamen in Massen
+--
+.. Wählen Sie für den Schritt *Neue Namen vorschlagen* *Bulk Rename Tool verwenden*.
+.. Geben Sie in das Feld *existing string* den anzuzeigenden Namensstring ein, den Sie ersetzen möchten.
+.. Geben Sie im Feld *New string* den Systemnamen ein, den Sie stattdessen verwenden möchten.
+.. Wählen Sie *Namen hinzufügen*, um die Namen der Tabelle für den Schritt *Neue Namen vorschlagen* hinzuzufügen.
+.. Bestätigen Sie, dass jeder Eintrag im Feld *Anzeigename* mit dem Namen im Feld *Systemname* übereinstimmt. Nehmen Sie Änderungen vor, oder image:../media/icon-x-to-remove.png["X-Symbol"]entfernen Sie alle Elemente, die Sie nicht zurücksetzen möchten.
++
+Um einen Anzeigenamen rückgängig zu machen, muss der Systemname im Feld *Anzeigename* angezeigt werden, der Name muss jedoch nicht zwischen Groß- und Kleinschreibung unterschieden werden.
+
+.. Wählen Sie *Umbenennen*.
++
+Eine Erfolgsmeldung wird angezeigt. Die Anzeigenamen für diese Elemente werden nicht mehr verwendet.
+
+
+
+--
+====
+. <<download-recovery-package,Laden Sie ein neues Wiederherstellungspaket herunter und speichern Sie es>>.
++
+Anzeigenamen für die zurückgesenckten Elemente sind nicht mehr in der Datei enthalten `Passwords.txt`.
+
+

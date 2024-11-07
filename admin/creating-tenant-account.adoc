@@ -1,0 +1,328 @@
+---
+permalink: admin/creating-tenant-account.html 
+sidebar: sidebar 
+keywords: create tenant, tenant account 
+summary: Sie müssen mindestens ein Mandantenkonto erstellen, um den Zugriff auf den Storage in Ihrem StorageGRID-System zu kontrollieren. 
+---
+= Erstellen Sie ein Mandantenkonto
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen mindestens ein Mandantenkonto erstellen, um den Zugriff auf den Storage in Ihrem StorageGRID-System zu kontrollieren.
+
+Die Schritte zum Erstellen eines Mandantenkontos hängen davon ab, link:using-identity-federation.html["Identitätsföderation"]ob und link:configuring-sso.html["Single Sign On"]konfiguriert sind und ob das Grid-Manager-Konto, mit dem Sie das Mandantenkonto erstellen, zu einer Administratorgruppe mit Root-Zugriffsberechtigung gehört.
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben die link:admin-group-permissions.html["Berechtigung für Root-Zugriff oder Mandantenkonten"].
+* Wenn das Mandantenkonto die für den Grid Manager konfigurierte Identitätsquelle verwendet und Sie einer föderierten Gruppe Root-Zugriffsberechtigungen für das Mandantenkonto gewähren möchten, haben Sie diese föderierte Gruppe in den Grid Manager importiert. Sie müssen dieser Administratorgruppe keine Grid Manager-Berechtigungen zuweisen. Siehe link:managing-admin-groups.html["Managen von Admin-Gruppen"].
+* Wenn Sie einem S3-Mandanten das Klonen von Kontodaten und das Replizieren von Bucket-Objekten in einem anderen Grid über eine Grid-Federation-Verbindung ermöglichen möchten:
++
+** Sie haben link:grid-federation-create-connection.html["Grid Federation-Verbindung konfiguriert"].
+** Der Status der Verbindung lautet *connected*.
+** Sie haben Root-Zugriffsberechtigung.
+** Sie haben die Überlegungen für geprüftlink:grid-federation-manage-tenants.html["Verwalten der zulässigen Mandanten für den Grid-Verbund"].
+** Wenn das Mandantenkonto die Identitätsquelle verwendet, die für Grid Manager konfiguriert wurde, haben Sie dieselbe Verbundgruppe in Grid Manager auf beiden Grids importiert.
++
+Wenn Sie den Mandanten erstellen, wählen Sie diese Gruppe aus, um die anfängliche Root-Zugriffsberechtigung für die Quell- und Zielmandantenkonten zu erhalten.
+
++
+
+TIP: Wenn diese Administratorgruppe vor dem Erstellen des Mandanten nicht auf beiden Grids vorhanden ist, wird der Mandant nicht am Ziel repliziert.
+
+
+
+
+
+
+
+== Greifen Sie auf den Assistenten zu
+
+.Schritte
+. Wählen Sie *MIETER*.
+. Wählen Sie *Erstellen*.
+
+
+
+
+== Geben Sie Details ein
+
+.Schritte
+. Geben Sie Details für die Serviceeinheit ein.
++
+[cols="1a,3a"]
+|===
+| Feld | Beschreibung 
+
+
+ a| 
+Name
+ a| 
+Ein Name für das Mandantenkonto. Mandantennamen müssen nicht eindeutig sein. Wenn das Mandantenkonto erstellt wird, erhält es eine eindeutige, 20-stellige Konto-ID.
+
+
+
+ a| 
+Beschreibung (optional)
+ a| 
+Eine Beschreibung zur Identifizierung des Mandanten.
+
+Wenn Sie einen Mandanten erstellen, der eine Grid-Federation-Verbindung verwendet, können Sie optional mithilfe dieses Felds ermitteln, welcher der Quell-Tenant ist und welcher der Zielmandant ist. Beispielsweise wird diese Beschreibung für einen Mandanten, der in Grid 1 erstellt wurde, auch für den Mandanten angezeigt, der in Grid 2 repliziert wurde: „Dieser Mandant wurde in Grid 1 erstellt.“
+
+
+
+ a| 
+Client-Typ
+ a| 
+Der Typ des Client-Protokolls, das dieser Mandant verwendet, entweder *S3* oder *Swift*.
+
+*Hinweis*: Die Unterstützung für Swift-Client-Anwendungen wurde veraltet und wird in einer zukünftigen Version entfernt.
+
+
+
+ a| 
+Storage-Kontingent (optional)
+ a| 
+Wenn Sie möchten, dass dieser Mandant über ein Speicherkontingent, einen numerischen Wert für das Kontingent und die Einheiten verfügt.
+
+|===
+. Wählen Sie *Weiter*.
+
+
+
+
+== [[admin-Tenant-select-permissions]]Wählen Sie Berechtigungen aus
+
+.Schritte
+. Wählen Sie optional die grundlegenden Berechtigungen aus, die dieser Mandant besitzen soll.
++
+
+NOTE: Einige dieser Berechtigungen haben zusätzliche Anforderungen. Für Details wählen Sie das Hilfesymbol für jede Berechtigung aus.
+
++
+[cols="1a,3a"]
+|===
+| Berechtigung | Wenn ausgewählt... 
+
+
+ a| 
+Unterstützung von Plattform-Services
+ a| 
+Der Mandant kann S3-Plattformservices wie CloudMirror verwenden. Siehe link:../admin/manage-platform-services-for-tenants.html["Management von Plattform-Services für S3-Mandantenkonten"].
+
+
+
+ a| 
+Eigene Identitätsquelle verwenden
+ a| 
+Der Mandant kann seine eigene Identitätsquelle für verbundene Gruppen und Benutzer konfigurieren und verwalten. Diese Option ist deaktiviert, wenn Sie für Ihr StorageGRID-System habenlink:../admin/configuring-sso.html["SSO konfiguriert"].
+
+
+
+ a| 
+S3 Select zulassen
+ a| 
+Der Mandant kann S3 SelectObjectContent API-Anforderungen ausgeben, um Objektdaten zu filtern und abzurufen. Siehe link:../admin/manage-s3-select-for-tenant-accounts.html["Management von S3 Select für Mandantenkonten"].
+
+*Wichtig*: SelectObjectContent Requests können die Load Balancer Performance für alle S3 Clients und alle Tenants verringern. Aktivieren Sie diese Funktion nur bei Bedarf und nur für vertrauenswürdige Mandanten.
+
+|===
+. Wählen Sie optional die erweiterten Berechtigungen aus, über die dieser Mandant verfügen soll.
++
+[cols="1a,3a"]
+|===
+| Berechtigung | Wenn ausgewählt... 
+
+
+ a| 
+Netzverbundverbindung
+ a| 
+Der Mandant kann eine Grid Federation-Verbindung verwenden, die:
+
+** Bewirkt, dass dieser Mandant und alle dem Konto hinzugefügten Mandantengruppen und Benutzer aus diesem Raster (das _source Grid_) in das andere Raster der ausgewählten Verbindung (das _Destination Grid_) geklont werden.
+** Ermöglicht diesem Mandanten, die Grid-übergreifende Replizierung zwischen entsprechenden Buckets in jedem Grid zu konfigurieren.
+
+
+Siehe link:../admin/grid-federation-manage-tenants.html["Verwalten Sie die zulässigen Mandanten für den Grid-Verbund"].
+
+
+
+ a| 
+S3-Objektsperre
+ a| 
+Dem Mandanten erlauben, bestimmte Funktionen von S3 Object Lock zu verwenden:
+
+** *Maximale Aufbewahrungsfrist festlegen* definiert, wie lange neue Objekte, die zu diesem Bucket hinzugefügt werden, beibehalten werden sollen, beginnend mit dem Zeitpunkt, zu dem sie aufgenommen werden.
+** *Compliance-Modus zulassen* verhindert das Überschreiben oder Löschen geschützter Objektversionen während der Aufbewahrungsfrist.
+
+
+|===
+. Wählen Sie *Weiter*.
+
+
+
+
+== Root-Zugriff definieren und Mandanten erstellen
+
+.Schritte
+. Definieren Sie den Root-Zugriff für das Mandantenkonto, je nachdem, ob Ihr StorageGRID-System Identitätsföderation, Single Sign-On (SSO) oder beides verwendet.
++
+[cols="1a,2a"]
+|===
+| Option | Tun Sie das 
+
+
+ a| 
+Wenn die Identitätsföderation nicht aktiviert ist
+ a| 
+Geben Sie das Kennwort an, das beim Anmelden bei der Serviceeinheit als lokaler Root-Benutzer verwendet werden soll.
+
+
+
+ a| 
+Wenn die Identitätsföderation aktiviert ist
+ a| 
+.. Wählen Sie eine vorhandene Verbundgruppe aus, um Root-Zugriffsberechtigungen für den Mandanten zu erhalten.
+.. Geben Sie optional das Kennwort an, das beim Anmelden bei der Serviceeinheit als lokaler Root-Benutzer verwendet werden soll.
+
+
+
+
+ a| 
+Wenn sowohl Identitätsföderation als auch Single Sign-On (SSO) aktiviert sind
+ a| 
+Wählen Sie eine vorhandene Verbundgruppe aus, um Root-Zugriffsberechtigungen für den Mandanten zu erhalten. Keine lokalen Benutzer können sich anmelden.
+
+|===
+. Wählen Sie *Create Tenant*.
++
+Eine Erfolgsmeldung wird angezeigt, und die neue Serviceeinheit wird auf der Seite „Serviceeinheiten“ aufgeführt. Informationen zum Anzeigen von Mandantendetails und zum Überwachen der Mandantenaktivität finden Sie unter link:../monitor/monitoring-tenant-activity.html["Überwachen Sie die Mandantenaktivität"].
+
++
+
+NOTE: Das Anwenden von Mandanteneinstellungen für das Grid kann je nach Netzwerkkonnektivität, Node-Status und Cassandra-Vorgängen 15 Minuten oder länger dauern.
+
+. Wenn Sie die Berechtigung *Grid Federation connection* für den Mieter verwenden ausgewählt haben:
++
+.. Vergewissern Sie sich, dass ein identischer Mandant auf das andere Grid in der Verbindung repliziert wurde. Die Mandanten in beiden Grids haben die gleiche 20-stellige Konto-ID, den gleichen Namen, die gleiche Beschreibung, das gleiche Kontingent und die gleichen Berechtigungen.
++
+
+NOTE: Wenn die Fehlermeldung „Tenant created without a Clone“ angezeigt wird, lesen Sie die Anweisungen in link:grid-federation-troubleshoot.html["Fehler beim Grid-Verbund beheben"].
+
+.. Wenn Sie beim Definieren des Root-Zugriffs ein lokales Root-Benutzerpasswort für den replizierten Mandanten angegeben link:changing-password-for-tenant-local-root-user.html["Ändern Sie das Passwort für den lokalen Root-Benutzer"]haben.
++
+
+TIP: Ein lokaler Root-Benutzer kann sich erst bei Tenant Manager im Zielraster anmelden, wenn das Passwort geändert wurde.
+
+
+
+
+
+
+
+== Beim Mandanten anmelden (optional)
+
+Sie können sich nach Bedarf jetzt beim neuen Mandanten anmelden, um die Konfiguration abzuschließen, oder sich später beim Mandanten anmelden. Die Schritte zur Anmeldung hängen davon ab, ob Sie über den Standardport (443) oder einen eingeschränkten Port beim Grid Manager angemeldet sind. Siehe link:controlling-access-through-firewalls.html["Kontrolle des Zugriffs über externe Firewall"].
+
+
+
+=== Jetzt anmelden
+
+[cols="1a,3a"]
+|===
+| Sie verwenden... | Tun Sie das... 
+
+
+ a| 
+Port 443 und Sie legen ein Passwort für den lokalen Root-Benutzer fest
+ a| 
+. Wählen Sie *als root anmelden*.
++
+Wenn Sie sich anmelden, werden Links zum Konfigurieren von Buckets, Identitätsverbünden, Gruppen und Benutzern angezeigt.
+
+. Wählen Sie die Links aus, um das Mandantenkonto zu konfigurieren.
++
+Jeder Link öffnet die entsprechende Seite im Tenant Manager. Informationen zum Ausfüllen der Seite finden Sie im link:../tenant/index.html["Anweisungen zur Verwendung von Mandantenkonten"].
+
+
+
+
+
+ a| 
+Port 443 und Sie haben kein Passwort für den lokalen Root-Benutzer festgelegt
+ a| 
+Wählen Sie *Anmelden*, und geben Sie die Anmeldeinformationen für einen Benutzer in der Gruppe Root Access Federated ein.
+
+
+
+ a| 
+Ein eingeschränkter Port
+ a| 
+. Wählen Sie *Fertig Stellen*
+. Wählen Sie *eingeschränkt* in der Tabelle Tenant aus, um mehr über den Zugriff auf dieses Mandantenkonto zu erfahren.
++
+Die URL für den Tenant Manager weist folgendes Format auf:
+
++
+`https://_FQDN_or_Admin_Node_IP:port_/?accountId=_20-digit-account-id_/`
+
++
+** `_FQDN_or_Admin_Node_IP_` Ist ein vollständig qualifizierter Domänenname oder die IP-Adresse eines Admin-Knotens
+** `_port_` Ist der nur-Mandanten-Port
+** `_20-digit-account-id_` Ist die eindeutige Konto-ID des Mandanten
+
+
+
+
+|===
+
+
+=== Melden Sie sich später an
+
+[cols="1a,3a"]
+|===
+| Sie verwenden... | Führen Sie eine dieser... 
+
+
+ a| 
+Anschluss 443
+ a| 
+* Wählen Sie im Grid Manager *MIETERS* aus und wählen Sie *Anmelden* rechts neben dem Mieternamen aus.
+* Geben Sie die URL des Mandanten in einen Webbrowser ein:
++
+`https://_FQDN_or_Admin_Node_IP_/?accountId=_20-digit-account-id_/`
+
++
+** `_FQDN_or_Admin_Node_IP_` Ist ein vollständig qualifizierter Domänenname oder die IP-Adresse eines Admin-Knotens
+** `_20-digit-account-id_` Ist die eindeutige Konto-ID des Mandanten
+
+
+
+
+
+
+ a| 
+Ein eingeschränkter Port
+ a| 
+* Wählen Sie im Grid Manager die Option *MITERS* aus, und wählen Sie *eingeschränkt*.
+* Geben Sie die URL des Mandanten in einen Webbrowser ein:
++
+`https://_FQDN_or_Admin_Node_IP:port_/?accountId=_20-digit-account-id_`
+
++
+** `_FQDN_or_Admin_Node_IP_` Ist ein vollständig qualifizierter Domänenname oder die IP-Adresse eines Admin-Knotens
+** `_port_` Ist der nur für Mandanten beschränkte Port
+** `_20-digit-account-id_` Ist die eindeutige Konto-ID des Mandanten
+
+
+
+
+|===
+
+
+== Konfigurieren Sie den Mandanten
+
+Folgen Sie den Anweisungen inlink:../tenant/index.html["Verwenden Sie ein Mandantenkonto"], um Mandantengruppen und -Benutzer, S3-Zugriffsschlüssel, Buckets, Plattformservices sowie Account-Klone und Grid-übergreifende Replizierung zu managen.

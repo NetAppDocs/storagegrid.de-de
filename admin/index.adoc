@@ -1,0 +1,35 @@
+---
+permalink: admin/index.html 
+sidebar: sidebar 
+keywords: how to administer storagegrid 
+summary: Verwenden Sie diese Anweisungen, um ein StorageGRID System zu konfigurieren und zu verwalten. 
+---
+= StorageGRID verwalten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Verwenden Sie diese Anweisungen, um ein StorageGRID System zu konfigurieren und zu verwalten.
+
+
+
+== Informationen zu diesen Anweisungen
+
+Mit den primären Aufgaben zum Konfigurieren und Verwalten von StorageGRID können Sie:
+
+* Verwenden Sie den Grid Manager, um Gruppen und Benutzer einzurichten
+* Erstellen von Mandantenkonten, die S3-Client-Applikationen das Speichern und Abrufen von Objekten erlauben
+* Konfiguration und Management von StorageGRID-Netzwerken
+* Konfigurieren Sie AutoSupport
+* Managen der Knoteneinstellungen
+
+
+
+
+== Bevor Sie beginnen
+
+* Sie verfügen über allgemeine Kenntnisse des StorageGRID Systems.
+* Sie verfügen über ziemlich detaillierte Kenntnisse über Linux-Befehlssells, das Netzwerk und die Einrichtung und Konfiguration von Serverhardware.
+

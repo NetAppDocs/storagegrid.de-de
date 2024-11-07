@@ -1,0 +1,106 @@
+---
+permalink: audit/cbre-object-receive-end.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, CBRE, Object Receive End 
+summary: Wenn die Übertragung eines Inhaltsblocks von einem Node auf einen anderen abgeschlossen ist, wird diese Meldung von der Zieleinheit ausgegeben. 
+---
+= CBRE: Das Objekt erhält das Ende
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn die Übertragung eines Inhaltsblocks von einem Node auf einen anderen abgeschlossen ist, wird diese Meldung von der Zieleinheit ausgegeben.
+
+[cols="1a,1a,4a"]
+|===
+| Codieren | Feld | Beschreibung 
+
+
+ a| 
+CNID
+ a| 
+Verbindungskennung
+ a| 
+Die eindeutige Kennung der Node-to-Node-Sitzung/-Verbindung.
+
+
+
+ a| 
+CBID
+ a| 
+Kennung Für Inhaltsblock
+ a| 
+Die eindeutige Kennung des zu übertragenden Inhaltsblocks.
+
+
+
+ a| 
+CTDR
+ a| 
+Übertragungsrichtung
+ a| 
+Gibt an, ob die CBID-Übertragung Push-Initiierung oder Pull-Initiierung war:
+
+PUSH: Der Übertragungsvorgang wurde von der sendenden Einheit angefordert.
+
+PULL: Der Transfer-Vorgang wurde von der empfangenden Einheit angefordert.
+
+
+
+ a| 
+CTSR
+ a| 
+Quelleinheit
+ a| 
+Die Knoten-ID der Quelle (Absender) der CBID-Übertragung.
+
+
+
+ a| 
+CTDS
+ a| 
+Zieleinheit
+ a| 
+Die Knoten-ID des Ziels (Empfänger) der CBID-Übertragung.
+
+
+
+ a| 
+CTSS
+ a| 
+Startreihenanzahl
+ a| 
+Gibt die Anzahl der Sequenzen an, auf denen die Übertragung gestartet wurde.
+
+
+
+ a| 
+CTAS
+ a| 
+Tatsächliche Endsequenz Anzahl
+ a| 
+Zeigt die letzte erfolgreich übertragene Sequenzzahl an. Wenn die Anzahl der tatsächlichen Endsequenzen mit der Anzahl der Startsequenzen identisch ist und das Ergebnis der Übertragung nicht erfolgreich war, wurden keine Daten ausgetauscht.
+
+
+
+ a| 
+RSLT
+ a| 
+Übertragungsergebnis
+ a| 
+Das Ergebnis der Übertragungsoperation (aus der Perspektive der sendenden Einheit):
+
+SUCS: Übertragung erfolgreich abgeschlossen; alle angeforderten Sequenzzählungen wurden gesendet.
+
+CONL: Verbindung während der Übertragung unterbrochen
+
+CTMO: Zeitüberschreitung der Verbindung während der Einrichtung oder Übertragung
+
+UNRE: Ziel-Node-ID nicht erreichbar
+
+CRPT: Übertragung wurde aufgrund des Empfangs von beschädigten oder ungültigen Daten beendet
+
+|===
+Diese Meldung bedeutet, dass der Datentransfer zwischen Nodes abgeschlossen wurde. Wenn das Ergebnis der Übertragung erfolgreich war, übermittelte der Vorgang Daten von „Startreihenanzahl“ in „tatsächliche Endsequenzanzahl“. Sendende und empfangende Nodes werden durch ihre Node-IDs identifiziert. Diese Informationen können verwendet werden, um den Datenfluss des Systems zu verfolgen und Fehler zu lokalisieren, zu tabulieren und zu analysieren. In Kombination mit Storage-Audit-Meldungen kann sie auch zur Überprüfung der Replikatanzahl verwendet werden.

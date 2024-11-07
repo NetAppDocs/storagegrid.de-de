@@ -1,0 +1,49 @@
+---
+permalink: maintain/replacing-gateway-node.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, replace gateway node, replacing gateway node 
+summary: Sie können einen fehlgeschlagenen Gateway-Node durch einen Gateway-Node ersetzen, der auf derselben physischen oder virtuellen Hardware ausgeführt wird, oder Sie können einen Gateway-Node, der auf VMware oder einem Linux-Host ausgeführt wird, durch einen Gateway-Node ersetzen, der auf einer Services-Appliance gehostet wird. 
+---
+= Gateway-Node Ersetzen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können einen fehlgeschlagenen Gateway-Node durch einen Gateway-Node ersetzen, der auf derselben physischen oder virtuellen Hardware ausgeführt wird, oder Sie können einen Gateway-Node, der auf VMware oder einem Linux-Host ausgeführt wird, durch einen Gateway-Node ersetzen, der auf einer Services-Appliance gehostet wird.
+
+Das Verfahren zum Austausch des Nodes, das Sie befolgen müssen, hängt davon ab, welche Plattform vom Austausch-Node verwendet wird. Nach Abschluss des Austauschverfahrens für den Node (geeignet für alle Node-Typen) werden Sie durch dieses Verfahren zum nächsten Schritt für die Gateway Node Recovery geleitet.
+
+[cols="1a,2a"]
+|===
+| Austauschplattform | Verfahren 
+
+
+ a| 
+VMware
+ a| 
+link:all-node-types-replacing-vmware-node.html["Einen VMware-Knoten ersetzen"]
+
+
+
+ a| 
+Linux
+ a| 
+link:all-node-types-replacing-linux-node.html["Ersetzen Sie einen Linux-Knoten"]
+
+
+
+ a| 
+Service-Appliances
+ a| 
+link:replacing-failed-node-with-services-appliance.html["Ersetzen Sie eine Service Appliance"]
+
+
+
+ a| 
+OpenStack
+ a| 
+Die von NetApp bereitgestellten Festplattendateien und Skripte für Virtual Machines von OpenStack werden für Recovery-Vorgänge nicht mehr unterstützt. Wenn Sie einen Knoten wiederherstellen müssen, der in einer OpenStack-Implementierung ausgeführt wird, laden Sie die Dateien für Ihr Linux-Betriebssystem herunter. Dann folgen Sie dem Verfahren für link:all-node-types-replacing-linux-node.html["Ersetzen eines Linux-Knotens"].
+
+|===

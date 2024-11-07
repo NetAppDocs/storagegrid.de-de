@@ -1,0 +1,102 @@
+---
+permalink: admin/configuring-s3-api-endpoint-domain-names.html 
+sidebar: sidebar 
+keywords: s3 endpoint domain names, virtual-hosted-style requests 
+summary: Um Anforderungen im virtuellen Hosted-Stil von S3 zu unterstützen, müssen Sie die Liste der S3-Endpunkt-Domänennamen, mit denen S3-Clients eine Verbindung herstellen, mit dem Grid Manager konfigurieren. 
+---
+= Konfigurieren Sie die Domänennamen des S3-Endpunkts
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um Anforderungen im virtuellen Hosted-Stil von S3 zu unterstützen, müssen Sie die Liste der S3-Endpunkt-Domänennamen, mit denen S3-Clients eine Verbindung herstellen, mit dem Grid Manager konfigurieren.
+
+
+CAUTION: Die Verwendung einer IP-Adresse für einen Domänennamen des Endpunkts wird nicht unterstützt. Zukünftige Versionen verhindern diese Konfiguration.
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben link:../admin/admin-group-permissions.html["Bestimmte Zugriffsberechtigungen"].
+* Sie haben bestätigt, dass ein Grid-Upgrade nicht ausgeführt wird.
++
+
+CAUTION: Nehmen Sie keine Änderungen an der Domänennamenkonfiguration vor, wenn ein Grid-Upgrade durchgeführt wird.
+
+
+
+.Über diese Aufgabe
+Um Clients die Verwendung von S3-Endpunkt-Domain-Namen zu ermöglichen, müssen Sie folgende Aktionen durchführen:
+
+* Verwenden Sie den Grid-Manager, um dem StorageGRID System die S3-Endpunkt-Domain-Namen hinzuzufügen.
+* Stellen Sie sicher, dass der link:../admin/configuring-administrator-client-certificates.html["Zertifikat, das der Client für HTTPS-Verbindungen zu StorageGRID verwendet"]für alle vom Client benötigten Domänennamen signiert ist.
++
+Wenn der Endpunkt beispielsweise lautet `s3.company.com`, müssen Sie sicherstellen, dass das für HTTPS-Verbindungen verwendete Zertifikat den Endpunkt und den Platzhalter Subject Alternative Name (SAN) des Endpunkts umfasst `s3.company.com`: `*.s3.company.com`.
+
+* Konfigurieren Sie den vom Client verwendeten DNS-Server. Fügen Sie DNS-Datensätze für die IP-Adressen ein, die Clients zum Verbindungsaufbau verwenden, und stellen Sie sicher, dass die Datensätze auf alle erforderlichen S3-Endpunkt-Domänennamen verweisen, einschließlich aller Platzhalternamen.
++
+
+NOTE: Clients können sich mit StorageGRID über die IP-Adresse eines Gateway-Node, eines Admin-Nodes oder eines Storage-Nodes oder durch Verbindung mit der virtuellen IP-Adresse einer Hochverfügbarkeitsgruppe verbinden. Sie sollten verstehen, wie Client-Anwendungen eine Verbindung zum Raster herstellen, sodass Sie die richtigen IP-Adressen in die DNS-Einträge aufnehmen können.
+
+
+
+Clients, die HTTPS-Verbindungen (empfohlen) zum Raster verwenden, können eines der folgenden Zertifikate verwenden:
+
+* Clients, die eine Verbindung zu einem Load Balancer-Endpunkt herstellen, können für diesen Endpunkt ein benutzerdefiniertes Zertifikat verwenden. Jeder Load Balancer-Endpunkt kann so konfiguriert werden, dass er unterschiedliche S3-Endpunkt-Domänennamen erkennt.
+* Clients, die sich mit einem Load-Balancer-Endpunkt oder direkt mit einem Storage-Node verbinden, können das globale S3-API-Zertifikat so anpassen, dass alle erforderlichen S3-Endpunkt-Domänennamen berücksichtigt werden.
+
+
+
+NOTE: Wenn Sie keine S3-Endpunkt-Domänennamen hinzufügen und die Liste leer ist, wird die Unterstützung für Anforderungen im virtuellen Hosted-Stil von S3 deaktiviert.
+
+
+
+== Fügen Sie einen S3-Endpunkt-Domänennamen hinzu
+
+.Schritte
+. Wählen Sie *CONFIGURATION* > *Network* > *S3-Endpunkt-Domänennamen*.
+. Geben Sie den Domainnamen in das Feld *Domain Name 1* ein. Wählen Sie *Add another Domain Name*, um weitere Domainnamen hinzuzufügen.
+. Wählen Sie *Speichern*.
+. Stellen Sie sicher, dass die von Clients verwendeten Serverzertifikate mit den erforderlichen S3-Endpunkt-Domänennamen übereinstimmen.
++
+** Wenn Clients eine Verbindung zu einem Load Balancer-Endpunkt herstellen, der ein eigenes Zertifikat verwendet, link:../admin/configuring-load-balancer-endpoints.html["Aktualisieren Sie das dem Endpunkt zugeordnete Zertifikat"].
+** Wenn Clients eine Verbindung zu einem Load Balancer-Endpunkt herstellen, der das globale S3-API-Zertifikat oder direkt zu Storage Nodes verwendet, link:../admin/use-s3-setup-wizard-steps.html["Aktualisieren Sie das globale S3-API-Zertifikat"].
+
+
+. Fügen Sie die erforderlichen DNS-Einträge hinzu, um sicherzustellen, dass die Anforderungen für den Domänennamen des Endpunkts aufgelöst werden können.
+
+
+.Ergebnis
+Wenn Clients nun den Endpunkt verwenden `_bucket.s3.company.com_`, wird der DNS-Server auf den richtigen Endpunkt aufgelöst und das Zertifikat authentifiziert den Endpunkt wie erwartet.
+
+
+
+== Benennen Sie einen S3-Endpunkt-Domänennamen um
+
+Wenn Sie einen Namen ändern, der von S3-Anwendungen verwendet wird, schlagen Anforderungen im virtuellen Hosted-Stil fehl.
+
+.Schritte
+. Wählen Sie *CONFIGURATION* > *Network* > *S3-Endpunkt-Domänennamen*.
+. Wählen Sie das Feld für den Domänennamen aus, das Sie bearbeiten möchten, und nehmen Sie die erforderlichen Änderungen vor.
+. Wählen Sie *Speichern*.
+. Wählen Sie *Ja*, um Ihre Änderung zu bestätigen.
+
+
+
+
+== Löschen Sie einen S3-Endpunkt-Domänennamen
+
+Wenn Sie einen Namen entfernen, der von S3-Anwendungen verwendet wird, schlagen Anforderungen im virtuellen Hosted-Stil fehl.
+
+.Schritte
+. Wählen Sie *CONFIGURATION* > *Network* > *S3-Endpunkt-Domänennamen*.
+. Wählen Sie das Löschsymbol image:../media/icon-x-to-remove.png["Symbol Löschen"] neben dem Domänennamen aus.
+. Wählen Sie *Ja*, um den Löschvorgang zu bestätigen.
+
+
+.Verwandte Informationen
+* link:../s3/index.html["S3-REST-API VERWENDEN"]
+* link:viewing-ip-addresses.html["Zeigen Sie IP-Adressen an"]
+* link:configure-high-availability-group.html["Konfigurieren Sie Hochverfügbarkeitsgruppen"]
+

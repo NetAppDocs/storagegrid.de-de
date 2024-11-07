@@ -1,0 +1,37 @@
+---
+permalink: maintain/rebooting-grid-node-from-command-shell.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, reboot node, command shell reboot 
+summary: Wenn Sie den Neustartvorgang genauer überwachen müssen oder wenn Sie nicht auf den Grid Manager zugreifen können, können Sie sich am Grid-Knoten anmelden und den Befehl Server Manager reboot über die Befehlsshell ausführen. 
+---
+= Grid-Node aus der Eingabeaufforderung neu booten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie den Neustartvorgang genauer überwachen müssen oder wenn Sie nicht auf den Grid Manager zugreifen können, können Sie sich am Grid-Knoten anmelden und den Befehl Server Manager reboot über die Befehlsshell ausführen.
+
+.Bevor Sie beginnen
+Sie haben die `Passwords.txt` Datei.
+
+.Schritte
+. Melden Sie sich beim Grid-Node an:
++
+.. Geben Sie den folgenden Befehl ein: `ssh admin@_grid_node_IP_`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+.. Geben Sie den folgenden Befehl ein, um zu root zu wechseln: `su -`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+
+
++
+Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `#`.
+
+. Optional Dienste anhalten: `service servermanager stop`
++
+Das Beenden von Diensten ist ein optionaler, aber empfohlener Schritt. Die Services können bis zu 15 Minuten zum Herunterfahren dauern. Möglicherweise möchten Sie sich beim System per Remote-Zugriff anmelden, um den Shutdown-Prozess zu überwachen, bevor Sie im nächsten Schritt den Node neu booten.
+
+. Grid-Node neu booten: `reboot`
+. Melden Sie sich von der Befehls-Shell ab: `exit`
+

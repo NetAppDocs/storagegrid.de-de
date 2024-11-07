@@ -1,0 +1,315 @@
+---
+permalink: s3/put-bucket-metadata-notification-configuration-request.html 
+sidebar: sidebar 
+keywords: S3 REST API, S3 operations, PUT bucket metadata notification configuration request 
+summary: Die Konfigurationsanforderung FÜR PUT Bucket-Metadaten-Benachrichtigungen ermöglicht es Ihnen, den Such-Integrationsservice für einzelne Buckets zu aktivieren. Die XML-XML-Konfiguration für die Metadatenbenachrichtigung, die Sie im Anforderungsindex angeben, gibt die Objekte an, deren Metadaten an den Zielsuchindex gesendet werden. 
+---
+= PUT Bucket-Metadaten-Benachrichtigungskonfiguration
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Konfigurationsanforderung FÜR PUT Bucket-Metadaten-Benachrichtigungen ermöglicht es Ihnen, den Such-Integrationsservice für einzelne Buckets zu aktivieren. Die XML-XML-Konfiguration für die Metadatenbenachrichtigung, die Sie im Anforderungsindex angeben, gibt die Objekte an, deren Metadaten an den Zielsuchindex gesendet werden.
+
+Sie müssen über die berechtigung s3:PutBucketMetadataNotification für einen Bucket verfügen oder als Account-Root dienen, um diesen Vorgang abzuschließen.
+
+
+
+== Anfrage
+
+Die Anforderung muss die Konfiguration der Metadatenbenachrichtigung in der Anfraentext enthalten. Jede Konfiguration für die Metadatenbenachrichtigung enthält mindestens ein Regeln. Jede Regel gibt die Objekte an, auf die sie angewendet wird, und das Ziel, an dem StorageGRID Metadaten senden soll.
+
+Objekte können nach dem Präfix des Objektnamens gefiltert werden. Beispielsweise können Sie Metadaten für Objekte mit dem Präfix an ein Ziel und Objekte mit dem `/videos` Präfix an ein anderes senden `/images`.
+
+Konfigurationen mit überlappenden Präfixen sind nicht gültig und werden beim Einreichen abgelehnt. Eine Konfiguration, die beispielsweise eine Regel für Objekte mit dem Präfix und eine zweite Regel für Objekte mit dem `test2` Präfix enthält `test`, ist nicht zulässig.
+
+Ziele müssen mit dem URN eines StorageGRID-Endpunkts angegeben werden. Der Endpunkt muss vorhanden sein, wenn die Metadaten-Benachrichtigungskonfiguration übermittelt wird, oder die Anforderung schlägt als fehl `400 Bad Request`. Die Fehlermeldung lautet: `Unable to save the metadata notification (search) policy. The specified endpoint URN does not exist: _URN_.`
+
+[listing]
+----
+<MetadataNotificationConfiguration>
+    <Rule>
+        <ID>Rule-1</ID>
+        <Status>rule-status</Status>
+        <Prefix>key-prefix</Prefix>
+        <Destination>
+           <Urn>arn:aws:es:region:account-ID:domain/mydomain/myindex/mytype</Urn>
+        </Destination>
+    </Rule>
+    <Rule>
+        <ID>Rule-2</ID>
+         ...
+    </Rule>
+     ...
+</MetadataNotificationConfiguration>
+----
+In der Tabelle werden die Elemente in der XML-Konfiguration für die Metadatenbenachrichtigung beschrieben.
+
+[cols="1a,2a,1a"]
+|===
+| Name | Beschreibung | Erforderlich 
+
+
+ a| 
+MetadataNotificationKonfiguration
+ a| 
+Container-Tag für Regeln zur Angabe von Objekten und Zielen für Metadatenbenachrichtigungen
+
+Enthält mindestens ein Regelelement.
+ a| 
+Ja.
+
+
+
+ a| 
+Regel
+ a| 
+Container-Tag für eine Regel, die die Objekte identifiziert, deren Metadaten zu einem bestimmten Index hinzugefügt werden sollen.
+
+Regeln mit überlappenden Präfixen werden abgelehnt.
+
+Im MetadataNotificationConfiguration Element enthalten.
+ a| 
+Ja.
+
+
+
+ a| 
+ID
+ a| 
+Eindeutige Kennung für die Regel.
+
+In das Element Regel aufgenommen.
+ a| 
+Nein
+
+
+
+ a| 
+Status
+ a| 
+Der Status kann „aktiviert“ oder „deaktiviert“ sein. Für deaktivierte Regeln wird keine Aktion durchgeführt.
+
+In das Element Regel aufgenommen.
+ a| 
+Ja.
+
+
+
+ a| 
+Präfix
+ a| 
+Objekte, die mit dem Präfix übereinstimmen, werden von der Regel beeinflusst und ihre Metadaten werden an das angegebene Ziel gesendet.
+
+Geben Sie ein leeres Präfix an, um alle Objekte zu entsprechen.
+
+In das Element Regel aufgenommen.
+ a| 
+Ja.
+
+
+
+ a| 
+Ziel
+ a| 
+Container-Tag für das Ziel einer Regel.
+
+In das Element Regel aufgenommen.
+ a| 
+Ja.
+
+
+
+ a| 
+Urne
+ a| 
+URNE des Ziels, an dem Objektmetadaten gesendet werden. Muss der URN eines StorageGRID-Endpunkts mit den folgenden Eigenschaften sein:
+
+* `es` Muss das dritte Element sein.
+* Die URN muss mit dem Index und dem Typ enden, in dem die Metadaten gespeichert sind, in der Form `domain-name/myindex/mytype`.
+
+
+Endpunkte werden mithilfe der Mandanten-Manager oder der Mandanten-Management-API konfiguriert. Sie nehmen folgende Form:
+
+* `arn:aws:es:region:account-ID:domain/mydomain/myindex/mytype`
+* `urn:mysite:es:::mydomain/myindex/mytype`
+
+
+Der Endpunkt muss konfiguriert werden, bevor die Konfigurations-XML gesendet wird, oder die Konfiguration schlägt mit einem Fehler 404 fehl.
+
+Urne ist im Element Ziel enthalten.
+ a| 
+Ja.
+
+|===
+
+
+== Beispiele anfordern
+
+Dieses Beispiel zeigt die Aktivierung der Integration von Suchvorgängen für einen Bucket. In diesem Beispiel werden die Objektmetadaten für alle Objekte an dasselbe Ziel gesendet.
+
+[listing, subs="specialcharacters,quotes"]
+----
+PUT /test1?x-ntap-sg-metadata-notification HTTP/1.1
+Date: _date_
+Authorization: _authorization string_
+Host: _host_
+
+<MetadataNotificationConfiguration>
+    <Rule>
+        <ID>Rule-1</ID>
+        <Status>Enabled</Status>
+        <Prefix></Prefix>
+        <Destination>
+           <Urn>urn:sgws:es:::sgws-notifications/test1/all</Urn>
+        </Destination>
+    </Rule>
+</MetadataNotificationConfiguration>
+----
+In diesem Beispiel werden Objektmetadaten für Objekte mit dem Präfix `/images` an ein Ziel gesendet, während Objektmetadaten für Objekte mit dem Präfix `/videos` an ein zweites Ziel gesendet werden.
+
+[listing, subs="specialcharacters,quotes"]
+----
+PUT /graphics?x-ntap-sg-metadata-notification HTTP/1.1
+Date: _date_
+Authorization: _authorization string_
+Host: _host_
+
+<MetadataNotificationConfiguration>
+    <Rule>
+        <ID>Images-rule</ID>
+        <Status>Enabled</Status>
+        <Prefix>/images</Prefix>
+        <Destination>
+           <Urn>arn:aws:es:us-east-1:3333333:domain/es-domain/graphics/imagetype</Urn>
+        </Destination>
+    </Rule>
+    <Rule>
+        <ID>Videos-rule</ID>
+        <Status>Enabled</Status>
+        <Prefix>/videos</Prefix>
+        <Destination>
+           <Urn>arn:aws:es:us-west-1:22222222:domain/es-domain/graphics/videotype</Urn>
+        </Destination>
+    </Rule>
+</MetadataNotificationConfiguration>
+----
+
+
+== Vom Suchintegrations-Service generierter JSON
+
+Wenn Sie den Such-Integrationsservice für einen Bucket aktivieren, wird ein JSON-Dokument generiert und an den Zielendpunkt gesendet, wenn Metadaten oder Tags hinzugefügt, aktualisiert oder gelöscht werden.
+
+Dieses Beispiel zeigt ein Beispiel für den JSON, der generiert werden könnte, wenn ein Objekt mit dem Schlüssel in einem Bucket mit `SGWS/Tagging.txt` dem Namen erstellt wird `test`. Der `test` Bucket ist nicht versioniert, daher ist das `versionId` Tag leer.
+
+[listing]
+----
+{
+  "bucket": "test",
+  "key": "SGWS/Tagging.txt",
+  "versionId": "",
+  "accountId": "86928401983529626822",
+  "size": 38,
+  "md5": "3d6c7634a85436eee06d43415012855",
+  "region":"us-east-1",
+  "metadata": {
+    "age": "25"
+  },
+  "tags": {
+    "color": "yellow"
+  }
+}
+----
+
+
+== Objektmetadaten sind in Metadaten-Benachrichtigungen enthalten
+
+In der Tabelle sind alle Felder aufgeführt, die im JSON-Dokument enthalten sind, die beim Aktivierung der Suchintegration an den Zielendpunkt gesendet werden.
+
+Der Dokumentname umfasst, falls vorhanden, den Bucket-Namen, den Objektnamen und die Version-ID.
+
+[cols="1a,1a,1a"]
+|===
+| Typ | Elementname | Beschreibung 
+
+
+ a| 
+Bucket- und Objektinformationen
+ a| 
+Eimer
+ a| 
+Name des Buckets
+
+
+
+ a| 
+Bucket- und Objektinformationen
+ a| 
+Taste
+ a| 
+Name des Objektschlüssels
+
+
+
+ a| 
+Bucket- und Objektinformationen
+ a| 
+VersionID
+ a| 
+Objektversion für Objekte in versionierten Buckets
+
+
+
+ a| 
+Bucket- und Objektinformationen
+ a| 
+Werden
+ a| 
+Beispiel: Bucket-Region `us-east-1`
+
+
+
+ a| 
+System-Metadaten
+ a| 
+Größe
+ a| 
+Objektgröße (in Byte) wie für einen HTTP-Client sichtbar
+
+
+
+ a| 
+System-Metadaten
+ a| 
+md5
+ a| 
+Objekt-Hash
+
+
+
+ a| 
+Benutzer-Metadaten
+ a| 
+Metadaten
+`_key:value_`
+ a| 
+Alle Benutzer-Metadaten des Objekts als Schlüssel-Wert-Paare
+
+
+
+ a| 
+Tags
+ a| 
+Tags
+`_key:value_`
+ a| 
+Alle für das Objekt definierten Objekt-Tags als Schlüsselwert-Paare
+
+|===
+
+NOTE: Für Tags und Benutzer-Metadaten gibt StorageGRID Daten und Nummern an Elasticsearch als Strings oder als S3-Ereignisbenachrichtigungen weiter. Um Elasticsearch so zu konfigurieren, dass diese Strings als Daten oder Zahlen interpretiert werden, befolgen Sie die Elasticsearch-Anweisungen für die dynamische Feldzuordnung und die Zuordnung von Datumsformaten. Sie müssen die dynamischen Feldzuordnungen im Index aktivieren, bevor Sie den Suchintegrationsdienst konfigurieren. Nachdem ein Dokument indiziert wurde, können Sie die Feldtypen des Dokuments im Index nicht mehr bearbeiten.
+
+.Verwandte Informationen
+link:../tenant/index.html["Verwenden Sie ein Mandantenkonto"]

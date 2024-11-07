@@ -1,0 +1,66 @@
+---
+permalink: admin/controlling-access-through-firewalls.html 
+sidebar: sidebar 
+keywords: firewall access, firewall ports, external firewall 
+summary: Sie können bestimmte Ports an der externen Firewall öffnen oder schließen. 
+---
+= Kontrolle des Zugriffs über externe Firewall
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können bestimmte Ports an der externen Firewall öffnen oder schließen.
+
+Sie können den Zugriff auf die Benutzeroberflächen und APIs auf StorageGRID-Administratorknoten steuern, indem Sie bestimmte Ports an der externen Firewall öffnen oder schließen. Beispielsweise möchten Sie verhindern, dass Mandanten sich an der Firewall mit dem Grid Manager verbinden können, und zwar zusätzlich über andere Methoden zur Steuerung des Systemzugriffs.
+
+Informationen zum Konfigurieren der internen Firewall von StorageGRID finden Sie unter link:../admin/configure-firewall-controls.html["Konfigurieren Sie die interne Firewall"].
+
+[cols="1a,1a,2a"]
+|===
+| Port | Beschreibung | Port offen... 
+
+
+ a| 
+443
+ a| 
+Standard-HTTPS-Port für Admin-Nodes
+ a| 
+Webbrowser und Management-API-Clients können auf den Grid Manager, die Grid Management API, den Mandanten-Manager und die Mandanten-Management-API zugreifen.
+
+*Hinweis:* Port 443 wird auch für einen internen Verkehr genutzt.
+
+
+
+ a| 
+8443
+ a| 
+Eingeschränkter Grid Manager-Port an Admin-Nodes
+ a| 
+* Webbrowser und Management-API-Clients können mithilfe von HTTPS auf den Grid Manager und die Grid Management API zugreifen.
+* Webbrowser und Management-API-Clients können nicht auf den Tenant Manager oder die Mandanten-Management-API zugreifen.
+* Anfragen nach internen Inhalten werden abgelehnt.
+
+
+
+
+ a| 
+9443
+ a| 
+Eingeschränkter Mandantenmanager-Port an Admin-Nodes
+ a| 
+* Webbrowser und Management-API-Clients können mithilfe von HTTPS auf den Mandanten-Manager und die Mandanten-Management-API zugreifen.
+* Webbrowser und Management-API-Clients können nicht auf den Grid Manager oder die Grid-Management-API zugreifen.
+* Anfragen nach internen Inhalten werden abgelehnt.
+
+
+|===
+
+TIP: Single Sign-On (SSO) ist auf den Ports Restricted Grid Manager oder Tenant Manager nicht verfügbar. Sie müssen den Standard-HTTPS-Port (443) verwenden, wenn Benutzer sich mit Single Sign-On authentifizieren möchten.
+
+.Verwandte Informationen
+* link:signing-in-to-grid-manager.html["Melden Sie sich beim Grid Manager an"]
+* link:creating-tenant-account.html["Erstellen eines Mandantenkontos"]
+* link:../network/external-communications.html["Externe Kommunikation"]
+

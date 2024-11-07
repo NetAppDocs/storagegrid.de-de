@@ -1,0 +1,259 @@
+---
+permalink: ilm/example-6-changing-ilm-policy.html 
+sidebar: sidebar 
+keywords: change ILM policy, example ILM policy, information lifecycle policy example 
+summary: Wenn Ihr Datenschutz geändert werden muss oder Sie neue Standorte hinzufügen, können Sie eine neue ILM-Richtlinie erstellen und aktivieren. 
+---
+= Beispiel 6: Ändern einer ILM-Richtlinie
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Ihr Datenschutz geändert werden muss oder Sie neue Standorte hinzufügen, können Sie eine neue ILM-Richtlinie erstellen und aktivieren.
+
+Vor dem Ändern einer Richtlinie muss verstanden werden, wie Änderungen an ILM-Platzierungen die Gesamt-Performance eines StorageGRID Systems vorübergehend beeinträchtigen können.
+
+In diesem Beispiel wurde eine neue StorageGRID-Site mit einer Erweiterung hinzugefügt, und für die Speicherung von Daten am neuen Standort muss eine neue aktive ILM-Richtlinie implementiert werden. Um eine neue aktive Richtlinie zu implementieren, zuerst link:creating-ilm-policy.html["Erstellen Sie eine Richtlinie"]. Danach müssen Sie link:../ilm/creating-ilm-policy.html#simulate-ilm-policy["Simulieren"]und dann link:../ilm/creating-ilm-policy.html#activate-ilm-policy["Aktivieren"] die neue Richtlinie.
+
+
+CAUTION: Die folgenden ILM-Regeln und -Richtlinien sind nur Beispiele. Es gibt viele Möglichkeiten zur Konfiguration von ILM-Regeln. Simulieren Sie vor der Aktivierung einer neuen Richtlinie, um zu bestätigen, dass sie so funktioniert, wie sie zum Schutz von Inhalten vor Verlust vorgesehen ist.
+
+
+
+== Wie sich eine Änderung einer ILM-Richtlinie auf die Performance auswirkt
+
+Wenn Sie eine neue ILM-Richtlinie aktivieren, wird die Performance Ihres StorageGRID Systems möglicherweise vorübergehend beeinträchtigt, insbesondere dann, wenn aufgrund der Platzierungsanweisungen in der neuen Richtlinie viele vorhandene Objekte an einen neuen Standort verschoben werden müssen.
+
+Bei der Aktivierung einer neuen ILM-Richtlinie verwendet StorageGRID sie zum Management aller Objekte, einschließlich vorhandener Objekte und neu aufgenommener Objekte. Prüfen Sie vor der Aktivierung einer neuen ILM-Richtlinie alle Änderungen an der Platzierung vorhandener replizierter und Erasure Coding-Objekte. Das Ändern des Speicherorts eines vorhandenen Objekts kann zu vorübergehenden Ressourcenproblemen führen, wenn die neuen Platzierungen ausgewertet und implementiert werden.
+
+Sie können sicherstellen, dass eine neue ILM-Richtlinie die Platzierung vorhandener replizierter und Erasure-Coded-Objekte nicht beeinträchtigtlink:create-ilm-rule-enter-details.html#use-advanced-filters-in-ilm-rules["Erstellen Sie eine ILM-Regel mit einem Filter für die Aufnahmezeit"]. Zum Beispiel ist *Ingest time _am oder nach_ _<date and time>_*, so dass die neue Regel nur für Objekte gilt, die am oder nach dem angegebenen Datum und der angegebenen Uhrzeit aufgenommen wurden.
+
+Folgende Arten von ILM-Richtlinienänderungen, die vorübergehend Auswirkungen auf die StorageGRID Performance haben:
+
+* Anwenden eines anderen Erasure Coding-Profils auf vorhandene Objekte, die zur Fehlerkorrektur codiert wurden
++
+
+NOTE: StorageGRID erachtet jedes Erasure Coding-Profil als einzigartig und verwendet beim Einsatz eines neuen Profils keine Fragmente des Erasure Coding-Codes mehr.
+
+* Ändern des für vorhandene Objekte erforderlichen Kopientyps; z. B. Konvertieren eines großen Anteils replizierter Objekte in Objekte mit Erasure-Coding-Verfahren.
+* Kopien vorhandener Objekte werden an einen völlig anderen Speicherort verschoben, z. B. um eine große Anzahl von Objekten in einen oder aus einem Cloud-Storage-Pool oder an einen Remote-Standort zu verschieben.
+
+
+
+
+== Aktive ILM-Richtlinie z. B. 6: Datensicherung an zwei Standorten
+
+In diesem Beispiel wurde die aktive ILM-Richtlinie ursprünglich für ein StorageGRID System mit zwei Standorten konzipiert und verwendet zwei ILM-Regeln.
+
+image::../media/policy_6_active_policy.png[Beispiel für eine aktive ILM-Richtlinie 6]
+
+In dieser ILM-Richtlinie werden Objekte, die von Mandanten A gehören, durch Erasure Coding von 2+1 an einem Standort geschützt, während Objekte, die zu allen anderen Mandanten gehören, durch die Replizierung mit zwei Kopien über zwei Standorte hinweg geschützt sind.
+
+
+
+=== Regel 1: Erasure Coding für einen Standort für Mandant A
+
+[cols="1a,2a"]
+|===
+| Regeldefinition | Beispielwert 
+
+
+ a| 
+Regelname
+ a| 
+Erasure Coding für einen Standort für Mandant A
+
+
+
+ a| 
+Mandantenkonto
+ a| 
+Mandant A
+
+
+
+ a| 
+Storage-Pool
+ a| 
+Standort 1
+
+
+
+ a| 
+Platzierungen
+ a| 
+2+1 Erasure Coding in Standort 1 vom Tag 0 bis ewig
+
+|===
+
+
+=== Regel 2: Replizierung zwischen zwei Standorten für andere Mandanten
+
+[cols="1a,2a"]
+|===
+| Regeldefinition | Beispielwert 
+
+
+ a| 
+Regelname
+ a| 
+Replizierung an zwei Standorten für andere Mandanten
+
+
+
+ a| 
+Mandantenkonto
+ a| 
+Ignorieren
+
+
+
+ a| 
+Storage-Pools
+ a| 
+Standort 1 und Standort 2
+
+
+
+ a| 
+Platzierungen
+ a| 
+Zwei replizierte Kopien von Tag 0 auf ewig: Eine Kopie an Standort 1 und eine Kopie an Standort 2.
+
+|===
+
+
+== ILM-Richtlinie für Beispiel 6: Datensicherung an drei Standorten
+
+In diesem Beispiel wird die ILM-Richtlinie durch eine neue Richtlinie für ein StorageGRID System mit drei Standorten ersetzt.
+
+Nach einer Erweiterung zum Hinzufügen des neuen Standorts erstellte der Grid-Administrator zwei neue Speicherpools: Einen Speicherpool für Standort 3 und einen Speicherpool mit allen drei Standorten (nicht mit dem Standardspeicherpool Alle Storage-Nodes). Anschließend erstellte der Administrator zwei neue ILM-Regeln und eine neue ILM-Richtlinie, die für den Schutz von Daten an allen drei Standorten konzipiert wurde.
+
+Bei Aktivierung dieser neuen ILM-Richtlinie werden Objekte, die von Mandant A gehören, an drei Standorten durch 2+1 Erasure Coding geschützt, während Objekte, die zu anderen Mandanten gehören (und kleinere Objekte von Mandanten A), durch Replizierung mit 3 Kopien über drei Standorte hinweg gesichert werden.
+
+
+
+=== Regel 1: Erasure Coding für drei Standorte für Mandant A
+
+[cols="1a,2a"]
+|===
+| Regeldefinition | Beispielwert 
+
+
+ a| 
+Regelname
+ a| 
+Three-Site Erasure Coding für Mandant A
+
+
+
+ a| 
+Mandantenkonto
+ a| 
+Mandant A
+
+
+
+ a| 
+Storage-Pool
+ a| 
+Alle 3 Standorte (einschließlich Standort 1, Standort 2 und Standort 3)
+
+
+
+ a| 
+Platzierungen
+ a| 
+2+1 Erasure Coding in allen 3 Standorten vom Tag 0 bis für immer
+
+|===
+
+
+=== Regel 2: Replizierung an drei Standorten für andere Mandanten
+
+[cols="1a,2a"]
+|===
+| Regeldefinition | Beispielwert 
+
+
+ a| 
+Regelname
+ a| 
+Replikation von drei Standorten für andere Mandanten
+
+
+
+ a| 
+Mandantenkonto
+ a| 
+Ignorieren
+
+
+
+ a| 
+Storage-Pools
+ a| 
+Standort 1, Standort 2 und Standort 3
+
+
+
+ a| 
+Platzierungen
+ a| 
+Drei replizierte Kopien von Tag 0 bis ewig: Eine Kopie an Standort 1, eine Kopie an Standort 2 und eine Kopie an Standort 3.
+
+|===
+
+
+== Aktivieren der ILM-Richtlinie, z. B. 6
+
+Wenn Sie eine neue ILM-Richtlinie aktivieren, werden vorhandene Objekte auf Basis der Anweisungen zur Platzierung in neuen oder aktualisierten Regeln möglicherweise an neue Standorte verschoben oder neue Objektkopien für vorhandene Objekte erstellt.
+
+
+CAUTION: Fehler in einer ILM-Richtlinie können zu nicht wiederherstellbaren Datenverlusten führen. Prüfen und simulieren Sie die Richtlinie sorgfältig, bevor Sie sie aktivieren, um sicherzustellen, dass sie wie vorgesehen funktioniert.
+
+
+CAUTION: Bei der Aktivierung einer neuen ILM-Richtlinie verwendet StorageGRID sie zum Management aller Objekte, einschließlich vorhandener Objekte und neu aufgenommener Objekte. Prüfen Sie vor der Aktivierung einer neuen ILM-Richtlinie alle Änderungen an der Platzierung vorhandener replizierter und Erasure Coding-Objekte. Das Ändern des Speicherorts eines vorhandenen Objekts kann zu vorübergehenden Ressourcenproblemen führen, wenn die neuen Platzierungen ausgewertet und implementiert werden.
+
+
+
+=== Was passiert, wenn sich die Anweisungen zur Einhaltung von Datenkonsistenz ändern
+
+In der derzeit aktiven ILM-Richtlinie für dieses Beispiel sind Objekte, die zu Mandant A gehören, durch den Erasure Coding 2+1 an Standort 1 geschützt. In der neuen ILM-Richtlinie werden Objekte von Mandant A durch Erasure Coding 2+1 an Standorten 1, 2 und 3 geschützt.
+
+Wenn die neue ILM-Richtlinie aktiviert ist, werden die folgenden ILM-Vorgänge durchgeführt:
+
+* Neue von Mandanten A aufgenommene Objekte werden in zwei Datenfragmente aufgeteilt und ein Paritätsfragment wird hinzugefügt. Dann wird jedes der drei Fragmente an einem anderen Ort gespeichert.
+* Die vorhandenen Objekte, die von Mandant A gehören, werden bei der laufenden ILM-Überprüfung neu bewertet. Da die ILM-Anweisungen für die Platzierung ein neues Erasure-Coding-Profil verwenden, werden völlig neue Fragmente erstellt und an die drei Standorte verteilt, die zur Fehlerkorrektur codiert wurden.
++
+
+NOTE: Die vorhandenen 2+1-Fragmente an Standort 1 werden nicht wiederverwendet. StorageGRID erachtet jedes Erasure Coding-Profil als einzigartig und verwendet beim Einsatz eines neuen Profils keine Fragmente des Erasure Coding-Codes mehr.
+
+
+
+
+
+=== Was geschieht, wenn sich Replikationsanweisungen ändern
+
+In der derzeit aktiven ILM-Richtlinie für dieses Beispiel werden Objekte anderer Mandanten mithilfe von zwei replizierten Kopien in Storage Pools an Standorten 1 und 2 geschützt. In der neuen ILM-Richtlinie werden Objekte anderer Mandanten mit drei replizierten Kopien in Storage Pools an Standorten 1, 2 und 3 gesichert.
+
+Wenn die neue ILM-Richtlinie aktiviert ist, werden die folgenden ILM-Vorgänge durchgeführt:
+
+* Wenn ein anderer Mandant als Mandant A ein neues Objekt aufnimmt, erstellt StorageGRID drei Kopien und speichert eine Kopie an jedem Standort.
+* Vorhandene Objekte, die zu diesen anderen Mandanten gehören, werden bei der laufenden ILM-Überprüfung neu bewertet. Da die vorhandenen Objektkopien an Standort 1 und Standort 2 weiterhin die Replizierungsanforderungen der neuen ILM-Regel erfüllen, muss StorageGRID nur eine neue Kopie des Objekts für Standort 3 erstellen.
+
+
+
+
+=== Auswirkungen der Aktivierung dieser Richtlinie auf die Performance
+
+Wenn die ILM-Richtlinie in diesem Beispiel aktiviert ist, wirkt sich dies vorübergehend auf die Gesamtleistung dieses StorageGRID-Systems aus. Wenn die Grid-Ressourcen höher als die normalen Level sind, werden neue Fragmente, die nach der Fehlerkorrektur codiert wurden, für vorhandene Objekte von Mandant A und neue replizierte Kopien an Standort 3 für vorhandene Objekte anderer Mandanten erstellt.
+
+Aufgrund der Änderung der ILM-Richtlinie können Lese- und Schreibanfragen von Clients vorübergehend höhere Latenzen aufweisen als die normalen Latenzen. Die Latenzen kehren wieder auf die normalen Werte zurück, nachdem die Anweisungen zur Platzierung im gesamten Grid vollständig implementiert wurden.
+
+Um Ressourcenprobleme bei der Aktivierung einer neuen ILM-Richtlinie zu vermeiden, können Sie den erweiterten Filter für die Aufnahmezeit in jeder Regel verwenden, die den Speicherort einer großen Anzahl vorhandener Objekte ändern könnte. Legen Sie für die Aufnahme-Zeit den Wert fest, der ungefähr der Zeit entspricht, zu der die neue Richtlinie in Kraft tritt, um sicherzustellen, dass vorhandene Objekte nicht unnötig verschoben werden.
+
+
+NOTE: Wenden Sie sich an den technischen Support, wenn Sie die Verarbeitungsgeschwindigkeit von Objekten nach einer ILM-Richtlinienänderung verlangsamen oder erhöhen müssen.

@@ -1,0 +1,44 @@
+---
+permalink: admin/networking-and-ports-for-platform-services.html 
+sidebar: sidebar 
+keywords: platform services, ports for platform services, 443, 80 
+summary: Wenn ein S3-Mandant Plattformservices verwendet, müssen Sie das Netzwerk für das Grid konfigurieren, um sicherzustellen, dass Plattformservices-Meldungen an seine Ziele gesendet werden können. 
+---
+= Netzwerk und Ports für Plattformservices
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn ein S3-Mandant Plattformservices verwendet, müssen Sie das Netzwerk für das Grid konfigurieren, um sicherzustellen, dass Plattformservices-Meldungen an seine Ziele gesendet werden können.
+
+Sie können Plattformservices für ein S3-Mandantenkonto aktivieren, wenn Sie das Mandantenkonto erstellen oder aktualisieren. Wenn Plattformservices aktiviert sind, kann der Mandant Endpunkte erstellen, die als Ziel für die CloudMirror-Replizierung, Ereignisbenachrichtigungen oder Integrationsmeldungen aus seinen S3-Buckets dienen. Diese Plattform-Services-Meldungen werden von Storage-Nodes gesendet, die den ADC-Service an die Ziel-Endpunkte ausführen.
+
+Beispielsweise können Mandanten die folgenden Typen von Ziel-Endpunkten konfigurieren:
+
+* Ein lokal gehostetes Elasticsearch-Cluster ausführen
+* Eine lokale Anwendung, die den Empfang von Amazon Simple Notification Service-Nachrichten unterstützt
+* Ein lokal gehosteter Kafka-Cluster
+* Ein lokal gehosteter S3-Bucket auf derselben oder einer anderen Instanz von StorageGRID
+* Einem externen Endpunkt wie einem Endpunkt auf Amazon Web Services
+
+
+Um sicherzustellen, dass Meldungen von Plattformservices bereitgestellt werden können, müssen Sie das Netzwerk oder die Netzwerke mit den ADC-Speicherknoten konfigurieren. Sie müssen sicherstellen, dass die folgenden Ports zum Senden von Plattformservices-Meldungen an die Ziel-Endpunkte verwendet werden können.
+
+Standardmäßig werden Plattform-Services-Meldungen an die folgenden Ports gesendet:
+
+* *80*: Für Endpunkt-URIs, die mit http beginnen (die meisten Endpunkte)
+* *443*: Für Endpunkt-URIs, die mit https beginnen (die meisten Endpunkte)
+* *9092*: Für Endpunkt-URIs, die mit http oder https beginnen (nur Kafka-Endpunkte)
+
+
+Mandanten können bei der Erstellung oder Bearbeitung eines Endpunkts einen anderen Port angeben.
+
+
+NOTE: Wenn eine StorageGRID-Bereitstellung als Ziel für die CloudMirror-Replikation verwendet wird, können Replikationsmeldungen auf einem anderen Port als 80 oder 443 empfangen werden. Vergewissern Sie sich, dass der von der Ziel-StorageGRID-Implementierung für S3 verwendete Port im Endpunkt angegeben ist.
+
+Wenn Sie einen nicht transparenten Proxy-Server verwenden, müssen Sie auch link:configuring-storage-proxy-settings.html["Konfigurieren Sie Speicher-Proxy-Einstellungen"]zulassen, dass Nachrichten an externe Endpunkte wie z. B. einen Endpunkt im Internet gesendet werden.
+
+.Verwandte Informationen
+link:../tenant/index.html["Verwenden Sie ein Mandantenkonto"]

@@ -1,0 +1,49 @@
+---
+permalink: vmware/index.html 
+sidebar: sidebar 
+keywords: vmware 
+summary: Führen Sie die folgenden grundlegenden Schritte aus, um einen VMware StorageGRID-Knoten zu installieren. 
+---
+= Schnellstart für die Installation von StorageGRID auf VMware
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Führen Sie die folgenden grundlegenden Schritte aus, um einen VMware StorageGRID-Knoten zu installieren.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"] Vorbereitung
+[role="quick-margin-list"]
+* Erfahren Sie mehr über link:../primer/storagegrid-architecture-and-network-topology.html["StorageGRID Architektur und Netzwerktopologie"].
+* Erfahren Sie mehr über die Besonderheiten von link:../network/index.html["StorageGRID Networking"].
+* Sammeln und bereiten Sie die link:required-materials.html["Erforderliche Informationen und Materialien"].
+* Installieren und konfigurieren link:software-requirements.html["VMware vSphere Hypervisor, vCenter und die ESX-Hosts"].
+* Bereiten Sie die erforderlichen link:cpu-and-ram-requirements.html["CPU und RAM"].
+* Vorsehen für link:storage-and-performance-requirements.html["Storage- und Performance-Anforderungen erfüllt"].
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"] Einsatz
+[role="quick-margin-para"]
+Implementieren von Grid-Nodes Wenn Sie Grid-Nodes implementieren, werden diese als Teil des StorageGRID Systems erstellt und mit einem oder mehreren Netzwerken verbunden.
+
+[role="quick-margin-list"]
+* Verwenden Sie den VMware vSphere Web Client, eine VMDK-Datei und eine Reihe von ovf-Dateivorlagen link:collecting-information-about-your-deployment-environment.html["Bereitstellung der softwarebasierten Nodes als Virtual Machines (VMs)"]auf den Servern, die Sie in Schritt 1 vorbereitet haben.
+* Um StorageGRID-Appliance-Nodes bereitzustellen, folgen Sie den https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/index.html["Schnellstart für die Hardwareinstallation"^].
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"] Konfiguration
+[role="quick-margin-para"]
+Wenn alle Knoten bereitgestellt wurden, verwenden Sie den Grid Manager für link:navigating-to-grid-manager.html["Konfigurieren Sie das Raster und schließen Sie die Installation ab"].
+
+
+
+== Automatisieren Sie die Installation
+
+Um Zeit zu sparen und Konsistenz zu gewährleisten, können Sie die Implementierung und Konfiguration von Grid-Nodes und die Konfiguration des StorageGRID Systems automatisieren.
+
+* link:automating-grid-node-deployment-in-vmware-vsphere.html#automate-grid-node-deployment["Automatisierung der Grid-Node-Implementierung mit VMware vSphere"].
+* Nachdem Sie Grid-Nodes bereitgestellt haben, link:automating-grid-node-deployment-in-vmware-vsphere.html#automate-the-configuration-of-storagegrid["Automatisieren Sie die Konfiguration des StorageGRID Systems"] verwenden Sie das im Installationsarchiv bereitgestellte Python-Konfigurationsskript.
+* https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/automating-appliance-installation-and-configuration.html["Automatisieren Sie die Installation und Konfiguration der Appliance Grid Nodes"^]
+* Wenn Sie ein fortgeschrittener Entwickler von StorageGRID-Bereitstellungen sind, automatisieren Sie die Installation von Grid-Nodes mithilfe der link:overview-of-installation-rest-api.html["REST-API für die Installation"].
+

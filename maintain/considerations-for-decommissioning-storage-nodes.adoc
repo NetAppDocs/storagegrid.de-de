@@ -1,0 +1,78 @@
+---
+permalink: maintain/considerations-for-decommissioning-storage-nodes.html 
+sidebar: sidebar 
+keywords: storage node decommission, considerations, appliance node clone 
+summary: Überlegen Sie vor dem Stilllegen eines Storage-Node, ob Sie stattdessen den Node klonen können. Wenn Sie den Node dann stilllegen, prüfen Sie, wie StorageGRID während der Stilllegung Objekte und Metadaten managt. 
+---
+= Überlegungen für die Deaktivierung von Storage-Nodes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Überlegen Sie vor dem Stilllegen eines Storage-Node, ob Sie stattdessen den Node klonen können. Wenn Sie den Node dann stilllegen, prüfen Sie, wie StorageGRID während der Stilllegung Objekte und Metadaten managt.
+
+
+
+== Zeitpunkt zum Klonen eines Node, anstatt ihn stillzulegen
+
+Wenn Sie einen älteren Storage-Node der Appliance durch eine neuere oder größere Appliance ersetzen möchten, sollten Sie das Klonen des Appliance-Node erwägen, anstatt eine neue Appliance in einer Erweiterung hinzuzufügen, und dann die alte Appliance stillzulegen.
+
+Durch das Klonen von Appliance-Nodes können Sie vorhandene Appliance-Nodes einfach durch eine kompatible Appliance am selben Standort in StorageGRID ersetzen. Beim Klonen werden alle Daten auf die neue Appliance übertragen, die neue Appliance wird in Betrieb genommen und die alte Appliance wird vorab installiert.
+
+Sie können einen Appliance-Node klonen, wenn Sie Folgendes benötigen:
+
+* Ersetzen Sie ein Gerät, das das Ende der Lebensdauer erreicht hat.
+* Aktualisieren Sie einen vorhandenen Node, um von verbesserter Appliance-Technologie zu profitieren.
+* Erhöhen Sie die Grid-Storage-Kapazität, ohne die Anzahl der Storage-Nodes in Ihrem StorageGRID System zu ändern.
+* Verbessern Sie die Storage-Effizienz, zum Beispiel durch Ändern des RAID-Modus.
+
+
+Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/storagegrid-appliances/commonhardware/how-appliance-node-cloning-works.html["Klonen von Appliance-Nodes"^].
+
+
+
+== Überlegungen zu verbundenen Storage-Nodes
+
+Prüfen Sie die Überlegungen bei der Stilllegung eines verbundenen Storage-Node.
+
+* Sie sollten nicht mehr als 10 Storage-Nodes in einem einzigen Decommission-Node-Verfahren außer Betrieb nehmen.
+* Das System muss jederzeit genügend Storage Nodes enthalten, um die betrieblichen Anforderungen zu erfüllen, einschließlich der link:understanding-adc-service-quorum.html["ADC-Quorum"] und der aktiven link:reviewing-ilm-policy-and-storage-configuration.html["ILM-Richtlinie"]. Um diese Einschränkung zu erfüllen, müssen Sie möglicherweise einen neuen Storage-Node zu einem Erweiterungsvorgang hinzufügen, bevor Sie einen vorhandenen Storage-Node stilllegen können.
++
+Gehen Sie mit Vorsicht vor, wenn Sie Storage-Nodes in einem Grid stilllegen, das rein softwarebasierte Metadaten-Nodes enthält. Wenn Sie alle Knoten außer Betrieb nehmen, die für den Speicher _sowohl_ Objekte als auch Metadaten konfiguriert sind, wird die Fähigkeit zum Speichern von Objekten aus dem Raster entfernt. Weitere Informationen zu nur Metadaten-Storage-Nodes finden Sie unterlink:../primer/what-storage-node-is.html#types-of-storage-nodes["Typen von Storage-Nodes"].
+
+* Wenn Sie einen Storage Node entfernen, werden große Mengen an Objektdaten über das Netzwerk übertragen. Obwohl diese Übertragungen keine Auswirkungen auf den normalen Systembetrieb haben sollten, können sie sich auf die gesamte vom StorageGRID System verbrauchte Netzwerkbandbreite auswirken.
+* Aufgaben für die Deaktivierung von Storage-Nodes haben eine niedrigere Priorität als Aufgaben, die mit normalen Systemvorgängen verbunden sind. Dadurch wird die Ausmusterung normale StorageGRID Systemvorgänge nicht beeinträchtigt und es muss keine Zeit für die Inaktivität des Systems eingeplant werden. Da die Ausmusterung im Hintergrund erfolgt, ist es schwierig zu schätzen, wie lange der Vorgang dauert. Im Allgemeinen erfolgt die Ausmusterung von Storage-Nodes schneller, wenn das System still ist oder nur ein Storage-Node gleichzeitig entfernt wird.
+* Es kann Tage oder Wochen dauern, bis ein Storage-Node außer Betrieb gesetzt wurde. Planen Sie dieses Verfahren entsprechend. Der Prozess zur Deaktivierung sorgt zwar dafür, dass der Betrieb des Systems nicht beeinträchtigt wird, aber weitere Verfahren werden möglicherweise eingeschränkt. Im Allgemeinen sollten geplante System-Upgrades oder -Erweiterungen durchgeführt werden, bevor Grid-Nodes entfernt werden.
+* Wenn Sie ein weiteres Wartungsverfahren durchführen müssen, während Storage Nodes entfernt werden, können Sie link:pausing-and-resuming-decommission-process-for-storage-nodes.html["Unterbrechen Sie den Stilllegungsvorgang"]es nach Abschluss des anderen Verfahrens wieder aufnehmen.
++
+
+NOTE: Die Schaltfläche *Pause* ist nur aktiviert, wenn die ILM-Bewertung oder die mit Erasure Coding versehenen Phasen der Datenauswertung erreicht sind. Die ILM-Evaluierung (Datenmigration) wird jedoch weiterhin im Hintergrund ausgeführt.
+
+* Wenn eine Ausmusterung ausgeführt wird, können keine Datenreparaturvorgänge auf Grid-Nodes ausgeführt werden.
+* Sie sollten keine Änderungen an einer ILM-Richtlinie vornehmen, während ein Storage-Node deaktiviert wird.
+* Um Daten dauerhaft und sicher zu entfernen, müssen Sie die Laufwerke des Storage-Node nach Abschluss des Stilllegungsvorgangs löschen.
+
+
+
+
+== Überlegungen zu getrennten Storage-Nodes
+
+Prüfen Sie die Überlegungen für die Deaktivierung eines getrennten Storage-Node.
+
+* Deaktivieren Sie einen getrennten Node nur, wenn Sie sicher sind, dass er nicht online geschaltet oder wiederhergestellt werden kann.
++
+
+CAUTION: Führen Sie dieses Verfahren nicht aus, wenn Sie der Meinung sind, dass Objektdaten vom Node wiederhergestellt werden können. Wenden Sie sich stattdessen an den technischen Support, um zu ermitteln, ob das Recovery von Nodes möglich ist.
+
+* Wenn Sie einen getrennten Storage-Node stilllegen, verwendet StorageGRID Daten von anderen Storage Nodes, um die Objektdaten und Metadaten, die sich auf dem getrennten Node befanden, zu rekonstruieren.
+* Wenn Sie mehr als einen getrennten Storage Node stilllegen, kann es zu Datenverlust kommen. Das System ist möglicherweise nicht in der Lage, Daten zu rekonstruieren, wenn nicht genügend Objektkopien, Fragmente mit Erasure-Coding-Verfahren oder Objekt-Metadaten verfügbar sind. Bei der Stilllegung von Storage-Nodes in einem Grid mit softwarebasierten, metadatenbasierten Nodes werden alle Nodes, die für die Speicherung von Objekten und Metadaten konfiguriert sind, vom Grid entfernt. Weitere Informationen zu nur Metadaten-Storage-Nodes finden Sie unterlink:../primer/what-storage-node-is.html#types-of-storage-nodes["Typen von Storage-Nodes"].
++
+
+CAUTION: Wenn Sie mehr als einen getrennten Storage Node haben, den Sie nicht wiederherstellen können, wenden Sie sich an den technischen Support, um die beste Vorgehensweise zu ermitteln.
+
+* Wenn Sie einen getrennten Storage-Node außer Betrieb nehmen, startet StorageGRID am Ende des Stilllegungsvorgangs die Reparatur der Daten. Diese Jobs versuchen, die Objektdaten und Metadaten, die auf dem getrennten Node gespeichert waren, zu rekonstruieren.
+* Wenn Sie einen getrennten Storage-Node ausmustern, wird der Vorgang der Ausmusterung relativ schnell abgeschlossen. Die Ausführung von Datenreparaturen kann jedoch Tage oder Wochen dauern und wird nicht durch die Außerbetriebnahme überwacht. Sie müssen diese Jobs manuell überwachen und nach Bedarf neu starten. Siehe link:checking-data-repair-jobs.html["Prüfen Sie die Reparatur von Daten"].
+* Wenn Sie einen getrennten Storage-Node stilllegen, der die einzige Kopie eines Objekts enthält, geht das Objekt verloren. Die Datenrekonstruktionsaufgaben können Objekte nur rekonstruieren und wiederherstellen, wenn mindestens eine replizierte Kopie oder genug Fragmente mit Löschungscode auf aktuell verbundenen Storage-Nodes vorhanden sind.
+

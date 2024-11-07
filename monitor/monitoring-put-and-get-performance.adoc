@@ -1,0 +1,30 @@
+---
+permalink: monitor/monitoring-put-and-get-performance.html 
+sidebar: sidebar 
+keywords: put, get, performance 
+summary: Sie können die Performance bestimmter Vorgänge, z. B. Objektspeicher und -Abruf, überwachen, um Änderungen zu identifizieren, die möglicherweise weitere Untersuchungen erfordern. 
+---
+= PUT- und GET-Performance werden überwacht
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können die Performance bestimmter Vorgänge, z. B. Objektspeicher und -Abruf, überwachen, um Änderungen zu identifizieren, die möglicherweise weitere Untersuchungen erfordern.
+
+.Über diese Aufgabe
+Zum Monitoring der PUT- und DER GET-Performance können S3-Befehle direkt von einer Workstation oder mit der Open-Source-S3tester-Applikation ausgeführt werden. Mit diesen Methoden können Sie die Leistung unabhängig von Faktoren bewerten, die außerhalb von StorageGRID liegen, z. B. Probleme mit einer Client-Applikation oder Probleme mit einem externen Netzwerk.
+
+Wenn SIE Tests für PUT- und GET-Vorgänge durchführen, beachten Sie folgende Richtlinien:
+
+* Objektgrößen sind vergleichbar mit den Objekten, die normalerweise in das Grid eingespeist werden.
+* Durchführung von Vorgängen an lokalen und Remote Standorten
+
+
+Meldungen im link:../audit/index.html["Prüfprotokoll"]geben die Gesamtzeit an, die für die Ausführung bestimmter Vorgänge benötigt wird. Um z. B. die Gesamtverarbeitungszeit für eine S3-GET-Anforderung zu bestimmen, können Sie den Wert des ZEITATTRIBUTS in der SGET-Audit-Nachricht prüfen. Das ZEITATTRIBUT finden Sie auch in den Audit-Meldungen für die folgenden S3-Operationen: DELETE, GET, HEAD, Metadata Updated, POST, PUT
+
+Bei der Analyse von Ergebnissen sollten Sie die durchschnittliche Zeit zur Erfüllung einer Anfrage sowie den Gesamtdurchsatz betrachten, den Sie erreichen können. Wiederholen Sie die gleichen Tests regelmäßig, und notieren Sie die Ergebnisse, damit Sie Trends identifizieren können, die eine Untersuchung erfordern könnten.
+
+* Sie können https://github.com/s3tester["Laden Sie S3tester von Github herunter"^].
+

@@ -1,0 +1,112 @@
+---
+permalink: monitor/types-of-text-reports.html 
+sidebar: sidebar 
+keywords: how to use text reports 
+summary: 'Textberichte zeigen eine textuelle Darstellung von Attributdatenwerten an, die vom NMS-Dienst verarbeitet wurden. Es gibt zwei Arten von Berichten, die je nach Zeitraum erstellt werden, für den Sie einen Bericht erstellen: RAW-Textberichte für Zeiträume unter einer Woche und Zusammenfassung von Textberichten für Zeiträume, die länger als eine Woche sind.' 
+---
+= Verwenden Sie Textberichte
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Textberichte zeigen eine textuelle Darstellung von Attributdatenwerten an, die vom NMS-Dienst verarbeitet wurden. Es gibt zwei Arten von Berichten, die je nach Zeitraum erstellt werden, für den Sie einen Bericht erstellen: RAW-Textberichte für Zeiträume unter einer Woche und Zusammenfassung von Textberichten für Zeiträume, die länger als eine Woche sind.
+
+
+
+== RAW-Textberichte
+
+In einem RAW-Textbericht werden Details zum ausgewählten Attribut angezeigt:
+
+* Empfangene Zeit: Lokales Datum und Uhrzeit, zu der ein Beispielwert der Daten eines Attributs vom NMS-Dienst verarbeitet wurde.
+* Probenzeit: Lokales Datum und Uhrzeit, zu der ein Attributwert an der Quelle erfasst oder geändert wurde.
+* Wert: Attributwert zur Probenzeit.
+
+
+image::../media/raw_text_report.gif[Screenshot mit rohem Textbericht]
+
+
+
+== Zusammenfassen von Textberichten
+
+Ein zusammengefasster Textbericht zeigt Daten über einen längeren Zeitraum (in der Regel eine Woche) an als einen reinen Textbericht. Jeder Eintrag ist das Ergebnis einer Zusammenfassung mehrerer Attributwerte (ein Aggregat von Attributwerten) durch den NMS-Dienst über einen Zeitraum in einem einzigen Eintrag mit durchschnittlichen, maximalen und minimalen Werten, die aus der Aggregation abgeleitet sind.
+
+In jedem Eintrag werden die folgenden Informationen angezeigt:
+
+* Aggregatzeit: Letztes lokales Datum und Zeitpunkt, zu dem der NMS-Dienst einen Satz von geänderten Attributwerten aggregiert (gesammelt) hat.
+* Durchschnittswert: Der Mittelwert des Attributs über den aggregierten Zeitraum.
+* Mindestwert: Der Mindestwert über den aggregierten Zeitraum.
+* Maximalwert: Der Maximalwert über den aggregierten Zeitraum.
+
+
+image::../media/aggregate_text_report.gif[Screenshot mit Aggregat-Textbericht]
+
+
+
+== Erstellen von Textberichten
+
+Textberichte zeigen eine textuelle Darstellung von Attributdatenwerten an, die vom NMS-Dienst verarbeitet wurden. Die Berichte können an Datacenter-Standorten, Grid-Node, Komponenten oder Service erstellt werden.
+
+.Bevor Sie beginnen
+* Sie müssen im Grid-Manager mit einem angemeldet seinlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben link:../admin/admin-group-permissions.html["Bestimmte Zugriffsberechtigungen"].
+
+
+.Über diese Aufgabe
+Für Attributdaten, die voraussichtlich kontinuierlich geändert werden, werden diese Attributdaten in regelmäßigen Abständen vom NMS-Dienst (an der Quelle) erfasst. Bei selten veränderlichen Attributdaten (z. B. Daten, die auf Ereignissen wie Statusänderungen basieren) wird ein Attributwert an den NMS-Dienst gesendet, wenn sich der Wert ändert.
+
+Der angezeigte Berichtstyp hängt vom konfigurierten Zeitraum ab. Standardmäßig werden zusammengefasste Textberichte für Zeiträume generiert, die länger als eine Woche sind.
+
+Der graue Text zeigt an, dass der Dienst während der Probenahme administrativ unten war. Blauer Text zeigt an, dass der Dienst in einem unbekannten Zustand war.
+
+.Schritte
+. Wählen Sie *SUPPORT* > *Tools* > *Grid-Topologie* aus.
+. Wählen Sie *_Grid Node_* > *_Component oder Service_* > *Berichte* > *Text* aus.
+. Wählen Sie das Attribut aus der Dropdown-Liste *Attribut* aus, für das ein Bericht erstellt werden soll.
+. Wählen Sie aus der Dropdown-Liste *Ergebnisse pro Seite* die Anzahl der Ergebnisse pro Seite aus.
+. Um Werte auf maximal drei Dezimalstellen zu runden (z. B. für als Prozentsätze gemeldete Attribute), deaktivieren Sie das Kontrollkästchen *Rohdaten*.
+. Wählen Sie den Zeitraum aus der Dropdown-Liste *Quick Query* aus, für den Sie einen Bericht erstellen möchten.
++
+Wählen Sie die Option Benutzerdefinierte Abfrage aus, um einen bestimmten Zeitbereich auszuwählen.
+
++
+Der Bericht erscheint nach wenigen Augenblicken. Lassen Sie mehrere Minuten für die Tabulierung von langen Zeitbereichen.
+
+. Wenn Sie „Benutzerdefinierte Abfrage“ ausgewählt haben, müssen Sie den Zeitraum anpassen, an dem Sie einen Bericht erstellen möchten, indem Sie die Optionen *Startdatum* und *Enddatum* eingeben.
++
+Verwenden Sie das Format `YYYY/MM/DDHH:MM:SS` in Ortszeit. Führende Nullen sind für das Format erforderlich. Beispiel: 2017/4/6 7:30:00 schlägt die Validierung fehl. Das richtige Format ist: 2017/04/06 07:30:00.
+
+. Klicken Sie Auf *Aktualisieren*.
++
+Nach wenigen Augenblicken wird ein Textbericht erstellt. Lassen Sie mehrere Minuten für die Tabulierung von langen Zeitbereichen. Abhängig von der für die Abfrage festgelegten Dauer wird entweder ein RAW-Textbericht oder ein aggregierter Textbericht angezeigt.
+
+
+
+
+
+== Exportieren von Textberichten
+
+Exportierte Textberichte öffnen eine neue Browser-Registerkarte, auf der Sie die Daten auswählen und kopieren können.
+
+.Über diese Aufgabe
+Die kopierten Daten können dann in einem neuen Dokument (z. B. in einer Tabelle) gespeichert und zur Analyse der Performance des StorageGRID-Systems verwendet werden.
+
+.Schritte
+. Wählen Sie *SUPPORT* > *Tools* > *Grid-Topologie* aus.
+. Erstellen Sie einen Textbericht.
+. Klicken Sie Auf *Export*image:../media/icon_export.gif["Symbol „Exportieren“"].
++
+image::../media/export_text_report.gif[Screenshot, der durch umgebenden Text beschrieben wird]
+
++
+Das Fenster Textbericht exportieren wird geöffnet, in dem der Bericht angezeigt wird.
+
++
+image::../media/export_text_report_data.gif[Screenshot mit Beispieltext-Bericht]
+
+. Wählen Sie den Inhalt des Fensters „Textbericht exportieren“ aus, und kopieren Sie ihn.
++
+Diese Daten können jetzt in ein Dokument eines Drittanbieters wie z. B. in eine Tabelle eingefügt werden.
+
+

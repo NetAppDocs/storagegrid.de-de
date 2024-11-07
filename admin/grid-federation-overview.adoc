@@ -1,0 +1,99 @@
+---
+permalink: admin/grid-federation-overview.html 
+sidebar: sidebar 
+keywords: grid federation, cross-grid replication, account clone, cgr, disaster recovery 
+summary: Mithilfe des Grid-Verbunds können Mandanten geklont und ihre Objekte zwischen zwei StorageGRID Systemen für das Disaster Recovery repliziert werden. 
+---
+= Was ist Grid Federation?
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Mithilfe des Grid-Verbunds können Mandanten geklont und ihre Objekte zwischen zwei StorageGRID Systemen für das Disaster Recovery repliziert werden.
+
+
+
+== Was ist eine Netzverbundverbindung?
+
+Eine Grid-Verbundverbindung ist eine bidirektionale, zuverlässige und sichere Verbindung zwischen dem Administrator und den Gateway Nodes in zwei StorageGRID Systemen.
+
+
+
+== Workflow für Grid-Verbund
+
+Das Workflow-Diagramm fasst die Schritte zur Konfiguration einer Grid Federation-Verbindung zwischen zwei Grids zusammen.
+
+image::../media/grid-federation-workflow.png[Workflow der Grid-Föderation-Verbindung]
+
+
+
+== Überlegungen und Anforderungen für Netzverbundverbindungen
+
+* Auf den Grids, die für den Grid-Verbund verwendet werden, müssen StorageGRID-Versionen ausgeführt werden, die entweder identisch sind oder nicht mehr als einen Hauptversionsunterschied aufweisen.
++
+Weitere Informationen zu Versionsanforderungen finden Sie im link:../release-notes/index.html["Versionshinweise"].
+
+* Ein Grid kann eine oder mehrere Netzverbundverbindungen zu anderen Grids haben. Jede Netzverbundverbindung ist unabhängig von allen anderen Verbindungen. Wenn beispielsweise Grid 1 eine Verbindung mit Grid 2 und eine zweite Verbindung mit Grid 3 hat, besteht keine implizierte Verbindung zwischen Grid 2 und Grid 3.
+* Netzverbundverbindungen sind bidirektional. Nachdem die Verbindung hergestellt wurde, können Sie die Verbindung von beiden Grids aus überwachen und verwalten.
+* Mindestens eine Netzverbundverbindung muss vorhanden sein, bevor Sie oder verwenden könnenlink:grid-federation-what-is-account-clone.html["Konto-Klon"]link:grid-federation-what-is-cross-grid-replication.html["Grid-übergreifende Replizierung"].
+
+
+
+
+=== Netzwerkanforderungen und IP-Adresse
+
+* Grid-Verbindungen können im Grid-Netzwerk, im Admin-Netzwerk oder im Client-Netzwerk auftreten.
+* Eine Netzverbundverbindung verbindet ein Grid mit einem anderen Grid. Die Konfiguration für jedes Grid gibt einen Grid-Verbundendpunkt auf dem anderen Grid an, der aus Admin-Nodes, Gateway-Nodes oder beidem besteht.
+* Die Best Practice besteht darin, die Gateway- und Admin-Nodes in jedem Grid zu verbindenlink:managing-high-availability-groups.html["Hochverfügbarkeitsgruppen (High Availability groups, HA-Gruppen"]. Durch die Verwendung von HA-Gruppen wird sichergestellt, dass die Verbindungen mit dem Grid-Verbund online bleiben, wenn die Nodes nicht mehr verfügbar sind. Wenn die aktive Schnittstelle in einer der HA-Gruppen ausfällt, kann die Verbindung eine Backup-Schnittstelle verwenden.
+* Das Erstellen einer Grid-Federation-Verbindung, die die IP-Adresse eines einzelnen Admin-Node oder Gateway-Node verwendet, wird nicht empfohlen. Wenn der Node nicht mehr verfügbar ist, ist auch die Verbindung zum Grid-Verbund nicht mehr verfügbar.
+* link:grid-federation-what-is-cross-grid-replication.html["Grid-übergreifende Replizierung"] Der Objekte erfordert, dass die Storage Nodes in jedem Grid auf die konfigurierten Admin- und Gateway-Nodes im anderen Grid zugreifen können. Vergewissern Sie sich für jedes Grid, dass alle Storage-Nodes eine Route mit hoher Bandbreite als Admin-Nodes oder Gateway-Nodes haben, die für die Verbindung verwendet werden.
+
+
+
+
+=== Verwenden Sie FQDNs, um die Verbindung auszugleichen
+
+Verwenden Sie für eine Produktionsumgebung vollständig qualifizierte Domänennamen (FQDNs), um jedes Raster in der Verbindung zu identifizieren. Erstellen Sie dann die entsprechenden DNS-Einträge wie folgt:
+
+* Der FQDN für Grid 1, der einer oder mehreren virtuellen IP-Adressen (VIP) für HA-Gruppen in Grid 1 oder der IP-Adresse eines oder mehrerer Admin- oder Gateway-Nodes in Grid 1 zugeordnet ist.
+* Der FQDN für Grid 2, der einer oder mehreren VIP-Adressen für Grid 2 oder der IP-Adresse eines oder mehrerer Administrator- oder Gateway-Knoten in Grid 2 zugeordnet ist.
+
+
+Wenn Sie mehrere DNS-Einträge verwenden, werden Anforderungen zur Verwendung der Verbindung wie folgt ausgeglichen:
+
+* DNS-Einträge, die den VIP-Adressen mehrerer HA-Gruppen zugeordnet sind, werden für den Lastausgleich zwischen den aktiven Nodes in den HA-Gruppen eingesetzt.
+* DNS-Einträge, die den IP-Adressen mehrerer Admin-Nodes oder Gateway-Nodes zugeordnet sind, werden zwischen den zugeordneten Nodes gleichmäßig verteilt.
+
+
+
+
+=== Port-Anforderungen
+
+Beim Erstellen einer Grid-Federation-Verbindung können Sie alle nicht verwendeten Portnummern zwischen 23000 und 23999 angeben. Beide Grids in dieser Verbindung verwenden den gleichen Port.
+
+Sie müssen sicherstellen, dass kein Node in einem Grid diesen Port für andere Verbindungen verwendet.
+
+
+
+=== Zertifikatanforderungen
+
+Wenn Sie eine Grid-Federation-Verbindung konfigurieren, generiert StorageGRID automatisch vier SSL-Zertifikate:
+
+* Server- und Client-Zertifikate zur Authentifizierung und Verschlüsselung von Informationen, die von Grid 1 an Grid 2 gesendet werden
+* Server- und Client-Zertifikate zur Authentifizierung und Verschlüsselung von Informationen, die von Grid 2 an Grid 1 gesendet werden
+
+
+image::../media/grid-federation-certificates.png[Zertifikate für Grid Federation]
+
+Standardmäßig sind die Zertifikate 730 Tage (2 Jahre) gültig. Wenn diese Zertifikate in der Nähe ihres Ablaufdatums liegen, erinnert die Warnung *Ablauf des Grid Federation Certificate* Sie daran, die Zertifikate zu drehen, was Sie mit dem Grid Manager tun können.
+
+
+CAUTION: Wenn die Zertifikate an einem Ende der Verbindung ablaufen, funktioniert die Verbindung nicht mehr. Die Datenreplikation steht aus, bis die Zertifikate aktualisiert werden.
+
+.Weitere Informationen .
+* link:grid-federation-create-connection.html["Erstellen von Grid Federation-Verbindungen"]
+* link:grid-federation-manage-connection.html["Grid-Verbindungen verwalten"]
+* link:grid-federation-troubleshoot.html["Fehler beim Grid-Verbund beheben"]
+

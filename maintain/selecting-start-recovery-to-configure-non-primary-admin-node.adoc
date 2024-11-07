@@ -1,0 +1,56 @@
+---
+permalink: maintain/selecting-start-recovery-to-configure-non-primary-admin-node.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, non-primary admin node 
+summary: Nach dem Ersetzen eines nicht-primären Admin-Knotens müssen Sie im Grid-Manager die Option Wiederherstellung starten wählen, um den neuen Knoten als Ersatz für den fehlgeschlagenen Knoten zu konfigurieren. 
+---
+= Wählen Sie Wiederherstellung starten, um einen nicht-primären Admin-Node zu konfigurieren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nach dem Ersetzen eines nicht-primären Admin-Knotens müssen Sie im Grid-Manager die Option Wiederherstellung starten wählen, um den neuen Knoten als Ersatz für den fehlgeschlagenen Knoten zu konfigurieren.
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben die link:../admin/admin-group-permissions.html["Berechtigung für Wartung oder Root-Zugriff"].
+* Sie haben die Provisionierungs-Passphrase.
+* Sie haben den Ersatzknoten bereitgestellt und konfiguriert.
+
+
+.Schritte
+. Wählen Sie im Grid Manager *MAINTENANCE* > *Tasks* > *Recovery*.
+. Wählen Sie in der Liste Ausstehende Knoten den Rasterknoten aus, den Sie wiederherstellen möchten.
++
+Nodes werden in der Liste angezeigt, wenn sie fehlschlagen. Sie können jedoch keinen Node auswählen, bis er neu installiert wurde und für die Wiederherstellung bereit ist.
+
+. Geben Sie die *Provisioning-Passphrase* ein.
+. Klicken Sie Auf *Wiederherstellung Starten*.
++
+image::../media/4b_select_recovery_node.png[Screenshot mit der Seite Wartung > Wiederherstellung]
+
+. Überwachen Sie den Fortschritt der Wiederherstellung in der Tabelle „Netzknoten wiederherstellen“.
++
+
+NOTE: Während der Wiederherstellungsvorgang läuft, können Sie auf *Zurücksetzen* klicken, um eine neue Wiederherstellung zu starten. Es wird ein Dialogfeld angezeigt, das anzeigt, dass der Knoten in einem unbestimmten Zustand bleibt, wenn Sie das Verfahren zurücksetzen.
+
++
+image::../media/recovery_reset_warning.gif[Screenshot mit dem Dialogfeld Warnung zum Zurücksetzen der Wiederherstellung]
+
++
+Wenn Sie die Recovery nach dem Zurücksetzen der Prozedur erneut versuchen möchten, müssen Sie den Node in einen vorinstallierten Status wiederherstellen:
+
++
+** *VMware*: Den bereitgestellten virtuellen Grid-Knoten löschen. Wenn Sie bereit sind, die Recovery neu zu starten, implementieren Sie den Node erneut.
+** *Linux*: Starten Sie den Knoten neu, indem Sie diesen Befehl auf dem Linux-Host ausführen: `storagegrid node force-recovery _node-name_`
+** *Appliance*: Wenn Sie die Wiederherstellung nach dem Zurücksetzen des Verfahrens erneut versuchen möchten, müssen Sie den Appliance-Knoten in einen vorinstallierten Zustand versetzen, indem Sie auf dem Knoten ausgeführt `sgareinstall` werden. Siehe link:preparing-appliance-for-reinstallation-platform-replacement-only.html["Appliance für die Neuinstallation vorbereiten (nur Plattformaustausch)"].
+
+
+. Wenn SSO (Single Sign-On) für Ihr StorageGRID-System aktiviert ist und das Vertrauen der Vertrauensstelle für den wiederhergestellten Admin-Knoten für das Zertifikat der Standardverwaltungsoberfläche konfiguriert wurde, aktualisieren (oder löschen und neu erstellen) das Vertrauen des Node auf die Vertrauensbasis in Active Directory Federation Services (AD FS). Verwenden Sie das neue Standard-Serverzertifikat, das während der Wiederherstellung des Admin-Knotens generiert wurde.
++
+
+NOTE: Informationen zum Konfigurieren einer vertrauenswürdigen Partei finden Sie unter link:../admin/configuring-sso.html["Konfigurieren Sie Single Sign-On"]. Melden Sie sich zum Zugriff auf das Standard-Serverzertifikat bei der Eingabeaufforderung des Admin-Knotens an. Gehen Sie zum `/var/local/mgmt-api` Verzeichnis, und wählen Sie die `server.crt` Datei aus.
+
+

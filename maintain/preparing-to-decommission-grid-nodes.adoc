@@ -1,0 +1,14 @@
+---
+permalink: maintain/preparing-to-decommission-grid-nodes.html 
+sidebar: sidebar 
+keywords: storagegrid, decommission 
+summary: Sie müssen die Überlegungen zum Entfernen von Grid-Nodes prüfen und bestätigen, dass keine Reparaturaufträge für Daten mit Erasure-Coding-Verfahren aktiv sind. 
+---
+= Grid-Nodes vorbereiten, um sie stillzulegen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen die Überlegungen zum Entfernen von Grid-Nodes prüfen und bestätigen, dass keine Reparaturaufträge für Daten mit Erasure-Coding-Verfahren aktiv sind.

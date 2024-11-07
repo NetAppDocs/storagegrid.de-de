@@ -1,0 +1,396 @@
+---
+settings:
+  name: StorageGRID 11.9
+  search: storagegrid-enable,storagegrid,storagegrid-appliances
+  internal:
+    pdf_enabled: true
+    termcheck_enabled: false
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+    hide_language_selector: true
+  langs: de-de,us-en,ja-jp,ko-kr,zh-cn,zh-tw,es-es,fr-fr,it-it
+sidebar:
+  entries:
+  - title: StorageGRID 11.9 Dokumente
+    url: "/index.html"
+  - title: StorageGRID Appliances
+    url: "/storagegrid-hardware.html"
+  - title: Versionshinweise
+    url: "/release-notes/index.html"
+  - title: Los geht's
+    url: "/landing-get-started/index.html"
+    entries:
+    - section: primer
+    - section: network
+    - title: Schnellstart
+      url: "/primer/quick-start.html"
+  - title: Installation, Upgrade und Hotfix
+    url: "/landing-install-upgrade/index.html"
+    entries:
+    - title: Installieren von Appliances
+      url: "/storagegrid-hardware.html"
+    - section: rhel
+    - section: ubuntu
+    - section: vmware
+    - section: upgrade
+    - title: StorageGRID-Hotfix anwenden
+      entries:
+      - title: Hotfix-Verfahren
+        url: "/maintain/storagegrid-hotfix-procedure.html"
+      - title: Auswirkungen auf Ihr System beim Anwenden eines Hotfix
+        url: "/maintain/how-your-system-is-affected-when-you-apply-hotfix.html"
+      - title: Beschaffung der erforderlichen Materialien für Hotfix
+        url: "/maintain/obtaining-required-materials-for-hotfix.html"
+      - title: Hotfix-Datei herunterladen
+        url: "/maintain/downloading-hotfix-file.html"
+      - title: Überprüfen Sie den Zustand des Systems, bevor Sie Hotfix anwenden
+        url: "/maintain/checking-systems-condition-before-applying-hotfix.html"
+      - title: Hotfix anwenden
+        url: "/maintain/applying-hotfix.html"
+  - title: Konfiguration und Management
+    url: "/landing-configure-manage/index.html"
+    entries:
+    - section: admin
+    - section: ilm
+    - section: harden
+    - section: fabricpool
+  - title: Verwenden Sie StorageGRID
+    url: "/landing-use/index.html"
+    entries:
+    - section: tenant
+    - section: s3
+    - section: swift
+  - title: Monitoring und Fehlerbehebung
+    url: "/landing-monitor-troubleshoot/index.html"
+    entries:
+    - section: monitor
+    - section: troubleshoot
+    - section: audit
+  - section: expand
+  - title: Grid warten
+    url: "/landing-maintain/index.html"
+    entries:
+    - title: Netzwartung
+      url: "/maintain/index.html"
+    - title: Recovery Package Herunterladen
+      url: "/maintain/downloading-recovery-package.html"
+    - title: Deaktivierung von Nodes oder Standort
+      entries:
+      - title: Node oder Standort wird ausmustern
+        url: "/maintain/decommission-procedure.html"
+      - title: Deaktivierung von Nodes
+        entries:
+        - title: Der Grid-Node wird deaktiviert
+          url: "/maintain/grid-node-decommissioning.html"
+        - title: Überlegungen zu Admin- oder Gateway-Nodes
+          url: "/maintain/considerations-for-decommissioning-admin-or-gateway-nodes.html"
+        - title: Überlegungen zu Storage-Nodes
+          entries:
+          - title: Allgemeine Überlegungen
+            url: "/maintain/considerations-for-decommissioning-storage-nodes.html"
+          - title: ADC-Quorum
+            url: "/maintain/understanding-adc-service-quorum.html"
+          - title: Prüfen der ILM-Richtlinie und Storage-Konfiguration
+            url: "/maintain/reviewing-ilm-policy-and-storage-configuration.html"
+          - title: Storage-Nodes Konsolidieren
+            url: "/maintain/consolidating-storage-nodes.html"
+          - title: Ausmustern mehrerer Storage-Nodes
+            url: "/maintain/decommissioning-multiple-storage-nodes.html"
+        - title: Prüfen Sie die Reparatur von Daten
+          url: "/maintain/checking-data-repair-jobs.html"
+        - title: Sammeln Sie die erforderlichen Materialien
+          url: "/maintain/gathering-required-materials-node-decom.html"
+        - title: Öffnen Sie die Seite Decommission Nodes
+          url: "/maintain/accessing-decommission-nodes-page.html"
+        - title: Die getrennten Grid-Nodes werden deaktiviert
+          url: "/maintain/decommissioning-disconnected-grid-nodes.html"
+        - title: Verbundene Grid-Nodes ausmustern
+          url: "/maintain/decommissioning-connected-grid-nodes.html"
+        - title: Anhalten und Fortsetzen des Stilllegen-Prozesses für Storage-Nodes
+          url: "/maintain/pausing-and-resuming-decommission-process-for-storage-nodes.html"
+      - title: Website zur Deaktivierung
+        entries:
+        - title: Überlegungen zum Entfernen des Standorts
+          url: "/maintain/considerations-for-removing-site.html"
+        - title: Sammeln Sie die erforderlichen Materialien
+          url: "/maintain/gathering-required-materials-site-decom.html"
+        - title: Standort auswählen
+          url: "/maintain/step-1-select-site.html"
+        - title: Details anzeigen
+          url: "/maintain/step-2-view-details.html"
+        - title: ILM-Richtlinien überarbeiten
+          url: "/maintain/step-3-revise-ilm-policy.html"
+        - title: Entfernen Sie ILM Referenzen
+          url: "/maintain/step-4-remove-ilm-references.html"
+        - title: Lösen von Knotenkonflikten (und Starten der Stilllegung)
+          url: "/maintain/step-5-resolve-node-conflicts.html"
+        - title: Überwachen Sie die Stilllegung
+          url: "/maintain/step-6-monitor-decommission.html"
+    - title: Benennen Sie Raster, Standort oder Node um
+      entries:
+      - title: Verwenden Sie die Umbenennung
+        url: "/maintain/rename-grid-site-node-overview.html"
+      - title: Anzeigenamen hinzufügen oder aktualisieren
+        url: "/maintain/rename-grid-site-node.html"
+    - title: Node-Verfahren
+      entries:
+      - title: Node-Wartungsverfahren
+        pdf-filename: Node-Verfahren
+        url: "/maintain/grid-node-procedures.html"
+      - title: Server Manager-Verfahren
+        entries:
+        - title: Zeigen Sie den Status und die Version von Server Manager an
+          url: "/maintain/viewing-server-manager-status-and-version.html"
+        - title: Den aktuellen Status aller Dienste anzeigen
+          url: "/maintain/viewing-current-status-of-all-services.html"
+        - title: Starten Sie Server Manager und alle Dienste
+          url: "/maintain/starting-server-manager-and-all-services.html"
+        - title: Starten Sie Server Manager und alle Services neu
+          url: "/maintain/restarting-server-manager-and-all-services.html"
+        - title: Beenden Sie Server Manager und alle Dienste
+          url: "/maintain/stopping-server-manager-and-all-services.html"
+        - title: Zeigt den aktuellen Servicestatus an
+          url: "/maintain/viewing-current-status-of-service.html"
+        - title: Dienst stoppen
+          url: "/maintain/stopping-service.html"
+        - title: Dienst zum Beenden erzwingen
+          url: "/maintain/forcing-service-to-terminate.html"
+        - title: Dienst starten oder neu starten
+          url: "/maintain/starting-or-restarting-service.html"
+        - title: Verwenden Sie eine DoNotStart-Datei
+          url: "/maintain/using-donotstart-file.html"
+        - title: Fehlerbehebung Für Server Manager
+          url: "/maintain/accessing-server-manager-log-file.html"
+      - title: Verfahren zum Neustart, Herunterfahren und Einschalten
+        entries:
+        - title: Führen Sie einen Rolling-Neustart durch
+          url: "/maintain/rolling-reboot-procedure.html"
+        - title: Starten Sie den Knoten über die Registerkarte Aufgaben neu
+          url: "/maintain/rebooting-grid-node-from-grid-manager.html"
+        - title: Booten Sie den Node von der Command Shell neu
+          url: "/maintain/rebooting-grid-node-from-command-shell.html"
+        - title: Fahren Sie den Node herunter
+          url: "/maintain/shutting-down-grid-node.html"
+        - title: Schalten Sie den Host aus
+          url: "/maintain/powering-down-host.html"
+        - title: Schalten Sie alle Nodes aus und wieder ein
+          url: "/maintain/powering-off-and-on-all-nodes-in-grid.html"
+      - title: Verfahren zur Neuzuordnung von Ports
+        entries:
+        - title: Entfernen Sie die Port-Remaps
+          url: "/maintain/removing-port-remaps.html"
+        - title: Entfernen Sie die Port-Remaps auf Bare-Metal-Hosts
+          url: "/maintain/removing-port-remaps-on-bare-metal-hosts.html"
+    - title: Netzwerkverfahren
+      entries:
+      - title: Subnetze für Grid Network aktualisieren
+        url: "/maintain/updating-subnets-for-grid-network.html"
+      - title: Konfigurieren Sie IP-Adressen
+        entries:
+        - title: Richtlinien für IP-Adressen
+          url: "/maintain/configuring-ip-addresses.html"
+        - title: Ändern der Node-Netzwerkkonfiguration
+          url: "/maintain/changing-nodes-network-configuration.html"
+        - title: Fügen Sie zu Subnetzlisten im Admin-Netzwerk hinzu oder ändern Sie
+            diese
+          url: "/maintain/adding-to-or-changing-subnet-lists-on-admin-network.html"
+        - title: Fügen Sie zu Subnetzlisten im Grid-Netzwerk hinzu oder ändern Sie
+            diese
+          url: "/maintain/adding-to-or-changing-subnet-lists-on-grid-network.html"
+        - title: Ändern Sie die IP-Adressen für alle Nodes im Grid
+          url: "/maintain/changing-ip-addresses-and-mtu-values-for-all-nodes-in-grid.html"
+      - title: Fügen Sie Schnittstellen zum vorhandenen Node hinzu
+        entries:
+        - title: 'Linux: Fügen Sie Admin- oder Client-Schnittstellen hinzu'
+          url: "/maintain/linux-adding-interfaces-to-existing-node.html"
+        - title: 'Linux: Fügen Sie Trunk- oder Zugangsschnittstellen hinzu'
+          url: "/maintain/linux-adding-trunk-or-access-interfaces-to-node.html"
+        - title: 'VMware: Trunk- oder Zugriffsschnittstellen hinzufügen'
+          url: "/maintain/vmware-adding-trunk-or-access-interfaces-to-node.html"
+      - title: Konfigurieren Sie DNS-Server
+        url: "/maintain/configuring-dns-servers.html"
+      - title: Ändern der DNS-Konfiguration für einen einzelnen Grid-Node
+        url: "/maintain/modifying-dns-configuration-for-single-grid-node.html"
+      - title: Managen von NTP-Servern
+        url: "/maintain/configuring-ntp-servers.html"
+      - title: Stellt die Netzwerkverbindung für isolierte Knoten wieder her
+        url: "/maintain/restoring-network-connectivity-for-isolated-nodes.html"
+    - title: Host- und Middleware-Verfahren
+      entries:
+      - title: 'Linux: Migrieren des Grid-Node zu neuem Host'
+        url: "/maintain/linux-migrating-grid-node-to-new-host.html"
+      - title: 'VMware: Virtuelle Maschine für automatischen Neustart konfigurieren'
+        url: "/maintain/vmware-configuring-virtual-machine-for-automatic-restart.html"
+  - title: Wiederherstellen oder Ersetzen von Knoten
+    url: "/landing-recover/index.html"
+    entries:
+    - title: Warnungen und Überlegungen für die Wiederherstellung von Grid Nodes
+      url: "/maintain/warnings-and-considerations-for-grid-node-recovery.html"
+    - title: Sammeln der erforderlichen Materialien für die Grid Node Recovery
+      url: "/maintain/gathering-required-materials-for-grid-node-recovery.html"
+    - title: Wählen Sie die Knotenwiederherstellung aus
+      url: "/maintain/selecting-node-recovery-procedure.html"
+    - title: Wiederherstellung nach Ausfällen der Storage-Nodes
+      entries:
+      - title: Recovery von Storage-Nodes
+        url: "/maintain/recovering-from-storage-node-failures.html"
+      - title: Appliance Storage Node wiederherstellen
+        entries:
+        - title: Warnungen zum Wiederherstellen von Appliance Storage Nodes
+          pdf-filename: Appliance Storage Node wiederherstellen
+          url: "/maintain/recovering-storagegrid-appliance-storage-node.html"
+        - title: Appliance-Speicherknoten für die Neuinstallation vorbereiten
+          url: "/maintain/preparing-appliance-storage-node-for-reinstallation.html"
+        - title: Starten Sie die Installation der StorageGRID Appliance
+          url: "/maintain/starting-storagegrid-appliance-installation.html"
+        - title: Überwachen Sie die Installation der StorageGRID Appliance
+          url: "/maintain/monitoring-storagegrid-appliance-installation-sn.html"
+        - title: Wählen Sie Wiederherstellung starten, um Appliance Storage Node zu
+            konfigurieren
+          url: "/maintain/selecting-start-recovery-to-configure-appliance-storage-node.html"
+        - title: Appliance-Storage-Volumes neu einbinden und formatieren (manuelle
+            Schritte)
+          url: "/maintain/remounting-and-reformatting-appliance-storage-volumes.html"
+        - title: Wiederherstellung von Objektdaten auf Storage Volumes für die Appliance
+          url: "/maintain/restoring-object-data-to-storage-volume-for-appliance.html"
+        - title: Überprüfen Sie den Speicherstatus nach der Wiederherstellung des
+            Appliance-Speicherknoten
+          url: "/maintain/checking-storage-state-after-recovering-sga.html"
+      - title: Wiederherstellung nach einem Storage-Volume-Ausfall bei intaktem Systemlaufwerk
+        entries:
+        - title: Recovery-Aufgaben
+          pdf-filename: Wiederherstellung nach einem Storage-Volume-Ausfall bei intaktem
+            Systemlaufwerk
+          url: "/maintain/recovering-from-storage-volume-failure-where-system-drive-is-intact.html"
+        - title: Warnungen zur Wiederherstellung des Speichervolumens
+          url: "/maintain/reviewing-warnings-about-storage-volume-recovery.html"
+        - title: Ermitteln und Aufheben fehlgeschlagener Storage Volumes
+          url: "/maintain/identifying-and-unmounting-failed-storage-volumes.html"
+        - title: Recovery ausgefallener Storage-Volumes und Wiederherstellung der
+            Cassandra-Datenbank
+          url: "/maintain/recovering-failed-storage-volumes-and-rebuilding-cassandra-database.html"
+        - title: Wiederherstellung von Objektdaten auf dem Storage Volume, auf dem
+            das Systemlaufwerk intakt ist
+          url: "/maintain/restoring-object-data-to-storage-volume-where-system-drive-is-intact.html"
+        - title: Überprüfen Sie den Speicherstatus nach der Wiederherstellung von
+            Storage Volumes
+          url: "/maintain/checking-storage-state-after-recovering-storage-volumes.html"
+      - title: Wiederherstellung nach einem Laufwerksausfall
+        entries:
+        - title: Warnungen für die Wiederherstellung des Storage Node-Systemlaufwerks
+          url: "/maintain/reviewing-warnings-for-system-drive-recovery.html"
+        - title: Ersetzen Sie den Speicherknoten
+          url: "/maintain/replacing-storage-node.html"
+        - title: Wählen Sie Wiederherstellung starten, um Speicherknoten zu konfigurieren
+          url: "/maintain/selecting-start-recovery-to-configure-storage-node.html"
+        - title: Speicher-Volumes neu einbinden und formatieren (manuelle Schritte)
+          url: "/maintain/remounting-and-reformatting-storage-volumes-manual-steps.html"
+        - title: Wiederherstellung von Objektdaten auf einem Storage-Volume (Systemausfall)
+          url: "/maintain/restoring-object-data-to-storage-volume.html"
+        - title: Überprüfen Sie den Speicherstatus nach der Wiederherstellung des
+            Speicherknoten-Systemlaufwerks
+          url: "/maintain/checking-storage-state-after-recovering-storage-node-system-drive.html"
+      - title: Stellen Sie Objektdaten mithilfe von Grid Manager wieder her
+        url: "/maintain/restoring-volume.html"
+      - title: Überwachen Sie Jobs mit Reparaturdaten
+        url: "/maintain/monitor-repairs.html"
+    - title: Wiederherstellung bei Ausfällen des Admin-Nodes
+      entries:
+      - title: Primärer oder nicht primärer Admin-Node
+        pdf-filename: Wiederherstellung bei Ausfällen des Admin-Nodes
+        url: "/maintain/recovering-from-admin-node-failures.html"
+      - title: Wiederherstellung nach Ausfällen des primären Admin-Nodes
+        entries:
+        - title: Primären Admin-Knoten wiederherstellen
+          pdf-filename: Wiederherstellung nach Ausfällen des primären Admin-Nodes
+          url: "/maintain/recovering-from-primary-admin-node-failures.html"
+        - title: Prüfprotokolle vom fehlgeschlagenen primären Admin-Node kopieren
+          url: "/maintain/copying-audit-logs-from-failed-primary-admin-node.html"
+        - title: Primären Admin-Node ersetzen
+          url: "/maintain/replacing-primary-admin-node.html"
+        - title: Primären Ersatzadministrator-Knoten konfigurieren
+          url: "/maintain/configuring-replacement-primary-admin-node.html"
+        - title: Ermitteln Sie die Hotfix-Anforderung für den primären Admin-Node
+          url: "/maintain/assess-hotfix-requirement-during-primary-admin-node-recovery.html"
+        - title: Prüfprotokoll auf wiederhergestellten primären Admin-Knoten wiederherstellen
+          url: "/maintain/restoring-audit-log-on-recovered-primary-admin-node.html"
+        - title: Stellen Sie die Admin-Knoten-Datenbank wieder her, wenn Sie den primären
+            Admin-Knoten wiederherstellen
+          url: "/maintain/restoring-admin-node-database-primary-admin-node.html"
+        - title: Stellen Sie bei der Wiederherstellung des primären Admin-Knotens
+            Prometheus-Kennzahlen wieder her
+          url: "/maintain/restoring-prometheus-metrics-primary-admin-node.html"
+      - title: Wiederherstellung nach Ausfällen von Admin-Nodes außerhalb des primären
+          Standorts
+        entries:
+        - title: Stellen Sie einen nicht-primären Admin-Node wieder her
+          pdf-filename: Wiederherstellung nach Ausfällen von Admin-Nodes außerhalb
+            des primären Standorts
+          url: "/maintain/recovering-from-non-primary-admin-node-failures.html"
+        - title: Prüfprotokolle vom fehlgeschlagenen Admin-Knoten kopieren
+          url: "/maintain/copying-audit-logs-from-failed-non-primary-admin-node.html"
+        - title: Nicht-primärer Admin-Node ersetzen
+          url: "/maintain/replacing-non-primary-admin-node.html"
+        - title: Wählen Sie Wiederherstellung starten, um einen nicht-primären Admin-Node
+            zu konfigurieren
+          url: "/maintain/selecting-start-recovery-to-configure-non-primary-admin-node.html"
+        - title: Stellen Sie das Prüfprotokoll auf dem wiederhergestellten Admin-Node,
+            der nicht dem primären Administrator gehört, wieder her
+          url: "/maintain/restoring-audit-log-on-recovered-non-primary-admin-node.html"
+        - title: Stellen Sie die Admin-Node-Datenbank wieder her, wenn Sie einen nicht-primären
+            Admin-Node wiederherstellen
+          url: "/maintain/restoring-admin-node-database-non-primary-admin-node.html"
+        - title: Stellen Sie Prometheus-Kennzahlen wieder her, wenn Sie einen nicht-primären
+            Admin-Node wiederherstellen
+          url: "/maintain/restoring-prometheus-metrics-non-primary-admin-node.html"
+    - title: Wiederherstellung nach Gateway-Node-Ausfällen
+      entries:
+      - title: Gateway-Node Ersetzen
+        url: "/maintain/replacing-gateway-node.html"
+      - title: Wählen Sie Wiederherstellung starten, um Gateway-Node zu konfigurieren
+        url: "/maintain/selecting-start-recovery-to-configure-gateway-node.html"
+    - title: Wiederherstellung nach Ausfällen des Archivierungs-Nodes
+      entries:
+      - title: Wiederherstellung nach Ausfällen des Archivierungs-Nodes
+        pdf-filename: Wiederherstellung nach Ausfällen des Archivierungs-Nodes
+        url: "/maintain/recovering-from-archive-node-failures.html"
+    - title: Ersetzen Sie den Linux-Knoten
+      entries:
+      - title: Austausch von Linux-Knoten
+        pdf-filename: Linux-Node ersetzen (alle Grid-Node-Typen)
+        url: "/maintain/all-node-types-replacing-linux-node.html"
+      - title: Implementieren Sie neue Linux-Hosts
+        url: "/maintain/deploying-new-linux-hosts.html"
+      - title: Stellen Sie die Grid-Nodes für den Host wieder her
+        url: "/maintain/restoring-existing-nodes.html"
+      - title: 'Was ist weiter: Führen Sie zusätzliche Recovery-Schritte, wenn erforderlich'
+        url: "/maintain/whats-next-performing-additional-recovery-steps-if-required.html"
+    - title: Ersetzen Sie den VMware-Knoten
+      url: "/maintain/all-node-types-replacing-vmware-node.html"
+    - title: Austausch eines fehlerhaften Node durch Services Appliance
+      entries:
+      - title: Richtlinien für den Austausch
+        pdf-filename: Austausch eines fehlerhaften Node durch Services Appliance
+        url: "/maintain/replacing-failed-node-with-services-appliance.html"
+      - title: Installation der Services Appliance (nur Plattformänderung)
+        url: "/maintain/installing-services-appliance-platform-change-only.html"
+      - title: Appliance für die Neuinstallation vorbereiten (nur Plattformaustausch)
+        url: "/maintain/preparing-appliance-for-reinstallation-platform-replacement-only.html"
+      - title: Starten der Softwareinstallation auf der Services-Appliance
+        url: "/maintain/starting-software-installation-on-services-appliance-recovery.html"
+      - title: Überwachen Sie die Installation der Services Appliance
+        url: "/maintain/monitoring-services-appliance-installation.html"
+    - title: Wie der technische Support eine Site wiederherstellt
+      url: "/maintain/how-site-recovery-is-performed-by-technical-support.html"
+  - title: Aktivieren Sie StorageGRID
+    url: "/storagegrid-enable.html"
+  - title: StorageGRID und BlueXP
+    url: "/storagegrid-bluexp.html"
+  - title: Andere Versionen
+    url: "/earlier-versions.html"
+  - title: Rechtliche Hinweise
+    url: "/legal-notices.html"
+product-family:
+  name: StorageGRID documentation
+  repo: storagegrid-family

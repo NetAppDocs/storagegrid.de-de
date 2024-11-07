@@ -1,0 +1,81 @@
+---
+permalink: vmware/troubleshooting-installation-issues.html 
+sidebar: sidebar 
+keywords: how to troubleshoot installation issues 
+summary: Falls bei der Installation des StorageGRID-Systems Probleme auftreten, können Sie auf die Installationsprotokolldateien zugreifen. 
+---
+= Fehlerbehebung bei Installationsproblemen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Falls bei der Installation des StorageGRID-Systems Probleme auftreten, können Sie auf die Installationsprotokolldateien zugreifen.
+
+Im Folgenden finden Sie die wichtigsten Installationsprotokolldateien, die beim technischen Support eventuell zu Problemen führen müssen.
+
+* `/var/local/log/install.log` (Auf allen Grid-Nodes vorhanden)
+* `/var/local/log/gdu-server.log` (Auf dem primären Admin-Node gefunden)
+
+
+.Verwandte Informationen
+Informationen zum Zugriff auf die Protokolldateien finden Sie unter link:../monitor/logs-files-reference.html["Referenz für Protokolldateien"].
+
+Wenn Sie weitere Hilfe benötigen, wenden Sie sich an https://mysupport.netapp.com/site/global/dashboard["NetApp Support"^].
+
+
+
+== Die Ressourcenreservierung für virtuelle Maschinen erfordert eine Anpassung
+
+OVF-Dateien enthalten eine Ressourcenreservierung, die sicherstellen soll, dass jeder Grid-Knoten über ausreichend RAM und CPU verfügt, um effizient zu arbeiten. Wenn Sie virtuelle Maschinen durch Bereitstellung dieser OVF-Dateien auf VMware erstellen und die vordefinierte Anzahl von Ressourcen nicht verfügbar ist, werden die virtuellen Maschinen nicht gestartet.
+
+.Über diese Aufgabe
+Wenn Sie sicher sind, dass der VM-Host über ausreichende Ressourcen für jeden Grid-Node verfügt, passen Sie die Ressourcen, die für die einzelnen Virtual Machines zugewiesen sind, manuell an und starten Sie dann die Virtual Machines.
+
+.Schritte
+. Wählen Sie in der VMware vSphere Hypervisor-Clientstruktur die virtuelle Maschine aus, die nicht gestartet wird.
+. Klicken Sie mit der rechten Maustaste‐auf die virtuelle Maschine, und wählen Sie *Einstellungen bearbeiten*.
+. Wählen Sie im Fenster Eigenschaften von virtuellen Maschinen die Registerkarte *Ressourcen* aus.
+. Passen Sie die Ressourcen an, die der virtuellen Maschine zugewiesen sind:
++
+.. Wählen Sie *CPU* aus, und passen Sie mit dem Schieberegler Reservierung die für diese virtuelle Maschine reservierten MHz an.
+.. Wählen Sie *Speicher*, und passen Sie mit dem Schieberegler Reservierung die für diese virtuelle Maschine reservierten MB an.
+
+
+. Klicken Sie auf *OK*.
+. Wiederholen Sie diesen Vorgang für andere virtuelle Maschinen, die auf demselben VM-Host gehostet werden.
+
+
+
+
+== Das temporäre Installationspasswort wurde deaktiviert
+
+Wenn Sie einen VMware Node bereitstellen, können Sie optional ein temporäres Installationspasswort angeben. Sie müssen über dieses Passwort verfügen, um auf die VM-Konsole zuzugreifen, oder SSH verwenden zu können, bevor der neue Node dem Grid Beitritt.
+
+Wenn Sie das temporäre Installationspasswort deaktiviert haben, müssen Sie zusätzliche Schritte zum Debuggen von Installationsproblemen durchführen.
+
+Sie können eine der folgenden Aktionen ausführen:
+
+* Stellen Sie die VM erneut bereit, geben Sie aber ein temporäres Installationspasswort an, damit Sie auf die Konsole zugreifen oder SSH zum Debuggen von Installationsproblemen verwenden können.
+* Verwenden Sie vCenter, um das Kennwort festzulegen:
++
+.. Schalten Sie die VM aus.
+.. Gehen Sie zu *VM*, wählen Sie die Registerkarte *Configure* und wählen Sie *vApp Options*.
+.. Geben Sie den Typ des temporären Installationspassworts an, das festgelegt werden soll:
++
+*** Wählen Sie *CUSTOM_TEMPORARY_PASSWORD*, um ein benutzerdefiniertes temporäres Passwort festzulegen.
+*** Wählen Sie *TEMPORARY_PASSWORD_TYPE* aus, um den Knotennamen als temporäres Passwort zu verwenden.
+
+
+.. Wählen Sie *Wert Festlegen*.
+.. Legen Sie das temporäre Kennwort fest:
++
+*** Ändern Sie *CUSTOM_TEMPORARY_PASSWORD* in einen benutzerdefinierten Passwortwert.
+*** Aktualisieren Sie den *TEMPORARY_PASSWORD_TYPE* mit dem Wert *use Node Name*.
+
+
+.. Starten Sie die VM neu, um das neue Passwort anzuwenden.
+
+
+

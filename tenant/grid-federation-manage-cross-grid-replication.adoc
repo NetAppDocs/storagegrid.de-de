@@ -1,0 +1,174 @@
+---
+permalink: tenant/grid-federation-manage-cross-grid-replication.html 
+sidebar: sidebar 
+keywords: grid federation, cross-grid replication, use grid federation connection, replicate client delete markers, s3 bucket 
+summary: f Ihrem Mandantenkonto wurde beim Erstellen die Berechtigung zum Verwenden der Grid-Federation-Verbindung zugewiesen. Sie können Objekte mithilfe der Grid-übergreifenden Replizierung automatisch zwischen Buckets im Mandanten-Quell-Grid und Buckets im Mandanten-Ziel-Grid replizieren. Die Grid-übergreifende Replizierung kann in eine oder beide Richtungen erfolgen. 
+---
+= Grid-übergreifende Replizierung managen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Ihrem Mandantenkonto bei der Erstellung die Berechtigung *Grid Federation connection* verwenden zugewiesen wurde, können Sie mittels Grid-Replizierung automatisch Objekte zwischen Buckets im Quell-Grid des Mandanten und Buckets im Zielraster des Mandanten replizieren. Die Grid-übergreifende Replizierung kann in eine oder beide Richtungen erfolgen.
+
+
+
+== Workflow für Grid-übergreifende Replizierung
+
+Das Workflow-Diagramm fasst die Schritte zusammen, die Sie zur Konfiguration der Grid-übergreifenden Replikation zwischen Buckets in zwei Grids durchführen. Diese Schritte werden im Folgenden genauer beschrieben.
+
+image::../media/grid-federation-cgr-workflow.png[Workflow für Grid-übergreifende Replizierung]
+
+
+
+== Konfiguration der Grid-übergreifenden Replizierung
+
+Bevor Sie die Grid-übergreifende Replizierung verwenden können, müssen Sie sich bei den entsprechenden Mandantenkonten in jedem Grid anmelden und identische Buckets erstellen. Anschließend können Sie die Grid-übergreifende Replizierung für einen oder beide Buckets aktivieren.
+
+.Bevor Sie beginnen
+* Sie haben die Anforderungen für die Grid-übergreifende Replizierung überprüft. Siehe link:../admin/grid-federation-what-is-cross-grid-replication.html["Was ist Grid-übergreifende Replizierung"].
+* Sie verwenden einen link:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Das Mandantenkonto hat die Berechtigung *use Grid Federation connection*, und identische Mandantenkonten existieren auf beiden Grids. Siehe link:../admin/grid-federation-manage-tenants.html["Verwalten Sie die zulässigen Mandanten für die Grid Federation-Verbindung"].
+* Der Mandantenbenutzer, den Sie sich anmelden, da er bereits in beiden Rastern vorhanden ist, gehört zu einer Benutzergruppe mit dem link:tenant-management-permissions.html["Root-Zugriffsberechtigung"].
+* Wenn Sie sich als lokaler Benutzer am Zielraster des Mandanten anmelden, hat der Stammbenutzer des Mandantenkontos ein Kennwort für Ihr Benutzerkonto in diesem Raster festgelegt.
+
+
+
+
+=== Erstellen Sie zwei identische Buckets
+
+Melden Sie sich als ersten Schritt bei den entsprechenden Mandantenkonten in jedem Grid an und erstellen Sie identische Buckets.
+
+.Schritte
+. Erstellen Sie ausgehend von einem der beiden Raster in der Grid Federation-Verbindung einen neuen Bucket:
++
+.. Melden Sie sich mit den Anmeldeinformationen eines Mandantenbenutzers an, der in beiden Grids vorhanden ist.
++
+
+NOTE: Wenn Sie sich nicht als lokaler Benutzer am Zielraster des Mandanten anmelden können, bestätigen Sie, dass der Root-Benutzer für das Mandantenkonto ein Kennwort für Ihr Benutzerkonto festgelegt hat.
+
+.. Folgen Sie den Anweisungen zu link:creating-s3-bucket.html["Erstellen eines S3-Buckets"].
+.. Wählen Sie auf der Registerkarte *Objekteinstellungen verwalten* *Objektversionierung aktivieren*.
+.. Wenn die S3-Objektsperre für Ihr StorageGRID-System aktiviert ist, aktivieren Sie nicht die S3-Objektsperre für den Bucket.
+.. Wählen Sie *Eimer erstellen*.
+.. Wählen Sie *Fertig*.
+
+
+. Wiederholen Sie diese Schritte, um einen identischen Bucket für dasselbe Mandantenkonto auf dem anderen Grid in der Grid-Federation-Verbindung zu erstellen.
++
+
+TIP: Je nach Bedarf kann jeder Bucket einen anderen Bereich verwenden.
+
+
+
+
+
+=== Grid-übergreifende Replizierung
+
+Sie müssen diese Schritte ausführen, bevor Sie Objekte zu einem Bucket hinzufügen.
+
+.Schritte
+. Ausgehend von einem Raster, dessen Objekte Sie replizieren möchten, aktivieren Sielink:../admin/grid-federation-what-is-cross-grid-replication.html["Grid-übergreifende Replizierung in eine Richtung"]:
++
+.. Melden Sie sich beim Mandantenkonto für den Bucket an.
+.. Wählen Sie *View Buckets* aus dem Dashboard, oder wählen Sie *STORAGE (S3)* > *Buckets*.
+.. Wählen Sie den Bucket-Namen aus der Tabelle aus, um auf die Seite mit den Bucket-Details zuzugreifen.
+.. Wählen Sie die Registerkarte *Grid-Replikation* aus.
+.. Wählen Sie *enable*, und überprüfen Sie die Liste der Anforderungen.
+.. Wenn alle Anforderungen erfüllt sind, wählen Sie die zu verwendende Netzverbundverbindung aus.
+.. Optional können Sie die Einstellung *Replicate delete Markers* ändern, um festzustellen, was im Zielraster passiert, wenn ein S3-Client eine Löschanforderung an das Quellraster ausgibt, das keine Versions-ID enthält:
++
+*** *Ja* (Standard): Ein Löschmarker wird zum Quell-Bucket hinzugefügt und in den Ziel-Bucket repliziert.
+*** *Nein*: Eine Löschmarkierung wird dem Quell-Bucket hinzugefügt, wird aber nicht in den Ziel-Bucket repliziert.
++
+image::../media/grid-federation-cross-grid-replication-client-deletes.png[Abbildung zeigt, wie der Replikate-Client auf beiden Rastern gelöscht wird]
+
++
+
+NOTE: Wenn die Löschanforderung eine Versions-ID enthält, wird diese Objektversion dauerhaft aus dem Quell-Bucket entfernt. StorageGRID repliziert Löschanforderungen, die eine Versions-ID enthalten, nicht, sodass dieselbe Objektversion nicht vom Ziel gelöscht wird.
+
++
+Weitere Informationen finden Sie unter link:../admin/grid-federation-what-is-cross-grid-replication.html["Was ist Grid-übergreifende Replizierung"] .
+
+
+
+.. Ändern Sie optional die Einstellung der Audit-Kategorie *Grid-übergreifende Replikation*, um das Volumen der Audit-Nachrichten zu verwalten:
++
+*** *Error* (Standard): Nur fehlgeschlagene Cross-Grid-Replikationsanforderungen sind in der Audit-Ausgabe enthalten.
+*** *Normal*: Alle Grid-übergreifenden Replikationsanfragen sind enthalten, was das Volumen der Audit-Ausgabe erheblich erhöht.
+
+
+.. Überprüfen Sie Ihre Auswahl. Sie können diese Einstellungen nur ändern, wenn beide Buckets leer sind.
+.. Wählen Sie *Enable und Test*.
++
+Nach einigen Augenblicken wird eine Erfolgsmeldung angezeigt. Objekte, die diesem Bucket hinzugefügt wurden, werden nun automatisch in das andere Grid repliziert. *Grid-übergreifende Replikation* wird als aktivierte Funktion auf der Bucket-Detailseite angezeigt.
+
+
+
+. Gehen Sie optional zum entsprechenden Bucket auf dem anderen Grid und link:../admin/grid-federation-what-is-cross-grid-replication.html["Aktivieren Sie die Grid-übergreifende Replizierung in beide Richtungen"].
+
+
+
+
+== Testen Sie die Replikation zwischen Grids
+
+Wenn die Grid-übergreifende Replizierung für einen Bucket aktiviert ist, müssen Sie möglicherweise überprüfen, ob die Verbindung und die Grid-übergreifende Replizierung ordnungsgemäß funktionieren und dass die Quell- und Ziel-Buckets nach wie vor alle Anforderungen erfüllen (beispielsweise ist die Versionierung weiterhin aktiviert).
+
+.Bevor Sie beginnen
+* Sie verwenden einen link:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie gehören zu einer Benutzergruppe mit dem link:tenant-management-permissions.html["Root-Zugriffsberechtigung"].
+
+
+.Schritte
+. Melden Sie sich beim Mandantenkonto für den Bucket an.
+. Wählen Sie *View Buckets* aus dem Dashboard, oder wählen Sie *STORAGE (S3)* > *Buckets*.
+. Wählen Sie den Bucket-Namen aus der Tabelle aus, um auf die Seite mit den Bucket-Details zuzugreifen.
+. Wählen Sie die Registerkarte *Grid-Replikation* aus.
+. Wählen Sie *Verbindung testen*.
++
+Wenn die Verbindung in einem ordnungsgemäßen Zustand ist, wird ein Erfolgsbanner angezeigt. Andernfalls wird eine Fehlermeldung angezeigt, die Sie und der Grid-Administrator zur Behebung des Problems verwenden können. Weitere Informationen finden Sie unter link:../admin/grid-federation-troubleshoot.html["Fehler beim Grid-Verbund beheben"].
+
+. Wenn die Grid-übergreifende Replikation in beide Richtungen konfiguriert ist, gehen Sie zum entsprechenden Bucket auf dem anderen Grid und wählen Sie *Verbindung testen* aus, um zu überprüfen, ob die Grid-übergreifende Replikation in die andere Richtung funktioniert.
+
+
+
+
+== Deaktivieren Sie die Grid-übergreifende Replizierung
+
+Sie können die Grid-übergreifende Replikation dauerhaft beenden, wenn Sie keine Objekte mehr in das andere Raster kopieren möchten.
+
+Beachten Sie vor dem Deaktivieren der Grid-übergreifenden Replikation Folgendes:
+
+* Durch die Deaktivierung der Grid-übergreifenden Replikation werden keine Objekte entfernt, die bereits zwischen den Rastern kopiert wurden. Beispielsweise werden Objekte in `my-bucket` Grid 1, die in Grid 2 kopiert wurden `my-bucket`, nicht entfernt, wenn Sie die Grid-übergreifende Replikation für diesen Bucket deaktivieren. Wenn Sie diese Objekte löschen möchten, müssen Sie sie manuell entfernen.
+* Wenn die Grid-übergreifende Replizierung für jeden Buckets aktiviert wurde (d. h. wenn die Replikation in beide Richtungen erfolgt), können Sie die Grid-übergreifende Replizierung für einen oder beide Buckets deaktivieren. So können Sie beispielsweise die Replikation von Objekten von in Raster 1 nach in `my-bucket` Raster 2 deaktivieren `my-bucket`, während Sie weiterhin Objekte von in Raster 2 nach in Raster `my-bucket` 1 replizieren `my-bucket`.
+* Sie müssen die Grid-übergreifende Replizierung deaktivieren, bevor Sie die Berechtigung eines Mandanten zur Verwendung der Grid-Federation-Verbindung entfernen können. Siehe link:../admin/grid-federation-manage-tenants.html["Management zulässiger Mandanten"].
+* Wenn Sie die Grid-übergreifende Replizierung für einen Bucket deaktivieren, der Objekte enthält, können Sie die Grid-übergreifende Replizierung nur wieder aktivieren, wenn Sie alle Objekte sowohl aus den Quell- als auch aus den Ziel-Buckets löschen.
++
+
+CAUTION: Die Replikation kann nur dann wieder aktiviert werden, wenn beide Buckets leer sind.
+
+
+
+.Bevor Sie beginnen
+* Sie verwenden einen link:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie gehören zu einer Benutzergruppe mit dem link:tenant-management-permissions.html["Root-Zugriffsberechtigung"].
+
+
+.Schritte
+. Beenden Sie die Grid-Replizierung für den Bucket, beginnend mit dem Grid, dessen Objekte Sie nicht mehr replizieren möchten:
++
+.. Melden Sie sich beim Mandantenkonto für den Bucket an.
+.. Wählen Sie *View Buckets* aus dem Dashboard, oder wählen Sie *STORAGE (S3)* > *Buckets*.
+.. Wählen Sie den Bucket-Namen aus der Tabelle aus, um auf die Seite mit den Bucket-Details zuzugreifen.
+.. Wählen Sie die Registerkarte *Grid-Replikation* aus.
+.. Wählen Sie *Replikation deaktivieren*.
+.. Wenn Sie sicher sind, dass Sie die Grid-übergreifende Replikation für diesen Bucket deaktivieren möchten, geben Sie *Yes* in das Textfeld ein und wählen Sie *Disable* aus.
++
+Nach einigen Augenblicken wird eine Erfolgsmeldung angezeigt. Neue Objekte, die diesem Bucket hinzugefügt wurden, können nicht mehr automatisch in das andere Grid repliziert werden. *Grid-übergreifende Replikation* wird nicht mehr als aktivierte Funktion auf der Buckets-Seite angezeigt.
+
+
+
+. Wenn die Grid-übergreifende Replizierung für beide Richtungen konfiguriert wurde, wechseln Sie zum entsprechenden Bucket auf dem anderen Grid und beenden Sie die Grid-übergreifende Replizierung in die andere Richtung.
+

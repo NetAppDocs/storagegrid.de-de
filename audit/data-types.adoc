@@ -1,0 +1,61 @@
+---
+permalink: audit/data-types.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, data, types, UI32, UI64, FC32, IPAD, CSTR, IPAD 
+summary: Verschiedene Datentypen werden zur Speicherung von Informationen in Audit-Meldungen verwendet. 
+---
+= Datentypen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Verschiedene Datentypen werden zur Speicherung von Informationen in Audit-Meldungen verwendet.
+
+[cols="1a,4a"]
+|===
+| Typ | Beschreibung 
+
+
+ a| 
+UI32
+ a| 
+Unsigned long integer (32 Bit); es kann die Zahlen 0 bis 4,294,967,295 speichern.
+
+
+
+ a| 
+UI64
+ a| 
+Unsigned double long integer (64 Bit); es kann die Zahlen 0 bis 18,446,744,073,709,551,615 speichern.
+
+
+
+ a| 
+FC32
+ a| 
+4-Zeichen-Konstante; ein 32-Bit-Integer-Wert ohne Vorzeichen, der als vier ASCII-Zeichen wie „ABCD“ dargestellt wird.
+
+
+
+ a| 
+IPAD
+ a| 
+Wird für IP-Adressen verwendet.
+
+
+
+ a| 
+CSTR
+ a| 
+Ein Array mit variabler Länge von UTF-8 Zeichen. Zeichen können mit den folgenden Konventionen entgangen werden:
+
+* Backslash ist \\.
+* Der Schlittenrücklauf beträgt \r
+* Doppelte Anführungszeichen sind \ʺ.
+* Zeilenvorschub (neue Zeile) ist \n.
+* Zeichen können durch ihre hexadezimalen Äquivalente ersetzt werden (im Format \xHH, wobei HH der hexadezimale Wert ist, der das Zeichen darstellt).
+
+
+|===

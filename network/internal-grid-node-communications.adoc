@@ -1,0 +1,483 @@
+---
+permalink: network/internal-grid-node-communications.html 
+sidebar: sidebar 
+keywords: storagegrid, network port, internal communications, ports, TCP, UDP, grid communications, port 
+summary: 'Die interne StorageGRID-Firewall erlaubt nur eingehende Verbindungen zu bestimmten Ports im Grid-Netzwerk, mit Ausnahme der Ports 22, 80, 123 und 443 \ (siehe Informationen zur externen Kommunikation\). Verbindungen werden auch an Ports akzeptiert, die durch Load Balancer-Endpunkte definiert wurden.' 
+---
+= Interne Kommunikation mit Grid-Nodes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die interne StorageGRID Firewall ermöglicht eingehende Verbindungen zu bestimmten Ports im Grid-Netzwerk. Verbindungen werden auch an Ports akzeptiert, die durch Load Balancer-Endpunkte definiert wurden.
+
+
+NOTE: NetApp empfiehlt, ICMP (Internet Control Message Protocol)-Datenverkehr zwischen den Grid-Knoten zu aktivieren. Wenn ICMP-Datenverkehr zugelassen wird, kann die Failover-Performance verbessert werden, wenn ein Grid-Knoten nicht erreicht werden kann.
+
+Zusätzlich zu ICMP und den in der Tabelle aufgeführten Ports verwendet StorageGRID das Virtual Router Redundancy Protocol (VRRP). VRRP ist ein Internetprotokoll, das IP-Protokoll Nummer 112 verwendet. StorageGRID verwendet VRRP nur im Unicast-Modus. VRRP ist nur erforderlich, wenn link:../admin/managing-high-availability-groups.html["Hochverfügbarkeitsgruppen"]konfiguriert sind.
+
+
+
+== Richtlinien für Linux-basierte Knoten
+
+Wenn Netzwerkrichtlinien des Unternehmens den Zugriff auf einen dieser Ports einschränken, können Sie Ports während der Bereitstellung mithilfe eines Konfigurationsparameters neu zuordnen. Weitere Informationen über die Zuordnung von Ports und die Konfigurationsparameter für die Bereitstellung finden Sie unter:
+
+* link:../rhel/index.html["Installieren Sie StorageGRID unter Red hat Enterprise Linux"]
+* link:../ubuntu/index.html["Installieren Sie StorageGRID auf Ubuntu oder Debian"]
+
+
+
+
+== Richtlinien für VMware-basierte Nodes
+
+Konfigurieren Sie die folgenden Ports nur dann, wenn Sie Firewall-Einschränkungen definieren müssen, die sich außerhalb des VMware-Netzwerks befinden.
+
+Wenn Netzwerkrichtlinien des Unternehmens den Zugriff auf eine dieser Ports einschränken, können Sie bei der Implementierung von Nodes mit dem VMware vSphere Web Client Ports neu zuordnen oder bei der Automatisierung der Grid Node-Bereitstellung eine Konfigurationsdateieinstellung verwenden. Weitere Informationen über die Parameter für die Portumzuordnung und Bereitstellungskonfiguration finden Sie unter link:../vmware/index.html["Installieren Sie StorageGRID auf VMware"].
+
+
+
+== Richtlinien für Appliance-Nodes
+
+Wenn Netzwerkrichtlinien des Unternehmens den Zugriff auf eine dieser Ports einschränken, können Sie Ports mithilfe des StorageGRID Appliance Installer neu zuordnen. Siehe https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/optional-remapping-network-ports-for-appliance.html["Optional: Netzwerkports für Appliance neu zuordnen"^].
+
+
+
+== Interne StorageGRID-Ports
+
+[cols="1a,1a,1a,1a,4a"]
+|===
+| Port | TCP oder UDP | Von | Bis | Details 
+
+
+ a| 
+22
+ a| 
+TCP
+ a| 
+Primärer Admin-Node
+ a| 
+Alle Nodes
+ a| 
+Bei Wartungsarbeiten muss der primäre Admin-Node mit SSH am Port 22 mit allen anderen Nodes kommunizieren können. Das Aktivieren von SSH-Datenverkehr von anderen Nodes ist optional.
+
+
+
+ a| 
+80
+ a| 
+TCP
+ a| 
+Appliances
+ a| 
+Primärer Admin-Node
+ a| 
+Verwendet von StorageGRID-Appliances, um mit dem primären Admin-Knoten zu kommunizieren, um die Installation zu starten.
+
+
+
+ a| 
+123
+ a| 
+UDP
+ a| 
+Alle Nodes
+ a| 
+Alle Nodes
+ a| 
+Netzwerkzeitprotokolldienst. Jeder Node synchronisiert seine Zeit mithilfe von NTP mit jedem anderen Node.
+
+
+
+ a| 
+443
+ a| 
+TCP
+ a| 
+Alle Nodes
+ a| 
+Primärer Admin-Node
+ a| 
+Wird zur Kommunikation des Status an den primären Admin-Knoten während der Installation und anderen Wartungsverfahren verwendet.
+
+
+
+ a| 
+1055
+ a| 
+TCP
+ a| 
+Alle Nodes
+ a| 
+Primärer Admin-Node
+ a| 
+Interner Datenverkehr für Installations-, Erweiterungs-, Wiederherstellungs- und andere Wartungsverfahren.
+
+
+
+ a| 
+1139
+ a| 
+TCP
+ a| 
+Storage-Nodes
+ a| 
+Storage-Nodes
+ a| 
+Interner Datenverkehr zwischen Speicherknoten.
+
+
+
+ a| 
+1501
+ a| 
+TCP
+ a| 
+Alle Nodes
+ a| 
+Storage-Nodes mit ADC
+ a| 
+Reporting-, Audit- und Konfigurationsdatenverkehr.
+
+
+
+ a| 
+1502
+ a| 
+TCP
+ a| 
+Alle Nodes
+ a| 
+Storage-Nodes
+ a| 
+Interner S3- und Swift-Datenverkehr.
+
+
+
+ a| 
+1504
+ a| 
+TCP
+ a| 
+Alle Nodes
+ a| 
+Admin-Nodes
+ a| 
+NMS-Service-Berichterstellung und interner Datenverkehr bei der Konfiguration.
+
+
+
+ a| 
+1505
+ a| 
+TCP
+ a| 
+Alle Nodes
+ a| 
+Admin-Nodes
+ a| 
+AMS-Dienst internen Verkehr.
+
+
+
+ a| 
+1506
+ a| 
+TCP
+ a| 
+Alle Nodes
+ a| 
+Alle Nodes
+ a| 
+Serverstatus interner Datenverkehr.
+
+
+
+ a| 
+1507
+ a| 
+TCP
+ a| 
+Alle Nodes
+ a| 
+Gateway-Nodes
+ a| 
+Interner Datenverkehr des Load Balancer:
+
+
+
+ a| 
+1508
+ a| 
+TCP
+ a| 
+Alle Nodes
+ a| 
+Primärer Admin-Node
+ a| 
+Interner Datenverkehr im Konfigurationsmanagement.
+
+
+
+ a| 
+1511
+ a| 
+TCP
+ a| 
+Alle Nodes
+ a| 
+Storage-Nodes
+ a| 
+Interner Metadaten-Datenverkehr:
+
+
+
+ a| 
+7001
+ a| 
+TCP
+ a| 
+Storage-Nodes
+ a| 
+Storage-Nodes
+ a| 
+Cassandra TLS zwischen Nodes-Cluster-Kommunikation
+
+
+
+ a| 
+7443
+ a| 
+TCP
+ a| 
+Alle Nodes
+ a| 
+Primärer Admin-Node
+ a| 
+Interner Datenverkehr für Installation, Erweiterung, Wiederherstellung, andere Wartungsverfahren und Fehlerberichterstattung.
+
+
+
+ a| 
+8011
+ a| 
+TCP
+ a| 
+Alle Nodes
+ a| 
+Primärer Admin-Node
+ a| 
+Interner Datenverkehr für Installations-, Erweiterungs-, Wiederherstellungs- und andere Wartungsverfahren.
+
+
+
+ a| 
+8443
+ a| 
+TCP
+ a| 
+Primärer Admin-Node
+ a| 
+Appliance-Nodes
+ a| 
+Interner Datenverkehr im Zusammenhang mit dem Wartungsmodus.
+
+
+
+ a| 
+9042
+ a| 
+TCP
+ a| 
+Storage-Nodes
+ a| 
+Storage-Nodes
+ a| 
+Cassandra-Client-Port:
+
+
+
+ a| 
+9999
+ a| 
+TCP
+ a| 
+Alle Nodes
+ a| 
+Alle Nodes
+ a| 
+Interner Datenverkehr für mehrere Dienste. Beinhaltet Wartungsvorgänge, Kennzahlen und Netzwerk-Updates.
+
+
+
+ a| 
+10226
+ a| 
+TCP
+ a| 
+Storage-Nodes
+ a| 
+Primärer Admin-Node
+ a| 
+Wird von StorageGRID Appliances für die Weiterleitung von AutoSupport-Paketen vom E-Series SANtricity System Manager zum primären Admin-Node verwendet.
+
+
+
+ a| 
+10342
+ a| 
+TCP
+ a| 
+Alle Nodes
+ a| 
+Primärer Admin-Node
+ a| 
+Interner Datenverkehr für Installations-, Erweiterungs-, Wiederherstellungs- und andere Wartungsverfahren.
+
+
+
+ a| 
+18000
+ a| 
+TCP
+ a| 
+Admin/Storage-Nodes
+ a| 
+Storage-Nodes mit ADC
+ a| 
+Kontodienst, interner Datenverkehr.
+
+
+
+ a| 
+18001
+ a| 
+TCP
+ a| 
+Admin/Storage-Nodes
+ a| 
+Storage-Nodes mit ADC
+ a| 
+Interner Datenverkehr der Identitätsföderation.
+
+
+
+ a| 
+18002
+ a| 
+TCP
+ a| 
+Admin/Storage-Nodes
+ a| 
+Storage-Nodes
+ a| 
+Interner API-Traffic im Zusammenhang mit Objektprotokollen.
+
+
+
+ a| 
+18003
+ a| 
+TCP
+ a| 
+Admin/Storage-Nodes
+ a| 
+Storage-Nodes mit ADC
+ a| 
+Plattform Dienste internen Traffic.
+
+
+
+ a| 
+18017
+ a| 
+TCP
+ a| 
+Admin/Storage-Nodes
+ a| 
+Storage-Nodes
+ a| 
+Interner Datenverkehr des Data Mover-Service für Cloud-Speicherpools.
+
+
+
+ a| 
+18019
+ a| 
+TCP
+ a| 
+Storage-Nodes
+ a| 
+Storage-Nodes
+ a| 
+Interner Traffic beim Chunk-Service für Erasure Coding.
+
+
+
+ a| 
+18082
+ a| 
+TCP
+ a| 
+Admin/Storage-Nodes
+ a| 
+Storage-Nodes
+ a| 
+Interner S3-Datenverkehr.
+
+
+
+ a| 
+18083
+ a| 
+TCP
+ a| 
+Alle Nodes
+ a| 
+Storage-Nodes
+ a| 
+Swift-bezogener interner Traffic:
+
+
+
+ a| 
+18086
+ a| 
+TCP
+ a| 
+Alle Grid-Nodes
+ a| 
+Alle Storage-Nodes
+ a| 
+Interner Datenverkehr im Zusammenhang mit dem LDR-Dienst.
+
+
+
+ a| 
+18200
+ a| 
+TCP
+ a| 
+Admin/Storage-Nodes
+ a| 
+Storage-Nodes
+ a| 
+Weitere Statistiken zu Client-Anforderungen.
+
+
+
+ a| 
+19000
+ a| 
+TCP
+ a| 
+Admin/Storage-Nodes
+ a| 
+Storage-Nodes mit ADC
+ a| 
+Keystone-Service: Interner Datenverkehr.
+
+|===
+.Verwandte Informationen
+link:external-communications.html["Externe Kommunikation"]

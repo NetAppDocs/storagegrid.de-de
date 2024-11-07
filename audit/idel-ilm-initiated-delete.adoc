@@ -1,0 +1,161 @@
+---
+permalink: audit/idel-ilm-initiated-delete.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, message, IDEL, ILM Initiated Delete 
+summary: Diese Meldung wird generiert, wenn ILM den Prozess zum Löschen eines Objekts startet. 
+---
+= IDEL: ILM gestartet Löschen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Diese Meldung wird generiert, wenn ILM den Prozess zum Löschen eines Objekts startet.
+
+Die IDEL-Nachricht wird in einer der folgenden Situationen erzeugt:
+
+* *Für Objekte in konformen S3-Buckets*: Diese Meldung wird generiert, wenn ILM den Prozess des automatischen Löschens eines Objekts startet, da der Aufbewahrungszeitraum abgelaufen ist (vorausgesetzt, die Einstellung zum automatischen Löschen ist aktiviert und die Legal Hold ist deaktiviert).
+* *Für Objekte in nicht konformen S3 Buckets*. Diese Meldung wird generiert, wenn ILM den Prozess zum Löschen eines Objekts startet, da derzeit keine Platzierungsanweisungen in den aktiven ILM-Richtlinien für das Objekt gelten.
+
+
+[cols="1a,1a,4a"]
+|===
+| Codieren | Feld | Beschreibung 
+
+
+ a| 
+CBID
+ a| 
+Kennung Für Inhaltsblock
+ a| 
+Die CBID des Objekts.
+
+
+
+ a| 
+CMPA
+ a| 
+Compliance: Automatisches Löschen
+ a| 
+Nur für Objekte in S3-konformen Buckets. 0 (false) oder 1 (true) geben an, ob ein konformes Objekt automatisch gelöscht werden soll, wenn der Aufbewahrungszeitraum endet, es sei denn, der Bucket befindet sich unter einer gesetzlichen Aufbewahrungspflichten.
+
+
+
+ a| 
+CMPL
+ a| 
+Einhaltung: Gesetzliche Aufbewahrungspflichten
+ a| 
+Nur für Objekte in S3-konformen Buckets. 0 (false) oder 1 (true), die angeben, ob der Bucket derzeit unter einer gesetzlichen Aufbewahrungspflichten steht.
+
+
+
+ a| 
+CMPR
+ a| 
+Compliance: Aufbewahrungszeitraum
+ a| 
+Nur für Objekte in S3-konformen Buckets. Die Länge der Aufbewahrungsdauer des Objekts in Minuten.
+
+
+
+ a| 
+CTME
+ a| 
+Compliance: Aufnahmezeit
+ a| 
+Nur für Objekte in S3-konformen Buckets. Die Aufnahmezeit des Objekts. Sie können den Aufbewahrungszeitraum in Minuten zu diesem Wert hinzufügen, um zu bestimmen, wann das Objekt aus dem Bucket gelöscht werden kann.
+
+
+
+ a| 
+DMRK
+ a| 
+Löschen der Marker-Version-ID
+ a| 
+Version-ID des Löschmarker, der beim Löschen eines Objekts aus einem versionierten Bucket erstellt wurde Vorgänge in Buckets enthalten dieses Feld nicht.
+
+
+
+ a| 
+CSIZ
+ a| 
+Inhaltsgröße
+ a| 
+Die Größe des Objekts in Byte.
+
+
+
+ a| 
+STANDORT
+ a| 
+Standorte
+ a| 
+Der Speicherort von Objektdaten im StorageGRID System. Der Wert für GEBIETSSCHEMA lautet „“, wenn das Objekt keine Speicherorte hat (zum Beispiel wurde es gelöscht).
+
+CLEC: Für Objekte, die mit Erasure Coding codiert wurden, werden die Profil-ID und die Gruppen-ID der Erasure Coding-Gruppe verwendet, die auf die Objektdaten angewendet wird.
+
+CLDI: Für replizierte Objekte, die LDR-Node-ID und die Volume-ID des Objektstandorts.
+
+CLNL: LICHTBOGENKNOTEN-ID des Objektes, wenn die Objektdaten archiviert werden.
+
+
+
+ a| 
+PFAD
+ a| 
+S3-Bucket/Key
+ a| 
+Der S3-Bucket-Name und der S3-Schlüsselname.
+
+
+
+ a| 
+RSLT
+ a| 
+Ergebnis
+ a| 
+Das Ergebnis des ILM-Vorgangs.
+
+SUCS: Der ILM-Vorgang war erfolgreich.
+
+
+
+ a| 
+REGEL
+ a| 
+Regelbezeichnung
+ a| 
+* Wenn ein Objekt in einem konformen S3-Bucket automatisch gelöscht wird, weil der Aufbewahrungszeitraum abgelaufen ist, ist dieses Feld leer.
+* Wenn das Objekt gelöscht wird, da derzeit keine Anweisungen zur Platzierung für das Objekt vorhanden sind, zeigt dieses Feld den vom Menschen lesbaren Namen der letzten ILM-Regel an, die auf das Objekt angewendet wurde.
+
+
+
+
+ a| 
+SGRP
+ a| 
+Standort (Gruppe)
+ a| 
+Wenn vorhanden, wurde das Objekt am angegebenen Standort gelöscht, nicht der Standort, an dem das Objekt aufgenommen wurde.
+
+
+
+ a| 
+UUID
+ a| 
+Universell Eindeutige Kennung
+ a| 
+Die Kennung des Objekts im StorageGRID System.
+
+
+
+ a| 
+VSID
+ a| 
+Version-ID
+ a| 
+Die Version-ID der spezifischen Version eines Objekts, das gelöscht wurde. Für Vorgänge in Buckets und Objekten mit nicht versionierten Buckets wird dieses Feld nicht berücksichtigt.
+
+|===

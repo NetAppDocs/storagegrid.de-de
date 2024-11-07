@@ -1,0 +1,49 @@
+---
+permalink: maintain/gathering-required-materials-node-decom.html 
+sidebar: sidebar 
+keywords: storagegrid, node decommission, decommission 
+summary: Bevor Sie einen Grid-Node außer Betrieb nehmen, müssen Sie die folgenden Informationen erhalten. 
+---
+= Sammeln Sie die erforderlichen Materialien
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor Sie einen Grid-Node außer Betrieb nehmen, müssen Sie die folgenden Informationen erhalten.
+
+[cols="1a,2a"]
+|===
+| Element | Hinweise 
+
+
+ a| 
+Recovery Package- `.zip`Datei
+ a| 
+Sie müssen link:downloading-recovery-package.html["Laden Sie das neueste Wiederherstellungspaket herunter"] `.zip` Datei (`sgws-recovery-package-_id-revision_.zip`). Sie können die Recovery Package-Datei verwenden, um das System wiederherzustellen, wenn ein Fehler auftritt.
+
+
+
+ a| 
+`Passwords.txt` Datei
+ a| 
+Diese Datei enthält die Passwörter, die für den Zugriff auf Grid-Knoten in der Befehlszeile erforderlich sind und im Wiederherstellungspaket enthalten sind.
+
+
+
+ a| 
+Provisioning-Passphrase
+ a| 
+Die Passphrase wird erstellt und dokumentiert, wenn das StorageGRID-System zum ersten Mal installiert wird. Die Provisionierungs-Passphrase ist nicht in der `Passwords.txt` Datei enthalten.
+
+
+
+ a| 
+Beschreibung der Topologie des StorageGRID Systems vor der Stilllegung
+ a| 
+Falls verfügbar, finden Sie eine Dokumentation, die die aktuelle Topologie des Systems beschreibt.
+
+|===
+.Verwandte Informationen
+link:../admin/web-browser-requirements.html["Anforderungen an einen Webbrowser"]

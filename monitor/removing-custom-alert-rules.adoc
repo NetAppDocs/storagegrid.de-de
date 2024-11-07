@@ -1,0 +1,38 @@
+---
+permalink: monitor/removing-custom-alert-rules.html 
+sidebar: sidebar 
+keywords: how to disable alert rules, how to remove a custom alert rule 
+summary: Sie können eine benutzerdefinierte Alarmregel entfernen, wenn Sie sie nicht mehr verwenden möchten. 
+---
+= Entfernen Sie benutzerdefinierte Warnungsregeln
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können eine benutzerdefinierte Alarmregel entfernen, wenn Sie sie nicht mehr verwenden möchten.
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben die link:../admin/admin-group-permissions.html["Managen von Warnmeldungen oder Root-Zugriffsberechtigungen"].
+
+
+.Schritte
+. Wählen Sie *ALERTS* > *Regeln*.
++
+Die Seite Alarmregeln wird angezeigt.
+
+. Wählen Sie das Optionsfeld für die benutzerdefinierte Alarmregel, die Sie entfernen möchten.
++
+Eine Standard-Warnungsregel kann nicht entfernt werden.
+
+. Wählen Sie *Benutzerdefinierte Regel entfernen*.
++
+Ein Bestätigungsdialogfeld wird angezeigt.
+
+. Wählen Sie * OK* aus, um die Warnregel zu entfernen.
++
+Alle aktiven Instanzen der Warnmeldung werden innerhalb von 10 Minuten behoben.
+
+

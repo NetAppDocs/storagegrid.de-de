@@ -1,0 +1,42 @@
+---
+permalink: s3/operations-on-the-service.html 
+sidebar: sidebar 
+keywords: listbuckets, get service, operations on the service 
+summary: Das StorageGRID System unterstützt Operationen für den Service. 
+---
+= Betrieb auf dem Service
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das StorageGRID System unterstützt die folgenden Vorgänge beim Service.
+
+[cols="1a,2a"]
+|===
+| Betrieb | Implementierung 
+
+
+ a| 
+ListBuchs
+
+(Zuvor „GET Service“ genannt)
+ a| 
+Wird mit dem gesamten Amazon S3-REST-API-Verhalten implementiert. Änderungen vorbehalten.
+
+
+
+ a| 
+GET Storage-Auslastung
+ a| 
+In der StorageGRIDlink:get-storage-usage-request.html["GET Storage-Auslastung"]-Anfrage wird der von einem Konto insgesamt und für jeden mit dem Konto verknüpften Bucket verwendete Storage angezeigt. Dies ist eine Operation auf dem Dienst mit einem Pfad von / und einem benutzerdefinierten Abfrageparameter (`?x-ntap-sg-usage`) hinzugefügt.
+
+
+
+ a| 
+OPTIONEN /
+ a| 
+Client-Anwendungen können `OPTIONS /` Anfragen an den S3-Port auf einem Storage-Node ausgeben, ohne S3-Authentifizierungsdaten bereitzustellen, um festzustellen, ob der Storage-Node verfügbar ist. Sie können diese Anforderung zum Monitoring verwenden oder um zu ermöglichen, dass externe Load Balancer eingesetzt werden, wenn ein Storage-Node ausfällt.
+
+|===

@@ -1,0 +1,23 @@
+---
+permalink: audit/event-specific-data.html 
+sidebar: sidebar 
+keywords: audit message, event, shea, s3 head 
+summary: Jede Überwachungsmeldung im Prüfprotokoll zeichnet Daten auf, die für ein Systemereignis spezifisch sind. 
+---
+= Ereignisspezifische Daten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Jede Überwachungsmeldung im Prüfprotokoll zeichnet Daten auf, die für ein Systemereignis spezifisch sind.
+
+Nach dem öffnenden `[AUDT:` Container, der die Nachricht selbst identifiziert, liefern die nächsten Attribute Informationen über das Ereignis oder die Aktion, die in der Überwachungsmeldung beschrieben wird. Diese Attribute sind im folgenden Beispiel hervorgehoben:
+
+[]
+====
+2018-12-05T08:24:45.921845 [AUDT:*\[RSLT\(FC32\):SUCS\]*\[TIME\(UI64\):11454\]\[SAIP\(IPAD\):„10.224.0 60025621595611246499.100 60025621595611246499“\[SCS3TR\(CSTR\):„60025621595611246499“\*\[SSB7BK\(CS3BK]\[SCSB7BK]:\][SCSB7BK]\[SCSB7BK]\][SCSB7BK]\[SCSB7BK]\[\]\[SCSB7BK]\[SCSB7BK]\[\]\[SCSB7BK]\[SCSBCSOCSOCSOCSOCSOCSOCSOCSOCSOKTR]:\]\][SCBK][SCBK][SCBK]\[SCBK]\[SCBK]\[SCSB1CSOCSLT\[SCBK]\\\\\\\\\[SCSB1CSOCSOCSOCSO\\\\\\\\\\ 30720\ 10 \ 1543998285921845\\\\ 12281045 \ 15552417629170647261
+
+====
+Das `ATYP` Element (im Beispiel unterstrichen) gibt an, welches Ereignis die Nachricht generiert hat. Diese Beispielnachricht enthält den link:shea-s3-head.html["SHEA"] Nachrichtencode ([ATYP(FC32):SHEA]), der angibt, dass er durch eine erfolgreiche S3-HEAD-Anforderung generiert wurde.

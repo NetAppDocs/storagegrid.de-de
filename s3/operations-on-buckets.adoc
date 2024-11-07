@@ -1,0 +1,396 @@
+---
+permalink: s3/operations-on-buckets.html 
+sidebar: sidebar 
+keywords: bucket, buckets, operations on buckets 
+summary: Das StorageGRID System unterstützt für jedes S3-Mandantenkonto maximal 5,000 Buckets. 
+---
+= Operationen auf Buckets
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das StorageGRID System unterstützt für jedes S3-Mandantenkonto maximal 5,000 Buckets.
+
+Jedes Grid kann maximal 100,000 Buckets enthalten.
+
+Um 5,000 Buckets zu unterstützen, muss jeder Storage Node im Grid mindestens 64 GB RAM aufweisen.
+
+Einschränkungen für Bucket-Namen folgen den regionalen Einschränkungen des AWS US Standard. Sie sollten sie jedoch weiter auf DNS-Namenskonventionen beschränken, um Anforderungen im virtuellen Hosted-Stil von S3 zu unterstützen.
+
+Weitere Informationen finden Sie im Folgenden:
+
+* https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html["Amazon Simple Storage Service User Guide: Bucket-Kontingente, Einschränkungen und Einschränkungen"^]
+* link:../admin/configuring-s3-api-endpoint-domain-names.html["Konfigurieren Sie die Domänennamen des S3-Endpunkts"]
+
+
+Die Operationen ListObjects (GET Bucket) und ListObjectVersions (GET Bucket Object Versions) unterstützen StorageGRID link:consistency-controls.html["Konsistenzwerte"].
+
+Sie können überprüfen, ob für einzelne Buckets Updates zur letzten Zugriffszeit aktiviert oder deaktiviert wurden. Siehe link:get-bucket-last-access-time-request.html["ZEITPUNKT des letzten Zugriffs FÜR den Bucket ABRUFEN"].
+
+In der folgenden Tabelle wird beschrieben, wie StorageGRID S3-REST-API-Bucket-Operationen implementiert Um einen dieser Vorgänge durchzuführen, müssen die erforderlichen Anmeldedaten für den Zugriff für das Konto bereitgestellt werden.
+
+[cols="1a,3a"]
+|===
+| Betrieb | Implementierung 
+
+
+ a| 
+CreateBucket
+ a| 
+Erstellt einen neuen Bucket. Mit dem Erstellen des Buckets werden Sie zum Bucket-Eigentümer.
+
+* Bucket-Namen müssen die folgenden Regeln einhalten:
++
+** Jedes StorageGRID System muss eindeutig sein (nicht nur innerhalb des Mandantenkontos).
+** Muss DNS-konform sein.
+** Muss mindestens 3 und nicht mehr als 63 Zeichen enthalten.
+** Kann eine Reihe von einer oder mehreren Etiketten sein, wobei angrenzende Etiketten durch einen Zeitraum getrennt sind. Jedes Etikett muss mit einem Kleinbuchstaben oder einer Zahl beginnen und enden. Es können nur Kleinbuchstaben, Ziffern und Bindestriche verwendet werden.
+** Darf nicht wie eine Text-formatierte IP-Adresse aussehen.
+** Perioden sollten nicht in Anforderungen im virtuellen gehosteten Stil verwendet werden. Perioden verursachen Probleme bei der Überprüfung des Server-Platzhalterzertifikats.
+
+
+* Standardmäßig werden Buckets in der Region erstellt `us-east-1`. Sie können jedoch das Anforderungselement im Anforderungskörper verwenden `LocationConstraint`, um einen anderen Bereich anzugeben. Wenn Sie das Element verwenden `LocationConstraint`, müssen Sie den genauen Namen einer Region angeben, die mit dem Grid Manager oder der Grid Management API definiert wurde. Wenden Sie sich an Ihren Systemadministrator, wenn Sie den zu verwendenden Regionalnamen nicht kennen.
++
+*Hinweis*: Ein Fehler tritt auf, wenn Ihre CreateBucket-Anforderung eine Region verwendet, die nicht in StorageGRID definiert wurde.
+
+* Sie können den Anforderungsheader einschließen `x-amz-bucket-object-lock-enabled`, um einen Bucket mit aktivierter S3 Object Lock zu erstellen. Siehe link:../s3/use-s3-api-for-s3-object-lock.html["Konfigurieren Sie die S3-Objektsperre über die S3-REST-API"].
++
+Sie müssen die S3-Objektsperre aktivieren, wenn Sie den Bucket erstellen. Sie können S3-Objektsperre nicht hinzufügen oder deaktivieren, nachdem ein Bucket erstellt wurde. Für die S3-Objektsperre ist eine Bucket-Versionierung erforderlich. Diese wird bei der Erstellung des Buckets automatisch aktiviert.
+
+
+
+
+
+ a| 
+DeleteBucket
+ a| 
+Löscht den Bucket.
+
+
+
+ a| 
+DeleteBucketCors
+ a| 
+Löscht die CORS-Konfiguration für den Bucket.
+
+
+
+ a| 
+DeleteBucketEncryption
+ a| 
+Löscht die Standardverschlüsselung aus dem Bucket. Vorhandene verschlüsselte Objekte bleiben verschlüsselt, neue Objekte, die dem Bucket hinzugefügt wurden, werden jedoch nicht verschlüsselt.
+
+
+
+ a| 
+DeleteBucketLifecycle
+ a| 
+Löscht die Lebenszykluskonfiguration aus dem Bucket. Siehe link:create-s3-lifecycle-configuration.html["S3-Lebenszykluskonfiguration erstellen"].
+
+
+
+ a| 
+DeleteBucketRichtlinien
+ a| 
+Löscht die dem Bucket angehängte Richtlinie.
+
+
+
+ a| 
+DeleteBucketReplication
+ a| 
+Löscht die Replikationskonfiguration, die mit dem Bucket verbunden ist.
+
+
+
+ a| 
+DeleteBucketTagging
+ a| 
+Verwendet die `tagging` Unterressource, um alle Tags aus einem Bucket zu entfernen.
+
+*Achtung*: Wenn für diesen Bucket ein nicht standardmäßiges ILM-Policy-Tag gesetzt ist, wird ein Bucket-Tag mit einem ihm zugewiesenen Wert vorhanden sein `NTAP-SG-ILM-BUCKET-TAG`. Stellen Sie keine DeleteBucketTagging-Anforderung aus, wenn ein `NTAP-SG-ILM-BUCKET-TAG` Bucket-Tag vorhanden ist. Geben Sie stattdessen eine Anforderung für das PutkBucketTagging nur mit dem `NTAP-SG-ILM-BUCKET-TAG` Tag und dem ihm zugewiesenen Wert aus, um alle anderen Tags aus dem Bucket zu entfernen. Ändern oder entfernen Sie das Bucket-Tag nicht `NTAP-SG-ILM-BUCKET-TAG`.
+
+
+
+ a| 
+GetBucketAcl
+ a| 
+Gibt eine positive Antwort und die ID, den Anzeigenamen und die Berechtigung des Bucket-Eigentümers zurück, was darauf hinweist, dass der Besitzer vollen Zugriff auf den Bucket hat.
+
+
+
+ a| 
+GetBucketCors
+ a| 
+Gibt die Konfiguration für den Bucket zurück `cors`.
+
+
+
+ a| 
+GetBucketEncryption
+ a| 
+Gibt die Standardverschlüsselungskonfiguration für den Bucket zurück.
+
+
+
+ a| 
+GetBucketLifecycleKonfiguration
+
+(Zuvor GET Bucket-Lebenszyklus genannt)
+ a| 
+Gibt die Lebenszykluskonfiguration für den Bucket zurück. Siehe link:create-s3-lifecycle-configuration.html["S3-Lebenszykluskonfiguration erstellen"].
+
+
+
+ a| 
+GetBucketLocation
+ a| 
+Gibt die Region zurück, die mit dem Element in der Anforderung CreateBucket festgelegt wurde `LocationConstraint`. Wenn der Bereich des Buckets ist `us-east-1`, wird eine leere Zeichenfolge für die Region zurückgegeben.
+
+
+
+ a| 
+GetBucketNotificationConfiguration
+
+(Zuvor namens „GET Bucket“-Benachrichtigung)
+ a| 
+Gibt die Benachrichtigungskonfiguration zurück, die mit dem Bucket verbunden ist.
+
+
+
+ a| 
+GetBucketPolicy
+ a| 
+Gibt die dem Bucket angehängte Richtlinie zurück.
+
+
+
+ a| 
+GetBucketReplication
+ a| 
+Gibt die Replikationskonfiguration zurück, die mit dem Bucket verbunden ist.
+
+
+
+ a| 
+GetBucketTagging
+ a| 
+Verwendet die `tagging` Unterressource, um alle Tags für einen Bucket zurückzugeben.
+
+*Achtung*: Wenn für diesen Bucket ein nicht standardmäßiges ILM-Policy-Tag gesetzt ist, wird ein Bucket-Tag mit einem ihm zugewiesenen Wert vorhanden sein `NTAP-SG-ILM-BUCKET-TAG`. Ändern oder entfernen Sie dieses Tag nicht.
+
+
+
+ a| 
+GetBucketVersioning
+ a| 
+Diese Implementierung verwendet die `versioning` Subressource, um den Versionsstatus eines Buckets zurückzugeben.
+
+* _Blank_: Die Versionierung wurde nie aktiviert (Bucket ist „unversioniert“)
+* Aktiviert: Versionierung ist aktiviert
+* Suspendiert: Die Versionierung war zuvor aktiviert und wird ausgesetzt
+
+
+
+
+ a| 
+GetObjectLockConfiguration
+ a| 
+Gibt den Standardaufbewahrungsmodus für Bucket und den Standardaufbewahrungszeitraum zurück, sofern konfiguriert.
+
+Siehe link:../s3/use-s3-api-for-s3-object-lock.html["Konfigurieren Sie die S3-Objektsperre über die S3-REST-API"].
+
+
+
+ a| 
+HeadBucket
+ a| 
+Legt fest, ob ein Bucket vorhanden ist und Sie über die Berechtigung verfügen, darauf zuzugreifen.
+
+Dieser Vorgang liefert Folgendes zurück:
+
+* `x-ntap-sg-bucket-id`: Die UUID des Buckets im UUID-Format.
+* `x-ntap-sg-trace-id`: Die eindeutige Trace-ID der zugehörigen Anforderung.
+
+
+
+
+ a| 
+ListObjects und ListObjectsV2
+
+(Zuvor benannt nach „GET Bucket“)
+ a| 
+Gibt einige oder alle (bis zu 1,000) Objekte in einem Bucket zurück. Die Storage-Klasse für Objekte kann einen der beiden Werte haben, selbst wenn das Objekt mit der Option Storage-Klasse aufgenommen wurde `REDUCED_REDUNDANCY`:
+
+* `STANDARD`, Das angibt, dass das Objekt in einem Speicherpool mit Storage Nodes gespeichert ist.
+* `GLACIER`, Das angibt, dass das Objekt in den externen Bucket verschoben wurde, der vom Cloud-Speicherpool angegeben wurde.
+
+
+Wenn der Bucket eine große Anzahl von gelöschten Schlüsseln mit dem gleichen Präfix enthält, kann die Antwort einige `CommonPrefixes` enthalten, die keine Schlüssel enthalten.
+
+
+
+ a| 
+ListObjectVersions
+
+(Zuvor namens „GET Bucket Object Versions“)
+ a| 
+Mit LESEZUGRIFF auf einen Bucket wird dieser Vorgang mit den Unterressourcen-Listen Metadaten aller Versionen von Objekten im Bucket verwendet `versions`.
+
+
+
+ a| 
+PutBucketCors
+ a| 
+Legt die CORS-Konfiguration für einen Bucket so fest, dass der Bucket Anfragen mit verschiedenen Ursprung bedienen kann. CORS (Cross-Origin Resource Sharing) ist ein Sicherheitsmechanismus, mit dem Client-Webanwendungen in einer Domäne auf Ressourcen in einer anderen Domäne zugreifen können. Angenommen, Sie verwenden einen S3-Bucket mit dem Namen `images` zum Speichern von Grafiken. Durch die Einstellung der CORS-Konfiguration für den `images` Bucket können Sie die Bilder in diesem Bucket auf der Website anzeigen lassen `+http://www.example.com+`.
+
+
+
+ a| 
+PutBucketEncryption
+ a| 
+Legt den Standardverschlüsselungsstatus eines vorhandenen Buckets fest. Bei aktivierter Verschlüsselung auf Bucket-Ebene sind alle neuen dem Bucket hinzugefügten Objekte verschlüsselt.StorageGRID unterstützt serverseitige Verschlüsselung mit von StorageGRID gemanagten Schlüsseln. Wenn Sie die serverseitige Verschlüsselungskonfigurationsregel angeben, setzen Sie den `SSEAlgorithm` Parameter auf `AES256`, und verwenden Sie den Parameter nicht `KMSMasterKeyID`.
+
+Die Standardverschlüsselungskonfiguration von Buckets wird ignoriert, wenn in der Objekt-Upload-Anforderung bereits Verschlüsselung angegeben ist (d. h. wenn die Anforderung den Anforderungsheader enthält `x-amz-server-side-encryption-*`).
+
+
+
+ a| 
+PutBucketLifecycleKonfiguration
+
+(Zuvor PUT Bucket-Lebenszyklus genannt)
+ a| 
+Erstellt eine neue Lebenszykluskonfiguration für den Bucket oder ersetzt eine vorhandene Lebenszykluskonfiguration. StorageGRID unterstützt in einer Lebenszykluskonfiguration bis zu 1,000 Lebenszyklusregeln. Jede Regel kann die folgenden XML-Elemente enthalten:
+
+* Ablauf (Tage, Datum, ErstrecktObjectDeleteMarker)
+* Nicht-aktuellVersionAblauf (NewerNichtaktuellVersionen, nicht aktuelleTage)
+* Filter (Präfix, Tag)
+* Status
+* ID
+
+
+StorageGRID bietet folgende Maßnahmen nicht:
+
+* AbortInsetteMultipartUpload
+* Übergang
+
+
+Siehe link:create-s3-lifecycle-configuration.html["S3-Lebenszykluskonfiguration erstellen"]. Informationen über die Interaktion der Aktion „Ablauf“ in einem Bucket-Lebenszyklus mit den Anweisungen zur ILM-Platzierung finden Sie unter link:../ilm/how-ilm-operates-throughout-objects-life.html["Wie ILM im gesamten Leben eines Objekts funktioniert"].
+
+*Hinweis*: Die Konfiguration des Bucket-Lebenszyklus kann für Buckets verwendet werden, für die S3-Objektsperre aktiviert ist. Die Bucket-Lebenszykluskonfiguration wird jedoch für ältere kompatible Buckets nicht unterstützt.
+
+
+
+ a| 
+PutBucketNotificationKonfiguration
+
+(Zuvor namens „PUT Bucket“-Benachrichtigung)
+ a| 
+Konfiguriert Benachrichtigungen für den Bucket mithilfe der XML-Benachrichtigungskonfiguration, die im Anforderungskörper enthalten ist. Sie sollten folgende Implementierungsdetails kennen:
+
+* StorageGRID unterstützt als Ziele Amazon Simple Notification Service (Amazon SNS) oder Kafka-Themen. SQS (Simple Queue Service)- oder Amazon Lambda-Endpunkte werden nicht unterstützt.
+* Das Ziel für Benachrichtigungen muss als URN eines StorageGRID-Endpunkts angegeben werden. Endpunkte können mit dem Mandanten-Manager oder der Mandanten-Management-API erstellt werden.
++
+Der Endpunkt muss vorhanden sein, damit die Benachrichtigungskonfiguration erfolgreich ausgeführt werden kann. Wenn der Endpunkt nicht vorhanden ist, wird ein `400 Bad Request` Fehler mit dem Code zurückgegeben `InvalidArgument`.
+
+* Sie können keine Benachrichtigung für die folgenden Ereignistypen konfigurieren. Diese Ereignistypen werden *nicht* unterstützt.
++
+** `s3:ReducedRedundancyLostObject`
+** `s3:ObjectRestore:Completed`
+
+
+* Aus StorageGRID gesendete Ereignisbenachrichtigungen verwenden das JSON-Standardformat, außer dass sie einige Schlüssel nicht enthalten und bestimmte Werte für andere verwenden, wie in der folgenden Liste gezeigt:
++
+** *EventSource*
++
+`sgws:s3`
+
+** *AwsRegion*
++
+Nicht enthalten
+
+** * X-amz-id-2*
++
+Nicht enthalten
+
+** *arn*
++
+`urn:sgws:s3:::bucket_name`
+
+
+
+
+
+
+
+ a| 
+PutBucketPolicy
+ a| 
+Legt die dem Bucket angehängte Richtlinie fest. Siehe link:bucket-and-group-access-policies.html["Verwendung von Bucket- und Gruppenzugriffsrichtlinien"].
+
+
+
+ a| 
+PutBucketReplication
+ a| 
+Konfiguration link:../tenant/understanding-cloudmirror-replication-service.html["StorageGRID CloudMirror Replizierung"] für den Bucket mithilfe der im Anforderungskörper bereitgestellten XML-Replikationskonfiguration Für die CloudMirror-Replikation sollten Sie die folgenden Implementierungsdetails beachten:
+
+* StorageGRID unterstützt nur V1 der Replizierungskonfiguration. Das bedeutet, dass StorageGRID die Verwendung des Elements für Regeln nicht unterstützt `Filter` und V1-Konventionen für das Löschen von Objektversionen befolgt. Weitere Informationen finden Sie unter https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication-add-config.html["Amazon Simple Storage Service User Guide: Replizierungskonfiguration"^].
+* Die Bucket-Replizierung kann für versionierte oder nicht versionierte Buckets konfiguriert werden.
+* Sie können in jeder Regel der XML-Replikationskonfiguration einen anderen Ziel-Bucket angeben. Ein Quell-Bucket kann auf mehrere Ziel-Bucket replizieren.
+* Ziel-Buckets müssen als URN der StorageGRID-Endpunkte angegeben werden, wie im Mandantenmanager oder der Mandantenmanagement-API angegeben. Siehe link:../tenant/configuring-cloudmirror-replication.html["CloudMirror-Replizierung konfigurieren"].
++
+Der Endpunkt muss vorhanden sein, damit die Replizierungskonfiguration erfolgreich ausgeführt werden kann. Wenn der Endpunkt nicht existiert, schlägt die Anforderung als fehl. Die Fehlermeldung lautet `400 Bad Request`: `Unable to save the replication policy. The specified endpoint URN does not exist: _URN_.`
+
+* Sie müssen kein in der Konfigurations-XML angeben `Role`. Dieser Wert wird von StorageGRID nicht verwendet und wird bei der Einreichung ignoriert.
+* Wenn Sie die Storage-Klasse aus dem Konfigurations-XML nicht angeben, verwendet StorageGRID standardmäßig die `STANDARD` Storage-Klasse.
+* Wenn Sie ein Objekt aus dem Quell-Bucket löschen oder den Quell-Bucket selbst löschen, sieht das Verhalten der regionsübergreifenden Replizierung wie folgt aus:
++
+** Wenn Sie das Objekt oder den Bucket löschen, bevor es repliziert wurde, wird das Objekt/Bucket nicht repliziert, und Sie werden nicht benachrichtigt.
+** Wenn Sie das Objekt oder Bucket nach der Replizierung löschen, befolgt StorageGRID das standardmäßige Löschverhalten von Amazon S3 für die V1 der regionsübergreifenden Replizierung.
+
+
+
+
+
+
+ a| 
+PutBucketTagging
+ a| 
+Verwendet die `tagging` Unterressource, um einen Satz von Tags für einen Bucket hinzuzufügen oder zu aktualisieren. Beachten Sie beim Hinzufügen von Bucket-Tags die folgenden Einschränkungen:
+
+* StorageGRID und Amazon S3 unterstützen für jeden Bucket bis zu 50 Tags.
+* Tags, die einem Bucket zugeordnet sind, müssen eindeutige Tag-Schlüssel haben. Ein Tag-Schlüssel kann bis zu 128 Unicode-Zeichen lang sein.
+* Die Tag-Werte können bis zu 256 Unicode-Zeichen lang sein.
+* Bei den Schlüsseln und Werten wird die Groß-/Kleinschreibung beachtet.
+
+
+*Achtung*: Wenn für diesen Bucket ein nicht standardmäßiges ILM-Policy-Tag gesetzt ist, wird ein Bucket-Tag mit einem ihm zugewiesenen Wert vorhanden sein `NTAP-SG-ILM-BUCKET-TAG`. Stellen Sie sicher, dass das `NTAP-SG-ILM-BUCKET-TAG` Bucket-Tag in allen PutBucketTagging-Anforderungen mit dem zugewiesenen Wert enthalten ist. Ändern oder entfernen Sie dieses Tag nicht.
+
+*Hinweis*: Dieser Vorgang überschreibt alle aktuellen Tags, die der Bucket bereits hat. Wenn vorhandene Tags aus dem Satz weggelassen werden, werden diese Tags für den Bucket entfernt.
+
+
+
+ a| 
+PutBucketVersioning
+ a| 
+Verwendet die `versioning` Unterressource, um den Versionsstatus eines vorhandenen Buckets festzulegen. Sie können den Versionierungsstatus mit einem der folgenden Werte festlegen:
+
+* Aktiviert: Versionierung für die Objekte im Bucket Alle dem Bucket hinzugefügten Objekte erhalten eine eindeutige Version-ID.
+* Suspendiert: Deaktiviert die Versionierung für die Objekte im Bucket. Alle dem Bucket hinzugefügten Objekte erhalten die Versions-ID `null`.
+
+
+
+
+ a| 
+PutObjectLockKonfiguration
+ a| 
+Konfiguriert oder entfernt den Standardaufbewahrungsmodus und den Standardaufbewahrungszeitraum für Bucket.
+
+Wenn der Standardaufbewahrungszeitraum geändert wird, bleiben die bisherigen Objektversionen unverändert und werden im neuen Standardaufbewahrungszeitraum nicht neu berechnet.
+
+Weitere Informationen finden Sie unterlink:../s3/use-s3-api-for-s3-object-lock.html["Konfigurieren Sie die S3-Objektsperre über die S3-REST-API"].
+
+|===

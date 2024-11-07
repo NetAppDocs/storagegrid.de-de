@@ -1,0 +1,25 @@
+---
+permalink: audit/audit-messages-main.html 
+sidebar: sidebar 
+keywords: storagegrid, audit, messages, message 
+summary: Detaillierte Beschreibungen der vom System zurückgegebenen Audit-Meldungen finden Sie in den folgenden Abschnitten. Jede Überwachungsmeldung wird zuerst in einer Tabelle aufgeführt, in der verwandte Nachrichten nach der Aktivitätsklasse gruppiert werden, für die die Meldung steht. Diese Gruppierungen sind sowohl für das Verständnis der Arten von Aktivitäten, die geprüft werden, als auch für die Auswahl der gewünschten Art der Filterung von Überwachungsnachrichten nützlich. 
+---
+= Beschreibungen von Audit-Meldungen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Detaillierte Beschreibungen der vom System zurückgegebenen Audit-Meldungen finden Sie in den folgenden Abschnitten. Jede Überwachungsmeldung wird zuerst in einer Tabelle aufgeführt, in der verwandte Nachrichten nach der Aktivitätsklasse gruppiert werden, für die die Meldung steht. Diese Gruppierungen sind sowohl für das Verständnis der Arten von Aktivitäten, die geprüft werden, als auch für die Auswahl der gewünschten Art der Filterung von Überwachungsnachrichten nützlich.
+
+Die Überwachungsmeldungen werden auch alphabetisch nach ihren vier-Zeichen-Codes aufgelistet. Mit dieser alphabetischen Liste können Sie Informationen zu bestimmten Nachrichten finden.
+
+Die in diesem Kapitel verwendeten vierstelligen Codes sind die ATYP-Werte, die in den Überwachungsmeldungen gefunden werden, wie in der folgenden Beispielmeldung dargestellt:
+
+[listing, subs="specialcharacters,quotes"]
+----
+2014-07-17T03:50:47.484627
+\[AUDT:[RSLT(FC32):VRGN][AVER(UI32):10][ATIM(UI64):1405569047484627][*ATYP\(FC32\):SYSU*][ANID(UI32):11627225][AMID(FC32):ARNI][ATID(UI64):9445736326500603516]]
+----
+Informationen über das Festlegen von Meldungsebenen, das Ändern von Protokollzielen und die Verwendung eines externen Syslog-Servers für Ihre Audit-Informationen finden Sie unter link:../monitor/configure-audit-messages.html["Konfigurieren von Überwachungsmeldungen und Protokollzielen"]

@@ -1,0 +1,26 @@
+---
+permalink: maintain/recovering-from-storage-volume-failure-where-system-drive-is-intact.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, storage volume failure, volume failure, system drive intact 
+summary: Sie müssen eine Reihe von Aufgaben durchführen, um einen softwarebasierten Storage Node wiederherzustellen, bei dem ein oder mehrere Storage-Volumes auf dem Storage-Node ausgefallen sind, das Systemlaufwerk jedoch intakt ist. Wenn nur Speichervolumen ausgefallen sind, steht der Speicherknoten dem StorageGRID-System weiterhin zur Verfügung. 
+---
+= Wiederherstellung nach einem Storage-Volume-Ausfall bei intaktem Systemlaufwerk
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen eine Reihe von Aufgaben durchführen, um einen softwarebasierten Storage Node wiederherzustellen, bei dem ein oder mehrere Storage-Volumes auf dem Storage-Node ausgefallen sind, das Systemlaufwerk jedoch intakt ist. Wenn nur Speichervolumen ausgefallen sind, steht der Speicherknoten dem StorageGRID-System weiterhin zur Verfügung.
+
+
+NOTE: Dieses Wiederherstellungsverfahren gilt nur für softwarebasierte Speicherknoten. Wenn Speicher-Volumes auf einem Appliance Storage Node ausgefallen sind, verwenden Sie stattdessen das Verfahren der Appliance: link:recovering-storagegrid-appliance-storage-node.html["Appliance Storage Node wiederherstellen"].
+
+Dieses Wiederherstellungsverfahren umfasst die folgenden Aufgaben:
+
+* link:reviewing-warnings-about-storage-volume-recovery.html["Lesen Sie die Warnungen für die Wiederherstellung von Speichervolumes"]
+* link:identifying-and-unmounting-failed-storage-volumes.html["Ermitteln und Aufheben fehlgeschlagener Storage Volumes"]
+* link:recovering-failed-storage-volumes-and-rebuilding-cassandra-database.html["Stellen Sie die Volumes wieder her, und erstellen Sie die Cassandra-Datenbank neu"]
+* link:restoring-object-data-to-storage-volume-where-system-drive-is-intact.html["Wiederherstellung von Objektdaten"]
+* link:checking-storage-state-after-recovering-storage-volumes.html["Prüfen Sie den Speicherstatus"]
+

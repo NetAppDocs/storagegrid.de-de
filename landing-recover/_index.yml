@@ -1,0 +1,43 @@
+---
+indexpage:
+  title: Wiederherstellen oder Ersetzen von Knoten
+  summary: Wenn ein Grid-Node ausfällt, können Sie ihn wiederherstellen, indem Sie
+    den fehlerhaften physischen oder virtuellen Server ersetzen, die StorageGRID Software
+    neu installieren und wiederherstellbare Daten wiederherstellen.
+  keywords: recover node, replace node
+  lead: Wenn ein Grid-Node ausfällt, können Sie ihn wiederherstellen, indem Sie den
+    fehlerhaften physischen oder virtuellen Server ersetzen, die StorageGRID Software
+    neu installieren und wiederherstellbare Daten wiederherstellen.
+  tiles:
+  - title: Los geht's
+    links:
+    - title: Warnungen und Überlegungen
+      url: "../maintain/warnings-and-considerations-for-grid-node-recovery.html"
+    - title: Sammeln Sie die erforderlichen Materialien
+      url: "../maintain/gathering-required-materials-for-grid-node-recovery.html"
+  - title: Fehlerhafte Knoten wiederherstellen
+    links:
+    - title: Warnungen und Überlegungen
+      url: "../maintain/warnings-and-considerations-for-grid-node-recovery.html"
+    - title: Storage-Nodes
+      url: "../maintain/recovering-from-storage-node-failures.html"
+    - title: Admin-Nodes
+      url: "../maintain/recovering-from-admin-node-failures.html"
+    - title: Gateway-Nodes
+      url: "../maintain/replacing-gateway-node.html"
+    - title: Archiv-Nodes
+      url: "../maintain/recovering-from-archive-node-failures.html"
+  - title: Ersetzen Sie den Knoten
+    links:
+    - title: Ersetzen Sie den Linux-Knoten
+      url: "../maintain/all-node-types-replacing-linux-node.html"
+    - title: Ersetzen Sie den VMware-Knoten
+      url: "../maintain/all-node-types-replacing-vmware-node.html"
+    - title: Ersetzen Sie Linux oder VMware Node durch Services-Appliance
+      url: "../maintain/installing-services-appliance-platform-change-only.html"
+    - title: Klon-Appliance-Node
+      url: https://docs.netapp.com/us-en/storagegrid-appliances/commonhardware/how-appliance-node-cloning-works.html
+  - title: Wiederherstellung eines Standorts
+    links:
+    - title: Wie der technische Support eine Site wiederherstellt
+      url: "../maintain/how-site-recovery-is-performed-by-technical-support.html"

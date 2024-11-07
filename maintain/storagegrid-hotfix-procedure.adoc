@@ -1,0 +1,53 @@
+---
+permalink: maintain/storagegrid-hotfix-procedure.html 
+sidebar: sidebar 
+keywords: apply hotfix, install hotfix, replace primary admin node 
+summary: Möglicherweise müssen Sie einen Hotfix auf Ihr StorageGRID-System anwenden, wenn Probleme mit der Software zwischen Funktionsversionen erkannt und behoben werden. 
+---
+= StorageGRID Hotfix Verfahren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Möglicherweise müssen Sie einen Hotfix auf Ihr StorageGRID-System anwenden, wenn Probleme mit der Software zwischen Funktionsversionen erkannt und behoben werden.
+
+StorageGRID Hotfixes enthalten Software-Änderungen, die außerhalb einer Feature- oder Patch-Freigabe verfügbar gemacht werden. Die gleichen Änderungen sind in einer zukünftigen Version enthalten. Darüber hinaus enthält jede Hotfix-Version eine Roll-up aller früheren Hotfixes innerhalb der Funktion oder Patch-Freigabe.
+
+
+
+== Überlegungen für die Anwendung eines Hotfix
+
+Ein StorageGRID-Hotfix kann nicht angewendet werden, wenn ein anderer Wartungsvorgang ausgeführt wird. Sie können beispielsweise keinen Hotfix anwenden, während eine Stilllegung, Erweiterung oder Wiederherstellung ausgeführt wird.
+
+
+NOTE: Wenn ein Knoten oder ein Standort stillgelegt wird, können Sie sicher einen Hotfix anwenden. Darüber hinaus können Sie in der Lage sein, einen Hotfix in den letzten Phasen eines StorageGRID-Upgrade-Verfahrens anzuwenden. Weitere Informationen finden Sie in der Anleitung zum Aktualisieren der StorageGRID-Software.
+
+Nachdem Sie den Hotfix im Grid Manager hochgeladen haben, wird der Hotfix automatisch auf den primären Admin-Knoten angewendet. Anschließend können Sie die Anwendung des Hotfix für die übrigen Knoten in Ihrem StorageGRID-System genehmigen.
+
+Wenn ein Hotfix nicht auf einen oder mehrere Knoten angewendet wird, wird der Grund für den Fehler in der Spalte Details der Hotfix-Fortschrittstabelle angezeigt. Sie müssen alle Fehler beheben und den gesamten Prozess wiederholen. Knoten mit einer zuvor erfolgreichen Anwendung des Hotfix werden in nachfolgenden Anwendungen übersprungen. Sie können den Hotfix-Prozess so oft wie erforderlich sicher wiederholen, bis alle Knoten aktualisiert wurden. Der Hotfix muss erfolgreich auf allen Grid-Knoten installiert werden, damit die Anwendung abgeschlossen werden kann.
+
+Während die Grid-Knoten mit der neuen Hotfix-Version aktualisiert werden, können die tatsächlichen Änderungen in einem Hotfix nur bestimmte Dienste auf bestimmte Node-Typen beeinflussen. Ein Hotfix wirkt sich beispielsweise nur auf den LDR-Service auf Storage Nodes aus.
+
+
+
+== Wie Hotfixes für die Wiederherstellung und Erweiterung eingesetzt werden
+
+Nachdem ein Hotfix auf das Grid angewendet wurde, installiert der primäre Admin-Knoten automatisch die gleiche Hotfix-Version auf alle Knoten, die durch Wiederherstellungsvorgänge wiederhergestellt oder in einer Erweiterung hinzugefügt werden.
+
+Wenn Sie jedoch den primären Admin-Knoten wiederherstellen müssen, müssen Sie manuell die richtige StorageGRID-Version installieren und dann den Hotfix anwenden. Die endgültige StorageGRID-Version des primären Admin-Knotens muss mit der Version der anderen Nodes im Raster übereinstimmen.
+
+Das folgende Beispiel zeigt, wie ein Hotfix bei der Wiederherstellung des primären Admin-Knotens angewendet wird:
+
+. Angenommen, auf dem Grid wird eine StorageGRID 11._A.B_-Version mit dem neuesten Hotfix ausgeführt. Die "Grid Version" ist 11._A.B.y_.
+. Der primäre Admin-Node schlägt fehl.
+. Sie stellen den primären Admin-Node mit StorageGRID 11._A.B_ neu bereit und führen das Recovery-Verfahren durch.
++
+
+NOTE: Wie zur Anpassung an die Grid-Version erforderlich, können Sie bei der Implementierung des Node eine untergeordnete Version verwenden. Sie müssen nicht zuerst die Hauptversion implementieren.
+
+. Anschließend wenden Sie Hotfix 11._A.B.y_ auf den primären Admin-Node an.
+
+
+Weitere Informationen finden Sie unter link:configuring-replacement-primary-admin-node.html["Primären Ersatzadministrator-Knoten konfigurieren"].

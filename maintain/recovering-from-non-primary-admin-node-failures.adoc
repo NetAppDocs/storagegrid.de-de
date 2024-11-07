@@ -1,0 +1,24 @@
+---
+permalink: maintain/recovering-from-non-primary-admin-node-failures.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, non-primary admin node failure 
+summary: 'Sie müssen die folgenden Aufgaben durchführen, um nach einem Ausfall eines nicht primären Admin-Knotens wiederherzustellen. Ein Admin-Node hostet den Configuration Management Node \(CMN\)-Dienst und ist als primärer Admin-Node bekannt. Obwohl Sie mehrere Admin-Nodes haben können, enthält jedes StorageGRID-System nur einen primären Admin-Node. Alle anderen Admin-Nodes sind nicht primäre Admin-Nodes.' 
+---
+= Wiederherstellung nach Ausfällen von Admin-Nodes außerhalb des primären Standorts
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen die folgenden Aufgaben durchführen, um nach einem Ausfall eines nicht primären Admin-Knotens wiederherzustellen. Ein Admin-Node hostet den Configuration Management Node (CMN)-Service und ist als primärer Admin-Node bekannt. Obwohl Sie mehrere Admin-Nodes haben können, enthält jedes StorageGRID-System nur einen primären Admin-Node. Alle anderen Admin-Nodes sind nicht primäre Admin-Nodes.
+
+Führen Sie diese allgemeinen Schritte aus, um einen nicht-primären Admin-Node wiederherzustellen:
+
+. link:copying-audit-logs-from-failed-non-primary-admin-node.html["Kopieren Sie Prüfprotokolle vom fehlgeschlagenen nicht-primären Admin-Node"]
+. link:replacing-non-primary-admin-node.html["Ersetzen Sie den nicht-primären Admin-Node"]
+. link:selecting-start-recovery-to-configure-non-primary-admin-node.html["Wählen Sie Wiederherstellung starten, um den nicht-primären Admin-Knoten zu konfigurieren"]
+. link:restoring-audit-log-on-recovered-non-primary-admin-node.html["Stellen Sie das Überwachungsprotokoll auf einem wiederhergestellten nicht-primären Admin-Knoten wieder her"]
+. link:restoring-admin-node-database-non-primary-admin-node.html["Stellen Sie die Admin-Node-Datenbank wieder her, wenn Sie einen nicht-primären Admin-Node wiederherstellen"]
+. link:restoring-prometheus-metrics-non-primary-admin-node.html["Stellen Sie Prometheus-Kennzahlen bei der Wiederherstellung eines nicht-primären Admin-Knotens wieder her"]
+
