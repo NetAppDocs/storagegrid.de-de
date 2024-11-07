@@ -9,7 +9,7 @@ settings:
     pdf_enabled: true
     harmony_enabled: false
     hide_language_selector: true
-  langs: de-de,us-en,es-es,fr-fr,it-it,pt-br,ja-jp,ko-kr,zh-cn,zh-tw
+  langs: de-de,us-en,ja-jp,ko-kr,zh-cn,zh-tw,es-es,fr-fr,it-it
 sidebar:
   entries:
   - title: StorageGRID 11.9 Dokumente
