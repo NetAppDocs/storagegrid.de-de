@@ -179,13 +179,13 @@ In dieser Phase tritt eines der folgenden Prozesse auf:
 +
 ** Bei einer Storage Appliance stellt das Installationsprogramm eine Verbindung zum Storage Controller her, löscht alle vorhandenen Konfigurationen, kommuniziert mit SANtricity OS zum Konfigurieren von Volumes und konfiguriert die Host-Einstellungen.
 ** Bei einer Services-Appliance löscht das Installationsprogramm alle vorhandenen Konfigurationen von den Laufwerken im Compute-Controller und konfiguriert die Hosteinstellungen.
-
-
 +
 *2. Installieren Sie das Betriebssystem*
 
 +
 In dieser Phase kopiert das Installationsprogramm das Betriebssystem-Image für StorageGRID auf die Appliance.
+
+
 
 . Überwachen Sie den Installationsfortschritt, bis eine Meldung im Konsolenfenster angezeigt wird. Dazu werden Sie aufgefordert, den Knoten mit dem Grid Manager zu genehmigen.
 +

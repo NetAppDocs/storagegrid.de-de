@@ -218,11 +218,11 @@ Beachten Sie Folgendes:
 ** Drücken Sie nicht *Strg+C*, während die SSH-Sitzung aktiv ist.
 ** Das Skript wird im Hintergrund ausgeführt, wenn eine Netzwerkunterbrechung auftritt und die SSH-Sitzung beendet wird. Sie können jedoch den Fortschritt auf der Seite Wiederherstellung anzeigen.
 ** Wenn der Storage-Node den RSM-Service verwendet, wird das Skript möglicherweise 5 Minuten lang blockiert, während die Node-Services neu gestartet werden. Diese 5-minütige Verzögerung wird erwartet, wenn der RSM-Dienst zum ersten Mal startet.
-
-
 +
 
 NOTE: Der RSM-Dienst ist auf Speicherknoten vorhanden, die den ADC-Service enthalten.
+
+
 
 +
 
