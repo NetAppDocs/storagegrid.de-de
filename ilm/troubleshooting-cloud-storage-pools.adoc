@@ -47,11 +47,16 @@ Dieser Fehler wird möglicherweise auftreten, wenn Sie versuchen, einen Cloud-Sp
 
 In der Regel wird dieser Fehler nur angezeigt, wenn Sie einen neuen Cloud Storage-Pool erstellen, und eine andere Instanz von StorageGRID verwendet bereits den gleichen Cloud Storage-Pool.
 
-Versuchen Sie mit diesen Schritten das Problem zu beheben:
+Führen Sie einen der folgenden Schritte aus, um das Problem zu beheben:
 
-* Vergewissern Sie sich, dass niemand in Ihrem Unternehmen diesen Cloud-Speicherpool verwendet.
-* Löschen Sie alle vorhandenen Objekte im Ziel-Bucket, einschließlich der `x-ntap-sgws-cloud-pool-uuid` Datei, und versuchen Sie erneut, den Cloud-Storage-Pool zu konfigurieren.
+* Wenn Sie einen neuen Cloud-Storage-Pool konfigurieren und der Bucket die Datei und zusätzliche Objektschlüssel enthält, die `x-ntap-sgws-cloud-pool-uuid` dem folgenden Beispiel ähneln, erstellen Sie einen neuen Bucket und verwenden Sie stattdessen diesen neuen Bucket.
++
+Beispiel für einen zusätzlichen Objektschlüssel: `my-bucket.3E64CF2C-B74D-4B7D-AFE7-AD28BC18B2F6.1727326606730410`
 
+* Wenn die `x-ntap-sgws-cloud-pool-uuid` Datei das einzige Objekt im Bucket ist, löschen Sie diese Datei.
+
+
+Wenn diese Schritte nicht auf Ihr Szenario zutreffen, wenden Sie sich an den Support.
 
 
 
