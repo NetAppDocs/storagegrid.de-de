@@ -40,6 +40,24 @@ Bevor Sie Storage-Nodes hinzufügen, um die Metadatenkapazität zu steigern, les
 * Wenn Sie Metadaten hinzufügen, sollten Sie jedem Standort die gleiche Anzahl an Storage-Nodes hinzufügen.
 
 
+Storage-Nodes, die nur Metadaten enthalten, erfüllen spezifische Hardwareanforderungen:
+
+* Bei Verwendung von StorageGRID Appliances können nur Nodes mit Metadaten auf SGF6112-Appliances mit zwölf 1.9-TB- oder zwölf 3.8-TB-Laufwerken konfiguriert werden.
+* Bei der Verwendung von softwarebasierten Nodes müssen die auf Metadaten auslaufenden Node-Ressourcen mit den vorhandenen Storage-Nodes übereinstimmen. Beispiel:
++
+** Wenn der bestehende StorageGRID Standort SG6000 oder SG6100 Appliances verwendet, müssen die rein softwarebasierten Nodes mit Metadaten die folgenden Mindestanforderungen erfüllen:
++
+*** 128 GB RAM
+*** 8-Core-CPU
+*** 8 TB SSD oder äquivalenter Storage für die Cassandra-Datenbank (rangedb/0)
+
+
+** Wenn der bestehende StorageGRID-Standort virtuelle Storage-Nodes mit 24 GB RAM, 8 Kern-CPUs und 3 TB oder 4 TB Metadaten-Storage verwendet, sollten die rein softwarebasierten Metadaten-Nodes ähnliche Ressourcen verwenden (24 GB RAM, 8 Kern-CPU und 4 TB Metadaten-Storage (rangedb/0).
+
+
+* Beim Hinzufügen eines neuen StorageGRID Standorts sollte die Metadaten-Gesamtkapazität des neuen Standorts mindestens den vorhandenen StorageGRID Standorten entsprechen, und neue Standortressourcen sollten den Storage-Nodes an den vorhandenen StorageGRID Standorten entsprechen.
+
+
 Siehe link:../admin/managing-object-metadata-storage.html["beschreibung des reservierten Speicherplatzes für Metadaten"].
 
 

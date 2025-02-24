@@ -317,6 +317,21 @@ NOTE: Wenn Sie nur ein Storage-Volume für einen Storage-Node verwenden und dem 
 
 NOTE: Wenn Sie Volume 0 weniger als 500 GB zuweisen (nur für den nicht-produktiven Einsatz), sind 10 % der Kapazität des Speicher-Volumes für Metadaten reserviert.
 
+* Die Node-Ressourcen, die nur auf Softwarebasierten Metadaten basieren, müssen mit den vorhandenen Storage-Nodes-Ressourcen übereinstimmen. Beispiel:
++
+** Wenn der bestehende StorageGRID Standort SG6000 oder SG6100 Appliances verwendet, müssen die rein softwarebasierten Nodes mit Metadaten die folgenden Mindestanforderungen erfüllen:
++
+*** 128 GB RAM
+*** 8-Core-CPU
+*** 8 TB SSD oder äquivalenter Storage für die Cassandra-Datenbank (rangedb/0)
+
+
+** Wenn der bestehende StorageGRID-Standort virtuelle Storage-Nodes mit 24 GB RAM, 8 Kern-CPUs und 3 TB oder 4 TB Metadaten-Storage verwendet, sollten die rein softwarebasierten Metadaten-Nodes ähnliche Ressourcen verwenden (24 GB RAM, 8 Kern-CPU und 4 TB Metadaten-Storage (rangedb/0).
++
+Beim Hinzufügen eines neuen StorageGRID Standorts sollte die Metadaten-Gesamtkapazität des neuen Standorts mindestens den vorhandenen StorageGRID Standorten entsprechen, und neue Standortressourcen sollten den Storage-Nodes an den vorhandenen StorageGRID Standorten entsprechen.
+
+
+
 * Wenn Sie ein neues System installieren (StorageGRID 11.6 oder höher) und jeder Speicherknoten mindestens 128 GB RAM hat, weisen Sie Volume 0 mindestens 8 TB zu. Bei Verwendung eines größeren Werts für Volume 0 kann der zulässige Speicherplatz für Metadaten auf jedem Storage Node erhöht werden.
 * Verwenden Sie bei der Konfiguration verschiedener Storage-Nodes für einen Standort, falls möglich, die gleiche Einstellung für Volume 0. Wenn ein Standort Storage-Nodes unterschiedlicher Größe enthält, bestimmt der Storage-Node mit dem kleinsten Volume 0 die Metadaten-Kapazität dieses Standorts.
 
