@@ -99,15 +99,7 @@ indexpage:
       url: https://netapp.com/blog/
     - title: NetApp Community
       url: https://community.netapp.com/
-  - title: Andere Versionen
+  - title: Ältere Versionen
     links:
-    - title: StorageGRID 11.8-Dokumentation
-      url: https://docs.netapp.com/us-en/storagegrid-118/index.html
-    - title: StorageGRID 11.7-Dokumentation
-      url: https://docs.netapp.com/us-en/storagegrid-117/index.html
-    - title: StorageGRID 11.6-Dokumentation
-      url: https://docs.netapp.com/us-en/storagegrid-116/index.html
-    - title: StorageGRID 11.5-Dokumentation
-      url: https://docs.netapp.com/us-en/storagegrid-115/index.html
     - title: StorageGRID 11.4-Dokumentation
       url: https://mysupport.netapp.com/documentation/docweb/index.html?productID=63374
