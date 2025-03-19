@@ -35,13 +35,43 @@ CAUTION: Wenden Sie sich an den technischen Support, wenn Sie Hilfe bei diesem V
 ... Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`. Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `#`.
 
 
-.. Wechseln Sie in das Verzeichnis, in dem sich die Überwachungsprotokolle befinden: `cd /var/local/log/`
+.. [[substep-1b]]Wechseln Sie in das Verzeichnis, in dem sich die Überwachungsprotokolle befinden.
 +
-[NOTE]
-====
-link:../monitor/configure-audit-messages.html#select-audit-information-destinations["Erfahren Sie mehr über die Ziele für Audit-Informationen"].
+--
+Das Verzeichnis der Überwachungsprotokolle und die entsprechenden Knoten hängen von den Einstellungen des Überwachungsziels ab.
 
-====
+[cols="1a,2a"]
+|===
+| Option | Ziel 
+
+
+ a| 
+Lokale Knoten (Standard)
+ a| 
+`/var/local/log/localaudit.log`
+
+
+
+ a| 
+Admin-Nodes/lokale Nodes
+ a| 
+*** Admin-Nodes (primär und nicht primär): `/var/local/audit/export/audit.log`
+*** Alle Knoten: Die `/var/local/log/localaudit.log` Datei ist in der Regel leer oder fehlt in diesem Modus.
+
+
+
+
+ a| 
+Externer Syslog-Server
+ a| 
+`/var/local/log/localaudit.log`
+
+|===
+Geben Sie je nach den Einstellungen des Überwachungsziels Folgendes ein: `cd /var/local/log` Oder `/var/local/audit/export/`
+
+Weitere Informationen finden Sie unter link:../monitor/configure-audit-messages.html#select-audit-information-destinations["Wählen Sie Ziele für Audit-Informationen aus"].
+
+--
 .. Verwenden Sie grep, um den  zu extrahieren link:../audit/object-ingest-transactions.html["Überwachungsmeldungen, die mit dem potenziell verlorenen Objekt verknüpft sind"]und an eine Ausgabedatei zu senden. Eingabe: `grep uuid-value audit_file_name > output_file_name`
 +
 Beispiel:
@@ -49,7 +79,7 @@ Beispiel:
 +
 [listing]
 ----
-Admin: # grep 926026C4-00A4-449B-AC72-BCCA72DD1311 audit.log > messages_about_lost_object.txt
+Admin: # grep 926026C4-00A4-449B-AC72-BCCA72DD1311 audit.log > /var/local/tmp/messages_about_lost_object.txt
 ----
 .. Verwenden Sie grep, um die Meldungen zum Lost Location (LLST) aus dieser Ausgabedatei zu extrahieren. Eingabe: `grep LLST output_file_name`
 +
@@ -58,7 +88,7 @@ Beispiel:
 +
 [listing]
 ----
-Admin: # grep LLST messages_about_lost_objects.txt
+Admin: # grep LLST /var/local/tmp/messages_about_lost_objects.txt
 ----
 +
 Eine LLST-Überwachungsmeldung sieht wie in dieser Beispielnachricht aus.
@@ -66,12 +96,11 @@ Eine LLST-Überwachungsmeldung sieht wie in dieser Beispielnachricht aus.
 +
 [listing]
 ----
-[AUDT:\[NOID\(UI32\):12448208\][CBIL(UI64):0x38186FE53E3C49A5]
+[AUDT:[NOID(UI32):12448208][CBIL(UI64):0x38186FE53E3C49A5]
 [UUID(CSTR):"926026C4-00A4-449B-AC72-BCCA72DD1311"][LTYP(FC32):CLDI]
-[PCLD\(CSTR\):"/var/local/rangedb/1/p/17/11/00rH0%DkRs&LgA%\#3tN6"\]
-[TSRC(FC32):SYST][RSLT(FC32):NONE][AVER(UI32):10][ATIM(UI64):
-1581535134379225][ATYP(FC32):LLST][ANID(UI32):12448208][AMID(FC32):CLSM]
-[ATID(UI64):7086871083190743409]]
+[PCLD(CSTR):"/var/local/rangedb/1/p/17/11/00rH0%DkRs&LgA#3tN6"]
+[TSRC(FC32):SYST][RSLT(FC32):NONE][AVER(UI32):10][ATIM(UI64):1581535134379225]
+[ATYP(FC32):LLST][ANID(UI32):12448208][AMID(FC32):CLSM][ATID(UI64):7086871083190743409]]
 ----
 .. Suchen Sie in der LLST-Meldung das Feld PCLD und das Feld NOID.
 +
@@ -180,7 +209,7 @@ Fahren Sie mit dem nächsten Schritt fort.
 ... Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`. Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `#`.
 
 
-.. Wechseln Sie in das Verzeichnis, in dem sich die Überwachungsprotokolle befinden: `cd /var/local/log/`
+.. Wechseln Sie in das Verzeichnis, in dem sich die Audit-Protokolle befinden. Siehe <<substep-1b,Teilschritt 1, b>> .
 .. Verwenden Sie grep, um die mit dem Objekt verknüpften Überwachungsmeldungen in eine Ausgabedatei zu extrahieren. Eingabe: `grep uuid-value audit_file_name > output_file_name`
 +
 Beispiel:
@@ -188,7 +217,7 @@ Beispiel:
 +
 [listing]
 ----
-Admin: # grep 926026C4-00A4-449B-AC72-BCCA72DD1311 audit.log > messages_about_restored_object.txt
+Admin: # grep 926026C4-00A4-449B-AC72-BCCA72DD1311 audit.log > /var/local/tmp/messages_about_restored_object.txt
 ----
 .. Verwenden Sie grep, um die ORLM-Audit-Meldungen (Object Rules met) aus dieser Ausgabedatei zu extrahieren. Eingabe: `grep ORLM output_file_name`
 +
@@ -197,7 +226,7 @@ Beispiel:
 +
 [listing]
 ----
-Admin: # grep ORLM messages_about_restored_object.txt
+Admin: # grep ORLM /var/local/tmp/messages_about_restored_object.txt
 ----
 +
 Eine ORLM-Überwachungsmeldung sieht wie in dieser Beispielnachricht aus.

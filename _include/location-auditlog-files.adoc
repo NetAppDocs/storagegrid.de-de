@@ -2,4 +2,35 @@
 :allow-uri-read: 
 
 
-link:../monitor/configure-audit-messages.html#select-audit-information-destinations["Erfahren Sie mehr über die Ziele für Audit-Informationen"].
+Das Verzeichnis der Überwachungsprotokolle und die entsprechenden Knoten hängen von den Einstellungen des Überwachungsziels ab.
+
+[cols="1a,2a"]
+|===
+| Option | Ziel 
+
+
+ a| 
+Lokale Knoten (Standard)
+ a| 
+`/var/local/log/localaudit.log`
+
+
+
+ a| 
+Admin-Nodes/lokale Nodes
+ a| 
+* Admin-Nodes (primär und nicht primär): `/var/local/audit/export/audit.log`
+* Alle Knoten: Die `/var/local/log/localaudit.log` Datei ist in der Regel leer oder fehlt in diesem Modus.
+
+
+
+
+ a| 
+Externer Syslog-Server
+ a| 
+`/var/local/log/localaudit.log`
+
+|===
+Geben Sie je nach den Einstellungen des Überwachungsziels Folgendes ein: `cd /var/local/log` Oder `/var/local/audit/export/`
+
+Weitere Informationen finden Sie unter link:../monitor/configure-audit-messages.html#select-audit-information-destinations["Wählen Sie Ziele für Audit-Informationen aus"].
