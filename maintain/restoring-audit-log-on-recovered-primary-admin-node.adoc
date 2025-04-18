@@ -33,7 +33,7 @@ Standardmäßig werden Audit-Informationen an das Audit-Protokoll auf Admin-Knot
 * Sie haben ausdrücklich angegeben, dass Audit-Meldungen nur auf den lokalen Knoten gespeichert werden sollten, die sie generiert haben.
 
 
-Weitere Informationen finden Sie unter link:../monitor/configure-audit-messages.html["Konfigurieren von Audit-Meldungen und externem Syslog-Server"] .
+Weitere Informationen finden Sie unter link:../monitor/configure-audit-messages.html["Konfigurieren von Überwachungsmeldungen und Protokollzielen"] .
 
 ====
 .Schritte

@@ -174,33 +174,6 @@ Sie können den Benutzernamen nicht ändern.
 
 
 
-== Föderierte Benutzer importieren
-
-Sie können einen oder mehrere föderierte Benutzer, bis zu 100 Benutzer, direkt auf die Seite Benutzer importieren.
-
-.Schritte
-. Wählen Sie *ZUGRIFFSVERWALTUNG* > *Benutzer*.
-. Wählen Sie *föderierte Benutzer importieren*.
-. Geben Sie die UUID oder den Benutzernamen für einen oder mehrere föderierte Benutzer ein.
-+
-Fügen Sie für mehrere Einträge jede UUID oder jeden Benutzernamen in eine neue Zeile ein.
-
-. Wählen Sie *Import*.
-+
-Wenn der Import in das Feld Benutzer für einen oder mehrere Benutzer fehlschlägt, führen Sie die folgenden Schritte aus:
-
-+
-.. Wählen Sie *Benutzer kopieren*.
-.. Wiederholen Sie den Import, indem Sie *Previous* auswählen und die kopierten Benutzer in das Dialogfeld *föderierte Benutzer importieren* einfügen.
-
-
-+
-Nachdem Sie das Dialogfeld *föderierte Benutzer importieren* geschlossen haben, werden die föderierten Benutzerinformationen auf der Seite Benutzer für die erfolgreich importierten Benutzer angezeigt.
-
-
-
-
-
 == Doppelter lokaler Benutzer
 
 Sie können einen lokalen Benutzer duplizieren, um einen neuen Benutzer schneller zu erstellen.

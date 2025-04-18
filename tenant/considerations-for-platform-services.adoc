@@ -32,7 +32,7 @@ TIP: Die Nutzung von Plattformdiensten muss für jedes Mandantenkonto durch eine
 
 == Die Konfiguration von Plattform-Services
 
-Plattformdienste kommunizieren mit externen Endpunkten, die Sie über oder konfigurierenlink:configuring-platform-services-endpoints.html["Mandanten-Manager"]link:understanding-tenant-management-api.html["Mandantenmanagement-API"]. Jeder Endpunkt stellt ein externes Ziel dar, z. B. einen StorageGRID S3-Bucket, einen Amazon Web Services-Bucket, ein Amazon SNS-Thema, einen Webhook-Endpunkt oder ein Elasticsearch-Cluster, das lokal, auf AWS oder an anderer Stelle gehostet wird.
+Plattformdienste kommunizieren mit externen Endpunkten, die Sie über oder konfigurierenlink:configuring-platform-services-endpoints.html["Mandanten-Manager"]link:understanding-tenant-management-api.html["Mandantenmanagement-API"]. Jeder Endpunkt stellt ein externes Ziel dar, z. B. einen StorageGRID S3-Bucket, einen Amazon Web Services-Bucket, ein Amazon SNS-Thema oder ein lokal auf AWS oder anderswo gehostetes Elasticsearch-Cluster.
 
 Nachdem Sie einen externen Endpunkt erstellt haben, können Sie einen Plattformdienst für einen Bucket aktivieren, indem Sie dem Bucket eine XML-Konfiguration hinzufügen. Die XML-Konfiguration identifiziert die Objekte, auf denen der Bucket handeln soll, die Aktion, die der Bucket durchführen sollte, und den Endpunkt, den der Bucket für den Service verwenden sollte.
 

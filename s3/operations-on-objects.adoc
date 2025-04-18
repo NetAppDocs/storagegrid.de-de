@@ -15,7 +15,7 @@ In diesem Abschnitt wird beschrieben, wie das StorageGRID System S3-REST-API-Vor
 
 Die folgenden Bedingungen gelten für alle Objektvorgänge:
 
-* StorageGRID link:consistency.html["Konsistenzwerte"]werden von allen Operationen an Objekten unterstützt, mit Ausnahme der folgenden:
+* StorageGRID link:consistency-controls.html["Konsistenzwerte"]werden von allen Operationen an Objekten unterstützt, mit Ausnahme der folgenden:
 +
 ** GetObjectAcl
 ** `OPTIONS /`

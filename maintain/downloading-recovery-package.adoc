@@ -2,16 +2,16 @@
 permalink: maintain/downloading-recovery-package.html 
 sidebar: sidebar 
 keywords: storagegrid, recovery package 
-summary: Mit der Wiederherstellungspaketdatei können Sie das StorageGRID-System bei einem Ausfall wiederherstellen. 
+summary: Die Wiederherstellungspakedatei ermöglicht Ihnen die Wiederherstellung des StorageGRID-Systems bei einem Fehler. 
 ---
-= Wiederherstellungspaket herunterladen
+= Recovery Package Herunterladen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Mit der Wiederherstellungspaketdatei können Sie das StorageGRID-System bei einem Ausfall wiederherstellen.
+Die Wiederherstellungspakedatei ermöglicht Ihnen die Wiederherstellung des StorageGRID-Systems bei einem Fehler.
 
 .Bevor Sie beginnen
 * Vom primären Admin-Knoten aus werden Sie mit einem beim Grid-Manager angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
@@ -19,7 +19,7 @@ Mit der Wiederherstellungspaketdatei können Sie das StorageGRID-System bei eine
 * Sie haben link:../admin/admin-group-permissions.html["Bestimmte Zugriffsberechtigungen"].
 
 
-Laden Sie die aktuelle Wiederherstellungspaket-Datei herunter, bevor Sie Änderungen an der Grid-Topologie am StorageGRID-System vornehmen oder bevor Sie die Software aktualisieren. Laden Sie anschließend eine neue Kopie des Wiederherstellungspakets herunter, nachdem Sie Änderungen an der Grid-Topologie vorgenommen oder die Software aktualisiert haben.
+Laden Sie die aktuelle Recovery Package-Datei herunter, bevor Sie Grid-Topologieänderungen am StorageGRID-System vornehmen oder bevor Sie Software aktualisieren. Laden Sie anschließend eine neue Kopie des Wiederherstellungspakets herunter, nachdem Sie Änderungen an der Grid-Topologie vorgenommen haben oder nachdem Sie die Software aktualisiert haben.
 
 .Schritte
 . Wählen Sie *WARTUNG* > *System* > *Wiederherstellungspaket*.
@@ -31,6 +31,6 @@ Der Download startet sofort.
 . Kopieren Sie die heruntergeladene Wiederherstellungspaket-Datei (`.zip`) in zwei sichere und separate Speicherorte.
 +
 
-CAUTION: Die Wiederherstellungspaket-Datei muss gesichert werden, da sie Verschlüsselungsschlüssel und Passwörter enthält, die verwendet werden können, um Daten vom StorageGRID-System zu erhalten.
+CAUTION: Die Recovery Package-Datei muss gesichert sein, weil sie Verschlüsselungsschlüssel und Passwörter enthält, die zum Abrufen von Daten vom StorageGRID-System verwendet werden können.
 
 

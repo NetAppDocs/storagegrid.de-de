@@ -99,13 +99,13 @@ Daraufhin wird der Vorgang zum Stilllegen des Node gestartet, und der Fortschrit
 
 CAUTION: Nehmen Sie einen Speicher-Node nicht offline, nachdem der Ausmusterung-Vorgang gestartet wurde. Wenn Sie den Status ändern, werden einige Inhalte möglicherweise nicht an andere Orte kopiert.
 
-. Sobald das neue Recovery-Paket verfügbar ist, wählen Sie den Recovery-Paket-Link im Banner oder wählen Sie *WARTUNG* > *System* > *Recovery-Paket*, um die Recovery-Paket-Seite zugreifen. Laden Sie dann die Datei herunter `.zip`.
+. Sobald das neue Wiederherstellungspaket verfügbar ist, wählen Sie den Link Wiederherstellungspaket im Banner oder wählen Sie *WARTUNG* > *System* > *Wiederherstellungspaket*, um auf die Seite Wiederherstellungspaket zuzugreifen. Laden Sie dann die Datei herunter `.zip`.
 +
-Siehe link:downloading-recovery-package.html["Das Wiederherstellungspaket wird heruntergeladen"].
+Siehe link:downloading-recovery-package.html["Herunterladen des Wiederherstellungspakets"].
 
 +
 
-NOTE: Laden Sie das Wiederherstellungspaket so schnell wie möglich herunter, um sicherzustellen, dass Sie Ihr Grid wiederherstellen können, wenn während des Stilllegungsvorgangs etwas schief geht.
+NOTE: Laden Sie das Wiederherstellungspaket so schnell wie möglich herunter, um sicherzustellen, dass Sie Ihr Grid wiederherstellen können, wenn während des Stillfalls etwas schief geht.
 
 . Überwachen Sie die Seite Decommission Nodes regelmäßig, um sicherzustellen, dass alle ausgewählten Knoten erfolgreich deaktiviert wurden.
 +

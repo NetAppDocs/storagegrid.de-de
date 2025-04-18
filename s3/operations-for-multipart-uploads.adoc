@@ -30,10 +30,9 @@ Die folgenden Bedingungen und Hinweise gelten für alle mehrteiligen Uploadvorg�
 ** Bei der Evaluierung von ILM für ein Teil filtert StorageGRID nach der Größe des Teils und nicht der Größe des Objekts. Das bedeutet, dass Teile eines Objekts an Orten gespeichert werden können, die die ILM-Anforderungen für das gesamte Objekt nicht erfüllen. Wenn z. B. in einer Regel festgelegt wird, dass alle Objekte mit 10 GB oder mehr bei DC1 gespeichert werden, während alle kleineren Objekte bei DC2 gespeichert sind, wird jeder 1-GB-Teil eines 10-teiligen mehrteiligen Uploads bei DC2 beim Einspielen gespeichert. Wird ILM für das gesamte Objekt evaluiert, werden alle Teile des Objekts nach DC1 verschoben.
 
 
-* Alle mehrteiligen Uploads unterstützen StorageGRID link:consistency.html["Konsistenzwerte"].
+* Alle mehrteiligen Uploads unterstützen StorageGRID link:consistency-controls.html["Konsistenzwerte"].
 * Wenn ein Objekt mit mehrteiligen Uploads aufgenommen wird, wird das link:../admin/what-object-segmentation-is.html["Schwellenwert für Objektsegmentierung (1 gib)"]nicht angewendet.
 * Je nach Bedarf können Sie mit mehrteiligen Uploads verwendenlink:using-server-side-encryption.html["Serverseitige Verschlüsselung"]. Um SSE (serverseitige Verschlüsselung mit StorageGRID-verwalteten Schlüsseln) zu verwenden, fügen Sie den `x-amz-server-side-encryption` Anforderungsheader nur in die CreateMultipartUpload-Anforderung ein. Um SSE-C (serverseitige Verschlüsselung mit vom Kunden bereitgestellten Schlüsseln) zu verwenden, geben Sie in der CreateMultipartUpload-Anforderung und in jeder nachfolgenden UploadPart-Anforderung die gleichen drei Verschlüsselungsschlüsselanforderungsheader an.
-* Ein mehrteiliges hochgeladenes Objekt ist in einem enthaltenlink:../tenant/manage-branch-buckets.html["Eimer verzweigen"], wenn die Aufnahme vor dem Zeitstempel des Basis-Buckets initiiert wurde, unabhängig davon, wann der Upload abgeschlossen ist.
 
 
 [cols="2a,3a"]

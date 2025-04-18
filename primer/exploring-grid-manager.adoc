@@ -75,6 +75,8 @@ Im link:../monitor/viewing-nodes-page.html["Knoten Seite"] werden Informationen 
 
 Auf der Startseite Nodes werden die kombinierten Metriken für das gesamte Raster angezeigt. Um Informationen zu einem bestimmten Standort oder Node anzuzeigen, wählen Sie den Standort oder Node aus.
 
+image::../media/nodes_page.png[Knoten Hauptseite]
+
 
 
 == Mandanten werden gestartet
@@ -82,6 +84,8 @@ Auf der Startseite Nodes werden die kombinierten Metriken für das gesamte Raste
 link:../admin/managing-tenants.html["Mandanten werden gestartet"]Mit können Sie link:../tenant/index.html["Erstellen und überwachen Sie die Konten von Storage-Mandanten"]für Ihr StorageGRID-System. Sie müssen mindestens ein Mandantenkonto erstellen, um anzugeben, wer Objekte speichern und abrufen kann und welche Funktionen ihnen zur Verfügung stehen.
 
 Die Seite „Mandanten“ stellt zudem Nutzungsdetails für die einzelnen Mandanten bereit, einschließlich der Anzahl der verwendeten Storage-Ressourcen und der Anzahl der Objekte. Wenn Sie beim Erstellen des Mandanten eine Quote festlegen, sehen Sie, wie viel von dieser Quote verwendet wurde.
+
+image::../media/tenants_page.png[Mandantenmenü und Seite]
 
 
 
@@ -141,7 +145,7 @@ Zu den Systemaufgaben gehören:
 * Verwenden link:../admin/grid-federation-overview.html["Grid-Verbund"] zum Klonen von Mandantenkontoinformationen und zum Replizieren von Objektdaten zwischen zwei StorageGRID Systemen.
 * Optional wird die  Option aktiviertlink:../admin/configuring-stored-object-compression.html["Gespeicherte Objekte komprimieren"].
 * link:../ilm/managing-objects-with-s3-object-lock.html["Verwalten der S3-Objektsperre"]
-* Allgemeines zu Speichereinstellungen wie link:../admin/what-object-segmentation-is.html["Objektsegmentierung"] und link:../admin/what-storage-volume-watermarks-are.html["Wasserzeichen für Storage-Volumes"].
+* Allgemeines zu Storage-Optionen wie link:../admin/what-object-segmentation-is.html["Objektsegmentierung"] und link:../admin/what-storage-volume-watermarks-are.html["Wasserzeichen für Storage-Volumes"].
 * link:../ilm/manage-erasure-coding-profiles.html["Profile für das Erasure Coding managen"].
 
 
@@ -165,7 +169,7 @@ Zu den Aufgaben der Zugriffssteuerung gehören:
 * link:../admin/managing-users.html["Verwalten von Administratorbenutzern"]
 * Ändern des link:../admin/changing-provisioning-passphrase.html["Provisionierungs-Passphrase"]oder link:../admin/change-node-console-password.html["Passwörter für die Node-Konsole"]
 * link:../admin/using-identity-federation.html["Identitätsföderation verwenden"]
-* link:../admin/how-sso-works.html["SSO konfigurieren"]
+* link:../admin/configuring-sso.html["SSO wird konfiguriert"]
 
 
 
@@ -196,7 +200,7 @@ Zu den Wartungsarbeiten gehören:
 Sie können folgende Systemwartungsaufgaben ausführen:
 
 * link:../admin/viewing-storagegrid-license-information.html["Anzeigen von StorageGRID-Lizenzinformationen"] Oder link:../admin/updating-storagegrid-license-information.html["Lizenzinformationen werden aktualisiert"]
-* Generieren und Herunterladen der link:../maintain/downloading-recovery-package.html["Recovery-Paket"]
+* Generieren und Herunterladen der link:../maintain/downloading-recovery-package.html["Wiederherstellungspaket"]
 * StorageGRID Software-Updates, einschließlich Software-Upgrades und Hotfixes, sowie Updates für die SANtricity OS Software auf ausgewählten Appliances
 +
 ** link:../upgrade/index.html["Upgrade-Verfahren"]

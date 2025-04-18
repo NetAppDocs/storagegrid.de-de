@@ -23,7 +23,7 @@ Das Ausführen des `sn-remount-volumes` Skripts kann Ihnen dabei helfen, zusätz
 * Sie haben link:reviewing-warnings-for-system-drive-recovery.html["Überprüfen Sie die Warnungen für die Wiederherstellung des Speicherknoten-Systemlaufwerks"].
 +
 
-CAUTION: Wenden Sie sich an den technischen Support, wenn mehr als ein Storage Node offline ist. Führen Sie das Skript nicht aus `sn-recovery-postinstall.sh`.
+CAUTION: Wenden Sie sich an den technischen Support, wenn mehr als ein Speicherknoten offline ist oder wenn ein Speicherknoten in diesem Grid in den letzten 15 Tagen neu aufgebaut wurde. Führen Sie das Skript nicht aus `sn-recovery-postinstall.sh`. Die Neuerstellung von Cassandra auf zwei oder mehr Storage-Nodes innerhalb von 15 Tagen voneinander kann zu Datenverlust führen.
 
 
 

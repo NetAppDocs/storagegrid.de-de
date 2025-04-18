@@ -17,7 +17,7 @@ Der Mandant kann S3-Plattformservices wie CloudMirror verwenden. Siehe link:../a
  a| 
 Eigene Identitätsquelle verwenden
  a| 
-Der Mandant kann seine eigene Identitätsquelle für verbundene Gruppen und Benutzer konfigurieren und verwalten. Diese Option ist deaktiviert, wenn Sie für Ihr StorageGRID-System habenlink:../admin/how-sso-works.html["SSO konfiguriert"].
+Der Mandant kann seine eigene Identitätsquelle für verbundene Gruppen und Benutzer konfigurieren und verwalten. Diese Option ist deaktiviert, wenn Sie für Ihr StorageGRID-System habenlink:../admin/configuring-sso.html["SSO konfiguriert"].
 
 
 

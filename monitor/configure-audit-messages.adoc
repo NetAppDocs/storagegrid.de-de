@@ -122,7 +122,7 @@ Es werden keine Überwachungsmeldungen aus der Kategorie protokolliert.
  a| 
 Fehler
  a| 
-Nur Fehlermeldungen sind protokollierte --Audit-Meldungen, für die der Ergebniscode nicht „erfolgreich“ war (SUCS).
+Nur Fehlermeldungen sind protokollierte - Audit-Meldungen, für die der Ergebniscode nicht „erfolgreich“ (SUCS) war.
 
 
 
@@ -169,7 +169,7 @@ Wenn HTTP-Header in einer Anfrage gefunden werden, sind sie in der Überwachungs
 
 +
 
-NOTE: Protokollanforderungen werden nur protokolliert, wenn die Überwachungsebene für *Client reads* oder *Client writes* nicht *aus* ist.
+NOTE: Header für Auditprotokoll-Anfragen werden nur protokolliert, wenn die Audit-Ebene für *Client* oder *Client-Schreibvorgänge* nicht *aus* ist.
 
 . Wählen Sie *Speichern*
 +
@@ -574,7 +574,7 @@ Sie gelangen zurück zur Seite *Audit und Syslog Server*. Ein grünes Banner zei
 
 +
 
-NOTE: StorageGRID Audit-Informationen werden erst dann an den externen Syslog-Server gesendet, wenn Sie ein Ziel auswählen, das den externen Syslog-Server enthält.
+NOTE: StorageGRID-Audit-Informationen werden erst dann an den externen Syslog-Server gesendet, wenn Sie ein Ziel auswählen, das den externen Syslog-Server enthält.
 
 
 

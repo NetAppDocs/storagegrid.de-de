@@ -78,11 +78,7 @@ Nach der Erstellung von Endpunkten können Fehler bei Plattformservice-Anfragen 
 
 Wenn bei StorageGRID ein wiederherstellbarer Fehler auftritt, wird die Serviceanfrage für die Plattform erneut versucht, bis sie erfolgreich ist.
 
-Andere Fehler können nicht behoben werden. So können nicht behebbare Fehler aus folgenden Gründen auftreten:
-
-* Der Endpunkt wird gelöscht.
-* Ein Webhook-Endpunktziel reagiert auf eine Benachrichtigungsanforderung mit einem `400 Bad Request` Fehler.
-
+Andere Fehler können nicht behoben werden. Beispielsweise tritt ein nicht behebbarer Fehler auf, wenn der Endpunkt gelöscht wird.
 
 Wenn bei StorageGRID ein nicht behebbarer Endpunktfehler auftritt:
 
@@ -95,7 +91,7 @@ Wenn bei StorageGRID ein nicht behebbarer Endpunktfehler auftritt:
 
 == Nachrichten zu Plattform-Services können nicht bereitgestellt werden
 
-Wenn auf dem Ziel ein Problem auftritt, das verhindert, dass Plattformdienste-Meldungen akzeptiert werden, ist der Clientvorgang auf dem Bucket erfolgreich, die Meldung „Plattformdienste“ wird jedoch nicht bereitgestellt. Dieser Fehler kann z. B. auftreten, wenn die Anmeldeinformationen auf dem Ziel aktualisiert werden, sodass sich StorageGRID nicht mehr beim Ziel-Service authentifizieren kann.
+Wenn im Ziel ein Problem auftritt, das verhindert, dass Plattformdienste-Meldungen akzeptiert werden, wird der Client-Vorgang auf dem Bucket erfolgreich ausgeführt, die Plattform-Services-Meldung wird jedoch nicht geliefert. Dieser Fehler kann z. B. auftreten, wenn die Anmeldeinformationen auf dem Ziel aktualisiert werden, sodass sich StorageGRID nicht mehr beim Ziel-Service authentifizieren kann.
 
 Prüfen Sie, ob entsprechende Warnmeldungen vorhanden sind.
 

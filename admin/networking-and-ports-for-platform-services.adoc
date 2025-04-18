@@ -20,10 +20,6 @@ Beispielsweise können Mandanten die folgenden Typen von Ziel-Endpunkten konfigu
 * Ein lokal gehostetes Elasticsearch-Cluster ausführen
 * Eine lokale Anwendung, die den Empfang von Amazon Simple Notification Service-Nachrichten unterstützt
 * Ein lokal gehosteter Kafka-Cluster
-* Ein externer oder lokal gehosteter Webhook-Endpunkt, der HTTP-POST-Benachrichtigungsanforderungen unterstützt.
-+
-Dieser Endpunkt kann auf verschiedenen Webservern, Frameworks oder Data Processing-Tools wie Fluentd gehostet werden.
-
 * Ein lokal gehosteter S3-Bucket auf derselben oder einer anderen Instanz von StorageGRID
 * Einem externen Endpunkt wie einem Endpunkt auf Amazon Web Services
 

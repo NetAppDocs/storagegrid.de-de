@@ -19,15 +19,13 @@ StorageGRID verwendet zwei Arten von Sicherheitszertifikaten:
 * *Clientzertifikate* authentifizieren eine Client- oder Benutzeridentität auf dem Server und bieten eine sicherere Authentifizierung als Passwörter allein. Clientzertifikate verschlüsseln keine Daten.
 
 
-Wenn ein Client über HTTPS eine Verbindung zum Server herstellt, antwortet der Server mit dem Serverzertifikat, das einen öffentlichen Schlüssel enthält. Der Client vergleicht die Server-Signatur mit der Signatur auf seiner Kopie des Zertifikats. Wenn die Signaturen übereinstimmen, startet der Client eine Sitzung mit dem Server, der denselben öffentlichen Schlüssel verwendet.
+Wenn ein Client über HTTPS eine Verbindung zum Server herstellt, antwortet der Server mit dem Serverzertifikat, das einen öffentlichen Schlüssel enthält. Der Client überprüft dieses Zertifikat, indem er die Serversignatur mit der Signatur seiner Kopie des Zertifikats vergleicht. Wenn die Signaturen übereinstimmen, startet der Client eine Sitzung mit dem Server, der denselben öffentlichen Schlüssel verwendet.
 
 StorageGRID-Funktionen wie der Server für einige Verbindungen (z. B. den Endpunkt des Load Balancer) oder als Client für andere Verbindungen (z. B. den CloudMirror-Replikationsdienst).
 
 *Standard Grid CA-Zertifikat*
 
-StorageGRID verfügt über eine integrierte Zertifizierungsstelle, die während der Systeminstallation ein internes Grid-CA-Zertifikat generiert. Das Grid-CA-Zertifikat wird standardmäßig zum Schutz des internen StorageGRID-Datenverkehrs verwendet. Eine externe Zertifizierungsstelle (CA) kann benutzerdefinierte Zertifikate ausstellen, die vollständig den Informationssicherheitsrichtlinien Ihres Unternehmens entsprechen.
-
-Verwenden Sie das Grid-CA-Zertifikat für nicht-Produktionsumgebungen. Verwenden Sie für die Produktion benutzerdefinierte Zertifikate, die von einer externen Zertifizierungsstelle signiert wurden. Ungesicherte Verbindungen ohne Zertifikat werden unterstützt, aber nicht empfohlen.
+StorageGRID enthält eine integrierte Zertifizierungsstelle (CA), die während der Systeminstallation ein internes Grid CA-Zertifikat generiert. Das Grid-CA-Zertifikat wird standardmäßig zum Schutz des internen StorageGRID-Datenverkehrs verwendet. Eine externe Zertifizierungsstelle (CA) kann benutzerdefinierte Zertifikate ausstellen, die vollständig den Informationssicherheitsrichtlinien Ihres Unternehmens entsprechen. Sie können das Grid-CA-Zertifikat zwar für eine nicht-Produktionsumgebungen verwenden, jedoch empfiehlt es sich, benutzerdefinierte Zertifikate zu verwenden, die von einer externen Zertifizierungsstelle signiert sind. Ungesicherte Verbindungen ohne Zertifikat werden ebenfalls unterstützt, aber nicht empfohlen.
 
 * Benutzerdefinierte CA-Zertifikate entfernen die internen Zertifikate nicht, jedoch sollten die benutzerdefinierten Zertifikate für die Überprüfung der Serververbindungen angegeben sein.
 * Alle benutzerdefinierten Zertifikate müssen den erfüllenlink:../harden/hardening-guideline-for-server-certificates.html["Richtlinien für die Systemhärtung von Serverzertifikaten"].
@@ -454,7 +452,7 @@ Authentifiziert die Verbindung zwischen Services der Identitätsföderation, z. 
  a| 
 *KONFIGURATION* > *Zugangskontrolle* > *Single Sign-On*
  a| 
-link:how-sso-works.html["Konfigurieren Sie Single Sign-On"]
+link:configuring-sso.html["Konfigurieren Sie Single Sign-On"]
 
 |===
 
@@ -471,7 +469,7 @@ In diesem Beispiel fungiert StorageGRID als Server.
 . Sie konfigurieren eine S3-Client-Verbindung zum Load Balancer-Endpunkt und laden dasselbe Zertifikat auf den Client hoch.
 . Wenn der Client Daten speichern oder abrufen möchte, stellt er über HTTPS eine Verbindung zum Load Balancer-Endpunkt her.
 . StorageGRID antwortet mit dem Serverzertifikat, das einen öffentlichen Schlüssel enthält, und mit einer Signatur auf Grundlage des privaten Schlüssels.
-. Der Client vergleicht die Server-Signatur mit der Signatur auf seiner Kopie des Zertifikats. Wenn die Signaturen übereinstimmen, startet der Client eine Sitzung mit demselben öffentlichen Schlüssel.
+. Der Client überprüft dieses Zertifikat, indem er die Serversignatur mit der Signatur seiner Kopie des Zertifikats vergleicht. Wenn die Signaturen übereinstimmen, startet der Client eine Sitzung mit demselben öffentlichen Schlüssel.
 . Der Client sendet Objektdaten an StorageGRID.
 
 

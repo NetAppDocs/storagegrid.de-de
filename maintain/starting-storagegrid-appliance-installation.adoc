@@ -83,6 +83,9 @@ Wenn die Schaltfläche *Installation starten* nicht aktiviert ist, müssen Sie m
 
 . Klicken Sie auf der Startseite des StorageGRID-Appliance-Installationsprogramms auf *Installation starten*.
 +
+image::../media/appliance_installer_home_start_installation_enabled.gif[Diese Abbildung wird durch den umgebenden Text beschrieben.]
+
++
 Der aktuelle Status ändert sich in „Installation wird ausgeführt“, und die Seite Monitorinstallation wird angezeigt.
 
 +

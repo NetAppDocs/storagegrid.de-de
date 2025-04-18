@@ -16,7 +16,7 @@ Der Ersatzknoten muss als primärer Admin-Node für Ihr StorageGRID System konfi
 .Bevor Sie beginnen
 * Für primäre Admin-Nodes, die auf virtuellen Maschinen gehostet werden, wurde die virtuelle Maschine bereitgestellt, eingeschaltet und initialisiert.
 * Für primäre Admin-Nodes, die auf einer Services-Appliance gehostet werden, haben Sie die Appliance ersetzt und die installierte Software installiert. Siehe https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/index.html["Installationsanweisungen für das Gerät"^].
-* Sie haben die letzte Sicherung der Wiederherstellungspaketdatei (`sgws-recovery-package-_id-revision_.zip`).
+* Sie haben die letzte Sicherung der Recovery Package Datei (`sgws-recovery-package-_id-revision_.zip`).
 * Sie haben die Provisionierungs-Passphrase.
 
 
@@ -38,10 +38,10 @@ Der Ersatzknoten muss als primärer Admin-Node für Ihr StorageGRID System konfi
 +
 image::../media/install_or_recover_primary_admin_node.png[Installieren oder Wiederherstellen des primären Admin-Knotens]
 
-. Laden Sie das letzte Backup des Wiederherstellungspakets hoch:
+. Laden Sie das aktuellste Backup des Wiederherstellungspakets hoch:
 +
 .. Klicken Sie Auf *Durchsuchen*.
-.. Suchen Sie die neueste Wiederherstellungspaket-Datei für Ihr StorageGRID-System, und klicken Sie auf *Öffnen*.
+.. Suchen Sie die aktuellste Wiederherstellungspakedatei für Ihr StorageGRID-System und klicken Sie auf *Öffnen*.
 
 
 . Geben Sie die Provisionierungs-Passphrase ein.
@@ -52,7 +52,7 @@ Der Wiederherstellungsprozess beginnt. Der Grid Manager ist möglicherweise eini
 . Wenn SSO (Single Sign-On) für Ihr StorageGRID-System aktiviert ist und das Vertrauen der Vertrauensstelle für den wiederhergestellten Admin-Knoten für das Zertifikat der Standardverwaltungsoberfläche konfiguriert wurde, aktualisieren (oder löschen und neu erstellen) das Vertrauen des Node auf die Vertrauensbasis in Active Directory Federation Services (AD FS). Verwenden Sie das neue Standard-Serverzertifikat, das während der Wiederherstellung des Admin-Knotens generiert wurde.
 +
 
-NOTE: Informationen zum Konfigurieren einer vertrauenswürdigen Partei finden Sie unter link:../admin/configure-sso.html["Konfigurieren Sie Single Sign-On"]. Melden Sie sich zum Zugriff auf das Standard-Serverzertifikat bei der Eingabeaufforderung des Admin-Knotens an. Gehen Sie zum `/var/local/mgmt-api` Verzeichnis, und wählen Sie die `server.crt` Datei aus.
+NOTE: Informationen zum Konfigurieren einer vertrauenswürdigen Partei finden Sie unter link:../admin/configuring-sso.html["Konfigurieren Sie Single Sign-On"]. Melden Sie sich zum Zugriff auf das Standard-Serverzertifikat bei der Eingabeaufforderung des Admin-Knotens an. Gehen Sie zum `/var/local/mgmt-api` Verzeichnis, und wählen Sie die `server.crt` Datei aus.
 
 
 

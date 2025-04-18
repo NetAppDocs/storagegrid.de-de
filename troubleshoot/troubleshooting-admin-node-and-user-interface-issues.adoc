@@ -46,7 +46,7 @@ Wenn der Fehler nicht automatisch behoben wird, fahren Sie mit dem nächsten Sch
 
 
 . Ermitteln, ob die Hardware des Node offline ist
-. Wenn Single Sign-On (SSO) für Ihr StorageGRID-System aktiviert ist, lesen Sie die Schritte für link:../admin/configure-sso.html["Konfigurieren der Single Sign-On-Funktion"].
+. Wenn Single Sign-On (SSO) für Ihr StorageGRID-System aktiviert ist, lesen Sie die Schritte für link:../admin/configuring-sso.html["Konfigurieren der Single Sign-On-Funktion"].
 +
 Unter Umständen müssen Sie SSO für einen einzelnen Admin-Node vorübergehend deaktivieren und erneut aktivieren, um Probleme zu beheben.
 

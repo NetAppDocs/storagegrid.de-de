@@ -56,10 +56,10 @@ Lesen Sie vor dem Hinzufügen von Speicherknoten zu vorhandenen Standorten die f
 
 Beim Konfigurieren der Erweiterung müssen Sie festlegen, ob der Dienst Administrative Domain Controller (ADC) auf jedem neuen Speicherknoten enthalten soll. Der ADC-Dienst verfolgt den Standort und die Verfügbarkeit von Grid-Services.
 
-* Sie können link:../maintain/move-adc-service.html["Verschieben Sie den ADC-Dienst von einem Storage Node zu einem anderen am selben Standort"].
 * Für das StorageGRID System muss ein System link:../maintain/understanding-adc-service-quorum.html["Quorum von ADC-Services"]jederzeit und an jedem Standort verfügbar sein.
 * Mindestens drei Storage-Nodes an jedem Standort müssen den ADC-Service enthalten.
 * Es wird nicht empfohlen, jedem Speicherknoten den ADC-Dienst hinzuzufügen. Die Einbeziehung von zu vielen ADC-Services kann zu Verlangsamungen führen, da die Kommunikation zwischen den Knoten größer ist.
 * Ein einzelnes Grid sollte nicht mehr als 48 Storage-Nodes mit dem ADC-Dienst aufweisen. Dies entspricht 16 Standorten mit drei ADC-Diensten an jedem Standort.
-* Wenn Sie im Allgemeinen die Einstellung *ADC-Dienst* für einen neuen Knoten auswählen, sollten Sie *automatisch* wählen. Wählen Sie *Ja* nur aus, wenn der neue Knoten einen anderen Speicherknoten ersetzt, der den ADC-Dienst enthält. Da ein Storage Node nicht stillgelegt werden kann, wenn zu wenige ADC-Dienste verbleiben würden, wird durch die Auswahl von *Yes* sichergestellt, dass ein neuer ADC-Service verfügbar ist, bevor der alte Service entfernt wird.
+* Wenn Sie im Allgemeinen die Einstellung *ADC-Dienst* für einen neuen Knoten auswählen, sollten Sie *automatisch* wählen. Wählen Sie *Ja* nur aus, wenn der neue Knoten einen anderen Speicherknoten ersetzt, der den ADC-Dienst enthält. Da ein Storage Node nicht stillgelegt werden kann, wenn zu wenige ADC-Dienste verbleiben, wird dadurch sichergestellt, dass ein neuer ADC-Service verfügbar ist, bevor der alte Service entfernt wird.
+* Sie können den ADC-Dienst nicht zu einem Knoten hinzufügen, nachdem er bereitgestellt wurde.
 

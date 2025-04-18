@@ -41,7 +41,7 @@ SSO aktiviert
  a| 
 Sie sind von allen Admin-Knoten abgemeldet, auf die Sie zugreifen konnten. Die Seite StorageGRID-Anmeldung wird angezeigt. *Grid Manager* wird standardmäßig im Dropdown-Menü *Letzte Konten* aufgeführt, und im Feld *Konto-ID* wird 0 angezeigt.
 
-*Hinweis:* Wenn SSO aktiviert ist und Sie auch beim Tenant Manager angemeldet sind, müssen Sie auch link:../tenant/signing-out-of-tenant-manager.html["melden Sie sich vom Mieterkonto ab"] auf link:how-sso-works.html["von SSO abmelden"].
+*Hinweis:* Wenn SSO aktiviert ist und Sie auch beim Tenant Manager angemeldet sind, müssen Sie auch link:../tenant/signing-out-of-tenant-manager.html["melden Sie sich vom Mieterkonto ab"] auf link:configuring-sso.html["von SSO abmelden"].
 
 |===
 

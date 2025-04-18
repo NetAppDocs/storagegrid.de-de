@@ -180,6 +180,25 @@ Cloud-Storage-Pools-Anfragen werden an AWS-Ziele mit HTTP gesendet. Grid-Adminis
 
 
  a| 
+111
+ a| 
+TCP/UDP
+ a| 
+Rpcbind
+ a| 
+NFS-Client
+ a| 
+Admin-Nodes
+ a| 
+Wird vom NFS-basierten Audit-Export verwendet (Portmap).
+
+*Hinweis:* dieser Port ist nur erforderlich, wenn NFS-basierter Audit-Export aktiviert ist.
+
+*Hinweis:* die Unterstützung für NFS wurde veraltet und wird in einer zukünftigen Version entfernt.
+
+
+
+ a| 
 123
  a| 
 UDP
@@ -310,6 +329,25 @@ Cloud-Storage-Pools-Anfragen werden an AWS-Ziele mit HTTPS gesendet. Grid-Admini
 
 
  a| 
+903
+ a| 
+TCP
+ a| 
+NFS
+ a| 
+NFS-Client
+ a| 
+Admin-Nodes
+ a| 
+Verwendet durch NFS-basierten Audit Export (`rpc.mountd`).
+
+*Hinweis:* dieser Port ist nur erforderlich, wenn NFS-basierter Audit-Export aktiviert ist.
+
+*Hinweis:* die Unterstützung für NFS wurde veraltet und wird in einer zukünftigen Version entfernt.
+
+
+
+ a| 
 2022
  a| 
 TCP
@@ -321,6 +359,25 @@ Service-Laptop
 Alle Nodes
  a| 
 Für Verfahren mit Konsolenschritten ist ein SSH- oder Konsolenzugriff erforderlich. Optional können Sie Port 22 anstelle von 2022 verwenden.
+
+
+
+ a| 
+2049
+ a| 
+TCP
+ a| 
+NFS
+ a| 
+NFS-Client
+ a| 
+Admin-Nodes
+ a| 
+Wird vom NFS-basierten Audit-Export verwendet (nfs).
+
+*Hinweis:* dieser Port ist nur erforderlich, wenn NFS-basierter Audit-Export aktiviert ist.
+
+*Hinweis:* die Unterstützung für NFS wurde veraltet und wird in einer zukünftigen Version entfernt.
 
 
 

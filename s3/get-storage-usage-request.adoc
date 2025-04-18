@@ -72,4 +72,4 @@ Content-Type: application/xml
 Jede gespeicherte Objektversion trägt zu den `ObjectCount` Werten und `DataBytes` in der Antwort bei. Löschmarkierungen werden nicht zur Gesamtmenge hinzugefügt `ObjectCount`.
 
 .Verwandte Informationen
-link:consistency.html["Konsistenz"]
+link:consistency-controls.html["Konsistenzwerte"]

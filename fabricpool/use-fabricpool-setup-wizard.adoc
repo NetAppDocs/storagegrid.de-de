@@ -56,7 +56,7 @@ Wenn Sie planen, einen virtuellen LAN zur Trennung des FabricPool-Datenverkehrs 
 
 === Konfigurieren Sie Identity Federation und SSO
 
-Wenn Sie planen, Identity Federation oder Single Sign-On (SSO) für Ihr StorageGRID-System zu verwenden, haben Sie diese Funktionen aktiviert. Sie wissen auch, welche föderierte Gruppe Root-Zugriff für das Mandantenkonto haben soll, das ONTAP verwenden wird. Siehe link:../admin/using-identity-federation.html["Verwenden Sie den Identitätsverbund"] und link:../admin/how-sso-works.html["Konfigurieren Sie Single Sign-On"].
+Wenn Sie planen, Identity Federation oder Single Sign-On (SSO) für Ihr StorageGRID-System zu verwenden, haben Sie diese Funktionen aktiviert. Sie wissen auch, welche föderierte Gruppe Root-Zugriff für das Mandantenkonto haben soll, das ONTAP verwenden wird. Siehe link:../admin/using-identity-federation.html["Verwenden Sie den Identitätsverbund"] und link:../admin/configuring-sso.html["Konfigurieren Sie Single Sign-On"].
 
 
 

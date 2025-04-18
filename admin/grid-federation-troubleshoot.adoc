@@ -133,8 +133,6 @@ Für jede Grid Federation-Verbindung zeigt die Spalte *Last error* den zuletzt a
 * Der Ziel-Bucket wurde von einem anderen Konto neu erstellt.
 * Im Ziel-Bucket ist die Versionierung angehalten.
 * Der Ziel-Bucket wurde vom selben Konto neu erstellt, ist aber jetzt nicht mehr versioniert.
-* Das Quellobjekt verfügt über S3 Object Lock-Einstellungen, die nicht den Aufbewahrungseinstellungen des Zielrasters auf Mandantenebene entsprechen.
-* Das Quellobjekt verfügt über S3 Object Lock-Einstellungen, und S3 Object Lock ist auf dem Ziel-Bucket deaktiviert.
 
 
 .Empfohlene Maßnahmen
@@ -183,6 +181,7 @@ Diese Warnmeldung weist darauf hin, dass Tenant-Objekte aus einem Grund, der vom
 +
 ** Es gibt einen entsprechenden Bucket für denselben Mandanten auf dem anderen Grid (muss den genauen Namen verwenden).
 ** Beide Buckets haben die Objektversionierung aktiviert (die Versionierung kann in keinem Grid ausgesetzt werden).
+** Bei beiden Buckets ist die S3-Objektsperre deaktiviert.
 ** Keiner der Buckets befindet sich im Status *delete objects: Read-only*.
 
 

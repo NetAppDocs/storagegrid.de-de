@@ -30,7 +30,7 @@ Informationen zur Verwendung der StorageGRID-Software finden Sie im https://imt.
 
 == Upgrades auf externe Dienste
 
-Externe Services können Schwachstellen aufweisen, die StorageGRID indirekt beeinträchtigen. Stellen Sie sicher, dass die Services, auf die StorageGRID angewiesen ist, auf dem neuesten Stand sind. Zu diesen Services gehören LDAP, KMS (oder KMIP Server), DNS und NTP.
+Externe Services können Schwachstellen aufweisen, die StorageGRID indirekt beeinträchtigen. Sie sollten sicherstellen, dass die Services, von denen StorageGRID abhängig sind, immer auf dem neuesten Stand sind. Zu diesen Services gehören LDAP, KMS (oder KMIP Server), DNS und NTP.
 
 Eine Liste der unterstützten Versionen finden Sie im https://imt.netapp.com/matrix/#welcome["NetApp Interoperabilitäts-Matrix-Tool"^].
 

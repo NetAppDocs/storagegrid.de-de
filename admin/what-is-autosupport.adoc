@@ -13,14 +13,14 @@ summary: Mit der AutoSupport-Funktion kann StorageGRID Systemzustands- und Statu
 [role="lead"]
 Mit der AutoSupport-Funktion kann StorageGRID Systemzustands- und Statuspakete an den technischen Support von NetApp senden.
 
-Mit AutoSupport lassen sich Probleme schneller lösen. Der technische Support kann den Speicherbedarf Ihres Systems überwachen und bei der Feststellung helfen, ob neue Nodes oder Standorte hinzugefügt werden müssen. Optional kann AutoSupport Pakete an ein zusätzliches Ziel senden.
+Durch den Einsatz von AutoSupport kann die Problembestimmung und -Lösung erheblich beschleunigt werden. Der technische Support überwacht auch den Storage-Bedarf Ihres Systems und hilft Ihnen dabei zu ermitteln, ob Sie neue Nodes oder Standorte hinzufügen müssen. Optional können Sie AutoSupport-Pakete konfigurieren, die an ein zusätzliches Ziel gesendet werden.
 
 StorageGRID bietet zwei Arten von AutoSupport:
 
 * *StorageGRID AutoSupport* meldet Probleme mit der StorageGRID-Software. Standardmäßig aktiviert, wenn Sie StorageGRID zum ersten Mal installieren. Sie könnenlink:configure-autosupport-grid-manager.html["Ändern Sie die AutoSupport-Standardkonfiguration"], wenn nötig.
 +
 
-NOTE: Wenn StorageGRID AutoSupport nicht aktiviert ist, wird im Grid Manager-Dashboard eine Meldung angezeigt. Die Meldung enthält einen Link zur AutoSupport-Konfigurationsseite. Wenn Sie die Meldung schließen, wird sie erst wieder angezeigt, wenn Ihr Browser-Cache gelöscht wird, selbst wenn AutoSupport deaktiviert bleibt.
+NOTE: Wenn StorageGRID AutoSupport nicht aktiviert ist, wird im Grid Manager-Dashboard eine Meldung angezeigt. Die Meldung enthält einen Link zur AutoSupport-Konfigurationsseite. Wenn Sie die Nachricht schließen, wird sie erst wieder angezeigt, wenn Ihr Browser-Cache gelöscht wird, auch wenn AutoSupport deaktiviert bleibt.
 
 * *Appliance Hardware AutoSupport* meldet Probleme mit der StorageGRID Appliance. Sie müssen link:configure-autosupport-grid-manager.html#autosupport-for-appliances["Konfigurieren Sie Hardware-AutoSupport auf jeder Appliance"].
 

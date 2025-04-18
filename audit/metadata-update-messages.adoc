@@ -44,7 +44,7 @@ Das Beispiel zeigt eine erfolgreiche Transaktion zur Aktualisierung der Metadate
 
 === SUPD: S3-Metadatenaktualisierung
 
-Der S3-Client fordert (SUPD) auf, die angegebenen Metadaten (`x-amz-meta-\*`für das S3-Objekt (S3KY) zu aktualisieren. In diesem Beispiel sind Anforderungsheader im Feld HTRH enthalten, da sie als Audit-Protokoll-Header konfiguriert wurde (**KONFIGURATION** > **Monitoring** > **Audit- und Syslog-Server**). Siehe link:../monitor/configure-audit-messages.html["Konfigurieren von Audit-Meldungen und externem Syslog-Server"].
+Der S3-Client fordert (SUPD) auf, die angegebenen Metadaten (`x-amz-meta-\*`für das S3-Objekt (S3KY) zu aktualisieren. In diesem Beispiel sind Anforderungsheader im Feld HTRH enthalten, da sie als Audit-Protokoll-Header konfiguriert wurde (**KONFIGURATION** > **Monitoring** > **Audit- und Syslog-Server**). Siehe link:../monitor/configure-audit-messages.html["Konfigurieren von Überwachungsmeldungen und Protokollzielen"].
 
 [listing]
 ----

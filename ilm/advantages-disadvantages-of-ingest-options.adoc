@@ -74,7 +74,7 @@ Im Folgenden finden Sie eine kurze Zusammenfassung der Konsistenzwerte, die in S
 
 
 
-NOTE: Bevor Sie einen Konsistenzwert auswählen, link:../s3/consistency.html["Lesen Sie die vollständige Beschreibung der Konsistenz"]. Vor dem Ändern des Standardwerts sollten Sie die Vorteile und Einschränkungen kennen.
+NOTE: Bevor Sie einen Konsistenzwert auswählen, link:../s3/consistency-controls.html["Lesen Sie die vollständige Beschreibung der Konsistenz"]. Vor dem Ändern des Standardwerts sollten Sie die Vorteile und Einschränkungen kennen.
 
 
 

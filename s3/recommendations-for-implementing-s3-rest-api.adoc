@@ -17,7 +17,7 @@ Bei der Implementierung der S3-REST-API zur Verwendung mit StorageGRID sollten S
 
 == Empfehlungen für Köpfe zu nicht vorhandenen Objekten
 
-Wenn Ihre Anwendung regelmäßig prüft, ob ein Objekt an einem Pfad existiert, wo Sie nicht erwarten, dass das Objekt tatsächlich existiert, sollten Sie das "verfügbar" verwendenlink:consistency.html["Konsistenz"]. Sie sollten beispielsweise die Konsistenz „verfügbar“ verwenden, wenn Ihre Anwendung einen Speicherort vorgibt, bevor Sie ihn verwenden.
+Wenn Ihre Anwendung regelmäßig prüft, ob ein Objekt an einem Pfad existiert, wo Sie nicht erwarten, dass das Objekt tatsächlich existiert, sollten Sie das "verfügbar" verwendenlink:consistency-controls.html["Konsistenz"]. Sie sollten beispielsweise die Konsistenz „verfügbar“ verwenden, wenn Ihre Anwendung einen Speicherort vorgibt, bevor Sie ihn verwenden.
 
 Wenn der HAUPTVORGANG das Objekt nicht findet, erhalten Sie möglicherweise eine hohe Anzahl von 500 internen Serverfehlern, wenn zwei oder mehr Storage Nodes am selben Standort nicht verfügbar sind oder ein Remote-Standort nicht erreichbar ist.
 

@@ -38,7 +38,7 @@ Geben Siez. B. `10.96.104.0/22` .
 .. Geben Sie die *Provisioning-Passphrase* ein.
 +
 
-CAUTION: Die Wiederherstellungspaket-Datei muss gesichert werden, da sie Verschlüsselungsschlüssel und Passwörter enthält, die verwendet werden können, um Daten vom StorageGRID-System zu erhalten. Er wird auch zur Wiederherstellung des primären Admin-Knotens verwendet.
+CAUTION: Die Recovery Package-Datei muss gesichert sein, weil sie Verschlüsselungsschlüssel und Passwörter enthält, die zum Abrufen von Daten vom StorageGRID-System verwendet werden können. Er wird auch zur Wiederherstellung des primären Admin-Knotens verwendet.
 
 
 

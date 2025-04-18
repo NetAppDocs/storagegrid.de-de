@@ -19,9 +19,9 @@ Wenn Sie das Upgrade durchführen, werden alle Knoten in Ihrem StorageGRID-Syste
 
 == Bevor Sie beginnen
 
-In diesen Themen erfahren Sie mehr über die neuen Funktionen und Verbesserungen in StorageGRID 12.0, können feststellen, ob Funktionen veraltet oder entfernt wurden, und Informationen zu Änderungen an StorageGRID APIs finden Sie unter.
+In diesen Themen erfahren Sie mehr über die neuen Funktionen und Verbesserungen in StorageGRID 11.9, können feststellen, ob Funktionen veraltet oder entfernt wurden, und Informationen zu Änderungen an StorageGRID APIs finden Sie unter.
 
-* link:whats-new.html["Was ist neu in StorageGRID 12.0"]
+* link:whats-new.html["Was ist neu in StorageGRID 11.9"]
 * link:removed-or-deprecated-features.html["Funktionen entfernt oder veraltet"]
 * link:changes-to-grid-management-api.html["Änderungen an der Grid-Management-API"]
 * link:changes-to-tenant-management-api.html["Änderungen an der Mandantenmanagement-API"]

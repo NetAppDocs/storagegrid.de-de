@@ -31,16 +31,16 @@ Wenn Sie eine ILM-Regel erstellen, möchten Sie die Region, die einem S3-Bucket 
 Befolgen Sie bei der Konfiguration von Regionen die folgenden Richtlinien:
 
 * Standardmäßig gehören alle Buckets zur `us-east-1` Region.
-* Sie müssen die Regionen mithilfe des Grid-Managers erstellen, bevor Sie beim Erstellen von Buckets mithilfe des Tenant Manager oder der Mandanten-Management-API oder mit dem Anforderungselement „LocationConstraint“ für S3 PUT Bucket-API-Anforderungen eine nicht standardmäßige Region angeben können. Ein Fehler tritt auf, wenn eine PUT Bucket-Anforderung eine Region verwendet, die nicht in StorageGRID definiert wurde.
+* Sie müssen die Regionen mit dem Grid Manager erstellen, bevor Sie beim Erstellen von Buckets mithilfe der Mandanten-Manager- oder Mandantenmanagement-API oder mit dem LocationConstraint-Anforderungselement für S3 PUT-Bucket-API-Anforderungen eine nicht standardmäßige Region angeben können. Ein Fehler tritt auf, wenn eine PUT-Bucket-Anforderung eine Region verwendet, die nicht in StorageGRID definiert wurde.
 * Sie müssen beim Erstellen des S3-Buckets den genauen Regionalnamen verwenden. Bei Regionalnamen wird zwischen Groß- und Kleinschreibung unterschieden. Gültige Zeichen sind Zahlen, Buchstaben und Bindestriche.
 +
 
-NOTE: EU gilt nicht als Alias für eu-West-1. Wenn Sie die Region EU oder eu-West-1 nutzen möchten, müssen Sie den genauen Namen verwenden.
+NOTE: Die EU gilt nicht als ein Alias für eu-West-1. Wenn Sie die Region EU oder eu-West-1 nutzen möchten, müssen Sie den genauen Namen verwenden.
 
 * Sie können eine Region nicht löschen oder ändern, wenn sie in einer Regel verwendet wird, die einer Richtlinie zugewiesen ist (aktiv oder inaktiv).
 * Wenn Sie eine ungültige Region als erweiterten Filter in einer ILM-Regel verwenden, können Sie diese Regel nicht zu einer Richtlinie hinzufügen.
 +
-Eine ungültige Region kann entstehen, wenn Sie eine Region als erweiterten Filter in einer ILM-Regel verwenden, diese Region später jedoch löschen oder wenn Sie die Grid-Management-API zum Erstellen einer Regel und zum Festlegen einer Region verwenden, die Sie nicht definiert haben.
+Eine ungültige Region kann sich ergeben, wenn Sie eine Region als erweiterten Filter in einer ILM-Regel verwenden, diese Region jedoch später löschen oder wenn Sie die Grid-Management-API zum Erstellen einer Regel und zum Festlegen einer Region verwenden, die Sie nicht definiert haben.
 
 * Wenn Sie eine Region löschen, nachdem Sie sie zum Erstellen eines S3-Buckets verwendet haben, müssen Sie die Region erneut hinzufügen, wenn Sie den erweiterten Filter Speicherungsbedingung verwenden möchten, um Objekte in diesem Bucket zu finden.
 
@@ -48,40 +48,23 @@ Eine ungültige Region kann entstehen, wenn Sie eine Region als erweiterten Filt
 .Schritte
 . Wählen Sie *ILM* > *Regionen*.
 +
-Die Seite Regionen wird angezeigt.
+Die Seite Regionen wird angezeigt, wobei die derzeit definierten Regionen aufgelistet sind. *Region 1* zeigt die Standardregion an, `us-east-1` die weder geändert noch entfernt werden kann.
 
-. Wählen Sie die Registerkarte *Alle Regionen* oder *Standardregion* aus.
+. So fügen Sie eine Region hinzu:
 +
-[role="tabbed-block"]
-====
-.Alle Regionen
---
-Die Registerkarte *Alle Regionen* listet die aktuell definierten Regionen auf, einschließlich der definierten Standardregion, die Sie nicht ändern oder entfernen können.
-
-.. Um eine Region hinzuzufügen, wählen Sie *Weitere Region hinzufügen*.
+.. Wählen Sie *Weitere Region hinzufügen*.
 .. Geben Sie den Namen einer Region ein, die Sie beim Erstellen von S3-Buckets verwenden möchten.
 +
 Sie müssen diesen genauen Regionalnamen als LocationConstraint Request Element verwenden, wenn Sie den entsprechenden S3-Bucket erstellen.
 
-.. Um einen nicht verwendeten Bereich zu entfernen, wählen Sie das Löschen-Symbol image:../media/icon-x-to-remove.png["Symbol entfernen"].
+
+
+. Um einen nicht verwendeten Bereich zu entfernen, wählen Sie das Löschen-Symbol image:../media/icon-x-to-remove.png["Symbol entfernen"].
 +
 Wenn Sie versuchen, eine Region zu entfernen, die derzeit in einer Richtlinie (aktiv oder inaktiv) verwendet wird, wird eine Fehlermeldung angezeigt.
 
-.. Wenn Sie Änderungen vorgenommen haben, wählen Sie *Speichern*.
+. Wenn Sie Änderungen vorgenommen haben, wählen Sie *Speichern*.
 +
 Sie können diese Bereiche nun im Abschnitt Erweiterte Filter in Schritt 1 des Assistenten zum Erstellen von ILM-Regeln auswählen. Siehe link:create-ilm-rule-enter-details.html#use-advanced-filters-in-ilm-rules["Verwenden Sie erweiterte Filter in ILM-Regeln"].
 
-
-
---
-.Standardregion
---
-Auf der Registerkarte *Default Region* wird die aktuell definierte Standardregion angezeigt, die Sie ändern können.
-
-.. Um die Standardregion zu ändern, wählen Sie den Namen der Region aus den verfügbaren Optionen in der Dropdown-Liste *Standardregion* aus.
-.. Wählen Sie *Speichern*.
-
-
---
-====
 

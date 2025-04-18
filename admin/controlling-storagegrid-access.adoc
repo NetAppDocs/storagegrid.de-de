@@ -32,16 +32,16 @@ Optional können Sie eine Gruppe als schreibgeschützt konfigurieren. Benutzer i
 
 == Aktivieren Sie Single Sign On
 
-Das StorageGRID-System unterstützt Single Sign-On (SSO) unter Verwendung des Security Assertion Markup Language 2.0 (SAML 2.0)-Standards. Danach link:how-sso-works.html["Konfigurieren und aktivieren Sie SSO"]müssen alle Benutzer von einem externen Identitätsanbieter authentifiziert werden, bevor sie auf den Grid Manager, den Tenant Manager, die Grid Management API oder die Tenant Management API zugreifen können. Lokale Benutzer können sich nicht bei StorageGRID anmelden.
+Das StorageGRID-System unterstützt Single Sign-On (SSO) unter Verwendung des Security Assertion Markup Language 2.0 (SAML 2.0)-Standards. Danach link:configuring-sso.html["Konfigurieren und aktivieren Sie SSO"]müssen alle Benutzer von einem externen Identitätsanbieter authentifiziert werden, bevor sie auf den Grid Manager, den Tenant Manager, die Grid Management API oder die Tenant Management API zugreifen können. Lokale Benutzer können sich nicht bei StorageGRID anmelden.
 
 
 
 == Provisionierungs-Passphrase ändern
 
-Die Provisionierungs-Passphrase ist für viele Installations- und Wartungsverfahren sowie für das Herunterladen des StorageGRID-Wiederherstellungspakets erforderlich. Die Passphrase ist auch erforderlich, um Backups der Grid-Topologieinformationen und Verschlüsselungen für das StorageGRID System herunterzuladen. Sie können link:changing-provisioning-passphrase.html["Ändern Sie die Passphrase"]dies nach Bedarf tun.
+Die Provisionierungs-Passphrase ist für viele Installations- und Wartungsverfahren und für das Herunterladen des StorageGRID Recovery Package erforderlich. Die Passphrase ist auch erforderlich, um Backups der Grid-Topologieinformationen und Verschlüsselungen für das StorageGRID System herunterzuladen. Sie können link:changing-provisioning-passphrase.html["Ändern Sie die Passphrase"]dies nach Bedarf tun.
 
 
 
 == Ändern der Passwörter für die Node-Konsole
 
-Jeder Node im Grid verfügt über ein Passwort für die Node-Konsole. Sie müssen sich mit SSH beim Node als „admin“ oder beim Root-Benutzer über eine VM/physische Konsolenverbindung einloggen. Nach Bedarf können Sie link:change-node-console-password.html["Ändern Sie das Passwort für die Node-Konsole"]für jeden Node.
+Jeder Node in Ihrem Grid verfügt über ein eindeutiges Node-Konsolenpasswort, das Sie als „admin“ über SSH beim Node oder beim Root-Benutzer über eine VM-/physische Konsolenverbindung einloggen müssen. Nach Bedarf können Sie link:change-node-console-password.html["Ändern Sie das Passwort für die Node-Konsole"]für jeden Node.

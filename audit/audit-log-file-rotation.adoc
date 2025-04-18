@@ -14,7 +14,7 @@ summary: Audit-Protokolldateien werden im Verzeichnis /var/local/log eines Admin
 Audit-Protokolldateien werden im Verzeichnis eines Admin-Knotens gespeichert `/var/local/log`. Die aktiven Audit-Log-Dateien werden benannt `audit.log`.
 
 
-NOTE: Optional können Sie das Ziel der Audit-Protokolle ändern und Audit-Informationen an einen externen Syslog-Server senden. Lokale Protokolle von Audit-Datensätzen werden weiterhin generiert und gespeichert, wenn ein externer Syslog-Server konfiguriert ist. Siehe link:../monitor/configure-audit-messages.html["Konfigurieren von Audit-Meldungen und externem Syslog-Server"].
+NOTE: Optional können Sie das Ziel der Audit-Protokolle ändern und Audit-Informationen an einen externen Syslog-Server senden. Lokale Protokolle von Audit-Datensätzen werden weiterhin generiert und gespeichert, wenn ein externer Syslog-Server konfiguriert ist. Siehe link:../monitor/configure-audit-messages.html["Konfigurieren von Überwachungsmeldungen und Protokollzielen"].
 
 Einmal täglich wird die aktive `audit.log` Datei gespeichert und eine neue `audit.log` Datei gestartet. Der Name der gespeicherten Datei gibt an, wann sie gespeichert wurde, im Format `_yyyy-mm-dd.txt_`. Wenn an einem Tag mehr als ein Audit-Protokoll erstellt wird, verwenden die Dateinamen das Datum, an dem die Datei mit einer Zahl angehängt wurde, im Format `_yyyy-mm-dd.txt.n_`. Beispiel: `2018-04-15.txt` Und `2018-04-15.txt.1` sind die ersten und zweiten Protokolldateien, die am 15. April 2018 erstellt und gespeichert wurden.
 

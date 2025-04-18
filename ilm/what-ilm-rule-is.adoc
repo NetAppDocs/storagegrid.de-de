@@ -107,7 +107,7 @@ Das Aufnahmeverhalten steuert, ob Objektkopien sofort nach den Anweisungen in de
 .Verwandte Informationen
 * link:data-protection-options-for-ingest.html["Aufnahmeoptionen"]
 * link:advantages-disadvantages-of-ingest-options.html["Vorteile, Nachteile und Einschränkungen der Aufnahmsoptionen"]
-* link:../s3/consistency.html#how-consistency-and-ILM-rules-interact["Zusammenspiel von Konsistenz- und ILM-Regeln zur Beeinträchtigung der Datensicherung"]
+* link:../s3/consistency-controls.html#how-consistency-controls-and-ILM-rules-interact["Zusammenspiel von Konsistenz- und ILM-Regeln zur Beeinträchtigung der Datensicherung"]
 
 
 

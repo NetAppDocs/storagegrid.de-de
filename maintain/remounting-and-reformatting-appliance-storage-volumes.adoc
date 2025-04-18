@@ -23,7 +23,7 @@ Das Ausführen des `sn-remount-volumes` Skripts kann Ihnen dabei helfen, zusätz
 
 
 
-CAUTION: Wenden Sie sich an den technischen Support, wenn mehr als ein Storage Node offline ist. Führen Sie das Skript nicht aus `sn-recovery-postinstall.sh`.
+CAUTION: Wenden Sie sich an den technischen Support, wenn mehr als ein Speicherknoten offline ist oder wenn ein Speicherknoten in diesem Grid in den letzten 15 Tagen neu aufgebaut wurde. Führen Sie das Skript nicht aus `sn-recovery-postinstall.sh`. Die Neuerstellung von Cassandra auf zwei oder mehr Storage-Nodes innerhalb von 15 Tagen voneinander kann zu Datenverlust führen.
 
 .Über diese Aufgabe
 Zum Abschluss dieses Vorgangs führen Sie die folgenden grundlegenden Aufgaben aus:

@@ -65,13 +65,13 @@ Durch das Ausführen von Vorabprüfungen können Sie Upgrade-Probleme erkennen u
 . Geben Sie für den Schritt *run prechecks* zunächst die Provisionierungs-Passphrase für Ihr Grid ein.
 . Wählen Sie *Wiederherstellungspaket herunterladen*.
 +
-Sie sollten die aktuelle Kopie der Wiederherstellungspaket-Datei herunterladen, bevor Sie den primären Admin-Node aktualisieren. Mit der Wiederherstellungspaket-Datei können Sie das System bei einem Fehler wiederherstellen.
+Sie sollten die aktuelle Kopie der Wiederherstellungspaket-Datei herunterladen, bevor Sie den primären Admin-Knoten aktualisieren. Die Recovery Package-Datei ermöglicht es Ihnen, das System wiederherzustellen, wenn ein Fehler auftritt.
 
 . Bestätigen Sie beim Herunterladen der Datei, dass Sie auf den Inhalt einschließlich der Datei zugreifen können `Passwords.txt`.
 . Kopieren Sie die heruntergeladene Datei (`.zip`) in zwei sichere und separate Speicherorte.
 +
 
-CAUTION: Die Wiederherstellungspaket-Datei muss gesichert werden, da sie Verschlüsselungsschlüssel und Passwörter enthält, die verwendet werden können, um Daten vom StorageGRID-System zu erhalten.
+CAUTION: Die Recovery Package-Datei muss gesichert sein, weil sie Verschlüsselungsschlüssel und Passwörter enthält, die zum Abrufen von Daten vom StorageGRID-System verwendet werden können.
 
 . Wählen Sie *Prechecks ausführen*, und warten Sie, bis die Vorabprüfungen abgeschlossen sind.
 . Überprüfen Sie die Details für jede gemeldete Vorabprüfung, und beheben Sie alle gemeldeten Fehler. Informationen zur Version StorageGRID 11.9 finden Sie im https://kb.netapp.com/hybrid/StorageGRID/Maintenance/StorageGRID_11.9_software_upgrade_resolution_guide["Lösungsleitfaden für StorageGRID Software-Upgrades"^].
@@ -135,7 +135,7 @@ NOTE: Wenn das Upgrade auf einem Grid-Node startet, werden die Services auf dies
 . Wenn Sie dazu aufgefordert werden, geben Sie Ihre Provisionierungs-Passphrase ein, und laden Sie eine neue Kopie des Wiederherstellungspakets herunter.
 +
 
-CAUTION: Sie sollten eine neue Kopie der Wiederherstellungspaket-Datei herunterladen, nachdem der primäre Admin-Knoten aktualisiert wurde. Mit der Wiederherstellungspaket-Datei können Sie das System bei einem Fehler wiederherstellen.
+CAUTION: Sie sollten eine neue Kopie der Wiederherstellungspaket-Datei herunterladen, nachdem der primäre Admin-Knoten aktualisiert wurde. Die Recovery Package-Datei ermöglicht es Ihnen, das System wiederherzustellen, wenn ein Fehler auftritt.
 
 . Überprüfen Sie die Statustabellen für jeden Node-Typ. Es gibt Tabellen für nicht-primäre Admin-Nodes, Gateway-Nodes und Storage-Nodes.
 +

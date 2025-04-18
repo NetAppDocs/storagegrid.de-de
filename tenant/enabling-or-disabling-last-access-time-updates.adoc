@@ -53,19 +53,6 @@ Die Tabelle fasst das Verhalten zusammen, das auf alle Objekte im Bucket angewen
 
 
  a| 
-Anforderung zum Abrufen der Metadaten eines Objekts, wenn eine HAUPTOPERATION ausgeführt wird
- a| 
-Nein
- a| 
-Nein
- a| 
-Nein
- a| 
-Nein
-
-
-
- a| 
 Anforderung zum Abrufen eines Objekts, seiner Zugriffssteuerungsliste oder seiner Metadaten
  a| 
 Nein

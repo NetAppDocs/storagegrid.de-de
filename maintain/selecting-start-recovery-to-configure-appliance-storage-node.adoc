@@ -19,6 +19,7 @@ Sie müssen im Grid Manager die Option Wiederherstellung starten auswählen, um 
 * Sie haben die Provisionierungs-Passphrase.
 * Sie haben einen Storage Node für die Recovery-Appliance bereitgestellt.
 * Sie haben das Startdatum aller Reparaturaufträge für Daten, die mit dem Verfahren zur Fehlerkorrektur codiert wurden.
+* Sie haben überprüft, ob der Speicher-Node innerhalb der letzten 15 Tage nicht neu erstellt wurde.
 
 
 .Schritte

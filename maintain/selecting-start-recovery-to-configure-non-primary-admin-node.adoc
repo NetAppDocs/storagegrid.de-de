@@ -51,6 +51,6 @@ Wenn Sie die Recovery nach dem Zurücksetzen der Prozedur erneut versuchen möch
 . Wenn SSO (Single Sign-On) für Ihr StorageGRID-System aktiviert ist und das Vertrauen der Vertrauensstelle für den wiederhergestellten Admin-Knoten für das Zertifikat der Standardverwaltungsoberfläche konfiguriert wurde, aktualisieren (oder löschen und neu erstellen) das Vertrauen des Node auf die Vertrauensbasis in Active Directory Federation Services (AD FS). Verwenden Sie das neue Standard-Serverzertifikat, das während der Wiederherstellung des Admin-Knotens generiert wurde.
 +
 
-NOTE: Informationen zum Konfigurieren einer vertrauenswürdigen Partei finden Sie unter link:../admin/configure-sso.html["Konfigurieren Sie Single Sign-On"]. Melden Sie sich zum Zugriff auf das Standard-Serverzertifikat bei der Eingabeaufforderung des Admin-Knotens an. Gehen Sie zum `/var/local/mgmt-api` Verzeichnis, und wählen Sie die `server.crt` Datei aus.
+NOTE: Informationen zum Konfigurieren einer vertrauenswürdigen Partei finden Sie unter link:../admin/configuring-sso.html["Konfigurieren Sie Single Sign-On"]. Melden Sie sich zum Zugriff auf das Standard-Serverzertifikat bei der Eingabeaufforderung des Admin-Knotens an. Gehen Sie zum `/var/local/mgmt-api` Verzeichnis, und wählen Sie die `server.crt` Datei aus.
 
 

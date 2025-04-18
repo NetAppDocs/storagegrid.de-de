@@ -113,42 +113,6 @@ Admin-Nodes
 
 
  a| 
-Apache Tomcat
- a| 
-Webserver für Java-basierte Anwendungen.
- a| 
-Admin-Nodes
-
-
-
- a| 
-Avahi-Dämon
- a| 
-Verarbeitet mDNS, das für die Namensauflösung und Diensterkennung im lokalen Netzwerk verwendet wird.
- a| 
-Alle Nodes
-
-
-
- a| 
-Cache-Service
- a| 
-Wird auf Load Balancer (Gateway)-Nodes ausgeführt und verwaltet einen lokalen Cache des Objektinhalts.
- a| 
-Gateway-Nodes
-
-
-
- a| 
-Cassandra
- a| 
-Verwaltet die verteilte Datenbank für Objektmetadaten.
- a| 
-Storage-Nodes (nur Daten)
-
-
-
- a| 
 Cassandra Reaper
  a| 
 Führt automatische Reparaturen von Objektmetadaten durch.
@@ -223,7 +187,7 @@ Admin- und Gateway-Nodes
  a| 
 Identität (idnt)
  a| 
-Verwaltet lokale Benutzer und Gruppen, Authentifizierung und föderiert Benutzeridentitäten von LDAP und Active Directory.
+Föderiert Benutzeridentitäten von LDAP und Active Directory
  a| 
 Storage-Nodes, die den ADC-Dienst verwenden
 
@@ -275,9 +239,9 @@ Alle Nodes
 
 
  a| 
-Nginx-gw Load Balancer
+Nginx-gw
  a| 
-Bietet Lastausgleich für S3-Datenverkehr von Clients zu Storage-Nodes. Der Lastverteilungsservice kann über die Konfigurationsseite Load Balancer Endpoints konfiguriert werden. Dieser Service wird auch als nginx-gw-Service bezeichnet.
+Schaltet den Lastverteilungsservice ein.
  a| 
 Admin- und Gateway-Nodes
 
@@ -289,24 +253,6 @@ NMS (Network Management System)
 Gibt die Überwachungs-, Berichterstellungs- und Konfigurationsoptionen an, die über den Grid Manager angezeigt werden.
  a| 
 Admin-Nodes
-
-
-
- a| 
-Node Exporter (Prometheus Datenerfassung)
- a| 
-Veröffentlicht Statistiken auf Systemebene für die Metriksammlung von Prometheus Zeitreihen.
- a| 
-Alle Nodes
-
-
-
- a| 
-ntp
- a| 
-NTP-Service (Network Time Protocol)
- a| 
-Alle Nodes
 
 
 
@@ -347,70 +293,7 @@ Auf jedem Grid-Node ist eine Instanz vorhanden
 
 
  a| 
-Server-Manager
- a| 
-Management von StorageGRID-Services
- a| 
-Alle Nodes
-
-
-
- a| 
-SNMP-Agent
- a| 
-Reagiert auf SNMP-Anforderungen.
- a| 
-Admin-Nodes
-
-
-
- a| 
-SNMP-Port-Management-Dienst
- a| 
-Übernimmt die dynamische Verwaltung von SNMP-Ports.
- a| 
-Alle Nodes
-
-
-
- a| 
-SSH (sichere Shell)
- a| 
-Für sicheren Zugriff und Remote-Systemmanagement.
- a| 
-Alle Nodes
-
-
-
- a| 
-SSM (System Status Monitor)
- a| 
-Überwacht Hardwarebedingungen und Berichte an den NMS-Service.
- a| 
-Alle Nodes
-
-
-
- a| 
-Notfall
- a| 
-Zeichnet zusätzliche Metriken in Bezug auf S3-Buckets auf.
- a| 
-Storage-Nodes
-
-
-
- a| 
-Trace-Agent (jaeger-Agent)
- a| 
-Empfängt und verarbeitet vom Trace Collector (jaeger-Collector) übermittelte Ablaufinformationen.
- a| 
-Alle Nodes
-
-
-
- a| 
-Trace Collector (jaeger-Collector)
+Trace-Kollektor
  a| 
 Führt eine Trace-Erfassung durch, um Informationen für den technischen Support zu sammeln. Der Trace Collector-Dienst verwendet die Open-Source-Jaeger-Software.
  a| 

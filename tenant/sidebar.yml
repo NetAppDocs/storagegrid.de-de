@@ -70,8 +70,6 @@ entries:
     url: "/tenant/creating-s3-bucket.html"
   - title: Bucket-Details anzeigen
     url: "/tenant/viewing-s3-bucket-details.html"
-  - title: Verwalten von Zweigstellen-Buckets
-    url: "/tenant/manage-branch-buckets.html"
   - title: Wenden Sie das ILM-Richtlinien-Tag auf Bucket an
     url: "/tenant/ilm-policy-tags.html"
   - title: Management von Bucket-Richtlinien
@@ -86,10 +84,8 @@ entries:
     url: "/tenant/using-s3-object-lock.html"
   - title: Aktualisieren Sie die S3 Object Lock-Standardaufbewahrung
     url: "/tenant/update-default-retention-settings.html"
-  - title: Konfigurieren Sie CORS für Buckets und Objekte
-    url: "/tenant/configuring-cross-origin-resource-sharing-for-buckets-and-objects.html"
-  - title: Aktivieren Sie CORS für eine Managementoberfläche
-    url: "/tenant/enable-cross-origin-resource-sharing-for-management-interface.html"
+  - title: Konfiguration der Cross-Origin Resource Sharing (CORS)
+    url: "/tenant/configuring-cross-origin-resource-sharing-cors.html"
   - title: Löschen von Objekten in Bucket
     url: "/tenant/deleting-s3-bucket-objects.html"
   - title: Löschen Sie den Bucket

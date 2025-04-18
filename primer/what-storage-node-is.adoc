@@ -33,16 +33,11 @@ Sie können den Typ des Storage-Node in folgenden Situationen auswählen:
 
 
 
+NOTE: Sie können den Typ nach Abschluss der Installation des Storage-Node nicht mehr ändern.
 
-=== Storage Node für Daten und Metadaten (kombiniert)
+Storage Node für Daten und Metadaten (kombiniert):: Standardmäßig werden auf allen neuen Storage-Nodes sowohl Objektdaten als auch Metadaten gespeichert. Dieser Typ von Storage Node wird als _Combined_ Storage Node bezeichnet.
+Storage-Node nur für Metadaten:: Die ausschließliche Verwendung eines Storage-Knotens für Metadaten kann sinnvoll sein, wenn Ihr Grid eine sehr große Anzahl kleiner Objekte speichert. Die Installation von dedizierten Metadaten bietet ein besseres Gleichgewicht zwischen dem für eine große Anzahl an kleinen Objekten erforderlichen Speicherplatz und dem für diese Objekte erforderlichen Speicherplatz. Darüber hinaus können Storage-Nodes, die auf hochperformanten Appliances gehostet werden, auf nur Metadaten ausgerichtet sind, die Performance steigern.
 
-Standardmäßig werden auf allen neuen Storage-Nodes sowohl Objektdaten als auch Metadaten gespeichert. Dieser Typ von Storage Node wird als _Combined_ Storage Node bezeichnet.
-
-
-
-=== Storage-Node nur für Metadaten
-
-Die ausschließliche Verwendung eines Storage-Knotens für Metadaten kann sinnvoll sein, wenn Ihr Grid eine sehr große Anzahl kleiner Objekte speichert. Die Installation von dedizierten Metadaten bietet ein besseres Gleichgewicht zwischen dem für eine große Anzahl an kleinen Objekten erforderlichen Speicherplatz und dem für diese Objekte erforderlichen Speicherplatz. Darüber hinaus können Storage-Nodes, die auf hochperformanten Appliances gehostet werden, auf nur Metadaten ausgerichtet sind, die Performance steigern.
 
 Storage-Nodes, die nur Metadaten enthalten, erfüllen spezifische Hardwareanforderungen:
 
@@ -71,22 +66,15 @@ Bei der Installation von nur Metadaten Nodes muss das Grid zudem eine Mindestanz
 
 NOTE: Obwohl reine Metadaten-Storage-Nodes S3-Client-Anforderungen enthalten <<ldr-service,LDR-Service>>und verarbeiten können, erhöht sich die StorageGRID-Performance möglicherweise nicht.
 
+Rein datenrein Storage-Node:: Ein Storage-Node ausschließlich für Daten ist sinnvoll, wenn Ihre Storage-Nodes unterschiedliche Performance-Merkmale aufweisen. Um beispielsweise die Performance potenziell zu steigern, können Sie reine Daten-Storage-Nodes mit einer hohen Kapazität und gleichzeitig hochperformante Storage-Nodes mit Metadaten verwenden.
 
-
-=== Rein datenrein Storage-Node
-
-Ein Storage-Node ausschließlich für Daten ist sinnvoll, wenn Ihre Storage-Nodes unterschiedliche Performance-Merkmale aufweisen. Um beispielsweise die Performance potenziell zu steigern, können Sie reine Daten-Storage-Nodes mit einer hohen Kapazität und gleichzeitig hochperformante Storage-Nodes mit Metadaten verwenden.
-
-Darüber hinaus können Sie mehr Metadaten-Kapazität erhalten, indem Sie Cassandra Nodes mit niedrigem RAM entfernen, wodurch sich die maximal zulässige Metadatenkapazität pro Node erhöht. Siehe link:../admin/managing-object-metadata-storage.html["Management von Objekt-Metadaten-Storage"].
 
 Bei der Installation von reinen Datenknoten muss das Grid Folgendes enthalten:
 
-* Mindestens zwei kombinierte oder rein datengeschützte Storage-Nodes pro Grid
-* Mindestens ein kombinierter oder nur-Daten-Storage-Node pro Standort
-* Mindestens drei kombinierte oder nur Metadaten-Storage-Nodes pro Standort
+* Mindestens zwei kombinierte oder rein datengeschützte Storage Nodes _pro Grid_
+* Mindestens ein kombinierter oder nur-Daten-Storage Node _pro Standort_
+* Mindestens drei kombinierte oder nur Metadaten-Storage-Nodes _pro Standort_
 
-
-Sie können einen Storage Node, der keinen enthält, in einen rein datenbasierten Storage Node konvertieren<<adc-service,ADC-Service>>. Siehe link:../maintain/convert-to-data-only-node.html["Umwandeln eines Storage-Node in einen rein datenbasierten Node"].
 
 
 
@@ -110,7 +98,7 @@ Management von Mandantenkonten.
 
 
  a| 
-[[adc-Service]]Administrative Domain Controller (ADC)
+Administrativer Domänen-Controller (ADC)
  a| 
 Aufrechterhaltung der Topologie und Grid-Konfiguration
 

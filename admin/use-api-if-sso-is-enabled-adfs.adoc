@@ -11,7 +11,7 @@ summary: 'Wenn Sie Single Sign-On (SSO) konfiguriert und aktiviert haben und Act
 
 
 [role="lead"]
-Wenn Sie Active Directory als SSO-Anbieter haben link:../admin/how-sso-works.html["Konfiguration und Aktivierung von Single Sign On (SSO)"] und verwenden, müssen Sie eine Reihe von API-Anforderungen ausgeben, um ein Authentifizierungstoken zu erhalten, das für die Grid-Management-API oder die Mandantenmanagement-API gültig ist.
+Wenn Sie Active Directory als SSO-Anbieter haben link:../admin/configuring-sso.html["Konfiguration und Aktivierung von Single Sign On (SSO)"] und verwenden, müssen Sie eine Reihe von API-Anforderungen ausgeben, um ein Authentifizierungstoken zu erhalten, das für die Grid-Management-API oder die Mandantenmanagement-API gültig ist.
 
 
 

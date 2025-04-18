@@ -24,7 +24,7 @@ Wenn Sie einen Cloud Storage Pool zum Verschieben von Objekten aus dem StorageGR
 * Die folgenden Plattform-, Authentifizierungs- und Protokollkombinationen mit S3 Object Lock werden für Cloud Storage Pools nicht unterstützt:
 +
 ** *Plattformen*: Google Cloud Platform und Azure
-** *Authentifizierungstypen*: Anonymer Zugriff
+** *Authentifizierungstypen*: IAM-Rollen überall und anonymer Zugriff
 ** *Protokoll*: HTTP
 
 

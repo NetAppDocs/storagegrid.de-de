@@ -36,7 +36,7 @@ NOTE: Wenn die vorhandenen DNS-Server in den neuen IP-Adressen für das Raster n
 
 +
 
-NOTE: Wenn SSO für Ihr StorageGRID-System aktiviert ist und alle Vertrauensstellen, die sich auf Administratorknoten-IP-Adressen befinden, konfiguriert wurden (anstelle von vollständig qualifizierten Domänennamen, wie empfohlen), müssen Sie diese Vertrauensstellungen der betreffenden Partei in Active Directory Federation Services (AD FS) aktualisieren oder neu konfigurieren. Unmittelbar nach dem Ändern der IP-Adressen. Siehe link:../admin/configure-sso.html["Konfigurieren Sie Single Sign-On"].
+NOTE: Wenn SSO für Ihr StorageGRID-System aktiviert ist und alle Vertrauensstellen, die sich auf Administratorknoten-IP-Adressen befinden, konfiguriert wurden (anstelle von vollständig qualifizierten Domänennamen, wie empfohlen), müssen Sie diese Vertrauensstellungen der betreffenden Partei in Active Directory Federation Services (AD FS) aktualisieren oder neu konfigurieren. Unmittelbar nach dem Ändern der IP-Adressen. Siehe link:../admin/configuring-sso.html["Konfigurieren Sie Single Sign-On"].
 
 +
 
@@ -130,7 +130,7 @@ NOTE: Das gesamte Grid muss heruntergefahren werden, damit alle Nodes zur gleich
 .. Wenn Sie neue DNS-Server hinzugefügt haben, löschen Sie die alten DNS-Serverwerte.
 
 
-. Laden Sie das neue Wiederherstellungspaket vom Grid Manager herunter.
+. Laden Sie das neue Wiederherstellungspaket aus dem Grid Manager herunter.
 +
 .. Wählen Sie *WARTUNG* > *System* > *Wiederherstellungspaket*.
 .. Geben Sie die Provisionierungs-Passphrase ein.

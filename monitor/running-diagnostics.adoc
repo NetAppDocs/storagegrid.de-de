@@ -38,7 +38,7 @@ Diagnosestatus sind unabhängig von aktuellen Warnungen und zeigen möglicherwei
 Die Seite Diagnose wird angezeigt und zeigt die Ergebnisse für jede Diagnosetest an. Die Ergebnisse sind nach Schweregrad (Achtung, Achtung und dann normal) sortiert. Innerhalb jedes Schweregrads werden die Ergebnisse alphabetisch sortiert.
 
 +
-In diesem Beispiel hat eine Diagnose den Status „Achtung“ und drei Diagnosen den Status „Normal“.
+In diesem Beispiel haben alle Diagnosen einen normalen Status.
 
 +
 image::../media/support_diagnostics_page.png[Support Diagnostics Seite]
@@ -55,18 +55,18 @@ Details zur Diagnose und ihren aktuellen Ergebnissen werden angezeigt. Folgende 
 
 NOTE: Sie können diese Schwellenwerte nicht ändern.
 
-** *Statuswerte*: Eine Grafik und Tabelle (Tabelle nicht im Screenshot gezeigt), die den Status und den Wert der Diagnose im gesamten StorageGRID-System anzeigt. In diesem Beispiel wird die aktuelle CPU-Auslastung für jeden Node in einem StorageGRID System angezeigt. Alle Node-Werte liegen unter den Warn- und Warnschwellenwerten, sodass der Gesamtstatus der Diagnose normal ist.
+** *Statuswerte*: Eine Tabelle, die den Status und den Wert der Diagnose im gesamten StorageGRID-System anzeigt. In diesem Beispiel wird die aktuelle CPU-Auslastung für jeden Node in einem StorageGRID System angezeigt. Alle Node-Werte liegen unter den Warn- und Warnschwellenwerten, sodass der Gesamtstatus der Diagnose normal ist.
+
+
 +
-image::../media/support_diagnostics_cpu_utilization.png[Beispiel für Diagnosestatuswerte]
+image::../media/support_diagnostics_cpu_utilization.png[Support Diagnostics CPU-Auslastung]
 
-
-
-. *Optional*: Um Grafana-Diagramme zu dieser Diagnose zu sehen, wählen Sie *Grafana Dashboard*.
+. *Optional*: Um Grafana-Diagramme zu dieser Diagnose anzuzeigen, klicken Sie auf den Link *Grafana Dashboard*.
 +
 Dieser Link wird nicht für alle Diagnosen angezeigt.
 
 +
-Das zugehörige Grafana Dashboard wird angezeigt. In diesem Beispiel wird das Node-Dashboard angezeigt, das die CPU-Auslastung für diesen Node und andere Grafana-Diagramme für den Node im Zeitverlauf anzeigt.
+Das zugehörige Grafana Dashboard wird angezeigt. In diesem Beispiel wird auf dem Node-Dashboard die CPU-Auslastung für diesen Node und andere Grafana-Diagramme für den Node angezeigt.
 
 +
 

@@ -11,7 +11,7 @@ summary: 'Wenn Sie Single Sign On (SSO) konfiguriert und aktiviert haben und Azu
 
 
 [role="lead"]
-Wenn Sie Azure als SSO-Anbieter haben link:../admin/how-sso-works.html["Konfiguration und Aktivierung von Single Sign On (SSO)"] und verwenden, können Sie zwei Beispielskripte verwenden, um ein Authentifizierungstoken zu erhalten, das für die Grid-Management-API oder die Mandantenmanagement-API gültig ist.
+Wenn Sie Azure als SSO-Anbieter haben link:../admin/configuring-sso.html["Konfiguration und Aktivierung von Single Sign On (SSO)"] und verwenden, können Sie zwei Beispielskripte verwenden, um ein Authentifizierungstoken zu erhalten, das für die Grid-Management-API oder die Mandantenmanagement-API gültig ist.
 
 
 

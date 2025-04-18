@@ -35,7 +35,7 @@ Die StorageGRID Installations-API umfasst die folgenden Abschnitte:
 * *Nodes* -- Konfigurationsvorgänge auf Node-Ebene. Sie können eine Liste der Grid-Nodes abrufen, einen Grid-Node löschen, einen Grid-Node konfigurieren, einen Grid-Node anzeigen und die Konfiguration eines Grid-Node zurücksetzen.
 * *Bereitstellung* -- Provisioning Operationen. Sie können den Bereitstellungsvorgang starten und den Status des Bereitstellungsvorgangs anzeigen.
 * *Wiederherstellung* -- primäre Admin-Knoten-Recovery-Operationen. Sie können Informationen zurücksetzen, das Wiederherstellungspaket hochladen, die Wiederherstellung starten und den Status des Wiederherstellungsvorgangs anzeigen.
-* *Recovery-Paket* -- Operationen zum Herunterladen des Wiederherstellungspakets.
+* *Recovery-Paket* -- Operationen, um das Recovery-Paket herunterzuladen.
 * *Standorte* -- Konfigurationsvorgänge auf Standortebene. Sie können eine Site erstellen, anzeigen, löschen und ändern.
 * *Temporary-password* -- Operationen auf dem temporären Passwort, um die mgmt-API während der Installation zu sichern.
 

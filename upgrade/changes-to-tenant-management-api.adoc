@@ -2,7 +2,7 @@
 permalink: upgrade/changes-to-tenant-management-api.html 
 sidebar: sidebar 
 keywords: tenant management api, api, api version, swagger, rest api 
-summary: StorageGRID 12.0 verwendet Version 4 der Mandantenmanagement-API. Version 4 verfällt Version 3; allerdings werden die Versionen 1, 2 und 3 weiterhin unterstützt. 
+summary: StorageGRID 11.9 verwendet Version 4 der Mandantenmanagement-API. Version 4 verfällt Version 3; allerdings werden die Versionen 1, 2 und 3 weiterhin unterstützt. 
 ---
 = Änderungen an der Mandantenmanagement-API
 :allow-uri-read: 
@@ -11,15 +11,15 @@ summary: StorageGRID 12.0 verwendet Version 4 der Mandantenmanagement-API. Versi
 
 
 [role="lead"]
-StorageGRID 12.0 verwendet Version 4 der Mandantenmanagement-API. Version 4 verfällt Version 3; allerdings werden die Versionen 1, 2 und 3 weiterhin unterstützt.
+StorageGRID 11.9 verwendet Version 4 der Mandantenmanagement-API. Version 4 verfällt Version 3; allerdings werden die Versionen 1, 2 und 3 weiterhin unterstützt.
 
 
-NOTE: Sie können weiterhin veraltete Versionen der Mandantenmanagement-API mit StorageGRID 12.0 verwenden. Die Unterstützung für diese Versionen der API wird jedoch in einer zukünftigen Version von StorageGRID entfernt. Nach dem Upgrade auf StorageGRID 12.0 können Sie die veralteten APIs mithilfe der API deaktivieren `PUT /grid/config/management`.
+NOTE: Sie können weiterhin veraltete Versionen der Mandantenmanagement-API mit StorageGRID 11.9 verwenden. Die Unterstützung für diese Versionen der API wird jedoch in einer zukünftigen Version von StorageGRID entfernt. Nach dem Upgrade auf StorageGRID 11.9 können Sie die veralteten APIs mithilfe der API deaktivieren `PUT /grid/config/management`.
 
 Weitere Informationen finden Sie unter link:../tenant/understanding-tenant-management-api.html["Mandantenmanagement-API verstehen"].
 
 
 
-== Neue API für die Objektreplizierung
+== Neue API für Bucket-Kapazitätslimit
 
-Sie können die API verwenden `/org/cross-grid-replication/{versionId}/replicate`, um Objekte manuell auf einen vorhandenen Bucket zu replizieren, für den die Grid-übergreifende Replizierung neu konfiguriert wurde.
+Mithilfe der API können `/org/containers/{bucketName}/quota-object-bytes` GET-/PUT-Vorgänge die Storage-Kapazitätsgrenze für einen Bucket abrufen und festlegen.

@@ -14,18 +14,18 @@ summary: Um den technischen Support bei der Fehlerbehebung in Ihrem StorageGRID 
 Um den technischen Support bei der Fehlerbehebung in Ihrem StorageGRID System zu unterstützen, können Sie manuell ein AutoSupport Paket senden.
 
 .Bevor Sie beginnen
-* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
-* Sie haben die Berechtigung Root-Zugriff oder andere Grid-Konfigurationen.
+* Sie müssen im Grid-Manager mit einem angemeldet seinlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie müssen über die Berechtigung Root-Zugriff oder andere Grid-Konfiguration verfügen.
 
 
 .Schritte
 . Wählen Sie *SUPPORT* > *Werkzeuge* > *AutoSupport*.
 . Wählen Sie auf der Registerkarte *Aktionen* *vom Benutzer ausgelöste AutoSupport* senden.
 +
-StorageGRID versucht, ein AutoSupport-Paket an die NetApp-Support-Website zu senden. Wenn der Versuch erfolgreich ist, werden die *aktuellsten Ergebnisse* und *Letzte erfolgreiche Zeit* Werte auf der Registerkarte *Ergebnisse* aktualisiert. Wenn es ein Problem gibt, wird der Wert *Letzte Ergebnisse* auf „fehlgeschlagen“ aktualisiert, und StorageGRID versucht nicht, das AutoSupport-Paket erneut zu senden.
+StorageGRID versucht, ein AutoSupport-Paket an die NetApp-Support-Website zu senden. Wenn der Versuch erfolgreich ist, werden die *aktuellsten Ergebnisse* und *Letzte erfolgreiche Zeit* Werte auf der Registerkarte *Ergebnisse* aktualisiert. Wenn es ein Problem gibt, wird der Wert für das *Letzte Ergebnis* auf „fehlgeschlagen“ aktualisiert, und StorageGRID versucht nicht, das AutoSupport-Paket erneut zu senden.
 
-. Aktualisieren Sie nach 1 Minute die Seite „AutoSupport“ in Ihrem Browser, um die aktuellsten Ergebnisse anzuzeigen.
++
+
+TIP: Nachdem Sie ein vom Benutzer ausgelöstes AutoSupport-Paket gesendet haben, aktualisieren Sie die AutoSupport-Seite in Ihrem Browser nach 1 Minute, um die neuesten Ergebnisse anzuzeigen.
 
 
-
-TIP: Darüber hinaus können link:../monitor/collecting-log-files-and-system-data.html["Sammeln Sie umfangreichere Protokolldateien und Systemdaten"] Sie sie an die NetApp Support-Website senden.

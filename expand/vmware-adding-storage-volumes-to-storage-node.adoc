@@ -93,13 +93,19 @@ Der Status wird automatisch aktualisiert.
 . Vergewissern Sie sich, dass der Speicherknoten online ist:
 +
 .. Melden Sie sich mit einem beim Grid-Manager anlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
-.. Wählen Sie *NODES* > *_Storage Node_* > *Tasks* aus.
-.. Wenn die Dropdown-Liste *Speicherstatus* auf Schreibgeschützt oder Offline eingestellt ist, wählen Sie *Online* aus.
-.. Wählen Sie *Speichern*.
+.. Wählen Sie *SUPPORT* > *Tools* > *Grid-Topologie* aus.
+.. Wählen Sie *_site_* > *_Storage Node_* > *LDR* > *Storage* aus.
+.. Wählen Sie die Registerkarte *Konfiguration* und dann die Registerkarte *Main*.
+.. Wenn die Dropdown-Liste *Speicherstatus - gewünscht* auf schreibgeschützt oder offline gesetzt ist, wählen Sie *Online* aus.
+.. Wählen Sie *Änderungen Anwenden*.
 
 
-. Um die neuen Objektspeicher anzuzeigen, wählen Sie *Speicher*.
-. Sehen Sie sich die Details in der Tabelle *Volumes* an.
+. So sehen Sie die neuen Objektspeicher:
++
+.. Wählen Sie *NODES* > *_site_* > *_Storage Node_* > *Storage* aus.
+.. Sehen Sie sich die Details in der Tabelle *Object Stores* an.
+
+
 
 
 .Ergebnis

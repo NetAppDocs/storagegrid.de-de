@@ -145,6 +145,9 @@ Wenn die Schaltfläche *Installation starten* nicht aktiviert ist, müssen Sie m
 
 . Wählen Sie auf der Startseite des StorageGRID-Appliance-Installationsprogramms die Option *Installation starten*.
 +
+image::../media/appliance_installer_home_start_installation_enabled.gif[Dieses Bild wird durch den umgebenden Text beschrieben.]
+
++
 Der aktuelle Status ändert sich in „Installation wird ausgeführt“, und die Seite Monitorinstallation wird angezeigt.
 
 . Wenn Ihre Erweiterung mehrere Appliance-Nodes umfasst, wiederholen Sie die vorherigen Schritte für jede Appliance.
@@ -155,6 +158,9 @@ NOTE: Wenn Sie mehrere Appliance Storage Nodes gleichzeitig bereitstellen müsse
 . Wenn Sie manuell auf die Seite Monitor-Installation zugreifen müssen, wählen Sie in der Menüleiste die Option *Monitor-Installation* aus.
 +
 Auf der Seite Monitor-Installation wird der Installationsfortschritt angezeigt.
+
++
+image::../media/monitor_installation_configure_storage.gif[Dieses Bild wird durch den umgebenden Text erläutert.]
 
 +
 Die blaue Statusleiste zeigt an, welche Aufgabe zurzeit ausgeführt wird. Grüne Statusleisten zeigen Aufgaben an, die erfolgreich abgeschlossen wurden.
@@ -185,5 +191,8 @@ In dieser Phase kopiert das Installationsprogramm das Betriebssystem-Image für 
 +
 
 NOTE: Warten Sie, bis alle Knoten, die Sie in dieser Erweiterung hinzugefügt haben, zur Genehmigung bereit sind, bevor Sie zum Grid Manager gehen, um die Knoten zu genehmigen.
+
++
+image::../media/monitor_installation_install_sgws.gif[Dieses Bild wird durch den umgebenden Text erläutert.]
 
 

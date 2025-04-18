@@ -19,6 +19,9 @@ Das Installationsprogramm der StorageGRID Appliance stellt den Status bereit, bi
 Auf der Seite Monitor-Installation wird der Installationsfortschritt angezeigt.
 
 +
+image::../media/monitor_installation_services_appl.png[Monitor Installation - Services Appl]
+
++
 Die blaue Statusleiste zeigt an, welche Aufgabe zurzeit ausgeführt wird. Grüne Statusleisten zeigen Aufgaben an, die erfolgreich abgeschlossen wurden.
 
 +
@@ -40,7 +43,13 @@ Während dieser Phase kopiert das Installationsprogramm das Betriebssystem-Image
 . Überwachen Sie den Installationsfortschritt, bis einer der folgenden Schritte eintritt:
 +
 ** Bei Appliance-Gateway-Knoten oder nicht-primären Appliance-Admin-Knoten wird die Phase *Install StorageGRID* angehalten. Auf der eingebetteten Konsole wird eine Meldung angezeigt, die Sie dazu auffordert, diesen Knoten auf dem Admin-Knoten mithilfe des Grid-Managers zu genehmigen.
++
+image::../media/monitor_installation_install_sgws.gif[Das Bild wird durch den umgebenden Text beschrieben]
+
 ** Für primäre Administrator-Knoten der Appliance wird eine fünfte Phase (Installationsprogramm für StorageGRID laden) angezeigt. Wenn die fünfte Phase länger als 10 Minuten in Bearbeitung ist, aktualisieren Sie die Seite manuell.
++
+image::../media/monitor_reinstallation_primary_admin.png[Screenshot der 5. Phase für die Neuinstallation des primären Admin-Node]
+
 
 
 . Fahren Sie mit dem nächsten Schritt des Wiederherstellungsprozesses für den Typ des Grid-Node der Appliance, den Sie wiederherstellen, fort.

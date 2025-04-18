@@ -24,7 +24,7 @@ NOTE: Berechtigungen zum Festlegen oder Ändern von S3 Object Lock-Eigenschaften
 * Wenn jeder Mandant 5,000 Buckets hat, verfügt jeder Storage-Node im Grid über mindestens 64 GB RAM.
 +
 
-NOTE: Jedes Raster kann maximal 100,000 Eimer haben, einschließlich link:../tenant/manage-branch-buckets.html["Eimer verzweigen"].
+NOTE: Jedes Grid kann maximal 100,000 Buckets enthalten.
 
 
 
@@ -87,15 +87,7 @@ Der StorageGRID-Administrator managt die verfügbaren Regionen. Die Regionen ein
 .Schritte
 . Aktivieren Sie optional die Objektversionierung für den Bucket.
 +
-Aktivieren Sie die Objektversionierung, wenn Sie jede Version jedes Objekts in diesem Bucket speichern möchten. Sie können dann nach Bedarf frühere Versionen eines Objekts abrufen.
-
-+
-Sie müssen die Objektversionierung aktivieren, wenn:
-
-+
-** Der Bucket wird für die Grid-übergreifende Replizierung verwendet.
-** Sie möchten aus diesem Bucket einen erstellenlink:../tenant/manage-branch-buckets.html["Eimer verzweigen"].
-
+Aktivieren Sie die Objektversionierung, wenn Sie jede Version jedes Objekts in diesem Bucket speichern möchten. Sie können dann nach Bedarf frühere Versionen eines Objekts abrufen. Sie müssen die Objektversionierung aktivieren, wenn der Bucket für die Grid-übergreifende Replizierung verwendet wird.
 
 . Wenn die globale S3 Object Lock-Einstellung aktiviert ist, können Sie optional S3 Object Lock für den Bucket aktivieren, um Objekte mithilfe eines WORM-Modells (Write-Once-Read-Many) zu speichern.
 +
@@ -154,16 +146,12 @@ Eine _maximale_ Aufbewahrungsfrist, die ein Wert von 1 Tag bis 100 Jahre sein ka
 
 
 
-. [[Capacity-Limit]]Wählen Sie optional *Enable Capacity Limit*, geben Sie einen Wert ein und wählen Sie die Kapazitätseinheit aus.
+. [[Capacity-Limit]]Wählen Sie optional *Enable Capacity Limit* aus.
 +
 Das Kapazitätslimit ist die maximale Kapazität, die für die Objekte dieses Buckets verfügbar ist. Dieser Wert stellt eine logische Menge (Objektgröße) und keine physische Menge (Größe auf Festplatte) dar.
 
 +
 Wenn kein Limit festgelegt ist, ist die Kapazität für diesen Bucket unbegrenzt. Weitere Informationen finden Sie unter link:../tenant/understanding-tenant-manager-dashboard.html#bucket-capacity-usage["Kapazitätsgrenze"] .
-
-. [[Object-count-Limit]]Wählen Sie optional *enable object count Limit* aus und geben Sie eine Ganzzahl von mindestens 1 und nicht mehr als 1,000,000,000,000,000,000 ein.
-+
-Die maximale Anzahl an Objekten, die dieser Bucket enthalten darf. Dieser Wert stellt eine logische Menge (Objektanzahl) dar. Wenn keine Begrenzung festgelegt ist, ist die Anzahl der Objekte unbegrenzt.
 
 . Wählen Sie *Eimer erstellen*.
 +
@@ -171,5 +159,3 @@ Der Bucket wird erstellt und der Tabelle auf der Seite Buckets hinzugefügt.
 
 . Wählen Sie optional *Gehe zu Bucket-Detailseite* zu link:viewing-s3-bucket-details.html["Bucket-Details anzeigen"] und führen Sie zusätzliche Konfiguration durch.
 
-
-Sie können auch link:../tenant/manage-branch-buckets.html["Erstellen Sie Zweige-Buckets"] nach Bedarf.

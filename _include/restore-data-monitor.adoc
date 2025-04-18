@@ -18,22 +18,22 @@
 
 * So überwachen Sie die Reparatur genauer:
 +
-.. Wählen Sie *KNOTEN*.
-.. Wählen Sie *_Grid Name_* > *ILM* aus.
-.. Setzen Sie den Mauszeiger über das ILM-Warteschlangendiagramm, um den Wert des Attributs *Scan Rate (Objects/sec)* anzuzeigen. Dies ist die Rate, mit der Objekte im Raster gescannt und für ILM in die Warteschlange eingereiht werden.
-.. Sehen Sie sich im Abschnitt ILM-Warteschlange die folgenden Attribute an:
+.. Wählen Sie *SUPPORT* > *Tools* > *Grid-Topologie* aus.
+.. Wählen Sie *_Grid_* > *_Storage Node wird repariert_* > *LDR* > *Data Store*.
+.. Verwenden Sie eine Kombination der folgenden Attribute, um festzustellen, ob replizierte Reparaturen abgeschlossen sind.
 +
-*** *Scan-Zeitraum - geschätzt*: Die geschätzte Zeit, um einen vollständigen ILM-Scan aller Objekte durchzuführen.
+
+NOTE: Cassandra-Inkonsistenzen sind möglicherweise vorhanden, und fehlgeschlagene Reparaturen werden nicht nachverfolgt.
+
 +
-Ein vollständiger Scan kann nicht garantieren, dass ILM auf alle Objekte angewendet wurde.
-
-*** *Reparaturversuche*: Die Gesamtzahl der Objektreparaturoperationen für replizierte Daten, die versucht wurden. Diese Zählung erhöht sich jedes Mal, wenn ein Storage-Node versucht, ein Objekt mit hohem Risiko zu reparieren. Risikobehaftete ILM-Reparaturen werden priorisiert, wenn das Grid besetzt wird.
+*** *Reparted (XRPA)*: Verwenden Sie dieses Attribut, um den Fortschritt der replizierten Reparaturen zu verfolgen. Dieses Attribut erhöht sich jedes Mal, wenn ein Storage-Node versucht, ein risikoreicheres Objekt zu reparieren. Wenn dieses Attribut für einen Zeitraum nicht länger als die aktuelle Scan-Periode (vorgesehen durch das Attribut *Scan Period -- Estimated*) steigt, bedeutet dies, dass ILM-Scans keine hoch riskant Objekte gefunden haben, die auf allen Knoten repariert werden müssen.
 +
-Die Reparatur desselben Objekts erhöht sich möglicherweise erneut, wenn die Replikation nach der Reparatur fehlgeschlagen ist. + Diese Attribute können nützlich sein, wenn Sie den Fortschritt der Storage Node Volume Recovery überwachen. Wenn die Anzahl der versuchten Reparaturen nicht mehr steigt und ein vollständiger Scan abgeschlossen wurde, ist die Reparatur wahrscheinlich abgeschlossen.
+
+NOTE: Objekte mit hohem Risiko sind Objekte, die Gefahr laufen, völlig verloren zu sein. Dies umfasst keine Objekte, die ihre ILM-Konfiguration nicht erfüllen.
+
+*** *Scan Period -- Estimated (XSCM)*: Verwenden Sie dieses Attribut, um zu schätzen, wann eine Richtlinienänderung auf zuvor aufgenommene Objekte angewendet wird. Wenn sich das Attribut *Repears versuchte* über einen Zeitraum nicht länger als der aktuelle Scanzeitraum erhöht, ist es wahrscheinlich, dass replizierte Reparaturen durchgeführt werden. Beachten Sie, dass sich der Scanzeitraum ändern kann. Das Attribut *Scan Period -- Estimated (XSCM)* gilt für das gesamte Raster und ist die maximale Anzahl aller Knoten Scan Perioden. Sie können den Attributverlauf des Attributs *Scanperiode -- Estimated* für das Raster abfragen, um einen geeigneten Zeitrahmen zu ermitteln.
 
 
-
-.. Alternativ können Sie auch eine Prometheus-Abfrage für und `storagegrid_ilm_repairs_attempted` einreichen `storagegrid_ilm_scan_period_estimated_minutes`.
 
 
 

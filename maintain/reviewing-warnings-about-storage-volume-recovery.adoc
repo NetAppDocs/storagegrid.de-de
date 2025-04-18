@@ -15,23 +15,25 @@ summary: Bevor Sie fehlgeschlagene Speicher-Volumes für einen Speicherknoten wi
 
 Die Storage-Volumes (oder Rangedbs) in einem Storage-Node werden durch eine hexadezimale Zahl identifiziert, die als Volume-ID bezeichnet wird. Zum Beispiel ist 0000 das erste Volumen und 000F das sechzehnte Volumen. Der erste Objektspeicher (Volume 0) auf jedem Storage-Node belegt bis zu 4 TB Speicherplatz für Objekt-Metadaten und Cassandra-Datenbankvorgänge. Für Objektdaten werden der verbleibende Speicherplatz auf diesem Volume verwendet. Alle anderen Storage Volumes werden ausschließlich für Objektdaten verwendet.
 
-Die Cassandra-Datenbank kann im Rahmen der Volume-Wiederherstellung wiederhergestellt werden, wenn:
+Falls Volume 0 ausfällt und wiederhergestellt werden muss, kann die Cassandra-Datenbank im Rahmen des Volume-Recovery-Verfahrens neu erstellt werden. Cassandra kann unter folgenden Umständen auch wieder aufgebaut werden:
 
-* Volume 0 schlägt fehl und wird wiederhergestellt.
+* Ein Storage-Node wird nach mehr als 15 Tagen offline wieder online geschaltet.
 * Das Systemlaufwerk und ein oder mehrere Storage-Volumes ausfallen und werden wiederhergestellt.
 
 
-Nach dem Rebuilt von Cassandra verwendet das System Informationen von anderen Speicherknoten. Falls Cassandra vor Kurzem neu aufgebaut wurde, sind Cassandra-Daten möglicherweise noch nicht konsistent im gesamten Grid. Wenn zu viele Storage-Nodes offline sind:
-
-* Einige Cassandra-Daten sind möglicherweise nicht verfügbar.
-* Es kann zu Datenverlusten kommen.
+Nach dem Rebuilt von Cassandra verwendet das System Informationen von anderen Speicherknoten. Wenn zu viele Storage-Nodes offline sind, sind einige Cassandra-Daten möglicherweise nicht verfügbar. Falls Cassandra vor Kurzem neu aufgebaut wurde, sind Cassandra-Daten möglicherweise noch nicht konsistent im gesamten Grid. Datenverluste können auftreten, wenn Cassandra neu aufgebaut wird, wenn zu viele Storage-Nodes offline sind oder wenn zwei oder mehr Storage-Nodes innerhalb von 15 Tagen neu erstellt werden.
 
 
+CAUTION: Wenn mehrere Speicherknoten ausgefallen sind (oder offline ist), wenden Sie sich an den technischen Support. Führen Sie das folgende Wiederherstellungsverfahren nicht durch. Es kann zu Datenverlusten kommen.
 
-CAUTION: Wenn mehrere Speicherknoten ausgefallen sind (oder offline ist), wenden Sie sich an den technischen Support. Führen Sie den folgenden Wiederherstellungsvorgang nicht durch. Es kann zu Datenverlusten kommen. Weitere Informationen finden Sie unter link:how-site-recovery-is-performed-by-technical-support.html["Wie der technische Support eine Site wiederherstellt"].
+
+CAUTION: Falls dies der zweite Ausfall des Storage-Nodes in weniger als 15 Tagen nach Ausfall oder Wiederherstellung eines Storage-Nodes ist, wenden Sie sich an den technischen Support. Die Neuerstellung von Cassandra auf zwei oder mehr Storage-Nodes innerhalb von 15 Tagen kann zu Datenverlust führen.
 
 
-CAUTION: Wenn ILM-Regeln so konfiguriert sind, dass nur eine replizierte Kopie gespeichert wird und die Kopie auf einem ausgefallenen Storage-Volume vorhanden ist, können Sie das Objekt nicht wiederherstellen.
+NOTE: Wenn mehr als ein Speicherknoten an einem Standort ausgefallen ist, ist möglicherweise ein Verfahren zur Standortwiederherstellung erforderlich. Siehe link:how-site-recovery-is-performed-by-technical-support.html["Wie der technische Support eine Site wiederherstellt"].
+
+
+CAUTION: Wenn ILM-Regeln so konfiguriert sind, dass nur eine replizierte Kopie gespeichert wird und sich die Kopie auf einem ausgefallenen Storage Volume befindet, können Sie das Objekt nicht wiederherstellen.
 
 .Verwandte Informationen
 link:warnings-and-considerations-for-grid-node-recovery.html["Warnungen und Überlegungen für die Wiederherstellung von Grid Nodes"]

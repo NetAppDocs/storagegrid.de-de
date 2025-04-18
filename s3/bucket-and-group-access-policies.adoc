@@ -996,13 +996,6 @@ Null
  a| 
 Überprüft, ob im aktuellen Anforderungskontext ein Bedingungsschlüssel vorhanden ist.
 
-
-
- a| 
-IfExists
- a| 
-An einen Bedingungsoperator angehängt, mit Ausnahme der Null-Bedingung, um zu prüfen, ob dieser Bedingungsschlüssel fehlt. Gibt TRUE zurück, wenn der Bedingungsschlüssel nicht vorhanden ist.
-
 |===
 
 
@@ -1089,24 +1082,6 @@ Wird mit dem Parameter max-keys verglichen, der in einer ListObjects- oder ListO
 
 
  a| 
-s3:Object-Lock-Modus
- a| 
-s3:PutObject
- a| 
-Vergleicht mit dem `object-lock-mode` erweiterten aus dem Anforderungsheader in der Anforderung PutObject, CopyObject und CreateMultipartUpload.
-
-
-
- a| 
-s3:Object-Lock-Modus
- a| 
-s3:PutObjectRetention
- a| 
-Vergleicht mit dem `object-lock-mode` erweiterten aus dem XML-Körper in der PutObjectRetention-Anforderung.
-
-
-
- a| 
 s3:verbleibende Object-Lock-Retention-Tage
  a| 
 s3:PutObject
@@ -1150,15 +1125,6 @@ s3:PuttObjectTagging
 s3:PuttObjectVersionTagging
  a| 
 Erfordert einen bestimmten Tag-Schlüssel und einen bestimmten Wert, wenn die Objektanforderung Tagging beinhaltet.
-
-
-
- a| 
-s3:x-amz-Server-seitige Verschlüsselung – Kunden-Algorithmus
- a| 
-s3:PutObject
- a| 
-Vergleicht mit dem `sse-customer-algorithm` oder mit dem `copy-source-sse-customer-algorithm` Expanded aus dem Anforderungsheader in der Anforderung PutObject, CopyObject, CreateMultipartUpload, UploadPart, UploadPartCopy und CompleteMultipartUpload.
 
 |===
 

@@ -76,7 +76,7 @@ NOTE: Der Konsistenzwert für Bucket-Versionierung, S3 Object Lock- und Bucket-V
 Die folgenden Bucket-Einstellungen verwenden keine starke Konsistenz und weisen eine höhere Verfügbarkeit für Änderungen auf. Änderungen an diesen Einstellungen können einige Zeit dauern, bevor sie wirksam werden.
 
 * link:considerations-for-platform-services.html["Konfiguration von Plattform-Services: Benachrichtigung, Replikation oder Suchintegration"]
-* link:configuring-cross-origin-resource-sharing-for-buckets-and-objects.html["Konfigurieren Sie StorageGRID-CORS für Buckets und Objekte"]
+* link:configuring-cross-origin-resource-sharing-cors.html["CORS-Konfiguration"]
 * <<change-bucket-consistency,Änderung der Bucket-Konsistenz>>
 
 
