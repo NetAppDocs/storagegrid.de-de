@@ -21,7 +21,7 @@ Sie aktivieren Benachrichtigungen für einen Bucket, indem Sie XML für die Bena
 
 
 .Über diese Aufgabe
-Sie konfigurieren Ereignisbenachrichtigungen, indem Sie XML für die Benachrichtigungskonfiguration mit einem Quell-Bucket verknüpfen. Die XML-Benachrichtigungskonfiguration folgt S3-Konventionen für die Konfiguration von Bucket-Benachrichtigungen. Das Ziel-Kafka- oder Amazon SNS-Thema wird als URN eines Endpunkts angegeben.
+Sie konfigurieren Ereignisbenachrichtigungen, indem Sie XML für die Benachrichtigungskonfiguration mit einem Quell-Bucket verknüpfen. Die XML-Benachrichtigungskonfiguration folgt S3-Konventionen für die Konfiguration von Bucket-Benachrichtigungen, wobei das Zielthema Amazon SNS, das Thema Kafka oder der Webhook-Endpunkt als URN eines Endpunkts angegeben sind.
 
 Allgemeine Informationen zu Ereignisbenachrichtigungen und deren Konfiguration finden Sie im https://docs.aws.amazon.com/s3/["Amazon Dokumentation"^]. Informationen darüber, wie StorageGRID die S3-Bucket-Benachrichtigungs-API implementiert, finden Sie im link:../s3/index.html["Anweisungen zur Implementierung von S3-Client-Applikationen"].
 
@@ -29,7 +29,7 @@ Beachten Sie beim Konfigurieren von Ereignisbenachrichtigungen für einen Bucket
 
 * Wenn Sie eine gültige XML-Benachrichtigungskonfiguration erstellen und anwenden, muss die URN eines Ereignisbenachrichtigungs-Endpunkts für jedes Ziel verwendet werden.
 * Obwohl die Ereignisbenachrichtigung für einen Bucket mit aktivierter S3 Object Lock konfiguriert werden kann, werden die S3 Object Lock-Metadaten (einschließlich Aufbewahrungszeitraum bis sowie Status der gesetzlichen Sperrzeit) der Objekte in den Benachrichtigungen nicht berücksichtigt.
-* Sobald nach dem Konfigurieren von Ereignisbenachrichtigungen ein bestimmtes Ereignis für ein Objekt im Quell-Bucket auftritt, wird eine Benachrichtigung generiert und an das als Zielendpunkt verwendete Thema Amazon SNS oder Kafka gesendet.
+* Nach der Konfiguration von Ereignisbenachrichtigungen wird immer dann eine Benachrichtigung generiert, wenn ein bestimmtes Ereignis für ein Objekt im Quell-Bucket eintritt, und an das als Ziel verwendete Amazon SNS-Thema, das Thema Kafka oder den Webhook-Endpunkt gesendet.
 * Wenn Sie Ereignisbenachrichtigungen für einen Bucket aktivieren, der Objekte enthält, werden Benachrichtigungen nur für Aktionen gesendet, die nach dem Speichern der Benachrichtigungskonfiguration ausgeführt werden.
 
 
@@ -77,7 +77,7 @@ NOTE: Plattformservices müssen für jedes Mandantenkonto von einem StorageGRID-
 +
 In diesem Beispiel wird eine Ereignisbenachrichtigung gesendet, wenn ein Objekt mit dem Präfix erstellt `images/` wird.
 
-.. Bestätigen Sie, dass eine Benachrichtigung an das Ziel-Thema Amazon SNS oder Kafka gesendet wurde.
+.. Bestätigen Sie, dass eine Benachrichtigung an das Ziel-Thema Amazon SNS, das Thema Kafka oder den Webhook-Endpunkt gesendet wurde.
 +
 Wenn Ihr Zielthema beispielsweise auf Amazon SNS gehostet wird, können Sie den Dienst so konfigurieren, dass Sie eine E-Mail senden, wenn die Benachrichtigung zugestellt wird.
 
@@ -129,8 +129,7 @@ Wenn die Benachrichtigung im Zielthema empfangen wird, haben Sie Ihren Quell-Buc
 
 
 .Verwandte Informationen
-link:understanding-notifications-for-buckets.html["Informieren Sie sich über Benachrichtigungen für Buckets"]
+* link:understanding-notifications-for-buckets.html["Informieren Sie sich über Benachrichtigungen für Buckets"]
+* link:../s3/index.html["S3-REST-API VERWENDEN"]
+* link:creating-platform-services-endpoint.html["Endpunkt für Plattformservices erstellen"]
 
-link:../s3/index.html["S3-REST-API VERWENDEN"]
-
-link:creating-platform-services-endpoint.html["Endpunkt für Plattformservices erstellen"]

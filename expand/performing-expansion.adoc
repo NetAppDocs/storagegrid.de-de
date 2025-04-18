@@ -119,9 +119,10 @@ Die Rolle des Network Time Protocol (NTP) des Grid-Node:
  a| 
 ADC-Service (kombinierte oder nur Metadaten-Storage-Nodes)
  a| 
-Gibt an, ob dieser Storage Node den Dienst Administrative Domain Controller (ADC) ausführen soll. Der ADC-Dienst verfolgt den Standort und die Verfügbarkeit von Grid-Services. Mindestens drei Storage-Nodes an jedem Standort müssen den ADC-Service enthalten. Sie können den ADC-Dienst nicht zu einem Knoten hinzufügen, nachdem er bereitgestellt wurde.
+Gibt an, ob dieser Storage Node den Dienst Administrative Domain Controller (ADC) ausführen soll. Der ADC-Dienst verfolgt den Standort und die Verfügbarkeit von Grid-Services. Mindestens drei Storage-Nodes an jedem Standort müssen den ADC-Service enthalten.
 
-*** Wählen Sie *Yes* aus, wenn der zu ersetzende Speicher-Node den ADC-Dienst enthält. Da ein Storage Node nicht stillgelegt werden kann, wenn zu wenige ADC-Dienste verbleiben, wird dadurch sichergestellt, dass ein neuer ADC-Service verfügbar ist, bevor der alte Service entfernt wird.
+*** Wählen Sie *Yes* aus, wenn der zu ersetzende Speicher-Node den ADC-Dienst enthält. Da ein Storage Node nicht stillgelegt werden kann, wenn zu wenige ADC-Dienste verbleiben, stellt diese Einstellung sicher, dass ein neuer ADC-Dienst verfügbar ist, bevor der alte Service entfernt wird.
+*** Sie können link:../maintain/move-adc-service.html["Verschieben Sie den ADC-Dienst in einen anderen Storage Node am selben Standort"]sicherstellen, dass das ADC-Service-Quorum erfüllt wird.
 *** Wählen Sie *automatisch*, damit das System bestimmen kann, ob dieser Knoten den ADC-Dienst benötigt.
 
 
@@ -174,15 +175,12 @@ Nach einigen Minuten wird diese Seite aktualisiert, um den Status des Erweiterun
 NOTE: Während des Schritts „Installation von Grid Nodes“ für eine neue Appliance zeigt der StorageGRID-Appliance-Installer, wie die Installation von Phase 3 auf Phase 4 verschoben und abgeschlossen wird. Wenn Phase 4 abgeschlossen ist, wird der Controller neu gestartet.
 
 +
-image::../media/grid_expansion_progress.png[Dieses Bild wird durch den umgebenden Text erläutert.]
-
-+
 
 NOTE: Eine Standorterweiterung umfasst eine zusätzliche Aufgabe zur Konfiguration von Cassandra für den neuen Standort.
 
-. Sobald der Link *Download Recovery Package* angezeigt wird, laden Sie die Recovery Package Datei herunter.
+. Sobald der Link *Download Recovery Package* angezeigt wird, laden Sie die Recovery Package-Datei herunter.
 +
-Sie müssen eine aktualisierte Kopie der Wiederherstellungspaket-Datei so schnell wie möglich herunterladen, nachdem Grid-Topologieänderungen am StorageGRID-System vorgenommen wurden. Die Recovery Package-Datei ermöglicht es Ihnen, das System wiederherzustellen, wenn ein Fehler auftritt.
+Sie müssen eine aktualisierte Kopie der Wiederherstellungspaket-Datei so schnell wie möglich herunterladen, nachdem Sie Änderungen an der Grid-Topologie am StorageGRID-System vorgenommen haben. Mit der Wiederherstellungspaket-Datei können Sie das System bei einem Fehler wiederherstellen.
 
 +
 .. Wählen Sie den Download-Link aus.
@@ -191,7 +189,7 @@ Sie müssen eine aktualisierte Kopie der Wiederherstellungspaket-Datei so schnel
 .. Kopieren Sie die heruntergeladene Wiederherstellungspaket-Datei (`.zip`) in zwei sichere und separate Speicherorte.
 +
 
-CAUTION: Die Recovery Package-Datei muss gesichert sein, weil sie Verschlüsselungsschlüssel und Passwörter enthält, die zum Abrufen von Daten vom StorageGRID-System verwendet werden können.
+CAUTION: Die Wiederherstellungspaket-Datei muss gesichert werden, da sie Verschlüsselungsschlüssel und Passwörter enthält, die verwendet werden können, um Daten vom StorageGRID-System zu erhalten.
 
 
 
@@ -206,8 +204,6 @@ CAUTION: Starten Sie keine Storage-Nodes während der Phasen „erweitern des Ca
 .Speicherknoten Werden Hinzugefügt
 --
 Wenn Sie Storage Nodes zu einem vorhandenen Standort hinzufügen, überprüfen Sie den Prozentsatz, der in der Statusmeldung „Starten von Cassandra und Streamen von Daten“ angezeigt wird.
-
-image::../media/grid_expansion_starting_cassandra.png[Grid-Erweiterung > Cassandra starten und Daten streamen]
 
 Dieser Prozentsatz schätzt, wie vollständig der Cassandra-Streaming-Vorgang ist, basierend auf der Gesamtmenge der verfügbaren Cassandra-Daten und der bereits auf den neuen Node geschriebenen Menge.
 

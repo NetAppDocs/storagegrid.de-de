@@ -40,8 +40,8 @@ Eine detaillierte Erklärung darüber, wie sich die Einstellung „reservierter 
 .Schritte
 . Legen Sie die aktuelle Einstellung für den reservierten Metadatenspeicherplatz fest.
 +
-.. Wählen Sie *KONFIGURATION* > *System* > *Speicheroptionen*.
-.. Beachten Sie im Abschnitt Speicherwasserzeichen den Wert von *Metadaten reservierter Speicherplatz*.
+.. Wählen Sie *CONFIGURATION* > *System* > *Storage settings*.
+.. Beachten Sie den Wert von *Metadata Reserved Space*.
 
 
 . Stellen Sie sicher, dass auf dem Speicher-Volume 0 jedes Speicherknoten genügend Speicherplatz zur Verfügung steht, um diesen Wert zu erhöhen.
@@ -78,17 +78,13 @@ Wenn die Einstellung für reservierten Speicherplatz für Metadaten beispielswei
 
 . Aktualisieren Sie die Einstellung für reservierten Metadatenspeicherplatz.
 +
-.. Wählen Sie *KONFIGURATION* > *System* > *Speicheroptionen*.
-.. Wählen Sie die Registerkarte Konfiguration aus.
-.. Wählen Sie im Abschnitt Speicherwasserzeichen die Option *Metadaten reservierter Speicherplatz* aus.
+.. Wählen Sie *CONFIGURATION* > *System* > *Storage settings*.
+.. Wählen Sie *Metadaten Reservierter Speicherplatz*.
 .. Geben Sie den neuen Wert ein.
 +
 Um beispielsweise 8 TB einzugeben, geben Sie *8000000000000* (8, gefolgt von 12 Nullen) ein.
 
-+
-image::../media/metadata_reserved_space.png[Reservierter Speicherplatz Für Metadaten]
-
-.. Wählen Sie *Änderungen Anwenden*.
+.. Wählen Sie *Speichern*.
 
 
 

@@ -2,7 +2,7 @@
 permalink: audit/shea-s3-head.html 
 sidebar: sidebar 
 keywords: storagegrid, audit, message, SHEA, S3 HEAD 
-summary: Wenn ein S3-Client eine HEAD-Transaktion ausgibt, wird eine Anfrage gestellt, ob es sich um ein Objekt oder einen Bucket handelt und die Metadaten zu einem Objekt abzurufen. Diese Meldung wird vom Server ausgegeben, wenn die Transaktion erfolgreich ist. 
+summary: Wenn ein S3-Client einen HEAD-Vorgang ausgibt, wird eine Anforderung gestellt, die Existenz eines Objekts oder Buckets zu prüfen und die Metadaten über ein Objekt abzurufen. Diese Meldung wird vom Server ausgegeben, wenn der Vorgang erfolgreich war. 
 ---
 = SHEA: S3 KOPF
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Wenn ein S3-Client eine HEAD-Transaktion ausgibt, wird eine Anfrage ges
 
 
 [role="lead"]
-Wenn ein S3-Client eine HEAD-Transaktion ausgibt, wird eine Anfrage gestellt, ob es sich um ein Objekt oder einen Bucket handelt und die Metadaten zu einem Objekt abzurufen. Diese Meldung wird vom Server ausgegeben, wenn die Transaktion erfolgreich ist.
+Wenn ein S3-Client einen HEAD-Vorgang ausgibt, wird eine Anforderung gestellt, die Existenz eines Objekts oder Buckets zu prüfen und die Metadaten über ein Objekt abzurufen. Diese Meldung wird vom Server ausgegeben, wenn der Vorgang erfolgreich war.
 
 [cols="1a,1a,4a"]
 |===

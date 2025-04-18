@@ -30,6 +30,7 @@ Sie können eine beliebige Kombination der folgenden Optionen verwenden, um Auto
 * *Event-Triggered*: Sendet automatisch AutoSupport-Pakete jede Stunde oder wenn bedeutende Systemereignisse auftreten. Standardeinstellung: Aktiviert.
 * *On Demand*: Lassen Sie technischen Support verlangen, dass Ihr StorageGRID-System AutoSupport-Pakete automatisch sendet, was nützlich ist, wenn sie aktiv an einem Problem arbeiten (erfordert HTTPS AutoSupport Übertragungsprotokoll). Standardeinstellung: Deaktiviert.
 * *Vom Benutzer ausgelöst*: AutoSupport-Pakete jederzeit manuell senden.
+* *Log Collection*: link:../monitor/collecting-log-files-and-system-data.html["Manuelle Erfassung von Protokolldateien und Systemdaten und Senden eines AutoSupport-Pakets"].
 
 
 

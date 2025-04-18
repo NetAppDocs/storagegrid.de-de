@@ -40,16 +40,16 @@ Der Service-Laptop muss Folgendes haben:
 
 
  a| 
-Recovery Package- `.zip`Datei
+Recovery-Paketdatei `.zip`
  a| 
-Holen Sie sich eine Kopie der neuesten Recovery Package `.zip`-Datei:
+Holen Sie sich eine Kopie der neuesten Recovery-Paket- `.zip`Datei:
 `sgws-recovery-package-_id-revision_.zip`
 
-Der Inhalt der `.zip` Datei wird jedes Mal aktualisiert, wenn das System geändert wird. Sie werden aufgefordert, die aktuellste Version des Wiederherstellungspakets nach dem Speichern dieser Änderungen an einem sicheren Ort zu speichern. Verwenden Sie die neueste Kopie, um nach Grid-Ausfällen eine Wiederherstellung durchzuführen.
+Der Inhalt der `.zip` Datei wird jedes Mal aktualisiert, wenn das System geändert wird. Sie werden angewiesen, die neueste Version des Wiederherstellungspakets an einem sicheren Ort zu speichern, nachdem Sie solche Änderungen vorgenommen haben. Verwenden Sie die neueste Kopie, um nach Grid-Ausfällen eine Wiederherstellung durchzuführen.
 
-Wenn der primäre Admin-Node normal funktioniert, können Sie das Wiederherstellungspaket aus dem Grid Manager herunterladen. Wählen Sie *WARTUNG* > *System* > *Wiederherstellungspaket*.
+Wenn der primäre Admin-Node normal funktioniert, können Sie das Wiederherstellungspaket vom Grid Manager herunterladen. Wählen Sie *WARTUNG* > *System* > *Wiederherstellungspaket*.
 
-Wenn Sie nicht auf den Grid Manager zugreifen können, finden Sie verschlüsselte Kopien des Wiederherstellungspakets auf einigen Storage Nodes, die den ADC-Dienst enthalten. Prüfen Sie auf jedem Storage Node diesen Speicherort für das Wiederherstellungspaket: `/var/local/install/sgws-recovery-package-_grid-id_-_revision_.zip.gpg` Verwenden Sie das Wiederherstellungspaket mit der höchsten Revisionsnummer.
+Wenn Sie nicht auf den Grid Manager zugreifen können, finden Sie verschlüsselte Kopien des Wiederherstellungspakets auf einigen Storage Nodes, die den ADC-Dienst enthalten. Prüfen Sie auf jedem Storage Node diesen Speicherort für das Wiederherstellungspaket: Verwenden Sie das Wiederherstellungspaket mit der höchsten Revisionsnummer. `/var/local/install/sgws-recovery-package-_grid-id_-_revision_.zip.gpg`
 
 
 

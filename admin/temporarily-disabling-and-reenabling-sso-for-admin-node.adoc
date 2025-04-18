@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: signing in when sso is down, single sign on failure 
 summary: 'Sie können sich möglicherweise nicht beim Grid-Manager anmelden, wenn das Single Sign-On \(SSO\)-System ausfällt. In diesem Fall können Sie SSO für einen Admin-Node vorübergehend deaktivieren und erneut aktivieren. Um SSO zu deaktivieren und dann erneut zu aktivieren, müssen Sie auf die Befehlshaber des Knotens zugreifen.' 
 ---
-= Deaktivieren Sie die einmalige Anmeldung für einen Admin-Knoten vorübergehend und aktivieren Sie sie erneut
+= Deaktivieren und aktivieren Sie SSO vorübergehend für einen Admin-Node
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

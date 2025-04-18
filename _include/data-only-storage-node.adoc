@@ -1,0 +1,14 @@
+= 
+:allow-uri-read: 
+
+
+Ein Storage-Node ausschließlich für Daten ist sinnvoll, wenn Ihre Storage-Nodes unterschiedliche Performance-Merkmale aufweisen. Um beispielsweise die Performance potenziell zu steigern, können Sie reine Daten-Storage-Nodes mit einer hohen Kapazität und gleichzeitig hochperformante Storage-Nodes mit Metadaten verwenden.
+
+Darüber hinaus können Sie mehr Metadaten-Kapazität erhalten, indem Sie Cassandra Nodes mit niedrigem RAM entfernen, wodurch sich die maximal zulässige Metadatenkapazität pro Node erhöht. Siehe link:../admin/managing-object-metadata-storage.html["Management von Objekt-Metadaten-Storage"].
+
+Bei der Installation von reinen Datenknoten muss das Grid Folgendes enthalten:
+
+* Mindestens zwei kombinierte oder rein datengeschützte Storage-Nodes pro Grid
+* Mindestens ein kombinierter oder nur-Daten-Storage-Node pro Standort
+* Mindestens drei kombinierte oder nur Metadaten-Storage-Nodes pro Standort
+

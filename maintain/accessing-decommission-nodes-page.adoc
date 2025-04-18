@@ -62,7 +62,7 @@ Keine.
  a| 
 Nein, mindestens ein Grid-Node ist getrennt.
 
-*Hinweis:* Diese Meldung wird nur für verbundene Grid-Knoten angezeigt.
+*Hinweis*: Diese Meldung wird nur für verbundene Netzknoten angezeigt.
  a| 
 Ein verbundener Grid-Node kann nicht stillgelegt werden, wenn ein Grid-Node getrennt wird.
 
@@ -81,7 +81,7 @@ Sie müssen alle getrennten Knoten wieder online schalten oder link:decommission
  a| 
 Nein, ein oder mehrere erforderliche Nodes sind derzeit getrennt und müssen wiederhergestellt werden.
 
-*Hinweis:* Diese Meldung wird nur für getrennte Gitterknoten angezeigt.
+*Hinweis*: Diese Meldung wird nur für getrennte Grid-Knoten angezeigt.
  a| 
 Ein getrennter Grid-Node kann nicht stillgelegt werden, wenn ein oder mehrere erforderliche Nodes ebenfalls getrennt sind (z. B. ein Storage Node, der für das ADC-Quorum erforderlich ist).
  a| 
@@ -97,7 +97,7 @@ Ein getrennter Grid-Node kann nicht stillgelegt werden, wenn ein oder mehrere er
 
 
  a| 
-Nein, Mitglied der HA-Gruppe(n): _Group Name_. Bevor Sie diesen Node außer Betrieb nehmen können, müssen Sie ihn aus allen HA-Gruppen entfernen.
+Nein, Mitglied der HA-Gruppe: _Group Name_. Bevor Sie diesen Node außer Betrieb nehmen können, müssen Sie ihn aus allen HA-Gruppen entfernen.
  a| 
 Sie können einen Admin-Node und einen Gateway-Node nicht stilllegen, wenn eine Node-Schnittstelle zu einer HA-Gruppe (High Availability, Hochverfügbarkeit) gehört.
  a| 
@@ -108,16 +108,16 @@ Bearbeiten Sie die HA-Gruppe, um die Schnittstelle des Node zu entfernen, oder e
  a| 
 Nein, Standort _x_ erfordert mindestens _n_ Storage Nodes mit ADC-Services.
  a| 
-*Nur Storage Nodes.* Ein Storage-Node kann nicht stillgelegt werden, wenn nicht genügend Nodes am Standort verbleiben, um die ADC-Quorum-Anforderungen zu unterstützen.
+*Nur Storage Nodes* (kombinierte oder nur Metadaten-Storage Nodes). Ein Storage-Node kann nicht stillgelegt werden, wenn nicht genügend Nodes am Standort verbleiben, um die ADC-Quorum-Anforderungen zu unterstützen. Sie können den ADC-Dienst jedoch in einen anderen Storage Node verschieben.
  a| 
-Eine Erweiterung durchführen. Fügen Sie dem Standort einen neuen Speicherknoten hinzu, und geben Sie an, dass ein ADC-Dienst vorhanden sein soll. Siehe Informationen zum link:understanding-adc-service-quorum.html["ADC-Quorum"].
+link:../maintain/move-adc-service.html["Verschieben Sie den ADC-Dienst in einen anderen Storage Node am selben Standort"], Oder führen Sie eine Erweiterung durch, indem Sie dem Standort einen neuen Speicherknoten hinzufügen und angeben, dass er einen ADC-Dienst haben soll. Siehe link:understanding-adc-service-quorum.html["ADC-Quorum"].
 
 
 
  a| 
 Nein, mindestens ein Profil mit Erasure Coding benötigt mindestens _n_ Storage Nodes. Wenn das Profil in einer ILM-Regel nicht verwendet wird, können Sie es deaktivieren.
  a| 
-*Nur Storage Nodes.* Sie können einen Storage Node nur dann stilllegen, wenn für die vorhandenen Profile für Erasure Coding genügend Nodes vorhanden sind.
+*Nur Storage Nodes*. Sie können einen Storage Node nur dann stilllegen, wenn für die vorhandenen Profile für Erasure Coding genügend Nodes vorhanden sind.
 
 Wenn z. B. ein Profil für die Erasure Coding 4+2 für das Erasure Coding vorhanden ist, müssen mindestens 6 Storage Nodes verbleiben.
  a| 

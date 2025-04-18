@@ -13,7 +13,7 @@ summary: Sie müssen mindestens ein Mandantenkonto erstellen, um den Zugriff auf
 [role="lead"]
 Sie müssen mindestens ein Mandantenkonto erstellen, um den Zugriff auf den Storage in Ihrem StorageGRID-System zu kontrollieren.
 
-Die Schritte zum Erstellen eines Mandantenkontos hängen davon ab, link:using-identity-federation.html["Identitätsföderation"]ob und link:configuring-sso.html["Single Sign On"]konfiguriert sind und ob das Grid-Manager-Konto, mit dem Sie das Mandantenkonto erstellen, zu einer Administratorgruppe mit Root-Zugriffsberechtigung gehört.
+Die Schritte zum Erstellen eines Mandantenkontos hängen davon ab, link:using-identity-federation.html["Identitätsföderation"]ob und link:how-sso-works.html["Single Sign On"]konfiguriert sind und ob das Grid-Manager-Konto, mit dem Sie das Mandantenkonto erstellen, zu einer Administratorgruppe mit Root-Zugriffsberechtigung gehört.
 
 .Bevor Sie beginnen
 * Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
@@ -118,7 +118,7 @@ Der Mandant kann S3-Plattformservices wie CloudMirror verwenden. Siehe link:../a
  a| 
 Eigene Identitätsquelle verwenden
  a| 
-Der Mandant kann seine eigene Identitätsquelle für verbundene Gruppen und Benutzer konfigurieren und verwalten. Diese Option ist deaktiviert, wenn Sie für Ihr StorageGRID-System habenlink:../admin/configuring-sso.html["SSO konfiguriert"].
+Der Mandant kann seine eigene Identitätsquelle für verbundene Gruppen und Benutzer konfigurieren und verwalten. Diese Option ist deaktiviert, wenn Sie für Ihr StorageGRID-System habenlink:../admin/how-sso-works.html["SSO konfiguriert"].
 
 
 

@@ -19,16 +19,16 @@ Bevor Sie einen Grid-Node außer Betrieb nehmen, müssen Sie die folgenden Infor
 
 
  a| 
-Recovery Package- `.zip`Datei
+Recovery-Paketdatei `.zip`
  a| 
-Sie müssen link:downloading-recovery-package.html["Laden Sie das neueste Wiederherstellungspaket herunter"] `.zip` Datei (`sgws-recovery-package-_id-revision_.zip`). Sie können die Recovery Package-Datei verwenden, um das System wiederherzustellen, wenn ein Fehler auftritt.
+Sie müssen link:downloading-recovery-package.html["Laden Sie das neueste Wiederherstellungspaket herunter"] `.zip` Datei (`sgws-recovery-package-_id-revision_.zip`). Sie können die Wiederherstellungspaket-Datei verwenden, um das System bei einem Fehler wiederherzustellen.
 
 
 
  a| 
 `Passwords.txt` Datei
  a| 
-Diese Datei enthält die Passwörter, die für den Zugriff auf Grid-Knoten in der Befehlszeile erforderlich sind und im Wiederherstellungspaket enthalten sind.
+Diese Datei enthält die Passwörter, die für den Zugriff auf Grid-Nodes auf der Befehlszeile erforderlich sind und ist im Wiederherstellungspaket enthalten.
 
 
 

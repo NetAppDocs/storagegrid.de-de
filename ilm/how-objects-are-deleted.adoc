@@ -92,6 +92,8 @@ Wenn Objekte versioniert sind, löschen Objekt-Löschanforderungen nicht die akt
 
 Auch wenn das Objekt nicht entfernt wurde, verhält sich StorageGRID so, als ob die aktuelle Version des Objekts nicht mehr verfügbar ist. Anfragen an dieses Objekt geben 404 nicht gefunden zurück. Da jedoch nicht aktuelle Objektdaten nicht entfernt wurden, können Anforderungen, die eine nicht aktuelle Version des Objekts angeben, erfolgreich ausgeführt werden.
 
+Wenn ein Client eine Objektversion mit einer Versions-ID aus einem löschtlink:../tenant/manage-branch-buckets.html["Eimer verzweigen"], blendet StorageGRID die Existenz der Objektversion aus, erstellt aber keine Löschmarkierung im Branch Bucket. Wenn ein Client ein Objekt ohne Versions-ID aus einem Branch-Bucket löscht, erstellt StorageGRID gemäß dem S3-Standardverhalten eine Löschmarkierung im Branch-Bucket.
+
 Um beim Löschen versionierter Objekte Speicherplatz freizugeben oder Löschmarkierungen zu entfernen, verwenden Sie eine der folgenden Methoden:
 
 * *S3 Client Request*: Geben Sie die Objektversion-ID in der S3 DELETE Object Request (`DELETE /object?versionId=ID`) an. Beachten Sie, dass diese Anforderung nur Objektkopien für die angegebene Version entfernt (die anderen Versionen belegen noch Speicherplatz).

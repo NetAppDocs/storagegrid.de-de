@@ -51,7 +51,7 @@ Die Softwaredatei wird verteilt, und der Upgrade-Service wird gestartet.
  a| 
 Upgrade anderer Grid-Nodes
  a| 
-Die Software auf allen anderen Grid-Knoten wird aktualisiert, in der Reihenfolge, in der Sie die Knoten genehmigen. Jeder Knoten im System wird einzeln heruntergefahren.
+Die Software auf allen anderen Grid-Knoten wird in der Reihenfolge aktualisiert, in der Sie die Knoten genehmigen. Ein Admin- oder Gateway-Node wird gleichzeitig mit einem Storage-Node aktualisiert.
  a| 
 15 Minuten bis 1 Stunde pro Node, wobei Appliance-Nodes die höchste Zeit erfordern
 

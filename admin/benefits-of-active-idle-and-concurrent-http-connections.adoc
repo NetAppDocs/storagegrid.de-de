@@ -24,7 +24,7 @@ Sie können die Performance-Vorteile für die folgenden Arten von HTTP-Verbindun
 
 == Vorteile, wenn inaktive HTTP-Verbindungen offen gehalten werden
 
-Sie sollten HTTP-Verbindungen auch dann offen halten, wenn Client-Anwendungen inaktiv sind, um Client-Anwendungen die Ausführung folgender Transaktionen über die offene Verbindung zu ermöglichen. Basierend auf Systemmessungen und Integrationserfahrungen sollten Sie eine inaktive HTTP-Verbindung für maximal 10 Minuten offen halten. StorageGRID schließt möglicherweise automatisch eine HTTP-Verbindung, die länger als 10 Minuten im Ruhezustand bleibt.
+Lassen Sie HTTP-Verbindungen offen, wenn Client-Anwendungen inaktiv sind, um spätere Transaktionen zu ermöglichen. Lassen Sie eine HTTP-Verbindung im Ruhezustand maximal 10 Minuten lang offen. StorageGRID schließt möglicherweise automatisch eine HTTP-Verbindung, die länger als 10 Minuten offen und inaktiv ist.
 
 Open- und Idle-HTTP-Verbindungen bieten folgende Vorteile:
 
@@ -36,7 +36,7 @@ Die geringere Latenz ist der Hauptvorteil, insbesondere aufgrund der für die Ei
 * Sofortige Benachrichtigung über mehrere Klassen von Fehlerbedingungen, die die Verbindung zwischen Client-Anwendung und StorageGRID-System unterbrechen
 
 
-Die Bestimmung, wie lange eine Leerlaufverbindung offen bleiben‐soll, ist ein Kompromiss zwischen den Vorteilen des langsamen Starts, der mit der bestehenden Verbindung verbunden ist, und der idealen Zuweisung der Verbindung zu internen Systemressourcen.
+Legen Sie fest, wie lange eine Verbindung im Leerlauf geöffnet bleiben soll, indem Sie die Vorteile des langsamen Starts und die Ressourcenzuweisung ausgleichen.
 
 
 
@@ -50,7 +50,7 @@ Bei Client-Verbindungen zu Storage-Nodes bietet die Beschränkung aktiver HTTP-V
 
 * Ermöglicht einen optimalen Lastausgleich über das StorageGRID System hinweg.
 +
-Im Laufe der Zeit ist eine HTTP-Verbindung möglicherweise nicht mehr optimal, da sich die Anforderungen für den Lastausgleich ändern. Das System führt den besten Lastenausgleich durch, wenn Client-Anwendungen für jede Transaktion eine separate HTTP-Verbindung herstellen, jedoch die wesentlich wertvolleren Gewinne, die mit persistenten Verbindungen verbunden sind, zunichte machen.
+Im Laufe der Zeit ist eine HTTP-Verbindung möglicherweise nicht mehr optimal, da sich die Anforderungen für den Lastausgleich ändern. Das System führt den besten Lastenausgleich durch, wenn Client-Anwendungen für jede Transaktion eine separate HTTP-Verbindung herstellen. Diese Methode negiert jedoch die wertvollen Vorteile, die mit persistenten Verbindungen verbunden sind.
 
 * Ermöglicht Client-Anwendungen, HTTP-Transaktionen an LDR-Dienste mit verfügbarem Speicherplatz zu leiten.
 * Ermöglicht das Starten von Wartungsvorgängen.
@@ -81,9 +81,9 @@ Das StorageGRID System kann parallele Transaktionen durchführen und den aggregi
 
 Client-Anwendungen sollten mehrere HTTP-Verbindungen einrichten. Wenn eine Client-Anwendung eine Transaktion durchführen muss, kann sie eine vorhandene Verbindung auswählen und sofort verwenden, die derzeit keine Transaktion verarbeitet.
 
-Die Topologie jedes StorageGRID-Systems weist einen unterschiedlichen Spitzendurchsatz für gleichzeitige Transaktionen und Verbindungen auf, bevor die Performance abnimmt. Spitzendurchsatz hängt von Faktoren wie Computing-Ressourcen, Netzwerkressourcen, Storage-Ressourcen und WAN-Links ab. Ebenfalls ausschlaggebend ist die Anzahl der Server und Services sowie die Anzahl der vom StorageGRID System unterstützten Applikationen.
+Die Topologie jedes StorageGRID-Systems weist einen unterschiedlichen Spitzendurchsatz für gleichzeitige Transaktionen und Verbindungen auf. Der Spitzendurchsatz hängt von der Datenverarbeitung, Netzwerk-, Speicherressourcen, WAN-Links und der Anzahl der Server, Services und Anwendungen ab, die das StorageGRID System unterstützt.
 
-StorageGRID Systeme unterstützen oft mehrere Client-Applikationen. Beachten Sie dies, wenn Sie die maximale Anzahl gleichzeitiger Verbindungen bestimmen, die von einer Client-Anwendung verwendet wird. Wenn die Client-Anwendung aus mehreren Softwareeinheiten besteht, die jeweils Verbindungen zum StorageGRID-System herstellen, sollten Sie alle Verbindungen zwischen den Einheiten hinzufügen. In den folgenden Situationen müssen Sie möglicherweise die maximale Anzahl gleichzeitiger Verbindungen anpassen:
+StorageGRID Systeme unterstützen oft mehrere Client-Applikationen. Beachten Sie dies, wenn Sie die maximale Anzahl gleichzeitiger Verbindungen ermitteln. Wenn die Client-Anwendung aus mehreren Softwareeinheiten besteht, die jeweils Verbindungen zum StorageGRID-System herstellen, fügen Sie alle Verbindungen über die Entitäten hinweg hinzu. In den folgenden Situationen müssen Sie möglicherweise die maximale Anzahl gleichzeitiger Verbindungen anpassen:
 
 * Die Topologie des StorageGRID Systems beeinflusst die maximale Anzahl gleichzeitiger Transaktionen und Verbindungen, die das System unterstützen kann.
 * Client-Applikationen, die über ein Netzwerk mit begrenzter Bandbreite mit dem StorageGRID-System interagieren, müssen möglicherweise das Maß an Parallelität verringern, um sicherzustellen, dass einzelne Transaktionen in einem angemessenen Zeitraum durchgeführt werden.

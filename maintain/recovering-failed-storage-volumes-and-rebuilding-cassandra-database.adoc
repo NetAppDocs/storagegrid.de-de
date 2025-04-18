@@ -51,7 +51,7 @@ NOTE: Das Auskommentieren eines fehlerhaften Volumes in der `/etc/fstab` Datei i
 ** Sie werden aufgefordert, die Cassandra-Datenbank bei Bedarf neu aufzubauen.
 +
 *** Überprüfen Sie die Warnungen. Falls keines dieser Beispiele zutreffend ist, bauen Sie die Cassandra-Datenbank neu aus. Geben Sie ein: *Y*
-*** Wenn mehr als ein Speicherknoten offline ist oder wenn ein anderer Speicherknoten in den letzten 15 Tagen wieder aufgebaut wurde. Geben Sie: *N* ein
+*** Wenn mehr als ein Storage-Node offline ist. Geben Sie: *N* ein
 +
 Das Skript wird beendet, ohne dass Cassandra neu aufgebaut werden muss. Wenden Sie sich an den technischen Support.
 

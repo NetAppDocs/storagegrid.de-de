@@ -29,7 +29,6 @@ Wenn ein Mandantenkonto die Berechtigung *Grid Federation connection* verwenden 
 
 * Muss denselben Namen haben, kann aber unterschiedliche Regionen haben
 * Versionierung muss aktiviert sein
-* S3-Objektsperre muss deaktiviert sein
 * Muss leer sein
 
 
@@ -42,13 +41,13 @@ link:../tenant/grid-federation-manage-cross-grid-replication.html["Grid-übergre
 
 == Funktionsweise der Grid-übergreifenden Replizierung
 
-Die Grid-übergreifende Replizierung kann so konfiguriert werden, dass sie in eine Richtung oder in beide Richtungen erfolgt.
+Sie können die Grid-übergreifende Replikation so konfigurieren, dass sie in eine Richtung oder in beide Richtungen erfolgt.
 
 
 
 === Replikation in eine Richtung
 
-Wenn Sie die Grid-übergreifende Replizierung für einen Bucket nur in einem Grid aktivieren, werden die diesem Bucket (Quell-Bucket) hinzugefügten Objekte in den entsprechenden Bucket auf dem anderen Grid (dem Ziel-Bucket) repliziert. Zum Ziel-Bucket hinzugefügte Objekte werden jedoch nicht zurück in die Quelle repliziert. In der Abbildung ist die Grid-übergreifende Replikation von Grid 1 bis Grid 2 aktiviert `my-bucket`, jedoch nicht in die andere Richtung aktiviert.
+Wenn Sie die Grid-übergreifende Replizierung für einen Bucket nur in einem Grid aktivieren, werden die diesem Bucket (Quell-Bucket) hinzugefügten Objekte in den entsprechenden Bucket auf dem anderen Grid (dem Ziel-Bucket) repliziert. Zum Ziel-Bucket hinzugefügte Objekte werden jedoch nicht zurück in die Quelle repliziert. In der Abbildung ist die Grid-übergreifende Replikation von Grid 1 bis Grid 2 aktiviert `my-bucket`, in der anderen Richtung ist sie jedoch nicht aktiviert.
 
 image::../media/grid-federation-cross-grid-replication-one-direction.png[Abbildung zeigt die Verbindung mit dem Grid Federation in eine Richtung]
 
@@ -68,7 +67,7 @@ Wenn ein S3-Client einem Bucket ein Objekt hinzufügt, für das die Grid-übergr
 
 . StorageGRID repliziert das Objekt automatisch aus dem Quell-Bucket in den Ziel-Bucket. Die Dauer dieses Hintergrundreplizierungsvorgangs hängt von verschiedenen Faktoren ab, darunter von der Anzahl der weiteren ausstehenden Replikationsvorgänge.
 +
-Der S3-Client kann den Replikationsstatus eines Objekts überprüfen, indem er eine GetObject- oder HeadObject-Anforderung ausgibt. Die Antwort enthält einen StorageGRID-spezifischen `x-ntap-sg-cgr-replication-status` Antwortheader, der einen der folgenden Werte hat: Der S3-Client kann den Replikationsstatus eines Objekts überprüfen, indem er eine GetObject- oder HeadObject-Anforderung ausgibt. Die Antwort enthält einen StorageGRID-spezifischen `x-ntap-sg-cgr-replication-status` Antwortheader, der einen der folgenden Werte enthält:
+Der S3-Client kann den Replikationsstatus eines Objekts überprüfen, indem er eine GetObject- oder HeadObject-Anforderung ausgibt. Die Antwort enthält einen StorageGRID-spezifischen `x-ntap-sg-cgr-replication-status` Antwortheader, der einen der folgenden Werte hat:
 
 +
 [cols="1a,2a"]
@@ -81,7 +80,7 @@ Quelle
  a| 
 ** *ABGESCHLOSSEN*: Die Replikation war für alle Grid-Verbindungen erfolgreich.
 ** *AUSSTEHEND*: Das Objekt wurde nicht auf mindestens eine Grid-Verbindung repliziert.
-** *FAILURE*: Die Replikation steht nicht für eine Netzverbindung aus und mindestens eine ist mit einem dauerhaften Fehler ausgefallen. Ein Benutzer muss den Fehler beheben.
+** *FAILURE*: Die Replikation steht nicht für eine Grid-Verbindung aus und mindestens eine ist mit einem permanenten Fehler ausgefallen. Ein Benutzer muss den Fehler beheben.
 
 
 
@@ -94,7 +93,7 @@ Ziel
 |===
 +
 
-NOTE: Der Header wird von StorageGRID nicht unterstützt `x-amz-replication-status`.
+NOTE: StorageGRID unterstützt den Header nicht `x-amz-replication-status`.
 
 . StorageGRID verwendet die aktiven ILM-Richtlinien der einzelnen Grids für die Objektverwaltung, wie bei jedem anderen Objekt. Objekt A in Tabelle 1 kann beispielsweise als zwei replizierte Kopien gespeichert und für immer aufbewahrt werden, während die Kopie von Objekt A, das in Tabelle 2 repliziert wurde, unter Verwendung von 2+1 Erasure Coding gespeichert und nach drei Jahren gelöscht werden kann.
 
@@ -119,7 +118,7 @@ Um nachzuvollziehen, was passiert, wenn ein S3-Client Objekte aus einem Bucket l
 * Wenn ein S3-Client eine Löschanfrage ausstellt, die keine Versions-ID enthält, löscht StorageGRID keine Objektversionen. Stattdessen wird dem Bucket eine Löschmarkierung hinzugefügt. Die Löschmarkierung bewirkt, dass StorageGRID so wirkt, als ob das Objekt gelöscht wurde:
 +
 ** Eine GetObject-Anforderung ohne Versions-ID schlägt mit fehl `404 No Object Found`
-** Eine GetObject-Anforderung mit einer gültigen Versions-ID wird erfolgreich ausgeführt und gibt die angeforderte Objektversion zurück.
+** Eine GetObject-Anforderung mit einer gültigen Versions-ID ist erfolgreich und gibt die angeforderte Objektversion zurück.
 
 
 
@@ -151,14 +150,14 @@ Wenn Sie Objekte zwischen Grids mithilfe von Grid-übergreifender Replizierung v
 Um einzelne Objekte zu verschlüsseln, können Sie beim Hinzufügen der Objekte zum Quell-Bucket SSE (Server-seitige Verschlüsselung mit von StorageGRID gemanagten Schlüsseln) verwenden. Verwenden Sie den `x-amz-server-side-encryption` Anforderungskopf und geben Sie an `AES256`. Siehe link:../s3/using-server-side-encryption.html["Serverseitige Verschlüsselung"].
 
 
-NOTE: Die Verwendung von SSE-C (serverseitige Verschlüsselung mit vom Kunden bereitgestellten Schlüsseln) wird für die Grid-übergreifende Replikation nicht unterstützt. Der Aufnahmevorgang schlägt fehl.
+NOTE: Die Verwendung von SSE-C (serverseitige Verschlüsselung mit vom Kunden bereitgestellten Schlüsseln) wird für die Grid-übergreifende Replizierung nicht unterstützt. Der Aufnahmevorgang schlägt fehl.
 
 Um die Standardverschlüsselung für einen Bucket zu verwenden, verwenden Sie eine Anforderung von PutBucketEncryption und setzen Sie den `SSEAlgorithm` Parameter auf `AES256`. Die Verschlüsselung auf Bucket-Ebene gilt für alle Objekte, die ohne den Request-Header aufgenommen `x-amz-server-side-encryption` wurden. Siehe link:../s3/operations-on-buckets.html["Operationen auf Buckets"].
 
 Um die Verschlüsselung auf Grid-Ebene zu verwenden, setzen Sie die Option *gespeicherte Objektverschlüsselung* auf *AES-256*. Die Verschlüsselung auf Grid-Ebene gilt für alle Objekte, die nicht auf Bucket-Ebene verschlüsselt oder ohne Anforderungsheader aufgenommen `x-amz-server-side-encryption` werden. Siehe link:../admin/changing-network-options-object-encryption.html["Konfigurieren Sie Netzwerk- und Objektoptionen"].
 
 
-NOTE: SSE unterstützt AES-128 nicht. Wenn die Option *Stored Object Encryption* für das Quellraster mit der Option *AES-128* aktiviert ist, wird die Verwendung des AES-128-Algorithmus nicht auf das replizierte Objekt übertragen. Stattdessen verwendet das replizierte Objekt die Verschlüsselungseinstellung für den Standard-Bucket oder die Grid-Ebene des Ziels, sofern verfügbar.
+NOTE: SSE unterstützt AES-128 nicht. Wenn die Option *Stored Object Encryption* für das Quellraster mit der Option *AES-128* aktiviert ist, wird die Verwendung des AES-128-Algorithmus nicht auf das replizierte Objekt übertragen. Stattdessen verwendet das replizierte Objekt, sofern verfügbar, die Standard-Bucket oder die Verschlüsselungseinstellung auf Grid-Ebene des Ziels.
 
 Bei der Festlegung, wie Quellobjekte verschlüsselt werden, wendet StorageGRID folgende Regeln an:
 
@@ -178,14 +177,74 @@ Beim Bestimmen, wie replizierte Objekte verschlüsselt werden, wendet StorageGRI
 
 
 
+=== Grid-übergreifende Replizierung mit S3 Object Lock
+
+Unter den folgenden Umständen können Sie die Grid-übergreifende Replizierung zwischen StorageGRID Buckets konfigurieren, bei der S3 Object Lock aktiviert ist.
+
+[cols="1a,1a"]
+|===
+| Wenn die S3-Objektsperrung auf dem Quell-Bucket Folgendes ist: | Und die S3-Objektsperre am Ziel-Bucket ist... 
+
+
+ a| 
+Aktiviert
+ a| 
+Aktiviert
+
+
+
+ a| 
+Deaktiviert
+ a| 
+Aktiviert
+
+|===
+Wenn die S3-Objektsperre für den Quell-Bucket aktiviert ist:
+
+* Die Objekte werden mit Aufbewahrungseinstellungen am Ziel in dieser Reihenfolge gesperrt:
++
+.. Die Kopfzeilenwerte für die Aufbewahrung des Quellobjekts für:
++
+`x-amz-object-lock-mode`
+
++
+`x-amz-object-lock-retain-until-date`
+
+.. Die Standardaufbewahrung des Quell-Buckets, sofern festgelegt.
+.. Die Standardaufbewahrung des Ziel-Buckets, sofern festgelegt.
+
+
++
+Die Standardaufbewahrung des Ziel-Buckets überschreibt die vom Quellobjekt replizierten Aufbewahrungseinstellungen nicht.
+
+* Sie können den rechtlichen Haltestatus für das Zielobjekt festlegen, indem Sie beim Hochladen des Objekts verwenden `x-amz-object-lock-legal-hold`.
+* Ein Fehler tritt auf, wenn der Zielmandant oder Bucket die S3-Objektsperreinstellungen des Quellobjekts nicht unterstützt. Siehe link:../admin/grid-federation-troubleshoot.html#cross-grid-replication-alerts-and-errors["Grid-übergreifende Replizierungswarnungen und Fehler"]
+
+
+Wenn die S3-Objektsperre für den Quell-Bucket deaktiviert ist:
+
+* Sie können die Standardaufbewahrung für den Ziel-Bucket konfigurieren, um die Aufbewahrungseinstellungen für S3 Object Lock auf das Zielobjekt anzuwenden.
+* Das Zielobjekt kann keinen rechtlichen Sperrstatus festlegen.
+
+
+
+
 === PutObjectTagging und DeleteObjectTagging werden nicht unterstützt
 
 PutObjectTagging- und DeleteObjectTagging-Anforderungen werden nicht für Objekte in Buckets unterstützt, für die die Grid-übergreifende Replikation aktiviert ist.
 
-Wenn ein S3-Client eine PutObjectTagging- oder DeleteObjectTagging-Anforderung ausgibt, `501 Not Implemented` wird diese zurückgegeben. Die Nachricht lautet `Put(Delete) ObjectTagging is not available for buckets that have cross-grid replication configured`.
+Wenn ein S3-Client eine PutObjectTagging- oder DeleteObjectTagging-Anforderung ausgibt, `501 Not Implemented` wird diese zurückgegeben. Die Nachricht lautet `Put(Delete) ObjectTagging isn't available for buckets that have cross-grid replication configured`.
+
+
+
+=== PutObjectRetention und PutObjectLegalHold werden nicht unterstützt
+
+PutObjectRetention und PutObjectLegalHold-Anforderungen werden nicht vollständig für Objekte in Buckets unterstützt, für die die Grid-übergreifende Replizierung aktiviert ist.
+
+Wenn ein S3-Client eine PutObjectRetention- oder PutObjectLegalHold-Anforderung ausgibt, werden die Einstellungen des Quellobjekts geändert, die Änderungen werden jedoch nicht auf das Ziel angewendet.
 
 
 
 === Wie segmentierte Objekte repliziert werden
 
-Die maximale Segmentgröße des Quellrasters gilt für Objekte, die in das Zielraster repliziert werden. Wenn Objekte in ein anderes Raster repliziert werden, wird die Einstellung *maximale Segmentgröße* (*KONFIGURATION* > *System* > *Speicheroptionen*) des Quellrasters auf beiden Grids verwendet. Angenommen, die maximale Segmentgröße für das Quellraster beträgt 1 GB, während die maximale Segmentgröße des Zielrasters 50 MB beträgt. Wenn Sie ein 2-GB-Objekt in das Quellraster aufnehmen, wird dieses Objekt als zwei 1-GB-Segmente gespeichert. Sie wird auch als zwei 1-GB-Segmente in das Zielraster repliziert, obwohl die maximale Segmentgröße dieses Grids 50 MB beträgt.
+Die maximale Segmentgröße des Quellrasters gilt für Objekte, die in das Zielraster repliziert werden. Wenn Objekte in ein anderes Raster repliziert werden, wird die Einstellung *maximale Segmentgröße* (*KONFIGURATION* > *System* > *Speicheroptionen*) des Quellrasters auf beiden Grids verwendet. Angenommen, die maximale Segmentgröße für das Quellraster beträgt 1 GB, während die maximale Segmentgröße des Zielrasters 50 MB beträgt. Wenn Sie ein 2-GB-Objekt in das Quellraster aufnehmen, wird dieses Objekt als zwei 1-GB-Segmente gespeichert. Er wird auch als zwei 1-GB-Segmente in das Zielraster repliziert, obwohl die maximale Segmentgröße des Grids 50 MB beträgt.

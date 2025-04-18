@@ -175,6 +175,33 @@ Gruppen ändern (nur lokale Benutzer)
 
 
 
+== Föderierte Benutzer importieren
+
+Sie können einen oder mehrere föderierte Benutzer, bis zu 100 Benutzer, direkt auf die Seite Benutzer importieren.
+
+.Schritte
+. Wählen Sie *CONFIGURATION* > *Admin Users*.
+. Wählen Sie *föderierte Benutzer importieren*.
+. Geben Sie die UUID oder den Benutzernamen für einen oder mehrere föderierte Benutzer ein.
++
+Fügen Sie für mehrere Einträge jede UUID oder jeden Benutzernamen in eine neue Zeile ein.
+
+. Wählen Sie *Import*.
++
+Wenn der Import in das Feld Benutzer für einen oder mehrere Benutzer fehlschlägt, führen Sie die folgenden Schritte aus:
+
++
+.. Wählen Sie *Benutzer kopieren*.
+.. Wiederholen Sie den Import, indem Sie *Previous* auswählen und die kopierten Benutzer in das Dialogfeld *föderierte Benutzer importieren* einfügen.
+
+
++
+Nachdem Sie das Dialogfeld *föderierte Benutzer importieren* geschlossen haben, werden die föderierten Benutzerinformationen auf der Seite Benutzer für die erfolgreich importierten Benutzer angezeigt.
+
+
+
+
+
 == Duplizieren eines Benutzers
 
 Sie können einen vorhandenen Benutzer duplizieren, um einen neuen Benutzer mit denselben Berechtigungen zu erstellen.

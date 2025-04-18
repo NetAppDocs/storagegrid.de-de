@@ -15,12 +15,12 @@ Sie verwenden PingFederate, um für jeden Admin-Node in Ihrem System eine SP-Ver
 
 .Bevor Sie beginnen
 * Sie haben Single Sign-On für StorageGRID konfiguriert und als SSO-Typ * Ping föderate* ausgewählt.
-* *Der Sandbox-Modus* ist auf der Single Sign-On-Seite im Grid Manager ausgewählt. Siehe link:../admin/using-sandbox-mode.html["Verwenden Sie den Sandbox-Modus"].
-* Sie haben die *SP-Verbindungs-ID* für jeden Admin-Knoten in Ihrem System. Diese Werte finden Sie in der Detailtabelle Admin Nodes auf der StorageGRID Single Sign-On-Seite.
+* link:../admin/configure-sso.html#enter-sandbox-mode["Sandbox-Modus aktiviert"]Im Grid-Manager.
+* Sie haben die *SP-Verbindungs-ID* für jeden Admin-Knoten in Ihrem System. Diese Werte finden Sie in der Detailtabelle Admin-Nodes auf der Seite SSO konfigurieren.
 * Sie haben die *SAML-Metadaten* für jeden Admin-Knoten in Ihrem System heruntergeladen.
 * Sie haben Erfahrung beim Erstellen von SP-Verbindungen in PingFederate Server.
 * Sie haben den https://docs.pingidentity.com/pingfederate/latest/administrators_reference_guide/pf_administrators_reference_guide.html["Administrator's Reference Guide"^] für PingFederate Server. Die PingFederate-Dokumentation bietet detaillierte Schritt-für-Schritt-Anleitungen und Erklärungen.
-* Sie haben den link:admin-group-permissions.html["Administratorberechtigung"] für PingFederate Server.
+* Sie haben den link:../admin/admin-group-permissions.html["Administratorberechtigung"] für PingFederate Server.
 
 
 .Über diese Aufgabe
@@ -109,7 +109,7 @@ TIP: Sie müssen für jeden Admin-Node in Ihrem StorageGRID-System eine SP-Verbi
 
 .Schritte
 . Wählen Sie auf der Registerkarte Metadaten importieren die Option *Datei*.
-. Wählen Sie die SAML-Metadatendatei, die Sie für den Admin-Node von der StorageGRID-Seite für Single Sign-On heruntergeladen haben.
+. Wählen Sie die SAML-Metadatendatei aus, die Sie von der Seite SSO konfigurieren für den Admin-Node heruntergeladen haben.
 . Überprüfen Sie die Metadatenübersicht und die Informationen auf der Registerkarte Allgemeine Informationen.
 +
 Die Entity-ID des Partners und der Verbindungsname werden auf die Verbindungs-ID des StorageGRID-SP festgelegt. (Z. B. 10.96.105.200-DC1-ADM1-105-200). Die Basis-URL ist die IP des StorageGRID-Admin-Knotens.

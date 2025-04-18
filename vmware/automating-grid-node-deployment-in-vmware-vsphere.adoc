@@ -608,14 +608,15 @@ Leere Konfigurationsdatei für die Verwendung mit dem Skript
 
 |===
 * Sie haben eine Konfigurationsdatei erstellt `configure-storagegrid.json`. Um diese Datei zu erstellen, können Sie die Beispiel-Konfigurationsdatei ändern (`configure-storagegrid.sample.json`) oder die leere Konfigurationsdatei (`configure-storagegrid.blank.json`).
-+
+
+
+
+CAUTION: Speichern Sie das Verwaltungspasswort und die Provisionierungs-Passphrase aus dem Abschnitt Passwörter der geänderten `configure-storagegrid.json` Konfigurationsdatei an einem sicheren Speicherort. Diese Passwörter sind für die Installation, Erweiterung und Wartung erforderlich. Außerdem sollten Sie die geänderte Konfigurationsdatei sichern `configure-storagegrid.json` und an einem sicheren Ort speichern.
+
+.Über diese Aufgabe
 Sie können das Python-Skript und die `configure-storagegrid.json` Grid-Konfigurationsdatei verwenden `configure-storagegrid.py`, um die Konfiguration Ihres StorageGRID-Systems zu automatisieren.
 
-+
-
-NOTE: Sie können das System auch mit dem Grid Manager oder der Installations-API konfigurieren.
-
-
++ HINWEIS: Sie können das System auch über den Grid Manager oder die Installations-API konfigurieren.
 
 .Schritte
 . Melden Sie sich an der Linux-Maschine an, die Sie verwenden, um das Python-Skript auszuführen.
@@ -643,10 +644,10 @@ Beispiel:
 
 
 .Ergebnis
-Eine Wiederherstellungspaket- `.zip`Datei wird während des Konfigurationsprozesses generiert und in das Verzeichnis heruntergeladen, in dem Sie den Installations- und Konfigurationsprozess ausführen. Sie müssen die Recovery-Paket-Datei sichern, damit Sie das StorageGRID-System wiederherstellen können, wenn ein oder mehrere Grid-Knoten ausfallen. Zum Beispiel kopieren Sie den Text auf einen sicheren, gesicherten Netzwerkstandort und an einen sicheren Cloud-Storage-Standort.
+Während des Konfigurationsprozesses wird eine Wiederherstellungspaket- `.zip`Datei generiert und in das Verzeichnis heruntergeladen, in dem Sie den Installations- und Konfigurationsprozess ausführen. Sie müssen die Recovery-Paketdatei sichern, sodass Sie das StorageGRID System wiederherstellen können, wenn ein oder mehrere Grid-Nodes ausfallen. Zum Beispiel kopieren Sie den Text auf einen sicheren, gesicherten Netzwerkstandort und an einen sicheren Cloud-Storage-Standort.
 
 
-CAUTION: Die Recovery Package-Datei muss gesichert sein, weil sie Verschlüsselungsschlüssel und Passwörter enthält, die zum Abrufen von Daten vom StorageGRID-System verwendet werden können.
+CAUTION: Die Wiederherstellungspaket-Datei muss gesichert werden, da sie Verschlüsselungsschlüssel und Passwörter enthält, die verwendet werden können, um Daten vom StorageGRID-System zu erhalten.
 
 Wenn Sie angegeben haben, dass zufällige Passwörter generiert werden sollen, öffnen Sie die `Passwords.txt` Datei und suchen Sie nach den Kennwörtern, die für den Zugriff auf Ihr StorageGRID-System erforderlich sind.
 

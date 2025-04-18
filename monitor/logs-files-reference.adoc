@@ -47,7 +47,7 @@ Das Exportieren der Protokolle auf den Syslog-Server bietet folgende Funktionen:
 * Bessere Transparenz bei Anfragen, die von Traffic-Klassifikatoren am Load Balancer blockiert wurden.
 
 
-Informationen zum Exportieren der Protokolle finden Sie unter link:../monitor/configure-audit-messages.html["Konfigurieren von Überwachungsmeldungen und Protokollzielen"].
+Informationen zum Exportieren der Protokolle finden Sie unter link:../monitor/configure-audit-messages.html["Konfigurieren von Audit-Meldungen und externem Syslog-Server"].
 
 
 
@@ -227,6 +227,6 @@ Ausgabe von StorageGRID-Containerbefehlen. Enthält Systeminformationen wie z. B
 
 
 | Sync-Recovery-Paket  a| 
-Im Zusammenhang mit der Aufrechterhaltung der Konsistenz des neuesten Wiederherstellungspakets über alle Admin-Nodes und Storage-Nodes hinweg, die den ADC-Dienst hosten.
+Im Zusammenhang mit der Aufrechterhaltung der Konsistenz des neuesten Wiederherstellungspakets über alle Admin-Knoten und Speicher-Nodes, die den ADC-Dienst hosten.
 
 |===

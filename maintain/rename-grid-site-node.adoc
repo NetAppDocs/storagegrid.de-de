@@ -167,11 +167,11 @@ Eine Erfolgsmeldung wird angezeigt. Die neuen Anzeigenamen werden nun im gesamte
 
 === [[download-Recovery-package]]Laden Sie das Wiederherstellungspaket herunter
 
-Wenn Sie die Umbenennung der Elemente abgeschlossen haben, laden Sie ein neues Wiederherstellungspaket herunter und speichern Sie es. Die neuen Anzeigenamen für die Elemente, die Sie umbenannt haben, werden in die Datei aufgenommen `Passwords.txt`.
+Wenn Sie alle Elemente umbenannt haben, laden Sie ein neues Wiederherstellungspaket herunter und speichern Sie es. Die neuen Anzeigenamen für die Elemente, die Sie umbenannt haben, werden in die Datei aufgenommen `Passwords.txt`.
 
 .Schritte
 . Geben Sie die Provisionierungs-Passphrase ein.
-. Wählen Sie *Download Recovery Package*.
+. Wählen Sie *Wiederherstellungspaket herunterladen*.
 +
 Der Download startet sofort.
 
@@ -179,7 +179,7 @@ Der Download startet sofort.
 . Kopieren Sie die `sgws-recovery-package-_id-revision_.zip` Datei an zwei sichere und separate Speicherorte.
 +
 
-CAUTION: Die Recovery Package-Datei muss gesichert sein, weil sie Verschlüsselungsschlüssel und Passwörter enthält, die zum Abrufen von Daten vom StorageGRID-System verwendet werden können.
+CAUTION: Die Wiederherstellungspaket-Datei muss gesichert werden, da sie Verschlüsselungsschlüssel und Passwörter enthält, die verwendet werden können, um Daten vom StorageGRID-System zu erhalten.
 
 . Wählen Sie *Fertig*, um zum ersten Schritt zurückzukehren.
 

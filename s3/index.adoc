@@ -55,6 +55,13 @@ https://datatracker.ietf.org/doc/html/rfc2616["IETF RFC 2616: Hypertext Transfer
 
 
  a| 
+12,0
+ a| 
+Zusätzliche Unterstützung für die Cross-Origin Resource Sharing (CORS) für eine Managementoberfläche, mit der eine andere Domäne über Management-APIs auf Daten in StorageGRID zugreifen kann. link:../tenant/enable-cross-origin-resource-sharing-for-management-interface.html["Weitere Informationen ."].
+
+
+
+ a| 
 11,9
  a| 
 * Unterstützung für vorberechnete SHA-256-Prüfsummenwerte für die folgenden Anforderungen und unterstützten Header wurde hinzugefügt. Mit dieser Funktion können Sie die Integrität hochgeladener Objekte überprüfen:

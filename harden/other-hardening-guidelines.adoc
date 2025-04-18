@@ -53,7 +53,7 @@ AutoSupport unterstützt HTTPS, HTTP und SMTP für Transportprotokolle. Aufgrund
 
 Sie können CORS (Cross-Origin Resource Sharing) für einen S3-Bucket konfigurieren, wenn Webapplikationen in anderen Domänen auf diesen Bucket und die Objekte in diesem Bucket zugreifen sollen. Im Allgemeinen sollten Sie CORS nur aktivieren, wenn dies erforderlich ist. Wenn CORS erforderlich ist, beschränken Sie es auf vertrauenswürdige Herkunft.
 
-Siehe die Schritte für link:../tenant/configuring-cross-origin-resource-sharing-cors.html["Konfigurieren der Cross-Origin Resource Sharing (CORS)"].
+Siehe die Schritte für link:../tenant/configuring-cross-origin-resource-sharing-for-buckets-and-objects.html["Konfigurieren von CORS für Buckets und Objekte"].
 
 
 

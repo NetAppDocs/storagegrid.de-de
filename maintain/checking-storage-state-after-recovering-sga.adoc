@@ -19,17 +19,7 @@ Nach der Wiederherstellung eines Appliance Storage Node müssen Sie überprüfen
 
 
 .Schritte
-. Wählen Sie *SUPPORT* > *Tools* > *Grid-Topologie* aus.
-. Überprüfen Sie die Werte von *wiederhergestellten Speicherknoten* > *LDR* > *Storage* > *Speicherzustand -- gewünscht* und *Speicherstatus -- Strom*.
-+
-Der Wert beider Attribute sollte Online sein.
-
-. Wenn der Speicherstatus -- gewünscht auf schreibgeschützt eingestellt ist, führen Sie die folgenden Schritte aus:
-+
-.. Klicken Sie auf die Registerkarte *Konfiguration*.
-.. Wählen Sie aus der Dropdown-Liste *Storage State -- gewünschte* die Option *Online* aus.
-.. Klicken Sie Auf *Änderungen Übernehmen*.
-.. Klicken Sie auf die Registerkarte *Übersicht* und bestätigen Sie, dass die Werte von *Speicherzustand -- gewünscht* und *Speicherzustand -- Aktuell* auf Online aktualisiert werden.
-
-
+. Wählen Sie *NODES* > *_Storage Node_* > *Tasks* aus.
+. Wenn die Dropdown-Liste *Speicherstatus* auf Schreibgeschützt oder Offline eingestellt ist, wählen Sie *Online* aus.
+. Wählen Sie *Speichern*.
 

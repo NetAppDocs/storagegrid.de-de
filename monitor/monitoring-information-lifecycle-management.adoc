@@ -52,11 +52,11 @@ NOTE: Die Diagramme auf der Seite *NODES* werden in einem zukünftigen StorageGR
 ** *Evaluationsrate (Objects/sec)*: Die aktuelle Rate, mit der Objekte anhand der ILM-Richtlinie im Grid ausgewertet werden.
 
 
-. Sehen Sie sich im Abschnitt ILM-Warteschlange die folgenden Attribute an.
 +
 
 NOTE: Der Abschnitt zur ILM-Warteschlange ist nur für das Raster enthalten. Diese Informationen werden auf der Registerkarte ILM für einen Standort oder Storage Node nicht angezeigt.
 
+. Sehen Sie sich im Abschnitt ILM-Warteschlange die folgenden Attribute an.
 +
 ** *Scan-Zeitraum - geschätzt*: Die geschätzte Zeit, um einen vollständigen ILM-Scan aller Objekte durchzuführen.
 +
@@ -65,12 +65,9 @@ NOTE: Ein vollständiger Scan gewährleistet nicht, dass ILM auf alle Objekte an
 
 ** *Reparaturversuche*: Die Gesamtzahl der Objektreparaturoperationen für replizierte Daten, die versucht wurden. Diese Zählung erhöht sich jedes Mal, wenn ein Storage-Node versucht, ein Objekt mit hohem Risiko zu reparieren. Risikobehaftete ILM-Reparaturen werden priorisiert, wenn das Grid besetzt wird.
 +
-
-NOTE: Die Reparatur desselben Objekts erhöht sich möglicherweise erneut, wenn die Replikation nach der Reparatur fehlgeschlagen ist.
-
+Die Reparatur desselben Objekts erhöht sich möglicherweise erneut, wenn die Replikation nach der Reparatur fehlgeschlagen ist. + Diese Attribute können nützlich sein, wenn Sie den Fortschritt der Storage Node Volume Recovery überwachen. Wenn die Anzahl der versuchten Reparaturen gestoppt wurde und ein vollständiger Scan abgeschlossen wurde, wurde die Reparatur wahrscheinlich abgeschlossen.
 
 
-+
-Diese Attribute können nützlich sein, wenn Sie den Fortschritt der Wiederherstellung von Storage Node Volumes überwachen. Wenn die Anzahl der versuchten Reparaturen gestoppt wurde und ein vollständiger Scan abgeschlossen wurde, wurde die Reparatur wahrscheinlich abgeschlossen.
 
+. Alternativ können Sie auch eine Prometheus-Abfrage für und `storagegrid_ilm_repairs_attempted` einreichen `storagegrid_ilm_scan_period_estimated_minutes`.
 

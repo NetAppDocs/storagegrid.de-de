@@ -42,7 +42,7 @@ Knoten können nicht aus dem Grid-Netzwerk entfernt werden.
 NOTE: Das Austauschen von IP-Adressen ist nicht zulässig. Wenn Sie IP-Adressen zwischen Grid-Nodes austauschen müssen, müssen Sie eine temporäre IP-Adresse verwenden.
 
 
-NOTE: Wenn Single Sign-On (SSO) für Ihr StorageGRID-System aktiviert ist und Sie die IP-Adresse eines Admin-Knotens ändern, ist zu beachten, dass jedes Vertrauen, das mit der IP-Adresse des Admin-Knotens konfiguriert wurde (anstelle des vollständig qualifizierten Domänennamens, wie empfohlen), ungültig wird. Sie können sich nicht mehr bei dem Node anmelden. Unmittelbar nach dem Ändern der IP-Adresse müssen Sie das Vertrauen des Knotens in Active Directory Federation Services (AD FS) mit der neuen IP-Adresse aktualisieren oder neu konfigurieren. Siehe die Anleitung für link:../admin/configuring-sso.html["SSO wird konfiguriert"].
+NOTE: Wenn Single Sign-On (SSO) für Ihr StorageGRID-System aktiviert ist und Sie die IP-Adresse eines Admin-Knotens ändern, ist zu beachten, dass jedes Vertrauen, das mit der IP-Adresse des Admin-Knotens konfiguriert wurde (anstelle des vollständig qualifizierten Domänennamens, wie empfohlen), ungültig wird. Sie können sich nicht mehr bei dem Node anmelden. Unmittelbar nach dem Ändern der IP-Adresse müssen Sie das Vertrauen des Knotens in Active Directory Federation Services (AD FS) mit der neuen IP-Adresse aktualisieren oder neu konfigurieren. Siehe die Anleitung für link:../admin/configure-sso.html["SSO wird konfiguriert"].
 
 
 NOTE: Alle Änderungen, die Sie mit dem Change IP-Tool an das Netzwerk vornehmen, werden an die Installer-Firmware für die StorageGRID-Appliances übertragen. Auf diese Weise wird bei einer erneuten Installation der StorageGRID Software auf einer Appliance oder beim Einsatz einer Appliance in den Wartungsmodus die Netzwerkkonfiguration korrekt ausgeführt.
@@ -208,3 +208,44 @@ Nachdem Sie Änderungen angewendet oder durchgeführt haben, wird ein neues Wied
 
 
 
+
+
+
+== Vorübergehende Änderung der LACP PDU-Rate
+
+Um Wartungsmaßnahmen an Netzwerkkomponenten durchzuführen, die in Ihrer Appliance installiert sind, wie z. B. das Aktualisieren der NIC-Firmware, können Sie die aktuelle LACP-PDU-Rateneinstellung überprüfen. Sie können die LACP PDU-Rate bei Bedarf auch nicht dauerhaft zwischen schnell und langsam umschalten.
+
+
+NOTE: Informationen über permanente Änderungen an der LACP PDU-Rate finden Sie unter https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/configuring-network-links.html["Netzwerkverbindungen konfigurieren"^].
+
+.Bevor Sie beginnen
+* Der Admin-Node wird installiert und ausgeführt.
+* Sie haben die `Passwords.txt` Datei.
+
+
+.Schritte
+. Melden Sie sich beim primären Admin-Node an:
++
+.. Geben Sie den folgenden Befehl ein: `ssh admin@primary_Admin_Node_IP`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+.. Geben Sie den folgenden Befehl ein, um zu root zu wechseln: `su -`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
++
+Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `#`.
+
+
+
+. Geben Sie den folgenden Befehl ein, um die aktuelle LACP PDU-Rateneinstellung zu überprüfen:
++
+`run-each-node --parallel --port 8022 '/usr/sbin/set-lacp-rate.sh --lacprate'`
+
+. Geben Sie den folgenden Befehl ein, um vorübergehend die LACP PDU-Rate zu ändern:
++
+`run-each-node --parallel --port 8022 '/usr/sbin/set-lacp-rate.sh --lacprate _<speed>_'`
+
++
+Wo `_<version-number>_` ist `fast` oder `slow`.
+
+
+
+Die LACP PDU-Rate wird beim nächsten Neustart der Appliance auf die vorherige Einstellung zurückgesetzt.

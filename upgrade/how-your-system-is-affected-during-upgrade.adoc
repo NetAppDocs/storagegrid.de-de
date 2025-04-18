@@ -73,12 +73,6 @@ Nachdem das Upgrade abgeschlossen ist, können Sie alle Upgrade-bezogenen Warnme
 
 
 
-== Viele SNMP-Benachrichtigungen werden erzeugt
-
-Beachten Sie, dass möglicherweise eine große Anzahl von SNMP-Benachrichtigungen generiert werden kann, wenn Grid-Knoten angehalten und während des Upgrades neu gestartet werden. Um zu viele Benachrichtigungen zu vermeiden, deaktivieren Sie das Kontrollkästchen *Enable SNMP Agent Notifications* (*CONFIGURATION* > *Monitoring* > *SNMP Agent*), um SNMP-Benachrichtigungen vor dem Start des Upgrades zu deaktivieren. Aktivieren Sie dann die Benachrichtigungen wieder, nachdem das Upgrade abgeschlossen ist.
-
-
-
 == Konfigurationsänderungen sind eingeschränkt
 
 
@@ -102,23 +96,4 @@ Bis die Aufgabe * Final Upgrade Steps* abgeschlossen ist:
 
 * Führen Sie keine Erweiterungsschritte durch.
 * Führen Sie keine Stilllegungsverfahren durch.
-
-
-
-
-== Sie können keine Bucket-Details anzeigen oder Buckets im Tenant Manager managen
-
-Während des Upgrades auf StorageGRID 11.9 (d. h. während das System als Umgebung mit gemischten Versionen läuft) können Sie keine Bucket-Details anzeigen oder Buckets mithilfe des Tenant Manager managen. Auf der Seite Buckets in Tenant Manager wird einer der folgenden Fehler angezeigt:
-
-* Sie können diese API nicht verwenden, während Sie ein Upgrade auf 11.9 durchführen.
-* Sie können keine Details zur Bucket-Versionierung im Tenant Manager anzeigen, während Sie ein Upgrade auf 11.9 durchführen.
-
-
-Dieser Fehler wird behoben, nachdem die Aktualisierung auf 11.9 abgeschlossen ist.
-
-.Behelfslösung
-Solange das Upgrade 11.9 läuft, können Sie mit den folgenden Tools Bucket-Details anzeigen oder Buckets managen, anstatt den Tenant Manager zu verwenden:
-
-* Zum Durchführen von Standard-S3-Operationen für einen Bucket verwenden Sie entweder die link:../s3/operations-on-buckets.html["S3-REST-API"] oder die link:../tenant/understanding-tenant-management-api.html["Mandantenmanagement-API"].
-* Verwenden Sie die Mandantenmanagement-API, um benutzerdefinierte StorageGRID-Vorgänge für einen Bucket auszuführen (z. B. Anzeigen und Ändern der Bucket-Konsistenz, Aktivieren oder Deaktivieren von Updates der letzten Zugriffszeit oder Konfigurieren der Suchintegration).
 

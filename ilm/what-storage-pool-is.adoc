@@ -16,7 +16,7 @@ Ein Speicherpool ist eine logische Gruppierung von Storage-Nodes.
 Bei der Installation von StorageGRID wird automatisch ein Speicherpool pro Standort erstellt. Sie können zusätzliche Speicherpools je nach Bedarf konfigurieren.
 
 
-NOTE: Storage-Nodes können während der Installation so konfiguriert werden, dass sie Objektdaten und Objektmetadaten oder nur Objektmetadaten enthalten. Nur Metadaten-Storage-Nodes können nicht in Storage-Pools verwendet werden. Weitere Informationen finden Sie unter link:../primer/what-storage-node-is.html#types-of-storage-nodes["Typen von Storage-Nodes"].
+NOTE: Storage-Nodes können während der Installation so konfiguriert werden, dass sie Objektdaten und Metadaten („kombinierter“ Storage Node), nur Objektmetadaten oder nur Objektdaten enthalten. Nur Metadaten-Storage-Nodes können nicht in Storage-Pools verwendet werden. Weitere Informationen finden Sie unter link:../primer/what-storage-node-is.html#types-of-storage-nodes["Typen von Storage-Nodes"].
 
 Storage-Pools haben zwei Attribute:
 

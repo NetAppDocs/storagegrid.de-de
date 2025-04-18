@@ -347,7 +347,7 @@ Weitere Informationen zu dieser Aufgabe finden Sie unter link:creating-tenant-ac
 +
 Mandantennamen müssen nicht eindeutig sein. Wenn das Mandantenkonto erstellt wird, erhält es eine eindeutige, numerische Konto-ID.
 
-. Definieren Sie den Root-Zugriff für das Mandantenkonto, je nachdem, ob Ihr StorageGRID-System link:using-identity-federation.html["Identitätsföderation"], link:configuring-sso.html["Single Sign On (SSO)"]oder beides verwendet.
+. Definieren Sie den Root-Zugriff für das Mandantenkonto, je nachdem, ob Ihr StorageGRID-System link:using-identity-federation.html["Identitätsföderation"], link:how-sso-works.html["Single Sign On (SSO)"]oder beides verwendet.
 +
 [cols="1a,2a"]
 |===

@@ -1,0 +1,22 @@
+---
+permalink: monitor/using-task-tab.html 
+sidebar: sidebar 
+keywords: Tasks tab, rename node, reboot node, storage state, maintenance mode 
+summary: Die Registerkarte Aufgaben wird für alle Nodes angezeigt. Sie können auf dieser Registerkarte einen Node umbenennen oder neu booten oder einen Appliance-Node in den Wartungsmodus versetzen. Für Storage-Nodes können Sie den Speicherstatus festlegen. 
+---
+= Verwenden Sie die Registerkarte Aufgaben
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Registerkarte Aufgaben wird für alle Nodes angezeigt. Sie können auf dieser Registerkarte einen Node umbenennen oder neu booten oder einen Appliance-Node in den Wartungsmodus versetzen. Für Storage-Nodes können Sie den Speicherstatus festlegen.
+
+Die vollständigen Anforderungen und Anweisungen für die einzelnen Optionen auf dieser Registerkarte finden Sie im Folgenden:
+
+* link:../maintain/rename-grid-site-node-overview.html["Benennen Sie Raster, Standorte und Nodes um"]
+* link:../maintain/rebooting-grid-node-from-grid-manager.html["Grid-Node neu booten"]
+* https://docs.netapp.com/us-en/storagegrid-appliances/commonhardware/placing-appliance-into-maintenance-mode.html["Stellen Sie das Gerät in den Wartungsmodus"^]
+* Sie überprüfen oder legen den Speicherstatus eines Storage-Node fest, nachdem Sie dem Storage-Node Direct-Attach- oder SAN-Volumes hinzugefügt haben oder nachdem Sie einen Storage-Node wiederhergestellt haben. Diese Anweisungen finden Sie in den Themen, die diese Aufgaben beschreiben.
+

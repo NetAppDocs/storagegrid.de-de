@@ -15,6 +15,8 @@ Zu den Plattform-Services zählen die CloudMirror-Replizierung, Ereignisbenachri
 
 Wenn Sie Plattformservices für S3-Mandantenkonten aktivieren, müssen Sie Ihr Grid so konfigurieren, dass Mandanten auf die externen Ressourcen zugreifen können, die für die Nutzung dieser Services erforderlich sind.
 
+Plattformdienste werden nicht für unterstütztlink:../tenant/manage-branch-buckets.html["Eimer verzweigen"].
+
 
 
 == Replizierung von CloudMirror
@@ -23,17 +25,16 @@ Der StorageGRID CloudMirror Replizierungsservice wird verwendet, um bestimmte Ob
 
 So können Sie beispielsweise CloudMirror Replizierung verwenden, um spezifische Kundendaten in Amazon S3 zu spiegeln und anschließend AWS Services für Analysen Ihrer Daten nutzen.
 
+Die CloudMirror-Replizierung weist einige wichtige Ähnlichkeiten und Unterschiede zur Grid-übergreifenden Replizierungsfunktion auf. Weitere Informationen finden Sie unter link:../admin/grid-federation-compare-cgr-to-cloudmirror.html["Vergleichen Sie Grid-Replizierung und CloudMirror Replizierung"].
 
-NOTE: Die CloudMirror-Replizierung weist einige wichtige Ähnlichkeiten und Unterschiede zur Grid-übergreifenden Replizierungsfunktion auf. Weitere Informationen finden Sie unter link:../admin/grid-federation-compare-cgr-to-cloudmirror.html["Vergleichen Sie Grid-Replizierung und CloudMirror Replizierung"].
 
-
-NOTE: Die CloudMirror-Replizierung wird nicht unterstützt, wenn im Quell-Bucket S3-Objektsperre aktiviert ist.
+NOTE: Die CloudMirror-Replizierung wird nicht unterstützt, wenn für den Quell-Bucket S3 Object Lock aktiviert ist.
 
 
 
 == Benachrichtigungen
 
-Bucket-spezifische Ereignisbenachrichtigungen werden verwendet, um Benachrichtigungen über bestimmte Aktionen zu senden, die an Objekte ausgeführt werden, und an ein bestimmtes externes Kafka-Cluster oder Amazon Simple Notification Service zu senden.
+Bucket-spezifische Ereignisbenachrichtigungen werden verwendet, um Benachrichtigungen über bestimmte Aktionen zu senden, die an Objekte ausgeführt werden, und zwar an einen bestimmten externen Kafka-Cluster, Webhook-Endpunkt oder Amazon Simple Notification Service.
 
 Beispielsweise können Sie Warnmeldungen so konfigurieren, dass sie an Administratoren über jedes Objekt, das einem Bucket hinzugefügt wurde, gesendet werden, wo die Objekte Protokolldateien darstellen, die mit einem kritischen Systemereignis verbunden sind.
 

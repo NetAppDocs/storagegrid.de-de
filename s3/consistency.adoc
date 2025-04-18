@@ -1,10 +1,10 @@
 ---
-permalink: s3/consistency-controls.html 
+permalink: s3/consistency.html 
 sidebar: sidebar 
 keywords: consistency, consistency control, consistency values 
 summary: Konsistenz bietet ein Gleichgewicht zwischen der Verfügbarkeit der Objekte und der Konsistenz dieser Objekte über verschiedene Storage-Nodes und Standorte hinweg. Sie können die Konsistenz entsprechend den Anforderungen Ihrer Anwendung ändern. 
 ---
-= Konsistenzwerte
+= Konsistenz
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,15 +13,15 @@ summary: Konsistenz bietet ein Gleichgewicht zwischen der Verfügbarkeit der Obj
 [role="lead"]
 Konsistenz bietet ein Gleichgewicht zwischen der Verfügbarkeit der Objekte und der Konsistenz dieser Objekte über verschiedene Storage-Nodes und Standorte hinweg. Sie können die Konsistenz entsprechend den Anforderungen Ihrer Anwendung ändern.
 
-Standardmäßig garantiert StorageGRID eine Lese-/Nachher-Konsistenz für neu erstellte Objekte. Jeder GET nach einem erfolgreich abgeschlossenen PUT wird in der Lage sein, die neu geschriebenen Daten zu lesen. Überschreibungen vorhandener Objekte, Metadatenaktualisierungen und -Löschungen sind schließlich konsistent. Überschreibungen dauern in der Regel nur wenige Sekunden oder Minuten, können jedoch bis zu 15 Tage in Anspruch nehmen.
+Standardmäßig garantiert StorageGRID eine Lese-/Nachher-Konsistenz für neu erstellte Objekte. Jeder GET nach einem erfolgreich abgeschlossenen PUT wird in der Lage sein, die neu geschriebenen Daten zu lesen. Überschreibungen vorhandener Objekte, Metadatenaktualisierungen und -Löschungen sind schließlich konsistent.
 
 Wenn Sie Objektoperationen mit einer anderen Konsistenz durchführen möchten, haben Sie folgende Möglichkeiten:
 
-* Geben Sie eine Konsistenz für <<bucket-consistency-control,Jeden Eimer>>.
+* Geben Sie eine Konsistenz für <<bucket-consistency,Jeden Eimer>>.
 * Geben Sie eine Konsistenz für <<api-operation-consistency-control,Jeder API-Vorgang>>.
 * Ändern Sie die standardmäßige Konsistenz für das gesamte Grid, indem Sie eine der folgenden Aufgaben ausführen:
 +
-** Gehen Sie im Grid Manager zu *CONFIGURATION* > *System* > *Storage settings* > *Default Consistency*.
+** Gehen Sie im Grid Manager zu *CONFIGURATION* > *System* > *Storage settings* > *Default Bucket Consistency*.
 ** .
 +
 
@@ -79,7 +79,7 @@ NOTE: Sie müssen für die PutObject- und GetObject-Operationen dieselbe Konsist
 
 
 
-== [[Bucket-Consistency-control]]Geben Sie die Konsistenz für Bucket an
+== [[Bucket-Consistency]]Geben Sie die Konsistenz für Bucket an
 
 Zum Festlegen der Konsistenz für Bucket können Sie die StorageGRID-Anforderung verwendenlink:put-bucket-consistency-request.html["PUT Bucket-Konsistenz"]. Sie können dies aber auch link:../tenant/manage-bucket-consistency.html#change-bucket-consistency["Ändern der Konsistenz eines Buckets"]über den Tenant Manager tun.
 
@@ -92,7 +92,7 @@ Beachten Sie beim Festlegen der Konsistenz für einen Bucket Folgendes:
 
 
 
-== [[How-Consistency-Controls-and-ILM-rules-interact]]wie Konsistenz- und ILM-Regeln interagieren, um den Datenschutz zu beeinträchtigen
+== [[How-Consistency-and-ILM-rules-interact]]wie Konsistenz- und ILM-Regeln interagieren, um den Datenschutz zu beeinträchtigen
 
 Sowohl Ihre Wahl der Konsistenz als auch Ihre ILM-Regel beeinflussen die Art und Weise, wie Objekte geschützt werden. Diese Einstellungen können interagieren.
 

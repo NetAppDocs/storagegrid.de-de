@@ -48,10 +48,7 @@ So installieren Sie die StorageGRID-Software auf einer Service-Appliance:
 +
 Die Startseite des StorageGRID-Appliance-Installationsprogramms wird angezeigt.
 
-+
-image::../media/services_appliance_installer_gateway_node.png[Home Page Für Appliance Installer]
-
-. So installieren Sie einen primären Admin-Knoten:
+. So installieren Sie einen primären Admin-Node:
 +
 .. Wählen Sie im Abschnitt This Node für *Node Type* die Option *Primary Admin* aus.
 .. Geben Sie im Feld *Knotenname* den gleichen Namen ein, der für den Knoten verwendet wurde, den Sie wiederherstellen, und klicken Sie auf *Speichern*.
@@ -62,9 +59,6 @@ Wenn die Version der Software korrekt ist, die zur Installation bereit ist, fahr
 .. Wenn Sie eine andere Version der Software hochladen möchten, wählen Sie im Menü * Erweitert* die Option *StorageGRID-Software hochladen*.
 +
 Die Seite StorageGRID-Software hochladen wird angezeigt.
-
-+
-image::../media/upload_sw_for_pa_on_sga1000.png[Screenshot, der durch umgebenden Text beschrieben wird]
 
 .. Klicken Sie auf *Durchsuchen*, um das *Softwarepaket* und die Checksum-Datei* für die StorageGRID-Software hochzuladen.
 +
@@ -113,7 +107,7 @@ Automatische Erkennung aller verbundenen primären Admin-Nodes
 |===
 . [[Installation_Section_Step]]im Abschnitt Installation müssen Sie bestätigen, dass der aktuelle Status bereit ist, die Installation des Knotennamens zu starten, und dass die Schaltfläche *Installation starten* aktiviert ist.
 +
-Wenn die Schaltfläche *Installation starten* nicht aktiviert ist, müssen Sie möglicherweise die Netzwerkkonfiguration oder die Porteinstellungen ändern. Anweisungen hierzu finden Sie in der Wartungsanleitung Ihres Geräts.
+Wenn die Schaltfläche *Installation starten* nicht aktiviert ist, müssen Sie möglicherweise die Netzwerkkonfiguration oder die Porteinstellungen ändern. Beachten Sie die Wartungsanleitungen für Ihr Gerät.
 
 . Klicken Sie auf der Startseite des StorageGRID-Appliance-Installationsprogramms auf *Installation starten*.
 +

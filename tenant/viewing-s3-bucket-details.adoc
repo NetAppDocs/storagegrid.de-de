@@ -68,7 +68,7 @@ Erstellungsdatum:: Datum und Uhrzeit der Erstellung des Buckets. Diese Spalte is
 . Um Details für einen bestimmten Bucket anzuzeigen, wählen Sie den Bucket-Namen aus der Tabelle aus.
 +
 .. Zeigen Sie die zusammenfassenden Informationen oben auf der Webseite an, um die Details für den Bucket zu bestätigen, z. B. Region und Objektanzahl.
-.. Zeigen Sie die Leiste für die Kapazitätsgrenze an. Wenn die Nutzung 100 % oder fast 100 % beträgt, sollten Sie die Begrenzung erhöhen oder einige Objekte löschen.
+.. Zeigen Sie die Balken für die Kapazitätsgrenze und die maximale Objektanzahl für die Nutzung an. Wenn die Auslastung 100 % oder fast 100 % beträgt, sollten Sie die Begrenzung erhöhen oder einige Objekte löschen.
 .. Wählen Sie bei Bedarf *Objekte im Bucket löschen* und *Bucket löschen* aus.
 +
 [CAUTION]
@@ -88,6 +88,7 @@ Achten Sie bei der Auswahl dieser Optionen genau auf die Warnhinweise. Weitere I
 **** link:manage-bucket-consistency.html["Management der Bucket-Konsistenz"]
 **** link:enabling-or-disabling-last-access-time-updates.html["Aktualisierung der Uhrzeit des letzten Zugriffs"]
 **** link:../tenant/creating-s3-bucket.html#capacity-limit["Kapazitätsgrenze"]
+**** link:../tenant/creating-s3-bucket.html#object-count-limit["Limit für die Objektanzahl"]
 **** link:changing-bucket-versioning.html["Objektversionierung"]
 **** link:using-s3-object-lock.html["S3-Objektsperre"]
 **** link:update-default-retention-settings.html["Standardmäßige Bucket-Aufbewahrung"]
@@ -97,10 +98,11 @@ Achten Sie bei der Auswahl dieser Optionen genau auf die Warnhinweise. Weitere I
 *** *Plattform-Services*: link:considerations-for-platform-services.html["Management von Plattform-Services"] (Wenn für den Mieter erlaubt)
 *** *Bucket Access*: Optionen anzeigen oder ändern. Sie müssen über spezifische Zugriffsberechtigungen verfügen.
 +
-**** Konfigurieren Sie link:configuring-cross-origin-resource-sharing-cors.html["Cross-Origin Resource Sharing (CORS)"] so, dass der Bucket und die Objekte im Bucket für Webanwendungen in anderen Domänen verfügbar sind.
+**** Konfigurieren Sie link:configuring-cross-origin-resource-sharing-for-buckets-and-objects.html["CORS für Buckets und Objekte"] so, dass der Bucket und die Objekte im Bucket für Webanwendungen in anderen Domänen verfügbar sind.
 **** link:../tenant/manage-bucket-policy.html["Kontrolle des Benutzerzugriffs"] Für einen S3-Bucket und Objekte in diesem Bucket.
 
 
+*** *Zweige*: Zeigt die Liste der Zweige-Eimer für den Eimer an. link:../tenant/manage-branch-buckets.html["Erstellen Sie einen neuen Branch Bucket oder verwalten Sie Branch Buckets"].
 
 
 

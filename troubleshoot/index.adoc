@@ -477,9 +477,7 @@ Erfassen von Protokolldateien und Systemdaten für Ihr System Wählen Sie *SUPPO
 
 Sie können Protokolle für das gesamte Grid oder für ausgewählte Nodes sammeln.
 
-Wenn Sie Protokolle nur für ausgewählte Knoten erfassen, müssen Sie mindestens einen Speicherknoten mit dem ADC-Service einschließen. (Die ersten drei Storage-Nodes an einem Standort enthalten den ADC-Service.)
-
-link:../monitor/collecting-log-files-and-system-data.html["Erfassen von Protokolldateien und Systemdaten"]
+Wenn Sie Protokolle nur für ausgewählte Knoten erfassen, müssen Sie mindestens einen Speicherknoten mit dem ADC-Service einschließen. Die ersten drei an einem Standort installierten Storage Nodes umfassen den ADC-Dienst.
 
 
 

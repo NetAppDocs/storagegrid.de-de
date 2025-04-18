@@ -19,7 +19,7 @@ Wenn Sie ein StorageGRID-System für die Verwendung mit FabricPool konfigurieren
 
 FabricPool-Workloads verfügen oft über eine hohe Rate an Lesevorgängen, die ein hohes Volumen an Audit-Nachrichten erzeugen können.
 
-* Wenn Sie keine Aufzeichnung von Client-Leseoperationen für FabricPool oder eine andere S3-Anwendung benötigen, gehen Sie optional zu *CONFIGURATION* > *Monitoring* > *Audit und Syslog-Server*. Ändern Sie die Einstellung *Client reads* auf *Error*, um die Anzahl der im Auditprotokoll aufgezeichneten Überwachungsmeldungen zu verringern. Weitere Informationen finden Sie unter link:../monitor/configure-audit-messages.html["Konfigurieren von Überwachungsmeldungen und Protokollzielen"] .
+* Wenn Sie keine Aufzeichnung von Client-Leseoperationen für FabricPool oder eine andere S3-Anwendung benötigen, gehen Sie optional zu *CONFIGURATION* > *Monitoring* > *Audit und Syslog-Server*. Ändern Sie die Einstellung *Client reads* auf *Error*, um die Anzahl der im Auditprotokoll aufgezeichneten Überwachungsmeldungen zu verringern. Weitere Informationen finden Sie unter link:../monitor/configure-audit-messages.html["Konfigurieren von Audit-Meldungen und externem Syslog-Server"] .
 * Wenn Sie über ein großes Grid verfügen, mehrere Arten von S3-Applikationen verwenden oder alle Audit-Daten behalten möchten, konfigurieren Sie einen externen Syslog-Server und speichern Sie Audit-Informationen Remote. Durch die Verwendung eines externen Servers werden die Auswirkungen der Protokollierung von Audit-Nachrichten auf die Performance minimiert, ohne dass die Vollständigkeit der Audit-Daten reduziert wird. Weitere Informationen finden Sie unter link:../monitor/considerations-for-external-syslog-server.html["Überlegungen für externen Syslog-Server"] .
 
 

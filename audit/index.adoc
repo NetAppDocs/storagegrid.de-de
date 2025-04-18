@@ -17,4 +17,4 @@ Diese Anweisungen richten sich an Administratoren, die für die Erstellung von B
 
 Um die Text-Log-Datei verwenden zu können, müssen Sie auf die konfigurierte Revisionsfreigabe im Admin-Knoten zugreifen können.
 
-Informationen über das Konfigurieren von Meldungsebenen und die Verwendung eines externen Syslog-Servers finden Sie unter link:../monitor/configure-audit-messages.html["Konfigurieren von Überwachungsmeldungen und Protokollzielen"].
+Informationen über das Konfigurieren von Meldungsebenen und die Verwendung eines externen Syslog-Servers finden Sie unter link:../monitor/configure-audit-messages.html["Konfigurieren von Audit-Meldungen und externem Syslog-Server"].

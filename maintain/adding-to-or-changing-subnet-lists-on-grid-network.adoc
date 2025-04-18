@@ -150,6 +150,6 @@ Der fehlgeschlagene Vorgang kann später erneut versucht werden, indem Sie im Ha
 
 +
 
-CAUTION: Die Recovery Package-Datei muss gesichert sein, weil sie Verschlüsselungsschlüssel und Passwörter enthält, die zum Abrufen von Daten vom StorageGRID-System verwendet werden können.
+CAUTION: Die Wiederherstellungspaket-Datei muss gesichert werden, da sie Verschlüsselungsschlüssel und Passwörter enthält, die verwendet werden können, um Daten vom StorageGRID-System zu erhalten.
 
 

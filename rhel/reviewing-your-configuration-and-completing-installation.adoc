@@ -24,14 +24,14 @@ image::../media/11_gmi_installer_summary_page.gif[Dieses Bild wird durch den umg
 
 NOTE: Wenn ein Knoten für die Verwendung des Client-Netzwerks konfiguriert ist, wechselt das Standard-Gateway für diesen Knoten vom Grid-Netzwerk zum Client-Netzwerk, wenn Sie auf *Installieren* klicken. Wenn die Verbindung unterbrochen wird, müssen Sie sicherstellen, dass Sie über ein zugängliches Subnetz auf den primären Admin-Node zugreifen. Weitere Informationen finden Sie unter link:../network/index.html["Netzwerkrichtlinien"] .
 
-. Klicken Sie Auf *Download Wiederherstellungspaket*.
+. Klicken Sie auf *Wiederherstellungspaket herunterladen*.
 +
-Wenn die Installation bis zu dem Punkt fortschreitet, an dem die Rastertopologie definiert ist, werden Sie aufgefordert, die Wiederherstellungspaket-Datei herunterzuladen (`.zip`) und zu bestätigen, dass Sie erfolgreich auf den Inhalt dieser Datei zugreifen können. Sie müssen die Recovery Package-Datei herunterladen, damit Sie das StorageGRID-System wiederherstellen können, wenn ein oder mehrere Grid-Knoten ausfallen. Die Installation wird im Hintergrund fortgesetzt, aber Sie können die Installation nicht abschließen und erst auf das StorageGRID-System zugreifen, wenn Sie diese Datei herunterladen und überprüfen.
+Wenn die Installation bis zu dem Punkt fortschreitet, an dem die Grid-Topologie definiert ist, werden Sie aufgefordert, die Wiederherstellungspaket-Datei herunterzuladen (`.zip`) und zu bestätigen, dass Sie erfolgreich auf den Inhalt dieser Datei zugreifen können. Sie müssen die Wiederherstellungspaket-Datei herunterladen, damit Sie das StorageGRID System wiederherstellen können, wenn ein oder mehrere Grid-Nodes ausfallen. Die Installation wird im Hintergrund fortgesetzt, aber Sie können die Installation nicht abschließen und erst auf das StorageGRID-System zugreifen, wenn Sie diese Datei herunterladen und überprüfen.
 
 . Vergewissern Sie sich, dass Sie den Inhalt der Datei extrahieren und anschließend an zwei sicheren und separaten Speicherorten speichern können `.zip`.
 +
 
-CAUTION: Die Recovery Package-Datei muss gesichert sein, weil sie Verschlüsselungsschlüssel und Passwörter enthält, die zum Abrufen von Daten vom StorageGRID-System verwendet werden können.
+CAUTION: Die Wiederherstellungspaket-Datei muss gesichert werden, da sie Verschlüsselungsschlüssel und Passwörter enthält, die verwendet werden können, um Daten vom StorageGRID-System zu erhalten.
 
 . Aktivieren Sie das Kontrollkästchen *Ich habe die Wiederherstellungspaket-Datei erfolgreich heruntergeladen und verifiziert*, und klicken Sie auf *Weiter*.
 +

@@ -39,7 +39,7 @@ In diesen Anweisungen wird beschrieben, wie Sie:
 
 * link:managing-alerts.html["Verwalten von Meldungen"]
 * link:logs-files-reference.html["Anzeigen von Protokolldateien"]
-* link:configure-audit-messages.html["Konfigurieren von Überwachungsmeldungen und Protokollzielen"]
+* link:configure-audit-messages.html["Konfigurieren von Audit-Meldungen und externem Syslog-Server"]
 * link:considerations-for-external-syslog-server.html["Verwenden Sie einen externen Syslog-Server"] Zur Erfassung von Audit-Informationen
 * link:using-snmp-monitoring.html["Verwenden Sie SNMP für die Überwachung"]
 * link:using-charts-and-reports.html["Zusätzliche StorageGRID-Daten abrufen"], Einschließlich Kennzahlen und Diagnose

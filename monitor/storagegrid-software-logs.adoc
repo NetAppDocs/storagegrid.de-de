@@ -14,7 +14,7 @@ summary: Sie können StorageGRID-Protokolle verwenden, um Probleme zu beheben.
 Sie können StorageGRID-Protokolle verwenden, um Probleme zu beheben.
 
 
-NOTE: Wenn Sie Ihre Protokolle an einen externen Syslog-Server senden oder das Ziel von Audit-Informationen wie den und `nms.log` ändern möchten `bycast.log`, siehe link:../monitor/configure-audit-messages.html#["Konfigurieren von Überwachungsmeldungen und Protokollzielen"].
+NOTE: Wenn Sie Ihre Protokolle an einen externen Syslog-Server senden oder das Ziel von Audit-Informationen wie den und `nms.log` ändern möchten `bycast.log`, siehe link:../monitor/configure-audit-messages.html#["Konfigurieren von Audit-Meldungen und externem Syslog-Server"].
 
 
 

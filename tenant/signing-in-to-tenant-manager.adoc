@@ -53,13 +53,7 @@ Der angezeigte Anmeldebildschirm hängt von der eingegebenen URL und davon ab, o
 Wenn StorageGRID SSO nicht verwendet, wird einer der folgenden Bildschirme angezeigt:
 
 ** Die Anmeldeseite des Grid Manager. Wählen Sie den Link *Tenant Sign-in*.
-+
-image::../media/tenant_login_link.png[Link für die Anmeldung eines Mandanten auf der Anmeldeseite des Grid Manager]
-
-** Die Anmeldeseite von Tenant Manager. Das Feld *Account* ist möglicherweise bereits ausgefüllt, wie unten gezeigt.
-+
-image::../media/tenant_user_sign_in.png[Anmeldeseite für Mandanten-Manager]
-
+** Die Anmeldeseite von Tenant Manager. Das Feld *Account* ist möglicherweise bereits ausgefüllt.
 +
 ... Wenn die 20-stellige Konto-ID des Mandanten nicht angezeigt wird, wählen Sie den Namen des Mandantenkontos aus, wenn er in der Liste der letzten Konten angezeigt wird, oder geben Sie die Konto-ID ein.
 ... Geben Sie Ihren Benutzernamen und Ihr Kennwort ein.
@@ -77,17 +71,11 @@ Das Dashboard von Tenant Manager wird angezeigt.
 --
 Wenn StorageGRID SSO verwendet, wird einer der folgenden Bildschirme angezeigt:
 
-** Die SSO-Seite Ihres Unternehmens. Beispiel:
-+
-image::../media/sso_organization_page.gif[Beispiel für die Anmeldeseite der Organisation für SSO]
-
+** Die SSO-Seite Ihres Unternehmens.
 +
 Geben Sie Ihre Standard-SSO-Anmeldeinformationen ein, und wählen Sie *Anmelden*.
 
 ** Die SSO-Anmeldeseite für den Tenant Manager.
-+
-image::../media/sign_in_sso.png[Melden Sie sich bei einem Mandantenkonto an, wenn SSO aktiviert ist]
-
 +
 ... Wenn die 20-stellige Konto-ID des Mandanten nicht angezeigt wird, wählen Sie den Namen des Mandantenkontos aus, wenn er in der Liste der letzten Konten angezeigt wird, oder geben Sie die Konto-ID ein.
 ... Wählen Sie *Anmelden*.

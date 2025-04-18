@@ -66,7 +66,7 @@ NOTE: Sie können kein Erasure Coding verwenden, wenn der Storage-Pool zwei Stan
 * Der Speicherpool sollte mindestens Storage Nodes enthalten `_k+m_ +1`, die Objektdaten speichern können.
 +
 
-NOTE: Storage-Nodes können während der Installation so konfiguriert werden, dass sie nur Objektmetadaten und keine Objektdaten enthalten. Weitere Informationen finden Sie unter link:../primer/what-storage-node-is.html#types-of-storage-nodes["Typen von Storage-Nodes"].
+NOTE: Storage-Nodes können während der Installation so konfiguriert werden, dass sie Objektdaten und Metadaten („kombinierter“ Storage Node), nur Objektmetadaten oder nur Objektdaten enthalten. Weitere Informationen finden Sie unter link:../primer/what-storage-node-is.html#types-of-storage-nodes["Typen von Storage-Nodes"].
 
 +
 Die Mindestanzahl der erforderlichen Storage-Nodes ist `k+m`. Durch mindestens einen zusätzlichen Storage-Node können jedoch Ingest- oder ILM-Backlogs verhindert werden, wenn ein erforderlicher Storage-Node vorübergehend nicht verfügbar ist.

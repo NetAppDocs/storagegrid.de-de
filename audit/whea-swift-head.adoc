@@ -2,7 +2,7 @@
 permalink: audit/whea-swift-head.html 
 sidebar: sidebar 
 keywords: storagegrid, audit, message, WHEA, Swift HEAD 
-summary: Wenn ein Swift-Client eine HEAD-Transaktion ausgibt, wird eine Anfrage gestellt, ob ein Konto, Container oder Objekt vorhanden ist, und alle relevanten Metadaten abzurufen. Diese Meldung wird vom Server ausgegeben, wenn die Transaktion erfolgreich ist. 
+summary: Wenn ein Swift-Client einen HEAD-Vorgang ausgibt, wird eine Anfrage gestellt, um die Existenz eines Kontos, Containers oder Objekts zu prüfen und alle relevanten Metadaten abzurufen. Diese Meldung wird vom Server ausgegeben, wenn der Vorgang erfolgreich war. 
 ---
 = WHEA: Schneller KOPF
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Wenn ein Swift-Client eine HEAD-Transaktion ausgibt, wird eine Anfrage 
 
 
 [role="lead"]
-Wenn ein Swift-Client eine HEAD-Transaktion ausgibt, wird eine Anfrage gestellt, ob ein Konto, Container oder Objekt vorhanden ist, und alle relevanten Metadaten abzurufen. Diese Meldung wird vom Server ausgegeben, wenn die Transaktion erfolgreich ist.
+Wenn ein Swift-Client einen HEAD-Vorgang ausgibt, wird eine Anfrage gestellt, um die Existenz eines Kontos, Containers oder Objekts zu prüfen und alle relevanten Metadaten abzurufen. Diese Meldung wird vom Server ausgegeben, wenn der Vorgang erfolgreich war.
 
 [cols="1a,1a,4a"]
 |===
@@ -52,7 +52,7 @@ RSLT
  a| 
 Ergebniscode
  a| 
-Ergebnis der HAUPTTRANSAKTION. Das Ergebnis ist immer:
+Ergebnis der KOPFOPERATION. Das Ergebnis ist immer:
 
 ERFOLGREICH
 

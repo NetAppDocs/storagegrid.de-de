@@ -46,12 +46,12 @@ TIP: Wenn Sie SSO aktivieren, wird eine im Mandantenmanager konfigurierte Identi
 .. Wählen Sie das Mandantenkonto aus und wählen Sie *Aktionen* > *Bearbeiten*.
 .. Wählen Sie auf der Registerkarte Details eingeben die Option *Weiter*.
 .. Wenn das Kontrollkästchen *eigene Identitätsquelle verwenden* aktiviert ist, deaktivieren Sie das Kontrollkästchen und wählen Sie *Speichern* aus.
-+
-image::../media/sso_uses_own_identity_source_for_tenant.png[Mandantenkonto bearbeiten > Kontrollkästchen eigene Identitätsquelle verwenden ist nicht ausgewählt]
+
 
 +
 Die Seite Mandant wird angezeigt.
 
++
 .. Wählen Sie das Mandantenkonto aus, wählen Sie *Anmelden* und melden Sie sich als lokaler Root-Benutzer beim Mandantenkonto an.
 .. Wählen Sie im Mandantenmanager die Option *ZUGRIFFSVERWALTUNG* > *Gruppen* aus.
 .. Stellen Sie sicher, dass mindestens eine föderierte Gruppe aus dem Grid Manager die Root-Zugriffsberechtigung für diesen Mandanten zugewiesen wurde.
