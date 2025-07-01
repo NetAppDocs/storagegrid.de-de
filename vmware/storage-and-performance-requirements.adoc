@@ -68,7 +68,7 @@ Storage-Node
 
 3 LUNs für jeden Speicherknoten auf diesem Host
 
-*Hinweis*: Ein Speicherknoten kann 1 bis 16 Speicher-LUNs haben; mindestens 3 Speicher-LUNs werden empfohlen.
+*Hinweis*: Ein Speicherknoten kann 1 bis 48 Speicher-LUNs haben; mindestens 3 Speicher-LUNs werden empfohlen.
 
 Mindestgröße pro LUN: 4 TB
 
@@ -104,10 +104,10 @@ NOTE: Je nach konfigurierter Audit-Ebene die Größe der Benutzereingaben wie S3
 
 == Storage-Anforderungen für Storage-Nodes
 
-Ein softwarebasierter Speicher-Node kann 1 bis 16 Speicher-Volumes haben - -3 oder mehr Speicher-Volumes werden empfohlen. Jedes Storage-Volume sollte 4 TB oder größer sein.
+Ein softwarebasierter Speicherknoten kann 1 bis 48 Speichervolumes haben; 3 oder mehr Speichervolumes werden empfohlen. Jedes Storage-Volume sollte 4 TB oder größer sein.
 
 
-NOTE: Ein Appliance-Speicherknoten kann bis zu 48 Speicher-Volumes haben.
+NOTE: Ein Appliance-Speicherknoten kann außerdem über bis zu 48 Speichervolumes verfügen.
 
 Wie in der Abbildung dargestellt, reserviert StorageGRID Speicherplatz für Objekt-Metadaten auf dem Storage Volume 0 jedes Storage-Nodes. Alle verbleibenden Speicherplatz auf dem Storage-Volume 0 und anderen Storage-Volumes im Storage-Node werden ausschließlich für Objektdaten verwendet.
 

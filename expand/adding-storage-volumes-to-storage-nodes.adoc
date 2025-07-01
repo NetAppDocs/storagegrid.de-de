@@ -2,7 +2,7 @@
 permalink: expand/adding-storage-volumes-to-storage-nodes.html 
 sidebar: sidebar 
 keywords: storage volumes, expand, expansion, add, storage nodes, adding storage capacity 
-summary: Sie können die Storage-Kapazität von Storage-Nodes mit maximal 16 Storage-Volumes erweitern, indem Sie zusätzliche Storage-Volumes hinzufügen. Möglicherweise müssen Sie Storage Volumes zu mehr als einem Storage Node hinzufügen, um ILM-Anforderungen für replizierte oder mit Erasure Coding versehenen Kopien zu erfüllen. 
+summary: Sie können die Storage-Kapazität von Storage-Nodes mit maximal 48 Storage-Volumes erweitern, indem Sie zusätzliche Storage-Volumes hinzufügen. Möglicherweise müssen Sie Storage Volumes zu mehr als einem Storage Node hinzufügen, um ILM-Anforderungen für replizierte oder mit Erasure Coding versehenen Kopien zu erfüllen. 
 ---
 = Fügen Sie Storage-Volumes zu Storage-Nodes hinzu
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Sie können die Storage-Kapazität von Storage-Nodes mit maximal 16 Sto
 
 
 [role="lead"]
-Sie können die Storage-Kapazität von Storage-Nodes mit maximal 16 Storage-Volumes erweitern, indem Sie zusätzliche Storage-Volumes hinzufügen. Möglicherweise müssen Sie Storage Volumes zu mehr als einem Storage Node hinzufügen, um ILM-Anforderungen für replizierte oder mit Erasure Coding versehenen Kopien zu erfüllen.
+Sie können die Storage-Kapazität von Storage-Nodes mit maximal 48 Storage-Volumes erweitern, indem Sie zusätzliche Storage-Volumes hinzufügen. Möglicherweise müssen Sie Storage Volumes zu mehr als einem Storage Node hinzufügen, um ILM-Anforderungen für replizierte oder mit Erasure Coding versehenen Kopien zu erfüllen.
 
 .Bevor Sie beginnen
 Überprüfen Sie vor dem Hinzufügen von Speicher-Volumes dielink:guidelines-for-adding-object-capacity.html["Richtlinien zum Hinzufügen von Objektkapazität"], um sicherzustellen, dass Sie wissen, wo Volumes hinzugefügt werden müssen, um die Anforderungen Ihrer ILM-Richtlinie zu erfüllen.
@@ -20,7 +20,7 @@ Sie können die Storage-Kapazität von Storage-Nodes mit maximal 16 Storage-Volu
 NOTE: Diese Anweisungen gelten nur für softwarebasierte Speicherknoten. Informationen zum Hinzufügen von Speicher-Volumes zum SG6060 oder SG6160 finden Sie unter https://docs.netapp.com/us-en/storagegrid-appliances/sg6000/adding-expansion-shelf-to-deployed-sg6060.html["Erweiterungs-Shelf zu implementiertem SG6060 hinzufügen"^] oder https://docs.netapp.com/us-en/storagegrid-appliances/sg6100/adding-expansion-shelf-to-deployed-sg6160.html["Erweiterungs-Shelf zu implementiertem SG6160 hinzufügen"^]. Storage-Nodes anderer Appliances können nicht erweitert werden.
 
 .Über diese Aufgabe
-Der zugrunde liegende Storage eines Storage-Node wird in Storage-Volumes unterteilt. Storage Volumes sind blockbasierte Storage-Geräte, die vom StorageGRID System formatiert und zum Speichern von Objekten gemountet werden. Jeder Storage Node kann bis zu 16 Storage Volumes unterstützen, die im Grid Manager als _Object Stores_ bezeichnet werden.
+Der zugrunde liegende Storage eines Storage-Node wird in Storage-Volumes unterteilt. Storage Volumes sind blockbasierte Storage-Geräte, die vom StorageGRID System formatiert und zum Speichern von Objekten gemountet werden. Jeder Storage Node kann bis zu 48 Storage Volumes unterstützen, die im Grid Manager als _Object Stores_ bezeichnet werden.
 
 
 NOTE: Objekt-Metadaten werden immer im Objektspeicher 0 gespeichert.

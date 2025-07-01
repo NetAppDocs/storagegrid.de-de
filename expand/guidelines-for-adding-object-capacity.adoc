@@ -21,7 +21,7 @@ Lesen Sie vor dem Hinzufügen von Storage-Volumes zu vorhandenen Storage-Nodes d
 
 * Sie müssen Ihre aktuellen ILM-Regeln prüfen, um zu bestimmen, wo und wann der verfügbare Speicher für  oder vergrößert link:../ilm/what-replication-is.html["Replizierte Objekte"]link:../ilm/what-erasure-coding-schemes-are.html["Objekte, die mit Erasure Coding codiert wurden"]werden solllink:../expand/adding-storage-volumes-to-storage-nodes.html["Storage-Volumes hinzufügen"].
 * Die Metadatenkapazität des Systems kann nicht durch Hinzufügen von Storage-Volumes erhöht werden, da Objekt-Metadaten nur auf Volume 0 gespeichert werden.
-* Jeder softwarebasierte Storage Node kann maximal 16 Storage Volumes unterstützen. Wenn Sie darüber hinaus Kapazität hinzufügen möchten, müssen Sie neue Storage-Nodes hinzufügen.
+* Jeder softwarebasierte Storage Node kann maximal 48 Storage Volumes unterstützen. Wenn Sie darüber hinaus Kapazität hinzufügen möchten, müssen Sie neue Storage-Nodes hinzufügen.
 * Sie können jeder SG6060 Appliance ein oder zwei Erweiterungs-Shelfs hinzufügen. Jedes Erweiterungs-Shelf enthält 16 Storage Volumes. Wenn beide Erweiterungs-Shelfs installiert sind, kann das SG6060 insgesamt 48 Storage-Volumes unterstützen.
 * Sie können jeder SG6160 Appliance ein oder zwei Erweiterungs-Shelfs hinzufügen. Jedes Erweiterungs-Shelf enthält 60 Storage Volumes. Wenn beide Erweiterungs-Shelfs installiert sind, kann das SG6160 insgesamt 180 Storage-Volumes unterstützen.
 * Storage Volumes können keiner anderen Storage Appliance hinzugefügt werden.

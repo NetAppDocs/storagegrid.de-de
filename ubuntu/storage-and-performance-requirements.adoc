@@ -95,7 +95,7 @@ Objektdaten
  a| 
 3 für jeden Speicherknoten auf diesem Host
 
-*Hinweis:* ein softwarebasierter Speicherknoten kann 1 bis 16 Speicher-Volumes haben; es werden mindestens 3 Speicher-Volumes empfohlen.
+*Hinweis:* ein softwarebasierter Speicherknoten kann 1 bis 48 Speicher-Volumes haben; es werden mindestens 3 Speicher-Volumes empfohlen.
  a| 
 12 TB (4 TB/LUN) Weitere Informationen finden Sie unter<<storage_req_SN,Storage-Anforderungen für Storage-Nodes>>.
 
@@ -289,10 +289,10 @@ Gateway-Node
 
 == Storage-Anforderungen für Storage-Nodes
 
-Ein softwarebasierter Speicher-Node kann 1 bis 16 Speicher-Volumes haben - -3 oder mehr Speicher-Volumes werden empfohlen. Jedes Storage-Volume sollte 4 TB oder größer sein.
+Ein softwarebasierter Speicherknoten kann 1 bis 48 Speichervolumes haben; 3 oder mehr Speichervolumes werden empfohlen. Jedes Storage-Volume sollte 4 TB oder größer sein.
 
 
-NOTE: Ein Appliance-Speicherknoten kann bis zu 48 Speicher-Volumes haben.
+NOTE: Ein Appliance-Speicherknoten kann außerdem über bis zu 48 Speichervolumes verfügen.
 
 Wie in der Abbildung dargestellt, reserviert StorageGRID Speicherplatz für Objekt-Metadaten auf dem Storage Volume 0 jedes Storage-Nodes. Alle verbleibenden Speicherplatz auf dem Storage-Volume 0 und anderen Storage-Volumes im Storage-Node werden ausschließlich für Objektdaten verwendet.
 
