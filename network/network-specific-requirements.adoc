@@ -33,6 +33,25 @@ Die folgenden Einschränkungen werden während der Bereitstellung durch den Grid
 
 * Die Subnetzmaske für eine beliebige Netzwerk-IP-Adresse darf nicht 255.255.255.254 oder 255.255.255.255 sein (/31 oder /32 in CIDR-Notation).
 * Das Subnetz, das durch eine IP-Adresse der Netzwerkschnittstelle und eine Subnetzmaske (CIDR) definiert ist, kann das Subnetz einer anderen Schnittstelle, die auf demselben Knoten konfiguriert ist, nicht überlappen.
+* Verwenden Sie keine Subnetze, die die folgenden IPv4-Adressen für das Grid-Netzwerk, das Admin-Netzwerk oder das Client-Netzwerk eines Knotens enthalten:
++
+** 192.168.130.101
+** 192.168.131.101
+** 192.168.130.102
+** 192.168.131.102
+** 198.51.100.2
+** 198.51.100.4
+
+
++
+Verwenden Sie beispielsweise nicht die folgenden Subnetzbereiche für das Grid-Netzwerk, das Admin-Netzwerk oder das Client-Netzwerk eines Knotens:
+
++
+** 192.168.130.0/24, da dieser Subnetzbereich die IP-Adressen 192.168.130.101 und 192.168.130.102 enthält
+** 192.168.131.0/24, da dieser Subnetzbereich die IP-Adressen 192.168.131.101 und 192.168.131.102 enthält
+** 198.51.100.0/24, da dieser Subnetzbereich die IP-Adressen 198.51.100.2 und 198.51.100.4 enthält
+
+
 * Das Grid-Netzwerk-Subnetz für jeden Node muss in der GNSL enthalten sein.
 * Das Subnetz Admin Network darf sich nicht mit dem Subnetz Grid Network, dem Subnetz Client Network oder einem Subnetz im GNSL überlappen.
 * Die Subnetze im AESL dürfen sich nicht mit Subnetzen im GNSL überlappen.
