@@ -68,7 +68,7 @@ Storage-Node
 
 3 LUNs für jeden Speicherknoten auf diesem Host
 
-*Hinweis*: Ein Speicherknoten kann 1 bis 48 Speicher-LUNs haben; mindestens 3 Speicher-LUNs werden empfohlen.
+*Hinweis*: Ein Speicherknoten kann 1 bis 16 Speicher-LUNs haben; mindestens 3 Speicher-LUNs werden empfohlen.
 
 Mindestgröße pro LUN: 4 TB
 
@@ -85,7 +85,7 @@ Storage-Node (nur Metadaten)
 
 Mindestgröße pro LUN: 4 TB
 
-*Hinweis*: Es gibt keine maximale Größe für die einzelne LUN. Überschüssige Kapazität wird für zukünftige Verwendung eingespart.
+Maximale getestete LUN-Größe: 39 TB.
 
 *Hinweis*: Nur ein Rangedb ist für Metadaten-only Storage Nodes erforderlich.
 
@@ -104,7 +104,7 @@ NOTE: Je nach konfigurierter Audit-Ebene die Größe der Benutzereingaben wie S3
 
 == Storage-Anforderungen für Storage-Nodes
 
-Ein softwarebasierter Speicherknoten kann 1 bis 48 Speichervolumes haben; 3 oder mehr Speichervolumes werden empfohlen. Jedes Storage-Volume sollte 4 TB oder größer sein.
+Ein softwarebasierter Speicherknoten kann 1 bis 16 Speichervolumes haben; 3 oder mehr Speichervolumes werden empfohlen.  Jedes Speichervolumen sollte mindestens 4 TB groß sein.
 
 
 NOTE: Ein Appliance-Speicherknoten kann außerdem über bis zu 48 Speichervolumes verfügen.

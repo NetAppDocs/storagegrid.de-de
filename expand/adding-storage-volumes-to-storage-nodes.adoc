@@ -2,7 +2,7 @@
 permalink: expand/adding-storage-volumes-to-storage-nodes.html 
 sidebar: sidebar 
 keywords: storage volumes, expand, expansion, add, storage nodes, adding storage capacity 
-summary: Sie können die Storage-Kapazität von Storage-Nodes mit maximal 48 Storage-Volumes erweitern, indem Sie zusätzliche Storage-Volumes hinzufügen. Möglicherweise müssen Sie Storage Volumes zu mehr als einem Storage Node hinzufügen, um ILM-Anforderungen für replizierte oder mit Erasure Coding versehenen Kopien zu erfüllen. 
+summary: Sie können die Speicherkapazität von Speicherknoten erweitern, die unter der maximal unterstützten Anzahl von Volumes liegen.  Möglicherweise müssen Sie Speichervolumes zu mehr als einem Speicherknoten hinzufügen, um die ILM-Anforderungen für replizierte oder löschcodierte Kopien zu erfüllen. 
 ---
 = Fügen Sie Storage-Volumes zu Storage-Nodes hinzu
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Sie können die Storage-Kapazität von Storage-Nodes mit maximal 48 Sto
 
 
 [role="lead"]
-Sie können die Storage-Kapazität von Storage-Nodes mit maximal 48 Storage-Volumes erweitern, indem Sie zusätzliche Storage-Volumes hinzufügen. Möglicherweise müssen Sie Storage Volumes zu mehr als einem Storage Node hinzufügen, um ILM-Anforderungen für replizierte oder mit Erasure Coding versehenen Kopien zu erfüllen.
+Sie können die Speicherkapazität von Speicherknoten erweitern, die unter der maximal unterstützten Anzahl von Volumes liegen.  Möglicherweise müssen Sie Speichervolumes zu mehr als einem Speicherknoten hinzufügen, um die ILM-Anforderungen für replizierte oder löschcodierte Kopien zu erfüllen.
 
 .Bevor Sie beginnen
 Überprüfen Sie vor dem Hinzufügen von Speicher-Volumes dielink:guidelines-for-adding-object-capacity.html["Richtlinien zum Hinzufügen von Objektkapazität"], um sicherzustellen, dass Sie wissen, wo Volumes hinzugefügt werden müssen, um die Anforderungen Ihrer ILM-Richtlinie zu erfüllen.
