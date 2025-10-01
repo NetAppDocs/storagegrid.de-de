@@ -11,13 +11,11 @@ summary: 'Mithilfe von Information Lifecycle Management \ (ILM\) können Sie die
 
 
 [role="lead"]
-Mithilfe von Information Lifecycle Management (ILM) können Sie die Platzierung, Dauer und das Aufnahmeverhalten für alle Objekte im StorageGRID System steuern. ILM-Regeln legen fest, wie StorageGRID Objekte im Laufe der Zeit speichert. Sie konfigurieren eine oder mehrere ILM-Regeln und fügen sie anschließend zu einer ILM-Richtlinie hinzu.
-
-Ein Raster verfügt jeweils nur über eine aktive Richtlinie. Eine Richtlinie kann mehrere Regeln enthalten.
+Sie verwenden Information Lifecycle Management (ILM), um die Platzierung, Dauer und das Aufnahmeverhalten aller Objekte in Ihrem StorageGRID System zu steuern.  ILM-Regeln bestimmen, wie StorageGRID Objekte im Laufe der Zeit speichert.  Sie konfigurieren eine oder mehrere ILM-Regeln und fügen sie dann einer ILM-Richtlinie hinzu.  Ein Grid kann gleichzeitig über mehrere aktive Richtlinien verfügen.
 
 ILM-Regeln definieren:
 
-* Welche Objekte sollten gespeichert werden. Eine Regel kann auf alle Objekte angewendet werden, oder Sie können Filter angeben, um zu identifizieren, für welche Objekte eine Regel gilt. Beispielsweise kann eine Regel nur für Objekte gelten, die mit bestimmten Mandantenkonten, bestimmten S3-Buckets oder Swift-Containern oder bestimmten Metadatenwerten verbunden sind.
+* Welche Objekte sollen gespeichert werden?  Eine Regel kann für alle Objekte gelten, oder Sie können Filter angeben, um zu ermitteln, für welche Objekte eine Regel gilt.  Beispielsweise kann eine Regel nur für Objekte gelten, die mit bestimmten Mandantenkonten, bestimmten S3-Buckets oder bestimmten Metadatenwerten verknüpft sind.
 * Speichertyp und -Standort. Objekte können auf Storage-Nodes oder in Cloud-Speicherpools gespeichert werden.
 * Der Typ der Objektkopien, die erstellt wurden. Kopien können repliziert oder zur Fehlerkorrektur codiert werden.
 * Für replizierte Kopien die Anzahl der Kopien, die erstellt werden.

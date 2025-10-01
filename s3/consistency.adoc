@@ -1,0 +1,142 @@
+---
+permalink: s3/consistency.html 
+sidebar: sidebar 
+keywords: consistency, consistency control, consistency values 
+summary: Konsistenz bietet ein Gleichgewicht zwischen der Verfügbarkeit der Objekte und der Konsistenz dieser Objekte über verschiedene Storage-Nodes und Standorte hinweg. Sie können die Konsistenz entsprechend den Anforderungen Ihrer Anwendung ändern. 
+---
+= Konsistenz
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Konsistenz bietet ein Gleichgewicht zwischen der Verfügbarkeit der Objekte und der Konsistenz dieser Objekte über verschiedene Storage-Nodes und Standorte hinweg. Sie können die Konsistenz entsprechend den Anforderungen Ihrer Anwendung ändern.
+
+Standardmäßig garantiert StorageGRID die Lese-nach-Schreib-Konsistenz für neu erstellte Objekte.  Jeder GET nach einem erfolgreich abgeschlossenen PUT kann die neu geschriebenen Daten lesen.  Überschreibungen vorhandener Objekte, Metadatenaktualisierungen und Löschungen sind letztendlich konsistent.
+
+Wenn Sie Objektoperationen mit einer anderen Konsistenz durchführen möchten, haben Sie folgende Möglichkeiten:
+
+* Geben Sie eine Konsistenz für<<bucket-consistency,Jeden Eimer>> .
+* Geben Sie eine Konsistenz für <<api-operation-consistency-control,Jeder API-Vorgang>>.
+* Ändern Sie die standardmäßige Konsistenz für das gesamte Grid, indem Sie eine der folgenden Aufgaben ausführen:
++
+** Gehen Sie im Grid Manager zu *Konfiguration* > *System* > *Speichereinstellungen* > *Standard-Bucket-Konsistenz*.
+** .
++
+
+NOTE: Eine Änderung der Konsistenz für das gesamte Grid gilt nur für Buckets, die nach der Änderung der Einstellung erstellt wurden. Informationen zu den Details einer Änderung finden Sie im Auditprotokoll unter `/var/local/log` (Suche nach *consistenzLevel*).
+
+
+
+
+
+
+
+== Konsistenzwerte
+
+Die Konsistenz wirkt sich darauf aus, wie die Metadaten, die StorageGRID zum Verfolgen von Objekten verwendet, zwischen den Knoten verteilt werden.  Konsistenz beeinflusst die Verfügbarkeit von Objekten für Clientanforderungen.
+
+Sie können die Konsistenz für einen Bucket oder eine API-Operation auf einen der folgenden Werte festlegen:
+
+* *Alle*: Alle Knoten erhalten sofort Objektmetadaten, oder die Anfrage schlägt fehl.
+* *Stark global*: Garantiert Lese-nach-Schreib-Konsistenz für alle Clientanforderungen auf allen Sites.  Wenn Quorum-Semantiken konfiguriert sind, gelten die folgenden Verhaltensweisen:
++
+** Ermöglicht Site-Fehlertoleranz für Clientanforderungen, wenn Grids drei oder mehr Sites haben.  Zwei-Site-Grids verfügen über keine Site-Ausfalltoleranz.
+** Die folgenden S3-Vorgänge sind nicht erfolgreich, wenn eine Site ausgefallen ist:
++
+*** DeleteBucketEncryption
+*** PutBucketBranch
+*** PutBucketEncryption
+*** PutBucketVersioning
+*** PutObjectLegalHold
+*** PutObjectLockKonfiguration
+*** PutObjectRetention
+
+
+
+
++
+Bei Bedarf können Sie https://kb.netapp.com/hybrid/StorageGRID/Object_Mgmt/Configuring_StorageGRID_quorum_semantics_for_strong-global_consistency["Konfigurieren Sie die StorageGRID Quorum-Semantik für starke globale Konsistenz"^] .
+
+* *Strong-site*: Objektmetadaten werden sofort auf andere Knoten am Standort verteilt. Garantiert Konsistenz bei Lese-nach-Schreibvorgängen für alle Client-Anfragen innerhalb eines Standorts.
+* *Read-after-New-write*: Bietet Read-after-write-Konsistenz für neue Objekte und eventuelle Konsistenz für Objektaktualisierungen. Hochverfügbarkeit und garantierte Datensicherung Empfohlen für die meisten Fälle.
+* *Verfügbar*: Bietet eventuelle Konsistenz für neue Objekte und Objekt-Updates. Verwenden Sie für S3-Buckets nur nach Bedarf (z. B. für einen Bucket mit Protokollwerten, die nur selten gelesen werden, oder für HEAD- oder GET-Vorgänge für nicht vorhandene Schlüssel). Nicht unterstützt für S3 FabricPool-Buckets.
+
+
+
+
+== Verwenden Sie die Konsistenz „Read-after-New-write“ und „available“
+
+Wenn ein HEAD- oder GET-Vorgang die Konsistenz von Read-after-New-write verwendet, führt StorageGRID die Suche in mehreren Schritten durch:
+
+* Es sieht zunächst das Objekt mit einer niedrigen Konsistenz.
+* Wenn diese Suche fehlschlägt, wiederholt sie die Suche beim nächsten Konsistenzwert, bis sie eine Konsistenz erreicht, die dem Verhalten für Strong-Global entspricht.
+
+
+Wenn eine HEAD- oder GET-Operation die Konsistenz „Read-after-New-write“ verwendet, das Objekt aber nicht existiert, erreicht die Objekt-Lookup immer eine Konsistenz, die dem Verhalten für strong-global entspricht. Da für diese Konsistenz mehrere Kopien der Objektmetadaten an jedem Standort verfügbar sein müssen, können Sie eine hohe Anzahl von 500 internen Serverfehlern erhalten, wenn zwei oder mehr Storage-Nodes am selben Standort nicht verfügbar sind.
+
+Sofern Sie keine Konsistenzgarantien ähnlich Amazon S3 benötigen, können Sie diese Fehler für HEAD- und GET-Operationen verhindern, indem Sie die Konsistenz auf „verfügbar“ setzen. Wenn ein HEAD- oder GET-Betrieb die „verfügbare“ Konsistenz verwendet, bietet StorageGRID letztendlich nur Konsistenz. Bei einem fehlgeschlagenen Vorgang wird nicht erneut versucht, die Konsistenz zu erhöhen, daher müssen nicht mehrere Kopien der Objekt-Metadaten verfügbar sein.
+
+
+
+== [[API-Operation-Consistency-control]]Geben Sie die Konsistenz für den API-Vorgang an
+
+Um die Konsistenz für eine individuelle API-Operation festzulegen, müssen die Konsistenzwerte für den Vorgang unterstützt werden, und Sie müssen die Konsistenz in der Anforderungsheader angeben. In diesem Beispiel wird die Konsistenz für eine GetObject-Operation auf „strong-site“ gesetzt.
+
+[listing, subs="specialcharacters,quotes"]
+----
+GET /bucket/object HTTP/1.1
+Date: date
+Authorization: _authorization name_
+Host: _host_
+Consistency-Control: strong-site
+----
+
+NOTE: Sie müssen für die PutObject- und GetObject-Operationen dieselbe Konsistenz verwenden.
+
+
+
+== [[bucket-consistency]]Konsistenz für Bucket angeben
+
+Zum Festlegen der Konsistenz für Bucket können Sie die StorageGRID-Anforderung verwendenlink:put-bucket-consistency-request.html["PUT Bucket-Konsistenz"]. Sie können dies aber auch link:../tenant/manage-bucket-consistency.html#change-bucket-consistency["Ändern der Konsistenz eines Buckets"]über den Tenant Manager tun.
+
+Beachten Sie beim Festlegen der Konsistenz für einen Bucket Folgendes:
+
+* Durch das Festlegen der Konsistenz für einen Bucket wird bestimmt, welche Konsistenz für S3-Vorgänge verwendet wird, die an den Objekten in der Bucket oder in der Bucket-Konfiguration durchgeführt werden. Er hat keine Auswirkungen auf die Vorgänge auf dem Bucket selbst.
+* Die Konsistenz einer einzelnen API-Operation überschreibt die Konsistenz für den Bucket.
+* Im Allgemeinen sollten Buckets die Standardkonsistenz „Read-after-New-write“ verwenden. Wenn die Anforderungen nicht korrekt funktionieren, ändern Sie das Client-Verhalten der Anwendung, wenn möglich. Oder konfigurieren Sie den Client so, dass die Konsistenz für jede API-Anforderung angegeben wird. Legen Sie die Konsistenz auf Bucket-Ebene nur als letzte Option fest.
+
+
+
+
+== [[how-consistency-and-ILM-rules-interact]]Wie Konsistenz- und ILM-Regeln den Datenschutz beeinflussen
+
+Sowohl Ihre Wahl der Konsistenz als auch Ihre ILM-Regel beeinflussen die Art und Weise, wie Objekte geschützt werden. Diese Einstellungen können interagieren.
+
+Beispielsweise wirkt sich die bei der Speicherung eines Objekts verwendete Konsistenz auf die anfängliche Platzierung von Objekt-Metadaten aus, während das für die ILM-Regel ausgewählte Aufnahmeverhalten sich auf die anfängliche Platzierung von Objektkopien auswirkt. StorageGRID benötigt zur Erfüllung von Clientanfragen Zugriff auf die Metadaten und die Daten eines Objekts. Durch die Auswahl einer passenden Sicherungsstufe für die Konsistenz und das Aufnahmeverhalten können die Daten am Anfang besser gesichert und Systemantworten besser vorhersehbar sein.
+
+Folgende link:../ilm/data-protection-options-for-ingest.html["Aufnahmeoptionen"] Informationen sind für ILM-Regeln verfügbar:
+
+Doppelte Provisionierung:: StorageGRID erstellt sofort Zwischenkopien des Objekts und gibt den Erfolg an den Client zurück. Kopien, die in der ILM-Regel angegeben sind, werden nach Möglichkeit erstellt.
+Streng:: Bevor der Erfolg an den Client zurückgegeben wird, müssen alle in der ILM-Regel angegebenen Kopien erstellt werden.
+Ausgeglichen:: StorageGRID versucht, bei der Aufnahme alle in der ILM-Regel angegebenen Kopien zu erstellen. Ist dies nicht möglich, werden Zwischenkopien erstellt und der Erfolg wird an den Client zurückgegeben. Die Kopien, die in der ILM-Regel angegeben sind, werden, wenn möglich gemacht.
+
+
+
+
+== Beispiel für die Interaktion der Konsistenz- und ILM-Regel
+
+Angenommen, Sie haben ein Grid mit drei Standorten mit der folgenden ILM-Regel und der folgenden Konsistenz:
+
+* *ILM-Regel*: Erstellen Sie drei Objektkopien, eine am lokalen Standort und eine an jedem Remote-Standort.  Verwenden Sie ein striktes Aufnahmeverhalten.
+* *Konsistenz*: Stark global (Objektmetadaten werden sofort an mehrere Sites verteilt).
+
+
+Wenn ein Client ein Objekt im Grid speichert, erstellt StorageGRID alle drei Objektkopien und verteilt Metadaten an mehrere Sites, bevor es dem Client die Erfolgsmeldung meldet.
+
+Zum Zeitpunkt der erfolgreichen Aufnahme der Nachricht ist das Objekt vollständig vor Verlust geschützt.  Wenn beispielsweise die lokale Site kurz nach der Aufnahme verloren geht, sind an den Remote-Sites weiterhin Kopien der Objektdaten und der Objektmetadaten vorhanden.  Das Objekt ist von den anderen Standorten vollständig abrufbar.
+
+Wenn Sie stattdessen dieselbe ILM-Regel und die starke Site-Konsistenz verwenden, erhält der Client möglicherweise eine Erfolgsmeldung, nachdem die Objektdaten auf die Remote-Sites repliziert wurden, aber bevor die Objektmetadaten dorthin verteilt werden.  In diesem Fall entspricht das Schutzniveau der Objektmetadaten nicht dem Schutzniveau der Objektdaten.  Wenn die lokale Site kurz nach der Aufnahme verloren geht, gehen die Objektmetadaten verloren.  Das Objekt kann nicht abgerufen werden.
+
+Die Beziehung zwischen Konsistenz- und ILM-Regeln kann komplex sein. Wenden Sie sich an den NetApp, wenn Sie Hilfe benötigen.

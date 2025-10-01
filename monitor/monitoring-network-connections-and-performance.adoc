@@ -24,7 +24,7 @@ Netzwerkkonnektivität und Bandbreite sind besonders wichtig, wenn Ihre Richtlin
 Denken Sie darüber hinaus daranlink:../admin/managing-traffic-classification-policies.html["Erstellen von Klassifizierungsrichtlinien für den Netzwerkverkehr"], dass Sie den Datenverkehr zu bestimmten Mandanten, Buckets, Subnetzen oder Endpunkten des Load Balancer überwachen können. Sie können Richtlinien zur Begrenzung des Datenverkehrs nach Bedarf festlegen.
 
 .Schritte
-. Wählen Sie *KNOTEN*.
+. Wählen Sie *Knoten* aus.
 +
 Die Seite Knoten wird angezeigt. Jeder Knoten im Raster wird im Tabellenformat aufgelistet.
 
@@ -54,7 +54,7 @@ image::../media/nodes_page_network_communication.png[Knoten Seite Netzwerk Komm]
 
 . Verwenden Sie die Metriken für Ihre Traffic-Klassifizierungsrichtlinien zur Überwachung des Netzwerkverkehrs.
 +
-.. Wählen Sie *CONFIGURATION* > *Network* > *traffic classification*.
+.. Wählen Sie *Konfiguration* > *Netzwerk* > *Verkehrsklassifizierung*.
 +
 Die Seite Richtlinien zur Klassifizierung von Verkehrsdaten wird angezeigt, und die vorhandenen Richtlinien sind in der Tabelle aufgeführt.
 
@@ -82,7 +82,7 @@ Wenn eine Richtlinie zur Klassifizierung von Verkehrsströmen darauf ausgelegt i
 Überwachen Sie einzelne Grid-Nodes, um deren Ressourcenverbrauch zu prüfen. Sind Nodes konsistent überlastet, sind möglicherweise mehr Nodes erforderlich, um einen effizienten Betrieb zu gewährleisten.
 
 .Schritte
-. Wählen Sie auf der Seite *NODES* den Knoten aus.
+. Wählen Sie auf der Seite *Knoten* den Knoten aus.
 . Wählen Sie die Registerkarte *Hardware* aus, um Grafiken der CPU-Auslastung und der Speicherauslastung anzuzeigen.
 +
 image::../media/nodes_page_hardware_tab_graphs.png[Registerkarte Knoten Hardware]

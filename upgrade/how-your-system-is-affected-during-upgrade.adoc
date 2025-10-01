@@ -15,6 +15,12 @@ Erfahren Sie, wie Ihr StorageGRID-System bei einem Upgrade beeinträchtigt wird.
 
 
 
+== Externer SSH-Zugriff ist bis zum Abschluss des Upgrades zulässig.
+
+Während des Upgrades ist externer SSH-Zugriff zulässig.  Wenn das Upgrade abgeschlossen ist, wird der externe SSH-Zugriff standardmäßig blockiert.  Nach dem Upgrade können Sie die Registerkarte *SSH blockieren* auf der Seite *Grid Manager* > *Sicherheitseinstellungen* verwenden, umlink:../admin/manage-external-ssh-access.html["externen SSH-Zugriff verwalten"] .  Der SSH-Zugriff zwischen Grid-Knoten ist nicht betroffen.
+
+
+
 == StorageGRID Upgrades sind unterbrechungsfrei
 
 Das StorageGRID System ist in der Lage, während des Upgrades Daten von Client-Applikationen aufzunehmen und abzurufen. Wenn Sie alle Nodes desselben Typs für das Upgrade genehmigen (z. B. Storage Nodes), werden die Nodes nacheinander heruntergefahren. Es ist also keine Zeit, wenn alle Grid-Nodes oder alle Grid-Nodes eines bestimmten Typs nicht verfügbar sind.
@@ -40,14 +46,20 @@ NOTE: Mehrere Gateways und Hochverfügbarkeitsgruppen (High Availability, HA) er
 
 
 
+== Hintergrundreparaturen werden auf Grids mit Knoten unterschiedlicher Versionen nicht ausgeführt
+
+Wenn das Grid Knoten mit unterschiedlichen Versionen enthält, werden während des Upgrades keine Hintergrundreparaturen ausgeführt.  Etwaige Inkonsistenzen, die während eines Site-Ausfalls auftreten, werden erst behoben, wenn das Upgrade abgeschlossen ist.
+
+
+
 == Die Appliance-Firmware wird aktualisiert
 
-Während der StorageGRID 11.9-Aktualisierung:
+Während des StorageGRID 12.0-Upgrades:
 
-* Alle StorageGRID Appliance Nodes werden automatisch auf die StorageGRID Appliance Installer-Firmware-Version 3.9 aktualisiert.
-* SG6060 und SGF6024 Appliances werden automatisch auf die BIOS-Firmware-Version 3B08.EX und BMC-Firmware-Version 4.00.07 aktualisiert.
-* SG100 und SG1000 Appliances werden automatisch auf die BIOS-Firmware-Version 3B13.EC und BMC-Firmware-Version 4.74.07 aktualisiert.
-* Appliances der SGF6112, SG6160, SG110 und SG1100 werden automatisch auf die BMC-Firmware-Version 3.16.07 aktualisiert.
+* Alle StorageGRID Appliance-Knoten werden automatisch auf die StorageGRID Appliance Installer-Firmwareversion 12.0 aktualisiert.
+* SG6060- und SGF6024-Geräte werden automatisch auf die BIOS-Firmware-Version 3B08.EX und die BMC -Firmware-Version 4.01.07 aktualisiert.
+* SG100- und SG1000-Geräte werden automatisch auf die BIOS-Firmware-Version 3B13.EC und die BMC -Firmware-Version 4.75.07 aktualisiert.
+* Die Geräte SGF6112, SG6160, SG110 und SG1100 werden automatisch auf die BIOS-Firmware-Version 3A14.QD und die BMC -Firmware-Version 3.19.07 aktualisiert.
 
 
 
@@ -65,24 +77,18 @@ Während der StorageGRID 11.9-Aktualisierung:
 
 Warnmeldungen können ausgelöst werden, wenn Services gestartet und beendet werden und wenn das StorageGRID System als Umgebung mit gemischten Versionen funktioniert (einige Grid-Nodes mit einer früheren Version, während andere auf eine neuere Version aktualisiert wurden). Nach Abschluss des Upgrades können weitere Warnmeldungen ausgelöst werden.
 
-Beispielsweise wird möglicherweise die Warnmeldung *Unable to communicate with Node* angezeigt, wenn Dienste angehalten werden, oder Sie sehen möglicherweise die Warnmeldung *Cassandra-Kommunikationsfehler*, wenn einige Knoten auf StorageGRID 11.9 aktualisiert wurden, aber andere Knoten noch StorageGRID 11.8 ausführen. Im Allgemeinen werden diese Meldungen nach Abschluss des Upgrades gelöscht.
+Beispielsweise wird möglicherweise die Warnung *Kommunikation mit Knoten nicht möglich* angezeigt, wenn Dienste gestoppt werden, oder die Warnung *Cassandra-Kommunikationsfehler*, wenn einige Knoten auf StorageGRID 12.0 aktualisiert wurden, auf anderen Knoten jedoch noch StorageGRID 11.9 ausgeführt wird.  Im Allgemeinen werden diese Warnungen gelöscht, wenn das Upgrade abgeschlossen ist.
 
-Die Warnung *ILM-Platzierung nicht erreichbar* kann ausgelöst werden, wenn Speicherknoten während des Upgrades auf StorageGRID 11.9 gestoppt werden. Dieser Alarm wird möglicherweise einen Tag nach Abschluss des Upgrades andauern.
+Die Warnung *ILM-Platzierung nicht erreichbar* kann ausgelöst werden, wenn Speicherknoten während des Upgrades auf StorageGRID 12.0 angehalten werden.  Diese Warnung bleibt möglicherweise noch einen Tag nach Abschluss des Upgrades bestehen.
 
 Nachdem das Upgrade abgeschlossen ist, können Sie alle Upgrade-bezogenen Warnmeldungen überprüfen, indem Sie im Grid Manager-Dashboard *Kürzlich aufgelöste Warnmeldungen* oder *Aktuelle Warnmeldungen* auswählen.
-
-
-
-== Viele SNMP-Benachrichtigungen werden erzeugt
-
-Beachten Sie, dass möglicherweise eine große Anzahl von SNMP-Benachrichtigungen generiert werden kann, wenn Grid-Knoten angehalten und während des Upgrades neu gestartet werden. Um zu viele Benachrichtigungen zu vermeiden, deaktivieren Sie das Kontrollkästchen *Enable SNMP Agent Notifications* (*CONFIGURATION* > *Monitoring* > *SNMP Agent*), um SNMP-Benachrichtigungen vor dem Start des Upgrades zu deaktivieren. Aktivieren Sie dann die Benachrichtigungen wieder, nachdem das Upgrade abgeschlossen ist.
 
 
 
 == Konfigurationsänderungen sind eingeschränkt
 
 
-NOTE: Diese Liste gilt insbesondere für Upgrades von StorageGRID 11.8 auf StorageGRID 11.9. Wenn Sie ein Upgrade auf eine andere StorageGRID-Version durchführen, lesen Sie die Liste der eingeschränkten Änderungen in den Upgrade-Anweisungen für diese Version.
+NOTE: Diese Liste gilt speziell für Upgrades von StorageGRID 11.9 auf StorageGRID 12.0.  Wenn Sie auf eine andere StorageGRID Version aktualisieren, lesen Sie die Liste der eingeschränkten Änderungen in den Upgrade-Anweisungen für diese Version.
 
 Bis die Aufgabe *Neues Feature* aktivieren abgeschlossen ist:
 
@@ -94,31 +100,12 @@ Bis die Aufgabe *Neues Feature* aktivieren abgeschlossen ist:
 
 NOTE: Wenden Sie sich an den technischen Support, wenn Sie einen Node während des Upgrades wiederherstellen müssen.
 
-* Während Sie ein Upgrade auf StorageGRID 11.9 durchführen, sollten Sie keine HA-Gruppen, VLAN-Schnittstellen oder Load Balancer-Endpunkte managen.
-* Löschen Sie keine HA-Gruppen, bevor Sie das Upgrade auf StorageGRID 11.9 abgeschlossen haben. Auf virtuelle IP-Adressen in anderen HA-Gruppen kann möglicherweise nicht mehr zugegriffen werden.
+* Sie sollten während des Upgrades auf StorageGRID 12.0 keine HA-Gruppen, VLAN-Schnittstellen oder Load Balancer-Endpunkte verwalten.
+* Löschen Sie keine HA-Gruppen, bis das Upgrade auf StorageGRID 12.0 abgeschlossen ist.  Auf virtuelle IP-Adressen in anderen HA-Gruppen kann möglicherweise nicht mehr zugegriffen werden.
 
 
 Bis die Aufgabe * Final Upgrade Steps* abgeschlossen ist:
 
 * Führen Sie keine Erweiterungsschritte durch.
 * Führen Sie keine Stilllegungsverfahren durch.
-
-
-
-
-== Sie können keine Bucket-Details anzeigen oder Buckets im Tenant Manager managen
-
-Während des Upgrades auf StorageGRID 11.9 (d. h. während das System als Umgebung mit gemischten Versionen läuft) können Sie keine Bucket-Details anzeigen oder Buckets mithilfe des Tenant Manager managen. Auf der Seite Buckets in Tenant Manager wird einer der folgenden Fehler angezeigt:
-
-* Sie können diese API nicht verwenden, während Sie ein Upgrade auf 11.9 durchführen.
-* Sie können keine Details zur Bucket-Versionierung im Tenant Manager anzeigen, während Sie ein Upgrade auf 11.9 durchführen.
-
-
-Dieser Fehler wird behoben, nachdem die Aktualisierung auf 11.9 abgeschlossen ist.
-
-.Behelfslösung
-Solange das Upgrade 11.9 läuft, können Sie mit den folgenden Tools Bucket-Details anzeigen oder Buckets managen, anstatt den Tenant Manager zu verwenden:
-
-* Zum Durchführen von Standard-S3-Operationen für einen Bucket verwenden Sie entweder die link:../s3/operations-on-buckets.html["S3-REST-API"] oder die link:../tenant/understanding-tenant-management-api.html["Mandantenmanagement-API"].
-* Verwenden Sie die Mandantenmanagement-API, um benutzerdefinierte StorageGRID-Vorgänge für einen Bucket auszuführen (z. B. Anzeigen und Ändern der Bucket-Konsistenz, Aktivieren oder Deaktivieren von Updates der letzten Zugriffszeit oder Konfigurieren der Suchintegration).
 

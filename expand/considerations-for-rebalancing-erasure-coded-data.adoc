@@ -26,9 +26,9 @@ Das EC-Ausgleichverfahren:
 * Verschiebt nur Objektdaten, die Erasure Coding verwenden. Es werden keine replizierten Objektdaten verschoben.
 * Verteilt die Daten an einem Standort neu. Es werden keine Daten zwischen Standorten verschoben.
 * Verteilt Daten auf alle Storage-Nodes an einem Standort neu. Daten werden nicht innerhalb von Storage Volumes neu verteilt.
-* Berücksichtigt nicht die Verwendung replizierter Daten auf jedem Storage Node bei der Festlegung, wo Daten mit Erasure Coding verschoben werden sollen.
-* Verteilt Daten, die mit Erasure Coding codiert wurden, gleichmäßig zwischen Storage-Nodes, ohne die relativen Kapazitäten jedes Nodes zu berücksichtigen.
-* Die Daten, die nach einer Erasure Coded codiert wurden, werden nicht an Storage-Nodes verteilt, die zu mehr als 80 % voll sind.
+* Versucht, jedem Knoten die gleiche Anzahl Bytes zuzuweisen.  Knoten, die mehr replizierte Daten enthalten, speichern nach Abschluss der Neuverteilung weniger Erasure-Codierte Daten.
+* Verteilt löschcodierte Daten gleichmäßig zwischen Speicherknoten, ohne die relativen Kapazitäten der einzelnen Knoten zu berücksichtigen.  Replizierte Daten werden in die Berechnung einbezogen.
+* Verteilt keine löschcodierten Daten an Speicherknoten, die zu mehr als 80 % voll sind.
 * Könnte die Performance von ILM-Vorgängen und S3-Client-Operationen beeinträchtigen, wenn sie ausgeführt wird&#8212;zusätzliche Ressourcen sind erforderlich, um die Fragmente des Erasure-Coding neu zu verteilen.
 
 
@@ -39,7 +39,7 @@ Wenn das EC-Ausgleichverfahren abgeschlossen ist:
 * Die verwendeten (%) Werte können zwischen den Storage-Nodes aus zwei Gründen unterschiedlich sein:
 +
 ** Replizierte Objektkopien verbrauchen weiterhin Speicherplatz auf den vorhandenen Nodes&#8212;beim EC-Ausgleichverfahren werden keine replizierten Daten verschoben.
-** Nodes mit höherer Kapazität sind relativ weniger voll als Nodes mit geringerer Kapazität, obwohl alle Nodes am Ende ungefähr das gleiche Volumen an Daten mit Erasure-Coded-Verfahren aufweisen.
+** Knoten mit größerer Kapazität sind relativ weniger voll als Knoten mit kleinerer Kapazität, obwohl alle Knoten am Ende ungefähr die gleiche Datenmenge aufweisen.
 +
 Angenommen, drei 200-TB-Nodes werden jeweils zu 80 % gefüllt (200 &#215; 0.8 = 160 TB auf jedem Node oder 480 TB für den Standort). Wenn Sie einen 400-TB-Node hinzufügen und das Ausgleichs-Verfahren ausführen, verfügen alle Nodes nun über ungefähr die gleiche Menge an Daten aus dem Löschcode (480/4 = 120 TB). Der verwendete Wert (%) für den größeren Knoten ist jedoch kleiner als der verwendete Wert (%) für die kleineren Knoten.
 
@@ -53,6 +53,10 @@ image::../media/used_space_with_larger_node.png[Vor der Erweiterung verwendeter 
 
 
 == Zeitpunkt für den Ausgleich von Daten, die mit Erasure Coding codiert wurden
+
+Das EC-Neuausgleichsverfahren verteilt vorhandene Erasure-Codierte-Daten neu, um sicherzustellen, dass Knoten nicht voll werden oder voll bleiben.  Das Verfahren trägt dazu bei, dass die EC-Kodierung auf der Site fortgesetzt werden kann.
+
+Führen Sie das Neuausgleichsverfahren aus, wenn bei der Datenverteilung auf einer Site eine besorgniserregende Verzerrung vorliegt und die Site hauptsächlich EC-Daten speichert (da replizierte Daten durch Neuausgleich nicht verschoben werden können).
 
 Betrachten wir das folgende Szenario:
 

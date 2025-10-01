@@ -68,11 +68,11 @@ Sie können die Verbindungskosten zwischen Datacenter-Standorten aktualisieren, 
 
 .Bevor Sie beginnen
 * Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
-* Sie haben die link:admin-group-permissions.html["Berechtigung zur Konfiguration der Grid-Topologie-Seite"].
+* Sie haben dielink:admin-group-permissions.html["Andere Rasterkonfigurationsberechtigung"] .
 
 
 .Schritte
-. Wählen Sie *SUPPORT* > *Other* > *Link Cost*.
+. Wählen Sie *Support* > *Sonstiges* > *Linkkosten*.
 +
 image::../media/configuring_link_costs.png[Verbindungskosten]
 

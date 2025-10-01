@@ -73,4 +73,4 @@ CAUTION: SelectObjectContent-Anforderungen können die Load Balancer-Performance
 
 Siehe link:../s3/use-s3-select.html["Anweisungen zur Verwendung von S3 Select"].
 
-Um Vorgänge im Zeitverlauf für S3 Select anzuzeigenlink:../monitor/reviewing-support-metrics.html["Grafana-Diagramme"], wählen Sie im Grid Manager *SUPPORT* > *Tools* > *Metrics* aus.
+Zum Ansehenlink:../monitor/reviewing-support-metrics.html["Grafana-Diagramme"] Wählen Sie für S3 Select-Vorgänge im Zeitverlauf *Support* > *Tools* > *Metriken* im Grid Manager.

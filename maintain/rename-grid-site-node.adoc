@@ -14,11 +14,7 @@ summary: Mit diesem Verfahren können Sie die Anzeigenamen für Ihr Raster, Ihre
 Mit diesem Verfahren können Sie die Anzeigenamen für Ihr Raster, Ihre Standorte und Knoten hinzufügen oder aktualisieren. Sie können ein einzelnes Element, mehrere Elemente oder sogar alle Elemente gleichzeitig umbenennen. Das Definieren oder Aktualisieren eines Anzeigenamens hat keinerlei Auswirkungen auf StorageGRID-Vorgänge.
 
 .Bevor Sie beginnen
-* Vom *primären Admin-Knoten* aus werden Sie mit einem beim Grid-Manager angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
-+
-
-NOTE: Sie können Anzeigenamen von einem nicht-primären Admin-Node hinzufügen oder aktualisieren, müssen jedoch beim primären Admin-Node angemeldet sein, um ein Wiederherstellungspaket herunterzuladen.
-
+* Von jedem Admin-Knoten aus werden Sie beim Grid Manager mit einemlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"] .
 * Sie haben die link:../admin/admin-group-permissions.html["Berechtigung für Wartung oder Root-Zugriff"].
 * Sie haben die Provisionierungs-Passphrase.
 * Sie kennen die Anforderungen und Best Practices für Anzeigenamen. Siehe link:../maintain/rename-grid-site-node-overview.html["Benennen Sie Raster, Standorte und Nodes um"].
@@ -39,7 +35,7 @@ Sie können einen Anzeigenamen verwenden, der zuvor von einem anderen Node verwe
 Wählen Sie zum Starten die Elemente aus, die Sie umbenennen möchten.
 
 .Schritte
-. Wählen Sie *MAINTENANCE* > *Tasks* > *Raster, Standorte und Knoten umbenennen*.
+. Wählen Sie *Wartung* > *Aufgaben* > *Raster, Sites und Knoten umbenennen*.
 . Wählen Sie im Schritt *Namen auswählen* die Elemente aus, die Sie umbenennen möchten.
 +
 [cols="1a,2a"]
@@ -165,13 +161,13 @@ Eine Erfolgsmeldung wird angezeigt. Die neuen Anzeigenamen werden nun im gesamte
 ====
 
 
-=== [[download-Recovery-package]]Laden Sie das Wiederherstellungspaket herunter
+=== [[download-recovery-package]]Laden Sie das Wiederherstellungspaket herunter
 
-Wenn Sie die Umbenennung der Elemente abgeschlossen haben, laden Sie ein neues Wiederherstellungspaket herunter und speichern Sie es. Die neuen Anzeigenamen für die Elemente, die Sie umbenannt haben, werden in die Datei aufgenommen `Passwords.txt`.
+Wenn Sie mit dem Umbenennen der Elemente fertig sind, laden Sie ein neues Wiederherstellungspaket herunter und speichern Sie es.  Die neuen Anzeigenamen für die umbenannten Elemente sind in der `Passwords.txt` Datei.
 
 .Schritte
 . Geben Sie die Provisionierungs-Passphrase ein.
-. Wählen Sie *Download Recovery Package*.
+. Wählen Sie *Wiederherstellungspaket herunterladen*.
 +
 Der Download startet sofort.
 
@@ -179,7 +175,7 @@ Der Download startet sofort.
 . Kopieren Sie die `sgws-recovery-package-_id-revision_.zip` Datei an zwei sichere und separate Speicherorte.
 +
 
-CAUTION: Die Recovery Package-Datei muss gesichert sein, weil sie Verschlüsselungsschlüssel und Passwörter enthält, die zum Abrufen von Daten vom StorageGRID-System verwendet werden können.
+CAUTION: Die Wiederherstellungspaketdatei muss gesichert werden, da sie Verschlüsselungsschlüssel und Passwörter enthält, mit denen Daten aus dem StorageGRID -System abgerufen werden können.
 
 . Wählen Sie *Fertig*, um zum ersten Schritt zurückzukehren.
 
@@ -191,7 +187,7 @@ CAUTION: Die Recovery Package-Datei muss gesichert sein, weil sie Verschlüsselu
 Sie können ein umbenanntes Raster, eine Site oder einen Node auf den ursprünglichen Systemnamen zurücksetzen. Wenn Sie ein Element auf seinen Systemnamen zurücksetzen, werden auf den Seiten des Grid-Managers und anderen StorageGRID-Speicherorten kein *Anzeigename* für dieses Element mehr angezeigt. Es wird nur der Systemname des Elements angezeigt.
 
 .Schritte
-. Wählen Sie *MAINTENANCE* > *Tasks* > *Raster, Standorte und Knoten umbenennen*.
+. Wählen Sie *Wartung* > *Aufgaben* > *Raster, Sites und Knoten umbenennen*.
 . Wählen Sie im Schritt *Namen auswählen* alle Elemente aus, die Sie auf Systemnamen zurücksetzen möchten.
 . Wählen Sie *Weiter*.
 . Für den Schritt *Neue Namen vorschlagen*, stellen Sie Anzeigenamen einzeln oder in Massen zurück auf Systemnamen.
@@ -229,7 +225,7 @@ Eine Erfolgsmeldung wird angezeigt. Die Anzeigenamen für diese Elemente werden 
 
 --
 ====
-. <<download-recovery-package,Laden Sie ein neues Wiederherstellungspaket herunter und speichern Sie es>>.
+. <<download-recovery-package,Laden Sie ein neues Wiederherstellungspaket herunter und speichern Sie es>> .
 +
 Anzeigenamen für die zurückgesenckten Elemente sind nicht mehr in der Datei enthalten `Passwords.txt`.
 

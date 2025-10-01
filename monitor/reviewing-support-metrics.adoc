@@ -25,7 +25,7 @@ Auf der Seite Metriken können Sie auf die Benutzeroberflächen von Prometheus u
 NOTE: Die auf der Seite Metriken verfügbaren Tools sind für den technischen Support bestimmt. Einige Funktionen und Menüelemente in diesen Tools sind absichtlich nicht funktionsfähig und können sich ändern. Siehe Liste von link:commonly-used-prometheus-metrics.html["Häufig verwendete Prometheus-Kennzahlen"].
 
 .Schritte
-. Wählen Sie unter Anleitung des technischen Supports *SUPPORT* > *Tools* > *Metrics* aus.
+. Wählen Sie gemäß den Anweisungen des technischen Supports *Support* > *Tools* > *Metriken*.
 +
 Ein Beispiel für die Seite Metriken ist hier aufgeführt:
 

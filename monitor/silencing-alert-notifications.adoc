@@ -27,7 +27,7 @@ Wenn Sie den SNMP-Agent aktiviert haben, unterdrücken Stille auch SNMP-Traps un
 CAUTION: Seien Sie vorsichtig, wenn Sie sich entscheiden, eine Alarmregel zu stummzuschalten. Wenn Sie eine Warnmeldung stummschalten, können Sie ein zugrunde liegendes Problem möglicherweise erst erkennen, wenn ein kritischer Vorgang nicht abgeschlossen werden kann.
 
 .Schritte
-. Wählen Sie *ALARME* > *Stille*.
+. Wählen Sie *Warnungen* > *Stummschaltungen*.
 +
 Die Seite „Stille“ wird angezeigt.
 
@@ -99,7 +99,7 @@ Auf welchen Knoten oder Knoten Sie diese Stille anwenden möchten. Sie können e
  a| 
 Stille bearbeiten
  a| 
-.. Wählen Sie *ALARME* > *Stille*.
+.. Wählen Sie *Warnungen* > *Stummschaltungen*.
 .. Wählen Sie in der Tabelle das Optionsfeld für die Stille, die Sie bearbeiten möchten.
 .. Wählen Sie *Bearbeiten*.
 .. Ändern Sie die Beschreibung, die verbleibende Zeit, die ausgewählten Schweregrade oder den betroffenen Knoten.
@@ -111,7 +111,7 @@ Stille bearbeiten
  a| 
 Entfernen Sie eine Stille
  a| 
-.. Wählen Sie *ALARME* > *Stille*.
+.. Wählen Sie *Warnungen* > *Stummschaltungen*.
 .. Wählen Sie in der Tabelle das Optionsfeld für die Stille, die Sie entfernen möchten.
 .. Wählen Sie *Entfernen*.
 .. Wählen Sie *OK*, um zu bestätigen, dass Sie diese Stille entfernen möchten.

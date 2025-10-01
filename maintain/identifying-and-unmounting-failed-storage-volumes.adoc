@@ -30,28 +30,22 @@ NOTE: Reparieren Sie die Hardware und schließen Sie die Festplatten ordnungsgem
 
 CAUTION: Fehlerhafte Storage-Volumes sorgfältig ermitteln Anhand dieser Informationen können Sie überprüfen, welche Volumes neu formatiert werden müssen. Nachdem ein Volume neu formatiert wurde, können Daten auf dem Volume nicht wiederhergestellt werden.
 
-Um fehlgeschlagene Speicher-Volumes korrekt wiederherzustellen, müssen Sie sowohl die Gerätenamen der ausgefallenen Speicher-Volumes als auch die zugehörigen Volume-IDs kennen.
+Um ausgefallene Speichervolumes wiederherzustellen, müssen Sie sowohl die Gerätenamen der ausgefallenen Speichervolumes als auch deren Volume-IDs kennen.
 
-Bei der Installation wird jedem Storage-Gerät eine UUID (Universal Unique Identifier) des Filesystems zugewiesen und über die zugewiesene Filesystem-UUID in ein rangedb-Verzeichnis auf dem Storage Node gemountet. Die Dateisystem-UUID und das Verzeichnis rangedb sind in der Datei aufgelistet `/etc/fstab`. Der Gerätename, das rankgedb-Verzeichnis und die Größe des gemounteten Volumes werden im Grid Manager angezeigt.
-
-Im folgenden Beispiel hat das Gerät `/dev/sdc` eine Volume-Größe von 4 TB, wird unter Verwendung des Gerätenamens `/dev/disk/by-uuid/822b0547-3b2b-472e-ad5e-e1cf1809faba` in der /`etc/fstab` Datei gemountet `/var/local/rangedb/0`:
-
-image::../media/mounting_storage_devices.gif[Beispiel für eine Volume-Größe]
+Bei der Installation wird jedem Speichergerät eine universelle eindeutige Kennung (UUID) für das Dateisystem zugewiesen und es wird mithilfe dieser zugewiesenen Dateisystem-UUID in ein rangedb-Verzeichnis auf dem Speicherknoten eingebunden.  Die Dateisystem-UUID und das rangedb-Verzeichnis sind in der `/etc/fstab` Datei.  Der Mount-Punkt, der Gerätename und die Größe des Volumes werden im Grid Manager angezeigt.
 
 .Schritte
 . Führen Sie die folgenden Schritte durch, um die fehlgeschlagenen Speicher-Volumes und deren Gerätenamen aufzunehmen:
 +
-.. Wählen Sie *SUPPORT* > *Tools* > *Grid-Topologie* aus.
-.. Wählen Sie *Standort* > *fehlgeschlagener Speicherknoten* > *LDR* > *Storage* > *Übersicht* > *Haupt*, und suchen Sie nach Objektspeichern mit Alarmen.
+.. Wählen Sie *Knoten* > *_Site_* > *_fehlgeschlagener Speicherknoten_* > *Speicher*.
+.. Blättern Sie nach unten, um die Volume-Tabelle und die Object Stores-Tabelle zu finden, und notieren Sie die folgenden Informationen für jedes Volume mit dem Status „Unbekannt“ oder „Offline“.
 +
-image::../media/ldr_storage_object_stores.gif[Abschnitt „Objektspeicher“]
+*** Notieren Sie aus der Volume-Tabelle den Einhängepunkt, das Gerät und die Größe.
+*** Notieren Sie aus der Objektspeichertabelle die `object_store_ID` .
++
+Das `object_store_ID` ist die ID des ausgefallenen Speichervolumes. Geben Sie beispielsweise im Befehl für einen Objektspeicher mit der ID 0000 an `0`.
 
-.. Wählen Sie *Standort* > *fehlgeschlagener Speicherknoten* > *SSM* > *Ressourcen* > *Übersicht* > *Haupt*. Ermitteln Sie den Mount-Punkt und die Volume-Größe jedes im vorherigen Schritt identifizierten ausgefallenen Storage-Volumes.
-+
-Objektspeichern werden in Hex-Notation nummeriert. Zum Beispiel ist 0000 das erste Volumen und 000F das sechzehnte Volumen. Im Beispiel entspricht der Objektspeicher mit der ID 0000 dem `/var/local/rangedb/0` Gerätenamen sdc und einer Größe von 107 GB.
 
-+
-image::../media/ssm_storage_volumes.gif[Beispiel für Objektspeichern und Mount-Punkte]
 
 
 
@@ -61,17 +55,14 @@ image::../media/ssm_storage_volumes.gif[Beispiel für Objektspeichern und Mount-
 .. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
 .. Geben Sie den folgenden Befehl ein, um zu root zu wechseln: `su -`
 .. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
-
-
 +
 Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `#`.
+
+
 
 . Führen Sie das folgende Skript aus, um die Bereitstellung eines ausgefallenen Speichervolume aufzuheben:
 +
 `sn-unmount-volume object_store_ID`
-
-+
-Das `object_store_ID` ist die ID des ausgefallenen Speichervolumes. Geben Sie beispielsweise im Befehl für einen Objektspeicher mit der ID 0000 an `0`.
 
 . Wenn Sie dazu aufgefordert werden, drücken Sie *y*, um den Cassandra-Service abhängig von Speichervolume 0 zu beenden.
 +

@@ -152,27 +152,6 @@ Prüfen Sie in der Vergangenheit ausgelöste Warnmeldungen, um zusätzliche Info
 
 
  a| 
-Monitoring von Ereignissen
- a| 
-Ereignisse umfassen Systemfehler oder Fehlerereignisse für einen Node, einschließlich Fehler wie Netzwerkfehler. Überwachen Sie Ereignisse, um weitere Informationen zu Problemen zu erhalten oder um Hilfe bei der Fehlerbehebung zu erhalten.
- a| 
-* link:../monitor/monitoring-events.html["Monitoring von Ereignissen"]
-
-
-
-
- a| 
-Identifizieren von Trends mithilfe von Diagrammen und Textberichten
- a| 
-Trends liefern wertvolle Hinweise darauf, wann Probleme zuerst auftraten, und können Ihnen helfen zu verstehen, wie schnell sich die Dinge ändern.
- a| 
-* link:../monitor/using-charts-and-reports.html["Verwenden Sie Diagramme und Diagramme"]
-* link:../monitor/types-of-text-reports.html["Verwenden Sie Textberichte"]
-
-
-
-
- a| 
 Basispläne erstellen
  a| 
 Sammeln von Informationen über die normalen Stufen verschiedener Betriebswerte. Diese Basiswerte und Abweichungen von diesen Grundlinien können wertvolle Hinweise liefern.
@@ -335,22 +314,13 @@ Sie können diese Informationen für das gesamte System oder für ein bestimmtes
 
 
  a| 
-Geschwindigkeit von S3/Swift Operationen
+Rate der S3-Operationen
  a| 
 Vorgänge/Sekunde
  a| 
-Wählen Sie im Dashboard von Grid Manager *Performance* > *S3 Operations* oder *Performance* > *Swift Operations* aus.
+Wählen Sie im Grid Manager-Dashboard *Leistung* > *S3-Vorgänge für Speicherknoten*.
 
-Um die Aufnahme- und Abrufraten für einen bestimmten Standort oder Knoten anzuzeigen, wählen Sie *NODES* > *_Site oder Storage Node_* > *Objects* aus. Positionieren Sie den Cursor auf dem Diagramm „Aufnahme und Abruf“ für S3.
-
-
-
- a| 
-S3/Swift-Vorgänge sind fehlgeschlagen
- a| 
-Betrieb
- a| 
-Wählen Sie *SUPPORT* > *Tools* > *Grid-Topologie* aus. Zeigen Sie auf der Registerkarte Übersicht im Abschnitt API-Vorgänge den Wert für S3-Operationen an – Fehlgeschlagen oder Swift-Vorgänge – Fehlgeschlagen.
+Um die Aufnahme- und Abrufraten sowie die Anzahl für eine bestimmte Site oder einen bestimmten Knoten anzuzeigen, wählen Sie *Knoten* > *_Site oder Speicherknoten_* > *Objekte*.  Positionieren Sie Ihren Cursor über dem S3-Aufnahme- und Abrufdiagramm.
 
 
 
@@ -370,7 +340,7 @@ ILM-Scan-Rate
  a| 
 Objekte/Sekunde
  a| 
-Wählen Sie *NODES* > *_Grid_* > *ILM* aus.
+Wählen Sie *Knoten* > *_grid_* > *ILM*.
 
 Suchen Sie im ILM-Queue-Diagramm einen Zeitraum, in dem die Zeile ziemlich stabil ist. Bewegen Sie den Cursor über das Diagramm, um einen Basislinienwert für *Scan-Rate* für Ihr System abzuschätzen.
 
@@ -381,7 +351,7 @@ Objekte, die sich aus Client-Vorgängen in Warteschlange befinden
  a| 
 Objekte/Sekunde
  a| 
-Wählen Sie *NODES* > *_Grid_* > *ILM* aus.
+Wählen Sie *Knoten* > *_grid_* > *ILM*.
 
 Suchen Sie im ILM-Queue-Diagramm einen Zeitraum, in dem die Zeile ziemlich stabil ist. Bewegen Sie den Cursor über das Diagramm, um einen Basislinienwert für *Objekte in der Warteschlange (von Client-Operationen)* für Ihr System abzuschätzen.
 
@@ -392,7 +362,7 @@ Durchschnittliche Abfragelatenz
  a| 
 Millisekunden
  a| 
-Wählen Sie *NODES* > *_Storage Node_* > *Objekte* aus. Zeigen Sie in der Tabelle Abfragen den Wert für durchschnittliche Latenz an.
+Wählen Sie *Knoten* > *_Speicherknoten_* > *Objekte*.  Zeigen Sie in der Abfragetabelle den Wert für die durchschnittliche Latenz an.
 
 |===
 
@@ -445,7 +415,7 @@ Wo liegt der Schweregrad des Problems? Welche Auswirkungen hat dies auf die Clie
  a| 
 StorageGRID System-ID
  a| 
-Wählen Sie *WARTUNG* > *System* > *Lizenz*. Die StorageGRID System-ID wird im Rahmen der aktuellen Lizenz angezeigt.
+Wählen Sie *Wartung* > *System* > *Lizenz*.  Die StorageGRID -System-ID wird als Teil der aktuellen Lizenz angezeigt.
 
 
 
@@ -473,13 +443,11 @@ Fassen Sie zusammen, wie Ihr StorageGRID System konfiguriert ist. Nehmen Sie z. 
  a| 
 Log-Dateien und Systemdaten
  a| 
-Erfassen von Protokolldateien und Systemdaten für Ihr System Wählen Sie *SUPPORT* > *Extras* > *Protokolle*.
+Sammeln Sie Protokolldateien und Systemdaten für Ihr System.  Wählen Sie *Support* > *Tools* > *Protokollsammlung*.
 
 Sie können Protokolle für das gesamte Grid oder für ausgewählte Nodes sammeln.
 
-Wenn Sie Protokolle nur für ausgewählte Knoten erfassen, müssen Sie mindestens einen Speicherknoten mit dem ADC-Service einschließen. (Die ersten drei Storage-Nodes an einem Standort enthalten den ADC-Service.)
-
-link:../monitor/collecting-log-files-and-system-data.html["Erfassen von Protokolldateien und Systemdaten"]
+Wenn Sie Protokolle nur für ausgewählte Knoten sammeln, achten Sie darauf, mindestens einen Speicherknoten einzuschließen, der über den ADC-Dienst verfügt.  Die ersten drei an einem Standort installierten Speicherknoten umfassen den ADC-Dienst.
 
 
 

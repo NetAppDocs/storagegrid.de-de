@@ -22,7 +22,7 @@ Wenn Sie einen S3-Mandanten verwenden und über die entsprechenden Berechtigunge
 CAUTION: Auf die S3-Buckets und Objekte, die zu einem Benutzer gehören, kann über die Zugriffsschlüssel-ID und den geheimen Zugriffsschlüssel zugegriffen werden, die für diesen Benutzer im Mandanten-Manager angezeigt werden. Aus diesem Grund schützen Sie Zugriffsschlüssel wie ein Passwort. Drehen Sie die Zugriffstasten regelmäßig, entfernen Sie alle nicht verwendeten Schlüssel aus dem Konto und geben Sie sie niemals anderen Benutzern zur Verfügung.
 
 .Schritte
-. Wählen Sie *ZUGRIFFSVERWALTUNG* > *Benutzer*.
+. Wählen Sie *Zugriffsverwaltung* > *Benutzer*.
 . Wählen Sie auf der Seite Benutzer den Benutzer aus, dessen S3-Zugriffsschlüssel Sie verwalten möchten.
 . Wählen Sie auf der Seite mit den Benutzerdetails *Zugriffsschlüssel* aus, und aktivieren Sie dann das Kontrollkästchen für jeden Zugriffsschlüssel, den Sie löschen möchten.
 . Wählen Sie *Aktionen* > *Ausgewählte Taste löschen*.

@@ -14,7 +14,7 @@ summary: Zu den Grid-Wartungsaufgaben gehören die Stilllegung eines Node oder S
 Zu den Grid-Wartungsaufgaben gehören die Stilllegung eines Node oder Standorts, die Umbenennung eines Grid, eines Node oder Standorts und die Wartung von Netzwerken. Sie können auch Host- und Middleware-Verfahren sowie Grid-Node-Verfahren durchführen.
 
 
-NOTE: In dieser Anleitung bezieht sich "Linux" auf eine Red hat® Enterprise Linux®-, Ubuntu®- oder Debian®-Bereitstellung. Eine Liste der unterstützten Versionen finden Sie im https://imt.netapp.com/matrix/#welcome["NetApp Interoperabilitäts-Matrix-Tool"^].
+NOTE: In diesen Anweisungen bezieht sich „Linux“ auf eine Bereitstellung von Red Hat® Enterprise Linux® (RHEL), Ubuntu® oder Debian®.  Eine Liste der unterstützten Versionen finden Sie im https://imt.netapp.com/matrix/#welcome["NetApp Interoperabilitäts-Matrix-Tool"^] .
 
 
 

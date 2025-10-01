@@ -32,7 +32,7 @@ Führen Sie diese Schritte auf einem der beiden StorageGRID-Systeme aus.
 
 .Schritte
 . Melden Sie sich über den primären Admin-Node auf beiden Grids beim Grid-Manager an.
-. Wählen Sie *CONFIGURATION* > *System* > *Grid Federation*.
+. Wählen Sie *Konfiguration* > *System* > *Grid-Föderation*.
 . Wählen Sie *Verbindung hinzufügen*.
 . Geben Sie Details für die Verbindung ein.
 +
@@ -119,7 +119,7 @@ Führen Sie diese Schritte auf dem StorageGRID-System durch, mit dem Sie eine Ve
 
 .Schritte
 . Melden Sie sich über den primären Admin-Knoten beim Grid-Manager an.
-. Wählen Sie *CONFIGURATION* > *System* > *Grid Federation*.
+. Wählen Sie *Konfiguration* > *System* > *Grid-Föderation*.
 . Wählen Sie *Upload Verification file*, um auf die Seite Upload zuzugreifen.
 . Wählen Sie *Überprüfungsdatei hochladen*. Navigieren Sie dann zu der Datei, die aus dem ersten Raster heruntergeladen wurde (`_connection-name_.grid-federation`).
 +

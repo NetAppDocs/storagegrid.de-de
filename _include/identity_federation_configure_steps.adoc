@@ -12,10 +12,10 @@ Wählen Sie *Other* aus, um Werte für einen LDAP-Server zu konfigurieren, der O
 
 . Wenn Sie *Sonstige* ausgewählt haben, füllen Sie die Felder im Abschnitt LDAP-Attribute aus. Andernfalls fahren Sie mit dem nächsten Schritt fort.
 +
-** *Eindeutiger Benutzername*: Der Name des Attributs, das die eindeutige Kennung eines LDAP-Benutzers enthält. Dieses Attribut entspricht `sAMAccountName` für Active Directory und `uid` OpenLDAP. Wenn Sie Oracle Directory Server konfigurieren, geben Sie ein `uid`.
-** *Benutzer-UUID*: Der Name des Attributs, das den permanenten eindeutigen Identifier eines LDAP-Benutzers enthält. Dieses Attribut entspricht `objectGUID` für Active Directory und `entryUUID` OpenLDAP. Wenn Sie Oracle Directory Server konfigurieren, geben Sie ein `nsuniqueid`. Der Wert jedes Benutzers für das angegebene Attribut muss eine 32-stellige Hexadezimalzahl im 16-Byte- oder String-Format sein, wobei Bindestriche ignoriert werden.
-** *Group Unique Name*: Der Name des Attributs, das den eindeutigen Identifier einer LDAP-Gruppe enthält. Dieses Attribut entspricht `sAMAccountName` für Active Directory und `cn` OpenLDAP. Wenn Sie Oracle Directory Server konfigurieren, geben Sie ein `cn`.
-** *Group UUID*: Der Name des Attributs, das den permanenten eindeutigen Identifier einer LDAP-Gruppe enthält. Dieses Attribut entspricht `objectGUID` für Active Directory und `entryUUID` OpenLDAP. Wenn Sie Oracle Directory Server konfigurieren, geben Sie ein `nsuniqueid`. Der Wert jeder Gruppe für das angegebene Attribut muss eine 32-stellige Hexadezimalzahl im 16-Byte- oder String-Format sein, wobei Bindestriche ignoriert werden.
+** *Eindeutiger Benutzername*: Der Name des Attributs, das die eindeutige Kennung eines LDAP-Benutzers enthält.  Dieses Attribut ist gleichbedeutend mit `sAMAccountName` für Active Directory und `uid` für OpenLDAP.  Wenn Sie Oracle Directory Server konfigurieren, geben Sie `uid` .
+** *Benutzer-UUID*: Der Name des Attributs, das die permanente eindeutige Kennung eines LDAP-Benutzers enthält.  Dieses Attribut ist gleichbedeutend mit `objectGUID` für Active Directory und `entryUUID` für OpenLDAP.  Wenn Sie Oracle Directory Server konfigurieren, geben Sie `nsuniqueid` .  Der Wert jedes Benutzers für das angegebene Attribut muss eine 32-stellige Hexadezimalzahl im 16-Byte- oder Zeichenfolgenformat sein, wobei Bindestriche ignoriert werden.
+** *Eindeutiger Gruppenname*: Der Name des Attributs, das die eindeutige Kennung einer LDAP-Gruppe enthält.  Dieses Attribut ist gleichbedeutend mit `sAMAccountName` für Active Directory und `cn` für OpenLDAP.  Wenn Sie Oracle Directory Server konfigurieren, geben Sie `cn` .
+** *Gruppen-UUID*: Der Name des Attributs, das die permanente eindeutige Kennung einer LDAP-Gruppe enthält.  Dieses Attribut ist gleichbedeutend mit `objectGUID` für Active Directory und `entryUUID` für OpenLDAP.  Wenn Sie Oracle Directory Server konfigurieren, geben Sie `nsuniqueid` .  Der Wert jeder Gruppe für das angegebene Attribut muss eine 32-stellige Hexadezimalzahl im 16-Byte- oder Zeichenfolgenformat sein, wobei Bindestriche ignoriert werden.
 
 
 . Geben Sie für alle LDAP-Servicetypen die Informationen zum erforderlichen LDAP-Server und zur Netzwerkverbindung im Abschnitt LDAP-Server konfigurieren ein.
@@ -39,7 +39,7 @@ Der angegebene Benutzer muss über die Berechtigung zum Auflisten von Gruppen un
 *** `cn`
 *** `memberOf` Oder `isMemberOf`
 *** *Active Directory*: `objectSid`, `primaryGroupID`, `userAccountControl` Und `userPrincipalName`
-*** *Azure*: `accountEnabled` Und `userPrincipalName`
+*** *Eintritts-ID*: `accountEnabled` Und `userPrincipalName`
 
 
 ** *Passwort*: Das mit dem Benutzernamen verknüpfte Passwort.
@@ -65,8 +65,8 @@ Es wird empfohlen, *Bind username Format* bereitzustellen, da Benutzer sich anme
 Geben Sie eines der folgenden Muster ein:
 
 +
-*** *UserPrincipalNamensmuster (Active Directory und Azure)*: `[USERNAME]@_example_.com`
-*** *Logon Name Pattern (Active Directory und Azure)*: `_example_\[USERNAME]`
+*** *UserPrincipalName-Muster (AD- und Entra-ID)*: `[USERNAME]@_example_.com`
+*** *Anmeldenamenmuster auf niedrigerer Ebene (AD- und Entra-ID)*: `_example_\[USERNAME]`
 *** *Distinguished Namensmuster*: `CN=[USERNAME],CN=Users,DC=_example_,DC=com`
 +
 Fügen Sie *[USERNAME]* genau wie geschrieben ein.
@@ -77,12 +77,12 @@ Fügen Sie *[USERNAME]* genau wie geschrieben ein.
 
 . Wählen Sie im Abschnitt Transport Layer Security (TLS) eine Sicherheitseinstellung aus.
 +
-** *Verwenden Sie STARTTLS*: Verwenden Sie STARTTLS, um die Kommunikation mit dem LDAP-Server zu sichern. Dies ist die empfohlene Option für Active Directory, OpenLDAP oder andere, diese Option wird jedoch für Azure nicht unterstützt.
-** *LDAPS verwenden*: Die Option LDAPS (LDAP über SSL) verwendet TLS, um eine Verbindung zum LDAP-Server herzustellen. Sie müssen diese Option für Azure auswählen.
-** *Verwenden Sie keine TLS*: Der Netzwerkverkehr zwischen dem StorageGRID-System und dem LDAP-Server wird nicht gesichert. Diese Option wird für Azure nicht unterstützt.
+** *STARTLS verwenden*: Verwenden Sie STARTTLS, um die Kommunikation mit dem LDAP-Server zu sichern.  Dies ist die empfohlene Option für Active Directory, OpenLDAP oder Andere, aber diese Option wird für Microsoft Entra ID nicht unterstützt.
+** *LDAPS verwenden*: Die Option LDAPS (LDAP über SSL) verwendet TLS, um eine Verbindung zum LDAP-Server herzustellen.  Sie müssen diese Option für die Microsoft Entra ID auswählen.
+** *TLS nicht verwenden*: Der Netzwerkverkehr zwischen dem StorageGRID -System und dem LDAP-Server wird nicht gesichert.  Diese Option wird für die Microsoft Entra ID nicht unterstützt.
 +
 
-NOTE: Die Verwendung der Option *keine TLS* verwenden wird nicht unterstützt, wenn Ihr Active Directory-Server die LDAP-Signatur erzwingt. Sie müssen STARTTLS oder LDAPS verwenden.
+NOTE: Die Verwendung der Option *TLS nicht verwenden* wird nicht unterstützt, wenn Ihr Active Directory-Server die LDAP-Signierung erzwingt.  Sie müssen STARTTLS oder LDAPS verwenden.
 
 
 
@@ -105,7 +105,7 @@ Nachdem Sie alle Werte eingegeben haben, müssen Sie die Verbindung testen, bevo
 
 .Schritte
 . Wählen Sie *Verbindung testen*.
-. Wenn Sie kein bind username Format angegeben haben:
+. Wenn Sie kein Bind-Benutzernamenformat angegeben haben:
 +
 ** Wenn die Verbindungseinstellungen gültig sind, wird die Meldung „Verbindung erfolgreich testen“ angezeigt. Wählen Sie *Speichern*, um die Konfiguration zu speichern.
 ** Wenn die Verbindungseinstellungen ungültig sind, wird die Meldung „Testverbindung konnte nicht hergestellt werden“ angezeigt. Wählen Sie *Schließen*. Beheben Sie anschließend alle Probleme, und testen Sie die Verbindung erneut.

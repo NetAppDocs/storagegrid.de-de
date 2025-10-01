@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, remove port remap, removing port remap, port remap 
 summary: Wenn Sie einen Endpunkt für den Load Balancer-Dienst konfigurieren möchten und einen Port verwenden möchten, der bereits als Port mit dem Port einer Port-Remap konfiguriert wurde, müssen Sie zunächst die vorhandene Port-Remap entfernen, oder der Endpunkt ist nicht wirksam. Sie müssen ein Skript auf jedem Admin-Knoten und Gateway-Knoten ausführen, der über widersprüchliche neu zugeordnete Ports verfügt, um alle Port-Remaps des Node zu entfernen. 
 ---
-= Entfernen Sie die Port-Remaps
+= Entfernen Sie Port-Neuzuordnungen auf StorageGRID -Geräten
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -25,6 +25,7 @@ NOTE: Wenn die Port-Neuzuordnung Client-Zugriff ermöglicht, konfigurieren Sie d
 NOTE: Dieses Verfahren ist bei einem StorageGRID System, das als Container auf Bare-Metal-Hosts bereitgestellt wird, nicht möglich. Siehe die Anleitung für link:removing-port-remaps-on-bare-metal-hosts.html["Entfernen von Port-Remaps auf Bare-Metal-Hosts"].
 
 .Schritte
+. Der externe SSH-Zugriff ist standardmäßig blockiert.  Falls erforderlich,link:../admin/manage-external-ssh-access.html["Zugriff vorübergehend erlauben"] .
 . Melden Sie sich bei dem Node an.
 +
 .. Geben Sie den folgenden Befehl ein: `ssh -p 8022 admin@node_IP`
@@ -43,4 +44,5 @@ Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `
 . Booten Sie den Node neu: `reboot`
 . Melden Sie sich von der Befehls-Shell ab: `exit`
 . Wiederholen Sie diese Schritte auf jedem Admin-Node und Gateway-Node mit gegensätzlichen neu zugeordneten Ports.
+. Wenn Sie externen SSH-Zugriff zugelassen haben,link:../admin/manage-external-ssh-access.html["Zugriff blockieren"] wenn Sie mit dem Entfernen der Port-Neuzuordnungen fertig sind.
 

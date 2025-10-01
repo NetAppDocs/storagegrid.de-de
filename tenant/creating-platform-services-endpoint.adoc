@@ -17,11 +17,11 @@ Sie müssen mindestens einen Endpunkt des richtigen Typs erstellen, bevor Sie ei
 * Sie sind beim Tenant Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
 * Die Plattformservices wurden für Ihr Mandantenkonto von einem StorageGRID-Administrator aktiviert.
 * Sie gehören zu einer Benutzergruppe mit dem link:tenant-management-permissions.html["Verwalten von Endpunkten oder Root-Zugriffsberechtigungen"].
-* Die Ressource, auf die der Endpunkt der Plattformservices verweist, wurde erstellt:
+* Die vom Plattformdienste-Endpunkt referenzierte Ressource wurde erstellt:
 +
 ** CloudMirror Replizierung: S3 Bucket
-** Ereignisbenachrichtigung: Amazon Simple Notification Service (Amazon SNS) oder Kafka Thema
-** Suchbenachrichtigung: Elasticsearch-Index, wenn das Ziel-Cluster nicht konfiguriert ist, Indizes automatisch zu erstellen.
+** Ereignisbenachrichtigung: Amazon Simple Notification Service (Amazon SNS)-Thema, Kafka-Thema oder Webhook-Endpunkt
+** Suchbenachrichtigung: Elasticsearch-Index, wenn der Zielcluster nicht für die automatische Erstellung von Indizes konfiguriert ist.
 
 
 * Sie haben die Informationen über die Zielressource:
@@ -76,7 +76,7 @@ Für Kafka-Endpunkte können Sie die folgenden Anmeldeinformationen verwenden:
 
 --
 ====
-** Sicherheitszertifikat (bei Verwendung eines benutzerdefinierten CA-Zertifikats)
+** Sicherheitszertifikat (falls eine Zertifikatsüberprüfung erforderlich ist)
 
 
 * Wenn die Elasticsearch-Sicherheitsfunktionen aktiviert sind, verfügen Sie über die Berechtigung zum Überwachen des Clusters für den Verbindungstest und entweder über die Berechtigung zum Schreibindex oder sowohl über die Index- als auch Löschindexberechtigungen für Dokumentaktualisierungen.
@@ -87,7 +87,7 @@ Für Kafka-Endpunkte können Sie die folgenden Anmeldeinformationen verwenden:
 . Wählen Sie *Endpunkt erstellen*.
 . Geben Sie einen Anzeigenamen ein, um den Endpunkt und seinen Zweck kurz zu beschreiben.
 +
-Der vom Endpunkt unterstützte Plattformservice wird neben dem Endpunktnamen angezeigt, wenn er auf der Seite Endpunkte aufgeführt wird. Sie müssen diese Informationen daher nicht in den Namen aufnehmen.
+Der Typ des Plattformdienstes, den der Endpunkt unterstützt, wird neben dem Endpunktnamen angezeigt, wenn dieser auf der Seite „Endpunkte“ aufgeführt ist. Sie müssen diese Information also nicht in den Namen aufnehmen.
 
 . Geben Sie im Feld *URI* den eindeutigen Resource Identifier (URI) des Endpunkts an.
 +
@@ -140,6 +140,10 @@ NOTE: Sie können die URN eines Endpunkts nicht ändern, nachdem der Endpunkt er
 
 . Wählen Sie *Weiter*.
 . Wählen Sie einen Wert für *Authentifizierungstyp* aus.
++
+
+NOTE: Wenn Sie eine Authentifizierung für Webhook-Endpunkte wünschen, konfigurieren Sie Mutual Transport Layer Security (mTLS) in<<verify-certs,Schritt 9>> .
+
 +
 [role="tabbed-block"]
 ====
@@ -318,17 +322,37 @@ Wählen Sie *Delegationsentnommene Authentifizierung verwenden* aus, wenn der Be
 --
 ====
 . Wählen Sie *Weiter*.
-. Wählen Sie eine Optionsschaltfläche für *Server überprüfen* aus, um auszuwählen, wie die TLS-Verbindung zum Endpunkt verifiziert wird.
+. [[verify-certs]]Wählen Sie ein Optionsfeld für *Zertifikate überprüfen*, um auszuwählen, wie die TLS-Verbindung zum Endpunkt überprüft wird.
 +
+[role="tabbed-block"]
+====
+.Die meisten Endpunkte
+--
+Überprüfen Sie die TLS-Verbindung für Suchintegration, CloudMirror-Replikation, Amazon SNS oder Kafka-Endpunkte.
+
 [cols="1a,2a"]
 |===
 | Typ der Zertifikatverifizierung | Beschreibung 
 
 
  a| 
+TLS
+ a| 
+Validiert das Serverzertifikat für TLS-Verbindungen zur Endpunktressource.
+
+
+
+ a| 
+Deaktiviert
+ a| 
+Die Zertifikatsüberprüfung ist deaktiviert.  Diese Option ist nicht sicher.
+
+
+
+ a| 
 Benutzerdefiniertes CA-Zertifikat verwenden
  a| 
-Verwenden Sie ein benutzerdefiniertes Sicherheitszertifikat. Wenn Sie diese Einstellung auswählen, kopieren Sie das benutzerdefinierte Sicherheitszertifikat in das Textfeld *CA-Zertifikat*.
+Das benutzerdefinierte CA-Zertifikat wird verwendet, um die Identität des Servers beim Herstellen einer Verbindung mit dem Endpunkt zu überprüfen.
 
 
 
@@ -337,14 +361,80 @@ Verwenden Sie das CA-Zertifikat für das Betriebssystem
  a| 
 Verwenden Sie das auf dem Betriebssystem installierte Standard-Grid-CA-Zertifikat, um Verbindungen zu sichern.
 
+|===
+--
+.Nur Webhook-Endpunkte
+--
+Überprüfen Sie die TLS-Verbindung für Webhook-Endpunkte.
+
+[cols="1a,2a"]
+|===
+| Typ der Zertifikatverifizierung | Beschreibung 
 
 
  a| 
-Verifizieren Sie das Zertifikat nicht
+TLS
  a| 
-Das für die TLS-Verbindung verwendete Zertifikat wird nicht verifiziert. Diese Option ist nicht sicher.
+Validiert das Serverzertifikat für TLS-Verbindungen zur Endpunktressource.
+
+
+
+ a| 
+mTLS
+ a| 
+Validiert die Client- und Serverzertifikate für gegenseitige TLS-Verbindungen zur Endpunktressource.
+
+
+
+ a| 
+Deaktiviert
+ a| 
+Die Zertifikatsüberprüfung ist deaktiviert.  Diese Option ist nicht sicher.
+
+
+
+ a| 
+Benutzerdefiniertes CA-Zertifikat verwenden
+ a| 
+Das benutzerdefinierte CA-Zertifikat wird verwendet, um die Identität des Servers beim Herstellen einer Verbindung mit dem Endpunkt zu überprüfen.
 
 |===
+Wenn Sie *mTLS* auswählen, werden diese Optionen verfügbar.
+
+[cols="1a,2a"]
+|===
+| Typ der Zertifikatverifizierung | Beschreibung 
+
+
+ a| 
+Serverzertifikat nicht überprüfen
+ a| 
+Deaktiviert die Serverzertifikatsüberprüfung, was bedeutet, dass die Identität des Servers nicht überprüft wird.  Diese Option ist nicht sicher.
+
+
+
+ a| 
+Client-Zertifikat
+ a| 
+Das Client-Zertifikat wird verwendet, um die Identität des Clients bei der Verbindung mit dem Endpunkt zu überprüfen.
+
+
+
+ a| 
+Privater Clientschlüssel
+ a| 
+Der private Schlüssel für das Client-Zertifikat.  Bei Verschlüsselung muss das traditionelle Format PKCS #1 verwendet werden (das Format PKCS #8 wird nicht unterstützt).
+
+
+
+ a| 
+Passphrase für den privaten Clientschlüssel
+ a| 
+Die Passphrase zum Entschlüsseln des privaten Clientschlüssels.  Wenn der private Schlüssel nicht verschlüsselt ist, lassen Sie dieses Feld leer.
+
+|===
+--
+====
 . Wählen Sie *Test und Endpunkt erstellen*.
 +
 ** Eine Erfolgsmeldung wird angezeigt, wenn der Endpunkt mit den angegebenen Anmeldeinformationen erreicht werden kann. Die Verbindung zum Endpunkt wird von einem Node an jedem Standort validiert.

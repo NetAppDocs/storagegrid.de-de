@@ -1,0 +1,49 @@
+---
+permalink: troubleshoot/troubleshooting-load-balancer-caching.html 
+sidebar: sidebar 
+keywords: how to troubleshoot load balancer caching 
+summary: Informieren Sie sich über mögliche Probleme beim Load Balancer-Caching und wie Sie diese beheben können. 
+---
+= Fehlerbehebung beim Load Balancer-Caching
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Informieren Sie sich über mögliche Probleme beim Load Balancer-Caching und wie Sie diese beheben können.
+
+
+
+== Ermitteln, ob eine Anfrage ein Cache-Treffer war
+
+* Der X-Cache-Header wird in der Antwort auf vom Cache-Dienst verarbeitete Anfragen gesetzt.  Mögliche Codes:
++
+** `HIT`: Das Objekt wurde aus dem Cache bereitgestellt
+** `PARTIAL-HIT`: Der Bucket/Schlüssel hatte einen Datensatz im Cache, aber nicht der gesamte angeforderte Bereich konnte aus dem Cache bereitgestellt werden
+** `STALE`: Der Bucket/Schlüssel hatte einen Datensatz im Cache, aber das Objekt wurde aktualisiert, seit es das letzte Mal aus dem Cache bereitgestellt wurde.
+** `MISS`: Das Objekt war nicht im Cache
+
+
+* Der `nginx-gw/endpoint-access.log.gz` Der Datensatz für die Anfrage enthält „unix:/run/cache-svc/cache-svc.sock“ für Anfragen, die vom Cache verarbeitet werden.
+* Der `cache-svc/cache-svc.log` meldet eine Meldung wie „Anforderung 320390: erfolgreich abgeschlossen (Cache-Treffer)“ oder „Anforderung 320375: erfolgreich abgeschlossen (Cache-Fehler)“.  Suchen Sie den angeforderten Pfad, indem Sie nach anderen Datensätzen mit derselben Zeichenfolge „Request _<Nummer>_“ suchen.
+
+
+
+
+== Niedrige Cache-Trefferquote
+
+* Niedrige Cache-Trefferraten sind möglicherweise zu erwarten, wenn eine neue Arbeitslast hinzugefügt wird oder sich der Arbeitssatz ändert, auf den eine Arbeitslast zugreift.  In diesen Situationen wird erwartet, dass die Trefferquote mit der Zeit steigt.
+* Wenn mehrere Workloads Caching verwenden, sollten Sie das Hinzufügen von Richtlinien zur Verkehrsklassifizierung in Erwägung ziehen, um Teile der Workloads zu isolieren, die vom Cache bedient werden.  Metriken zur Cache-Trefferquote sind pro Verkehrsklassifizierungsrichtlinie verfügbar.  Wenn bei einigen Workloads keine guten Cache-Trefferquoten erzielt werden, sollten Sie erwägen, diese Workloads auf andere Endpunkte zu verschieben, bei denen das Caching nicht aktiviert ist.
+* Bewerten Sie die Cache-Auslagerungsrate.  Wenn der Cache zu klein für den Arbeitssatz ist, kommt es zu hohen Räumungsraten, was zu niedrigeren Trefferquoten führen kann.
+* Unter FPVR sind möglicherweise Optionen zur Verbesserung der Trefferquoten bestimmter Workloads verfügbar.
+
+
+
+
+== Geringe Leistung
+
+* Bewerten Sie die Cache-Trefferquote.  Niedrige Cache-Trefferraten können zu einer geringen Gesamtleistung führen.
+* Bewerten Sie die Cache-Auslagerungsrate.  Während der Räumung werden einige Speicherressourcen zum Entfernen vorhandener Objekte von der Festplatte verwendet.  Wenn der Räumungsprozess mit dem Zugriff auf neue Objekte nicht Schritt hält, kann das System die Schwellenwerte für das harte Wasserzeichen erreichen und beginnen, den Cache zu umgehen.
+* Überprüfen Sie die Netzwerkbeschränkungen mithilfe der Diagnosefunktionen „Empfangsnutzung der Netzwerkschnittstellen“ und „Sendenutzung der Netzwerkschnittstellen“.
+

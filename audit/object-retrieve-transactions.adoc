@@ -13,7 +13,7 @@ summary: Sie können Transaktionen für den Abruf von Objekten im Revisionsproto
 [role="lead"]
 Sie können Transaktionen für den Abruf von Objekten im Revisionsprotokoll identifizieren, indem Sie S3-API-spezifische Audit-Meldungen suchen.
 
-In den folgenden Tabellen sind nicht alle während einer Abruftransaktion generierten Überwachungsmeldungen aufgeführt. Es werden nur Nachrichten enthalten, die für die Rückrufs-Transaktion erforderlich sind.
+In der folgenden Tabelle sind nicht alle Prüfmeldungen aufgeführt, die während einer Abruftransaktion generiert werden.  Es sind nur Nachrichten enthalten, die zum Verfolgen der Abruftransaktion erforderlich sind.
 
 
 
@@ -34,27 +34,6 @@ Anforderung zum Abrufen eines Objekts aus einem Bucket
 CBID, S3BK, S3KY
  a| 
 link:sget-s3-get.html["SGET S3 ABRUFEN"]
-
-|===
-
-
-== Schnelles Abrufen von Audit-Meldungen
-
-[cols="1a,1a,2a,1a,1a"]
-|===
-| Codieren | Name | Beschreibung | Verfolgen | Siehe 
-
-
- a| 
-WGET
- a| 
-Swift-GET
- a| 
-Anforderung gemacht, ein Objekt aus einem Container abzurufen.
- a| 
-CBID, WCON, WOBJ
- a| 
-link:wget-swift-get.html["WGET: Schneller ERHALTEN"]
 
 |===
 

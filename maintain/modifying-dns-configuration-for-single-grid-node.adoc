@@ -13,9 +13,10 @@ summary: Anstatt den DNS global für die gesamte Bereitstellung zu konfigurieren
 [role="lead"]
 Anstatt den DNS global für die gesamte Bereitstellung zu konfigurieren, können Sie ein Skript ausführen, um DNS für jeden Grid-Knoten anders zu konfigurieren.
 
-Im Allgemeinen sollten Sie die Option *MAINTENANCE* > *Network* > *DNS Servers* im Grid Manager verwenden, um DNS-Server zu konfigurieren. Verwenden Sie das folgende Skript nur, wenn Sie unterschiedliche DNS-Server für unterschiedliche Grid-Nodes verwenden müssen.
+Im Allgemeinen sollten Sie zum Konfigurieren von DNS-Servern die Option *Wartung* > *Netzwerk* > *DNS-Server* im Grid Manager verwenden.  Verwenden Sie das folgende Skript nur, wenn Sie für verschiedene Grid-Knoten unterschiedliche DNS-Server verwenden müssen.
 
 .Schritte
+. Der externe SSH-Zugriff ist standardmäßig blockiert.  Falls erforderlich,link:../admin/manage-external-ssh-access.html["Zugriff vorübergehend erlauben"] .
 . Melden Sie sich beim primären Admin-Node an:
 +
 .. Geben Sie den folgenden Befehl ein: `ssh admin@_primary_Admin_Node_IP_`
@@ -77,4 +78,5 @@ Enter command [`add search <domain>|remove search <domain>|add nameserver <ip>`]
 . [[close_cmd_Shell]]Schließen Sie die Befehlsshell auf dem Server: `exit`
 . Wiederholen Sie für jeden Rasterknoten die Schritte von <<log_in_to_node,Anmeldung beim Node>> bis <<close_cmd_shell,Schließen der Befehlsshell>>.
 . Wenn Sie keinen passwortlosen Zugriff auf andere Server mehr benötigen, entfernen Sie den privaten Schlüssel vom SSH-Agent. Eingabe: `ssh-add -D`
+. Wenn Sie externen SSH-Zugriff zugelassen haben,link:../admin/manage-external-ssh-access.html["Zugriff blockieren"] wenn Sie mit der Änderung der DNS-Konfiguration fertig sind.
 

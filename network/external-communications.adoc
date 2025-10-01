@@ -21,13 +21,14 @@ Wenn die Netzwerkrichtlinien des Unternehmens den Zugriff auf einen der Ports ei
 
 * Mit link:../admin/configuring-load-balancer-endpoints.html["Load Balancer-Endpunkte"] können Sie den Zugriff auf benutzerdefinierte Ports zulassen.
 * Weisen Sie bei der Implementierung von Nodes Ports neu zu. Sie sollten jedoch die Load Balancer-Endpunkte nicht neu zuordnen. Weitere Informationen zur Port-Neuzuweisung für den StorageGRID-Node finden Sie unter:
-+
-** link:../rhel/creating-node-configuration-files.html#port-remap-keys["Port-Neuzuordnungsschlüssel für StorageGRID auf Red hat Enterprise Linux"]
-** link:../ubuntu/creating-node-configuration-files.html#port-remap-keys["Port-Neuzuordnungsschlüssel für StorageGRID auf Ubuntu oder Debian"]
-** link:../vmware/deploying-storagegrid-node-as-virtual-machine.html#vmware-remap-ports["Ports für StorageGRID auf VMware neu zuordnen"]
-** https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/optional-remapping-network-ports-for-appliance.html["Optional: Netzwerkports für Appliance neu zuordnen"^]
 
 
+
+NOTE: Die Unterstützung für die Neuzuordnung von Ports ist veraltet und wird in einer zukünftigen Version entfernt. Informationen zum Entfernen neu zugeordneter Ports finden Sie unterlink:../maintain/removing-port-remaps.html["Entfernen Sie Port-Neuzuordnungen auf StorageGRID -Geräten"] oderlink:../maintain/removing-port-remaps-on-bare-metal-hosts.html["Entfernen Sie die Port-Remaps auf Bare-Metal-Hosts"] .
+
+* link:../swnodes/creating-node-configuration-files.html["Port-Neuzuordnungsschlüssel für StorageGRID auf Red hat Enterprise Linux"]
+* link:../swnodes/deploying-storagegrid-node-as-virtual-machine.html#vmware-remap-ports["Ports für StorageGRID auf VMware neu zuordnen"]
+* https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/optional-remapping-network-ports-for-appliance.html["Optional: Netzwerkports für Appliance neu zuordnen"^]
 
 
 
@@ -42,21 +43,6 @@ NOTE: Diese Liste enthält keine Ports, die möglicherweise als konfiguriert wer
 [cols="1a,1a,1a,1a,1a,4a"]
 |===
 | Port | TCP oder UDP | Protokoll | Von | Bis | Details 
-
-
- a| 
-22
- a| 
-TCP
- a| 
-SSH
- a| 
-Service-Laptop
- a| 
-Alle Nodes
- a| 
-Für Verfahren mit Konsolenschritten ist ein SSH- oder Konsolenzugriff erforderlich. Optional können Sie Port 2022 anstelle von 22 verwenden.
-
 
 
  a| 
@@ -176,25 +162,6 @@ Storage-Nodes
 AWS
  a| 
 Cloud-Storage-Pools-Anfragen werden an AWS-Ziele mit HTTP gesendet. Grid-Administratoren können die HTTP-Porteinstellung von 80 bei der Konfiguration eines Cloud-Storage-Pools außer Kraft setzen.
-
-
-
- a| 
-111
- a| 
-TCP/UDP
- a| 
-Rpcbind
- a| 
-NFS-Client
- a| 
-Admin-Nodes
- a| 
-Wird vom NFS-basierten Audit-Export verwendet (Portmap).
-
-*Hinweis:* dieser Port ist nur erforderlich, wenn NFS-basierter Audit-Export aktiviert ist.
-
-*Hinweis:* die Unterstützung für NFS wurde veraltet und wird in einer zukünftigen Version entfernt.
 
 
 
@@ -329,59 +296,6 @@ Cloud-Storage-Pools-Anfragen werden an AWS-Ziele mit HTTPS gesendet. Grid-Admini
 
 
  a| 
-903
- a| 
-TCP
- a| 
-NFS
- a| 
-NFS-Client
- a| 
-Admin-Nodes
- a| 
-Verwendet durch NFS-basierten Audit Export (`rpc.mountd`).
-
-*Hinweis:* dieser Port ist nur erforderlich, wenn NFS-basierter Audit-Export aktiviert ist.
-
-*Hinweis:* die Unterstützung für NFS wurde veraltet und wird in einer zukünftigen Version entfernt.
-
-
-
- a| 
-2022
- a| 
-TCP
- a| 
-SSH
- a| 
-Service-Laptop
- a| 
-Alle Nodes
- a| 
-Für Verfahren mit Konsolenschritten ist ein SSH- oder Konsolenzugriff erforderlich. Optional können Sie Port 22 anstelle von 2022 verwenden.
-
-
-
- a| 
-2049
- a| 
-TCP
- a| 
-NFS
- a| 
-NFS-Client
- a| 
-Admin-Nodes
- a| 
-Wird vom NFS-basierten Audit-Export verwendet (nfs).
-
-*Hinweis:* dieser Port ist nur erforderlich, wenn NFS-basierter Audit-Export aktiviert ist.
-
-*Hinweis:* die Unterstützung für NFS wurde veraltet und wird in einer zukünftigen Version entfernt.
-
-
-
- a| 
 5353
  a| 
 UDP
@@ -408,21 +322,6 @@ Appliance
 KMS
  a| 
 KMIP (Key Management Interoperability Protocol): Externer Datenverkehr von Appliances, die für die Node-Verschlüsselung auf den Verschlüsselungsmanagement-Server (Key Management Interoperability Protocol) konfiguriert sind, es sei denn, ein anderer Port wird auf der KMS-Konfigurationsseite des StorageGRID Appliance Installer angegeben.
-
-
-
- a| 
-8022
- a| 
-TCP
- a| 
-SSH
- a| 
-Service-Laptop
- a| 
-Alle Nodes
- a| 
-SSH auf Port 8022 gewährt Zugriff auf das Betriebssystem auf Appliance- und virtuellen Node-Plattformen zur Unterstützung und Fehlerbehebung. Dieser Port wird nicht für Linux-basierte (Bare Metal-)Nodes verwendet und muss nicht zwischen Grid-Nodes oder während des normalen Betriebs zugänglich sein.
 
 
 
@@ -521,21 +420,6 @@ S3-Client-Traffic direkt zu Storage-Nodes (HTTPS).
 
 
  a| 
-18083
- a| 
-TCP
- a| 
-HTTPS
- a| 
-Swift Clients
- a| 
-Storage-Nodes
- a| 
-Swift-Client-Datenverkehr direkt zu Storage-Nodes (HTTPS).
-
-
-
- a| 
 18084
  a| 
 TCP
@@ -547,21 +431,6 @@ S3-Clients
 Storage-Nodes
  a| 
 S3-Client-Traffic direkt zu Storage-Nodes (HTTP).
-
-
-
- a| 
-18085
- a| 
-TCP
- a| 
-HTTP
- a| 
-Swift Clients
- a| 
-Storage-Nodes
- a| 
-Swift-Client-Datenverkehr direkt zu Storage-Nodes (HTTP).
 
 
 

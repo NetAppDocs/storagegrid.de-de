@@ -1,0 +1,110 @@
+---
+permalink: tenant/what-is-branch-bucket.html 
+sidebar: sidebar 
+keywords: how to create branch bucket 
+summary: Ein Branch-Bucket bietet Zugriff auf Objekte in einem Bucket, wie sie zu einem bestimmten Zeitpunkt existierten. 
+---
+= Was ist ein Asteimer?
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ein Branch-Bucket bietet Zugriff auf Objekte in einem Bucket, wie sie zu einem bestimmten Zeitpunkt existierten.
+
+Sie erstellen einen Branch-Bucket aus einem vorhandenen Bucket.  Nachdem Sie einen Branch-Bucket erstellt haben, wird der ursprüngliche Bucket, aus dem er erstellt wurde, als _Basis-Bucket_ bezeichnet.  Darüber hinaus können Sie einen Branch-Bucket aus einem anderen Branch-Bucket erstellen.
+
+Ein Branch-Bucket bietet Zugriff auf geschützte Daten, dient jedoch nicht als Backup.  Um die Daten weiterhin zu schützen, verwenden Sie diese Funktionen für Basis-Buckets:
+
+* link:../tenant/using-s3-object-lock.html["S3-Objektsperre"]
+* link:../admin/grid-federation-what-is-cross-grid-replication.html["Grid-übergreifende Replizierung"]für Basiseimer
+* link:../tenant/manage-bucket-policy.html["Bucket-Richtlinien"]für versionierte Buckets zum Bereinigen alter Objektversionen
+
+
+Beachten Sie die folgenden Merkmale von Zweig-Buckets:
+
+* Sie können auf die Objekte in Zweig-Buckets zugreifen, indem Sielink:../tenant/use-s3-console.html["S3-Konsole zum Herunterladen von Objekten"] .
+* Wenn Clients auf Objekte in einem Branch-Bucket zugreifen,link:../s3/use-access-policies.html["Zugriffsrichtlinien"] und nicht die Richtlinien des Basis-Buckets bestimmen, ob der Zugriff gewährt oder verweigert wird.
+* Objekte, die in einem Basis-Bucket erstellt werden, werden danach ausgewertet, wielink:../ilm/access-create-ilm-rule-wizard.html["ILM-Regeln"] auf den Basiseimer anwenden.  In einem Branch-Bucket erstellte Objekte werden basierend darauf ausgewertet, wie ILM-Regeln auf den Branch-Bucket angewendet werden.
+* Die Cross-Grid-Replikation wird für Branch-Buckets nicht unterstützt.
+* Plattformdienste werden für Branch-Buckets nicht unterstützt.
+
+
+
+
+== Beispiele für die Verwendung von Branch Buckets
+
+* Sie können einen Branch-Bucket verwenden, um beschädigte Objekte zu entfernen, indem Sie einen Branch-Bucket von einem Zeitpunkt vor dem Auftreten der Beschädigung erstellen und dann Anwendungen auf den Branch-Bucket statt auf den Basis-Bucket verweisen, der beschädigte Objekte enthält.
+* Sie speichern Daten in einem versionierten Bucket.  Es gab eine versehentliche Sicherheitslücke, die dazu führte, dass nach der Zeit _T_ viele unerwünschte Objekte aufgenommen wurden.  Sie können einen Branch-Bucket für den Vorher-Zeitwert _T_ erstellen und Clientvorgänge an diesen Branch-Bucket umleiten.  Dann werden den Clients nur Objekte angezeigt, die vor der Vorzeit _T_ aufgenommen wurden.
+
+
+
+
+== Operationen an Objekten in Branch-Buckets
+
+* Eine PUT-Objektoperation für einen Branch-Bucket erstellt ein Objekt im Branch.
+* Eine GET-Objektoperation für einen Branch-Bucket ruft ein Objekt aus dem Branch ab.  Wenn das Objekt im Zweig-Bucket nicht vorhanden ist, wird das Objekt aus dem Basis-Bucket abgerufen.
+* Das Löschen von Objekten aus Branch-Buckets erfolgt wie folgt:
++
+[cols="1a,1a,2a,2a,2a"]
+|===
+| Betrieb | Ziel | Ergebnis | Objektsichtbarkeit im Basis-Bucket | Objektsichtbarkeit im Branch-Bucket 
+
+
+ a| 
+Löschen ohne Versionskennung
+ a| 
+Basiseimer
+ a| 
+Löschmarkierung wird nur für den Basis-Bucket erstellt
+ a| 
+HEAD/GET gibt zurück, dass das Objekt nicht existiert, auf bestimmte Versionen kann jedoch noch zugegriffen werden
+ a| 
+HEAD/GET gibt zurück, dass das Objekt vorhanden ist und auf bestimmte Versionen noch zugegriffen werden kann
+
+Die Löschmarkierung wäre nach dem Branch-Bucket erstellt worden `beforeTime` .
+
+
+
+ a| 
+Löschen mit Versions-ID
+ a| 
+Basiseimer
+ a| 
+Eine bestimmte Objektversion wird sowohl für den Basis- als auch für den Zweig-Bucket gelöscht
+ a| 
+HEAD/GET gibt zurück, dass die Objektversion nicht existiert
+ a| 
+HEAD/GET gibt zurück, dass die Objektversion nicht existiert
+
+
+
+ a| 
+Löschen ohne Versionskennung
+ a| 
+Asteimer
+ a| 
+Löschmarkierung wird nur für den Branch-Bucket erstellt
+ a| 
+HEAD/GET gibt Objekt zurück (Basis-Bucket-Objekt nicht betroffen)
+ a| 
+HEAD/GET gibt zurück, dass das Objekt nicht existiert
+
+
+
+ a| 
+Löschen mit Versions-ID
+ a| 
+Asteimer
+ a| 
+Bestimmte Objektversionen werden nur für den Zweig-Bucket gelöscht
+ a| 
+HEAD/GET gibt eine bestimmte Objektversion zurück (Basis-Bucket-Objekt nicht betroffen)
+ a| 
+HEAD/GET gibt zurück, dass die Objektversion nicht existiert
+
+|===
+
+
+Siehe auchlink:../ilm/how-objects-are-deleted.html#delete-s3-versioned-objects["Löschen von S3-versionierten Objekten"] .

@@ -33,7 +33,7 @@ Beziehen Sie IP-Adressen, und richten Sie VLAN-Schnittstellen ein:: Wenn Sie ein
 Wenn Sie planen, einen virtuellen LAN zur Trennung des Datenverkehrs von der S3-Anwendung zu verwenden, haben Sie die VLAN-Schnittstelle bereits konfiguriert. Siehe link:../admin/configure-vlan-interfaces.html["Konfigurieren Sie die VLAN-Schnittstellen"].
 
 --
-Konfigurieren Sie Identity Federation und SSO:: Wenn Sie planen, Identity Federation oder Single Sign-On (SSO) für Ihr StorageGRID-System zu verwenden, haben Sie diese Funktionen aktiviert. Sie wissen auch, welche föderierte Gruppe Root-Zugriff für das Mandantenkonto haben soll, das die S3-Anwendung verwenden wird. Siehe link:../admin/using-identity-federation.html["Verwenden Sie den Identitätsverbund"] und link:../admin/configuring-sso.html["Konfigurieren Sie Single Sign-On"].
+Konfigurieren Sie Identity Federation und SSO:: Wenn Sie Identitätsföderation oder Single Sign-On (SSO) für Ihr StorageGRID System verwenden möchten, haben Sie diese Funktionen aktiviert.  Sie wissen auch, welche föderierte Gruppe Root-Zugriff auf das Mandantenkonto haben sollte, das die S3-Anwendung verwenden wird.  Sehenlink:../admin/using-identity-federation.html["Verwenden Sie den Identitätsverbund"] Undlink:../admin/how-sso-works.html["Konfigurieren Sie Single Sign-On"] .
 Abrufen und Konfigurieren von Domänennamen:: Sie wissen, welcher vollständig qualifizierte Domänenname (FQDN) für StorageGRID verwendet werden soll. DNS-Einträge (Domain Name Server) weisen diesen FQDN den virtuellen IP-Adressen (VIP) der HA-Gruppe zu, die Sie mit dem Assistenten erstellen.
 +
 --

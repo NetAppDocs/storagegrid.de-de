@@ -40,7 +40,7 @@ Sie sollten die Ergebnisse aus Hintergrundverifizierungen und Objektprüfungen r
 .Schritte
 . Prüfen Sie die Ergebnisse aus Hintergrundverifizierungen:
 +
-.. Wählen Sie *NODES* > *_Storage Node_* > *Objekte* aus.
+.. Wählen Sie *Knoten* > *_Speicherknoten_* > *Objekte*.
 .. Überprüfen Sie die Überprüfungsergebnisse:
 +
 *** Um die Verifizierung replizierter Objektdaten zu prüfen, sehen Sie sich die Attribute im Abschnitt Überprüfung an.
@@ -60,8 +60,8 @@ Wählen Sie das Fragezeichen  neben dem Namen eines Attributs ausimage:../media/
 
 . Überprüfen Sie die Ergebnisse von Objektprüfaufträgen:
 +
-.. Wählen Sie *WARTUNG* > *Objekt Existenzprüfung* > *Jobverlauf*.
-.. Scannen Sie die Spalte „fehlende Objektkopien erkannt“. Wenn bei Jobs 100 oder mehr fehlende Objektkopien vorhanden waren und die Warnmeldung *Objects lost* ausgelöst wurde, wenden Sie sich an den technischen Support.
+.. Wählen Sie *Wartung* > *Objektexistenzprüfung* > *Auftragsverlauf*.
+.. Scannen Sie die Spalte „Fehlende Objektkopien erkannt“.  Wenn bei einem Auftrag 100 oder mehr Objektkopien fehlen und die Warnung „Möglicherweise verlorene Objekte“ ausgelöst wurde, wenden Sie sich an den technischen Support.
 +
 image::../media/oec_job_history.png[Jobverlauf der Objektexistenz-Prüfung]
 

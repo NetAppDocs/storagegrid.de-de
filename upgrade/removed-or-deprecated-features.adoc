@@ -103,7 +103,7 @@ Docker Container-Engine
  a| 
 NOCH AUSSTEHEND
  a| 
-Die Unterstützung für Docker als Container-Engine für rein softwarebasierte Implementierungen ist veraltet. Docker wird in einer zukünftigen Version durch eine weitere Container-Engine ersetzt. Siehe link:../ubuntu/software-requirements.html#docker-versions-tested["Liste der derzeit unterstützten Docker-Versionen"].
+Die Unterstützung für Docker als Container-Engine für reine Softwarebereitstellungen ist veraltet.  Docker wird in einer zukünftigen Version durch eine andere Container-Engine ersetzt.  Weitere Informationen finden Sie imlink:../swnodes/software-requirements.html["Softwareanforderungen für softwarebasierte Knoten"] für eine Liste der derzeit unterstützten Docker-Versionen.
 
 
 
@@ -117,6 +117,18 @@ NFS-Audit-Export
 12,0
  a| 
 https://docs.netapp.com/us-en/storagegrid-118/admin/configuring-audit-client-access.html["Audit-Client-Zugriff für NFS konfigurieren (StorageGRID 11.8)"^]
+
+
+
+ a| 
+Port-Neuzuordnung
+ a| 
+12,0
+ a| 
+12,1
+ a| 
+12,2
+ a| 
 
 
 

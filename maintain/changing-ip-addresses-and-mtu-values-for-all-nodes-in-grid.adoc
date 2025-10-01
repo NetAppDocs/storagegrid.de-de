@@ -36,12 +36,13 @@ NOTE: Wenn die vorhandenen DNS-Server in den neuen IP-Adressen für das Raster n
 
 +
 
-NOTE: Wenn SSO für Ihr StorageGRID-System aktiviert ist und alle Vertrauensstellen, die sich auf Administratorknoten-IP-Adressen befinden, konfiguriert wurden (anstelle von vollständig qualifizierten Domänennamen, wie empfohlen), müssen Sie diese Vertrauensstellungen der betreffenden Partei in Active Directory Federation Services (AD FS) aktualisieren oder neu konfigurieren. Unmittelbar nach dem Ändern der IP-Adressen. Siehe link:../admin/configuring-sso.html["Konfigurieren Sie Single Sign-On"].
+NOTE: Wenn SSO für Ihr StorageGRID -System aktiviert ist und alle Vertrauensstellungen der vertrauenden Seite mithilfe von IP-Adressen des Admin-Knotens konfiguriert wurden (anstelle von vollqualifizierten Domänennamen, wie empfohlen), müssen Sie diese Vertrauensstellungen der vertrauenden Seite in Active Directory Federation Services (AD FS) unmittelbar nach der Änderung der IP-Adressen aktualisieren oder neu konfigurieren. Sehen link:../admin/configure-sso.html["Konfigurieren Sie Single Sign-On"] .
 
 +
 
 NOTE: Fügen Sie bei Bedarf das neue Subnetz für die neuen IP-Adressen hinzu.
 
+. Der externe SSH-Zugriff ist standardmäßig blockiert.  Falls erforderlich,link:../admin/manage-external-ssh-access.html["Zugriff vorübergehend erlauben"] .
 . Melden Sie sich beim primären Admin-Node an:
 +
 .. Geben Sie den folgenden Befehl ein: `ssh admin@_primary_Admin_Node_IP_`
@@ -130,12 +131,13 @@ NOTE: Das gesamte Grid muss heruntergefahren werden, damit alle Nodes zur gleich
 .. Wenn Sie neue DNS-Server hinzugefügt haben, löschen Sie die alten DNS-Serverwerte.
 
 
-. Laden Sie das neue Wiederherstellungspaket aus dem Grid Manager herunter.
+. Laden Sie das neue Wiederherstellungspaket vom Grid Manager herunter.
 +
-.. Wählen Sie *WARTUNG* > *System* > *Wiederherstellungspaket*.
+.. Wählen Sie *Wartung* > *System* > *Wiederherstellungspaket*.
 .. Geben Sie die Provisionierungs-Passphrase ein.
 
 
+. Wenn Sie externen SSH-Zugriff zugelassen haben,link:../admin/manage-external-ssh-access.html["Zugriff blockieren"] wenn Sie mit der Änderung der IP-Adressen fertig sind.
 
 
 .Verwandte Informationen

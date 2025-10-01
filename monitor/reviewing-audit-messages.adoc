@@ -30,7 +30,7 @@ StorageGRID kann standardmäßig Audit-Informationen senden oder das Ziel änder
 * StorageGRID ist standardmäßig auf lokale Node-Überwachungsziele eingestellt.
 * Die Audit-Protokolleinträge von Grid Manager und Tenant Manager können an einen Storage Node gesendet werden.
 * Optional können Sie das Ziel der Audit-Protokolle ändern und Audit-Informationen an einen externen Syslog-Server senden. Lokale Protokolle von Audit-Datensätzen werden weiterhin generiert und gespeichert, wenn ein externer Syslog-Server konfiguriert ist.
-* link:../monitor/configure-audit-messages.html["Erfahren Sie mehr über das Konfigurieren von Überwachungsmeldungen und Protokollzielen"].
+* link:../monitor/configure-log-management.html["Informationen zum Konfigurieren der Protokollverwaltung"] .
 
 
 Details zur Audit-Log-Datei, zum Format der Audit-Meldungen, zu den Typen der Audit-Meldungen und zu den verfügbaren Tools zur Analyse von Audit-Meldungen finden Sie unter link:../audit/index.html["Prüfung von Audit-Protokollen"].

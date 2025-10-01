@@ -33,23 +33,23 @@ Jeder Gateway-Node oder Admin-Node kann möglicherweise nur ein paar Minuten ode
 .Schritte
 . Sobald ein neues Wiederherstellungspaket erstellt wurde, laden Sie die Datei herunter.
 +
-image::../media/decommission_site_step_6_recovery_package.png[Site Decommission Schritt 6 Recovery Package]
+image::../media/decommission_site_step_6_recovery_package.png[Wiederherstellungspaket für Site-Dekommissionierung, Schritt 6]
 
 +
 
-NOTE: Laden Sie das Wiederherstellungspaket so schnell wie möglich herunter, um sicherzustellen, dass Sie Ihr Grid wiederherstellen können, wenn während des Stillfalls etwas schief geht.
+NOTE: Laden Sie das Wiederherstellungspaket so schnell wie möglich herunter, um sicherzustellen, dass Sie Ihr Netz wiederherstellen können, falls während der Außerbetriebnahme etwas schiefgeht.
 
 +
-.. Wählen Sie den Link in der Nachricht aus, oder wählen Sie *WARTUNG* > *System* > *Wiederherstellungspaket*.
+.. Wählen Sie den Link in der Nachricht oder wählen Sie *Wartung* > *System* > *Wiederherstellungspaket*.
 .. Laden Sie die `.zip` Datei herunter.
 +
-Siehe die Anleitung für link:downloading-recovery-package.html["Herunterladen des Wiederherstellungspakets"].
+Siehe die Anweisungen fürlink:downloading-recovery-package.html["Herunterladen des Wiederherstellungspakets"] .
 
 
 
 +
 
-NOTE: Die Recovery Package-Datei muss gesichert sein, weil sie Verschlüsselungsschlüssel und Passwörter enthält, die zum Abrufen von Daten vom StorageGRID-System verwendet werden können.
+NOTE: Die Wiederherstellungspaketdatei muss gesichert werden, da sie Verschlüsselungsschlüssel und Passwörter enthält, mit denen Daten aus dem StorageGRID -System abgerufen werden können.
 
 . Überwachen Sie mithilfe des Diagramms für die Datenverschiebung das Verschieben von Objektdaten von dieser Seite zu anderen Standorten.
 +

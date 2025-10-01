@@ -33,8 +33,8 @@ indexpage:
       url: "../monitor/using-snmp-monitoring.html"
   - title: Verwenden Sie Überwachungsmeldungen und andere Protokolle
     links:
-    - title: Konfigurieren Sie Überwachungsmeldungen
-      url: "../monitor/configure-audit-messages.html"
+    - title: Konfigurieren der Protokollverwaltung
+      url: "../monitor/configure-log-management.html"
     - title: Verwenden Sie einen externen Syslog-Server
       url: "../monitor/considerations-for-external-syslog-server.html"
     - title: Prüfung von Audit-Protokollen
@@ -45,6 +45,8 @@ indexpage:
     links:
     - title: Prüfen von Support-Kennzahlen
       url: "../monitor/reviewing-support-metrics.html"
+    - title: E/A-Priorisierung ändern
+      url: "../monitor/manage-io-prioritization.html"
     - title: Führen Sie eine Diagnose aus
       url: "../monitor/running-diagnostics.html"
     - title: Fehlerbehebung bei häufigen Problemen

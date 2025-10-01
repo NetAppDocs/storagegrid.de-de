@@ -15,17 +15,19 @@ StorageGRID Nodes können auf VMware Virtual Machines innerhalb einer Container-
 
 
 
-== Steuern Sie den Remote-IPMI-Zugriff auf BMC
+== [[block-remote-ipmi]]Steuern Sie den Remote-IPMI-Zugriff auf BMC
 
 Sie können den Remote-IPMI-Zugriff für alle Appliances aktivieren oder deaktivieren, die einen BMC enthalten. Die Remote-IPMI-Schnittstelle ermöglicht jedem Benutzer mit einem BMC-Konto und Passwort den Zugriff auf Ihre StorageGRID-Geräte auf niedriger Ebene. Wenn Sie keinen Remote-IPMI-Zugriff auf den BMC benötigen, deaktivieren Sie diese Option.
 
-* Um den Remote-IPMI-Zugriff auf den BMC im Grid Manager zu steuern, gehen Sie zu *CONFIGURATION* > *Security* > *Security settings* > *Appliances*:
+* Um den Remote-IPMI-Zugriff auf den BMC im Grid Manager zu steuern, gehen Sie zu *Konfiguration* > *Sicherheit* > *Sicherheitseinstellungen* > *Geräte*:
 +
 ** Deaktivieren Sie das Kontrollkästchen *Remote-IPMI-Zugriff aktivieren*, um den IPMI-Zugriff auf den BMC zu deaktivieren.
 ** Aktivieren Sie das Kontrollkästchen *Remote-IPMI-Zugriff aktivieren*, um IPMI-Zugriff auf den BMC zu aktivieren.
 
 
 
+
+Weitere Informationen zur BMC Härtung finden Sie im https://media.defense.gov/2023/Jun/14/2003241405/-1/-1/0/CSI_HARDEN_BMCS.PDF["Baseboard-Management-Controller härten"^] Informationsblatt zur Cybersicherheit der https://www.nsa.gov/["Nationale Sicherheitsagentur (NSA)"^] Und https://www.cisa.gov/["Agentur für Cybersicherheit und Infrastruktursicherheit (CISA)"^] .
 
 
 
@@ -44,13 +46,13 @@ Sie können insbesondere diese Bereiche managen:
 
 Diese interne Firewall bietet zwar eine zusätzliche Schutzschicht gegen häufig vorgängige Bedrohungen, sie macht aber keine externe Firewall erforderlich.
 
-Eine Liste aller internen und externen Ports, die von StorageGRID verwendet werden, finden Sie unter link:../network/network-port-reference.html["Referenz für Netzwerk-Ports"].
+Eine Liste aller von StorageGRID verwendeten internen und externen Ports finden Sie unterlink:../network/internal-grid-node-communications.html#storagegrid-internal-ports["Interne StorageGRID-Ports"] Undlink:../network/external-communications.html#ports-used-for-external-communications["Anschlüsse für externe Kommunikation"] .
 
 
 
 == Deaktivieren Sie nicht verwendete Dienste
 
-Bei allen StorageGRID-Knoten sollten Sie den Zugriff auf nicht genutzte Services deaktivieren oder blockieren. Wenn Sie beispielsweise nicht planen, DHCP zu verwenden, verwenden Sie den Grid Manager, um Port 68 zu schließen. Wählen Sie *CONFIGURATION* > *Firewall Control* > *externen Zugriff verwalten*. Ändern Sie dann den Status-Umschalter für Port 68 von *Open* auf *Closed*.
+Für alle StorageGRID -Knoten sollten Sie den Zugriff auf nicht verwendete Dienste deaktivieren oder blockieren.  Wenn Sie beispielsweise DHCP nicht verwenden möchten, schließen Sie Port 68 mit dem Grid Manager.  Wählen Sie *Konfiguration* > *Firewall-Steuerung* > *Externen Zugriff verwalten*.  Ändern Sie dann den Statusschalter für Port 68 von *Offen* auf *Geschlossen*.
 
 
 
@@ -63,6 +65,14 @@ Vermeiden Sie bei allen StorageGRID Nodes die Ausführung von StorageGRID auf de
 == Schutz von Nodes während der Installation
 
 Erlauben Sie nicht vertrauenswürdigen Benutzern den Zugriff auf StorageGRID-Knoten über das Netzwerk, wenn die Knoten installiert werden. Nodes sind erst dann vollständig sicher, wenn sie sich dem Grid angeschlossen haben.
+
+
+
+== Beschränken Sie den physischen Zugriff auf die Hardware
+
+Sie müssen den physischen Zugriff auf StorageGRID -Hardware-Appliance-Knoten sowie auf VMware-Hosts für virtuelle Maschinen und Linux-Hosts, auf denen StorageGRID ausgeführt wird, auf autorisierte Administratoren beschränken.  Beispiele für physische Zugangskontrollen sind Schlösser, Wachen, physische Barrieren und Videoüberwachung.
+
+Hardware-Appliance-Knoten dürfen nur von autorisierten Administratoren installiert und betrieben werden.  Erlauben Sie nicht autorisierten Administratoren keinen Zugriff auf Hardware-Appliance-Knoten.
 
 
 
@@ -93,7 +103,7 @@ Storage-Nodes managen und speichern Objektdaten und Metadaten. Befolgen Sie dies
 * Aktivieren Sie keine ausgehenden Dienste für nicht vertrauenswürdige Mandanten. Wenn Sie beispielsweise das Konto für einen nicht vertrauenswürdigen Mandanten erstellen, erlauben Sie dem Mandanten nicht, seine eigene Identitätsquelle zu verwenden, und erlauben Sie nicht die Nutzung von Plattformdiensten. Siehe die Schritte für link:../admin/creating-tenant-account.html["Erstellen eines Mandantenkontos"].
 * Verwenden Sie einen Drittanbieter-Load-Balancer für nicht vertrauenswürdigen Client-Datenverkehr. Der Lastausgleich von Drittanbietern bietet mehr Kontrolle und zusätzlichen Schutz vor Angriffen.
 * Verwenden Sie optional einen Storage Proxy, um mehr Kontrolle über Cloud-Storage-Pools und die Kommunikation der Plattformservices von Storage Nodes zu externen Services zu erhalten. Siehe die Schritte für link:../admin/configuring-storage-proxy-settings.html["Erstellen eines Speicherproxys"].
-* Optional können Sie über das Client-Netzwerk eine Verbindung zu externen Diensten herstellen. Wählen Sie dann *CONFIGURATION* > *Security* > *Firewall Control* > *UnTrusted Client Networks* aus und geben Sie an, dass das Client-Netzwerk auf dem Storage Node nicht vertrauenswürdig ist. Der Speicherknoten akzeptiert keinen eingehenden Datenverkehr im Client-Netzwerk mehr, aber er erlaubt weiterhin ausgehende Anfragen für Platform Services.
+* Optional können Sie über das Client-Netzwerk eine Verbindung zu externen Diensten herstellen.  Wählen Sie dann *Konfiguration* > *Sicherheit* > *Firewall-Steuerung* > *Nicht vertrauenswürdige Client-Netzwerke* und geben Sie an, dass das Client-Netzwerk auf dem Speicherknoten nicht vertrauenswürdig ist.  Der Speicherknoten akzeptiert keinen eingehenden Datenverkehr mehr im Client-Netzwerk, lässt jedoch weiterhin ausgehende Anfragen für Plattformdienste zu.
 
 
 
@@ -104,7 +114,7 @@ Gateway-Knoten stellen eine optionale Schnittstelle zum Lastausgleich bereit, ü
 
 * Konfigurieren und verwenden Sie Load Balancer-Endpunkte. Siehe link:../admin/managing-load-balancing.html["Überlegungen zum Lastausgleich"].
 * Verwenden Sie für nicht vertrauenswürdigen Client-Datenverkehr einen Drittanbieter-Load-Balancer zwischen Client und Gateway-Node oder Storage-Nodes. Der Lastausgleich von Drittanbietern bietet mehr Kontrolle und zusätzlichen Schutz vor Angriffen. Wenn Sie einen Load Balancer eines Drittanbieters verwenden, kann der Netzwerk-Traffic optional auch so konfiguriert werden, dass er über einen internen Load Balancer-Endpunkt geleitet oder direkt an Storage Nodes gesendet wird.
-* Wenn Sie Load Balancer-Endpunkte verwenden, lassen Sie optional Clients über das Client-Netzwerk verbinden. Wählen Sie dann *CONFIGURATION* > *Security* > *Firewall Control* > *UnTrusted Client Networks* aus und geben Sie an, dass das Client-Netzwerk auf dem Gateway Node nicht vertrauenswürdig ist. Der Gateway-Node akzeptiert nur eingehenden Datenverkehr an den Ports, die explizit als Load Balancer-Endpunkte konfiguriert wurden.
+* Wenn Sie Load Balancer-Endpunkte verwenden, können Sie Clients optional über das Client-Netzwerk verbinden.  Wählen Sie dann *Konfiguration* > *Sicherheit* > *Firewall-Steuerung* > *Nicht vertrauenswürdige Client-Netzwerke* und geben Sie an, dass das Client-Netzwerk auf dem Gateway-Knoten nicht vertrauenswürdig ist.  Der Gateway-Knoten akzeptiert eingehenden Datenverkehr nur auf den Ports, die explizit als Endpunkte des Lastenausgleichs konfiguriert sind.
 
 
 
@@ -116,14 +126,25 @@ StorageGRID Hardware-Appliances wurden speziell für den Einsatz in einem Storag
 Beachten Sie diese Richtlinien zum Schutz aller Hardware-Appliance-Nodes in Ihrem StorageGRID System:
 
 * Wenn die Appliance SANtricity System Manager zum Management des Storage Controllers verwendet, verhindern Sie, dass nicht vertrauenswürdige Clients über das Netzwerk auf SANtricity System Manager zugreifen.
-* Wenn die Appliance über einen Baseboard Management Controller (BMC) verfügt, beachten Sie, dass der BMC-Management-Port einen niedrigen Hardwarezugriff ermöglicht. Schließen Sie den BMC-Management-Port nur an ein sicheres, vertrauenswürdiges, internes Management-Netzwerk an. Wenn kein solches Netzwerk verfügbar ist, lassen Sie den BMC-Management-Port unverbunden oder blockiert, es sei denn, eine BMC-Verbindung wird vom technischen Support angefordert.
+* Wenn das Gerät über einen Baseboard Management Controller (BMC) verfügt, beachten Sie, dass der BMC Verwaltungsport einen Low-Level-Hardwarezugriff ermöglicht.  Verbinden Sie den BMC Verwaltungsport nur mit einem sicheren, vertrauenswürdigen internen Verwaltungsnetzwerk.
++
+Sie können ein VLAN einrichten, um BMC Netzwerkverbindungen zu isolieren und den BMC Internetzugriff auf vertrauenswürdige Netzwerke zu beschränken.  Weitere Informationen zum Erzwingen der VLAN-Trennung finden Sie im https://media.defense.gov/2023/Jun/14/2003241405/-1/-1/0/CSI_HARDEN_BMCS.PDF["Baseboard-Management-Controller härten"^] Informationsblatt zur Cybersicherheit der https://www.nsa.gov/["Nationale Sicherheitsagentur (NSA)"^] Und https://www.cisa.gov/["Agentur für Cybersicherheit und Infrastruktursicherheit (CISA)"^] .
+
++
+Wenn kein sicheres, vertrauenswürdiges internes Verwaltungsnetzwerk verfügbar ist, lassen Sie den BMC Verwaltungsport unverbunden oder blockiert.  Der technische Support kann während eines Supportfalls vorübergehenden Zugriff anfordern.
+
 * Wenn die Appliance die Remote-Verwaltung der Controller-Hardware über Ethernet mit dem IPMI-Standard (Intelligent Platform Management Interface) unterstützt, blockieren Sie den nicht vertrauenswürdigen Datenverkehr auf Port 623.
 
 
 
-NOTE: Sie können den Remote-IPMI-Zugriff für alle Appliances aktivieren oder deaktivieren, die einen BMC enthalten. Die Remote-IPMI-Schnittstelle ermöglicht jedem Benutzer mit einem BMC-Konto und Passwort den Zugriff auf Ihre StorageGRID-Geräte auf niedriger Ebene. Wenn Sie keinen Remote-IPMI-Zugriff auf das BMC benötigen, deaktivieren Sie diese Option mit einer der folgenden Methoden: + im Grid-Manager gehen Sie zu *CONFIGURATION* > *Security* > *Sicherheitseinstellungen* > *Appliances* und deaktivieren Sie das Kontrollkästchen *Remote-IPMI-Zugriff aktivieren*. + Verwenden Sie in der Grid-Management-API den privaten Endpunkt: `PUT /private/bmc`.
+NOTE: Sie können den Remote-IPMI-Zugriff für alle Appliances mit einem BMC aktivieren oder deaktivieren.  Die Remote-IPMI-Schnittstelle ermöglicht jedem mit einem BMC -Konto und Kennwort den Low-Level-Hardwarezugriff auf Ihre StorageGRID -Geräte.  Wenn Sie keinen Remote-IPMI-Zugriff auf den BMC benötigen, deaktivieren Sie diese Option mit einer der folgenden Methoden: + Gehen Sie im Grid Manager zu *Konfiguration* > *Sicherheit* > *Sicherheitseinstellungen* > *Geräte* und deaktivieren Sie das Kontrollkästchen *Remote-IPMI-Zugriff aktivieren*.  + Verwenden Sie in der Grid-Management-API den privaten Endpunkt: `PUT /private/bmc` .
+
++ Sie können auch<<block-remote-ipmi,Deaktivieren des Remote-IPMI-Zugriffs>> .
 
 * Für Appliance-Modelle mit SED-, FDE- oder FIPS-NL-SAS-Laufwerken, die Sie mit SANtricity System Manager managen, https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/accessing-and-configuring-santricity-system-manager.html["Aktivieren und konfigurieren Sie die SANtricity-Laufwerksicherheit"^].
-* Für Appliance-Modelle mit SED- oder FIPS-NVMe-SSDs, die Sie mit dem StorageGRID-Appliance-Installationsprogramm und dem Grid-Manager managen, https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/optional-enabling-node-encryption.html["Aktivieren und konfigurieren Sie die StorageGRID-Laufwerkverschlüsselung"^].
-* Bei Appliances ohne SED-, FDE- oder FIPS-Laufwerke aktivieren und konfigurieren Sie die StorageGRID-Software-Node-Verschlüsselung https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/optional-enabling-node-encryption.html#enable-node-encryption["Verwendung eines Key Management Servers (KMS)"^].
+* Für Appliance-Modelle mit SED- oder FIPS-NVMe-SSDs, die Sie mit dem StorageGRID Appliance Installer und Grid Manager verwalten, https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/optional-enabling-node-encryption.html#enable-drive-encryption["Aktivieren und konfigurieren Sie die StorageGRID-Laufwerkverschlüsselung"^] .
+* Für Geräte ohne SED-, FDE- oder FIPS-Laufwerke verwenden Sie einen Key Management Server (KMS), um https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/optional-enabling-node-encryption.html#enable-node-encryption["Aktivieren und Konfigurieren der StorageGRID -Softwareknotenverschlüsselung"^] .
 
+
+.Verwandte Informationen
+https://docs.netapp.com/us-en/e-series-santricity/sm-settings/overview-drive-security.html["Erfahren Sie mehr über die Laufwerkssicherheit im SANtricity System Manager"^]

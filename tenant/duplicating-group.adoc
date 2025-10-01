@@ -19,9 +19,9 @@ Sie können neue Gruppen schneller erstellen, indem Sie eine vorhandene Gruppe d
 
 
 .Schritte
-. Wählen Sie *ZUGRIFFSVERWALTUNG* > *Gruppen*.
+. Wählen Sie *Zugriffsverwaltung* > *Gruppen*.
 . Aktivieren Sie das Kontrollkästchen für die Gruppe, die Sie duplizieren möchten.
-. Wählen Sie *Gruppe duplizieren*. Weitere Informationen zum Erstellen einer Gruppe finden Sie in den Anweisungen zum Erstellen von Gruppen für link:creating-groups-for-s3-tenant.html["Einen S3-Mandanten"] oder für link:creating-groups-for-swift-tenant.html["Einen Swift-Mandanten"].
+. Wählen Sie *Gruppe duplizieren*.  Weitere Einzelheiten zum Erstellen einer Gruppe finden Sie in den Anweisungen zum Erstellen von Gruppen fürlink:creating-groups-for-s3-tenant.html["Einen S3-Mandanten"] .
 . Wählen Sie die Registerkarte *Lokale Gruppe* aus, um eine lokale Gruppe zu erstellen, oder wählen Sie die Registerkarte *Federated Group* aus, um eine Gruppe aus der zuvor konfigurierten Identitätsquelle zu importieren.
 +
 Wenn Single Sign-On (SSO) für Ihr StorageGRID-System aktiviert ist, können sich Benutzer, die zu lokalen Gruppen gehören, nicht beim Tenant Manager anmelden, obwohl sie Client-Anwendungen verwenden können, um die Ressourcen des Mandanten basierend auf link:tenant-management-permissions.html["Gruppenberechtigungen"]zu verwalten.

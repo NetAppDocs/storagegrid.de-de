@@ -26,7 +26,7 @@ Bei der Installation von StorageGRID und dem Hinzufügen von Standorten wird aut
 * Wenn Ihr Raster mehr als einen Standort enthält, repliziert die Standardregel eine Kopie jedes Objekts an jedem Standort.
 
 
-Entspricht die Standardrichtlinie nicht Ihren Storage-Anforderungen, können Sie eigene Regeln und Richtlinien erstellen. Siehe link:what-ilm-rule-is.html["Erstellen einer ILM-Regel"] und link:creating-ilm-policy.html["ILM-Richtlinie erstellen"].
+Wenn die Standardrichtlinie Ihren Speicheranforderungen nicht entspricht, können Sie Ihre eigenen Regeln und Richtlinien erstellen.  Sehenlink:what-ilm-rule-is.html["Erstellen einer ILM-Regel"] Undlink:creating-ilm-policy.html["ILM-Richtlinie erstellen"] .
 
 
 
@@ -56,6 +56,11 @@ ILM-Richtlinien-Tags:: Wenn Mandanten einfach pro Bucket zwischen mehreren Daten
 Sie können beispielsweise drei Tags mit den Namen Gold, Silber und Bronze haben. Sie können jedem Tag eine ILM-Richtlinie zuweisen. Diese richtet sich nach der Dauer und dem Speicherort von Objekten, die in dieser Richtlinie gespeichert sind. Mandanten können durch Tagging ihrer Buckets die zu verwendende Richtlinie auswählen. Ein mit Gold gekennzeichneter Bucket wird durch die Gold-Richtlinie gemanagt und erhält das Gold-Level für Datensicherung und Performance.
 
 --
+
+
+
+NOTE: Du kannstlink:../ilm/creating-ilm-policy.html#activate-ilm-policy["Erstellen Sie maximal 10 Richtlinien-Tags"] für Ihr Raster.
+
 Standard-ILM-Richtlinien-Tag:: Bei der Installation von StorageGRID wird automatisch ein Standard-ILM-Richtlinien-Tag erstellt. Jedes Raster muss über eine aktive Richtlinie verfügen, die dem Standard-Tag zugewiesen ist. Die Standardrichtlinie gilt für alle S3-Buckets ohne Tag.
 
 

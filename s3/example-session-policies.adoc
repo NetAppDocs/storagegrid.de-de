@@ -1,0 +1,33 @@
+---
+permalink: s3/example-session-policies.html 
+sidebar: sidebar 
+keywords: session policy example 
+summary: Verwenden Sie das Beispiel in diesem Abschnitt, um StorageGRID Sitzungsrichtlinien zu erstellen. 
+---
+= Beispiel für eine Sitzungsrichtlinie
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Verwenden Sie das folgende Beispiel, um eine StorageGRID -Sitzungsrichtlinie zu erstellen.
+
+
+
+== Beispiel: Einrichten einer Sitzungsrichtlinie, die den Objektabruf ermöglicht
+
+In diesem Beispiel darf der Sitzungsprinzipal nur Objekte aus Bucket1 abrufen.  Alle anderen Aktionen werden implizit verweigert, mit Ausnahme von StorageGRID-spezifischen Aktionen, wie z. B. der Verwendung deslink:use-access-policies/#use-putoverwriteobject-permission["s3:PutOverwrite Object"] Erlaubnis.  Die Sitzungsrichtlinie kann beim Aufruf der AssumeRole-API als JSON-Datei bereitgestellt werden.
+
+[listing]
+----
+{
+  "Statement": [
+    {
+      "Action": "s3:GetObject",
+      "Effect": "Allow",
+      "Resource": "arn:aws:s3:::bucket1/*"
+    }
+  ]
+}
+----

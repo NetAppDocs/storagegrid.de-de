@@ -37,7 +37,7 @@ In diesem Zustand:
 Wenn ein Major oder Minor *Low Object Data Storage*-Alarm ausgelöst wird, sollten Sie so schnell wie möglich eine Erweiterung durchführen.
 
 .Schritte
-. Wählen Sie *ALERTS* > *Current*.
+. Wählen Sie *Warnungen* > *Aktuell*.
 +
 Die Seite „Meldungen“ wird angezeigt.
 
@@ -53,7 +53,7 @@ NOTE: Wählen Sie die Meldung und nicht die Überschrift einer Gruppe von Warnun
 ** Die aktuellen Werte der Metriken für diese Meldung
 
 
-. Wählen Sie *NODES* > *_Storage Node oder Standort_* > *Storage* aus.
+. Wählen Sie *Knoten* > *_Speicherknoten oder -site_* > *Speicher*.
 . Bewegen Sie den Cursor über die Grafik „verwendeter Speicher – Objektdaten“.
 +
 Die folgenden Werte werden angezeigt:

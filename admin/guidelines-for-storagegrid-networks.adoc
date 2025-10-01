@@ -91,9 +91,11 @@ Informationen zum Hinzufügen von Trunk- oder Access-Schnittstellen finden Sie u
 
 * *VMware (nach der Installation des Knotens)*: link:../maintain/vmware-adding-trunk-or-access-interfaces-to-node.html["VMware: Hinzufügen von Trunk- oder Zugriffsschnittstellen zu einem Node"]
 +
-** *Red hat Enterprise Linux (vor der Installation des Knotens)*: link:../rhel/creating-node-configuration-files.html["Erstellen von Node-Konfigurationsdateien"]
-** *Ubuntu oder Debian (vor der Installation des Knotens)*: link:../ubuntu/creating-node-configuration-files.html["Erstellen von Node-Konfigurationsdateien"]
-** *RHEL, Ubuntu oder Debian (nach der Installation des Knotens)*: link:../maintain/linux-adding-trunk-or-access-interfaces-to-node.html["Linux: Hinzufügen von Trunk- oder Zugriffsschnittstellen zu einem Node"]
+** *Linux (vor der Installation des Knotens)*:link:../swnodes/creating-node-configuration-files.html["Erstellen von Node-Konfigurationsdateien"]
+** *Linux (nach der Installation des Knotens)*:link:../maintain/linux-adding-trunk-or-access-interfaces-to-node.html["Hinzufügen von Trunk- oder Zugriffsschnittstellen zu einem Knoten"]
 
 
 
+
+
+NOTE: „Linux“ bezieht sich auf eine RHEL-, Ubuntu- oder Debian-Bereitstellung.  Eine Liste der unterstützten Versionen finden Sie im https://imt.netapp.com/matrix/#welcome["NetApp Interoperabilitäts-Matrix-Tool (IMT)"^] .

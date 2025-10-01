@@ -63,3 +63,6 @@ Alternativ können Sie den Namen des Tags auswählen. Die Detailseite für das T
 
 . Wählen Sie *Ja*, um das Tag zu löschen.
 
+
+.Verwandte Informationen
+link:creating-ilm-policy.html#activate-ilm-policy["Informationen zum Erstellen von ILM-Richtlinientags"]

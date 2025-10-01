@@ -33,11 +33,7 @@ Wenn es nicht möglich ist, fehlende Knoten zu importieren, müssen Sie die zuge
 
 Sie müssen dann die Grid-Konfigurationsdatei validieren und alle Netzwerk- oder Storage-Probleme beheben, bevor Sie StorageGRID neu starten. Wenn Sie die Konfigurationsdatei für einen Node neu erstellen, müssen Sie denselben Namen für den Austausch-Node verwenden, der für den wiederherzuenden Node verwendet wurde.
 
-Weitere Informationen zum Speicherort des Volumes für einen Node finden Sie in der Installationsanleitung `/var/local`.
-
-* link:../rhel/index.html["Installieren Sie StorageGRID unter Red hat Enterprise Linux"]
-* link:../ubuntu/index.html["Installieren Sie StorageGRID auf Ubuntu oder Debian"]
-
+Siehe dielink:../swnodes/index.html["Linux-Installationsanweisungen"] für weitere Informationen zum Standort des `/var/local` Volume für einen Knoten.
 
 .Schritte
 . Führen Sie in der Befehlszeile des wiederhergestellten Hosts alle derzeit konfigurierten StorageGRID-Knoten auf:``sudo storagegrid node list``
@@ -76,10 +72,7 @@ NOTE: Alle mit dem Flag importierten Knoten `--force` erfordern zusätzliche Wie
 
 
 
-. Erstellen Sie für Grid-Nodes ohne `/var/local` Volume die Konfigurationsdatei des Node neu, um sie auf dem Host wiederherzustellen. Anweisungen hierzu finden Sie unter:
-+
-** link:../rhel/creating-node-configuration-files.html["Erstellen Sie Node-Konfigurationsdateien für Red hat Enterprise Linux"]
-** link:../ubuntu/creating-node-configuration-files.html["Erstellen Sie Knoten-Konfigurationsdateien für Ubuntu oder Debian"]
+. Für Grid-Knoten, die kein `/var/local` Volume: Erstellen Sie die Konfigurationsdatei des Knotens neu, um sie auf dem Host wiederherzustellen. Anweisungen hierzu finden Sie unterlink:../swnodes/creating-node-configuration-files.html["Erstellen von Node-Konfigurationsdateien"] .
 +
 
 NOTE: Wenn Sie die Konfigurationsdatei für einen Node neu erstellen, müssen Sie denselben Namen für den Austausch-Node verwenden, der für den wiederherzuenden Node verwendet wurde. Stellen Sie bei Linux-Bereitstellungen sicher, dass der Name der Konfigurationsdatei den Node-Namen enthält. Sie sollten, wenn möglich, dieselben Netzwerkschnittstellen, Gerätezuordnungen blockieren und IP-Adressen verwenden. Dieses Verfahren minimiert die Datenmenge, die während des Recovery auf den Node kopiert werden muss. Dadurch kann die Recovery erheblich schneller (in manchen Fällen nur Minuten statt Wochen) erfolgen.
@@ -87,8 +80,6 @@ NOTE: Wenn Sie die Konfigurationsdatei für einen Node neu erstellen, müssen Si
 +
 
 NOTE: Wenn Sie neue Blockgeräte (Geräte, die der StorageGRID-Knoten zuvor nicht verwendet hat) als Werte für eine der Konfigurationsvariablen verwenden, die mit beginnen `BLOCK_DEVICE_`, wenn Sie die Konfigurationsdatei für einen Knoten neu erstellen, befolgen Sie die Richtlinien in <<fix-block-errors,Beheben Sie fehlende Blockgerätfehler>>.
-
-
 
 . Führen Sie den folgenden Befehl auf dem wiederhergestellten Host aus, um alle StorageGRID Knoten aufzulisten.
 +
@@ -145,17 +136,9 @@ Das bedeutet, dass `/etc/storagegrid/nodes/_node-name_.conf` das von _Node-Name_
 
 Wenn Sie die fehlende Blockdevice-Sonderdatei nicht wiederherstellen oder neu erstellen können, können Sie ein neues Blockdevice mit der entsprechenden Größe und Speicherkategorie zuweisen und die Knotenkonfigurationsdatei bearbeiten, um den Wert zu ändern `BLOCK_DEVICE_PURPOSE`, auf die neue Blockdevice-Sonderdatei zu verweisen.
 
-Ermitteln Sie mithilfe der Tabellen für Ihr Linux-Betriebssystem die geeignete Größe und Storage-Kategorie:
+Ermitteln Sie anhand der Tabellen die passende Größe und Speicherkategorie für Ihr Linux-Betriebssystem. Sehen link:../swnodes/storage-and-performance-requirements.html["Storage- und Performance-Anforderungen erfüllt"] .
 
-* link:../rhel/storage-and-performance-requirements.html["Storage- und Performance-Anforderungen für Red hat Enterprise Linux"]
-* link:../ubuntu/storage-and-performance-requirements.html["Speicher- und Leistungsanforderungen für Ubuntu oder Debian"]
-
-
-Überprüfen Sie die Empfehlungen zur Konfiguration des Hostspeichers, bevor Sie mit dem Austausch des Blockgeräts fortfahren:
-
-* link:../rhel/configuring-host-storage.html["Konfiguration des Hostspeichers für Red hat Enterprise Linux"]
-* link:../ubuntu/configuring-host-storage.html["Konfigurieren Sie den Hostspeicher für Ubuntu oder Debian"]
-
+Lesen Sie die Empfehlungen fürlink:../swnodes/configuring-host-storage.html["Konfigurieren des Hostspeichers"] bevor Sie mit dem Austausch des Blockgeräts fortfahren.
 
 
 NOTE: Wenn Sie ein neues Blockspeichergerät für eine der Variablen der Konfigurationsdatei angeben müssen, die mit beginnen `BLOCK_DEVICE_`, weil das ursprüngliche Blockgerät mit dem ausgefallenen Host verloren gegangen ist, stellen Sie sicher, dass das neue Blockgerät nicht formatiert ist, bevor Sie weitere Wiederherstellungsverfahren versuchen. Das neue Blockgerät wird unformatiert, wenn Sie gemeinsam genutzten Speicher verwenden und ein neues Volume erstellt haben. Wenn Sie sich nicht sicher sind, führen Sie den folgenden Befehl gegen neue Spezialdateien für das Blockspeichergerät aus.

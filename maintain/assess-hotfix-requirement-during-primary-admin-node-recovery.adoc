@@ -18,7 +18,7 @@ Recovery des primären Admin-Node ist abgeschlossen.
 
 .Schritte
 . Melden Sie sich mit einem beim Grid-Manager anlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
-. Wählen Sie *KNOTEN*.
+. Wählen Sie *Knoten* aus.
 . Wählen Sie in der Liste links den primären Admin-Node aus.
 . Notieren Sie sich auf der Registerkarte Übersicht die Version, die im Feld *Softwareversion* angezeigt wird.
 . Wählen Sie einen beliebigen anderen Grid-Knoten aus.

@@ -25,7 +25,7 @@ Sie können die Details für ein Erasure-Coding-Profil anzeigen und bei Bedarf e
 Sie können die Details eines Profils zur Fehlerkorrektur anzeigen, um dessen Status, das verwendete Schema zur Fehlerkorrektur sowie weitere Informationen zu bestimmen.
 
 .Schritte
-. Wählen Sie *CONFIGURATION* > *System* > *Erasure Coding*.
+. Wählen Sie *Konfiguration* > *System* > *Erasure Coding*.
 . Wählen Sie das Profil aus. Die Detailseite für das Profil wird angezeigt.
 . Optional können Sie auf der Registerkarte ILM-Regeln eine Liste der ILM-Regeln anzeigen, die das Profil verwenden, sowie die ILM-Richtlinien, die diese Regeln verwenden.
 . Optional können Sie die Registerkarte Storage Nodes anzeigen, um Details zu jedem Storage Node im Speicherpool des Profils anzuzeigen, z. B. den Standort, an dem er sich befindet, und die Speichernutzung.
@@ -38,7 +38,7 @@ Sie können die Details eines Profils zur Fehlerkorrektur anzeigen, um dessen St
 Möglicherweise möchten Sie ein Erasure Coding-Profil umbenennen, um die Funktionen des Profils offensichtlicher zu machen.
 
 .Schritte
-. Wählen Sie *CONFIGURATION* > *System* > *Erasure Coding*.
+. Wählen Sie *Konfiguration* > *System* > *Erasure Coding*.
 . Wählen Sie das Profil aus, das Sie umbenennen möchten.
 . Wählen Sie *Umbenennen*.
 . Geben Sie einen eindeutigen Namen für das Erasure-Coding-Profil ein.
@@ -69,7 +69,7 @@ StorageGRID verhindert, dass Sie ein Erasure Coding-Profil deaktivieren, wenn ei
 
 
 .Schritte
-. Wählen Sie *CONFIGURATION* > *System* > *Erasure Coding*.
+. Wählen Sie *Konfiguration* > *System* > *Erasure Coding*.
 . Überprüfen Sie auf der Registerkarte aktiv die Spalte *Status*, um zu bestätigen, dass das zu deaktivierende Erasure-Coding-Profil in keiner ILM-Regel verwendet wird.
 +
 Sie können ein Profil für Erasure Coding nicht deaktivieren, wenn es in einer ILM-Regel verwendet wird. In diesem Beispiel wird das Profil 2+1 Rechenzentrum 1 in mindestens einer ILM-Regel verwendet.

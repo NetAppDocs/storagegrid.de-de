@@ -21,7 +21,7 @@ Weitere Informationen zu Admin-Knoten finden Sie unter link:../primer/what-admin
 
 
 .Schritte
-. Wählen Sie *KNOTEN*.
+. Wählen Sie *Knoten* aus.
 . Geben Sie *primary* in das Suchfeld ein.
 +
 Identifizieren Sie in den Suchergebnissen den Knoten mit dem in der Spalte Typ angezeigten „Primary Admin Node“. Ein primärer Admin-Knoten sollte aufgelistet werden.

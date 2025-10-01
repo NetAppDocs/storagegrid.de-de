@@ -6,7 +6,7 @@
 
 == Suchen Sie nach Hostnamen für Speicherknoten
 
-. Melden Sie sich beim primären Admin-Node an:
+. Melden Sie sich bei einem beliebigen Admin-Knoten an:
 +
 .. Geben Sie den folgenden Befehl ein: `ssh admin@_primary_Admin_Node_IP_`
 .. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
@@ -42,7 +42,7 @@ Mit diesem Befehl werden die replizierten Daten auf einem Storage-Node mit dem N
 `repair-data start-replicated-node-repair --nodes SG-DC-SN3`
 
 
-NOTE: Bei der Wiederherstellung von Objektdaten wird die Warnmeldung *Objektverlust* ausgelöst, wenn das StorageGRID-System keine replizierten Objektdaten finden kann. Auf Storage-Nodes im gesamten System können Warnmeldungen ausgelöst werden. Sie sollten die Ursache des Schadens bestimmen und feststellen, ob eine Wiederherstellung möglich ist. Siehe link:../troubleshoot/investigating-lost-objects.html["Untersuchen Sie verlorene Objekte"].
+NOTE: Beim Wiederherstellen von Objektdaten wird die Warnung „Objekte verloren“ ausgelöst, wenn das StorageGRID System replizierte Objektdaten nicht finden kann.  Auf Speicherknoten im gesamten System können Warnungen ausgelöst werden.  Sie sollten die Ursache des Verlusts ermitteln und feststellen, ob eine Wiederherstellung möglich ist. Sehen link:../troubleshoot/investigating-potentially-lost-objects.html["Untersuchen Sie möglicherweise verlorene Objekte"] .
 
 --
 .EC-Daten (Erasure Coded)

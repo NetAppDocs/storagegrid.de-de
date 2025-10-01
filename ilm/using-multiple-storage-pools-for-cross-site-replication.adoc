@@ -20,7 +20,7 @@ Für Replizierung und Erasure Coding sind unterschiedliche Storage-Pool-Konfigur
 
 
 
-CAUTION: Wenn Sie Ihre StorageGRID-Bereitstellung für den Schutz vor Standortausfällen konfigurieren, müssen Sie auch die Auswirkungen von  und berücksichtigenlink:data-protection-options-for-ingest.html["Aufnahmeoptionen"]link:../s3/consistency-controls.html["Konsistenz"].
+CAUTION: Bei der Konfiguration Ihrer StorageGRID -Bereitstellung für den Site-Loss-Schutz müssen Sie auch die Auswirkungen vonlink:data-protection-options-for-ingest.html["Aufnahmeoptionen"] Undlink:../s3/consistency.html["Konsistenz"] .
 
 
 

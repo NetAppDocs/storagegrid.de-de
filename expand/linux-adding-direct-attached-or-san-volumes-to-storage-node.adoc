@@ -14,12 +14,7 @@ summary: Wenn ein Speicherknoten weniger als 48 Speicher-Volumes umfasst, könne
 Wenn ein Speicherknoten weniger als 48 Speicher-Volumes umfasst, können Sie seine Kapazität erhöhen, indem Sie neue Block-Speichergeräte hinzufügen, sie für die Linux-Hosts sichtbar machen und die neuen Blockgeräte-Zuordnungen zur StorageGRID-Konfigurationsdatei hinzufügen, die für den Speicherknoten verwendet wurde.
 
 .Bevor Sie beginnen
-* Sie haben Zugriff auf die Anweisungen für die Installation von StorageGRID für Ihre Linux-Plattform.
-+
-** link:../rhel/index.html["Installieren Sie StorageGRID unter Red hat Enterprise Linux"]
-** link:../ubuntu/index.html["Installieren Sie StorageGRID auf Ubuntu oder Debian"]
-
-
+* Sie haben Zugriff auf dielink:../swnodes/index.html["Anweisungen zur Installation von StorageGRID"] für Ihre Linux-Plattform.
 * Sie haben die `Passwords.txt` Datei.
 * Sie haben link:../admin/admin-group-permissions.html["Bestimmte Zugriffsberechtigungen"].
 
@@ -167,19 +162,13 @@ Das `setup_rangedbs.sh` Skript wird automatisch ausgeführt.
 . Überprüfen Sie, ob der Speicherstatus des Storage-Node online ist:
 +
 .. Melden Sie sich mit einem beim Grid-Manager anlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
-.. Wählen Sie *SUPPORT* > *Tools* > *Grid-Topologie* aus.
-.. Wählen Sie *_site_* > *_Storage Node_* > *LDR* > *Storage* aus.
-.. Wählen Sie die Registerkarte *Konfiguration* und dann die Registerkarte *Main*.
-.. Wenn die Dropdown-Liste *Speicherstatus - gewünscht* auf schreibgeschützt oder offline gesetzt ist, wählen Sie *Online* aus.
-.. Klicken Sie Auf *Änderungen Übernehmen*.
+.. Wählen Sie *Knoten* > *_Speicherknoten_* > *Aufgaben*.
+.. Wenn die Dropdown-Liste *Speicherstatus* auf „Schreibgeschützt“ oder „Offline“ eingestellt ist, wählen Sie „Online“ aus.
+.. Wählen Sie *Speichern*.
 
 
-. So sehen Sie die neuen Objektspeicher:
-+
-.. Wählen Sie *NODES* > *_site_* > *_Storage Node_* > *Storage* aus.
-.. Sehen Sie sich die Details in der Tabelle *Object Stores* an.
-
-
+. Um die neuen Objektspeicher anzuzeigen, wählen Sie *Speicher*.
+. Sehen Sie sich die Details in der Tabelle *Volumes* an.
 
 
 .Ergebnis

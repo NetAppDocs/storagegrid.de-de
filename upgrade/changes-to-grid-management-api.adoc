@@ -2,7 +2,7 @@
 permalink: upgrade/changes-to-grid-management-api.html 
 sidebar: sidebar 
 keywords: grid management api, api, api version, swagger, rest api, usageCacheDuration 
-summary: StorageGRID 11.9 verwendet Version 4 der Grid-Management-API. Version 4 verfällt Version 3; allerdings werden die Versionen 1, 2 und 3 weiterhin unterstützt. 
+summary: StorageGRID 12.0 verwendet Version 4 der Grid Management API.  Version 4 macht Version 3 veraltet; die Versionen 1, 2 und 3 werden jedoch weiterhin unterstützt. 
 ---
 = Änderungen an der Grid-Management-API
 :allow-uri-read: 
@@ -11,42 +11,43 @@ summary: StorageGRID 11.9 verwendet Version 4 der Grid-Management-API. Version 4
 
 
 [role="lead"]
-StorageGRID 11.9 verwendet Version 4 der Grid-Management-API. Version 4 verfällt Version 3; allerdings werden die Versionen 1, 2 und 3 weiterhin unterstützt.
+StorageGRID 12.0 verwendet Version 4 der Grid Management API.  Version 4 macht Version 3 veraltet; die Versionen 1, 2 und 3 werden jedoch weiterhin unterstützt.
 
 
-NOTE: Sie können mit StorageGRID 11.9 weiterhin veraltete Versionen der Management-API verwenden. Die Unterstützung für diese Versionen der API wird jedoch in einem zukünftigen Release von StorageGRID entfernt. Nach dem Upgrade auf StorageGRID 11.9 können Sie die veralteten APIs mithilfe der API deaktivieren `PUT /grid/config/management`.
+NOTE: Sie können veraltete Versionen der Verwaltungs-API weiterhin mit StorageGRID 12.0 verwenden. Die Unterstützung für diese Versionen der API wird jedoch in einer zukünftigen Version von StorageGRID entfernt.  Nach dem Upgrade auf StorageGRID 12.0 können Sie die veralteten APIs deaktivieren, indem Sie die `PUT /grid/config/management` API.
 
 Weitere Informationen finden Sie unter link:../admin/using-grid-management-api.html["Verwenden Sie die Grid-Management-API"].
 
 
 
-== Überprüfen Sie die Compliance-Einstellungen nach dem Aktivieren der globalen S3 Objektsperre
+== Neue Endpunkte für Branch-Buckets
 
-Überprüfen Sie die Compliance-Einstellungen vorhandener Mandanten, nachdem Sie die globale S3 Object Lock-Einstellung aktiviert haben. Wenn Sie diese Einstellung aktivieren, hängen die Einstellungen für die S3-Objektsperrung pro Mandant vom StorageGRID-Release zum Zeitpunkt der Erstellung des Mandanten ab.
+Die folgenden Endpunkte wurden hinzugefügt, um Ihnen zu ermöglichen,link:../tenant/what-is-branch-bucket.html["Branch-Buckets verwalten"] :
 
+`GET /org/containers/{branchBucketName}/branch`
 
-
-== Ältere Management-API-Anforderungen wurden entfernt
-
-Diese älteren Anforderungen wurden entfernt:
-
-`/grid/server-types`
-
-`/grid/ntp-roles`
+`PUT /org/containers/{branchBucketName}/branch`
 
 
 
-== Änderungen an `GET /private/storage-usage` API
+== Neue private Endpunkte für Move ADC
 
-* Eine neue Eigenschaft, `usageCacheDuration`, wurde dem Antwortkörper hinzugefügt. Diese Eigenschaft gibt die Dauer (in Sekunden) an, für die der Usage Lookup-Cache gültig bleibt. Dieser Wert gilt, wenn die Nutzung anhand der Limits für Mandanten-Storage-Kontingente und Bucket-Kapazitäten geprüft wird.
-* Das `GET /api/v4/private/storage-usage` Verhalten wurde korrigiert, um die Verschachtelung aus dem Schema abzugleichen.
-* Diese Änderungen gelten nur für die private API.
+Die folgenden privaten Endpunkte wurden hinzugefügt, damit Sielink:../maintain/move-adc-service.html["Verschieben Sie den ADC-Dienst"] von einem Speicherknoten zu einem anderen am selben Standort:
+
+`/private/move-adc`
+
+`/private/move-adc/start`
+
+`/private/move-adc/retry`
 
 
 
+== Neue private Endpunkte für die Konvertierung in einen Nur-Daten-Knoten
 
-== Änderungen an `GET cross-grid-replication` API
+Die folgenden privaten Endpunkte wurden hinzugefügt, damit Sielink:../maintain/convert-to-data-only-node.html["Konvertieren Sie einen oder mehrere kombinierte Speicherknoten"] die den ADC-Dienst nicht enthalten, in reine Datenknoten.
 
-Die */org/Containers/:Name/Cross-Grid-Replication* GET API erfordert nicht mehr die (`viewAllContainers`Berechtigung Root Access (`rootAccess`); Sie müssen jedoch zu einer Benutzergruppe gehören, die über die Berechtigung Manage all Buckets (`manageAllContainers`) oder View all Buckets ) verfügt.
+`/private/convert-to-data-only-node`
 
-Die API */org/Containers/:Name/Cross-Grid-Replication* PUT ist unverändert und erfordert weiterhin die (`rootAccess`Berechtigung Root Access ).
+`/private/convert-to-data-only-node/start`
+
+`/private/convert-to-data-only-node/retry`

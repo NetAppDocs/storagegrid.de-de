@@ -30,7 +30,7 @@ So installieren Sie StorageGRID auf einem Appliance-Speicherknoten:
 * Sie starten die Installation und warten, bis Volumes konfiguriert und die Software installiert ist.
 +
 
-NOTE: Wenn Sie einen Appliance-Storage-Node wiederherstellen, installieren Sie ihn mit demselben Speichertyp wie die ursprüngliche Appliance (kombiniert, nur Metadaten oder nur Daten) neu. Wenn Sie einen anderen Speichertyp angeben, schlägt die Wiederherstellung fehl und erfordert eine Neuinstallation der Appliance mit dem richtigen Speichertyp.
+NOTE: Wenn Sie einen Appliance-Speicherknoten wiederherstellen, installieren Sie ihn mit demselben Speichertyp wie die ursprüngliche Appliance neu (kombiniert, nur Metadaten oder nur Daten).  Wenn Sie einen anderen Speichertyp angeben, schlägt die Wiederherstellung fehl und erfordert eine Neuinstallation der Appliance mit dem richtigen angegebenen Speichertyp.
 
 * Durch den Prozess partway, die Installation pausiert. Um die Installation fortzusetzen, müssen Sie sich beim Grid Manager anmelden und den ausstehenden Speicherknoten als Ersatz für den ausgefallenen Node konfigurieren.
 * Nachdem Sie den Node konfiguriert haben, wird die Installation der Appliance abgeschlossen und die Appliance wird neu gestartet.
@@ -60,7 +60,11 @@ Manuelle IP-Eingabe
  a| 
 .. Deaktivieren Sie das Kontrollkästchen *Admin-Node-Erkennung aktivieren*.
 .. Geben Sie die IP-Adresse manuell ein.
-.. Klicken Sie Auf *Speichern*.
+
+
+*Hinweis*: Geben Sie zur Installation manuell die IP-Adresse des Admin-Knotens ein, den Sie zum Installieren des Knotens verwenden möchten.  Verwenden Sie zur Wiederherstellung die IP des primären Admin-Knotens, falls verfügbar. Andernfalls verwenden Sie die IP eines nicht primären Admin-Knotens.
+
+.. Wählen Sie *Speichern*.
 .. Warten Sie, bis der Verbindungsstatus für die neue IP-Adresse „bereit“ lautet.
 
 
@@ -70,21 +74,24 @@ Manuelle IP-Eingabe
 Automatische Erkennung aller verbundenen primären Admin-Nodes
  a| 
 .. Aktivieren Sie das Kontrollkästchen *Admin-Node-Erkennung aktivieren*.
-.. Wählen Sie aus der Liste der ermittelten IP-Adressen den primären Admin-Node für das Grid aus, in dem dieser Appliance-Speicher-Node bereitgestellt wird.
-.. Klicken Sie Auf *Speichern*.
+.. Wählen Sie aus der Liste der erkannten IP-Adressen den Admin-Knoten für das Grid aus, in dem dieser Appliance-Speicherknoten bereitgestellt wird.
+
+
+*Hinweis*: Verwenden Sie zur Wiederherstellung die IP des primären Admin-Knotens, falls verfügbar. Andernfalls verwenden Sie die IP eines nicht primären Admin-Knotens.
+
+.. Wählen Sie *Speichern*.
 .. Warten Sie, bis der Verbindungsstatus für die neue IP-Adresse „bereit“ lautet.
 
 
 |===
+
+
 . Geben Sie im Feld *Node Name* den gleichen Hostnamen (Systemnamen) ein, der für den Knoten verwendet wurde, den Sie wiederherstellen, und klicken Sie auf *Save*.
 . Vergewissern Sie sich im Abschnitt Installation, dass der aktuelle Status „bereit zur Installation von in Grid mit primärem Admin-Knoten `_admin_ip_`“ lautet und dass die Schaltfläche *Installation starten* aktiviert ist `_node name_`.
 +
 Wenn die Schaltfläche *Installation starten* nicht aktiviert ist, müssen Sie möglicherweise die Netzwerkkonfiguration oder die Porteinstellungen ändern. Anweisungen hierzu finden Sie in der Wartungsanleitung Ihres Geräts.
 
 . Klicken Sie auf der Startseite des StorageGRID-Appliance-Installationsprogramms auf *Installation starten*.
-+
-image::../media/appliance_installer_home_start_installation_enabled.gif[Diese Abbildung wird durch den umgebenden Text beschrieben.]
-
 +
 Der aktuelle Status ändert sich in „Installation wird ausgeführt“, und die Seite Monitorinstallation wird angezeigt.
 

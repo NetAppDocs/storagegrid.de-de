@@ -3,18 +3,18 @@
 
 
 .Bevor Sie beginnen
-* Sie müssen im Grid-Manager mit einem angemeldet seinlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
-* Sie müssen über die Berechtigung Root-Zugriff oder andere Grid-Konfiguration verfügen.
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie verfügen über Root-Zugriff oder die Berechtigung „Andere Rasterkonfiguration“.
 
 
 .Schritte
-. Wählen Sie *SUPPORT* > *Werkzeuge* > *AutoSupport*.
+. Wählen Sie *Support* > *Tools* > * AutoSupport*.
 . Wählen Sie auf der Registerkarte *Aktionen* *vom Benutzer ausgelöste AutoSupport* senden.
 +
-StorageGRID versucht, ein AutoSupport-Paket an die NetApp-Support-Website zu senden. Wenn der Versuch erfolgreich ist, werden die *aktuellsten Ergebnisse* und *Letzte erfolgreiche Zeit* Werte auf der Registerkarte *Ergebnisse* aktualisiert. Wenn es ein Problem gibt, wird der Wert für das *Letzte Ergebnis* auf „fehlgeschlagen“ aktualisiert, und StorageGRID versucht nicht, das AutoSupport-Paket erneut zu senden.
+StorageGRID versucht, ein AutoSupport Paket an die NetApp Support-Site zu senden.  Wenn der Versuch erfolgreich ist, werden die Werte *Neuestes Ergebnis* und *Letzter erfolgreicher Zeitpunkt* auf der Registerkarte *Ergebnisse* aktualisiert.  Wenn ein Problem auftritt, wird der Wert „Neuestes Ergebnis“ auf „Fehlgeschlagen“ aktualisiert und StorageGRID versucht nicht, das AutoSupport Paket erneut zu senden.
 
-+
-
-TIP: Nachdem Sie ein vom Benutzer ausgelöstes AutoSupport-Paket gesendet haben, aktualisieren Sie die AutoSupport-Seite in Ihrem Browser nach 1 Minute, um die neuesten Ergebnisse anzuzeigen.
+. Aktualisieren Sie nach 1 Minute die AutoSupport -Seite in Ihrem Browser, um auf die aktuellsten Ergebnisse zuzugreifen.
 
 
+
+TIP: Darüber hinaus können Sielink:../monitor/collecting-log-files-and-system-data.html["umfangreichere Logfiles und Systemdaten erfassen"] und senden Sie sie an die NetApp Support Site.

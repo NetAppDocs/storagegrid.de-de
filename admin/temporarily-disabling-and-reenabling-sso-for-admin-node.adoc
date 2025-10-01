@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: signing in when sso is down, single sign on failure 
 summary: 'Sie können sich möglicherweise nicht beim Grid-Manager anmelden, wenn das Single Sign-On \(SSO\)-System ausfällt. In diesem Fall können Sie SSO für einen Admin-Node vorübergehend deaktivieren und erneut aktivieren. Um SSO zu deaktivieren und dann erneut zu aktivieren, müssen Sie auf die Befehlshaber des Knotens zugreifen.' 
 ---
-= Deaktivieren Sie die einmalige Anmeldung für einen Admin-Knoten vorübergehend und aktivieren Sie sie erneut
+= SSO für einen Admin-Knoten vorübergehend deaktivieren und wieder aktivieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -52,7 +52,7 @@ Die Anmeldeseite für den Grid Manager wird jetzt angezeigt, weil SSO deaktivier
 . Melden Sie sich mit dem Benutzernamen root und dem Passwort des lokalen Root-Benutzers an.
 . Wenn Sie SSO vorübergehend deaktiviert haben, da Sie die SSO-Konfiguration korrigieren mussten:
 +
-.. Wählen Sie *KONFIGURATION* > *Zugriffskontrolle* > *Single Sign-On*.
+.. Wählen Sie *Konfiguration* > *Zugriffskontrolle* > *Einmaliges Anmelden*.
 .. Ändern Sie die falschen oder veralteten SSO-Einstellungen.
 .. Wählen Sie *Speichern*.
 +

@@ -33,11 +33,16 @@ Sie können den Typ des Storage-Node in folgenden Situationen auswählen:
 
 
 
-NOTE: Sie können den Typ nach Abschluss der Installation des Storage-Node nicht mehr ändern.
 
-Storage Node für Daten und Metadaten (kombiniert):: Standardmäßig werden auf allen neuen Storage-Nodes sowohl Objektdaten als auch Metadaten gespeichert. Dieser Typ von Storage Node wird als _Combined_ Storage Node bezeichnet.
-Storage-Node nur für Metadaten:: Die ausschließliche Verwendung eines Storage-Knotens für Metadaten kann sinnvoll sein, wenn Ihr Grid eine sehr große Anzahl kleiner Objekte speichert. Die Installation von dedizierten Metadaten bietet ein besseres Gleichgewicht zwischen dem für eine große Anzahl an kleinen Objekten erforderlichen Speicherplatz und dem für diese Objekte erforderlichen Speicherplatz. Darüber hinaus können Storage-Nodes, die auf hochperformanten Appliances gehostet werden, auf nur Metadaten ausgerichtet sind, die Performance steigern.
+=== Storage Node für Daten und Metadaten (kombiniert)
 
+Standardmäßig werden auf allen neuen Storage-Nodes sowohl Objektdaten als auch Metadaten gespeichert. Dieser Typ von Storage Node wird als _Combined_ Storage Node bezeichnet.
+
+
+
+=== Storage-Node nur für Metadaten
+
+Die ausschließliche Verwendung eines Storage-Knotens für Metadaten kann sinnvoll sein, wenn Ihr Grid eine sehr große Anzahl kleiner Objekte speichert. Die Installation von dedizierten Metadaten bietet ein besseres Gleichgewicht zwischen dem für eine große Anzahl an kleinen Objekten erforderlichen Speicherplatz und dem für diese Objekte erforderlichen Speicherplatz. Darüber hinaus können Storage-Nodes, die auf hochperformanten Appliances gehostet werden, auf nur Metadaten ausgerichtet sind, die Performance steigern.
 
 Storage-Nodes, die nur Metadaten enthalten, erfüllen spezifische Hardwareanforderungen:
 
@@ -51,29 +56,34 @@ Storage-Nodes, die nur Metadaten enthalten, erfüllen spezifische Hardwareanford
 *** 8 TB SSD oder äquivalenter Storage für die Cassandra-Datenbank (rangedb/0)
 
 
-** Wenn der bestehende StorageGRID-Standort virtuelle Storage-Nodes mit 24 GB RAM, 8 Kern-CPUs und 3 TB oder 4 TB Metadaten-Storage verwendet, sollten die rein softwarebasierten Metadaten-Nodes ähnliche Ressourcen verwenden (24 GB RAM, 8 Kern-CPU und 4 TB Metadaten-Storage (rangedb/0).
+** Wenn die vorhandene StorageGRID Site virtuelle Speicherknoten mit 24 GB RAM, 8-Kern-CPU und 3 TB oder 4 TB Metadatenspeicher verwendet, sollten die softwarebasierten Nur-Metadaten-Knoten ähnliche Ressourcen verwenden (24 GB RAM, 8-Kern-CPU und 4 TB Metadatenspeicher (rangedb/0)).
 
 
-* Beim Hinzufügen eines neuen StorageGRID Standorts sollte die Metadaten-Gesamtkapazität des neuen Standorts mindestens den vorhandenen StorageGRID Standorten entsprechen, und neue Standortressourcen sollten den Storage-Nodes an den vorhandenen StorageGRID Standorten entsprechen.
-
-
-Bei der Installation von nur Metadaten Nodes muss das Grid zudem eine Mindestanzahl an Nodes für den Storage enthalten:
-
-* Konfigurieren Sie für ein Grid mit einem Standort mindestens zwei kombinierte oder reine Storage-Nodes.
-* Konfigurieren Sie für ein Grid mit mehreren Standorten mindestens einen kombinierten oder nur-Daten-Storage-Node _pro Standort_.
+* Beim Hinzufügen einer neuen StorageGRID -Site sollte die Gesamtmetadatenkapazität der neuen Site mindestens der vorhandener Sites entsprechen.  Die Ressourcen an einem neuen Standort sollten mit den Speicherknoten an vorhandenen Standorten übereinstimmen.
 
 
 
 NOTE: Obwohl reine Metadaten-Storage-Nodes S3-Client-Anforderungen enthalten <<ldr-service,LDR-Service>>und verarbeiten können, erhöht sich die StorageGRID-Performance möglicherweise nicht.
 
-Rein datenrein Storage-Node:: Ein Storage-Node ausschließlich für Daten ist sinnvoll, wenn Ihre Storage-Nodes unterschiedliche Performance-Merkmale aufweisen. Um beispielsweise die Performance potenziell zu steigern, können Sie reine Daten-Storage-Nodes mit einer hohen Kapazität und gleichzeitig hochperformante Storage-Nodes mit Metadaten verwenden.
 
 
-Bei der Installation von reinen Datenknoten muss das Grid Folgendes enthalten:
+=== Rein datenrein Storage-Node
 
-* Mindestens zwei kombinierte oder rein datengeschützte Storage Nodes _pro Grid_
-* Mindestens ein kombinierter oder nur-Daten-Storage Node _pro Standort_
-* Mindestens drei kombinierte oder nur Metadaten-Storage-Nodes _pro Standort_
+Ein Storage-Node ausschließlich für Daten ist sinnvoll, wenn Ihre Storage-Nodes unterschiedliche Performance-Merkmale aufweisen. Um beispielsweise die Performance potenziell zu steigern, können Sie reine Daten-Storage-Nodes mit einer hohen Kapazität und gleichzeitig hochperformante Storage-Nodes mit Metadaten verwenden.
+
+Darüber hinaus können Sie mehr Metadatenkapazität erhalten, indem Sie Knoten mit wenig RAM aus Cassandra entfernen, wodurch sich das Metadatenkapazitätslimit pro Knoten erhöht. Weitere Informationen finden Sie unter link:../admin/managing-object-metadata-storage.html["Management von Objekt-Metadaten-Storage"] .
+
+Sie können einen Storage Node konvertieren, der nicht die<<adc-service,ADC-Dienst>> zu einem reinen Datenspeicherknoten. Weitere Informationen finden Sie unter link:../maintain/convert-to-data-only-node.html["Konvertieren eines Speicherknotens in einen Nur-Datenknoten"] .
+
+
+
+== Erforderliche Speicherknoten pro Grid und pro Site
+
+Beachten Sie bei der Auswahl der in Ihrer Topologie zu verwendenden Speicherknoten, dass das Raster bzw. jeder Standort im Raster Folgendes enthalten muss:
+
+* Pro Site (in einem Single- oder Multi-Site-Raster): Drei<<adc-service,ADC>> Speicherknoten (kann eine beliebige Kombination aus kombinierten und reinen Metadaten-Speicherknoten sein)
+* Single-Site-Grid: Mindestens zwei Objektspeicherknoten (kann eine beliebige Kombination aus kombinierten und Nur-Daten-Knoten sein)
+* Multi-Site-Raster: Mindestens ein Objektspeicherknoten pro Site (kann entweder kombiniert oder nur für Daten sein)
 
 
 
@@ -95,14 +105,16 @@ Konto (Konto)
  a| 
 Management von Mandantenkonten.
 
+Dieser Dienst wird nicht von reinen Datenspeicherknoten gehostet.
+
 
 
  a| 
-Administrativer Domänen-Controller (ADC)
+[[adc-service]]Administrativer Domänencontroller (ADC)
  a| 
 Aufrechterhaltung der Topologie und Grid-Konfiguration
 
-*Hinweis*: Reine Daten-Speicher-Nodes hosten den ADC-Dienst nicht.
+Dieser Dienst wird nicht von reinen Datenspeicherknoten gehostet.
 
 .Details
 [%collapsible]
@@ -125,7 +137,7 @@ Cassandra
  a| 
 Speichert und sichert Objekt-Metadaten.
 
-*Hinweis*: Reine Daten-Storage-Nodes hosten den Cassandra-Service nicht.
+Dieser Dienst wird nicht von reinen Datenspeicherknoten gehostet.
 
 
 
@@ -134,7 +146,7 @@ Cassandra Reaper
  a| 
 Führt automatische Reparaturen von Objektmetadaten durch.
 
-*Hinweis*: Reine Daten-Storage-Nodes hosten den Cassandra Reaper-Service nicht.
+Dieser Dienst wird nicht von reinen Datenspeicherknoten gehostet.
 
 
 
@@ -171,6 +183,8 @@ Der DDS-Service verfolgt die Gesamtanzahl der im StorageGRID-System aufgenommene
 Identität (idnt)
  a| 
 Föderiert Benutzeridentitäten von LDAP und Active Directory
+
+Dieser Dienst wird nicht von reinen Datenspeicherknoten gehostet.
 
 
 
@@ -220,6 +234,8 @@ Um Redundanz sicherzustellen und so vor Verlust zu schützen, werden an jedem St
 Replicated State Machine (RSM)
  a| 
 Stellt sicher, dass Serviceanfragen der S3-Plattform an ihre jeweiligen Endpunkte gesendet werden.
+
+Dieser Dienst wird nicht von reinen Datenspeicherknoten gehostet.
 
 
 

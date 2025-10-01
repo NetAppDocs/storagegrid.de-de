@@ -46,7 +46,7 @@ NOTE: Der private Client-Schlüssel muss im OpenSSL-verschlüsselten Format oder
 
 
 
-.. Ändern Sie bei Bedarf die Methode zur Überprüfung des Servers.
+.. Ändern Sie bei Bedarf die Methode zur Überprüfung von Zertifikaten.
 
 
 . Wählen Sie *Test und speichern Sie die Änderungen*.

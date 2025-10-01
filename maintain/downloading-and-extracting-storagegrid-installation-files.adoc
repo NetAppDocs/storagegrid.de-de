@@ -41,7 +41,7 @@ Verwenden Sie die `.zip` Datei, wenn Sie Windows ausführen.
 
 
  a| 
-Red Hat Enterprise Linux
+RHEL
 | `StorageGRID-Webscale-_version_-RPM-_uniqueID_.zip` 
 `StorageGRID-Webscale-_version_-RPM-_uniqueID_.tgz` 
 
@@ -62,9 +62,12 @@ VMware
 +
 Die im Schritt für jede Plattform aufgeführten Pfade beziehen sich auf das von der Archivdatei installierte Verzeichnis auf der obersten Ebene.
 
-. Wenn Sie eine wiederherstellenlink:../rhel/index.html["Red hat Enterprise Linux-System"], wählen Sie die entsprechenden Dateien aus.
-
-
+. Wenn Sie einelink:../swnodes/index.html["softwarebasierter Knoten"] , wählen Sie die entsprechenden Dateien aus:
++
+[role="tabbed-block"]
+====
+.RHEL
+--
 [cols="1a,1a"]
 |===
 | Pfad und Dateiname | Beschreibung 
@@ -139,9 +142,9 @@ API-Schemata für StorageGRID:
 *Hinweis*: Bevor Sie ein Upgrade durchführen, können Sie diese Schemas verwenden, um zu bestätigen, dass jeder Code, den Sie zur Verwendung von StorageGRID Management APIs geschrieben haben, mit der neuen StorageGRID-Version kompatibel ist, wenn Sie keine StorageGRID-Umgebung außerhalb der Produktionsumgebung für Upgrade-Kompatibilitätstests haben.
 
 |===
-. Wenn Sie eine wiederherstellenlink:../ubuntu/index.html["Ubuntu oder Debian-System"], wählen Sie die entsprechenden Dateien aus.
-
-
+--
+.Ubuntu oder Debian
+--
 [cols="1a,1a"]
 |===
 | Pfad und Dateiname | Beschreibung 
@@ -221,9 +224,9 @@ API-Schemata für StorageGRID:
 *Hinweis*: Bevor Sie ein Upgrade durchführen, können Sie diese Schemas verwenden, um zu bestätigen, dass jeder Code, den Sie zur Verwendung von StorageGRID Management APIs geschrieben haben, mit der neuen StorageGRID-Version kompatibel ist, wenn Sie keine StorageGRID-Umgebung außerhalb der Produktionsumgebung für Upgrade-Kompatibilitätstests haben.
 
 |===
-. Wenn Sie eine wiederherstellenlink:../vmware/index.html["VMware System"], wählen Sie die entsprechenden Dateien aus.
-
-
+--
+.VMware
+--
 [cols="1a,1a"]
 |===
 | Pfad und Dateiname | Beschreibung 
@@ -318,8 +321,15 @@ API-Schemata für StorageGRID:
 *Hinweis*: Bevor Sie ein Upgrade durchführen, können Sie diese Schemas verwenden, um zu bestätigen, dass jeder Code, den Sie zur Verwendung von StorageGRID Management APIs geschrieben haben, mit der neuen StorageGRID-Version kompatibel ist, wenn Sie keine StorageGRID-Umgebung außerhalb der Produktionsumgebung für Upgrade-Kompatibilitätstests haben.
 
 |===
+--
+====
+
+
 . Wenn Sie ein Appliance-basiertes StorageGRID-System wiederherstellen, wählen Sie die entsprechenden Dateien aus.
 
+
+
+NOTE: Für die Installation der Appliance sind diese Dateien nur erforderlich, wenn Sie Netzwerkverkehr vermeiden müssen.  Die Appliance kann die erforderlichen Dateien vom Admin-Knoten herunterladen, auf dem Sie das Wiederherstellungsverfahren durchführen.
 
 [cols="1a,1a"]
 |===
@@ -336,5 +346,3 @@ MD5-Prüfsumme für die Datei `/debs/storagegridwebscale-
 images-version-SHA.deb`.
 
 |===
-
-NOTE: Für die Installation der Appliance sind diese Dateien nur erforderlich, wenn Sie den Netzwerkverkehr vermeiden müssen. Die Appliance kann die erforderlichen Dateien vom primären Admin-Knoten herunterladen.

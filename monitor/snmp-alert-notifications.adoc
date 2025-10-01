@@ -13,7 +13,7 @@ summary: Wenn StorageGRID SNMP-Benachrichtigungen senden soll, wenn Warnmeldunge
 [role="lead"]
 Wenn StorageGRID SNMP-Benachrichtigungen senden soll, wenn Warnmeldungen auftreten, müssen Sie den StorageGRID SNMP-Agent aktivieren und ein oder mehrere Trap-Ziele konfigurieren.
 
-Sie können die Option *CONFIGURATION* > *Monitoring* > *SNMP Agent* im Grid Manager oder die SNMP-Endpunkte für die Grid Management API verwenden, um den StorageGRID SNMP-Agent zu aktivieren und zu konfigurieren. Der SNMP-Agent unterstützt alle drei Versionen des SNMP-Protokolls.
+Sie können die Option *Konfiguration* > *Überwachung* > *SNMP-Agent* im Grid Manager oder die SNMP-Endpunkte für die Grid Management-API verwenden, um den StorageGRID SNMP-Agenten zu aktivieren und zu konfigurieren.  Der SNMP-Agent unterstützt alle drei Versionen des SNMP-Protokolls.
 
 Informationen zum Konfigurieren des SNMP-Agenten finden Sie unter link:using-snmp-monitoring.html["Verwenden Sie SNMP-Überwachung"].
 

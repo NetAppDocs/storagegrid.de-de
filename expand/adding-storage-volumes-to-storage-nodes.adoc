@@ -30,7 +30,7 @@ Jeder Objektspeicher wird auf einem Volume gemountet, das seiner ID entspricht. 
 Bevor Sie neue Speicher-Volumes hinzufügen, zeigen Sie mit Grid Manager die aktuellen Objektspeicher für jeden Storage-Node sowie die entsprechenden Mount-Punkte an. Diese Informationen können Sie beim Hinzufügen von Speicher-Volumes verwenden.
 
 .Schritte
-. Wählen Sie *NODES* > *_site_* > *_Storage Node_* > *Storage* aus.
+. Wählen Sie *Knoten* > *_Site_* > *_Speicherknoten_* > *Speicher*.
 . Blättern Sie nach unten, um die verfügbaren Speichermengen für jedes Volume und jeden Objektspeicher anzuzeigen.
 +
 Bei Appliance-Storage-Nodes entspricht der weltweite Name jeder Festplatte der WWID (World-Wide Identifier) des Volumes, die angezeigt wird, wenn Sie die Standard-Volume-Eigenschaften in SANtricity OS (der mit dem Storage Controller der Appliance verbundenen Managementsoftware) anzeigen.

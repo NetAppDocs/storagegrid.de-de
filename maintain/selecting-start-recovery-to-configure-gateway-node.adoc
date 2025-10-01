@@ -21,7 +21,7 @@ Nachdem Sie einen Gateway-Node ersetzt haben, müssen Sie im Grid Manager Recove
 
 
 .Schritte
-. Wählen Sie im Grid Manager *MAINTENANCE* > *Tasks* > *Recovery*.
+. Wählen Sie im Grid Manager *Wartung* > *Aufgaben* > *Wiederherstellung*.
 . Wählen Sie in der Liste Ausstehende Knoten den Rasterknoten aus, den Sie wiederherstellen möchten.
 +
 Nodes werden in der Liste angezeigt, wenn sie fehlschlagen. Sie können jedoch keinen Node auswählen, bis er neu installiert wurde und für die Wiederherstellung bereit ist.

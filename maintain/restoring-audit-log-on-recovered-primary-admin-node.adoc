@@ -33,7 +33,7 @@ Standardmäßig werden Audit-Informationen an das Audit-Protokoll auf Admin-Knot
 * Sie haben ausdrücklich angegeben, dass Audit-Meldungen nur auf den lokalen Knoten gespeichert werden sollten, die sie generiert haben.
 
 
-Weitere Informationen finden Sie unter link:../monitor/configure-audit-messages.html["Konfigurieren von Überwachungsmeldungen und Protokollzielen"] .
+Sehenlink:../monitor/configure-log-management.html["Konfigurieren Sie die Protokollverwaltung und den externen Syslog-Server"] für Details.
 
 ====
 .Schritte
@@ -48,12 +48,12 @@ Weitere Informationen finden Sie unter link:../monitor/configure-audit-messages.
 +
 Nachdem Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `#`.
 
-. Prüfen Sie, welche Audit-Dateien erhalten wurden: `cd /var/local/log`
+. Überprüfen Sie, welche Audit-Dateien erhalten geblieben sind: `cd /var/local/audit/export`
 . Kopieren Sie die erhaltenen Audit-Log-Dateien in den wiederhergestellten Admin-Node: `scp admin@_grid_node_IP_:/var/local/tmp/saved-audit-logs/YYYY* .`
 +
 Geben Sie bei der entsprechenden Eingabeaufforderung das Passwort für den Administrator ein.
 
 . Löschen Sie aus Sicherheitsgründen die Prüfprotokolle vom fehlgeschlagenen Grid-Knoten, nachdem Sie überprüft haben, ob sie erfolgreich auf den wiederhergestellten Admin-Node kopiert wurden.
-. Aktualisieren Sie die Benutzer- und Gruppeneinstellungen der Audit-Log-Dateien auf dem wiederhergestellten Admin-Knoten: `chown ams-user: bycast *`
+. Aktualisieren Sie die Benutzer- und Gruppeneinstellungen der Audit-Protokolldateien auf dem wiederhergestellten Admin-Knoten: `chown ams-user:bycast *`
 . Melden Sie sich als root ab: `exit`
 

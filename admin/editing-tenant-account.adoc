@@ -25,7 +25,7 @@ TIP: Wenn ein Mandant über die Berechtigung *Grid Federation connection* verwen
 NOTE: Das Anwenden von Mandanteneinstellungen für das Grid kann je nach Netzwerkkonnektivität, Node-Status und Cassandra-Vorgängen 15 Minuten oder länger dauern.
 
 .Schritte
-. Wählen Sie *MIETER*.
+. Wählen Sie *Mandanten* aus.
 +
 image::../media/tenant_accounts_page.png[Seite „Mandantenkonten“]
 

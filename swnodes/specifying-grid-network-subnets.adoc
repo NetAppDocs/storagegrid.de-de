@@ -1,0 +1,33 @@
+---
+permalink: swnodes/specifying-grid-network-subnets.html 
+sidebar: sidebar 
+keywords: how to specify Grid Network subnets 
+summary: Sie müssen die Subnetze angeben, die im Grid-Netzwerk verwendet werden. 
+---
+= Grid-Netzwerk-Subnetze angeben
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen die Subnetze angeben, die im Grid-Netzwerk verwendet werden.
+
+.Über diese Aufgabe
+Die Subnetzeinträge umfassen die Subnetze für das Grid-Netzwerk für jeden Standort im StorageGRID-System sowie alle Subnetze, die über das Grid-Netzwerk erreichbar sein müssen.
+
+Wenn Sie mehrere Grid-Subnetze haben, ist das Grid Network-Gateway erforderlich. Alle angegebenen Grid-Subnetze müssen über dieses Gateway erreichbar sein.
+
+.Schritte
+. Geben Sie die CIDR-Netzwerkadresse für mindestens ein Grid-Netzwerk im Textfeld *Subnetz 1* an.
+. Klicken Sie auf das Pluszeichen neben dem letzten Eintrag, um einen zusätzlichen Netzwerkeintrag hinzuzufügen. Sie müssen alle Subnetze für alle Standorte im Grid-Netzwerk angeben.
++
+** Wenn Sie bereits mindestens einen Knoten bereitgestellt haben, klicken Sie auf *Netznetze-Subnetze ermitteln*, um die Netznetzwerksubnetz-Liste automatisch mit den Subnetzen zu füllen, die von Grid-Nodes gemeldet wurden, die beim Grid Manager registriert sind.
+** Sie müssen manuell Subnetze für NTP, DNS, LDAP oder andere externe Server hinzufügen, auf die über das Grid-Netzwerk-Gateway zugegriffen wird.
++
+image::../media/4_gmi_installer_grid_network_page.gif[Geben Sie Subnetze an]
+
+
+
+. Klicken Sie Auf *Weiter*.
+

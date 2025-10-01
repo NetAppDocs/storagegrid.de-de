@@ -13,19 +13,24 @@ summary: 'Sie können hochverfügbare \(HA\)-Gruppen konfigurieren, um hochverf�
 [role="lead"]
 Sie können Hochverfügbarkeitsgruppen (High Availability groups, HA-Gruppen) konfigurieren, um hochverfügbaren Zugriff auf die Services in Admin-Nodes oder Gateway-Nodes bereitzustellen.
 
+
+NOTE: Ein StorageGRID -System kann maximal 255 HA-Gruppen haben.
+
 .Bevor Sie beginnen
 * Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
 * Sie haben die link:admin-group-permissions.html["Root-Zugriffsberechtigung"].
 * Wenn Sie eine VLAN-Schnittstelle in einer HA-Gruppe verwenden möchten, haben Sie die VLAN-Schnittstelle erstellt. Siehe link:../admin/configure-vlan-interfaces.html["Konfigurieren Sie die VLAN-Schnittstellen"].
 * Wenn Sie eine Zugriffsoberfläche für einen Node in einer HA-Gruppe verwenden möchten, haben Sie die Schnittstelle erstellt:
 +
-** *Red hat Enterprise Linux (vor der Installation des Knotens)*: link:../rhel/creating-node-configuration-files.html["Erstellen von Node-Konfigurationsdateien"]
-** *Ubuntu oder Debian (vor der Installation des Knotens)*: link:../ubuntu/creating-node-configuration-files.html["Erstellen von Node-Konfigurationsdateien"]
-** *Linux (nach der Installation des Knotens)*: link:../maintain/linux-adding-trunk-or-access-interfaces-to-node.html["Linux: Hinzufügen von Trunk- oder Zugriffsschnittstellen zu einem Node"]
-** *VMware (nach der Installation des Knotens)*: link:../maintain/vmware-adding-trunk-or-access-interfaces-to-node.html["VMware: Hinzufügen von Trunk- oder Zugriffsschnittstellen zu einem Node"]
+** *Linux (vor der Installation des Knotens)*:link:../swnodes/creating-node-configuration-files.html["Erstellen von Node-Konfigurationsdateien"]
+** *Linux (nach der Installation des Knotens)*:link:../maintain/linux-adding-trunk-or-access-interfaces-to-node.html["Hinzufügen von Trunk- oder Zugriffsschnittstellen zu einem Knoten"]
+** *VMware (nach der Installation des Knotens)*:link:../maintain/vmware-adding-trunk-or-access-interfaces-to-node.html["Hinzufügen von Trunk- oder Zugriffsschnittstellen zu einem Knoten"]
 
 
 
+
+
+NOTE: „Linux“ bezieht sich auf eine RHEL-, Ubuntu- oder Debian-Bereitstellung.  Eine Liste der unterstützten Versionen finden Sie im https://imt.netapp.com/matrix/#welcome["NetApp Interoperabilitäts-Matrix-Tool (IMT)"^] .
 
 
 
@@ -40,7 +45,7 @@ Eine Schnittstelle muss lauten, damit ein Gateway-Node oder ein Admin-Node in ei
 === Greifen Sie auf den Assistenten zu
 
 .Schritte
-. Wählen Sie *CONFIGURATION* > *Network* > *High Availability groups*.
+. Wählen Sie *Konfiguration* > *Netzwerk* > *Hochverfügbarkeitsgruppen*.
 . Wählen Sie *Erstellen*.
 
 
@@ -154,7 +159,7 @@ Sie können eine HA-Gruppe (High Availability, Hochverfügbarkeit) bearbeiten, u
 Beispielsweise müssen Sie möglicherweise eine HA-Gruppe bearbeiten, wenn Sie den Node, der einer ausgewählten Schnittstelle zugeordnet ist, entfernen möchten, wenn Sie ihn an einem Standort ausmustern oder einem Node entfernen möchten.
 
 .Schritte
-. Wählen Sie *CONFIGURATION* > *Network* > *High Availability groups*.
+. Wählen Sie *Konfiguration* > *Netzwerk* > *Hochverfügbarkeitsgruppen*.
 +
 Auf der Seite „Hochverfügbarkeitsgruppen“ werden alle vorhandenen HA-Gruppen angezeigt.
 
@@ -199,10 +204,10 @@ TIP: Sie können eine HA-Gruppe nicht entfernen, wenn sie an einen Load Balancer
 Aktualisieren Sie alle betroffenen S3-Client-Applikationen, bevor Sie eine HA-Gruppe entfernen, um Client-Unterbrechungen zu vermeiden. Aktualisieren Sie jeden Client, um eine Verbindung über eine andere IP-Adresse herzustellen, z. B. die virtuelle IP-Adresse einer anderen HA-Gruppe oder die IP-Adresse, die während der Installation für eine Schnittstelle konfiguriert wurde.
 
 .Schritte
-. Wählen Sie *CONFIGURATION* > *Network* > *High Availability groups*.
+. Wählen Sie *Konfiguration* > *Netzwerk* > *Hochverfügbarkeitsgruppen*.
 . Überprüfen Sie die Spalte *Load Balancer Endpunkte* für jede HA-Gruppe, die Sie entfernen möchten. Wenn Load Balancer-Endpunkte aufgeführt sind:
 +
-.. Gehen Sie zu *CONFIGURATION* > *Network* > *Load Balancer Endpunkte*.
+.. Gehen Sie zu *Konfiguration* > *Netzwerk* > *Load Balancer-Endpunkte*.
 .. Aktivieren Sie das Kontrollkästchen für den Endpunkt.
 .. Wählen Sie *Aktionen* > *Endpunktbindungsmodus bearbeiten*.
 .. Aktualisieren Sie den Bindungsmodus, um die HA-Gruppe zu entfernen.

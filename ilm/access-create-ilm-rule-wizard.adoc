@@ -24,11 +24,10 @@ NOTE: Wenn Sie die standardmäßige ILM-Regel für eine Richtlinie erstellen mö
 * Sie haben alle Cloud-Storage-Pools konfiguriert, die Sie verwenden möchten. Siehe link:creating-cloud-storage-pool.html["Cloud Storage Pool Erstellen"].
 * Sie kennen die link:data-protection-options-for-ingest.html["Aufnahmeoptionen"].
 * Wenn Sie eine konforme Regel für die Verwendung mit S3 Object Lock erstellen müssen, sind Sie mit dem vertrautlink:requirements-for-s3-object-lock.html["Anforderungen für die S3-Objektsperre"].
-* Optional haben Sie sich das Video angesehen: https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=9872d38f-80b3-4ad4-9f79-b1ff008760c7["Video: ILM-Regeln im Überblick"^].
+* Optional haben Sie das Video angesehen:
 +
-[link=https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=9872d38f-80b3-4ad4-9f79-b1ff008760c7]
-image::../media/video-screenshot-ilm-rules-118.png[Video: ILM-Regeln im Überblick]
-
+.Übersicht über ILM-Regeln
+video::9872d38f-80b3-4ad4-9f79-b1ff008760c7[panopto]
 
 
 .Über diese Aufgabe

@@ -25,7 +25,7 @@ Managen Sie die Mandantengruppen nach Bedarf, um eine Gruppe anzuzeigen, zu bear
 Sie können die grundlegenden Informationen und Details für jede Gruppe anzeigen und bearbeiten.
 
 .Schritte
-. Wählen Sie *ZUGRIFFSVERWALTUNG* > *Gruppen*.
+. Wählen Sie *Zugriffsverwaltung* > *Gruppen*.
 . Überprüfen Sie die Informationen auf der Seite Gruppen, auf der grundlegende Informationen für alle lokalen und föderierten Gruppen für dieses Mandantenkonto aufgeführt sind.
 +
 Wenn das Mandantenkonto über die Berechtigung *Grid Federation connection* verwenden verfügt und Sie Gruppen im Quellraster des Mandanten anzeigen:
@@ -66,15 +66,13 @@ Wenn das Mandantenkonto über die Berechtigung *Grid Federation connection* verw
 
 
 
-. Bearbeiten Sie die Gruppeneinstellungen nach Bedarf. Weitere Informationen zu den Eingeben finden Sie unter link:creating-groups-for-s3-tenant.html["Erstellen von Gruppen für einen S3-Mandanten"] undlink:creating-groups-for-swift-tenant.html["Erstellen von Gruppen für einen Swift Mandanten"].
+. Bearbeiten Sie die Gruppeneinstellungen nach Bedarf.  Siehelink:creating-groups-for-s3-tenant.html["Erstellen von Gruppen für einen S3-Mandanten"] für Details zu den einzugebenden Informationen.
 +
 .. Ändern Sie im Abschnitt Übersicht den Anzeigenamen, indem Sie den Namen oder das Bearbeiten-Symbol auswählenimage:../media/icon_edit_tm.png["Symbol bearbeiten"].
 .. Aktualisieren Sie auf der Registerkarte *Gruppenberechtigungen* die Berechtigungen und wählen Sie *Änderungen speichern*.
 .. Nehmen Sie auf der Registerkarte *Gruppenrichtlinie* Änderungen vor und wählen Sie *Änderungen speichern*.
 +
-*** Wenn Sie eine S3-Gruppe bearbeiten, wählen Sie optional eine andere S3-Gruppenrichtlinie aus, oder geben Sie bei Bedarf den JSON-String für eine benutzerdefinierte Richtlinie ein.
-*** Wenn Sie eine Swift-Gruppe bearbeiten, aktivieren oder deaktivieren Sie optional das Kontrollkästchen *Swift Administrator*.
-
+Wählen Sie optional eine andere S3-Gruppenrichtlinie aus oder geben Sie bei Bedarf die JSON-Zeichenfolge für eine benutzerdefinierte Richtlinie ein.
 
 
 
@@ -114,10 +112,10 @@ Sie können eine vorhandene Gruppe duplizieren, um neue Gruppen schneller zu ers
 NOTE: Wenn Ihr Mandantenkonto die Berechtigung *Grid Federation connection* verwenden hat und Sie eine Gruppe aus dem Quellraster des Mandanten duplizieren, wird die duplizierte Gruppe im Zielraster des Mandanten geklont.
 
 .Schritte
-. Wählen Sie *ZUGRIFFSVERWALTUNG* > *Gruppen*.
+. Wählen Sie *Zugriffsverwaltung* > *Gruppen*.
 . Aktivieren Sie das Kontrollkästchen für die Gruppe, die Sie duplizieren möchten.
 . Wählen Sie *Aktionen* > *Gruppe duplizieren*.
-. Weitere Informationen zu den Eingeben finden Sie unter link:creating-groups-for-s3-tenant.html["Erstellen von Gruppen für einen S3-Mandanten"] oderlink:creating-groups-for-swift-tenant.html["Erstellen von Gruppen für einen Swift Mandanten"].
+. Sehenlink:creating-groups-for-s3-tenant.html["Erstellen von Gruppen für einen S3-Mandanten"] für Details zu den einzugebenden Informationen.
 . Wählen Sie *Gruppe erstellen*.
 
 
@@ -144,7 +142,7 @@ Sie können eine oder mehrere Gruppen löschen. Alle Benutzer, die nur zu einer 
 NOTE: Wenn Ihr Mandantenkonto über die Berechtigung *Grid Federation connection* verwenden verfügt und Sie eine Gruppe löschen, wird StorageGRID die entsprechende Gruppe im anderen Raster nicht löschen. Wenn Sie diese Informationen synchron halten müssen, müssen Sie dieselbe Gruppe aus beiden Rastern löschen.
 
 .Schritte
-. Wählen Sie *ZUGRIFFSVERWALTUNG* > *Gruppen*.
+. Wählen Sie *Zugriffsverwaltung* > *Gruppen*.
 . Aktivieren Sie das Kontrollkästchen für jede Gruppe, die Sie löschen möchten.
 . Wählen Sie *Aktionen* > *Gruppe löschen* oder *Aktionen* > *Gruppen löschen*.
 +
@@ -152,3 +150,49 @@ Ein Bestätigungsdialogfeld wird angezeigt.
 
 . Wählen Sie *Gruppe löschen* oder *Gruppen löschen*.
 
+
+
+
+== Einrichten von AssumeRole
+
+.Bevor Sie beginnen
+Sie müssen Administrator sein, um AssumeRole einzurichten.
+
+.Über diese Aufgabe
+Um AssumeRole einzurichten, erstellen Sie die zu übernehmende Zielgruppe, falls die Gruppe noch nicht vorhanden ist.  Bearbeiten Sie die S3-Richtlinie der Gruppe, um die zulässigen Aktionen für die Übernahme dieser Gruppe anzugeben.  Bearbeiten Sie die S3-Vertrauensrichtlinie der Gruppe, um die vertrauenswürdigen Benutzer anzugeben, die die Gruppe mit der AssumeRole-API übernehmen dürfen.
+
+Temporäre Sicherheitsanmeldeinformationen, die aus der Annahme dieser Gruppe erstellt werden, sind für eine begrenzte Dauer gültig.  Die Sitzung dauert zwischen 15 Minuten und 12 Stunden, die Standardsitzung beträgt 1 Stunde.  Wenn Sie den Benutzer aus der S3-Vertrauensrichtlinie der Gruppe entfernen, kann der Benutzer diese Gruppe nicht mehr übernehmen.
+
+.Schritte
+. Wählen Sie *Zugriffsverwaltung* > *Gruppen*.
+. Klicken Sie auf den Gruppennamen.
+. Wählen Sie die Registerkarte *S3-Vertrauensrichtlinie*.
+. Fügen Sie Ihre S3-Vertrauensrichtlinie hinzu, einschließlich einer Liste von Benutzern, die AssumeRole ausführen können.
+. Wählen Sie *Änderungen speichern*.
+. Wählen Sie die Registerkarte *S3-Gruppenrichtlinie*.
+. Bearbeiten Sie die S3-Richtlinie, um nur die erforderlichen S3-Aktionen für die vertrauenswürdigen Benutzer anzugeben, die in der S3-Vertrauensrichtlinie dieser Gruppe hinzugefügt wurden.
+. Wählen Sie *Änderungen speichern*.
+
+
+
+
+=== Beispiel einer AssumeRole S3-Vertrauensrichtlinie
+
+[listing]
+----
+{
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "sts:AssumeRole",
+            "Principal": {
+                "AWS": [
+                    "urn:sgws:identity::1234567890:user/user1",
+                    "arn:aws:iam::1234567890:user/user2"
+                ]
+            }
+        }
+    ]
+}
+----
+Nachdem die Konfiguration abgeschlossen ist, können in der S3-Vertrauensrichtlinie aufgeführte Benutzer AssumeRole ausführen und Anmeldeinformationen erhalten.  Die endgültigen Berechtigungen werden durch Gruppenrichtlinien, Bucket-Richtlinien und Sitzungsrichtlinien bestimmt. Weitere Informationen finden Sie unter link:../s3/use-access-policies.html["Verwenden von Zugriffsrichtlinien"] .

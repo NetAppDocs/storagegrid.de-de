@@ -25,7 +25,7 @@ NOTE: Konfigurierte Speicher-Proxy-Einstellungen gelten nicht für Kafka-Plattfo
 Sie können die Einstellungen für einen einzelnen Speicher-Proxy konfigurieren.
 
 .Schritte
-. Wählen Sie *KONFIGURATION* > *Sicherheit* > *Proxy-Einstellungen*.
+. Wählen Sie *Konfiguration* > *Sicherheit* > *Proxy-Einstellungen*.
 . Aktivieren Sie auf der Registerkarte *Storage* das Kontrollkästchen *Speicher-Proxy aktivieren*.
 . Wählen Sie das Protokoll für den Speicher-Proxy aus.
 . Geben Sie den Hostnamen oder die IP-Adresse des Proxy-Servers ein.

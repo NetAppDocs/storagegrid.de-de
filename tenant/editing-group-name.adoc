@@ -19,7 +19,7 @@ Sie können den Anzeigenamen für eine Gruppe bearbeiten. Sie können den eindeu
 
 
 .Schritte
-. Wählen Sie *ZUGRIFFSVERWALTUNG* > *Gruppen*.
+. Wählen Sie *Zugriffsverwaltung* > *Gruppen*.
 . Aktivieren Sie das Kontrollkästchen für die Gruppe, deren Anzeigename Sie bearbeiten möchten.
 . Wählen Sie *Aktionen* > *Gruppenname bearbeiten*.
 +

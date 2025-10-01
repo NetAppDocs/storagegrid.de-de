@@ -24,7 +24,7 @@ Für alle Berechtigungen legt die Einstellung Zugriffsmodus der Gruppe fest, ob 
 
 NOTE: Wenn ein Benutzer zu mehreren Gruppen gehört und eine beliebige Gruppe auf schreibgeschützt eingestellt ist, hat der Benutzer schreibgeschützten Zugriff auf alle ausgewählten Einstellungen und Funktionen.
 
-Sie können einer Gruppe die folgenden Berechtigungen zuweisen. Beachten Sie, dass S3-Mandanten und Swift-Mandanten unterschiedliche Gruppenberechtigungen haben.
+Sie können einer Gruppe die folgenden Berechtigungen zuweisen.
 
 [cols="1a,3a,3a"]
 |===
@@ -36,16 +36,6 @@ Root-Zugriff
  a| 
 Bietet vollständigen Zugriff auf den Tenant Manager und die Mandanten-Management-API.
  a| 
-Swift-Benutzer müssen über Root-Zugriffsberechtigungen verfügen, um sich beim Mandantenkonto anzumelden.
-
-
-
- a| 
-Verwalter
- a| 
-Nur Swift Mandanten. Bietet vollständigen Zugriff auf die Swift Container und Objekte für dieses Mandantenkonto
- a| 
-Swift-Benutzer müssen über die Swift-Administrator-Berechtigung verfügen, um alle Vorgänge mit der Swift-REST-API auszuführen.
 
 
 
@@ -61,30 +51,22 @@ Benutzer, die diese Berechtigung nicht besitzen, sehen die Menüoption *STORAGE 
  a| 
 Alle Buckets anzeigen
  a| 
-*S3 Tenants*: Ermöglicht es Benutzern, alle Buckets und Bucket-Konfigurationen anzuzeigen.
-
-*Swift Tenants*: Ermöglicht Swift-Benutzern, alle Container und Container-Konfigurationen über die Tenant Management API anzuzeigen.
+Ermöglicht Benutzern, alle Buckets und Bucket-Konfigurationen anzuzeigen.
  a| 
 Benutzer, die weder die Berechtigung Alle Buckets anzeigen noch die Berechtigung Alle Buckets verwalten haben, sehen die Menüoption *Buckets* nicht.
 
-Diese Berechtigung wird durch die Berechtigung zum Verwalten aller Buckets ersetzt. Dies hat keine Auswirkungen auf S3-Bucket oder Gruppenrichtlinien, die von S3-Clients oder S3-Konsole verwendet werden.
-
-Diese Berechtigung können Sie Swift-Gruppen nur über die Mandanten-Management-API zuweisen. Diese Berechtigung können Swift-Gruppen nicht mit dem Tenant Manager zugewiesen werden.
+Diese Berechtigung wird durch die Berechtigung „Alle Buckets verwalten“ ersetzt.  Es hat keine Auswirkungen auf S3-Bucket- oder Gruppenrichtlinien, die von S3-Clients oder der S3-Konsole verwendet werden.
 
 
 
  a| 
 Managen aller Buckets
  a| 
-*S3-Mandanten*: Ermöglicht Benutzern die Verwendung des Tenant Manager und der Tenant Management API, um S3-Buckets zu erstellen und zu löschen sowie die Einstellungen für alle S3-Buckets im Mandantenkonto zu managen, unabhängig von S3-Bucket oder Gruppenrichtlinien.
-
-*Swift Tenants*: Ermöglicht Swift-Benutzern die Kontrolle der Konsistenz für Swift-Container mithilfe der Mandanten-Management-API.
+Ermöglicht Benutzern die Verwendung des Tenant Managers und der Tenant Management API zum Erstellen und Löschen von S3-Buckets und zum Verwalten der Einstellungen für alle S3-Buckets im Tenant-Konto, unabhängig von S3-Bucket- oder Gruppenrichtlinien.
  a| 
 Benutzer, die weder die Berechtigung Alle Buckets anzeigen noch die Berechtigung Alle Buckets verwalten haben, sehen die Menüoption *Buckets* nicht.
 
-Diese Berechtigung ersetzt die Berechtigung Alle Planungsperioden anzeigen. Dies hat keine Auswirkungen auf S3-Bucket oder Gruppenrichtlinien, die von S3-Clients oder S3-Konsole verwendet werden.
-
-Diese Berechtigung können Sie Swift-Gruppen nur über die Mandanten-Management-API zuweisen. Diese Berechtigung können Swift-Gruppen nicht mit dem Tenant Manager zugewiesen werden.
+Diese Berechtigung ersetzt die Berechtigung „Alle Buckets anzeigen“.  Es hat keine Auswirkungen auf S3-Bucket- oder Gruppenrichtlinien, die von S3-Clients oder der S3-Konsole verwendet werden.
 
 
 

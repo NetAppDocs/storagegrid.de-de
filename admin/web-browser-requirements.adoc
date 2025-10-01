@@ -21,24 +21,24 @@ Sie müssen einen unterstützten Webbrowser verwenden.
  a| 
 Google Chrome
  a| 
-119
+138
 
 
 
  a| 
 Microsoft Edge
  a| 
-119
+138
 
 
 
  a| 
 Mozilla Firefox
  a| 
-119
+140
 
 |===
-Sie sollten das Browserfenster auf eine empfohlene Breite einstellen.
+Stellen Sie das Browserfenster auf eine empfohlene Breite ein.
 
 [cols="3a,1a"]
 |===

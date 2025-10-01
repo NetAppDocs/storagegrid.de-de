@@ -21,9 +21,9 @@ Wenn StorageGRID-Knoten auf Linux-Hosts bereitgestellt werden, link:linux-instal
 [role="quick-margin-para"]
 Greifen Sie vom primären Administratorknoten aus auf die Seite StorageGRID-Aktualisierung zu, und laden Sie ggf. die Aktualisierungsdatei und die Hotfix-Datei hoch.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"] Wiederherstellungspaket Herunterladen
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]Wiederherstellungspaket herunterladen
 [role="quick-margin-para"]
-Laden Sie das aktuelle Wiederherstellungspaket herunter, bevor Sie das Upgrade starten.
+Laden Sie das aktuelle Wiederherstellungspaket herunter, bevor Sie mit dem Upgrade beginnen.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"] Führen Sie Vorabprüfungen für Upgrades durch
 [role="quick-margin-para"]
@@ -33,9 +33,9 @@ Anhand der Upgrade-Vorabprüfungen können Sie Probleme erkennen und beheben, be
 [role="quick-margin-para"]
 Wenn Sie das Upgrade starten, werden die Vorabprüfungen erneut ausgeführt, und der primäre Admin-Node wird automatisch aktualisiert. Sie können nicht auf den Grid-Manager zugreifen, während das Upgrade des primären Admin-Knotens durchgeführt wird. Auch Audit-Protokolle sind nicht verfügbar. Dieses Upgrade kann bis zu 30 Minuten in Anspruch nehmen.
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Sechs"] Wiederherstellungspaket Herunterladen
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Sechs"]Wiederherstellungspaket herunterladen
 [role="quick-margin-para"]
-Nachdem der primäre Admin-Knoten aktualisiert wurde, laden Sie ein neues Wiederherstellungspaket herunter.
+Laden Sie nach dem Upgrade des primären Admin-Knotens ein neues Wiederherstellungspaket herunter.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["Sieben"] Knoten genehmigen
 [role="quick-margin-para"]

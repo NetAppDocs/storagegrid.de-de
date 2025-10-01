@@ -38,7 +38,7 @@ Als allgemeine Best Practice sollte jeder Standort in Ihrem StorageGRID-System z
 
 Ein Load Balancer-Endpunkt definiert den Port und das Netzwerkprotokoll (HTTPS oder HTTP), über das eingehende und ausgehende Client-Anwendungsanforderungen auf die Knoten zugreifen, die den Load Balancer-Dienst enthalten. Der Endpunkt definiert außerdem den Client-Typ (S3), den Bindungsmodus und optional eine Liste zulässiger oder blockierter Mandanten.
 
-Um einen Load Balancer-Endpunkt zu erstellen, wählen Sie entweder *CONFIGURATION* > *Network* > *Load Balancer-Endpunkte* oder schließen Sie den FabricPool- und S3-Setup-Assistenten ab. Weitere Informationen:
+Um einen Load Balancer-Endpunkt zu erstellen, verwenden Sie entweder den Grid Manager oder schließen Sie die S3-Setup- und FabricPool Assistenten ab:
 
 * link:configuring-load-balancer-endpoints.html["Konfigurieren von Load Balancer-Endpunkten"]
 * link:use-s3-setup-wizard-steps.html["Verwenden Sie den S3-Einrichtungsassistenten"]
@@ -47,11 +47,87 @@ Um einen Load Balancer-Endpunkt zu erstellen, wählen Sie entweder *CONFIGURATIO
 
 
 
+=== Überlegungen zum Load Balancer-Caching
+
+Durch Caching wird die Leistung erheblich verbessert, wenn eine Arbeitslast mit einer Teilmenge von Daten arbeitet und mehrmals auf Objekte zugreift.  Darüber hinaus ermöglicht das Caching den Fernzugriff auf den Objektspeicher ohne vollständige Grid-Bereitstellung.  Das Zwischenspeichern des Lastenausgleichs ist nur für Gateway-Knoten verfügbar.
+
+Beim Erstellen von Load Balancer-Endpunkten:
+
+* Aktivieren Sie das Caching nur für Workloads, die zwischengespeichert werden können.  Workloads, die häufiger auf nicht zwischengespeicherte Daten als auf zwischengespeicherte Daten zugreifen, weisen eine schlechtere Leistung auf, als wenn sie nicht vom Cache verarbeitet würden.  In einigen Fällen können Workloads mit hohen Überschreib- und Auslagerungsraten auch die garantierte Schreiblebensdauer des Laufwerks überschreiten.
+* Erwägen Sie das Hinzufügen zusätzlicher Endpunkte oder Knoten zum Zwischenspeichern einzelner Workloads, die sich gut für das Zwischenspeichern eignen.
+* Verwenden Sie unterschiedliche Endpunkte für zwischenspeicherbare und nicht zwischenspeicherbare Workloads.  Diese Trennung stellt sicher, dass Caching-Mechanismen angemessen angewendet werden und die nicht zwischenspeicherbare Datenverarbeitung nicht beeinträchtigen.
+* Bewerten Sie eine potenziell zwischenspeicherbare Arbeitslast, indem Sie sie an den cachefähigen Endpunkt weiterleiten.  Überwachen und überprüfen Sie die Cache-Trefferquote, um die Eignung der Arbeitslast für das Caching zu bestimmen.  Diese Bewertung hilft bei der Optimierung der Leistung und stellt eine effiziente Nutzung der Cache-Ressourcen sicher.
+* link:../audit/index.html["Prüfung von Audit-Protokollen"]um zu bestimmen, ob eine vorhandene Arbeitslast ein guter Kandidat für das Caching wäre.  Bestimmen Sie für einen bestimmten Zeitraum, welcher Prozentsatz der GETs für eindeutige Objekte erfolgt.  Um für das Caching geeignet zu sein, sollte dieser Wert unter 50 % liegen.
+
+
+
+
+==== Beispiele für Workloads, die sich gut für das Caching eignen könnten
+
+* Datenseen
+* Hochleistungsrechnen (HPC)
+* KI/ML-Schulung
+* Content-Distribution-Netzwerke (CDN)
+* Medien-Asset-Management
+* Videoproduktion
+
+
+[NOTE]
+====
+* Es können mehrere Objektversionen zwischengespeichert werden.
+* Bereichslesevorgänge werden unterstützt.
+
+
+====
+
+
+==== Beispiele für Workloads, die sich nicht gut für das Caching eignen
+
+* Stoffpool
+* Backup-Anwendungen
+* Speicher-Tiering
+
+
+
+CAUTION: Wenn für vom Cache bereitzustellende Inhalte eine Verschlüsselung im Ruhezustand erforderlich ist, https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/optional-enabling-node-encryption.html["Knoten- oder Laufwerkverschlüsselung aktivieren"^] auf dem Cache-Knoten.
+
+
+
+==== Arten von Objekten und Anfragen, die nicht zwischengespeichert werden
+
+* Der `response-content-encoding` Abfrageparameter
+* Der `partNumber` Abfrageparameter
+* Bedingte Header
++
+** `If-Match`
+** `If-Modified-Since`
+** `If-None-Match`
+** `If-Unmodified-Since`
+
+
+* Anfragen, die im Ruhezustand mit einem der folgenden Elemente verschlüsselt wurden:
++
+** SSE (serverseitige Verschlüsselung mit von StorageGRID verwalteten Schlüsseln)
+** SSE-C (serverseitige Verschlüsselung mit vom Kunden bereitgestellten Schlüsseln)
+** Verschlüsselung gespeicherter Objekte
+
+
+
+
+Alle nicht zwischengespeicherten Anfragen werden an einen Upstream-LDR weitergeleitet, als wäre der Cache nicht aktiviert.
+
+.Verwandte Informationen
+* link:../troubleshoot/troubleshooting-load-balancer-caching.html["Fehlerbehebung beim Load Balancer-Caching"]
+* Weitere Informationen zum Load Balancer-Caching erhalten Sie beim technischen Support.
+
+
+
+
 === Überlegungen zum Port
 
 Der Port für einen Load Balancer-Endpunkt ist für den ersten erstellten Endpunkt standardmäßig auf 10433 gesetzt. Sie können jedoch einen beliebigen nicht verwendeten externen Port zwischen 1 und 65535 angeben. Wenn Sie Port 80 oder 443 verwenden, verwendet der Endpunkt nur den Load Balancer-Dienst auf Gateway-Nodes. Diese Ports sind für Admin-Nodes reserviert. Wenn Sie denselben Port für mehr als einen Endpunkt verwenden, müssen Sie für jeden Endpunkt einen anderen Bindungsmodus angeben.
 
-Von anderen Netzdiensten verwendete Ports sind nicht zulässig. Siehe link:../network/network-port-reference.html["Referenz für Netzwerk-Ports"].
+Von anderen Grid-Diensten verwendete Ports sind nicht zulässig. Sehen link:../network/internal-grid-node-communications.html#storagegrid-internal-ports["Interne StorageGRID-Ports"] .
 
 
 

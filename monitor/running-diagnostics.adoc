@@ -33,12 +33,12 @@ Die Seite Diagnose führt eine Reihe von diagnostischen Prüfungen zum aktuellen
 Diagnosestatus sind unabhängig von aktuellen Warnungen und zeigen möglicherweise keine betrieblichen Probleme mit dem Raster an. Beispielsweise wird bei einer Diagnose-Prüfung möglicherweise der Status „Achtung“ angezeigt, auch wenn keine Meldung ausgelöst wurde.
 
 .Schritte
-. Wählen Sie *SUPPORT* > *Tools* > *Diagnose*.
+. Wählen Sie *Support* > *Tools* > *Diagnose*.
 +
 Die Seite Diagnose wird angezeigt und zeigt die Ergebnisse für jede Diagnosetest an. Die Ergebnisse sind nach Schweregrad (Achtung, Achtung und dann normal) sortiert. Innerhalb jedes Schweregrads werden die Ergebnisse alphabetisch sortiert.
 
 +
-In diesem Beispiel haben alle Diagnosen einen normalen Status.
+In diesem Beispiel hat eine Diagnose den Status „Achtung“ und drei Diagnosen haben den Status „Normal“.
 
 +
 image::../media/support_diagnostics_page.png[Support Diagnostics Seite]
@@ -55,22 +55,22 @@ Details zur Diagnose und ihren aktuellen Ergebnissen werden angezeigt. Folgende 
 
 NOTE: Sie können diese Schwellenwerte nicht ändern.
 
-** *Statuswerte*: Eine Tabelle, die den Status und den Wert der Diagnose im gesamten StorageGRID-System anzeigt. In diesem Beispiel wird die aktuelle CPU-Auslastung für jeden Node in einem StorageGRID System angezeigt. Alle Node-Werte liegen unter den Warn- und Warnschwellenwerten, sodass der Gesamtstatus der Diagnose normal ist.
-
-
+** *Statuswerte*: Ein Diagramm und eine Tabelle (Tabelle nicht im Screenshot dargestellt), die den Status und den Wert der Diagnose im gesamten StorageGRID System anzeigen.  In diesem Beispiel wird die aktuelle CPU-Auslastung für jeden Knoten in einem StorageGRID -System angezeigt.  Alle Knotenwerte liegen unter den Schwellenwerten „Achtung“ und „Vorsicht“, sodass der Gesamtstatus der Diagnose „Normal“ ist.
 +
-image::../media/support_diagnostics_cpu_utilization.png[Support Diagnostics CPU-Auslastung]
+image::../media/support_diagnostics_cpu_utilization.png[Beispiel für Diagnosestatuswerte]
 
-. *Optional*: Um Grafana-Diagramme zu dieser Diagnose anzuzeigen, klicken Sie auf den Link *Grafana Dashboard*.
+
+
+. *Optional*: Um Grafana-Diagramme im Zusammenhang mit dieser Diagnose anzuzeigen, wählen Sie *Grafana-Dashboard*.
 +
 Dieser Link wird nicht für alle Diagnosen angezeigt.
 
 +
-Das zugehörige Grafana Dashboard wird angezeigt. In diesem Beispiel wird auf dem Node-Dashboard die CPU-Auslastung für diesen Node und andere Grafana-Diagramme für den Node angezeigt.
+Das zugehörige Grafana-Dashboard wird angezeigt.  In diesem Beispiel wird das Knoten-Dashboard angezeigt, das die CPU-Auslastung im Zeitverlauf für diesen Knoten sowie andere Grafana-Diagramme für den Knoten anzeigt.
 
 +
 
-NOTE: Sie können auch über den Abschnitt „Grafana“ auf der Seite * SUPPORT* > *Tools* > *Metriken* auf die vorkonfigurierten Dashboards von Grafana zugreifen.
+NOTE: Sie können auch über den Abschnitt „Grafana“ auf der Seite *Support* > *Tools* > *Metriken* auf die vorgefertigten Grafana-Dashboards zugreifen.
 
 +
 image::../media/grafana_dashboard_nodes.png[Grafana Dashboard-Knoten]

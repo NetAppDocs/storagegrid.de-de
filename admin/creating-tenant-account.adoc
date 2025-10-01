@@ -13,7 +13,7 @@ summary: Sie müssen mindestens ein Mandantenkonto erstellen, um den Zugriff auf
 [role="lead"]
 Sie müssen mindestens ein Mandantenkonto erstellen, um den Zugriff auf den Storage in Ihrem StorageGRID-System zu kontrollieren.
 
-Die Schritte zum Erstellen eines Mandantenkontos hängen davon ab, link:using-identity-federation.html["Identitätsföderation"]ob und link:configuring-sso.html["Single Sign On"]konfiguriert sind und ob das Grid-Manager-Konto, mit dem Sie das Mandantenkonto erstellen, zu einer Administratorgruppe mit Root-Zugriffsberechtigung gehört.
+Die Schritte zum Erstellen eines Mandantenkontos variieren je nachdem, oblink:using-identity-federation.html["Identitätsföderation"] Undlink:how-sso-works.html["Single Sign On"] konfiguriert sind und ob das Grid Manager-Konto, das Sie zum Erstellen des Mandantenkontos verwenden, zu einer Administratorgruppe mit Root-Zugriffsberechtigung gehört.
 
 .Bevor Sie beginnen
 * Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
@@ -42,7 +42,7 @@ TIP: Wenn diese Administratorgruppe vor dem Erstellen des Mandanten nicht auf be
 == Greifen Sie auf den Assistenten zu
 
 .Schritte
-. Wählen Sie *MIETER*.
+. Wählen Sie *Mandanten* aus.
 . Wählen Sie *Erstellen*.
 
 
@@ -77,9 +77,7 @@ Wenn Sie einen Mandanten erstellen, der eine Grid-Federation-Verbindung verwende
  a| 
 Client-Typ
  a| 
-Der Typ des Client-Protokolls, das dieser Mandant verwendet, entweder *S3* oder *Swift*.
-
-*Hinweis*: Die Unterstützung für Swift-Client-Anwendungen wurde veraltet und wird in einer zukünftigen Version entfernt.
+Muss *S3* sein.
 
 
 
@@ -118,7 +116,7 @@ Der Mandant kann S3-Plattformservices wie CloudMirror verwenden. Siehe link:../a
  a| 
 Eigene Identitätsquelle verwenden
  a| 
-Der Mandant kann seine eigene Identitätsquelle für verbundene Gruppen und Benutzer konfigurieren und verwalten. Diese Option ist deaktiviert, wenn Sie für Ihr StorageGRID-System habenlink:../admin/configuring-sso.html["SSO konfiguriert"].
+Der Mandant kann seine eigene Identitätsquelle für föderierte Gruppen und Benutzer konfigurieren und verwalten.  Diese Option ist deaktiviert, wenn Sielink:../admin/how-sso-works.html["SSO konfiguriert"] für Ihr StorageGRID System.
 
 
 
@@ -290,7 +288,7 @@ Die URL für den Tenant Manager weist folgendes Format auf:
  a| 
 Anschluss 443
  a| 
-* Wählen Sie im Grid Manager *MIETERS* aus und wählen Sie *Anmelden* rechts neben dem Mieternamen aus.
+* Wählen Sie im Grid Manager *Mandanten* und rechts neben dem Mandantennamen * Sign in* aus.
 * Geben Sie die URL des Mandanten in einen Webbrowser ein:
 +
 `https://_FQDN_or_Admin_Node_IP_/?accountId=_20-digit-account-id_/`
@@ -307,7 +305,7 @@ Anschluss 443
  a| 
 Ein eingeschränkter Port
  a| 
-* Wählen Sie im Grid Manager die Option *MITERS* aus, und wählen Sie *eingeschränkt*.
+* Wählen Sie im Grid Manager *Mandanten* und dann *Eingeschränkt* aus.
 * Geben Sie die URL des Mandanten in einen Webbrowser ein:
 +
 `https://_FQDN_or_Admin_Node_IP:port_/?accountId=_20-digit-account-id_`

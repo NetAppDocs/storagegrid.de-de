@@ -24,7 +24,7 @@ Wenn sich Mandantenbenutzer beim Mandanten-Manager anmelden, stellen sie eine Ve
 
 Nachdem ein Grid-Administrator ein Mandantenkonto erstellt hat, indem er den Grid Manager oder die Grid Management API verwendet, können sich Mandantenbenutzer beim Mandanten-Manager anmelden.
 
-Über das Tenant Manager Dashboard können Mandantenbenutzer die Storage-Auslastung auf einen Blick überwachen. Im Bereich Storage-Nutzung finden Sie eine Liste der größten Buckets (S3) oder Container (Swift) für den Mandanten. Der Wert für „genutzter Speicherplatz“ ist die Gesamtmenge der Objektdaten im Bucket oder Container. Das Balkendiagramm stellt die relative Größe dieser Buckets oder Container dar.
+Über das Tenant Manager-Dashboard können Mandantenbenutzer die Speichernutzung auf einen Blick überwachen.  Das Speichernutzungsfenster enthält eine Liste der größten S3-Buckets für den Mandanten.  Der Wert „Benutzter Speicherplatz“ ist die Gesamtmenge der Objektdaten im Bucket oder Container.  Das Balkendiagramm stellt die relativen Größen dieser Eimer oder Behälter dar.
 
 Der über dem Balkendiagramm angezeigte Wert ist eine Summe des Speicherplatzes, der für alle Buckets oder Container des Mandanten verwendet wird. Wurde zum Zeitpunkt der Kontoerstellung die maximale Anzahl an Gigabyte, Terabyte oder Petabyte angegeben, so wird auch die Menge des verwendeten Kontingents und der verbleibenden Menge angezeigt.
 
@@ -34,7 +34,13 @@ image::../media/tenant_dashboard_with_buckets.png[Mandanten-Manager Dashboard]
 
 == Speichermenü (S3)
 
-Das Menü Storage wird nur für S3-Mandantenkonten angezeigt. In diesem Menü können S3 Benutzer Zugriffsschlüssel managen, Buckets erstellen, managen und löschen, Plattform-Services-Endpunkte managen und alle Grid-Verbindungen anzeigen, die sie verwenden dürfen.
+Über dieses Menü können S3-Benutzer:
+
+* Zugriffsschlüssel verwalten
+* Buckets erstellen, verwalten und löschen
+* Verwalten von Plattform-Services-Endpunkten
+* Alle Grid-Föderation-Verbindungen anzeigen, die sie verwenden dürfen
+
 
 
 
@@ -46,7 +52,7 @@ S3-Mandantenbenutzer können die Zugriffschlüssel wie folgt managen:
 * Benutzer mit Root-Zugriffsberechtigung können die Zugriffsschlüssel für das S3-Stammkonto, ihr eigenes Konto und alle anderen Benutzer verwalten. Root-Zugriffsschlüssel bieten auch vollständigen Zugriff auf die Buckets und Objekte des Mandanten, sofern nicht ausdrücklich von einer Bucket-Richtlinie deaktiviert wurde.
 +
 
-NOTE: Die Verwaltung der Zugriffstasten für andere Benutzer erfolgt über das Menü Access Management.
+NOTE: Die Verwaltung der Zugriffsschlüssel für andere Benutzer erfolgt über das Menü „Zugriffsverwaltung“.
 
 
 

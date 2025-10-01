@@ -40,7 +40,7 @@ NOTE: Wenn Sie Objekte komprimieren müssen und Ihre Client-Applikation Bereichs
 
 
 .Schritte
-. Wählen Sie *CONFIGURATION* > *System* > *Storage settings* > *Object compression*.
+. Wählen Sie *Konfiguration* > *System* > *Speichereinstellungen* > *Objektkomprimierung*.
 . Aktivieren Sie das Kontrollkästchen *gespeicherte Objekte komprimieren*.
 . Wählen Sie *Speichern*.
 

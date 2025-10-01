@@ -68,7 +68,7 @@ Die Einstellung „_Metadata reserved space_“ ist eine systemweite Einstellung
 
 
  a| 
-11.5 bis 11.9
+11,5 bis 12,0
  a| 
 128 GB oder mehr auf jedem Storage-Node im Grid
  a| 
@@ -116,7 +116,7 @@ Beliebiger Betrag
 Befolgen Sie diese Schritte, um die Einstellung für den reservierten Speicherplatz für Metadaten für Ihr StorageGRID-System anzuzeigen.
 
 .Schritte
-. Wählen Sie *CONFIGURATION* > *System* > *Storage settings*.
+. Wählen Sie *Konfiguration* > *System* > *Speichereinstellungen*.
 . Erweitern Sie auf der Seite Speichereinstellungen den Abschnitt *reservierter Speicherplatz für Metadaten*.
 
 
@@ -161,7 +161,7 @@ Die kleineren Werte:
 Führen Sie die folgenden Schritte aus, um den tatsächlich reservierten Speicherplatz für Metadaten auf einem bestimmten Storage-Node anzuzeigen.
 
 .Schritte
-. Wählen Sie im Grid Manager *NODES* > *_Storage Node_* aus.
+. Wählen Sie im Grid Manager *Knoten* > *_Speicherknoten_*.
 . Wählen Sie die Registerkarte *Storage* aus.
 . Setzen Sie den Cursor auf das Diagramm Speicher verwendet - Objekt Metadaten und suchen Sie den Wert *tatsächlich reserviert*.
 +
@@ -173,7 +173,7 @@ Im Screenshot beträgt der *tatsächliche reservierte* Wert 8 TB. Dieser Screens
 
 
 
-== Beispiel für den tatsächlich reservierten Metadatenspeicherplatz
+=== Beispiel für den tatsächlich reservierten Metadatenspeicherplatz
 
 Angenommen, Sie installieren ein neues StorageGRID System mit Version 11.7 oder höher. Nehmen Sie in diesem Beispiel an, dass jeder Speicherknoten mehr als 128 GB RAM und dieses Volume 0 von Speicherknoten 1 (SN1) 6 TB hat. Basierend auf diesen Werten:
 
@@ -237,7 +237,7 @@ Die folgende Tabelle zeigt, wie StorageGRID den *zulässigen Metadatenspeicherpl
 Führen Sie die folgenden Schritte aus, um den zulässigen Metadatenspeicher für einen Storage-Node anzuzeigen.
 
 .Schritte
-. Wählen Sie im Grid Manager die Option *NODES* aus.
+. Wählen Sie im Grid Manager *Knoten* aus.
 . Wählen Sie den Speicherknoten aus.
 . Wählen Sie die Registerkarte *Storage* aus.
 . Setzen Sie den Cursor auf das Diagramm Speicher verwendet - Objekt Metadaten und suchen Sie den Wert *erlaubt*.

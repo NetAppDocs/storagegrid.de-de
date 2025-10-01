@@ -19,18 +19,18 @@ Bevor Sie eine Website ausmustern, sind die folgenden Unterlagen erforderlich.
 
 
  a| 
-Recovery Package- `.zip`Datei
+Wiederherstellungspaket `.zip` Datei
  a| 
-Sie müssen die neueste Recovery Package-Datei herunterladen `.zip`(`sgws-recovery-package-id-revision.zip` ). Sie können die Recovery Package-Datei verwenden, um das System wiederherzustellen, wenn ein Fehler auftritt.
+Sie müssen das neueste Wiederherstellungspaket herunterladen `.zip` Datei(`sgws-recovery-package-id-revision.zip` ).  Mit der Wiederherstellungspaketdatei können Sie das System im Falle eines Fehlers wiederherstellen.
 
-link:downloading-recovery-package.html["Laden Sie das Recovery Package herunter"]
+link:downloading-recovery-package.html["Laden Sie das Wiederherstellungspaket herunter"]
 
 
 
  a| 
 `Passwords.txt` Datei
  a| 
-Diese Datei enthält die Passwörter, die für den Zugriff auf Grid-Knoten in der Befehlszeile erforderlich sind und im Wiederherstellungspaket enthalten sind.
+Diese Datei enthält die für den Zugriff auf Grid-Knoten über die Befehlszeile erforderlichen Passwörter und ist im Wiederherstellungspaket enthalten.
 
 
 

@@ -14,7 +14,7 @@ summary: Sie erstellen Storage-Pools, um zu bestimmen, wo das StorageGRID-System
 Sie erstellen Storage-Pools, um zu bestimmen, wo das StorageGRID-System Objektdaten und den verwendeten Storage-Typ speichert. Jeder Speicherpool umfasst einen oder mehrere Standorte und eine oder mehrere Speicherklassen.
 
 
-NOTE: Wenn Sie StorageGRID 11.9 in einem neuen Grid installieren, werden für jeden Standort automatisch Speicherpools erstellt. Wenn Sie StorageGRID 11.6 oder eine frühere Version installiert haben, werden Speicherpools jedoch nicht automatisch für jeden Standort erstellt.
+NOTE: Wenn Sie StorageGRID 12.0 auf einem neuen Grid installieren, werden für jeden Standort automatisch Speicherpools erstellt.  Wenn Sie jedoch StorageGRID 11.6 oder früher ursprünglich installiert haben, werden Speicherpools nicht automatisch für jede Site erstellt.
 
 Wenn Sie Cloud-Speicherpools erstellen möchten, um Objektdaten außerhalb Ihres StorageGRID-Systems zu speichern, lesen Sie die link:what-cloud-storage-pool-is.html["Informationen zur Verwendung von Cloud Storage Pools"].
 

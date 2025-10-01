@@ -48,7 +48,7 @@ CAUTION: Wenn Objektmetadaten 90 % oder mehr des zulässigen Metadatenspeichers 
 CAUTION: Wenn die Größe von Volume 0 kleiner ist als die Option „Metadatenreservierter Speicherplatz“ (z. B. in einer nicht-Produktionsumgebung), kann die Berechnung für die Warnmeldung * Low Metadaten Storage* fehlerhaft sein.
 
 .Schritte
-. Wählen Sie *ALERTS* > *Current*.
+. Wählen Sie *Warnungen* > *Aktuell*.
 . Erweitern Sie, falls erforderlich, aus der Warnmeldungstabelle die Warnungsgruppe *Low-Metadaten-Speicher* und wählen Sie die spezifische Warnung aus, die Sie anzeigen möchten.
 . Überprüfen Sie die Details im Dialogfeld „Warnung“.
 . Wenn eine wichtige oder kritische Warnung für * Storage-Systeme mit niedrigen Metadaten* ausgelöst wurde, führen Sie eine Erweiterung durch, um Storage-Nodes sofort hinzuzufügen.

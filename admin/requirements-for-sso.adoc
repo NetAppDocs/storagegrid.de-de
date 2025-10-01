@@ -1,10 +1,10 @@
 ---
 permalink: admin/requirements-for-sso.html 
 sidebar: sidebar 
-keywords: sso requirements, single sign on requirements, identity federation requirements for sso, pingfederate, azure ad, ad fs 
+keywords: sso requirements, single sign on requirements, identity federation requirements for sso, pingfederate, entra id, ad fs 
 summary: Bevor Sie die einmalige Anmeldung für ein StorageGRID-System aktivieren, lesen Sie die Anforderungen und Überlegungen. 
 ---
-= Voraussetzungen und Überlegungen für Single Sign-On
+= Anforderungen und Überlegungen für SSO
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -20,7 +20,7 @@ Bevor Sie Single Sign-On (SSO) für ein StorageGRID-System aktivieren, lesen Sie
 StorageGRID unterstützt die folgenden SSO-Identitätsanbieter (IdP):
 
 * Active Directory Federation Service (AD FS)
-* Azure Active Directory (Azure AD)
+* Microsoft Entra ID
 * PingFederate
 
 
@@ -35,16 +35,16 @@ Sie müssen die Identitätsföderation für Ihr StorageGRID-System konfigurieren
 Active Directory
  a| 
 * Active Directory
-* Azure
+* Entra-ID
 * PingFederate
 
 
 
 
  a| 
-Azure
+Entra-ID
  a| 
-Azure
+Entra-ID
 
 |===
 
@@ -71,15 +71,15 @@ NOTE: Windows Server 2016 sollte , oder höher verwenden https://support.microso
 
 
 
-=== Überlegungen zu Azure
+=== Überlegungen zur Entra-ID
 
-Wenn Sie Azure als SSO-Typ verwenden und Benutzer über Hauptbenutzernamen verfügen, die den sAMAccountName nicht als Präfix verwenden, können Anmeldeprobleme auftreten, wenn StorageGRID seine Verbindung mit dem LDAP-Server verliert. Damit Benutzer sich anmelden können, müssen Sie die Verbindung zum LDAP-Server wiederherstellen.
+Wenn Sie Entra ID als SSO-Typ verwenden und Benutzer über Benutzerprinzipalnamen verfügen, die nicht sAMAccountName als Präfix verwenden, können Anmeldeprobleme auftreten, wenn StorageGRID die Verbindung zum LDAP-Server verliert.  Um Benutzern die Anmeldung zu ermöglichen, müssen Sie die Verbindung zum LDAP-Server wiederherstellen.
 
 
 
 == Serverzertifikate-Anforderungen
 
-Standardmäßig verwendet StorageGRID auf jedem Admin-Node ein Zertifikat der Managementoberfläche, um den Zugriff auf den Grid Manager, den Mandanten-Manager, die Grid-Management-API und die Mandanten-Management-API zu sichern. Wenn Sie Trusts (AD FS), Enterprise-Anwendungen (Azure) oder Service Provider Connections (PingFederate) für StorageGRID konfigurieren, verwenden Sie das Serverzertifikat als Signaturzertifikat für StorageGRID-Anfragen.
+Standardmäßig verwendet StorageGRID auf jedem Admin-Knoten ein Verwaltungsschnittstellenzertifikat, um den Zugriff auf den Grid Manager, den Tenant Manager, die Grid Management API und die Tenant Management API zu sichern.  Wenn Sie Vertrauensstellungen der vertrauenden Seite (AD FS), Unternehmensanwendungen (Entra ID) oder Dienstanbieterverbindungen (PingFederate) für StorageGRID konfigurieren, verwenden Sie das Serverzertifikat als Signaturzertifikat für StorageGRID Anfragen.
 
 Wenn Sie noch nichtlink:configuring-custom-server-certificate-for-grid-manager-tenant-manager.html["Ein benutzerdefiniertes Zertifikat für die Managementoberfläche konfiguriert"], sollten Sie dies jetzt tun. Wenn Sie ein benutzerdefiniertes Serverzertifikat installieren, wird es für alle Administratorknoten verwendet, und Sie können es in allen StorageGRID-Vertrauensstellungen, Unternehmensanwendungen oder SP-Verbindungen verwenden.
 

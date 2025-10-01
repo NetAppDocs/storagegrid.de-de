@@ -5,7 +5,7 @@
 Wenn Sie einen OpenLDAP-Server für die Identitätsföderation verwenden möchten, müssen Sie bestimmte Einstellungen auf dem OpenLDAP-Server konfigurieren.
 
 
-CAUTION: Bei Identitätsquellen, die nicht ActiveDirectory oder Azure sind, blockiert StorageGRID den S3-Zugriff nicht automatisch für Benutzer, die extern deaktiviert sind. Löschen Sie zum Blockieren des S3-Zugriffs alle S3-Schlüssel für den Benutzer oder entfernen Sie den Benutzer aus allen Gruppen.
+CAUTION: Bei Identitätsquellen, bei denen es sich nicht um Active Directory oder Microsoft Entra ID handelt, blockiert StorageGRID den S3-Zugriff für extern deaktivierte Benutzer nicht automatisch.  Um den S3-Zugriff zu blockieren, löschen Sie alle S3-Schlüssel für den Benutzer oder entfernen Sie den Benutzer aus allen Gruppen.
 
 
 

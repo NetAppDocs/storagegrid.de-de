@@ -15,7 +15,7 @@ Systemhärtung ist der Prozess, bei dem so viele Sicherheitsrisiken wie möglich
 
 Nutzen Sie bei der Installation und Konfiguration von StorageGRID diese Richtlinien, um alle vorgegebenen Sicherheitsziele für Vertraulichkeit, Integrität und Verfügbarkeit zu erfüllen.
 
-Sie sollten bereits branchenübliche Best Practices für die Systemhärtung verwenden. Sie verwenden beispielsweise starke Passwörter für StorageGRID, verwenden HTTPS statt HTTP und aktivieren, sofern verfügbar, die zertifikatbasierte Authentifizierung.
+Sie sollten bereits branchenübliche Best Practices zur Systemhärtung verwenden.  Verwenden Sie beispielsweise sichere Passwörter für StorageGRID, verwenden Sie HTTPS statt HTTP und aktivieren Sie die zertifikatsbasierte Authentifizierung, sofern verfügbar.  Diese Best Practices müssen physische und Umgebungssicherheit umfassen, die den physischen Zugriff beschränkt und das physische Rechenzentrum sowie die Support-Infrastruktur schützt.  Sie müssen sich auch auf alle geltenden gesetzlichen Normen und Empfehlungen für Ihr Unternehmen und Ihre Region beziehen.
 
 StorageGRID folgt dem https://security.netapp.com/policy/["NetApp Richtlinie zur Bearbeitung von Schwachstellen"^]. Gemeldete Schwachstellen werden gemäß dem Prozess der Reaktion auf Produktsicherheitsvorfälle überprüft und behoben.
 

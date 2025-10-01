@@ -1,0 +1,34 @@
+---
+permalink: admin/manage-external-ssh-access.html 
+sidebar: sidebar 
+keywords: security, external, ssh, access 
+summary: Verwalten Sie den SSH-Schutz, indem Sie externen SSH-Zugriff blockieren oder zulassen. 
+---
+= Externen SSH-Zugriff verwalten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Verwalten Sie den SSH-Zugriff für eingehenden Datenverkehr in das Grid, indem Sie den externen Zugriff blockieren oder zulassen.  Die Verwaltung des externen SSH-Zugriffs hat keine Auswirkungen auf den Datenverkehr zwischen Knoten im Grid.
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben link:admin-group-permissions.html["Root-Zugriffsberechtigung"].
+
+
+.Über diese Aufgabe
+Um die Systemsicherheit zu erhöhen, wird der externe SSH-Zugriff standardmäßig blockiert.  Wenn Sie Aufgaben ausführen müssen, die eingehenden SSH-Zugriff erfordern, wie etwa die Fehlerbehebung, lassen Sie vorübergehend den externen Zugriff zu.  Wenn Sie die Aufgabe abgeschlossen haben, blockieren Sie den externen Zugriff.
+
+.Schritte
+. Wählen Sie *Konfiguration* > *Sicherheit* > *Sicherheitseinstellungen*.
+. Wählen Sie die Registerkarte *SSH blockieren*.
+. Verwenden Sie die Option *Eingehenden SSH-Zugriff blockieren*, um den externen SSH-Zugriff zu verwalten:
++
+.. Aktivieren Sie das Kontrollkästchen, um den Zugriff zu blockieren (Standard).
+.. Deaktivieren Sie das Kontrollkästchen, um den Zugriff zuzulassen.
+
+
+. Wählen Sie *Speichern*.
+

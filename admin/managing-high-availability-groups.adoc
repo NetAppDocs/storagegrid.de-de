@@ -50,7 +50,7 @@ Ebenso fungieren alle Schnittstellen mit niedriger Priorität für die HA-Gruppe
 
 == Anzeigen des aktuellen HA-Gruppen-Status eines Node
 
-Um zu ermitteln, ob ein Node einer HA-Gruppe zugewiesen ist und seinen aktuellen Status ermittelt, wählen Sie *NODES* > *_Node_* aus.
+Um zu sehen, ob ein Knoten einer HA-Gruppe zugewiesen ist, und um seinen aktuellen Status zu bestimmen, wählen Sie *Knoten* > *_Knoten_*.
 
 Wenn die Registerkarte *Übersicht* einen Eintrag für *HA-Gruppen* enthält, wird der Knoten den aufgeführten HA-Gruppen zugewiesen. Der Wert nach dem Gruppennamen ist der aktuelle Status des Node in der HA-Gruppe:
 

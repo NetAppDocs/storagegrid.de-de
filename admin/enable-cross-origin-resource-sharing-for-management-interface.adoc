@@ -1,0 +1,42 @@
+---
+permalink: admin/enable-cross-origin-resource-sharing-for-management-interface.html 
+sidebar: sidebar 
+keywords: how to configure cross-origin resource sharing, cors, management, api, domain 
+summary: 'Sie können Cross-Origin Resource Sharing (CORS) für Management-API-Anfragen an StorageGRID aktivieren, wenn Sie möchten, dass Daten in StorageGRID über Management-APIs einer anderen Domäne zugänglich sind.' 
+---
+= Aktivieren Sie StorageGRID CORS für eine Verwaltungsschnittstelle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Als Grid-Administrator können Sie Cross-Origin Resource Sharing (CORS) für Management-API-Anfragen an StorageGRID aktivieren, wenn Sie möchten, dass Daten in StorageGRID über Management-APIs einer anderen Domäne zugänglich sind.
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Derlink:../tenant/tenant-management-permissions.html["Root-Zugriffsberechtigung"] bietet Zugriff auf alle CORS-Konfigurationsanforderungen.
+
+
+.Über diese Aufgabe
+CORS ist ein Sicherheitsmechanismus, der es Client-Webanwendungen in einer Domäne ermöglicht, auf Ressourcen in einer anderen Domäne zuzugreifen.  Angenommen, Sie möchten ein Überwachungs-Dashboard für StorageGRID in der Domäne erstellen `\http://www.example.com` .  Durch die Aktivierung von CORS in StorageGRID für `\http://www.example.com` und "Grid Manager", die StorageGRID Domäne antwortet auf Grid Management API-Anfragen von `\http://www.example.com` .
+
+Management-API (mgmt-api)-Anfragen mit `application/json` oder `multipart/formdata` Anfragen für `Content-Type` werden für CORS unterstützt.
+
+.Schritte
+. Gehen Sie im Grid Manager zu *KONFIGURATION* > *Netzwerk* > *CORS-Einstellungen der Verwaltungsschnittstelle*.
+. Wählen Sie *Grid Manager*, *Tenant Manager* oder beide Optionen.
++
+** *Grid Manager*: Aktiviert CORS für domänenübergreifende Grid Management-API-Anfragen.
+** *Tenant Manager*: Aktiviert CORS für domänenübergreifende Tenant Management-API-Anfragen.
+
+
+. Geben Sie die URL für die andere Domäne in das Feld *Domänen* ein.
++
+Wählen Sie *Weitere Domäne hinzufügen*, wenn Sie CORS in StorageGRID für mehr als eine Domäne aktivieren möchten.
+
+. Wählen Sie *Speichern*.
+
+
+.Verwandte Informationen
+link:../tenant/configuring-cross-origin-resource-sharing-for-buckets-and-objects.html["Konfigurieren Sie StorageGRID CORS für Buckets und Objekte"]

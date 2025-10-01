@@ -44,7 +44,7 @@ Der Service-Laptop verfügt über Folgendes:
  a| 
 `Passwords.txt` Datei
  a| 
-Enthält die Passwörter, die für den Zugriff auf Grid-Nodes in der Befehlszeile erforderlich sind. Im Wiederherstellungspaket enthalten.
+Enthält die Passwörter, die für den Zugriff auf Grid-Knoten über die Befehlszeile erforderlich sind.  Im Wiederherstellungspaket enthalten.
 
 
 
@@ -60,13 +60,7 @@ StorageGRID-Dokumentation
  a| 
 * link:../admin/index.html["StorageGRID verwalten"]
 * link:../release-notes/index.html["Versionshinweise"]
-* Installationsanweisungen für Ihre Plattform
-+
-** link:../rhel/index.html["Installieren Sie StorageGRID unter Red hat Enterprise Linux"]
-** link:../ubuntu/index.html["Installieren Sie StorageGRID auf Ubuntu oder Debian"]
-** link:../vmware/index.html["Installieren Sie StorageGRID auf VMware"]
-
-
+* link:../swnodes/index.html["Installationsanweisungen für Ihre Plattform"]
 
 
 
@@ -106,7 +100,7 @@ Verwenden Sie die `.zip` Datei, wenn Sie Windows auf dem Service-Laptop ausführ
 
 
  a| 
-Red Hat Enterprise Linux
+RHEL
 | `StorageGRID-Webscale-_version_-RPM-_uniqueID_.zip` 
 `StorageGRID-Webscale-_version_-RPM-_uniqueID_.tgz` 
 
@@ -134,7 +128,7 @@ Um eine vorhandene Implementierung auf OpenStack zu erweitern, müssen Sie eine 
 +
 Die im Schritt für jede Plattform aufgeführten Pfade beziehen sich auf das von der Archivdatei installierte Verzeichnis auf der obersten Ebene.
 
-. Wenn Sie ein Red hat Enterprise Linux-System erweitern, wählen Sie die entsprechenden Dateien aus.
+. Wenn Sie ein RHEL-System erweitern, wählen Sie die entsprechenden Dateien aus.
 
 
 [cols="1a,1a"]
@@ -393,6 +387,9 @@ API-Schemata für StorageGRID:
 . Wenn Sie ein Appliance-basiertes StorageGRID System erweitern, wählen Sie die entsprechenden Dateien aus.
 
 
+
+NOTE: Für die Installation der Appliance sind diese Dateien nur erforderlich, wenn Sie Netzwerkverkehr vermeiden müssen.  Die Appliance kann die erforderlichen Dateien vom Admin-Knoten herunterladen, auf dem Sie das Wiederherstellungsverfahren durchführen.
+
 [cols="1a,1a"]
 |===
 | Pfad und Dateiname | Beschreibung 
@@ -408,9 +405,6 @@ MD5-Prüfsumme für die Datei `/debs/storagegridwebscale-
 images-version-SHA.deb`.
 
 |===
-
-NOTE: Für die Installation der Appliance sind diese Dateien nur erforderlich, wenn Sie den Netzwerkverkehr vermeiden müssen. Die Appliance kann die erforderlichen Dateien vom primären Admin-Knoten herunterladen.
-
 
 
 == Überprüfung der Hardware und des Netzwerks

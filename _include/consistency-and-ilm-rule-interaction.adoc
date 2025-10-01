@@ -2,16 +2,16 @@
 :allow-uri-read: 
 
 
-Angenommen, Sie haben ein Grid mit zwei Standorten mit der folgenden ILM-Regel und folgender Konsistenz:
+Angenommen, Sie haben ein Grid mit drei Standorten mit der folgenden ILM-Regel und der folgenden Konsistenz:
 
-* *ILM-Regel*: Erstellen Sie zwei Objektkopien, eine am lokalen Standort und eine an einem entfernten Standort. Strikte Aufnahme-Verhaltensweise
-* *Konsistenz*: Stark-global (Objektmetadaten werden sofort an alle Standorte verteilt).
+* *ILM-Regel*: Erstellen Sie drei Objektkopien, eine am lokalen Standort und eine an jedem Remote-Standort.  Verwenden Sie ein striktes Aufnahmeverhalten.
+* *Konsistenz*: Stark global (Objektmetadaten werden sofort an mehrere Sites verteilt).
 
 
-Wenn ein Client ein Objekt im Grid speichert, erstellt StorageGRID sowohl Objektkopien als auch verteilt Metadaten an beiden Standorten, bevor der Kunde zum Erfolg zurückkehrt.
+Wenn ein Client ein Objekt im Grid speichert, erstellt StorageGRID alle drei Objektkopien und verteilt Metadaten an mehrere Sites, bevor es dem Client die Erfolgsmeldung meldet.
 
-Das Objekt ist zum Zeitpunkt der Aufnahme der Nachricht vollständig gegen Verlust geschützt. Wenn beispielsweise der lokale Standort kurz nach der Aufnahme verloren geht, befinden sich Kopien der Objektdaten und der Objektmetadaten am Remote-Standort weiterhin. Das Objekt kann vollständig abgerufen werden.
+Zum Zeitpunkt der erfolgreichen Aufnahme der Nachricht ist das Objekt vollständig vor Verlust geschützt.  Wenn beispielsweise die lokale Site kurz nach der Aufnahme verloren geht, sind an den Remote-Sites weiterhin Kopien der Objektdaten und der Objektmetadaten vorhanden.  Das Objekt ist von den anderen Standorten vollständig abrufbar.
 
-Wenn Sie stattdessen dieselbe ILM-Regel und die Konsistenz für starke Standorte verwenden, erhält der Client möglicherweise eine Erfolgsmeldung, nachdem die Objektdaten am Remote-Standort repliziert wurden, jedoch bevor die Objektmetadaten dort verteilt werden. In diesem Fall entspricht die Sicherung von Objektmetadaten nicht dem Schutzniveau für Objektdaten. Falls der lokale Standort kurz nach der Aufnahme verloren geht, gehen Objektmetadaten verloren. Das Objekt kann nicht abgerufen werden.
+Wenn Sie stattdessen dieselbe ILM-Regel und die starke Site-Konsistenz verwenden, erhält der Client möglicherweise eine Erfolgsmeldung, nachdem die Objektdaten auf die Remote-Sites repliziert wurden, aber bevor die Objektmetadaten dorthin verteilt werden.  In diesem Fall entspricht das Schutzniveau der Objektmetadaten nicht dem Schutzniveau der Objektdaten.  Wenn die lokale Site kurz nach der Aufnahme verloren geht, gehen die Objektmetadaten verloren.  Das Objekt kann nicht abgerufen werden.
 
 Die Beziehung zwischen Konsistenz- und ILM-Regeln kann komplex sein. Wenden Sie sich an den NetApp, wenn Sie Hilfe benötigen.

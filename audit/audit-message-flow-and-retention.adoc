@@ -13,11 +13,13 @@ summary: Alle StorageGRID-Services generieren während des normalen Systembetrie
 [role="lead"]
 Alle StorageGRID-Services generieren während des normalen Systembetriebs Audit-Meldungen. Sie sollten verstehen, wie diese Meldungen über das StorageGRID-System in die Datei verschoben `audit.log` werden.
 
+Die folgenden Workflows für Audit-Nachrichten und die Aufbewahrung von Audit-Nachrichten sind nur anwendbar, wenn StorageGRID für *Admin-Knoten/lokale Knoten* oder *Admin-Knoten und externen Syslog-Server* konfiguriert ist.  Wenn StorageGRID für "Nur lokale Knoten" (Standard) oder "Externer Syslog-Server" konfiguriert ist, werden die Audit-Meldungen lokal auf jedem Knoten im `/var/local/log/localaudit.log` Datei und kann nicht von Admin-Knoten oder Speicherknoten verarbeitet werden.
+
 
 
 == Audit-Nachrichtenfluss
 
-Überwachungsmeldungen werden von Admin-Nodes und Storage-Nodes verarbeitet, die über einen ADC-Dienst (Administrative Domain Controller) verfügen.
+Audit-Nachrichten werden von Admin-Knoten verarbeitet, wenn StorageGRID für *Admin-Knoten/lokale Knoten* oder *Admin-Knoten und externen Syslog-Server* konfiguriert ist, und von den Storage-Knoten, die über einen Administrative Domain Controller (ADC)-Dienst verfügen.
 
 Wie im Überwachungsmeldung-Flow-Diagramm dargestellt, sendet jeder StorageGRID Node seine Audit-Meldungen an einen der ADC-Services am Datacenter-Standort. Der ADC-Dienst wird automatisch für die ersten drei Speicherknoten aktiviert, die an jedem Standort installiert sind.
 
@@ -33,21 +35,21 @@ image::../media/audit_message_flow.gif[Diagramm mit der Zusammenfassung des Meld
 
 StorageGRID verwendet einen Kopier- und Löschprozess, um sicherzustellen, dass keine Audit-Meldungen verloren gehen, bevor sie in das Audit-Protokoll geschrieben werden.
 
-Wenn ein Knoten eine Überwachungsmeldung generiert oder sendet, wird die Meldung in einer Meldungswarteschlange auf der Systemfestplatte des Grid-Node gespeichert. Eine Kopie der Nachricht wird immer in einer Meldungswarteschlange gespeichert, bis die Nachricht in die Audit-Log-Datei im Verzeichnis des Admin-Knotens geschrieben `/var/local/log` wird. Dadurch wird der Verlust einer Prüfmeldung während des Transports verhindert.
+Wenn ein Knoten eine Prüfnachricht generiert oder weiterleitet, wird die Nachricht in einer Prüfnachrichtenwarteschlange auf der Systemfestplatte des Grid-Knotens gespeichert.  Eine Kopie der Nachricht wird immer in einer Audit-Nachrichtenwarteschlange aufbewahrt, bis die Nachricht in die Audit-Protokolldatei im Admin-Knoten geschrieben wird. `/var/local/audit/export` Verzeichnis.  Dadurch wird verhindert, dass während des Transports eine Prüfnachricht verloren geht.
 
 image::../media/audit_message_retention.gif[Diagramm mit der Zusammenfassung des Belegs der Prüfmeldung am AMS]
 
-Die Warteschlange für Überwachungsnachrichten kann aufgrund von Problemen mit der Netzwerkverbindung oder aufgrund unzureichender Audit-Kapazität vorübergehend erhöht werden. Mit der Zunahme der Warteschlangen verbrauchen sie mehr des verfügbaren Speicherplatzes im Verzeichnis der einzelnen Knoten `/var/local/`. Wenn das Problem weiterhin besteht und das Verzeichnis der Überwachungsmeldungen eines Knotens zu voll ist, werden die einzelnen Knoten die Verarbeitung ihres Rückstands priorisieren und für neue Meldungen vorübergehend nicht verfügbar sein.
+Die Warteschlange der Prüfnachrichten kann aufgrund von Netzwerkverbindungsproblemen oder unzureichender Prüfkapazität vorübergehend größer werden.  Wenn die Warteschlangen größer werden, verbrauchen sie mehr verfügbaren Speicherplatz in den einzelnen Knoten. `/var/local/` Verzeichnis.  Wenn das Problem weiterhin besteht und das Prüfnachrichtenverzeichnis eines Knotens zu voll wird, priorisieren die einzelnen Knoten die Verarbeitung ihres Rückstands und sind vorübergehend für neue Nachrichten nicht verfügbar.
 
 Sie können insbesondere folgende Verhaltensweisen erkennen:
 
-* Wenn das `/var/local/log` Verzeichnis, das von einem Admin-Knoten verwendet wird, voll wird, wird der Admin-Knoten für neue Überwachungsmeldungen als nicht verfügbar markiert, bis das Verzeichnis nicht mehr voll ist. S3-Client-Anforderungen werden nicht beeinträchtigt. Der Alarm XAMS (Unreachable Audit Repositories) wird ausgelöst, wenn ein Audit-Repository nicht erreichbar ist.
-* Wenn das `/var/local/` von einem Storage Node mit dem ADC-Dienst verwendete Verzeichnis zu 92 % belegt wird, wird der Knoten als nicht verfügbar für Überwachungsmeldungen markiert, bis das Verzeichnis nur zu 87 % voll ist. S3-Client-Anfragen an andere Nodes werden nicht beeinträchtigt. Der Alarm NRLY (Available Audit Relays) wird ausgelöst, wenn Audit-Relais nicht erreichbar sind.
+* Wenn die `/var/local/audit/export` Wenn das von einem Admin-Knoten verwendete Verzeichnis voll ist, wird der Admin-Knoten als für neue Prüfmeldungen nicht verfügbar gekennzeichnet, bis das Verzeichnis nicht mehr voll ist.  S3-Client-Anfragen sind nicht betroffen.  Der XAMS-Alarm (Unreachable Audit Repositories) wird ausgelöst, wenn ein Audit-Repository nicht erreichbar ist.
+* Wenn die `/var/local/` Wenn das von einem Speicherknoten mit dem ADC-Dienst verwendete Verzeichnis zu 92 % gefüllt ist, wird der Knoten als für die Überwachung von Nachrichten nicht verfügbar gekennzeichnet, bis das Verzeichnis nur noch zu 87 % gefüllt ist.  S3-Client-Anfragen an andere Knoten sind nicht betroffen.  Der NRLY-Alarm (Available Audit Relays) wird ausgelöst, wenn Audit-Relays nicht erreichbar sind.
 +
 
 NOTE: Wenn keine verfügbaren Storage-Nodes mit dem ADC-Dienst vorhanden sind, speichern die Storage-Nodes die Überwachungsmeldungen lokal in der `/var/local/log/localaudit.log` Datei.
 
-* Wenn das `/var/local/` von einem Storage Node verwendete Verzeichnis zu 85% voll wird, wird der Knoten mit den S3-Client-Anfragen ablehnen `503 Service Unavailable`.
+* Wenn die `/var/local/` Das von einem Speicherknoten verwendete Verzeichnis ist zu 85 % gefüllt. Der Knoten beginnt, S3-Client-Anfragen mit `503 Service Unavailable` .
 
 
 Die folgenden Arten von Problemen können dazu führen, dass die Warteschlangen für Überwachungsnachrichten sehr groß werden:
@@ -65,7 +67,7 @@ Um Ihnen dabei zu helfen, die Größe der Überwachungsmeldungswarteschlangen im
 
 Wenn der Alarm * Large Audit queue* oder der alte AMQS-Alarm ausgelöst wird, prüfen Sie zunächst die Auslastung des Systems – wenn eine beträchtliche Anzahl aktueller Transaktionen vorliegt, sollten sich die Warnung und der Alarm im Laufe der Zeit lösen und können ignoriert werden.
 
-Wenn die Warnung oder der Alarm weiterhin besteht und die Schwere erhöht wird, zeigen Sie ein Diagramm der Warteschlangengröße an. Wenn die Zahl über Stunden oder Tage stetig zunimmt, hat die Audit-Last wahrscheinlich die Audit-Kapazität des Systems überschritten. Verringern Sie die Betriebsrate des Clients, oder verringern Sie die Anzahl der protokollierten Audit-Meldungen, indem Sie das Audit-Level für Client-Schreibvorgänge und Client-Lesevorgänge auf Fehler oder aus ändern. Siehe link:../monitor/configure-audit-messages.html["Konfigurieren von Überwachungsmeldungen und Protokollzielen"].
+Wenn die Warnung oder der Alarm weiterhin besteht und an Schwere zunimmt, sehen Sie sich ein Diagramm der Warteschlangengröße an.  Wenn die Zahl über Stunden oder Tage hinweg stetig ansteigt, hat die Prüflast wahrscheinlich die Prüfkapazität des Systems überschritten.  Reduzieren Sie die Client-Betriebsrate oder verringern Sie die Anzahl der protokollierten Prüfmeldungen, indem Sie die Prüfstufe für Client-Schreibvorgänge und Client-Lesevorgänge auf „Fehler“ oder „Aus“ ändern. Sehen link:../monitor/configure-log-management.html["Konfigurieren Sie die Protokollverwaltung und den externen Syslog-Server"] .
 
 
 

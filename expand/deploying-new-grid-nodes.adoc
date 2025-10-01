@@ -22,7 +22,7 @@ Wenn Sie ein Raster erweitern, müssen die hinzugefügten Nodes nicht den vorhan
 Sie müssen für jeden VMware Node, den Sie der Erweiterung hinzufügen möchten, eine Virtual Machine in VMware vSphere implementieren.
 
 .Schritte
-. link:../vmware/deploying-storagegrid-node-as-virtual-machine.html["Implementieren Sie den neuen Node als Virtual Machine"] Und verbinden Sie es mit einem oder mehreren StorageGRID-Netzwerken.
+. link:../swnodes/deploying-storagegrid-node-as-virtual-machine.html["Implementieren Sie den neuen Node als Virtual Machine"]und verbinden Sie es mit einem oder mehreren StorageGRID -Netzwerken.
 +
 Bei der Implementierung des Node können Sie optional Node-Ports neu zuordnen oder CPU- oder Speichereinstellungen erhöhen.
 
@@ -36,12 +36,7 @@ Bei der Implementierung des Node können Sie optional Node-Ports neu zuordnen od
 Die Grid-Nodes können auf neuen Linux-Hosts oder auf vorhandenen Linux-Hosts implementiert werden. Wenn Sie zusätzliche Linux-Hosts benötigen, um die CPU-, RAM- und Storage-Anforderungen der StorageGRID-Nodes, die Sie dem Grid hinzufügen möchten, zu unterstützen, bereiten Sie sie auf die gleiche Weise vor, wie Sie die Hosts bei der ersten Installation vorbereitet haben. Anschließend implementieren Sie die Erweiterungs-Nodes auf dieselbe Weise wie bei der Installation die Grid-Nodes.
 
 .Bevor Sie beginnen
-* Sie haben Anweisungen zum Installieren von StorageGRID für Ihre Linux-Version und haben die Hardware- und Speicheranforderungen geprüft.
-+
-** link:../rhel/index.html["Installieren Sie StorageGRID unter Red hat Enterprise Linux"]
-** link:../ubuntu/index.html["Installieren Sie StorageGRID auf Ubuntu oder Debian"]
-
-
+* Sie verfügen über die Anweisungen zur Installation von StorageGRID für Ihre Linux-Version und haben dielink:../swnodes/index.html["Hardware- und Speicheranforderungen"] .
 * Wenn Sie neue Grid-Nodes auf vorhandenen Hosts implementieren möchten, haben Sie bestätigt, dass die vorhandenen Hosts über genügend CPU-, RAM- und Storage-Kapazität für die zusätzlichen Nodes verfügen.
 * Sie verfügen über einen Plan, um Ausfall-Domains zu minimieren. Beispielsweise sollten nicht alle Gateway-Nodes auf einem einzelnen physischen Host bereitgestellt werden.
 +
@@ -145,9 +140,6 @@ Wenn die Schaltfläche *Installation starten* nicht aktiviert ist, müssen Sie m
 
 . Wählen Sie auf der Startseite des StorageGRID-Appliance-Installationsprogramms die Option *Installation starten*.
 +
-image::../media/appliance_installer_home_start_installation_enabled.gif[Dieses Bild wird durch den umgebenden Text beschrieben.]
-
-+
 Der aktuelle Status ändert sich in „Installation wird ausgeführt“, und die Seite Monitorinstallation wird angezeigt.
 
 . Wenn Ihre Erweiterung mehrere Appliance-Nodes umfasst, wiederholen Sie die vorherigen Schritte für jede Appliance.
@@ -158,9 +150,6 @@ NOTE: Wenn Sie mehrere Appliance Storage Nodes gleichzeitig bereitstellen müsse
 . Wenn Sie manuell auf die Seite Monitor-Installation zugreifen müssen, wählen Sie in der Menüleiste die Option *Monitor-Installation* aus.
 +
 Auf der Seite Monitor-Installation wird der Installationsfortschritt angezeigt.
-
-+
-image::../media/monitor_installation_configure_storage.gif[Dieses Bild wird durch den umgebenden Text erläutert.]
 
 +
 Die blaue Statusleiste zeigt an, welche Aufgabe zurzeit ausgeführt wird. Grüne Statusleisten zeigen Aufgaben an, die erfolgreich abgeschlossen wurden.
@@ -191,8 +180,5 @@ In dieser Phase kopiert das Installationsprogramm das Betriebssystem-Image für 
 +
 
 NOTE: Warten Sie, bis alle Knoten, die Sie in dieser Erweiterung hinzugefügt haben, zur Genehmigung bereit sind, bevor Sie zum Grid Manager gehen, um die Knoten zu genehmigen.
-
-+
-image::../media/monitor_installation_install_sgws.gif[Dieses Bild wird durch den umgebenden Text erläutert.]
 
 

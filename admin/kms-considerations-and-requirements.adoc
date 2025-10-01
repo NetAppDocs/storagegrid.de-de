@@ -35,7 +35,7 @@ Sie müssen sicherstellen, dass jeder Appliance-Node, der Node-Verschlüsselung 
 
 Für die Kommunikation zwischen den Appliance-Nodes und dem konfigurierten KMS werden sichere TLS-Verbindungen verwendet. StorageGRID unterstützt entweder das TLS 1.2- oder TLS 1.3-Protokoll, wenn KMIP-Verbindungen zu einem KMS- oder KMS-Cluster hergestellt werden, basierend auf den von KMS unterstützten und von link:manage-tls-ssh-policy.html["TLS- und SSH-Richtlinie"] Ihnen verwendeten Komponenten.
 
-StorageGRID verhandelt das Protokoll und die Chiffre (TLS 1.2) oder die Chiffre-Suite (TLS 1.3) mit dem KMS, wenn die Verbindung hergestellt wird. Um zu sehen, welche Protokollversionen und Chiffren/Chiffren-Suites verfügbar sind, lesen Sie den `tlsOutbound` Abschnitt der aktiven TLS- und SSH-Richtlinie des Grids (*CONFIGURATION* > *Security* *Security settings*).
+StorageGRID handelt beim Herstellen der Verbindung das Protokoll und die Verschlüsselung (TLS 1.2) oder die Verschlüsselungssuite (TLS 1.3) mit dem KMS aus.  Um zu sehen, welche Protokollversionen und Chiffren/Chiffrensammlungen verfügbar sind, lesen Sie die `tlsOutbound` Abschnitt der aktiven TLS- und SSH-Richtlinie des Grids (*Konfiguration* > *Sicherheit* *Sicherheitseinstellungen*).
 
 
 

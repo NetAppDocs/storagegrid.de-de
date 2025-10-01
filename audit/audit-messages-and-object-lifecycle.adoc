@@ -28,13 +28,6 @@ S3BK (Eimer), S3KY (Schlüssel) oder beide
 
 
  a| 
-Swift-Vorgänge verknüpfen
- a| 
-WCON (Container), WOBJ (Object) oder beides
-
-
-
- a| 
 Verknüpfen interner Vorgänge
  a| 
 CBID (interne Kennung des Objekts)

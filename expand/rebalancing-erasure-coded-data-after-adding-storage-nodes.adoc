@@ -16,7 +16,7 @@ Nach dem Hinzufügen von Storage Nodes können Sie das Ausgleichen von Fragmente
 .Bevor Sie beginnen
 * Sie haben die Erweiterungsschritte zum Hinzufügen der neuen Speicherknoten abgeschlossen.
 * Sie haben die überprüftlink:considerations-for-rebalancing-erasure-coded-data.html["Überlegungen zur Lastverteilung bei Daten, die mit Erasure Coding versehen sind"].
-* Sie wissen, dass replizierte Objektdaten bei diesem Verfahren nicht verschoben werden und dass beim EC-Ausgleichverfahren die replizierte Datennutzung auf jedem Storage Node nicht berücksichtigt wird, wenn festgestellt wird, wo Daten mit Erasure Coding verschoben werden.
+* Sie verstehen, dass replizierte Objektdaten durch dieses Verfahren nicht verschoben werden und dass das EC-Neuausgleichsverfahren keine replizierten Daten verschiebt.  Allerdings werden replizierte Daten berücksichtigt, wenn entschieden wird, wohin EC-Daten verschoben werden sollen.
 * Sie haben die `Passwords.txt` Datei.
 
 
@@ -34,16 +34,6 @@ Sie können den Vorgang erneut ausführen, nachdem alle Volumes wieder online si
 
 NOTE: S3-API-Operationen zum Hochladen von Objekten (oder Objektteilen) können während des EC-Ausgleichs fehlschlagen, wenn ihr Abschluss mehr als 24 Stunden erfordert. PUT-Vorgänge mit langer Dauer schlagen fehl, wenn die geltende ILM-Regel eine ausgewogene oder strikte Platzierung bei der Aufnahme verwendet. Der folgende Fehler wird gemeldet: `500 Internal Server Error`.
 
-* Bei diesem Verfahren haben alle Knoten eine Speicherkapazitätsgrenze von 80 %. Knoten, die diese Grenze überschreiten, aber immer noch unterhalb der Zieldatenpartition gespeichert werden, werden von folgenden Elementen ausgeschlossen:
-+
-** Der Wert für die Unwucht des Standorts
-** Alle Bedingungen für den Abschluss eines Jobs
-+
-
-NOTE: Die Zieldatenpartition wird berechnet, indem die Gesamtdaten für einen Standort durch die Anzahl der Knoten dividiert werden.
-
-
-
 * *Bedingungen für die Fertigstellung des Jobs*. Das EC-Ausgleichverfahren gilt als abgeschlossen, wenn eine der folgenden Bedingungen erfüllt ist:
 +
 ** Es können keine Daten mit Erasure Coded verschoben werden.
@@ -56,7 +46,7 @@ NOTE: Die Zieldatenpartition wird berechnet, indem die Gesamtdaten für einen St
 .Schritte
 . [[review_object_Storage]]Überprüfen Sie die aktuellen Objekt-Storage-Details für den Standort, den Sie ausgleichen möchten.
 +
-.. Wählen Sie *KNOTEN*.
+.. Wählen Sie *Knoten* aus.
 .. Wählen Sie den ersten Speicherknoten am Standort aus.
 .. Wählen Sie die Registerkarte *Storage* aus.
 .. Bewegen Sie den Mauszeiger über das Diagramm Speicher verwendet – Objektdaten, um die aktuelle Menge replizierter Daten und mit Löschungscodes versehene Daten auf dem Speicher-Node anzuzeigen.
@@ -112,7 +102,7 @@ Hilfe zum Befehl zum Ausgleich von Daten erhalten:
 +
 ** Wenn `State` dies der Fall ist `In progress`, wird der EC-Ausgleichsoperation noch ausgeführt. Sie sollten das Verfahren regelmäßig überwachen, bis es abgeschlossen ist.
 +
-Verwenden Sie den `Site Imbalance` Wert, um zu beurteilen, wie unausgewogen Daten aus dem Löschcode in den Storage-Nodes am Standort verwendet werden. Dieser Wert kann zwischen 1.0 und 0 liegen, wobei 0 bedeutet, dass die Datennutzung für das Erasure Coding vollständig auf alle Storage-Nodes am Standort verteilt ist.
+Gehen Sie zur Seite „Knoten“, um die Datenverteilung auf den Speicherknoten der Site zu beurteilen.
 
 +
 Der EC-Neuausgleich-Job gilt als abgeschlossen und wird angehalten, wenn sich die Daten in allen Knoten innerhalb einer Abweichung von 5 % von der Zieldatenpartition befinden.

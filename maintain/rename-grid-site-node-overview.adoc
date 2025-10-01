@@ -29,7 +29,7 @@ Verwenden Sie das Umbenennungsverfahren, um Tippfehler zu korrigieren, eine ande
 
 Die folgende Tabelle fasst zusammen, wo Systemnamen und Anzeigenamen in der StorageGRID-Benutzeroberfläche und in StorageGRID-Dateien angezeigt werden.
 
-[cols="2a,2a,3a"]
+[cols="1a,1a,3a"]
 |===
 | Standort | Systemname | Anzeigename 
 
@@ -55,20 +55,11 @@ Wenn ein Element umbenannt wird, wird anstelle des Systemnamens an diesen Speich
 
 
  a| 
-*NODES* > *Übersicht* Tab für einen Knoten
+*Knoten* > Registerkarte *Übersicht* für einen Knoten
  a| 
 Immer angezeigt
  a| 
 Wird nur angezeigt, wenn das Element umbenannt wurde
-
-
-
- a| 
-Legacy-Seiten im Grid Manager (z. B. *SUPPORT* > *Grid Topology*)
- a| 
-Angezeigt
- a| 
-Nicht abgebildet
 
 
 
@@ -99,7 +90,7 @@ Wird als Primärname angezeigt, wenn das Element umbenannt wird:
 
 
  a| 
-`Passwords.txt` Datei im Wiederherstellungspaket
+`Passwords.txt`Datei im Wiederherstellungspaket
  a| 
 Angezeigt als `Server Name`
  a| 

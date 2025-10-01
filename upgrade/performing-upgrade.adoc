@@ -2,7 +2,7 @@
 permalink: upgrade/performing-upgrade.html 
 sidebar: sidebar 
 keywords: upgrade, how to perform a software upgrade 
-summary: Sie können ein Upgrade auf StorageGRID 11.9 durchführen und gleichzeitig den neuesten Hotfix für diese Version anwenden. Die StorageGRID Upgrade-Seite enthält den empfohlenen Upgrade-Pfad und Links direkt zu den richtigen Download-Seiten. 
+summary: Sie können auf StorageGRID 12.0 aktualisieren und gleichzeitig den neuesten Hotfix für diese Version anwenden.  Die StorageGRID Upgradeseite bietet den empfohlenen Upgradepfad und verlinkt direkt zu den richtigen Downloadseiten. 
 ---
 = Führen Sie das Upgrade durch
 :allow-uri-read: 
@@ -11,10 +11,13 @@ summary: Sie können ein Upgrade auf StorageGRID 11.9 durchführen und gleichzei
 
 
 [role="lead"]
-Sie können ein Upgrade auf StorageGRID 11.9 durchführen und gleichzeitig den neuesten Hotfix für diese Version anwenden. Die StorageGRID Upgrade-Seite enthält den empfohlenen Upgrade-Pfad und Links direkt zu den richtigen Download-Seiten.
+Sie können auf StorageGRID 12.0 aktualisieren und gleichzeitig den neuesten Hotfix für diese Version anwenden.  Die StorageGRID Upgradeseite bietet den empfohlenen Upgradepfad und verlinkt direkt zu den richtigen Downloadseiten.
 
 .Bevor Sie beginnen
 Sie haben alle Überlegungen geprüft und alle Planungs- und Vorbereitungsschritte durchgeführt.
+
+
+CAUTION: Starten Sie das Upgrade nicht, wenn Sie Ihren Speicher dringend erweitern müssen, um die Kapazität zu erhöhen (wenn Ihr Speicher fast voll ist).  Schließen Sie den Upgrade-Vorgang rechtzeitig ab.  Wenn eine Wiederherstellung erforderlich ist, wenden Sie sich an den technischen Support.
 
 
 
@@ -24,7 +27,7 @@ Rufen Sie als ersten Schritt im Grid-Manager die Seite „StorageGRID-Upgrade“
 
 .Schritte
 . Melden Sie sich mit einem beim Grid-Manager anlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
-. Wählen Sie *WARTUNG* > *System* > *Software-Update*.
+. Wählen Sie *Wartung* > *System* > *Software-Update*.
 . Wählen Sie in der StorageGRID-Upgrade-Kachel *Upgrade* aus.
 
 
@@ -32,10 +35,10 @@ Rufen Sie als ersten Schritt im Grid-Manager die Seite „StorageGRID-Upgrade“
 
 == Wählen Sie Dateien aus
 
-Der Updatepfad auf der Seite StorageGRID-Aktualisierung zeigt an, welche Hauptversionen (z. B. 11.9.0) und Hotfixes (z. B. 11.9.0.1) installiert werden müssen, um die neueste StorageGRID-Version zu erhalten. Sie sollten die empfohlenen Versionen und Hotfixes in der angegebenen Reihenfolge installieren.
+Der Aktualisierungspfad auf der StorageGRID -Upgradeseite gibt an, welche Hauptversionen (z. B. 12.0.0) und Hotfixes (z. B. 12.0.0.1) Sie installieren müssen, um die neueste StorageGRID Version zu erhalten.  Sie sollten die empfohlenen Versionen und Hotfixes in der angegebenen Reihenfolge installieren.
 
 
-TIP: Wenn kein Updatepfad angezeigt wird, kann Ihr Browser möglicherweise nicht auf die NetApp-Support-Website zugreifen, oder das Kontrollkästchen *nach Softwareupdates suchen* auf der AutoSupport-Seite (*SUPPORT* > *Extras* > *AutoSupport* > *Einstellungen*) ist möglicherweise deaktiviert.
+TIP: Wenn kein Aktualisierungspfad angezeigt wird, kann Ihr Browser möglicherweise nicht auf die NetApp Support-Site zugreifen oder das Kontrollkästchen *Nach Software-Updates suchen* auf der AutoSupport -Seite (*Support* > *Tools* > * AutoSupport* > *Einstellungen*) ist möglicherweise deaktiviert.
 
 .Schritte
 . Überprüfen Sie für den Schritt *Dateien auswählen* den Updatepfad.
@@ -47,9 +50,9 @@ Wenn kein Updatepfad angezeigt wird, gehen Sie zum https://mysupport.netapp.com/
 
 NOTE: Wenn Sie ein RPM- oder DEB-Paket auf allen Linux-Hosts herunterladen und installieren mussten, sind möglicherweise bereits die StorageGRID-Upgrade- und Hotfix-Dateien im Updatepfad aufgelistet.
 
-. Wählen Sie *Browse*, um die Aktualisierungsdatei der Version auf StorageGRID hochzuladen: `NetApp_StorageGRID_11.9.0_Software_uniqueID.upgrade`
+. Wählen Sie *Durchsuchen*, um die Versions-Upgrade-Datei auf StorageGRID hochzuladen: `NetApp_StorageGRID_12.0.0_Software_uniqueID.upgrade`
 +
-Wenn der Upload- und Validierungsprozess abgeschlossen ist, wird neben dem Dateinamen ein grünes Häkchen angezeigt.
+Wenn der Upload und die Überprüfung der Codesignatur abgeschlossen sind, wird neben dem Dateinamen ein grünes Häkchen angezeigt.
 
 . Wenn Sie eine Hotfix-Datei heruntergeladen haben, wählen Sie *Durchsuchen*, um diese Datei hochzuladen. Der Hotfix wird automatisch im Rahmen des Versions-Upgrades angewendet.
 . Wählen Sie *Weiter*.
@@ -65,16 +68,16 @@ Durch das Ausführen von Vorabprüfungen können Sie Upgrade-Probleme erkennen u
 . Geben Sie für den Schritt *run prechecks* zunächst die Provisionierungs-Passphrase für Ihr Grid ein.
 . Wählen Sie *Wiederherstellungspaket herunterladen*.
 +
-Sie sollten die aktuelle Kopie der Wiederherstellungspaket-Datei herunterladen, bevor Sie den primären Admin-Knoten aktualisieren. Die Recovery Package-Datei ermöglicht es Ihnen, das System wiederherzustellen, wenn ein Fehler auftritt.
+Sie sollten die aktuelle Kopie der Wiederherstellungspaketdatei herunterladen, bevor Sie den primären Admin-Knoten aktualisieren.  Mit der Wiederherstellungspaketdatei können Sie das System wiederherstellen, wenn ein Fehler auftritt.
 
 . Bestätigen Sie beim Herunterladen der Datei, dass Sie auf den Inhalt einschließlich der Datei zugreifen können `Passwords.txt`.
 . Kopieren Sie die heruntergeladene Datei (`.zip`) in zwei sichere und separate Speicherorte.
 +
 
-CAUTION: Die Recovery Package-Datei muss gesichert sein, weil sie Verschlüsselungsschlüssel und Passwörter enthält, die zum Abrufen von Daten vom StorageGRID-System verwendet werden können.
+CAUTION: Die Wiederherstellungspaketdatei muss gesichert werden, da sie Verschlüsselungsschlüssel und Passwörter enthält, mit denen Daten aus dem StorageGRID -System abgerufen werden können.
 
 . Wählen Sie *Prechecks ausführen*, und warten Sie, bis die Vorabprüfungen abgeschlossen sind.
-. Überprüfen Sie die Details für jede gemeldete Vorabprüfung, und beheben Sie alle gemeldeten Fehler. Informationen zur Version StorageGRID 11.9 finden Sie im https://kb.netapp.com/hybrid/StorageGRID/Maintenance/StorageGRID_11.9_software_upgrade_resolution_guide["Lösungsleitfaden für StorageGRID Software-Upgrades"^].
+. Überprüfen Sie die Details für jede gemeldete Vorprüfung und beheben Sie alle gemeldeten Fehler.  Siehe die https://kb.netapp.com/hybrid/StorageGRID/Maintenance/StorageGRID_12.0_software_upgrade_resolution_guide["Lösungsleitfaden für StorageGRID Software-Upgrades"^] für die StorageGRID Version 12.0.
 +
 Sie müssen alle Vorabprüfung _errors_ beheben, bevor Sie Ihr System aktualisieren können. Sie müssen jedoch vor dem Upgrade keine Vorabprüfung _Warnings_ durchführen.
 
@@ -123,19 +126,19 @@ Sie müssen alle Grid-Nodes aktualisieren, aber Sie können mehrere Upgrade-Sitz
 Wenn die Reihenfolge des Upgrades von Nodes wichtig ist, genehmigen Sie Knoten oder Gruppen von Knoten jeweils eins und warten Sie, bis das Upgrade auf jedem Knoten abgeschlossen ist, bevor Sie den nächsten Knoten oder die nächste Gruppe von Nodes genehmigen.
 
 
-NOTE: Wenn das Upgrade auf einem Grid-Node startet, werden die Services auf diesem Node angehalten. Später wird der Grid-Node neu gebootet. Um Serviceunterbrechungen für Client-Applikationen zu vermeiden, die mit dem Node kommunizieren, genehmigen Sie das Upgrade für einen Node nur, wenn Sie sicher sind, dass der Node bereit ist, angehalten und neu gestartet zu werden. Planen Sie bei Bedarf ein Wartungsfenster oder benachrichtigen Sie die Kunden.
+CAUTION: Wenn das Upgrade auf einem Grid-Node startet, werden die Services auf diesem Node angehalten. Später wird der Grid-Node neu gebootet. Um Serviceunterbrechungen für Client-Applikationen zu vermeiden, die mit dem Node kommunizieren, genehmigen Sie das Upgrade für einen Node nur, wenn Sie sicher sind, dass der Node bereit ist, angehalten und neu gestartet zu werden. Planen Sie bei Bedarf ein Wartungsfenster oder benachrichtigen Sie die Kunden.
 
 .Schritte
 . Überprüfen Sie für den Schritt *andere Knoten aktualisieren* die Zusammenfassung, die die Startzeit für das Upgrade als Ganzes und den Status für jede größere Upgrade-Aufgabe enthält.
 +
 ** *Upgrade-Dienst starten* ist die erste Upgrade-Aufgabe. Während dieser Aufgabe wird die Softwaredatei an die Grid-Nodes verteilt, und der Upgrade-Service wird auf jedem Node gestartet.
-** Wenn der Task *Upgrade-Dienst starten* abgeschlossen ist, wird der Task *andere Grid-Knoten aktualisieren* gestartet und Sie werden aufgefordert, eine neue Kopie des Wiederherstellungspakets herunterzuladen.
+** Wenn die Aufgabe *Upgradedienst starten* abgeschlossen ist, wird die Aufgabe *Andere Grid-Knoten aktualisieren* gestartet und Sie werden aufgefordert, eine neue Kopie des Wiederherstellungspakets herunterzuladen.
 
 
-. Wenn Sie dazu aufgefordert werden, geben Sie Ihre Provisionierungs-Passphrase ein, und laden Sie eine neue Kopie des Wiederherstellungspakets herunter.
+. Geben Sie bei entsprechender Aufforderung Ihre Bereitstellungspassphrase ein und laden Sie eine neue Kopie des Wiederherstellungspakets herunter.
 +
 
-CAUTION: Sie sollten eine neue Kopie der Wiederherstellungspaket-Datei herunterladen, nachdem der primäre Admin-Knoten aktualisiert wurde. Die Recovery Package-Datei ermöglicht es Ihnen, das System wiederherzustellen, wenn ein Fehler auftritt.
+CAUTION: Sie sollten eine neue Kopie der Wiederherstellungspaketdatei herunterladen, nachdem der primäre Admin-Knoten aktualisiert wurde.  Mit der Wiederherstellungspaketdatei können Sie das System wiederherstellen, wenn ein Fehler auftritt.
 
 . Überprüfen Sie die Statustabellen für jeden Node-Typ. Es gibt Tabellen für nicht-primäre Admin-Nodes, Gateway-Nodes und Storage-Nodes.
 +
@@ -148,6 +151,10 @@ Ein Gitterknoten kann sich in einer dieser Stufen befinden, wenn die Tabellen zu
 
 
 . [[Approval-Step]]Wenn Sie für die Aktualisierung Grid-Nodes auswählen möchten (oder wenn Sie die Genehmigung für ausgewählte Nodes aufheben müssen), gehen Sie wie folgt vor:
++
+
+NOTE: Wenn Sie bei einem StorageGRID 12.0-Upgrade einzelne Knoten statt aller Knoten genehmigen möchten, empfiehlt es sich, eine gesamte Site zu aktualisieren, bevor Sie mit der nächsten Site fortfahren.
+
 +
 [cols="1a,1a"]
 |===
@@ -240,12 +247,7 @@ Wenn alle Grid-Knoten die Upgrade-Phasen abgeschlossen haben, wird die Aufgabe *
 
 .Schritte
 . Sobald die Aufgabe *enable Features* abgeschlossen ist (was schnell passiert), können Sie die  in der aktualisierten StorageGRID-Version verwendenlink:whats-new.html["Neuer Funktionen"].
-. Während der Task *Datenbank aktualisieren* prüft der Upgrade-Prozess jeden Knoten, um sicherzustellen, dass die Cassandra-Datenbank nicht aktualisiert werden muss.
-+
-
-NOTE: Für das Upgrade von StorageGRID 11.8 auf 11.9 ist kein Cassandra-Datenbank-Upgrade erforderlich. Der Cassandra-Service wird jedoch auf jedem Speicherknoten angehalten und neu gestartet. Bei künftigen StorageGRID-Funktionsversionen kann der Schritt für das Update der Cassandra-Datenbank mehrere Tage dauern.
-
-. Wenn die Aufgabe *Datenbank aktualisieren* abgeschlossen ist, warten Sie ein paar Minuten, bis die Schritte für das letzte Upgrade* abgeschlossen sind.
+. Das Upgrade der Cassandra-Datenbank beginnt.  Dieses Upgrade wird ein bis drei Tage lang im Hintergrund ausgeführt und der Cassandra-Dienst wird auf jedem Speicherknoten angehalten und neu gestartet.  Während dieser Zeit werden bestimmte Wartungsvorgänge, die Metadaten-Streaming beinhalten, wie etwa die Erweiterung, deaktiviert.
 . Nach Abschluss der *letzten Upgrade-Schritte* ist das Upgrade abgeschlossen. Der erste Schritt, *Dateien auswählen*, wird mit einem grünen Erfolgsbanner angezeigt.
 . Überprüfen Sie, ob die Grid-Vorgänge wieder den normalen Status aufweisen:
 +
@@ -254,3 +256,6 @@ NOTE: Für das Upgrade von StorageGRID 11.8 auf 11.9 ist kein Cassandra-Datenban
 
 
 
+
+.Verwandte Informationen
+link:how-your-system-is-affected-during-upgrade.html["Auswirkungen des Upgrades auf Ihr System"]

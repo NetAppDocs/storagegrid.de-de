@@ -24,7 +24,7 @@ Wenn Sie StorageGRID zum ersten Mal installieren, wird die Speicherklasse *Defau
 Mit benutzerdefinierten Speicherqualitäten können Sie ILM-Speicherpools erstellen, die nur einen bestimmten Typ von Speicher-Node enthalten. Möglicherweise möchten Sie beispielsweise bestimmte Objekte auf Ihren schnellsten Storage-Nodes wie z. B. StorageGRID All-Flash Storage Appliances speichern.
 
 
-NOTE: Storage-Nodes können während der Installation so konfiguriert werden, dass sie nur Objektmetadaten und keine Objektdaten enthalten. Storage-Nodes, die nur Metadaten enthalten, können keiner Storage-Klasse zugewiesen werden. Weitere Informationen finden Sie unter link:../primer/what-storage-node-is.html#types-of-storage-nodes["Typen von Storage-Nodes"].
+NOTE: Nur Metadaten-Speicherknoten kann keine Speicherklasse zugewiesen werden. Weitere Informationen finden Sie unter link:../primer/what-storage-node-is.html#types-of-storage-nodes["Typen von Storage-Nodes"] .
 
 Wenn die Speichergüte kein Problem ist (zum Beispiel sind alle Speicherknoten identisch), können Sie dieses Verfahren überspringen und die Auswahl *includes all Storage grades* für die Speicherklasse verwenden, wenn Sie link:creating-storage-pool.html["Erstellen von Speicherpools"]. Mit dieser Auswahl wird sichergestellt, dass der Speicherpool jeden Storage Node am Standort umfasst, unabhängig von seiner Speicherklasse.
 

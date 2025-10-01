@@ -18,11 +18,10 @@ Sie können benutzerdefinierte Alarmregeln erstellen, um eigene Bedingungen für
 * Sie haben die link:../admin/admin-group-permissions.html["Managen von Warnmeldungen oder Root-Zugriffsberechtigungen"].
 * Sie kennen die link:commonly-used-prometheus-metrics.html["Häufig verwendete Prometheus-Kennzahlen"].
 * Sie verstehen die https://prometheus.io/docs/prometheus/latest/querying/basics/["Syntax der Prometheus-Abfragen"^].
-* Optional haben Sie sich das Video angesehen: https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=54af90c4-9a38-4136-9621-b1ff008604a3["Video: Benutzerdefinierte Alarme"^].
+* Optional haben Sie das Video angesehen:
 +
-[link=https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=54af90c4-9a38-4136-9621-b1ff008604a3]
-image::../media/video-screenshot-alert-create-custom-118.png[Video: Benutzerdefinierte Alarme]
-
+.Benutzerdefinierte Benachrichtigungen
+video::54af90c4-9a38-4136-9621-b1ff008604a3[panopto]
 
 
 .Über diese Aufgabe
@@ -40,7 +39,7 @@ Um zum Beispiel den Ausdruck zu testen `node_memory_MemTotal_bytes < 24000000000
 
 
 .Schritte
-. Wählen Sie *ALERTS* > *Regeln*.
+. Wählen Sie *Benachrichtigungen* > *Regeln*.
 +
 Die Seite Alarmregeln wird angezeigt.
 

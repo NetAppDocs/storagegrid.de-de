@@ -19,11 +19,10 @@ Sie müssen im Grid Manager die Option Wiederherstellung starten auswählen, um 
 * Sie haben die Provisionierungs-Passphrase.
 * Sie haben einen Storage Node für die Recovery-Appliance bereitgestellt.
 * Sie haben das Startdatum aller Reparaturaufträge für Daten, die mit dem Verfahren zur Fehlerkorrektur codiert wurden.
-* Sie haben überprüft, ob der Speicher-Node innerhalb der letzten 15 Tage nicht neu erstellt wurde.
 
 
 .Schritte
-. Wählen Sie im Grid Manager *MAINTENANCE* > *Tasks* > *Recovery*.
+. Wählen Sie im Grid Manager *Wartung* > *Aufgaben* > *Wiederherstellung*.
 . Wählen Sie in der Liste Ausstehende Knoten den Rasterknoten aus, den Sie wiederherstellen möchten.
 +
 Nodes werden in der Liste angezeigt, wenn sie fehlschlagen. Sie können jedoch keinen Node auswählen, bis er neu installiert wurde und für die Wiederherstellung bereit ist.

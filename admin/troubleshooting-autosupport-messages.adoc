@@ -11,7 +11,7 @@ summary: Wenn der Versuch, ein AutoSupport-Paket zu senden, fehlschlägt, führt
 
 
 [role="lead"]
-Wenn der Versuch, ein AutoSupport-Paket zu senden, fehlschlägt, führt das StorageGRID-System je nach Typ des AutoSupport-Pakets unterschiedliche Aktionen durch. Sie können den Status von AutoSupport-Paketen überprüfen, indem Sie *SUPPORT* > *Tools* > *AutoSupport* > *results* auswählen.
+Wenn der Versuch, ein AutoSupport Paket zu senden, fehlschlägt, ergreift das StorageGRID System je nach Art des AutoSupport Pakets unterschiedliche Maßnahmen.  Sie können den Status von AutoSupport -Paketen überprüfen, indem Sie *Support* > *Tools* > * AutoSupport* > *Ergebnisse* auswählen.
 
 Wenn das AutoSupport-Paket nicht gesendet werden kann, erscheint auf der Registerkarte *Ergebnisse* der Seite *AutoSupport* „Fehlgeschlagen“.
 
@@ -43,7 +43,7 @@ Wenn ein vom Benutzer oder durch ein Ereignis ausgelöstes AutoSupport-Paket nic
 . Protokolliert den Fehler in `nms.log`.
 
 
-Wenn ein Fehler auftritt und SMTP das ausgewählte Protokoll ist, überprüfen Sie, ob der E-Mail-Server des StorageGRID-Systems korrekt konfiguriert ist und Ihr E-Mail-Server ausgeführt wird (*SUPPORT* > *Alarme (alt)* > *Legacy-E-Mail-Einrichtung*). Die folgende Fehlermeldung kann auf der Seite AutoSupport angezeigt werden: `AutoSupport packages cannot be sent using SMTP protocol due to incorrect settings on the E-mail Server page.`
+Wenn ein Fehler auftritt und SMTP das ausgewählte Protokoll ist, überprüfen Sie, ob der E-Mail-Server des StorageGRID Systems richtig konfiguriert ist und ob Ihr E-Mail-Server ausgeführt wird (*Support* > *Alarme (Legacy)* > *Legacy-E-Mail-Setup*).  Auf der AutoSupport -Seite wird möglicherweise die folgende Fehlermeldung angezeigt: `AutoSupport packages cannot be sent using SMTP protocol due to incorrect settings on the E-mail Server page.`
 
 Erfahren Sie, wie man link:../monitor/email-alert-notifications.html["Konfigurieren Sie die E-Mail-Servereinstellungen"].
 

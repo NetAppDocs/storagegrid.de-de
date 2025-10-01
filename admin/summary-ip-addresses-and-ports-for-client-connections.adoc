@@ -88,7 +88,7 @@ Wenn beispielsweise die virtuelle IP-Adresse der HA-Gruppe 192.0.2.5 lautet und 
 . Melden Sie sich mit einem beim Grid-Manager anlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
 . So suchen Sie die IP-Adresse eines Grid-Knotens:
 +
-.. Wählen Sie *KNOTEN*.
+.. Wählen Sie *Knoten* aus.
 .. Wählen Sie den Admin-Node, Gateway-Node oder Storage-Node aus, mit dem Sie eine Verbindung herstellen möchten.
 .. Wählen Sie die Registerkarte *Übersicht*.
 .. Notieren Sie im Abschnitt Node-Informationen die IP-Adressen für den Node.
@@ -110,13 +110,13 @@ NOTE: Wenn ein Admin-Node oder ein Gateway-Node angezeigt wird und dieser in ein
 
 . So finden Sie die virtuelle IP-Adresse einer Hochverfügbarkeitsgruppe:
 +
-.. Wählen Sie *CONFIGURATION* > *Network* > *High Availability groups*.
+.. Wählen Sie *Konfiguration* > *Netzwerk* > *Hochverfügbarkeitsgruppen*.
 .. Notieren Sie in der Tabelle die virtuelle IP-Adresse der HA-Gruppe.
 
 
 . So finden Sie die Portnummer eines Load Balancer-Endpunkts:
 +
-.. Wählen Sie *CONFIGURATION* > *Network* > *Load Balancer Endpunkte*.
+.. Wählen Sie *Konfiguration* > *Netzwerk* > *Load Balancer-Endpunkte*.
 .. Notieren Sie sich die Portnummer für den zu verwendenden Endpunkt.
 +
 

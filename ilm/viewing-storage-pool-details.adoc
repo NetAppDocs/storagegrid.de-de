@@ -46,7 +46,7 @@ Die Tabelle enthält die folgenden Informationen für jeden Node:
 ** Speichernutzung: Der Prozentsatz des gesamten nutzbaren Speicherplatzes für Objektdaten, der für den Speicher-Node verwendet wurde.
 +
 
-NOTE: Der gleiche Wert für die Speichernutzung (%) wird auch im Diagramm Speicher verwendet - Objektdaten für jeden Speicherknoten angezeigt (wählen Sie *NODES* > *_Storage Node_* > *Storage*).
+NOTE: Derselbe Wert für die Speichernutzung (%) wird auch im Diagramm „Speichernutzung – Objektdaten“ für jeden Speicherknoten angezeigt (wählen Sie *Knoten* > *_Speicherknoten_* > *Speicher*).
 
 
 

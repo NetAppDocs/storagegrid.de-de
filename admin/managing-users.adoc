@@ -36,7 +36,7 @@ NOTE: Wenn Single Sign-On (SSO) aktiviert ist, können sich lokale Benutzer nich
 === Greifen Sie auf den Assistenten zu
 
 .Schritte
-. Wählen Sie *KONFIGURATION* > *Zugriffskontrolle* > *Admin-Benutzer*.
+. Wählen Sie *Konfiguration* > *Zugriffskontrolle* > *Admin-Benutzer*.
 . Wählen Sie *Benutzer erstellen*.
 
 
@@ -171,6 +171,33 @@ Gruppen ändern (nur lokale Benutzer)
 
 
 |===
+
+
+
+
+== Importieren von Verbundbenutzern
+
+Sie können einen oder mehrere Verbundbenutzer (bis zu maximal 100 Benutzer) direkt in die Seite „Benutzer“ importieren.
+
+.Schritte
+. Wählen Sie *Konfiguration* > *Zugriffskontrolle* > *Admin-Benutzer*.
+. Wählen Sie *Verbundbenutzer importieren*.
+. Geben Sie die UUID oder den Benutzernamen für einen oder mehrere Verbundbenutzer ein.
++
+Fügen Sie bei mehreren Einträgen jede UUID oder jeden Benutzernamen in einer neuen Zeile hinzu.
+
+. Wählen Sie *Importieren*.
++
+Wenn der Import in das Feld „Benutzer“ für einen oder mehrere Benutzer fehlschlägt, führen Sie die folgenden Schritte aus:
+
++
+.. Erweitern Sie *Nicht importierte Benutzer* und wählen Sie *Benutzer kopieren*.
+.. Versuchen Sie den Import erneut, indem Sie *Zurück* auswählen und die kopierten Benutzer in das Dialogfeld *Verbundbenutzer importieren* einfügen.
+
+
++
+Nachdem Sie das Dialogfeld *Verbundbenutzer importieren* geschlossen haben, werden die Verbundbenutzerinformationen für die erfolgreich importierten Benutzer auf der Seite „Benutzer“ angezeigt.
+
 
 
 

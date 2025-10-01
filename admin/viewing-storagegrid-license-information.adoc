@@ -24,7 +24,7 @@ image::../media/dashboard_health_panel_license_status.png[Status Der Dashboard-S
 .Schritte
 . Rufen Sie die Lizenzseite auf, indem Sie einen der folgenden Schritte ausführen:
 +
-** Wählen Sie *WARTUNG* > *System* > *Lizenz*.
+** Wählen Sie *Wartung* > *System* > *Lizenz*.
 ** Wählen Sie auf der Statuskarte für den Systemzustand im Dashboard das Symbol Lizenzstatus oder den Link *Lizenz* aus.
 +
 Dieser Link wird nur angezeigt, wenn ein Problem mit der Lizenz vorliegt.

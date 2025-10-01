@@ -13,6 +13,8 @@ summary: Die Revisionsfreigabe enthält die aktive audit.log-Datei und alle komp
 [role="lead"]
 Die Audit-Freigabe enthält die aktive `audit.log` Datei und alle komprimierten Audit-Log-Dateien. Sie können über die Befehlszeile des Admin-Knotens direkt auf Audit-Log-Dateien zugreifen.
 
+Der `audit.log` Die Datei bleibt leer, es sei denn, Sie konfigurieren StorageGRID für *Admin-Knoten/lokale Knoten* oder *Admin-Knoten und externen Syslog-Server*. Weitere Informationen finden Sie unter link:../monitor/configure-log-management.html#select-log-location["Protokollspeicherort auswählen"] .
+
 .Bevor Sie beginnen
 * Sie haben link:../admin/admin-group-permissions.html["Bestimmte Zugriffsberechtigungen"].
 * Sie müssen über die `Passwords.txt` Datei verfügen.
@@ -33,7 +35,7 @@ Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `
 
 . Gehen Sie zu dem Verzeichnis, das die Audit-Log-Dateien enthält:
 +
-`cd /var/local/log`
+`cd  /var/local/audit/export/`
 
 . Sehen Sie sich die aktuelle oder gespeicherte Audit-Protokolldatei nach Bedarf an.
 

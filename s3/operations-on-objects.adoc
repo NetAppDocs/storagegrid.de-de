@@ -15,7 +15,7 @@ In diesem Abschnitt wird beschrieben, wie das StorageGRID System S3-REST-API-Vor
 
 Die folgenden Bedingungen gelten für alle Objektvorgänge:
 
-* StorageGRID link:consistency-controls.html["Konsistenzwerte"]werden von allen Operationen an Objekten unterstützt, mit Ausnahme der folgenden:
+* StorageGRIDlink:consistency.html["Konsistenzwerte"] werden von allen Operationen an Objekten unterstützt, mit Ausnahme der folgenden:
 +
 ** GetObjectAcl
 ** `OPTIONS /`
@@ -26,7 +26,6 @@ Die folgenden Bedingungen gelten für alle Objektvorgänge:
 
 * Widersprüchliche Clientanforderungen, wie z. B. zwei Clients, die in denselben Schlüssel schreiben, werden auf der Grundlage der „neuesten Wins“ gelöst. Der Zeitpunkt für die Bewertung „neuester Erfolge“ basiert auf dem Zeitpunkt, an dem das StorageGRID System eine bestimmte Anforderung abgeschlossen hat und nicht auf dem Zeitpunkt, an dem S3-Clients einen Vorgang starten.
 * Alle Objekte in einem StorageGRID-Bucket sind im Eigentum des Bucket-Inhabers. Dies umfasst Objekte, die von einem anonymen Benutzer oder einem anderen Konto erstellt wurden.
-* Der Zugriff auf Datenobjekte, die über Swift in das StorageGRID System aufgenommen wurden, ist nicht über S3 möglich.
 
 
 In der folgenden Tabelle wird beschrieben, wie StorageGRID S3-REST-API-Objektvorgänge implementiert.

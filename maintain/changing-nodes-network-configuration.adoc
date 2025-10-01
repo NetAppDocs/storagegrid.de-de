@@ -17,13 +17,7 @@ Mit dem Change IP-Tool können Sie die Netzwerkkonfiguration für einen oder meh
 Sie haben die `Passwords.txt` Datei.
 
 .Über diese Aufgabe
-*Linux:* Wenn Sie zum ersten Mal einen Grid-Knoten zum Admin-Netzwerk oder Client-Netzwerk hinzufügen und SIE IN der Node-Konfigurationsdatei NOCH nicht ADMIN_NETWORK_TARGET oder CLIENT_NETWORK_TARGET konfiguriert haben, müssen Sie dies jetzt tun.
-
-Weitere Informationen finden Sie in der StorageGRID-Installationsanleitung für Ihr Linux-Betriebssystem:
-
-* link:../rhel/index.html["Installieren Sie StorageGRID unter Red hat Enterprise Linux"]
-* link:../ubuntu/index.html["Installieren Sie StorageGRID auf Ubuntu oder Debian"]
-
+*Linux:* Wenn Sie zum ersten Mal einen Grid-Knoten zum Admin-Netzwerk oder Client-Netzwerk hinzufügen und ADMIN_NETWORK_TARGET oder CLIENT_NETWORK_TARGET zuvor nicht in der Knotenkonfigurationsdatei konfiguriert haben, müssen Sie dies jetzt tun.  Zum StorageGRIDlink:../swnodes/index.html["Installationsanweisungen"] für Ihr Linux-Betriebssystem.
 
 *Appliances:* bei StorageGRID Appliances, wenn das Client- oder Admin-Netzwerk während der Erstinstallation nicht im StorageGRID-Gerät-Installationsprogramm konfiguriert wurde, kann das Netzwerk nicht nur mit dem Change IP-Tool hinzugefügt werden. Zuerst müssen Sie https://docs.netapp.com/us-en/storagegrid-appliances/commonhardware/placing-appliance-into-maintenance-mode.html["Stellen Sie das Gerät in den Wartungsmodus"^] die Verbindungen konfigurieren, das Gerät wieder in den normalen Betriebsmodus versetzen und dann die Netzwerkkonfiguration mit dem Tool „IP ändern“ ändern. Siehe https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/configuring-network-links.html["Verfahren zum Konfigurieren von Netzwerkverbindungen"^].
 
@@ -42,12 +36,13 @@ Knoten können nicht aus dem Grid-Netzwerk entfernt werden.
 NOTE: Das Austauschen von IP-Adressen ist nicht zulässig. Wenn Sie IP-Adressen zwischen Grid-Nodes austauschen müssen, müssen Sie eine temporäre IP-Adresse verwenden.
 
 
-NOTE: Wenn Single Sign-On (SSO) für Ihr StorageGRID-System aktiviert ist und Sie die IP-Adresse eines Admin-Knotens ändern, ist zu beachten, dass jedes Vertrauen, das mit der IP-Adresse des Admin-Knotens konfiguriert wurde (anstelle des vollständig qualifizierten Domänennamens, wie empfohlen), ungültig wird. Sie können sich nicht mehr bei dem Node anmelden. Unmittelbar nach dem Ändern der IP-Adresse müssen Sie das Vertrauen des Knotens in Active Directory Federation Services (AD FS) mit der neuen IP-Adresse aktualisieren oder neu konfigurieren. Siehe die Anleitung für link:../admin/configuring-sso.html["SSO wird konfiguriert"].
+NOTE: Wenn Single Sign-On (SSO) für Ihr StorageGRID System aktiviert ist und Sie die IP-Adresse eines Admin-Knotens ändern, beachten Sie, dass alle Vertrauensstellungen der vertrauenden Seite, die mit der IP-Adresse des Admin-Knotens (anstelle des vollqualifizierten Domänennamens, wie empfohlen) konfiguriert wurden, ungültig werden.  Sie können sich nicht mehr beim Knoten anmelden.  Unmittelbar nach der Änderung der IP-Adresse müssen Sie die Vertrauensstellung der vertrauenden Seite des Knotens in Active Directory Federation Services (AD FS) mit der neuen IP-Adresse aktualisieren oder neu konfigurieren.  Siehe die Anweisungen fürlink:../admin/configure-sso.html["SSO wird konfiguriert"] .
 
 
 NOTE: Alle Änderungen, die Sie mit dem Change IP-Tool an das Netzwerk vornehmen, werden an die Installer-Firmware für die StorageGRID-Appliances übertragen. Auf diese Weise wird bei einer erneuten Installation der StorageGRID Software auf einer Appliance oder beim Einsatz einer Appliance in den Wartungsmodus die Netzwerkkonfiguration korrekt ausgeführt.
 
 .Schritte
+. Der externe SSH-Zugriff ist standardmäßig blockiert.  Falls erforderlich,link:../admin/manage-external-ssh-access.html["Zugriff vorübergehend erlauben"] .
 . Melden Sie sich beim primären Admin-Node an:
 +
 .. Geben Sie den folgenden Befehl ein: `ssh admin@_primary_Admin_Node_IP_`
@@ -186,7 +181,7 @@ Updating grid network configuration on Name
 
 
 +
-Nachdem Sie Änderungen angewendet oder durchgeführt haben, wird ein neues Wiederherstellungspaket als Ergebnis der Änderung der Rasterkonfiguration generiert.
+Nachdem Sie Änderungen angewendet oder bereitgestellt haben, wird aufgrund der Änderung der Grid-Konfiguration ein neues Wiederherstellungspaket generiert.
 
 . Wenn Sie *Phase* ausgewählt haben, führen Sie nach Abschluss der Bereitstellung folgende Schritte aus:
 +
@@ -201,10 +196,52 @@ Nachdem Sie Änderungen angewendet oder durchgeführt haben, wird ein neues Wied
 
 
 . Wählen Sie *0* aus, um das Change IP-Tool nach Abschluss der Änderungen zu beenden.
-. Laden Sie ein neues Wiederherstellungspaket aus dem Grid Manager herunter.
+. Laden Sie ein neues Wiederherstellungspaket vom Grid Manager herunter.
 +
-.. Wählen Sie *WARTUNG* > *System* > *Wiederherstellungspaket*.
+.. Wählen Sie *Wartung* > *System* > *Wiederherstellungspaket*.
 .. Geben Sie die Provisionierungs-Passphrase ein.
 
 
+. Wenn Sie externen SSH-Zugriff zugelassen haben,link:../admin/manage-external-ssh-access.html["Zugriff blockieren"] wenn Sie mit der Änderung der Knotennetzwerkkonfiguration fertig sind.
 
+
+
+
+== Vorübergehende Änderung der LACP-PDU-Rate
+
+Um Wartungsvorgänge an den in Ihrem Gerät installierten Netzwerkkomponenten durchzuführen, z. B. die Aktualisierung der NIC-Firmware, können Sie überprüfen, ob die aktuelle Einstellung der LACP-PDU-Rate den Timing-Anforderungen für die NIC-Kommunikation entspricht.  Sie können die LACP-PDU-Rate bei Bedarf nicht dauerhaft zwischen schnell (1 Sekunde Wartezeit) und langsam (30 Sekunden Wartezeit) umschalten.
+
+
+NOTE: Um dauerhafte Änderungen an der LACP-PDU-Rate vorzunehmen, siehe https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/configuring-network-links.html["Netzwerkverbindungen konfigurieren"^] .
+
+.Bevor Sie beginnen
+* Der Admin-Knoten ist installiert und läuft.
+* Sie haben die `Passwords.txt` Datei.
+
+
+.Schritte
+. Melden Sie sich beim primären Admin-Node an:
++
+.. Geben Sie den folgenden Befehl ein: `ssh admin@primary_Admin_Node_IP`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+.. Geben Sie den folgenden Befehl ein, um zu root zu wechseln: `su -`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
++
+Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `#`.
+
+
+
+. Um die aktuelle LACP-PDU-Rateneinstellung zu überprüfen, geben Sie den folgenden Befehl ein:
++
+`run-each-node --parallel --port 8022 '/usr/sbin/set-lacp-rate.sh'`
+
+. Um die LACP-PDU-Rate vorübergehend zu ändern, geben Sie den folgenden Befehl ein:
++
+`run-each-node --parallel --port 8022 '/usr/sbin/set-lacp-rate.sh _<speed>_'`
+
++
+Wo `_<speed>_` Ist `fast` oder `slow` .
+
+
+
+Beim nächsten Neustart des Geräts wird die LACP-PDU-Rate auf die vorherige Einstellung zurückgesetzt.

@@ -1,0 +1,33 @@
+---
+permalink: monitor/manage-io-prioritization.html 
+sidebar: sidebar 
+keywords: ec repair priority, ec purge priority 
+summary: 'Durch die Priorisierung von Eingabe/Ausgabe (E/A) können Sie die relativen Prioritäten für E/A-Vorgänge im Grid ändern.' 
+---
+= E/A-Priorisierung ändern
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Durch die Priorisierung von Eingabe/Ausgabe (E/A) können Sie die relativen Prioritäten für E/A-Vorgänge im Grid ändern.
+
+Standardmäßig wird dem PUT- und GET-E/A-Verkehr des Clients die höchste Priorität gegenüber Hintergrundaktivitäten wie dem Löschen von Erasure-Coded-Daten (EC) und der EC-Reparatur eingeräumt.  Durch Erhöhen der Priorität der Bereinigung von Erasure-Coded-Daten (EC) und von EC-Reparaturaktivitäten können diese Aufgaben möglicherweise schneller abgeschlossen werden.  Die Wirksamkeit von Änderungen der E/A-Priorisierung wird durch die Rate der Clientanforderungen, Schwankungen des Netzwerkverkehrs und andere laufende Netzwerkaufgaben beeinflusst.
+
+.Bevor Sie beginnen
+* Überprüfen Sie die Seite zur E/A-Priorisierung, um festzustellen, welche Optionen sich auf Ihr Raster auswirken könnten.
+* Bewerten Sie, ob der laufende Client-Verkehr längere Wartezeiten oder Client-Timeouts sicher bewältigen kann.
+* Seien Sie darauf vorbereitet, die Auswirkungen der Priorisierungsänderung zu überwachen und bei Bedarf Anpassungen vorzunehmen.  Diese Änderungen werden schnell umgesetzt, es kann jedoch Stunden dauern, bis ihre Wirkung sichtbar wird.
+
+
+.Schritte
+. Wählen Sie *Support* > *E/A-Priorisierung*.
+. (Optional) Ändern Sie die EC-Bereinigungs- und Reparaturpriorität für Hintergrundvorgänge, die EC-Daten bereinigen, von ihren Standardwerten.
++
+
+NOTE: Verwenden Sie die standardmäßige niedrige EC-Bereinigungs- und Reparaturpriorität für Grids mit RAID-basierten Knoten.
+
+. Wählen Sie *Speichern*.
+. Überwachen Sie dielink:../monitor/commonly-used-prometheus-metrics.html#where-are-prometheus-metrics-used["Metriken"] um die Auswirkungen von Priorisierungsänderungen zu bewerten.
+

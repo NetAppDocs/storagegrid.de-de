@@ -2,7 +2,7 @@
 permalink: tenant/understanding-tenant-manager-dashboard.html 
 sidebar: sidebar 
 keywords: how to understand tenant manager dashboard 
-summary: 'Das Tenant Manager-Dashboard bietet einen Überblick über die Konfiguration eines Mandantenkontos und den Speicherplatz, der von Objekten in den Buckets \(S3\) oder Containern \(Swift\) des Mandanten verwendet wird. Wenn der Mandant über ein Kontingent verfügt, wird im Dashboard angezeigt, wie viel des Kontingents verwendet wird und wie viel übrig bleibt. Wenn Fehler im Zusammenhang mit dem Mandantenkonto auftreten, werden die Fehler auf dem Dashboard angezeigt.' 
+summary: Das Tenant Manager-Dashboard bietet einen Überblick über die Konfiguration eines Tenant-Kontos und die Menge an Speicherplatz, die von Objekten in den S3-Buckets des Tenant verwendet wird.  Wenn der Mandant über ein Kontingent verfügt, zeigt das Dashboard an, wie viel des Kontingents genutzt wird und wie viel noch übrig ist.  Wenn Fehler im Zusammenhang mit dem Mieterkonto auftreten, werden diese auf dem Dashboard angezeigt. 
 ---
 = Mandantenmanager-Dashboard verstehen
 :allow-uri-read: 
@@ -11,10 +11,10 @@ summary: 'Das Tenant Manager-Dashboard bietet einen Überblick über die Konfigu
 
 
 [role="lead"]
-Das Tenant Manager-Dashboard bietet einen Überblick über die Konfiguration eines Mandantenkontos und die Menge an Speicherplatz, die von Objekten in den Buckets (S3) oder Containern (Swift) verwendet wird. Wenn der Mandant über ein Kontingent verfügt, wird im Dashboard angezeigt, wie viel des Kontingents verwendet wird und wie viel übrig bleibt. Wenn Fehler im Zusammenhang mit dem Mandantenkonto auftreten, werden die Fehler auf dem Dashboard angezeigt.
+Das Tenant Manager-Dashboard bietet einen Überblick über die Konfiguration eines Tenant-Kontos und die Menge an Speicherplatz, die von Objekten in den S3-Buckets des Tenant verwendet wird.  Wenn der Mandant über ein Kontingent verfügt, zeigt das Dashboard an, wie viel des Kontingents genutzt wird und wie viel noch übrig ist.  Wenn Fehler im Zusammenhang mit dem Mieterkonto auftreten, werden diese auf dem Dashboard angezeigt.
 
 
-NOTE: Die Werte für den genutzten Speicherplatz sind Schätzungen. Diese Schätzungen sind vom Zeitpunkt der Aufnahme, der Netzwerkverbindung und des Node-Status betroffen.
+NOTE: Die logische Größe aller Objekte, die zu diesem Mandanten gehören, umfasst unvollständige und laufende mehrteilige Uploads.  Die Größe umfasst nicht den zusätzlichen physischen Speicherplatz, der für ILM-Richtlinien verwendet wird.  Bei den Werten für den belegten Speicherplatz handelt es sich um Schätzungen.  Diese Schätzungen werden durch den Zeitpunkt der Aufnahme, die Netzwerkkonnektivität und den Knotenstatus beeinflusst.
 
 Wenn Objekte hochgeladen wurden, sieht das Dashboard wie das folgende Beispiel aus:
 

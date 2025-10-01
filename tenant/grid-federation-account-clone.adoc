@@ -44,7 +44,7 @@ Wenn Sie Gruppen und Benutzer erstellen, beginnen Sie immer vom Quellraster des 
 
 
 [role="quick-margin-list"]
-* Wenn Sie nicht mit Identity Federation, link:creating-groups-for-s3-tenant.html["Erstellen Sie neue lokale Gruppen"] und dann link:managing-local-users.html["Erstellen Sie lokale Benutzer"].
+* Wenn Sie keine Identitätsföderation verwenden,link:creating-groups-for-s3-tenant.html["Erstellen Sie neue lokale Gruppen"] und dannlink:manage-users.html["Erstellen Sie lokale Benutzer"] .
 
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"] Erstellen von S3 Zugriffsschlüsseln
@@ -78,9 +78,9 @@ NOTE: Alle Benutzer, die Sie beim Erstellen einer lokalen Gruppe im Quellraster 
 
 === Lokale Benutzer, die im Quellraster erstellt wurden, werden geklont
 
-Wenn Sie einen neuen lokalen Benutzer im Quellraster erstellen, klont StorageGRID diesen Benutzer automatisch in das Zielraster. Sowohl der ursprüngliche Benutzer als auch sein Klon haben den gleichen vollständigen Namen, Benutzernamen und die gleiche Einstellung für *Zugriff verweigern*. Beide Benutzer gehören ebenfalls zu den gleichen Gruppen. Anweisungen hierzu finden Sie unter link:managing-local-users.html["Managen Sie lokale Benutzer"].
+Wenn Sie einen neuen lokalen Benutzer im Quell-Grid erstellen, klont StorageGRID diesen Benutzer automatisch in das Ziel-Grid.  Sowohl der ursprüngliche Benutzer als auch sein Klon haben denselben vollständigen Namen, Benutzernamen und dieselbe Einstellung für *Zugriff verweigern*.  Beide Benutzer gehören außerdem denselben Gruppen an. Anweisungen hierzu finden Sie unterlink:manage-users.html["Benutzer managen"] .
 
-Aus Sicherheitsgründen werden lokale Benutzerpasswörter nicht im Zielraster geklont. Wenn ein lokaler Benutzer im Zielraster auf Tenant Manager zugreifen muss, muss der Root-Benutzer des Mandantenkontos ein Kennwort für diesen Benutzer im Zielraster hinzufügen. Anweisungen hierzu finden Sie unter link:managing-local-users.html["Managen Sie lokale Benutzer"].
+Aus Sicherheitsgründen werden lokale Benutzerkennwörter nicht in das Zielraster geklont.  Wenn ein lokaler Benutzer auf den Mandantenmanager im Zielraster zugreifen muss, muss der Root-Benutzer für das Mandantenkonto ein Kennwort für diesen Benutzer im Zielraster hinzufügen. Anweisungen hierzu finden Sie unterlink:manage-users.html["Benutzer managen"] .
 
 image::../media/grid-federation-local-user-clone.png[Bild, das zeigt, dass lokale Benutzer vom Quell- zum Zielraster geklont werden]
 

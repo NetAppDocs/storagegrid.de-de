@@ -44,13 +44,6 @@ Unterstützung für AWS Signature Version 4, mit folgenden Ausnahmen:
 * Wenn Sie den tatsächlichen Wert der Payload Checksumme in angeben `x-amz-content-sha256`, wird der Wert ohne Validierung akzeptiert, als ob der Wert `UNSIGNED-PAYLOAD` für den Header angegeben worden wäre. Wenn Sie einen Header-Wert angeben `x-amz-content-sha256`, der Streaming impliziert `aws-chunked` (z. B. STREAMING-AWS4-HMAC-SHA256-PAYLOAD), werden die Chunk-Signaturen nicht gegen die Chunk-Daten verifiziert.
 
 
-
-
- a| 
-X-amz-Sicherheits-Token
- a| 
-Nicht implementiert. Kehrt Zurück. `XNotImplemented`
-
 |===
 
 

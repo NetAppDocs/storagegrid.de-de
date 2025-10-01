@@ -1,0 +1,57 @@
+---
+permalink: maintain/convert-to-data-only-node.html 
+sidebar: sidebar 
+keywords: storagegrid, convert node, data-only node 
+summary: Um die Leistung zu steigern, können Sie langsamere Nicht-ADC-Speicherknoten in reine Datenspeicherknoten umwandeln. 
+---
+= Konvertieren eines Speicherknotens in einen Nur-Datenknoten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um die Leistung zu steigern, können Sie langsamere Nicht-ADC-Speicherknoten in reine Datenspeicherknoten umwandeln.
+
+Ein Storage-Node ausschließlich für Daten ist sinnvoll, wenn Ihre Storage-Nodes unterschiedliche Performance-Merkmale aufweisen. Um beispielsweise die Performance potenziell zu steigern, können Sie reine Daten-Storage-Nodes mit einer hohen Kapazität und gleichzeitig hochperformante Storage-Nodes mit Metadaten verwenden.
+
+Darüber hinaus können Sie mehr Metadatenkapazität erhalten, indem Sie Knoten mit wenig RAM aus Cassandra entfernen, wodurch sich das Metadatenkapazitätslimit pro Knoten erhöht. Weitere Informationen finden Sie unter link:../admin/managing-object-metadata-storage.html["Management von Objekt-Metadaten-Storage"] .
+
+Beim Konvertieren von Nur-Daten-Knoten muss das Raster mindestens drei kombinierte oder Nur-Metadaten-Speicherknoten pro Site enthalten.
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben die link:../admin/admin-group-permissions.html["Berechtigung für Wartung oder Root-Zugriff"].
+* Der Storage Node, den Sie konvertieren möchten, enthält den ADC-Dienst nicht, oder Sie habenlink:../maintain/move-adc-service.html["den ADC-Dienst verschoben"] zu einem anderen Knoten.
+* Der Speicherknoten ist kein reiner Metadatenknoten oder reiner Datenknoten.
+* Der Storage Node, den Sie konvertieren möchten, enthält den ADC-Dienst nicht, oder Sie habenlink:../maintain/move-adc-service.html["den ADC-Dienst verschoben"] zu einem anderen Knoten.
+* Es gibt genügend Metadatenspeicher auf anderen Knoten der Site (oder Sie habenlink:../expand/index.html["Ihr Raster erweitert"] ), um die Metadaten aufzunehmen, die vom Speicherknoten, den Sie konvertieren, migriert werden.
++
+[CAUTION]
+====
+** Wenn die Metadaten, die zu anderen Knoten auf derselben Site migriert werden, die Größe deslink:../admin/managing-object-metadata-storage.html["Reservierter Speicherplatz für Metadaten"] , wird das Netz instabil.
+** Nachdem Sie die Konvertierung gestartet haben, können Sie das Raster nicht mehr erweitern.
+
+
+====
+
+
+.Über diese Aufgabe
+Verwenden Sie dieses Verfahren, um einen oder mehrere kombinierte Speicherknoten, die den ADC-Dienst nicht enthalten, in reine Datenknoten umzuwandeln.
+
+Zusätzlich zur Konvertierung des Speicherknotens wird bei diesem Verfahren Cassandra vom Knoten außer Betrieb gesetzt.  Alle Metadaten werden auf kombinierte oder reine Metadaten-Speicherknoten migriert.  Je nach der Menge der zu migrierenden Metadaten kann dieser Vorgang pro Knoten mehrere Tage dauern.
+
+
+TIP: Im Allgemeinen können Sie bis zu 10 Knoten gleichzeitig konvertieren, wenn die Metadatennutzung pro Knoten weniger als 1 TB beträgt.  Wenn die Metadatennutzung pro Knoten mehr als 1 TB beträgt, konvertieren Sie stattdessen bis zu 5 Knoten pro Prozedur.
+
+.Schritte
+. Notieren Sie die Knoten-IDs der Nicht-ADC-Speicherknoten, die Sie konvertieren möchten.
+. Wählen Sie oben im Grid Manager das Hilfesymbol aus und wählen Sie *API-Dokumentation*.
+. Wählen Sie *Gehe zu privater API-Dokumentation*.
+. Wählen Sie die `POST /private/convert-to-data-only-node/start` Betrieb. Weitere Informationen finden Sie unter link:../admin/using-grid-management-api.html#issue-api-requests["API-Anforderungen ausgeben"] für weitere Informationen.
++
+Jeder Knoten wird während des Vorgangs neu gestartet.
+
+. Sie können `GET /private/convert-to-data-only-node` um den Vorgang zu überwachen.  Wenn Fehler auftreten, wählen Sie `POST /private/convert-to-data-only-node/retry` um den Vorgang zu wiederholen.
+. link:../maintain/downloading-recovery-package.html["Laden Sie ein Wiederherstellungspaket herunter"]nach Abschluss dieses Vorgangs.
+

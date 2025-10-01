@@ -19,7 +19,7 @@ Sie können eine Verkehrsklassifizierungsrichtlinie löschen, wenn Sie sie nicht
 
 
 .Schritte
-. Wählen Sie *CONFIGURATION* > *Network* > *traffic classification*.
+. Wählen Sie *Konfiguration* > *Netzwerk* > *Verkehrsklassifizierung*.
 +
 Die Seite für die Verkehrsklassifizierungsrichtlinien wird mit den vorhandenen Richtlinien in einer Tabelle angezeigt.
 

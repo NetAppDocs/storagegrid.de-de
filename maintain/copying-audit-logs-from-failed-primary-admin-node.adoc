@@ -22,7 +22,7 @@ Je nach Art des Fehlers können Sie unter Umständen keine Prüfprotokolle von e
 NOTE: Wenn die Überwachungsprotokolle jetzt nicht auf den fehlgeschlagenen Admin-Knoten zugreifen können, können Sie möglicherweise später darauf zugreifen, z. B. nach der Host-Wiederherstellung.
 
 .Schritte
-. Melden Sie sich nach Möglichkeit beim fehlgeschlagenen Admin-Knoten an. Melden Sie sich andernfalls beim primären Admin-Node oder einem anderen Admin-Node an, falls verfügbar.
+. Melden Sie sich nach Möglichkeit beim ausgefallenen primären Admin-Knoten an.  Andernfalls melden Sie sich bei einem beliebigen verfügbaren Admin-Knoten an.
 +
 .. Geben Sie den folgenden Befehl ein: `ssh admin@_grid_node_IP_`
 .. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
@@ -36,14 +36,28 @@ Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `
 . Beenden Sie den AMS-Dienst, um zu verhindern, dass er eine neue Protokolldatei erstellt:``service ams stop``
 . Navigieren Sie zum Verzeichnis für den Audit-Export:
 +
-`cd /var/local/log`
+`cd /var/local/audit/export`
 
-. Benennen Sie die Quelldatei in einen eindeutigen nummerierten Dateinamen um `audit.log`. Benennen Sie beispielsweise die Datei audit.log in um `2023-10-25.txt.1`.
++
+(oder `cd /var/local/log` auf früheren Systemen)
+
+. Benennen Sie die Quellprotokolldatei in einen eindeutigen nummerierten Dateinamen um.
++
+[NOTE]
+====
+** Wenn sich die Protokolldatei im `/var/local/audit/export` Verzeichnis, sein Name ist `audit.log` .
+** Wenn sich die Protokolldatei im `/var/local/log` Verzeichnis, sein Name ist `localaudit.log` .
+
+
+====
++
+Benennen Sie beispielsweise die `localaudit.log` Datei zu `2025-10-22.txt.1` .
+
 +
 [listing]
 ----
 ls -l
-mv audit.log 2023-10-25.txt.1
+mv localaudit.log 2025-10-22.txt.1
 ----
 . Starten Sie den AMS-Dienst neu: `service ams start`
 . Erstellen Sie das Verzeichnis, um alle Audit-Log-Dateien an einen temporären Speicherort auf einem separaten Grid-Knoten zu kopieren: `ssh admin@_grid_node_IP_ mkdir -p /var/local/tmp/saved-audit-logs`

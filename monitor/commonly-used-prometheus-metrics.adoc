@@ -39,7 +39,7 @@ image::../media/nodes_page_network_traffic_graph.png[Prometheus Diagramm]
 
 NOTE: Metriken, die _privat_ in ihren Namen enthalten, sind nur zur internen Verwendung vorgesehen und können ohne Ankündigung zwischen StorageGRID Versionen geändert werden.
 
-* Die Seite *SUPPORT* > *Tools* > *Diagnostics* und die Seite *SUPPORT* > *Tools* > *Metrics*: Diese Seiten, die in erster Linie für den technischen Support bestimmt sind, bieten verschiedene Tools und Diagramme, die die Werte von Prometheus Metrics verwenden.
+* Die Seite *Support* > *Tools* > *Diagnose* und die Seite *Support* > *Tools* > *Metriken*: Diese Seiten, die in erster Linie für den technischen Support vorgesehen sind, bieten mehrere Tools und Diagramme, die die Werte der Prometheus-Metriken verwenden.
 +
 
 NOTE: Einige Funktionen und Menüelemente auf der Seite Metriken sind absichtlich nicht funktionsfähig und können sich ändern.
@@ -65,8 +65,8 @@ storagegrid_administrativ_down:: Der Node ist aus einem erwarteten Grund nicht m
 storagegrid_Appliance_Compute_Controller_Hardware_Status:: Der Status der Computing-Controller-Hardware in einer Appliance.
 storagegrid_Appliance_failed_Disks:: Für den Speicher-Controller in einer Appliance die Anzahl der Laufwerke, die nicht optimal sind.
 storagegrid_Appliance_Storage_Controller_Hardware_Status:: Der Gesamtstatus der Hardware eines Storage Controllers in einer Appliance.
-storagegrid_Content_Buckets_und_Containern:: Die Gesamtzahl der S3-Buckets und Swift-Container, die von diesem Storage-Node bekannt sind
-storagegrid_Content_Objects:: Die Gesamtzahl der von diesem Storage-Node bekannten S3 und Swift Datenobjekte. Die Anzahl gilt nur für Datenobjekte, die von Client-Applikationen erstellt werden und über S3 mit dem System verbunden sind.
+storagegrid_Content_Buckets_und_Containern:: Die Gesamtzahl der diesem Speicherknoten bekannten S3-Buckets.
+storagegrid_Content_Objects:: Die Gesamtzahl der diesem Speicherknoten bekannten S3-Datenobjekte.  Die Anzahl ist nur für Datenobjekte gültig, die von Clientanwendungen erstellt wurden, die über S3 mit dem System kommunizieren.
 storagegrid_Content_Objects_Lost:: Gesamtzahl der vom StorageGRID System erkannten Objekte, die von diesem Service als fehlend erkannt werden. Es sollten Maßnahmen ergriffen werden, um die Ursache des Schadens zu ermitteln und ob eine Erholung möglich ist.
 +
 --
@@ -135,11 +135,6 @@ storagegrid_Storage_Utiffici“_Metadata_allowed_Bytes:: Der gesamte Speicherpla
 storagegrid_Storage_Utifficiendatiy_Metadata_Bytes:: Die Menge der Objekt-Metadaten auf dem Storage-Volume 0 in Bytes.
 storagegrid_Storage_Utifficienfficienals_total_space_Bytes:: Der gesamte Speicherplatz, der allen Objektspeichern zugewiesen ist.
 storagegrid_Storage_Utiable_space_Bytes:: Die verbleibende Menge an Objekt-Storage. Berechnet durch Hinzufügen der verfügbaren Menge an Speicherplatz für alle Objektspeichern auf dem Storage-Node.
-storagegrid_Swift_Data_Transfers_Bytes_aufgenommen:: Die Gesamtmenge der Daten, die Swift-Clients seit dem letzten Zurücksetzen des Attributs von diesem Storage-Node aufgenommen haben.
-storagegrid_Swift_Data_Transfers_Bytes_abgerufen:: Die Gesamtanzahl der Daten, die Swift-Clients von diesem Speicherknoten seit dem letzten Zurücksetzen des Attributs abgerufen haben.
-storagegrid_Swift_Operations_fehlgeschlagen:: Die Gesamtzahl der fehlgeschlagenen Swift-Vorgänge (HTTP-Statuscodes 4xx und 5xx), ausgenommen solche, die durch Swift-Autorisierungsfehler verursacht wurden.
-storagegrid_Swift_Operations_erfolgreich:: Die Gesamtzahl der erfolgreichen Swift-Vorgänge (HTTP-Statuscode 2xx).
-storagegrid_Swift_Operations_nicht autorisiert:: Die Gesamtzahl der fehlgeschlagenen Swift-Vorgänge, die auf einen Autorisierungsfehler zurückzuführen sind (HTTP-Statuscodes 401, 403, 405).
 storagegrid_Tenant_Usage_Data_Byte:: Die logische Größe aller Objekte für den Mandanten.
 storagegrid_Tenant_Usage_object_count:: Die Anzahl der Objekte für den Mandanten.
 storagegrid_Tenant_Usage_quota_bytes:: Die maximale Menge an logischem Speicherplatz, die für die Objekte des Mandanten verfügbar ist Wenn keine Quota-Metrik angegeben wird, steht eine unbegrenzte Menge an Speicherplatz zur Verfügung.
@@ -151,6 +146,7 @@ storagegrid_Tenant_Usage_quota_bytes:: Die maximale Menge an logischem Speicherp
 
 [[Alle Metriken abrufen]]um die vollständige Liste der Metriken zu erhalten, verwenden Sie die Grid Management API.
 
+.Schritte
 . Wählen Sie oben im Grid Manager das Hilfesymbol aus und wählen Sie *API-Dokumentation*.
 . Suchen Sie nach den *Metriken*-Vorgängen.
 . Führen Sie den `GET /grid/metric-names` Vorgang aus.

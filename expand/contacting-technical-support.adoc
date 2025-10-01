@@ -16,12 +16,12 @@ Wenn während der Rastererweiterung Fehler auftreten, die nicht behoben werden k
 Bevor Sie sich an den technischen Support wenden, sammeln Sie die erforderlichen Protokolldateien, um die Fehlerbehebung zu unterstützen.
 
 .Schritte
+. Der externe SSH-Zugriff ist standardmäßig blockiert.  Falls erforderlich,link:../admin/manage-external-ssh-access.html["Zugriff vorübergehend erlauben"] .
 . Stellen Sie eine Verbindung mit dem Erweiterungs-Node her, bei dem es zu Ausfällen kommt:
 +
 .. Geben Sie den folgenden Befehl ein:``ssh -p 8022 admin@_grid_node_IP_``
 +
-
-NOTE: Port 8022 ist der SSH-Port des Basis-OS, während Port 22 der SSH-Port der Container-Engine ist, auf der StorageGRID ausgeführt wird.
+Port 8022 ist der SSH-Port des Basis-OS, während Port 22 der SSH-Port der Container-Engine ist, auf der StorageGRID ausgeführt wird.
 
 .. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
 .. Geben Sie den folgenden Befehl ein, um zu root zu wechseln: `su -`
@@ -57,4 +57,5 @@ Linux
 
 
 |===
+. Wenn Sie externen SSH-Zugriff zugelassen haben,link:../admin/manage-external-ssh-access.html["Zugriff blockieren"] wenn Sie die Aufgabe erledigt haben.
 

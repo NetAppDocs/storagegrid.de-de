@@ -18,12 +18,12 @@ Führen Sie manuell zwei Skripte aus, um noch intaerte Storage-Volumes neu mount
 +
 Das Ausführen des `sn-remount-volumes` Skripts kann Ihnen dabei helfen, zusätzliche fehlerhafte Speichervolumes zu identifizieren.
 
-* Sie haben überprüft, dass keine Ausmusterung von Storage-Nodes ausgeführt wird oder Sie den Vorgang zur Deaktivierung eines Node angehalten haben. (Wählen Sie im Grid Manager *MAINTENANCE* > *Tasks* > *Decommission*.)
-* Sie haben überprüft, dass keine Erweiterung ausgeführt wird. (Wählen Sie im Grid Manager *MAINTENANCE* > *Tasks* > *Expansion*.)
+* Sie haben überprüft, dass keine Außerbetriebnahme eines Speicherknotens im Gange ist, oder Sie haben den Vorgang zur Außerbetriebnahme des Knotens angehalten.  (Wählen Sie im Grid Manager *Wartung* > *Aufgaben* > *Außerbetriebnahme*.)
+* Sie haben überprüft, dass keine Erweiterung im Gange ist.  (Wählen Sie im Grid Manager *Wartung* > *Aufgaben* > *Erweiterung*.)
 
 
 
-CAUTION: Wenden Sie sich an den technischen Support, wenn mehr als ein Speicherknoten offline ist oder wenn ein Speicherknoten in diesem Grid in den letzten 15 Tagen neu aufgebaut wurde. Führen Sie das Skript nicht aus `sn-recovery-postinstall.sh`. Die Neuerstellung von Cassandra auf zwei oder mehr Storage-Nodes innerhalb von 15 Tagen voneinander kann zu Datenverlust führen.
+CAUTION: Wenden Sie sich an den technischen Support, wenn mehr als ein Speicherknoten offline ist.  Führen Sie nicht die `sn-recovery-postinstall.sh` Skript.
 
 .Über diese Aufgabe
 Zum Abschluss dieses Vorgangs führen Sie die folgenden grundlegenden Aufgaben aus:

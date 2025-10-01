@@ -28,56 +28,80 @@ NOTE: Einige StorageGRID-Dienste wurden nicht aktualisiert, um die Chiffren in d
 == Wählen Sie eine Sicherheitsrichtlinie aus
 
 .Schritte
-. Wählen Sie *CONFIGURATION* > *Security* > *Security settings*.
+. Wählen Sie *Konfiguration* > *Sicherheit* > *Sicherheitseinstellungen*.
 +
 Auf der Registerkarte *TLS und SSH Policies* werden die verfügbaren Richtlinien angezeigt. Die derzeit aktive Richtlinie wird durch ein grünes Häkchen auf der Kachel „Richtlinie“ gekennzeichnet.
 
 +
 image::../media/securitysettings_tls_ssh_policies_current.png[TLS- und SSH-Richtlinien]
 
-. Lesen Sie die Kacheln, um mehr über die verfügbaren Richtlinien zu erfahren.
+. Sehen Sie sich die Registerkarten an, um mehr über die verfügbaren Richtlinien zu erfahren.
 +
-[cols="1a,2a"]
-|===
-| Richtlinie | Beschreibung 
+[role="tabbed-block"]
+====
+.Moderne Kompatibilität (Standard)
+--
+Verwenden Sie die Standardrichtlinie, wenn Sie eine starke Verschlüsselung benötigen und keine besonderen Anforderungen haben.  Diese Richtlinie ist mit den meisten TLS- und SSH-Clients kompatibel.
+
+--
+.Kompatibilität mit älteren Systemen
+--
+Verwenden Sie die Legacy-Kompatibilitätsrichtlinie, wenn Sie zusätzliche Kompatibilitätsoptionen für ältere Clients benötigen.  Die zusätzlichen Optionen in dieser Richtlinie machen sie möglicherweise weniger sicher als die moderne Kompatibilitätsrichtlinie.
+
+--
+.Gemeinsame Kriterien
+--
+Verwenden Sie die Common Criteria-Richtlinie, wenn Sie eine Common Criteria-Zertifizierung benötigen.
+
+--
+.FIPS-strikt
+--
+Verwenden Sie die strikte FIPS-Richtlinie, wenn Sie eine Common Criteria-Zertifizierung benötigen und das NetApp Cryptographic Security Module (NCSM) 3.0.8 oder das NetApp StorageGRID Kernel Crypto API 6.1.129-1-ntap1-amd64-Modul für externe Clientverbindungen zu Load Balancer-Endpunkten, Tenant Manager und Grid Manager verwenden müssen.  Die Verwendung dieser Richtlinie kann die Leistung beeinträchtigen.
+
+Das NCSM 3.0.8- und NetApp StorageGRID Kernel Crypto API 6.1.129-1-ntap1-amd64-Modul wird in den folgenden Vorgängen verwendet:
+
+** NCSM
++
+*** TLS-Verbindungen zwischen den folgenden Diensten: ADC, AMS, CMN, DDS, LDR, SSM, NMS, mgmt-api, nginx, nginx-gw und cache-svc
+*** TLS-Verbindungen zwischen Clients und dem nginx-gw-Dienst (Load Balancer-Endpunkte)
+*** TLS-Verbindungen zwischen Clients und dem LDR-Dienst
+*** Objektinhaltsverschlüsselung für SSE-S3, SSE-C und die Einstellung „Gespeicherte Objektverschlüsselung“
+*** SSH-Verbindungen
 
 
- a| 
-Moderne Kompatibilität (Standard)
- a| 
-Verwenden Sie die Standardrichtlinie, wenn Sie eine starke Verschlüsselung benötigen und wenn Sie keine besonderen Anforderungen haben. Diese Richtlinie ist mit den meisten TLS- und SSH-Clients kompatibel.
++
+Weitere Informationen finden Sie im NIST Cryptographic Algorithm Validation Program.link:https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4838["Zertifikat Nr. 4838"^] .
+
+** NetApp StorageGRID Kernel Crypto API-Modul
++
+Das NetApp StorageGRID Kernel Crypto API-Modul ist nur auf VM- und StorageGRID Appliance-Plattformen vorhanden.
+
++
+*** Entropie-Sammlung
+*** Knotenverschlüsselung
+
+
++
+Weitere Informationen finden Sie im NIST Cryptographic Algorithm Validation Program.link:https://csrc.nist.gov/projects/cryptographic-algorithm-validation-program/validation-search?searchMode=implementation&product=NetApp+StorageGRID+Kernel+Crypto+API&productType=-1&ipp=50["Zertifikate Nr. A6242 bis Nr. A6257"^] Undlink:https://csrc.nist.gov/projects/cryptographic-module-validation-program/entropy-validations/certificate/223["Entropie-Zertifikat Nr. E223"^] .
 
 
 
- a| 
-Kompatibilität mit älteren Systemen
- a| 
-Verwenden Sie diese Richtlinie, wenn Sie zusätzliche Kompatibilitätsoptionen für ältere Clients benötigen. Die zusätzlichen Optionen in dieser Richtlinie machen sie möglicherweise weniger sicher als die moderne Kompatibilitätsrichtlinie.
+*Hinweis*: Nachdem Sie diese Richtlinie ausgewählt haben,link:../maintain/rolling-reboot-procedure.html["Führen Sie einen Rolling Reboot durch"] für alle Knoten, um das NCSM zu aktivieren.  Verwenden Sie *Wartung* > *Rollierender Neustart*, um Neustarts zu initiieren und zu überwachen.
 
-
-
- a| 
-Gemeinsame Kriterien
- a| 
-Verwenden Sie diese Richtlinie, wenn Sie eine Common Criteria-Zertifizierung benötigen.
-
-
-
- a| 
-FIPS-strikt
- a| 
-Verwenden Sie diese Richtlinie, wenn Sie eine Common Criteria-Zertifizierung benötigen und das Cryptographic Security Module 3.0.8 von NetApp für externe Clientverbindungen zu Load Balancer-Endpunkten, Mandantenmanager und Grid Manager verwenden müssen. Die Verwendung dieser Richtlinie kann die Performance beeinträchtigen.
-
-*Hinweis*: Nachdem Sie diese Richtlinie ausgewählt haben, müssen alle Knoten link:../maintain/rolling-reboot-procedure.html["Neu gestartet in einer rollenden Art und Weise"]das NetApp Cryptographic Sicherheitsmodul aktivieren. Verwenden Sie *Maintenance* > *Rolling reboot*, um Neustarts zu initiieren und zu überwachen.
-
-
-
- a| 
-Individuell
- a| 
+--
+.Individuell
+--
 Erstellen Sie eine benutzerdefinierte Richtlinie, wenn Sie Ihre eigenen Chiffren anwenden müssen.
 
-|===
+Wenn Ihr StorageGRID FIPS 140-Kryptografieanforderungen hat, aktivieren Sie optional die FIPS-Modusfunktion, um das NCSM 3.0.8- und NetApp StorageGRID Kernel Crypto API 6.1.129-1-ntap1-amd64-Modul zu verwenden:
+
+.. Legen Sie die `fipsMode` Parameter auf `true` .
+.. Wenn Sie dazu aufgefordert werden,link:../maintain/rolling-reboot-procedure.html["Führen Sie einen Rolling Reboot durch"] für alle Knoten, um die Kryptografiemodule zu aktivieren.  Verwenden Sie *Wartung* > *Rollierender Neustart*, um Neustarts zu initiieren und zu überwachen.
+.. Wählen Sie *Support* > *Diagnose*, um die aktiven FIPS-Modulversionen anzuzeigen.
+
+
+--
+====
 . Um Details zu den Chiffren, Protokollen und Algorithmen der einzelnen Richtlinien anzuzeigen, wählen Sie *Details anzeigen*.
 . Um die aktuelle Richtlinie zu ändern, wählen Sie *Richtlinie verwenden*.
 +

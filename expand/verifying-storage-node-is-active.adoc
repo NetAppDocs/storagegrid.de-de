@@ -15,7 +15,7 @@ Nachdem ein Erweiterungsvorgang abgeschlossen ist, der neue Speicherknoten hinzu
 
 .Schritte
 . Melden Sie sich mit einem beim Grid-Manager anlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
-. Wählen Sie *NODES* > *_Expansion Storage Node_* > *Storage* aus.
+. Wählen Sie *Knoten* > *_Erweiterungsspeicherknoten_* > *Speicher*.
 . Bewegen Sie den Cursor über die Grafik *verwendeter Speicher - Objektdaten*, um den Wert für *Used* anzuzeigen, der die Menge des gesamten nutzbaren Speicherplatzes ist, der für Objektdaten verwendet wurde.
 . Vergewissern Sie sich, dass der Wert von *verwendet* erhöht wird, wenn Sie den Cursor nach rechts auf dem Diagramm bewegen.
 

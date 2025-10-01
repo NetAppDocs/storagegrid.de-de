@@ -14,7 +14,12 @@ summary: Nachdem Sie eine ILM-Richtlinie aktiviert haben, nehmen Sie repräsenta
 Nachdem Sie eine ILM-Richtlinie aktiviert haben, nehmen Sie repräsentative Testobjekte in das StorageGRID System auf und führen Sie dann eine Objekt-Metadaten-Suche durch, um zu bestätigen, dass Kopien wie vorgesehen erstellt und an den richtigen Stellen platziert werden.
 
 .Bevor Sie beginnen
-Sie haben einen Objektbezeichner, der einer der folgenden sein kann: * *UUID*: Der universell eindeutige Bezeichner des Objekts. * *CBID*: Die eindeutige Kennung des Objekts in StorageGRID. Sie können die CBID eines Objekts aus dem Prüfprotokoll abrufen. Geben Sie die CBID in Großbuchstaben ein. * *S3-Bucket und Objektschlüssel*: Wenn ein Objekt über die S3-Schnittstelle aufgenommen wird, verwendet die Client-Applikation eine Bucket- und Objektschlüsselkombination, um das Objekt zu speichern und zu identifizieren. Wenn der S3-Bucket versioniert ist und Sie eine bestimmte Version eines S3-Objekts mithilfe des Bucket und Objektschlüssels nachsehen möchten, steht Ihnen die *Version-ID* zur Verfügung.
+Sie verfügen über eine Objektkennung, die eine der folgenden sein kann:
+
+* *UUID*: Die universell eindeutige Kennung des Objekts.
+* *CBID*: Die eindeutige Kennung des Objekts innerhalb von StorageGRID.  Sie können die CBID eines Objekts aus dem Prüfprotokoll abrufen.  Geben Sie die CBID in Großbuchstaben ein.
+* *S3-Bucket und Objektschlüssel*: Wenn ein Objekt über die S3-Schnittstelle aufgenommen wird, verwendet die Client-Anwendung eine Kombination aus Bucket und Objektschlüssel, um das Objekt zu speichern und zu identifizieren.  Wenn der S3-Bucket versioniert ist und Sie mithilfe des Bucket- und Objektschlüssels eine bestimmte Version eines S3-Objekts nachschlagen möchten, verfügen Sie über die *Versions-ID*.
+
 
 .Schritte
 . Aufnahme des Objekts.

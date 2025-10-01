@@ -29,16 +29,7 @@ NOTE: Unterstützung für Archive Nodes wurde entfernt. Das Verschieben von Obje
 Das StorageGRID System bietet unter anderem folgende Vorteile:
 
 * Extrem skalierbar und leicht zu verwendende Daten-Repositorys mit geografisch verteilten Standorten für unstrukturierte Daten
-* Standard-Objekt-Storage-Protokolle:
-+
-** Amazon Web Services Simple Storage Service (S3)
-** OpenStack Swift
-+
-
-NOTE: Die Unterstützung für Swift-Client-Anwendungen wurde veraltet und wird in einer zukünftigen Version entfernt.
-
-
-
+* Das Standard-Objektspeicherprotokoll Simple Storage Service (S3) von Amazon Web Services.
 * Hybrid Cloud-fähig: Richtlinienbasiertes Information Lifecycle Management (ILM) speichert Objekte in Public Clouds, einschließlich Amazon Web Services (AWS) und Microsoft Azure. StorageGRID Plattform-Services ermöglichen die Content-Replizierung, Ereignisbenachrichtigung und Metadatensuche von Objekten, die in Public Clouds gespeichert sind.
 * Flexible Datensicherung für Langlebigkeit und Verfügbarkeit Die Daten lassen sich durch Replizierung und ein mehrstufiges Erasure Coding zur Fehlerkorrektur sichern. Überprüfung von Daten im Ruhezustand und auf der Übertragungsstrecke sorgt für Integrität für langfristige Aufbewahrung.
 * Dynamisches Lifecycle Management für Daten zum Management der Storage-Kosten Sie können ILM-Regeln erstellen, die den Daten-Lebenszyklus auf Objektebene managen und Datenlokalität, Datenaufbewahrungszeit, Performance, Kosten anpassen. und Aufbewahrungszeit.
@@ -49,7 +40,7 @@ NOTE: Die Unterstützung für Swift-Client-Anwendungen wurde veraltet und wird i
 +
 ** Virtual Machines in VMware ausgeführt.
 ** Container-Engines auf Linux Hosts
-** Speziell entwickelte StorageGRID Appliances
+** Von StorageGRID entwickelte Geräte.
 +
 *** Storage Appliances bieten Objekt-Storage.
 *** Services Appliances stellen Services für die Grid-Administration und den Lastausgleich bereit.

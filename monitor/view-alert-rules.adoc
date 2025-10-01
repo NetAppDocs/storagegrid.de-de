@@ -18,15 +18,14 @@ Sie können die Liste aller Standard- und benutzerdefinierten Warnungsregeln anz
 .Bevor Sie beginnen
 * Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
 * Sie haben die link:../admin/admin-group-permissions.html["Managen von Warnmeldungen oder Root-Zugriffsberechtigungen"].
-* Optional haben Sie sich das Video angesehen: https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2eea81c5-8323-417f-b0a0-b1ff008506c1["Video: Übersicht über Warnmeldungen"^]
+* Optional haben Sie das Video angesehen:
 +
-[link=https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2eea81c5-8323-417f-b0a0-b1ff008506c1]
-image::../media/video-screenshot-alert-overview-118.png[Video: Übersicht über Warnmeldungen]
-
+.Übersicht über Warnungen
+video::2eea81c5-8323-417f-b0a0-b1ff008506c1[panopto]
 
 
 .Schritte
-. Wählen Sie *ALERTS* > *Regeln*.
+. Wählen Sie *Benachrichtigungen* > *Regeln*.
 +
 Die Seite Alarmregeln wird angezeigt.
 

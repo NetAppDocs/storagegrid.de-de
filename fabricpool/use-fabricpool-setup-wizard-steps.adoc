@@ -365,7 +365,7 @@ Erstellen Sie einen neuen Mandanten und Bucket oder wählen Sie einen vorhandene
 .Neuer Mandant und Bucket
 --
 . Um einen neuen Mandanten und Bucket zu erstellen, geben Sie einen *Tenant Name* ein.  `FabricPool tenant`Beispiel: .
-. Definieren Sie den Root-Zugriff für das Mandantenkonto, je nachdem, ob Ihr StorageGRID-System link:../admin/using-identity-federation.html["Identitätsföderation"], link:../admin/configuring-sso.html["Single Sign On (SSO)"]oder beides verwendet.
+. Definieren Sie den Root-Zugriff für das Mandantenkonto, je nachdem, ob Ihr StorageGRID -Systemlink:../admin/using-identity-federation.html["Identitätsföderation"] ,link:../admin/how-sso-works.html["Single Sign On (SSO)"] oder beides.
 +
 [cols="1a,3a"]
 |===

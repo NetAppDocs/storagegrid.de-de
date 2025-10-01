@@ -117,11 +117,10 @@ Keine Aktion erforderlich.
 
 *Aufgelöste Warnungen*: Sie können einen Verlauf von Warnungen suchen und anzeigen, die behoben wurden.
 
-Optional haben Sie sich das Video angesehen: https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2eea81c5-8323-417f-b0a0-b1ff008506c1["Video: Übersicht über Warnmeldungen"^]
+Optional haben Sie das Video angesehen:
 
-[link=https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=2eea81c5-8323-417f-b0a0-b1ff008506c1]
-image::../media/video-screenshot-alert-overview-118.png[Video: Übersicht über Warnmeldungen]
-
+.Übersicht über Warnungen
+video::2eea81c5-8323-417f-b0a0-b1ff008506c1[panopto]
 In der folgenden Tabelle werden die im Grid Manager angezeigten Informationen zu aktuellen und behobenen Warnmeldungen beschrieben.
 
 [cols="1a,3a"]

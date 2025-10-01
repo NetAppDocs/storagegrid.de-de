@@ -2,7 +2,7 @@
 permalink: audit/audit-log-file-rotation.html 
 sidebar: sidebar 
 keywords: storagegrid, audit, log file, audit.log, audit.log file, rotation, save, autosave, auto save, auto-save 
-summary: Audit-Protokolldateien werden im Verzeichnis /var/local/log eines Admin-Knotens gespeichert. Die aktiven Audit-Log-Dateien werden als Audit.log bezeichnet. 
+summary: Audit-Protokolldateien werden im Verzeichnis /var/local/audit/export/ eines Admin-Knotens gespeichert.  Die aktiven Audit-Protokolldateien heißen audit.log. 
 ---
 = Drehung der Audit-Log-Dateien
 :allow-uri-read: 
@@ -11,14 +11,14 @@ summary: Audit-Protokolldateien werden im Verzeichnis /var/local/log eines Admin
 
 
 [role="lead"]
-Audit-Protokolldateien werden im Verzeichnis eines Admin-Knotens gespeichert `/var/local/log`. Die aktiven Audit-Log-Dateien werden benannt `audit.log`.
+Wenn StorageGRID für *Admin-Knoten/lokale Knoten* oder *Admin-Knoten und externen Syslog-Server* konfiguriert ist, werden die Audit-Protokolldateien auf dem Admin-Knoten gespeichert. `/var/local/audit/export/` Verzeichnis.  Die aktiven Audit-Protokolldateien heißen `audit.log` .
 
 
-NOTE: Optional können Sie das Ziel der Audit-Protokolle ändern und Audit-Informationen an einen externen Syslog-Server senden. Lokale Protokolle von Audit-Datensätzen werden weiterhin generiert und gespeichert, wenn ein externer Syslog-Server konfiguriert ist. Siehe link:../monitor/configure-audit-messages.html["Konfigurieren von Überwachungsmeldungen und Protokollzielen"].
+NOTE: Optional können Sie das Ziel der Überwachungsprotokolle ändern und Überwachungsinformationen an einen externen Syslog-Server senden.  Wenn ein externer Syslog-Server konfiguriert ist, werden weiterhin lokale Protokolle mit Prüfdatensätzen erstellt und gespeichert. Weitere Informationen finden Sie unter link:../monitor/configure-audit-messages.html["Konfigurieren von Audit-Meldungen und externem Syslog-Server"] .
 
 Einmal täglich wird die aktive `audit.log` Datei gespeichert und eine neue `audit.log` Datei gestartet. Der Name der gespeicherten Datei gibt an, wann sie gespeichert wurde, im Format `_yyyy-mm-dd.txt_`. Wenn an einem Tag mehr als ein Audit-Protokoll erstellt wird, verwenden die Dateinamen das Datum, an dem die Datei mit einer Zahl angehängt wurde, im Format `_yyyy-mm-dd.txt.n_`. Beispiel: `2018-04-15.txt` Und `2018-04-15.txt.1` sind die ersten und zweiten Protokolldateien, die am 15. April 2018 erstellt und gespeichert wurden.
 
-Nach einem Tag wird die gespeicherte Datei komprimiert und umbenannt, in dem Format `_yyyy-mm-dd.txt.gz_`, das das ursprüngliche Datum behält. Im Lauf der Zeit führt dies zu einem Verbrauch von für Prüfprotokolle auf dem Admin-Node zugewiesenem Storage. Ein Skript überwacht den Speicherplatzverbrauch des Überwachungsprotokolls und löscht Protokolldateien, falls erforderlich, um Speicherplatz im Verzeichnis freizugeben `/var/local/log`. Audit-Protokolle werden nach dem Erstellungsdatum der Prüfprotokolle gelöscht, wobei der älteste zuerst gelöscht wird. Sie können die Aktionen des Skripts in der folgenden Datei überwachen: `/var/local/log/manage-audit.log`.
+Nach einem Tag wird die gespeicherte Datei komprimiert und umbenannt, im Format `_yyyy-mm-dd.txt.gz_` , wodurch das ursprüngliche Datum erhalten bleibt.  Mit der Zeit wird der für Prüfprotokolle zugewiesene Admin-Knotenspeicher verbraucht.  Ein Skript überwacht den Speicherplatzverbrauch des Audit-Protokolls und löscht Protokolldateien nach Bedarf, um Speicherplatz im `/var/local/audit/export/` Verzeichnis.  Prüfprotokolle werden basierend auf dem Datum gelöscht, an dem sie erstellt wurden.  Die ältesten Protokolle werden zuerst gelöscht.  Sie können die Aktionen des Skripts in der folgenden Datei überwachen: `/var/local/log/manage-audit.log` .
 
 Dieses Beispiel zeigt die aktive `audit.log` Datei, die Datei des Vortages (`2018-04-15.txt`) und die komprimierte Datei für den Vortag (`2018-04-14.txt.gz`).
 

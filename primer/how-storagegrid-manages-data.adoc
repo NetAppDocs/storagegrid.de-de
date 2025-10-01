@@ -33,7 +33,7 @@ Objektmetadaten sind alle Informationen, die ein Objekt beschreiben. StorageGRID
 
 Objektmetadaten enthalten Informationen wie die folgenden:
 
-* Systemmetadaten, einschließlich einer eindeutigen ID für jedes Objekt (UUID), dem Objektnamen, dem Namen des S3-Buckets oder Swift-Containers, dem Mandanten-Kontonamen oder -ID, der logischen Größe des Objekts, dem Datum und der Uhrzeit der ersten Erstellung des Objekts Und Datum und Uhrzeit der letzten Änderung des Objekts.
+* Systemmetadaten, einschließlich einer eindeutigen ID für jedes Objekt (UUID), des Objektnamens, des Namens des S3-Buckets, des Namens oder der ID des Mandantenkontos, der logischen Größe des Objekts, des Datums und der Uhrzeit, zu der das Objekt zum ersten Mal erstellt wurde sowie des Datums und der Uhrzeit, zu der das Objekt zuletzt geändert wurde.
 * Der aktuelle Speicherort der einzelnen Objektkopien oder Fragmente, deren Löschen codiert wurde
 * Alle dem Objekt zugeordneten Benutzer-Metadaten.
 

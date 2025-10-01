@@ -45,7 +45,7 @@ image::../media/dashboard_storage_over_time.png[Diagramm Storage im Zeitverlauf]
 
 . Auf der Seite Nodes finden Sie weitere Details dazu, wie viel Storage genutzt wurde und wie viel Storage für Objektdaten und Objektmetadaten im Grid verfügbar bleibt.
 +
-.. Wählen Sie *KNOTEN*.
+.. Wählen Sie *Knoten* aus.
 .. Wählen Sie *_Grid_* > *Storage* aus.
 +
 image::../media/nodes_deployment_storage_tab.png[Registerkarte Nodes Deployment Storage]
@@ -82,7 +82,7 @@ Der nutzbare Speicherplatz ist der Speicherplatz, der zum Speichern von Objekten
 image::../media/calculating_watermarks.gif[Konzeptzeichnung für den insgesamt nutzbaren Speicherplatz]
 
 .Schritte
-. Wählen Sie *NODES* > *_Storage Node_* > *Storage* aus.
+. Wählen Sie *Knoten* > *_Speicherknoten_* > *Speicher*.
 +
 Die Diagramme und Tabellen für den Node werden angezeigt.
 
@@ -140,7 +140,7 @@ In einigen Fällen wird die Kapazität der Objektmetadaten des Grid möglicherwe
 Zu den Faktoren, die die Metadatennutzung steigern können, gehören die Größe und Menge der Metadaten und -Tags der Benutzer, die Gesamtzahl der Teile in einem mehrteiligen Upload und die Häufigkeit von Änderungen an den ILM-Speicherorten.
 
 .Schritte
-. Wählen Sie *NODES* > *_Storage Node_* > *Storage* aus.
+. Wählen Sie *Knoten* > *_Speicherknoten_* > *Speicher*.
 . Bewegen Sie den Mauszeiger über das Diagramm Speicher verwendet – Objekt-Metadaten, um die Werte für eine bestimmte Zeit anzuzeigen.
 +
 image::../media/storage_used_object_metadata.png[Verwendeter Storage: Objekt-Metadaten]

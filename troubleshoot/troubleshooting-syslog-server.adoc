@@ -16,7 +16,7 @@ In der folgenden Tabelle werden die Fehlermeldungen beschrieben, die möglicherw
 Weitere Informationen zum Senden von Audit-Informationen an einen externen Syslog-Server finden Sie unter:
 
 * link:../monitor/considerations-for-external-syslog-server.html["Überlegungen zur Verwendung eines externen Syslog-Servers"]
-* link:../monitor/configure-audit-messages.html["Konfigurieren von Audit-Meldungen und externem Syslog-Server"]
+* link:../monitor/configure-log-management.html["Konfigurieren Sie die Protokollverwaltung und den externen Syslog-Server"]
 
 
 [cols="1a,3a"]

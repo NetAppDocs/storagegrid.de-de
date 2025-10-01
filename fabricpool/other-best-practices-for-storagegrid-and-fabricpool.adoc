@@ -19,7 +19,7 @@ Wenn Sie ein StorageGRID-System für die Verwendung mit FabricPool konfigurieren
 
 FabricPool-Workloads verfügen oft über eine hohe Rate an Lesevorgängen, die ein hohes Volumen an Audit-Nachrichten erzeugen können.
 
-* Wenn Sie keine Aufzeichnung von Client-Leseoperationen für FabricPool oder eine andere S3-Anwendung benötigen, gehen Sie optional zu *CONFIGURATION* > *Monitoring* > *Audit und Syslog-Server*. Ändern Sie die Einstellung *Client reads* auf *Error*, um die Anzahl der im Auditprotokoll aufgezeichneten Überwachungsmeldungen zu verringern. Weitere Informationen finden Sie unter link:../monitor/configure-audit-messages.html["Konfigurieren von Überwachungsmeldungen und Protokollzielen"] .
+* Wenn Sie keine Aufzeichnung der Client-Lesevorgänge für FabricPool oder eine andere S3-Anwendung benötigen, gehen Sie optional zu *Konfiguration* > *Überwachung* > *Audit- und Syslog-Server*.  Ändern Sie die Einstellung *Client Reads* in *Error*, um die Anzahl der im Audit-Protokoll aufgezeichneten Audit-Meldungen zu verringern. Sehenlink:../monitor/configure-log-management.html["Konfigurieren Sie die Protokollverwaltung und den externen Syslog-Server"] für Details.
 * Wenn Sie über ein großes Grid verfügen, mehrere Arten von S3-Applikationen verwenden oder alle Audit-Daten behalten möchten, konfigurieren Sie einen externen Syslog-Server und speichern Sie Audit-Informationen Remote. Durch die Verwendung eines externen Servers werden die Auswirkungen der Protokollierung von Audit-Nachrichten auf die Performance minimiert, ohne dass die Vollständigkeit der Audit-Daten reduziert wird. Weitere Informationen finden Sie unter link:../monitor/considerations-for-external-syslog-server.html["Überlegungen für externen Syslog-Server"] .
 
 
@@ -34,6 +34,12 @@ Bei der Konfiguration von StorageGRID können Sie optional den aktivierenlink:..
 == Objektkomprimierung
 
 Aktivieren Sie beim Konfigurieren von StorageGRID nicht link:../admin/configuring-stored-object-compression.html["Globale Option zum Komprimieren gespeicherter Objekte"]. Die Daten, die von FabricPool zu StorageGRID verschoben werden, werden bereits komprimiert. Durch Verwendung der Option StorageGRID wird die Größe eines Objekts nicht weiter reduziert.
+
+
+
+== S3-Objektsperre
+
+Wenn die globale S3-Objektsperre für Ihr StorageGRID System aktiviert ist, aktivieren Sie nichtlink:../s3/use-s3-api-for-s3-object-lock.html["S3-Objektsperre"] wenn Sie FabricPool Buckets erstellen.  S3 Object Lock wird für FabricPool Buckets nicht unterstützt.
 
 
 

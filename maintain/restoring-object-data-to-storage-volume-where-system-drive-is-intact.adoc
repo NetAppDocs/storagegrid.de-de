@@ -19,8 +19,8 @@ Nach der Wiederherstellung eines Speicher-Volumes auf einem Speicher-Node, auf d
 
 Stellen Sie nach Möglichkeit Objektdaten mithilfe der Seite *Volume-Wiederherstellung* im Grid Manager wieder her.
 
-* Wenn die Volumes unter *MAINTENANCE* > *Volume-Wiederherstellung* > *zu wiederherstellende Knoten* aufgeführt sind, stellen Sie Objektdaten mithilfe des link:../maintain/restoring-volume.html["Seite zur Volume-Wiederherstellung im Grid Manager"]wieder her.
-* Wenn die Volumes nicht unter *MAINTENANCE* > *Volume-Wiederherstellung* > *zu wiederherstellende Knoten* aufgeführt sind, befolgen Sie die nachstehenden Schritte, um das Skript zur Wiederherstellung von Objektdaten zu verwenden `repair-data`.
+* Wenn die Volumes unter *Wartung* > *Volume-Wiederherstellung* > *Wiederherzustellende Knoten* aufgelistet sind, stellen Sie die Objektdaten mithilfe derlink:../maintain/restoring-volume.html["Seite zur Volume-Wiederherstellung im Grid Manager"] .
+* Wenn die Volumes nicht unter *Wartung* > *Volume-Wiederherstellung* > *Wiederherzustellende Knoten* aufgeführt sind, befolgen Sie die nachstehenden Schritte zur Verwendung des `repair-data` Skript zum Wiederherstellen von Objektdaten.
 +
 Wenn der wiederhergestellte Speicher-Node weniger Volumes enthält als der Knoten, den er ersetzt, müssen Sie das Skript verwenden `repair-data`.
 
@@ -34,7 +34,7 @@ NOTE: Das Repair-Data-Skript ist veraltet und wird in einer zukünftigen Version
 == Verwenden Sie das `repair-data` Skript, um Objektdaten wiederherzustellen
 
 .Bevor Sie beginnen
-* Sie haben bestätigt, dass der wiederhergestellte Storage Node auf der Registerkarte *NODES* > *Übersicht* im Grid Manager den Verbindungsstatus *connected* hatimage:../media/icon_alert_green_checkmark.png["Symbol Warnung grünes Häkchen"].
+* Sie haben bestätigt, dass der wiederhergestellte Speicherknoten den Verbindungsstatus *Verbunden* hat.image:../media/icon_alert_green_checkmark.png["Symbol Warnung grünes Häkchen"] auf der Registerkarte *Knoten* > *Übersicht* im Grid Manager.
 
 
 .Über diese Aufgabe
@@ -99,7 +99,7 @@ NOTE: Der EC-Reparaturauftrag reserviert vorübergehend eine große Menge an Lag
 
 == Suchen Sie nach Hostnamen für Speicherknoten
 
-. Melden Sie sich beim primären Admin-Node an:
+. Melden Sie sich bei einem beliebigen Admin-Knoten an:
 +
 .. Geben Sie den folgenden Befehl ein: `ssh admin@_primary_Admin_Node_IP_`
 .. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
@@ -135,7 +135,7 @@ Mit diesem Befehl werden die replizierten Daten auf einem Storage-Node mit dem N
 `repair-data start-replicated-node-repair --nodes SG-DC-SN3`
 
 
-NOTE: Bei der Wiederherstellung von Objektdaten wird die Warnmeldung *Objektverlust* ausgelöst, wenn das StorageGRID-System keine replizierten Objektdaten finden kann. Auf Storage-Nodes im gesamten System können Warnmeldungen ausgelöst werden. Sie sollten die Ursache des Schadens bestimmen und feststellen, ob eine Wiederherstellung möglich ist. Siehe link:../troubleshoot/investigating-lost-objects.html["Untersuchen Sie verlorene Objekte"].
+NOTE: Beim Wiederherstellen von Objektdaten wird die Warnung „Objekte verloren“ ausgelöst, wenn das StorageGRID System replizierte Objektdaten nicht finden kann.  Auf Speicherknoten im gesamten System können Warnungen ausgelöst werden.  Sie sollten die Ursache des Verlusts ermitteln und feststellen, ob eine Wiederherstellung möglich ist. Sehen link:../troubleshoot/investigating-potentially-lost-objects.html["Untersuchen Sie möglicherweise verlorene Objekte"] .
 
 --
 .EC-Daten (Erasure Coded)
@@ -227,28 +227,28 @@ Sie können auch den Status der in Verarbeitung beendeten Volume-Wiederherstellu
 
 * So stellen Sie fest, ob Reparaturen abgeschlossen sind:
 +
-.. Wählen Sie *NODES* > *_Storage Node wird repariert_* > *ILM*.
+.. Wählen Sie *Knoten* > *_Speicherknoten wird repariert_* > *ILM*.
 .. Prüfen Sie die Attribute im Abschnitt Bewertung. Wenn die Reparaturen abgeschlossen sind, weist das Attribut *wartet - Alle* 0 Objekte an.
 
 
 * So überwachen Sie die Reparatur genauer:
 +
-.. Wählen Sie *SUPPORT* > *Tools* > *Grid-Topologie* aus.
-.. Wählen Sie *_Grid_* > *_Storage Node wird repariert_* > *LDR* > *Data Store*.
-.. Verwenden Sie eine Kombination der folgenden Attribute, um festzustellen, ob replizierte Reparaturen abgeschlossen sind.
+.. Wählen Sie *Knoten* aus.
+.. Wählen Sie *_Grid Name_* > *ILM* aus.
+.. Positionieren Sie den Cursor über dem ILM-Warteschlangendiagramm, um den Wert des Attributs *Scanrate (Objekte/Sek.)* anzuzeigen. Dies ist die Rate, mit der Objekte im Raster gescannt und für ILM in die Warteschlange gestellt werden.
+.. Sehen Sie sich im Abschnitt „ILM-Warteschlange“ die folgenden Attribute an:
 +
-
-NOTE: Cassandra-Inkonsistenzen sind möglicherweise vorhanden, und fehlgeschlagene Reparaturen werden nicht nachverfolgt.
-
+*** *Scan-Zeitraum - geschätzt*: Die geschätzte Zeit, um einen vollständigen ILM-Scan aller Objekte durchzuführen.
 +
-*** *Reparted (XRPA)*: Verwenden Sie dieses Attribut, um den Fortschritt der replizierten Reparaturen zu verfolgen. Dieses Attribut erhöht sich jedes Mal, wenn ein Storage-Node versucht, ein risikoreicheres Objekt zu reparieren. Wenn dieses Attribut für einen Zeitraum nicht länger als die aktuelle Scan-Periode (vorgesehen durch das Attribut *Scan Period -- Estimated*) steigt, bedeutet dies, dass ILM-Scans keine hoch riskant Objekte gefunden haben, die auf allen Knoten repariert werden müssen.
+Ein vollständiger Scan garantiert nicht, dass ILM auf alle Objekte angewendet wurde.
+
+*** *Reparaturversuche*: Die Gesamtzahl der versuchten Objektreparaturvorgänge für replizierte Daten, die als hohes Risiko gelten.  Objekte mit hohem Risiko sind alle Objekte, von denen eine Kopie übrig bleibt, unabhängig davon, ob dies durch die ILM-Richtlinie festgelegt ist oder aufgrund verlorener Kopien.  Dieser Zähler erhöht sich jedes Mal, wenn ein Speicherknoten versucht, ein Hochrisikoobjekt zu reparieren.  Bei einer Netzüberlastung werden ILM-Reparaturen mit hohem Risiko priorisiert.
 +
-
-NOTE: Objekte mit hohem Risiko sind Objekte, die Gefahr laufen, völlig verloren zu sein. Dies umfasst keine Objekte, die ihre ILM-Konfiguration nicht erfüllen.
-
-*** *Scan Period -- Estimated (XSCM)*: Verwenden Sie dieses Attribut, um zu schätzen, wann eine Richtlinienänderung auf zuvor aufgenommene Objekte angewendet wird. Wenn sich das Attribut *Repears versuchte* über einen Zeitraum nicht länger als der aktuelle Scanzeitraum erhöht, ist es wahrscheinlich, dass replizierte Reparaturen durchgeführt werden. Beachten Sie, dass sich der Scanzeitraum ändern kann. Das Attribut *Scan Period -- Estimated (XSCM)* gilt für das gesamte Raster und ist die maximale Anzahl aller Knoten Scan Perioden. Sie können den Attributverlauf des Attributs *Scanperiode -- Estimated* für das Raster abfragen, um einen geeigneten Zeitrahmen zu ermitteln.
+Die gleiche Objektreparatur kann erneut inkrementiert werden, wenn die Replikation nach der Reparatur fehlgeschlagen ist.  + Diese Attribute können nützlich sein, wenn Sie den Fortschritt der Wiederherstellung des Storage Node-Volumes überwachen.  Wenn die Anzahl der Reparaturversuche nicht mehr zunimmt und ein vollständiger Scan abgeschlossen wurde, ist die Reparatur wahrscheinlich abgeschlossen.
 
 
+
+.. Alternativ senden Sie eine Prometheus-Abfrage für `storagegrid_ilm_scan_period_estimated_minutes` Und `storagegrid_ilm_repairs_attempted` .
 
 
 
@@ -260,7 +260,7 @@ So überwachen Sie die Reparatur von Daten mit Verfahren zur Einhaltung von Date
 
 . Status von Datenreparaturen mit Löschungscode ermitteln:
 +
-** Wählen Sie *SUPPORT* > *Tools* > *Metrics*, um die geschätzte Zeit bis zum Abschluss und den Fertigstellungsgrad für den aktuellen Job anzuzeigen. Wählen Sie dann im Abschnitt Grafana die Option *EC Übersicht* aus. Sehen Sie sich die Dashboards *Grid EC Job Estimated Time to Completion* und *Grid EC Job prozentual Completed* an.
+** Wählen Sie *Support* > *Tools* > *Metriken*, um die geschätzte Zeit bis zur Fertigstellung und den Fertigstellungsgrad für den aktuellen Auftrag anzuzeigen.  Wählen Sie dann im Abschnitt „Grafana“ die Option „EC-Übersicht“ aus.  Sehen Sie sich die Dashboards *Geschätzte Zeit bis zur Fertigstellung des Grid EC-Jobs* und *Prozentsatz der Fertigstellung des Grid EC-Jobs* an.
 ** Mit diesem Befehl können Sie den Status einer bestimmten Operation anzeigen `repair-data`:
 +
 `repair-data show-ec-repair-status --repair-id repair ID`

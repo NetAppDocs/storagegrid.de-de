@@ -2,6 +2,9 @@
 :allow-uri-read: 
 
 
+
+NOTE: Für die Installation der Appliance sind diese Dateien nur erforderlich, wenn Sie Netzwerkverkehr vermeiden müssen.  Die Appliance kann die erforderlichen Dateien vom Admin-Knoten herunterladen, auf dem Sie das Wiederherstellungsverfahren durchführen.
+
 [cols="1a,1a"]
 |===
 | Pfad und Dateiname | Beschreibung 
@@ -17,5 +20,3 @@ MD5-Prüfsumme für die Datei `/debs/storagegridwebscale-
 images-version-SHA.deb`.
 
 |===
-
-NOTE: Für die Installation der Appliance sind diese Dateien nur erforderlich, wenn Sie den Netzwerkverkehr vermeiden müssen. Die Appliance kann die erforderlichen Dateien vom primären Admin-Knoten herunterladen.

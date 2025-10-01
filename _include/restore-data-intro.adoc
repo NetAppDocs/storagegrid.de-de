@@ -8,8 +8,8 @@
 
 Stellen Sie nach Möglichkeit Objektdaten mithilfe der Seite *Volume-Wiederherstellung* im Grid Manager wieder her.
 
-* Wenn die Volumes unter *MAINTENANCE* > *Volume-Wiederherstellung* > *zu wiederherstellende Knoten* aufgeführt sind, stellen Sie Objektdaten mithilfe des link:../maintain/restoring-volume.html["Seite zur Volume-Wiederherstellung im Grid Manager"]wieder her.
-* Wenn die Volumes nicht unter *MAINTENANCE* > *Volume-Wiederherstellung* > *zu wiederherstellende Knoten* aufgeführt sind, befolgen Sie die nachstehenden Schritte, um das Skript zur Wiederherstellung von Objektdaten zu verwenden `repair-data`.
+* Wenn die Volumes unter *Wartung* > *Volume-Wiederherstellung* > *Wiederherzustellende Knoten* aufgelistet sind, stellen Sie die Objektdaten mithilfe derlink:../maintain/restoring-volume.html["Seite zur Volume-Wiederherstellung im Grid Manager"] .
+* Wenn die Volumes nicht unter *Wartung* > *Volume-Wiederherstellung* > *Wiederherzustellende Knoten* aufgeführt sind, befolgen Sie die nachstehenden Schritte zur Verwendung des `repair-data` Skript zum Wiederherstellen von Objektdaten.
 +
 Wenn der wiederhergestellte Speicher-Node weniger Volumes enthält als der Knoten, den er ersetzt, müssen Sie das Skript verwenden `repair-data`.
 
@@ -23,7 +23,7 @@ NOTE: Das Repair-Data-Skript ist veraltet und wird in einer zukünftigen Version
 == Verwenden Sie das `repair-data` Skript, um Objektdaten wiederherzustellen
 
 .Bevor Sie beginnen
-* Sie haben bestätigt, dass der wiederhergestellte Storage Node auf der Registerkarte *NODES* > *Übersicht* im Grid Manager den Verbindungsstatus *connected* hatimage:../media/icon_alert_green_checkmark.png["Symbol Warnung grünes Häkchen"].
+* Sie haben bestätigt, dass der wiederhergestellte Speicherknoten den Verbindungsstatus *Verbunden* hat.image:../media/icon_alert_green_checkmark.png["Symbol Warnung grünes Häkchen"] auf der Registerkarte *Knoten* > *Übersicht* im Grid Manager.
 
 
 .Über diese Aufgabe

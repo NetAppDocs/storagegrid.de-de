@@ -13,6 +13,9 @@ summary: Überprüfen Sie bei der Nutzung des Grid-Verbunds die Ähnlichkeiten u
 [role="lead"]
 Wenn Sie mit Grid Federation beginnen, überprüfen Sie die Ähnlichkeiten und Unterschiede zwischen link:grid-federation-what-is-cross-grid-replication.html["Grid-übergreifende Replizierung"] und link:../tenant/understanding-cloudmirror-replication-service.html["StorageGRID CloudMirror Replikationsservice"].
 
+
+NOTE: Sie können CloudMirror nicht auf einem Bucket verwenden, der durch Cross-Grid-Replikation repliziert wurde, und umgekehrt.
+
 [cols="1a,3a,3a"]
 |===
 |  | Grid-übergreifende Replizierung | CloudMirror Replikationsservice 
@@ -25,7 +28,7 @@ Ein StorageGRID System fungiert als Disaster Recovery-System. Objekte in einem B
  a| 
 Ermöglicht einem Mandanten, automatisch Objekte aus einem Bucket in StorageGRID (Quelle) in einen externen S3-Bucket (Ziel) zu replizieren
 
-Bei der CloudMirror-Replizierung wird eine unabhängige Kopie eines Objekts in einer unabhängigen S3-Infrastruktur erstellt. Diese unabhängige Kopie wird nicht als Backup verwendet, sondern häufig weiter in der Cloud verarbeitet.
+Die CloudMirror-Replikation erstellt eine unabhängige Kopie eines Objekts in einer unabhängigen S3-Infrastruktur.  Diese unabhängige Kopie dient nicht als Backup, sondern wird häufig in der Cloud weiterverarbeitet.
 
 
 

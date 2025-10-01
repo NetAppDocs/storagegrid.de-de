@@ -23,7 +23,7 @@ OVWR
  a| 
 Objekt-Überschreiben: Protokolliert eine Transaktion, um ein Objekt mit einem anderen Objekt zu überschreiben.
  a| 
-S3 und Swift Clients
+S3-Client
  a| 
 link:ovwr-object-overwrite.html["OVWR: Objektüberschreibung"]
 
@@ -74,27 +74,5 @@ Aktualisierte S3 Metadaten: Protokolliert eine erfolgreiche Transaktion zur Aktu
 S3-Client
  a| 
 link:supd-s3-metadata-updated.html["SUPD: S3-Metadaten wurden aktualisiert"]
-
-
-
- a| 
-WDEL
- a| 
-Swift DELETE: Protokolliert eine erfolgreiche Transaktion zum Löschen eines Objekts oder Containers.
- a| 
-Swift Client
- a| 
-link:wdel-swift-delete.html["WDEL: Swift LÖSCHEN"]
-
-
-
- a| 
-WPUT
- a| 
-Swift PUT: Protokolliert eine erfolgreiche Transaktion, um ein neues Objekt oder einen neuen Container zu erstellen.
- a| 
-Swift Client
- a| 
-link:wput-swift-put.html["WPUT: Schnell AUSGEDRÜCKT"]
 
 |===

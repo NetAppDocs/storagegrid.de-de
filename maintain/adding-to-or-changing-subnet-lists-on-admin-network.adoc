@@ -40,6 +40,7 @@ Verwenden Sie beispielsweise nicht die folgenden Subnetzbereiche für das Grid-N
 
 ====
 .Schritte
+. Der externe SSH-Zugriff ist standardmäßig blockiert.  Falls erforderlich,link:../admin/manage-external-ssh-access.html["Zugriff vorübergehend erlauben"] .
 . Melden Sie sich beim primären Admin-Node an:
 +
 .. Geben Sie den folgenden Befehl ein: `ssh admin@_primary_Admin_Node_IP_`
@@ -102,7 +103,7 @@ image::../media/change_ip_tool_aesl_sample_input.gif[Beispiel für das ip-Tool �
 . Wenn Sie bereit sind, geben Sie *q* ein, um zum Hauptmenü-Bildschirm zurückzukehren. Ihre Änderungen werden so lange gespeichert, bis sie gelöscht oder angewendet wurden.
 +
 
-NOTE: Wenn Sie in Schritt 2 einen der "alle" Knotenauswahlmodi ausgewählt haben, drücken Sie *Enter* (ohne *q*), um zum nächsten Knoten in der Liste zu gelangen.
+NOTE: Wenn Sie in Schritt 3 einen der Knotenauswahlmodi „Alle“ ausgewählt haben, drücken Sie *Eingabe* (ohne *q*), um zum nächsten Knoten in der Liste zu gelangen.
 
 . Folgenden Optionen wählbar:
 +
@@ -151,10 +152,11 @@ Updating grid network configuration on Name
 ----
 
 
-. Laden Sie ein neues Wiederherstellungspaket aus dem Grid Manager herunter.
+. Laden Sie ein neues Wiederherstellungspaket vom Grid Manager herunter.
 +
-.. Wählen Sie *WARTUNG* > *System* > *Wiederherstellungspaket*.
+.. Wählen Sie *Wartung* > *System* > *Wiederherstellungspaket*.
 .. Geben Sie die Provisionierungs-Passphrase ein.
 
 
+. Wenn Sie externen SSH-Zugriff zugelassen haben,link:../admin/manage-external-ssh-access.html["Zugriff blockieren"] wenn Sie mit dem Hinzufügen oder Ändern der Subnetzlisten fertig sind.
 

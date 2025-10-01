@@ -125,7 +125,7 @@ Speicherortbeschränkung (nur S3)
  a| 
 Die Region, in der ein S3-Bucket erstellt wurde. Verwenden Sie *ILM* > *Regionen*, um die angezeigten Regionen zu definieren.
 
-*Hinweis:* Ein Wert von US-East-1 entspricht Objekten in Eimern, die in der Region US-East-1 erstellt wurden, sowie Objekten in Buckets, die keine Region angegeben haben. Siehe link:configuring-regions-optional-and-s3-only.html["Regionen konfigurieren (nur optional und S3)"].
+*Hinweis:* Ein Wert von us-east-1 entspricht Objekten in Buckets, die in der Region us-east-1 erstellt wurden, sowie Objekten in Buckets, für die keine Region angegeben ist. Sehen link:configuring-regions-optional-and-s3-only.html["Konfigurieren von S3-Regionen"] .
 
 
 

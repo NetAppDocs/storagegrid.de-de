@@ -21,7 +21,7 @@ Die Warnmeldung S3 PUT Object size too Large wird ausgelöst, wenn ein Mandant v
 Legen Sie fest, welche Mandanten Objekte verwenden, die größer als 5 gib sind, damit Sie sie benachrichtigen können.
 
 .Schritte
-. Gehen Sie zu *CONFIGURATION* > *Monitoring* > *Audit und Syslog-Server*.
+. Gehen Sie zu *Konfiguration* > *Überwachung* > *Audit- und Syslog-Server*.
 . Wenn die Schreibvorgänge des Clients normal sind, greifen Sie auf das Revisionsprotokoll zu:
 +
 .. Eingabe `ssh admin@_primary_Admin_Node_IP_`
@@ -51,7 +51,7 @@ Lokale Knoten (Standard)
  a| 
 Admin-Nodes/lokale Nodes
  a| 
-*** Admin-Nodes (primär und nicht primär): `/var/local/audit/export/audit.log`
+*** Admin-Knoten (primär und nicht primär): `/var/local/audit/export/audit.log`
 *** Alle Knoten: Die `/var/local/log/localaudit.log` Datei ist in der Regel leer oder fehlt in diesem Modus.
 
 
@@ -65,7 +65,7 @@ Externer Syslog-Server
 |===
 Geben Sie je nach den Einstellungen des Überwachungsziels Folgendes ein: `cd /var/local/log` Oder `/var/local/audit/export/`
 
-Weitere Informationen finden Sie unter link:../monitor/configure-audit-messages.html#select-audit-information-destinations["Wählen Sie Ziele für Audit-Informationen aus"].
+Weitere Informationen finden Sie unterlink:../monitor/configure-log-management.html#select-log-location["Protokollspeicherort auswählen"] .
 
 --
 .. Ermitteln Sie, welche Mandanten Objekte mit einer Größe von mehr als 5 gib verwenden.
@@ -116,7 +116,7 @@ audit.log:2023-01-05T18:47:05.525999 [AUDT:[RSLT(FC32):SUCS][CNID(UI64):16729436
 
 . Wenn die Schreibvorgänge des Clients nicht normal sind, verwenden Sie die Mandanten-ID in der Warnmeldung, um den Mandanten zu identifizieren:
 +
-.. Gehen Sie zu *SUPPORT* > *Tools* > *Logs*. Sammeln Sie Anwendungsprotokolle für den Speicher-Node in der Warnmeldung. Geben Sie 15 Minuten vor und nach der Warnmeldung an.
+.. Gehen Sie zu *Support* > *Tools* > *Protokollsammlung*.  Sammeln Sie Anwendungsprotokolle für den Speicherknoten in der Warnung.  Geben Sie 15 Minuten vor und nach der Warnung an. Weitere Informationen finden Sie unter link:../monitor/collecting-log-files-and-system-data.html["Erfassen von Protokolldateien und Systemdaten"] .
 .. Extrahieren Sie die Datei und gehen Sie zu `bycast.log`:
 +
 `/GID<grid_id>_<time_stamp>/<site_node>/<time_stamp>/grid/bycast.log`

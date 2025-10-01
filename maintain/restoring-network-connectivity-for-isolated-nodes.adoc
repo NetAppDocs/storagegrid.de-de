@@ -17,7 +17,7 @@ Unter bestimmten Umständen kann eine oder mehrere Knotengruppen möglicherweise
 Knotenisolierung wird angezeigt durch:
 
 * Warnungen wie *Unable to communicate with Node* (*Alerts* > *current*)
-* Connectivity-bezogene Diagnose (*SUPPORT* > *Tools* > *Diagnose*)
+* Konnektivitätsbezogene Diagnose (*Support* > *Tools* > *Diagnose*)
 
 
 Isolierte Nodes haben einige der Folgen:

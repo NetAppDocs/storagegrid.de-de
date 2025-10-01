@@ -1,47 +1,8 @@
 ---
 permalink: ubuntu/where-to-go-next.html 
-sidebar: sidebar 
-keywords: what to do after ubuntu installation 
-summary: Führen Sie nach Abschluss einer Installation die erforderlichen Integrations- und Konfigurationsaufgaben aus. Sie können die optionalen Aufgaben nach Bedarf ausführen. 
+redirect: storagegrid/swnodes/where-to-go-next.html 
 ---
-= Weitere Schritte
+= 
 :allow-uri-read: 
-:icons: font
-:imagesdir: ../media/
 
-
-[role="lead"]
-Führen Sie nach Abschluss einer Installation die erforderlichen Integrations- und Konfigurationsaufgaben aus. Sie können die optionalen Aufgaben nach Bedarf ausführen.
-
-
-
-== Erforderliche Aufgaben
-
-* link:../admin/managing-tenants.html["Erstellen Sie ein Mandantenkonto"] Für das S3-Client-Protokoll, das zum Speichern von Objekten auf Ihrem StorageGRID System verwendet wird.
-* link:../admin/controlling-storagegrid-access.html["Kontrolle des Systemzugriffs"] Durch das Konfigurieren von Gruppen und Benutzerkonten. Optional können Sie link:../admin/using-identity-federation.html["Konfigurieren Sie eine föderierte Identitätsquelle"](z. B. Active Directory oder OpenLDAP) Verwaltungsgruppen und Benutzer importieren. Oder Sie können link:../admin/managing-users.html#create-a-local-user["Erstellen Sie lokale Gruppen und Benutzer"].
-* Integrieren und testen Sie die link:../s3/configuring-tenant-accounts-and-connections.html["S3-API"] Client-Anwendungen, mit denen Sie Objekte auf Ihr StorageGRID-System hochladen.
-* link:../ilm/index.html["Konfigurieren Sie die Regeln für Information Lifecycle Management (ILM) und die ILM-Richtlinie"] Sie möchten zum Schutz von Objektdaten verwenden.
-* Wenn Ihre Installation Storage-Nodes der Appliance umfasst, führen Sie mithilfe von SANtricity OS die folgenden Aufgaben aus:
-+
-** Stellen Sie Verbindungen zu jeder StorageGRID Appliance her.
-** Eingang der AutoSupport-Daten überprüfen.
-+
-Siehe https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/configuring-hardware.html["Richten Sie die Hardware ein"^].
-
-
-
-* Überprüfen und befolgen Sie dielink:../harden/index.html["Richtlinien zur StorageGRID-Systemhärtung"], um Sicherheitsrisiken zu beseitigen.
-* link:../monitor/email-alert-notifications.html["Konfigurieren Sie E-Mail-Benachrichtigungen für Systemwarnungen"].
-
-
-
-
-== Optionale Aufgaben
-
-* link:../maintain/changing-ip-addresses-and-mtu-values-for-all-nodes-in-grid.html["Aktualisieren der IP-Adressen des Grid-Node"] Wenn sie sich seit der Planung der Bereitstellung geändert haben und das Wiederherstellungspaket erstellt haben.
-* link:../admin/changing-network-options-object-encryption.html["Konfigurieren Sie die Speicherverschlüsselung"], Bei Bedarf.
-* link:../admin/configuring-stored-object-compression.html["Konfigurieren Sie die Storage-Komprimierung"] Um die Größe gespeicherter Objekte bei Bedarf zu reduzieren.
-* link:../admin/configure-vlan-interfaces.html["Konfigurieren Sie die VLAN-Schnittstellen"] Zur Isolierung und Partitionierung des Netzwerkverkehrs, falls erforderlich
-* link:../admin/configure-high-availability-group.html["Konfigurieren Sie Hochverfügbarkeitsgruppen"] Zur Verbesserung der Verbindungsverfügbarkeit für Grid Manager-, Tenant Manager- und S3-Clients, falls erforderlich.
-* link:../admin/configuring-load-balancer-endpoints.html["Konfigurieren von Load Balancer-Endpunkten"] Für die S3-Client-Konnektivität, falls erforderlich.
 

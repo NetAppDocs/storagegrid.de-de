@@ -14,7 +14,7 @@ summary: Sie können StorageGRID-Protokolle verwenden, um Probleme zu beheben.
 Sie können StorageGRID-Protokolle verwenden, um Probleme zu beheben.
 
 
-NOTE: Wenn Sie Ihre Protokolle an einen externen Syslog-Server senden oder das Ziel von Audit-Informationen wie den und `nms.log` ändern möchten `bycast.log`, siehe link:../monitor/configure-audit-messages.html#["Konfigurieren von Überwachungsmeldungen und Protokollzielen"].
+NOTE: Wenn Sie Ihre Protokolle an einen externen Syslog-Server senden oder das Ziel der Audit-Informationen ändern möchten, wie z. B. die `bycast.log` Und `nms.log` , sehenlink:../monitor/configure-log-management.html["Konfigurieren der Protokollverwaltung"] .
 
 
 
@@ -26,14 +26,14 @@ NOTE: Wenn Sie Ihre Protokolle an einen externen Syslog-Server senden oder das Z
 
 
 | /Var/local/log/bycast.log  a| 
-Die primäre StorageGRID-Fehlerbehebungsdatei. Wählen Sie *SUPPORT* > *Tools* > *Grid-Topologie* aus. Wählen Sie dann *_Site_* > *_Node_* > *SSM* > *Events* aus.
+Die primäre StorageGRID Fehlerbehebungsdatei.
  a| 
 Alle Nodes
 
 
 
 | /Var/local/log/bycast-err.log  a| 
-Enthält eine Untergruppe von `bycast.log` (Meldungen mit Schweregrad „FEHLER“ und „KRITISCH“). WICHTIGE Meldungen werden auch im System angezeigt. Wählen Sie *SUPPORT* > *Tools* > *Grid-Topologie* aus. Wählen Sie dann *_Site_* > *_Node_* > *SSM* > *Events* aus.
+Enthält eine Teilmenge von `bycast.log` (Meldungen mit Schweregrad ERROR und CRITICAL).  Außerdem werden im System KRITISCHE Meldungen angezeigt.
  a| 
 Alle Nodes
 
@@ -188,6 +188,13 @@ Speicherknoten, auf denen der ADC-Service ausgeführt wird
 | /Var/local/log/ams.errlog  a| 
  a| 
 Admin-Nodes
+
+
+
+| /var/local/log/cache-svc.log + /var/local/log/cache-svc.errlog  a| 
+Cache-Dienstprotokolle.
+ a| 
+Gateway-Nodes
 
 
 

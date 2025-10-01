@@ -24,7 +24,7 @@ Die für Warnmeldungen verwendete E-Mail-Einrichtung wird für AutoSupport-Paket
 Wenn Ihre StorageGRID-Bereitstellung mehrere Administratorknoten umfasst, ist der primäre Administratorknoten der bevorzugte Absender für Warnmeldungen, AutoSupport-Pakete und SNMP-Traps und -Benachrichtigungen. Wenn der primäre Admin-Node nicht mehr verfügbar ist, werden vorübergehend Benachrichtigungen von anderen Admin-Nodes gesendet. Siehe link:../primer/what-admin-node-is.html["Was ist ein Admin-Node?"].
 
 .Schritte
-. Wählen Sie *ALERTS* > *Email Setup*.
+. Wählen Sie *Benachrichtigungen* > *E-Mail-Setup*.
 +
 Die Seite E-Mail-Einrichtung wird angezeigt.
 
@@ -290,7 +290,7 @@ Wenn die Meldung *E-Mail-Benachrichtigung Fehler* ausgelöst wird oder Sie die T
 .Schritte
 . Überprüfen Sie Ihre Einstellungen.
 +
-.. Wählen Sie *ALERTS* > *Email Setup*.
+.. Wählen Sie *Benachrichtigungen* > *E-Mail-Setup*.
 .. Überprüfen Sie, ob die Einstellungen des SMTP-Servers (E-Mail) korrekt sind.
 .. Stellen Sie sicher, dass Sie gültige E-Mail-Adressen für die Empfänger angegeben haben.
 

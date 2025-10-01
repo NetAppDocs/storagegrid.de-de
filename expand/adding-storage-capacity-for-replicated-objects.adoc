@@ -21,4 +21,4 @@ Falls Sie eine komplexere ILM-Richtlinie haben, die Regeln enthält, die Objekte
 
 Wenn Sie verstehen, wie schnell die insgesamt genutzte Storage-Kapazität verbraucht wird, können Sie verstehen, wie viel Storage in der Erweiterung hinzugefügt werden muss und wann der zusätzliche Speicherplatz erforderlich ist. Mit dem Grid-Manager können link:../monitor/monitoring-storage-capacity.html["Überwachen und graten Sie die Speicherkapazität"]Sie .
 
-Denken Sie bei der Planung des Zeitpunkts einer Erweiterung daran, wie lange die Beschaffung und Installation von zusätzlichem Storage dauern könnte.
+Denken Sie bei der Planung des Zeitpunkts einer Erweiterung daran, wie lange die Beschaffung und Installation von zusätzlichem Speicher dauern könnte.  Um die Erweiterungsplanung zu vereinfachen, sollten Sie das Hinzufügen von Speicherknoten in Erwägung ziehen, wenn vorhandene Speicherknoten 70 % ihrer Kapazität erreichen.

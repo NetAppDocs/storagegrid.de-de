@@ -33,7 +33,7 @@ Verwenden Sie nach Möglichkeit DNS-Server, auf die jeder Standort lokal zugreif
 Führen Sie die folgenden Schritte aus, um einen DNS-Server hinzuzufügen.
 
 .Schritte
-. Wählen Sie *MAINTENANCE* > *Network* > *DNS-Server*.
+. Wählen Sie *Wartung* > *Netzwerk* > *DNS-Server*.
 . Wählen Sie *Add another Server*, um einen DNS-Server hinzuzufügen.
 . Wählen Sie *Speichern*.
 
@@ -45,7 +45,7 @@ Führen Sie die folgenden Schritte aus, um einen DNS-Server hinzuzufügen.
 Führen Sie die folgenden Schritte aus, um einen DNS-Server zu ändern.
 
 .Schritte
-. Wählen Sie *MAINTENANCE* > *Network* > *DNS-Server*.
+. Wählen Sie *Wartung* > *Netzwerk* > *DNS-Server*.
 . Wählen Sie die IP-Adresse des Servernamens aus, den Sie bearbeiten möchten, und nehmen Sie die erforderlichen Änderungen vor.
 . Wählen Sie *Speichern*.
 
@@ -57,7 +57,7 @@ Führen Sie die folgenden Schritte aus, um einen DNS-Server zu ändern.
 Gehen Sie wie folgt vor, um eine IP-Adresse eines DNS-Servers zu löschen.
 
 .Schritte
-. Wählen Sie *MAINTENANCE* > *Network* > *DNS-Server*.
+. Wählen Sie *Wartung* > *Netzwerk* > *DNS-Server*.
 . Wählen Sie das Löschsymbol image:../media/icon-x-to-remove.png["Symbol Löschen"] neben der IP-Adresse.
 . Wählen Sie *Speichern*.
 

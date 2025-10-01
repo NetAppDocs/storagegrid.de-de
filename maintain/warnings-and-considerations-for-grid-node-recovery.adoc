@@ -17,7 +17,7 @@ Wenn ein Grid-Node ausfällt, müssen Sie ihn so schnell wie möglich wiederhers
 CAUTION: StorageGRID ist ein verteiltes System, das aus mehreren Knoten besteht, die miteinander arbeiten. Verwenden Sie keine Festplatten-Snapshots, um Grid-Nodes wiederherzustellen. Beachten Sie stattdessen die Recovery- und Wartungsabläufe für jeden Node-Typ.
 
 
-NOTE: Wenn eine gesamte StorageGRID Site ausfällt, wenden Sie sich an den technischen Support. Der technische Support arbeitet in Zusammenarbeit mit Ihnen an der Entwicklung und Umsetzung eines Recovery-Plans für einen Standort, der die Menge der wiederhergestellten Daten maximiert und Ihre Geschäftsziele erfüllt. Siehe link:how-site-recovery-is-performed-by-technical-support.html["Wie der technische Support eine Site wiederherstellt"].
+NOTE: Wenn eine gesamte StorageGRID -Site ausgefallen ist, wenden Sie sich an den technischen Support.  Der technische Support arbeitet mit Ihnen zusammen, um einen Site-Wiederherstellungsplan zu entwickeln und umzusetzen, der die wiederherzustellende Datenmenge maximiert und Ihre Geschäftsziele erfüllt. Weitere Informationen finden Sie unter link:how-site-recovery-is-performed-by-technical-support.html["Wie der technische Support eine Site wiederherstellt"] .
 
 Einige der Gründe für die baldige Wiederherstellung eines ausgefallenen Grid-Node sind:
 
@@ -38,15 +38,15 @@ Bei der Wiederherstellung der Grid-Nodes werden alle folgenden Bedingungen vorau
 
 * Die fehlerhafte physische oder virtuelle Hardware wurde ersetzt und konfiguriert.
 * Die Installationsversion des StorageGRID-Geräts auf der Ersatz-Appliance entspricht der Softwareversion Ihres StorageGRID-Systems, wie unter beschrieben https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/verifying-and-upgrading-storagegrid-appliance-installer-version.html["Überprüfen und Aktualisieren der Installationsversion der StorageGRID Appliance"^].
-* Wenn Sie einen anderen Grid-Node als den primären Admin-Node wiederherstellen, besteht die Verbindung zwischen dem wiederherzustellenden Grid-Node und dem primären Admin-Node.
-* Wenn Sie einen Appliance-Storage-Node wiederherstellen, müssen Sie während der Appliance-Installation denselben Speichertyp angeben wie die ursprüngliche Appliance (kombiniert, nur Metadaten oder nur Daten). Wenn Sie einen anderen Speichertyp angeben, schlägt die Wiederherstellung fehl und erfordert eine Neuinstallation der Appliance mit dem richtigen Speichertyp.
+* Wenn Sie einen anderen Grid-Knoten als den primären Admin-Knoten wiederherstellen, besteht eine Verbindung zwischen dem wiederherzustellenden Grid-Knoten und dem Admin-Knoten, der das Wiederherstellungsverfahren verwaltet.
+* Wenn Sie einen Appliance-Speicherknoten wiederherstellen, müssen Sie während der Appliance-Installation denselben Speichertyp wie bei der ursprünglichen Appliance angeben (kombiniert, nur Metadaten oder nur Daten).  Wenn Sie einen anderen Speichertyp angeben, schlägt die Wiederherstellung fehl und erfordert eine Neuinstallation der Appliance mit dem richtigen angegebenen Speichertyp.
 
 
 
 
 == Reihenfolge der Knotenwiederherstellung, wenn ein Server, der mehr als einen Grid-Knoten hostet, ausfällt
 
-Wenn ein Server, der mehr als einen Grid-Node hostet, ausfällt, können Sie die Knoten in beliebiger Reihenfolge wiederherstellen. Wenn der ausgefallene Server jedoch den primären Admin-Node hostet, müssen Sie diesen Knoten zuerst wiederherstellen. Die Wiederherstellung des primären Admin-Knotens verhindert, dass andere Knoten-Wiederherstellungen angehalten werden, während sie warten, bis der primäre Admin-Node kontaktiert wird.
+Wenn ein Server ausfällt, auf dem mehr als ein Grid-Knoten gehostet wird, können Sie die Knoten in beliebiger Reihenfolge wiederherstellen.  Wenn der ausgefallene Server jedoch den primären Admin-Knoten hostet, müssen Sie diesen Knoten zuerst wiederherstellen.
 
 
 

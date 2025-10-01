@@ -13,9 +13,6 @@ summary: Load Balancer-Endpunkte bestimmen die Ports und Netzwerkprotokolle, die
 [role="lead"]
 Load Balancer-Endpunkte bestimmen die Ports und Netzwerkprotokolle, die S3-Clients bei der Verbindung zum StorageGRID Load Balancer auf Gateway- und Admin-Nodes verwenden können. Sie können Endpunkte auch für den Zugriff auf Grid Manager, Tenant Manager oder beide verwenden.
 
-
-TIP: Swift-Details wurden aus dieser Version der doc-Site entfernt. Siehe https://docs.netapp.com/us-en/storagegrid-118/admin/configuring-client-connections.html["Konfiguration von S3- und Swift-Client-Verbindungen"^].
-
 .Bevor Sie beginnen
 * Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
 * Sie haben die link:admin-group-permissions.html["Root-Zugriffsberechtigung"].
@@ -41,15 +38,15 @@ NOTE: Änderungen an einem Endpunktzertifikat können bis zu 15 Minuten dauern, 
 
 == Erstellen Sie einen Endpunkt für den Load Balancer
 
-Jeder S3-Client-Load-Balancer-Endpunkt gibt einen Port, einen Client-Typ (S3) und ein Netzwerkprotokoll (HTTP oder HTTPS) an. Endpunkte für den Lastenausgleich der Verwaltungsschnittstelle geben einen Port, einen Schnittstellentyp und ein nicht vertrauenswürdiges Client-Netzwerk an.
+Jeder S3-Client-Load-Balancer-Endpunkt gibt einen Port, einen Clienttyp (S3) und ein Netzwerkprotokoll (HTTP oder HTTPS) an.  Die Endpunkte des Lastenausgleichsmoduls der Verwaltungsschnittstelle geben einen Port, einen Schnittstellentyp und ein nicht vertrauenswürdiges Clientnetzwerk an.
 
 
 
 === Greifen Sie auf den Assistenten zu
 
 .Schritte
-. Wählen Sie *CONFIGURATION* > *Network* > *Load Balancer Endpunkte*.
-. Um einen Endpunkt für einen S3- oder Swift-Client zu erstellen, wählen Sie die Registerkarte *S3 oder Swift-Client* aus.
+. Wählen Sie *Konfiguration* > *Netzwerk* > *Load Balancer-Endpunkte*.
+. Um einen Endpunkt für einen S3-Client zu erstellen, wählen Sie die Registerkarte *S3-Client*.
 . Um einen Endpunkt für den Zugriff auf Grid Manager, Tenant Manager oder beides zu erstellen, wählen Sie die Registerkarte *Verwaltungsschnittstelle* aus.
 . Wählen Sie *Erstellen*.
 
@@ -64,7 +61,7 @@ Jeder S3-Client-Load-Balancer-Endpunkt gibt einen Port, einen Client-Typ (S3) un
 
 [role="tabbed-block"]
 ====
-.S3- oder Swift-Client
+.S3-Client
 --
 [cols="1a,3a"]
 |===
@@ -90,7 +87,7 @@ Wenn Sie *80* oder *8443* eingeben, wird der Endpunkt nur auf Gateway Nodes konf
  a| 
 Client-Typ
  a| 
-Der Typ der Client-Anwendung, die diesen Endpunkt verwenden wird, entweder *S3* oder *Swift*.
+Muss *S3* sein.
 
 
 
@@ -102,6 +99,15 @@ Das Netzwerkprotokoll, das Clients bei der Verbindung mit diesem Endpunkt verwen
 * Wählen Sie *HTTPS* für sichere, TLS verschlüsselte Kommunikation (empfohlen). Sie müssen ein Sicherheitszertifikat anhängen, bevor Sie den Endpunkt speichern können.
 * Wählen Sie *HTTP* für eine weniger sichere, unverschlüsselte Kommunikation. Verwenden Sie HTTP nur für ein Grid, das nicht produktionsbereit ist.
 
+
+
+
+ a| 
+Caching aktivieren
+ a| 
+Aktivieren oder Deaktivierenlink:../admin/managing-load-balancing.html#considerations-for-load-balancer-caching["Caching auf den Gateway-Knoten"] für diesen Load Balancer-Endpunkt.
+
+Wenn Probleme mit dem Caching auftreten, lesen Sielink:../troubleshoot/troubleshooting-load-balancer-caching.html["Fehlerbehebung beim Load Balancer-Caching"] .
 
 |===
 --

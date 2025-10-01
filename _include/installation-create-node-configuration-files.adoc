@@ -67,7 +67,7 @@ Die folgende Tabelle definiert die Werte für alle unterstützten Schlüssel. Je
 
 
  a| 
-Grid Network IPv4-Adresse des primären Admin-Knotens für das Grid, zu dem dieser Node gehört. Verwenden Sie denselben Wert, den Sie für GRID_NETWORK_IP für den Grid-Node mit NODE_TYPE = VM_Admin_Node und ADMIN_ROLE = Primary angegeben haben. Wenn Sie diesen Parameter nicht angeben, versucht der Node, einen primären Admin-Node mit mDNS zu ermitteln.
+Grid-Netzwerk-IPv4-Adresse des Admin-Knotens, den Sie zum Installieren des Linux-basierten Knotens verwenden möchten.  Verwenden Sie zur Wiederherstellung die IP des primären Admin-Knotens, falls verfügbar. Andernfalls verwenden Sie die IP eines nicht primären Admin-Knotens.  Wenn Sie diesen Parameter weglassen, versucht der Knoten, mithilfe von mDNS einen primären Admin-Knoten zu ermitteln.
 
 link:how-grid-nodes-discover-primary-admin-node.html["Ermitteln der primären Admin-Node durch Grid-Nodes"]
 
@@ -277,11 +277,7 @@ Setzen Sie den Schlüssel auf „true“, damit der StorageGRID-Container die MA
 
 *Best Practice:* in Netzwerken, in denen der promiskuious-Modus erforderlich wäre, verwenden Sie stattdessen DEN ADMIN_NETWORK_TARGET_TYPE_INTERFACE_CLONE_MAC-Schlüssel.
 
-Weitere Informationen zum Klonen von MAC:
-
-* link:../rhel/configuring-host-network.html#considerations-and-recommendations-for-mac-address-cloning["Überlegungen und Empfehlungen zum Klonen von MAC-Adressen (Red hat Enterprise Linux)"]
-* link:../ubuntu/configuring-host-network.html#considerations-and-recommendations-for-mac-address-cloning["Überlegungen und Empfehlungen zum Klonen von MAC-Adressen (Ubuntu oder Debian)"]
-
+Weitere Informationen zum MAC-Klonen für Linux finden Sie unterlink:../swnodes/configuring-host-network.html#considerations-and-recommendations-for-mac-address-cloning["Überlegungen und Empfehlungen zum Klonen von MAC-Adressen"]
  a| 
 Best Practices in sich
 
@@ -639,11 +635,7 @@ Setzen Sie den Schlüssel auf „true“, damit der StorageGRID-Container die MA
 
 *Best Practice:* in Netzwerken, in denen der promiskuious-Modus erforderlich wäre, verwenden Sie stattdessen DEN CLIENT_NETWORK_TARGET_TYPE_INTERFACE_CLONE_MAC-Schlüssel.
 
-Weitere Informationen zum Klonen von MAC:
-
-* link:../rhel/configuring-host-network.html#considerations-and-recommendations-for-mac-address-cloning["Überlegungen und Empfehlungen zum Klonen von MAC-Adressen (Red hat Enterprise Linux)"]
-* link:../ubuntu/configuring-host-network.html#considerations-and-recommendations-for-mac-address-cloning["Überlegungen und Empfehlungen zum Klonen von MAC-Adressen (Ubuntu oder Debian)"]
-
+Weitere Informationen zum MAC-Klonen für Linux finden Sie unterlink:../swnodes/configuring-host-network.html#considerations-and-recommendations-for-mac-address-cloning["Überlegungen und Empfehlungen zum Klonen von MAC-Adressen"]
  a| 
 Best Practices in sich
 
@@ -834,11 +826,7 @@ Setzen Sie den Wert des Schlüssels auf „true“, um den StorageGRID-Container
 
 *Best Practice:* in Netzwerken, in denen der promiskuious-Modus erforderlich wäre, verwenden Sie stattdessen DEN GRID_NETWORK_TARGET_TYPE_INTERFACE_CLONE_MAC-Schlüssel.
 
-Weitere Informationen zum Klonen von MAC:
-
-* link:../rhel/configuring-host-network.html#considerations-and-recommendations-for-mac-address-cloning["Überlegungen und Empfehlungen zum Klonen von MAC-Adressen (Red hat Enterprise Linux)"]
-* link:../ubuntu/configuring-host-network.html#considerations-and-recommendations-for-mac-address-cloning["Überlegungen und Empfehlungen zum Klonen von MAC-Adressen (Ubuntu oder Debian)"]
-
+Weitere Informationen zum MAC-Klonen für Linux finden Sie unterlink:../swnodes/configuring-host-network.html#considerations-and-recommendations-for-mac-address-cloning["Überlegungen und Empfehlungen zum Klonen von MAC-Adressen"]
  a| 
 Best Practices in sich
 
@@ -980,6 +968,9 @@ Optional
 
 
 === Schlüssel für die Portzuordnung neu zuweisen
+
+
+NOTE: Die Unterstützung für die Neuzuordnung von Ports ist veraltet und wird in einer zukünftigen Version entfernt. Informationen zum Entfernen neu zugeordneter Ports finden Sie unterlink:../maintain/removing-port-remaps-on-bare-metal-hosts.html["Entfernen Sie die Port-Remaps auf Bare-Metal-Hosts"] .
 
 
 

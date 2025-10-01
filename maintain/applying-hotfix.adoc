@@ -26,7 +26,7 @@ Der Hotfix wird zuerst automatisch auf den primären Admin-Knoten angewendet. An
 
 .Schritte
 . Melden Sie sich mit einem beim Grid-Manager anlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
-. Wählen Sie *WARTUNG* > *System* > *Software-Update*.
+. Wählen Sie *Wartung* > *System* > *Software-Update*.
 +
 Die Seite Software-Aktualisierung wird angezeigt.
 
@@ -70,7 +70,7 @@ Eine Warnung wird angezeigt, dass die Verbindung Ihres Browsers vorübergehend u
 Wenn der Hotfix beginnt:
 
 +
-.. Die Hotfix-Validierungen werden ausgeführt.
+.. Die Hotfix-Validierungen werden ausgeführt, einschließlich der Überprüfung der Codesignatur.
 +
 
 NOTE: Wenn Fehler gemeldet werden, beheben Sie sie, laden Sie die Hotfix-Datei erneut hoch und wählen Sie erneut *Start* aus.

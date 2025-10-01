@@ -19,7 +19,7 @@ Sie können eine benutzerdefinierte Alarmregel entfernen, wenn Sie sie nicht meh
 
 
 .Schritte
-. Wählen Sie *ALERTS* > *Regeln*.
+. Wählen Sie *Benachrichtigungen* > *Regeln*.
 +
 Die Seite Alarmregeln wird angezeigt.
 

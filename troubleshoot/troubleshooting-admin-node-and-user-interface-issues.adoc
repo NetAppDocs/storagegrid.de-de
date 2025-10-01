@@ -41,12 +41,12 @@ Wenn der Fehler nicht automatisch behoben wird, fahren Sie mit dem nächsten Sch
 
 . Wenn Ihr StorageGRID-System über mehr als einen Administratorknoten verfügt, melden Sie sich von einem anderen Administratorknoten beim Grid-Manager an, um den Status eines nicht verfügbaren Administratorknotens zu überprüfen.
 +
-** Wenn Sie sich anmelden können, können Sie die Optionen *Dashboard*, *NODES*, *Alerts* und *SUPPORT* verwenden, um die Ursache des Fehlers zu ermitteln.
+** Wenn Sie sich anmelden können, können Sie die Optionen *Dashboard*, *Knoten*, *Warnungen* und *Support* verwenden, um die Fehlerursache zu ermitteln.
 ** Wenn Sie nur einen Admin-Knoten haben oder sich immer noch nicht anmelden können, fahren Sie mit dem nächsten Schritt fort.
 
 
 . Ermitteln, ob die Hardware des Node offline ist
-. Wenn Single Sign-On (SSO) für Ihr StorageGRID-System aktiviert ist, lesen Sie die Schritte für link:../admin/configuring-sso.html["Konfigurieren der Single Sign-On-Funktion"].
+. Wenn Single Sign-On (SSO) für Ihr StorageGRID System aktiviert ist, lesen Sie die Schritte fürlink:../admin/configure-sso.html["Konfigurieren der Single Sign-On-Funktion"] .
 +
 Unter Umständen müssen Sie SSO für einen einzelnen Admin-Node vorübergehend deaktivieren und erneut aktivieren, um Probleme zu beheben.
 
@@ -62,7 +62,7 @@ Wenn das verbundene Benutzerkonto nicht funktioniert, melden Sie sich beim Grid 
 ** Wenn sich der lokale Benutzer anmelden kann:
 +
 ... Prüfen von Warnmeldungen
-... Wählen Sie *KONFIGURATION* > *Zugangskontrolle* > *Identitätsverbund* aus.
+... Wählen Sie *Konfiguration* > *Zugriffskontrolle* > *Identitätsföderation*.
 ... Klicken Sie auf *Verbindung testen*, um die Verbindungseinstellungen für den LDAP-Server zu validieren.
 ... Wenn der Test fehlschlägt, beheben Sie alle Konfigurationsfehler.
 

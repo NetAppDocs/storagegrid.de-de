@@ -22,7 +22,7 @@ NOTE: Die Schaltfläche *Pause* ist nur aktiviert, wenn die ILM-Bewertung oder d
 
 
 .Schritte
-. Wählen Sie *MAINTENANCE* > *Tasks* > *Decommission*.
+. Wählen Sie *Wartung* > *Aufgaben* > *Außerbetriebnahme*.
 +
 Die Seite Decommission wird angezeigt.
 

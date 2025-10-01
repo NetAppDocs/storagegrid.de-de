@@ -23,7 +23,7 @@ Weitere Informationen zu dieser Aufgabe finden Sie unter link:../admin/creating-
 
 
 .Schritte
-. Wählen Sie *MIETER*.
+. Wählen Sie *Mandanten* aus.
 . Wählen Sie *Erstellen*.
 . Geben Sie für die Schritte zum Eingeben von Details die folgenden Informationen ein.
 +
@@ -73,7 +73,7 @@ FabricPool-Mandanten müssen in der Regel nicht S3 Select verwenden.
 .. Wählen Sie optional *Grid Federation Connection* verwenden, um dem Mandanten die Verwendung eines  für Account-Clone und die Grid-übergreifende Replikation zu ermöglichenlink:../admin/grid-federation-overview.html["Netzverbundverbindung"]. Wählen Sie dann die zu verwendende Netzverbundverbindung aus.
 
 
-. Geben Sie für den Schritt Root-Zugriff definieren an, welcher Benutzer die anfängliche Root-Zugriffsberechtigung für das Mandantenkonto hat, je nachdemlink:../admin/configuring-sso.html["Single Sign On (SSO)"], ob Ihr StorageGRID-System link:../admin/using-identity-federation.html["Identitätsföderation"], oder beides verwendet.
+. Geben Sie im Schritt „Root-Zugriff definieren“ an, welcher Benutzer die anfängliche Root-Zugriffsberechtigung für das Mandantenkonto haben soll, je nachdem, ob Ihr StorageGRID Systemlink:../admin/using-identity-federation.html["Identitätsföderation"] ,link:../admin/how-sso-works.html["Single Sign On (SSO)"] oder beides.
 +
 [cols="1a,2a"]
 |===

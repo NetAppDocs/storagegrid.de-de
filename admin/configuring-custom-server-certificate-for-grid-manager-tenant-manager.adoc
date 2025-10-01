@@ -21,7 +21,7 @@ Da für alle Admin-Nodes ein einzelnes Zertifikat für eine benutzerdefinierte M
 Sie müssen die Konfiguration auf dem Server abschließen. Je nach der von Ihnen verwendeten Root Certificate Authority (CA) müssen Benutzer möglicherweise auch das Grid CA-Zertifikat in den Webbrowser installieren, mit dem sie auf den Grid Manager und den Tenant Manager zugreifen können.
 
 
-NOTE: Um sicherzustellen, dass der Betrieb nicht durch ein fehlerhaftes Serverzertifikat unterbrochen wird, wird die Warnmeldung *Ablauf des Serverzertifikats für die Managementoberfläche* ausgelöst, wenn dieses Serverzertifikat abläuft. Wenn erforderlich, können Sie anzeigen, wann das aktuelle Zertifikat abläuft, indem Sie *KONFIGURATION* > *Sicherheit* > *Zertifikate* auswählen und das Ablaufdatum für das Zertifikat der Verwaltungsschnittstelle auf der Registerkarte Global anzeigen.
+NOTE: Um sicherzustellen, dass der Betrieb nicht durch ein fehlerhaftes Serverzertifikat unterbrochen wird, wird die Warnung *Ablauf des Serverzertifikats für die Verwaltungsschnittstelle* ausgelöst, wenn dieses Serverzertifikat bald abläuft.  Bei Bedarf können Sie das Ablaufdatum des aktuellen Zertifikats anzeigen, indem Sie *Konfiguration* > *Sicherheit* > *Zertifikate* auswählen und auf der Registerkarte „Global“ das Ablaufdatum für das Management-Schnittstellenzertifikat prüfen.
 
 [NOTE]
 ====
@@ -39,7 +39,7 @@ Wenn Sie mit einem Domänennamen anstelle einer IP-Adresse auf den Grid Manager 
 Zum Hinzufügen eines Zertifikats einer benutzerdefinierten Managementoberfläche können Sie Ihr eigenes Zertifikat bereitstellen oder mit dem Grid Manager ein Zertifikat erstellen.
 
 .Schritte
-. Wählen Sie *KONFIGURATION* > *Sicherheit* > *Zertifikate*.
+. Wählen Sie *Konfiguration* > *Sicherheit* > *Zertifikate*.
 . Wählen Sie auf der Registerkarte *Global* die Option *Management Interface Certificate* aus.
 . Wählen Sie *Benutzerdefiniertes Zertifikat verwenden*.
 . Hochladen oder Generieren des Zertifikats
@@ -166,7 +166,7 @@ NOTE: Nachdem Sie ein Zertifikat hochgeladen oder generiert haben, lassen Sie si
 Sie können das Standardzertifikat zur Managementoberfläche für Grid Manager- und Tenant-Manager-Verbindungen wiederherstellen.
 
 .Schritte
-. Wählen Sie *KONFIGURATION* > *Sicherheit* > *Zertifikate*.
+. Wählen Sie *Konfiguration* > *Sicherheit* > *Zertifikate*.
 . Wählen Sie auf der Registerkarte *Global* die Option *Management Interface Certificate* aus.
 . Wählen Sie *Standard-Zertifikat verwenden*.
 +
@@ -229,7 +229,7 @@ Geben Sie DIE START- und DAS ENDE-Tags in Ihre Auswahl ein.
 . Bestätigen Sie, dass das Zertifikat konfiguriert wurde:
 +
 .. Greifen Sie auf den Grid Manager zu.
-.. Wählen Sie *KONFIGURATION* > *Sicherheit* > *Zertifikate*
+.. Wählen Sie *Konfiguration* > *Sicherheit* > *Zertifikate*
 .. Wählen Sie auf der Registerkarte *Global* die Option *Management Interface Certificate* aus.
 
 
@@ -243,7 +243,7 @@ Geben Sie DIE START- und DAS ENDE-Tags in Ihre Auswahl ein.
 Sie können den Inhalt des Zertifikats der Managementoberfläche speichern oder kopieren, um ihn an einer anderen Stelle zu verwenden.
 
 .Schritte
-. Wählen Sie *KONFIGURATION* > *Sicherheit* > *Zertifikate*.
+. Wählen Sie *Konfiguration* > *Sicherheit* > *Zertifikate*.
 . Wählen Sie auf der Registerkarte *Global* die Option *Management Interface Certificate* aus.
 . Wählen Sie die Registerkarte *Server* oder *CA Bundle* aus und laden Sie das Zertifikat herunter oder kopieren Sie es.
 +

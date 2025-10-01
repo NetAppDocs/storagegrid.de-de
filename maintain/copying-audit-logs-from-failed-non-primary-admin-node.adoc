@@ -34,7 +34,7 @@ Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `
 . Beenden Sie den AMS-Dienst, um zu verhindern, dass er eine neue Protokolldatei erstellt:``service ams stop``
 . Navigieren Sie zum Verzeichnis für den Audit-Export:
 +
-`cd /var/local/log`
+`cd /var/local/audit/export/`
 
 . Benennen Sie die Quell-audit.log-Datei in einen eindeutigen nummerierten Dateinamen um. Benennen Sie beispielsweise die Datei audit.log in um `2023-10-25.txt.1`.
 +

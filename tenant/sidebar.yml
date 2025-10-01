@@ -39,14 +39,12 @@ entries:
     entries:
     - title: Erstellen von S3-Gruppen
       url: "/tenant/creating-groups-for-s3-tenant.html"
-    - title: Erstellen von Swift-Gruppen
-      url: "/tenant/creating-groups-for-swift-tenant.html"
     - title: Mandantenmanagement-Berechtigungen
       url: "/tenant/tenant-management-permissions.html"
     - title: Gruppen managen
       url: "/tenant/manage-groups.html"
-  - title: Managen Sie lokale Benutzer
-    url: "/tenant/managing-local-users.html"
+  - title: Benutzer managen
+    url: "/tenant/manage-users.html"
 - title: Managen von S3-Zugriffsschlüsseln
   entries:
   - title: Zugriffsschlüssel für Mandanten
@@ -70,6 +68,10 @@ entries:
     url: "/tenant/creating-s3-bucket.html"
   - title: Bucket-Details anzeigen
     url: "/tenant/viewing-s3-bucket-details.html"
+  - title: Was ist ein Zweigeimer
+    url: "/tenant/what-is-branch-bucket.html"
+  - title: Verwalten von Branch-Buckets
+    url: "/tenant/manage-branch-buckets.html"
   - title: Wenden Sie das ILM-Richtlinien-Tag auf Bucket an
     url: "/tenant/ilm-policy-tags.html"
   - title: Management von Bucket-Richtlinien
@@ -84,8 +86,8 @@ entries:
     url: "/tenant/using-s3-object-lock.html"
   - title: Aktualisieren Sie die S3 Object Lock-Standardaufbewahrung
     url: "/tenant/update-default-retention-settings.html"
-  - title: Konfiguration der Cross-Origin Resource Sharing (CORS)
-    url: "/tenant/configuring-cross-origin-resource-sharing-cors.html"
+  - title: CORS für Buckets und Objekte konfigurieren
+    url: "/tenant/configuring-cross-origin-resource-sharing-for-buckets-and-objects.html"
   - title: Löschen von Objekten in Bucket
     url: "/tenant/deleting-s3-bucket-objects.html"
   - title: Löschen Sie den Bucket

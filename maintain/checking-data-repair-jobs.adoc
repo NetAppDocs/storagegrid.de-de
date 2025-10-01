@@ -11,10 +11,12 @@ summary: Bevor Sie einen Grid-Node außer Betrieb nehmen, müssen Sie bestätige
 
 
 [role="lead"]
-Bevor Sie einen Grid-Node außer Betrieb nehmen, müssen Sie bestätigen, dass keine Datenreparatur-Jobs aktiv sind. Wenn Reparaturen fehlgeschlagen sind, müssen Sie sie neu starten und vor der Außerbetriebnahme abschließen lassen.
+Bevor Sie einen Grid-Knoten außer Betrieb nehmen oder erweitern, müssen Sie bestätigen, dass keine Datenreparaturjobs aktiv sind.  Wenn Reparaturen fehlgeschlagen sind, müssen Sie diese neu starten und abschließen lassen, bevor Sie die Außerbetriebnahme durchführen.
+
+Siehelink:../expand/index.html["Erweiterungsarten"] für Details zum Erweitern eines Rasterknotens.
 
 .Über diese Aufgabe
-Wenn Sie einen nicht verbundenen Speicherknoten stilllegen müssen, führen Sie diese Schritte auch nach Abschluss des Stilllegungsvorgangs aus, um sicherzustellen, dass der Datenreparaturauftrag erfolgreich abgeschlossen wurde. Sie müssen sicherstellen, dass alle Fragmente, die mit Erasure-Coding-Verfahren codiert wurden, die sich auf dem entfernten Node befanden, erfolgreich wiederhergestellt wurden.
+Wenn Sie einen getrennten Speicherknoten außer Betrieb nehmen müssen, führen Sie diese Schritte nach Abschluss des Außerbetriebnahmevorgangs aus, um sicherzustellen, dass der Datenreparaturauftrag abgeschlossen ist.  Sie müssen sicherstellen, dass alle Erasure-Coded-Fragmente, die sich auf dem entfernten Knoten befanden, wiederhergestellt wurden.
 
 Die Schritte gelten nur für Systeme mit Erasure-Coding-Objekten.
 

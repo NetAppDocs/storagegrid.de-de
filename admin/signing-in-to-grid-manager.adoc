@@ -25,7 +25,7 @@ Wenn Admin-Nodes in einer HA-Gruppe (High Availability, Hochverfügbarkeit) enth
 
 === Verwenden Sie SSO
 
-Die Anmeldeschritte sind etwas unterschiedlich, wenn link:configuring-sso.html["Single Sign-On (SSO) wurde konfiguriert"].
+Die Anmeldeschritte sind etwas anders, wennlink:how-sso-works.html["Single Sign-On (SSO) wurde konfiguriert"] .
 
 
 
@@ -70,9 +70,6 @@ Der angezeigte Anmeldebildschirm hängt davon ab, ob Single Sign-On (SSO) für S
 --
 .. Geben Sie Ihren Benutzernamen und Ihr Kennwort für den Grid Manager ein.
 .. Wählen Sie *Anmelden*.
-+
-image::../media/sign_in_grid_manager_no_sso.png[Anmeldeseite]
-
 
 
 --
@@ -81,23 +78,16 @@ image::../media/sign_in_grid_manager_no_sso.png[Anmeldeseite]
 ** Wenn StorageGRID SSO verwendet und Sie zum ersten Mal auf die URL in diesem Browser zugreifen:
 +
 ... Wählen Sie *Anmelden*. Sie können die 0 im Feld „Konto“ belassen.
+... Geben Sie Ihre Standard-SSO-Anmeldeinformationen auf der SSO-Anmeldeseite Ihrer Organisation ein.
 +
-image::../media/sso_sign_in_first_time.png[Anmelde-Bildschirm, wenn SSO aktiviert ist und keine Cookies verwendet werden]
+Wenn StorageGRID beispielsweise SSO verwendet und Sie zuvor auf den Grid Manager oder ein Mandantenkonto zugegriffen haben:
 
-... Geben Sie auf der SSO-Anmeldeseite Ihres Unternehmens Ihre Standard-SSO-Anmeldedaten ein. Beispiel:
 +
-image::../media/sso_organization_page.gif[Beispiel für die Anmeldeseite der Organisation für SSO]
+.... Geben Sie *0* (die Konto-ID für den Grid-Manager) ein oder wählen Sie *Grid-Manager* aus, wenn er in der Liste der letzten Konten angezeigt wird.
+.... Wählen Sie *Anmelden*.
+.... Melden Sie sich mit Ihren Standard-SSO-Anmeldedaten auf der SSO-Anmeldeseite Ihres Unternehmens an.
 
 
-
-** Wenn StorageGRID SSO verwendet und Sie zuvor auf den Grid-Manager oder ein Mandantenkonto zugegriffen haben:
-+
-... Geben Sie *0* (die Konto-ID für den Grid-Manager) ein oder wählen Sie *Grid-Manager* aus, wenn er in der Liste der letzten Konten angezeigt wird.
-+
-image::../media/sign_in_grid_manager_sso.png[Wählen Sie Grid Manager aus der Liste der jüngsten Konten aus, wenn SSO aktiviert ist]
-
-... Wählen Sie *Anmelden*.
-... Melden Sie sich mit Ihren Standard-SSO-Anmeldedaten auf der SSO-Anmeldeseite Ihres Unternehmens an.
 
 
 
@@ -107,8 +97,6 @@ image::../media/sign_in_grid_manager_sso.png[Wählen Sie Grid Manager aus der Li
 
 
 Wenn Sie angemeldet sind, wird die Startseite des Grid-Managers angezeigt, die das Dashboard enthält. Informationen zu den bereitgestellten Informationen finden Sie unter link:../monitor/viewing-dashboard.html["Das Dashboard anzeigen und verwalten"].
-
-image::../media/grid_manager_dashboard.png[Dashboard]
 
 
 

@@ -21,7 +21,7 @@ Sie können Richtlinien zur Verkehrsklassifizierung erstellen, wenn Sie den Netz
 
 
 .Schritte
-. Wählen Sie *CONFIGURATION* > *Network* > *traffic classification*.
+. Wählen Sie *Konfiguration* > *Netzwerk* > *Verkehrsklassifizierung*.
 . Wählen Sie *Erstellen*.
 . Geben Sie einen Namen und eine Beschreibung (optional) für die Richtlinie ein und wählen Sie *Weiter*.
 +
@@ -122,7 +122,7 @@ Die Einheit, die den eingegebenen Wert beschreibt.
 
 |===
 +
-Wenn Sie beispielsweise eine Bandbreitenbegrenzung von 40 GB/s für eine SLA-Ebene erstellen möchten, erstellen Sie zwei aggregierte Bandbreitenlimits: GET/HEAD bei 40 GB/s und PUT/POST/DELETE bei 40 GB/s.
+Wenn Sie beispielsweise ein Bandbreitenlimit von 4 GB/s für eine SLA-Stufe erstellen möchten, erstellen Sie zwei aggregierte Bandbreitenlimits: GET/HEAD mit 4 GB/s und PUT/POST/DELETE mit 4 GB/s.
 
 . Wählen Sie *Weiter*.
 . Lesen und prüfen Sie die Richtlinie zur Verkehrsklassifizierung. Verwenden Sie die Schaltfläche * Zurück*, um zurückzugehen und Änderungen vorzunehmen. Wenn Sie mit der Richtlinie zufrieden sind, wählen Sie *Speichern und fortfahren*.

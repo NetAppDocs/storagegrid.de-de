@@ -21,7 +21,7 @@ Um zu bestimmen, ob eine Site deaktiviert werden kann, öffnen Sie zunächst den
 
 
 .Schritte
-. Wählen Sie *MAINTENANCE* > *Tasks* > *Decommission*.
+. Wählen Sie *Wartung* > *Aufgaben* > *Außerbetriebnahme*.
 . Wählen Sie *Decommission Site*.
 +
 Schritt 1 (Standort auswählen) des Assistenten für die Dekommission-Site wird angezeigt. Dieser Schritt enthält eine alphabetische Liste der Sites in Ihrem StorageGRID-System.

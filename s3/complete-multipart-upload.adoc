@@ -59,6 +59,8 @@ NOTE: Der `ETag` zurückgegebene Wert ist keine MD5-Summe der Daten, sondern fol
 
 Die folgenden Anforderungsheader werden nicht unterstützt:
 
+* `If-Match`
+* `If-None-Match`
 * `x-amz-sdk-checksum-algorithm`
 * `x-amz-trailer`
 

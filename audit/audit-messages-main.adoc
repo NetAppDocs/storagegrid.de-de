@@ -22,4 +22,4 @@ Die in diesem Kapitel verwendeten vierstelligen Codes sind die ATYP-Werte, die i
 2014-07-17T03:50:47.484627
 \[AUDT:[RSLT(FC32):VRGN][AVER(UI32):10][ATIM(UI64):1405569047484627][*ATYP\(FC32\):SYSU*][ANID(UI32):11627225][AMID(FC32):ARNI][ATID(UI64):9445736326500603516]]
 ----
-Informationen über das Festlegen von Meldungsebenen, das Ändern von Protokollzielen und die Verwendung eines externen Syslog-Servers für Ihre Audit-Informationen finden Sie unter link:../monitor/configure-audit-messages.html["Konfigurieren von Überwachungsmeldungen und Protokollzielen"]
+Informationen zum Festlegen von Audit-Meldungsebenen, zum Ändern von Protokollzielen und zur Verwendung eines externen Syslog-Servers für Ihre Audit-Informationen finden Sie unterlink:../monitor/configure-log-management.html["Konfigurieren Sie die Protokollverwaltung und den externen Syslog-Server"]

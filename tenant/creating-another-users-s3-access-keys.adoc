@@ -31,7 +31,7 @@ Jeder Schlüssel kann eine bestimmte Ablaufzeit haben oder keinen Ablauf haben. 
 CAUTION: Auf die S3-Buckets und Objekte, die zu einem Benutzer gehören, kann über die Zugriffsschlüssel-ID und den geheimen Zugriffsschlüssel zugegriffen werden, die für diesen Benutzer im Mandanten-Manager angezeigt werden. Aus diesem Grund schützen Sie Zugriffsschlüssel wie ein Passwort. Drehen Sie die Zugriffstasten regelmäßig, entfernen Sie alle nicht verwendeten Schlüssel aus dem Konto und geben Sie sie niemals anderen Benutzern zur Verfügung.
 
 .Schritte
-. Wählen Sie *ZUGRIFFSVERWALTUNG* > *Benutzer*.
+. Wählen Sie *Zugriffsverwaltung* > *Benutzer*.
 . Wählen Sie den Benutzer aus, dessen S3-Zugriffsschlüssel Sie managen möchten.
 +
 Die Seite mit den Benutzerdetails wird angezeigt.

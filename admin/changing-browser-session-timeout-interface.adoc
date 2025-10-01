@@ -29,7 +29,7 @@ Das Zeitlimit für die Inaktivität des Browsers wird auch durch Folgendes geste
 * Ein separater, nicht konfigurierbarer StorageGRID-Timer, der für die Systemsicherheit enthalten ist. Das Authentifizierungstoken jedes Benutzers läuft 16 Stunden nach der Anmeldung des Benutzers ab. Wenn die Authentifizierung eines Benutzers abläuft, wird dieser Benutzer automatisch abgemeldet, auch wenn das Zeitlimit für die Inaktivität des Browsers deaktiviert ist oder der Wert für das Browsertimeout nicht erreicht wurde. Um das Token zu erneuern, muss sich der Benutzer erneut anmelden.
 * Timeout-Einstellungen für den Identitäts-Provider, vorausgesetzt, Single Sign-On (SSO) ist für StorageGRID aktiviert.
 +
-Wenn SSO aktiviert ist und der Browser eines Benutzers eine Zeitdauer ausläuft, muss der Benutzer seine SSO-Anmeldeinformationen erneut eingeben, um erneut auf StorageGRID zuzugreifen. Siehe link:configuring-sso.html["Konfigurieren Sie Single Sign-On"].
+Wenn SSO aktiviert ist und es beim Browser eines Benutzers zu einer Zeitüberschreitung kommt, muss der Benutzer seine SSO-Anmeldeinformationen erneut eingeben, um wieder auf StorageGRID zugreifen zu können. Sehen link:how-sso-works.html["So funktioniert SSO"] .
 
 
 
@@ -43,7 +43,7 @@ Diese Option ist standardmäßig deaktiviert, aber Sie möchten diese Funktion m
 
 
 .Schritte
-. Wählen Sie *CONFIGURATION* > *Security* > *Security settings*.
+. Wählen Sie *Konfiguration* > *Sicherheit* > *Sicherheitseinstellungen*.
 . Wählen Sie die Registerkarte *Interface*.
 . So ändern Sie die Einstellung für das Zeitlimit für die Inaktivität des Browsers:
 +

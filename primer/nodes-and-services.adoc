@@ -17,7 +17,7 @@ Der grundlegende Baustein eines StorageGRID Systems ist der Grid-Node. Nodes ent
 
 == Typen von Grid-Nodes
 
-Das StorageGRID System nutzt vier Typen von Grid-Nodes:
+Das StorageGRID -System verwendet drei Arten von Grid-Knoten:
 
 Admin-Nodes:: Bereitstellen von Managementservices wie Systemkonfiguration, Monitoring und Protokollierung Wenn Sie sich beim Grid Manager anmelden, stellen Sie eine Verbindung zu einem Admin-Node her. Jedes Grid muss über einen primären Admin-Node verfügen und möglicherweise über zusätzliche nicht-primäre Admin-Nodes für Redundanz verfügen. Sie können eine Verbindung zu einem beliebigen Admin-Knoten herstellen, und jeder Admin-Knoten zeigt eine ähnliche Ansicht des StorageGRID-Systems an. Wartungsverfahren müssen jedoch mit dem primären Admin-Node durchgeführt werden.
 +
@@ -30,6 +30,8 @@ Siehe link:what-admin-node-is.html["Was ist ein Admin-Node?"]
 Storage-Nodes:: Management und Speicherung von Objektdaten und Metadaten Jeder Standort im StorageGRID-System muss über mindestens drei Storage-Nodes verfügen.
 +
 --
+Bei der Erstinstallation eines neuen Storage Node können Sie festlegen, dass dieser nur fürlink:../primer/what-storage-node-is.html#types-of-storage-nodes["Speichern von Metadaten"] .
+
 Siehe link:what-storage-node-is.html["Was ist ein Storage-Node?"]
 
 --
@@ -45,7 +47,7 @@ Siehe link:what-gateway-node-is.html["Was ist ein Gateway Node?"]
 
 == Hardware- und Software-Nodes
 
-StorageGRID Nodes können als StorageGRID-Appliance-Nodes oder als softwarebasierte Nodes implementiert werden.
+StorageGRID Knoten können als StorageGRID Appliance-Knoten oder als softwarebasierte Knoten bereitgestellt werden.  Die maximale Anzahl an Knoten (einschließlich aller Knotentypen) pro System beträgt 220.
 
 
 
@@ -63,16 +65,9 @@ Im Folgenden erfahren Sie mehr über die verfügbaren Appliances:
 
 === Softwarebasierte Nodes
 
-Softwarebasierte Grid-Nodes können als VMware Virtual Machines oder in Container-Engines auf einem Linux-Host implementiert werden.
-
-* Virtuelle Maschine (VM) in VMware vSphere: Siehe link:../vmware/index.html["Installieren Sie StorageGRID auf VMware"].
-* Innerhalb einer Container-Engine auf Red hat Enterprise Linux: Siehe link:../rhel/index.html["Installieren Sie StorageGRID unter Red hat Enterprise Linux"].
-* Innerhalb einer Container-Engine auf Ubuntu oder Debian: Siehe link:../ubuntu/index.html["Installieren Sie StorageGRID auf Ubuntu oder Debian"].
-
+Softwarebasierte Grid-Knoten können als virtuelle VMware-Maschinen oder innerhalb von Container-Engines auf einem Linux-Host bereitgestellt werden. Sehen link:../swnodes/index.html["Installieren Sie StorageGRID auf softwarebasierten Knoten"] .
 
 Verwenden Sie die https://imt.netapp.com/matrix/#welcome["NetApp Interoperabilitäts-Matrix-Tool (IMT)"^], um die unterstützten Versionen zu bestimmen.
-
-Bei der Erstinstallation eines neuen softwarebasierten Storage-Knotens können Sie angeben, dass er nur für verwendet werden link:../primer/what-storage-node-is.html#types-of-storage-nodes["Speichern von Metadaten"]soll.
 
 
 
@@ -109,6 +104,42 @@ AMS (Audit Management System)
 Überwacht und protokolliert alle geprüften Systemereignisse und Transaktionen in einer Textdatei.
  a| 
 Admin-Nodes
+
+
+
+ a| 
+Apache Tomcat
+ a| 
+Webserver für Java-basierte Anwendungen.
+ a| 
+Admin-Nodes
+
+
+
+ a| 
+Avahi-Daemon
+ a| 
+Verarbeitet mDNS, das zur Namensauflösung und Diensterkennung innerhalb des lokalen Netzwerks verwendet wird.
+ a| 
+Alle Nodes
+
+
+
+ a| 
+Cache-Dienst
+ a| 
+Läuft auf Load Balancer-Knoten (Gateway) und verwaltet einen lokalen Cache mit Objektinhalten.
+ a| 
+Gateway-Nodes
+
+
+
+ a| 
+Cassandra
+ a| 
+Verwaltet die verteilte Datenbank für Objektmetadaten.
+ a| 
+Speicherknoten (außer Nur-Daten)
 
 
 
@@ -187,7 +218,7 @@ Admin- und Gateway-Nodes
  a| 
 Identität (idnt)
  a| 
-Föderiert Benutzeridentitäten von LDAP und Active Directory
+Verwaltet lokale Benutzer und Gruppen, Authentifizierung und föderiert Benutzeridentitäten aus LDAP und Active Directory.
  a| 
 Storage-Nodes, die den ADC-Dienst verwenden
 
@@ -239,9 +270,9 @@ Alle Nodes
 
 
  a| 
-Nginx-gw
+nginx-gw Lastenausgleich
  a| 
-Schaltet den Lastverteilungsservice ein.
+Bietet Lastausgleich für S3-Datenverkehr von Clients zu Storage-Nodes. Der Lastverteilungsservice kann über die Konfigurationsseite Load Balancer Endpoints konfiguriert werden. Dieser Service wird auch als nginx-gw-Service bezeichnet.
  a| 
 Admin- und Gateway-Nodes
 
@@ -253,6 +284,24 @@ NMS (Network Management System)
 Gibt die Überwachungs-, Berichterstellungs- und Konfigurationsoptionen an, die über den Grid Manager angezeigt werden.
  a| 
 Admin-Nodes
+
+
+
+ a| 
+Knotenexporteur (Prometheus-Datensammlung)
+ a| 
+Veröffentlicht Statistiken auf Systemebene für die Prometheus-Zeitreihenmetriksammlung.
+ a| 
+Alle Nodes
+
+
+
+ a| 
+ntp
+ a| 
+Network Time Protocol (NTP)-Dienst.
+ a| 
+Alle Nodes
 
 
 
@@ -293,7 +342,70 @@ Auf jedem Grid-Node ist eine Instanz vorhanden
 
 
  a| 
-Trace-Kollektor
+Server-Manager
+ a| 
+Verwaltet StorageGRID -Dienste.
+ a| 
+Alle Nodes
+
+
+
+ a| 
+SNMP-Agent
+ a| 
+Reagiert auf SNMP-Anfragen.
+ a| 
+Admin-Nodes
+
+
+
+ a| 
+SNMP-Portverwaltungsdienst
+ a| 
+Verwaltet die dynamische Verwaltung von SNMP-Ports.
+ a| 
+Alle Nodes
+
+
+
+ a| 
+SSH (Secure Shell)
+ a| 
+Verwaltet sicheren Zugriff und Remote-Systemverwaltung.
+ a| 
+Alle Nodes
+
+
+
+ a| 
+SSM (Systemstatusmonitor)
+ a| 
+Überwacht Hardwarebedingungen und Berichte an den NMS-Service.
+ a| 
+Alle Nodes
+
+
+
+ a| 
+Statistik
+ a| 
+Zeichnet zusätzliche Metriken im Zusammenhang mit S3-Buckets auf.
+ a| 
+Storage-Nodes
+
+
+
+ a| 
+Trace Agent (Jaeger-Agent)
+ a| 
+Empfängt und verarbeitet vom Trace-Collector (Jaeger-Collector) übermittelte Tracing-Informationen.
+ a| 
+Alle Nodes
+
+
+
+ a| 
+Spurensammler (Jaeger-Sammler)
  a| 
 Führt eine Trace-Erfassung durch, um Informationen für den technischen Support zu sammeln. Der Trace Collector-Dienst verwendet die Open-Source-Jaeger-Software.
  a| 

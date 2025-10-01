@@ -784,7 +784,7 @@ link:operations-on-buckets.html["Operationen auf Buckets"]
 StorageGRID unterstützt alle <<common-params,Allgemeine Parameter und Kopfzeilen>>dieser Anforderung.
 
 .Text anfordern
-Weitere Informationen zu den unterstützten JSON-Textfeldern finden Sie unter link:bucket-and-group-access-policies.html["Verwendung von Bucket- und Gruppenzugriffsrichtlinien"].
+Einzelheiten zu den unterstützten JSON-Body-Feldern finden Sie unterlink:use-access-policies.html["Verwendung von Bucket- und Gruppenzugriffsrichtlinien"] .
 
 
 

@@ -38,7 +38,7 @@ Wenn StorageGRID einen Grid-Node neu gebootet, führt dies den `reboot` Befehl a
 TIP: Wenn Sie mehr als einen Node neu booten müssen, können Sie den verwendenlink:../maintain/rolling-reboot-procedure.html["Ein Neustart wird durchgeführt"].
 
 .Schritte
-. Wählen Sie *KNOTEN*.
+. Wählen Sie *Knoten* aus.
 . Wählen Sie den Grid-Node aus, den Sie neu booten möchten.
 . Wählen Sie die Registerkarte *Aufgaben* aus.
 . Wählen Sie *Neustart*.

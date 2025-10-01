@@ -1,7 +1,7 @@
 ---
 permalink: audit/client-read-audit-messages.html 
 sidebar: sidebar 
-keywords: storagegrid, audit, message, messages, client read, S3SL, SGET, SHEA, WGET, WHEA, S3, swift 
+keywords: storagegrid, audit, message, messages, client read, S3SL, SGET, SHEA, WGET, WHEA, S3 
 summary: Gelesene Audit-Meldungen des Clients werden protokolliert, wenn eine S3-Client-Anwendung eine Anforderung zum Abrufen eines Objekts vornimmt. 
 ---
 = Client liest Audit-Meldungen
@@ -50,27 +50,5 @@ S3 HEAD: Protokolliert eine erfolgreiche Transaktion, um zu überprüfen, ob ein
 S3-Client
  a| 
 link:shea-s3-head.html["SHEA: S3 KOPF"]
-
-
-
- a| 
-WGET
- a| 
-Swift GET: Protokolliert eine erfolgreiche Transaktion, um ein Objekt abzurufen oder die Objekte in einem Container aufzulisten.
- a| 
-Swift Client
- a| 
-link:wget-swift-get.html["WGET: Schneller ERHALTEN"]
-
-
-
- a| 
-WHEA
- a| 
-Swift HEAD: Protokolliert eine erfolgreiche Transaktion, um das Vorhandensein eines Objekts oder Containers zu überprüfen.
- a| 
-Swift Client
- a| 
-link:whea-swift-head.html["WHEA: Schneller KOPF"]
 
 |===

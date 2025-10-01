@@ -11,7 +11,7 @@ summary: Sie können die Ereignisbenachrichtigung für einen S3-Bucket aktiviere
 
 
 [role="lead"]
-Sie können die Ereignisbenachrichtigung für einen S3-Bucket aktivieren, wenn StorageGRID Benachrichtigungen über angegebene Ereignisse an ein Kafka-Zielcluster oder Amazon Simple Notification Service senden soll.
+Sie können die Ereignisbenachrichtigung für einen S3-Bucket aktivieren, wenn StorageGRID Benachrichtigungen über bestimmte Ereignisse an einen Kafka-Zielcluster, einen Webhook-Endpunkt oder den Amazon Simple Notification Service senden soll.
 
 Beispielsweise können Sie Warnmeldungen so konfigurieren, dass sie an Administratoren über jedes Objekt, das einem Bucket hinzugefügt wurde, gesendet werden, wo die Objekte Protokolldateien darstellen, die mit einem kritischen Systemereignis verbunden sind.
 

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: expand, expansion, storage node, add storage volumes, VMware 
 summary: Wenn ein Speicherknoten weniger als 16 Speichervolumes umfasst, können Sie seine Kapazität erhöhen, indem Sie mithilfe von VMware vSphere Volumes hinzufügen. 
 ---
-= VMware: Hinzufügen von Storage Volumes zum Storage-Node
+= Speichervolumes zu VMware Storage Nodes hinzufügen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -14,11 +14,7 @@ summary: Wenn ein Speicherknoten weniger als 16 Speichervolumes umfasst, können
 Wenn ein Speicherknoten weniger als 16 Speichervolumes umfasst, können Sie seine Kapazität erhöhen, indem Sie mithilfe von VMware vSphere Volumes hinzufügen.
 
 .Bevor Sie beginnen
-* Sie haben Zugriff auf die Anweisungen zur Installation von StorageGRID für VMware Implementierungen.
-+
-** link:../vmware/index.html["Installieren Sie StorageGRID auf VMware"]
-
-
+* Sie haben Zugriff auf dielink:../swnodes/index.html["Anweisungen zur Installation von StorageGRID für VMware-Bereitstellungen"] .
 * Sie haben die `Passwords.txt` Datei.
 * Sie haben link:../admin/admin-group-permissions.html["Bestimmte Zugriffsberechtigungen"].
 
@@ -93,19 +89,13 @@ Der Status wird automatisch aktualisiert.
 . Vergewissern Sie sich, dass der Speicherknoten online ist:
 +
 .. Melden Sie sich mit einem beim Grid-Manager anlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
-.. Wählen Sie *SUPPORT* > *Tools* > *Grid-Topologie* aus.
-.. Wählen Sie *_site_* > *_Storage Node_* > *LDR* > *Storage* aus.
-.. Wählen Sie die Registerkarte *Konfiguration* und dann die Registerkarte *Main*.
-.. Wenn die Dropdown-Liste *Speicherstatus - gewünscht* auf schreibgeschützt oder offline gesetzt ist, wählen Sie *Online* aus.
-.. Wählen Sie *Änderungen Anwenden*.
+.. Wählen Sie *Knoten* > *_Speicherknoten_* > *Aufgaben*.
+.. Wenn die Dropdown-Liste *Speicherstatus* auf „Schreibgeschützt“ oder „Offline“ eingestellt ist, wählen Sie „Online“ aus.
+.. Wählen Sie *Speichern*.
 
 
-. So sehen Sie die neuen Objektspeicher:
-+
-.. Wählen Sie *NODES* > *_site_* > *_Storage Node_* > *Storage* aus.
-.. Sehen Sie sich die Details in der Tabelle *Object Stores* an.
-
-
+. Um die neuen Objektspeicher anzuzeigen, wählen Sie *Speicher*.
+. Sehen Sie sich die Details in der Tabelle *Volumes* an.
 
 
 .Ergebnis

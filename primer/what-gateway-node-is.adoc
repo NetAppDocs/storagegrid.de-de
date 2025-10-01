@@ -31,6 +31,13 @@ In der folgenden Tabelle werden die primären Services für Gateway-Nodes aufgef
 
 
  a| 
+Cache-Dienst
+ a| 
+Verwaltet einen lokalen Cache mit Objektinhalten.
+
+
+
+ a| 
 Hochverfügbarkeit
  a| 
 Verwaltet hochverfügbare virtuelle IP-Adressen für Gruppen von Admin-Nodes und Gateway-Nodes.

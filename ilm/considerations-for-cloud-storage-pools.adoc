@@ -20,11 +20,10 @@ Wenn Sie einen Cloud Storage Pool zum Verschieben von Objekten aus dem StorageGR
 * Im Allgemeinen ist Cloud-Archiv-Storage, wie Amazon S3 Glacier oder Azure Blob Storage, ein kostengünstiger Ort für die Speicherung von Objektdaten. Die Kosten für den Abruf von Daten aus dem Cloud-Archiv-Storage sind jedoch relativ hoch. Um die niedrigsten Gesamtkosten zu erreichen, müssen Sie berücksichtigen, wann und wie oft Sie auf die Objekte im Cloud Storage Pool zugreifen. Die Verwendung eines Cloud-Storage-Pools wird nur für Inhalte empfohlen, auf die Sie voraussichtlich nur selten zugreifen.
 * Die Verwendung von Cloud Storage Pools mit FabricPool wird nicht unterstützt, weil die zusätzliche Latenz zum Abrufen eines Objekts aus dem Cloud-Storage-Pool-Ziel hinzugefügt wird.
 * Objekte mit aktivierter S3-Objektsperre können nicht in Cloud-Storage-Pools platziert werden.
-* Wenn für den Ziel-S3-Bucket für einen Cloud-Storage-Pool die S3-Objektsperre aktiviert ist, schlägt der Versuch, die Bucket-Replizierung (PutBucketReplication) zu konfigurieren, mit einem Fehler bei AccessDenied fehl.
 * Die folgenden Plattform-, Authentifizierungs- und Protokollkombinationen mit S3 Object Lock werden für Cloud Storage Pools nicht unterstützt:
 +
 ** *Plattformen*: Google Cloud Platform und Azure
-** *Authentifizierungstypen*: IAM-Rollen überall und anonymer Zugriff
+** *Authentifizierungstypen*: Anonymer Zugriff
 ** *Protokoll*: HTTP
 
 

@@ -62,7 +62,7 @@ Beim Bearbeiten einer Grid Federation-Verbindung wird die folgende Warnmeldung a
 Wenn Sie eine Grid-Federation-Verbindung bearbeiten, versucht StorageGRID, eine Datei mit der Kandidatenkonfiguration auf allen Admin-Knoten im ersten Grid zu speichern. Eine Warnmeldung wird angezeigt, wenn diese Datei nicht in allen Admin-Knoten gespeichert werden kann, z. B. weil ein Admin-Knoten offline ist.
 
 .Empfohlene Maßnahmen
-. Wählen Sie aus dem Raster, mit dem Sie die Verbindung bearbeiten, *KNOTEN* aus.
+. Wählen Sie im Raster, das Sie zum Bearbeiten der Verbindung verwenden, *Knoten* aus.
 . Vergewissern Sie sich, dass alle Admin-Nodes für dieses Grid online sind.
 . Wenn Knoten offline sind, schalten Sie sie wieder online und versuchen Sie erneut, die Verbindung zu bearbeiten.
 
@@ -84,7 +84,7 @@ Wenn ein Mandantenkonto aus dem Quellraster des Mandanten im Zielraster des Mand
 .Empfohlene Maßnahmen
 Bevor sich der Root-Benutzer im Zielraster des Mandanten anmelden kann, muss zunächst ein Grid-Administrator link:changing-password-for-tenant-local-root-user.html["Ändern Sie das Passwort für den lokalen Root-Benutzer"]im Zielraster angemeldet werden.
 
-Bevor ein geklonter lokaler Benutzer sich im Zielraster des Mandanten anmelden kann, muss der Root-Benutzer für den geklonten Mandanten ein Passwort für den Benutzer im Zielraster hinzufügen. Anweisungen dazu finden Sie link:../tenant/managing-local-users.html["Managen Sie lokale Benutzer"] in den Anweisungen zur Verwendung des Tenant Managers.
+Bevor sich ein geklonter lokaler Benutzer beim Zielraster des Mandanten anmelden kann, muss der Root-Benutzer des geklonten Mandanten ein Kennwort für den Benutzer im Zielraster hinzufügen.  Anweisungen hierzu finden Sie unterlink:../tenant/manage-users.html["Benutzer managen"] in der Anleitung zur Nutzung des Tenant Managers.
 
 
 
@@ -99,7 +99,7 @@ Dieses Problem kann auftreten, wenn Aktualisierungen des Verbindungsstatus verz�
 .Empfohlene Maßnahmen
 . Überprüfen Sie den in der Fehlermeldung aufgeführten Grund, und beheben Sie alle Netzwerk- oder anderen Probleme, die möglicherweise die Funktion der Verbindung verhindern. Siehe <<grid-federation-errors,Warnmeldungen und Fehler bei der Grid-Verbundverbindung>>.
 . Befolgen Sie die Anweisungen zum Testen einer Netzverbundverbindung inlink:grid-federation-manage-connection.html["Grid-Verbindungen verwalten"], um zu bestätigen, dass das Problem behoben wurde.
-. Wählen Sie im Quellraster des Mandanten *TENANTS* aus.
+. Wählen Sie im Quellraster des Mandanten *Mandanten* aus.
 . Suchen Sie das Mandantenkonto, das nicht geklont werden konnte.
 . Wählen Sie den Namen der Serviceeinheit aus, um die Detailseite anzuzeigen.
 . Wählen Sie *Kontoklone wiederholen*.
@@ -125,14 +125,16 @@ Wenn link:../monitor/grid-federation-monitor-connections.html["Anzeigen einer Ne
 image::../media/grid-federation-last-error.png[Screenshot mit einer Meldung in der Spalte Letzter Fehler einer Grid Federation-Verbindung]
 
 .Details
-Für jede Grid Federation-Verbindung zeigt die Spalte *Last error* den zuletzt auftretenden Fehler an, falls vorhanden, wenn die Daten eines Mandanten in das andere Grid repliziert wurden. In dieser Spalte wird nur der letzte gitterübergreifende Replikationsfehler angezeigt. Frühere Fehler, die möglicherweise aufgetreten sind, werden nicht angezeigt. Ein Fehler in dieser Spalte kann aus einem der folgenden Gründe auftreten:
+Für jede Grid-Föderationsverbindung zeigt die Spalte *Letzter Fehler* den letzten Fehler an, der ggf. beim Replizieren der Daten eines Mandanten in das andere Grid aufgetreten ist.  In dieser Spalte wird nur der letzte aufgetretene Fehler bei der Cross-Grid-Replikation angezeigt. Eventuell zuvor aufgetretene Fehler werden nicht angezeigt.  Ein Fehler in dieser Spalte kann aus einem der folgenden Gründe auftreten:
 
-* Die Version des Quellobjekts wurde nicht gefunden.
+* Die Quellobjektversion wurde nicht gefunden.
 * Der Quell-Bucket wurde nicht gefunden.
 * Der Ziel-Bucket wurde gelöscht.
 * Der Ziel-Bucket wurde von einem anderen Konto neu erstellt.
 * Im Ziel-Bucket ist die Versionierung angehalten.
 * Der Ziel-Bucket wurde vom selben Konto neu erstellt, ist aber jetzt nicht mehr versioniert.
+* Das Quellobjekt verfügt über S3-Objektsperreinstellungen, die nicht mit den Aufbewahrungseinstellungen auf Mandantenebene des Zielrasters übereinstimmen.
+* Das Quellobjekt verfügt über S3 Object Lock-Einstellungen und S3 Object Lock ist im Ziel-Bucket deaktiviert.
 
 
 .Empfohlene Maßnahmen
@@ -167,7 +169,7 @@ Diese Warnmeldung weist darauf hin, dass Tenant-Objekte aus einem Grund, der vom
 
 .Empfohlene Maßnahmen
 . Melden Sie sich am Raster an, in dem die Warnmeldung ausgelöst wurde.
-. Gehen Sie zu *CONFIGURATION* > *System* > *Grid Federation*, und suchen Sie den in der Warnung aufgeführten Verbindungsnamen.
+. Gehen Sie zu *Konfiguration* > *System* > *Grid-Föderation* und suchen Sie den in der Warnung aufgeführten Verbindungsnamen.
 . Sehen Sie auf der Registerkarte zulässige Mieter in der Spalte *Letzter Fehler* nach, um zu bestimmen, welche Mandantenkonten Fehler aufweisen.
 . Weitere Informationen über den Fehler finden Sie in den Anweisungen unterlink:../monitor/grid-federation-monitor-connections.html["Überwachen von Netzverbundverbindungen"], um die Grid-übergreifenden Replikationskennzahlen zu überprüfen.
 . Für jedes betroffene Mandantenkonto:
@@ -181,7 +183,6 @@ Diese Warnmeldung weist darauf hin, dass Tenant-Objekte aus einem Grund, der vom
 +
 ** Es gibt einen entsprechenden Bucket für denselben Mandanten auf dem anderen Grid (muss den genauen Namen verwenden).
 ** Beide Buckets haben die Objektversionierung aktiviert (die Versionierung kann in keinem Grid ausgesetzt werden).
-** Bei beiden Buckets ist die S3-Objektsperre deaktiviert.
 ** Keiner der Buckets befindet sich im Status *delete objects: Read-only*.
 
 

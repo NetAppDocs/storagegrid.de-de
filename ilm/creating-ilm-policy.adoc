@@ -53,13 +53,11 @@ NOTE: Wenn der link:enabling-s3-object-lock-globally.html["Die Einstellung für 
 
 --
 ====
-* Optional haben Sie sich das Video angesehen: https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=e768d4da-da88-413c-bbaa-b1ff00874d10["Video: ILM-Richtlinien im Überblick"^]
-+
-[link=https://netapp.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=e768d4da-da88-413c-bbaa-b1ff00874d10]
-image::../media/video-screenshot-ilm-policies-118.png[Video: ILM-Richtlinien im Überblick]
+* Optional haben Sie das Video angesehen:
 
 
-
+.Übersicht über ILM-Richtlinien
+video::e768d4da-da88-413c-bbaa-b1ff00874d10[panopto]
 Siehe auch link:ilm-policy-overview.html["Verwenden Sie ILM-Richtlinien"].
 
 .Schritte
@@ -255,10 +253,10 @@ Alternativ können Sie eine einzelne Richtlinie auf der Seite *ILM* > *Richtlini
 --
 .Aktivieren Sie mehrere Richtlinien
 --
-Um mehrere Richtlinien zu aktivieren, müssen Sie Tags erstellen und jedem Tag eine Richtlinie zuweisen.
+Um mehrere Richtlinien zu aktivieren, müssen Sie Richtlinien-Tags erstellen und jedem Tag eine Richtlinie zuweisen.  Sie können maximal 10 Richtlinien-Tags für Ihr Raster erstellen.
 
 
-TIP: Wenn mehrere Tags verwendet werden und Mandanten häufig Richtlinien-Tags Buckets zuweisen, kann die Grid-Performance beeinträchtigt werden. Wenn Sie nicht vertrauenswürdige Mandanten haben, sollten Sie nur das Standard-Tag verwenden.
+TIP: Wenn mehrere Richtlinien-Tags verwendet werden und Mandanten Richtlinien-Tags häufig Buckets neu zuweisen, kann dies die Grid-Leistung beeinträchtigen.  Wenn Sie nicht vertrauenswürdige Mandanten haben, sollten Sie in Erwägung ziehen, nur das Standardrichtlinien-Tag zu verwenden.
 
 . Wählen Sie *ILM* > *Policy-Tags* aus.
 . Wählen Sie *Erstellen*.

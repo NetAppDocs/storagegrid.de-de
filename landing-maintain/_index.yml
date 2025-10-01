@@ -11,7 +11,7 @@ indexpage:
     links:
     - title: Netzwartung
       url: "../maintain/index.html"
-    - title: Recovery Package Herunterladen
+    - title: Wiederherstellungspaket herunterladen
       url: "../maintain/downloading-recovery-package.html"
   - title: Deaktivierung von Nodes oder Standorten
     links:

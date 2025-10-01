@@ -37,7 +37,7 @@ TIP: Wenn Sie eine ältere Appliance durch eine neuere Appliance ersetzen möcht
 
 Verbundene Grid-Nodes oder getrennte Grid-Nodes können deaktiviert werden.
 
-Verbundene Nodes werden stillgelegt:: Im Allgemeinen sollten Sie Grid-Knoten nur dann stilllegen, wenn sie mit dem StorageGRID-System verbunden sind, und nur dann, wenn sich alle Knoten in einem normalen Zustand befinden (grüne Symbole auf den Seiten *NODES* und auf der Seite *Decommissionsknoten*).
+Verbundene Nodes werden stillgelegt:: Im Allgemeinen sollten Sie Grid-Knoten nur außer Betrieb nehmen, wenn sie mit dem StorageGRID -System verbunden sind und nur, wenn alle Knoten in einem normalen Zustand sind (grüne Symbole auf den Seiten *Knoten* und auf der Seite *Knoten außer Betrieb nehmen*).
 +
 --
 Anweisungen hierzu finden Sie unter link:decommissioning-connected-grid-nodes.html["Verbundene Grid-Nodes ausmustern"].

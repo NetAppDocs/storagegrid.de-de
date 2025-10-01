@@ -27,8 +27,9 @@ NOTE: Die Details, die für jeden Protokolltyp angegeben sind, dienen nur als Re
 
 == Greifen Sie auf die Protokolle zu
 
-Um auf die Protokolle zuzugreifen, können Sie link:collecting-log-files-and-system-data.html["Erfassen von Protokolldateien und Systemdaten"]von einem oder mehreren Knoten aus als einzelnes Protokolldateiarchiv zugreifen. Wenn der primäre Admin-Node nicht verfügbar ist oder einen bestimmten Knoten nicht erreichen kann, können Sie für jeden Grid-Knoten wie folgt auf einzelne Protokolldateien zugreifen:
+Um auf die Protokolle zuzugreifen, können Sielink:collecting-log-files-and-system-data.html["Erfassen von Protokolldateien und Systemdaten"] von einem oder mehreren Knoten als einzelnes Protokolldateiarchiv.  Alternativ können Sie wie folgt auf die einzelnen Protokolldateien für jeden Grid-Knoten zugreifen:
 
+.Schritte
 . Geben Sie den folgenden Befehl ein: `ssh admin@grid_node_IP`
 . Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
 . Geben Sie den folgenden Befehl ein, um zu root zu wechseln: `su -`
@@ -41,13 +42,13 @@ Um auf die Protokolle zuzugreifen, können Sie link:collecting-log-files-and-sys
 
 Das Exportieren der Protokolle auf den Syslog-Server bietet folgende Funktionen:
 
-* Sie erhalten eine Liste aller Grid Manager- und Tenant Manager-Anforderungen zusätzlich zu S3- und Swift-Anforderungen.
+* Erhalten Sie zusätzlich zu den S3-Anfragen eine Liste aller Grid Manager- und Tenant Manager-Anfragen.
 * Besserer Einblick in S3-Anfragen, die Fehler zurückgeben, ohne die Auswirkungen auf die Performance, die durch Audit-Protokollierungsmethoden verursacht werden.
 * Zugriff auf HTTP-Layer-Anforderungen und Fehlercodes, die einfach zu analysieren sind.
 * Bessere Transparenz bei Anfragen, die von Traffic-Klassifikatoren am Load Balancer blockiert wurden.
 
 
-Informationen zum Exportieren der Protokolle finden Sie unter link:../monitor/configure-audit-messages.html["Konfigurieren von Überwachungsmeldungen und Protokollzielen"].
+Informationen zum Exportieren der Protokolle finden Sie unterlink:../monitor/configure-log-management.html["Konfigurieren Sie die Protokollverwaltung und den externen Syslog-Server"] .
 
 
 
@@ -72,6 +73,11 @@ Informationen zu Betriebssystemen, einschließlich StorageGRID-Image-Versionen
 
 | Pakete  a| 
 Globale Konfigurationsinformationen (Bundles)
+
+
+
+| Cache-SVC  a| 
+Cache-Dienstprotokolle (nur auf Gateway-Knoten).
 
 
 
@@ -107,6 +113,11 @@ Hochverfügbarkeitsgruppen – Kennzahlen und Protokolle
 
 | Lambda-Schiedsrichter  a| 
 Protokolle in Verbindung mit der S3 Select Proxy-Anforderung.
+
+
+
+| durchgesickert  a| 
+Protokolle vom Leakd-Dienst.
 
 
 
@@ -153,7 +164,7 @@ Konfigurationsdateien und Protokolle für den Load Balancer und den Grid Federat
 ** Das Format dieser Protokollmeldungen ist `[$time_iso8601] $remote_addr $status $bytes_sent $request_length $request_time "$endpointId" "$upstream_addr" "$request" "$http_host"`
 
 
-* `endpoint-access.log.gz`: S3 und Swift Anfragen an Load Balancer Endpunkte.
+* `endpoint-access.log.gz`: S3-Anfragen an Load Balancer-Endpunkte.
 +
 ** Diese Meldungen werden beim Exportieren mit syslog als Präfix festgelegt `endpoint:`.
 ** Das Format dieser Protokollmeldungen ist `[$time_iso8601] $remote_addr $status $bytes_sent $request_length $request_time "$endpointId" "$upstream_addr" "$request" "$http_host"`
@@ -227,6 +238,6 @@ Ausgabe von StorageGRID-Containerbefehlen. Enthält Systeminformationen wie z. B
 
 
 | Sync-Recovery-Paket  a| 
-Im Zusammenhang mit der Aufrechterhaltung der Konsistenz des neuesten Wiederherstellungspakets über alle Admin-Nodes und Storage-Nodes hinweg, die den ADC-Dienst hosten.
+Bezieht sich auf die Aufrechterhaltung der Konsistenz des neuesten Wiederherstellungspakets auf allen Admin-Knoten und Speicherknoten, die den ADC-Dienst hosten.
 
 |===

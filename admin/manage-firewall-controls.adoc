@@ -64,7 +64,7 @@ Nachdem Sie Ihre Konfiguration gespeichert haben, werden alle externen Ports auf
 
 === Beispiel 2: Sperren sensibler Ports
 
-Angenommen, Sie möchten sensible Ports und den Dienst auf diesem Port sperren (z. B. SSH an Port 22). Sie können die folgenden allgemeinen Schritte verwenden:
+Angenommen, Sie möchten sensible Ports und den Dienst auf diesem Port sperren.  Sie können die folgenden allgemeinen Schritte ausführen:
 
 . Verwenden Sie die Registerkarte Liste der privilegierten Adressen, um nur den Hosts Zugriff zu gewähren, die Zugriff auf den Dienst benötigen.
 . Verwenden Sie die Registerkarte externen Zugriff verwalten, um alle Ports zu blockieren.
@@ -73,7 +73,7 @@ Angenommen, Sie möchten sensible Ports und den Dienst auf diesem Port sperren (
 
 CAUTION: Fügen Sie die privilegierte IP-Adresse hinzu, bevor Sie den Zugriff auf alle Ports blockieren, die dem Zugriff auf Grid Manager und Tenant Manager zugewiesen sind (voreingestellte Ports sind 443 und 8443). Alle Benutzer, die derzeit mit einem blockierten Port verbunden sind, einschließlich Ihnen, verlieren den Zugriff auf Grid Manager, es sei denn, ihre IP-Adresse wurde der Liste der privilegierten Adressen hinzugefügt.
 
-Nachdem Sie die Konfiguration gespeichert haben, stehen den Hosts auf der Liste der privilegierten Adressen Port 22 und SSH-Dienst zur Verfügung. Allen anderen Hosts wird der Zugriff auf den Dienst verweigert, unabhängig davon, von welcher Schnittstelle die Anforderung stammt.
+Nachdem Sie Ihre Konfiguration gespeichert haben, stehen der sensible Port und der Dienst auf diesem Port den Hosts auf der Liste privilegierter Adressen zur Verfügung.  Allen anderen Hosts wird der Zugriff auf den Dienst verweigert, unabhängig davon, von welcher Schnittstelle die Anforderung kommt.
 
 
 

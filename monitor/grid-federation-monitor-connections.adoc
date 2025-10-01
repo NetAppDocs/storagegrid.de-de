@@ -25,7 +25,7 @@ Sie können grundlegende Informationen über alle link:../admin/grid-federation-
 Die Seite Grid Federation enthält grundlegende Informationen zu allen Grid-Verbundverbindungen und zu allen Mandantenkonten, die für die Nutzung von Grid-Verbundverbindungen zugelassen sind.
 
 .Schritte
-. Wählen Sie *CONFIGURATION* > *System* > *Grid Federation*.
+. Wählen Sie *Konfiguration* > *System* > *Grid-Föderation*.
 +
 Die Seite Grid Federation wird angezeigt.
 
@@ -107,7 +107,7 @@ image::../media/grid-federation-certificates-tab.png[Grid-Federation-Certificate
 Über das Cross-Grid Replication Dashboard in Grafana können Sie Prometheus-Metriken zu Grid-übergreifenden Replikationsvorgängen auf Ihrem Grid anzeigen.
 
 .Schritte
-. Wählen Sie im Grid Manager *SUPPORT* > *Tools* > *Metrics*.
+. Wählen Sie im Grid Manager *Support* > *Tools* > *Metriken*.
 +
 
 NOTE: Die auf der Seite Metriken verfügbaren Tools sind für den technischen Support bestimmt. Einige Funktionen und Menüelemente in diesen Tools sind absichtlich nicht funktionsfähig und können sich ändern. Siehe Liste von link:../monitor/commonly-used-prometheus-metrics.html["Häufig verwendete Prometheus-Kennzahlen"].

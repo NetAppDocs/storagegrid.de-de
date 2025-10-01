@@ -55,7 +55,7 @@ NOTE: Wenn Sie keine S3-Endpunkt-Domänennamen hinzufügen und die Liste leer is
 == Fügen Sie einen S3-Endpunkt-Domänennamen hinzu
 
 .Schritte
-. Wählen Sie *CONFIGURATION* > *Network* > *S3-Endpunkt-Domänennamen*.
+. Wählen Sie *Konfiguration* > *Netzwerk* > *S3-Endpunktdomänennamen*.
 . Geben Sie den Domainnamen in das Feld *Domain Name 1* ein. Wählen Sie *Add another Domain Name*, um weitere Domainnamen hinzuzufügen.
 . Wählen Sie *Speichern*.
 . Stellen Sie sicher, dass die von Clients verwendeten Serverzertifikate mit den erforderlichen S3-Endpunkt-Domänennamen übereinstimmen.
@@ -77,7 +77,7 @@ Wenn Clients nun den Endpunkt verwenden `_bucket.s3.company.com_`, wird der DNS-
 Wenn Sie einen Namen ändern, der von S3-Anwendungen verwendet wird, schlagen Anforderungen im virtuellen Hosted-Stil fehl.
 
 .Schritte
-. Wählen Sie *CONFIGURATION* > *Network* > *S3-Endpunkt-Domänennamen*.
+. Wählen Sie *Konfiguration* > *Netzwerk* > *S3-Endpunktdomänennamen*.
 . Wählen Sie das Feld für den Domänennamen aus, das Sie bearbeiten möchten, und nehmen Sie die erforderlichen Änderungen vor.
 . Wählen Sie *Speichern*.
 . Wählen Sie *Ja*, um Ihre Änderung zu bestätigen.
@@ -90,7 +90,7 @@ Wenn Sie einen Namen ändern, der von S3-Anwendungen verwendet wird, schlagen An
 Wenn Sie einen Namen entfernen, der von S3-Anwendungen verwendet wird, schlagen Anforderungen im virtuellen Hosted-Stil fehl.
 
 .Schritte
-. Wählen Sie *CONFIGURATION* > *Network* > *S3-Endpunkt-Domänennamen*.
+. Wählen Sie *Konfiguration* > *Netzwerk* > *S3-Endpunktdomänennamen*.
 . Wählen Sie das Löschsymbol image:../media/icon-x-to-remove.png["Symbol Löschen"] neben dem Domänennamen aus.
 . Wählen Sie *Ja*, um den Löschvorgang zu bestätigen.
 

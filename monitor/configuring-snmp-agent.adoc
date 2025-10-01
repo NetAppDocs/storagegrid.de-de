@@ -30,7 +30,7 @@ Alle Knoten im Grid verwenden dieselbe SNMP-Konfiguration.
 Aktivieren Sie als ersten Schritt den StorageGRID-SMNP-Agent und geben Sie grundlegende Informationen an.
 
 .Schritte
-. Wählen Sie *KONFIGURATION* > *Überwachung* > *SNMP-Agent*.
+. Wählen Sie *Konfiguration* > *Überwachung* > *SNMP-Agent*.
 +
 Die Seite SNMP Agent wird angezeigt.
 
@@ -347,6 +347,9 @@ Die Agentenadresse wird erstellt und der Tabelle hinzugefügt.
 == [[create-usm-users]]Erstellen Sie USM-Benutzer
 
 Wenn Sie SNMPv3 verwenden, definieren Sie auf der Registerkarte USM-Benutzer im Abschnitt andere Konfigurationen die USM-Benutzer, die zum Abfragen der MIB oder zum Empfangen von Traps und Informationen berechtigt sind.
+
+
+NOTE: Für SNMPv3-Trap-Ziele wird empfohlen, für jeden Admin-Knoten einen USM-Benutzer zu erstellen.  Wenn nicht jeder Admin-Knoten über einen USM-Benutzer verfügt, erhält Ihr Verwaltungssystem möglicherweise keine Benachrichtigungen mehr, wenn der primäre Admin-Knoten ausfällt.
 
 
 NOTE: SNMPv3 _Inform_ Ziele müssen Benutzer mit Engine-IDs haben. SNMPv3 _Trap_ Ziel kann keine Benutzer mit Engine-IDs haben.

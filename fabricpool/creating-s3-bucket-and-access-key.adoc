@@ -44,7 +44,7 @@ TIP: Sie können den Bucket-Namen nach dem Erstellen des Buckets nicht ändern.
 
 .. Wählen Sie die Region für diesen Bucket aus.
 +
-Standardmäßig werden alle Buckets in der Region erstellt `us-east-1`.
+Standardmäßig werden alle Buckets im `us-east-1` Region.  Wenn die Standardregion auf eine andere Region als `us-east-1` , diese andere Region ist zunächst im Dropdown-Menü ausgewählt.
 
 .. Wählen Sie *Weiter*.
 .. Wählen Sie *Eimer erstellen*.

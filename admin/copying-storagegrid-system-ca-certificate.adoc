@@ -22,7 +22,7 @@ StorageGRID verwendet eine interne Zertifizierungsstelle (Certificate Authority,
 Wenn ein benutzerdefiniertes Serverzertifikat konfiguriert wurde, sollten Client-Anwendungen den Server anhand des benutzerdefinierten Serverzertifikats überprüfen. Sie sollten das CA-Zertifikat nicht aus dem StorageGRID-System kopieren.
 
 .Schritte
-. Wählen Sie *KONFIGURATION* > *Sicherheit* > *Zertifikate* und dann die Registerkarte *Raster CA* aus.
+. Wählen Sie *Konfiguration* > *Sicherheit* > *Zertifikate* und dann die Registerkarte *Grid CA*.
 . Laden Sie das Zertifikat im Abschnitt *Zertifikat PEM* herunter oder kopieren Sie es.
 +
 [role="tabbed-block"]

@@ -21,7 +21,7 @@ Sie können ein Mandantenkonto löschen, wenn Sie den Zugriff des Mandanten auf 
 
 
 .Schritte
-. Wählen Sie *MIETER*.
+. Wählen Sie *Mandanten* aus.
 . Suchen Sie das oder die Konten, die Sie löschen möchten.
 +
 Verwenden Sie das Suchfeld, um nach einem Mandanten anhand des Namens oder der Mandanten-ID zu suchen.

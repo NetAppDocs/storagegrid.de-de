@@ -1,0 +1,32 @@
+---
+permalink: swnodes/how-grid-nodes-discover-primary-admin-node.html 
+sidebar: sidebar 
+keywords: how grid nodes discover the primary Admin Node 
+summary: Die Grid-Nodes kommunizieren mit dem primären Admin-Node zu Konfiguration und Management. Jeder Grid-Knoten muss die IP-Adresse des primären Admin-Knotens im Grid-Netzwerk kennen. 
+---
+= Ermitteln der primären Admin-Node durch Grid-Nodes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Grid-Nodes kommunizieren mit dem primären Admin-Node zu Konfiguration und Management. Jeder Grid-Knoten muss die IP-Adresse des primären Admin-Knotens im Grid-Netzwerk kennen.
+
+Um sicherzustellen, dass ein Grid-Node auf den primären Admin-Node zugreifen kann, können Sie bei der Bereitstellung des Node eines der folgenden Schritte ausführen:
+
+* Sie können den ADMIN_IP-Parameter verwenden, um die IP-Adresse des primären Admin-Knotens manuell einzugeben.
+* Sie können den ADMIN_IP-Parameter weglassen, damit der Grid-Node den Wert automatisch ermittelt. Die automatische Erkennung ist besonders nützlich, wenn das Grid-Netzwerk DHCP verwendet, um die IP-Adresse dem primären Admin-Node zuzuweisen.
+
+
+Die automatische Erkennung des primären Admin-Knotens wird über ein Multicast-Domänennamensystem (mDNS) durchgeführt. Beim ersten Start des primären Admin-Knotens veröffentlicht er seine IP-Adresse mit mDNS. Andere Knoten im selben Subnetz können dann die IP-Adresse abfragen und automatisch erfassen. Da der Multicast-IP-Datenverkehr normalerweise nicht über Subnetze routingfähig ist, können Nodes in anderen Subnetzen die IP-Adresse des primären Admin-Node nicht direkt abrufen.
+
+[NOTE]
+====
+Wenn Sie die automatische Erkennung verwenden:
+
+* Sie müssen DIE ADMIN_IP-Einstellung für mindestens einen Grid-Node in allen Subnetzen, mit denen der primäre Admin-Node nicht direkt verbunden ist, enthalten. Dieser Grid-Knoten veröffentlicht dann die IP-Adresse des primären Admin-Knotens für andere Knoten im Subnetz, um mit mDNS zu ermitteln.
+* Stellen Sie sicher, dass Ihre Netzwerkinfrastruktur den Datenverkehr mehrerer gegossener IP-Daten innerhalb eines Subnetzes unterstützt.
+
+
+====

@@ -52,7 +52,7 @@ TIP: Bevor ein lokaler Root-Benutzer sich beim replizierten Mandanten im Zielras
 Sie können Details zu einem Mandanten anzeigen, der eine Verbindung mit dem Grid Federation verwenden darf.
 
 .Schritte
-. Wählen Sie *MIETER*.
+. Wählen Sie *Mandanten* aus.
 . Wählen Sie auf der Seite Tenants den Namen der Serviceeinheit aus, um die Seite mit den Details der Serviceeinheit anzuzeigen.
 +
 Wenn es sich hierbei um das Quellraster für den Mandanten handelt (d. h. wenn der Mandant in diesem Raster erstellt wurde), wird ein Banner angezeigt, das Sie daran erinnert, dass der Mandant in einem anderen Raster geklont wurde. Wenn Sie diesen Mandanten bearbeiten oder löschen, werden Ihre Änderungen nicht mit dem anderen Raster synchronisiert.
@@ -121,7 +121,7 @@ Deaktivieren Sie als ersten Schritt die Grid-übergreifende Replizierung für al
 
 .Schritte
 . Melden Sie sich vom primären Admin-Node aus an einem der beiden Raster beim Grid Manager an.
-. Wählen Sie *CONFIGURATION* > *System* > *Grid Federation*.
+. Wählen Sie *Konfiguration* > *System* > *Grid-Föderation*.
 . Wählen Sie den Verbindungsnamen aus, um die zugehörigen Details anzuzeigen.
 . Bestimmen Sie auf der Registerkarte *zulässige Mieter*, ob der Mieter die Verbindung nutzt.
 . Wenn der Mieter aufgeführt ist, weisen Sie ihn anlink:../tenant/grid-federation-manage-cross-grid-replication.html["Deaktivieren Sie die Grid-übergreifende Replizierung"], alle seine Eimer auf beiden Rastern in der Verbindung zu besetzen.
@@ -145,7 +145,7 @@ Nachdem die Grid-übergreifende Replizierung für Mandanten-Buckets deaktiviert 
 ====
 .Seite „Grid Federation“
 --
-.. Wählen Sie *CONFIGURATION* > *System* > *Grid Federation*.
+.. Wählen Sie *Konfiguration* > *System* > *Grid-Föderation*.
 .. Wählen Sie den Verbindungsnamen aus, um die Detailseite anzuzeigen.
 .. Wählen Sie auf der Registerkarte *zulässige Mieter* die Optionsschaltfläche für den Mieter aus.
 .. Wählen Sie *Berechtigung entfernen*.
@@ -154,7 +154,7 @@ Nachdem die Grid-übergreifende Replizierung für Mandanten-Buckets deaktiviert 
 --
 .Mandanten werden gestartet
 --
-.. Wählen Sie *MIETER*.
+.. Wählen Sie *Mandanten* aus.
 .. Wählen Sie den Namen des Mandanten aus, um die Detailseite anzuzeigen.
 .. Wählen Sie auf der Registerkarte *Grid Federation* das Optionsfeld für die Verbindung aus.
 .. Wählen Sie *Berechtigung entfernen*.
@@ -196,7 +196,7 @@ Bevor Sie die Erlaubnis eines Mandanten gewaltsam entfernen, notieren Sie sich d
 
 .Schritte
 . Melden Sie sich über den primären Admin-Knoten beim Grid-Manager an.
-. Wählen Sie *CONFIGURATION* > *System* > *Grid Federation*.
+. Wählen Sie *Konfiguration* > *System* > *Grid-Föderation*.
 . Wählen Sie den Verbindungsnamen aus, um die Detailseite anzuzeigen.
 . Wählen Sie auf der Registerkarte *zulässige Mieter* die Optionsschaltfläche für den Mieter aus.
 . Wählen Sie *Berechtigung entfernen*.

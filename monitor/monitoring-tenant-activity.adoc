@@ -25,14 +25,14 @@ Alle S3-Client-Aktivitäten sind mit StorageGRID-Mandantenkonten verknüpft. Mit
 Auf der Seite Tenants werden grundlegende Informationen für alle aktuellen Mandantenkonten angezeigt.
 
 .Schritte
-. Wählen Sie *MIETER*.
+. Wählen Sie *Mandanten* aus.
 . Überprüfen Sie die auf den Mandanten-Seiten angezeigten Informationen.
 +
 Für jeden Mandanten werden der genutzte logische Speicherplatz, die Kontingentnutzung, das Kontingent und die Objektanzahl aufgelistet. Wenn für einen Mandanten keine Quote festgelegt ist, enthalten die Felder Quota Usage und Quota einen Bindestrich (&#8212;).
 
 +
 
-NOTE: Die Werte für den genutzten Speicherplatz sind Schätzungen. Diese Schätzungen sind vom Zeitpunkt der Aufnahme, der Netzwerkverbindung und des Node-Status betroffen.
+NOTE: Die logische Größe aller Objekte, die zu diesem Mandanten gehören, umfasst unvollständige und laufende mehrteilige Uploads.  Die Größe umfasst nicht den zusätzlichen physischen Speicherplatz, der für ILM-Richtlinien verwendet wird.  Bei den Werten für den belegten Speicherplatz handelt es sich um Schätzungen.  Diese Schätzungen werden durch den Zeitpunkt der Aufnahme, die Netzwerkkonnektivität und den Knotenstatus beeinflusst.
 
 +
 image::../media/tenant_accounts_page.png[Seite „Mandantenkonten“]
@@ -75,6 +75,10 @@ image::../media/tenant_usage_modal.png[Nutzung von Mandanten modal]
 . Überprüfen Sie oben auf der Seite die Übersicht über die Serviceeinheiten.
 +
 Dieser Abschnitt der Detailseite enthält zusammenfassende Informationen für den Mandanten, einschließlich der Objektanzahl des Mandanten, der Kontingentnutzung, des verwendeten logischen Speicherplatzes und der Kontingenteinstellung.
+
++
+
+NOTE: Die logische Größe aller Objekte, die zu diesem Mandanten gehören, umfasst unvollständige und laufende mehrteilige Uploads.  Die Größe umfasst nicht den zusätzlichen physischen Speicherplatz, der für ILM-Richtlinien verwendet wird.  Bei den Werten für den belegten Speicherplatz handelt es sich um Schätzungen.  Diese Schätzungen werden durch den Zeitpunkt der Aufnahme, die Netzwerkkonnektivität und den Knotenstatus beeinflusst.
 
 . Sehen Sie sich auf der Registerkarte *Raumaufschlüsselung* das Diagramm *Speicherplatzverbrauch* an.
 +
@@ -129,7 +133,7 @@ Siehe link:../admin/grid-federation-overview.html["Was ist Grid Federation?"] un
 Wenn Richtlinien zur Traffic-Klassifizierung für einen Mandanten vorhanden sind, überprüfen Sie den Netzwerkverkehr für diesen Mandanten.
 
 .Schritte
-. Wählen Sie *CONFIGURATION* > *Network* > *traffic classification*.
+. Wählen Sie *Konfiguration* > *Netzwerk* > *Verkehrsklassifizierung*.
 +
 Die Seite Richtlinien zur Klassifizierung von Verkehrsdaten wird angezeigt, und die vorhandenen Richtlinien sind in der Tabelle aufgeführt.
 
@@ -164,7 +168,7 @@ Weitere Informationen finden Sie unter link:../audit/index.html["Prüfung von Au
 
 Optional können Sie mit den Prometheus-Kennzahlen Berichte über die Mandantenaktivität erstellen.
 
-* Wählen Sie im Grid Manager die Option *SUPPORT* > *Tools* > *Metriken*. Kunden können vorhandene Dashboards wie S3 Overview zur Überprüfung von Client-Aktivitäten nutzen.
+* Wählen Sie im Grid Manager *Support* > *Tools* > *Metriken*.  Sie können vorhandene Dashboards wie S3 Overview verwenden, um Clientaktivitäten zu überprüfen.
 +
 
 NOTE: Die auf der Seite Metriken verfügbaren Tools sind in erster Linie für den technischen Support bestimmt. Einige Funktionen und Menüelemente in diesen Tools sind absichtlich nicht funktionsfähig.

@@ -33,7 +33,7 @@ Dieses Verfahren ist nur ein Schritt im Recovery-Prozess des Grid Node. Das Verf
 . Wenn der fehlgeschlagene Grid-Node ein Storage-Node ist, ermitteln Sie, ob eine der virtuellen Festplatten, die für die Datenspeicherung verwendet werden, unbeschädigt sind, und bewahren Sie sie für die erneute Verbindung mit dem wiederhergestellten Grid-Node auf.
 . Schalten Sie die virtuelle Maschine aus.
 . Wählen Sie *actions* > *All vCenter actions* > *Delete from Disk*, um die virtuelle Maschine zu löschen.
-. Implementieren Sie eine neue Virtual Machine als Ersatz-Node und verbinden Sie sie mit einem oder mehreren StorageGRID Netzwerken. Anweisungen hierzu finden Sie unter link:../vmware/deploying-storagegrid-node-as-virtual-machine.html["StorageGRID-Knoten als virtuelle Maschine implementieren"].
+. Stellen Sie eine neue virtuelle Maschine als Ersatzknoten bereit und verbinden Sie sie mit einem oder mehreren StorageGRID Netzwerken.  Anweisungen finden Sie unterlink:../swnodes/deploying-storagegrid-node-as-virtual-machine.html["StorageGRID-Knoten als virtuelle Maschine implementieren"] .
 +
 Bei der Implementierung des Node können Sie optional Node-Ports neu zuordnen oder CPU- oder Speichereinstellungen erhöhen.
 

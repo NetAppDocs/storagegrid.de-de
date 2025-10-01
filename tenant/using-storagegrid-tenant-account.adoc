@@ -23,7 +23,7 @@ Optional können Mandantenkonten verwendet werden, um gespeicherte Objekte nach 
 * *Anwendungsbeispiel für Unternehmen:* Wenn das StorageGRID-System innerhalb eines Unternehmens verwendet wird, kann der Objekt-Storage des Grid von den verschiedenen Abteilungen des Unternehmens getrennt werden. Beispielsweise können Mandantenkonten für die Marketingabteilung, die Kundenbetreuung, die Personalabteilung usw. vorhanden sein.
 +
 
-NOTE: Wenn Sie das S3-Client-Protokoll verwenden, können Sie auch S3-Buckets und Bucket-Richtlinien verwenden, um Objekte zwischen den Abteilungen eines Unternehmens zu trennen. Sie müssen keine separaten Mandantenkonten erstellen. Weitere Informationen finden Sie in den Anweisungen zur Implementierunglink:../s3/bucket-and-group-access-policies.html["S3-Buckets und Bucket-Richtlinien"].
+NOTE: Wenn Sie das S3-Clientprotokoll verwenden, können Sie auch S3-Buckets und Bucket-Richtlinien verwenden, um Objekte zwischen den Abteilungen in einem Unternehmen zu trennen.  Sie müssen keine separaten Mieterkonten erstellen.  Siehe Anweisungen zur Implementierunglink:../s3/use-access-policies.html["S3-Buckets und Bucket-Richtlinien"] für weitere Informationen.
 
 * *Anwendungsfall des Service-Providers:* Wenn das StorageGRID-System von einem Service-Provider verwendet wird, kann der Objekt-Storage des Grid von den verschiedenen Einheiten getrennt werden, die den Storage leasen. Beispielsweise können Mandantenkonten für Unternehmen A, Unternehmen B, Unternehmen C usw. vorhanden sein.
 

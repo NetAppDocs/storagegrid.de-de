@@ -58,7 +58,7 @@ Wählen Sie die Knoten aus, die neu gestartet werden sollen, überprüfen Sie Ih
 Öffnen Sie als ersten Schritt die Seite Rolling Reboot, und wählen Sie die Knoten aus, die neu gestartet werden sollen.
 
 .Schritte
-. Wählen Sie *MAINTENANCE* > *Tasks* > *Rolling reboot*.
+. Wählen Sie *Wartung* > *Aufgaben* > *Rollierender Neustart*.
 . Überprüfen Sie den Verbindungsstatus und die Warnsymbole in der Spalte *Knotenname*.
 +
 
@@ -129,6 +129,6 @@ Die Tabellen bieten einen Fortschrittsbalken des Vorgangs auf jedem Node und zei
 Sie können das Rolling-Reboot-Verfahren vom primären Admin-Node aus stoppen. Wenn Sie das Verfahren beenden, schließen alle Knoten mit dem Status „Dienste anhalten“, „System neu starten“ oder „Dienste starten“ den Neustartvorgang ab. Diese Knoten werden jedoch nicht mehr im Rahmen des Verfahrens nachverfolgt.
 
 .Schritte
-. Wählen Sie *MAINTENANCE* > *Tasks* > *Rolling reboot*.
+. Wählen Sie *Wartung* > *Aufgaben* > *Rollierender Neustart*.
 . Wählen Sie im Schritt *Monitor reboot* die Option *Neustart stoppen*.
 

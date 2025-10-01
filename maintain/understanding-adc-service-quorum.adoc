@@ -23,7 +23,7 @@ CAUTION: Gehen Sie mit Vorsicht vor, wenn Sie Storage-Nodes in einem Grid stilll
 Angenommen, ein Standort umfasst derzeit sechs Storage Nodes mit ADC-Diensten und Sie möchten drei Storage Nodes stilllegen. Aufgrund der Quorum-Anforderung des ADC müssen Sie zwei Verfahren zur Deaktivierung durchführen:
 
 * Bei der ersten Stilllegung müssen Sie sicherstellen, dass vier Speicher-Nodes mit ADC-Diensten verfügbar bleiben: `((0.5 * 6) + 1)`. Das bedeutet, dass Sie zunächst nur zwei Storage-Nodes außer Betrieb nehmen können.
-* Bei der zweiten Stilllegung können Sie den dritten Speicher-Node entfernen, da für das ADC-Quorum jetzt nur noch drei ADC-Services verfügbar bleiben müssen: `((0.5 * 4) + 1)`.
+* Im zweiten Außerbetriebnahmeverfahren können Sie den dritten Speicherknoten entfernen, da das ADC-Quorum jetzt nur noch drei ADC-Dienste erfordert, um verfügbar zu bleiben: `((0.5 * 4) + 1)` .
 
 
-Wenn Sie einen Storage Node stilllegen müssen, aber aufgrund der ADC-Quorum-Anforderung nicht dazu in der Lage sind, fügen Sie einen neuen Storage Node in ein hinzu link:../expand/index.html["Expansion"]und geben Sie an, dass er einen ADC-Service haben soll. Setzen Sie dann den vorhandenen Storage-Node aus.
+Wenn Sie einen Speicherknoten außer Betrieb nehmen müssen, können Sie die ADC-Quorum-Anforderung weiterhin erfüllen, indem Sielink:../upgrade/changes-to-grid-management-api.html#new-private-endpoints-for-move-adc["Verschieben des ADC-Dienstes auf einen anderen Speicherknoten am selben Standort"] oder Hinzufügen eines neuen Speicherknotens in einemlink:../expand/index.html["Expansion"] und angeben, dass es einen ADC-Dienst haben soll.  Anschließend können Sie den vorhandenen Speicherknoten außer Betrieb nehmen, ohne das Quorum zu beeinträchtigen.

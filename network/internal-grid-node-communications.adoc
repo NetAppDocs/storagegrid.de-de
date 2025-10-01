@@ -22,11 +22,10 @@ Zusätzlich zu ICMP und den in der Tabelle aufgeführten Ports verwendet Storage
 
 == Richtlinien für Linux-basierte Knoten
 
-Wenn Netzwerkrichtlinien des Unternehmens den Zugriff auf einen dieser Ports einschränken, können Sie Ports während der Bereitstellung mithilfe eines Konfigurationsparameters neu zuordnen. Weitere Informationen über die Zuordnung von Ports und die Konfigurationsparameter für die Bereitstellung finden Sie unter:
+Wenn die Netzwerkrichtlinien des Unternehmens den Zugriff auf diese Ports einschränken, können Sie die Ports zum Zeitpunkt der Bereitstellung mithilfe eines Bereitstellungskonfigurationsparameters neu zuordnen.  Weitere Informationen zur Portneuzuordnung und zu den Bereitstellungskonfigurationsparametern finden Sie unterlink:../swnodes/index.html["Installieren Sie StorageGRID auf softwarebasierten Knoten"] .
 
-* link:../rhel/index.html["Installieren Sie StorageGRID unter Red hat Enterprise Linux"]
-* link:../ubuntu/index.html["Installieren Sie StorageGRID auf Ubuntu oder Debian"]
 
+NOTE: Die Unterstützung für die Neuzuordnung von Ports ist veraltet und wird in einer zukünftigen Version entfernt. Informationen zum Entfernen neu zugeordneter Ports finden Sie unterlink:../maintain/removing-port-remaps-on-bare-metal-hosts.html["Entfernen Sie die Port-Remaps auf Bare-Metal-Hosts"] .
 
 
 
@@ -34,13 +33,19 @@ Wenn Netzwerkrichtlinien des Unternehmens den Zugriff auf einen dieser Ports ein
 
 Konfigurieren Sie die folgenden Ports nur dann, wenn Sie Firewall-Einschränkungen definieren müssen, die sich außerhalb des VMware-Netzwerks befinden.
 
-Wenn Netzwerkrichtlinien des Unternehmens den Zugriff auf eine dieser Ports einschränken, können Sie bei der Implementierung von Nodes mit dem VMware vSphere Web Client Ports neu zuordnen oder bei der Automatisierung der Grid Node-Bereitstellung eine Konfigurationsdateieinstellung verwenden. Weitere Informationen über die Parameter für die Portumzuordnung und Bereitstellungskonfiguration finden Sie unter link:../vmware/index.html["Installieren Sie StorageGRID auf VMware"].
+Wenn die Netzwerkrichtlinien des Unternehmens den Zugriff auf diese Ports einschränken, können Sie die Ports neu zuordnen, wenn Sie Knoten mithilfe des VMware vSphere Web Client bereitstellen oder indem Sie bei der Automatisierung der Grid-Knotenbereitstellung eine Konfigurationsdateieinstellung verwenden.  Weitere Informationen zur Port-Neuzuordnung und zu den Konfigurationsparametern für die Bereitstellung finden Sie in den Anweisungen fürlink:../swnodes/index.html["Installieren von StorageGRID auf VMware"] .
+
+
+NOTE: Die Unterstützung für die Neuzuordnung von Ports ist veraltet und wird in einer zukünftigen Version entfernt. Informationen zum Entfernen neu zugeordneter Ports finden Sie unterlink:../maintain/removing-port-remaps-on-bare-metal-hosts.html["Entfernen Sie die Port-Remaps auf Bare-Metal-Hosts"] .
 
 
 
 == Richtlinien für Appliance-Nodes
 
 Wenn Netzwerkrichtlinien des Unternehmens den Zugriff auf eine dieser Ports einschränken, können Sie Ports mithilfe des StorageGRID Appliance Installer neu zuordnen. Siehe https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/optional-remapping-network-ports-for-appliance.html["Optional: Netzwerkports für Appliance neu zuordnen"^].
+
+
+NOTE: Die Unterstützung für die Neuzuordnung von Ports ist veraltet und wird in einer zukünftigen Version entfernt. Informationen zum Entfernen neu zugeordneter Ports finden Sie unterlink:../maintain/removing-port-remaps.html["Entfernen Sie Port-Neuzuordnungen auf StorageGRID -Geräten"] .
 
 
 
@@ -151,7 +156,7 @@ Alle Nodes
  a| 
 Storage-Nodes
  a| 
-Interner S3- und Swift-Datenverkehr.
+Interner S3-Datenverkehr.
 
 
 
@@ -425,19 +430,6 @@ Admin/Storage-Nodes
 Storage-Nodes
  a| 
 Interner S3-Datenverkehr.
-
-
-
- a| 
-18083
- a| 
-TCP
- a| 
-Alle Nodes
- a| 
-Storage-Nodes
- a| 
-Swift-bezogener interner Traffic:
 
 
 

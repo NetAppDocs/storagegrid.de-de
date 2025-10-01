@@ -31,7 +31,7 @@ NOTE: Die Verwendung von Cloud Storage Pools mit FabricPool wird nicht unterstü
 Mit S3-Plattform-Services können Unternehmen Remote-Services als Endpunkte zur Objektreplizierung, für Ereignisbenachrichtigungen oder zur Integration von Suchvorgängen nutzen. Plattform-Services werden unabhängig von den ILM-Regeln des Grid und für einzelne S3-Buckets aktiviert. Folgende Services werden unterstützt:
 
 * Der CloudMirror Replizierungsservice spiegelt angegebene Objekte automatisch auf einen S3-Ziel-Bucket, der sich auf Amazon S3 oder auf einem zweiten StorageGRID System befinden kann.
-* Der Ereignisbenachrichtigungsservice sendet Meldungen über bestimmte Aktionen an einen externen Endpunkt, der das Empfangen von Amazon SNS-Ereignissen (Simple Notification Service) unterstützt.
+* Der Ereignisbenachrichtigungsdienst sendet Nachrichten über angegebene Aktionen an einen externen Endpunkt, der den Empfang von Simple Notification Service (Amazon SNS)-Ereignissen unterstützt.
 * Der Such-Integrationsservice sendet Objektmetadaten an einen externen Elasticsearch-Service, sodass Metadaten mit Tools von Drittanbietern durchsucht, visualisiert und analysiert werden können.
 
 
@@ -43,10 +43,10 @@ So können Sie beispielsweise CloudMirror Replizierung verwenden, um spezifische
 
 Sie können die Kosten von ONTAP Storage reduzieren, indem Sie Daten mithilfe von FabricPool auf StorageGRID verschieben. FabricPool ermöglicht automatisiertes Tiering von Daten auf kostengünstige Objekt-Storage-Tiers, entweder vor Ort oder an anderen Standorten.
 
-Im Gegensatz zu manuellen Tiering-Lösungen senkt FabricPool durch das Automatisieren von Daten-Tiering die Gesamtbetriebskosten, um die Storage-Kosten zu senken. Durch Tiering in Public und Private Clouds einschließlich StorageGRID profitieren Sie von den Vorteilen der Wirtschaftlichkeit der Cloud.
+Im Gegensatz zu manuellen Tiering-Lösungen reduziert FabricPool die Gesamtbetriebskosten, indem es das Tiering der Daten automatisiert und so die Speicherkosten senkt.  Es bietet die Vorteile der Cloud-Ökonomie durch die Einstufung in öffentliche und private Clouds, einschließlich StorageGRID.
 
 .Verwandte Informationen
-* link:../ilm/what-cloud-storage-pool-is.html["Was ist Cloud-Storage-Pool?"]
+* link:../ilm/what-cloud-storage-pool-is.html["Was ist ein Cloud-Storage-Pool?"]
 * link:../tenant/what-platform-services-are.html["Management von Plattform-Services"]
 * link:../fabricpool/index.html["Konfigurieren Sie StorageGRID für FabricPool"]
 

@@ -16,12 +16,16 @@ Verwenden Sie diese Anweisungen, um ein StorageGRID System auf eine neue Version
 Wenn Sie das Upgrade durchführen, werden alle Knoten in Ihrem StorageGRID-System aktualisiert.
 
 
+CAUTION: Starten Sie das Upgrade nicht, wenn Sie Ihren Speicher dringend erweitern müssen, um die Kapazität zu erhöhen (wenn Ihr Speicher fast voll ist).  Schließen Sie den Upgrade-Vorgang rechtzeitig ab.  Wenn eine Wiederherstellung erforderlich ist, wenden Sie sich an den technischen Support.
 
-== Bevor Sie beginnen
 
-In diesen Themen erfahren Sie mehr über die neuen Funktionen und Verbesserungen in StorageGRID 11.9, können feststellen, ob Funktionen veraltet oder entfernt wurden, und Informationen zu Änderungen an StorageGRID APIs finden Sie unter.
 
-* link:whats-new.html["Was ist neu in StorageGRID 11.9"]
+== Vor dem Upgrade
+
+Lesen Sie diese Themen, um mehr über die neuen Funktionen und Verbesserungen in StorageGRID 12.0 zu erfahren, festzustellen, ob Funktionen veraltet sind oder entfernt wurden, und sich über Änderungen an den StorageGRID -APIs zu informieren.
+
+* link:how-your-system-is-affected-during-upgrade.html["Auswirkungen des Upgrades auf Ihr System"]
+* link:whats-new.html["Was ist neu in StorageGRID 12.0"]
 * link:removed-or-deprecated-features.html["Funktionen entfernt oder veraltet"]
 * link:changes-to-grid-management-api.html["Änderungen an der Grid-Management-API"]
 * link:changes-to-tenant-management-api.html["Änderungen an der Mandantenmanagement-API"]

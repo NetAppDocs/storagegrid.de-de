@@ -13,11 +13,10 @@ summary: Bis auf ein paar Ausnahmen bereiten Sie die neuen Hosts wie während de
 [role="lead"]
 Bis auf ein paar Ausnahmen bereiten Sie die neuen Hosts wie während der Erstinstallation vor.
 
-Um neue oder neu installierte physische oder virtuelle Linux-Hosts bereitzustellen, gehen Sie wie folgt vor, um die Hosts in den StorageGRID-Installationsanweisungen für Ihr Linux-Betriebssystem vorzubereiten:
+Um neue oder neu installierte physische oder virtuelle Linux-Hosts bereitzustellen, befolgen Sie die Schritte zum Vorbereiten der Hosts in den StorageGRID -Installationsanweisungen für Ihr Linux-Betriebssystem. Sehen link:../swnodes/installing-linux.html["Installieren Sie Linux"] .
 
-* link:../rhel/installing-linux.html["Installation Von Linux (Red Hat Enterprise Linux)"]
-* link:../ubuntu/installing-linux.html["Linux installieren (Ubuntu oder Debian)"]
 
+NOTE: „Linux“ bezieht sich auf eine RHEL-, Ubuntu- oder Debian-Bereitstellung.  Eine Liste der unterstützten Versionen finden Sie im https://imt.netapp.com/matrix/#welcome["NetApp Interoperabilitäts-Matrix-Tool (IMT)"^] .
 
 Dieses Verfahren umfasst Schritte zur Durchführung folgender Aufgaben:
 

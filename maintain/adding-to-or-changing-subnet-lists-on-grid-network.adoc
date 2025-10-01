@@ -43,6 +43,7 @@ Verwenden Sie beispielsweise nicht die folgenden Subnetzbereiche für das Grid-N
 
 ====
 .Schritte
+. Der externe SSH-Zugriff ist standardmäßig blockiert.  Falls erforderlich,link:../admin/manage-external-ssh-access.html["Zugriff vorübergehend erlauben"] .
 . Melden Sie sich beim primären Admin-Node an:
 +
 .. Geben Sie den folgenden Befehl ein: `ssh admin@_primary_Admin_Node_IP_`
@@ -149,7 +150,7 @@ Wenn Sie nicht wissen, dass für die vorgeschlagenen Änderungen ein Neustart vo
 
 
 +
-Nachdem Sie Änderungen angewendet oder durchgeführt haben, wird ein neues Wiederherstellungspaket als Ergebnis der Änderung der Rasterkonfiguration generiert.
+Nachdem Sie Änderungen angewendet oder bereitgestellt haben, wird aufgrund der Änderung der Grid-Konfiguration ein neues Wiederherstellungspaket generiert.
 
 . Wenn die Konfiguration aufgrund von Fehlern angehalten wird, stehen folgende Optionen zur Verfügung:
 +
@@ -162,14 +163,15 @@ Der fehlgeschlagene Vorgang kann später erneut versucht werden, indem Sie im Ha
 ** Wenn Sie manuell eingreifen mussten (zum Beispiel um einen Knoten neu zu starten) und sich sicher sind, dass die Aktion, die das Tool für erfolgreich hält, tatsächlich erfolgreich abgeschlossen wurde, geben Sie *f* ein, um sie als erfolgreich zu markieren und zum nächsten Vorgang zu wechseln.
 
 
-. Laden Sie ein neues Wiederherstellungspaket aus dem Grid Manager herunter.
+. Laden Sie ein neues Wiederherstellungspaket vom Grid Manager herunter.
 +
-.. Wählen Sie *WARTUNG* > *System* > *Wiederherstellungspaket*.
+.. Wählen Sie *Wartung* > *System* > *Wiederherstellungspaket*.
 .. Geben Sie die Provisionierungs-Passphrase ein.
 
 
 +
 
-CAUTION: Die Recovery Package-Datei muss gesichert sein, weil sie Verschlüsselungsschlüssel und Passwörter enthält, die zum Abrufen von Daten vom StorageGRID-System verwendet werden können.
+CAUTION: Die Wiederherstellungspaketdatei muss gesichert werden, da sie Verschlüsselungsschlüssel und Passwörter enthält, mit denen Daten aus dem StorageGRID -System abgerufen werden können.
 
+. Wenn Sie externen SSH-Zugriff zugelassen haben,link:../admin/manage-external-ssh-access.html["Zugriff blockieren"] wenn Sie mit dem Hinzufügen oder Ändern der Subnetzlisten fertig sind.
 

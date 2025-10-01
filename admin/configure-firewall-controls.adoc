@@ -38,7 +38,7 @@ Weitere Informationen zu externen Firewalls und Netzwerksicherheit finden Sie un
 == Firewall-Kontrollen für den Zugriff
 
 .Schritte
-. Wählen Sie *CONFIGURATION* > *Security* > *Firewall Control*.
+. Wählen Sie *Konfiguration* > *Sicherheit* > *Firewall-Steuerung*.
 +
 Die drei Registerkarten auf dieser Seite werden in beschriebenlink:../admin/manage-firewall-controls.html["Management der Firewall-Kontrollen"].
 

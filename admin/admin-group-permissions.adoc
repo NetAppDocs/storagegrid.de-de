@@ -50,15 +50,6 @@ NOTE: Um Zugriff auf die Seite Mieter zu gewähren, die die Option *Root Passwor
 
 
 
-== Konfiguration der Seite der Grid-Topologie
-
-Mit dieser Berechtigung können Sie auf der Seite *SUPPORT* > *Tools* > *Grid Topology* auf die Registerkarten Konfiguration zugreifen.
-
-
-NOTE: Die Seite „Grid Topology“ wurde veraltet und wird in einem zukünftigen Release entfernt.
-
-
-
 == ILM
 
 Diese Berechtigung bietet Zugriff auf die folgenden *ILM* Menüoptionen:
@@ -73,7 +64,7 @@ Diese Berechtigung bietet Zugriff auf die folgenden *ILM* Menüoptionen:
 
 
 
-NOTE: Benutzer müssen über die Berechtigung *andere Grid-Konfiguration* und *Grid-Topologiekonfiguration* verfügen, um Speicherklassen zu verwalten.
+NOTE: Benutzer müssen über die Berechtigung *Andere Rasterkonfiguration* verfügen, um Speicherklassen verwalten zu können.
 
 
 
@@ -81,17 +72,17 @@ NOTE: Benutzer müssen über die Berechtigung *andere Grid-Konfiguration* und *G
 
 Benutzer müssen über die Berechtigung zur Wartung verfügen, um folgende Optionen verwenden zu können:
 
-* *KONFIGURATION* > *Zugangskontrolle*:
+* *Konfiguration* > *Zugriffskontrolle*:
 +
 ** Grid-Passwörter
 
 
-* *KONFIGURATION* > *Netzwerk*:
+* *Konfiguration* > *Netzwerk*:
 +
 ** Domänennamen des S3-Endpunkts
 
 
-* *WARTUNG* > *Aufgaben*:
+* *Wartung* > *Aufgaben*:
 +
 ** Ausmustern
 ** Erweiterung
@@ -99,13 +90,13 @@ Benutzer müssen über die Berechtigung zur Wartung verfügen, um folgende Optio
 ** Recovery
 
 
-* *WARTUNG* > *System*:
+* *Wartung* > *System*:
 +
 ** Recovery-Paket
 ** Software-Update
 
 
-* *SUPPORT* > *Tools*:
+* *Support* > *Tools*:
 +
 ** Protokolle
 
@@ -114,29 +105,29 @@ Benutzer müssen über die Berechtigung zur Wartung verfügen, um folgende Optio
 
 Benutzer, die nicht über die Berechtigung Wartung verfügen, können diese Seiten anzeigen, aber nicht bearbeiten:
 
-* *WARTUNG* > *Netzwerk*:
+* *Wartung* > *Netzwerk*:
 +
 ** DNS-Server
 ** Grid-Netzwerk
 ** NTP-Server
 
 
-* *WARTUNG* > *System*:
+* *Wartung* > *System*:
 +
 ** Lizenz
 
 
-* *KONFIGURATION* > *Netzwerk*:
+* *Konfiguration* > *Netzwerk*:
 +
 ** Domänennamen des S3-Endpunkts
 
 
-* *KONFIGURATION* > *Sicherheit*:
+* *Konfiguration* > *Sicherheit*:
 +
 ** Zertifikate
 
 
-* *KONFIGURATION* > *Überwachung*:
+* *Konfiguration* > *Überwachung*:
 +
 ** Audit- und Syslog-Server
 
@@ -155,7 +146,7 @@ Mit dieser Berechtigung erhalten Sie Zugriff auf Optionen zum Verwalten von Warn
 
 Diese Berechtigung bietet Zugriff auf:
 
-* *SUPPORT* > *Tools* > *Metrics* Seite
+* *Support* > *Tools* > *Metriken*-Seite
 * Benutzerdefinierte Prometheus-Metrikabfragen mit dem Abschnitt *Metrics* der Grid Management API
 * Dashboard-Karten von Grid Manager, die Metriken enthalten
 
@@ -170,18 +161,15 @@ Mit dieser Berechtigung erhalten Sie Zugriff auf die Seite *ILM* > *Objekt-Metad
 
 == Andere Grid-Konfiguration
 
-Diese Berechtigung ermöglicht den Zugriff auf zusätzliche Grid-Konfigurationsoptionen.
-
-
-TIP: Um diese zusätzlichen Optionen zu sehen, müssen Benutzer auch über die Berechtigung *Grid Topology Page Configuration* verfügen.
+Diese Berechtigung bietet Zugriff auf diese zusätzlichen Rasterkonfigurationsoptionen:
 
 * *ILM*:
 +
 ** Lagergüten
 
 
-* *KONFIGURATION* > *System*:
-* *SUPPORT* > *andere*:
+* *Konfiguration* > *System*:
+* *Support* > *Sonstiges*:
 +
 ** Verbindungskosten
 

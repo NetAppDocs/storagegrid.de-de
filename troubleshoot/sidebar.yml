@@ -20,12 +20,8 @@ entries:
     - title: Methoden zum Abrufen von Objekten
       pdf-filename: Fehlerbehebung bei verlorenen und fehlenden Objektdaten
       url: "/troubleshoot/troubleshooting-lost-and-missing-object-data.html"
-    - title: Untersuchen Sie verlorene Objekte
-      url: "/troubleshoot/investigating-lost-objects.html"
-    - title: Suche nach potenziell verlorenen Objekten und Wiederherstellung
-      url: "/troubleshoot/searching-for-and-restoring-potentially-lost-objects.html"
-    - title: Verlorene und fehlende Objektanzahl zurücksetzen
-      url: "/troubleshoot/resetting-lost-and-missing-object-counts.html"
+    - title: Untersuchen Sie möglicherweise verlorene Objekte
+      url: "/troubleshoot/investigating-potentially-lost-objects.html"
   - title: Beheben Sie die Warnung „Niedrig Object Data Storage“
     url: "/troubleshoot/troubleshooting-low-object-data-storage-alert.html"
   - title: Fehlerbehebung bei Warnungen zur Überbrückung von nur geringem Lesezugriff
@@ -40,3 +36,5 @@ entries:
   url: "/troubleshoot/troubleshooting-network-hardware-and-platform-issues.html"
 - title: Fehlerbehebung für externen Syslog-Server
   url: "/troubleshoot/troubleshooting-syslog-server.html"
+- title: Fehlerbehebung beim Load Balancer-Caching
+  url: "/troubleshoot/troubleshooting-load-balancer-caching.html"

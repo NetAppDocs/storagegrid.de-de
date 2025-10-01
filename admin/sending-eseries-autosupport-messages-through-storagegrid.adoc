@@ -37,7 +37,7 @@ Sie können eine spezielle Proxy-Server-Adresse im SANtricity-System-Manager kon
 NOTE: Dieses Verfahren gilt nur für die Konfiguration eines StorageGRID-Proxyservers für E-Series AutoSupport-Pakete. Weitere Informationen zur AutoSupport Konfiguration der E-Series finden Sie im https://docs.netapp.com/us-en/e-series-family/index.html["NetApp E-Series und SANtricity Dokumentation"^].
 
 .Schritte
-. Wählen Sie im Grid Manager die Option *NODES* aus.
+. Wählen Sie im Grid Manager *Knoten* aus.
 . Wählen Sie in der Liste der Knoten links den Speicher-Appliance-Node aus, den Sie konfigurieren möchten.
 . Wählen Sie *SANtricity System Manager*.
 +
@@ -46,7 +46,7 @@ Die Startseite von SANtricity System Manager wird angezeigt.
 +
 image::../media/autosupport_santricity_home_page.png[Startseite von AutoSupport SANtricity]
 
-. Wählen Sie *SUPPORT* > *Support Center* > *AutoSupport*.
+. Wählen Sie *Support* > *Supportcenter* > * AutoSupport*.
 +
 Die Seite AutoSupport-Vorgänge wird angezeigt.
 

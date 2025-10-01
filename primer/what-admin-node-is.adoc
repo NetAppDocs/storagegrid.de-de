@@ -17,7 +17,7 @@ Admin Nodes stellen Managementservices wie Systemkonfiguration, Monitoring und P
 
 == Unterschiede zwischen primären und nicht primären Admin-Nodes
 
-Wenn Sie sich beim Grid Manager oder dem Tenant Manager anmelden, stellen Sie eine Verbindung zu einem Admin-Node her. Sie können eine Verbindung zu einem beliebigen Admin-Knoten herstellen, und jeder Admin-Knoten zeigt eine ähnliche Ansicht des StorageGRID-Systems an. Der primäre Admin-Node bietet jedoch mehr Funktionen als nicht-primäre Admin-Nodes. Die meisten Wartungsverfahren müssen beispielsweise von den primären Admin-Nodes aus durchgeführt werden.
+Wenn Sie sich beim Grid Manager oder Tenant Manager anmelden, stellen Sie eine Verbindung zu einem Admin-Knoten her.  Sie können eine Verbindung zu jedem Admin-Knoten herstellen und jeder Admin-Knoten zeigt eine ähnliche Ansicht des StorageGRID Systems an.  Der primäre Admin-Knoten bietet jedoch mehr Funktionen als nicht-primäre Admin-Knoten.  Beispielsweise müssen die meisten Wartungsvorgänge vom primären Admin-Knoten aus durchgeführt werden.
 
 In der Tabelle sind die Funktionen der primären und nicht-primären Admin-Nodes zusammengefasst.
 
@@ -99,6 +99,15 @@ Nein
 
 
  a| 
+Kann Wiederherstellungspaket herunterladen
+ a| 
+Ja.
+ a| 
+Ja.
+
+
+
+ a| 
 EC-Neuverteilung nach der Storage-Node-Erweiterung möglich
  a| 
 Ja.
@@ -121,6 +130,24 @@ Kann Protokolldateien und Systemdaten von einem oder mehreren Nodes erfassen
  a| 
 Ja.
  a| 
+Ja.
+
+
+
+ a| 
+Kann Speicher, Gateway und nicht primäre Admin-Knoten wiederherstellen
+ a| 
+Ja.
+ a| 
+Ja.
+
+
+
+ a| 
+Kann den primären Admin-Knoten wiederherstellen
+ a| 
+Ja.
+ a| 
 Nein
 
 
@@ -139,12 +166,12 @@ Ja. Fungiert als Standby-Sender.
 
 Wenn Ihre StorageGRID-Bereitstellung mehrere Administratorknoten umfasst, ist der primäre Administratorknoten der bevorzugte Absender für Warnmeldungen, AutoSupport-Pakete und SNMP-Traps und -Benachrichtigungen.
 
-Im normalen Systembetrieb sendet nur der bevorzugte Sender Benachrichtigungen. Alle anderen Admin-Knoten überwachen jedoch den bevorzugten Sender. Wenn ein Problem erkannt wird, fungieren andere Admin-Nodes als _Standby-Sender_.
+Im normalen Systembetrieb sendet nur der bevorzugte Absender Benachrichtigungen.  Alle anderen Admin-Knoten überwachen jedoch den bevorzugten Absender.  Wenn ein Problem erkannt wird, fungieren andere Admin-Knoten als Standby-Sender.
 
-In den folgenden Fällen können mehrere Benachrichtigungen gesendet werden:
+In diesen Fällen können mehrere Benachrichtigungen gesendet werden:
 
 * Wenn Admin-Knoten voneinander „islanded“ werden, versuchen sowohl der bevorzugte Sender als auch der Standby-Sender, Benachrichtigungen zu senden, und es können mehrere Kopien von Benachrichtigungen empfangen werden.
-* Wenn der Standby-Sender Probleme mit dem bevorzugten Sender erkennt und mit dem Senden von Benachrichtigungen beginnt, kann der bevorzugte Sender möglicherweise wieder Benachrichtigungen senden. In diesem Fall können doppelte Benachrichtigungen gesendet werden. Der Standby-Sender hört auf, Benachrichtigungen zu senden, wenn Fehler auf dem bevorzugten Sender nicht mehr erkannt werden.
+* Wenn ein Standby-Absender Probleme mit dem bevorzugten Absender erkennt und mit dem Senden von Benachrichtigungen beginnt, kann der bevorzugte Absender möglicherweise seine Fähigkeit zum Senden von Benachrichtigungen wiedererlangen.  In diesem Fall werden möglicherweise doppelte Benachrichtigungen gesendet.  Der Standby-Absender stellt das Senden von Benachrichtigungen ein, wenn er beim bevorzugten Absender keine Fehler mehr erkennt.
 +
 
 NOTE: Wenn Sie AutoSupport-Pakete testen, senden alle Admin-Knoten den Test. Wenn Sie die Warnbenachrichtigungen testen, müssen Sie sich bei jedem Admin-Knoten anmelden, um die Verbindung zu überprüfen.

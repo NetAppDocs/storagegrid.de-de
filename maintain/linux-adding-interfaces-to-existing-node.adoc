@@ -13,11 +13,7 @@ summary: Führen Sie diese Schritte aus, um einen Linux-Knoten nach der Installa
 [role="lead"]
 Führen Sie diese Schritte aus, um einen Linux-Knoten nach der Installation eine Schnittstelle im Admin-Netzwerk oder im Client-Netzwerk hinzuzufügen.
 
-Wenn SIE WÄHREND der Installation IN der Node-Konfigurationsdatei auf dem Linux-Host NICHT ADMIN_NETWORK_TARGET oder CLIENT_NETWORK_TARGET konfiguriert haben, verwenden Sie dieses Verfahren, um die Schnittstelle hinzuzufügen. Weitere Informationen zur Node-Konfigurationsdatei finden Sie in den Anweisungen für Ihr Linux-Betriebssystem:
-
-* link:../rhel/index.html["Installieren Sie StorageGRID unter Red hat Enterprise Linux"]
-* link:../ubuntu/index.html["Installieren Sie StorageGRID auf Ubuntu oder Debian"]
-
+Wenn Sie ADMIN_NETWORK_TARGET oder CLIENT_NETWORK_TARGET während der Installation nicht in der Knotenkonfigurationsdatei auf dem Linux-Host konfiguriert haben, verwenden Sie dieses Verfahren, um die Schnittstelle hinzuzufügen.  Weitere Informationen zur Knotenkonfigurationsdatei finden Sie unterlink:../swnodes/index.html["Installieren Sie StorageGRID auf softwarebasierten Knoten"] .
 
 Sie führen diese Schritte auf dem Linux-Server durch, der den Node hostet, der die neue Netzwerkzuweisung benötigt, nicht innerhalb des Nodes. Bei diesem Vorgang wird die Schnittstelle nur dem Knoten hinzugefügt. Ein Validierungsfehler tritt auf, wenn Sie versuchen, andere Netzwerkparameter anzugeben.
 

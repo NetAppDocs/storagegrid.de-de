@@ -69,7 +69,7 @@ Die Clients sollten so konfiguriert werden, dass sie der Zertifizierungsstelle v
 
 == Unterstützte Hashing- und Verschlüsselungsalgorithmen für TLS-Bibliotheken
 
-Das StorageGRID-System unterstützt eine Reihe von Cipher-Suites, die Client-Anwendungen beim Einrichten einer TLS-Sitzung verwenden können. Um Chiffren zu konfigurieren, gehen Sie zu *CONFIGURATION* > *Security* > *Security settings* und wählen *TLS und SSH Policies* aus.
+Das StorageGRID -System unterstützt eine Reihe von Verschlüsselungssammlungen, die Clientanwendungen beim Herstellen einer TLS-Sitzung verwenden können.  Um Verschlüsselungen zu konfigurieren, gehen Sie zu *Konfiguration* > *Sicherheit* > *Sicherheitseinstellungen* und wählen Sie *TLS- und SSH-Richtlinien*.
 
 
 

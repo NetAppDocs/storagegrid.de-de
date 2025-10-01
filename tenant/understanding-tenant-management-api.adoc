@@ -44,7 +44,7 @@ Informationen zur Verbesserung der Authentifizierungssicherheit finden Sie unter
 NOTE: Wenn Single Sign-On (SSO) für das StorageGRID-System aktiviert ist, müssen Sie zur Authentifizierung verschiedene Schritte durchführen. Siehe link:../admin/using-grid-management-api.html["Anweisungen zur Verwendung der Grid Management API"].
 
 * *Config*: Operationen im Zusammenhang mit der Produktversion und den Versionen der Mandanten-Management-API. Sie können die Produktversion und die Hauptversionen der von dieser Version unterstützten API auflisten.
-* *Container*: Operationen auf S3 Buckets oder Swift Containern.
+* *Container*: Vorgänge auf S3-Buckets.
 * *Deactivated-Features*: Operationen zum Anzeigen von Features, die möglicherweise deaktiviert wurden.
 * *Endpunkte*: Operationen zur Verwaltung eines Endpunkts. Endpunkte ermöglichen es einem S3-Bucket, einen externen Service für die Replizierung, Benachrichtigungen oder Suchintegration von StorageGRID CloudMirror zu verwenden.
 * *Grid-Federation-connections*: Operationen auf Grid Federation-Verbindungen und Cross-Grid-Replikation.

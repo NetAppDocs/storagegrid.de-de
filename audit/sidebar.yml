@@ -146,11 +146,3 @@ entries:
       url: "/audit/syst-node-stopping.html"
     - title: 'SYSU: Knoten Start'
       url: "/audit/sysu-node-start.html"
-    - title: 'WDEL: Swift LÖSCHEN'
-      url: "/audit/wdel-swift-delete.html"
-    - title: 'WGET: Schneller ERHALTEN'
-      url: "/audit/wget-swift-get.html"
-    - title: 'WHEA: Schneller KOPF'
-      url: "/audit/whea-swift-head.html"
-    - title: 'WPUT: Schnell AUSGEDRÜCKT'
-      url: "/audit/wput-swift-put.html"

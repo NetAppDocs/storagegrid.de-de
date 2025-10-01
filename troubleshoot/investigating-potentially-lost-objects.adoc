@@ -1,0 +1,144 @@
+---
+permalink: troubleshoot/investigating-potentially-lost-objects.html 
+sidebar: sidebar 
+keywords: lost objects, investigating, objects 
+summary: Wenn die Warnung „Möglicherweise verlorene Objekte“ ausgelöst wird, müssen Sie dies sofort untersuchen.  Sammeln Sie Informationen zu den betroffenen Objekten und wenden Sie sich an den technischen Support. 
+---
+= Untersuchen Sie möglicherweise verlorene Objekte
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn die Warnung „Möglicherweise verlorene Objekte“ ausgelöst wird, müssen Sie dies sofort untersuchen.  Sammeln Sie Informationen zu den betroffenen Objekten und wenden Sie sich an den technischen Support.
+
+.Bevor Sie beginnen
+* Sie müssen im Grid-Manager mit einem angemeldet seinlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie haben link:../admin/admin-group-permissions.html["Bestimmte Zugriffsberechtigungen"].
+* Sie müssen über die `Passwords.txt` Datei verfügen.
+
+
+.Über diese Aufgabe
+Die Warnung *Möglicherweise verlorene Objekte* weist darauf hin, dass gemäß den verfügbaren Informationen in StorageGRID keine Kopien eines Objekts im Grid vorhanden sind.  Möglicherweise sind die Daten dauerhaft verloren gegangen.
+
+Untersuchen Sie verlorene Objektwarnungen sofort. Möglicherweise müssen Sie Maßnahmen ergreifen, um weiteren Datenverlust zu vermeiden. In einigen Fällen können Sie ein verlorenes Objekt wiederherstellen, wenn Sie eine sofortige Aktion ausführen.
+
+
+CAUTION: Wenn mehr als 10 Objekte als verloren gemeldet werden, wenden Sie sich an den technischen Support.  Führen Sie dieses Verfahren nicht selbst durch.
+
+.Schritte
+. Wählen Sie *Knoten* aus.
+. Wählen Sie *_Speicherknoten_* > *Objekte* Aus.
+. Überprüfen Sie die Anzahl der verlorenen Objekte, die in der Tabelle Objektanzahl angezeigt werden.
++
+Diese Nummer gibt die Gesamtzahl der Objekte an, die dieser Grid-Node im gesamten StorageGRID-System als fehlend erkennt. Der Wert ist die Summe der Zähler Lost Objects der Data Store Komponente innerhalb der LDR- und DDS-Dienste.
+
+. Von einem Admin-Knoten aus,link:../audit/accessing-audit-log-file.html["Rufen Sie das Überwachungsprotokoll auf"] So ermitteln Sie die eindeutige Kennung (UUID) des Objekts, das die Warnung „Möglicherweise verlorene Objekte“ ausgelöst hat:
++
+.. Melden Sie sich beim Grid-Node an:
++
+... Geben Sie den folgenden Befehl ein: `ssh admin@grid_node_IP`
+... Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+... Geben Sie den folgenden Befehl ein, um zu root zu wechseln: `su -`
+... Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`. Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `#`.
+
+
+.. Wechseln Sie in das Verzeichnis, in dem sich die Audit-Protokolle befinden.
++
+--
+Das Verzeichnis der Überwachungsprotokolle und die entsprechenden Knoten hängen von den Einstellungen des Überwachungsziels ab.
+
+[cols="1a,2a"]
+|===
+| Option | Ziel 
+
+
+ a| 
+Lokale Knoten (Standard)
+ a| 
+`/var/local/log/localaudit.log`
+
+
+
+ a| 
+Admin-Nodes/lokale Nodes
+ a| 
+*** Admin-Knoten (primär und nicht primär): `/var/local/audit/export/audit.log`
+*** Alle Knoten: Die `/var/local/log/localaudit.log` Datei ist in der Regel leer oder fehlt in diesem Modus.
+
+
+
+
+ a| 
+Externer Syslog-Server
+ a| 
+`/var/local/log/localaudit.log`
+
+|===
+Geben Sie je nach den Einstellungen des Überwachungsziels Folgendes ein: `cd /var/local/log` Oder `/var/local/audit/export/`
+
+Weitere Informationen finden Sie unterlink:../monitor/configure-log-management.html#select-log-location["Protokollspeicherort auswählen"] .
+
+--
+.. Verwenden Sie grep, um die Audit-Meldungen zu „Objekt verloren“ (OLST) zu extrahieren. Eingabe: `grep OLST audit_file_name`
+.. Beachten Sie den in der Meldung enthaltenen UUID-Wert.
++
+[listing]
+----
+Admin: # grep OLST audit.log
+2020-02-12T19:18:54.780426 [AUDT:[CBID(UI64):0x38186FE53E3C49A5][UUID(CSTR):"926026C4-00A4-449B-AC72-BCCA72DD1311"]
+[PATH(CSTR):"source/cats"][NOID(UI32):12288733][VOLI(UI64):3222345986][RSLT(FC32):NONE][AVER(UI32):10]
+[ATIM(UI64):1581535134780426][ATYP(FC32):OLST][ANID(UI32):12448208][AMID(FC32):ILMX][ATID(UI64):7729403978647354233]]
+----
+
+
+. Suchen Sie mit der UUID nach den Metadaten für das verlorene Objekt:
++
+.. Wählen Sie *ILM* > *Object Metadata Lookup*.
+.. Geben Sie die UUID ein, und wählen Sie *Look Up*.
+.. Überprüfen Sie die Speicherorte in den Metadaten, und ergreifen Sie die entsprechenden Maßnahmen:
++
+[cols="2a,4a"]
+|===
+| Metadaten | Schlussfolgerung 
+
+
+ a| 
+Das Objekt-<object_identifier> wurde nicht gefunden
+ a| 
+Wenn das Objekt nicht gefunden wird, wird die Meldung „ERROR":"“ zurückgegeben.
+
+Wenn das Objekt nicht gefunden wird,<<reset-lost-obj-count,Setzen Sie den Zähler für potenziell verlorene Objekte zurück>> , um die Warnung zu löschen.  Das Fehlen eines Objekts weist darauf hin, dass das Objekt absichtlich gelöscht wurde.
+
+
+
+ a| 
+Standorte > 0
+ a| 
+Wenn in der Ausgabe Standorte aufgeführt sind, kann die Warnung „Möglicherweise verlorene Objekte“ ein Fehlalarm sein.
+
+Vergewissern Sie sich, dass die Objekte vorhanden sind. Verwenden Sie die Knoten-ID und den Dateipfad, der in der Ausgabe aufgeführt ist, um zu bestätigen, dass sich die Objektdatei am aufgelisteten Speicherort befindet.
+
+Wenn die Objekte vorhanden sind,<<reset-lost-obj-count,Setzen Sie den Zähler für potenziell verlorene Objekte zurück>> , um die Warnung zu löschen.
+
+
+
+ a| 
+Standorte = 0
+ a| 
+Wenn in der Ausgabe keine Standorte aufgeführt sind, fehlt das Objekt möglicherweise.  Wenden Sie sich an den technischen Support.
+
+Vom technischen Support bitten Sie möglicherweise, zu bestimmen, ob ein Verfahren zur Storage-Recovery durchgeführt wird. Siehe die Informationen über link:../maintain/restoring-volume.html["Wiederherstellen von Objektdaten mit Grid Manager"] und link:../maintain/restoring-object-data-to-storage-volume.html["Wiederherstellung von Objektdaten auf einem Storage-Volume"].
+
+|===
+
+
+. [[reset-lost-obj-count]]Nachdem Sie die Probleme mit verlorenen Objekten behoben haben, setzen Sie den Zähler für potenziell verlorene Objekte zurück, um sicherzustellen, dass es sich bei den Warnungen nicht um Fehlalarme handelt:
++
+.. Wählen Sie *Knoten* aus.
+.. Wählen Sie *_Speicherknoten_* > *Aufgaben*.
+.. Wählen Sie im Abschnitt „Zähler potenziell verlorener Objekte zurücksetzen“ die Option „Zurücksetzen“ aus.
+
+
+

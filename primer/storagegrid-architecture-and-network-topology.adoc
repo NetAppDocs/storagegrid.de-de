@@ -13,15 +13,15 @@ summary: Ein StorageGRID System besteht aus mehreren Typen von Grid-Nodes an ein
 [role="lead"]
 Ein StorageGRID System besteht aus mehreren Typen von Grid-Nodes an einem oder mehreren Datacenter-Standorten.
 
-Siehe link:nodes-and-services.html["Beschreibungen der Grid-Node-Typen"].
+Erfahren Sie mehr über dielink:nodes-and-services.html["Rasterknotentypen"] .
 
-Weitere Informationen über die StorageGRID-Netzwerktopologie, -Anforderungen und -Netzkommunikation finden Sie im link:../network/index.html["Netzwerkrichtlinien"].
+Weitere Informationen zur StorageGRID -Netzwerktopologie, den Anforderungen und der Grid-Kommunikation finden Sie imlink:../network/index.html["Netzwerkrichtlinien"] .
 
 
 
 == Implementierungstopologien
 
-Das StorageGRID System kann an einem einzelnen Datacenter-Standort oder an mehreren Datacenter-Standorten implementiert werden.
+Das StorageGRID -System kann an einem einzelnen oder an mehreren Rechenzentrumsstandorten bereitgestellt werden.  Die maximale Anzahl von Sites pro Bereitstellung beträgt 16.
 
 
 
@@ -37,11 +37,11 @@ image::../media/data_center_site_single.png[Einzelner Datacenter-Standort]
 
 In einer Implementierung mit mehreren Standorten können an jedem Standort unterschiedliche Typen und eine unterschiedliche Anzahl von StorageGRID Ressourcen installiert werden. So könnte beispielsweise mehr Storage für ein Datacenter als für ein anderes erforderlich sein.
 
-Unterschiedliche Standorte befinden sich häufig an geografischen Standorten über unterschiedliche Ausfall-Domains, wie z. B. Erdbebenfehlerleitungen oder Überschwemmungsgebiete. Die Daten-Sharing und Disaster Recovery werden durch die automatische Verteilung der Daten an andere Standorte realisiert.
+Die Standorte befinden sich häufig an geografisch unterschiedlichen Standorten in unterschiedlichen Störungsbereichen, beispielsweise an einer Erdbebenverwerfungslinie oder in einem Überschwemmungsgebiet.  Datenfreigabe und Notfallwiederherstellung werden durch die automatisierte Verteilung der Daten an andere Standorte erreicht.
 
 image::../media/data_center_sites_multiple.png[Mehrere Datacenter-Standorte]
 
-Darüber hinaus können mehrere logische Standorte innerhalb eines einzigen Datacenters eingesetzt werden, um die Verfügbarkeit und Ausfallsicherheit durch verteilte Replizierung und Erasure Coding zu verbessern.
+Innerhalb eines einzigen Rechenzentrums können auch mehrere logische Standorte vorhanden sein, um die Verwendung verteilter Replikation und Erasure Coding für eine höhere Verfügbarkeit und Ausfallsicherheit zu ermöglichen.
 
 
 
@@ -61,4 +61,4 @@ S3 Clients speichern Objekte in StorageGRID und rufen sie ab. Andere Clients wer
 
 S3-Clients können eine Verbindung zu einem Gateway-Node oder einem Admin-Node herstellen, um die Load-Balancing-Schnittstelle zu Storage-Nodes zu verwenden. Alternativ können S3-Clients über HTTPS eine direkte Verbindung zu Storage-Nodes herstellen.
 
-Objekte können in StorageGRID auf Software- oder hardwarebasierten Storage-Nodes oder in Cloud-Storage-Pools, die aus externen S3-Buckets oder Azure Blob Storage-Containern bestehen, gespeichert werden.
+Objekte können innerhalb von StorageGRID auf software- oder hardwarebasierten Speicherknoten oder in Cloud-Speicherpools gespeichert werden, die aus externen S3-Buckets oder Azure Blob-Speichercontainern bestehen.

@@ -16,12 +16,7 @@ Sie können einen oder mehrere StorageGRID-Knoten von einem Linux-Host (dem _sou
 Angenommen, Sie möchten einen Node migrieren, um Patching und Neubooten des Betriebssystems durchzuführen.
 
 .Bevor Sie beginnen
-* Sie planten Ihre StorageGRID-Implementierung, um den Migrations-Support einzubeziehen.
-+
-** link:../rhel/node-container-migration-requirements.html["Migrationsanforderungen für Node-Container für Red hat Enterprise Linux"]
-** link:../ubuntu/node-container-migration-requirements.html["Node Container Migration Anforderungen für Ubuntu oder Debian"]
-
-
+* Sie haben Ihre StorageGRID -Bereitstellung so geplant, dass sie Migrationsunterstützung umfasst. Sehen link:../swnodes/node-container-migration-requirements.html["Anforderungen für die Container-Migration für Nodes"] .
 * Der Zielhost ist bereits für die Verwendung mit StorageGRID vorbereitet.
 * Shared Storage wird für alle Storage Volumes pro Node verwendet
 * Netzwerkschnittstellen verfügen über konsistente Namen aller Hosts.
@@ -132,12 +127,7 @@ Checking for duplication of unique values... PASSED
 ----
 . Wenn Validierungsfehler auftreten, beheben Sie diese, bevor Sie den migrierten Knoten starten.
 +
-Informationen zur Fehlerbehebung finden Sie in der StorageGRID-Installationsanleitung für Ihr Linux-Betriebssystem.
-
-+
-** link:../rhel/index.html["Installieren Sie StorageGRID unter Red hat Enterprise Linux"]
-** link:../ubuntu/index.html["Installieren Sie StorageGRID auf Ubuntu oder Debian"]
-
+Informationen zur Fehlerbehebung finden Sie im StorageGRIDlink:../swnodes/index.html["Installationsanweisungen"] für Ihr Linux-Betriebssystem.
 
 
 

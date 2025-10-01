@@ -25,7 +25,7 @@ Wenn eine Warnungsregel deaktiviert ist, werden ihre Ausdrücke nicht ausgewerte
 CAUTION: Im Allgemeinen wird es nicht empfohlen, eine Standardwarnregel zu deaktivieren. Wenn eine Meldungsregel deaktiviert ist, kann ein zugrunde liegendes Problem möglicherweise erst erkannt werden, wenn ein kritischer Vorgang nicht abgeschlossen werden kann.
 
 .Schritte
-. Wählen Sie *ALERTS* > *Regeln*.
+. Wählen Sie *Benachrichtigungen* > *Regeln*.
 +
 Die Seite Alarmregeln wird angezeigt.
 

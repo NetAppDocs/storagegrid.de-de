@@ -69,7 +69,7 @@ Sie können die aktuellen Einstellungen für Wasserzeichen und die systemoptimie
 Im Grid Manager können Sie die aktuellen Einstellungen für Speicherwasserzeichen anzeigen.
 
 .Schritte
-. Wählen Sie *SUPPORT* > *andere* > *Speicherwasserzeichen*.
+. Wählen Sie *Support* > *Sonstiges* > *Speicherwasserzeichen*.
 . Aktivieren Sie auf der Seite Speicherwasserzeichen das Kontrollkästchen optimierte Werte verwenden.
 +
 ** Wenn das Kontrollkästchen aktiviert ist, werden alle drei Wasserzeichen für jedes Speicher-Volume auf jedem Speicher-Node optimiert, basierend auf der Größe des Speicher-Node und der relativen Kapazität des Volumes.
@@ -90,7 +90,7 @@ Wenn Sie benutzerdefinierte Wasserzeicheneinstellungen angeben, müssen Sie Wert
 
 StorageGRID verwendet zwei Prometheus-Kennzahlen, um die optimierten Werte anzuzeigen, die es für das schreibgeschützte weiche Wasserzeichen des Storage-Volumes berechnet hat. Sie können die minimalen und maximalen optimierten Werte für jeden Speicherknoten in Ihrem Raster anzeigen.
 
-. Wählen Sie *SUPPORT* > *Tools* > *Metriken*.
+. Wählen Sie *Support* > *Tools* > *Metriken*.
 . Wählen Sie im Abschnitt Prometheus den Link aus, um auf die Benutzeroberfläche von Prometheus zuzugreifen.
 . Um das empfohlene Mindestwasserzeichen für weichen, schreibgeschützten Wert anzuzeigen, geben Sie die folgende Prometheus-Metrik ein, und wählen Sie *Ausführen*:
 +

@@ -18,8 +18,8 @@ Sie müssen ein Skript ausführen, das den Speicher auf ausgefallenen Storage-Vo
 * Die Systemlaufwerke auf dem Server sind intakt.
 * Die Fehlerursache wurde erkannt und ggf. Ersatz-Storage-Hardware bereits angeschafft.
 * Die Gesamtgröße des Ersatzspeichers ist mit dem Original identisch.
-* Sie haben überprüft, dass keine Ausmusterung von Storage-Nodes ausgeführt wird oder Sie den Vorgang zur Deaktivierung eines Node angehalten haben. (Wählen Sie im Grid Manager *MAINTENANCE* > *Tasks* > *Decommission*.)
-* Sie haben überprüft, dass keine Erweiterung ausgeführt wird. (Wählen Sie im Grid Manager *MAINTENANCE* > *Tasks* > *Expansion*.)
+* Sie haben überprüft, dass keine Außerbetriebnahme eines Speicherknotens im Gange ist, oder Sie haben den Vorgang zur Außerbetriebnahme des Knotens angehalten.  (Wählen Sie im Grid Manager *Wartung* > *Aufgaben* > *Außerbetriebnahme*.)
+* Sie haben überprüft, dass keine Erweiterung im Gange ist.  (Wählen Sie im Grid Manager *Wartung* > *Aufgaben* > *Erweiterung*.)
 * Sie haben link:reviewing-warnings-about-storage-volume-recovery.html["Die Warnungen zur Wiederherstellung des Speichervolumens wurden überprüft"].
 
 
@@ -28,7 +28,7 @@ Sie müssen ein Skript ausführen, das den Speicher auf ausgefallenen Storage-Vo
 +
 Volumes sollten in diesem Schritt nicht erneut bereitgestellt werden. Der Speicher wird neu eingebunden und in einem späteren Schritt hinzugefügt `/etc/fstab`.
 
-. Gehen Sie im Grid Manager zu *NODES* > > *Hardware* `*appliance Storage Node*`. Überprüfen Sie im Abschnitt StorageGRID-Gerät auf der Seite, ob der Speicher-RAID-Modus ordnungsgemäß funktioniert.
+. Gehen Sie im Grid Manager zu *Knoten* > `*appliance Storage Node*` > *Hardware*.  Überprüfen Sie im Abschnitt „StorageGRID Appliance“ der Seite, ob der Storage-RAID-Modus fehlerfrei ist.
 . Melden Sie sich beim fehlgeschlagenen Speicherknoten an:
 +
 .. Geben Sie den folgenden Befehl ein: `ssh admin@_grid_node_IP_`
@@ -51,7 +51,7 @@ NOTE: Das Auskommentieren eines fehlerhaften Volumes in der `/etc/fstab` Datei i
 ** Sie werden aufgefordert, die Cassandra-Datenbank bei Bedarf neu aufzubauen.
 +
 *** Überprüfen Sie die Warnungen. Falls keines dieser Beispiele zutreffend ist, bauen Sie die Cassandra-Datenbank neu aus. Geben Sie ein: *Y*
-*** Wenn mehr als ein Speicherknoten offline ist oder wenn ein anderer Speicherknoten in den letzten 15 Tagen wieder aufgebaut wurde. Geben Sie: *N* ein
+*** Wenn mehr als ein Speicherknoten offline ist.  Geben Sie ein: *n*
 +
 Das Skript wird beendet, ohne dass Cassandra neu aufgebaut werden muss. Wenden Sie sich an den technischen Support.
 

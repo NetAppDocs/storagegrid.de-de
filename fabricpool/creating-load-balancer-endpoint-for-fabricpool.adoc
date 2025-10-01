@@ -24,7 +24,7 @@ Um diese Aufgabe mithilfe des FabricPool-Setup-Assistenten abzuschließen, gehen
 
 
 .Schritte
-. Wählen Sie *CONFIGURATION* > *Network* > *Load Balancer Endpunkte*.
+. Wählen Sie *Konfiguration* > *Netzwerk* > *Load Balancer-Endpunkte*.
 . Wählen Sie *Erstellen*.
 . Füllen Sie für den Schritt *Enter Endpoint Details* die folgenden Felder aus.
 +

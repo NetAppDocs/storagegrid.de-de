@@ -28,8 +28,8 @@ indexpage:
       url: "../tenant/creating-groups-for-s3-tenant.html"
     - title: Mandantenmanagement-Berechtigungen
       url: "../tenant/tenant-management-permissions.html"
-    - title: Managen Sie lokale Benutzer
-      url: "../tenant/managing-local-users.html"
+    - title: Benutzer managen
+      url: "../tenant/manage-users.html"
   - title: Management von S3 Zugriffschlüsseln und Buckets
     links:
     - title: Managen von S3-Zugriffsschlüsseln
@@ -59,7 +59,7 @@ indexpage:
     - title: Operationen für Objekte
       url: "../s3/operations-on-objects.html"
     - title: Bucket- und Gruppenzugriffsrichtlinien
-      url: "../s3/bucket-and-group-access-policies.html"
+      url: "../s3/use-access-policies.html"
   - title: Swift-REST-API verwenden (Ende des Lebenszyklus)
     links:
     - title: Verwenden Sie Swift

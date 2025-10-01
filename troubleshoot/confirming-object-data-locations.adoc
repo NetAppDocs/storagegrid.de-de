@@ -27,7 +27,7 @@ Je nach dem Problem möchten Sie vielleicht link:../audit/object-ingest-transact
 . Wählen Sie *ILM* > *Object Metadata Lookup*.
 . Geben Sie die Kennung des Objekts in das Feld *Kennung* ein.
 +
-Sie können eine UUID, CBID, S3 Bucket/Objektschlüssel oder Swift Container/Objektname eingeben.
+Sie können eine UUID, CBID oder einen S3-Bucket/Objektschlüssel eingeben.
 
 . Wenn Sie eine bestimmte Version des Objekts suchen möchten, geben Sie die Version-ID ein (optional).
 +

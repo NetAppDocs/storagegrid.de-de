@@ -1,8 +1,8 @@
 ---
-permalink: expand/copying-audit-logs.html 
 sidebar: sidebar 
+permalink: expand/copying-audit-logs.html 
 keywords: copy audit log, Admin Node expansion, 
-summary: Wenn Sie einen neuen Admin-Node durch ein Erweiterungsverfahren hinzufügen, protokolliert sein AMS-Service nur Ereignisse und Aktionen, die nach dem Beitritt zum System auftreten. Nach Bedarf können Sie Audit-Protokolle von einem zuvor installierten Admin-Node auf den neuen Erweiterungs-Admin-Node kopieren, sodass er mit dem Rest des StorageGRID Systems synchronisiert ist. 
+summary: Wenn Sie über ein Erweiterungsverfahren einen neuen Admin-Knoten hinzufügen, protokolliert sein AMS-Dienst nur Ereignisse und Aktionen, die nach dem Beitritt zum System auftreten.  Bei Bedarf können Sie Prüfprotokolle von einem zuvor installierten Admin-Knoten auf den neuen Erweiterungs-Admin-Knoten kopieren, sodass dieser mit dem Rest des StorageGRID -Systems synchronisiert ist. 
 ---
 = Prüfprotokolle kopieren
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Wenn Sie einen neuen Admin-Node durch ein Erweiterungsverfahren hinzuf�
 
 
 [role="lead"]
-Wenn Sie einen neuen Admin-Node durch ein Erweiterungsverfahren hinzufügen, protokolliert sein AMS-Service nur Ereignisse und Aktionen, die nach dem Beitritt zum System auftreten. Nach Bedarf können Sie Audit-Protokolle von einem zuvor installierten Admin-Node auf den neuen Erweiterungs-Admin-Node kopieren, sodass er mit dem Rest des StorageGRID Systems synchronisiert ist.
+Wenn Sie über ein Erweiterungsverfahren einen neuen Admin-Knoten hinzufügen, protokolliert sein AMS-Dienst nur Ereignisse und Aktionen, die nach dem Beitritt zum System auftreten.  Bei Bedarf können Sie Prüfprotokolle von einem zuvor installierten Admin-Knoten auf den neuen Erweiterungs-Admin-Knoten kopieren, sodass dieser mit dem Rest des StorageGRID -Systems synchronisiert ist.
 
 .Bevor Sie beginnen
 * Sie haben die erforderlichen Erweiterungsschritte zum Hinzufügen eines Admin-Knotens abgeschlossen.
@@ -23,13 +23,13 @@ Um historische Audit-Meldungen auf einem neuen Admin-Knoten verfügbar zu machen
 
 [NOTE]
 ====
-Standardmäßig werden Audit-Informationen an das Audit-Protokoll auf Admin-Knoten gesendet. Sie können diese Schritte überspringen, wenn eine der folgenden Maßnahmen zutrifft:
+Standardmäßig werden Audit-Informationen an die `localaudit` Melden Sie sich bei jedem Knoten an.  Um dieses Verfahren zu verwenden, müssen Sie die Admin-Knoten wie folgt als Prüfziel konfiguriert haben:
 
-* Sie haben einen externen Syslog-Server konfiguriert und Audit-Protokolle werden jetzt an den Syslog-Server anstatt an Admin-Knoten gesendet.
-* Sie haben ausdrücklich angegeben, dass Audit-Meldungen nur auf den lokalen Knoten gespeichert werden sollten, die sie generiert haben.
+* Sie haben *Admin-Knoten/lokale Knoten* als Protokollziel konfiguriert.
+* Sie haben *Admin-Knoten und externen Syslog-Server* als Protokollziel konfiguriert.
 
 
-Weitere Informationen finden Sie unter link:../monitor/configure-audit-messages.html["Konfigurieren von Überwachungsmeldungen und Protokollzielen"] .
+Siehelink:../monitor/configure-audit-messages.html["Konfigurieren von Audit-Meldungen und externem Syslog-Server"] für Details.
 
 ====
 .Schritte
@@ -47,9 +47,9 @@ Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `
 . Beenden Sie den AMS-Dienst, um zu verhindern, dass er eine neue Datei erstellt: `service ams stop`
 . Navigieren Sie zum Verzeichnis für den Audit-Export:
 +
-`cd /var/local/log`
+`cd /var/local/audit/export/`
 
-. Benennen Sie die Quelldatei `audit.log` um, um sicherzustellen, dass die Datei auf dem Erweiterungsadministratorknoten, in den Sie kopieren, nicht überschrieben wird:
+. Benennen Sie die Quelle um `audit.log` Datei, um sicherzustellen, dass die Datei auf dem Erweiterungs-Admin-Knoten, auf den Sie sie kopieren, nicht überschrieben wird:
 +
 [listing]
 ----
@@ -58,7 +58,7 @@ mv audit.log _new_name_.txt
 ----
 . Kopieren Sie alle Audit-Log-Dateien in den Zielspeicherort auf dem Erweiterungs-Admin-Node:
 +
-`scp -p * _IP_address_:/var/local/log`
+`scp -p * _IP_address_:/var/local/audit/export/`
 
 . Wenn Sie zur Eingabe der Passphrase für aufgefordert `/root/.ssh/id_rsa` werden, geben Sie das SSH-Zugriffspasswort für den in der Datei aufgeführten primären Admin-Knoten ein `Passwords.txt`.
 . Originaldatei wiederherstellen `audit.log`:
@@ -86,7 +86,7 @@ Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `
 
 . Benutzer- und Gruppeneinstellungen für die Audit-Log-Dateien aktualisieren:
 +
-`cd /var/local/log`
+`cd /var/local/audit/export/`
 
 +
 `chown ams-user:bycast *`

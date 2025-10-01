@@ -85,6 +85,7 @@ Die Warnung *Grid Network MTU mismatch* wird ausgelöst, wenn sich die MTU-Einst
 Die Unterschiede in den MTU-Einstellungen könnten darauf hinweisen, dass einige, aber nicht alle, eth0-Netzwerke für Jumbo Frames konfiguriert sind. Eine MTU-Größe von mehr als 1000 kann zu Problemen mit der Netzwerkleistung führen.
 
 .Schritte
+. Der externe SSH-Zugriff ist standardmäßig blockiert.  Falls erforderlich,link:../admin/manage-external-ssh-access.html["Zugriff vorübergehend erlauben"] .
 . Führen Sie die MTU-Einstellungen für eth0 auf allen Knoten auf.
 +
 ** Verwenden Sie die im Grid Manager angegebene Abfrage.
@@ -148,6 +149,7 @@ Der Node. Die Standardeinstellung ist der lokale Knoten.
 |===
 
 
+. Wenn Sie externen SSH-Zugriff zugelassen haben,link:../admin/manage-external-ssh-access.html["Zugriff blockieren"] wenn Sie die Aufgabe erledigt haben.
 
 
 
@@ -257,12 +259,12 @@ Möglicherweise werden Probleme mit der Netzwerkverbindung für StorageGRID-Knot
 
 === Klonen VON MAC Adressen
 
-In einigen Fällen können Netzwerkprobleme mithilfe des Klonens von MAC-Adressen behoben werden. Wenn Sie virtuelle Hosts verwenden, legen Sie den Wert des MAC-Adressenklonens für jedes Ihrer Netzwerke in der Node-Konfigurationsdatei auf „true“ fest. Diese Einstellung bewirkt, dass die MAC-Adresse des StorageGRID-Containers die MAC-Adresse des Hosts verwendet. Informationen zum Erstellen von Node-Konfigurationsdateien finden Sie in den Anweisungen für link:../rhel/creating-node-configuration-files.html["Red Hat Enterprise Linux"] oder link:../ubuntu/creating-node-configuration-files.html["Ubuntu oder Debian"].
+In einigen Fällen können Netzwerkprobleme durch das Klonen von MAC-Adressen gelöst werden.  Wenn Sie virtuelle Hosts verwenden, setzen Sie den Wert des MAC-Adressklonschlüssels für jedes Ihrer Netzwerke in Ihrer Knotenkonfigurationsdatei auf „true“.  Diese Einstellung bewirkt, dass die MAC-Adresse des StorageGRID -Containers die MAC-Adresse des Hosts verwendet.  Siehe die Anweisungen zulink:../swnodes/creating-node-configuration-files.html["Erstellen Sie Knotenkonfigurationsdateien"] .
 
 
 NOTE: Erstellen Sie separate virtuelle Netzwerkschnittstellen, die vom Linux Host-Betriebssystem verwendet werden können. Die Verwendung derselben Netzwerkschnittstellen für das Linux-Hostbetriebssystem und den StorageGRID-Container kann dazu führen, dass das Host-Betriebssystem nicht mehr erreichbar ist, wenn der promiskuious-Modus auf dem Hypervisor nicht aktiviert wurde.
 
-Weitere Informationen zum Aktivieren des MAC-Klonens finden Sie in den Anweisungen für link:../rhel/configuring-host-network.html["Red Hat Enterprise Linux"] oder link:../ubuntu/configuring-host-network.html["Ubuntu oder Debian"].
+Weitere Informationen finden Sie in der Anleitung fürlink:../swnodes/configuring-host-network.html["Aktivieren des MAC-Klonens"] .
 
 
 
@@ -270,7 +272,7 @@ Weitere Informationen zum Aktivieren des MAC-Klonens finden Sie in den Anweisung
 
 Wenn Sie das Klonen von MAC-Adressen nicht verwenden möchten und lieber allen Schnittstellen erlauben möchten, Daten für andere MAC-Adressen als die vom Hypervisor zugewiesenen zu empfangen und zu übertragen, Stellen Sie sicher, dass die Sicherheitseigenschaften auf der Ebene des virtuellen Switches und der Portgruppen für den Promiscuous-Modus, MAC-Adressänderungen und Forged-Übertragungen auf *Accept* gesetzt sind. Die auf dem virtuellen Switch eingestellten Werte können von den Werten auf der Portgruppenebene außer Kraft gesetzt werden. Stellen Sie also sicher, dass die Einstellungen an beiden Stellen identisch sind.
 
-Weitere Informationen zur Verwendung des Promiscuous-Modus finden Sie in den Anweisungen für link:../rhel/configuring-host-network.html["Red Hat Enterprise Linux"] oder link:../ubuntu/configuring-host-network.html["Ubuntu oder Debian"].
+Weitere Informationen zur Verwendung des Promiscuous-Modus finden Sie in den Anweisungen fürlink:../swnodes/configuring-host-network.html["So konfigurieren Sie das Hostnetzwerk"] .
 
 
 
@@ -327,7 +329,7 @@ Möglicherweise müssen Sie die IPv6-Unterstützung im Kernel aktivieren, wenn S
 .Über diese Aufgabe
 So zeigen Sie die IPv6-Adresse an, die einem Grid-Knoten zugewiesen wurde:
 
-. Wählen Sie *NODES* aus und wählen Sie den Knoten aus.
+. Wählen Sie *Knoten* und wählen Sie den Knoten aus.
 . Wählen Sie *zusätzliche IP-Adressen anzeigen* neben *IP-Adressen* auf der Registerkarte Übersicht aus.
 
 

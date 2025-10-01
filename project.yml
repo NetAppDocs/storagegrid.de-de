@@ -10,8 +10,10 @@ settings:
     harmony_enabled: false
     hide_language_selector: false
   versions:
-  - version-number: '11.9'
+  - version-number: '12.0'
     url: "/storagegrid"
+  - version-number: '11.9'
+    url: "/storagegrid-119"
   - version-number: '11.8'
     url: "/storagegrid-118"
   - version-number: '11.7'
@@ -23,7 +25,7 @@ settings:
   langs: de-de,us-en,es-es,fr-fr,it-it,pt-br,ja-jp,ko-kr,zh-cn,zh-tw
 sidebar:
   entries:
-  - title: StorageGRID 11.9-Dokumentation
+  - title: StorageGRID 12.0-Software
     url: "/index.html"
   - title: StorageGRID Appliances
     url: "/storagegrid-hardware.html"
@@ -39,11 +41,9 @@ sidebar:
   - title: Installation, Upgrade und Hotfix
     url: "/landing-install-upgrade/index.html"
     entries:
-    - title: Installieren von Appliances
+    - title: Appliance-basierte Knoten installieren
       url: "/storagegrid-hardware.html"
-    - section: rhel
-    - section: ubuntu
-    - section: vmware
+    - section: swnodes
     - section: upgrade
     - title: StorageGRID-Hotfix anwenden
       entries:
@@ -84,7 +84,7 @@ sidebar:
     entries:
     - title: Netzwartung
       url: "/maintain/index.html"
-    - title: Recovery Package Herunterladen
+    - title: Wiederherstellungspaket herunterladen
       url: "/maintain/downloading-recovery-package.html"
     - title: Deaktivierung von Nodes oder Standort
       entries:
@@ -149,6 +149,30 @@ sidebar:
       - title: Node-Wartungsverfahren
         pdf-filename: Node-Verfahren
         url: "/maintain/grid-node-procedures.html"
+      - title: ADC-Dienst verschieben
+        url: "/maintain/move-adc-service.html"
+      - title: In Nur-Daten-Knoten konvertieren
+        url: "/maintain/convert-to-data-only-node.html"
+      - title: Verfahren zum Neustart, Herunterfahren und Einschalten
+        entries:
+        - title: Führen Sie einen Rolling-Neustart durch
+          url: "/maintain/rolling-reboot-procedure.html"
+        - title: Starten Sie den Knoten über die Registerkarte Aufgaben neu
+          url: "/maintain/rebooting-grid-node-from-grid-manager.html"
+        - title: Booten Sie den Node von der Command Shell neu
+          url: "/maintain/rebooting-grid-node-from-command-shell.html"
+        - title: Fahren Sie den Node herunter
+          url: "/maintain/shutting-down-grid-node.html"
+        - title: Schalten Sie den Host aus
+          url: "/maintain/powering-down-host.html"
+        - title: Schalten Sie alle Nodes aus und wieder ein
+          url: "/maintain/powering-off-and-on-all-nodes-in-grid.html"
+      - title: Verfahren zur Neuzuordnung von Ports
+        entries:
+        - title: Entfernen Sie Port-Neuzuordnungen auf StorageGRID -Geräten
+          url: "/maintain/removing-port-remaps.html"
+        - title: Entfernen Sie die Port-Remaps auf Bare-Metal-Hosts
+          url: "/maintain/removing-port-remaps-on-bare-metal-hosts.html"
       - title: Server Manager-Verfahren
         entries:
         - title: Zeigen Sie den Status und die Version von Server Manager an
@@ -173,26 +197,6 @@ sidebar:
           url: "/maintain/using-donotstart-file.html"
         - title: Fehlerbehebung Für Server Manager
           url: "/maintain/accessing-server-manager-log-file.html"
-      - title: Verfahren zum Neustart, Herunterfahren und Einschalten
-        entries:
-        - title: Führen Sie einen Rolling-Neustart durch
-          url: "/maintain/rolling-reboot-procedure.html"
-        - title: Starten Sie den Knoten über die Registerkarte Aufgaben neu
-          url: "/maintain/rebooting-grid-node-from-grid-manager.html"
-        - title: Booten Sie den Node von der Command Shell neu
-          url: "/maintain/rebooting-grid-node-from-command-shell.html"
-        - title: Fahren Sie den Node herunter
-          url: "/maintain/shutting-down-grid-node.html"
-        - title: Schalten Sie den Host aus
-          url: "/maintain/powering-down-host.html"
-        - title: Schalten Sie alle Nodes aus und wieder ein
-          url: "/maintain/powering-off-and-on-all-nodes-in-grid.html"
-      - title: Verfahren zur Neuzuordnung von Ports
-        entries:
-        - title: Entfernen Sie die Port-Remaps
-          url: "/maintain/removing-port-remaps.html"
-        - title: Entfernen Sie die Port-Remaps auf Bare-Metal-Hosts
-          url: "/maintain/removing-port-remaps-on-bare-metal-hosts.html"
     - title: Netzwerkverfahren
       entries:
       - title: Subnetze für Grid Network aktualisieren
@@ -394,7 +398,7 @@ sidebar:
         url: "/maintain/monitoring-services-appliance-installation.html"
     - title: Wie der technische Support eine Site wiederherstellt
       url: "/maintain/how-site-recovery-is-performed-by-technical-support.html"
-  - title: Aktivieren Sie StorageGRID
+  - title: StorageGRID -Lösungen und -Ressourcen
     url: "/storagegrid-enable.html"
   - title: StorageGRID und BlueXP
     url: "/storagegrid-bluexp.html"

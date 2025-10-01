@@ -1,0 +1,49 @@
+---
+permalink: maintain/move-adc-service.html 
+sidebar: sidebar 
+keywords: storagegrid, move adc, adc quorum 
+summary: Sie können den ADC-Dienst auf einen anderen Speicherknoten am selben Standort verschieben. 
+---
+= Verschieben des ADC-Dienstes
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können den ADC-Dienst auf einen anderen Speicherknoten am selben Standort verschieben.
+
+.Bevor Sie beginnen
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Du hastlink:../admin/admin-group-permissions.html["Berechtigung für Wartung oder Root-Zugriff"] .
+* Der Quellknoten enthält den ADC-Dienst.
+* Der Zielknoten enthält nicht den ADC-Dienst.
+* Der Zielknoten ist entweder ein reiner Metadatenknoten oder ein kombinierter Knoten (Metadaten und Objektdaten).
+* Der Quellknoten und der Zielknoten befinden sich am selben Standort.
+
+
+.Über diese Aufgabe
+Verwenden Sie das Verfahren „ADC verschieben“, wenn Sie Folgendes möchten:
+
+* Außerbetriebnahme eines Speicherknotens, der den ADC-Dienst hostet
+* Konvertieren Sie einen Speicherknoten, der den ADC-Dienst hostet, in einen Nur-Daten-Speicherknoten
+
+
+Wenn Sie einen Storage Node außer Betrieb nehmen möchten oderlink:../maintain/convert-to-data-only-node.html["Konvertieren Sie einen Speicherknoten in einen Nur-Datenknoten"] , müssen Sie möglicherweise zuerst das Verfahren „ADC verschieben“ verwenden.  Sie müssen sicherstellen, dass dielink:../maintain/understanding-adc-service-quorum.html["ADC-Quorum bleibt erhalten"] .
+
+Bei diesem Verfahren werden die Dienste ADC, IDNT, ACCT und RSM von einem Speicherknoten zu einem anderen am selben Standort verschoben.  Die RSM-, IDNT- und ACCT-Dienste sind vom ADC-Dienst abhängig und werden daher automatisch verschoben, wenn der ADC-Dienst verschoben wird.
+
+.Schritte
+. Notieren Sie die Knoten-IDs der Quell- und Zielknoten.
++
+In der Grid Management API wird die Quellknoten-ID bezeichnet als `sourceNodeId` .  Die Zielknoten-ID wird bezeichnet als `targetNodeId` .
+
+. Wählen Sie oben im Grid Manager das Hilfesymbol aus und wählen Sie *API-Dokumentation*.
+. Wählen Sie *Gehe zu privater API-Dokumentation*.
+. Wählen Sie die `POST /private/move-adc/start` Betrieb. Weitere Informationen finden Sie unter link:../admin/using-grid-management-api.html#issue-api-requests["API-Anforderungen ausgeben"] für weitere Informationen.
++
+Während des Vorgangs werden die beiden Knoten nacheinander neu gestartet.  Zuerst wird der Quellknoten neu gestartet, gefolgt vom Zielknoten.
+
+. Sie können `GET /private/move-adc` um den Vorgang zu überwachen.  Wenn Fehler auftreten, wählen Sie `POST /private/move-adc/retry` um den Vorgang zu wiederholen.
+. link:../maintain/downloading-recovery-package.html["Laden Sie ein Wiederherstellungspaket herunter"]nach Abschluss dieses Vorgangs.
+

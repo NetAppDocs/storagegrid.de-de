@@ -17,15 +17,15 @@ Durch die Verwendung eines Identitätsverbunds können Mandantengruppen und Benu
 
 == Konfigurieren Sie die Identitätsföderation für Mandanten-Manager
 
-Sie können eine Identitätsföderation für den Mandanten-Manager konfigurieren, wenn Mandantengruppen und Benutzer in einem anderen System, z. B. Active Directory, Azure Active Directory (Azure AD), OpenLDAP oder Oracle Directory Server, gemanagt werden sollen.
+Sie können die Identitätsföderation für den Tenant Manager konfigurieren, wenn Sie möchten, dass Tenantgruppen und Benutzer in einem anderen System wie Active Directory, Microsoft Entra ID, OpenLDAP oder Oracle Directory Server verwaltet werden.
 
 .Bevor Sie beginnen
-* Sie sind beim Tenant Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+* Sie sind beim Tenant Manager angemeldet mit einemlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"] .
 * Sie gehören zu einer Benutzergruppe mit dem link:tenant-management-permissions.html["Root-Zugriffsberechtigung"].
-* Sie verwenden Active Directory, Azure AD, OpenLDAP oder Oracle Directory Server als Identitäts-Provider.
+* Sie verwenden Active Directory, Microsoft Entra ID, OpenLDAP oder Oracle Directory Server als Identitätsanbieter.
 +
 
-NOTE: Wenn Sie einen nicht aufgeführten LDAP v3-Dienst verwenden möchten, wenden Sie sich an den technischen Support.
+NOTE: Wenn Sie einen LDAP v3-Dienst verwenden möchten, der nicht aufgeführt ist, wenden Sie sich an den technischen Support.
 
 * Wenn Sie OpenLDAP verwenden möchten, müssen Sie den OpenLDAP-Server konfigurieren. Siehe <<Richtlinien für die Konfiguration von OpenLDAP-Server>>.
 * Wenn Sie Transport Layer Security (TLS) für die Kommunikation mit dem LDAP-Server verwenden möchten, muss der Identitäts-Provider TLS 1.2 oder 1.3 verwenden. Siehe link:../admin/supported-ciphers-for-outgoing-tls-connections.html["Unterstützte Chiffren für ausgehende TLS-Verbindungen"].
@@ -43,7 +43,7 @@ image::../media/tenant_shares_identity_federation.png[Mandanten Teilen Sich Die 
 Wenn Sie Identifizieren Verbund konfigurieren, geben Sie die Werte an, die StorageGRID für die Verbindung mit einem LDAP-Dienst benötigt.
 
 .Schritte
-. Wählen Sie * ACCESS MANAGEMENT* > *Identity Federation*.
+. Wählen Sie *Zugriffsverwaltung* > *Identitätsföderation*.
 . Wählen Sie *Identitätsföderation aktivieren*.
 . Wählen Sie im Abschnitt LDAP-Servicetyp den Typ des LDAP-Dienstes aus, den Sie konfigurieren möchten.
 +
@@ -54,10 +54,10 @@ Wählen Sie *Other* aus, um Werte für einen LDAP-Server zu konfigurieren, der O
 
 . Wenn Sie *Sonstige* ausgewählt haben, füllen Sie die Felder im Abschnitt LDAP-Attribute aus. Andernfalls fahren Sie mit dem nächsten Schritt fort.
 +
-** *Eindeutiger Benutzername*: Der Name des Attributs, das die eindeutige Kennung eines LDAP-Benutzers enthält. Dieses Attribut entspricht `sAMAccountName` für Active Directory und `uid` OpenLDAP. Wenn Sie Oracle Directory Server konfigurieren, geben Sie ein `uid`.
-** *Benutzer-UUID*: Der Name des Attributs, das den permanenten eindeutigen Identifier eines LDAP-Benutzers enthält. Dieses Attribut entspricht `objectGUID` für Active Directory und `entryUUID` OpenLDAP. Wenn Sie Oracle Directory Server konfigurieren, geben Sie ein `nsuniqueid`. Der Wert jedes Benutzers für das angegebene Attribut muss eine 32-stellige Hexadezimalzahl im 16-Byte- oder String-Format sein, wobei Bindestriche ignoriert werden.
-** *Group Unique Name*: Der Name des Attributs, das den eindeutigen Identifier einer LDAP-Gruppe enthält. Dieses Attribut entspricht `sAMAccountName` für Active Directory und `cn` OpenLDAP. Wenn Sie Oracle Directory Server konfigurieren, geben Sie ein `cn`.
-** *Group UUID*: Der Name des Attributs, das den permanenten eindeutigen Identifier einer LDAP-Gruppe enthält. Dieses Attribut entspricht `objectGUID` für Active Directory und `entryUUID` OpenLDAP. Wenn Sie Oracle Directory Server konfigurieren, geben Sie ein `nsuniqueid`. Der Wert jeder Gruppe für das angegebene Attribut muss eine 32-stellige Hexadezimalzahl im 16-Byte- oder String-Format sein, wobei Bindestriche ignoriert werden.
+** *Eindeutiger Benutzername*: Der Name des Attributs, das die eindeutige Kennung eines LDAP-Benutzers enthält.  Dieses Attribut ist gleichbedeutend mit `sAMAccountName` für Active Directory und `uid` für OpenLDAP.  Wenn Sie Oracle Directory Server konfigurieren, geben Sie `uid` .
+** *Benutzer-UUID*: Der Name des Attributs, das die permanente eindeutige Kennung eines LDAP-Benutzers enthält.  Dieses Attribut ist gleichbedeutend mit `objectGUID` für Active Directory und `entryUUID` für OpenLDAP.  Wenn Sie Oracle Directory Server konfigurieren, geben Sie `nsuniqueid` .  Der Wert jedes Benutzers für das angegebene Attribut muss eine 32-stellige Hexadezimalzahl im 16-Byte- oder Zeichenfolgenformat sein, wobei Bindestriche ignoriert werden.
+** *Eindeutiger Gruppenname*: Der Name des Attributs, das die eindeutige Kennung einer LDAP-Gruppe enthält.  Dieses Attribut ist gleichbedeutend mit `sAMAccountName` für Active Directory und `cn` für OpenLDAP.  Wenn Sie Oracle Directory Server konfigurieren, geben Sie `cn` .
+** *Gruppen-UUID*: Der Name des Attributs, das die permanente eindeutige Kennung einer LDAP-Gruppe enthält.  Dieses Attribut ist gleichbedeutend mit `objectGUID` für Active Directory und `entryUUID` für OpenLDAP.  Wenn Sie Oracle Directory Server konfigurieren, geben Sie `nsuniqueid` .  Der Wert jeder Gruppe für das angegebene Attribut muss eine 32-stellige Hexadezimalzahl im 16-Byte- oder Zeichenfolgenformat sein, wobei Bindestriche ignoriert werden.
 
 
 . Geben Sie für alle LDAP-Servicetypen die Informationen zum erforderlichen LDAP-Server und zur Netzwerkverbindung im Abschnitt LDAP-Server konfigurieren ein.
@@ -81,7 +81,7 @@ Der angegebene Benutzer muss über die Berechtigung zum Auflisten von Gruppen un
 *** `cn`
 *** `memberOf` Oder `isMemberOf`
 *** *Active Directory*: `objectSid`, `primaryGroupID`, `userAccountControl` Und `userPrincipalName`
-*** *Azure*: `accountEnabled` Und `userPrincipalName`
+*** *Eintritts-ID*: `accountEnabled` Und `userPrincipalName`
 
 
 ** *Passwort*: Das mit dem Benutzernamen verknüpfte Passwort.
@@ -107,8 +107,8 @@ Es wird empfohlen, *Bind username Format* bereitzustellen, da Benutzer sich anme
 Geben Sie eines der folgenden Muster ein:
 
 +
-*** *UserPrincipalNamensmuster (Active Directory und Azure)*: `[USERNAME]@_example_.com`
-*** *Logon Name Pattern (Active Directory und Azure)*: `_example_\[USERNAME]`
+*** *UserPrincipalName-Muster (AD- und Entra-ID)*: `[USERNAME]@_example_.com`
+*** *Anmeldenamenmuster auf niedrigerer Ebene (AD- und Entra-ID)*: `_example_\[USERNAME]`
 *** *Distinguished Namensmuster*: `CN=[USERNAME],CN=Users,DC=_example_,DC=com`
 +
 Fügen Sie *[USERNAME]* genau wie geschrieben ein.
@@ -119,12 +119,12 @@ Fügen Sie *[USERNAME]* genau wie geschrieben ein.
 
 . Wählen Sie im Abschnitt Transport Layer Security (TLS) eine Sicherheitseinstellung aus.
 +
-** *Verwenden Sie STARTTLS*: Verwenden Sie STARTTLS, um die Kommunikation mit dem LDAP-Server zu sichern. Dies ist die empfohlene Option für Active Directory, OpenLDAP oder andere, diese Option wird jedoch für Azure nicht unterstützt.
-** *LDAPS verwenden*: Die Option LDAPS (LDAP über SSL) verwendet TLS, um eine Verbindung zum LDAP-Server herzustellen. Sie müssen diese Option für Azure auswählen.
-** *Verwenden Sie keine TLS*: Der Netzwerkverkehr zwischen dem StorageGRID-System und dem LDAP-Server wird nicht gesichert. Diese Option wird für Azure nicht unterstützt.
+** *STARTLS verwenden*: Verwenden Sie STARTTLS, um die Kommunikation mit dem LDAP-Server zu sichern.  Dies ist die empfohlene Option für Active Directory, OpenLDAP oder Andere, aber diese Option wird für Microsoft Entra ID nicht unterstützt.
+** *LDAPS verwenden*: Die Option LDAPS (LDAP über SSL) verwendet TLS, um eine Verbindung zum LDAP-Server herzustellen.  Sie müssen diese Option für die Microsoft Entra ID auswählen.
+** *TLS nicht verwenden*: Der Netzwerkverkehr zwischen dem StorageGRID -System und dem LDAP-Server wird nicht gesichert.  Diese Option wird für die Microsoft Entra ID nicht unterstützt.
 +
 
-NOTE: Die Verwendung der Option *keine TLS* verwenden wird nicht unterstützt, wenn Ihr Active Directory-Server die LDAP-Signatur erzwingt. Sie müssen STARTTLS oder LDAPS verwenden.
+NOTE: Die Verwendung der Option *TLS nicht verwenden* wird nicht unterstützt, wenn Ihr Active Directory-Server die LDAP-Signierung erzwingt.  Sie müssen STARTTLS oder LDAPS verwenden.
 
 
 
@@ -147,7 +147,7 @@ Nachdem Sie alle Werte eingegeben haben, müssen Sie die Verbindung testen, bevo
 
 .Schritte
 . Wählen Sie *Verbindung testen*.
-. Wenn Sie kein bind username Format angegeben haben:
+. Wenn Sie kein Bind-Benutzernamenformat angegeben haben:
 +
 ** Wenn die Verbindungseinstellungen gültig sind, wird die Meldung „Verbindung erfolgreich testen“ angezeigt. Wählen Sie *Speichern*, um die Konfiguration zu speichern.
 ** Wenn die Verbindungseinstellungen ungültig sind, wird die Meldung „Testverbindung konnte nicht hergestellt werden“ angezeigt. Wählen Sie *Schließen*. Beheben Sie anschließend alle Probleme, und testen Sie die Verbindung erneut.
@@ -189,15 +189,15 @@ NOTE: Die Warnmeldung * Identity Federation Failure* wird ausgelöst, wenn es ei
 
 == Deaktivieren Sie den Identitätsverbund
 
-Sie können den Identitätsverbund für Gruppen und Benutzer vorübergehend oder dauerhaft deaktivieren. Wenn die Identitätsföderation deaktiviert ist, besteht keine Kommunikation zwischen StorageGRID und der Identitätsquelle. Allerdings bleiben alle von Ihnen konfigurierten Einstellungen erhalten, sodass Sie die Identitätsföderation zukünftig einfach wieder aktivieren können.
+Sie können die Identitätsföderation für Gruppen und Benutzer vorübergehend oder dauerhaft deaktivieren.  Wenn die Identitätsföderation deaktiviert ist, findet keine Kommunikation zwischen StorageGRID und der Identitätsquelle statt.  Alle von Ihnen konfigurierten Einstellungen bleiben jedoch erhalten, sodass Sie die Identitätsföderation in Zukunft problemlos wieder aktivieren können.
 
 .Über diese Aufgabe
 Bevor Sie die Identitätsföderation deaktivieren, sollten Sie Folgendes beachten:
 
 * Verbundene Benutzer können sich nicht anmelden.
 * Föderierte Benutzer, die sich derzeit anmelden, erhalten bis zu ihrem Ablauf Zugriff auf das StorageGRID-System, können sich jedoch nach Ablauf der Sitzung nicht anmelden.
-* Die Synchronisierung zwischen dem StorageGRID-System und der Identitätsquelle wird nicht durchgeführt, und für Konten, die nicht synchronisiert wurden, werden keine Warnmeldungen ausgegeben.
-* Das Kontrollkästchen *Enable Identity Federation* ist deaktiviert, wenn Single Sign-On (SSO) auf *enabled* oder *Sandbox Mode* eingestellt ist. Der SSO-Status auf der Seite Single Sign-On muss *deaktiviert* sein, bevor Sie die Identitätsföderation deaktivieren können. Siehe link:../admin/disabling-single-sign-on.html["Deaktivieren Sie Single Sign-On"].
+* Es findet keine Synchronisierung zwischen dem StorageGRID -System und der Identitätsquelle statt und es werden keine Warnungen für Konten ausgelöst, die nicht synchronisiert wurden.
+* Das Kontrollkästchen *Identitätsföderation aktivieren* ist deaktiviert, wenn der Single Sign-On-Status (SSO) *Aktiviert* oder *Sandbox-Modus* ist.  Der SSO-Status auf der Single Sign-On-Seite muss *Deaktiviert* sein, bevor Sie die Identitätsföderation deaktivieren können. Sehen link:../admin/disabling-single-sign-on.html["Deaktivieren Sie Single Sign-On"] .
 
 
 .Schritte
@@ -212,7 +212,7 @@ Bevor Sie die Identitätsföderation deaktivieren, sollten Sie Folgendes beachte
 Wenn Sie einen OpenLDAP-Server für die Identitätsföderation verwenden möchten, müssen Sie bestimmte Einstellungen auf dem OpenLDAP-Server konfigurieren.
 
 
-CAUTION: Bei Identitätsquellen, die nicht ActiveDirectory oder Azure sind, blockiert StorageGRID den S3-Zugriff nicht automatisch für Benutzer, die extern deaktiviert sind. Löschen Sie zum Blockieren des S3-Zugriffs alle S3-Schlüssel für den Benutzer oder entfernen Sie den Benutzer aus allen Gruppen.
+CAUTION: Bei Identitätsquellen, bei denen es sich nicht um Active Directory oder Microsoft Entra ID handelt, blockiert StorageGRID den S3-Zugriff für extern deaktivierte Benutzer nicht automatisch.  Um den S3-Zugriff zu blockieren, löschen Sie alle S3-Schlüssel für den Benutzer oder entfernen Sie den Benutzer aus allen Gruppen.
 
 
 

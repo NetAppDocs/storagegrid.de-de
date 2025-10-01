@@ -40,23 +40,23 @@ Der Service-Laptop muss Folgendes haben:
 
 
  a| 
-Recovery Package- `.zip`Datei
+Wiederherstellungspaket `.zip` Datei
  a| 
-Holen Sie sich eine Kopie der neuesten Recovery Package `.zip`-Datei:
+Besorgen Sie sich eine Kopie des aktuellsten Wiederherstellungspakets `.zip` Datei:
 `sgws-recovery-package-_id-revision_.zip`
 
-Der Inhalt der `.zip` Datei wird jedes Mal aktualisiert, wenn das System geändert wird. Sie werden aufgefordert, die aktuellste Version des Wiederherstellungspakets nach dem Speichern dieser Änderungen an einem sicheren Ort zu speichern. Verwenden Sie die neueste Kopie, um nach Grid-Ausfällen eine Wiederherstellung durchzuführen.
+Der Inhalt der `.zip` Die Datei wird bei jeder Änderung des Systems aktualisiert.  Sie werden angewiesen, nach der Durchführung solcher Änderungen die aktuellste Version des Wiederherstellungspakets an einem sicheren Ort zu speichern.  Verwenden Sie zur Wiederherstellung nach Netzausfällen die aktuellste Kopie.
 
-Wenn der primäre Admin-Node normal funktioniert, können Sie das Wiederherstellungspaket aus dem Grid Manager herunterladen. Wählen Sie *WARTUNG* > *System* > *Wiederherstellungspaket*.
+Wenn Sie bei einem beliebigen Admin-Knoten angemeldet sind, verwenden Sie den Grid Manager, um ein Wiederherstellungspaket herunterzuladen.  Wählen Sie *Wartung* > *System* > *Wiederherstellungspaket*.
 
-Wenn Sie nicht auf den Grid Manager zugreifen können, finden Sie verschlüsselte Kopien des Wiederherstellungspakets auf einigen Storage Nodes, die den ADC-Dienst enthalten. Prüfen Sie auf jedem Storage Node diesen Speicherort für das Wiederherstellungspaket: `/var/local/install/sgws-recovery-package-_grid-id_-_revision_.zip.gpg` Verwenden Sie das Wiederherstellungspaket mit der höchsten Revisionsnummer.
+Wenn Sie nicht auf den Grid Manager zugreifen können, finden Sie verschlüsselte Kopien des Wiederherstellungspakets auf einigen Speicherknoten, die den ADC-Dienst enthalten.  Suchen Sie auf jedem Speicherknoten an diesem Speicherort nach dem Wiederherstellungspaket: `/var/local/install/sgws-recovery-package-_grid-id_-_revision_.zip.gpg` Verwenden Sie das Wiederherstellungspaket mit der höchsten Revisionsnummer.
 
 
 
  a| 
 `Passwords.txt` Datei
  a| 
-Enthält die Passwörter, die für den Zugriff auf Grid-Nodes in der Befehlszeile erforderlich sind. Im Wiederherstellungspaket enthalten.
+Enthält die Passwörter, die für den Zugriff auf Grid-Knoten über die Befehlszeile erforderlich sind.  Im Wiederherstellungspaket enthalten.
 
 
 
@@ -107,7 +107,7 @@ Verwenden Sie die `.zip` Datei, wenn Sie Windows ausführen.
 
 
  a| 
-Red Hat Enterprise Linux
+RHEL
 | `StorageGRID-Webscale-_version_-RPM-_uniqueID_.zip` 
 `StorageGRID-Webscale-_version_-RPM-_uniqueID_.tgz` 
 
@@ -124,13 +124,16 @@ VMware
 `StorageGRID-Webscale-_version_-VMware-_uniqueID_.tgz` 
 |===
 . Laden Sie die Archivdatei herunter und extrahieren Sie sie.
-. Befolgen Sie den entsprechenden Schritt für Ihre Plattform und wählen Sie die Dateien aus, die Sie benötigen, basierend auf Ihrer Plattform und den Grid-Nodes, die Sie wiederherstellen müssen.
+. Springen Sie zum entsprechenden Abschnitt für Ihre Plattform, um die benötigten Dateien basierend auf Ihrer Plattform und den Grid-Knoten auszuwählen, die Sie wiederherstellen müssen.
 +
 Die im Schritt für jede Plattform aufgeführten Pfade beziehen sich auf das von der Archivdatei installierte Verzeichnis auf der obersten Ebene.
 
-. Wenn Sie eine wiederherstellenlink:../rhel/index.html["Red hat Enterprise Linux-System"], wählen Sie die entsprechenden Dateien aus.
-
-
+. Wenn Sie einelink:../swnodes/index.html["softwarebasierter Knoten"] , wählen Sie die entsprechenden Dateien aus:
++
+[role="tabbed-block"]
+====
+.RHEL
+--
 [cols="1a,1a"]
 |===
 | Pfad und Dateiname | Beschreibung 
@@ -205,9 +208,9 @@ API-Schemata für StorageGRID:
 *Hinweis*: Bevor Sie ein Upgrade durchführen, können Sie diese Schemas verwenden, um zu bestätigen, dass jeder Code, den Sie zur Verwendung von StorageGRID Management APIs geschrieben haben, mit der neuen StorageGRID-Version kompatibel ist, wenn Sie keine StorageGRID-Umgebung außerhalb der Produktionsumgebung für Upgrade-Kompatibilitätstests haben.
 
 |===
-. Wenn Sie eine wiederherstellenlink:../ubuntu/index.html["Ubuntu oder Debian-System"], wählen Sie die entsprechenden Dateien aus.
-
-
+--
+.Ubuntu oder Debian
+--
 [cols="1a,1a"]
 |===
 | Pfad und Dateiname | Beschreibung 
@@ -287,9 +290,9 @@ API-Schemata für StorageGRID:
 *Hinweis*: Bevor Sie ein Upgrade durchführen, können Sie diese Schemas verwenden, um zu bestätigen, dass jeder Code, den Sie zur Verwendung von StorageGRID Management APIs geschrieben haben, mit der neuen StorageGRID-Version kompatibel ist, wenn Sie keine StorageGRID-Umgebung außerhalb der Produktionsumgebung für Upgrade-Kompatibilitätstests haben.
 
 |===
-. Wenn Sie eine wiederherstellenlink:../vmware/index.html["VMware System"], wählen Sie die entsprechenden Dateien aus.
-
-
+--
+.VMware
+--
 [cols="1a,1a"]
 |===
 | Pfad und Dateiname | Beschreibung 
@@ -384,8 +387,15 @@ API-Schemata für StorageGRID:
 *Hinweis*: Bevor Sie ein Upgrade durchführen, können Sie diese Schemas verwenden, um zu bestätigen, dass jeder Code, den Sie zur Verwendung von StorageGRID Management APIs geschrieben haben, mit der neuen StorageGRID-Version kompatibel ist, wenn Sie keine StorageGRID-Umgebung außerhalb der Produktionsumgebung für Upgrade-Kompatibilitätstests haben.
 
 |===
+--
+====
+
+
 . Wenn Sie ein Appliance-basiertes StorageGRID-System wiederherstellen, wählen Sie die entsprechenden Dateien aus.
 
+
+
+NOTE: Für die Installation der Appliance sind diese Dateien nur erforderlich, wenn Sie Netzwerkverkehr vermeiden müssen.  Die Appliance kann die erforderlichen Dateien vom Admin-Knoten herunterladen, auf dem Sie das Wiederherstellungsverfahren durchführen.
 
 [cols="1a,1a"]
 |===
@@ -402,5 +412,3 @@ MD5-Prüfsumme für die Datei `/debs/storagegridwebscale-
 images-version-SHA.deb`.
 
 |===
-
-NOTE: Für die Installation der Appliance sind diese Dateien nur erforderlich, wenn Sie den Netzwerkverkehr vermeiden müssen. Die Appliance kann die erforderlichen Dateien vom primären Admin-Knoten herunterladen.

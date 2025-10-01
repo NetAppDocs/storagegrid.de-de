@@ -141,6 +141,8 @@ Siehe <<Anforderungsheader für serverseitige Verschlüsselung>>
 
 Die folgenden Anforderungsheader werden nicht unterstützt:
 
+* `If-Match`
+* `If-None-Match`
 * `x-amz-acl`
 * `x-amz-sdk-checksum-algorithm`
 * `x-amz-trailer`

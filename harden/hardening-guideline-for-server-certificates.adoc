@@ -11,7 +11,7 @@ summary: Sie sollten die während der Installation erstellten Standardzertifikat
 
 
 [role="lead"]
-Sie sollten die während der Installation erstellten Standardzertifikate ersetzen und die entsprechende Sicherheitsrichtlinie für TLS- und SSH-Verbindungen auswählen.
+Sie sollten den SSH-Zugriff kontrollieren, Standard-TLS-Zertifikate ersetzen und die entsprechende Sicherheitsrichtlinie für TLS- und SSH-Verbindungen auswählen.
 
 
 
@@ -48,6 +48,12 @@ Darüber hinaus sollten Kunden bei der Kommunikation mit StorageGRID strenge Hos
 
 Sie können eine Sicherheitsrichtlinie auswählen, um festzulegen, welche Protokolle und Chiffren zum Aufbau sicherer TLS-Verbindungen mit Clientanwendungen und sicherer SSH-Verbindungen zu internen StorageGRID-Diensten verwendet werden.
 
-Die Sicherheitsrichtlinie steuert, wie TLS und SSH Daten in Bewegung verschlüsseln. Als Best Practice sollten Sie Verschlüsselungsoptionen deaktivieren, die für die Anwendungskompatibilität nicht erforderlich sind. Verwenden Sie die moderne Standardrichtlinie, es sei denn, Ihr System muss Common Criteria-konform sein oder Sie müssen andere Chiffren verwenden.
+Die Sicherheitsrichtlinie steuert, wie TLS und SSH übertragene Daten verschlüsseln.  Als bewährte Methode sollten Sie Verschlüsselungsoptionen deaktivieren, die für die Anwendungskompatibilität nicht erforderlich sind.  Verwenden Sie die standardmäßige moderne Richtlinie, es sei denn, Ihr System muss Common Criteria-kompatibel oder FIPS 140-2-kompatibel sein oder Sie müssen andere Verschlüsselungsverfahren verwenden.
 
 Weitere Informationen und Anweisungen finden Sie unterlink:../admin/manage-tls-ssh-policy.html["Verwalten Sie die TLS- und SSH-Richtlinie"].
+
+
+
+== Externen SSH-Zugriff verwalten
+
+Um die Systemsicherheit zu erhöhen, wird der externe SSH-Zugriff standardmäßig blockiert.  Aktivieren Sie den SSH-Zugriff nur, wenn Sie Aufgaben ausführen müssen, die eingehenden SSH-Zugriff erfordern, beispielsweise zur Fehlerbehebung.  Siehelink:../admin/manage-external-ssh-access.html["Externen SSH-Zugriff verwalten"] für Details und Anweisungen.

@@ -56,7 +56,7 @@ Primärer Admin-Node
 | /Var/local/log/gdu-server.log  a| 
 Erstellt durch den GDU-Dienst. Enthält Ereignisse im Zusammenhang mit Provisioning- und Wartungsverfahren, die vom primären Admin-Node verwaltet werden.
  a| 
-Primärer Admin-Node
+Admin-Nodes
 
 
 

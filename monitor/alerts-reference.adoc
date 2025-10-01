@@ -174,6 +174,13 @@ Bei einem Direct-Attached Storage (das)-Laufwerk in der Appliance wurde ein Prob
 
 
  a| 
+Das DAS-Laufwerk der Appliance befindet sich im falschen Steckplatz oder Knoten
+ a| 
+Ein DAS-Laufwerk (Direct Attached Storage) befindet sich im falschen Steckplatz oder Knoten
+
+
+
+ a| 
 Die LED für die das-Laufwerksfinder der Appliance leuchtet
  a| 
 Die Laufwerksfinder-LED für ein oder mehrere Direct-Attached Storage (das)-Laufwerke in einem Appliance-Storage-Node ist eingeschaltet.
@@ -240,6 +247,13 @@ Es wurde ein Problem mit einer Netzwerkkarte (NIC) im Gerät festgestellt.
 Das gesamte Netzteil des Geräts ist heruntergestuft
  a| 
 Die Leistung eines StorageGRID-Geräts ist von der empfohlenen Betriebsspannung abweichen.
+
+
+
+ a| 
+Appliance SANtricity OS-Softwareupdate erforderlich
+ a| 
+Die SANtricity -Softwareversion ist niedriger als das empfohlene Minimum für diese Version von StorageGRID.
 
 
 
@@ -380,7 +394,7 @@ Der Node kann Protokolle nicht an den externen Syslog-Server weiterleiten.
  a| 
 Große Audit-Warteschlange
  a| 
-Die Datenträgerwarteschlange für Überwachungsmeldungen ist voll. Wenn diese Bedingung nicht erfüllt wird, können S3- oder Swift-Vorgänge fehlschlagen.
+Die Festplattenwarteschlange für Prüfmeldungen ist voll.  Wenn dieser Zustand nicht behoben wird, können S3-Vorgänge fehlschlagen.
 
 
 
@@ -609,9 +623,23 @@ Die E-Mail-Benachrichtigung für eine Warnmeldung konnte nicht gesendet werden.
 
 
  a| 
+Ziel-Bucket für Protokollarchivierung nicht gefunden
+ a| 
+Der Ziel-Bucket für die Protokollarchivierung fehlt, wodurch die Archivierung der Protokolle im Ziel-Bucket verhindert wird.
+
+
+
+ a| 
 SNMP-Inform-Fehler
  a| 
 Fehler beim Senden von SNMP-Benachrichtigungen an ein Trap-Ziel.
+
+
+
+ a| 
+Externer SSH-Zugriff aktiviert
+ a| 
+Der externe SSH-Zugriff ist seit mehr als 24 Stunden aktiviert.
 
 
 
@@ -681,9 +709,9 @@ Mindestens ein Clientzertifikat läuft bald ab.
 
 
  a| 
-Ablauf des globalen Serverzertifikats für S3 und Swift
+Ablauf des globalen Serverzertifikats für S3
  a| 
-Das globale Serverzertifikat für S3 und Swift läuft demnächst ab.
+Das globale Serverzertifikat für S3 läuft bald ab.
 
 
 
@@ -944,7 +972,7 @@ Der Offset zwischen lokaler Uhr und NTP-Zeit (Network Time Protocol) ist zu gro�
  a| 
 Geringe Kapazität der Auditprotokoll-Festplatte
  a| 
-Der für Audit-Protokolle verfügbare Platz ist gering. Wenn diese Bedingung nicht erfüllt wird, können S3- oder Swift-Vorgänge fehlschlagen.
+Der für Audit-Protokolle verfügbare Speicherplatz ist gering.  Wenn dieser Zustand nicht behoben wird, können S3-Vorgänge fehlschlagen.
 
 
 
@@ -1007,7 +1035,7 @@ Der auf der Stammfestplatte verfügbare Speicherplatz ist gering.
  a| 
 Niedrige Datenkapazität des Systems
  a| 
-Der für /var/local verfügbare Speicherplatz ist gering. Wenn diese Bedingung nicht erfüllt wird, können S3- oder Swift-Vorgänge fehlschlagen.
+Der für /var/local verfügbare Speicherplatz ist gering.  Wenn dieser Zustand nicht behoben wird, können S3-Vorgänge fehlschlagen.
 
 
 
@@ -1024,6 +1052,13 @@ Der im Verzeichnis /tmp verfügbare Speicherplatz ist gering.
 [cols="1a,2a"]
 |===
 | Alarmname | Beschreibung 
+
+
+ a| 
+ADC-Quorum nicht erreicht
+ a| 
+Speicherknoten mit ADC-Dienst ist offline.  Erweiterungs- und Außerbetriebnahmevorgänge werden blockiert, bis das ADC-Quorum wiederhergestellt ist.
+
 
 
  a| 
@@ -1238,9 +1273,16 @@ Der Job zur Prüfung der ObjektExistenz ist blockiert.
 
 
  a| 
-Objekte verloren
+Möglicherweise verlorene Objekte
  a| 
-Mindestens ein Objekt ist aus dem Raster verloren gegangen.
+Ein oder mehrere Objekte sind möglicherweise aus dem Raster verschwunden.
+
+
+
+ a| 
+Verwaiste Objekte erkannt
+ a| 
+Es wurden verwaiste Objekte erkannt.
 
 
 
@@ -1255,6 +1297,21 @@ Ein Client versucht, eine PUT-Objekt-Operation durchzuführen, die die S3-Größ
 Nicht identifizierte beschädigte Objekte erkannt
  a| 
 Im replizierten Objekt-Storage wurde eine Datei gefunden, die nicht als repliziertes Objekt identifiziert werden konnte.
+
+|===
+
+
+== Warnungen bei Objektbeschädigung
+
+[cols="1a,2a"]
+|===
+| Alarmname | Beschreibung 
+
+
+ a| 
+Objektgröße stimmt nicht überein
+ a| 
+Bei der Überprüfung der Objektexistenz wurde eine unerwartete Objektgröße erkannt.
 
 |===
 
@@ -1348,14 +1405,14 @@ Die Konfiguration des nginx-gw-Dienstes ist ungültig. Die vorherige Konfigurati
  a| 
 Zum Deaktivieren von FIPS ist ein Neustart erforderlich
  a| 
-Die Sicherheitsrichtlinie erfordert keinen FIPS-Modus, aber das NetApp Cryptographic Security Module ist aktiviert.
+Die Sicherheitsrichtlinie erfordert keinen FIPS-Modus, aber es werden FIPS-Module verwendet.
 
 
 
  a| 
 Neustart erforderlich zur Aktivierung von FIPS
  a| 
-Die Sicherheitsrichtlinie erfordert den FIPS-Modus, aber das NetApp Cryptographic Security Module ist deaktiviert.
+Die Sicherheitsrichtlinie erfordert den FIPS-Modus, aber es werden keine FIPS-Module verwendet.
 
 
 

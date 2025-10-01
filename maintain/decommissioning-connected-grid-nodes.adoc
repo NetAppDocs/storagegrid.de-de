@@ -99,13 +99,13 @@ Daraufhin wird der Vorgang zum Stilllegen des Node gestartet, und der Fortschrit
 
 CAUTION: Nehmen Sie einen Speicher-Node nicht offline, nachdem der Ausmusterung-Vorgang gestartet wurde. Wenn Sie den Status ändern, werden einige Inhalte möglicherweise nicht an andere Orte kopiert.
 
-. Sobald das neue Wiederherstellungspaket verfügbar ist, wählen Sie den Link Wiederherstellungspaket im Banner oder wählen Sie *WARTUNG* > *System* > *Wiederherstellungspaket*, um auf die Seite Wiederherstellungspaket zuzugreifen. Laden Sie dann die Datei herunter `.zip`.
+. Sobald das neue Wiederherstellungspaket verfügbar ist, wählen Sie den Link zum Wiederherstellungspaket im Banner oder wählen Sie *Wartung* > *System* > *Wiederherstellungspaket*, um auf die Seite mit dem Wiederherstellungspaket zuzugreifen.  Laden Sie dann die `.zip` Datei.
 +
-Siehe link:downloading-recovery-package.html["Herunterladen des Wiederherstellungspakets"].
+Sehen link:downloading-recovery-package.html["Herunterladen des Wiederherstellungspakets"] .
 
 +
 
-NOTE: Laden Sie das Wiederherstellungspaket so schnell wie möglich herunter, um sicherzustellen, dass Sie Ihr Grid wiederherstellen können, wenn während des Stillfalls etwas schief geht.
+NOTE: Laden Sie das Wiederherstellungspaket so schnell wie möglich herunter, um sicherzustellen, dass Sie Ihr Netz wiederherstellen können, falls während der Außerbetriebnahme etwas schiefgeht.
 
 . Überwachen Sie die Seite Decommission Nodes regelmäßig, um sicherzustellen, dass alle ausgewählten Knoten erfolgreich deaktiviert wurden.
 +
@@ -122,7 +122,7 @@ Führen Sie die folgenden Schritte aus, nachdem Sie den Vorgang zur Deaktivierun
 
 . Befolgen Sie den entsprechenden Schritt für Ihre Plattform. Beispiel:
 +
-** *Linux*: Möglicherweise möchten Sie die Volumes trennen und die Knoten-Konfigurationsdateien löschen, die Sie während der Installation erstellt haben. Siehe link:../rhel/index.html["Installieren Sie StorageGRID unter Red hat Enterprise Linux"] und link:../ubuntu/index.html["Installieren Sie StorageGRID auf Ubuntu oder Debian"].
+** *Linux*: Möglicherweise möchten Sie die Volumes trennen und die Knotenkonfigurationsdateien löschen, die Sie während der Installation erstellt haben. Sehen link:../swnodes/index.html["Installieren Sie StorageGRID auf softwarebasierten Knoten"] .
 ** *VMware*: Sie können die vCenter-Option "von Festplatte löschen" verwenden, um die virtuelle Maschine zu löschen. Möglicherweise müssen Sie auch alle Datenfestplatten löschen, die unabhängig von der virtuellen Maschine sind.
 ** *StorageGRID-Appliance*: Der Appliance-Knoten wird automatisch in einen nicht bereitgestellten Zustand zurückgesetzt, in dem Sie auf das Installationsprogramm der StorageGRID-Appliance zugreifen können. Sie können das Gerät ausschalten oder es einem anderen StorageGRID-System hinzufügen.
 

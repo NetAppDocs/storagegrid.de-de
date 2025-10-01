@@ -24,7 +24,7 @@ Für alle Speicherknoten wird ein einzelnes benutzerdefiniertes Serverzertifikat
 Nach Abschluss der Konfiguration auf dem Server müssen Sie möglicherweise auch das Grid-CA-Zertifikat in dem S3-API-Client installieren, den Sie für den Zugriff auf das System verwenden, je nachdem, welche Root-Zertifizierungsstelle Sie verwenden.
 
 
-NOTE: Um sicherzustellen, dass der Betrieb nicht durch ein fehlerhaftes Serverzertifikat unterbrochen wird, wird die Warnmeldung *Ablauf des globalen Serverzertifikats für S3 API* ausgelöst, wenn das Stammserverzertifikat abläuft. Wenn erforderlich, können Sie anzeigen, wann das aktuelle Zertifikat abläuft, indem Sie *CONFIGURATION* > *Security* > *Certificates* auswählen und das Ablaufdatum des S3 API-Zertifikats auf der Registerkarte Global anzeigen.
+NOTE: Um sicherzustellen, dass der Betrieb nicht durch ein fehlerhaftes Serverzertifikat unterbrochen wird, wird die Warnung *Ablauf des globalen Serverzertifikats für S3-API* ausgelöst, wenn das Stammserverzertifikat bald abläuft.  Bei Bedarf können Sie das Ablaufdatum des aktuellen Zertifikats anzeigen, indem Sie *Konfiguration* > *Sicherheit* > *Zertifikate* auswählen und auf der Registerkarte „Global“ das Ablaufdatum für das S3-API-Zertifikat anzeigen.
 
 Sie können ein benutzerdefiniertes S3-API-Zertifikat hochladen oder generieren.
 
@@ -33,7 +33,7 @@ Sie können ein benutzerdefiniertes S3-API-Zertifikat hochladen oder generieren.
 == Fügen Sie ein benutzerdefiniertes S3-API-Zertifikat hinzu
 
 .Schritte
-. Wählen Sie *KONFIGURATION* > *Sicherheit* > *Zertifikate*.
+. Wählen Sie *Konfiguration* > *Sicherheit* > *Zertifikate*.
 . Wählen Sie auf der Registerkarte *Global* *S3 API-Zertifikat* aus.
 . Wählen Sie *Benutzerdefiniertes Zertifikat verwenden*.
 . Hochladen oder Generieren des Zertifikats
@@ -164,7 +164,7 @@ NOTE: Nachdem Sie ein Zertifikat hochgeladen oder generiert haben, lassen Sie si
 Sie können auf die Verwendung des standardmäßigen S3-API-Zertifikats für S3-Client-Verbindungen zu Storage-Nodes zurücksetzen. Sie können jedoch das S3-API-Standardzertifikat nicht für einen Load Balancer-Endpunkt verwenden.
 
 .Schritte
-. Wählen Sie *KONFIGURATION* > *Sicherheit* > *Zertifikate*.
+. Wählen Sie *Konfiguration* > *Sicherheit* > *Zertifikate*.
 . Wählen Sie auf der Registerkarte *Global* *S3 API-Zertifikat* aus.
 . Wählen Sie *Standard-Zertifikat verwenden*.
 +
@@ -184,7 +184,7 @@ Wenn Sie über Root-Zugriffsberechtigungen verfügen und das benutzerdefinierte 
 Sie können den Inhalt des S3-API-Zertifikats speichern oder kopieren und an anderer Stelle verwenden.
 
 .Schritte
-. Wählen Sie *KONFIGURATION* > *Sicherheit* > *Zertifikate*.
+. Wählen Sie *Konfiguration* > *Sicherheit* > *Zertifikate*.
 . Wählen Sie auf der Registerkarte *Global* *S3 API-Zertifikat* aus.
 . Wählen Sie die Registerkarte *Server* oder *CA Bundle* aus und laden Sie das Zertifikat herunter oder kopieren Sie es.
 +

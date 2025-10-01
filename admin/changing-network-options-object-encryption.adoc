@@ -57,7 +57,7 @@ Unter link:summary-ip-addresses-and-ports-for-client-connections.html["Zusammenf
 
 
 .Schritte
-. Wählen Sie *CONFIGURATION* > *Security* > *Security settings*.
+. Wählen Sie *Konfiguration* > *Sicherheit* > *Sicherheitseinstellungen*.
 . Wählen Sie die Registerkarte *Netzwerk und Objekte*.
 . Verwenden Sie für die Verschlüsselung gespeicherter Objekte die Einstellung *None* (Standard), wenn Sie keine Verschlüsselung gespeicherter Objekte wünschen, oder wählen Sie *AES-128* oder *AES-256*, um gespeicherte Objekte zu verschlüsseln.
 . Wählen Sie optional *Client-Änderung verhindern* aus, wenn Sie S3-Clients daran hindern möchten, bestimmte Anfragen zu stellen.

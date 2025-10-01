@@ -84,7 +84,7 @@ Sie können die Warnung *Low read-only Watermark override* lösen, indem Sie ben
 === Bewertung der Nutzung von Objektdaten für das gesamte Grid
 
 .Schritte
-. Wählen Sie *KNOTEN*.
+. Wählen Sie *Knoten* aus.
 . Erweitern Sie für jeden Standort im Raster die Liste der Nodes.
 . Überprüfen Sie die Prozentwerte, die in der Spalte *Objektdaten verwendet* für jeden Speicherknoten an jedem Standort angezeigt werden.
 +
@@ -105,7 +105,7 @@ image::../media/nodes_page_object_data_used_with_alert.png[Seite Knoten mit Obje
 StorageGRID verwendet zwei Prometheus-Kennzahlen, um die optimierten Werte anzuzeigen, die es für das schreibgeschützte weiche Wasserzeichen des Storage-Volumes berechnet hat. Sie können die minimalen und maximalen optimierten Werte für jeden Speicherknoten in Ihrem Raster anzeigen.
 
 .Schritte
-. Wählen Sie *SUPPORT* > *Tools* > *Metriken*.
+. Wählen Sie *Support* > *Tools* > *Metriken*.
 . Wählen Sie im Abschnitt Prometheus den Link aus, um auf die Benutzeroberfläche von Prometheus zuzugreifen.
 . Um das empfohlene Mindestwasserzeichen für weichen, schreibgeschützten Wert anzuzeigen, geben Sie die folgende Prometheus-Metrik ein, und wählen Sie *Ausführen*:
 +
@@ -129,7 +129,7 @@ In der letzten Spalte wird der maximale optimierte Wert des weichen schreibgesch
 === [[Bestimmen-optimiert-Wasserzeichen]]Bestimmen Sie, ob Sie optimierte Wasserzeichen verwenden können
 
 .Schritte
-. Wählen Sie *KNOTEN*.
+. Wählen Sie *Knoten* aus.
 . Wiederholen Sie diese Schritte für jeden Online-Speicherknoten:
 +
 .. Wählen Sie *_Storage-Node_* > *Storage* Aus.
@@ -153,7 +153,7 @@ NOTE: Auf jedes Storage Volume auf jedem Storage Node werden dieselben benutzerd
 === [[use-optimized-Watermarks]]optimierte Wasserzeichen verwenden
 
 .Schritte
-. Gehen Sie zu *SUPPORT* > *andere* > *Speicherwasserzeichen*.
+. Gehen Sie zu *Support* > *Sonstiges* > *Speicherwasserzeichen*.
 . Aktivieren Sie das Kontrollkästchen *optimierte Werte verwenden*.
 . Wählen Sie *Speichern*.
 

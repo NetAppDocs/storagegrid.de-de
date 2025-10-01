@@ -18,7 +18,7 @@ Wenn Sie mit einem externen Monitoring-Tool auf StorageGRID zugreifen müssen, m
 Siehe link:using-storagegrid-security-certificates.html["Verwalten von Sicherheitszertifikaten"] und link:configuring-custom-server-certificate-for-grid-manager-tenant-manager.html["Konfigurieren Sie benutzerdefinierte Serverzertifikate"].
 
 
-NOTE: Um sicherzustellen, dass der Betrieb nicht durch ein fehlerhaftes Serverzertifikat unterbrochen wird, wird die Warnung *Ablauf von Client-Zertifikaten, die auf der Seite Zertifikate konfiguriert ist* ausgelöst, wenn dieses Serverzertifikat abläuft. Wenn erforderlich, können Sie anzeigen, wann das aktuelle Zertifikat abläuft, indem Sie *KONFIGURATION* > *Sicherheit* > *Zertifikate* und das Ablaufdatum des Clientzertifikats auf der Registerkarte Client auswählen.
+NOTE: Um sicherzustellen, dass der Betrieb nicht durch ein fehlerhaftes Serverzertifikat unterbrochen wird, wird die Warnung *Ablauf der auf der Seite „Zertifikate“ konfigurierten Clientzertifikate* ausgelöst, wenn dieses Serverzertifikat bald abläuft.  Bei Bedarf können Sie das Ablaufdatum des aktuellen Zertifikats anzeigen, indem Sie *Konfiguration* > *Sicherheit* > *Zertifikate* auswählen und auf der Registerkarte „Client“ das Ablaufdatum für das Client-Zertifikat anzeigen.
 
 
 NOTE: Wenn Sie einen Schlüsselverwaltungsserver (KMS) zum Schutz der Daten auf speziell konfigurierten Geräteknoten verwenden, lesen Sie die spezifischen Informationen zu link:kms-adding.html["Hochladen eines KMS-Clientzertifikats"].
@@ -60,7 +60,7 @@ Gehen Sie wie folgt vor, um das Clientzertifikat hinzuzufügen:
 Verwenden Sie diese Vorgehensweise, um ein Clientzertifikat hinzuzufügen, wenn bereits ein Zertifikat für eine Managementoberfläche mit einer vom Kunden bereitgestellten CA, einem Clientzertifikat und einem privaten Schlüssel konfiguriert wurde.
 
 .Schritte
-. Wählen Sie im Grid Manager die Option *KONFIGURATION* > *Sicherheit* > *Zertifikate* und dann die Registerkarte *Client* aus.
+. Wählen Sie im Grid Manager *Konfiguration* > *Sicherheit* > *Zertifikate* und dann die Registerkarte *Client*.
 . Wählen Sie *Hinzufügen*.
 . Geben Sie einen Zertifikatnamen ein.
 . Um über Ihr externes Monitoring-Tool auf Prometheus-Kennzahlen zuzugreifen, wählen Sie *prometheus zulassen*.
@@ -91,7 +91,7 @@ Verwenden Sie dieses Verfahren, um ein Administrator-Client-Zertifikat hinzuzuf�
 
 .Schritte
 . Führen Sie die Schritte bis link:configuring-custom-server-certificate-for-grid-manager-tenant-manager.html["Konfigurieren Sie ein Zertifikat für die Managementoberfläche"]aus.
-. Wählen Sie im Grid Manager die Option *KONFIGURATION* > *Sicherheit* > *Zertifikate* und dann die Registerkarte *Client* aus.
+. Wählen Sie im Grid Manager *Konfiguration* > *Sicherheit* > *Zertifikate* und dann die Registerkarte *Client*.
 . Wählen Sie *Hinzufügen*.
 . Geben Sie einen Zertifikatnamen ein.
 . Um über Ihr externes Monitoring-Tool auf Prometheus-Kennzahlen zuzugreifen, wählen Sie *prometheus zulassen*.
@@ -121,7 +121,7 @@ Die neuen Zertifikate werden auf der Registerkarte Client angezeigt.
 Verwenden Sie dieses Verfahren, um ein Administrator-Client-Zertifikat hinzuzufügen, wenn ein Zertifikat der Verwaltungsschnittstelle nicht konfiguriert wurde und Sie planen, ein Clientzertifikat für Prometheus hinzuzufügen, das die Funktion Zertifikat generieren in Grid Manager verwendet.
 
 .Schritte
-. Wählen Sie im Grid Manager die Option *KONFIGURATION* > *Sicherheit* > *Zertifikate* und dann die Registerkarte *Client* aus.
+. Wählen Sie im Grid Manager *Konfiguration* > *Sicherheit* > *Zertifikate* und dann die Registerkarte *Client*.
 . Wählen Sie *Hinzufügen*.
 . Geben Sie einen Zertifikatnamen ein.
 . Um über Ihr externes Monitoring-Tool auf Prometheus-Kennzahlen zuzugreifen, wählen Sie *prometheus zulassen*.
@@ -167,7 +167,7 @@ Geben Sie den Dateinamen des privaten Schlüssels und den Speicherort für den D
 +
 Das neue Zertifikat wird auf der Registerkarte Client angezeigt.
 
-. Wählen Sie im Grid Manager die Option *KONFIGURATION* > *Sicherheit* > *Zertifikate* und wählen Sie dann die Registerkarte *Global* aus.
+. Wählen Sie im Grid Manager *Konfiguration* > *Sicherheit* > *Zertifikate* und wählen Sie dann die Registerkarte *Global*.
 . Wählen Sie *Management Interface Certificate* aus.
 . Wählen Sie *Benutzerdefiniertes Zertifikat verwenden*.
 . Laden Sie die Dateien Certificate.pem und private_key.pem aus dem  Schritt hoch<<client_cert_details,Details zum Clientzertifikat>>. Es ist nicht erforderlich, das CA-Paket hochzuladen.
@@ -228,7 +228,7 @@ Informationen zu den Metriken finden Sie im link:../monitor/index.html["Anweisun
 Sie können ein Administrator-Clientzertifikat bearbeiten, um seinen Namen zu ändern, Prometheus-Zugriff zu aktivieren oder zu deaktivieren oder ein neues Zertifikat hochzuladen, wenn das aktuelle Zertifikat abgelaufen ist.
 
 .Schritte
-. Wählen Sie *KONFIGURATION* > *Sicherheit* > *Zertifikate* und dann die Registerkarte *Client* aus.
+. Wählen Sie *Konfiguration* > *Sicherheit* > *Zertifikate* und dann die Registerkarte *Client*.
 +
 In der Tabelle sind die Daten zum Ablauf des Zertifikats und die Zugriffsrechte für Prometheus aufgeführt. Wenn ein Zertifikat bald abläuft oder bereits abgelaufen ist, wird in der Tabelle eine Meldung angezeigt, und eine Warnmeldung wird ausgelöst.
 
@@ -249,7 +249,7 @@ Das aktualisierte Zertifikat wird auf der Registerkarte Client angezeigt.
 Sie können ein neues Zertifikat hochladen, wenn das aktuelle Zertifikat abgelaufen ist.
 
 .Schritte
-. Wählen Sie *KONFIGURATION* > *Sicherheit* > *Zertifikate* und dann die Registerkarte *Client* aus.
+. Wählen Sie *Konfiguration* > *Sicherheit* > *Zertifikate* und dann die Registerkarte *Client*.
 +
 In der Tabelle sind die Daten zum Ablauf des Zertifikats und die Zugriffsrechte für Prometheus aufgeführt. Wenn ein Zertifikat bald abläuft oder bereits abgelaufen ist, wird in der Tabelle eine Meldung angezeigt, und eine Warnmeldung wird ausgelöst.
 
@@ -343,7 +343,7 @@ Das neue Zertifikat wird auf der Registerkarte Client angezeigt.
 Sie können ein Clientzertifikat zur Verwendung an anderer Stelle herunterladen oder kopieren.
 
 .Schritte
-. Wählen Sie *KONFIGURATION* > *Sicherheit* > *Zertifikate* und dann die Registerkarte *Client* aus.
+. Wählen Sie *Konfiguration* > *Sicherheit* > *Zertifikate* und dann die Registerkarte *Client*.
 . Wählen Sie das Zertifikat aus, das Sie kopieren oder herunterladen möchten.
 . Laden Sie das Zertifikat herunter oder kopieren Sie es.
 +
@@ -384,7 +384,7 @@ Beispiel: `storagegrid_certificate.pem`
 Wenn Sie kein Administrator-Clientzertifikat mehr benötigen, können Sie es entfernen.
 
 .Schritte
-. Wählen Sie *KONFIGURATION* > *Sicherheit* > *Zertifikate* und dann die Registerkarte *Client* aus.
+. Wählen Sie *Konfiguration* > *Sicherheit* > *Zertifikate* und dann die Registerkarte *Client*.
 . Wählen Sie das Zertifikat aus, das Sie entfernen möchten.
 . Wählen Sie *Löschen* und bestätigen Sie dann.
 

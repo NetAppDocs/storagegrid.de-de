@@ -30,7 +30,7 @@ Konfigurieren Sie, falls möglich, Site-spezifische Verschlüsselungsmanagement-
 In Schritt 1 (KMS-Details) des Assistenten zum Hinzufügen eines Schlüsselverwaltungsservers geben Sie Details zum KMS- oder KMS-Cluster an.
 
 .Schritte
-. Wählen Sie *KONFIGURATION* > *Sicherheit* > *Schlüsselverwaltungsserver* aus.
+. Wählen Sie *Konfiguration* > *Sicherheit* > *Schlüsselverwaltungsserver*.
 +
 Die Seite Key Management Server wird angezeigt, und die Registerkarte Configuration Details ist ausgewählt.
 

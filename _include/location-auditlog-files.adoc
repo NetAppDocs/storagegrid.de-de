@@ -19,7 +19,7 @@ Lokale Knoten (Standard)
  a| 
 Admin-Nodes/lokale Nodes
  a| 
-* Admin-Nodes (primär und nicht primär): `/var/local/audit/export/audit.log`
+* Admin-Knoten (primär und nicht primär): `/var/local/audit/export/audit.log`
 * Alle Knoten: Die `/var/local/log/localaudit.log` Datei ist in der Regel leer oder fehlt in diesem Modus.
 
 
@@ -33,4 +33,4 @@ Externer Syslog-Server
 |===
 Geben Sie je nach den Einstellungen des Überwachungsziels Folgendes ein: `cd /var/local/log` Oder `/var/local/audit/export/`
 
-Weitere Informationen finden Sie unter link:../monitor/configure-audit-messages.html#select-audit-information-destinations["Wählen Sie Ziele für Audit-Informationen aus"].
+Weitere Informationen finden Sie unterlink:../monitor/configure-log-management.html#select-log-location["Protokollspeicherort auswählen"] .

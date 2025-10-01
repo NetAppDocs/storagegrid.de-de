@@ -24,7 +24,7 @@ Für alle vorhandenen Richtlinien zur Verkehrsklassifizierung können Sie Metrik
 Auch wenn für eine Richtlinie zur Klassifizierung von Datenverkehr keine Grenzen gesetzt wurden, werden Kennzahlen erfasst und die Diagramme bieten nützliche Informationen zum Verständnis von Verkehrstrends.
 
 .Schritte
-. Wählen Sie *CONFIGURATION* > *Network* > *traffic classification*.
+. Wählen Sie *Konfiguration* > *Netzwerk* > *Verkehrsklassifizierung*.
 +
 Die Seite für die Verkehrsklassifizierungsrichtlinien wird angezeigt, und die vorhandenen Richtlinien werden in der Tabelle aufgeführt.
 
@@ -54,9 +54,9 @@ NOTE: Wenn die Anforderungen abgeschlossen sind, zeigt dieses Diagramm nur die B
 ** Leseanforderungsrate nach Objektgröße: Die Rate für GET/HEAD-Anfragen, die dieser Richtlinie entsprechen. Die Positionierung auf einer einzelnen Zelle zeigt die Raten pro Sekunde an. Die in der Hover-Ansicht angezeigten Raten werden auf Ganzzahlen gekürzt und können 0 melden, wenn im Bucket Anfragen ohne Null angezeigt werden.
 
 
-. Alternativ können Sie über das Menü * SUPPORT* auf die Diagramme zugreifen.
+. Alternativ können Sie über das Menü *Support* auf die Diagramme zugreifen.
 +
-.. Wählen Sie *SUPPORT* > *Tools* > *Metriken*.
+.. Wählen Sie *Support* > *Tools* > *Metriken*.
 .. Wählen Sie im Abschnitt *Grafana* die Option *Richtlinie zur Traffic-Klassifizierung* aus.
 .. Wählen Sie die Richtlinie aus dem Menü oben links auf der Seite aus.
 .. Positionieren Sie den Cursor über einem Diagramm, um ein Popup-Fenster anzuzeigen, in dem Datum und Uhrzeit der Probe, Objektgrößen, die in der Anzahl zusammengefasst werden, und die Anzahl der Anfragen pro Sekunde in diesem Zeitraum angezeigt werden.

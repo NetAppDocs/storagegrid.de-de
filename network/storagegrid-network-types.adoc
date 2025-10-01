@@ -91,13 +91,7 @@ Client-Netzwerk (optional)
 eth2
 
 |===
-Weitere Informationen über die Zuordnung von virtuellen oder physischen Ports zu Node-Netzwerkschnittstellen finden Sie in den Installationsanweisungen:
-
-.Softwarebasierte Nodes
-* link:../rhel/index.html["Installieren Sie StorageGRID unter Red hat Enterprise Linux"]
-* link:../ubuntu/index.html["Installieren Sie StorageGRID auf Ubuntu oder Debian"]
-* link:../vmware/index.html["Installieren Sie StorageGRID auf VMware"]
-
+Weitere Informationen zum Zuordnen virtueller oder physischer Ports zu Knotennetzwerkschnittstellen finden Sie unterlink:../swnodes/index.html["Installieren Sie StorageGRID auf softwarebasierten Knoten"] .
 
 .Appliance-Nodes
 * https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/hardware-description-sg6100.html["Storage Appliance SG6160"^]

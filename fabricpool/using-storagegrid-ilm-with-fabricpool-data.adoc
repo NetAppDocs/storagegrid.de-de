@@ -25,7 +25,7 @@ CAUTION: Verwenden Sie zur Vermeidung von Datenverlust keine ILM-Regel, die ausl
 * Sie haben die überprüftlink:best-practices-ilm.html["Best Practices für die Verwendung von ILM mit FabricPool-Daten"].
 * Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
 * Sie haben die link:../admin/admin-group-permissions.html["ILM oder Root-Zugriffsberechtigung"].
-* Wenn Sie von einer früheren StorageGRID-Version auf StorageGRID 11.9 aktualisiert haben, haben Sie den zu verwendenden Speicherpool konfiguriert. Im Allgemeinen sollten Sie für jeden StorageGRID-Standort, den Sie zum Speichern von Daten verwenden, einen Speicherpool erstellen.
+* Wenn Sie von einer StorageGRID -Version vor 11.7 auf StorageGRID 12.0 aktualisiert haben, haben Sie den zu verwendenden Speicherpool konfiguriert.  Im Allgemeinen sollten Sie für jede StorageGRID -Site, die Sie zum Speichern von Daten verwenden, einen Speicherpool erstellen.  (Ab Version 11.7 werden Speicherpools automatisch für jeden Standort erstellt.)
 +
 
 NOTE: Diese Voraussetzung gilt nicht, wenn Sie zunächst StorageGRID 11.7 oder 11.8 installiert haben. Wenn Sie eine dieser Versionen zuerst installieren, werden Speicherpools automatisch für jeden Standort erstellt.

@@ -2,10 +2,10 @@
 section: upgrade
 title: Upgrade der StorageGRID Software
 entries:
-- title: Bevor Sie beginnen
+- title: Vor dem Upgrade
   pdf-filename: Upgrade der StorageGRID Software
   url: "/upgrade/index.html"
-- title: Was ist neu in StorageGRID 11.9
+- title: Was ist neu in StorageGRID 12.0
   url: "/upgrade/whats-new.html"
 - title: Funktionen entfernt oder veraltet
   url: "/upgrade/removed-or-deprecated-features.html"

@@ -49,7 +49,7 @@ Zugriff nur auf Tenant Manager
 
 
  a| 
-S3-Client-Zugriff – Load Balancer-Service
+S3-Clientzugriff – Load Balancer-Dienst
  a| 
 * Admin-Nodes
 * Gateway-Nodes

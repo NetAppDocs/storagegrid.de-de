@@ -15,8 +15,8 @@ Sie müssen Active Directory Federation Services (AD FS) verwenden, um ein Vertr
 
 .Bevor Sie beginnen
 * Sie haben Single Sign-On für StorageGRID konfiguriert und als SSO-Typ *AD FS* ausgewählt.
-* *Der Sandbox-Modus* ist auf der Single Sign-On-Seite im Grid Manager ausgewählt. Siehe link:../admin/using-sandbox-mode.html["Verwenden Sie den Sandbox-Modus"].
-* Sie kennen den vollständig qualifizierten Domänennamen (oder die IP-Adresse) und die bevertrauenden Partei-ID für jeden Admin-Knoten in Ihrem System. Diese Werte finden Sie in der Detailtabelle Admin Nodes auf der StorageGRID Single Sign-On-Seite.
+* Du hastlink:../admin/configure-sso.html["Sandbox-Modus aufgerufen"] im Grid Manager.
+* Sie kennen den vollqualifizierten Domänennamen (oder die IP-Adresse) und die Kennung der vertrauenden Partei für jeden Admin-Knoten in Ihrem System.  Sie finden diese Werte in der Detailtabelle „Admin-Knoten“ auf der StorageGRID -Seite „SSO konfigurieren“.
 +
 
 NOTE: Sie müssen für jeden Admin-Knoten in Ihrem StorageGRID-System ein Vertrauensverhältnis aufbauen. Mit einer Vertrauensbasis für jeden Admin-Knoten wird sichergestellt, dass Benutzer sich sicher bei und aus jedem Admin-Knoten anmelden können.
@@ -88,7 +88,7 @@ Wenn die Metadaten fehlen, überprüfen Sie, ob die Metadatenadresse der Födera
 
 
 . Wiederholen Sie diese Schritte, um ein Vertrauensverhältnis für alle Administratorknoten in Ihrem StorageGRID-System zu konfigurieren.
-. Wenn Sie fertig sind, kehren Sie zu StorageGRID zurück und testen Sie alle Treuhänder der Vertrauensstellen, um zu bestätigen, dass sie richtig konfiguriert sind. Anweisungen finden Sie unter link:using-sandbox-mode.html["Verwenden Sie den Sandbox-Modus"] .
+. Wenn Sie fertig sind, kehren Sie zu StorageGRID zurück undlink:../admin/configure-sso.html#test-sso["Testen Sie alle Vertrauensstellungen der vertrauenden Parteien"] um zu bestätigen, dass sie richtig konfiguriert sind.
 
 
 
@@ -139,7 +139,7 @@ Wenn die Metadaten fehlen, überprüfen Sie, ob die Metadatenadresse der Födera
 
 
 . Wiederholen Sie diese Schritte, um ein Vertrauensverhältnis für alle Administratorknoten in Ihrem StorageGRID-System zu konfigurieren.
-. Wenn Sie fertig sind, kehren Sie zu StorageGRID zurück und testen Sie alle Treuhänder der Vertrauensstellen, um zu bestätigen, dass sie richtig konfiguriert sind. Anweisungen finden Sie unter link:using-sandbox-mode.html["Verwenden Sie den Sandbox-Modus"] .
+. Wenn Sie fertig sind, kehren Sie zu StorageGRID zurück undlink:../admin/configure-sso.html#test-sso["Testen Sie alle Vertrauensstellungen der vertrauenden Parteien"] um zu bestätigen, dass sie richtig konfiguriert sind.
 
 
 
@@ -233,5 +233,5 @@ Die Eigenschaften der zu vertrauenden Partei werden gespeichert und geschlossen.
 
 
 . Wiederholen Sie diese Schritte, um ein Vertrauensverhältnis für alle Administratorknoten in Ihrem StorageGRID-System zu konfigurieren.
-. Wenn Sie fertig sind, kehren Sie zu StorageGRID zurück und testen Sie alle Treuhänder der Vertrauensstellen, um zu bestätigen, dass sie richtig konfiguriert sind. Anweisungen finden Sie unter link:using-sandbox-mode.html["Verwenden Sie den Sandbox-Modus"] .
+. Wenn Sie fertig sind, kehren Sie zu StorageGRID zurück undlink:../admin/configure-sso.html#test-sso["Testen Sie alle Vertrauensstellungen der vertrauenden Parteien"] um zu bestätigen, dass sie richtig konfiguriert sind.
 

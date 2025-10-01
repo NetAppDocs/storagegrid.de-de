@@ -24,7 +24,7 @@ Weitere Informationen über AutoSupport finden Sie unter link:configure-autosupp
 Sie können die Einstellungen für einen einzelnen Administrator-Proxy konfigurieren.
 
 .Schritte
-. Wählen Sie *KONFIGURATION* > *Sicherheit* > *Proxy-Einstellungen*.
+. Wählen Sie *Konfiguration* > *Sicherheit* > *Proxy-Einstellungen*.
 +
 Die Seite Proxy-Einstellungen wird angezeigt. Standardmäßig ist Speicher im Registerkartenmenü ausgewählt.
 

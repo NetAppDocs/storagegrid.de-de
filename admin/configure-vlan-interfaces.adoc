@@ -26,12 +26,14 @@ Sie können virtuelle LAN-Schnittstellen (VLAN) auf Admin-Nodes und Gateway-Node
 * Wenn Sie Leitungsbündelschnittstellen hinzufügen müssen, lesen Sie die folgenden Informationen:
 +
 ** *VMware (nach der Installation des Knotens)*: link:../maintain/vmware-adding-trunk-or-access-interfaces-to-node.html["VMware: Hinzufügen von Trunk- oder Zugriffsschnittstellen zu einem Node"]
-** *RHEL (vor der Installation des Knotens)*: link:../rhel/creating-node-configuration-files.html["Erstellen von Node-Konfigurationsdateien"]
-** *Ubuntu oder Debian (vor der Installation des Knotens)*: link:../ubuntu/creating-node-configuration-files.html["Erstellen von Node-Konfigurationsdateien"]
-** *RHEL, Ubuntu oder Debian (nach der Installation des Knotens)*: link:../maintain/linux-adding-trunk-or-access-interfaces-to-node.html["Linux: Hinzufügen von Trunk- oder Zugriffsschnittstellen zu einem Node"]
+** *Linux (vor der Installation des Knotens)*:link:../swnodes/creating-node-configuration-files.html["Erstellen von Node-Konfigurationsdateien"]
+** *Linux (nach der Installation des Knotens)*:link:../maintain/linux-adding-trunk-or-access-interfaces-to-node.html["Hinzufügen von Trunk- oder Zugriffsschnittstellen zu einem Knoten"]
 
 
 
+
+
+NOTE: „Linux“ bezieht sich auf eine RHEL-, Ubuntu- oder Debian-Bereitstellung.  Eine Liste der unterstützten Versionen finden Sie im https://imt.netapp.com/matrix/#welcome["NetApp Interoperabilitäts-Matrix-Tool (IMT)"^] .
 
 
 
@@ -54,7 +56,7 @@ Sie können den Grid-Manager verwenden, um VLAN-Schnittstellen zu erstellen, die
 === Greifen Sie auf den Assistenten zu
 
 .Schritte
-. Wählen Sie *KONFIGURATION* > *Netzwerk* > *VLAN-Schnittstellen*.
+. Wählen Sie *Konfiguration* > *Netzwerk* > *VLAN-Schnittstellen*.
 . Wählen Sie *Erstellen*.
 
 
@@ -101,7 +103,7 @@ image::../media/vlan-create-parent-interfaces.png[Übergeordnete Schnittstellen 
 
 
 . Wählen Sie *Speichern*.
-. Warten Sie bis zu 5 Minuten, bis die neue Schnittstelle auf der Seite Hochverfügbarkeitsgruppen als Auswahl angezeigt wird und in der Tabelle *Netzwerkschnittstellen* für den Knoten (*NODES* > *_Parent Interface Node_* > *Network*) aufgelistet wird.
+. Warten Sie bis zu 5 Minuten, bis die neue Schnittstelle als Auswahl auf der Seite „Hochverfügbarkeitsgruppen“ angezeigt und in der Tabelle *Netzwerkschnittstellen* für den Knoten aufgeführt wird (*Knoten* > *_übergeordneter Schnittstellenknoten_* > *Netzwerk*).
 
 
 
@@ -126,7 +128,7 @@ Angenommen, VLAN 200 ist an den übergeordneten Schnittstellen auf den Knoten A 
 
 
 .Schritte
-. Wählen Sie *KONFIGURATION* > *Netzwerk* > *VLAN-Schnittstellen*.
+. Wählen Sie *Konfiguration* > *Netzwerk* > *VLAN-Schnittstellen*.
 . Aktivieren Sie das Kontrollkästchen für die VLAN-Schnittstelle, die Sie bearbeiten möchten. Wählen Sie dann *Aktionen* > *Bearbeiten* aus.
 . Optional können Sie die VLAN-ID oder die Beschreibung aktualisieren. Wählen Sie anschließend *Weiter*.
 +
@@ -153,7 +155,7 @@ Um Unterbrechungen des Client-Traffic zu vermeiden, sollten Sie einen der folgen
 
 
 .Schritte
-. Wählen Sie *KONFIGURATION* > *Netzwerk* > *VLAN-Schnittstellen*.
+. Wählen Sie *Konfiguration* > *Netzwerk* > *VLAN-Schnittstellen*.
 . Aktivieren Sie das Kontrollkästchen für jede VLAN-Schnittstelle, die Sie entfernen möchten. Wählen Sie dann *Aktionen* > *Löschen* aus.
 . Wählen Sie *Ja*, um Ihre Auswahl zu bestätigen.
 +

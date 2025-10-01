@@ -15,11 +15,8 @@ Möglicherweise können Sie die Systemeinstellung „reservierter Speicherplatz 
 
 .Was Sie benötigen
 * Sie sind im Grid Manager mit einem angemeldetlink:web-browser-requirements.html["Unterstützter Webbrowser"].
-* Sie haben die link:admin-group-permissions.html["Root-Zugriffsberechtigung oder die Berechtigung für die Konfiguration der Seite „Grid Topology“ und andere Berechtigungen für die Grid-Konfiguration"].
+* Sie haben dielink:admin-group-permissions.html["Root-Zugriffsberechtigung oder Berechtigung „Andere Rasterkonfiguration“"] .
 
-
-
-NOTE: Die Seite „Grid Topology“ wurde veraltet und wird in einem zukünftigen Release entfernt.
 
 .Über diese Aufgabe
 Möglicherweise können Sie den systemweiten reservierten Metadatenspeicherplatz manuell auf bis zu 8 TB erhöhen.
@@ -40,13 +37,13 @@ Eine detaillierte Erklärung darüber, wie sich die Einstellung „reservierter 
 .Schritte
 . Legen Sie die aktuelle Einstellung für den reservierten Metadatenspeicherplatz fest.
 +
-.. Wählen Sie *KONFIGURATION* > *System* > *Speicheroptionen*.
-.. Beachten Sie im Abschnitt Speicherwasserzeichen den Wert von *Metadaten reservierter Speicherplatz*.
+.. Wählen Sie *Konfiguration* > *System* > *Speichereinstellungen*.
+.. Notieren Sie den Wert von *Reservierter Speicherplatz für Metadaten*.
 
 
 . Stellen Sie sicher, dass auf dem Speicher-Volume 0 jedes Speicherknoten genügend Speicherplatz zur Verfügung steht, um diesen Wert zu erhöhen.
 +
-.. Wählen Sie *KNOTEN*.
+.. Wählen Sie *Knoten* aus.
 .. Wählen Sie den ersten Storage-Node im Raster aus.
 .. Wählen Sie die Registerkarte Storage aus.
 .. Suchen Sie im Abschnitt Volumes den Eintrag */var/local/rangedb/0*.
@@ -64,7 +61,7 @@ Wenn die Einstellung für reservierten Speicherplatz für Metadaten beispielswei
 
 . Stellen Sie sicher, dass Sie mindestens 128 GB RAM auf jedem Speicherknoten haben.
 +
-.. Wählen Sie *KNOTEN*.
+.. Wählen Sie *Knoten* aus.
 .. Wählen Sie den ersten Storage-Node im Raster aus.
 .. Wählen Sie die Registerkarte *Hardware* aus.
 .. Bewegen Sie den Mauszeiger über das Diagramm „Speicherauslastung“. Vergewissern Sie sich, dass *Total Memory* mindestens 128 GB beträgt.
@@ -78,17 +75,13 @@ Wenn die Einstellung für reservierten Speicherplatz für Metadaten beispielswei
 
 . Aktualisieren Sie die Einstellung für reservierten Metadatenspeicherplatz.
 +
-.. Wählen Sie *KONFIGURATION* > *System* > *Speicheroptionen*.
-.. Wählen Sie die Registerkarte Konfiguration aus.
-.. Wählen Sie im Abschnitt Speicherwasserzeichen die Option *Metadaten reservierter Speicherplatz* aus.
+.. Wählen Sie *Konfiguration* > *System* > *Speichereinstellungen*.
+.. Wählen Sie *Reservierter Speicherplatz für Metadaten*.
 .. Geben Sie den neuen Wert ein.
 +
 Um beispielsweise 8 TB einzugeben, geben Sie *8000000000000* (8, gefolgt von 12 Nullen) ein.
 
-+
-image::../media/metadata_reserved_space.png[Reservierter Speicherplatz Für Metadaten]
-
-.. Wählen Sie *Änderungen Anwenden*.
+.. Wählen Sie *Speichern*.
 
 
 

@@ -20,7 +20,7 @@ Mithilfe von Grid Manager können Sie Objektdaten für ein fehlerhaftes Speicher
 ** link:../maintain/remounting-and-reformatting-storage-volumes-manual-steps.html["Speicher-Volumes neu einbinden und formatieren (manuelle Schritte)"]
 
 
-* Sie haben bestätigt, dass der Speicher-Node, auf dem Sie Objekte wiederherstellen, auf der Registerkarte *NODES* > *Übersicht* im Grid Manager den Verbindungsstatus *Verbunden* hatimage:../media/icon_alert_green_checkmark.png["Symbol Warnung grünes Häkchen"].
+* Sie haben bestätigt, dass der Speicherknoten, auf dem Sie Objekte wiederherstellen, den Verbindungsstatus *Verbunden* hat.image:../media/icon_alert_green_checkmark.png["Symbol Warnung grünes Häkchen"] auf der Registerkarte *Knoten* > *Übersicht* im Grid Manager.
 * Sie haben Folgendes bestätigt:
 +
 ** Eine Grid-Erweiterung zum Hinzufügen eines Storage-Knotens wird nicht ausgeführt.
@@ -34,11 +34,11 @@ Mithilfe von Grid Manager können Sie Objektdaten für ein fehlerhaftes Speicher
 
 
 .Über diese Aufgabe
-Nachdem Sie die Laufwerke ersetzt und die manuellen Schritte zum Formatieren der Volumes durchgeführt haben, zeigt Grid Manager die Volumes als Kandidaten für die Wiederherstellung auf der Registerkarte *MAINTENANCE* > *Volume-Wiederherstellung* > *zu wiederherstellende Nodes* an.
+Nachdem Sie die Laufwerke ausgetauscht und die manuellen Schritte zum Formatieren der Volumes ausgeführt haben, zeigt Grid Manager die Volumes auf der Registerkarte *Wartung* > *Volume-Wiederherstellung* > *Wiederherzustellende Knoten* als Kandidaten für die Wiederherstellung an.
 
 Stellen Sie nach Möglichkeit Objektdaten mithilfe der Seite Volume-Wiederherstellung im Grid Manager wieder her. Sie können entweder die Volume-Wiederherstellung automatisch starten, wenn die Volumes wiederhergestellt werden können<<enable-auto-restore-mode,Aktivieren Sie den automatischen Wiederherstellungsmodus>>, oder <<manually-restore,Führen Sie die Volume-Wiederherstellung manuell durch>>. Befolgen Sie diese Richtlinien:
 
-* Wenn die Volumes unter *MAINTENANCE* > *Volume-Wiederherstellung* > *zu wiederherstellende Knoten* aufgeführt sind, stellen Sie Objektdaten wie in den Schritten unten beschrieben wieder her. Die Volumes werden aufgelistet, wenn:
+* Wenn die Volumes unter *Wartung* > *Volume-Wiederherstellung* > *Wiederherzustellende Knoten* aufgeführt sind, stellen Sie die Objektdaten wie in den folgenden Schritten beschrieben wieder her.  Die Bände werden aufgelistet, wenn:
 +
 ** Einige, aber nicht alle Storage-Volumes in einem Node sind ausgefallen
 ** Alle Speicher-Volumes in einem Node sind ausgefallen und werden durch dieselbe Anzahl von Volumes oder mehr ersetzt
@@ -87,7 +87,7 @@ NOTE: Die Volume-Wiederherstellung hängt von der Verfügbarkeit von Ressourcen 
 Wenn Sie den automatischen Wiederherstellungsmodus aktivieren, wird die Volume-Wiederherstellung automatisch gestartet, sobald die Volumes zur Wiederherstellung bereit sind.
 
 .Schritte
-. Gehen Sie im Grid Manager zu *MAINTENANCE* > *Volume Restoration*.
+. Gehen Sie im Grid Manager zu *Wartung* > *Volume-Wiederherstellung*.
 . Wählen Sie die Registerkarte *zu wiederherstellende Knoten*, und schieben Sie dann den Umschalter für *Automatischer Wiederherstellungsmodus* in die aktivierte Position.
 . Wenn das Bestätigungsdialogfeld angezeigt wird, überprüfen Sie die Details.
 +
@@ -113,7 +113,7 @@ Sie können den automatischen Wiederherstellungsmodus jederzeit deaktivieren.
 Führen Sie die folgenden Schritte aus, um ein ausgefallenes Volume oder einen ausgefallenen Node wiederherzustellen.
 
 .Schritte
-. Gehen Sie im Grid Manager zu *MAINTENANCE* > *Volume Restoration*.
+. Gehen Sie im Grid Manager zu *Wartung* > *Volume-Wiederherstellung*.
 . Wählen Sie die Registerkarte *zu wiederherstellende Knoten*, und schieben Sie dann den Umschalter für *Automatischer Wiederherstellungsmodus* in die deaktivierte Position.
 +
 Die Nummer auf der Registerkarte gibt die Anzahl der Nodes an, deren Volumes wiederhergestellt werden müssen.

@@ -25,7 +25,7 @@ Weitere Informationen zu dieser Aufgabe finden Sie unter link:../admin/managing-
 
 
 .Schritte
-. Wählen Sie *CONFIGURATION* > *Network* > *High Availability groups*.
+. Wählen Sie *Konfiguration* > *Netzwerk* > *Hochverfügbarkeitsgruppen*.
 . Wählen Sie *Erstellen*.
 . Füllen Sie für den Schritt *Enter Details* die folgenden Felder aus.
 +

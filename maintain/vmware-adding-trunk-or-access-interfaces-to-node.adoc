@@ -14,7 +14,7 @@ summary: Nach der Installation können Sie einem VM-Node zusätzliche Trunk- ode
 Nach der Installation des Node können Sie einem VM-Node eine Trunk- oder Zugriffsschnittstelle hinzufügen. Die fügen Sie Schnittstellen hinzu, werden auf der Seite VLAN-Schnittstellen und auf der Seite HA-Gruppen angezeigt.
 
 .Bevor Sie beginnen
-* Sie haben Zugriff auf die Anweisungen für link:../vmware/index.html["Installation von StorageGRID auf Ihrer VMware-Plattform"].
+* Sie haben Zugriff auf die Anleitungen fürlink:../swnodes/index.html["Installation von StorageGRID auf Ihrer VMware-Plattform"] .
 * Sie haben virtuelle Admin-Node- und Gateway-Node-VMware-Maschinen.
 * Sie haben ein Netzwerk-Subnetz, das nicht als Grid, Admin oder Client-Netzwerk verwendet wird.
 * Sie haben die `Passwords.txt` Datei.

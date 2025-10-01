@@ -38,27 +38,6 @@ link:sdel-s3-delete.html["SDEL: S3 LÖSCHEN"]
 |===
 
 
-== Swift Audit-Nachrichten löschen
-
-[cols="1a,1a,2a,1a,2a"]
-|===
-| Codieren | Name | Beschreibung | Verfolgen | Siehe 
-
-
- a| 
-WDEL
- a| 
-Swift Löschen
- a| 
-Anforderung gemacht, das Objekt aus einem Container oder Container zu löschen.
- a| 
-CBID, WOBJ
- a| 
-link:wdel-swift-delete.html["WDEL: Swift LÖSCHEN"]
-
-|===
-
-
 == Beispiel: S3-Objektlöschung
 
 Wenn ein S3-Client ein Objekt aus einem Storage-Node (LDR-Service) löscht, wird eine Überwachungsmeldung generiert und im Revisionsprotokoll gespeichert.

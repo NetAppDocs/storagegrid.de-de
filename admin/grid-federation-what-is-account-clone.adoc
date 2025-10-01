@@ -37,7 +37,7 @@ Wenn eines der StorageGRID-Systeme in der Grid-Federation-Verbindung SSO verwend
 
 .Schritte
 . Konfigurieren Sie dieselbe Identitätsquelle für beide Raster. Siehe link:using-identity-federation.html["Verwenden Sie den Identitätsverbund"].
-. Konfigurieren Sie denselben SSO-Identitätsanbieter (IdP) für beide Grids. Siehe link:configuring-sso.html["Konfigurieren Sie Single Sign-On"].
+. Konfigurieren Sie für beide Grids denselben SSO-Identitätsanbieter (IdP). Sehen link:how-sso-works.html["Konfigurieren Sie Single Sign-On"] .
 . link:managing-admin-groups.html["Erstellen Sie dieselbe Administratorgruppe"] Auf beiden Rastern durch Importieren derselben Verbundgruppe.
 +
 Wenn Sie den Mandanten erstellen, wählen Sie diese Gruppe aus, um die anfängliche Root-Zugriffsberechtigung für die Quell- und Zielmandantenkonten zu erhalten.

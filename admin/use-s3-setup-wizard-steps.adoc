@@ -170,7 +170,7 @@ Port
  a| 
 Der StorageGRID-Port, den Sie für den Lastausgleich verwenden möchten. Dieses Feld ist für den ersten erstellten Endpunkt standardmäßig auf 10433 eingestellt, Sie können jedoch jeden nicht verwendeten externen Port eingeben. Wenn Sie 80 oder 443 eingeben, wird der Endpunkt nur auf Gateway-Nodes konfiguriert, da diese Ports auf Admin-Nodes reserviert sind.
 
-*Hinweis:* von anderen Netzdiensten verwendete Ports sind nicht erlaubt. Siehe link:../network/network-port-reference.html["Referenz für Netzwerk-Ports"].
+*Hinweis:* Von anderen Grid-Diensten verwendete Ports sind nicht zulässig. Sehen link:../network/internal-grid-node-communications.html#storagegrid-internal-ports["Interne StorageGRID-Ports"] .
 
 
 
@@ -347,7 +347,7 @@ Weitere Informationen zu dieser Aufgabe finden Sie unter link:creating-tenant-ac
 +
 Mandantennamen müssen nicht eindeutig sein. Wenn das Mandantenkonto erstellt wird, erhält es eine eindeutige, numerische Konto-ID.
 
-. Definieren Sie den Root-Zugriff für das Mandantenkonto, je nachdem, ob Ihr StorageGRID-System link:using-identity-federation.html["Identitätsföderation"], link:configuring-sso.html["Single Sign On (SSO)"]oder beides verwendet.
+. Definieren Sie den Root-Zugriff für das Mandantenkonto, je nachdem, ob Ihr StorageGRID -Systemlink:using-identity-federation.html["Identitätsföderation"] ,link:how-sso-works.html["Single Sign On (SSO)"] oder beides.
 +
 [cols="1a,2a"]
 |===

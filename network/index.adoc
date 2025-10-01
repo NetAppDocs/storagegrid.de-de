@@ -51,9 +51,7 @@ Nachdem Sie festgelegt haben, welche StorageGRID-Netzwerke Sie verwenden möchte
 
 
 .Installation softwarebasierter Nodes
-* link:../rhel/index.html["Installieren Sie StorageGRID unter Red hat Enterprise Linux"]
-* link:../ubuntu/index.html["Installieren Sie StorageGRID auf Ubuntu oder Debian"]
-* link:../vmware/index.html["Installieren Sie StorageGRID auf VMware"]
+* link:../swnodes/index.html["Installieren Sie StorageGRID auf softwarebasierten Knoten"]
 
 
 .StorageGRID Software konfigurieren und verwalten

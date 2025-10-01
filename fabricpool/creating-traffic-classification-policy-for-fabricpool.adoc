@@ -36,7 +36,7 @@ Wenn beispielsweise andere S3-Clients dieses StorageGRID-System verwenden, sollt
 
 
 .Schritte
-. Wählen Sie *CONFIGURATION* > *Network* > *traffic classification*.
+. Wählen Sie *Konfiguration* > *Netzwerk* > *Verkehrsklassifizierung*.
 . Wählen Sie *Erstellen*.
 . Geben Sie einen Namen und eine Beschreibung (optional) für die Richtlinie ein und wählen Sie *Weiter*.
 . Fügen Sie für den Schritt übereinstimmende Regeln hinzufügen mindestens eine Regel hinzu.

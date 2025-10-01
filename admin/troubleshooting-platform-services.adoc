@@ -45,7 +45,7 @@ NOTE: Einige Fehlermeldungen in der Spalte *Letzter Fehler* können eine LOGID i
 
 == Probleme im Zusammenhang mit Proxy-Servern
 
-Wenn Sie ein  zwischen Storage-Nodes und Plattform-Service-Endpunkten konfiguriert habenlink:configuring-storage-proxy-settings.html["Storage-Proxy"], können Fehler auftreten, wenn Ihr Proxy-Service keine Meldungen von StorageGRID zulässt. Um diese Probleme zu beheben, überprüfen Sie die Einstellungen Ihres Proxy-Servers, um sicherzustellen, dass keine Nachrichten im Zusammenhang mit dem Plattformdienst blockiert werden.
+Wenn Sie einelink:configuring-storage-proxy-settings.html["Storage-Proxy"] zwischen Speicherknoten und Plattformdienst-Endpunkten können Fehler auftreten, wenn Ihr Proxydienst keine Nachrichten von StorageGRID zulässt.  Um diese Probleme zu beheben, überprüfen Sie die Einstellungen Ihres Proxyservers, um sicherzustellen, dass plattformdienstbezogene Nachrichten nicht blockiert werden.
 
 
 
@@ -61,8 +61,9 @@ Einige Probleme bei Plattform-Services können zum Ausfall von Client-Operatione
 
 So überprüfen Sie den Status der Dienste:
 
-. Wählen Sie *SUPPORT* > *Tools* > *Grid-Topologie* aus.
-. Wählen Sie *_site_* > *_Storage Node_* > *SSM* > *Services* aus.
+. Wählen Sie *Knoten* > *_Site_* > *_Speicherknoten_* > *Übersicht*.
+. Suchen Sie in der Warnungstabelle nach aktiven Warnungen.
+. Lösen Sie alle aktiven Warnungen.  Wenden Sie sich bei Bedarf an den technischen Support.
 
 
 
@@ -72,13 +73,17 @@ So überprüfen Sie den Status der Dienste:
 Nach der Erstellung von Endpunkten können Fehler bei Plattformservice-Anfragen aus verschiedenen Gründen auftreten. Einige Fehler lassen sich durch Benutzereingriffe wiederherstellen. Beispielsweise können behebbare Fehler aus den folgenden Gründen auftreten:
 
 * Die Anmeldedaten des Benutzers wurden gelöscht oder abgelaufen.
-* Der Ziel-Bucket ist nicht vorhanden.
+* Der Ziel-Bucket existiert nicht.
 * Die Benachrichtigung kann nicht zugestellt werden.
 
 
 Wenn bei StorageGRID ein wiederherstellbarer Fehler auftritt, wird die Serviceanfrage für die Plattform erneut versucht, bis sie erfolgreich ist.
 
-Andere Fehler können nicht behoben werden. Beispielsweise tritt ein nicht behebbarer Fehler auf, wenn der Endpunkt gelöscht wird.
+Andere Fehler sind nicht behebbar.  Nicht behebbare Fehler können beispielsweise aus folgenden Gründen auftreten:
+
+* Der Endpunkt wird gelöscht.
+* Ein Webhook-Endpunktziel antwortet auf eine Benachrichtigungsanforderung mit einem `400 Bad Request` Fehler.
+
 
 Wenn bei StorageGRID ein nicht behebbarer Endpunktfehler auftritt:
 
@@ -91,7 +96,7 @@ Wenn bei StorageGRID ein nicht behebbarer Endpunktfehler auftritt:
 
 == Nachrichten zu Plattform-Services können nicht bereitgestellt werden
 
-Wenn im Ziel ein Problem auftritt, das verhindert, dass Plattformdienste-Meldungen akzeptiert werden, wird der Client-Vorgang auf dem Bucket erfolgreich ausgeführt, die Plattform-Services-Meldung wird jedoch nicht geliefert. Dieser Fehler kann z. B. auftreten, wenn die Anmeldeinformationen auf dem Ziel aktualisiert werden, sodass sich StorageGRID nicht mehr beim Ziel-Service authentifizieren kann.
+Wenn beim Ziel ein Problem auftritt, das die Annahme von Plattformdienstnachrichten verhindert, ist der Clientvorgang für den Bucket zwar erfolgreich, die Plattformdienstnachricht wird jedoch nicht zugestellt.  Dieser Fehler kann beispielsweise auftreten, wenn die Anmeldeinformationen am Ziel aktualisiert werden, sodass StorageGRID sich nicht mehr beim Zieldienst authentifizieren kann.
 
 Prüfen Sie, ob entsprechende Warnmeldungen vorhanden sind.
 
@@ -111,7 +116,7 @@ CloudMirror-Anforderungen sind wahrscheinlicher von der Performance des Zielendp
 
 So zeigen Sie die Ausfallrate der Anfrage für Plattformdienste an:
 
-. Wählen Sie *KNOTEN*.
+. Wählen Sie *Knoten* aus.
 . Wählen Sie *_site_* > *Platform Services*.
 . Zeigen Sie das Diagramm Fehlerrate anfordern an.
 +

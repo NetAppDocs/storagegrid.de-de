@@ -27,14 +27,14 @@ TIP: Wenn Sie SSO aktivieren, wird eine im Mandantenmanager konfigurierte Identi
 
 +
 .. Melden Sie sich für jedes Mandantenkonto bei Tenant Manager an.
-.. Wählen Sie * ACCESS MANAGEMENT* > *Identity Federation*.
+.. Wählen Sie *Zugriffsverwaltung* > *Identitätsföderation*.
 .. Bestätigen Sie, dass das Kontrollkästchen *Enable Identity Federation* nicht aktiviert ist.
 .. Wenn dies der Fall ist, bestätigen Sie, dass keine föderierten Gruppen mehr für dieses Mandantenkonto benötigt werden, deaktivieren Sie das Kontrollkästchen und wählen Sie *Speichern*.
 
 
 . Bestätigen Sie, dass ein verbundener Benutzer auf den Grid Manager zugreifen kann:
 +
-.. Wählen Sie im Grid Manager die Option *KONFIGURATION* > *Zugriffskontrolle* > *Admin-Gruppen* aus.
+.. Wählen Sie im Grid Manager *Konfiguration* > *Zugriffskontrolle* > *Admingruppen*.
 .. Stellen Sie sicher, dass mindestens eine föderierte Gruppe aus der Active Directory-Identitätsquelle importiert wurde und dass ihr die Root-Zugriffsberechtigung zugewiesen wurde.
 .. Abmelden.
 .. Bestätigen Sie, dass Sie sich wieder bei Grid Manager als Benutzer in der föderierten Gruppe anmelden können.
@@ -42,18 +42,18 @@ TIP: Wenn Sie SSO aktivieren, wird eine im Mandantenmanager konfigurierte Identi
 
 . Wenn es bereits bestehende Mandantenkonten gibt, bestätigen Sie, dass sich ein föderaler Benutzer mit Root-Zugriffsberechtigung anmelden kann:
 +
-.. Wählen Sie im Grid Manager die Option *MITERS* aus.
+.. Wählen Sie im Grid Manager *Mandanten* aus.
 .. Wählen Sie das Mandantenkonto aus und wählen Sie *Aktionen* > *Bearbeiten*.
 .. Wählen Sie auf der Registerkarte Details eingeben die Option *Weiter*.
 .. Wenn das Kontrollkästchen *eigene Identitätsquelle verwenden* aktiviert ist, deaktivieren Sie das Kontrollkästchen und wählen Sie *Speichern* aus.
-+
-image::../media/sso_uses_own_identity_source_for_tenant.png[Mandantenkonto bearbeiten > Kontrollkästchen eigene Identitätsquelle verwenden ist nicht ausgewählt]
+
 
 +
 Die Seite Mandant wird angezeigt.
 
++
 .. Wählen Sie das Mandantenkonto aus, wählen Sie *Anmelden* und melden Sie sich als lokaler Root-Benutzer beim Mandantenkonto an.
-.. Wählen Sie im Mandantenmanager die Option *ZUGRIFFSVERWALTUNG* > *Gruppen* aus.
+.. Wählen Sie im Mandanten-Manager *Zugriffsverwaltung* > *Gruppen*.
 .. Stellen Sie sicher, dass mindestens eine föderierte Gruppe aus dem Grid Manager die Root-Zugriffsberechtigung für diesen Mandanten zugewiesen wurde.
 .. Abmelden.
 .. Bestätigen Sie, dass Sie sich wieder bei dem Mandanten als Benutzer in der föderierten Gruppe anmelden können.

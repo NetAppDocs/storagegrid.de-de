@@ -22,7 +22,7 @@ Sie können SNMP-Benachrichtigungen deaktivieren, Community-Strings aktualisiere
 Weitere Informationen zu den einzelnen Feldern finden link:configuring-snmp-agent.html["Konfigurieren Sie den SNMP-Agent"]Sie auf der Seite SNMP-Agent. Sie müssen unten auf der Seite *Speichern* auswählen, um alle Änderungen zu übernehmen, die Sie auf jeder Registerkarte vornehmen.
 
 .Schritte
-. Wählen Sie *KONFIGURATION* > *Überwachung* > *SNMP-Agent*.
+. Wählen Sie *Konfiguration* > *Überwachung* > *SNMP-Agent*.
 +
 Die Seite SNMP Agent wird angezeigt.
 

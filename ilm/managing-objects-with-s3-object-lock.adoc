@@ -102,7 +102,7 @@ Wenn Sie die ältere Compliance-Funktion in einer früheren Version von StorageG
  a| 
 Wie wird die Funktion global aktiviert?
  a| 
-Wählen Sie im Grid Manager die Option *KONFIGURATION* > *System* > *S3 Object Lock*.
+Wählen Sie im Grid Manager *Konfiguration* > *System* > *S3-Objektsperre*.
  a| 
 Wird nicht mehr unterstützt.
 

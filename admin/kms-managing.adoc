@@ -25,7 +25,7 @@ Zum Verwalten eines Schlüsselverwaltungsservers (KMS) gehören das Anzeigen ode
 Sie können Informationen zu jedem Schlüsselverwaltungsserver (KMS) in Ihrem StorageGRID-System anzeigen, einschließlich der Schlüsseldetails und des aktuellen Status der Server- und Clientzertifikate.
 
 .Schritte
-. Wählen Sie *KONFIGURATION* > *Sicherheit* > *Schlüsselverwaltungsserver* aus.
+. Wählen Sie *Konfiguration* > *Sicherheit* > *Schlüsselverwaltungsserver*.
 +
 Die Seite Key Management Server wird angezeigt und zeigt die folgenden Informationen an:
 
@@ -147,7 +147,7 @@ Beheben Sie umgehend alle Probleme mit dem Server- oder Client-Zertifikat. Erset
 CAUTION: Sie müssen Probleme mit dem Zertifikat so schnell wie möglich beheben, um den Datenzugriff aufrechtzuerhalten.
 
 .Schritte
-. Wählen Sie *KONFIGURATION* > *Sicherheit* > *Schlüsselverwaltungsserver* aus.
+. Wählen Sie *Konfiguration* > *Sicherheit* > *Schlüsselverwaltungsserver*.
 . Sehen Sie sich in der Tabelle den Wert für den Ablauf des Zertifikats für jeden KMS an.
 . Wenn der Zertifikatablauf für ein KMS unbekannt ist, warten Sie bis zu 30 Minuten, und aktualisieren Sie dann Ihren Webbrowser.
 . Wenn in der Spalte Zertifikatablauf angezeigt wird, dass ein Zertifikat abgelaufen ist oder kurz vor dem Ablaufdatum steht, wählen Sie das KMS aus, um zur Seite KMS-Details zu gelangen.
@@ -173,7 +173,7 @@ NOTE: Wenn Sie den Status *Server Certificate Status is unknown* erhalten, stell
 Sie können Informationen zu den Appliance-Knoten in Ihrem StorageGRID-System anzeigen, bei denen die Einstellung *Node-Verschlüsselung* aktiviert ist.
 
 .Schritte
-. Wählen Sie *KONFIGURATION* > *Sicherheit* > *Schlüsselverwaltungsserver* aus.
+. Wählen Sie *Konfiguration* > *Sicherheit* > *Schlüsselverwaltungsserver*.
 +
 Die Seite Key Management Server wird angezeigt. Auf der Registerkarte Konfigurationsdetails werden alle konfigurierten Schlüsselverwaltungsserver angezeigt.
 
@@ -274,7 +274,7 @@ Möglicherweise müssen Sie die Konfiguration eines Schlüsselverwaltungsservers
 
 
 .Schritte
-. Wählen Sie *KONFIGURATION* > *Sicherheit* > *Schlüsselverwaltungsserver* aus.
+. Wählen Sie *Konfiguration* > *Sicherheit* > *Schlüsselverwaltungsserver*.
 +
 Die Seite Key Management Server wird angezeigt und zeigt alle konfigurierten Key Management Server an.
 
@@ -382,7 +382,7 @@ In diesen Fällen können Sie einen KMS entfernen:
 
 
 .Schritte
-. Wählen Sie *KONFIGURATION* > *Sicherheit* > *Schlüsselverwaltungsserver* aus.
+. Wählen Sie *Konfiguration* > *Sicherheit* > *Schlüsselverwaltungsserver*.
 +
 Die Seite Key Management Server wird angezeigt und zeigt alle konfigurierten Key Management Server an.
 

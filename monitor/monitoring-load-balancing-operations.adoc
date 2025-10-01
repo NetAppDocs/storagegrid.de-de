@@ -25,7 +25,7 @@ Weitere Informationen finden Sie unter link:../admin/configuring-client-connecti
 .Schritte
 . Wenn sich S3-Clients über den Load Balancer-Service verbinden, überprüfen Sie, ob Admin-Nodes oder Gateway-Nodes den Datenverkehr aktiv wie erwartet verteilen:
 +
-.. Wählen Sie *KNOTEN*.
+.. Wählen Sie *Knoten* aus.
 .. Wählen Sie einen Gateway-Node oder einen Admin-Node aus.
 .. Prüfen Sie auf der Registerkarte *Übersicht*, ob sich eine Knotenschnittstelle in einer HA-Gruppe befindet und ob die Knotenschnittstelle die Rolle Primary hat.
 +

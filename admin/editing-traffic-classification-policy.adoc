@@ -19,7 +19,7 @@ Sie können eine Traffic-Klassifizierungsrichtlinie bearbeiten, um ihren Namen o
 
 
 .Schritte
-. Wählen Sie *CONFIGURATION* > *Network* > *traffic classification*.
+. Wählen Sie *Konfiguration* > *Netzwerk* > *Verkehrsklassifizierung*.
 +
 Die Seite für die Verkehrsklassifizierungsrichtlinien wird angezeigt, und die vorhandenen Richtlinien werden in einer Tabelle aufgeführt.
 

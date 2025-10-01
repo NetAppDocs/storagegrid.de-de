@@ -25,7 +25,7 @@ Wenn Sie eine standardmäßige Warnungsregel bearbeiten, können Sie die Bedingu
 CAUTION: Seien Sie vorsichtig, wenn Sie sich entscheiden, eine Warnungsregel zu bearbeiten. Wenn Sie die Triggerwerte ändern, können Sie möglicherweise ein zugrunde liegendes Problem erst erkennen, wenn ein kritischer Vorgang nicht abgeschlossen werden kann.
 
 .Schritte
-. Wählen Sie *ALERTS* > *Regeln*.
+. Wählen Sie *Benachrichtigungen* > *Regeln*.
 +
 Die Seite Alarmregeln wird angezeigt.
 

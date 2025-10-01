@@ -19,7 +19,7 @@ Wenn Sie die Details für eine Gruppe anzeigen, können Sie den Anzeigenamen, Be
 
 
 .Schritte
-. Wählen Sie *ZUGRIFFSVERWALTUNG* > *Gruppen*.
+. Wählen Sie *Zugriffsverwaltung* > *Gruppen*.
 . Wählen Sie den Namen der Gruppe aus, deren Details Sie anzeigen oder bearbeiten möchten.
 +
 Alternativ können Sie *Aktionen* > *Gruppendetails anzeigen* wählen.
@@ -44,10 +44,6 @@ Sie können den eindeutigen Namen einer Gruppe nicht ändern. Der Anzeigename f�
 .. Nehmen Sie als Gruppenrichtlinie die entsprechenden Änderungen für Ihren S3-Mandanten vor.
 +
 *** Wenn Sie eine Gruppe für einen S3-Mandanten bearbeiten, wählen Sie optional eine andere S3-Gruppenrichtlinie aus. Wenn Sie eine benutzerdefinierte S3-Richtlinie auswählen, aktualisieren Sie den JSON-String wie erforderlich.
-*** Wenn Sie eine Gruppe für einen Swift-Mandanten bearbeiten, aktivieren oder deaktivieren Sie optional das Kontrollkästchen *Swift-Administrator*.
-+
-Weitere Informationen zum Swift Administrator erhalten Sie in den Anweisungen zum Erstellen von Gruppen für einen Swift-Mandanten.
-
 
 
 .. Optional können Benutzer hinzugefügt oder entfernt werden.
@@ -58,5 +54,4 @@ Weitere Informationen zum Swift Administrator erhalten Sie in den Anweisungen zu
 
 .Verwandte Informationen
 * link:creating-groups-for-s3-tenant.html["Gruppen für S3 Mandanten erstellen"]
-* link:creating-groups-for-swift-tenant.html["Gruppen für Swift Mandanten erstellen"]
 

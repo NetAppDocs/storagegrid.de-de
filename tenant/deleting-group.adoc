@@ -19,7 +19,7 @@ Sie können eine Gruppe aus dem System löschen. Benutzer, die nur zu dieser Gru
 
 
 .Schritte
-. Wählen Sie *ZUGRIFFSVERWALTUNG* > *Gruppen*.
+. Wählen Sie *Zugriffsverwaltung* > *Gruppen*.
 . Aktivieren Sie das Kontrollkästchen für jede Gruppe, die Sie löschen möchten.
 . Wählen Sie *Aktionen* > *Gruppe löschen*.
 . Wählen Sie *Gruppe löschen*.

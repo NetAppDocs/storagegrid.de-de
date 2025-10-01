@@ -46,7 +46,7 @@ Verwenden Sie beispielsweise nicht die folgenden Subnetzbereiche für das Grid-N
 
 ====
 .Schritte
-. Wählen Sie *WARTUNG* > *Netzwerk* > *Grid-Netzwerk*.
+. Wählen Sie *Wartung* > *Netzwerk* > *Grid-Netzwerk*.
 . Wählen Sie *Add another subnet*, um ein neues Subnetz in CIDR-Notation hinzuzufügen.
 +
 Geben Siez. B. `10.96.104.0/22` .
@@ -54,11 +54,11 @@ Geben Siez. B. `10.96.104.0/22` .
 . Geben Sie die Provisionierungs-Passphrase ein, und wählen Sie *Speichern*.
 . Warten Sie, bis die Änderungen übernommen wurden, und laden Sie dann ein neues Wiederherstellungspaket herunter.
 +
-.. Wählen Sie *WARTUNG* > *System* > *Wiederherstellungspaket*.
+.. Wählen Sie *Wartung* > *System* > *Wiederherstellungspaket*.
 .. Geben Sie die *Provisioning-Passphrase* ein.
 +
 
-CAUTION: Die Recovery Package-Datei muss gesichert sein, weil sie Verschlüsselungsschlüssel und Passwörter enthält, die zum Abrufen von Daten vom StorageGRID-System verwendet werden können. Er wird auch zur Wiederherstellung des primären Admin-Knotens verwendet.
+CAUTION: Die Wiederherstellungspaketdatei muss gesichert werden, da sie Verschlüsselungsschlüssel und Passwörter enthält, mit denen Daten aus dem StorageGRID -System abgerufen werden können.  Es wird auch verwendet, um den primären Admin-Knoten wiederherzustellen.
 
 
 

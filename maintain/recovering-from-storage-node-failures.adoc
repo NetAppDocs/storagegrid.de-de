@@ -22,15 +22,11 @@ Verwenden Sie diese Tabelle, um das Wiederherstellungsverfahren für einen fehlg
 
  a| 
 * Mehr als ein Speicherknoten ist ausgefallen.
-* Ein zweiter Speicherknoten ist weniger als 15 Tage nach Ausfall oder Wiederherstellung eines Speicherknotens ausgefallen.
-+
-Dies schließt den Fall ein, dass ein Speicherknoten während der Wiederherstellung eines anderen Speicherknoten noch in Arbeit ist.
-
 
  a| 
 Wenden Sie sich an den technischen Support.
  a| 
-Die Wiederherstellung von mehr als einem Storage-Node (oder mehr als einem Storage-Node innerhalb von 15 Tagen) kann die Integrität der Cassandra-Datenbank beeinträchtigen, was zu Datenverlust führen kann.
+Die Wiederherstellung von mehr als einem Speicherknoten kann die Integrität der Cassandra-Datenbank beeinträchtigen und zu Datenverlust führen.
 
 Der technische Support kann bestimmen, wann die Wiederherstellung eines zweiten Storage Node sicher gestartet werden kann.
 

@@ -144,3 +144,6 @@ Je nach Ihren Anforderungen können Sie mehrere Verschlüsselungsmethoden gleich
 
 
 Wenn nur ein kleiner Teil Ihrer Objekte eine Verschlüsselung erfordern, sollten Sie stattdessen die Verschlüsselung auf Bucket- oder Objektebene kontrollieren. Durch die Aktivierung diverser Verschlüsselungsstufen entstehen zusätzliche Performance-Kosten.
+
+.Verwandte Informationen
+link:manage-tls-ssh-policy.html#select-a-security-policy["Erfahren Sie mehr über die FIPS-zertifizierten Verschlüsselungsoptionen"]

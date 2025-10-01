@@ -51,7 +51,7 @@ NOTE: Wenn Sie die externe NTP-Quelle für eine StorageGRID-Installation auf Pro
 Führen Sie die folgenden Schritte aus, um NTP-Server hinzuzufügen, zu aktualisieren oder zu entfernen.
 
 .Schritte
-. Wählen Sie *MAINTENANCE* > *Network* > *NTP-Server*.
+. Wählen Sie *Wartung* > *Netzwerk* > *NTP-Server*.
 . Fügen Sie im Abschnitt Server bei Bedarf NTP-Servereinträge hinzu, aktualisieren oder entfernen Sie sie.
 +
 Sie sollten mindestens vier NTP-Server angeben, und Sie können bis zu sechs Server angeben.

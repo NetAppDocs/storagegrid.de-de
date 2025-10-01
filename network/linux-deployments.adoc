@@ -1,7 +1,7 @@
 ---
 permalink: network/linux-deployments.html 
 sidebar: sidebar 
-keywords: linux network, container engine, red hat enterprise linux rhel network, ubuntu network 
+keywords: linux network, container engine, red hat enterprise linux network, rhel network, ubuntu network 
 summary: Das StorageGRID System wird unter Linux als Sammlung von Container-Engines ausgeführt, um Effizienz, Zuverlässigkeit und Sicherheit zu gewährleisten. Die Container-Engine-bezogene Netzwerkkonfiguration ist bei einem StorageGRID System nicht erforderlich. 
 ---
 = Linux Implementierungen
@@ -18,7 +18,7 @@ Verwenden Sie für die Container-Netzwerkschnittstelle ein Gerät ohne Bindung, 
 
 CAUTION: Verwenden Sie keine Bond- oder Bridge-Geräte direkt als Container-Netzwerkschnittstelle. Dies könnte den Start von Knoten verhindern, weil ein Kernel-Problem mit der Verwendung von macvlan mit Bond- und Bridge-Geräten im Container-Namespace vorliegt.
 
-Siehe Installationsanweisungen für link:../rhel/index.html["Red Hat Enterprise Linux"] oder link:../ubuntu/index.html["Ubuntu oder Debian"] Bereitstellungen.
+Siehe dielink:../swnodes/index.html["Installationsanweisungen"] .
 
 
 
@@ -41,12 +41,14 @@ NOTE: Eine physische Schnittstelle auf dem Host kann vom Host selbst und von ein
 * Öffnen Sie die erforderlichen Ports zum Host.
 * Wenn Sie beabsichtigen, VLAN-Schnittstellen in StorageGRID zu verwenden, muss der Host über eine oder mehrere Trunk-Schnittstellen verfügen, die Zugriff auf die gewünschten VLANs bieten. Diese Schnittstellen können als eth0, eth2 oder als zusätzliche Schnittstellen in den Node-Container übergeben werden. Informationen zum Hinzufügen von Trunk- oder Access-Schnittstellen finden Sie unter:
 +
-** *RHEL (vor der Installation des Knotens)*: link:../rhel/creating-node-configuration-files.html["Erstellen von Node-Konfigurationsdateien"]
-** *Ubuntu oder Debian (vor der Installation des Knotens)*: link:../ubuntu/creating-node-configuration-files.html["Erstellen von Node-Konfigurationsdateien"]
-** *RHEL, Ubuntu oder Debian (nach der Installation des Knotens)*: link:../maintain/linux-adding-trunk-or-access-interfaces-to-node.html["Linux: Hinzufügen von Trunk- oder Zugriffsschnittstellen zu einem Node"]
+** *Linux (vor der Installation des Knotens)*:link:../swnodes/creating-node-configuration-files.html["Erstellen von Node-Konfigurationsdateien"]
+** *Linux (nach der Installation des Knotens)*:link:../maintain/linux-adding-trunk-or-access-interfaces-to-node.html["Hinzufügen von Trunk- oder Zugriffsschnittstellen zu einem Knoten"]
 
 
 
+
+
+NOTE: „Linux“ bezieht sich auf eine RHEL-, Ubuntu- oder Debian-Bereitstellung.  Eine Liste der unterstützten Versionen finden Sie im https://imt.netapp.com/matrix/#welcome["NetApp Interoperabilitäts-Matrix-Tool (IMT)"^] .
 
 
 
@@ -132,8 +134,4 @@ So führen Sie beispielsweise einen Admin-Node, einen Gateway-Node und einen Sto
 
 In diesem Szenario sollten Sie mindestens 11 + 20 + 10 = 41 GBit/s Netzwerkbandbreite angeben, Dies konnte von zwei 40 Gbps Schnittstellen oder fünf 10 Gbps Schnittstellen erreicht werden, die möglicherweise in Trunks aggregiert und dann von den drei oder mehr VLANs, die die Grid-, Admin- und Client-Subnetze lokal zum physischen Rechenzentrum mit dem Host übertragen, gemeinsam genutzt werden.
 
-Einige empfohlene Möglichkeiten zur Konfiguration physischer und Netzwerkressourcen auf den Hosts in Ihrem StorageGRID Cluster zur Vorbereitung der StorageGRID-Bereitstellung finden Sie im folgenden:
-
-* link:../rhel/configuring-host-network.html["Konfiguration des Hostnetzwerks (Red hat Enterprise Linux)"]
-* link:../ubuntu/configuring-host-network.html["Konfigurieren des Hostnetzwerks (Ubuntu oder Debian)"]
-
+Einige empfohlene Methoden zum Konfigurieren physischer und Netzwerkressourcen auf den Hosts in Ihrem StorageGRID Cluster zur Vorbereitung Ihrer StorageGRID Bereitstellung finden Sie unterlink:../swnodes/configuring-host-network.html["Konfigurieren Sie das Hostnetzwerk"] .

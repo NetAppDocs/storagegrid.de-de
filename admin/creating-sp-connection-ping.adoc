@@ -15,12 +15,12 @@ Sie verwenden PingFederate, um für jeden Admin-Node in Ihrem System eine SP-Ver
 
 .Bevor Sie beginnen
 * Sie haben Single Sign-On für StorageGRID konfiguriert und als SSO-Typ * Ping föderate* ausgewählt.
-* *Der Sandbox-Modus* ist auf der Single Sign-On-Seite im Grid Manager ausgewählt. Siehe link:../admin/using-sandbox-mode.html["Verwenden Sie den Sandbox-Modus"].
-* Sie haben die *SP-Verbindungs-ID* für jeden Admin-Knoten in Ihrem System. Diese Werte finden Sie in der Detailtabelle Admin Nodes auf der StorageGRID Single Sign-On-Seite.
+* Du hastlink:../admin/configure-sso.html#enter-sandbox-mode["Sandbox-Modus aufgerufen"] im Grid Manager.
+* Sie haben die * SP Verbindungs-ID* für jeden Admin-Knoten in Ihrem System.  Sie finden diese Werte in der Detailtabelle „Admin-Knoten“ auf der Seite „SSO konfigurieren“.
 * Sie haben die *SAML-Metadaten* für jeden Admin-Knoten in Ihrem System heruntergeladen.
 * Sie haben Erfahrung beim Erstellen von SP-Verbindungen in PingFederate Server.
 * Sie haben den https://docs.pingidentity.com/pingfederate/latest/administrators_reference_guide/pf_administrators_reference_guide.html["Administrator's Reference Guide"^] für PingFederate Server. Die PingFederate-Dokumentation bietet detaillierte Schritt-für-Schritt-Anleitungen und Erklärungen.
-* Sie haben den link:admin-group-permissions.html["Administratorberechtigung"] für PingFederate Server.
+* Sie haben dielink:../admin/admin-group-permissions.html["Administratorberechtigung"] für PingFederate Server.
 
 
 .Über diese Aufgabe
@@ -67,7 +67,7 @@ Wenn Sie noch nicht, erstellen Sie eine IdP-Adapterinstanz.
 . Wählen Sie *Neue Instanz Erstellen*.
 . Wählen Sie auf der Registerkarte Typ die Option *HTML-Formular-IdP-Adapter* aus.
 . Wählen Sie auf der Registerkarte IdP-Adapter *Neue Zeile zu 'Credential Validators'* hinzufügen.
-. Wählen Sie die <<password-validator,Gültigkeitsprüfung für Kennwortausweise>>erstellte aus.
+. Wählen Sie die<<password-validator,Gültigkeitsprüfung für Kennwortausweise>> Sie erstellt haben.
 . Wählen Sie auf der Registerkarte Adapterattribute das Attribut *Benutzername* für *Pseudonym* aus.
 . Wählen Sie *Speichern*.
 
@@ -109,7 +109,7 @@ TIP: Sie müssen für jeden Admin-Node in Ihrem StorageGRID-System eine SP-Verbi
 
 .Schritte
 . Wählen Sie auf der Registerkarte Metadaten importieren die Option *Datei*.
-. Wählen Sie die SAML-Metadatendatei, die Sie für den Admin-Node von der StorageGRID-Seite für Single Sign-On heruntergeladen haben.
+. Wählen Sie die SAML-Metadatendatei aus, die Sie von der Seite „SSO konfigurieren“ für den Admin-Knoten heruntergeladen haben.
 . Überprüfen Sie die Metadatenübersicht und die Informationen auf der Registerkarte Allgemeine Informationen.
 +
 Die Entity-ID des Partners und der Verbindungsname werden auf die Verbindungs-ID des StorageGRID-SP festgelegt. (Z. B. 10.96.105.200-DC1-ADM1-105-200). Die Basis-URL ist die IP des StorageGRID-Admin-Knotens.
@@ -183,7 +183,7 @@ Die Entity-ID des Partners und der Verbindungsname werden auf die Verbindungs-ID
 .Schritte
 . Wählen Sie auf der Registerkarte SP-Verbindung die Option *Anmeldeinformationen* aus.
 . Wählen Sie auf der Registerkarte Anmeldeinformationen die Option *Anmeldeinformationen konfigurieren*.
-. Wählen Sie das erstellte oder importierte aus<<signing-certificate,Signieren des Zertifikats>>.
+. Wählen Sie die<<signing-certificate,Signieren des Zertifikats>> Sie haben erstellt oder importiert.
 . Wählen Sie *Weiter* aus, um zu *Einstellungen zur Signature-Verifizierung verwalten* zu gelangen.
 +
 .. Wählen Sie auf der Registerkarte Vertrauensmodell die Option *nicht verankert* aus.

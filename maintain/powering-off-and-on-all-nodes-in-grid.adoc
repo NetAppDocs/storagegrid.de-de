@@ -33,6 +33,7 @@ NOTE: Wenn ein einzelner Host mehr als einen Grid-Node enthält, fahren Sie den 
 NOTE: Bei Bedarf können Sie link:linux-migrating-grid-node-to-new-host.html["Migrieren Sie Nodes von einem Linux-Host zu einem anderen"]die Hostwartung durchführen, ohne die Funktionalität oder Verfügbarkeit Ihres Grids zu beeinträchtigen.
 
 .Schritte
+. Der externe SSH-Zugriff ist standardmäßig blockiert.  Falls erforderlich,link:../admin/manage-external-ssh-access.html["Zugriff vorübergehend erlauben"] .
 . Beenden Sie alle Client-Applikationen vom Zugriff auf das Grid.
 . [[log_in_to_gn]]Melden Sie sich bei jedem Gateway-Knoten an:
 +
@@ -141,6 +142,7 @@ Diese LED leuchtet, wenn zwischengespeicherte Daten auf die Laufwerke geschriebe
 +
 Das StorageGRID-Grid wurde jetzt heruntergefahren.
 
+. Wenn Sie externen SSH-Zugriff zugelassen haben,link:../admin/manage-external-ssh-access.html["Zugriff blockieren"] wenn Sie mit dem Herunterfahren der Knoten fertig sind.
 
 
 
@@ -171,7 +173,7 @@ Sie können diese Knoten in beliebiger Reihenfolge einschalten.
 
 . Schalten Sie die Hosts für alle Gateway-Nodes ein.
 . Melden Sie sich beim Grid Manager an.
-. Wählen Sie *NODES* aus, und überwachen Sie den Status der Grid-Knoten. Vergewissern Sie sich, dass neben den Node-Namen keine Warnsymbole vorhanden sind.
+. Wählen Sie *Knoten* aus und überwachen Sie den Status der Rasterknoten.  Stellen Sie sicher, dass neben den Knotennamen keine Warnsymbole angezeigt werden.
 
 
 .Verwandte Informationen

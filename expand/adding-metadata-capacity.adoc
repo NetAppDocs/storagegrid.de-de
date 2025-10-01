@@ -52,7 +52,7 @@ Storage-Nodes, die nur Metadaten enthalten, erfüllen spezifische Hardwareanford
 *** 8 TB SSD oder äquivalenter Storage für die Cassandra-Datenbank (rangedb/0)
 
 
-** Wenn der bestehende StorageGRID-Standort virtuelle Storage-Nodes mit 24 GB RAM, 8 Kern-CPUs und 3 TB oder 4 TB Metadaten-Storage verwendet, sollten die rein softwarebasierten Metadaten-Nodes ähnliche Ressourcen verwenden (24 GB RAM, 8 Kern-CPU und 4 TB Metadaten-Storage (rangedb/0).
+** Wenn die vorhandene StorageGRID Site virtuelle Speicherknoten mit 24 GB RAM, 8-Kern-CPU und 3 TB oder 4 TB Metadatenspeicher verwendet, sollten die softwarebasierten Nur-Metadaten-Knoten ähnliche Ressourcen verwenden (24 GB RAM, 8-Kern-CPU und 4 TB Metadatenspeicher (rangedb/0)).
 
 
 * Beim Hinzufügen eines neuen StorageGRID Standorts sollte die Metadaten-Gesamtkapazität des neuen Standorts mindestens den vorhandenen StorageGRID Standorten entsprechen, und neue Standortressourcen sollten den Storage-Nodes an den vorhandenen StorageGRID Standorten entsprechen.

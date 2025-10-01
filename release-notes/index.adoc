@@ -13,4 +13,4 @@ summary: Erhalten Sie Release-spezifische Informationen zu behobene Probleme und
 [role="lead"]
 Erhalten Sie Release-spezifische Informationen zu behobene Probleme und bekannten Problemen.
 
-Melden Sie sich auf der NetApp-Support-Website an, um https://library.netapp.com/ecm/ecm_download_file/ECMLP3330064["PDF-Datei anzeigen oder herunterladen"^] die Versionshinweise zu StorageGRID 11.9 zu erhalten.
+Melden Sie sich bei der NetApp Support Site an, um https://library.netapp.com/ecm/ecm_download_file/ECMLP3351267["PDF-Datei anzeigen oder herunterladen"^] enthält die Versionshinweise zu StorageGRID 12.0.

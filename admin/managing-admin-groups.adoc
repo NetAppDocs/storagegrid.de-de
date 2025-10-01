@@ -30,7 +30,7 @@ Administratorgruppen ermöglichen es Ihnen, festzulegen, welche Benutzer auf wel
 === Greifen Sie auf den Assistenten zu
 
 .Schritte
-. Wählen Sie *KONFIGURATION* > *Zugriffskontrolle* > *Admin-Gruppen*.
+. Wählen Sie *Konfiguration* > *Zugriffskontrolle* > *Admin-Gruppen*.
 . Wählen Sie *Gruppe erstellen*.
 
 
@@ -62,7 +62,7 @@ Sie können eine lokale Gruppe erstellen oder eine föderierte Gruppe importiere
 . Wählen Sie *Federated Group*.
 . Geben Sie den Namen der Gruppe ein, die importiert werden soll, genau so, wie sie in der konfigurierten Identitätsquelle angezeigt wird.
 +
-** Verwenden Sie für Active Directory und Azure den sAMAccountName.
+** Verwenden Sie für Active Directory und Microsoft Entra ID den sAMAccountName.
 ** Verwenden Sie für OpenLDAP das CN (Common Name).
 ** Verwenden Sie für einen anderen LDAP den entsprechenden eindeutigen Namen für den LDAP-Server.
 

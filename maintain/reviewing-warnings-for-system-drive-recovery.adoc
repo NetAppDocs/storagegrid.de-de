@@ -13,23 +13,20 @@ summary: Lesen Sie vor der Wiederherstellung eines ausgefallenen Systemlaufwerks
 [role="lead"]
 Lesen Sie vor der Wiederherstellung eines fehlerhaften Systemlaufwerks eines Storage-Knotens die allgemeinen link:warnings-and-considerations-for-grid-node-recovery.html["Warnungen und Überlegungen zur Wiederherstellung des Grid Node"] und die folgenden spezifischen Warnungen durch.
 
-Storage-Nodes verfügen über eine Cassandra Datenbank mit Objekt-Metadaten. Unter folgenden Umständen kann die Cassandra-Datenbank neu erstellt werden:
+Speicherknoten verfügen über eine Cassandra-Datenbank, die Objektmetadaten enthält.  Die Cassandra-Datenbank kann in folgenden Fällen neu erstellt werden:
 
-* Ein Storage-Node wird nach mehr als 15 Tagen offline wieder online geschaltet.
-* Ein Speichervolume ist ausgefallen und wurde wiederhergestellt.
+* Ein Speichervolume fällt aus und wird wiederhergestellt.
 * Das Systemlaufwerk und ein oder mehrere Storage-Volumes ausfallen und werden wiederhergestellt.
 
 
-Nach dem Rebuilt von Cassandra verwendet das System Informationen von anderen Speicherknoten. Wenn zu viele Storage-Nodes offline sind, sind einige Cassandra-Daten möglicherweise nicht verfügbar. Falls Cassandra vor Kurzem neu aufgebaut wurde, sind Cassandra-Daten möglicherweise noch nicht konsistent im gesamten Grid. Datenverluste können auftreten, wenn Cassandra neu aufgebaut wird, wenn zu viele Storage-Nodes offline sind oder wenn zwei oder mehr Storage-Nodes innerhalb von 15 Tagen neu erstellt werden.
+Beim Neuaufbau von Cassandra verwendet das System Informationen von anderen Speicherknoten.  Wenn Cassandra vor Kurzem neu erstellt wurde, sind die Cassandra-Daten im gesamten Grid möglicherweise noch nicht konsistent.  Wenn zu viele Speicherknoten offline sind:
+
+* Einige Cassandra-Daten sind möglicherweise nicht verfügbar.
+* Es könnte zu Datenverlust kommen.
 
 
-CAUTION: Wenn mehrere Speicherknoten ausgefallen sind (oder offline ist), wenden Sie sich an den technischen Support. Führen Sie das folgende Wiederherstellungsverfahren nicht durch. Es kann zu Datenverlusten kommen.
 
-
-CAUTION: Falls dies der zweite Ausfall des Storage-Nodes in weniger als 15 Tagen nach Ausfall oder Wiederherstellung eines Storage-Nodes ist, wenden Sie sich an den technischen Support. Die Neuerstellung von Cassandra auf zwei oder mehr Storage-Nodes innerhalb von 15 Tagen kann zu Datenverlust führen.
-
-
-NOTE: Wenn mehr als ein Speicherknoten an einem Standort ausgefallen ist, ist möglicherweise ein Verfahren zur Standortwiederherstellung erforderlich. Siehe link:how-site-recovery-is-performed-by-technical-support.html["Wie der technische Support eine Site wiederherstellt"].
+CAUTION: Wenn mehr als ein Speicherknoten ausgefallen ist (oder offline ist), wenden Sie sich an den technischen Support.  Führen Sie das folgende Wiederherstellungsverfahren nicht durch.  Es könnte zu Datenverlust kommen. Weitere Informationen finden Sie unter link:how-site-recovery-is-performed-by-technical-support.html["Wie der technische Support eine Site wiederherstellt"] .
 
 
 CAUTION: Wenn sich dieser Speicherknoten im schreibgeschützten Wartungsmodus befindet, um das Abrufen von Objekten durch einen anderen Speicherknoten mit ausgefallenen Speichervolumes zu ermöglichen, stellen Sie Volumes auf dem Speicherknoten mit fehlerhaften Speicher-Volumes wieder her, bevor Sie diesen fehlgeschlagenen Speicherknoten wiederherstellen. Siehe die Anweisungen zu link:recovering-from-storage-volume-failure-where-system-drive-is-intact.html["Wiederherstellung nach einem Ausfall des Speicher-Volumes bei intakt des Systemlaufwerks"].

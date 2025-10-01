@@ -46,8 +46,8 @@ Sie können *Suche* verwenden, um Einträge in der Seitenleiste des Grid Manager
 
 Über das Hilfemenü image:../media/icon-help-menu-bar.png["Hilfe-Symbol in der Menüleiste"]können Sie auf Folgendes zugreifen:
 
-* Der link:../fabricpool/use-fabricpool-setup-wizard.html["FabricPool"] und -link:../admin/use-s3-setup-wizard.html["S3-Einrichtung"]Assistent
-* Das StorageGRID Dokumentationszentrum für die aktuelle Version
+* Derlink:../fabricpool/use-fabricpool-setup-wizard.html["FabricPool"] Undlink:../admin/use-s3-setup-wizard.html["S3-Einrichtung"] Zauberer
+* Die StorageGRID -Dokumentationsseite für die aktuelle Version
 * link:../admin/using-grid-management-api.html["API-Dokumentation"]
 * Informationen darüber, welche Version von StorageGRID derzeit installiert ist
 
@@ -71,11 +71,7 @@ Das Menü „Meldungen“ bietet eine benutzerfreundliche Oberfläche zum Erkenn
 
 == Knoten Seite
 
-Im link:../monitor/viewing-nodes-page.html["Knoten Seite"] werden Informationen über das gesamte Raster, jeden Standort im Raster und jeden Node an einem Standort angezeigt.
-
-Auf der Startseite Nodes werden die kombinierten Metriken für das gesamte Raster angezeigt. Um Informationen zu einem bestimmten Standort oder Node anzuzeigen, wählen Sie den Standort oder Node aus.
-
-image::../media/nodes_page.png[Knoten Hauptseite]
+Derlink:../monitor/viewing-nodes-page.html["Knoten Seite"] zeigt Informationen zum gesamten Raster, zu jedem Standort im Raster und zu jedem Knoten an einem Standort an.  Um Informationen zu einer bestimmten Site oder einem bestimmten Knoten anzuzeigen, wählen Sie die Site oder den Knoten aus.
 
 
 
@@ -84,8 +80,6 @@ image::../media/nodes_page.png[Knoten Hauptseite]
 link:../admin/managing-tenants.html["Mandanten werden gestartet"]Mit können Sie link:../tenant/index.html["Erstellen und überwachen Sie die Konten von Storage-Mandanten"]für Ihr StorageGRID-System. Sie müssen mindestens ein Mandantenkonto erstellen, um anzugeben, wer Objekte speichern und abrufen kann und welche Funktionen ihnen zur Verfügung stehen.
 
 Die Seite „Mandanten“ stellt zudem Nutzungsdetails für die einzelnen Mandanten bereit, einschließlich der Anzahl der verwendeten Storage-Ressourcen und der Anzahl der Objekte. Wenn Sie beim Erstellen des Mandanten eine Quote festlegen, sehen Sie, wie viel von dieser Quote verwendet wurde.
-
-image::../media/tenants_page.png[Mandantenmenü und Seite]
 
 
 
@@ -116,11 +110,12 @@ Das  ermöglicht Ihnen link:../ilm/index.html["Konfigurieren Sie die Regeln und 
 
 Zu den Netzwerkaufgaben gehören:
 
-* link:../admin/managing-high-availability-groups.html["Verwalten von Hochverfügbarkeitsgruppen"]
-* link:../admin/managing-load-balancing.html["Verwalten von Endpunkten des Load Balancer"]
-* link:../admin/configuring-s3-api-endpoint-domain-names.html["Konfigurieren von S3-Endpunkt-Domänennamen"]
-* link:../admin/managing-traffic-classification-policies.html["Verwalten von Richtlinien für die Verkehrsklassifizierung"]
-* link:../admin/configure-vlan-interfaces.html["Konfigurieren von VLAN-Schnittstellen"]
+* link:../admin/managing-high-availability-groups.html["Management von Hochverfügbarkeitsgruppen"]
+* link:../admin/managing-load-balancing.html["Verwalten von Load Balancer-Endpunkten"]
+* link:../admin/configuring-s3-api-endpoint-domain-names.html["Konfigurieren Sie die Domänennamen des S3-Endpunkts"]
+* link:../admin/managing-traffic-classification-policies.html["Verwalten von Richtlinien zur Verkehrsklassifizierung"]
+* link:../admin/configure-vlan-interfaces.html["Konfigurieren Sie die VLAN-Schnittstellen"]
+* link:../admin/enable-cross-origin-resource-sharing-for-management-interface.html["Aktivieren Sie StorageGRID CORS für eine Verwaltungsschnittstelle"]
 
 
 
@@ -130,10 +125,10 @@ Zu den Netzwerkaufgaben gehören:
 Zu den Sicherheitsaufgaben gehören:
 
 * link:../admin/using-storagegrid-security-certificates.html["Verwalten von Sicherheitszertifikaten"]
-* link:../admin/manage-firewall-controls.html["Management interner Firewall-Kontrollen"]
+* link:../admin/manage-firewall-controls.html["Interne Firewall-Kontrollen verwalten"]
 * link:../admin/kms-configuring.html["Konfigurieren von Verschlüsselungsmanagement-Servern"]
-* Konfigurieren von Sicherheitseinstellungen einschließlich link:../admin/manage-tls-ssh-policy.html["TLS- und SSH-Richtlinie"], link:../admin/changing-network-options-object-encryption.html["Optionen für die Netzwerk- und Objektsicherheit"]und link:../admin/changing-browser-session-timeout-interface.html["Sicherheitseinstellungen der Schnittstelle"].
-* Konfigurieren der Einstellungen für ein link:../admin/configuring-storage-proxy-settings.html["Storage-Proxy"] oder ein link:../admin/configuring-admin-proxy-settings.html["Admin-Proxy"]
+* Konfigurieren Sie Sicherheitseinstellungen, einschließlich derlink:../admin/manage-tls-ssh-policy.html["TLS- und SSH-Richtlinie"] ,link:../admin/changing-network-options-object-encryption.html["Optionen für die Netzwerk- und Objektsicherheit"] ,link:../admin/changing-browser-session-timeout-interface.html["Sicherheitseinstellungen der Schnittstelle"] , Undlink:../admin/manage-external-ssh-access.html["SSH-Zugriffsoptionen"]
+* Konfigurieren Sie Einstellungen für einelink:../admin/configuring-storage-proxy-settings.html["Storage-Proxy"] oder einlink:../admin/configuring-admin-proxy-settings.html["Admin-Proxy"]
 
 
 
@@ -142,11 +137,12 @@ Zu den Sicherheitsaufgaben gehören:
 
 Zu den Systemaufgaben gehören:
 
-* Verwenden link:../admin/grid-federation-overview.html["Grid-Verbund"] zum Klonen von Mandantenkontoinformationen und zum Replizieren von Objektdaten zwischen zwei StorageGRID Systemen.
-* Optional wird die  Option aktiviertlink:../admin/configuring-stored-object-compression.html["Gespeicherte Objekte komprimieren"].
-* link:../ilm/managing-objects-with-s3-object-lock.html["Verwalten der S3-Objektsperre"]
-* Allgemeines zu Storage-Optionen wie link:../admin/what-object-segmentation-is.html["Objektsegmentierung"] und link:../admin/what-storage-volume-watermarks-are.html["Wasserzeichen für Storage-Volumes"].
-* link:../ilm/manage-erasure-coding-profiles.html["Profile für das Erasure Coding managen"].
+* Verwendenlink:../admin/grid-federation-overview.html["Grid-Verbund"] zum Klonen von Mandantenkontoinformationen und Replizieren von Objektdaten zwischen zwei StorageGRID Systemen
+* Aktivieren Sie optional dielink:../admin/configuring-stored-object-compression.html["Gespeicherte Objekte komprimieren"] Option
+* Konfigurieren Sie optional dielink:../s3/consistency.html["Standardeinstellung für die Bucket-Konsistenz"]
+* link:../ilm/managing-objects-with-s3-object-lock.html["S3-Objektsperre verwalten"]
+* Verstehen Sie Speichereinstellungen wielink:../admin/what-storage-volume-watermarks-are.html["Wasserzeichen für Storage-Volumes"]
+* link:../ilm/manage-erasure-coding-profiles.html["Profile für das Erasure Coding managen"]
 
 
 
@@ -155,8 +151,8 @@ Zu den Systemaufgaben gehören:
 
 Zu den Überwachungsaufgaben gehören:
 
-* link:../monitor/configure-audit-messages.html["Konfigurieren von Überwachungsmeldungen und Protokollzielen"]
-* link:../monitor/using-snmp-monitoring.html["Verwendung von SNMP-Überwachung"]
+* link:../monitor/configure-log-management.html["Konfigurieren der Protokollverwaltung"]
+* link:../monitor/using-snmp-monitoring.html["Verwenden Sie SNMP-Überwachung"]
 
 
 
@@ -165,11 +161,11 @@ Zu den Überwachungsaufgaben gehören:
 
 Zu den Aufgaben der Zugriffssteuerung gehören:
 
-* link:../admin/managing-admin-groups.html["Verwalten von Admin-Gruppen"]
+* link:../admin/managing-admin-groups.html["Managen von Admin-Gruppen"]
 * link:../admin/managing-users.html["Verwalten von Administratorbenutzern"]
-* Ändern des link:../admin/changing-provisioning-passphrase.html["Provisionierungs-Passphrase"]oder link:../admin/change-node-console-password.html["Passwörter für die Node-Konsole"]
-* link:../admin/using-identity-federation.html["Identitätsföderation verwenden"]
-* link:../admin/configuring-sso.html["SSO wird konfiguriert"]
+* Ändern Sie dielink:../admin/changing-provisioning-passphrase.html["Provisionierungs-Passphrase"] oderlink:../admin/change-node-console-password.html["Passwörter für die Node-Konsole"]
+* link:../admin/using-identity-federation.html["Verwenden Sie den Identitätsverbund"]
+* link:../admin/how-sso-works.html["SSO konfigurieren"]
 
 
 
@@ -189,7 +185,7 @@ Zu den Wartungsarbeiten gehören:
 * link:../maintain/warnings-and-considerations-for-grid-node-recovery.html["Verfahren zur Recovery von Grid-Nodes"] Zum Ersetzen eines fehlerhaften Node und Wiederherstellen von Daten
 * link:../maintain/rename-grid-site-node-overview.html["Verfahren umbenennen"] Ändern der Anzeigenamen des Rasters, der Standorte und Knoten
 * link:../troubleshoot/verifying-object-integrity.html["Vorgänge zur Überprüfung der Objektexistenz"] Um das Vorhandensein von Objektdaten (wenn auch nicht die Richtigkeit) zu überprüfen
-* Durchführen eineslink:../maintain/rolling-reboot-procedure.html["Neustart wird durchgeführt"], um mehrere Grid-Nodes neu zu starten
+* Führen Sie einenlink:../maintain/rolling-reboot-procedure.html["Neustart wird durchgeführt"] um mehrere Grid-Knoten neu zu starten
 * link:../maintain/restoring-volume.html["Volume-Wiederherstellungsvorgänge"]
 
 
@@ -199,8 +195,8 @@ Zu den Wartungsarbeiten gehören:
 
 Sie können folgende Systemwartungsaufgaben ausführen:
 
-* link:../admin/viewing-storagegrid-license-information.html["Anzeigen von StorageGRID-Lizenzinformationen"] Oder link:../admin/updating-storagegrid-license-information.html["Lizenzinformationen werden aktualisiert"]
-* Generieren und Herunterladen der link:../maintain/downloading-recovery-package.html["Wiederherstellungspaket"]
+* link:../admin/viewing-storagegrid-license-information.html["Zeigen Sie StorageGRID Lizenzinformationen an"]oderlink:../admin/updating-storagegrid-license-information.html["Lizenzinformationen aktualisieren"]
+* Generieren und Herunterladen derlink:../maintain/downloading-recovery-package.html["Wiederherstellungspaket"]
 * StorageGRID Software-Updates, einschließlich Software-Upgrades und Hotfixes, sowie Updates für die SANtricity OS Software auf ausgewählten Appliances
 +
 ** link:../upgrade/index.html["Upgrade-Verfahren"]
@@ -217,9 +213,9 @@ Sie können folgende Systemwartungsaufgaben ausführen:
 
 Sie können folgende Aufgaben zur Netzwerkwartung ausführen:
 
-* link:../maintain/configuring-dns-servers.html["Konfigurieren von DNS-Servern"]
-* link:../maintain/updating-subnets-for-grid-network.html["Aktualisieren von Netznetzen"]
-* link:../maintain/configuring-ntp-servers.html["Verwalten von NTP-Servern"]
+* link:../maintain/configuring-dns-servers.html["Konfigurieren Sie DNS-Server"]
+* link:../maintain/updating-subnets-for-grid-network.html["Aktualisieren von Grid-Netzwerk-Subnetzen"]
+* link:../maintain/configuring-ntp-servers.html["Managen von NTP-Servern"]
 
 
 
@@ -236,7 +232,6 @@ Im Abschnitt Tools des Menüs Support können Sie folgende Aufgaben ausführen:
 
 * link:../admin/configure-autosupport-grid-manager.html["Konfigurieren Sie AutoSupport"]
 * link:../monitor/running-diagnostics.html["Führen Sie eine Diagnose aus"] Auf den aktuellen Zustand des Rasters
-* link:../monitor/viewing-grid-topology-tree.html["Greifen Sie auf die Baumstruktur der Grid-Topologie zu"] So zeigen Sie detaillierte Informationen zu Grid-Nodes, Services und Attributen an
 * link:../monitor/collecting-log-files-and-system-data.html["Erfassen von Protokolldateien und Systemdaten"]
 * link:../monitor/reviewing-support-metrics.html["Prüfen von Support-Kennzahlen"]
 +
@@ -247,17 +242,13 @@ NOTE: Die Tools, die über die Option *Metrics* zur Verfügung stehen, sind für
 
 
 
-=== Alarme (alt)
-
-Die Informationen zu älteren Alarmen wurden aus dieser Version der Dokumentation entfernt. Siehe https://docs.netapp.com/us-en/storagegrid-118/monitor/managing-alerts-and-alarms.html["Verwaltung von Alarmen und Alarmen (StorageGRID 11.8-Dokumentation)"^].
-
-
-
 === Sonstiges
 
 Im anderen Bereich des Menüs „Support“ haben Sie folgende Möglichkeiten:
 
+* Konfigurierenlink:../monitor/manage-io-prioritization.html["E/A-Priorisierung"]
+* Konfigurierenlink:../admin/configure-autosupport-grid-manager.html["AutoSupport -E-Mail-Setup (Legacy)"]
 * Managen link:../admin/manage-link-costs.html["Verbindungskosten"]
-* Einträge link:../admin/viewing-notification-status-and-queues.html["Netzwerk-Management-System (NMS)"] anzeigen
+* Anzeigen von Knotendienst-IDs
 * Managen link:../admin/what-storage-volume-watermarks-are.html["Storage-Wasserzeichen"]
 

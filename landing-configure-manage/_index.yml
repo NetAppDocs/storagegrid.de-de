@@ -30,7 +30,7 @@ indexpage:
     - title: Berechtigungen für Admin-Gruppen
       url: "../admin/admin-group-permissions.html"
     - title: Konfigurieren Sie Single Sign-On
-      url: "../admin/configuring-sso.html"
+      url: "../admin/how-sso-works.html"
   - title: Grid-Verbund verwenden
     links:
     - title: Was ist Grid Federation?

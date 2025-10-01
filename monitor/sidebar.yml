@@ -91,12 +91,12 @@ entries:
     url: "/monitor/deployment-and-maintenance-logs.html"
   - title: Etwa bycast.log
     url: "/monitor/about-bycast-log.html"
-- title: Konfigurieren Sie Überwachungsmeldungen und Protokollziele
+- title: Konfigurieren Sie die Protokollverwaltung und den externen Syslog-Server
   entries:
   - title: Überlegungen für externen Syslog-Server
     url: "/monitor/considerations-for-external-syslog-server.html"
-  - title: Konfigurieren von Audit-Meldungen und externem Syslog-Server
-    url: "/monitor/configure-audit-messages.html"
+  - title: Konfigurieren der Protokollverwaltung
+    url: "/monitor/configure-log-management.html"
 - title: Verwenden Sie SNMP-Überwachung
   entries:
   - title: SNMP-Überwachung
@@ -110,26 +110,20 @@ entries:
     url: "/monitor/access-snmp-mib.html"
 - title: Erfassung zusätzlicher StorageGRID-Daten
   entries:
-  - title: Verwenden Sie Diagramme und Diagramme
-    url: "/monitor/using-charts-and-reports.html"
-  - title: Verwenden Sie Textberichte
-    url: "/monitor/types-of-text-reports.html"
   - title: PUT- und GET-Performance werden überwacht
     url: "/monitor/monitoring-put-and-get-performance.html"
   - title: Überwachen von Objektverifizierungsvorgängen
     url: "/monitor/monitoring-object-verification-operations.html"
-  - title: Monitoring von Ereignissen
-    url: "/monitor/monitoring-events.html"
   - title: Audit-Meldungen prüfen
     url: "/monitor/reviewing-audit-messages.html"
   - title: Erfassen von Protokolldateien und Systemdaten
     url: "/monitor/collecting-log-files-and-system-data.html"
   - title: Starten Sie manuell ein AutoSupport-Paket
     url: "/monitor/manually-triggering-autosupport-message.html"
-  - title: Sehen Sie sich den Baum der Grid Topology an
-    url: "/monitor/viewing-grid-topology-tree.html"
   - title: Prüfen von Support-Kennzahlen
     url: "/monitor/reviewing-support-metrics.html"
+  - title: E/A-Priorisierung ändern
+    url: "/monitor/manage-io-prioritization.html"
   - title: Führen Sie eine Diagnose aus
     url: "/monitor/running-diagnostics.html"
   - title: Erstellen benutzerdefinierter Überwachungsanwendungen
