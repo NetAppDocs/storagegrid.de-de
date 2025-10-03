@@ -239,6 +239,19 @@ Interner Metadaten-Datenverkehr:
 
 
  a| 
+5353
+ a| 
+UDP
+ a| 
+Alle Nodes
+ a| 
+Alle Nodes
+ a| 
+Stellt den Multicast-DNS-Dienst (mDNS) bereit, der für Full-Grid-IP-Änderungen und für die Erkennung des primären Admin-Knotens während der Installation, Erweiterung und Wiederherstellung verwendet wird.
+
+
+
+ a| 
 7001
  a| 
 TCP
@@ -412,11 +425,11 @@ Interner Datenverkehr des Data Mover-Service für Cloud-Speicherpools.
  a| 
 TCP
  a| 
-Storage-Nodes
+Alle Nodes
  a| 
-Storage-Nodes
+Alle Nodes
  a| 
-Interner Traffic beim Chunk-Service für Erasure Coding.
+Interner Datenverkehr des Chunk-Dienstes für Erasure Coding und Replikation
 
 
 
@@ -438,9 +451,9 @@ Interner S3-Datenverkehr.
  a| 
 TCP
  a| 
-Alle Grid-Nodes
+Alle Nodes
  a| 
-Alle Storage-Nodes
+Storage-Nodes
  a| 
 Interner Datenverkehr im Zusammenhang mit dem LDR-Dienst.
 

@@ -244,9 +244,9 @@ Browser
  a| 
 Admin-Nodes
  a| 
-Wird von Webbrowsern und Management-API-Clients für den Zugriff auf Grid Manager und Tenant Manager verwendet.
+Wird von Webbrowsern und Management-API-Clients verwendet, um auf den Grid Manager und den Tenant Manager zuzugreifen.
 
-*Hinweis*: Wenn Sie die Grid Manager-Ports 443 oder 8443 schließen, verlieren alle Benutzer, die derzeit an einem blockierten Port angeschlossen sind, einschließlich Ihnen, den Zugriff auf den Grid Manager, es sei denn, ihre IP-Adresse wurde der Liste der privilegierten Adressen hinzugefügt. Informationen zum Konfigurieren privilegierter IP-Adressen finden Sie unterlink:../admin/configure-firewall-controls.html["Konfigurieren Sie die Firewall-Steuerelemente"].
+*Hinweis*: Wenn Sie die Grid Manager-Ports 443 oder 8443 schließen, verlieren alle Benutzer, die derzeit über einen blockierten Port verbunden sind (einschließlich Ihnen), den Zugriff auf Grid Manager, es sei denn, ihre IP-Adresse wurde zur Liste der privilegierten Adressen hinzugefügt. Siehelink:../admin/configure-firewall-controls.html["Konfigurieren Sie die Firewall-Steuerelemente"] um privilegierte IP-Adressen zu konfigurieren.
 
 
 
@@ -306,7 +306,7 @@ Alle Nodes
  a| 
 Alle Nodes
  a| 
-Stellt den Multicast-DNS-Service (mDNS) bereit, der für vollständige IP-Änderungen am Grid und für die Erkennung des primären Admin-Knotens während der Installation, Erweiterung und Wiederherstellung verwendet wird.
+Stellt den Multicast-DNS-Dienst (mDNS) bereit, der für Full-Grid-IP-Änderungen und für die Erkennung des primären Admin-Knotens während der Installation, Erweiterung und Wiederherstellung verwendet wird.
 
 
 
@@ -336,9 +336,26 @@ Browser
  a| 
 Admin-Nodes
  a| 
-Optional Wird von Webbrowsern und Management-API-Clients für den Zugriff auf den Grid Manager verwendet. Kann zur Trennung der Kommunikation zwischen Grid Manager und Tenant Manager verwendet werden.
+Optional. Wird von Webbrowsern und Management-API-Clients für den Zugriff auf den Grid Manager verwendet. Kann verwendet werden, um die Kommunikation zwischen Grid Manager und Tenant Manager zu trennen.
 
-*Hinweis*: Wenn Sie die Grid Manager-Ports 443 oder 8443 schließen, verlieren alle Benutzer, die derzeit an einem blockierten Port angeschlossen sind, einschließlich Ihnen, den Zugriff auf den Grid Manager, es sei denn, ihre IP-Adresse wurde der Liste der privilegierten Adressen hinzugefügt. Informationen zum Konfigurieren privilegierter IP-Adressen finden Sie unterlink:../admin/configure-firewall-controls.html["Konfigurieren Sie die Firewall-Steuerelemente"].
+*Hinweis*: Wenn Sie die Grid Manager-Ports 443 oder 8443 schließen, verlieren alle Benutzer, die derzeit über einen blockierten Port verbunden sind (einschließlich Ihnen), den Zugriff auf Grid Manager, es sei denn, ihre IP-Adresse wurde zur Liste der privilegierten Adressen hinzugefügt.  Siehelink:../admin/configure-firewall-controls.html["Konfigurieren Sie die Firewall-Steuerelemente"] um privilegierte IP-Adressen zu konfigurieren.
+
+
+
+ a| 
+8443
+ a| 
+TCP
+ a| 
+HTTPS
+ a| 
+Browser
+ a| 
+Appliances
+ a| 
+Wird von Webbrowsern und Verwaltungs-API-Clients verwendet, um auf das StorageGRID Appliance Installer zuzugreifen.
+
+*Hinweis*: Port 443 leitet für den StorageGRID Appliance Installer auf Port 8443 um.
 
 
 
@@ -400,7 +417,7 @@ Browser
  a| 
 Admin-Nodes
  a| 
-Optional Wird von Webbrowsern und Management-API-Clients für den Zugriff auf den Mandanten-Manager verwendet. Kann zur Trennung der Kommunikation zwischen Grid Manager und Tenant Manager verwendet werden.
+Optional. Wird von Webbrowsern und Verwaltungs-API-Clients für den Zugriff auf den Tenant Manager verwendet. Kann verwendet werden, um die Kommunikation zwischen Grid Manager und Tenant Manager zu trennen.
 
 
 
