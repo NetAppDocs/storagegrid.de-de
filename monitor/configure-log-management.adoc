@@ -557,7 +557,7 @@ Ein grünes Banner zeigt an, dass die Konfiguration gespeichert wurde.
 +
 Die Testergebnisse werden kontinuierlich auf der Seite angezeigt, bis Sie den Test beenden. Während der Test läuft, werden Ihre Audit-Meldungen weiterhin an Ihre zuvor konfigurierten Ziele gesendet.
 
-. Wenn Sie Fehler erhalten, korrigieren Sie diese und wählen Sie *Testmeldungen senden* erneut.
+. Wenn Sie während der Syslog-Serverkonfiguration oder zur Laufzeit Fehler erhalten, korrigieren Sie diese und wählen Sie erneut *Testnachrichten senden*.
 +
 Weitere  Informationen finden Sie unter, link:../troubleshoot/troubleshooting-syslog-server.html["Fehlerbehebung für einen externen Syslog-Server"] um Sie bei der Behebung von Fehlern zu unterstützen.
 
