@@ -11,7 +11,7 @@ summary: 'Sie können virtuelle LAN \ (VLAN\)-Schnittstellen auf Admin-Nodes und
 
 
 [role="lead"]
-Sie können virtuelle LAN-Schnittstellen (VLAN) auf Admin-Nodes und Gateway-Nodes erstellen und diese in HA-Gruppen und Load Balancer-Endpunkten verwenden, um den Datenverkehr für Sicherheit, Flexibilität und Performance zu isolieren und zu partitionieren.
+Erstellen Sie virtuelle LAN-Schnittstellen (VLAN) auf Admin-Knoten und Gateway-Knoten und verwenden Sie sie in HA-Gruppen und Load Balancer-Endpunkten, um den Datenverkehr aus Sicherheits-, Flexibilitäts- und Leistungsgründen zu isolieren und zu partitionieren. Die ausgewählten Knoten in der HA-Gruppe können die VLAN-Schnittstellen verwenden, um bis zu 10 virtuelle IP-Adressen gemeinsam zu nutzen, sodass beim Ausfall eines Knotens ein anderer Knoten den Datenverkehr zu und von den virtuellen IP-Adressen übernimmt.
 
 
 
