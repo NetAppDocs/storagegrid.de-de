@@ -70,7 +70,7 @@ Wenn das verbundene Benutzerkonto nicht funktioniert, melden Sie sich beim Grid 
 ** Wenn der lokale Benutzer sich nicht anmelden kann und Sie sicher sind, dass die Anmeldeinformationen korrekt sind, fahren Sie mit dem nächsten Schritt fort.
 
 
-. Verwenden Sie Secure Shell (SSH), um sich beim Admin-Knoten anzumelden:
+. Verwenden Sie Secure Shell (SSH), um sich am Admin-Knoten anzumelden:
 +
 .. Geben Sie den folgenden Befehl ein: `ssh admin@Admin_Node_IP`
 .. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.

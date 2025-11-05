@@ -249,6 +249,8 @@ Alle Nodes
  a| 
 Stellt den Multicast-DNS-Dienst (mDNS) bereit, der für Full-Grid-IP-Änderungen und für die Erkennung des primären Admin-Knotens während der Installation, Erweiterung und Wiederherstellung verwendet wird.
 
+*Hinweis*: Die Konfiguration dieses Ports ist optional.
+
 
 
  a| 

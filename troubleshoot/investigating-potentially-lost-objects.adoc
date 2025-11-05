@@ -2,7 +2,7 @@
 permalink: troubleshoot/investigating-potentially-lost-objects.html 
 sidebar: sidebar 
 keywords: lost objects, investigating, objects 
-summary: Wenn die Warnung „Möglicherweise verlorene Objekte“ ausgelöst wird, müssen Sie dies sofort untersuchen.  Sammeln Sie Informationen zu den betroffenen Objekten und wenden Sie sich an den technischen Support. 
+summary: Wenn die Warnung „Objekte möglicherweise verloren“ ausgelöst wird, müssen Sie dies unverzüglich untersuchen. Sammeln Sie Informationen zu den betroffenen Objekten und wenden Sie sich an den technischen Support. 
 ---
 = Untersuchen Sie möglicherweise verlorene Objekte
 :allow-uri-read: 

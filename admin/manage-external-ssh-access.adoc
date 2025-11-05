@@ -28,6 +28,10 @@ Um die Systemsicherheit zu erhöhen, wird der externe SSH-Zugriff standardmäßi
 +
 .. Aktivieren Sie das Kontrollkästchen, um den Zugriff zu blockieren (Standard).
 .. Deaktivieren Sie das Kontrollkästchen, um den Zugriff zuzulassen.
++
+
+NOTE: Erfordert Zugriff auf Port 22 zwischen dem Service-Laptop und allen anderen Grid-Knoten.  Entfernen Sie den Zugriff auf Port 22, sobald Sie die Wartungsarbeiten abgeschlossen haben.
+
 
 
 . Wählen Sie *Speichern*.
