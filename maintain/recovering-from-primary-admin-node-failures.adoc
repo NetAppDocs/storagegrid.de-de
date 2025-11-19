@@ -16,8 +16,6 @@ Sie müssen einen bestimmten Satz von Aufgaben ausführen, um nach einem Ausfall
 
 CAUTION: Sie müssen einen fehlerhaften primären Admin-Node umgehend reparieren oder ersetzen, da das Grid möglicherweise nicht mehr in der Lage ist, neue Objekte aufzunehmen. Der genaue Zeitraum hängt von der Geschwindigkeit der Objekterfassung ab: Wenn Sie eine genauere Bewertung des Zeitrahmens für Ihr Grid benötigen, wenden Sie sich an den technischen Support.
 
-Der Configuration Management Node (CMN)-Dienst auf dem primären Admin-Node ist für die Ausgabe von Objektkennungen für das Grid verantwortlich. Diese Kennungen werden Objekten bei ihrer Aufnahme zugewiesen. Neue Objekte können nur aufgenommen werden, wenn Kennungen verfügbar sind. Die Objektaufnahme kann fortgesetzt werden, während das CMN nicht verfügbar ist, da die Identifikatoren ungefähr einen Monat im Grid zwischengespeichert werden. Nachdem jedoch die gecachten Kennungen erschöpft sind, können keine neuen Objekte hinzugefügt werden.
-
 Führen Sie diese allgemeinen Schritte aus, um einen primären Admin-Node wiederherzustellen:
 
 . link:copying-audit-logs-from-failed-primary-admin-node.html["Prüfprotokolle vom fehlgeschlagenen primären Admin-Node kopieren"]
