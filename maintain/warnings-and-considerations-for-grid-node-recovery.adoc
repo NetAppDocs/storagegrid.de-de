@@ -46,7 +46,7 @@ Bei der Wiederherstellung der Grid-Nodes werden alle folgenden Bedingungen vorau
 
 == Reihenfolge der Knotenwiederherstellung, wenn ein Server, der mehr als einen Grid-Knoten hostet, ausfällt
 
-Wenn ein Server ausfällt, auf dem mehr als ein Grid-Knoten gehostet wird, können Sie die Knoten in beliebiger Reihenfolge wiederherstellen. Wenn der ausgefallene Server jedoch den primären Admin-Knoten hostet und keine weiteren Admin-Knoten vorhanden sind, muss zuerst der primäre Admin-Knoten wiederhergestellt werden.
+Wenn ein Server ausfällt, auf dem mehr als ein Grid-Knoten gehostet wird, können Sie die Knoten in beliebiger Reihenfolge wiederherstellen. Wenn der ausgefallene Server jedoch den primären Admin-Knoten hostet, müssen Sie diesen Knoten zuerst wiederherstellen.
 
 
 
