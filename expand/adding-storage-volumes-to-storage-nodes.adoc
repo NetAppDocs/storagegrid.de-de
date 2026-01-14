@@ -1,10 +1,10 @@
 ---
 permalink: expand/adding-storage-volumes-to-storage-nodes.html 
 sidebar: sidebar 
-keywords: storage volumes, expand, expansion, add, storage nodes, adding storage capacity 
+keywords: storage volumes, expand, expansion, add, storage nodes, adding storage capacity, StorageGRID 
 summary: Sie können die Speicherkapazität von Speicherknoten erweitern, die unter der maximal unterstützten Anzahl von Volumes liegen.  Möglicherweise müssen Sie Speichervolumes zu mehr als einem Speicherknoten hinzufügen, um die ILM-Anforderungen für replizierte oder löschcodierte Kopien zu erfüllen. 
 ---
-= Fügen Sie Storage-Volumes zu Storage-Nodes hinzu
+= Fügen Sie Ihrem StorageGRID System Speichervolumes hinzu.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

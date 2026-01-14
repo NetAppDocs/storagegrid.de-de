@@ -1,10 +1,10 @@
 ---
 permalink: expand/adding-grid-nodes-to-existing-site-or-adding-new-site.html 
 sidebar: sidebar 
-keywords: grid node, add node, add site, expand, expansion 
+keywords: grid node, add node, add site, expand, expansion, StorageGRID 
 summary: Gehen Sie wie folgt vor, um bestehenden Standorten Grid-Nodes hinzuzufügen oder einen neuen Standort hinzuzufügen. Sie können jeweils nur einen Erweiterungstyp ausführen. 
 ---
-= Grid-Nodes zu vorhandenem Standort hinzufügen oder neuen Standort hinzufügen
+= Workflow-Zusammenfassung zum Hinzufügen von Grid-Knoten oder neuen Standorten zu StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -24,7 +24,7 @@ NOTE: Sie können eine Erweiterung nicht starten, während noch ein weiteres Ver
 
 
 .Schritte
-. link:updating-subnets-for-grid-network.html["Subnetze für Grid Network aktualisieren"].
-. link:deploying-new-grid-nodes.html["Neue Grid-Nodes implementieren"].
-. link:performing-expansion.html["Erweiterung durchführen"].
+. link:updating-subnets-for-grid-network.html["Aktualisieren Sie die Subnetze für das Grid-Netzwerk."]Die
+. link:deploying-new-grid-nodes.html["Die neuen Grid-Knoten bereitstellen"]Die
+. link:performing-expansion.html["Führen Sie die Erweiterung durch"].
 

@@ -1,38 +1,36 @@
 ---
 section: expand
-title: Erweitern Sie ein Raster
+title: Raster erweitern
 url: "/landing-expand/index.html"
 entries:
-- title: Erweiterungsarten
+- title: Erfahren Sie mehr über die Expansion
   pdf-filename: Erweitern Sie Ihr StorageGRID System
   url: "/expand/index.html"
-- title: Planen Sie eine Erweiterung von StorageGRID
+- title: Expansionsplanung
   entries:
-  - title: Erweitern Sie Ihre Storage-Kapazität
-    entries:
-    - title: 'Richtlinien: Hinzufügen von Objektkapazität'
-      url: "/expand/guidelines-for-adding-object-capacity.html"
-    - title: Storage-Kapazitäten für replizierte Objekte hinzufügen
-      url: "/expand/adding-storage-capacity-for-replicated-objects.html"
-    - title: Erweitern Sie Storage-Kapazität für Objekte, die nach dem Erasure-Coding-Verfahren
-        codiert wurden
-      url: "/expand/adding-storage-capacity-for-erasure-coded-objects.html"
-    - title: Überlegungen zur Lastverteilung bei Daten, die mit Erasure Coding versehen
-        sind
-      url: "/expand/considerations-for-rebalancing-erasure-coded-data.html"
-  - title: Hinzufügen von Metadatenkapazität
+  - title: Expansionsplanung für replizierte Daten
+    url: "/expand/adding-storage-capacity-for-replicated-objects.html"
+  - title: Expansionsplanung für löschcodierte Daten
+    url: "/expand/adding-storage-capacity-for-erasure-coded-objects.html"
+  - title: Erfahren Sie mehr über die Neuausrichtung von Erasure Codes nach der Erweiterung.
+    url: "/expand/considerations-for-rebalancing-erasure-coded-data.html"
+- title: Erweiterungsrichtlinien
+  entries:
+  - title: Richtlinien zum Hinzufügen von Objektkapazität
+    url: "/expand/guidelines-for-adding-object-capacity.html"
+  - title: Richtlinien für die Erweiterung der Metadatenkapazität
     url: "/expand/adding-metadata-capacity.html"
-  - title: Redundanz oder neue Funktionen hinzufügen
+  - title: Richtlinien zum Hinzufügen von Rasterknoten
     url: "/expand/adding-grid-nodes-to-add-capabilities.html"
-  - title: Neuen Standort hinzufügen
+  - title: Richtlinien zum Hinzufügen einer neuen Website
     url: "/expand/adding-new-site.html"
-- title: Sammeln Sie die erforderlichen Materialien
+- title: Bereiten Sie sich auf die Expansion vor
   url: "/expand/gather-required-materials.html"
 - title: Grid-Nodes oder Standort hinzufügen
   entries:
-  - title: Grid-Nodes zu vorhandenem Standort hinzufügen oder neuen Standort hinzufügen
+  - title: Workflow-Zusammenfassung
     url: "/expand/adding-grid-nodes-to-existing-site-or-adding-new-site.html"
-  - title: Subnetze für Grid Network aktualisieren
+  - title: Fügen Sie dem Grid-Netzwerk Subnetze hinzu oder aktualisieren Sie diese.
     url: "/expand/updating-subnets-for-grid-network.html"
   - title: Neue Grid-Nodes implementieren
     url: "/expand/deploying-new-grid-nodes.html"
@@ -42,15 +40,15 @@ entries:
   entries:
   - title: Fügen Sie Storage-Volumes zu Storage-Nodes hinzu
     url: "/expand/adding-storage-volumes-to-storage-nodes.html"
-  - title: 'VMware: Hinzufügen von Storage Volumes zum Storage-Node'
+  - title: Fügen Sie Speichervolumes für VMware hinzu.
     url: "/expand/vmware-adding-storage-volumes-to-storage-node.html"
-  - title: 'Linux: Hinzufügen von Direct-Attached oder SAN-Volumes zu Storage Node'
+  - title: Fügen Sie direkt angeschlossene oder SAN-Volumes für Linux hinzu.
     url: "/expand/linux-adding-direct-attached-or-san-volumes-to-storage-node.html"
 - title: Erweitertes System konfigurieren
   entries:
-  - title: Konfigurationsschritte
+  - title: Konfigurieren Sie neu hinzugefügte Knoten und Standorte
     url: "/expand/configuring-expanded-storagegrid-system.html"
-  - title: Vergewissern Sie sich, dass der Speicherknoten aktiv ist
+  - title: Überprüfen Sie, ob die Speicherknoten aktiv sind.
     url: "/expand/verifying-storage-node-is-active.html"
   - title: Admin-Knoten-Datenbank kopieren
     url: "/expand/copying-admin-node-database.html"
@@ -58,8 +56,7 @@ entries:
     url: "/expand/copying-prometheus-metrics.html"
   - title: Prüfprotokolle kopieren
     url: "/expand/copying-audit-logs.html"
-  - title: Ausgleich von Daten, die im Erasure Coding ausgeführt werden, nach dem
-      Hinzufügen von Storage-Nodes
+  - title: Daten mit Löschcodierung neu ausbalancieren
     url: "/expand/rebalancing-erasure-coded-data-after-adding-storage-nodes.html"
-- title: Fehler bei Erweiterung beheben
+- title: Behebung von Erweiterungsfehlern
   url: "/expand/contacting-technical-support.html"

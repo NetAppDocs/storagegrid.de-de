@@ -1,10 +1,10 @@
 ---
 permalink: expand/vmware-adding-storage-volumes-to-storage-node.html 
 sidebar: sidebar 
-keywords: expand, expansion, storage node, add storage volumes, VMware 
+keywords: expand, expansion, storage node, add storage volumes, VMware, StorageGRID 
 summary: Wenn ein Speicherknoten weniger als 16 Speichervolumes umfasst, können Sie seine Kapazität erhöhen, indem Sie mithilfe von VMware vSphere Volumes hinzufügen. 
 ---
-= Speichervolumes zu VMware Storage Nodes hinzufügen
+= Fügen Sie Speichervolumes zu VMware-Speicherknoten in StorageGRID hinzu.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

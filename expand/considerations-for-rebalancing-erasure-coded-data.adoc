@@ -1,10 +1,10 @@
 ---
 permalink: expand/considerations-for-rebalancing-erasure-coded-data.html 
 sidebar: sidebar 
-keywords: erasure coding, rebalance, ec rebalance, site rebalance 
+keywords: erasure coding, rebalance, ec rebalance, site rebalance, StorageGRID 
 summary: Wenn Sie eine Erweiterung zum Hinzufügen von Storage Nodes durchführen und ILM-Regeln zum Löschen von Code-Daten verwenden, müssen Sie möglicherweise das EC-Ausgleichs-Verfahren durchführen, wenn Sie nicht genügend Storage Nodes für das von Ihnen verwendete Erasure-Coding-Schema hinzufügen können. 
 ---
-= Überlegungen zur Lastverteilung bei Daten, die mit Erasure Coding versehen sind
+= Erfahren Sie mehr über EC-Rebalancing nach der Erweiterung in StorageGRID.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

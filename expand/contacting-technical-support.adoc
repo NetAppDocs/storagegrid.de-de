@@ -1,10 +1,10 @@
 ---
 permalink: expand/contacting-technical-support.html 
 sidebar: sidebar 
-keywords: troubleshoot expansion, contact technical support 
+keywords: troubleshoot expansion, contact technical support, StorageGRID 
 summary: Wenn während der Rastererweiterung Fehler auftreten, die nicht behoben werden können, oder wenn eine Rasteraufgabe fehlschlägt, erfassen Sie die Protokolldateien, und wenden Sie sich an den technischen Support. 
 ---
-= Fehler bei Erweiterung beheben
+= Beheben von Erweiterungsfehlern in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

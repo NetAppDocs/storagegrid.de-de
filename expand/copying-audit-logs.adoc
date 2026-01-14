@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: expand/copying-audit-logs.html 
-keywords: copy audit log, Admin Node expansion, 
+keywords: copy audit log, Admin Node expansion, StorageGRID 
 summary: Wenn Sie über ein Erweiterungsverfahren einen neuen Admin-Knoten hinzufügen, protokolliert sein AMS-Dienst nur Ereignisse und Aktionen, die nach dem Beitritt zum System auftreten.  Bei Bedarf können Sie Prüfprotokolle von einem zuvor installierten Admin-Knoten auf den neuen Erweiterungs-Admin-Knoten kopieren, sodass dieser mit dem Rest des StorageGRID -Systems synchronisiert ist. 
 ---
-= Prüfprotokolle kopieren
+= Kopieren Sie die Audit-Protokolle auf neue Admin-Knoten in StorageGRID.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

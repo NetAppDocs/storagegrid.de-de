@@ -1,10 +1,10 @@
 ---
 permalink: expand/rebalancing-erasure-coded-data-after-adding-storage-nodes.html 
 sidebar: sidebar 
-keywords: erasure coding, EC, rebalancing, site rebalance procedure 
+keywords: erasure coding, EC, rebalancing, site rebalance procedure, StorageGRID 
 summary: Nachdem Sie Storage Nodes hinzugefügt haben, können Sie mithilfe des Ausgleichs bei Erasure Coding Fragmente zwischen vorhandenen und neuen Storage Nodes verteilen, die mit Erasure Coding codiert wurden. 
 ---
-= Ausgleich von Daten, die im Erasure Coding ausgeführt werden, nach dem Hinzufügen von Storage-Nodes
+= Nach dem Hinzufügen von Knoten zu Ihrem StorageGRID -System sollten Sie die mit Erasure-Codierung versehenen Daten neu ausbalancieren.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

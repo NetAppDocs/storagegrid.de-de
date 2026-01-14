@@ -1,10 +1,10 @@
 ---
 permalink: expand/adding-storage-capacity-for-erasure-coded-objects.html 
 sidebar: sidebar 
-keywords: erasure coding, capacity, storage nodes, ec, expand, expansion 
+keywords: erasure coding, capacity, storage nodes, ec, expand, expansion, StorageGRID 
 summary: Wenn Ihre ILM-Richtlinie eine Regel zur Erstellung von Kopien zur Fehlerkorrektur enthält, müssen Sie planen, wo neuer Storage hinzugefügt werden muss und wann neuer Storage hinzugefügt werden muss. Die Menge des zusätzlichen Speichers und der Zeitpunkt der Hinzufügung können die nutzbare Speicherkapazität des Netzes beeinflussen. 
 ---
-= Erweitern Sie Storage-Kapazität für Objekte, die nach dem Erasure-Coding-Verfahren codiert wurden
+= Erweiterungsplanung für löschcodierte (EC) Daten in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

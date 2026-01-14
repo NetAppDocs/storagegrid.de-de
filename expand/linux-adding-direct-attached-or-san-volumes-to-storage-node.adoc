@@ -1,12 +1,11 @@
 ---
 permalink: expand/linux-adding-direct-attached-or-san-volumes-to-storage-node.html 
 sidebar: sidebar 
-keywords: expansion, Linux, add storage volumes 
+keywords: expansion, Linux, add storage volumes, StorageGRID 
 summary: Wenn ein Speicherknoten weniger als 48 Speicher-Volumes umfasst, können Sie seine Kapazität erhöhen, indem Sie neue Block-Speichergeräte hinzufügen, sie für die Linux-Hosts sichtbar machen und die neuen Blockgeräte-Zuordnungen zur StorageGRID-Konfigurationsdatei hinzufügen, die für den Speicherknoten verwendet wurde. 
 ---
-= Linux: Hinzufügen von Direct-Attached oder SAN-Volumes zu Storage Node
+= Fügen Sie direkt angeschlossene oder SAN-Volumes zu Linux-Speicherknoten in StorageGRID hinzu.
 :allow-uri-read: 
-:icons: font
 :imagesdir: ../media/
 
 

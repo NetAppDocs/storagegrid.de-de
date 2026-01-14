@@ -1,17 +1,17 @@
 ---
 permalink: expand/index.html 
 sidebar: sidebar 
-keywords: expand grid 
+keywords: expand grid, StorageGRID 
 summary: Sie können die Kapazität oder Funktionen Ihres StorageGRID Systems ohne Unterbrechung des Systembetriebs erweitern. 
 ---
-= Erweiterungsarten
+= Erfahren Sie mehr über die Erweiterung Ihres StorageGRID Systems.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie können die Kapazität oder Funktionen Ihres StorageGRID Systems ohne Unterbrechung des Systembetriebs erweitern.
+Erfahren Sie, wie Sie Ihr StorageGRID System erweitern können, um die Kapazität oder die Funktionen zu erhöhen, ohne den Betrieb zu unterbrechen. Sie können Speichervolumes zu bestehenden Speicherknoten hinzufügen, neue Grid-Knoten zu einem bestehenden Standort hinzufügen oder einen neuen Standort hinzufügen.
 
 Bevor Sie einen Grid-Knoten erweitern, müssen Sie bestätigen, dass keine Datenreparaturjobs aktiv sind.  Wenn Reparaturen fehlgeschlagen sind, müssen Sie diese neu starten und abschließen lassen, bevor Sie die Außerbetriebnahme oder Erweiterung durchführen. Weitere Informationen finden Sie unter link:../maintain/checking-data-repair-jobs.html["Prüfen Sie die Reparatur von Daten"] .
 
