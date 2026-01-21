@@ -1,10 +1,10 @@
 ---
 permalink: harden/hardening-guideline-for-server-certificates.html 
 sidebar: sidebar 
-keywords: Hardening guidelines, certificates 
+keywords: StorageGRID, hardening guidelines, certificates 
 summary: Sie sollten die während der Installation erstellten Standardzertifikate ersetzen und die entsprechende Sicherheitsrichtlinie für TLS- und SSH-Verbindungen auswählen. 
 ---
-= Härtungsrichtlinien für TLS und SSH
+= Härtungsrichtlinien für TLS und SSH in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

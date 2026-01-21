@@ -1,7 +1,7 @@
 ---
 permalink: harden/hardening-guidelines-for-storagegrid-networks.html 
 sidebar: sidebar 
-keywords: hardening guidelines, networks, networking, security 
+keywords: StorageGRID, hardening guidelines, networks, networking, security 
 summary: Das StorageGRID System unterstützt bis zu drei Netzwerkschnittstellen pro Grid Node. So können Sie das Netzwerk für jeden einzelnen Grid Node so konfigurieren, dass er Ihren Sicherheits- und Zugriffsanforderungen entspricht. 
 ---
 = Hardening Guidelines for StorageGRID Networks

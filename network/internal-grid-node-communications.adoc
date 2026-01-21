@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, network port, internal communications, ports, TCP, UDP, grid communications, port 
 summary: 'Die interne StorageGRID-Firewall erlaubt nur eingehende Verbindungen zu bestimmten Ports im Grid-Netzwerk, mit Ausnahme der Ports 22, 80, 123 und 443 \ (siehe Informationen zur externen Kommunikation\). Verbindungen werden auch an Ports akzeptiert, die durch Load Balancer-Endpunkte definiert wurden.' 
 ---
-= Interne Kommunikation mit Grid-Nodes
+= Interne Grid-Knotenkommunikation für StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

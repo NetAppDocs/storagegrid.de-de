@@ -1,9 +1,9 @@
 ---
 section: harden
-title: Systemhärtung
+title: Systemhärtung für StorageGRID
 entries:
-- title: Allgemeine Überlegungen
-  pdf-filename: StorageGRID Systemhärtung
+- title: Erfahren Sie mehr über Systemhärtung
+  pdf-filename: Systemhärtung für StorageGRID
   url: "/harden/index.html"
 - title: Richtlinien für die Härtung von Upgrades
   url: "/harden/hardening-guidelines-for-software-upgrades.html"
@@ -13,5 +13,5 @@ entries:
   url: "/harden/hardening-guidelines-for-storagegrid-nodes.html"
 - title: Härtungsrichtlinien für TLS und SSH
   url: "/harden/hardening-guideline-for-server-certificates.html"
-- title: Andere Hinweise zur Verhärtung
+- title: Härtungsrichtlinien für Protokolle und Passwörter
   url: "/harden/other-hardening-guidelines.html"

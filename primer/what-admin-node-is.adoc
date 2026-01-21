@@ -1,10 +1,10 @@
 ---
 permalink: primer/what-admin-node-is.html 
 sidebar: sidebar 
-keywords: admin nodes 
+keywords: StorageGRID, admin nodes 
 summary: Admin Nodes stellen Managementservices wie Systemkonfiguration, Monitoring und Protokollierung bereit. Admin-Nodes können auch zum Lastausgleich für S3-Client-Traffic verwendet werden. Jedes Grid muss einen primären Admin-Node haben und kann eine beliebige Anzahl nicht primärer Admin-Nodes für Redundanz aufweisen. 
 ---
-= Was ist ein Admin-Node?
+= Was ist ein StorageGRID Admin Node?
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

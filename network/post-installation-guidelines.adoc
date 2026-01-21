@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: networking after installation, dhcp networking 
 summary: Befolgen Sie nach Abschluss der Implementierung und Konfiguration des Grid-Node die folgenden Richtlinien für DHCP-Adressen und Änderungen der Netzwerkkonfiguration. 
 ---
-= Richtlinien nach der Installation
+= Richtlinien nach der Installation für StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

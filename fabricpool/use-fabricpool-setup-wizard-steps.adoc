@@ -1,10 +1,10 @@
 ---
 permalink: fabricpool/use-fabricpool-setup-wizard-steps.html 
 sidebar: sidebar 
-keywords: fabricPool, FabricPool setup wizard, ontap system manager 
+keywords: fabricPool, StorageGRID, FabricPool setup wizard, ontap system manager 
 summary: Mit dem FabricPool-Einrichtungsassistenten können Sie StorageGRID als Objekt-Storage-System für eine FabricPool Cloud-Tier konfigurieren. 
 ---
-= Öffnen und Abschließen des FabricPool Setup-Assistenten
+= Greifen Sie auf den StorageGRID FabricPool Einrichtungsassistenten zu und schließen Sie ihn ab
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

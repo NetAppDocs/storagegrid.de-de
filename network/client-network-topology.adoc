@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: client network topology 
 summary: 'Ein Client-Netzwerk ist optional. Durch die Verwendung eines Client-Netzwerks kann der Client-Netzwerk-Traffic \ (z.B. S3\) vom internen Grid-Datenverkehr getrennt werden, wodurch die Sicherheit der Grid-Netzwerke gewährleistet wird. Wenn das Admin-Netzwerk nicht konfiguriert ist, kann der administrative Datenverkehr entweder vom Client oder vom Grid-Netzwerk verarbeitet werden.' 
 ---
-= Client-Netzwerktopologie
+= Client-Netzwerktopologie für StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

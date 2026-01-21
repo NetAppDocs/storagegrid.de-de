@@ -1,10 +1,10 @@
 ---
 permalink: fabricpool/creating-load-balancer-endpoint-for-fabricpool.html 
 sidebar: sidebar 
-keywords: fabricPool, load balancer, endpoint, load balancing, create, creating, certificate 
+keywords: fabricPool, StorageGRID, load balancer, endpoint, load balancing, create, creating, certificate 
 summary: StorageGRID verwendet einen Load Balancer zum Managen des Workloads von Client-Applikationen wie FabricPool. Load Balancing maximiert Geschwindigkeit und Verbindungskapazität über mehrere Storage Nodes hinweg. 
 ---
-= Erstellen eines Load Balancer-Endpunkts für FabricPool
+= Erstellen Sie einen Load-Balancer-Endpunkt für FabricPool in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

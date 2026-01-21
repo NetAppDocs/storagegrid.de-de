@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: network-specific requirements, network specific requirements, network requirements 
 summary: Befolgen Sie die Anforderungen für jeden StorageGRID Netzwerktyp. 
 ---
-= Netzwerkspezifische Anforderungen
+= Netzwerkspezifische Anforderungen für StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

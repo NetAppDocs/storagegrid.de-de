@@ -2,8 +2,8 @@
 section: network
 title: Netzwerkrichtlinien
 entries:
-- title: StorageGRID Networking
-  pdf-filename: StorageGRID Netzwerkrichtlinien
+- title: Netzwerkrichtlinien
+  pdf-filename: Netzwerkrichtlinien für StorageGRID
   url: "/network/index.html"
 - title: StorageGRID-Netzwerktypen
   url: "/network/storagegrid-network-types.html"
@@ -27,7 +27,7 @@ entries:
     url: "/network/linux-deployments.html"
   - title: Networking und Ports für Plattform-Services und Cloud Storage-Pools
     url: "/network/networking-and-ports-for-platform-services-and-cloud-storage-pools.html"
-  - title: Appliance-Nodes
+  - title: Netzwerkkonfiguration der Appliance
     url: "/network/appliance-nodes.html"
 - title: Netzwerkinstallation und -Bereitstellung
   url: "/network/network-installation-and-provisioning.html"

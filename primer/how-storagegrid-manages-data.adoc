@@ -1,10 +1,10 @@
 ---
 permalink: primer/how-storagegrid-manages-data.html 
 sidebar: sidebar 
-keywords: how storagegrid manages data, what an object is, how object data is protected 
+keywords: StorageGRID, how storagegrid manages data, what an object is, how object data is protected 
 summary: Bei Objekt-Storage ist die Storage-Einheit ein Objekt und nicht eine Datei oder ein Block. Im Gegensatz zur Baumstruktur eines File-Systems oder Block-Storage werden die Daten im Objekt-Storage in einem flachen, unstrukturierten Layout organisiert. 
 ---
-= Was ist ein Objekt
+= Was ist ein StorageGRID Objekt
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

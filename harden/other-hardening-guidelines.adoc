@@ -1,10 +1,10 @@
 ---
 permalink: harden/other-hardening-guidelines.html 
 sidebar: sidebar 
-keywords: Hardening guidelines, security 
+keywords: StorageGRID, hardening guidelines, security 
 summary: Beachten Sie zusätzlich die Hinweise zur Verhärtung von StorageGRID-Netzwerken und -Knoten die Härtungsrichtlinien für andere Bereiche des StorageGRID-Systems. 
 ---
-= Andere Hinweise zur Verhärtung
+= Härtungsrichtlinien für Protokolle, Passwörter und Prüfmeldungen in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

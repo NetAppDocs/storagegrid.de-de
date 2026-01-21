@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, network, networking, ethernet, subnet, routing 
 summary: Mithilfe dieser Richtlinien lernen Sie die StorageGRID Architektur und Netzwerktopologien kennen und erfahren Sie mehr über die Anforderungen für Netzwerkkonfiguration und Provisionierung. 
 ---
-= Netzwerkrichtlinien
+= Netzwerkrichtlinien für StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

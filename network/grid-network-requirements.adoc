@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: grid network requirements 
 summary: Befolgen Sie die folgenden Anforderungen und Richtlinien für das Grid-Netzwerk. 
 ---
-= Anforderungen an das Grid-Netzwerk
+= Grid-Netzwerk-Anforderungen für StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

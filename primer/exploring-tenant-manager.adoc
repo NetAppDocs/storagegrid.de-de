@@ -1,10 +1,10 @@
 ---
 permalink: primer/exploring-tenant-manager.html 
 sidebar: sidebar 
-keywords: what is the tenant manager, tenant manager dashboard 
+keywords: StorageGRID, what is the tenant manager, tenant manager dashboard 
 summary: Der MandantenManager ist die browserbasierte grafische Schnittstelle, die Mandantenbenutzer darauf zugreifen, um ihre Storage-Konten zu konfigurieren, zu managen und zu überwachen. 
 ---
-= Entdecken Sie den Tenant Manager
+= Erkunden Sie den StorageGRID Tenant Manager
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

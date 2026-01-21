@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: networking for appliance, port bond mode 
 summary: Die Netzwerk-Ports auf StorageGRID Applikationen können so konfiguriert werden, dass die Port Bond-Modi verwendet werden, die den Anforderungen an Durchsatz, Redundanz und Failover entsprechen. 
 ---
-= Appliance-Nodes
+= Netzwerkkonfiguration für StorageGRID Appliance-Nodes
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

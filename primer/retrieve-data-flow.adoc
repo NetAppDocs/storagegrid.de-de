@@ -1,10 +1,10 @@
 ---
 permalink: primer/retrieve-data-flow.html 
 sidebar: sidebar 
-keywords: object data, retrieve 
+keywords: StorageGRID, object data, retrieve 
 summary: Ein Abrufvorgang besteht aus einem definierten Datenfluss zwischen dem StorageGRID-System und dem Client. Das System verwendet Attribute, um den Abruf des Objekts von einem Storage Node oder, falls erforderlich, einem Cloud-Storage-Pool nachzuverfolgen. 
 ---
-= Abrufen des Datenflusses
+= Wie StorageGRID den Objektabruf handhabt
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

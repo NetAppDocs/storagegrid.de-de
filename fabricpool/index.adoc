@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to configure storagegrid for fabricpool, using fabricpool with storagegrid, 
 summary: Wenn Sie NetApp ONTAP Software verwenden, können Sie NetApp FabricPool verwenden, um inaktive Daten auf ein NetApp StorageGRID Objekt-Storage-System zu verschieben. 
 ---
-= Konfigurieren Sie StorageGRID für FabricPool
+= Konfigurationsworkflow für die Verwendung von StorageGRID mit FabricPool
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

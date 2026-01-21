@@ -1,10 +1,10 @@
 ---
 permalink: harden/index.html 
 sidebar: sidebar 
-keywords: Hardening guidelines, system, security 
+keywords: StorageGRID, hardening guidelines, system, security 
 summary: Systemhärtung ist der Prozess, bei dem so viele Sicherheitsrisiken wie möglich durch ein StorageGRID System beseitigt werden. 
 ---
-= Allgemeine Überlegungen zur Systemhärtung
+= Erfahren Sie mehr über die Systemhärtung für StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

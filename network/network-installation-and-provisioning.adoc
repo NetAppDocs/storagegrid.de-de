@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: network install, network provisioning 
 summary: Sie müssen verstehen, wie das Grid-Netzwerk und die optionalen Admin- und Client-Netzwerke während der Node-Bereitstellung und der Grid-Konfiguration verwendet werden. 
 ---
-= Netzwerkinstallation und -Bereitstellung
+= Netzwerkinstallation und Bereitstellung für StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

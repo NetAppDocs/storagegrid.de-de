@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: StorageGRID, fabricPool, ONTAP System Manager, ONTAP CLI, port, FQDN, object store name 
 summary: Bevor Sie StorageGRID als Cloud-Tier für FabricPool hinzufügen können, müssen Sie die Konfigurationsschritte in StorageGRID durchführen und bestimmte Werte erhalten. 
 ---
-= Erforderliche Informationen zum Hinzufügen von StorageGRID als Cloud-Tier
+= Informationen, die benötigt werden, um StorageGRID als FabricPool Cloud-Tier anzubinden
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

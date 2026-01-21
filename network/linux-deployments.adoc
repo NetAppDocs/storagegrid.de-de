@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: linux network, container engine, red hat enterprise linux network, rhel network, ubuntu network 
 summary: Das StorageGRID System wird unter Linux als Sammlung von Container-Engines ausgeführt, um Effizienz, Zuverlässigkeit und Sicherheit zu gewährleisten. Die Container-Engine-bezogene Netzwerkkonfiguration ist bei einem StorageGRID System nicht erforderlich. 
 ---
-= Linux Implementierungen
+= Netzwerkkonfiguration für StorageGRID Linux-Bereitstellungen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: admin network topology, using admin network 
 summary: Die Verwendung eines Admin-Netzwerks ist optional. Eine Möglichkeit, wie Sie ein Admin-Netzwerk und ein Grid-Netzwerk verwenden können, besteht darin, ein routingbares Grid-Netzwerk und ein verbundes Admin-Netzwerk für jeden Knoten zu konfigurieren. 
 ---
-= Admin-Netzwerktopologie
+= Admin-Netzwerktopologie für StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

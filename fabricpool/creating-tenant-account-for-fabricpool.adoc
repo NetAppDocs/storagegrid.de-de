@@ -1,10 +1,10 @@
 ---
 permalink: fabricpool/creating-tenant-account-for-fabricpool.html 
 sidebar: sidebar 
-keywords: fabricPool, tenant, SSO 
+keywords: fabricPool, StorageGRID, tenant, SSO 
 summary: Sie müssen ein Mandantenkonto im Grid Manager for FabricPool Use erstellen. 
 ---
-= Erstellen eines Mandantenkontos für FabricPool
+= Erstellen Sie ein Mandantenkonto für FabricPool in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

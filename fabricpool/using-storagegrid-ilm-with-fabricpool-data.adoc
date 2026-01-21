@@ -1,10 +1,10 @@
 ---
 permalink: fabricpool/using-storagegrid-ilm-with-fabricpool-data.html 
 sidebar: sidebar 
-keywords: FabricPool, requirements, ILM, information lifecycle management, ILM rule, ILM rules, ILM policy, erasure coding, replication, cloud storage pool, glacier 
+keywords: FabricPool, StorageGRID, requirements, ILM, information lifecycle management, ILM rule, ILM rules, ILM policy, erasure coding, replication, cloud storage pool, glacier 
 summary: Sie können diese einfache Beispielrichtlinie als Ausgangspunkt für Ihre eigenen ILM-Regeln und -Richtlinien verwenden. 
 ---
-= Konfigurieren Sie ILM für FabricPool-Daten
+= StorageGRID ILM für FabricPool-Daten konfigurieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

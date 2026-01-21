@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: network subnets 
 summary: Befolgen Sie diese Anforderungen und Richtlinien für Netzwerknetze. 
 ---
-= Subnetz-Anforderungen
+= Subnetzanforderungen für StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
