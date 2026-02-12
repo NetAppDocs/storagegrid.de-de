@@ -28,7 +28,7 @@ sidebar:
   - title: StorageGRID 12.0-Software
     url: "/index.html"
   - title: StorageGRID Appliances
-    url: "/storagegrid-hardware.html"
+    url: "/swnodes/storagegrid-hardware.html"
   - title: Versionshinweise
     url: "/release-notes/index.html"
   - title: Los geht's
@@ -41,8 +41,6 @@ sidebar:
   - title: Installation, Upgrade und Hotfix
     url: "/landing-install-upgrade/index.html"
     entries:
-    - title: Appliance-basierte Knoten installieren
-      url: "/storagegrid-hardware.html"
     - section: swnodes
     - section: upgrade
     - title: StorageGRID-Hotfix anwenden
