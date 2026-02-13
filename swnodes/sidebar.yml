@@ -63,9 +63,9 @@ entries:
     - title: Validieren Sie die StorageGRID -Konfiguration (Linux).
       url: "/swnodes/validating-storagegrid-configuration.html"
     - title: Starten Sie den StorageGRID -Hostdienst (Linux)
-      url: "/swnodes/storagegrid-host-service.html"
+      url: "/swnodes/starting-storagegrid-host-service.html"
   - title: Fehlerbehebung bei Installationsproblemen
-    url: "/swnodes/installation-issues.html"
+    url: "/swnodes/troubleshooting-installation-issues.html"
   - title: Skriptbeispiele
     entries:
     - title: Beispiel /etc/sysconfig/network-scripts (RHEL)
