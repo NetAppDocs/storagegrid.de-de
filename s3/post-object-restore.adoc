@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: post, RestoreObject, object 
 summary: Sie können die S3-Wiederherstellungs-Objekt-Anforderung verwenden, um ein Objekt wiederherzustellen, das in einem Cloud-Storage-Pool gespeichert ist. 
 ---
-= Objekt restoreObject
+= Ein Objekt in StorageGRID mit der S3-RestoreObject-Anfrage wiederherstellen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

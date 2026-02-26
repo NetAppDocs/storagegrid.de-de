@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: HeadObject 
 summary: Sie können die S3 HeadObject-Anforderung verwenden, um Metadaten von einem Objekt abzurufen, ohne das Objekt selbst zurückzugeben. 
 ---
-= HeadObject
+= Metadaten eines Objekts in StorageGRID mit der S3 HeadObject-Anfrage abrufen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

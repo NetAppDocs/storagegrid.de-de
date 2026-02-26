@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: multipart upload, object, object size 
 summary: Der CompleteMultipartUpload-Vorgang führt einen mehrteiligen Upload eines Objekts durch, indem die zuvor hochgeladenen Teile zusammengelegt werden. 
 ---
-= CompleteMultipartUpload
+= Wie StorageGRID S3 REST API mehrteilige Uploads durchführt
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

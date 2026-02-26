@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: bucket policy examples 
 summary: Mithilfe der Beispiele in diesem Abschnitt können Sie StorageGRID-Zugriffsrichtlinien für Buckets erstellen. 
 ---
-= Beispiel für Bucket-Richtlinien
+= StorageGRID S3 REST API-Bucket-Richtlinienbeispiele
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

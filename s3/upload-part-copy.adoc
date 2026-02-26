@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: UploadPart, UploadPartCopy, multipart uploads, uploads, 
 summary: Der Vorgang UploadPartCopy lädt einen Teil eines Objekts hoch, indem Daten aus einem vorhandenen Objekt als Datenquelle kopiert werden. 
 ---
-= UploadPartCopy
+= Laden Sie einen Teil eines Objekts in StorageGRID mit der S3 UploadPartCopy-Operation hoch
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

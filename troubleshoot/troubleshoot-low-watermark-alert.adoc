@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: troubleshoot low soft read-only watermark override alert, optimized watermarks 
 summary: Wenn Sie benutzerdefinierte Werte für Speichervolumen-Wasserzeichen verwenden, müssen Sie möglicherweise die Warnmeldung zur Überbrückung des Schreibschutzzeichens mit geringem Schreibschutzwert lösen. Wenn möglich, sollten Sie Ihr System aktualisieren, um mit den optimierten Werten zu beginnen. 
 ---
-= Fehlerbehebung bei Warnungen zur Überbrückung von nur geringem Lesezugriff
+= Beheben Sie die Warnung zur Wasserzeichenüberschreibung in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

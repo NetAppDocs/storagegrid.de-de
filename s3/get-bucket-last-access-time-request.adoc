@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: S3 REST API, S3 operations, GET last access time request 
 summary: In der Anforderung „letzte Bucket-Zugriffszeit“ KÖNNEN Sie festlegen, ob Updates der letzten Zugriffszeit für einzelne Buckets aktiviert oder deaktiviert sind. 
 ---
-= ZEITPUNKT des letzten Zugriffs FÜR den Bucket ABRUFEN
+= Rufen Sie den Status der letzten Zugriffszeit eines Buckets in StorageGRID mit der Anfrage „GET Bucket last access time“ ab.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

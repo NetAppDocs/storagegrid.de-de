@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: initiate multipart upload, CreateMultipartUpload, upload ID 
 summary: Der CreateMultipartUpload-Vorgang initiiert einen mehrteiligen Upload für ein Objekt und gibt eine Upload-ID zurück. 
 ---
-= CreateMultipartUpload
+= S3 CreateMultipartUpload Anforderungsheader und Optionen in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

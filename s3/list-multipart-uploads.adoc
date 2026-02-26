@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ListMultipartUploads, uploads, multipart uploads, bucket 
 summary: Der Vorgang ListMultipartUploads listet mehrteilige Uploads für einen Bucket auf, die gerade ausgeführt werden. 
 ---
-= ListMultipartUploads
+= S3 ListMultipartUploads Operation und unterstützte Parameter in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

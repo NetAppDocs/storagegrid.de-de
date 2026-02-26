@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords:  
 summary: Einige Funktionen wurden in dieser Version entfernt oder veraltet. Überprüfen Sie diese Elemente, um zu verstehen, ob Sie Clientanwendungen aktualisieren oder Ihre Konfiguration vor dem Upgrade ändern müssen. 
 ---
-= Entfernte oder veraltete Funktionen und Fähigkeiten
+= Entfernte oder veraltete Funktionen und Fähigkeiten in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

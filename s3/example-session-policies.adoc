@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: session policy example 
 summary: Verwenden Sie das Beispiel in diesem Abschnitt, um StorageGRID Sitzungsrichtlinien zu erstellen. 
 ---
-= Beispiel für eine Sitzungsrichtlinie
+= Beispiel für eine StorageGRID S3 REST API-Sitzungsrichtlinie
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

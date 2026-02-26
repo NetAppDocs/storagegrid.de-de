@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: conflicting client requests 
 summary: Widersprüchliche Clientanforderungen, wie z. B. zwei Clients, die in denselben Schlüssel schreiben, werden auf der Grundlage der „neuesten Wins“ gelöst. 
 ---
-= In Konflikt stehende Clientanforderungen
+= Wie StorageGRID S3 REST API widersprüchliche Clientanfragen löst
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

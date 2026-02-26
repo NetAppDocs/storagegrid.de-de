@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to troubleshoot lost object data, how to troubleshoot missing object data 
 summary: Objekte können aus verschiedenen Gründen abgerufen werden, darunter Leseanforderungen von einer Client-Applikation, Hintergrundverifizierungen replizierter Objektdaten, ILM-Neubewertungen und die Wiederherstellung von Objektdaten während der Recovery eines Storage Node. 
 ---
-= Fehlerbehebung bei verlorenen und fehlenden Objektdaten
+= Erfahren Sie mehr über verlorene und fehlende Objektdaten in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

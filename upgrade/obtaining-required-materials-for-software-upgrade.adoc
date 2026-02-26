@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: upgrade, requirements, rhel, red hat, linux, ubuntu, debian 
 summary: Bevor Sie mit dem Software-Upgrade beginnen, müssen Sie alle erforderlichen Materialien beziehen. 
 ---
-= Beschaffen der erforderlichen Materialien für ein Software-Upgrade
+= Beschaffen Sie die erforderlichen Materialien für ein StorageGRID-Software-Upgrade
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

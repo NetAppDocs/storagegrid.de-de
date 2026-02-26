@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to troubleshoot certificate errors 
 summary: Wenn beim Versuch, über einen Webbrowser, einen S3-Client oder ein externes Überwachungstool eine Verbindung zu StorageGRID herzustellen, ein Sicherheits- oder Zertifikatproblem auftritt, sollten Sie das Zertifikat prüfen. 
 ---
-= Fehlerbehebung bei Zertifikatfehlern
+= Beheben von Zertifikatsfehlern in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

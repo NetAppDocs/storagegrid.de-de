@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: s3 UploadPart operation 
 summary: Der Vorgang UploadPart lädt ein Teil in einem mehrteiligen Upload für ein Objekt hoch. 
 ---
-= UploadTeil
+= Unterstützte und nicht unterstützte Anforderungsheader für S3 UploadPart-Operationen in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

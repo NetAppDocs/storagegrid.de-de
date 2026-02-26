@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to confirm object location, object metadata lookup 
 summary: Je nach Problem sollten Sie überprüfen, wo Objektdaten gespeichert werden. Beispielsweise möchten Sie überprüfen, ob die ILM-Richtlinie wie erwartet funktioniert und Objektdaten dort gespeichert werden, wo sie geplant sind. 
 ---
-= Bestätigen Sie den Speicherort der Objektdaten
+= Bestätigen Sie die Objektdatenspeicherorte in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to confirm object location, object metadata lookup 
 summary: Der zugrunde liegende Storage auf einem Storage-Node ist in Objektspeicher unterteilt. Objektspeicher werden auch als Storage Volumes bezeichnet. 
 ---
-= Fehler beim Objektspeicher (Storage Volume)
+= Erfahren Sie mehr über Objektspeicher-Ausfälle für Speichervolumes in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: S3 REST API, S3 operations, PUT bucket metadata notification configuration request 
 summary: Die Konfigurationsanforderung FÜR PUT Bucket-Metadaten-Benachrichtigungen ermöglicht es Ihnen, den Such-Integrationsservice für einzelne Buckets zu aktivieren. Die XML-XML-Konfiguration für die Metadatenbenachrichtigung, die Sie im Anforderungsindex angeben, gibt die Objekte an, deren Metadaten an den Zielsuchindex gesendet werden. 
 ---
-= PUT Bucket-Metadaten-Benachrichtigungskonfiguration
+= Aktivieren Sie den Suchintegrationsdienst in StorageGRID mit der PUT Bucket-Metadatenbenachrichtigungs-Konfigurationsanfrage
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

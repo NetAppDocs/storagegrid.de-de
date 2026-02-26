@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: consistency, consistency control, consistency values 
 summary: Konsistenz bietet ein Gleichgewicht zwischen der Verfügbarkeit der Objekte und der Konsistenz dieser Objekte über verschiedene Storage-Nodes und Standorte hinweg. Sie können die Konsistenz entsprechend den Anforderungen Ihrer Anwendung ändern. 
 ---
-= Konsistenz
+= Wie StorageGRID S3 REST API Verfügbarkeit und Konsistenz in Einklang bringt
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

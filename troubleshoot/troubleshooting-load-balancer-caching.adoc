@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to troubleshoot load balancer caching 
 summary: Informieren Sie sich über mögliche Probleme beim Load Balancer-Caching und wie Sie diese beheben können. 
 ---
-= Fehlerbehebung beim Load Balancer-Caching
+= Erfahren Sie mehr über Caching-Probleme von Load-Balancern in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

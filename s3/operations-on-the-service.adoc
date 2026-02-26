@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: listbuckets, get service, operations on the service 
 summary: Das StorageGRID System unterstützt Operationen für den Service. 
 ---
-= Betrieb auf dem Service
+= Unterstützte Serviceoperationen in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

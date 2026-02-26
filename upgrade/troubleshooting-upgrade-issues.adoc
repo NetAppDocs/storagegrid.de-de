@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: upgrade, troubleshoot, troubleshooting, errors, upgrade precheck 
 summary: Wenn beim Durchführen eines Upgrades etwas schief geht, können Sie das Problem möglicherweise selbst lösen. Wenn Sie ein Problem nicht lösen können, sammeln Sie so viele Informationen wie möglich, und wenden Sie sich dann an den technischen Support. 
 ---
-= Behebung von Upgrade-Problemen
+= Beheben von StorageGRID-Aktualisierungsproblemen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: grid management api, api, api version, swagger, rest api, usageCacheDuration 
 summary: StorageGRID 12.0 verwendet Version 4 der Grid Management API.  Version 4 macht Version 3 veraltet; die Versionen 1, 2 und 3 werden jedoch weiterhin unterstützt. 
 ---
-= Änderungen an der Grid-Management-API
+= Änderungen an der Grid Management API in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

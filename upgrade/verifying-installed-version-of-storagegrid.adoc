@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, version, current version, previous version 
 summary: Bevor Sie mit dem Upgrade beginnen, überprüfen Sie, ob die vorherige Version von StorageGRID derzeit mit dem neuesten verfügbaren Hotfix installiert ist. 
 ---
-= Überprüfen Sie die installierte StorageGRID-Version
+= Überprüfen Sie die installierte Version von StorageGRID, bevor Sie ein Upgrade durchführen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

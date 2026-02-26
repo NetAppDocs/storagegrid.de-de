@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: S3 REST API, S3 operations, PUT deprecated compliance requests 
 summary: Die ANFORDERUNG „PUT Bucket-Compliance“ ist veraltet. Sie können diese Anforderung jedoch weiterhin verwenden, um die Compliance-Einstellungen für einen vorhandenen Bucket zu ändern, der die Compliance-Anforderungen erfüllt. 
 ---
-= Veraltet: PUT Bucket Compliance Request
+= Veraltete PUT Bucket Compliance-Anfrage in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: S3 REST API, S3 operations, deprecated GET compliance requests 
 summary: Die ANFORDERUNG „GET Bucket-Compliance“ ist veraltet. Sie können diese Anforderung jedoch weiterhin verwenden, um die derzeit für einen vorhandenen, älteren, konformen Bucket geltenden Compliance-Einstellungen zu bestimmen. 
 ---
-= Veraltet: Anforderung FÜR Bucket-Compliance ABRUFEN
+= Veraltete GET Bucket compliance-Anfrage in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

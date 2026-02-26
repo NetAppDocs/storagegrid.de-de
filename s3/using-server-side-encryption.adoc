@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: server side encryption, encryption, operations on objects, objects 
 summary: Die serverseitige Verschlüsselung schützt Ihre Objektdaten im Ruhezustand. StorageGRID verschlüsselt die Daten beim Schreiben des Objekts und entschlüsselt sie beim Zugriff auf das Objekt. 
 ---
-= Serverseitige Verschlüsselung
+= Wie StorageGRID die serverseitige Verschlüsselung verwendet
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

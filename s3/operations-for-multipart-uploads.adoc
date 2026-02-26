@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: operations, multipart uploads, uploads, rest API 
 summary: In diesem Abschnitt wird beschrieben, wie StorageGRID Vorgänge für mehrteilige Uploads unterstützt. 
 ---
-= Vorgänge für mehrteilige Uploads
+= Unterstützte mehrteilige Upload-Operationen in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

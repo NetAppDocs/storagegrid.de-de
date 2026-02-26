@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to troubleshoot metadata issues 
 summary: Wenn Metadatenprobleme auftreten, werden Sie über die Ursache des Fehlers und über die empfohlenen Maßnahmen informiert. Sie müssen insbesondere neue Storage-Nodes hinzufügen, wenn die Warnmeldung zur Speicherung geringer Metadaten ausgelöst wird. 
 ---
-= Behebung von Metadatenproblemen
+= Beheben von Metadatenproblemen in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

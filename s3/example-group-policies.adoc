@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: group policy examples 
 summary: Verwenden Sie die Beispiele in diesem Abschnitt, um StorageGRID-Zugriffsrichtlinien für Gruppen zu erstellen. 
 ---
-= Beispiel für Gruppenrichtlinien
+= Beispiele für Gruppenrichtlinien der StorageGRID S3 REST API
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

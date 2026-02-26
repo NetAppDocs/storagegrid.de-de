@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: bucket, buckets, operations on buckets 
 summary: Das StorageGRID System unterstützt für jedes S3-Mandantenkonto maximal 5,000 Buckets. 
 ---
-= Operationen auf Buckets
+= S3-Bucket-Operationen und Implementierungsdetails in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

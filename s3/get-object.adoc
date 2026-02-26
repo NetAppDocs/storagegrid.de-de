@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: get object 
 summary: Sie können die S3-GET-Objektanfrage verwenden, um ein Objekt aus einem S3-Bucket abzurufen. 
 ---
-= GetObject
+= Rufen Sie ein Objekt aus einem Bucket in StorageGRID mit der GetObject-Anfrage ab
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

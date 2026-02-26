@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: S3 REST API, S3 operations, deprecated bucket requests for compliance 
 summary: Das SGCompliance XML-Element ist veraltet. Zuvor könnten Sie dieses benutzerdefinierte StorageGRID-Element in den optionalen XML-Anforderungskörper von CreateBucket-Anforderungen aufnehmen, um einen konformen Bucket zu erstellen. 
 ---
-= Veraltet: CreateBucket fordert Änderungen für Compliance an
+= Veraltetes SGCompliance-Element in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

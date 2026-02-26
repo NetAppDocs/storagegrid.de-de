@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: upgrade workflow 
 summary: Lesen Sie vor dem Upgrade den allgemeinen Workflow durch. Die Seite StorageGRID-Upgrade führt Sie durch die Aktualisierungsschritte. 
 ---
-= Schnellstart für das Upgrade
+= Schnellstart für StorageGRID-Upgrades
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

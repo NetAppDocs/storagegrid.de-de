@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to troubleshoot admin node issues, how to troubleshoot user interface issues 
 summary: Sie können mehrere Aufgaben durchführen, um die Quelle von Problemen im Zusammenhang mit Administratorknoten und der StorageGRID-Benutzeroberfläche zu ermitteln. 
 ---
-= Fehlerbehebung bei Problemen mit Admin-Node und Benutzeroberfläche
+= Beheben von Problemen mit dem Admin Node und der Benutzeroberfläche in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

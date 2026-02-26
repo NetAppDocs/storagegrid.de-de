@@ -2,9 +2,9 @@
 permalink: s3/put-bucket-last-access-time-request.html 
 sidebar: sidebar 
 keywords: S3 REST API, S3 operations, put bucket last access time request 
-summary: In der Anforderung „letzte Bucket-Zugriffszeit“ KÖNNEN Sie festlegen, ob Updates der letzten Zugriffszeit für einzelne Buckets aktiviert oder deaktiviert sind. 
+summary: Die PUT Bucket Last Access Time-Anfrage ermöglicht es Ihnen, die Aktualisierung des letzten Zugriffszeitpunkts für einzelne Buckets zu aktivieren oder zu deaktivieren. 
 ---
-= PUT Bucket-Zeit für den letzten Zugriff
+= Aktivieren und Deaktivieren von Aktualisierungen der letzten Zugriffszeit in StorageGRID mit der PUT Bucket last access time-Anfrage
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

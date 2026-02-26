@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: audit log, auditing bucket and object operations, S3 audit messages 
 summary: Audit-Meldungen werden von StorageGRID-Diensten generiert und in Text-Log-Dateien gespeichert. Sie können die S3-spezifischen Audit-Meldungen im Revisionsprotokoll prüfen, um Details zu Bucket- und Objektvorgängen zu abrufen. 
 ---
-= S3-Vorgänge werden in den Audit-Protokollen protokolliert
+= S3-Operationen, die in den StorageGRID-Audit-Protokollen protokolliert werden
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: S3 REST API, S3 operations, deprecated bucket requests 
 summary: Möglicherweise müssen Sie die StorageGRID S3 REST-API zum Management von Buckets verwenden, die mit der älteren Compliance-Funktion erstellt wurden. 
 ---
-= Veraltete Bucket-Anforderungen für ältere Compliance
+= Veraltete Bucket-Anfragen für die Legacy StorageGRID Compliance
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

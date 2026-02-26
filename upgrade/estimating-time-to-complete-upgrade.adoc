@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: upgrade, time estimate, duration, cassandra upgrade 
 summary: Ziehen Sie den Zeitpunkt für ein Upgrade in Betracht, basierend auf der Dauer, die das Upgrade dauern könnte. Achten Sie darauf, welche Vorgänge Sie in jeder Phase des Upgrades durchführen können und nicht. 
 ---
-= Schätzen Sie den Zeitaufwand für die Durchführung eines Upgrades ein
+= Schätzen Sie die Zeit für die Durchführung eines StorageGRID Upgrades
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

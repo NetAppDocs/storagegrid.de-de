@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: lost objects, investigating, objects 
 summary: Wenn die Warnung „Objekte möglicherweise verloren“ ausgelöst wird, müssen Sie dies unverzüglich untersuchen. Sammeln Sie Informationen zu den betroffenen Objekten und wenden Sie sich an den technischen Support. 
 ---
-= Untersuchen Sie möglicherweise verlorene Objekte
+= Beheben Sie die Warnung „Objekte möglicherweise verloren“ in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: object version, object versioning 
 summary: Sie können den Versionsstatus eines Buckets festlegen, wenn Sie mehrere Versionen eines Objekts beibehalten möchten. Die Aktivierung der Versionierung für einen Bucket kann zum Schutz vor versehentlichem Löschen von Objekten beitragen und ermöglicht es Ihnen, frühere Versionen eines Objekts abzurufen und wiederherzustellen. 
 ---
-= Objektversionierung
+= Wie StorageGRID die Objektversionierung nutzt
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

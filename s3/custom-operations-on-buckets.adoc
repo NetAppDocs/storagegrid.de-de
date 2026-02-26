@@ -4,9 +4,8 @@ sidebar: sidebar
 keywords: operations, buckets, custom, storagegrid bucket operations 
 summary: Das StorageGRID System unterstützt benutzerdefinierte Vorgänge, die zur S3-REST-API hinzugefügt werden. 
 ---
-= Benutzerdefinierte Operationen von StorageGRID
+= Unterstützte benutzerdefinierte Bucket-Operationen in StorageGRID
 :allow-uri-read: 
-:icons: font
 :imagesdir: ../media/
 
 

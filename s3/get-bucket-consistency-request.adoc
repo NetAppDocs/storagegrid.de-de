@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: S3 REST API, S3 operations, GET bucket consistency 
 summary: Mit der Konsistenzanforderung für GET Bucket können Sie die Konsistenz bestimmen, die auf einen bestimmten Bucket angewendet wird. 
 ---
-= Get Bucket-Konsistenz
+= Den Bucket-Konsistenzgrad in StorageGRID mit der GET-Anfrage für Bucket-Konsistenz abrufen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

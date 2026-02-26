@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: S3 REST API, S3 operations, GET bucket metadata notification configuration 
 summary: Die Konfigurationsanforderung FÜR GET Bucket-Metadaten-Benachrichtigungen ermöglicht es Ihnen, die Konfigurations-XML abzurufen, die zur Konfiguration der Suchintegration für einzelne Buckets verwendet wird. 
 ---
-= Konfiguration der Bucket-Metadaten-Benachrichtigungen ABRUFEN
+= Konfigurieren Sie die Suchintegration in StorageGRID mit der GET Bucket-Metadatenbenachrichtigungskonfigurationsanfrage
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

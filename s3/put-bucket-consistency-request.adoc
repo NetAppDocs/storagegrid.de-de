@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: S3 REST API, S3 operations, PUT bucket consistency request 
 summary: Mit der Konsistenzanforderung für PUT-Bucket können Sie die Konsistenz angeben, die auf Vorgänge angewendet werden soll, die auf einen Bucket ausgeführt wurden. 
 ---
-= PUT Bucket-Konsistenz
+= Geben Sie Konsistenzstufen in StorageGRID mit der PUT Bucket consistency-Anforderung an
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

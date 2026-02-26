@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to troubleshoot S3 PUT Object size too large alert, S3 PutObject size 
 summary: Die Warnmeldung S3 PUT Object size too Large wird ausgelöst, wenn ein Mandant versucht, einen nicht mehrteiligen PutObject-Vorgang auszuführen, der das S3-Größenlimit von 5 gib überschreitet. 
 ---
-= Fehlerbehebung bei S3 PUT Objektgröße zu groß Warnung
+= Beheben Sie die Warnung „S3 PUT object size too large“ in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

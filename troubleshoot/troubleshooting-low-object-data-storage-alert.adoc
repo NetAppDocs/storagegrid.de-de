@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to troubleshoot the Low object data storage alert 
 summary: Die Warnung „Niedriger Speicherplatz für Objektdaten“ überwacht, wie viel Speicherplatz auf den einzelnen Speicherknoten für die Speicherung von Objektdaten zur Verfügung steht. 
 ---
-= Beheben Sie die Warnung „Niedrig Object Data Storage“
+= Beheben Sie die Warnung zum niedrigen Objektdaten-Speicher in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

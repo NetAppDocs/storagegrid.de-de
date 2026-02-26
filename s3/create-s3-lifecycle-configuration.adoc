@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: s3 lifecycle, object deletion, bucket 
 summary: Sie können eine S3-Lebenszyklukonfiguration erstellen, um zu steuern, wann bestimmte Objekte aus dem StorageGRID System gelöscht werden. 
 ---
-= S3-Lebenszykluskonfiguration erstellen
+= Erfahren Sie mehr über die S3-Lebenszykluskonfiguration für StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

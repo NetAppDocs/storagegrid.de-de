@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: upgrade, linux, rpm, deb, 
 summary: Wenn StorageGRID-Knoten auf Linux-Hosts bereitgestellt werden, installieren Sie auf jedem dieser Hosts ein zusätzliches RPM- oder DEB-Paket, bevor Sie mit dem Upgrade beginnen. 
 ---
-= Linux: Laden Sie das RPM- oder DEB-Paket herunter und installieren Sie es auf allen Hosts
+= Laden Sie RPM- oder DEB-Pakete auf allen Linux-Hosts für StorageGRID herunter und installieren Sie sie
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

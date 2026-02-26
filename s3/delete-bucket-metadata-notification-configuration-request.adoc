@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: S3 REST API, S3 operations, DELETE Bucket metadata notification configuration request 
 summary: Mit der Konfigurationsanforderung FÜR DIE BENACHRICHTIGUNG „BUCKET-Metadaten LÖSCHEN“ können Sie den Suchintegrationsdienst für einzelne Buckets deaktivieren, indem Sie die Konfigurations-XML löschen. 
 ---
-= Konfiguration für die Benachrichtigung über Bucket-Metadaten LÖSCHEN
+= Deaktivieren Sie den Suchintegrationsdienst mit der DELETE Bucket-Metadaten-Benachrichtigungskonfigurationsanfrage in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
