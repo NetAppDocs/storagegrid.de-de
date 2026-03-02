@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: audit message examples, audit.log, atyp, sput, s3 put 
 summary: Detaillierte Informationen finden Sie in jeder Audit-Nachricht. Alle Überwachungsmeldungen verwenden das gleiche Format. 
 ---
-= Beispiele für Überwachungsnachrichten
+= StorageGRID Revisionsprotokoll-Nachrichtenformat und Beispiele
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

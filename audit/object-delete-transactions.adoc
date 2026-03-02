@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: object delete transaction, S3 delete, SDEL, WDEL 
 summary: Sie können Objektlöschtransaktionen im Revisionsprotokoll identifizieren, indem Sie S3-API-spezifische Audit-Meldungen suchen. 
 ---
-= Löschen von Objekttransaktionen
+= Auditmeldungen für Objektlöschvorgänge in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message formats, message format 
 summary: Im StorageGRID-System ausgetauschte Audit-Meldungen enthalten Standardinformationen, die für alle Meldungen und spezifische Inhalte zur Beschreibung des Ereignisses oder der Aktivität üblich sind. 
 ---
-= Überwachungsmeldungsformat
+= Erfahren Sie mehr über die Struktur der StorageGRID Revisionsprotokollmeldungen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

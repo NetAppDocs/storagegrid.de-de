@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, management, user request, user requests 
 summary: Die Kategorie Management protokolliert Benutzeranfragen an die Management-API. 
 ---
-= Management-Audit-Nachricht
+= StorageGRID-Verwaltungs-Revisionsprotokollmeldungen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

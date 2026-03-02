@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, log, object lifecycle, ingest, retrieve, delete, s3, timing, ILM, Information lifecycle management 
 summary: Audit-Nachrichten werden bei jeder Aufnahme, jedem Abruf oder jedem Löschen eines Objekts generiert. Sie können diese Transaktionen im Revisionsprotokoll identifizieren, indem Sie S3-API-spezifische Audit-Meldungen suchen. 
 ---
-= Wann werden Audit-Meldungen generiert?
+= Wenn Revisionsprotokollmeldungen in StorageGRID generiert werden
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

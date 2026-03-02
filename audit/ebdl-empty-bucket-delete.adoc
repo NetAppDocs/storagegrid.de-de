@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, EBDL, Empty Bucket Delete 
 summary: 'Der ILM-Scanner hat ein Objekt in einem Bucket gelöscht, das alle Objekte löscht (und einen leeren Bucket-Vorgang durchgeführt).' 
 ---
-= EBDL: Leerer Bucket löschen
+= EBDL-Revisionsprotokollmeldung für das Löschen leerer Bucket-Objekte in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

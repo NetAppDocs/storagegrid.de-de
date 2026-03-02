@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, SHEA, S3 HEAD 
 summary: Wenn ein S3-Client eine HEAD-Operation ausgibt, wird eine Anforderung gestellt, um die Existenz eines Objekts oder Buckets zu überprüfen und die Metadaten zu einem Objekt abzurufen.  Diese Meldung wird vom Server ausgegeben, wenn der Vorgang erfolgreich war. 
 ---
-= SHEA: S3 KOPF
+= SHEA audit message für S3 HEAD-Operationen in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

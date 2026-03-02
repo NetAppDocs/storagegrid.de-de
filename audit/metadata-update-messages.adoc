@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, Metadata update, S3 metadata update, SUPD 
 summary: Audit-Meldungen werden generiert, wenn ein S3-Client die Metadaten eines Objekts aktualisiert. 
 ---
-= Nachrichten zum Metadatenupdate
+= Revisionsprotokoll-Meldungen für Aktualisierungen der S3-Objektmetadaten in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

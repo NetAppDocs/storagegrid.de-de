@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, SDEL, S3 DELETE 
 summary: Wenn ein S3-Client eine LÖSCHTRANSAKTION ausgibt, wird eine Anfrage gestellt, um das angegebene Objekt oder den angegebenen Bucket zu entfernen. Diese Meldung wird vom Server ausgegeben, wenn die Transaktion erfolgreich ist. 
 ---
-= SDEL: S3 LÖSCHEN
+= SDEL-Revisionsprotokollnachricht für S3 DELETE-Transaktionen in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

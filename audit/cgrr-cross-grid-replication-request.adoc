@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cgrr, cross-grid replication request, audit message, 
 summary: Diese Meldung wird generiert, wenn StorageGRID versucht, Objekte zwischen Buckets in einer Grid-Federation-Verbindung in einem Grid-Replizierungsvorgang zu replizieren. 
 ---
-= CGRR: Grid-übergreifende Replikationsanforderung
+= CGRR-Revisionsprotokollmeldung für netzübergreifende Replikationsanforderungen in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

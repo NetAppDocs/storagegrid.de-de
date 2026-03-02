@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, GTED, Grid Task Ended 
 summary: Diese Überwachungsmeldung zeigt an, dass der CMN-Dienst die Verarbeitung der angegebenen Rasteraufgabe abgeschlossen hat und die Aufgabe in die Tabelle „Historisch“ verschoben hat. Wenn es sich um SUCS, ABRT oder ROLF handelt, wird eine entsprechende Überwachungsmeldung für die mit Grid Task gestartete Aufgabe angezeigt. Die anderen Ergebnisse zeigen, dass die Verarbeitung dieser Grid-Aufgabe nie gestartet wurde. 
 ---
-= GTED: Grid Task beendet
+= GTED-Revisionsprotokollmeldung für beendete Grid-Aufgaben in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

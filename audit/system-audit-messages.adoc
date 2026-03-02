@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, messages, system, ECOC, ETAF, GNRG, GNUR, GTED, GTST, GTSU, LLST, OLST, SADD, SADE, SVRF, SVRU, SYSD, SYST, SYSU, VLST 
 summary: 'Die Audit-Meldungen, die zur Systemauditkategorie gehören, werden für Ereignisse verwendet, die mit dem Auditsystem selbst, Grid-Node-Status, der systemweiten Task-Aktivität \(Grid-Aufgaben\) und den Service-Backup-Vorgängen zusammenhängen.' 
 ---
-= Systemaudits Meldungen
+= Auditmeldungen für Systemereignisse in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

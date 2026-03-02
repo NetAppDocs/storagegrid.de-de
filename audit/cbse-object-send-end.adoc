@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, CBSE, Object Send End 
 summary: Wenn die Übertragung eines Inhaltsblocks von einem Node auf einen anderen abgeschlossen ist, wird diese Meldung von der Quelleinheit ausgegeben. 
 ---
-= CBSE: Objekt Senden Ende
+= CBSE-Revisionsprotokollmeldung für das Ende des Objektsendens in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

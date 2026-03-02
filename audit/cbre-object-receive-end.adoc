@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, CBRE, Object Receive End 
 summary: Wenn die Übertragung eines Inhaltsblocks von einem Node auf einen anderen abgeschlossen ist, wird diese Meldung von der Zieleinheit ausgegeben. 
 ---
-= CBRE: Das Objekt erhält das Ende
+= CBRE-Revisionsprotokollmeldung für das Ende des Objektempfangs in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

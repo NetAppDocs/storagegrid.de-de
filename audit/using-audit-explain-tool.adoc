@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, tool, audit-explain, audit explain, translate audit messages, translate messages, translate audit message, translate message 
 summary: Sie können das Audit-Explain-Tool verwenden, um die Audit-Meldungen im Audit-Protokoll in ein leicht lesbares Format zu übersetzen. 
 ---
-= Verwenden Sie das Audit-Erklären-Tool
+= Verwenden Sie das Tool „audit-explain“, um StorageGRID Revisionsprotokollmeldungen zu übersetzen.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: bror, bucket read only request, empty bucket, audit message, 
 summary: Der LDR-Service generiert diese Überwachungsmeldung, wenn ein Bucket in den schreibgeschützten Modus wechselt oder diesen beendet. Beispielsweise wechselt ein Bucket während des Leerens in den schreibgeschützten Modus. 
 ---
-= BROR: Bucket Read Only Request
+= BROR Revisionsprotokollmeldung für schreibgeschützte Bucket-Anfragen in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

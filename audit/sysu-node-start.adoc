@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, SYSU, Node Start 
 summary: 'Wenn ein Dienst neu gestartet wird, wird diese Meldung erzeugt, um anzugeben, ob die vorherige Abschaltung \(befahl\) oder nicht ordnungsgemäß \ (unerwartet\) war.' 
 ---
-= SYSU: Knoten Start
+= SYSU-Revisionsprotokollnachricht für Knotenstarts in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

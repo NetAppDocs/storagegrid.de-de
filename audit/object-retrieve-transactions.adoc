@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: object retrieve, transactions, SGET, WGET 
 summary: Sie können Transaktionen für den Abruf von Objekten im Revisionsprotokoll identifizieren, indem Sie S3-API-spezifische Audit-Meldungen suchen. 
 ---
-= Abrufen von Objekttransaktionen
+= Audit-Meldungen für Objektabruftransaktionen in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

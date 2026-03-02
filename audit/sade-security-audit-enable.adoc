@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, SADE, Security Audit Enable 
 summary: 'Diese Meldung gibt an, dass der ursprüngliche Dienst \(Node ID\) die Protokollierung von Überwachungsmeldungen wiederhergestellt hat; Audit-Meldungen werden erneut erfasst und übermittelt.' 
 ---
-= SADE: Sicherheits-Audit aktivieren
+= SADE-Revisionsprotokollmeldung zur Aktivierung der Sicherheitsüberwachung in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, CBRB, Object Receive Begin 
 summary: Während des normalen Systembetriebs werden Content-Blöcke kontinuierlich zwischen verschiedenen Nodes übertragen, wenn auf die Daten zugegriffen wird, repliziert und aufbewahrt werden. Wenn der Transfer eines Inhaltsblocks von einem Node zum anderen initiiert wird, wird diese Meldung von der Zieleinheit ausgegeben. 
 ---
-= CBRB: Objekt empfangen beginnen
+= CBRB-Revisionsprotokollmeldung für Objektempfangsbeginn in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

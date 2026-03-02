@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, log file formats, log formats, log file format, log format 
 summary: Die Audit-Log-Dateien befinden sich auf jedem Admin-Knoten und enthalten eine Sammlung einzelner Audit-Nachrichten. 
 ---
-= Format der Auditprotokolldatei
+= Erfahren Sie mehr über das Format von Revisionsprotokolldateien in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

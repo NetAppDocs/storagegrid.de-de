@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, MGAU, Management audit message 
 summary: Die Kategorie Management protokolliert Benutzeranfragen an die Management-API. Jede Anfrage, die keine GET- oder HEAD-Anforderung an die API ist, protokolliert eine Antwort mit dem Benutzernamen, der IP und der Art der Anfrage an die API. 
 ---
-= MGAU: Management-Audit-Nachricht
+= MGAU-Revisionsprotokollmeldung für Management-API-Anfragen in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

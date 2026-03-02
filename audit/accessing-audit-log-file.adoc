@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, log, log file, access, accessing 
 summary: Die Revisionsfreigabe enthält die aktive audit.log-Datei und alle komprimierten Audit-Log-Dateien. Sie können über die Befehlszeile des Admin-Knotens direkt auf Audit-Log-Dateien zugreifen. 
 ---
-= Zugriff auf die Audit-Log-Datei
+= Greifen Sie auf Revisionsprotokolldateien von der StorageGRID Admin Node Befehlszeile zu
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

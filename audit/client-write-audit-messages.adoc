@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, messages, client write, OVWR, SDEL, SPOS, SPUT, SUPD, WDEL, WPUT, S3 
 summary: Audit-Meldungen für den Client-Schreibvorgang werden protokolliert, wenn eine S3-Client-Anwendung eine Anforderung zum Erstellen oder Ändern eines Objekts stellt. 
 ---
-= Audit-Meldungen des Clients schreiben
+= Audit-Meldungen für Client-Schreibvorgänge in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

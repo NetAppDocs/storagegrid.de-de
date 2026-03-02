@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, SPOS, S3 POST 
 summary: Wenn ein S3-Client eine POST Object-Anforderung ausgibt, wird diese Meldung vom Server ausgegeben, wenn die Transaktion erfolgreich durchgeführt wurde. 
 ---
-= SPOS: S3-BEITRAG
+= SPOS-Revisionsprotokollmeldung für S3-POST-Transaktionen in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

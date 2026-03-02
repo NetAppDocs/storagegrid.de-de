@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, SVRU, Object Store Verify Unknown 
 summary: Die Speicherkomponente des LDR-Dienstes scannt kontinuierlich alle Kopien replizierter Objektdaten im Objektspeicher. Diese Meldung wird ausgegeben, wenn eine unbekannte oder unerwartete Kopie replizierter Objektdaten im Objektspeicher erkannt und in das Quarantäneverzeichnis verschoben wird. 
 ---
-= SVRU: Objektspeicher überprüfen Unbekannt
+= SVRU-Revisionsprotokollmeldung für unbekannten Objektspeicherinhalt in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

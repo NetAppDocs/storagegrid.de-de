@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, LKCU, Overwritten Object Cleanup 
 summary: Diese Meldung wird generiert, wenn StorageGRID ein überschreibtes Objekt entfernt, das zuvor zur Freigabe von Speicherplatz erforderlich war. Ein Objekt wird überschrieben, wenn ein S3-Client ein Objekt auf einen Pfad schreibt, der bereits ein Objekt enthält. Die Entfernung erfolgt automatisch und im Hintergrund. 
 ---
-= LKCU: Objektbereinigung überschrieben
+= LKCU-Revisionsprotokollmeldung zur Bereinigung überschriebener Objekte in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

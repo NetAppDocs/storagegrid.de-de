@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: audit messages, ILM, IDEL, LKCU, ORLM 
 summary: Die Audit-Meldungen der ILM-Audit-Kategorie werden für Ereignisse im Zusammenhang mit Information Lifecycle-Operationen verwendet. 
 ---
-= ILM-Prüfmeldungen
+= StorageGRID ILM-Revisionsprotokollmeldungen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

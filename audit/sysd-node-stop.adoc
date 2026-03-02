@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, SYSD, Node Stop 
 summary: Wenn ein Dienst ordnungsgemäß angehalten wird, wird diese Meldung generiert, um anzugeben, dass das Herunterfahren angefordert wurde. Normalerweise wird diese Meldung erst nach einem anschließenden Neustart gesendet, da die Warteschlange für Überwachungsmeldungen vor dem Herunterfahren nicht gelöscht wird. Suchen Sie nach der SYST-Meldung, die zu Beginn der Abschaltsequenz gesendet wird, wenn der Dienst nicht neu gestartet wurde. 
 ---
-= SYSD: Knoten stoppen
+= SYSD Revisionsprotokollmeldung für ordnungsgemäße Knotenstopps in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

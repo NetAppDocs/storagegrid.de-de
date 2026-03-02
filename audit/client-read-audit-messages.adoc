@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, messages, client read, S3SL, SGET, SHEA, WGET, WHEA, S3 
 summary: Gelesene Audit-Meldungen des Clients werden protokolliert, wenn eine S3-Client-Anwendung eine Anforderung zum Abrufen eines Objekts vornimmt. 
 ---
-= Client liest Audit-Meldungen
+= Audit-Meldungen für Client-Lesevorgänge in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, SGET, S3 GET 
 summary: Wenn ein S3-Client eine GET-Transaktion ausgibt, wird eine Anfrage gestellt, um ein Objekt abzurufen oder die Objekte in einem Bucket aufzulisten. Diese Meldung wird vom Server ausgegeben, wenn die Transaktion erfolgreich ist. 
 ---
-= SGET S3 ABRUFEN
+= SGET-Revisionsprotokollmeldung für S3 GET-Transaktionen in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

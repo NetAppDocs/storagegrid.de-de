@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: audit message, event, shea, s3 head 
 summary: Jede Überwachungsmeldung im Prüfprotokoll zeichnet Daten auf, die für ein Systemereignis spezifisch sind. 
 ---
-= Ereignisspezifische Daten
+= Ereignisspezifische Daten in StorageGRID Revisionsprotokollmeldungen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

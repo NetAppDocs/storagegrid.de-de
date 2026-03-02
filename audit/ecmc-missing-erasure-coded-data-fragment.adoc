@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, ECMC, Missing Erasure-Coded Data Fragment 
 summary: Diese Meldung zeigt an, dass das System ein fehlendes Datenfragment mit Löschungscode erkannt hat. 
 ---
-= ECMC: Fehlende Datenfragment mit Erasure-Code
+= ECMC-Revisionsprotokollmeldung für fehlende erasure-coded Daten in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

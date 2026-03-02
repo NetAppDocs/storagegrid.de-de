@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, CBSB, Object Send Begin 
 summary: Während des normalen Systembetriebs werden Content-Blöcke kontinuierlich zwischen verschiedenen Nodes übertragen, wenn auf die Daten zugegriffen wird, repliziert und aufbewahrt werden. Wenn die Übertragung eines Inhaltsblocks von einem Node auf einen anderen initiiert wird, wird diese Meldung von der Quelleinheit ausgegeben. 
 ---
-= CBSB: Objektsendebeginn
+= CBSB-Revisionsprotokollmeldung für Objektsendebeginn in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

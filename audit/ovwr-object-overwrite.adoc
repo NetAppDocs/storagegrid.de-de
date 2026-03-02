@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, OVWR, Object Overwrite 
 summary: 'Diese Meldung wird erzeugt, wenn ein externer \(Client-angeforderte\) Vorgang ein Objekt durch ein anderes Objekt überschrieben.' 
 ---
-= OVWR: Objektüberschreibung
+= OVWR-Revisionsprotokollmeldung für Objektüberschreibungen in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, SADD, Security Audit Disable 
 summary: 'Diese Meldung gibt an, dass der ursprüngliche Dienst \(Node ID\) die Protokollierung von Überwachungsmeldungen deaktiviert hat; Audit-Meldungen werden nicht mehr erfasst oder geliefert.' 
 ---
-= SADD: Security Audit deaktiviert
+= SADD-Revisionsprotokollmeldung zur Deaktivierung der Sicherheitsprüfung in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

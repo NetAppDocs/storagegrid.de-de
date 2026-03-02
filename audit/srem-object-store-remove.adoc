@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, SREM, Object Store Remove 
 summary: Diese Meldung wird ausgegeben, wenn Inhalte aus einem persistenten Storage entfernt werden und nicht mehr über regelmäßige APIs zugänglich sind. 
 ---
-= SREM: Objektspeicher Entfernen
+= SREM-Revisionsprotokollmeldung für Objektspeicher-Entfernung in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

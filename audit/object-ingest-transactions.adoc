@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: object ingest transaction, S3 ingest, SPUT, ORLM, WPUT 
 summary: Sie können Client-Ingest-Transaktionen im Revisionsprotokoll identifizieren, indem Sie S3-API-spezifische Audit-Meldungen ermitteln. 
 ---
-= Objektaufnahme von Transaktionen
+= Audit-Meldungen für Objektaufnahmetransaktionen in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

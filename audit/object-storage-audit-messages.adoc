@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: audit, object storage, object management, object retrieval, node transfer, verification, BROR, CBSE, CBRE, CGRR, EBDL, EBKR, SCMT, SREM 
 summary: Sie sollten mit Audit-Meldungen vertraut sein, die zur Objektspeicheraudits-Kategorie gehören. Dies sind Ereignisse, die mit der Speicherung und dem Management von Objekten innerhalb des StorageGRID Systems zusammenhängen. Dazu zählen Objekt-Storage und -Abruf, Grid-Node zu Grid-Node-Transfers und Verifizierungen. 
 ---
-= Audit-Meldungen zu Objekt-Storage
+= Audit-Meldungen für Objektspeicher-Ereignisse in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

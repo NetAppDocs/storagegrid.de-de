@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit, message, flow, retention 
 summary: Alle StorageGRID-Services generieren während des normalen Systembetriebs Audit-Meldungen. Sie sollten verstehen, wie diese Audit-Meldungen durch das StorageGRID-System in die Datei audit.log verschoben werden. 
 ---
-= Meldungsfluss und -Aufbewahrung von Audits
+= Wie Audit-Meldungen durch das StorageGRID System in die Datei audit.log zur Aufbewahrung gelangen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
