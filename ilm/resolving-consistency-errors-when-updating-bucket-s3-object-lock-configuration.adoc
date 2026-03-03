@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: consistency error, s3 object lock and consistency 
 summary: Wenn ein Datacenter-Standort oder mehrere Storage-Nodes an einem Standort nicht mehr verfügbar sind, müssen Benutzer von S3-Mandanten unter Umständen Änderungen an der S3-Objektsperre oder älterer Compliance-Konfiguration vornehmen. 
 ---
-= Beheben Sie die Konsistenzfehler beim Aktualisieren der S3-Objektsperre oder der alten Compliance-Konfiguration
+= Beheben Sie Konsistenzfehler beim Aktualisieren von S3 Object Lock oder älteren Compliance-Einstellungen in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

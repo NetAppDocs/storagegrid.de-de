@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: object versions, example ILM rule, information lifecycle rule examples 
 summary: Wenn Sie einen S3-Bucket mit aktivierter Versionierung haben, können Sie die nicht aktuellen Objektversionen managen, indem Sie Regeln in Ihre ILM-Richtlinie einarbeiten, die die aktuelle Zeit als Referenzzeit verwenden. 
 ---
-= Beispiel 4: ILM-Regeln und -Richtlinie für versionierte Objekte mit S3
+= ILM-Regeln und -Richtlinien für nicht aktuelle S3-Objektversionen in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

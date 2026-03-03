@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: example ILM rule, information lifecycle rule examples 
 summary: Anhand der folgenden Beispielregeln und -Richtlinien können Sie sicherstellen, dass Bilder mit mehr als 1 MB Löschcode erhalten und dass zwei Kopien aus kleineren Bildern erstellt werden. 
 ---
-= Beispiel 3: ILM-Regeln und -Richtlinie für besseren Schutz von Image-Dateien
+= ILM-Regeln und -Richtlinien zum Schutz von Image-Dateien in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

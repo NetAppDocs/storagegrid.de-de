@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: remove cloud storage pool 
 summary: Sie können einen Cloud-Speicherpool entfernen, wenn er nicht in einer ILM-Regel verwendet wird und keine Objektdaten enthält. 
 ---
-= Entfernen Sie einen Cloud-Speicherpool
+= Entfernen Sie einen Cloud-Speicherpool in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

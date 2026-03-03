@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: what is a storage pool 
 summary: Ein Speicherpool ist eine logische Gruppierung von Storage-Nodes. 
 ---
-= Was ist ein Speicherpool?
+= Erfahren Sie mehr über Speicherpools in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

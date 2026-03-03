@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to create cloud storage pool 
 summary: Ein Cloud-Storage-Pool gibt einen einzelnen externen Amazon S3-Bucket oder einen anderen S3-kompatiblen Provider oder einen Azure Blob-Storage-Container an. 
 ---
-= Erstellen Sie einen Cloud-Storage-Pool
+= Erstellen Sie einen Cloud Storage Pool in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

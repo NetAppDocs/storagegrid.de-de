@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ILM policy,S3 Object Lock 
 summary: Sie können den S3-Bucket, ILM-Regeln und ILM-Richtlinie in diesem Beispiel als Ausgangspunkt verwenden, wenn Sie eine ILM-Richtlinie definieren, um die Objektschutz- und Aufbewahrungsanforderungen für Objekte in Buckets zu erfüllen, wenn S3-Objektsperre aktiviert ist. 
 ---
-= Beispiel 7: Konforme ILM-Richtlinie für S3 Object Lock
+= Konforme ILM-Richtlinie für S3 Object Lock in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

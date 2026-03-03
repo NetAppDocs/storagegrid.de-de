@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: what is a storage grade, create storage grade 
 summary: Speicherklassen identifizieren den Speichertyp, der von einem Speicherknoten verwendet wird. Sie können Storage-Klassen erstellen, wenn ILM-Regeln bestimmte Objekte auf bestimmten Storage-Nodes platzieren sollen. 
 ---
-= Speicherklassen erstellen und zuweisen
+= Erstellen und Zuweisen von Speicherklassen in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

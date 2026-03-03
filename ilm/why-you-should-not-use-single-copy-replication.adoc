@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: dual commit, single commit, number of copies for replication 
 summary: Beim Erstellen einer ILM-Regel zum Erstellen replizierter Kopien sollten Sie immer mindestens zwei Kopien für einen beliebigen Zeitraum in den Anweisungen zur Platzierung angeben. 
 ---
-= Warum sollten Sie keine Replizierung mit nur einer Kopie verwenden
+= Risiken der Einzelkopie-Replikation in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

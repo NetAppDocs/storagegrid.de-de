@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ILM policy tag 
 summary: Sie können die Details der ILM-Richtlinien-Tags anzeigen, ein Tag bearbeiten oder ein Tag entfernen. 
 ---
-= Managen von ILM-Richtlinien-Tags
+= ILM-Richtlinientags in StorageGRID verwalten
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

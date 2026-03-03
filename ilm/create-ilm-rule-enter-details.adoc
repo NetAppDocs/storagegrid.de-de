@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ILM rule step 1, define basics 
 summary: 'Schritt 1 \(Details eingeben\) des Assistenten zum Erstellen einer ILM-Regel ermöglicht Ihnen, einen Namen und eine Beschreibung für die Regel einzugeben und Filter für die Regel zu definieren.' 
 ---
-= Schritt 1 von 3: Details eingeben
+= Geben Sie Details und Filter für eine StorageGRID ILM-Regel ein
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

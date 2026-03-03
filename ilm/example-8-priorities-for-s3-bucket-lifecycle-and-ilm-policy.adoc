@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: retention priority, example S3 bucket lifecycle, example ILM policy 
 summary: Je nach Lifecycle-Konfiguration folgen Objekte den Aufbewahrungseinstellungen entweder des S3 Bucket-Lebenszyklus oder einer ILM-Richtlinie. 
 ---
-= Beispiel 8: Prioritäten für den S3-Bucket-Lebenszyklus und die ILM-Richtlinie
+= Wie der S3-Bucket-Lebenszyklus und die ILM-Richtlinie in StorageGRID zusammenwirken
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

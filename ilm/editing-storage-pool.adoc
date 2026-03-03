@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: edit storage pool 
 summary: Sie können einen Speicherpool bearbeiten, um seinen Namen zu ändern oder Standorte und Speicherklassen zu aktualisieren. 
 ---
-= Speicherpool bearbeiten
+= Bearbeiten Sie einen Speicherpool in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

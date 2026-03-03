@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: use cloud storage pool, benefits of cloud storage pools 
 summary: Mit Cloud Storage Pools können Sie Daten an einem externen Ort sichern oder per Tiering übertragen. Darüber hinaus können Daten in mehreren Clouds gesichert oder per Tiering verschoben werden. 
 ---
-= Wann sollten Sie Cloud Storage Pools nutzen
+= Anwendungsfälle für Cloud Storage Pool in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

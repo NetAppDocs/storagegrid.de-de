@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: object lock workflow 
 summary: Als Grid-Administrator müssen Sie sich eng mit den Mandantenbenutzern abstimmen, um sicherzustellen, dass die Objekte so geschützt sind, dass sie ihren Aufbewahrungsanforderungen entsprechen. 
 ---
-= S3 Objektsperraufgaben
+= S3 Object Lock-Workflow in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

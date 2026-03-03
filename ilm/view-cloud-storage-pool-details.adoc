@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: view cloud storage pool 
 summary: Sie können die Details eines Cloud-Storage-Pools anzeigen, um zu bestimmen, wo er verwendet wird, und um anzuzeigen, welche Nodes und Storage-Klassen enthalten sind. 
 ---
-= Details zum Cloud-Storage-Pool anzeigen
+= Details zum Cloud Storage Pool in StorageGRID anzeigen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

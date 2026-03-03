@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cloud storage pool, troubleshoot 
 summary: Verwenden Sie diese Fehlerbehebungsschritte, um Fehler zu beheben, die beim Erstellen, Bearbeiten oder Löschen eines Cloud-Speicherpools auftreten können. 
 ---
-= Fehlerbehebung Bei Cloud Storage Pools
+= Fehlerbehebung bei Cloud Storage Pools in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

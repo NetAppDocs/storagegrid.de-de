@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how object retention is determined 
 summary: StorageGRID bietet sowohl Grid-Administratoren als auch einzelnen Mandantenbenutzer Optionen, um die Speicherdauer von Objekten festzulegen. Im Allgemeinen haben alle von einem Mandantenbenutzer bereitgestellten Aufbewahrungsanweisungen Vorrang vor den Aufbewahrungsanweisungen, die vom Grid-Administrator bereitgestellt werden. 
 ---
-= Wie die Aufbewahrung von Objekten bestimmt wird
+= Wie StorageGRID die Objektaufbewahrung bestimmt
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

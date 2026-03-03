@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: last access time, ilm rule reference time 
 summary: Sie können die Uhrzeit des letzten Zugriffs als Referenzzeit in einer ILM-Regel verwenden. Sie möchten beispielsweise Objekte, die in den letzten drei Monaten auf lokalen Speicherknoten angezeigt wurden, während Sie Objekte verschieben, die noch nicht in letzter Zeit an einen externen Standort betrachtet wurden. Sie können die Uhrzeit des letzten Zugriffs auch als erweiterten Filter verwenden, wenn eine ILM-Regel nur auf Objekte angewendet werden soll, auf die an einem bestimmten Datum zuletzt zugegriffen wurde. 
 ---
-= Verwenden Sie die letzte Zugriffszeit in ILM-Regeln
+= Letzte Zugriffszeit in StorageGRID ILM-Regeln verwenden
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create default ilm rule 
 summary: Bevor Sie eine ILM-Richtlinie erstellen, müssen Sie eine Standardregel erstellen, um Objekte zu platzieren, die nicht mit einer anderen Regel in der Richtlinie übereinstimmt. Die Standardregel kann keinen Filter verwenden. Die Lösung muss für alle Mandanten, alle Buckets und alle Objektversionen gelten. 
 ---
-= Erstellen einer Standard-ILM-Regel
+= Erstellen Sie eine Standard-ILM-Regel in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

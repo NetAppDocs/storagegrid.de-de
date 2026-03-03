@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: site-loss protection, cross-site replication, storage pools 
 summary: Wenn die Implementierung von StorageGRID mehrere Standorte umfasst, können Sie für den Schutz vor Standortausfällen Replizierung und Erasure Coding mit entsprechend konfigurierten Storage-Pools verwenden. 
 ---
-= Schutz vor Standortausfällen
+= Schutz vor Standortverlust mit Speicherpools in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

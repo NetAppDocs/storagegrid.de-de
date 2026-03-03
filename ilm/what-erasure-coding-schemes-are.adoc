@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: erasure-coding scheme 
 summary: Erasure Coding steuert die Anzahl von Datenfragmenten und die Anzahl der Parity-Fragmente für jedes Objekt. 
 ---
-= Was sind Erasure Coding-Systeme?
+= Erfahren Sie mehr über Erasure-Coding-Schemata in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

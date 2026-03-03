@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: object size for erasure coding, example ILM rule, information lifecycle rule examples, 1 MB 
 summary: Die folgenden Beispielregeln und -Richtlinien dienen als Ausgangspunkt für die Definition einer ILM-Richtlinie, die nach Objektgröße gefiltert wird, um empfohlene EC-Anforderungen zu erfüllen. 
 ---
-= Beispiel 2: ILM-Regeln und Richtlinie für EC-Objektgrößen-Filterung
+= ILM-Regeln und Richtlinien für die Filterung der EC-Objektgröße in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

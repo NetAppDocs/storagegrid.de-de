@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: replication, object copies 
 summary: Die Replizierung ist eine von zwei Methoden, die StorageGRID zum Speichern von Objektdaten verwendet. Wenn Objekte mit einer ILM-Regel übereinstimmen, die Replizierung verwendet, erstellt das System exakte Kopien von Objektdaten und speichert die Kopien auf Storage Nodes. 
 ---
-= Was ist Replikation?
+= Erfahren Sie mehr über die Replikation in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

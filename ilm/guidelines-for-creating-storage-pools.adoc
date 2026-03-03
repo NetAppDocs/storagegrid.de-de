@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storage pool guidelines 
 summary: Konfiguration und Verwendung von Speicherpools zur Absicherung gegen Datenverluste durch Verteilung von Daten über mehrere Standorte hinweg Für replizierte Kopien und Kopien, die zur Fehlerkorrektur codiert wurden, sind unterschiedliche Konfigurationen von Storage-Pools erforderlich. 
 ---
-= Richtlinien zur Erstellung von Speicherpools
+= Richtlinien zur Speicherpool-Konfiguration in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

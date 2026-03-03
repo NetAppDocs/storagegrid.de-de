@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: lifecycle of cloud storage pool object 
 summary: Überprüfen Sie vor der Implementierung von Cloud-Storage-Pools den Lebenszyklus der Objekte, die in jedem Typ von Cloud-Storage-Pool gespeichert sind. 
 ---
-= Lebenszyklus eines Cloud-Storage-Pool-Objekts
+= Lebenszyklus eines Cloud Storage Pool-Objekts in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

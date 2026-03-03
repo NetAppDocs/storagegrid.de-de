@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ilm rule step 2, define placements 
 summary: 'Im Schritt Platzierungen definieren des Assistenten zur Erstellung von ILM-Regeln können Sie die Platzierungsanweisungen definieren, die festlegen, wie lange Objekte gespeichert werden, den Typ der Kopien \ (repliziert oder Erasure-coded\), den Speicherort und die Anzahl der Kopien.' 
 ---
-= Schritt 2 von 3: Definieren von Platzierungen
+= Platzierungsanweisungen für eine StorageGRID ILM-Regel definieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

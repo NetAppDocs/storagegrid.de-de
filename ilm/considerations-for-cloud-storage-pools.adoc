@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: what is a cloud storage pool, considerations for a cloud storage pool 
 summary: Wenn Sie einen Cloud Storage Pool zum Verschieben von Objekten aus dem StorageGRID System verwenden möchten, müssen Sie die Überlegungen für die Konfiguration und Verwendung von Cloud Storage Pools prüfen. 
 ---
-= Überlegungen zu Cloud-Storage-Pools
+= Anforderungen und Beschränkungen für Cloud Storage Pool in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

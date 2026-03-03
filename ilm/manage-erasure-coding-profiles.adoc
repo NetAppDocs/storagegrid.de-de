@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: rename erasure-coding profile, ec profile 
 summary: Sie können die Details für ein Erasure-Coding-Profil anzeigen und bei Bedarf ein Profil umbenennen. Sie können ein Profil für Erasure Coding deaktivieren, wenn es derzeit nicht in ILM-Regeln verwendet wird. 
 ---
-= Profile für das Erasure Coding managen
+= Verwalten Sie Erasure-Coding-Profile in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

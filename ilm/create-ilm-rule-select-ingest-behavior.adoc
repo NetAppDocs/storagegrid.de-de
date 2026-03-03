@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ilm rule step 3, define ingest behavior 
 summary: 'Mit Schritt 3 \(Select Ingest Behavior\) des Assistenten Create ILM Rule können Sie festlegen, wie die von dieser Regel gefilterten Objekte bei der Aufnahme geschützt werden.' 
 ---
-= Schritt 3 von 3: Wählen Sie Ingest Behavior
+= Wählen Sie das Aufnahmeverhalten für eine StorageGRID ILM-Regel aus
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

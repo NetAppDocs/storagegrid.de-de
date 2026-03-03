@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ingest options, balanced ingest, strict ingest, dual-commit ingest 
 summary: 'Wenn Sie eine ILM-Regel erstellen, geben Sie eine von drei Optionen zum Schutz der Objekte bei der Aufnahme an: Doppelter Commit, strenger oder ausgeglichener Storage.' 
 ---
-= Aufnahmeoptionen
+= ILM-Aufnahmeoptionen in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

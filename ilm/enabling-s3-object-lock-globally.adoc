@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: enable s3 object lock, object lock 
 summary: Falls ein S3-Mandantenkonto Vorschriften beim Speichern von Objektdaten einhalten muss, muss die S3-Objektsperre für Ihr gesamtes StorageGRID System aktiviert werden. Wenn Sie die globale S3-Objektsperre aktivieren, können alle S3-Mandantenbenutzer Buckets und Objekte mit S3 Object Lock erstellen und verwalten. 
 ---
-= Aktivieren Sie die S3-Objektsperre global
+= Aktivieren Sie die S3 Object Lock global in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

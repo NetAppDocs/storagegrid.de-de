@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: verify ilm policy, object metadata lookup 
 summary: Nachdem Sie eine ILM-Richtlinie aktiviert haben, nehmen Sie repräsentative Testobjekte in das StorageGRID System auf und führen Sie dann eine Objekt-Metadaten-Suche durch, um zu bestätigen, dass Kopien wie vorgesehen erstellt und an den richtigen Stellen platziert werden. 
 ---
-= Überprüfen einer ILM-Richtlinie mit Objekt-Metadaten-Lookup
+= Überprüfen Sie eine ILM-Richtlinie mit Objektmetadatenabfrage in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

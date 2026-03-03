@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: example ILM rule, information lifecycle rule examples 
 summary: Die folgenden Beispielregeln und -Richtlinien dienen als Ausgangspunkt bei der Definition einer ILM-Richtlinie zur Erfüllung der Anforderungen an Objektschutz und -Aufbewahrung. 
 ---
-= Beispiel 1: ILM-Regeln und -Richtlinie für Objekt-Storage
+= ILM-Regeln und -Richtlinien für den grundlegenden Objektschutz und die Aufbewahrung in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

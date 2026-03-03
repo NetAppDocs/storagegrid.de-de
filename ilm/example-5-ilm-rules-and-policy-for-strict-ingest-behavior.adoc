@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: strict ingest example, example ILM rule, information lifecycle rule examples 
 summary: Ein Speicherortfilter und das strikte Aufnahmeverhalten in einer Regel verhindern, dass Objekte an einem bestimmten Datacenter-Standort gespeichert werden. 
 ---
-= Beispiel 5: ILM-Regeln und Richtlinie für striktes Ingest-Verhalten
+= ILM rules und Richtlinien für Strict ingest behavior in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

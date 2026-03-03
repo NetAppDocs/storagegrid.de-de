@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ILM deletion, how objects are deleted 
 summary: StorageGRID kann Objekte entweder als direkte Antwort auf eine Client-Anfrage oder automatisch aufgrund des Ablaufs eines S3-Bucket-Lebenszyklus oder der Anforderungen der ILM-Richtlinie löschen. Wenn Sie verstehen, auf welche Weise Objekte gelöscht werden können und wie StorageGRID Löschanfragen verarbeitet, können Sie Objekte effizienter managen. 
 ---
-= So werden Objekte gelöscht
+= Wie StorageGRID Objekte löscht
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

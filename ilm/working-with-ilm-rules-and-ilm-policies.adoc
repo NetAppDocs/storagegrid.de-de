@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: remove ilm rule, edit ilm rule, clone ilm rule, ilm queue 
 summary: Wenn sich Ihre Speicheranforderungen ändern, müssen Sie möglicherweise eine andere Richtlinie festlegen oder die mit dieser Richtlinie verbundenen ILM-Regeln ändern. Sie können ILM-Metriken anzeigen, um die Systemperformance zu ermitteln. 
 ---
-= Arbeiten mit ILM-Richtlinien und ILM-Regeln
+= Arbeiten mit ILM-Richtlinien und ILM-Regeln in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

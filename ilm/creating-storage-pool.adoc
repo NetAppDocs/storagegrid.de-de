@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create storage pool 
 summary: Sie erstellen Storage-Pools, um zu bestimmen, wo das StorageGRID-System Objektdaten und den verwendeten Storage-Typ speichert. Jeder Speicherpool umfasst einen oder mehrere Standorte und eine oder mehrere Speicherklassen. 
 ---
-= Erstellen Sie einen Speicherpool
+= Erstellen Sie einen Speicherpool in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

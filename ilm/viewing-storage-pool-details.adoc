@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storage pool, view details 
 summary: Sie können die Details eines Speicherpools anzeigen, um zu bestimmen, wo der Speicherpool verwendet wird, und um zu sehen, welche Nodes und Speicherklassen enthalten sind. 
 ---
-= Zeigen Sie Details zum Speicherpool an
+= Details zum Speicherpool in StorageGRID anzeigen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: change ILM policy, example ILM policy, information lifecycle policy example 
 summary: Wenn Ihr Datenschutz geändert werden muss oder Sie neue Standorte hinzufügen, können Sie eine neue ILM-Richtlinie erstellen und aktivieren. 
 ---
-= Beispiel 6: Ändern einer ILM-Richtlinie
+= Wie sich die Änderung einer ILM-Richtlinie auf die Leistung von StorageGRID auswirkt
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

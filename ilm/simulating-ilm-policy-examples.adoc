@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: simulate ilm policy 
 summary: Die Beispiele für ILM-Richtliniensimulationen bieten Richtlinien zur Strukturierung und Änderung von Simulationen für Ihre Umgebung. 
 ---
-= Beispiele für ILM-Richtliniensimulationen
+= Beispiel-ILM-Policy-Simulationen in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

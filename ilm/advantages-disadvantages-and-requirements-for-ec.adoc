@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: erasure coding advantages, disadvantages, EC requirements 
 summary: Bevor Sie sich entscheiden, ob Sie zum Schutz von Objektdaten mithilfe von Replizierungs- oder Erasure Coding vor Verlust schützen möchten, sollten Sie die Vorteile und Nachteile sowie die Anforderungen für Verfahren zur Einhaltung von Datenkonsistenz kennen. 
 ---
-= Vor- und Nachteile sowie Anforderungen für Erasure Coding
+= Vorteile, Nachteile und Anforderungen für Erasure Coding in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

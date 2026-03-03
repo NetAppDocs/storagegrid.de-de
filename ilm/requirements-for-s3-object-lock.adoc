@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: requirements, s3 object lock, compliant ilm rule, compliant ilm policy 
 summary: Sie müssen die Anforderungen für die Aktivierung der globalen S3-Objektsperre, die Anforderungen für die Erstellung konformer ILM-Regeln und ILM-Richtlinien sowie die Einschränkungen prüfen, die StorageGRID für Buckets und Objekte, die S3 Objektsperre verwenden, festlegen. 
 ---
-= Anforderungen für die S3-Objektsperre
+= S3 Object Lock-Anforderungen in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
