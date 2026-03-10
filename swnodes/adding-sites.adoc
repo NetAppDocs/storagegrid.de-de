@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to add sites 
 summary: Sie müssen mindestens einen Standort erstellen, wenn Sie StorageGRID installieren. Sie können weitere Standorte erstellen, um die Zuverlässigkeit und Storage-Kapazität Ihres StorageGRID Systems zu erhöhen. 
 ---
-= Fügen Sie Sites hinzu
+= Standorte in StorageGRID hinzufügen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

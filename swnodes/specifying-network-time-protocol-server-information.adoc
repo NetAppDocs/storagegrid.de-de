@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to specify Network Time Protocol server information 
 summary: 'Sie müssen die Konfigurationsinformationen zum Netzwerkzeitprotokoll \(NTP\) für das StorageGRID-System angeben, damit Vorgänge, die auf separaten Servern ausgeführt werden, synchronisiert werden können.' 
 ---
-= Geben Sie Informationen zum Network Time Protocol-Server an
+= Geben Sie die Network Time Protocol-Serverinformationen für StorageGRID an
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

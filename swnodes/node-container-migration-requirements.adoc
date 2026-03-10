@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to migrate a node 
 summary: Mit der Funktion zur Node-Migration können Sie einen Node manuell von einem Host auf einen anderen verschieben. Normalerweise befinden sich beide Hosts im selben physischen Datacenter. 
 ---
-= Anforderungen für die Migration von Knotencontainern (Linux)
+= StorageGRID-Knotencontainer-Migrationsanforderungen für Linux
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

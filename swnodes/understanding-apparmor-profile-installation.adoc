@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to install AppArmor profile 
 summary: Wenn Sie in einer selbst bereitgestellten Ubuntu-Umgebung arbeiten und das obligatorische Zutrittskontrollsystem AppArmor verwenden, werden die AppArmor-Profile, die mit Paketen verknüpft sind, die Sie auf dem Basissystem installieren, möglicherweise durch die entsprechenden Pakete blockiert, die mit StorageGRID installiert sind. 
 ---
-= Verstehen Sie die Installation des AppArmor-Profils (Ubuntu und Debian)
+= Erfahren Sie mehr über AppArmor-Profile für StorageGRID unter Ubuntu und Debian
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

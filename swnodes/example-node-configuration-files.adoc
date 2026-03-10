@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: example debian node configuration file, example ubuntu linux node configuration file, example red hat linux node configuration file, example rhel node configuration file 
 summary: Sie können die Beispiel-Node-Konfigurationsdateien verwenden, die Ihnen bei der Einrichtung der Node-Konfigurationsdateien für Ihr StorageGRID System helfen. Die Beispiele zeigen Node-Konfigurationsdateien für alle Grid-Nodes. 
 ---
-= Beispiel-Knotenkonfigurationsdateien (Linux)
+= Beispielkonfigurationsdateien für StorageGRID-Knoten unter Linux
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

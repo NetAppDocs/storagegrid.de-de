@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to create rhel ubuntu or debian node configuration files, port, remap, port remap 
 summary: Konfigurationsdateien für die Nodes sind kleine Textdateien, die die Informationen liefern, die der StorageGRID-Host-Service benötigt, um einen Node zu starten und eine Verbindung zu den entsprechenden Netzwerk- und Block-Storage-Ressourcen herzustellen. Die Node-Konfigurationsdateien werden für virtuelle Nodes verwendet und nicht für Appliance-Nodes verwendet. 
 ---
-= Erstellen von Knotenkonfigurationsdateien für Linux-Bereitstellungen
+= Erstellen Sie StorageGRID-Knotenkonfigurationsdateien für Linux-Bereitstellungen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

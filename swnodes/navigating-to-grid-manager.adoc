@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to navigate to Grid Manager 
 summary: Mit dem Grid Manager können Sie alle Informationen definieren, die für die Konfiguration des StorageGRID Systems erforderlich sind. 
 ---
-= Navigieren Sie zum Grid Manager
+= Navigieren Sie zum StorageGRID Grid Manager
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

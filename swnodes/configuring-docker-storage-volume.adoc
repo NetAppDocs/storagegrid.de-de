@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to configure container engine storage volume, Docker, Podman 
 summary: Bevor Sie die Docker- oder Podman-Container-Engine installieren, müssen Sie möglicherweise das Speichervolume formatieren und mounten. 
 ---
-= Speichervolumen der Container-Engine konfigurieren (Linux)
+= Konfigurieren Sie das Container-Engine-Speichervolume für StorageGRID unter Linux
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how grid nodes discover the primary Admin Node 
 summary: Die Grid-Nodes kommunizieren mit dem primären Admin-Node zu Konfiguration und Management. Jeder Grid-Knoten muss die IP-Adresse des primären Admin-Knotens im Grid-Netzwerk kennen. 
 ---
-= Ermitteln der primären Admin-Node durch Grid-Nodes
+= Wie Grid-Knoten den primären Admin-Knoten in StorageGRID entdecken
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

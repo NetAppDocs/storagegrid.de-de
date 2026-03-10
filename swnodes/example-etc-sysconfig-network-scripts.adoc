@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to aggregate red hat linux interface, how to aggregate rhel interface, LACP bond, network scripts 
 summary: Sie können die Beispieldateien verwenden, um vier physische Linux-Schnittstellen in einer einzelnen LACP-Verbindung zu aggregieren. Anschließend können Sie drei VLAN-Schnittstellen einrichten, die die Verbindung als StorageGRID-Grid-, Admin- und Client-Netzwerkschnittstellen unterteilen. 
 ---
-= Beispiel /etc/sysconfig/network-scripts (RHEL)
+= Beispiel für die Konsolidierung von vier physischen Schnittstellen zu einem Bond für StorageGRID auf RHEL
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

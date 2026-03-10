@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storage requirements, performance requirements, host storage, host volumes, netapp ontap, fabricpool 
 summary: Sie müssen die Storage-Anforderungen für StorageGRID-Nodes verstehen, damit Sie ausreichend Speicherplatz für die Erstkonfiguration und die künftige Storage-Erweiterung bereitstellen können. 
 ---
-= Storage- und Performance-Anforderungen erfüllt
+= Speicher- und Leistungsanforderungen für StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

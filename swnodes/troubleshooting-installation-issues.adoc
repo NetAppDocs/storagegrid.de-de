@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to troubleshoot ubuntu or debian installation 
 summary: Falls bei der Installation des StorageGRID-Systems Probleme auftreten, können Sie auf die Installationsprotokolldateien zugreifen. Der technische Support muss möglicherweise auch die Installations-Log-Dateien verwenden, um Probleme zu beheben. 
 ---
-= Fehlerbehebung bei Installationsproblemen
+= Beheben von Installationsproblemen bei StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

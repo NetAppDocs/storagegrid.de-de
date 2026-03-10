@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to collect information about your vmware deployment environment 
 summary: Bevor Sie Grid-Nodes bereitstellen, müssen Sie Informationen über Ihre Netzwerkkonfiguration und die VMware Umgebung erfassen. 
 ---
-= Sammeln Sie Informationen zu Ihrer Bereitstellungsumgebung (VMware).
+= Sammeln Sie Informationen über Ihre VMware-Umgebung für StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to specify Grid Network subnets 
 summary: Sie müssen die Subnetze angeben, die im Grid-Netzwerk verwendet werden. 
 ---
-= Grid-Netzwerk-Subnetze angeben
+= Geben Sie Grid-Netzwerk-Subnetze für StorageGRID an
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

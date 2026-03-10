@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: example etc network interfaces 
 summary: Die Datei /etc/Netzwerk/Interfaces enthält drei Abschnitte, die die physischen Schnittstellen, die Bond-Schnittstelle und die VLAN-Schnittstellen definieren. Sie können die drei Beispielabschnitte in einer einzelnen Datei kombinieren, die vier physische Linux-Schnittstellen in einer einzelnen LACP-Verbindung aggregieren wird. Anschließend können Sie drei VLAN-Schnittstellen einrichten, die die Verbindung als StorageGRID Grid, Administrator und Client-Netzwerk-Schnittstellen verwenden. 
 ---
-= Beispiel /etc/network/interfaces (Ubuntu und Debian)
+= Beispiel für die Aggregation physischer Schnittstellen für StorageGRID auf Ubuntu und Debian
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

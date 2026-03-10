@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to install on ubuntu, how to install on debian, how to install on red hat linux, how to install on rhel 
 summary: 'Auf Bare-Metal-Systemen nimmt StorageGRID einige Änderungen an den Einstellungen für den gesamten Host `sysctl` vor.' 
 ---
-= So ändern sich hostweite Einstellungen während der Installation (Linux)
+= Wie StorageGRID Änderungen an den hostweiten Einstellungen vornimmt
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

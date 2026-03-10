@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to configure the host network 
 summary: Nach dem Abschluss der Linux-Installation auf Ihren Hosts müssen Sie möglicherweise eine zusätzliche Konfiguration durchführen, um auf jedem Host eine Reihe von Netzwerkschnittstellen vorzubereiten, die sich für die Zuordnung zu den später zu implementierenden StorageGRID Nodes eignen. 
 ---
-= Konfigurieren des Hostnetzwerks (Linux)
+= Konfigurieren Sie das StorageGRID-Hostnetzwerk für Linux-Bereitstellungen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

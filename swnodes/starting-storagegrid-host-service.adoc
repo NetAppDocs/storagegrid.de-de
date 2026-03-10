@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to start host service 
 summary: Um die StorageGRID Nodes zu starten und sicherzustellen, dass sie nach einem Neustart des Hosts neu gestartet werden, müssen Sie den StorageGRID Host Service aktivieren und starten. 
 ---
-= Starten Sie den StorageGRID -Hostdienst (Linux)
+= Starten Sie den StorageGRID Hostdienst unter Linux
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: software requirements 
 summary: Sie können eine virtuelle Maschine zum Hosten eines beliebigen Typs von StorageGRID-Knoten verwenden. Für jeden Grid-Node benötigen Sie eine virtuelle Maschine. 
 ---
-= Softwareanforderungen
+= Softwareanforderungen für StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

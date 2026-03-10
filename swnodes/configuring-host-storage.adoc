@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to configure host storage 
 summary: Sie müssen jedem Linux-Host Blockspeichervolumes zuweisen. 
 ---
-= Hostspeicher konfigurieren (Linux)
+= StorageGRID Hostspeicher für Linux-Bereitstellungen konfigurieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

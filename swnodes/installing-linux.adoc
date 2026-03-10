@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to install Linux 
 summary: Sie müssen StorageGRID auf allen Linux-Grid-Hosts installieren.  Eine Liste der unterstützten Versionen erhalten Sie mit dem NetApp Interoperability Matrix Tool. 
 ---
-= Installieren Sie Linux
+= Installieren Sie StorageGRID auf Linux-Grid-Hosts
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

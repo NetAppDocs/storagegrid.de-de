@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to approve pending grid nodes 
 summary: Sie müssen jeden Grid-Node genehmigen, bevor er dem StorageGRID System beitreten kann. 
 ---
-= Ausstehende Grid-Nodes genehmigen
+= Ausstehende Grid-Knoten für StorageGRID genehmigen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
