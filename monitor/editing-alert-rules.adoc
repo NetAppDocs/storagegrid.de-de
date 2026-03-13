@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to edit alert rules 
 summary: Sie können eine Meldungsregel bearbeiten, um die Triggerbedingungen zu ändern. Für eine benutzerdefinierte Warnungsregel können Sie auch den Regelnamen, die Beschreibung und die empfohlenen Aktionen aktualisieren. 
 ---
-= Bearbeiten von Meldungsregeln
+= Alarmregeln in StorageGRID bearbeiten
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

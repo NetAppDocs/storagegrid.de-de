@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: network tab 
 summary: Auf der Registerkarte Netzwerk wird ein Diagramm angezeigt, in dem der empfangene und gesendete Netzwerkdatenverkehr über alle Netzwerkschnittstellen auf dem Node, am Standort oder im Raster angezeigt wird. 
 ---
-= Zeigen Sie die Registerkarte Netzwerk an
+= Registerkarte „StorageGRID-Netzwerk“ anzeigen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

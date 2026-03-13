@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: mib, snmp, monitoring 
 summary: MIB-Dateien enthalten Definitionen und Informationen über die Eigenschaften der verwalteten Ressourcen und Dienste für die Knoten in der Tabelle. Sie können auf MIB-Dateien zugreifen, die die Objekte und Benachrichtigungen für StorageGRID definieren. Diese Dateien können für die Überwachung Ihres Grids nützlich sein. 
 ---
-= Zugriff auf MIB-Dateien
+= Auf StorageGRID MIB-Dateien zugreifen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

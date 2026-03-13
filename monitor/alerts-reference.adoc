@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: alerts reference 
 summary: In dieser Referenz werden die Standardwarnungen aufgeführt, die im Grid Manager angezeigt werden. Empfohlene Maßnahmen finden Sie in der Warnmeldung, die Sie erhalten. 
 ---
-= Alerts Referenz
+= Warnungen in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

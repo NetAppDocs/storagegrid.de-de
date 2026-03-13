@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: load balancing, monitoring 
 summary: Wenn Sie zum Verwalten von Client-Verbindungen zu StorageGRID einen Load Balancer verwenden, sollten Sie die Lastausgleichvorgänge überwachen, nachdem Sie das System zunächst und nachdem Sie Konfigurationsänderungen vorgenommen oder eine Erweiterung durchgeführt haben. 
 ---
-= Monitoring von Lastverteilungsvorgängen
+= Überwachen Sie die Lastverteilungsvorgänge in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

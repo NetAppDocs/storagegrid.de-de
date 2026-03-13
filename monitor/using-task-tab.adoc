@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: Tasks tab, rename node, reboot node, storage state, maintenance mode 
 summary: Die Registerkarte „Aufgaben“ wird für alle Knoten angezeigt.  Sie können diese Registerkarte verwenden, um einen Knoten umzubenennen oder neu zu starten oder um einen Appliance-Knoten in den Wartungsmodus zu versetzen.  Für Speicherknoten können Sie den Speicherstatus festlegen. 
 ---
-= Verwenden Sie die Registerkarte Aufgaben
+= Verwenden Sie die Registerkarte „StorageGRID-Aufgaben“.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

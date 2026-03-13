@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: monitoring, monitoring network connections, network, network performance 
 summary: Die Integrität und Bandbreite des Netzwerks zwischen Knoten und Standorten sowie die Ressourcennutzung einzelner Grid-Nodes sind für einen effizienten Betrieb von entscheidender Bedeutung. 
 ---
-= Überwachen Sie Netzwerk- und Systemressourcen
+= Überwachen Sie Netzwerk- und Systemressourcen in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

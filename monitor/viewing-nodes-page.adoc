@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: nodes page 
 summary: Wenn Sie detailliertere Informationen über das StorageGRID-System benötigen, als das Dashboard bietet, können Sie auf der Seite Nodes Metriken für das gesamte Grid, jeden Standort im Raster und jeden Node an einem Standort anzeigen. 
 ---
-= Zeigen Sie die Seite Knoten an
+= Seite „StorageGRID-Knoten“ anzeigen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

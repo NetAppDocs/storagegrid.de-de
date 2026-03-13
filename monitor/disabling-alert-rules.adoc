@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to disable alert rules, how to remove a custom alert rule 
 summary: Sie können den aktivierten/deaktivierten Status für eine Standard- oder eine benutzerdefinierte Warnungsregel ändern. 
 ---
-= Deaktivieren von Meldungsregeln
+= Warnregeln in StorageGRID deaktivieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

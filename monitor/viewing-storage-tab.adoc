@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storage tab 
 summary: Die Registerkarte „Storage“ fasst Storage-Verfügbarkeit und andere Storage-Metriken zusammen. 
 ---
-= Öffnen Sie die Registerkarte „Speicher“
+= Registerkarte „Storage“ in StorageGRID anzeigen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

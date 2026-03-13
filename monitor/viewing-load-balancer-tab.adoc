@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: load balancer tab 
 summary: Die Registerkarte Load Balancer enthält Performance- und Diagnosediagramme zum Betrieb des Load Balancer Service. 
 ---
-= Zeigen Sie die Registerkarte Load Balancer an
+= Registerkarte „StorageGRID Load Balancer“ anzeigen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

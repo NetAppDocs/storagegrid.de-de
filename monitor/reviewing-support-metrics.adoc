@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to view support metrics, how to review support metrics 
 summary: Bei der Fehlerbehebung eines Problems können Sie gemeinsam mit dem technischen Support detaillierte Metriken und Diagramme für Ihr StorageGRID System prüfen. 
 ---
-= Prüfen von Support-Kennzahlen
+= Überprüfen Sie die StorageGRID-Support-Metriken
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

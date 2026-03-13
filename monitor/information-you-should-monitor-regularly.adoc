@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: when to monitor, what to monitor 
 summary: Das StorageGRID System funktioniert auch dann weiter, wenn Fehler auftreten oder Teile des Grids nicht verfügbar sind, sollten Sie potenzielle Probleme überwachen und beheben, bevor sie die Effizienz oder Verfügbarkeit des Grids beeinträchtigen. 
 ---
-= Was und wann zu überwachen
+= Was und wann in StorageGRID überwacht werden sollte
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

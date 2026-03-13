@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: platform services tab 
 summary: Die Registerkarte Plattformdienste enthält Informationen über alle S3-Plattform-Servicevorgänge an einem Standort. 
 ---
-= Zeigen Sie die Registerkarte Plattformdienste an
+= Registerkarte „Dienste der StorageGRID-Plattform“ anzeigen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

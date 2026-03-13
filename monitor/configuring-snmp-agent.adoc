@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: snmp agent, mib, trap, inform 
 summary: Sie können den StorageGRID SNMP-Agent so konfigurieren, dass ein SNMP-Verwaltungssystem eines Drittanbieters für schreibgeschützten MIB-Zugriff und Benachrichtigungen verwendet wird. 
 ---
-= Konfigurieren Sie den SNMP-Agent
+= Konfigurieren Sie den SNMP-Agent in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to manage alert rules 
 summary: Alarmregeln definieren die Bedingungen, die bestimmte Warnmeldungen auslösen. StorageGRID enthält eine Reihe von Standardwarnregeln, die Sie unverändert verwenden oder ändern können, oder Sie können individuelle Alarmregeln erstellen. 
 ---
-= Zeigen Sie Alarmregeln an
+= StorageGRID-Alarmregeln anzeigen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

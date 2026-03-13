@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to update the SNMP agent 
 summary: Sie können SNMP-Benachrichtigungen deaktivieren, Community-Strings aktualisieren oder Agent-Adressen, USM-Benutzer und Trap-Ziele hinzufügen oder entfernen. 
 ---
-= Aktualisieren Sie den SNMP-Agent
+= Aktualisieren Sie den StorageGRID SNMP-Agenten
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

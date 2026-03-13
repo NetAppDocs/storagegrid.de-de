@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to disable alert rules, how to remove a custom alert rule 
 summary: Wenn E-Mail-Benachrichtigungen gesendet werden sollen, wenn Warnmeldungen auftreten, müssen Sie Informationen über Ihren SMTP-Server angeben. Sie müssen auch E-Mail-Adressen für Empfänger von Benachrichtigungen eingeben. 
 ---
-= Richten Sie E-Mail-Benachrichtigungen für Warnmeldungen ein
+= E-Mail-Benachrichtigungen für StorageGRID-Warnungen einrichten
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

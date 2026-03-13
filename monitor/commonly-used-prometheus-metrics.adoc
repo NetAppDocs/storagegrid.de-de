@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: prometheus, Prometheus metrics, metrics 
 summary: In dieser Liste der häufig verwendeten Prometheus-Kennzahlen können Sie die Bedingungen in den Standardwarnungsregeln besser verstehen oder die Bedingungen für benutzerdefinierte Warnungsregeln erstellen. 
 ---
-= Häufig verwendete Prometheus-Kennzahlen
+= Häufig verwendete Prometheus-Metriken in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

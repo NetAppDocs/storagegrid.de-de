@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to create custom alert rules 
 summary: Sie können benutzerdefinierte Alarmregeln erstellen, um eigene Bedingungen für das Auslösen von Warnmeldungen zu definieren. 
 ---
-= Erstellen benutzerdefinierter Warnungsregeln
+= Erstellen Sie benutzerdefinierte Alarmregeln in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

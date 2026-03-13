@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: put, get, performance 
 summary: Sie können die Performance bestimmter Vorgänge, z. B. Objektspeicher und -Abruf, überwachen, um Änderungen zu identifizieren, die möglicherweise weitere Untersuchungen erfordern. 
 ---
-= PUT- und GET-Performance werden überwacht
+= Überwachen Sie die PUT- und GET-Leistung in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

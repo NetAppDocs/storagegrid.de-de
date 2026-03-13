@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: hardware tab 
 summary: Auf der Registerkarte Hardware werden für jeden Node CPU-Auslastung und Arbeitsspeicherauslastung sowie zusätzliche Hardware-Informationen über Appliances angezeigt. 
 ---
-= Zeigen Sie die Registerkarte Hardware an
+= Registerkarte „StorageGRID-Hardware“ anzeigen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

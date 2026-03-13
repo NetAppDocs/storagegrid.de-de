@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to disable alert rules, how to remove a custom alert rule 
 summary: Sie können eine benutzerdefinierte Alarmregel entfernen, wenn Sie sie nicht mehr verwenden möchten. 
 ---
-= Entfernen Sie benutzerdefinierte Warnungsregeln
+= Benutzerdefinierte Alarmregeln in StorageGRID entfernen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

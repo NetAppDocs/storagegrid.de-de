@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: Manage drives tab, hardware diagnostics, fail drive, logically replace drive 
 summary: Auf der Registerkarte Laufwerke verwalten können Sie auf Details zugreifen und Fehlerbehebungs- und Wartungsaufgaben für Laufwerke in den Appliances durchführen, die diese Funktion unterstützen. 
 ---
-= Zeigen Sie die Registerkarte Laufwerke verwalten an
+= Registerkarte „Laufwerke verwalten“ in StorageGRID anzeigen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

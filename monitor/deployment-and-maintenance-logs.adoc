@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: deployment, logs, Maintenance 
 summary: Sie können die Bereitstellungs- und Wartungsprotokolle verwenden, um Probleme zu beheben. 
 ---
-= Protokoll für Implementierung und Wartung
+= Bereitstellungs- und Wartungsprotokolle in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

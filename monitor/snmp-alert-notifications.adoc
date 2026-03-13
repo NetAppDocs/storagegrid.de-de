@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to use snmp notifications for alerts 
 summary: Wenn StorageGRID SNMP-Benachrichtigungen senden soll, wenn Warnmeldungen auftreten, müssen Sie den StorageGRID SNMP-Agent aktivieren und ein oder mehrere Trap-Ziele konfigurieren. 
 ---
-= Einrichten von SNMP-Benachrichtigungen für Warnmeldungen
+= SNMP-Benachrichtigungen für StorageGRID-Warnungen einrichten
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: alert rules, managing alerts, alerts, alert notifications. edit alert rules 
 summary: Das Warnsystem bietet eine benutzerfreundliche Oberfläche zum Erkennen, Bewerten und Beheben von Problemen, die während des StorageGRID-Betriebs auftreten können. 
 ---
-= Verwalten von Meldungen
+= Warnmeldungen in StorageGRID verwalten
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

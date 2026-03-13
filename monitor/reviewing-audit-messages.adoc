@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to review audit messages, how to view audit messages 
 summary: Audit-Meldungen helfen Ihnen, die detaillierten Vorgänge Ihres StorageGRID Systems besser zu verstehen. Sie können mithilfe von Audit-Protokollen Probleme beheben und die Performance bewerten. 
 ---
-= Audit-Meldungen prüfen
+= StorageGRID-Auditmeldungen prüfen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: overview tab 
 summary: Die Registerkarte Übersicht enthält grundlegende Informationen zu den einzelnen Knoten. Es werden zudem alle Meldungen angezeigt, die derzeit den Node betreffen. 
 ---
-= Zeigen Sie die Registerkarte Übersicht an
+= Registerkarte „StorageGRID-Übersicht“ anzeigen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: syslog server, external syslog server, sizing, sizing syslog server, audit messages 
 summary: Ein externer Syslog-Server ist ein Server außerhalb von StorageGRID, mit dem Sie Audit-Informationen zum System an einem Ort sammeln können. Mithilfe eines externen Syslog-Servers können Sie den Netzwerkverkehr auf Ihren Admin-Knoten reduzieren und Audit-Informationen effizienter verwalten. 
 ---
-= Überlegungen zur Verwendung eines externen Syslog-Servers
+= Externe Syslog-Server in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

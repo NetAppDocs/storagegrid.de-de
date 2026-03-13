@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to view dashboard, how to configure dashboard 
 summary: Über das Dashboard können Sie Systemaktivitäten auf einen Blick überwachen. Sie können benutzerdefinierte Dashboards erstellen, um die Implementierung von StorageGRID zu überwachen. 
 ---
-= Das Dashboard anzeigen und verwalten
+= Anzeigen und Verwalten des Dashboards in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: log management, audit level, external syslog server, log destinations 
 summary: Konfigurieren Sie nach Bedarf Prüfebenen, Protokollheader und den Speicherort von Prüfmeldungen und -protokollen. 
 ---
-= Konfigurieren der Protokollverwaltung
+= Protokollverwaltung in StorageGRID konfigurieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

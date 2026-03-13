@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to disable alert rules, how to remove a custom alert rule 
 summary: Optional können Sie Stille konfigurieren, um Benachrichtigungen vorübergehend zu unterdrücken. 
 ---
-= Benachrichtigung über Stille
+= Warnmeldungen in StorageGRID stummschalten
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

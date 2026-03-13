@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: autosupport, triggering autosupport, manually triggering autosupport, autosupport triggers 
 summary: Um den technischen Support bei der Fehlerbehebung in Ihrem StorageGRID System zu unterstützen, können Sie manuell ein AutoSupport Paket senden. 
 ---
-= Starten Sie manuell ein AutoSupport-Paket
+= Ein StorageGRID AutoSupport Paket manuell auslösen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

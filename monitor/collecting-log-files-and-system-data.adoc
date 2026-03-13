@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to collect system data, how to collect logs 
 summary: Sie können StorageGRID -Protokolldateien und Systemdaten, einschließlich Konfigurationsdaten, abrufen und an den technischen Support senden. 
 ---
-= Erfassen von Protokolldateien und Systemdaten
+= Sammeln Sie StorageGRID-Protokolldateien und Systemdaten
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

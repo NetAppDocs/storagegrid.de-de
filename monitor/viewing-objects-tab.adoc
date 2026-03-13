@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: objects tab 
 summary: Die Registerkarte Objekte bietet Informationen zu S3-Aufnahme- und -Abrufraten. 
 ---
-= Zeigen Sie die Registerkarte Objekte an
+= Registerkarte „StorageGRID-Objekte“ anzeigen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

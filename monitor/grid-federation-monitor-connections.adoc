@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: grid federation, monitor connection, cross grid replication metrics 
 summary: Sie können grundlegende Informationen zu allen Grid-Verbundverbindungen, detaillierte Informationen zu einer bestimmten Verbindung oder Prometheus-Metriken zu Grid-übergreifenden Replizierungsvorgängen überwachen. Sie können eine Verbindung von beiden Rastergitten aus überwachen. 
 ---
-= Überwachen von Netzverbundverbindungen
+= Überwachen Sie StorageGRID Grid-Federation-Verbindungen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

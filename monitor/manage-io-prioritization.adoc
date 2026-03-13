@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ec repair priority, ec purge priority 
 summary: 'Durch die Priorisierung von Eingabe/Ausgabe (E/A) können Sie die relativen Prioritäten für E/A-Vorgänge im Grid ändern.' 
 ---
-= E/A-Priorisierung ändern
+= Ändern Sie die E/A-Priorisierung in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

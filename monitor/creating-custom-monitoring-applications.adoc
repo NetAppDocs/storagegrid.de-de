@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: custom monitoring, monitoring, dashboard 
 summary: Mithilfe der StorageGRID-Kennzahlen der Grid-Management-API können Sie benutzerdefinierte Monitoring-Applikationen und Dashboards erstellen. 
 ---
-= Erstellen benutzerdefinierter Überwachungsanwendungen
+= Erstellen Sie benutzerdefinierte Überwachungsanwendungen für StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
