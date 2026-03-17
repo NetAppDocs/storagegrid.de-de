@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to use identity federation, how to use federated groups with Tenant Manager 
 summary: Durch die Verwendung eines Identitätsverbunds können Mandantengruppen und Benutzer schneller eingerichtet werden, und Mandantenbenutzer können sich dann mithilfe der vertrauten Anmeldedaten beim Mandantenkonto anmelden. 
 ---
-= Verwenden Sie den Identitätsverbund
+= Verwenden Sie die Identitätsföderation in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

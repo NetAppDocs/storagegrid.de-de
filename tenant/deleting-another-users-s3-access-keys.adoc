@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to delete access key for other user 
 summary: Wenn Sie einen S3-Mandanten verwenden und über entsprechende Berechtigungen verfügen, können Sie die S3-Zugriffsschlüssel eines anderen Benutzers löschen. Nach dem Löschen eines Zugriffsschlüssels kann dieser nicht mehr für den Zugriff auf die Objekte und Buckets im Mandantenkonto verwendet werden. 
 ---
-= Löschen Sie die S3-Zugriffstasten eines anderen Benutzers
+= Löschen Sie die S3-Zugriffsschlüssel eines anderen Benutzers in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

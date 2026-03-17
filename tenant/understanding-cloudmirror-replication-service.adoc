@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cloudmirror replication 
 summary: Sie können die CloudMirror-Replizierung für einen S3-Bucket aktivieren, wenn StorageGRID bestimmte Objekte replizieren soll, die dem Bucket zu einem oder mehreren Ziel-Buckets hinzugefügt wurden. 
 ---
-= Verstehen Sie den CloudMirror Replizierungsservice
+= Erfahren Sie mehr über den StorageGRID CloudMirror Replikationsdienst
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

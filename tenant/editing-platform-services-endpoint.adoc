@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to edit platform services endpoint 
 summary: Sie können die Konfiguration für einen Endpunkt für Plattformdienste bearbeiten, um seinen Namen, URI oder andere Details zu ändern. Beispielsweise müssen Sie möglicherweise abgelaufene Anmeldedaten aktualisieren oder den URI so ändern, dass er zu einem Backup-Elasticsearch-Index für ein Failover weist. Sie können den URN für einen Endpunkt für Plattformdienste nicht ändern. 
 ---
-= Endpunkt der Plattformdienste bearbeiten
+= Bearbeiten Sie einen Platform Services-Endpunkt in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

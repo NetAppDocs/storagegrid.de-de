@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to delete bucket objects, empty bucket 
 summary: Sie können den Tenant Manager verwenden, um die Objekte in einem oder mehreren Buckets zu löschen. 
 ---
-= Löschen von Objekten in Bucket
+= Objekte aus einem StorageGRID S3-Bucket löschen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

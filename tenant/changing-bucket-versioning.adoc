@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to change bucket versioning, disabled versioning, enabled versioning, suspended versioning 
 summary: Wenn Sie einen S3-Mandanten verwenden, können Sie den Versionsstatus für S3-Buckets ändern. 
 ---
-= Ändern Sie die Objektversionierung für einen Bucket
+= Objektversionierung für einen S3-Bucket in StorageGRID ändern
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

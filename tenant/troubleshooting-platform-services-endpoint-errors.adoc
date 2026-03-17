@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to troubleshoot platform services endpoint 
 summary: Wenn StorageGRID versucht, mit einem Endpunkt für Plattformdienste zu kommunizieren, wird eine Meldung auf dem Dashboard angezeigt. Auf der Seite „Plattform-Services-Endpunkte“ wird in der Spalte „Letzte Fehler“ angezeigt, wie lange der Fehler bereits aufgetreten ist. Es wird kein Fehler angezeigt, wenn die Berechtigungen, die mit den Anmeldedaten eines Endpunkts verknüpft sind, falsch sind. 
 ---
-= Fehlerbehebung bei Endpunktfehlern bei Plattform-Services
+= Beheben Sie Endpunktfehler bei StorageGRID-Plattformdiensten
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

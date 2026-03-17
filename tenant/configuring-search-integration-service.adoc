@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to configure search integration service 
 summary: Sie aktivieren die Suchintegration für einen Bucket, indem Sie XML für die Suchintegration erstellen und den Tenant Manager verwenden, um die XML-Datei auf einen Bucket anzuwenden. 
 ---
-= Konfigurieren Sie den Suchintegrationsdienst
+= Konfigurieren Sie den Suchintegrationsdienst in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

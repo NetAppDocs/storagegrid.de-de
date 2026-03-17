@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to view bucket details 
 summary: Sie können die Buckets in Ihrem Mandantenkonto anzeigen. 
 ---
-= Bucket-Details anzeigen
+= S3-Bucket-Details in StorageGRID anzeigen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to manage s3 access key 
 summary: Jeder Benutzer eines S3-Mandantenkontos muss über einen Zugriffsschlüssel verfügen, um Objekte im StorageGRID System zu speichern und abzurufen. Ein Zugriffsschlüssel besteht aus einer Zugriffsschlüssel-ID und einem geheimen Zugriffsschlüssel. 
 ---
-= Managen von S3-Zugriffsschlüsseln
+= S3-Zugriffsschlüssel in StorageGRID verwalten
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

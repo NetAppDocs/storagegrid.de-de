@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to view other user access key 
 summary: Wenn Sie einen S3-Mandanten verwenden und über entsprechende Berechtigungen verfügen, können Sie die S3-Zugriffsschlüssel eines anderen Benutzers anzeigen. Sie können die Liste nach Ablauf der Zeit sortieren, sodass Sie feststellen können, welche Schlüssel bald ablaufen. Nach Bedarf können Sie neue Schlüssel erstellen und Schlüssel löschen, die nicht mehr verwendet werden. 
 ---
-= Zeigen Sie die S3-Zugriffstasten eines anderen Benutzers an
+= Anzeigen der S3-Zugriffsschlüssel eines anderen Benutzers in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

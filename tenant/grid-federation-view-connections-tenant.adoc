@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: grid federation connection, view, clear error, last error 
 summary: Wenn Ihr Mandantenkonto über die Berechtigung zum Verwenden der Grid Federation-Verbindung verfügt, können Sie die zulässigen Verbindungen anzeigen. 
 ---
-= Anzeigen von Verbindungen mit Grid Federation
+= Grid-Federation-Verbindungen in StorageGRID anzeigen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

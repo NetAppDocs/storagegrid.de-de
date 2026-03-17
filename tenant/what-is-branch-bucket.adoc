@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to create branch bucket 
 summary: Ein Branch-Bucket bietet Zugriff auf Objekte in einem Bucket, wie sie zu einem bestimmten Zeitpunkt existierten. 
 ---
-= Was ist ein Asteimer?
+= Erfahren Sie mehr über StorageGRID Branch-Buckets
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

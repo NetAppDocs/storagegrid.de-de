@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to use s3 console 
 summary: Mit der S3-Konsole können Sie die Objekte in einem S3-Bucket anzeigen und managen. 
 ---
-= Verwenden Sie die S3-Konsole
+= Verwenden Sie die S3-Konsole in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to configure open ldap 
 summary: Wenn Sie einen OpenLDAP-Server für die Identitätsföderation verwenden möchten, müssen Sie bestimmte Einstellungen auf dem OpenLDAP-Server konfigurieren. 
 ---
-= Richtlinien für die Konfiguration von OpenLDAP-Server
+= Konfigurieren Sie einen OpenLDAP-Server für StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

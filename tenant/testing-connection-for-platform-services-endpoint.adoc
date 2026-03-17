@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to test platform services endpoint connection 
 summary: Wenn sich die Verbindung zu einem Plattformdienst geändert hat, können Sie die Verbindung für den Endpunkt testen, um zu überprüfen, ob die Zielressource existiert und ob sie mit den von Ihnen angegebenen Anmeldeinformationen erreicht werden kann. 
 ---
-= Testen der Verbindung für Endpunkt der Plattformservices
+= Testen Sie die Verbindung für einen StorageGRID platform services endpoint
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

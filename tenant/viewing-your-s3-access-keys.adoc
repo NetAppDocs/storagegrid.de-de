@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to view your s3 access key 
 summary: Wenn Sie einen S3-Mandanten verwenden und über die entsprechenden Berechtigungen verfügen, können Sie eine Liste Ihrer S3-Zugriffsschlüssel anzeigen. Sie können die Liste nach Ablauf der Zeit sortieren, sodass Sie feststellen können, welche Schlüssel bald ablaufen. Nach Bedarf können Sie neue Schlüssel erstellen oder Schlüssel löschen, die Sie nicht mehr verwenden. 
 ---
-= Die S3-Zugriffsschlüssel anzeigen
+= Zeigen Sie Ihre S3-Zugriffsschlüssel in StorageGRID an
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

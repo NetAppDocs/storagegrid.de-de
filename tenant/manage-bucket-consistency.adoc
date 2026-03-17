@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to manage bucket consistency, how to change bucket consistency, read after new write, read-after-new-write, strong site, strong-site, strong global, strong-global 
 summary: Mithilfe von Konsistenzwerten können Änderungen an den Bucket-Einstellungen festgelegt und ein Gleichgewicht zwischen der Verfügbarkeit der Objekte in einem Bucket und der Konsistenz dieser Objekte in verschiedenen Storage-Nodes und Standorten sichergestellt werden. Sie können die Konsistenzwerte so ändern, dass sie sich von den Standardwerten unterscheiden, damit Client-Anwendungen ihre betrieblichen Anforderungen erfüllen können. 
 ---
-= Management der Bucket-Konsistenz
+= Konsistenz von StorageGRID-Buckets verwalten
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

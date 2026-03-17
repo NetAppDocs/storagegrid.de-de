@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to sign in to tenant manager 
 summary: Sie greifen auf den Tenant Manager zu, indem Sie die URL für den Mandanten in die Adressleiste eines unterstützten Webbrowsers eingeben. 
 ---
-= Melden Sie sich bei Tenant Manager an
+= Sign in zu StorageGRID Tenant Manager
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

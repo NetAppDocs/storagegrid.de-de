@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to create S3 bucket 
 summary: Sie können im Mandanten-Manager S3-Buckets für Objektdaten erstellen. 
 ---
-= Erstellen eines S3-Buckets
+= Erstellen Sie einen StorageGRID S3-Bucket
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

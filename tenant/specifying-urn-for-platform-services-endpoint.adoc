@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to specify platform services urn 
 summary: 'Wenn Sie einen Endpunkt für Plattformservices erstellen, müssen Sie einen eindeutigen Ressourcennamen (URN) angeben. Beim Erstellen einer Konfigurations-XML für den Plattformdienst verwenden Sie die URN als Referenz auf den Endpunkt. Der URN für jeden Endpunkt muss eindeutig sein.' 
 ---
-= URN für Endpunkt von Plattformservices angeben
+= Geben Sie eine URN für einen StorageGRID Plattformdienste-Endpunkt an
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

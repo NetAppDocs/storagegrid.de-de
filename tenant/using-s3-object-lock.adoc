@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to use s3 object lock 
 summary: Sie können S3 Object Lock verwenden, wenn Buckets und Objekte die gesetzlichen Aufbewahrungsanforderungen erfüllen müssen. 
 ---
-= Verwenden Sie S3 Objektsperre, um Objekte beizubehalten
+= Verwenden Sie S3 Object Lock, um Objekte in StorageGRID aufzubewahren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

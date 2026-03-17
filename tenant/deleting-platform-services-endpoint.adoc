@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to delete tenant platform services endpoint 
 summary: Sie können einen Endpunkt löschen, wenn Sie den zugeordneten Plattformdienst nicht mehr verwenden möchten. 
 ---
-= Endpunkt für Plattformservices löschen
+= Löschen eines StorageGRID Platform Services-Endpunkts
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -2,16 +2,16 @@
 permalink: tenant/grid-federation-clone-keys-with-api.html 
 sidebar: sidebar 
 keywords: s3 access key, secret key id, account clone, tenant manager api 
-summary: Wenn Ihr Mandantenkonto über die Berechtigung zum Verwenden der Grid-Federation-Verbindung verfügt, können Sie die Mandantenmanagement-API verwenden, um S3-Zugriffsschlüssel vom Mandanten im Quellraster manuell auf den Mandanten im Zielraster zu klonen. 
+summary: Wenn Ihr StorageGRID-Mandantenkonto über die Berechtigung Use grid federation connection verfügt, können Sie die Tenant Management API verwenden, um S3-Zugriffsschlüssel manuell zu klonen. 
 ---
-= Klonen von S3-Zugriffsschlüsseln mithilfe der API
+= Klonen von S3-Zugriffsschlüsseln zwischen StorageGRID-Grids mithilfe der Tenant Management API
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Wenn Ihr Mandantenkonto über die Berechtigung *Grid Federation connection* verwenden verfügt, können Sie die Tenant Management API verwenden, um S3-Zugriffsschlüssel vom Mandanten im Quellraster manuell auf den Mandanten im Zielraster zu klonen.
+Wenn Ihr StorageGRID Mandantenkonto über die Berechtigung *Use grid federation connection* verfügt, können Sie die Tenant Management API verwenden, um S3-Zugriffsschlüssel manuell vom Mandanten im Quell-Grid zum Mandanten im Ziel-Grid zu klonen.
 
 .Bevor Sie beginnen
 * Das Mandantenkonto hat die Berechtigung *Grid Federation connection* verwenden.

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to create other user S3 access key 
 summary: Wenn Sie einen S3-Mandanten verwenden und über die entsprechenden Berechtigungen verfügen, können Sie S3-Zugriffsschlüssel für andere Benutzer erstellen, beispielsweise Applikationen, die Zugriff auf Buckets und Objekte benötigen. 
 ---
-= Erstellen Sie die S3-Zugriffstasten eines anderen Benutzers
+= Erstellen Sie die S3-Zugriffsschlüssel eines anderen Benutzers in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

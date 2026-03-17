@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to create your own S3 access key 
 summary: Wenn Sie einen S3-Mandanten verwenden und über die entsprechenden Berechtigungen verfügen, können Sie Ihre eigenen S3-Zugriffsschlüssel erstellen. Sie benötigen einen Zugriffsschlüssel für den Zugriff auf Ihre Buckets und Objekte. 
 ---
-= Erstellen Ihrer eigenen S3-Zugriffsschlüssel
+= Erstellen Sie Ihre eigenen S3-Zugriffsschlüssel in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

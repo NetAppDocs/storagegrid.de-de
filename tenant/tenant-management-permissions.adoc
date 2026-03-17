@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: tenant management permissions 
 summary: Bevor Sie eine Mandantengruppe erstellen, überlegen Sie, welche Berechtigungen Sie dieser Gruppe zuweisen möchten. Über die Mandantenmanagement-Berechtigungen wird festgelegt, welche Aufgaben Benutzer mit dem Tenant Manager oder der Mandantenmanagement-API durchführen können. Ein Benutzer kann einer oder mehreren Gruppen angehören. Berechtigungen werden kumulativ, wenn ein Benutzer zu mehreren Gruppen gehört. 
 ---
-= Mandantenmanagement-Berechtigungen
+= StorageGRID Mandantenverwaltungsberechtigungen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

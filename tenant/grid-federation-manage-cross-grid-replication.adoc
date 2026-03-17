@@ -2,9 +2,9 @@
 permalink: tenant/grid-federation-manage-cross-grid-replication.html 
 sidebar: sidebar 
 keywords: grid federation, cross-grid replication, use grid federation connection, replicate client delete markers, s3 bucket 
-summary: f Ihrem Mandantenkonto wurde beim Erstellen die Berechtigung zum Verwenden der Grid-Federation-Verbindung zugewiesen. Sie können Objekte mithilfe der Grid-übergreifenden Replizierung automatisch zwischen Buckets im Mandanten-Quell-Grid und Buckets im Mandanten-Ziel-Grid replizieren. Die Grid-übergreifende Replizierung kann in eine oder beide Richtungen erfolgen. 
+summary: Wenn Ihrem Mandantenkonto bei der Erstellung die Berechtigung Use grid federation connection zugewiesen wurde, können Sie die Grid-übergreifende Replikation nutzen, um Objekte automatisch zwischen Buckets im Quell-Grid des Mandanten und Buckets im Ziel-Grid des Mandanten zu replizieren. Die Grid-übergreifende Replikation kann in eine oder beide Richtungen erfolgen. 
 ---
-= Grid-übergreifende Replizierung managen
+= Verwalten der gridübergreifenden Replikation in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

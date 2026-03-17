@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to create branch bucket 
 summary: Verwenden Sie den Mandanten-Manager, um Details für Zweigstellen-Buckets zu erstellen und anzuzeigen. 
 ---
-= Verwalten von Branch-Buckets
+= StorageGRID-Branch-Buckets verwalten
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

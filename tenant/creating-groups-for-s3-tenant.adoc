@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to create S3 tenant groups, federated group, local group 
 summary: Sie können Berechtigungen für S3-Benutzergruppen managen, indem Sie föderierte Gruppen importieren oder lokale Gruppen erstellen. 
 ---
-= Erstellen von Gruppen für einen S3-Mandanten
+= Erstellen Sie Gruppen für einen S3-Mandanten in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

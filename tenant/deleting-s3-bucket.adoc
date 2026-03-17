@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to delete S3 bucket 
 summary: Sie können den Mandanten-Manager verwenden, um einen leeren S3-Bucket zu löschen. 
 ---
-= S3-Bucket löschen
+= Löschen eines StorageGRID S3 bucket
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to understand tenant management api 
 summary: Sie können Systemmanagementaufgaben mit der REST-API für das Mandantenmanagement anstelle der Mandantenmanager-Benutzeroberfläche ausführen. Möglicherweise möchten Sie beispielsweise die API zur Automatisierung von Vorgängen verwenden oder mehrere Einheiten, wie beispielsweise Benutzer, schneller erstellen. 
 ---
-= Mandantenmanagement-API verstehen
+= Erfahren Sie mehr über die StorageGRID Tenant Management API
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

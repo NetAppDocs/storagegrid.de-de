@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to edit tenant group name 
 summary: Sie können den Anzeigenamen für eine Gruppe bearbeiten. Sie können den eindeutigen Namen für eine Gruppe nicht bearbeiten. 
 ---
-= Gruppenname bearbeiten
+= Bearbeiten Sie einen Mandantengruppennamen in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

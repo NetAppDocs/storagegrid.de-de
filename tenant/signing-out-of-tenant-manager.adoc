@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to sign out of tenant manager 
 summary: Wenn Sie mit dem Mandanten-Manager arbeiten, müssen Sie sich anmelden, um sicherzustellen, dass nicht autorisierte Benutzer nicht auf das StorageGRID-System zugreifen können. Wenn Sie Ihren Browser schließen, werden Sie möglicherweise aufgrund der Cookie-Einstellungen des Browsers nicht aus dem System abgesendet. 
 ---
-= Melden Sie sich von Tenant Manager ab
+= Von StorageGRID Tenant Manager abmelden
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

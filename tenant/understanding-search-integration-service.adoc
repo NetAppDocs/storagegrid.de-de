@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to understand search integration service 
 summary: Sie können die Integration der Suche in einen S3-Bucket aktivieren, wenn Sie einen externen Such- und Analyseservice für Ihre Objektmetadaten verwenden möchten. 
 ---
-= Den Suchintegrations-Service verstehen
+= Erfahren Sie mehr über den StorageGRID Suchintegrationsdienst
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

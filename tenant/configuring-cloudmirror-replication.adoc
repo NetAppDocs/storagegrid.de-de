@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to configure CloudMirror replication, replication xml 
 summary: Sie aktivieren die CloudMirror-Replizierung für einen Bucket, indem Sie XML für die Bucket-Replizierungskonfiguration erstellen und Tenant Manager zum Anwenden des XML-Codes auf den Bucket verwenden. 
 ---
-= CloudMirror-Replizierung konfigurieren
+= Konfigurieren Sie die CloudMirror-Replikation in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

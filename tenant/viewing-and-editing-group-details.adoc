@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to view and edit group 
 summary: Wenn Sie die Details für eine Gruppe anzeigen, können Sie den Anzeigenamen, Berechtigungen, Richtlinien und die zu der Gruppe gehörenden Benutzer ändern. 
 ---
-= Zeigen Sie Gruppendetails an und bearbeiten Sie sie
+= Details zu Mandantengruppen in StorageGRID anzeigen und bearbeiten
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

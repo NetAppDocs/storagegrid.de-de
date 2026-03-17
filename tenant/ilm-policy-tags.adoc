@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to assign ilm policy tag to bucket 
 summary: Wählen Sie ein ILM-Richtlinien-Tag aus, das Sie basierend auf Ihren Objekt-Storage-Anforderungen einem Bucket zuweisen möchten. 
 ---
-= Anwenden eines ILM-Richtlinien-Tags auf einen Bucket
+= Wenden Sie ein ILM-Policy-Tag auf einen StorageGRID Bucket an
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

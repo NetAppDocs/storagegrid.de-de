@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: tenant management api version 
 summary: Die Mandanten-Management-API verwendet Versionierung zur Unterstützung unterbrechungsfreier Upgrades. 
 ---
-= Mandantenmanagement-API-Versionierung
+= StorageGRID Tenant Management API-Versionierung
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

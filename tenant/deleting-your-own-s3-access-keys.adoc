@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to delete S3 access key 
 summary: Wenn Sie einen S3-Mandanten verwenden und über die entsprechenden Berechtigungen verfügen, können Sie Ihre eigenen S3-Zugriffsschlüssel löschen. Nach dem Löschen eines Zugriffsschlüssels kann dieser nicht mehr für den Zugriff auf die Objekte und Buckets im Mandantenkonto verwendet werden. 
 ---
-= Löschen Ihrer eigenen S3-Zugriffsschlüssel
+= Löschen Sie Ihre eigenen S3-Zugriffsschlüssel in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

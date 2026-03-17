@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to duplicate tenant group 
 summary: Sie können neue Gruppen schneller erstellen, indem Sie eine vorhandene Gruppe duplizieren. 
 ---
-= Gruppe duplizieren
+= Eine StorageGRID Mandantengruppe duplizieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
