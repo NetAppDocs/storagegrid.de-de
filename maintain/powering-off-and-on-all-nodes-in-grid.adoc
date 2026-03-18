@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, power nodes, power on nodes, power off nodes, power down nodes 
 summary: Möglicherweise müssen Sie Ihr gesamtes StorageGRID System herunterfahren, wenn Sie ein Datacenter verschieben. Diese Schritte bieten einen allgemeinen Überblick über die empfohlene Sequenz für ein kontrolliertes Herunterfahren und Starten. 
 ---
-= Schalten Sie alle Knoten im Grid aus und wieder ein
+= Alle StorageGRID-Knoten aus- und wieder einschalten
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

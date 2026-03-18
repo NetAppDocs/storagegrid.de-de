@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, select site 
 summary: Um zu bestimmen, ob eine Site deaktiviert werden kann, öffnen Sie zunächst den Assistenten zur Deaktivierung der Site. 
 ---
-= Schritt 1: Standort Auswählen
+= Wählen Sie einen Standort für die Außerbetriebnahme in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

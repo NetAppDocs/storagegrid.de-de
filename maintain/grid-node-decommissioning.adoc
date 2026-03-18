@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, decommission, remove grid node 
 summary: Mithilfe der Node-Deaktivierung können Sie einen oder mehrere Grid-Nodes an einem oder mehreren Standorten entfernen. Sie können den primären Admin-Node nicht stilllegen. 
 ---
-= Der Grid-Node wird deaktiviert
+= StorageGRID-Grid-Knoten Stilllegung
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, server manager, status, version 
 summary: Für jeden Grid-Node können Sie den aktuellen Status und die Version des auf diesem Grid-Node ausgeführten Server Managers anzeigen. Zudem erhalten Sie den aktuellen Status aller auf diesem Grid-Node ausgeführten Services. 
 ---
-= Zeigen Sie den Status und die Version von Server Manager an
+= Status und Version des StorageGRID Server-Managers anzeigen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

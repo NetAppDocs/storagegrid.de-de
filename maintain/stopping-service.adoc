@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, stop service, service 
 summary: Einige Wartungsvorgänge erfordern, dass Sie einen einzelnen Service beenden und gleichzeitig andere Services auf dem Grid-Node ausgeführt werden. Stoppen Sie nur einzelne Dienste, wenn Sie dazu durch ein Wartungsverfahren angewiesen werden. 
 ---
-= Dienst stoppen
+= Einen StorageGRID Dienst stoppen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

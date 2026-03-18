@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: rename grid, rename sites, rename node, change display name, bulk rename tool 
 summary: Mit diesem Verfahren können Sie die Anzeigenamen für Ihr Raster, Ihre Standorte und Knoten hinzufügen oder aktualisieren. Sie können ein einzelnes Element, mehrere Namen oder sogar alle Elemente gleichzeitig umbenennen. Das Definieren oder Aktualisieren eines Anzeigenamens hat keinerlei Auswirkungen auf StorageGRID-Vorgänge. 
 ---
-= Anzeigenamen hinzufügen oder aktualisieren
+= StorageGRID-Anzeigenamen hinzufügen oder aktualisieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

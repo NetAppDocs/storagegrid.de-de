@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, storage volume recovery, storage state, storage volume 
 summary: Nach der Wiederherstellung von Speichervolumes müssen Sie überprüfen, ob der gewünschte Status des Speicherknoten auf „Online“ gesetzt ist, und sicherstellen, dass der Status beim Neustart des Speicherknotenservers standardmäßig online ist. 
 ---
-= Überprüfen Sie den Speicherstatus nach der Wiederherstellung von Storage Volumes
+= Speicherstatus nach der Wiederherstellung von StorageGRID-Speichervolumes prüfen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

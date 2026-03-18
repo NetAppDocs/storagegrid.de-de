@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: reboot nodes, rolling reboot procedure 
 summary: Sie können einen Rolling Reboot durchführen, um mehrere Grid-Nodes ohne Serviceunterbrechung neu zu starten. 
 ---
-= Führen Sie einen Rolling-Neustart durch
+= Führen Sie einen rollierenden Neustart von StorageGRID durch.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

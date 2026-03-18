@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, decommission nodes, decommissioning nodes, maintenance task 
 summary: Wenn Sie im Grid Manager auf die Seite Decommission Nodes zugreifen, sehen Sie auf einen Blick, welche Knoten deaktiviert werden können. 
 ---
-= Öffnen Sie die Seite Decommission Nodes
+= Seite „Knoten außer Betrieb nehmen“ in StorageGRID aufrufen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

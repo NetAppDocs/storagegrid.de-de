@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, appliance, reinstallation appliance, reinstall appliance 
 summary: Bei der Wiederherstellung eines Grid-Node, der auf einer Services Appliance gehostet wurde, müssen Sie zuerst die Appliance für die Neuinstallation der StorageGRID Software vorbereiten. 
 ---
-= Appliance für die Neuinstallation vorbereiten (nur Plattformaustausch)
+= StorageGRID Appliance für die Neuinstallation vorbereiten (nur Plattformaustausch)
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

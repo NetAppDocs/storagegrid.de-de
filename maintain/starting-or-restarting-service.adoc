@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, service, start service, restart service 
 summary: Möglicherweise müssen Sie einen Dienst starten, der angehalten wurde, oder Sie müssen einen Dienst anhalten und neu starten. 
 ---
-= Dienst starten oder neu starten
+= Starten oder Neustarten eines StorageGRID-Dienstes
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

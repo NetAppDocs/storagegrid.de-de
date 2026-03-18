@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, corrective action, additional recovery 
 summary: Abhängig von den spezifischen Aktionen, die Sie unternommen haben, um die StorageGRID Nodes auf dem Ersatzhost auszuführen, müssen Sie möglicherweise zusätzliche Recovery-Schritte für jeden Node durchführen. 
 ---
-= Was ist weiter: Führen Sie zusätzliche Recovery-Schritte, wenn erforderlich
+= Führen Sie zusätzliche Schritte zur Wiederherstellung des StorageGRID-Knotens durch
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

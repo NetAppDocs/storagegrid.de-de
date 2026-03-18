@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, move adc, adc quorum 
 summary: Sie können den ADC-Dienst auf einen anderen Speicherknoten am selben Standort verschieben. 
 ---
-= Verschieben des ADC-Dienstes
+= Verschieben Sie den ADC-Dienst in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, gateway node 
 summary: Nachdem Sie einen Gateway-Node ersetzt haben, müssen Sie im Grid Manager Recovery starten auswählen, um den neuen Node als Ersatz für den ausgefallenen Node zu konfigurieren. 
 ---
-= Wählen Sie Wiederherstellung starten, um Gateway-Node zu konfigurieren
+= Wählen Sie „Wiederherstellung starten“, um den StorageGRID Gateway Node zu konfigurieren.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, decommission admin node, decommission gateway node 
 summary: Prüfen Sie die Überlegungen für die Stilllegung eines Admin-Node oder Gateway-Node. 
 ---
-= Überlegungen bei der Stilllegung von Admin- oder Gateway-Nodes
+= Überlegungen zur Außerbetriebnahme von StorageGRID Admin- oder Gateway-Knoten
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

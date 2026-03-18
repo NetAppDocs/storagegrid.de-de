@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, network connection, restore network connection, isolated node, restore isolated node connection 
 summary: Unter bestimmten Umständen kann eine oder mehrere Knotengruppen möglicherweise nicht mit dem Rest des Grids in Kontakt treten. Beispielsweise können Änderungen an Standort- oder Grid-weiten IP-Adressen zu isolierten Nodes führen. 
 ---
-= Stellt die Netzwerkverbindung für isolierte Knoten wieder her
+= Netzwerkverbindung für isolierte StorageGRID-Knoten wiederherstellen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

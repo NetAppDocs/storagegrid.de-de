@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, subnet list, grid network 
 summary: Mithilfe des Tools IP ändern können Sie Subnetze im Grid Network hinzufügen oder ändern. 
 ---
-= Fügen Sie zu Subnetzlisten im Grid-Netzwerk hinzu oder ändern Sie diese
+= Subnetzlisten im Grid-Netzwerk in StorageGRID hinzufügen oder ändern
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

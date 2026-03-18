@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, node decommission, decommission 
 summary: Bevor Sie einen Grid-Node außer Betrieb nehmen, müssen Sie die folgenden Informationen erhalten. 
 ---
-= Sammeln Sie die erforderlichen Materialien
+= Sammeln Sie die benötigten Materialien für die Stilllegung des StorageGRID-Knotens
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

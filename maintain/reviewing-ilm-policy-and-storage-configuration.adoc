@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, restore, ilm policy, storage configuration 
 summary: Wenn Sie einen Storage-Node ausmustern möchten, sollten Sie die ILM-Richtlinie Ihres StorageGRID Systems überprüfen, bevor Sie den Ausmusterungsprozess starten. 
 ---
-= Prüfen der ILM-Richtlinie und Storage-Konfiguration
+= Überprüfen Sie die StorageGRID ILM-Richtlinie und die Speicherkonfiguration
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, system drive warning, storage node 
 summary: Lesen Sie vor der Wiederherstellung eines ausgefallenen Systemlaufwerks eines Storage-Knotens die allgemeinen Warnungen und Überlegungen zur Wiederherstellung des Grid-Knotens sowie die folgenden spezifischen Warnungen durch. 
 ---
-= Warnungen für die Wiederherstellung des Storage Node-Systemlaufwerks
+= Warnungen zur Wiederherstellung des Systemlaufwerks des StorageGRID-Speicherknotens
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

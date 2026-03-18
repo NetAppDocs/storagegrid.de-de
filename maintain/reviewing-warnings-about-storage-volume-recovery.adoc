@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, volume warning 
 summary: Bevor Sie fehlgeschlagene Speicher-Volumes für einen Speicherknoten wiederherstellen, müssen Sie die folgenden Warnungen überprüfen. 
 ---
-= Warnungen zur Wiederherstellung des Speichervolumens
+= Warnungen zur StorageGRID-Speichervolumen-Wiederherstellung
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

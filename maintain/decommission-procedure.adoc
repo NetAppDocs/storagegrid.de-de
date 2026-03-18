@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to decommission 
 summary: Sie können einen Außerbetriebnahme durchführen, um Grid-Nodes oder eine ganze Website dauerhaft vom StorageGRID System zu entfernen. 
 ---
-= Node oder Standort wird ausmustern
+= Außerbetriebnahme eines StorageGRID Knotens oder Standorts
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

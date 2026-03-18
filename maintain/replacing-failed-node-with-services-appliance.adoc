@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, replace failed node, services appliance 
 summary: Sie können eine Service-Appliance verwenden, um einen fehlgeschlagenen Gateway-Knoten, einen fehlerhaften nicht primären Admin-Knoten oder einen fehlerhaften primären Admin-Knoten wiederherzustellen, der auf VMware, einem Linux-Host oder einer Service-Appliance gehostet wurde. Dieses Verfahren ist ein Schritt der Wiederherstellung des Grid-Nodes. 
 ---
-= Austausch eines fehlerhaften Node durch Services Appliance
+= Ersetzen Sie den ausgefallenen StorageGRID-Knoten durch eine Services-Appliance
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

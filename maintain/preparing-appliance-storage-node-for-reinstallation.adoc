@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, appliance, reinstallation appliance, reinstall appliance 
 summary: Wenn Sie einen Appliance-Speicherknoten wiederherstellen, müssen Sie zuerst die Appliance für die Neuinstallation der StorageGRID-Software vorbereiten. 
 ---
-= Appliance-Speicherknoten für die Neuinstallation vorbereiten
+= Bereiten Sie den StorageGRID Appliance-Speicherknoten für die Neuinstallation vor
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: reboot grid node, tasks tab 
 summary: Sie können einen einzelnen Grid-Node über die Registerkarte Aufgaben auf der Seite Nodes neu booten. 
 ---
-= Starten Sie den Grid-Node über die Registerkarte Aufgaben neu
+= Starten Sie den StorageGRID-Knoten über die Registerkarte „Tasks“ neu.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, hotfix 
 summary: Bevor Sie einen Hotfix anwenden, müssen Sie alle erforderlichen Materialien erhalten. 
 ---
-= Beschaffung der erforderlichen Materialien für Hotfix
+= Beschaffen Sie die benötigten Materialien für einen StorageGRID-Hotfix
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

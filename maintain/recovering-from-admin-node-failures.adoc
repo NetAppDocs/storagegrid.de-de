@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: recover, admin node failure, workflow 
 summary: Der Wiederherstellungsprozess für einen Admin-Knoten hängt davon ab, ob es sich um den primären Admin-Knoten oder einen nicht-primären Admin-Knoten handelt. 
 ---
-= Recovery des primären oder nicht primären Admin-Node
+= Wiederherstellung des primären oder nicht-primären Admin-Node in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

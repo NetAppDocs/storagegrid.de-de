@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: restore replicated data, restore erasure-coded data, recover storage node, recover storage volume 
 summary: Nach der Wiederherstellung eines Speicher-Volumes auf einem Speicher-Node, auf dem das Systemlaufwerk intakt ist, können Sie die replizierten oder mit Löschungen codierten Objektdaten wiederherstellen, die beim Ausfall des Speicher-Volumes verloren gingen. 
 ---
-= Wiederherstellung von Objektdaten auf dem Storage Volume, auf dem das Systemlaufwerk intakt ist
+= Objektdaten auf StorageGRID-Speichervolume wiederherstellen, wo das Systemlaufwerk intakt ist
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

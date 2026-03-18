@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, restore metrics, restore prometheus, non-primary admin node 
 summary: Optional können Sie die historischen Metriken aufbewahren, die von Prometheus auf einem nicht primären Admin-Node gewartet wurden, der ausgefallen ist. 
 ---
-= Stellen Sie Prometheus-Kennzahlen wieder her, wenn Sie einen nicht-primären Admin-Node wiederherstellen
+= Stellen Sie Prometheus-Metriken wieder her, wenn Sie einen nicht-primären StorageGRID-Admin-Knoten wiederherstellen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

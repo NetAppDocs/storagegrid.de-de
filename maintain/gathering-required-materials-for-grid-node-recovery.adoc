@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recovery, grid node recovery, node recovery 
 summary: Bevor Sie Wartungsmaßnahmen durchführen, müssen Sie sicherstellen, dass die zur Wiederherstellung eines ausgefallenen Grid-Node erforderlichen Materialien vorhanden sind. 
 ---
-= Sammeln der erforderlichen Materialien für die Grid Node Recovery
+= Sammeln Sie die benötigten Materialien für die Wiederherstellung des StorageGRID-Grid-Knotens
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

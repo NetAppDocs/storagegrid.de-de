@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, storage volume failure, volume failure, system drive intact 
 summary: Sie müssen eine Reihe von Aufgaben durchführen, um einen softwarebasierten Storage Node wiederherzustellen, bei dem ein oder mehrere Storage-Volumes auf dem Storage-Node ausgefallen sind, das Systemlaufwerk jedoch intakt ist. Wenn nur Speichervolumen ausgefallen sind, steht der Speicherknoten dem StorageGRID-System weiterhin zur Verfügung. 
 ---
-= Wiederherstellung nach einem Storage-Volume-Ausfall bei intaktem Systemlaufwerk
+= Wiederherstellung nach StorageGRID-Speichervolumenausfall, wenn das Systemlaufwerk intakt ist
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

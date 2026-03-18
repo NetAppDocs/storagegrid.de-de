@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: maintain overview, maintenance overview, about maintain, about maintenance 
 summary: Zu den Grid-Wartungsaufgaben gehören die Stilllegung eines Node oder Standorts, die Umbenennung eines Grid, eines Node oder Standorts und die Wartung des Netzwerks. Sie können auch Host- und Middleware-Verfahren sowie Grid-Node-Verfahren durchführen. 
 ---
-= Netzwartung
+= StorageGRID-Netzwartung
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, vmware, automatic restart, auto restart, configure automatic restart, configure auto restart 
 summary: Wenn die virtuelle Maschine nach dem Neustart des VMware vSphere-Hypervisors nicht neu gestartet wird, müssen Sie die virtuelle Maschine möglicherweise für den automatischen Neustart konfigurieren. 
 ---
-= VMware: Virtuelle Maschine für automatischen Neustart konfigurieren
+= Konfigurieren Sie eine VMware-VM für den automatischen Neustart in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

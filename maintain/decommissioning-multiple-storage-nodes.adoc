@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, decommission nodes, storage node, multiple storage nodes 
 summary: Wenn mehr als ein Storage-Node entfernt werden muss, können Sie sie nacheinander oder parallel absetzen. 
 ---
-= Ausmustern mehrerer Storage-Nodes
+= Mehrere StorageGRID-Speicherknoten außer Betrieb nehmen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, storage node 
 summary: Nachdem Sie einen Speicherknoten ersetzt haben, müssen Sie im Grid Manager die Option Wiederherstellung starten auswählen, um den neuen Knoten als Ersatz für den ausgefallenen Knoten zu konfigurieren. 
 ---
-= Wählen Sie Wiederherstellung starten, um Speicherknoten zu konfigurieren
+= Wählen Sie „Wiederherstellung starten“, um den StorageGRID-Speicherknoten zu konfigurieren.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

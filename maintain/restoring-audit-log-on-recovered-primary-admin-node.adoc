@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, restore audit log, primary admin node 
 summary: Wenn Sie das Revisionsprotokoll vom fehlgeschlagenen primären Admin-Knoten erhalten konnten, können Sie es in den primären Admin-Knoten kopieren, den Sie wiederherstellen. 
 ---
-= Prüfprotokoll auf wiederhergestellten primären Admin-Knoten wiederherstellen
+= Revisionsprotokoll auf dem wiederhergestellten primären StorageGRID Admin-Node wiederherstellen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, revise ilm policies 
 summary: 'In Schritt 3 \(ILM-Richtlinien überarbeiten\) des Assistenten für die Entkomissionierungsstelle können Sie bestimmen, ob der Standort durch eine ILM-Richtlinie referenziert wird.' 
 ---
-= Schritt 3: Überarbeiten der ILM-Richtlinien
+= Überarbeiten Sie die ILM-Richtlinien für die Standortstilllegung in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

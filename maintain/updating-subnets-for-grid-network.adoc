@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, subnet, grid network, update subnets 
 summary: 'StorageGRID pflegt eine Liste der für die Kommunikation zwischen Grid-Nodes im Grid Network \(eth0\) verwendeten Subnetze. Zu diesen Einträgen gehören die Subnetze, die von jedem Standort im StorageGRID-System für das Grid-Netzwerk verwendet werden, sowie alle Subnetze, die für NTP, DNS, LDAP oder andere externe Server verwendet werden, auf die über das Grid-Netzwerk-Gateway zugegriffen wird. Wenn Sie Grid-Nodes oder einen neuen Standort in einer Erweiterung hinzufügen, müssen Sie möglicherweise Subnetze zum Grid-Netzwerk aktualisieren oder hinzufügen.' 
 ---
-= Subnetze für Grid Network aktualisieren
+= Aktualisieren Sie die Subnetze für das StorageGRID Grid Network
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

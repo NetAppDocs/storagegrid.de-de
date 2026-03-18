@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, site recovery, technical support, tech support 
 summary: Falls eine gesamte StorageGRID Site ausfällt oder mehrere Storage Nodes ausfallen, müssen Sie sich an den technischen Support wenden. Der technische Support analysiert das Unternehmen, entwickelt einen Recovery-Plan und stellt die ausgefallenen Nodes oder Standorte dann auf eine Art und Weise wieder her, die Ihre Geschäftsziele erfüllt. Die Recovery-Zeit wird optimiert und unnötige Datenverluste werden vermieden. 
 ---
-= Wie der technische Support eine Site wiederherstellt
+= Wie der technische Support eine StorageGRID Site wiederherstellt
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

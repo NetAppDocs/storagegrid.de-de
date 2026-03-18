@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: restore replicated data, restore erasure-coded data, recover appliance storage node, recover storage volume 
 summary: 'Sie können den Status von Reparaturjobs mit dem Skript von der Befehlszeile aus überwachen `repair-data`.' 
 ---
-= Überwachen Sie Jobs mit Reparaturdaten
+= Überwachen Sie StorageGRID repair-data-Jobs
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

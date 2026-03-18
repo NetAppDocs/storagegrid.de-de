@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, decommission 
 summary: Bevor Sie eine Website ausmustern, sind die folgenden Unterlagen erforderlich. 
 ---
-= Sammeln Sie die erforderlichen Materialien
+= Sammeln Sie die benötigten Materialien für die Stilllegung des StorageGRID-Standorts
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

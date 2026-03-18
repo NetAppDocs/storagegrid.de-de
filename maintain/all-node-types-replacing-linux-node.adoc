@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: replace linux node 
 summary: Wenn ein Fehler erfordert, dass Sie einen oder mehrere neue physische oder virtuelle Hosts bereitstellen oder Linux auf einem vorhandenen Host neu installieren, stellen Sie den Ersatz-Host bereit und konfigurieren Sie ihn, bevor Sie den Grid-Node wiederherstellen können. Dieses Verfahren ist ein Schritt der Wiederherstellung des Grid-Nodes für alle Arten von Grid-Nodes. 
 ---
-= Ersetzen Sie den Linux-Knoten
+= Ersetzen Sie einen Linux-Knoten in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

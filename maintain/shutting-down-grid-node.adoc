@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, node shutdown, shut down node, node shut down 
 summary: Sie können einen Grid-Node von der Befehlshülle des Node herunterfahren. 
 ---
-= Fahren Sie den Grid-Node herunter
+= StorageGRID-Knoten herunterfahren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

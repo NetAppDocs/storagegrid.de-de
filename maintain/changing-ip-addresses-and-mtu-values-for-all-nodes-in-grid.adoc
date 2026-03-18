@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, node ip address, change node ip, change node ip address, changing node ip, changing node ip address 
 summary: Wenn Sie die Grid-Netzwerk-IP-Adresse für alle Knoten im Raster ändern müssen, müssen Sie dieses spezielle Verfahren befolgen. Sie können eine Grid-Netzwerk-IP-Änderung nicht unter Verwendung des Verfahrens zum Ändern einzelner Knoten vornehmen. 
 ---
-= Ändern Sie die IP-Adressen für alle Nodes im Grid
+= Ändern Sie die IP-Adressen aller Knoten in einem StorageGRID Grid
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

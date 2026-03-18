@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, storage node, consolidate storage node, consolidating storage node 
 summary: Sie können Storage-Nodes konsolidieren, um die Anzahl der Storage-Nodes für einen Standort oder eine Bereitstellung zu verringern und gleichzeitig die Storage-Kapazität zu erhöhen. 
 ---
-= Storage-Nodes Konsolidieren
+= StorageGRID-Speicherknoten konsolidieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

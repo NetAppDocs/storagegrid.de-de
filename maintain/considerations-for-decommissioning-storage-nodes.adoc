@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storage node decommission, considerations, appliance node clone 
 summary: Überlegen Sie vor dem Stilllegen eines Storage-Node, ob Sie stattdessen den Node klonen können. Wenn Sie den Node dann stilllegen, prüfen Sie, wie StorageGRID während der Stilllegung Objekte und Metadaten managt. 
 ---
-= Überlegungen für die Deaktivierung von Storage-Nodes
+= Überlegungen zur Stilllegung von Storage Node in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

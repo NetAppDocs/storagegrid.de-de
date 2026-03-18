@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, primary admin node, replace primary admin node, replacing primary admin node 
 summary: Der Ersatzknoten muss als primärer Admin-Node für Ihr StorageGRID System konfiguriert sein. 
 ---
-= Primären Ersatzadministrator-Knoten konfigurieren
+= Konfigurieren Sie einen Ersatz-Primären Admin-Node in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

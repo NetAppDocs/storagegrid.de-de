@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, subnet list, admin network 
 summary: Sie können die Subnetze in der Subnetz-Liste Admin-Netzwerk eines oder mehrerer Nodes hinzufügen, löschen oder ändern. 
 ---
-= Fügen Sie zu Subnetzlisten im Admin-Netzwerk hinzu oder ändern Sie diese
+= Subnetzlisten im Admin-Netzwerk in StorageGRID hinzufügen oder ändern
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

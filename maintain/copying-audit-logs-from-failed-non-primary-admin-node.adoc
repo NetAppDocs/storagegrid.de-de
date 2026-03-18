@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, audit log, copy audit log, copying audit log, non-primary admin node, non primary admin node 
 summary: Wenn Sie in der Lage sind, Audit-Protokolle vom fehlgeschlagenen Admin-Knoten zu kopieren, sollten Sie diese beibehalten, um die Aufzeichnung der Systemaktivität und -Nutzung des Rasters zu erhalten. Sie können die erhaltenen Audit-Protokolle nach dem Wiederherstellen des nicht-primären Admin-Knotens wiederherstellen, nachdem er ausgeführt wurde. 
 ---
-= Prüfprotokolle vom fehlgeschlagenen Admin-Knoten kopieren
+= Audit-Protokolle von einem ausgefallenen, nicht primären StorageGRID Admin-Node kopieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

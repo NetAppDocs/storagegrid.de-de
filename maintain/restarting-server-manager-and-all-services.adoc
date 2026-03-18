@@ -2,16 +2,16 @@
 permalink: maintain/restarting-server-manager-and-all-services.html 
 sidebar: sidebar 
 keywords: storagegrid, recover, server manager, restart server manager 
-summary: Möglicherweise müssen Sie den Server-Manager und alle Dienste, die auf einem Grid-Knoten ausgeführt werden, neu starten. 
+summary: Möglicherweise müssen Sie den Server-Manager und alle auf einem Grid-Knoten laufenden Dienste neu starten. 
 ---
-= Starten Sie Server Manager und alle Services neu
+= Starten Sie den StorageGRID Server-Manager und alle Dienste neu
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Möglicherweise müssen Sie den Server-Manager und alle Dienste, die auf einem Grid-Knoten ausgeführt werden, neu starten.
+Möglicherweise müssen Sie den Server-Manager und alle auf einem Grid-Knoten laufenden Dienste neu starten.
 
 .Bevor Sie beginnen
 Sie haben die `Passwords.txt` Datei.

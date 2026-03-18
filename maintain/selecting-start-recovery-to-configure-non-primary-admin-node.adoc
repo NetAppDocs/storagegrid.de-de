@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, non-primary admin node 
 summary: Nach dem Ersetzen eines nicht-primären Admin-Knotens müssen Sie im Grid-Manager die Option Wiederherstellung starten wählen, um den neuen Knoten als Ersatz für den fehlgeschlagenen Knoten zu konfigurieren. 
 ---
-= Wählen Sie Wiederherstellung starten, um einen nicht-primären Admin-Node zu konfigurieren
+= Wählen Sie „Wiederherstellung starten“, um den nicht-primären StorageGRID Admin Node zu konfigurieren.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

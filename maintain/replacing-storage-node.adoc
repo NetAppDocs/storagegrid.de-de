@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, replace storage node, replacing storage node 
 summary: Wenn das Systemlaufwerk ausgefallen ist, müssen Sie zuerst den Speicherknoten ersetzen. 
 ---
-= Ersetzen Sie den Speicherknoten
+= Ersetzen Sie den StorageGRID-Speicherknoten
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

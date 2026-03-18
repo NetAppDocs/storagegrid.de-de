@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: configure ip address, change IP tool, ethernet, dhcp, ha group 
 summary: Sie können eine Netzwerkkonfiguration durchführen, indem Sie IP-Adressen für Grid-Nodes mithilfe des Tools IP ändern konfigurieren. 
 ---
-= Richtlinien für IP-Adressen
+= StorageGRID IP-Adressrichtlinien
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

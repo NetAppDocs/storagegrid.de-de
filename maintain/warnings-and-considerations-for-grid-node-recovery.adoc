@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, warning 
 summary: Wenn ein Grid-Node ausfällt, müssen Sie ihn so schnell wie möglich wiederherstellen. Bevor Sie beginnen, müssen Sie alle Warnungen und Überlegungen für die Node-Wiederherstellung prüfen. 
 ---
-= Warnungen und Überlegungen für die Wiederherstellung von Grid Nodes
+= Warnungen und Hinweise zur Wiederherstellung von StorageGRID-Knoten
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

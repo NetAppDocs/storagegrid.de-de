@@ -2,16 +2,16 @@
 permalink: maintain/viewing-current-status-of-service.html 
 sidebar: sidebar 
 keywords: storagegrid, recover, service, status 
-summary: Sie können jederzeit den aktuellen Status einer auf einem Grid-Node ausgeführten Services anzeigen. 
+summary: Sie können den aktuellen Status eines auf einem Grid-Knoten laufenden Dienstes jederzeit einsehen. 
 ---
-= Zeigt den aktuellen Servicestatus an
+= Aktuellen Status eines StorageGRID Dienstes anzeigen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie können jederzeit den aktuellen Status einer auf einem Grid-Node ausgeführten Services anzeigen.
+Sie können den aktuellen Status eines auf einem Grid-Knoten laufenden Dienstes jederzeit einsehen.
 
 .Bevor Sie beginnen
 Sie haben die `Passwords.txt` Datei.

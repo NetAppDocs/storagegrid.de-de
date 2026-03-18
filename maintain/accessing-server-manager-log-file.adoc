@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, server manager, log file 
 summary: Wenn bei der Verwendung von Server Manager ein Problem auftritt, überprüfen Sie dessen Protokolldatei. 
 ---
-= Fehlerbehebung Für Server Manager
+= Fehlerbehebung des Server-Managers in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

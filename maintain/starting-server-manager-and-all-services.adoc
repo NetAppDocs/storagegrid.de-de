@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, server manager, start server manager, start services, start all services 
 summary: Möglicherweise müssen Sie Server Manager starten, der auch alle Dienste auf dem Grid-Knoten startet. 
 ---
-= Starten Sie Server Manager und alle Dienste
+= Starten Sie StorageGRID Server-Manager und alle Dienste
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

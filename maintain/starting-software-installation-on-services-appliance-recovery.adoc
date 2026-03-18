@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, services appliance, start software installation 
 summary: Um einen Gateway-Knoten oder einen Admin-Knoten auf einer Service-Appliance zu installieren, verwenden Sie den StorageGRID-Appliance-Installer, der in der Appliance enthalten ist. 
 ---
-= Starten der Softwareinstallation auf der Services-Appliance
+= Starten Sie die Installation der StorageGRID-Software auf einem Services-Gerät
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

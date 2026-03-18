@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, restore, volume 
 summary: Mit Grid Manager können Sie Objektdaten für ein fehlerhaftes Speicher-Volume oder einen fehlerhaften Speicher-Node wiederherstellen. Sie können den Grid Manager auch verwenden, um laufende Wiederherstellungsprozesse zu überwachen und einen Wiederherstellungsverlauf anzuzeigen. 
 ---
-= Stellen Sie Objektdaten mithilfe von Grid Manager wieder her
+= Objektdaten mithilfe von StorageGRID Grid Manager wiederherstellen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

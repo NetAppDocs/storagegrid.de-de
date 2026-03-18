@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, appliance storage volume, appliance volume, remount appliance storage volume, remount volume, remounting appliance storage volume, remounting volume, reformat appliance storage volume, reformat volume, reformatting appliance storage volume, reformatting volume 
 summary: Führen Sie manuell zwei Skripte aus, um noch intaerte Storage-Volumes neu mounten und ausgefallene Storage Volumes neu formatieren zu können. Das erste Skript bindet Volumes wieder ein, die ordnungsgemäß als StorageGRID-Storage-Volumes formatiert sind. Das zweite Skript formatiert alle nicht abgehängt Volumes neu, stellt die Cassandra-Datenbank bei Bedarf wieder her und startet Services. 
 ---
-= Appliance-Storage-Volumes neu einbinden und formatieren (manuelle Schritte)
+= StorageGRID-Gerätespeichervolumes neu einbinden und formatieren (manuelle Schritte)
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

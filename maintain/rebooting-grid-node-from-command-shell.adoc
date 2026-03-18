@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, reboot node, command shell reboot 
 summary: Wenn Sie den Neustartvorgang genauer überwachen müssen oder wenn Sie nicht auf den Grid Manager zugreifen können, können Sie sich am Grid-Knoten anmelden und den Befehl Server Manager reboot über die Befehlsshell ausführen. 
 ---
-= Grid-Node aus der Eingabeaufforderung neu booten
+= StorageGRID-Knoten über die Befehlszeile neu starten
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

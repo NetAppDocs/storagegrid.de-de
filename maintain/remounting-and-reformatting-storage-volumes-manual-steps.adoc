@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, appliance storage volume, appliance volume, remount manually, reformat manually 
 summary: Sie müssen zwei Skripte manuell ausführen, um die erhaltenen Storage Volumes neu einzubinden und ausgefallene Storage Volumes neu zu formatieren. Das erste Skript bindet Volumes wieder ein, die ordnungsgemäß als StorageGRID-Storage-Volumes formatiert sind. Das zweite Skript formatiert alle nicht abgehängt Volumes neu, stellt Cassandra bei Bedarf wieder her und startet Services. 
 ---
-= Speicher-Volumes neu einbinden und formatieren (manuelle Schritte)
+= StorageGRID-Speichervolumes neu einbinden und neu formatieren (manuelle Schritte)
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

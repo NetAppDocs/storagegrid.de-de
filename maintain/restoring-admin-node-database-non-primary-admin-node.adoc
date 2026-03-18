@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, restore admin node database, restore database, non-primary admin node 
 summary: Wenn Sie die historischen Informationen zu Attributen und Warnmeldungen auf einem nicht-primären Admin-Node beibehalten möchten, der fehlgeschlagen ist, können Sie die Admin-Node-Datenbank vom primären Admin-Node wiederherstellen. 
 ---
-= Stellen Sie die Admin-Node-Datenbank wieder her, wenn Sie einen nicht-primären Admin-Node wiederherstellen
+= Stellen Sie die StorageGRID Admin Node Datenbank wieder her, wenn Sie einen nicht-primären Admin Node wiederherstellen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

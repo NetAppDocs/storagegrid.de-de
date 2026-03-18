@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: replace VMware node 
 summary: Wenn Sie einen ausgefallenen StorageGRID-Knoten wiederherstellen, der auf VMware gehostet wurde, entfernen Sie den ausgefallenen Knoten und stellen einen Recovery-Knoten bereit. 
 ---
-= Ersetzen Sie den VMware-Knoten
+= Ersetzen Sie einen VMware-Knoten in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

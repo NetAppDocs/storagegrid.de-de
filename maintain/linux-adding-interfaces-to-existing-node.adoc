@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: add interfaces, add client network interface, add admin network interface 
 summary: Führen Sie diese Schritte aus, um einen Linux-Knoten nach der Installation eine Schnittstelle im Admin-Netzwerk oder im Client-Netzwerk hinzuzufügen. 
 ---
-= Linux: Hinzufügen von Admin- oder Client-Schnittstellen zu einem bestehenden Knoten
+= Fügen Sie einem Linux-Knoten in StorageGRID Admin- oder Client-Schnittstellen hinzu
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

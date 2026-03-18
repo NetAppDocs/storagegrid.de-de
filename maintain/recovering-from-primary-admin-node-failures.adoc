@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, primary admin node failure 
 summary: 'Sie müssen einen bestimmten Satz von Aufgaben ausführen, um nach einem Ausfall eines primären Admin-Knotens wiederherstellen zu können. Der primäre Admin-Node hostet den Configuration Management Node \(CMN\)-Dienst für das Grid.' 
 ---
-= Wiederherstellung nach Ausfällen des primären Admin-Nodes
+= Wiederherstellung nach Ausfällen des primären StorageGRID-Admin-Knotens
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

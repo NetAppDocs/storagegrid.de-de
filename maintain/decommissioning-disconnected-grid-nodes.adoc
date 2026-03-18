@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, disconnected nodes, decommission node 
 summary: 'Möglicherweise müssen Sie einen Knoten außer Betrieb setzen, der derzeit nicht mit dem Grid \(One verbunden ist, dessen Status unbekannt oder administrativ ausgefallen ist\).' 
 ---
-= Die getrennten Grid-Nodes werden deaktiviert
+= Außerbetriebnahme nicht mehr verbundener StorageGRID Nodes
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

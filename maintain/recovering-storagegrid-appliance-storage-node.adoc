@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: recover, appliance storage node failure, workflow 
 summary: Das Verfahren zur Wiederherstellung eines fehlerhaften StorageGRID-Appliance-Speicherknoten ist dieselbe, egal ob Sie eine Wiederherstellung nach dem Verlust des Systemlaufwerks oder nach dem Verlust von Storage-Volumes durchführen. 
 ---
-= Warnungen zum Wiederherstellen von Appliance Storage Nodes
+= Warnungen zur Wiederherstellung von StorageGRID Appliance Storage Nodes
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

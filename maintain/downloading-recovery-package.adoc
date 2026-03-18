@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recovery package 
 summary: Mit der Wiederherstellungspaketdatei können Sie das StorageGRID -System wiederherstellen, wenn ein Fehler auftritt. 
 ---
-= Wiederherstellungspaket herunterladen
+= Laden Sie das StorageGRID-Wiederherstellungspaket herunter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

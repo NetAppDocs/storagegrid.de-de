@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, data repair 
 summary: Bevor Sie einen Grid-Node außer Betrieb nehmen, müssen Sie bestätigen, dass keine Datenreparatur-Jobs aktiv sind. Wenn Reparaturen fehlgeschlagen sind, müssen Sie sie neu starten und vor der Außerbetriebnahme abschließen lassen. 
 ---
-= Prüfen Sie die Reparatur von Daten
+= Überprüfen Sie Datenreparaturjobs in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

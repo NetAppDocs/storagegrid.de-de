@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: add extra interface to node, access interface, VM interface 
 summary: Nach der Installation können Sie einem VM-Node zusätzliche Trunk- oder Zugriffsschnittstellen hinzufügen. Die fügen Sie Schnittstellen hinzu, werden auf der Seite VLAN-Schnittstellen und auf der Seite HA-Gruppen angezeigt. 
 ---
-= VMware: Hinzufügen von Trunk- oder Zugriffsschnittstellen zu einem Node
+= Fügen Sie Trunk- oder Access-Schnittstellen zu einem VMware-Knoten in StorageGRID hinzu
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, deploy linux host, new host, new linux host 
 summary: Bis auf ein paar Ausnahmen bereiten Sie die neuen Hosts wie während der Erstinstallation vor. 
 ---
-= Implementieren Sie neue Linux-Hosts
+= Neue Linux-Hosts für StorageGRID bereitstellen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

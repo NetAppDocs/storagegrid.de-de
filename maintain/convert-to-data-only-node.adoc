@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, convert node, data-only node 
 summary: Um die Leistung zu steigern, können Sie langsamere Nicht-ADC-Speicherknoten in reine Datenspeicherknoten umwandeln. 
 ---
-= Konvertieren eines Speicherknotens in einen Nur-Datenknoten
+= Konvertieren eines StorageGRID-Speicherknotens in einen reinen Datenknoten
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

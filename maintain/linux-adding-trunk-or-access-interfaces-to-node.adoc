@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: add extra interface to node, trunk interface, access interface 
 summary: Nach der Installation können Sie einem Linux-Knoten zusätzliche Trunk- oder Zugangsschnittstellen hinzufügen. Die fügen Sie Schnittstellen hinzu, werden auf der Seite VLAN-Schnittstellen und auf der Seite HA-Gruppen angezeigt. 
 ---
-= Linux: Hinzufügen von Trunk- oder Zugriffsschnittstellen zu einem Node
+= Fügen Sie einem Linux-Knoten in StorageGRID Trunk- oder Access-Schnittstellen hinzu
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

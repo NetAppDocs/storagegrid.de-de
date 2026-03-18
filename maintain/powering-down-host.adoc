@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, stop services, power down host, power off host 
 summary: Bevor Sie einen Host herunterfahren, müssen Sie Dienste auf allen Grid-Nodes auf diesem Host anhalten. 
 ---
-= Schalten Sie den Host aus
+= Einen StorageGRID Host herunterfahren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

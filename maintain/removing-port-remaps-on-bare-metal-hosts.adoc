@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, linux, linux host, bare metal host, baremetal host, remove port remap, removing port remap, port remap 
 summary: Wenn Sie einen Endpunkt für den Load Balancer-Dienst konfigurieren möchten und einen Port verwenden möchten, der bereits als Port mit dem Port einer Port-Remap konfiguriert wurde, müssen Sie zunächst die vorhandene Port-Remap entfernen, oder der Endpunkt ist nicht wirksam. 
 ---
-= Entfernen Sie die Port-Remaps auf Bare-Metal-Hosts
+= Entfernen Sie StorageGRID-Port-Remappings auf Bare-Metal-Hosts
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

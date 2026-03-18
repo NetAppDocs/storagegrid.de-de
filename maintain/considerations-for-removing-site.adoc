@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to remove site 
 summary: Bevor Sie die Website wieder entfernen, müssen Sie zunächst die entsprechenden Überlegungen überprüfen. 
 ---
-= Überlegungen zum Entfernen eines Standorts
+= Überlegungen zur Standortstilllegung in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

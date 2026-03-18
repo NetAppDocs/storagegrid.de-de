@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, decommission, connected nodes, decommission node 
 summary: Sie können Nodes, die mit dem Grid verbunden sind, außer Betrieb nehmen und dauerhaft entfernen. 
 ---
-= Verbundene Grid-Nodes ausmustern
+= Angeschlossene StorageGRID-Knoten außer Betrieb nehmen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

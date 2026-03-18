@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, network configuration, node network configuration 
 summary: Mit dem Change IP-Tool können Sie die Netzwerkkonfiguration für einen oder mehrere Knoten ändern. Sie können die Konfiguration des Grid-Netzwerks ändern oder den Administrator- oder Client-Netzwerk hinzufügen, ändern oder entfernen. 
 ---
-= Ändern der Node-Netzwerkkonfiguration
+= Netzwerkkonfiguration des Knotens in StorageGRID ändern
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

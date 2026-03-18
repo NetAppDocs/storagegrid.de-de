@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover services appliance, recover appliance, recovering appliance, recovering services appliance, install services appliance, installing services appliance, services appliance 
 summary: 'Wenn Sie einen fehlerhaften Grid-Node wiederherstellen, der auf VMware oder einem Linux-Host gehostet wurde, und Sie eine Services-Appliance für den Ersatz-Node verwenden, müssen Sie zuerst die neue Appliance-Hardware installieren und dabei denselben Node-Namen (Systemname) wie der ausgefallene Node verwenden.' 
 ---
-= Installation der Services Appliance (nur Plattformänderung)
+= StorageGRID-Services-Appliance installieren (nur Plattformwechsel)
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, hotfix, download 
 summary: Sie müssen die Hotfix-Datei herunterladen, bevor Sie den Hotfix anwenden können. 
 ---
-= Hotfix-Datei herunterladen
+= Laden Sie eine StorageGRID-Hotfix-Datei herunter
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: recover, storage node failure, Reaper 
 summary: Das Verfahren zur Wiederherstellung eines fehlgeschlagenen Speicherknoten hängt von der Art des Fehlers und dem Typ des fehlgeschlagenen Speicherknoten ab. 
 ---
-= Wiederherstellung nach Ausfällen der Storage-Nodes
+= Wiederherstellung nach StorageGRID Storage Node-Ausfällen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

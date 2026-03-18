@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to pause decommission 
 summary: Wenn Sie einen zweiten Wartungsvorgang durchführen müssen, können Sie das Verfahren zur Deaktivierung eines Storage Nodes während bestimmter Phasen unterbrechen. Nachdem das andere Verfahren abgeschlossen ist, können Sie die Stilllegung fortsetzen. 
 ---
-= Anhalten und Fortsetzen des Stilllegen-Prozesses für Storage-Nodes
+= Stilllegungsprozess für StorageGRID Storage Nodes anhalten und fortsetzen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

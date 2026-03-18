@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, replace gateway node, replacing gateway node 
 summary: Sie können einen fehlgeschlagenen Gateway-Node durch einen Gateway-Node ersetzen, der auf derselben physischen oder virtuellen Hardware ausgeführt wird, oder Sie können einen Gateway-Node, der auf VMware oder einem Linux-Host ausgeführt wird, durch einen Gateway-Node ersetzen, der auf einer Services-Appliance gehostet wird. 
 ---
-= Gateway-Node Ersetzen
+= Ersetzen Sie den StorageGRID Gateway Node
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

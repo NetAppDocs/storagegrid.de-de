@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, procedure 
 summary: Sie müssen den korrekten Wiederherstellungsvorgang für den Typ des fehlgeschlagenen Knotens auswählen. 
 ---
-= Wählen Sie die Knotenwiederherstellung aus
+= Wählen Sie das StorageGRID-Knoten-Wiederherstellungsverfahren aus
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

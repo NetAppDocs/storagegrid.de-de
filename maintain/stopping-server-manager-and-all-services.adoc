@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, stop server manager, stop all services, stop services 
 summary: Server Manager ist dafür gedacht, immer ausgeführt zu werden, aber möglicherweise müssen Sie Server Manager und alle Dienste, die auf einem Grid-Knoten ausgeführt werden, anhalten. 
 ---
-= Beenden Sie Server Manager und alle Dienste
+= Beenden Sie den StorageGRID Server-Manager und alle Dienste
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

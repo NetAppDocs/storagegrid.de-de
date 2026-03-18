@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, restore admin node database, restore database, primary admin node 
 summary: Wenn Sie die historischen Informationen zu Attributen und Warnmeldungen auf einem primären Admin-Knoten beibehalten möchten, der fehlgeschlagen ist, können Sie die Admin-Knoten-Datenbank wiederherstellen. Sie können diese Datenbank nur wiederherstellen, wenn Ihr StorageGRID-System einen anderen Admin-Knoten enthält. 
 ---
-= Stellen Sie die Admin-Knoten-Datenbank wieder her, wenn Sie den primären Admin-Knoten wiederherstellen
+= StorageGRID Admin-Node-Datenbank bei der Wiederherstellung des primären Admin-Knotens wiederherstellen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

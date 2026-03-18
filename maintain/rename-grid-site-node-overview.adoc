@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: rename grid, rename site, rename node, display name, system name 
 summary: Bei Bedarf können Sie die Anzeigenamen ändern, die im Grid Manager für Ihr gesamtes Raster, jeden Standort und jeden Node angezeigt werden. Sie können Anzeigenamen sicher und jederzeit aktualisieren. 
 ---
-= Verwenden Sie das Verfahren zum Umbenennen
+= Verwenden Sie die StorageGRID-Umbenennungsprozedur
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

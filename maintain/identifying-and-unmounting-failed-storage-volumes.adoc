@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, storage volume, failed storage volume, unmount failed volume 
 summary: Bei der Wiederherstellung eines Storage-Nodes mit ausgefallenen Storage-Volumes müssen Sie die ausgefallenen Volumes identifizieren und deren Bereitstellung aufheben. Sie müssen überprüfen, ob nur die fehlgeschlagenen Speicher-Volumes im Rahmen der Wiederherstellungsverfahren neu formatiert werden. 
 ---
-= Ermitteln und Aufheben fehlgeschlagener Storage Volumes
+= Fehlerhafte Speichervolumes in StorageGRID identifizieren und aushängen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

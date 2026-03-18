@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, maintenance, maintain, failed storage volumes, failed volumes, cassandra, cassandra rebuild, rebuild cassandra, cassandra database 
 summary: Sie müssen ein Skript ausführen, das den Speicher auf ausgefallenen Storage-Volumes neu formatiert und neu einbindet, und die Cassandra-Datenbank auf dem Storage-Node neu erstellen, falls das System den Bedarf ermittelt. 
 ---
-= Recovery ausgefallener Storage-Volumes und Wiederherstellung der Cassandra-Datenbank
+= Ausgefallene Speichervolumes wiederherstellen und die Cassandra-Datenbank in StorageGRID neu aufbauen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
