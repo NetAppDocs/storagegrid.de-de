@@ -38,10 +38,16 @@ In der folgenden Tabelle wird beschrieben, wie StorageGRID S3-REST-API-Objektvor
  a| 
 DeleteObject
  a| 
-Multi-Faktor-Authentifizierung (MFA) und der Antwortheader `x-amz-mfa` werden nicht unterstützt.
-
 Bei der Verarbeitung einer DeleteObject-Anforderung versucht StorageGRID sofort, alle Kopien des Objekts von allen gespeicherten Speicherorten zu entfernen. Wenn erfolgreich, gibt StorageGRID sofort eine Antwort an den Client zurück. Wenn nicht innerhalb von 30 Sekunden alle Kopien entfernt werden können (z. B. weil ein Speicherort vorübergehend nicht verfügbar ist), stellt StorageGRID die Kopien in eine Warteschlange zur Entfernung und zeigt dann den Erfolg des Clients an.
 
+Einschränkungen::
++
+--
+* Multi-Faktor-Authentifizierung (MFA) und der Antwortheader `x-amz-mfa` werden nicht unterstützt.
+* Die  `If-None` und  `If-None-Match` Header werden akzeptiert, sind aber nicht funktionsfähig.
+
+
+--
 Versionierung:: Zum Entfernen einer bestimmten Version muss der Anforderer der Bucket-Eigentümer sein und die Unterressource verwenden `versionId`. Durch die Verwendung dieser Unterressource wird die Version dauerhaft gelöscht. Wenn das `versionId` einer Löschmarkierung entspricht, wird die Antwortkopfzeile `x-amz-delete-marker` auf gesetzt zurückgegeben `true`.
 +
 --

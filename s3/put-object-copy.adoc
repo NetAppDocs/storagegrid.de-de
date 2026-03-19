@@ -101,6 +101,14 @@ Die folgenden Anforderungsheader werden nicht unterstützt:
 * `Content-Encoding`
 * `Content-Language`
 * `Expires`
+* `If-Match`
++
+Das `If-Match header` wird akzeptiert, ist aber nicht funktionsfähig.
+
+* `If-None-Match`
++
+Das  `If-None-Match header` wird akzeptiert, ist aber nicht funktionsfähig.
+
 * `x-amz-checksum-algorithm`
 +
 Wenn Sie ein Objekt kopieren und das Quellobjekt eine Prüfsumme hat, kopiert StorageGRID diesen Prüfsummenwert nicht auf das neue Objekt. Dieses Verhalten gilt unabhängig davon, ob Sie versuchen, in der Objektanforderung zu verwenden `x-amz-checksum-algorithm`.
