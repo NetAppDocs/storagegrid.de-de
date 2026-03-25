@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: enable http, storage node connections 
 summary: Sie können die Netzwerk- und Objektsicherheit so konfigurieren, dass gespeicherte Objekte verschlüsselt, bestimmte S3-Anforderungen verhindert oder Client-Verbindungen zu Storage-Nodes HTTP anstelle von HTTPS verwenden. 
 ---
-= Konfigurieren Sie die Netzwerk- und Objektsicherheit
+= Konfigurieren Sie die StorageGRID Netzwerk- und Objektsicherheit
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

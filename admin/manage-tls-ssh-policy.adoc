@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: TLS and SSH policy, secure connection, FIPS, Common Criteria 
 summary: Die TLS- und SSH-Richtlinie legt fest, welche Protokolle und Chiffren verwendet werden, um sichere TLS-Verbindungen mit Clientanwendungen und sichere SSH-Verbindungen zu internen StorageGRID-Diensten herzustellen. 
 ---
-= Verwalten Sie die TLS- und SSH-Richtlinie
+= Verwalten Sie die TLS- und SSH-Richtlinie in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

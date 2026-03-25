@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: grid federation, create connection, configure connection 
 summary: Sie können eine Grid-Verbundverbindung zwischen zwei StorageGRID Systemen erstellen, wenn Sie Mandantendetails klonen und Objektdaten replizieren möchten. 
 ---
-= Erstellen von Grid Federation-Verbindungen
+= StorageGRID Grid-Federationsverbindungen erstellen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

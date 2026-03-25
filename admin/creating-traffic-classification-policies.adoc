@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: traffic classification, network traffic, traffic limits, policy 
 summary: Sie erstellen Traffic-Klassifizierungsrichtlinien, wenn Sie den Netzwerkverkehr nach Bucket, Mandanten, IP-Subnetz oder Load Balancer-Endpunkt überwachen und optional begrenzen möchten. Optional können Sie Obergrenzen für eine Richtlinie basierend auf der Bandbreite, der Anzahl gleichzeitiger Anfragen oder der Anfragerate festlegen. 
 ---
-= Richtlinien für die Verkehrsklassifizierung erstellen
+= Erstellen Sie StorageGRID-Traffic-Klassifizierungsrichtlinien
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: relying party trust, active directory, ad fs, single sign on, sso 
 summary: 'Sie müssen Active Directory Federation Services (AD FS) verwenden, um ein Vertrauensverhältnis für jeden Admin-Knoten in Ihrem System zu erstellen. Sie können vertraut mit PowerShell-Befehlen erstellen, SAML-Metadaten von StorageGRID importieren oder die Daten manuell eingeben.' 
 ---
-= Erstellen Sie Vertrauensstellungen von vertrauenswürdigen Parteien in AD FS
+= Erstellen von Relying-Party-Vertrauensstellungen in AD FS für StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

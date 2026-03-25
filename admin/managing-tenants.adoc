@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: manage tenants, tenant account, what is a tenant 
 summary: 'Ein Mandantenkonto ermöglicht Ihnen die Verwendung der Simple Storage Service \(S3\) REST API zum Speichern und Abrufen von Objekten in einem StorageGRID System.' 
 ---
-= Was sind Mandantenkonten?
+= Mandantenkonten in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

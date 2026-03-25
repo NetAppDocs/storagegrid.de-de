@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: s3 select, selectobjectcontent, best practices, object format, s3 select requirements 
 summary: Bestimmte S3-Mandanten können S3 Select verwenden, um SelectObjectContent-Anfragen für einzelne Objekte auszulösen. 
 ---
-= Management von S3 Select für Mandantenkonten
+= Verwalten Sie S3 Select für Mandantenkonten in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

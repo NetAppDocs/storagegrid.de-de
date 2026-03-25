@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: manage load balancing, balance workload, client ingest, client retrieval, distribute connection 
 summary: Mit Lastausgleich können Workloads bei der Aufnahme und dem Abruf von S3 Clients genutzt werden. 
 ---
-= Überlegungen zum Lastausgleich
+= Erfahren Sie mehr über StorageGRID Load Balancing
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

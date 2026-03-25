@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: security, S3, client application, TLS 
 summary: StorageGRID-Mandantenkonten verwenden S3-Client-Applikationen, um Objektdaten in StorageGRID zu speichern. Überprüfen Sie die Sicherheitsmaßnahmen, die für Client-Anwendungen implementiert wurden. 
 ---
-= Sicherheit für S3-Clients
+= Sicherheit für S3-Clients in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

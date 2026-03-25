@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: security, browser inactivity timeout, management API stack track 
 summary: Mit den Sicherheitseinstellungen der Schnittstelle können Sie festlegen, ob Benutzer abgemeldet werden, wenn sie länger als die angegebene Zeit inaktiv sind und ob ein Stack Trace in API-Fehlermeldungen enthalten ist. 
 ---
-= Ändern Sie die Sicherheitseinstellungen der Schnittstelle
+= Ändern Sie die Sicherheitseinstellungen der StorageGRID-Schnittstelle
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

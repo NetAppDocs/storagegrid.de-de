@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cross-grid replication, cgr, disaster recovery, grid federation 
 summary: Grid-übergreifende Replizierung ist die automatische Replizierung von Objekten zwischen ausgewählten S3 Buckets in zwei StorageGRID Systemen, die über eine Grid-Verbundverbindung verbunden sind. Account-Klon ist für Grid-übergreifende Replizierung erforderlich. 
 ---
-= Was ist Grid-übergreifende Replizierung?
+= Erfahren Sie mehr über die gitterübergreifende Replikation in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

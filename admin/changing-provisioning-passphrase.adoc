@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: provisioning passphrase, change passphrase 
 summary: Verwenden Sie dieses Verfahren, um die Passphrase für die StorageGRID Bereitstellung zu ändern.  Die Passphrase wird für Wiederherstellungs-, Erweiterungs- und Wartungsverfahren benötigt.  Die Passphrase ist auch zum Herunterladen von Backups des Wiederherstellungspakets erforderlich, die Informationen zur Grid-Topologie, Passwörter für die Grid-Knotenkonsole und Verschlüsselungsschlüssel für das StorageGRID System enthalten. 
 ---
-= Ändern Sie die Provisionierungs-Passphrase
+= Ändern Sie die StorageGRID Bereitstellungspassphrase
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

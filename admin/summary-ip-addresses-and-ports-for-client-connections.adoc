@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: ip addresses for client, how to connect to storagegrid, ports, vip 
 summary: 'Zum Speichern oder Abrufen von Objekten stellen S3-Clientanwendungen eine Verbindung zum Load Balancer-Dienst her, der auf allen Admin-Knoten und Gateway-Knoten enthalten ist, oder zum Local Distribution Router (LDR)-Dienst, der auf allen Storage-Nodes enthalten ist.' 
 ---
-= Zusammenfassung: IP-Adressen und Ports für Client-Verbindungen
+= IP-Adressen und Ports für StorageGRID-Clientverbindungen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

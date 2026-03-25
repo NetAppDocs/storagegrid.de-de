@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cross-grid replication, cloudmirror replication 
 summary: Überprüfen Sie bei der Nutzung des Grid-Verbunds die Ähnlichkeiten und Unterschiede zwischen der Grid-übergreifenden Replizierung und dem StorageGRID CloudMirror Replizierungsservice. 
 ---
-= Vergleichen Sie Grid-Replizierung und CloudMirror Replizierung
+= Vergleichen Sie die netzübergreifende Replikation und CloudMirror-Replikation in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

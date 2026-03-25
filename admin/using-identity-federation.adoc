@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to use identity federation, how to use federated groups with Grid Manager 
 summary: Durch die Verwendung von Identity Federation lassen sich Gruppen und Benutzer schneller einrichten, und Benutzer können sich mithilfe vertrauter Anmeldedaten bei StorageGRID anmelden. 
 ---
-= Verwenden Sie den Identitätsverbund
+= Verwenden Sie die Identitätsföderation in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

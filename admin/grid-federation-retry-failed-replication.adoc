@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: grid federation, troubleshoot 
 summary: Nach dem Beheben der Warnmeldung über den dauerhaften Ausfall der Grid-übergreifenden Replikation sollten Sie feststellen, ob Objekte oder Löschmarkierungen nicht in das andere Raster repliziert werden konnten. Sie können diese Objekte dann wieder aufnehmen oder die Grid Management API verwenden, um die Replikation erneut zu versuchen. 
 ---
-= Identifizieren Sie fehlgeschlagene Replikationsvorgänge und versuchen Sie es erneut
+= Fehlgeschlagene StorageGRID Replikationsvorgänge identifizieren und wiederholen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

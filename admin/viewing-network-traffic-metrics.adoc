@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: network traffic, traffic classification policy, monitor traffic 
 summary: Sie können den Netzwerkverkehr überwachen, indem Sie die Diagramme anzeigen, die auf der Seite für die Verkehrsklassifizierungsrichtlinien verfügbar sind. 
 ---
-= Zeigen Sie Metriken zum Netzwerkverkehr an
+= Netzwerkverkehrsmetriken in StorageGRID anzeigen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: custom certificates, grid manager, tenant manager, management interface certificate 
 summary: Sie können das standardmäßige StorageGRID-Serverzertifikat durch ein einzelnes benutzerdefiniertes Serverzertifikat ersetzen, das Benutzern den Zugriff auf den Grid-Manager und den Tenant-Manager ermöglicht, ohne dass Sicherheitswarnungen ausgegeben werden. Sie können auch das Standard-Zertifikat für die Managementoberfläche zurücksetzen oder ein neues erstellen. 
 ---
-= Konfigurieren Sie Zertifikate für die Managementoberfläche
+= Konfigurieren Sie Managementoberflächenzertifikate in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

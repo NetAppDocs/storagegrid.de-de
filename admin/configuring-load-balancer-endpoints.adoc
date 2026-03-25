@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to configure load balancer endpoint, how to attach certificate to load balancer endpoint 
 summary: Load Balancer-Endpunkte bestimmen die Ports und Netzwerkprotokolle, die S3-Clients bei der Verbindung zum StorageGRID Load Balancer auf Gateway- und Admin-Nodes verwenden können. Sie können Endpunkte auch für den Zugriff auf Grid Manager, Tenant Manager oder beide verwenden. 
 ---
-= Konfigurieren von Load Balancer-Endpunkten
+= StorageGRID Load-Balancer-Endpunkte konfigurieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

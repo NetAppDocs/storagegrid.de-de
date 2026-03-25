@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: deactivate features from api 
 summary: Mithilfe der Grid Management API können Sie bestimmte Funktionen im StorageGRID-System komplett deaktivieren. Wenn ein Feature deaktiviert ist, kann niemand Berechtigungen zum Ausführen der Aufgaben zugewiesen werden, die mit diesem Feature verbunden sind. 
 ---
-= Deaktivieren Sie Funktionen mit der API
+= StorageGRID-Funktionen mit der API deaktivieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

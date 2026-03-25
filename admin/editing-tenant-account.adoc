@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: edit tenant account, change tenant name, allow platform services, tenant quota 
 summary: Sie können ein Mandantenkonto bearbeiten, um den Anzeigenamen, das Speicherkontingent oder die Berechtigungen für Mandanten zu ändern. 
 ---
-= Mandantenkonto bearbeiten
+= Bearbeiten eines StorageGRID-Tenant-Kontos
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: grid federation, cross-grid replication, account clone, cgr, disaster recovery 
 summary: Mithilfe des Grid-Verbunds können Mandanten geklont und ihre Objekte zwischen zwei StorageGRID Systemen für das Disaster Recovery repliziert werden. 
 ---
-= Was ist Grid Federation?
+= Erfahren Sie mehr über StorageGRID Grid-Föderation
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

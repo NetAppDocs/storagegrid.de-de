@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: what are storage volume watermarks, storage volume soft read-only watermark, storage volume hard read-only watermark, storage volume read-write watermark 
 summary: StorageGRID verwendet drei Storage-Volume-Wasserzeichen, um sicherzustellen, dass Storage-Nodes sicher in einen schreibgeschützten Zustand überführt werden, bevor deren Speicherplatz kritisch knapp wird. Damit können Storage-Nodes, die aus einem schreibgeschützten Zustand migriert wurden, erneut Lese- und Schreibvorgänge werden. 
 ---
-= Was sind Wasserzeichen für Storage-Volumes?
+= Erfahren Sie mehr über Speicher-Volume-Wasserzeichen in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

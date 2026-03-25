@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: manage high availability group, ha groups, admin node, gateway node, active interface, backup interface, priority order 
 summary: 'Hochverfügbare \(HA\)-Gruppen bieten hochverfügbare Datenverbindungen für S3-Clients und hochverfügbare Verbindungen zu Grid Manager und Tenant Manager.' 
 ---
-= Was sind Hochverfügbarkeitsgruppen (High Availability Groups, HA-Gruppen)?
+= Erfahren Sie mehr über StorageGRID Hochverfügbarkeitsgruppen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

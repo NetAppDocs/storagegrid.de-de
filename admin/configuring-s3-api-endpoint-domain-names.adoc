@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: s3 endpoint domain names, virtual-hosted-style requests 
 summary: Um Anforderungen im virtuellen Hosted-Stil von S3 zu unterstützen, müssen Sie die Liste der S3-Endpunkt-Domänennamen, mit denen S3-Clients eine Verbindung herstellen, mit dem Grid Manager konfigurieren. 
 ---
-= Konfigurieren Sie die Domänennamen des S3-Endpunkts
+= Konfigurieren Sie S3-Endpunkt-Domänennamen in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

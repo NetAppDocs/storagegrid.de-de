@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: configure kms, key management server, kmip, Key Management Interoperability Protocol 
 summary: 'Ein Verschlüsselungsmanagement-Server \ (KMS\) ist ein externes Drittanbietersystem, das mithilfe des Key Management Interoperability Protocol\ (KMIP \) Verschlüsselungen für StorageGRID Appliance-Nodes am zugehörigen StorageGRID-Standort bereitstellt.' 
 ---
-= Was ist ein KMS (Key Management Server)?
+= Erfahren Sie mehr über Schlüsselverwaltungsserver in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

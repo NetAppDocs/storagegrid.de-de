@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: autosupport, how to send asup message 
 summary: Um den technischen Support bei der Fehlerbehebung in Ihrem StorageGRID System zu unterstützen, können Sie manuell ein AutoSupport Paket senden. 
 ---
-= Starten Sie manuell ein AutoSupport-Paket
+= Manuelles Auslösen eines AutoSupport-Pakets in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

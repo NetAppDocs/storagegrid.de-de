@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: grid federation, edit connection, remove connection, rotate certificates 
 summary: Das Management von Grid-Verbindungen zwischen StorageGRID Systemen umfasst das Bearbeiten von Verbindungsdetails, das Drehen der Zertifikate, das Entfernen von Mandantenberechtigungen und das Entfernen nicht verwendeter Verbindungen. 
 ---
-= Grid-Verbindungen verwalten
+= StorageGRID Grid-Federationsverbindungen verwalten
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

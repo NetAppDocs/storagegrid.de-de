@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: object segmentation, multipart upload 
 summary: Bei der Objektsegmentierung wird ein Objekt in eine Sammlung kleinerer Objekte fester Größe aufgeteilt, um die Storage- und Ressourcennutzung für große Objekte zu optimieren. Auch beim S3-Multi-Part-Upload werden segmentierte Objekte erstellt, wobei ein Objekt die einzelnen Teile darstellt. 
 ---
-= Was ist Objektsegmentierung?
+= Erfahren Sie mehr über die Objektsegmentierung in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to access storagegrid API if SSO is enabled with ADFS 
 summary: 'Wenn Sie Single Sign-On (SSO) konfiguriert und aktiviert haben und Active Directory als SSO-Provider verwenden, müssen Sie eine Reihe von API-Anforderungen ausstellen, um ein für die Grid Management API oder die Mandantenmanagement-API gültiges Authentifizierungs-Token zu erhalten.' 
 ---
-= Verwenden Sie die API, wenn Single Sign-On aktiviert ist (Active Directory).
+= Verwenden Sie die StorageGRID API, wenn Single Sign-On aktiviert ist (Active Directory)
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

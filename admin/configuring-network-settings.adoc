@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: network settings, vlan interface, traffic classification 
 summary: Sie können verschiedene Netzwerkeinstellungen vom Grid Manager konfigurieren, um den Betrieb Ihres StorageGRID Systems zu optimieren. 
 ---
-= Netzwerkeinstellungen konfigurieren
+= StorageGRID-Netzwerkeinstellungen konfigurieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

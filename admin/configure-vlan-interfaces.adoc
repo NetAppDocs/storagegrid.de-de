@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: how to configure vlan interfaces, vlan interfaces, trunk interface 
 summary: 'Sie können virtuelle LAN \ (VLAN\)-Schnittstellen auf Admin-Nodes und Gateway-Nodes erstellen und diese in HA-Gruppen und Load Balancer-Endpunkten verwenden, um den Datenverkehr zu isolieren und zu partitionieren, um für Sicherheit, Flexibilität und Performance zu sorgen.' 
 ---
-= Konfigurieren Sie die VLAN-Schnittstellen
+= Konfigurieren Sie VLAN-Schnittstellen in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

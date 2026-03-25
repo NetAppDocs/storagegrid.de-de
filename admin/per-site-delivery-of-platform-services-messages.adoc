@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: platform services message delivery 
 summary: Alle Vorgänge von Plattform-Services werden am Standort durchgeführt. 
 ---
-= Bereitstellung von Plattform-Services am Standort
+= Standortbezogene Zustellung von StorageGRID-Plattformdienste-Nachrichten
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

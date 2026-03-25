@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: link cost, site latency, manage link costs, prioritize sites 
 summary: Durch die Verbindungskosten können Sie festlegen, welcher Datacenter-Standort einen angeforderten Service bereitstellt, wenn zwei oder mehr Datacenter-Standorte vorhanden sind. Sie können die Verbindungskosten anpassen, um die Latenz zwischen Standorten reflektieren. 
 ---
-= Verwalten Sie Verbindungskosten
+= Linkkosten in StorageGRID verwalten
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

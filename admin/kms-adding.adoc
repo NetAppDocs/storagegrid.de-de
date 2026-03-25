@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: add kms, key management server 
 summary: Mithilfe des Assistenten für den StorageGRID-Verschlüsselungsmanagement-Server können Sie jeden KMS- oder KMS-Cluster hinzufügen. 
 ---
-= Hinzufügen eines Verschlüsselungsmanagement-Servers (KMS)
+= Fügen Sie einen Schlüsselverwaltungsserver in StorageGRID hinzu
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

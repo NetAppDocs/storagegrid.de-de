@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: grid federation, manage tenant, use grid federation permission, remove permission, cross grid replication 
 summary: Sie können S3-Mandantenkonten die Verwendung einer Grid-Federation-Verbindung zwischen zwei StorageGRID-Systemen erlauben. Wenn Mandanten eine Verbindung verwenden dürfen, sind spezielle Schritte erforderlich, um die Details der Serviceeinheit zu bearbeiten oder die Berechtigung der Serviceeinheit dauerhaft zu entfernen, um die Verbindung zu verwenden. 
 ---
-= Verwalten Sie die zulässigen Mandanten für den Grid-Verbund
+= Verwalten Sie die zulässigen Mandanten für StorageGRID Grid-Föderation
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

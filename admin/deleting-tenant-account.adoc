@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: tenant, delete, remove tenant 
 summary: Sie können ein Mandantenkonto löschen, wenn Sie den Zugriff des Mandanten auf das System dauerhaft entfernen möchten. 
 ---
-= Mandantenkonto löschen
+= Löschen eines StorageGRID-Tenant-Kontos
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

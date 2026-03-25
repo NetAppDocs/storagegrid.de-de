@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: delete traffic classification policy 
 summary: Wenn Sie keine Traffic-Klassifizierungsrichtlinie mehr benötigen, können Sie sie löschen. 
 ---
-= Löschen einer Traffic-Klassifizierungsrichtlinie
+= Löschen einer StorageGRID traffic classification policy
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

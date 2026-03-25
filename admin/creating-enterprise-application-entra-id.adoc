@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: enterprise application, entra id, single sign on, sso 
 summary: Sie verwenden die Entra-ID, um für jeden Admin-Knoten in Ihrem System eine Unternehmensanwendung zu erstellen. 
 ---
-= Erstellen Sie Unternehmensanwendungen in Entra ID
+= Erstellen Sie Unternehmensanwendungen in Entra ID für StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

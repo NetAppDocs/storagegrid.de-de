@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: platform services, ports for platform services, 443, 80 
 summary: Wenn ein S3-Mandant Plattformservices verwendet, müssen Sie das Netzwerk für das Grid konfigurieren, um sicherzustellen, dass Plattformservices-Meldungen an seine Ziele gesendet werden können. 
 ---
-= Netzwerk und Ports für Plattformservices
+= Netzwerk und Ports für StorageGRID Plattformdienste
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

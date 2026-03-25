@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: active http connection benefits, idle http connection benefits, concurrent http connection benefits 
 summary: Die Konfiguration von HTTP-Verbindungen kann sich auf die Performance des StorageGRID-Systems auswirken. Die Konfigurationen unterscheiden sich je nachdem, ob die HTTP-Verbindung aktiv oder inaktiv ist oder Sie mehrere Verbindungen gleichzeitig haben. 
 ---
-= Vorteile von aktiven, inaktiven und gleichzeitigen HTTP-Verbindungen
+= Vorteile von aktiven, inaktiven und gleichzeitigen HTTP-Verbindungen in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

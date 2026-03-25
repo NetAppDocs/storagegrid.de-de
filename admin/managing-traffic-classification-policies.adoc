@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: QoS, quality of service, traffic classification, best practices, limit traffic, monitor traffic 
 summary: Mithilfe von Richtlinien zur Datenverkehrsklassifizierung können Sie verschiedene Arten von Netzwerkverkehr identifizieren und überwachen. Diese Richtlinien unterstützen Sie bei der Verkehrsbeschränkung und -Überwachung und verbessern so Ihre Quality-of-Service-Angebote. 
 ---
-= Was sind Richtlinien zur Verkehrsklassifizierung?
+= Richtlinien zur Verkehrsklassifizierung in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

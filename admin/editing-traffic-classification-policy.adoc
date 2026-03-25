@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: edit traffic classification policy 
 summary: Sie können eine Traffic-Klassifizierungsrichtlinie bearbeiten, um ihren Namen oder ihre Beschreibung zu ändern oder um Regeln oder Grenzen für die Richtlinie zu erstellen, zu bearbeiten oder zu löschen. 
 ---
-= Richtlinie zur Verkehrsklassifizierung bearbeiten
+= Bearbeiten einer StorageGRID-Verkehrsklassifizierungsrichtlinie
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

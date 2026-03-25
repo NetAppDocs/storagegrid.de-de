@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: admin group permissions 
 summary: Beim Erstellen von Admin-Benutzergruppen wählen Sie eine oder mehrere Berechtigungen, um den Zugriff auf bestimmte Funktionen des Grid Manager zu steuern. Sie können dann jeden Benutzer einer oder mehreren dieser Admin-Gruppen zuweisen, um zu bestimmen, welche Aufgaben der Benutzer ausführen kann. 
 ---
-= Berechtigungen für Admin-Gruppen
+= Administratorgruppenberechtigungen in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

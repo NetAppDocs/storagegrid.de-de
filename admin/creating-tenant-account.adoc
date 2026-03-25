@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: create tenant, tenant account 
 summary: Sie müssen mindestens ein Mandantenkonto erstellen, um den Zugriff auf den Storage in Ihrem StorageGRID-System zu kontrollieren. 
 ---
-= Erstellen Sie ein Mandantenkonto
+= Erstellen Sie ein StorageGRID-Tenant-Konto
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

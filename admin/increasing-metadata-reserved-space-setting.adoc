@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: increase metadata reserved space setting 
 summary: Möglicherweise können Sie die Systemeinstellung „reservierter Speicherplatz für Metadaten“ erhöhen, wenn die Storage-Nodes bestimmte Anforderungen für RAM und verfügbaren Speicherplatz erfüllen. 
 ---
-= Erhöhen Sie die Einstellung für reservierten Speicherplatz für Metadaten
+= Erhöhen Sie die Einstellung „Metadata Reserved Space“ in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

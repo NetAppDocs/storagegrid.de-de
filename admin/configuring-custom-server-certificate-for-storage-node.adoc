@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: global S3 API certificate 
 summary: Sie können das Serverzertifikat ersetzen oder wiederherstellen, das für S3-Clientverbindungen zu Storage Nodes oder zu Load Balancer-Endpunkten verwendet wird. Das benutzerdefinierte Ersatzserverzertifikat ist speziell für Ihr Unternehmen bestimmt. 
 ---
-= Konfigurieren Sie S3-API-Zertifikate
+= Konfigurieren Sie S3-API-Zertifikate in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: Key Management Interoperability Protocol, kmip version, kms requirements, use key management server 
 summary: 'Bevor Sie einen externen Verschlüsselungsmanagement-Server \(KMS\) konfigurieren, müssen Sie die Überlegungen und Anforderungen verstehen.' 
 ---
-= Überlegungen und Anforderungen für die Verwendung eines Verschlüsselungsmanagement-Servers
+= Anforderungen und Überlegungen zum StorageGRID-Schlüsselverwaltungsserver
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

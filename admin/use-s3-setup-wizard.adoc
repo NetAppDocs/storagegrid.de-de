@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: S3, S3 setup wizard 
 summary: Sie können mit dem S3-Einrichtungsassistenten StorageGRID als Objekt-Storage-System für eine S3-Applikation konfigurieren. 
 ---
-= Überlegungen und Anforderungen im S3-Setup-Assistenten
+= Überlegungen und Anforderungen zum StorageGRID S3-Einrichtungsassistenten
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

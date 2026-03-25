@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: firewall controls, untrusted client network, privileged address, manage external access 
 summary: StorageGRID umfasst für jeden Node eine interne Firewall, die die Sicherheit Ihres Grids erhöht, indem Sie den Zugriff auf das Grid-Netzwerk, das Admin-Netzwerk und das Client-Netzwerk anpassen können. 
 ---
-= Interne Firewall-Kontrollen verwalten
+= Interne Firewall-Steuerungen in StorageGRID verwalten
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

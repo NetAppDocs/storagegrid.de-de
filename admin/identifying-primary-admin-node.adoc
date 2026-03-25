@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: primary admin node, configuration management node 
 summary: Der primäre Admin-Node bietet mehr Funktionen als nicht-primäre Admin-Nodes. Beispielsweise müssen einige Wartungsverfahren mit dem primären Admin-Node durchgeführt werden. 
 ---
-= Identifizieren Sie den primären Admin-Node
+= Identifizieren Sie den primären Admin-Node in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
