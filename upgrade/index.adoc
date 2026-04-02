@@ -25,8 +25,8 @@ CAUTION: Starten Sie das Upgrade nicht, wenn Sie Ihren Speicher dringend erweite
 Lesen Sie diese Themen, um mehr über die neuen Funktionen und Verbesserungen in StorageGRID 12.0 zu erfahren, festzustellen, ob Funktionen veraltet sind oder entfernt wurden, und sich über Änderungen an den StorageGRID -APIs zu informieren.
 
 * link:how-your-system-is-affected-during-upgrade.html["Auswirkungen des Upgrades auf Ihr System"]
-* link:whats-new.html["Was ist neu in StorageGRID 12.0"]
-* link:removed-or-deprecated-features.html["Funktionen entfernt oder veraltet"]
-* link:changes-to-grid-management-api.html["Änderungen an der Grid-Management-API"]
-* link:changes-to-tenant-management-api.html["Änderungen an der Mandantenmanagement-API"]
+* link:../release-notes/whats-new.html["Was ist neu in StorageGRID 12.0"]
+* link:../release-notes/removed-or-deprecated-features.html["Funktionen entfernt oder veraltet"]
+* link:../release-notes/changes-to-grid-management-api.html["Änderungen an der Grid-Management-API"]
+* link:../release-notes/changes-to-tenant-management-api.html["Änderungen an der Mandantenmanagement-API"]
 

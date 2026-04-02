@@ -1,0 +1,110 @@
+---
+permalink: release-notes/whats-new.html 
+sidebar: sidebar 
+keywords: what is new in StorageGRID 12.0 
+summary: StorageGRID 12.0 erweitert die Objektspeicherkapazität, verbessert die Unterstützung von KI/ML-Workloads, stärkt die Grid-Federation, vereinfacht Systemmanagement und erhöht die Sicherheit auf der gesamten Plattform. 
+---
+= Was ist neu in StorageGRID 12.0
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+StorageGRID 12.0 erweitert die Objektspeicherkapazität, verbessert die Unterstützung von KI/ML-Workloads, stärkt die Grid-Federation, vereinfacht Systemmanagement und erhöht die Sicherheit auf der gesamten Plattform.
+
+Einzelheiten zu behobenen und bekannten Problemen in den aktuellen StorageGRID 12.0-Versionen finden Sie in den  https://library.netapp.com/ecm/ecm_download_file/ECMLP3351267["StorageGRID 12.0 Versionshinweise"^]. Sie müssen sich mit Ihrem NetApp Account anmelden oder ein Konto erstellen, um auf die Release notes zuzugreifen.
+
+
+
+== Appliances
+
+* Speicherkapazität und Kosteneffizienz haben sich deutlich erhöht.
+* Automatisierte Firmware-Upgrades für Laufwerke verbessern die Systemzuverlässigkeit und reduzieren den Wartungsaufwand.
+
+
+
+
+== Künstliche Intelligenz (KI) und maschinelles Lernen (ML)
+
+* link:../tenant/what-is-branch-bucket.html["Zweigeimer"]Ermöglichen Sie Point-in-Time-Versionen von Buckets, die eine schnellere Ransomware-Wiederherstellung und isolierte Datensätze für Tests und Experimente ermöglichen.
+* Eine S3-Caching-Schicht verbessert die Leistung für das KI/ML-Training.
+
+
+
+
+== Kapazität
+
+StorageGRID unterstützt jetzt eine Billion Objekte, was mehr als das Doppelte des vorherigen Limits ist.  Weitere Informationen finden Sie im https://fusion.netapp.com/["NetApp Fusion -Tool"^] zur Dimensionierung und Gestaltung von StorageGRID.
+
+
+
+== Cassandra-Updates
+
+StorageGRID verwendet jetzt eine neuere Version von Cassandra zur Metadatenspeicherung.  Diese Version von Cassandra nutzt den Speicherplatz effizienter, um mehr Metadaten zu speichern.
+
+Nach Ihnenlink:../upgrade/index.html["Upgrade von StorageGRID 11.9 auf 12.0"] , wird ein bis drei Tage lang im Hintergrund eine Aktualisierung des Metadatenformats durchgeführt.  Während dieser Zeit werden bestimmte Wartungsvorgänge, die Metadaten-Streaming beinhalten, wie etwa die Erweiterung, deaktiviert.
+
+Weitere Informationen finden Sie unter link:../upgrade/performing-upgrade.html#upgrade-other-nodes["Aktualisieren Sie andere Nodes"] .
+
+
+
+== Föderation
+
+* Sie können jetztlink:../admin/managing-users.html#import-federated-users["Importieren Sie bis zu 100 föderierte Benutzer"] in StorageGRID.
+* Sie können jetztlink:../ilm/configuring-regions-optional-and-s3-only.html["Ändern Sie die Standardregion"] für S3-Buckets.  Diese Funktion bietet mehr Flexibilität bei der Verwaltung des Datenstandorts und der Compliance.
+* Sie können jetzt die Cross-Grid-Replikation zwischen Buckets mit aktivierter S3-Objektsperre konfigurieren. Weitere Informationen finden Sie unter link:../admin/grid-federation-what-is-cross-grid-replication.html#cgr-with-ol["Cross-Grid-Replikation mit S3 Object Lock"] .
++
+NetApp empfiehlt, diese Funktion nur zwischen Quell- und Ziel-Buckets von StorageGRID 12.0 zu verwenden.  Diese Funktion wird jedoch zwischen StorageGRID 11.9-Quell-Buckets mit deaktivierter S3-Objektsperre und StorageGRID 12.0-Ziel-Buckets mit aktivierter S3-Objektsperre unterstützt.
+
+
+
+
+
+== Verwaltbarkeit
+
+* Verbessertlink:../maintain/decommission-procedure.html["Stilllegungsverfahren"] reduziert Zeit und Komplexität und steigert so die Betriebseffizienz.
+* Verbessertes Verhalten für starke globale Konsistenz bietet Site-Fehlertoleranz für Clientanforderungen, wenn Grids drei oder mehr Sites haben.
++
+** Bei Neuinstallationen von StorageGRID 12.0 und höher wird standardmäßig die Quorum-Semantik verwendet, wennlink:../s3/consistency.html["starke globale Konsistenz"] ist eingestellt.
+** Wenn Sie von StorageGRID 11.9 auf StorageGRID 12.0 aktualisieren, behalten aktualisierte Grids das vorherige Verhalten für starke globale Konsistenz bei.
+
+
+
+
+
+NOTE: Wenn Sie zum vorherigen Verhalten zurückkehren müssen, um eine starke globale Konsistenz zu erreichen, lesen Sie https://kb.netapp.com/hybrid/StorageGRID/Object_Mgmt/Configuring_StorageGRID_quorum_semantics_for_strong-global_consistency["Konfigurieren der StorageGRID Quorum-Semantik für starke globale Konsistenz"^] Anweisungen hierzu finden Sie unter.
+
+* Die Möglichkeit, Protokoll-Uploads zu initiierenlink:../admin/configure-autosupport-grid-manager.html["AutoSupport"] trägt zur Verbesserung der Support-Reaktionsfähigkeit bei.
+* Reduziert https://docs.netapp.com/us-en/storagegrid-appliances/index.html["Gerät"^] Die Neustartzeit minimiert die Ausfallzeit und verbessert so die allgemeine Systemverfügbarkeit.
+* link:../maintain/move-adc-service.html["Die Möglichkeit, den ADC-Dienst zu verschieben"]auf einen anderen Speicherknoten erhöht die Flexibilität und Ausfallsicherheit bei der Verwaltung von Speicherknoten, die den ADC-Dienst hosten.  Sie können den ADC-Dienst verschieben, bevor Sie einen Speicherknoten außer Betrieb nehmen oder einen Speicherknoten in einen Nur-Daten-Knoten umwandeln.
+* Um die Datenspeicherkapazität zu maximieren, können Sielink:../maintain/convert-to-data-only-node.html["Konvertieren Sie einen Speicherknoten in einen Nur-Datenknoten"] , wodurch die Metadaten auf diesem Knoten auf kombinierte oder reine Metadaten-Speicherknoten migriert werden.
+* Die Möglichkeit für jeden Admin-Knoten,link:../maintain/selecting-node-recovery-procedure.html["Wiederherstellen eines anderen Knotens"] (mit Ausnahme des primären Admin-Knotens) verbessert die Systemwiederherstellung und Fehlertoleranz und verbessert die allgemeine Zuverlässigkeit.
+* Benutzer können jetzt einen S3-Bucket verwenden, umlink:../monitor/configure-log-management.html#use-a-bucket["Audit-Protokolle über einen langen Zeitraum speichern"] .
+
+
+
+
+== Sicherheit
+
+* Stärkere Datenverschlüsselung und Integritätsschutz sorgen für verbesserte Sicherheit und Leistung.
+* Durch die erhöhte Sicherheit gespeicherter Passwörter wird das Risiko eines unbefugten Zugriffs verringert.
+* link:../admin/manage-external-ssh-access.html["SSH wird standardmäßig blockiert"]um die Sicherheit zu erhöhen und gleichzeitig kontrollierten Zugriff zu ermöglichen.
+
+
+
+
+== Mandantengruppen
+
+* Sie können jetztlink:../tenant/manage-groups.html["Konfigurieren Sie eine neue S3-Vertrauensrichtlinie"] zur Unterstützung der AssumeRole-API.  Die Funktion „AssumeRole“ bietet kurzfristige Anmeldeinformationen für verbesserte Sicherheit und flexible Zugriffskontrolle.
+* Das Objektanzahlkontingent pro Bucket ermöglicht eine bessere Kontrolle und Verwaltung der Speicherressourcen.
+
+
+
+
+== Benutzeroberfläche
+
+* Die Einstellungen für dunkle Designs und Systemdesigns sind im Benutzermenü des Grid Managers und des Tenant Managers verfügbar.
+* Die Seite „Audit- und Syslog-Server“ wurde umbenanntlink:../monitor/configure-log-management.html["Protokollverwaltung"] , wurde umgestaltet und enthält Ergänzungen zum Speichern von Protokollen in einem System-Bucket zu Sicherungszwecken.
+* Die alte Seite „Grid-Topologie“ wurde entfernt.  In den letzten StorageGRID Versionen wurden die auf dieser Seite verfügbaren Vorgänge und Metriken auf andere Seiten im Grid Manager migriert, insbesondere auf dielink:../monitor/viewing-nodes-page.html["Knoten Seite"] .
+

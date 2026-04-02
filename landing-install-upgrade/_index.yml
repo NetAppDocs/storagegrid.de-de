@@ -34,7 +34,7 @@ indexpage:
   - title: Upgrade oder Hotfix
     links:
     - title: Was ist neu
-      url: "../upgrade/whats-new.html"
+      url: "../release-notes/whats-new.html"
     - title: Geschätzte Zeit bis zum Abschluss
       url: "../upgrade/estimating-time-to-complete-upgrade.html"
     - title: Auswirkungen eines Upgrades auf Ihr System

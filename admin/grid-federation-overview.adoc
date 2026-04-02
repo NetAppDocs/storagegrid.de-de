@@ -33,7 +33,7 @@ image::../media/grid-federation-workflow.png[Workflow der Grid-Föderation-Verbi
 
 * Auf den Grids, die für den Grid-Verbund verwendet werden, müssen StorageGRID-Versionen ausgeführt werden, die entweder identisch sind oder nicht mehr als einen Hauptversionsunterschied aufweisen.
 +
-Weitere Informationen zu Versionsanforderungen finden Sie im link:../release-notes/index.html["Versionshinweise"].
+Einzelheiten zu den Versionsvoraussetzungen finden Sie in der  https://library.netapp.com/ecm/ecm_download_file/ECMLP3351267["Versionshinweise"^]. Sie müssen sich mit Ihrem NetApp Konto anmelden oder ein Konto erstellen, um auf die Release Notes zuzugreifen.
 
 * Ein Grid kann eine oder mehrere Netzverbundverbindungen zu anderen Grids haben. Jede Netzverbundverbindung ist unabhängig von allen anderen Verbindungen. Wenn beispielsweise Grid 1 eine Verbindung mit Grid 2 und eine zweite Verbindung mit Grid 3 hat, besteht keine implizierte Verbindung zwischen Grid 2 und Grid 3.
 * Netzverbundverbindungen sind bidirektional. Nachdem die Verbindung hergestellt wurde, können Sie die Verbindung von beiden Grids aus überwachen und verwalten.

@@ -56,5 +56,5 @@ Nachdem Sie festgelegt haben, welche StorageGRID-Netzwerke Sie verwenden möchte
 
 .StorageGRID Software konfigurieren und verwalten
 * link:../admin/index.html["StorageGRID verwalten"]
-* link:../release-notes/index.html["Versionshinweise"]
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP3351267["Versionshinweise"^]. Sie müssen sich mit Ihrem NetApp-Konto anmelden oder ein Konto erstellen, um auf die Versionshinweise zugreifen zu können.
 

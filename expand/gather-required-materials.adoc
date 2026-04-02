@@ -59,7 +59,7 @@ Die Passphrase wird erstellt und dokumentiert, wenn das StorageGRID-System zum e
 StorageGRID-Dokumentation
  a| 
 * link:../admin/index.html["StorageGRID verwalten"]
-* link:../release-notes/index.html["Versionshinweise"]
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP3351267["Versionshinweise"^]. Sie müssen sich mit Ihrem NetApp-Konto anmelden oder ein Konto erstellen, um auf die Versionshinweise zugreifen zu können.
 * link:../swnodes/index.html["Installationsanweisungen für Ihre Plattform"]
 
 
