@@ -825,7 +825,7 @@ Objekt restoreObject
 |===
 
 
-== Verwenden Sie PutOverwriteObject-Berechtigung
+== [[use-putoverwriteobject-permission]]PutOverwriteObject-Berechtigung verwenden
 
 die s3:PutOverwriteObject-Berechtigung ist eine benutzerdefinierte StorageGRID-Berechtigung, die für Vorgänge gilt, die Objekte erstellen oder aktualisieren. Durch diese Berechtigung wird festgelegt, ob der Client die Daten, benutzerdefinierte Metadaten oder S3-Objekt-Tagging überschreiben kann.
 

@@ -17,7 +17,7 @@ Verwenden Sie das folgende Beispiel, um eine StorageGRID -Sitzungsrichtlinie zu 
 
 == Beispiel: Einrichten einer Sitzungsrichtlinie, die den Objektabruf ermöglicht
 
-In diesem Beispiel darf der Sitzungsprinzipal nur Objekte aus Bucket1 abrufen.  Alle anderen Aktionen werden implizit verweigert, mit Ausnahme von StorageGRID-spezifischen Aktionen, wie z. B. der Verwendung deslink:use-access-policies/#use-putoverwriteobject-permission["s3:PutOverwrite Object"] Erlaubnis.  Die Sitzungsrichtlinie kann beim Aufruf der AssumeRole-API als JSON-Datei bereitgestellt werden.
+In diesem Beispiel darf der Sitzungsbenutzer nur Objekte aus bucket1 abrufen. Alle anderen Aktionen sind implizit untersagt, mit Ausnahme von StorageGRID-spezifischen Aktionen, wie der Verwendung der link:../s3/use-access-policies.html#use-putoverwriteobject-permission["s3:PutOverwrite Object"] Berechtigung. Die Sitzungsrichtlinie kann beim Aufruf der AssumeRole API als JSON-Datei angegeben werden.
 
 [listing]
 ----
