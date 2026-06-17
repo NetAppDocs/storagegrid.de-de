@@ -10,7 +10,7 @@ summary: Lesen Sie, wie Sie die StorageGRID Appliance-Hardware installieren, kon
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

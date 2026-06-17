@@ -2,7 +2,7 @@
 permalink: admin/signing-in-to-grid-manager.html 
 sidebar: sidebar 
 keywords: grid manager, sign in, log in 
-summary: 'Sie greifen auf die Anmeldeseite des Grid Manager zu, indem Sie den vollständig qualifizierten Domänennamen \(FQDN\) oder die IP-Adresse eines Admin-Knotens in die Adressleiste eines unterstützten Webbrowsers eingeben.' 
+summary: 'Sie greifen auf die Anmeldeseite des Grid Manager zu, indem Sie den vollständig qualifizierten Domänennamen (FQDN) oder die IP-Adresse eines Admin-Knotens in die Adressleiste eines unterstützten Webbrowsers eingeben.' 
 ---
 = Melden Sie sich beim StorageGRID Grid Manager an
 :allow-uri-read: 

@@ -2,7 +2,7 @@
 permalink: admin/confirming-federated-users-can-sign-in.html 
 sidebar: sidebar 
 keywords: sso configuration 
-summary: 'Bevor Sie Single Sign-On \(SSO\) aktivieren, müssen Sie bestätigen, dass sich mindestens ein verbundener Benutzer beim Grid Manager und beim Tenant Manager für alle bestehenden Mandantenkonten anmelden kann.' 
+summary: 'Bevor Sie Single Sign-On (SSO) aktivieren, müssen Sie bestätigen, dass sich mindestens ein verbundener Benutzer beim Grid Manager und beim Tenant Manager für alle bestehenden Mandantenkonten anmelden kann.' 
 ---
 = Bestätigen Sie, dass sich Verbundbenutzer bei StorageGRID anmelden können
 :allow-uri-read: 

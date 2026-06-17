@@ -2,7 +2,7 @@
 permalink: admin/protecting-against-cross-site-request-forgery-csrf.html 
 sidebar: sidebar 
 keywords: csrf, cross site request forgery, token 
-summary: 'Sie können mithilfe von CSRF-Tokens die Authentifizierung verbessern, die Cookies verwendet, um Angriffe auf Cross-Site Request Forgery \ (CSRF\) gegen StorageGRID zu schützen. Grid Manager und Tenant Manager aktivieren diese Sicherheitsfunktion automatisch; andere API-Clients können wählen, ob sie aktiviert werden sollen, wenn sie sich anmelden.' 
+summary: 'Gegen Cross-Site Request Forgery (CSRF)-Angriffe auf StorageGRID kann durch die Verwendung von CSRF-Token zum Schutz der Authentifizierung, die Cookies verwendet, vorgebeugt werden.' 
 ---
 = Schutz vor Cross-Site Request Forgery (CSRF) in StorageGRID
 :allow-uri-read: 

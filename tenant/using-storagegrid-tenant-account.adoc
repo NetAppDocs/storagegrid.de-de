@@ -2,7 +2,7 @@
 permalink: tenant/using-storagegrid-tenant-account.html 
 sidebar: sidebar 
 keywords: how to use tenant account 
-summary: 'Ein Mandantenkonto ermöglicht Ihnen die Verwendung der Simple Storage Service \(S3\) REST API zum Speichern und Abrufen von Objekten in einem StorageGRID System.' 
+summary: 'Ein Mandantenkonto ermöglicht Ihnen die Verwendung der S3-REST-API (Simple Storage Service) zum Speichern und Abrufen von Objekten in einem StorageGRID System.' 
 ---
 = Nutzen Sie das StorageGRID Mandantenkonto
 :allow-uri-read: 

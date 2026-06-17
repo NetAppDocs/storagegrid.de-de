@@ -2,7 +2,7 @@
 permalink: ilm/what-ilm-rule-is.html 
 sidebar: sidebar 
 keywords: what is information lifecycle rule, ilm rule 
-summary: 'Zum Managen von Objekten erstellen Sie einen Satz von Regeln für das Information Lifecycle Management \ (ILM\) und ordnen diese in einer ILM-Richtlinie ab.' 
+summary: 'Zum Managen von Objekten erstellen Sie eine Reihe von Regeln für das Information Lifecycle Management (ILM) und organisieren diese in eine ILM-Richtlinie.' 
 ---
 = Erfahren Sie mehr über ILM-Regeln in StorageGRID
 :allow-uri-read: 

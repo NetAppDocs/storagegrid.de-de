@@ -2,7 +2,7 @@
 permalink: monitor/using-snmp-monitoring.html 
 sidebar: sidebar 
 keywords: snmp, monitoring 
-summary: 'Wenn Sie StorageGRID mit dem Simple Network Management Protocol \ (SNMP\) überwachen möchten, müssen Sie den SNMP-Agent konfigurieren, der in StorageGRID enthalten ist.' 
+summary: 'Wenn Sie StorageGRID mit dem Simple Network Management Protocol (SNMP) überwachen möchten, müssen Sie den SNMP-Agent konfigurieren, der in StorageGRID enthalten ist.' 
 ---
 = Verwenden Sie die SNMP-Überwachung in StorageGRID
 :allow-uri-read: 

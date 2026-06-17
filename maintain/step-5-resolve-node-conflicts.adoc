@@ -2,7 +2,7 @@
 permalink: maintain/step-5-resolve-node-conflicts.html 
 sidebar: sidebar 
 keywords: storagegrid, recover, resolve node conflict 
-summary: 'Ab Schritt 5 \(Auflösen von Knotenkonflikten\) des Assistenten für die Dekommission-Website können Sie feststellen, ob Knoten in Ihrem StorageGRID-System getrennt sind oder ob Knoten am ausgewählten Standort zu einer hochverfügbaren \(HA\)-Gruppe gehören. Nachdem Konflikte mit Knoten behoben wurden, starten Sie den Vorgang zur Deaktivierung auf dieser Seite.' 
+summary: 'Ab Schritt 5 (Auflösen von Knotenkonflikten) des Assistenten für die Dekommission-Website können Sie feststellen, ob Knoten in Ihrem StorageGRID-System getrennt sind oder ob Knoten am ausgewählten Standort zu einer HA-Gruppe gehören. Nachdem Konflikte mit Knoten behoben wurden, starten Sie den Vorgang zur Deaktivierung auf dieser Seite.' 
 ---
 = Beheben Sie Knotenkonflikte und starten Sie die Standortstilllegung in StorageGRID
 :allow-uri-read: 

@@ -2,7 +2,7 @@
 permalink: admin/kms-managing.html 
 sidebar: sidebar 
 keywords: manage kms, manage key management server, view kms, view key management server, edit kms, edit key management server, view encrypted nodes, remove kms, remove key management server 
-summary: 'Die Verwaltung eines Schlüsselverwaltungsservers \(KMS\) umfasst das Anzeigen oder Bearbeiten von Details, das Verwalten von Zertifikaten, das Anzeigen verschlüsselter Knoten und das Entfernen eines KMS, wenn er nicht mehr benötigt wird.' 
+summary: 'Zum Verwalten eines Schlüsselverwaltungsservers (KMS) gehören das Anzeigen oder Bearbeiten von Details, das Verwalten von Zertifikaten, das Anzeigen verschlüsselter Knoten und das Entfernen eines KMS, wenn er nicht mehr benötigt wird.' 
 ---
 = Verwalten eines Schlüsselverwaltungsservers in StorageGRID
 :allow-uri-read: 

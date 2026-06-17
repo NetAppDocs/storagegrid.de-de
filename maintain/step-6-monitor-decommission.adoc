@@ -2,7 +2,7 @@
 permalink: maintain/step-6-monitor-decommission.html 
 sidebar: sidebar 
 keywords: storagegrid, recover, monitor decommission, decommission 
-summary: 'Ab Schritt 6 \(Monitor Decommission\) des Seitenassistenten der Decommission Site können Sie den Fortschritt überwachen, während die Site entfernt wird.' 
+summary: 'Ab Schritt 6 (Überwachung der Dekommission) des Seitenassistenten der Decommission-Website können Sie den Fortschritt überwachen, während die Site entfernt wird.' 
 ---
 = Überwachen Sie den Fortschritt der Standortstilllegung in StorageGRID
 :allow-uri-read: 

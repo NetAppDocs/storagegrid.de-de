@@ -2,7 +2,7 @@
 permalink: admin/temporarily-disabling-and-reenabling-sso-for-admin-node.html 
 sidebar: sidebar 
 keywords: signing in when sso is down, single sign on failure 
-summary: 'Sie können sich möglicherweise nicht beim Grid-Manager anmelden, wenn das Single Sign-On \(SSO\)-System ausfällt. In diesem Fall können Sie SSO für einen Admin-Node vorübergehend deaktivieren und erneut aktivieren. Um SSO zu deaktivieren und dann erneut zu aktivieren, müssen Sie auf die Befehlshaber des Knotens zugreifen.' 
+summary: 'Sie können sich möglicherweise nicht beim Grid Manager anmelden, wenn das Single Sign-On (SSO)-System ausfällt. In diesem Fall kann SSO für einen Admin-Knoten vorübergehend deaktiviert und anschließend wieder aktiviert werden. Um SSO zu deaktivieren und dann wieder zu aktivieren, ist der Zugriff auf die Befehlsshell des Knotens erforderlich.' 
 ---
 = SSO für einen StorageGRID Admin-Node vorübergehend deaktivieren und wieder aktivieren
 :allow-uri-read: 

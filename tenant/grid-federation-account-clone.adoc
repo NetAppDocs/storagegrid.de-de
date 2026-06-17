@@ -2,7 +2,7 @@
 permalink: tenant/grid-federation-account-clone.html 
 sidebar: sidebar 
 keywords: account clone, cloning tenant, grid federation, cross-grid replication 
-summary: 'Wenn ein Mandant zur Verwendung einer Grid-Verbundverbindung erstellt oder bearbeitet wurde, wird dieser Mandant von einem StorageGRID-System \(der Quellmandant\) auf ein anderes StorageGRID-System \(der Replikatmandant\) repliziert. Nach der Replizierung des Mandanten werden alle Gruppen und Benutzer, die dem Quellmandanten hinzugefügt wurden, dem Replikatmandanten geklont.' 
+summary: 'Wenn ein Mandant zur Verwendung einer Grid-Verbundverbindung erstellt oder bearbeitet wurde, wird dieser Mandant von einem StorageGRID System (dem Quellmandanten) auf ein anderes StorageGRID System (dem Replikatmandanten) repliziert. Nach der Replizierung des Mandanten werden alle Gruppen und Benutzer, die dem Quellmandanten hinzugefügt wurden, dem Replikatmandanten geklont.' 
 ---
 = Mandantengruppen und Benutzer in StorageGRID klonen
 :allow-uri-read: 

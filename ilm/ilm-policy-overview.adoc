@@ -2,7 +2,7 @@
 permalink: ilm/ilm-policy-overview.html 
 sidebar: sidebar 
 keywords: ILM policy, information lifecycle policy considerations 
-summary: 'Eine Information Lifecycle Management \ (ILM\)-Richtlinie ist ein bestellter Satz von ILM-Regeln, die bestimmen, wie das StorageGRID System Objektdaten über einen längeren Zeitraum verwaltet.' 
+summary: 'Eine Information Lifecycle Management-Richtlinie (ILM) ist ein bestellter Satz von ILM-Regeln, die bestimmen, wie das StorageGRID System Objektdaten über einen längeren Zeitraum managt.' 
 ---
 = Erfahren Sie mehr über ILM-Richtlinien in StorageGRID
 :allow-uri-read: 

@@ -2,7 +2,7 @@
 permalink: monitor/viewing-ilm-tab.html 
 sidebar: sidebar 
 keywords: ilm tab 
-summary: 'Die Registerkarte ILM bietet Informationen zu Information Lifecycle Management \(ILM\)-Vorgängen.' 
+summary: 'Die Registerkarte ILM bietet Informationen zu Operationen des Information Lifecycle Management (ILM).' 
 ---
 = Die StorageGRID ILM-Registerkarte anzeigen
 :allow-uri-read: 

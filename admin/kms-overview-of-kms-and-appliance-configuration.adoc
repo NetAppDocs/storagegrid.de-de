@@ -2,7 +2,7 @@
 permalink: admin/kms-overview-of-kms-and-appliance-configuration.html 
 sidebar: sidebar 
 keywords: kms, appliance configuration, node encryption 
-summary: 'Bevor Sie einen Verschlüsselungsmanagement-Server \(KMS\) zur Sicherung von StorageGRID-Daten auf Appliance-Nodes verwenden können, müssen Sie zwei Konfigurationsaufgaben erfüllen: Einen oder mehrere KMS-Server einrichten und die Node-Verschlüsselung für die Appliance-Nodes aktivieren. Wenn diese beiden Konfigurationsaufgaben abgeschlossen sind, erfolgt automatisch der Verschlüsselungsmanagementprozess.' 
+summary: 'Bevor Sie einen Key Management Server (KMS) zum Schutz von StorageGRID Daten auf Appliance-Knoten verwenden können, müssen zwei Konfigurationsaufgaben abgeschlossen werden: die Einrichtung eines oder mehrerer KMS Server und die Aktivierung der Knotenverschlüsselung für die Appliance-Knoten. Sobald diese beiden Konfigurationsaufgaben abgeschlossen sind, erfolgt der Schlüsselverwaltungsprozess automatisch.' 
 ---
 = StorageGRID Schlüsselverwaltungsserver und Appliance-Konfiguration
 :allow-uri-read: 

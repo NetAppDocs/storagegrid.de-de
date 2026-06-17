@@ -2,7 +2,7 @@
 permalink: ilm/index.html 
 sidebar: sidebar 
 keywords: information lifecycle management overview, about information lifecycle management, ilm overview, about ilm 
-summary: 'Die Information Lifecycle Management \ (ILM\)-Regeln in einer ILM-Richtlinie erläutern StorageGRID, wie Kopien von Objektdaten erstellt und verteilt werden und wie diese Kopien über einen längeren Zeitraum gemanagt werden.' 
+summary: 'Die Regeln für Information Lifecycle Management (ILM) einer ILM-Richtlinie erläutern StorageGRID, wie Kopien von Objektdaten erstellt und verteilt werden und wie diese Kopien über einen längeren Zeitraum gemanagt werden.' 
 ---
 = Objekte mit ILM in StorageGRID verwalten
 :allow-uri-read: 

@@ -2,7 +2,7 @@
 permalink: maintain/recovering-from-non-primary-admin-node-failures.html 
 sidebar: sidebar 
 keywords: storagegrid, recover, non-primary admin node failure 
-summary: 'Sie müssen die folgenden Aufgaben durchführen, um nach einem Ausfall eines nicht primären Admin-Knotens wiederherzustellen. Ein Admin-Node hostet den Configuration Management Node \(CMN\)-Dienst und ist als primärer Admin-Node bekannt. Obwohl Sie mehrere Admin-Nodes haben können, enthält jedes StorageGRID-System nur einen primären Admin-Node. Alle anderen Admin-Nodes sind nicht primäre Admin-Nodes.' 
+summary: 'Sie müssen die folgenden Aufgaben durchführen, um nach einem Ausfall eines nicht primären Admin-Knotens wiederherzustellen. Ein Admin-Node hostet den Configuration Management Node (CMN)-Service und ist als primärer Admin-Node bekannt. Obwohl Sie mehrere Admin-Nodes haben können, enthält jedes StorageGRID-System nur einen primären Admin-Node. Alle anderen Admin-Nodes sind nicht primäre Admin-Nodes.' 
 ---
 = Wiederherstellung nach Ausfällen von nicht-primären StorageGRID-Admin-Knoten
 :allow-uri-read: 

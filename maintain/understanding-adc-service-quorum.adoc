@@ -2,7 +2,7 @@
 permalink: maintain/understanding-adc-service-quorum.html 
 sidebar: sidebar 
 keywords: storagegrid, recover, adc, adc quorum 
-summary: 'Sie können bestimmte Speicher-Nodes an einem Standort möglicherweise nicht stilllegen, wenn nach der Stilllegung zu wenige Dienste des Administrative Domain Controller \(ADC\) verbleiben würden.' 
+summary: 'Möglicherweise können Sie bestimmte Speicher-Nodes an einem Standort nicht stilllegen, wenn nach der Stilllegung zu wenige ADC-Dienste (Administrative Domain Controller) verbleiben würden.' 
 ---
 = Was ist das StorageGRID ADC-Quorum?
 :allow-uri-read: 

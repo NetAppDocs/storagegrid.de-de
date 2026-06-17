@@ -2,7 +2,7 @@
 permalink: admin/troubleshooting-autosupport-messages.html 
 sidebar: sidebar 
 keywords: troubleshoot autosupport, asup package 
-summary: Wenn der Versuch, ein AutoSupport-Paket zu senden, fehlschlägt, führt das StorageGRID-System je nach Typ des AutoSupport-Pakets unterschiedliche Aktionen durch. Sie können den Status von AutoSupport-Paketen überprüfen, indem Sie Support \> Tools \> AutoSupport \> Results auswählen. 
+summary: Wenn ein Versuch, ein AutoSupport-Paket zu senden, fehlschlägt, ergreift das StorageGRID-System je nach Typ des AutoSupport-Pakets unterschiedliche Maßnahmen. 
 ---
 = Fehlerbehebung bei StorageGRID AutoSupport-Paketen
 :allow-uri-read: 

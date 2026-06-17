@@ -2,7 +2,7 @@
 permalink: admin/troubleshooting-platform-services.html 
 sidebar: sidebar 
 keywords: troubleshoot platform services, platform services endpoint error 
-summary: Die in Plattform-Services verwendeten Endpunkte werden von Mandantenbenutzern im Mandanten-Manager erstellt und gewartet. Falls jedoch Probleme bei der Konfiguration oder Verwendung von Plattformservices bei einem Mandanten auftreten, können Sie das Problem mithilfe des Grid Manager beheben. 
+summary: Die in den Plattformdiensten verwendeten Endpunkte werden von Mandantenbenutzern im Tenant Manager erstellt und verwaltet. Wenn ein Mandant jedoch Probleme bei der Konfiguration oder Nutzung von Plattformdiensten hat, kann der Grid Manager möglicherweise zur Lösung des Problems beitragen. 
 ---
 = Fehlerbehebung bei StorageGRID-Plattformdiensten
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Die in Plattform-Services verwendeten Endpunkte werden von Mandantenben
 
 
 [role="lead"]
-Die in Plattform-Services verwendeten Endpunkte werden von Mandantenbenutzern im Mandanten-Manager erstellt und gewartet. Falls jedoch Probleme bei der Konfiguration oder Verwendung von Plattformservices bei einem Mandanten auftreten, können Sie das Problem mithilfe des Grid Manager beheben.
+Die in den Plattformdiensten verwendeten Endpunkte werden von Mandantenbenutzern im Tenant Manager erstellt und verwaltet. Wenn ein Mandant jedoch Probleme bei der Konfiguration oder Nutzung von Plattformdiensten hat, kann der Grid Manager möglicherweise zur Lösung des Problems beitragen.
 
 
 

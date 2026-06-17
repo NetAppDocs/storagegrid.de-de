@@ -2,7 +2,7 @@
 permalink: s3/use-access-policies.html 
 sidebar: sidebar 
 keywords: bucket access policies, group access policies, session policies 
-summary:  
+summary: 'StorageGRID verwendet die Richtliniensprache von Amazon Web Services (AWS), um S3-Mandanten die Kontrolle über den Zugriff auf Buckets und Objekte innerhalb dieser Buckets zu ermöglichen.' 
 ---
 = Wie StorageGRID AWS-Richtlinien verwendet, um den Zugriff auf S3-Buckets und Objekte zu steuern
 :allow-uri-read: 

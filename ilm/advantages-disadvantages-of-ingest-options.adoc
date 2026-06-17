@@ -2,7 +2,7 @@
 permalink: ilm/advantages-disadvantages-of-ingest-options.html 
 sidebar: sidebar 
 keywords: ingest options, balance ingest, strict ingest, dual commit ingest 
-summary: 'Die vor- und Nachteile jeder der drei Optionen zum Schutz von Daten bei Aufnahme zu verstehen \(ausgewogen, streng oder Dual Commit\) kann Ihnen bei der Entscheidung helfen, welche für eine ILM-Regel ausgewählt werden soll.' 
+summary: 'Wenn Sie die vor- und Nachteile der drei Optionen zum Schutz von Daten bei der Aufnahme (ausgewogen, streng oder Dual-Commit) kennen, können Sie leichter entscheiden, welche für eine ILM-Regel ausgewählt werden soll.' 
 ---
 = Vorteile, Nachteile und Einschränkungen der ILM-Ingest-Optionen in StorageGRID
 :allow-uri-read: 

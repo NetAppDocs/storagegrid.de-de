@@ -2,7 +2,7 @@
 permalink: maintain/recovering-from-primary-admin-node-failures.html 
 sidebar: sidebar 
 keywords: storagegrid, recover, primary admin node failure 
-summary: 'Sie müssen einen bestimmten Satz von Aufgaben ausführen, um nach einem Ausfall eines primären Admin-Knotens wiederherstellen zu können. Der primäre Admin-Node hostet den Configuration Management Node \(CMN\)-Dienst für das Grid.' 
+summary: 'Sie müssen einen bestimmten Satz von Aufgaben ausführen, um nach einem Ausfall eines primären Admin-Knotens wiederherstellen zu können. Der primäre Admin-Node hostet den Configuration Management Node (CMN)-Service für das Grid.' 
 ---
 = Wiederherstellung nach Ausfällen des primären StorageGRID-Admin-Knotens
 :allow-uri-read: 
@@ -14,7 +14,7 @@ summary: 'Sie müssen einen bestimmten Satz von Aufgaben ausführen, um nach ein
 Sie müssen einen bestimmten Satz von Aufgaben ausführen, um nach einem Ausfall eines primären Admin-Knotens wiederherstellen zu können. Der primäre Admin-Node hostet den Configuration Management Node (CMN)-Service für das Grid.
 
 
-CAUTION: Sie müssen einen fehlerhaften primären Admin-Node umgehend reparieren oder ersetzen, da das Grid möglicherweise nicht mehr in der Lage ist, neue Objekte aufzunehmen. Der genaue Zeitraum hängt von der Geschwindigkeit der Objekterfassung ab: Wenn Sie eine genauere Bewertung des Zeitrahmens für Ihr Grid benötigen, wenden Sie sich an den technischen Support.
+CAUTION: Ein ausgefallener primärer Admin Node muss umgehend repariert oder ersetzt werden, da Sie sonst möglicherweise bestimmte Wartungsarbeiten nicht durchführen können.
 
 Führen Sie diese allgemeinen Schritte aus, um einen primären Admin-Node wiederherzustellen:
 

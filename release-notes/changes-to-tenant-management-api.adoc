@@ -2,7 +2,7 @@
 permalink: release-notes/changes-to-tenant-management-api.html 
 sidebar: sidebar 
 keywords: tenant management api, api, api version, swagger, rest api 
-summary: StorageGRID 12.0 verwendet Version 4 der Tenant Management API.  Version 4 macht Version 3 veraltet; die Versionen 1, 2 und 3 werden jedoch weiterhin unterstützt. 
+summary: StorageGRID 12.0 verwendet Version 4 der Tenant Management API. Version 4 ersetzt Version 3. Die Versionen 1, 2 und 3 werden jedoch weiterhin unterstützt. 
 ---
 = Änderungen an der Tenant Management API in StorageGRID
 :allow-uri-read: 

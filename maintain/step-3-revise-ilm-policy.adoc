@@ -2,7 +2,7 @@
 permalink: maintain/step-3-revise-ilm-policy.html 
 sidebar: sidebar 
 keywords: storagegrid, recover, revise ilm policies 
-summary: 'In Schritt 3 \(ILM-Richtlinien überarbeiten\) des Assistenten für die Entkomissionierungsstelle können Sie bestimmen, ob der Standort durch eine ILM-Richtlinie referenziert wird.' 
+summary: 'In Schritt 3 (ILM-Richtlinien überarbeiten) des Assistenten zum Entnehmen von Websites können Sie bestimmen, ob der Standort durch eine ILM-Richtlinie referenziert wird.' 
 ---
 = Überarbeiten Sie die ILM-Richtlinien für die Standortstilllegung in StorageGRID
 :allow-uri-read: 

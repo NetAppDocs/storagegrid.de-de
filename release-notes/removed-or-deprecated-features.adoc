@@ -39,7 +39,7 @@ NOTE: In bestimmten Situationen stellt NetApp den Support für bestimmte Funktio
 
 
  a| 
-Alte Alarme (_Not Alerts_)
+Alarme, ältere Version (_nicht Alerts_)
  a| 
 11,7
  a| 
@@ -104,6 +104,19 @@ Docker Container-Engine
 NOCH AUSSTEHEND
  a| 
 Die Unterstützung für Docker als Container-Engine für reine Softwarebereitstellungen ist veraltet.  Docker wird in einer zukünftigen Version durch eine andere Container-Engine ersetzt.  Weitere Informationen finden Sie imlink:../swnodes/software-requirements.html["Softwareanforderungen für softwarebasierte Knoten"] für eine Liste der derzeit unterstützten Docker-Versionen.
+
+
+
+ a| 
+E-Mail Einrichtung (ältere Version)
+ a| 
+11,9
+ a| 
+12,0
+ a| 
+12,1
+ a| 
+https://docs.netapp.com/us-en/storagegrid-118/monitor/managing-alarms.html#configure-notifications-for-alarms-legacy-system["Benachrichtigungen für Alarme (Altsystem) konfigurieren (StorageGRID 11.8)"^]
 
 
 

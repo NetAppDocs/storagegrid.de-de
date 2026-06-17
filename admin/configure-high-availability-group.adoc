@@ -2,7 +2,7 @@
 permalink: admin/configure-high-availability-group.html 
 sidebar: sidebar 
 keywords: how to configure high availability group, node priority order, failover 
-summary: 'Sie können hochverfügbare \(HA\)-Gruppen konfigurieren, um hochverfügbare Zugriffe auf die Services in Admin-Nodes oder Gateway-Nodes zu ermöglichen.' 
+summary: 'Sie können Hochverfügbarkeitsgruppen (High Availability groups, HA-Gruppen) konfigurieren, um hochverfügbaren Zugriff auf die Services in Admin-Nodes oder Gateway-Nodes bereitzustellen.' 
 ---
 = Konfigurieren von Hochverfügbarkeitsgruppen in StorageGRID
 :allow-uri-read: 

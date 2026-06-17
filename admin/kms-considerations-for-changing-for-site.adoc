@@ -2,7 +2,7 @@
 permalink: admin/kms-considerations-for-changing-for-site.html 
 sidebar: sidebar 
 keywords: kms cluster, copy kms encryption key 
-summary: 'Jeder Verschlüsselungsmanagement-Server \ (KMS\) oder KMS-Cluster gewährt allen Appliance-Nodes an einem einzelnen Standort oder einer Gruppe von Standorten einen Verschlüsselungsschlüssel. Wenn Sie ändern müssen, welcher KMS für einen Standort verwendet wird, müssen Sie den Verschlüsselungsschlüssel möglicherweise von einem KMS auf einen anderen kopieren.' 
+summary: 'Jeder Verschlüsselungsmanagement-Server (KMS) oder KMS-Cluster gewährt allen Appliance-Nodes an einem einzelnen Standort oder einer Gruppe von Standorten einen Verschlüsselungsschlüssel. Wenn Sie ändern müssen, welcher KMS für einen Standort verwendet wird, müssen Sie den Verschlüsselungsschlüssel möglicherweise von einem KMS auf einen anderen kopieren.' 
 ---
 = Überlegungen zum Wechsel des KMS für einen StorageGRID Standort
 :allow-uri-read: 

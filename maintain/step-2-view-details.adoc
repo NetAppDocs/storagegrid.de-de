@@ -2,7 +2,7 @@
 permalink: maintain/step-2-view-details.html 
 sidebar: sidebar 
 keywords: storagegrid, recover, view details 
-summary: 'Ab Schritt 2 \(Details anzeigen\) des Assistenten für die Decommission-Site können Sie überprüfen, welche Knoten auf der Site enthalten sind, sehen, wie viel Speicherplatz auf den einzelnen Speicherknoten verwendet wurde, und bewerten, wie viel freier Speicherplatz auf den anderen Standorten in Ihrem Raster verfügbar ist.' 
+summary: 'Ab Schritt 2 (Details anzeigen) des Assistenten für die Decommission-Site können Sie überprüfen, welche Knoten auf der Site enthalten sind, sehen, wie viel Speicherplatz auf den einzelnen Speicherknoten verwendet wurde, und bewerten, wie viel freier Speicherplatz auf den anderen Standorten in Ihrem Raster verfügbar ist.' 
 ---
 = Überprüfen Sie die Standortdetails vor der Stilllegung in StorageGRID
 :allow-uri-read: 

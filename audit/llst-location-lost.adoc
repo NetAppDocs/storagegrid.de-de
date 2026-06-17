@@ -2,7 +2,7 @@
 permalink: audit/llst-location-lost.html 
 sidebar: sidebar 
 keywords: storagegrid, audit, message, LLST, Location Lost 
-summary: 'Diese Meldung wird immer dann generiert, wenn ein Speicherort für eine Objektkopie \(replizierte oder Erasure-coded\) nicht gefunden werden kann.' 
+summary: 'Diese Meldung wird immer dann generiert, wenn kein Speicherort für eine Objektkopie (repliziert oder mit Erasure-Codierung) gefunden werden kann.' 
 ---
 = LLST-Revisionsprotokollmeldung für verlorene Objektkopiespeicherorte in StorageGRID
 :allow-uri-read: 
