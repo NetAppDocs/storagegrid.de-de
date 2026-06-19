@@ -2,7 +2,7 @@
 permalink: ilm/data-protection-options-for-ingest.html 
 sidebar: sidebar 
 keywords: ingest options, balanced ingest, strict ingest, dual-commit ingest 
-summary: 'Wenn Sie eine ILM-Regel erstellen, geben Sie eine von drei Optionen zum Schutz von Objekten bei der Aufnahme an: Dual commit, Strict oder Balanced.' 
+summary: Wenn eine ILM-Regel erstellt wird, können Objekte beim Ingest geschützt werden, indem entweder Dual commit, Strict oder Balanced angegeben wird. 
 ---
 = ILM-Aufnahmeoptionen in StorageGRID
 :allow-uri-read: 

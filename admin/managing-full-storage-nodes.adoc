@@ -2,7 +2,7 @@
 permalink: admin/managing-full-storage-nodes.html 
 sidebar: sidebar 
 keywords: storage node is full 
-summary: 'Sobald die Speicherkapazität der Speicherknoten erschöpft ist, muss das StorageGRID System durch Hinzufügen von neuem Speicher erweitert werden. Hierfür stehen drei Optionen zur Verfügung: Hinzufügen von Speichervolumes, Hinzufügen von Speichererweiterungsregalen und Hinzufügen von Speicherknoten.' 
+summary: Sobald die Speicherkapazität der Speicherknoten erschöpft ist, muss das StorageGRID System durch Hinzufügen von neuem Speicher erweitert werden. Dies ist möglich durch das Hinzufügen von Speichervolumes, Speichererweiterungsgehäusen und Speicherknoten. 
 ---
 = Verwalten Sie vollständige Storage Nodes in StorageGRID
 :allow-uri-read: 

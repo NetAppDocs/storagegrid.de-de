@@ -2,7 +2,7 @@
 permalink: monitor/about-bycast-log.html 
 sidebar: sidebar 
 keywords: bycast, log 
-summary: 'Die Datei /var/local/log/bycast.log ist die primäre Fehlerbehebungsdatei für die StorageGRID-Software. Für jeden Grid-Node gibt es eine `bycast.log` Datei. Die Datei enthält für diesen Grid-Node spezifische Meldungen.' 
+summary: Die Datei /var/local/log/bycast.log ist die primäre Fehlerbehebungsdatei für die StorageGRID Software. Für jeden Grid-Knoten existiert eine bycast.log Datei. Diese Datei enthält Meldungen, die spezifisch für den jeweiligen Grid-Knoten sind. 
 ---
 = Erfahren Sie mehr über die StorageGRID bycast.log
 :allow-uri-read: 
