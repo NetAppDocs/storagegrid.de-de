@@ -21,7 +21,7 @@ Kontoklone ist für erforderlichlink:grid-federation-what-is-cross-grid-replicat
 
 Das Workflow-Diagramm zeigt die Schritte, die Grid-Administratoren und berechtigte Mandanten zum Einrichten des Kontoklons durchführen. Diese Schritte werden nach dem durchgeführtlink:grid-federation-create-connection.html["Die Grid-Federation-Verbindung ist konfiguriert"].
 
-image::../media/grid-federation-account-clone-workflow.png[Workflow für Konto-Klon]
+image:grid-federation-account-clone-workflow.png["Workflow für Konto-Klon"]
 
 
 

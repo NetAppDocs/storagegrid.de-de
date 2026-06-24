@@ -26,7 +26,7 @@ Sie können den Anzeigenamen für eine Gruppe bearbeiten. Sie können den eindeu
 Das Dialogfeld Gruppenname bearbeiten wird angezeigt.
 
 +
-image::../media/edit_group_name.png[Gruppenname bearbeiten]
+image:edit_group_name.png["Gruppenname bearbeiten"]
 
 . Wenn Sie eine lokale Gruppe bearbeiten, aktualisieren Sie den Anzeigenamen nach Bedarf.
 +

@@ -39,7 +39,7 @@ Sie können Ihre eigenen Zugriffsschlüssel klonen, wenn Sie auf dieselben Bucke
 `POST /org/users/current-user/replicate-s3-access-key`
 
 +
-image::../media/grid-federation-post-current-user-replicate.png[POST-Endpunkt für die Replikation des eigenen Zugriffsschlüssels]
+image:grid-federation-post-current-user-replicate.png["POST-Endpunkt für die Replikation des eigenen Zugriffsschlüssels"]
 
 . Wählen Sie *Probieren Sie es aus*.
 . Ersetzen Sie im Textfeld *body* die Beispieleinträge für *accesskey* und *secretAccessKey* durch die Werte aus der heruntergeladenen *.csv*-Datei.
@@ -47,7 +47,7 @@ image::../media/grid-federation-post-current-user-replicate.png[POST-Endpunkt f�
 Achten Sie darauf, dass die doppelten Anführungszeichen um jede Zeichenfolge herum beibehalten werden.
 
 +
-image::../media/grid-federation-clone-access-key.png[Die Mandanten-Manager-API gibt Werte zum Klonen des Zugriffsschlüssels ein]
+image:grid-federation-clone-access-key.png["Die Mandanten-Manager-API gibt Werte zum Klonen des Zugriffsschlüssels ein"]
 
 . Wenn der Schlüssel abläuft, ersetzen Sie den Beispieleintrag für *expires* durch das Ablaufdatum und die Zeit als String im ISO 8601-Datenzeitformat (z.B. `2024-02-28T22:46:33-08:00` ). Wenn der Schlüssel nicht abläuft, geben Sie *null* als Wert für den Eintrag *expires* ein (oder entfernen Sie die Zeile *expires* und das vorangegangene Komma).
 . Wählen Sie *Ausführen*.
@@ -80,7 +80,7 @@ Sie können die Zugriffsschlüssel eines anderen Benutzers klonen, wenn er auf d
 `POST /org/users/{userId}/replicate-s3-access-key`
 
 +
-image::../media/grid-federation-post-other-user.png[POST-Endpunkt zur Replikation des Zugriffsschlüssels eines anderen Benutzers]
+image:grid-federation-post-other-user.png["POST-Endpunkt zur Replikation des Zugriffsschlüssels eines anderen Benutzers"]
 
 . Wählen Sie *Probieren Sie es aus*.
 . Fügen Sie im Textfeld *userid* die von Ihnen kopierte Benutzer-ID ein.

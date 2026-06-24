@@ -52,7 +52,7 @@ Das folgende Beispiel zeigt die Ergebnisse für die Suche nach Objektmetadaten f
 
 NOTE: Der folgende Screenshot ist ein Beispiel. Die Ergebnisse variieren je nach StorageGRID-Version.
 
-image::../media/object_lookup_results.png[Ergebnisse Für Objekt-Lookup]
+image:object_lookup_results.png["Ergebnisse Für Objekt-Lookup"]
 
 .Verwandte Informationen
 link:../s3/index.html["S3-REST-API VERWENDEN"]

@@ -20,15 +20,15 @@ Beispiel:
 . Sie konfigurieren zunächst ein Standard-KMS, das für alle Standorte gilt, die kein dediziertes KMS haben.
 . Wenn der KMS gespeichert wird, stellen alle Appliance-Nodes, deren *Node Encryption*-Einstellung aktiviert ist, eine Verbindung zum KMS her und fordern den Verschlüsselungsschlüssel an. Dieser Schlüssel wird verwendet, um die Appliance-Nodes an allen Standorten zu verschlüsseln. Dieser Schlüssel muss auch verwendet werden, um diese Geräte zu entschlüsseln.
 +
-image::../media/kms_default_key.png[KM-Standardschlüssel]
+image:kms_default_key.png["KM-Standardschlüssel"]
 
 . Sie entscheiden, einen standortspezifischen KMS für einen Standort hinzuzufügen (Datacenter 3 in der Abbildung). Da die Appliance-Nodes jedoch bereits verschlüsselt sind, tritt ein Validierungsfehler auf, wenn Sie versuchen, die Konfiguration für den standortspezifischen KMS zu speichern. Der Fehler tritt auf, weil der standortspezifische KMS nicht über den korrekten Schlüssel verfügt, um die Knoten an diesem Standort zu entschlüsseln.
 +
-image::../media/kms_wrong_key.png[KMS falscher Schlüssel]
+image:kms_wrong_key.png["KMS falscher Schlüssel"]
 
 . Um das Problem zu beheben, kopieren Sie die aktuelle Version des Verschlüsselungsschlüssels vom Standard-KMS auf den neuen KMS. (Technisch kopieren Sie den Originalschlüssel in einen neuen Schlüssel mit dem gleichen Alias. Der ursprüngliche Schlüssel wird zu einer früheren Version des neuen Schlüssels.) Der standortspezifische KMS verfügt nun über den richtigen Schlüssel zur Entschlüsselung der Appliance-Nodes in Rechenzentrum 3, sodass er in StorageGRID gespeichert werden kann.
 +
-image::../media/kms_copied_key.png[KMS kopierter Schlüssel]
+image:kms_copied_key.png["KMS kopierter Schlüssel"]
 
 
 

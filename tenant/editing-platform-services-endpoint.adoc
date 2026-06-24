@@ -34,7 +34,7 @@ Die Seite mit den Details des Endpunkts wird angezeigt.
 NOTE: Sie können die URN eines Endpunkts nicht ändern, nachdem der Endpunkt erstellt wurde.
 
 +
-.. Um den Anzeigenamen für den Endpunkt zu ändern, wählen Sie das Symbol Bearbeiten image:../media/icon_edit_tm.png["Symbol Bearbeiten"].
+.. Um den Anzeigenamen für den Endpunkt zu ändern, das Bearbeitungssymbol image:icon_edit_tm.png["Symbol Bearbeiten"] auswählen.
 .. Ändern Sie bei Bedarf den URI.
 .. Ändern Sie bei Bedarf den Authentifizierungstyp.
 +

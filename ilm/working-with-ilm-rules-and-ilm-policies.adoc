@@ -85,7 +85,7 @@ So zeigen Sie die Details für eine ILM-Regel an, einschließlich des Aufbewahru
 . Wählen Sie *ILM* > *Regeln*.
 . Wählen Sie den Namen der Regel aus, deren Details Sie anzeigen möchten. Beispiel:
 +
-image::../media/ilm_rule_details_page.png[Detailseite zu ILM-Regel]
+image:ilm_rule_details_page.png["Detailseite zu ILM-Regel"]
 
 
 
@@ -174,9 +174,9 @@ NOTE: Da das Dashboard angepasst werden kann, ist die Registerkarte ILM möglich
 
 . Überwachen Sie die Kennzahlen auf der Registerkarte ILM.
 +
-Sie können das Fragezeichen auswählenimage:../media/icon_nms_question.png["Fragezeichen-Symbol"], um eine Beschreibung der Elemente auf der Registerkarte ILM anzuzeigen.
+Sie können das Fragezeichen image:icon_nms_question.png["Fragezeichen-Symbol"] auswählen, um eine Beschreibung der Elemente auf der Registerkarte ILM anzuzeigen.
 
 +
-image::../media/ilm_metrics_on_dashboard.png[ILM-Kennzahlen im Grid Manager Dashboard]
+image:ilm_metrics_on_dashboard.png["ILM-Kennzahlen im Grid Manager Dashboard"]
 
 

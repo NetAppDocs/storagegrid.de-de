@@ -17,7 +17,7 @@ Objekt-Storage entkoppelt den physischen Standort der Daten von der Methode zum 
 
 Jedes Objekt in einem objektbasierten Storage-System besteht aus zwei Teilen: Objekt-Daten und Objekt-Metadaten.
 
-image::../media/object_conceptual_drawing.png[Objekt]
+image:object_conceptual_drawing.png["Objekt"]
 
 
 
@@ -56,7 +56,7 @@ Wenn StorageGRID Objekte einer ILM-Regel (Information Lifecycle Management) zuor
 
 Im folgenden Beispiel gibt die Regel „2 Kopien erstellen“ an, dass zwei replizierte Kopien jedes Objekts in einem Speicherpool platziert werden, der drei Storage-Nodes enthält.
 
-image::../media/ilm_replication_make_2_copies.png[Regel für 2 Kopien erstellen]
+image:ilm_replication_make_2_copies.png["Regel für 2 Kopien erstellen"]
 
 
 
@@ -66,7 +66,7 @@ Wenn StorageGRID Objekte mit einer ILM-Regel übereinstimmt, die zur Erstellung 
 
 Das folgende Beispiel zeigt den Einsatz von Erasure Coding für Objektdaten. In diesem Beispiel verwendet die ILM-Regel ein 4+2-Schema zur Einhaltung von Datenkonsistenz. Jedes Objekt wird in vier gleiche Datenfragmente geteilt und aus den Objektdaten werden zwei Paritätsfragmente berechnet. Jedes der sechs Fragmente ist in drei Datacentern auf einem anderen Storage Node gespeichert, um bei Node-Ausfällen oder Standortausfällen ihre Daten zu sichern.
 
-image::../media/ec_three_sites_4_plus_2.png[Löschvorgang Codiert Drei Standorte 4 Plus 2]
+image:ec_three_sites_4_plus_2.png["Löschvorgang Codiert Drei Standorte 4 Plus 2"]
 
 .Verwandte Informationen
 * link:../ilm/index.html["Objektmanagement mit ILM"]

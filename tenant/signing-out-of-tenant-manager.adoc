@@ -16,7 +16,7 @@ Wenn Sie die Arbeit mit dem Mandantenmanager abgeschlossen haben, müssen Sie si
 .Schritte
 . Suchen Sie das Dropdown-Menü Benutzername in der oberen rechten Ecke der Benutzeroberfläche.
 +
-image::../media/tenant_user_sign_out.png[Link „Abmelden“]
+image:tenant_user_sign_out.png["Link „Abmelden“"]
 
 . Wählen Sie den Benutzernamen und dann *Abmelden*.
 +

@@ -48,7 +48,7 @@ Sie haben Zugriff auf Informationen zu allen StorageGRID-Zertifikaten an einer z
 .Schritte
 . Wählen Sie im Grid Manager *Konfiguration* > *Sicherheit* > *Zertifikate*.
 +
-image::security_certificates.png[Zertifikatsseite]
+image:security_certificates.png["Zertifikatsseite"]
 
 . Wählen Sie auf der Seite Zertifikate eine Registerkarte aus, um Informationen zu den einzelnen Zertifikatkategorien zu erhalten und auf die Zertifikatseinstellungen zuzugreifen. Sie können auf eine Registerkarte zugreifen, wenn Sie über die verfügenlink:admin-group-permissions.html["Entsprechende Berechtigung"].
 +

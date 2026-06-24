@@ -32,11 +32,11 @@ NOTE: Die Erstellung von Endpunkten schlägt fehl, wenn Plattformdienste für da
 
 Wenn ein Fehler auftritt, wenn StorageGRID versucht, einen vorhandenen Endpunkt zu erreichen, wird im Mandantenmanager eine Meldung auf dem Dashboard angezeigt.
 
-image::../media/tenant_dashboard_endpoint_error.png[endpunktfehlermeldung auf dem Dashboard]
+image:tenant_dashboard_endpoint_error.png["endpunktfehlermeldung auf dem Dashboard"]
 
-Mandantenbenutzer können auf der Seite Endpunkte die aktuellste Fehlermeldung für jeden Endpunkt lesen und herausfinden, wie lange der Fehler bereits aufgetreten ist. Die Spalte *Letzter Fehler* zeigt die aktuellste Fehlermeldung für jeden Endpunkt an und gibt an, wie lange der Fehler aufgetreten ist. Fehler, die das  Symbol enthaltenimage:../media/icon_alert_red_critical.png["Rotes X-Symbol"], traten innerhalb der letzten 7 Tage auf.
+Benutzer können auf der Seite „Endpunkte“ die jeweils aktuellste Fehlermeldung für jeden Endpunkt einsehen und feststellen, wie lange der Fehler zurückliegt. Die Spalte „Letzter Fehler“ zeigt die letzte Fehlermeldung für jeden Endpunkt an und gibt an, wie lange der Fehler zurückliegt. Fehler, die mit dem image:icon_alert_red_critical.png["Rotes X-Symbol"] Symbol gekennzeichnet sind, sind innerhalb der letzten 7 Tage aufgetreten.
 
-image::../media/endpoints_last_error.png[Screenshot der Seite Endpoints mit der Spalte Letzter Fehler]
+image:endpoints_last_error.png["Screenshot der Seite Endpoints mit der Spalte Letzter Fehler"]
 
 
 NOTE: Einige Fehlermeldungen in der Spalte *Letzter Fehler* können eine LOGID in Klammern enthalten. Ein Grid-Administrator oder technischer Support kann diese ID verwenden, um ausführlichere Informationen über den Fehler im bycast.log zu finden.
@@ -120,7 +120,7 @@ So zeigen Sie die Ausfallrate der Anfrage für Plattformdienste an:
 . Wählen Sie *_site_* > *Platform Services*.
 . Zeigen Sie das Diagramm Fehlerrate anfordern an.
 +
-image::../media/nodes_page_site_level_platform_services.gif[Knoten Seitenplattform-Services]
+image:nodes_page_site_level_platform_services.gif["Knoten Seitenplattform-Services"]
 
 
 

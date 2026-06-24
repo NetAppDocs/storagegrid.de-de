@@ -31,14 +31,14 @@ Der Hotfix wird zuerst automatisch auf den primären Admin-Knoten angewendet. An
 Die Seite Software-Aktualisierung wird angezeigt.
 
 +
-image::../media/software_update_landing.png[Landing Page Für Software-Updates]
+image:software_update_landing.png["Landing Page Für Software-Updates"]
 
 . Wählen Sie *Hotfix anwenden*.
 +
 Die Seite StorageGRID Hotfix wird angezeigt.
 
 +
-image::../media/hotfix_choose_file.png[Hotfix Wählen Sie Datei]
+image:hotfix_choose_file.png["Hotfix Wählen Sie Datei"]
 
 . Wählen Sie die Hotfix-Datei aus, die Sie von der NetApp Support-Website heruntergeladen haben.
 +
@@ -81,7 +81,7 @@ Diese Tabelle zeigt alle Knoten in Ihrem Raster und die aktuelle Phase der Hotfi
 
 .. Der Fortschrittsbalken wird abgeschlossen, und der primäre Admin-Knoten wird als „Abschließen“ angezeigt.
 +
-image::../media/hotfix_progress_table.png[Hotfix-Fortschrittstabelle]
+image:hotfix_progress_table.png["Hotfix-Fortschrittstabelle"]
 
 
 
@@ -108,7 +108,7 @@ NOTE: Sie müssen den StorageGRID-Hotfix abschließen, bevor Sie ein anderes Sof
 Wenn die Phase über "Queued" hinausgeht, wird die Schaltfläche *Remove* ausgeblendet und Sie können den Knoten nicht mehr aus dem Hotfix-Prozess entfernen.
 
 +
-image::../media/approve_all_progresstable.png[Hotfix-Fortschritt mit Entnahme-Taste]
+image:approve_all_progresstable.png["Hotfix-Fortschritt mit Entnahme-Taste"]
 
 
 

@@ -58,6 +58,6 @@ Gehen Sie wie folgt vor, um eine IP-Adresse eines DNS-Servers zu löschen.
 
 .Schritte
 . Wählen Sie *Wartung* > *Netzwerk* > *DNS-Server*.
-. Wählen Sie das Löschsymbol image:../media/icon-x-to-remove.png["Symbol Löschen"] neben der IP-Adresse.
+. Das Löschsymbol image:icon-x-to-remove.png["Symbol Löschen"] neben der IP-Adresse auswählen.
 . Wählen Sie *Speichern*.
 

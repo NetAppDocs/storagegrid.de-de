@@ -95,7 +95,7 @@ Die angegebenen Subnetze werden automatisch für Ihr StorageGRID System konfigur
 
 .Schritte
 . Wählen Sie *Wartung* > *Netzwerk* > *Grid-Netzwerk*.
-. Wählen Sie das Löschsymbol image:../media/icon-x-to-remove.png["Symbol Löschen"] neben dem Subnetz aus.
+. Das Löschsymbol image:icon-x-to-remove.png["Symbol Löschen"] neben dem Subnetz auswählen.
 . Geben Sie die Provisionierungs-Passphrase ein, und wählen Sie *Speichern*.
 . Wählen Sie im Bestätigungsdialogfeld * Ja* aus.
 . Warten Sie, bis die Änderungen übernommen wurden, und laden Sie dann ein neues Wiederherstellungspaket herunter.

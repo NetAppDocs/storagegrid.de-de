@@ -43,7 +43,7 @@ Weitere Informationen finden Sie unter link:../ilm/how-objects-are-deleted.html[
 
 == Datenfluss für Clientlöschungen
 
-image::../media/delete_data_flow.png[Client löscht den Datenfluss]
+image:delete_data_flow.png["Client löscht den Datenfluss"]
 
 . Der LDR-Dienst erhält eine Löschanforderung von der Client-Anwendung.
 . Der LDR-Service aktualisiert den Metadatenspeicher, sodass das Objekt auf die Client-Anforderungen gelöscht wird, und weist die ILM-Engine an, alle Kopien von Objektdaten zu entfernen.
@@ -54,7 +54,7 @@ image::../media/delete_data_flow.png[Client löscht den Datenfluss]
 
 == Datenfluss für ILM-Löschungen
 
-image::../media/automatic_deletion_data_flow.png[Automatisches Löschen des Datenflusses]
+image:automatic_deletion_data_flow.png["Automatisches Löschen des Datenflusses"]
 
 . Die ILM-Engine legt fest, dass das Objekt gelöscht werden muss.
 . Die ILM-Engine benachrichtigt den Metadatenspeicher. Der Metadatenspeicher aktualisiert Objektmetadaten, sodass das Objekt auf Client-Anforderungen gelöscht aussieht.

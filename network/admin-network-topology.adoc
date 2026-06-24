@@ -19,6 +19,6 @@ Das Admin-Netzwerk kann für jeden Knoten eindeutig sein und aus mehreren Subnet
 
 In diesem Beispiel wird das Grid-Netzwerk für Datenverkehr im Zusammenhang mit S3-Clientanforderungen und Objektmanagement verwendet, während das Admin-Netzwerk für administrative Funktionen verwendet wird.
 
-image::../media/grid_admin_networks.png[Grid-Admin-Netzwerke]
+image:grid_admin_networks.png["Grid-Admin-Netzwerke"]
 
-image::../media/grid_admin_networks_ips.png[Grid-Administrator-NetzwerkIPs]
+image:grid_admin_networks_ips.png["Grid-Administrator-NetzwerkIPs"]

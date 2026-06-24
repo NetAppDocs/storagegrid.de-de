@@ -47,6 +47,6 @@ Sie können die IP-Adresse für die primäre Admin-Knoten-IP im Grid-Netzwerk od
 Die Seite zum Konfigurieren eines StorageGRID-Rasters wird angezeigt.
 
 +
-image::../media/gmi_installer_first_screen.gif[Erster Bildschirm des StorageGRID-Installers]
+image:gmi_installer_first_screen.gif["Erster Bildschirm des StorageGRID-Installers"]
 
 

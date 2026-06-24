@@ -57,7 +57,7 @@ Platzierungen
 Erstellen Sie eine Kopie mit 2+1-Verfahren zur Fehlerkorrektur mit drei Standorten
 
 |===
-image::../media/policy_2_rule_1_ec_objects_adv_filtering.png[ILM-Regel 1 beispielsweise 2: Verwenden Sie EC für alle Objekte über 1 MB]
+image:policy_2_rule_1_ec_objects_adv_filtering.png["ILM-Regel 1 beispielsweise 2: Verwenden Sie EC für alle Objekte über 1 MB"]
 
 
 

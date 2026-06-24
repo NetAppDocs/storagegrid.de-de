@@ -19,7 +19,7 @@ Grid-übergreifende Replizierung ist die automatische Replizierung von Objekten 
 
 Das Workflow-Diagramm fasst die Schritte zum Konfigurieren der Cross-Grid-Replikation zwischen Buckets auf zwei Grids zusammen.
 
-image::../media/grid-federation-cgr-workflow.png[Workflow für Grid-übergreifende Replizierung]
+image:grid-federation-cgr-workflow.png["Workflow für Grid-übergreifende Replizierung"]
 
 
 
@@ -50,7 +50,7 @@ Sie können die Cross-Grid-Replikation so konfigurieren, dass sie in eine oder i
 
 Wenn Sie die Cross-Grid-Replikation für einen Bucket nur auf einem Grid aktivieren, werden die diesem Bucket (dem Quell-Bucket) hinzugefügten Objekte in den entsprechenden Bucket auf dem anderen Grid (dem Ziel-Bucket) repliziert.  Dem Ziel-Bucket hinzugefügte Objekte werden jedoch nicht zurück zur Quelle repliziert.  In der Abbildung ist die Cross-Grid-Replikation aktiviert für `my-bucket` von Raster 1 zu Raster 2, aber in die andere Richtung ist es nicht aktiviert.
 
-image::../media/grid-federation-cross-grid-replication-one-direction.png[Abbildung zeigt die Verbindung mit dem Grid Federation in eine Richtung]
+image:grid-federation-cross-grid-replication-one-direction.png["Abbildung zeigt die Verbindung mit dem Grid Federation in eine Richtung"]
 
 
 
@@ -58,7 +58,7 @@ image::../media/grid-federation-cross-grid-replication-one-direction.png[Abbildu
 
 Wenn Sie auf beiden Grids die Grid-übergreifende Replizierung für denselben Bucket aktivieren, werden die zu einem Bucket hinzugefügten Objekte in das andere Grid repliziert. In der Abbildung ist die Grid-übergreifende Replizierung für in beide Richtungen aktiviert `my-bucket`.
 
-image::../media/grid-federation-cross-grid-replication.png[Bild zeigt Replikation in eine Richtung im Vergleich zur Replikation in beide Richtungen]
+image:grid-federation-cross-grid-replication.png["Bild zeigt Replikation in eine Richtung im Vergleich zur Replikation in beide Richtungen"]
 
 
 
@@ -137,7 +137,7 @@ Wenn ein S3-Client ein Objekt aus einem Bucket löscht, für den die Grid-überg
 
 In der Abbildung wurde *Löschmarkierungen replizieren* auf *Ja* gesetzt, alslink:../tenant/grid-federation-manage-cross-grid-replication.html["Die Grid-übergreifende Replizierung wurde aktiviert"] .  Löschanforderungen für den Quell-Bucket, die eine Versions-ID enthalten, löschen keine Objekte aus dem Ziel-Bucket.  Löschanforderungen für den Quell-Bucket, die keine Versions-ID enthalten, scheinen Objekte im Ziel-Bucket zu löschen.
 
-image::../media/grid-federation-cross-grid-replication-delete.png[Abbildung zeigt, wie der Replikate-Client auf beiden Rastern gelöscht wird]
+image:grid-federation-cross-grid-replication-delete.png["Abbildung zeigt, wie der Replikate-Client auf beiden Rastern gelöscht wird"]
 
 
 NOTE: Wenn Sie die Objektlöschungen zwischen den Rastern synchronisieren möchten, erstellen Sie für die Planungsperioden auf beiden Rastern entsprechende Objektelink:../s3/create-s3-lifecycle-configuration.html["S3 Lifecycle-Konfigurationen"].

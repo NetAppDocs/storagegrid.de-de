@@ -58,7 +58,7 @@ Sie können Details zu einem Mandanten anzeigen, der eine Verbindung mit dem Gri
 Wenn es sich hierbei um das Quellraster für den Mandanten handelt (d. h. wenn der Mandant in diesem Raster erstellt wurde), wird ein Banner angezeigt, das Sie daran erinnert, dass der Mandant in einem anderen Raster geklont wurde. Wenn Sie diesen Mandanten bearbeiten oder löschen, werden Ihre Änderungen nicht mit dem anderen Raster synchronisiert.
 
 +
-image::../media/grid-federation-tenant-detail.png[Registerkarte „Grid Federation“ auf der Seite „Tenant Details“]
+image:grid-federation-tenant-detail.png["Registerkarte „Grid Federation“ auf der Seite „Tenant Details“"]
 
 . Wählen Sie optional die Registerkarte *Grid Federation* auf link:../monitor/grid-federation-monitor-connections.html["Überwachen der Netzverbundverbindung"].
 
@@ -96,7 +96,7 @@ Um diese Fehler zu vermeiden, entfernen Sie die Berechtigung des Mandanten zur V
 
 Um zu verhindern, dass ein Mandant eine Netzverbundverbindung verwendet, müssen Sie die Berechtigung *Grid Federation Connection* verwenden entfernen.
 
-image::../media/grid-federation-remove-permission.png[Schritte zum Entfernen der Netzverbundverbindung]
+image:grid-federation-remove-permission.png["Schritte zum Entfernen der Netzverbundverbindung"]
 
 Beachten Sie Folgendes, bevor Sie die Berechtigung eines Mandanten zur Verwendung einer Grid-Federation-Verbindung entfernen:
 
@@ -167,7 +167,7 @@ Nachdem die Grid-übergreifende Replizierung für Mandanten-Buckets deaktiviert 
 ** Wenn die Berechtigung entfernt werden kann, kehren Sie zur Detailseite zurück, und eine Erfolgsmeldung wird angezeigt. Dieser Mandant kann die Grid Federation-Verbindung nicht mehr verwenden.
 ** Wenn für einen oder mehrere Mandanten-Buckets die Grid-übergreifende Replizierung weiterhin aktiviert ist, wird ein Fehler angezeigt.
 +
-image::../media/grid-federation-remove-permission-error.png[Es wird eine Fehlermeldung angezeigt, wenn der Mandant cgr für einen Bucket aktiviert hat]
+image:grid-federation-remove-permission-error.png["Es wird eine Fehlermeldung angezeigt, wenn der Mandant cgr für einen Bucket aktiviert hat"]
 
 +
 Sie können eine der folgenden Aktionen ausführen:

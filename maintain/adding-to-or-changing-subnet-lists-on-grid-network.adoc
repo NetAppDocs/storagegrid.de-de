@@ -65,7 +65,7 @@ Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `
 Das Hauptmenü wird angezeigt.
 
 +
-image::../media/change_ip_tool_main_menu.png[Screenshot mit Willkommensbildschirm des Change IP-Tools]
+image:change_ip_tool_main_menu.png["Screenshot mit Willkommensbildschirm des Change IP-Tools"]
 
 . Wählen Sie im Hauptmenü die Option zum Bearbeiten von Subnetzen für das Grid-Netzwerk (Option *4*).
 +
@@ -93,7 +93,7 @@ TIP: Sie können die erforderliche Eingabe reduzieren, indem Sie mit dem Aufwär
 
 Die unten stehende Beispieleingabe zeigt das Festlegen von Subnetzen für die Netzsubnetz-Liste:
 
-image::../media/change_ip_tool_gnsl_sample_input.gif[Screenshot, der durch umgebenden Text beschrieben wird]
+image:change_ip_tool_gnsl_sample_input.gif["Screenshot, der durch umgebenden Text beschrieben wird"]
 
 --
 . Wenn Sie bereit sind, geben Sie *q* ein, um zum Hauptmenü-Bildschirm zurückzukehren. Ihre Änderungen werden so lange gespeichert, bis sie gelöscht oder angewendet wurden.
@@ -101,7 +101,7 @@ image::../media/change_ip_tool_gnsl_sample_input.gif[Screenshot, der durch umgeb
 +
 ** Wählen Sie die Option *5*, um Änderungen in der Ausgabe anzuzeigen, die isoliert sind, um nur das geänderte Element anzuzeigen. Änderungen werden grün (Zusätze) oder rot (Löschungen) hervorgehoben, wie in der Beispielausgabe unten gezeigt:
 +
-image::../media/change_ip_tool_gnsl_sample_output.gif[Screenshot, der durch umgebenden Text beschrieben wird]
+image:change_ip_tool_gnsl_sample_output.gif["Screenshot, der durch umgebenden Text beschrieben wird"]
 
 ** Wählen Sie die Option *6*, um Änderungen in der Ausgabe anzuzeigen, die die vollständige Konfiguration anzeigen. Änderungen werden grün (Ergänzungen) oder rot (Löschungen) markiert.
 +

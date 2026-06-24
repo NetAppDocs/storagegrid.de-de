@@ -21,7 +21,7 @@ Die Registerkarte Übersicht wird für alle Knoten angezeigt.
 
 Im Abschnitt „Knoteninformationen“ der Registerkarte „Übersicht“ werden grundlegende Informationen zum Knoten aufgeführt.
 
-image::../media/nodes_page_overview_tab.png[Registerkarte „Knotenübersicht“]
+image:nodes_page_overview_tab.png["Registerkarte „Knotenübersicht“"]
 
 Die Übersichtsinformationen für einen Knoten umfassen Folgendes:
 
@@ -31,13 +31,13 @@ Die Übersichtsinformationen für einen Knoten umfassen Folgendes:
 * *ID*: Die eindeutige Kennung für den Knoten, die auch als UUID bezeichnet wird.
 * *Verbindungsstatus*: Einer von drei Zuständen. Das Symbol für den schwersten Zustand wird angezeigt.
 +
-** *Unbekannt* image:../media/icon_alarm_blue_unknown.png["Blaues Fragezeichen-Symbol"]: aus einem unbekannten Grund ist der Knoten nicht mit dem Grid verbunden, oder ein oder mehrere Dienste sind unerwartet ausgefallen. Beispielsweise wurde die Netzwerkverbindung zwischen den Knoten unterbrochen, der Strom ist ausgefallen oder ein Dienst ist ausgefallen. Die Warnung * kann nicht mit Node* kommunizieren. Auch andere Warnmeldungen können aktiv sein. Diese Situation erfordert sofortige Aufmerksamkeit.
+** *Unbekannt* image:icon_alarm_blue_unknown.png["Blaues Fragezeichen-Symbol"]: Aus unbekanntem Grund ist der Node nicht mit dem Grid verbunden oder ein oder mehrere Services sind unerwartet ausgefallen. Beispielsweise wurde die Netzwerkverbindung zwischen Nodes unterbrochen, die Stromversorgung ist ausgefallen oder ein Service ist ausgefallen. Die Warnung *Unable to communicate with node* kann ebenfalls ausgelöst werden. Weitere Warnungen können ebenfalls aktiv sein. In dieser Situation ist sofortige Aufmerksamkeit erforderlich.
 +
 
 NOTE: Ein Node wird möglicherweise während des verwalteten Herunterfahrens als „Unbekannt“ angezeigt. In diesen Fällen können Sie den Status Unbekannt ignorieren.
 
-** *Administrativ unten* image:../media/icon_alarm_gray_administratively_down.png["Graues Fragensymbol"]: der Knoten ist aus einem erwarteten Grund nicht mit dem Raster verbunden. Beispielsweise wurde der Node oder die Services für den Node ordnungsgemäß heruntergefahren, der Node neu gebootet oder die Software wird aktualisiert. Mindestens ein Alarm ist möglicherweise auch aktiv.
-** *Connected* image:../media/icon_alert_green_checkmark.png["Symbol Warnung grünes Häkchen"]: der Knoten ist mit dem Raster verbunden.
+** *Administrativ nicht verfügbar* image:icon_alarm_gray_administratively_down.png["Graues Fragensymbol"]: Der Knoten ist aus einem erwarteten Grund nicht mit dem Grid verbunden. Beispielsweise wurde der Knoten oder die darauf laufenden Dienste ordnungsgemäß heruntergefahren, der Knoten wird neu gestartet oder die Software wird aktualisiert. Eine oder mehrere Warnmeldungen könnten ebenfalls aktiv sein.
+** *Verbunden* image:icon_alert_green_checkmark.png["Symbol Warnung grünes Häkchen"]: Der Knoten ist mit dem Netz verbunden.
 
 
 * *Verwendeter Speicher*: Nur für Speicherknoten.
@@ -57,6 +57,6 @@ NOTE: Ein Node wird möglicherweise während des verwalteten Herunterfahrens als
 
 Im Abschnitt Warnungen der Registerkarte Übersicht werden alle aufgelistetlink:monitoring-system-health.html#view-current-and-resolved-alerts["Warnmeldungen, die sich derzeit auf diesen Knoten auswirken, die nicht stummgeschaltet wurden"]. Wählen Sie den Namen der Warnmeldung aus, um weitere Details und empfohlene Aktionen anzuzeigen.
 
-image::../media/nodes_page_alerts_table.png[Tabelle „Knotenpunkte“]
+image:nodes_page_alerts_table.png["Tabelle „Knotenpunkte“"]
 
 Warnungen sind auch für enthaltenlink:monitoring-system-health.html#monitor-node-connection-states["Status der Node-Verbindung"].

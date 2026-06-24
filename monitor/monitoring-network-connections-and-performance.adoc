@@ -29,26 +29,26 @@ Denken Sie darüber hinaus daranlink:../admin/managing-traffic-classification-po
 Die Seite Knoten wird angezeigt. Jeder Knoten im Raster wird im Tabellenformat aufgelistet.
 
 +
-image::../media/nodes_menu.png[Knoten-Menü]
+image:nodes_menu.png["Knoten-Menü"]
 
 . Wählen Sie den Grid-Namen, einen bestimmten Datacenter-Standort oder einen Grid-Node aus, und wählen Sie dann die Registerkarte *Netzwerk* aus.
 +
 Das Diagramm „Netzwerk-Traffic“ bietet eine Zusammenfassung des gesamten Netzwerkverkehr für das gesamte Grid, den Datacenter-Standort oder für den Node.
 
 +
-image::../media/nodes_page_network_traffic_graph.png[Knoten Seite Netzwerk Verkehr Diagramm]
+image:nodes_page_network_traffic_graph.png["Knoten Seite Netzwerk Verkehr Diagramm"]
 
 +
 .. Wenn Sie einen Rasterknoten ausgewählt haben, scrollen Sie nach unten, um den Abschnitt *Netzwerkschnittstellen* auf der Seite anzuzeigen.
 +
-image::../media/nodes_page_network_interfaces.png[Knoten Seite Netzwerkschnittstellen]
+image:nodes_page_network_interfaces.png["Knoten Seite Netzwerkschnittstellen"]
 
 .. Blättern Sie bei Rasterknoten nach unten, um den Abschnitt *Netzwerkkommunikation* auf der Seite anzuzeigen.
 +
 Die Tabellen „Empfangen und Senden“ zeigen, wie viele Bytes und Pakete über jedes Netzwerk empfangen und gesendet wurden, sowie andere Empfangs- und Übertragungstabellen.
 
 +
-image::../media/nodes_page_network_communication.png[Knoten Seite Netzwerk Komm]
+image:nodes_page_network_communication.png["Knoten Seite Netzwerk Komm"]
 
 
 
@@ -59,7 +59,7 @@ image::../media/nodes_page_network_communication.png[Knoten Seite Netzwerk Komm]
 Die Seite Richtlinien zur Klassifizierung von Verkehrsdaten wird angezeigt, und die vorhandenen Richtlinien sind in der Tabelle aufgeführt.
 
 +
-image::../media/traffic_classification_policies_main_screen_w_examples.png[Beispiel für eine Verkehrsrichtlinie für Grafik]
+image:traffic_classification_policies_main_screen_w_examples.png["Beispiel für eine Verkehrsrichtlinie für Grafik"]
 
 .. Um Diagramme anzuzeigen, die die mit einer Richtlinie verknüpften Netzwerkmetriken anzeigen, wählen Sie das Optionsfeld links neben der Richtlinie aus, und klicken Sie dann auf *Metriken*.
 .. Überprüfen Sie die Diagramme, um den mit der Richtlinie verknüpften Netzwerkverkehr zu verstehen.
@@ -85,7 +85,7 @@ Wenn eine Richtlinie zur Klassifizierung von Verkehrsströmen darauf ausgelegt i
 . Wählen Sie auf der Seite *Knoten* den Knoten aus.
 . Wählen Sie die Registerkarte *Hardware* aus, um Grafiken der CPU-Auslastung und der Speicherauslastung anzuzeigen.
 +
-image::../media/nodes_page_hardware_tab_graphs.png[Registerkarte Knoten Hardware]
+image:nodes_page_hardware_tab_graphs.png["Registerkarte Knoten Hardware"]
 
 . Um ein anderes Zeitintervall anzuzeigen, wählen Sie eines der Steuerelemente oberhalb des Diagramms oder Diagramms aus. Sie können die verfügbaren Informationen für Intervalle von 1 Stunde, 1 Tag, 1 Woche oder 1 Monat anzeigen. Sie können auch ein benutzerdefiniertes Intervall festlegen, mit dem Sie Datum und Zeitbereiche festlegen können.
 . Wenn der Node auf einer Storage Appliance oder einer Services Appliance gehostet wird, scrollen Sie nach unten, um die Komponententabellen anzuzeigen. Der Status aller Komponenten sollte „nominal“ lauten. Untersuchen Sie Komponenten, die einen anderen Status haben.

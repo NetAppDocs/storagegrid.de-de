@@ -30,21 +30,21 @@ Nodes werden in der Liste angezeigt, wenn sie fehlschlagen. Sie können jedoch k
 . Geben Sie die *Provisioning-Passphrase* ein.
 . Klicken Sie Auf *Wiederherstellung Starten*.
 +
-image::../media/4b_select_recovery_node.png[Screenshot mit der Seite Wartung > Wiederherstellung]
+image:4b_select_recovery_node.png["Screenshot der Seite Wartung > Wiederherstellung"]
 
 . Überwachen Sie den Fortschritt der Wiederherstellung in der Tabelle „Netzknoten wiederherstellen“.
 +
 Wenn der Grid-Knoten die Phase „Warten auf manuelle Schritte“ erreicht, gehen Sie zum nächsten Thema über und führen Sie die manuellen Schritte aus, um die Appliance-Speichervolumes neu zu mounten und neu zu formatieren.
 
 +
-image::../media/recovery_reset_button.gif[Screenshot mit der Bühne, die auf manuelle Schritte wartet]
+image:recovery_reset_button.gif["Screenshot mit der Bühne, die auf manuelle Schritte wartet"]
 
 +
 
 NOTE: An jedem Punkt während der Wiederherstellung können Sie auf *Zurücksetzen* klicken, um eine neue Wiederherstellung zu starten. Es wird ein Dialogfeld angezeigt, das anzeigt, dass der Knoten in einem unbestimmten Zustand bleibt, wenn Sie das Verfahren zurücksetzen.
 
 +
-image::../media/recovery_reset_warning.gif[Screenshot mit dem Dialogfeld Warnung zum Zurücksetzen der Wiederherstellung]
+image:recovery_reset_warning.gif["Screenshot mit dem Dialogfeld Warnung zum Zurücksetzen der Wiederherstellung"]
 
 +
 Wenn Sie die Wiederherstellung nach dem Zurücksetzen des Verfahrens erneut versuchen möchten, müssen Sie den Appliance-Node auf einen vorinstallierten Status zurücksetzen, indem Sie auf dem Node ausgeführt `sgareinstall` werden.

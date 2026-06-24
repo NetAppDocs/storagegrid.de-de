@@ -34,7 +34,7 @@ NOTE: Das Repair-Data-Skript ist veraltet und wird in einer zukünftigen Version
 == Verwenden Sie das `repair-data` Skript, um Objektdaten wiederherzustellen
 
 .Bevor Sie beginnen
-* Sie haben bestätigt, dass der wiederhergestellte Speicherknoten den Verbindungsstatus *Verbunden* hat.image:../media/icon_alert_green_checkmark.png["Symbol Warnung grünes Häkchen"] auf der Registerkarte *Knoten* > *Übersicht* im Grid Manager.
+* Sie haben bestätigt, dass der wiederhergestellte Speicherknoten im Grid Manager auf der Registerkarte *Knoten* > *Übersicht* den Verbindungsstatus *Verbunden* image:icon_alert_green_checkmark.png["Symbol Warnung grünes Häkchen"] aufweist.
 
 
 .Über diese Aufgabe

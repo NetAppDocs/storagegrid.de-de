@@ -68,7 +68,7 @@ Wenn die Registerkarte *Übersicht* einen Eintrag für *HA-Gruppen* enthält, wi
 
 In diesem Beispiel wurde der primäre Admin-Node zwei HA-Gruppen hinzugefügt. Dieser Knoten ist derzeit die aktive Schnittstelle für die Gruppe Admin-Clients und eine Sicherungsschnittstelle für die Gruppe FabricPool-Clients.
 
-image::../media/ha_group_primary_interface.png[Primäre Schnittstelle DER HA-Gruppe]
+image:ha_group_primary_interface.png["Primäre Schnittstelle DER HA-Gruppe"]
 
 
 

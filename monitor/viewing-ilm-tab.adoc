@@ -17,7 +17,7 @@ Die ILM-Registerkarte wird für jeden Storage-Node, jeden Standort und das gesam
 
 Für Storage-Nodes bietet die Registerkarte ILM Details zur ILM-Bewertung und zur Hintergrundüberprüfung von Objekten, die zur Fehlerkorrektur codiert wurden.
 
-image::../media/nodes_page_ilm_tab.png[Knoten Seite ILM Registerkarte]
+image:nodes_page_ilm_tab.png["Knoten Seite ILM Registerkarte"]
 
 .Verwandte Informationen
 * link:monitoring-information-lifecycle-management.html["Überwachung des Information Lifecycle Management"]

@@ -62,7 +62,7 @@ Das Python-Skript ruft dann das entsprechende Node.js-Skript auf, um die Entra I
 
 . Geben Sie bei der entsprechenden Aufforderung das Kennwort ein und seien Sie bereit, Entra ID auf Anfrage eine MFA-Autorisierung zu erteilen.
 +
-image::../media/sso_api_password_mfa.png[Aufforderung zur Eingabe von Passwort und MFA]
+image:sso_api_password_mfa.png["Aufforderung zur Eingabe von Passwort und MFA"]
 
 +
 

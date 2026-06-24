@@ -33,7 +33,7 @@ NOTE: Einige StorageGRID-Dienste wurden nicht aktualisiert, um die Chiffren in d
 Auf der Registerkarte *TLS und SSH Policies* werden die verfügbaren Richtlinien angezeigt. Die derzeit aktive Richtlinie wird durch ein grünes Häkchen auf der Kachel „Richtlinie“ gekennzeichnet.
 
 +
-image::../media/securitysettings_tls_ssh_policies_current.png[TLS- und SSH-Richtlinien]
+image:securitysettings_tls_ssh_policies_current.png["TLS- und SSH-Richtlinien"]
 
 . Sehen Sie sich die Registerkarten an, um mehr über die verfügbaren Richtlinien zu erfahren.
 +
@@ -119,7 +119,7 @@ Sie können eine benutzerdefinierte Richtlinie erstellen, wenn Sie Ihre eigenen 
 . Wählen Sie auf der Kachel der Richtlinie, die der benutzerdefinierten Richtlinie, die Sie erstellen möchten, am ähnlichsten ist, *Details anzeigen* aus.
 . Wählen Sie *in Zwischenablage kopieren*, und wählen Sie dann *Abbrechen*.
 +
-image::../media/securitysettings-custom-security-policy-copy.png[Kopieren einer vorhandenen Richtlinie zum Erstellen einer benutzerdefinierten Richtlinie]
+image:securitysettings-custom-security-policy-copy.png["Kopieren einer vorhandenen Richtlinie zum Erstellen einer benutzerdefinierten Richtlinie"]
 
 . Wählen Sie in der Kachel *Benutzerdefinierte Richtlinie* die Option *Konfigurieren und Verwenden* aus.
 . Fügen Sie die JSON ein, die Sie kopiert haben, und nehmen Sie alle erforderlichen Änderungen vor.

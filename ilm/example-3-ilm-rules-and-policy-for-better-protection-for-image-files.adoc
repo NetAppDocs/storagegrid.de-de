@@ -66,7 +66,7 @@ Platzierungen
 Erstellen Sie eine Kopie mit 2+1-Verfahren zur Fehlerkorrektur mit drei Standorten
 
 |===
-image::../media/policy_3_rule_1_ec_images_adv_filtering.png[ILM-Regel 1 beispielsweise 3: Verwenden Sie EC für Bilddateien über 1 MB]
+image:policy_3_rule_1_ec_images_adv_filtering.png["ILM-Regel 1 beispielsweise 3: Verwenden Sie EC für Bilddateien über 1 MB"]
 
 Da diese Regel als erste Regel in der Richtlinie konfiguriert ist, gilt die Anweisung für die Platzierung von Löschcodes nur für Dateien mit einer Größe von mehr als 1 MB.
 
@@ -121,4 +121,4 @@ Dieses Beispiel enthält drei Regeln für die ILM-Richtlinie:
 * Die Standardregel gilt für alle übrigen Objekte (d. h. alle nicht-Image-Dateien).
 
 
-image::../media/policy_3_configured_policy.png[ILM-Richtlinie beispielsweise 3: Besserer Schutz für Image-Dateien]
+image:policy_3_configured_policy.png["ILM-Richtlinie beispielsweise 3: Besserer Schutz für Image-Dateien"]

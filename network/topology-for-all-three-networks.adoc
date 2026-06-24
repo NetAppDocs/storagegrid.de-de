@@ -22,4 +22,4 @@ In diesem Beispiel:
 
 *Topologiebeispiel: Grid, Admin und Client-Netzwerke*
 
-image::../media/grid_admin_client_networks.png[Grid-Administrator-Client-Netzwerke]
+image:grid_admin_client_networks.png["Grid-Administrator-Client-Netzwerke"]

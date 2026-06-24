@@ -19,7 +19,7 @@ Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requireme
 .Über diese Aufgabe
 Wenn es ein Problem mit der Softwarelizenz für dieses StorageGRID-System gibt, enthält die Statuskarte für den Systemzustand auf dem Dashboard ein Lizenzstatus-Symbol und einen Link *Lizenz*. Die Zahl gibt die Anzahl der lizenzbezogenen Probleme an.
 
-image::../media/dashboard_health_panel_license_status.png[Status Der Dashboard-Statuskarte Lizenzstatus]
+image:dashboard_health_panel_license_status.png["Status Der Dashboard-Statuskarte Lizenzstatus"]
 
 .Schritte
 . Rufen Sie die Lizenzseite auf, indem Sie einen der folgenden Schritte ausführen:

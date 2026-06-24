@@ -15,7 +15,7 @@ Bevor der Verschlüsselungsmanagement-Server (KMS) die StorageGRID-Daten auf App
 
 Das Flussdiagramm zeigt die grundlegenden Schritte bei der Verwendung eines KMS zur Sicherung von StorageGRID-Daten auf Appliance-Nodes.
 
-image::../media/kms_configuration_overview.png[KMS-Konfigurationsworkflow, der im folgenden Text beschrieben wird]
+image:kms_configuration_overview.png["KMS-Konfigurationsworkflow, der im folgenden Text beschrieben wird"]
 
 Das Flussdiagramm zeigt die parallele Einrichtung von KMS und die Einrichtung der Appliance. Sie können jedoch die Verschlüsselungsmanagement-Server je nach Ihren Anforderungen vor oder nach Aktivierung der Node-Verschlüsselung für neue Appliance-Nodes einrichten.
 

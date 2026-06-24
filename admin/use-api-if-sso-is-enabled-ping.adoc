@@ -59,7 +59,7 @@ Geben Sie bei der entsprechenden Aufforderung Werte für die folgenden Argumente
 ** Die Adresse für StorageGRID
 ** Die Mandantenkonto-ID, wenn Sie auf die Mandantenmanagement-API zugreifen möchten.
 +
-image::../media/sso_auth_python_script_ping.png[SSO Authentication Script für Ping Federate]
+image:sso_auth_python_script_ping.png["SSO Authentication Script für Ping Federate"]
 
 +
 Das StorageGRID-Autorisierungs-Token wird in der Ausgabe bereitgestellt. Sie können das Token jetzt auch für andere Anforderungen verwenden. Dies entspricht der Verwendung der API, wenn SSO nicht verwendet wurde.

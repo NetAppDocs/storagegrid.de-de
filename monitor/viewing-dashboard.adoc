@@ -18,7 +18,7 @@ TIP: Um die Einheiten für die im Grid-Manager angezeigten Speicherwerte zu änd
 
 Ihr Dashboard kann je nach Systemkonfiguration unterschiedlich sein.
 
-image::../media/grid_manager_dashboard.png[Grid Manager Dashboard]
+image:grid_manager_dashboard.png["Grid Manager Dashboard"]
 
 
 
@@ -69,7 +69,7 @@ Knoten
 CPU-, Daten- und Arbeitsspeicherverbrauch pro Node S3-Vorgänge pro Node. Verteilung von Knoten zu Standort.
 
 |===
-Einige der Karten können für eine einfachere Anzeige maximiert werden. Wählen Sie das Symbol Maximieren image:../media/icon_dashboard_card_maximize.png["Symbol maximieren"]in der oberen rechten Ecke der Karte. Um eine maximierte Karte zu schließen, wählen Sie das Minimieren-Symbol image:../media/icon_dashboard_card_minimize.png["Symbol minimieren"] oder wählen *Schließen*.
+Einige Karten können zur besseren Ansicht maximiert werden. Das Maximieren-Symbol image:icon_dashboard_card_maximize.png["Symbol maximieren"] befindet sich in der oberen rechten Ecke der Karte. Zum Schließen einer maximierten Karte kann das Minimieren-Symbol image:icon_dashboard_card_minimize.png["Symbol minimieren"] oder *Schließen* ausgewählt werden.
 
 
 
@@ -91,7 +91,7 @@ NOTE: Wenn Sie neben dem Root-Zugriff über eine andere Berechtigung verfügen, 
 
 Um Dashboards zu verwalten, wählen Sie *actions* > *Manage Dashboards*.
 
-image::../media/dashboard_manage.png[Managen von Dashboards]
+image:dashboard_manage.png["Managen von Dashboards"]
 
 
 
@@ -112,4 +112,4 @@ Folgende Möglichkeiten stehen beim Konfigurieren eines Dashboards zur Verfügun
 * Wählen Sie die Größe der einzelnen Karten aus, indem Sie oben auf der Karte *S*, *M*, *L* oder *XL* auswählen
 
 
-image::../media/dashboard_configure.png[Dashboard konfigurieren]
+image:dashboard_configure.png["Dashboard konfigurieren"]

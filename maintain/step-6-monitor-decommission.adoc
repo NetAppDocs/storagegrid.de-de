@@ -33,7 +33,7 @@ Jeder Gateway-Node oder Admin-Node kann möglicherweise nur ein paar Minuten ode
 .Schritte
 . Sobald ein neues Wiederherstellungspaket erstellt wurde, laden Sie die Datei herunter.
 +
-image::../media/decommission_site_step_6_recovery_package.png[Wiederherstellungspaket für Site-Dekommissionierung, Schritt 6]
+image:decommission_site_step_6_recovery_package.png["Wiederherstellungspaket für Site-Dekommissionierung, Schritt 6"]
 
 +
 
@@ -56,14 +56,14 @@ NOTE: Die Wiederherstellungspaketdatei muss gesichert werden, da sie Verschlüss
 Datenverschiebung gestartet, als Sie die neue ILM-Richtlinie in Schritt 3 aktiviert haben (ILM-Richtlinie überarbeiten). Die Datenverschiebung findet während der gesamten Außerbetriebnahme statt.
 
 +
-image::../media/decommission_site_step_6_data_movement.png[Deaktivieren Sie Die Datenverschiebung Von Schritt 6 Des Standorts]
+image:decommission_site_step_6_data_movement.png["Deaktivieren Sie Die Datenverschiebung Von Schritt 6 Des Standorts"]
 
 . Überwachen Sie im Abschnitt Status des Knotens der Seite den Fortschritt des Stillstandsvorgangs, wenn Nodes entfernt werden.
 +
 Wenn ein Speicherknoten entfernt wird, durchläuft jeder Knoten eine Reihe von Phasen. Obwohl die meisten dieser Phasen schnell oder sogar unmerklich auftreten, müssen Sie möglicherweise Tage oder sogar Wochen warten, bis andere Phasen abgeschlossen sind, je nachdem, wie viele Daten verschoben werden müssen. Zur Verwaltung von Daten, die mit Erasure Coding versehen sind, und zur Neubewertung von ILM-Verfahren ist zusätzlicher Zeit erforderlich.
 
 +
-image::../media/decommission_site_step_6_storage_node.png[Deaktivieren Sie Site Schritt 6 Storage Node]
+image:decommission_site_step_6_storage_node.png["Deaktivieren Sie Site Schritt 6 Storage Node"]
 
 +
 Wenn Sie den Fortschritt der Deaktivierung einer verbundenen Site überwachen, lesen Sie diese Tabelle, um die Phasen zur Ausmusterung eines Storage Node zu verstehen:
@@ -213,7 +213,7 @@ Minuten
 +
 ** Im Schritt *Cassandra reparieren* führt StorageGRID alle erforderlichen Reparaturen an den Cassandra-Clustern durch, die in Ihrem Grid verbleiben. Je nachdem, wie viele Speicherknoten im Raster verbleiben, kann diese Reparaturen mehrere Tage oder länger dauern.
 +
-image::../media/decommission_site_step_6_repair_cassandra.png[Deaktivieren Sie Site Schritt 6 Repair Cassandra]
+image:decommission_site_step_6_repair_cassandra.png["Deaktivieren Sie Site Schritt 6 Repair Cassandra"]
 
 ** Während des Schritts *EC-Profile deaktivieren & Speicherpools löschen* werden folgende ILM-Änderungen vorgenommen:
 +
@@ -227,13 +227,13 @@ NOTE: Der Speicherpool Alle Speicherknoten (StorageGRID 11.6 und früher) wird e
 
 ** Schließlich werden im Schritt *Konfiguration entfernen* alle verbleibenden Verweise auf die Site und ihre Knoten aus dem Rest des Rasters entfernt.
 +
-image::../media/decommission_site_step_6_remove_configuration.png[Deaktivieren Sie Site Schritt 6 Konfiguration Entfernen]
+image:decommission_site_step_6_remove_configuration.png["Deaktivieren Sie Site Schritt 6 Konfiguration Entfernen"]
 
 
 
 . Nach Abschluss des Stilllegen-Verfahrens wird auf der Seite Decommission Site eine Meldung angezeigt, die den entfernten Standort nicht mehr anzeigt.
 +
-image::../media/decommission_site_success_message.png[Success Message Zur Deaktivierung Von Website]
+image:decommission_site_success_message.png["Success Message Zur Deaktivierung Von Website"]
 
 
 

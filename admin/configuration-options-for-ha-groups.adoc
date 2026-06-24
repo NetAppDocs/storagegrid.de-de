@@ -15,7 +15,7 @@ Die folgenden Diagramme zeigen Beispiele für verschiedene Möglichkeiten, wie S
 
 In den Diagrammen zeigt blau die primäre Schnittstelle in der HA-Gruppe an und gelb gibt die Backup-Schnittstelle in der HA-Gruppe an.
 
-image::../media/high_availability_examples.png[HA-Beispiele]
+image:high_availability_examples.png["HA-Beispiele"]
 
 Die Tabelle enthält eine Zusammenfassung der Vorteile der einzelnen HA-Konfigurationen, die in der Abbildung dargestellt sind.
 

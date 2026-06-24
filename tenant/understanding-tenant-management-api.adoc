@@ -63,7 +63,7 @@ NOTE: Wenn Single Sign-On (SSO) für das StorageGRID-System aktiviert ist, müss
 
 Wenn Sie die einzelnen API-Operationen erweitern, können Sie die HTTP-Aktion, die Endpunkt-URL, eine Liste aller erforderlichen oder optionalen Parameter, ein Beispiel des Anforderungskörpers (falls erforderlich) und die möglichen Antworten sehen.
 
-image::../media/tenant_api_swagger_example.gif[Beispiel für DIE FUNKTION GET Groups in Swagger API]
+image:tenant_api_swagger_example.gif["Beispiel für DIE FUNKTION GET Groups in Swagger API"]
 
 
 

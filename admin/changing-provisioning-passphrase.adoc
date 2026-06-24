@@ -36,7 +36,7 @@ CAUTION: Bewahren Sie die Bereitstellungspassphrase an einem sicheren Ort auf.  
 Das System zeigt ein grünes Erfolgsbanner an, wenn die Änderung der Provisionierungs-Passphrase abgeschlossen ist.
 
 +
-image::../media/change_provisioning_passphrase_success.png[Erfolgsmeldung für das Provisioning der Passphrase geändert]
+image:change_provisioning_passphrase_success.png["Erfolgsmeldung für das Provisioning der Passphrase geändert"]
 
 . Wählen Sie *Wiederherstellungspaket*.
 . Geben Sie die neue Bereitstellungspassphrase ein, um das neue Wiederherstellungspaket herunterzuladen.

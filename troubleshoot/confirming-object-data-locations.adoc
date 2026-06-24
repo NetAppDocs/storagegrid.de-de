@@ -31,7 +31,7 @@ Sie können eine UUID, CBID oder einen S3-Bucket/Objektschlüssel eingeben.
 
 . Wenn Sie eine bestimmte Version des Objekts suchen möchten, geben Sie die Version-ID ein (optional).
 +
-image::../media/object_lookup.png[Objekt-Lookup-Seite]
+image:object_lookup.png["Objekt-Lookup-Seite"]
 
 . Wählen Sie *Look Up*.
 +
@@ -52,6 +52,6 @@ Das folgende Beispiel zeigt die Ergebnisse für die Suche nach Objektmetadaten f
 
 
 +
-image::../media/object_lookup_results.png[Ergebnisse Für Objekt-Lookup]
+image:object_lookup_results.png["Ergebnisse Für Objekt-Lookup"]
 
 

@@ -44,7 +44,7 @@ Um einen Knoten von einem Host auf einen anderen zu verschieben, muss der Storag
 
 Angenommen, beispielsweise, dass StorageGRID NodeA, der auf Host1 ausgeführt wird, mit den folgenden Schnittstellenzuordnungen konfiguriert wurde:
 
-image::../media/eth0_bond.gif[Dieses Bild wird durch den umgebenden Text erläutert.]
+image:eth0_bond.gif["Dieses Bild wird durch den umgebenden Text erläutert."]
 
 Die linke Seite der Pfeile entspricht den traditionellen Schnittstellen, die aus einem StorageGRID-Container betrachtet werden (das sind die Grid-, Administrator- und Client-Netzwerk-Schnittstellen). Die rechte Seite der Pfeile entspricht den tatsächlichen Host-Schnittstellen, die diese Netzwerke bereitstellen. Dabei handelt es sich um drei VLAN-Schnittstellen, die derselben physischen Interface-Verbindung untergeordnet sind.
 
@@ -66,4 +66,4 @@ In Anbetracht dieses Betriebsmodus müssen alle Systemdaten und Objekt-Storage-V
 
 Das folgende Beispiel zeigt eine Lösung für die Blockgerätezuordnung für einen StorageGRID-Speicherknoten, wobei DM-Multipathing auf den Hosts verwendet wird und das Aliasfeld in verwendet wurde `/etc/multipath.conf`, um konsistente, freundliche Blockgerätenamen bereitzustellen, die auf allen Hosts verfügbar sind.
 
-image::../media/block_device_mapping_rhel.gif[Blockgerätezuordnung]
+image:block_device_mapping_rhel.gif["Blockgerätezuordnung"]

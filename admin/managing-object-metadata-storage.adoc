@@ -38,7 +38,7 @@ StorageGRID speichert Objektmetadaten in einer Cassandra-Datenbank, die unabhän
 
 Diese Abbildung zeigt die Speicherknoten an zwei Standorten. Jeder Standort verfügt über die gleiche Menge an Objektmetadaten. Die Metadaten jedes Standorts werden unter alle Storage-Nodes an diesem Standort unterteilt.
 
-image::../media/metadata_space_across_sites.png[Metadatenspeicherplatz Über Mehrere Standorte Hinweg]
+image:metadata_space_across_sites.png["Metadatenspeicherplatz Über Mehrere Standorte Hinweg"]
 
 
 
@@ -46,7 +46,7 @@ image::../media/metadata_space_across_sites.png[Metadatenspeicherplatz Über Meh
 
 Diese Abbildung zeigt die Storage Volumes für einen einzelnen Storage-Node.
 
-image::../media/metadata_space_storage_node.png[Metadaten-Speicherplatz-Storage-Node]
+image:metadata_space_storage_node.png["Metadaten-Speicherplatz-Storage-Node"]
 
 Wie in der Abbildung dargestellt, reserviert StorageGRID Speicherplatz für Objekt-Metadaten auf dem Storage Volume 0 jedes Storage-Nodes. Sie verwendet den reservierten Speicherplatz zum Speichern von Objektmetadaten und zum Ausführen wichtiger Datenbankvorgänge. Alle übrigen Speicherplatz auf dem Storage Volume 0 und allen anderen Storage Volumes im Storage Node werden ausschließlich für Objektdaten (replizierte Kopien und nach Datenkonsistenz) verwendet.
 
@@ -165,7 +165,7 @@ Führen Sie die folgenden Schritte aus, um den tatsächlich reservierten Speiche
 . Wählen Sie die Registerkarte *Storage* aus.
 . Setzen Sie den Cursor auf das Diagramm Speicher verwendet - Objekt Metadaten und suchen Sie den Wert *tatsächlich reserviert*.
 +
-image::../media/storage_used_object_metadata_actual_reserved.png[Verwendeter Speicher - Objektmetadaten - Ist Reserviert]
+image:storage_used_object_metadata_actual_reserved.png["Verwendeter Speicher - Objektmetadaten - Ist Reserviert"]
 
 
 
@@ -187,7 +187,7 @@ Angenommen, Sie installieren ein neues StorageGRID System mit Version 11.7 oder 
 
 Der tatsächlich reservierte Speicherplatz jedes Storage-Node für Metadaten wird in den Speicherplatz für Objekt-Metadaten (den „ _zulässigen Metadatenspeicherplatz_“) und den Platzbedarf für wichtige Datenbankvorgänge (wie Data-Compaction und Reparatur) sowie zukünftige Hardware- und Software-Upgrades unterteilt. Der zulässige Metadatenspeicherplatz bestimmt die gesamte Objektkapazität.
 
-image::../media/metadata_allowed_space_volume_0.png[Platz für Volume 0 durch Metadaten zulässig]
+image:metadata_allowed_space_volume_0.png["Platz für Volume 0 durch Metadaten zulässig"]
 
 Die folgende Tabelle zeigt, wie StorageGRID den *zulässigen Metadatenspeicherplatz* für verschiedene Storage-Nodes berechnet, basierend auf der Speichermenge für den Node und dem tatsächlich reservierten Speicherplatz für Metadaten.
 
@@ -242,7 +242,7 @@ Führen Sie die folgenden Schritte aus, um den zulässigen Metadatenspeicher fü
 . Wählen Sie die Registerkarte *Storage* aus.
 . Setzen Sie den Cursor auf das Diagramm Speicher verwendet - Objekt Metadaten und suchen Sie den Wert *erlaubt*.
 +
-image::../media/storage_used_object_metadata_allowed.png[Verwendeter Speicher - Objekt-Metadaten - Zulässig]
+image:storage_used_object_metadata_allowed.png["Verwendeter Speicher - Objekt-Metadaten - Zulässig"]
 
 
 
@@ -316,7 +316,7 @@ SN3
 
 Da Objektmetadaten gleichmäßig auf die Storage-Nodes an einem Standort verteilt werden, kann jeder Node in diesem Beispiel nur 1.32 TB Metadaten enthalten. Die zusätzlichen 0.66 TB an erlaubten Metadaten für SN2 und SN3 können nicht verwendet werden.
 
-image::../media/metadata_space_three_storage_nodes.png[Metadaten Platz Drei Storage-Nodes]
+image:metadata_space_three_storage_nodes.png["Metadaten Platz Drei Storage-Nodes"]
 
 Da StorageGRID alle Objektmetadaten für ein StorageGRID System an jedem Standort speichert, wird die Gesamtkapazität der Metadaten eines StorageGRID Systems durch die Objektmetadaten des kleinsten Standorts bestimmt.
 

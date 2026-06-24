@@ -18,7 +18,7 @@ Der LDR-Service des Storage Node fragt den Metadatenspeicher nach dem Speicheror
 
 NOTE: Wenn sich die einzige Objektkopie auf AWS Glacier Storage oder in der Azure Archiv-Tier befindet, muss die Client-Applikation eine Anfrage für S3 RestoreObject ausgeben, um eine abrufbare Kopie im Cloud-Storage-Pool wiederherzustellen.
 
-image::../media/retrieve_data_flow.png[Abrufen]
+image:retrieve_data_flow.png["Abrufen"]
 
 . Der LDR-Service erhält eine Abrufanforderung von der Client-Anwendung.
 . Der LDR-Service fragt den Metadatenspeicher nach dem Objektdatenstandort und den Metadaten ab.

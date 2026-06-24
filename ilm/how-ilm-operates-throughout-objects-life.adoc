@@ -29,4 +29,4 @@ NOTE: Objekte in einem Bucket, für den die S3-Objektsperrung aktiviert ist, kö
 
 Das Diagramm fasst die Funktionsweise von ILM im gesamten Lebenszyklus eines Objekts zusammen.
 
-image::../media/overview_of_object_lifecycle.png[Übersicht über den Lebenszyklus von Objekten]
+image:overview_of_object_lifecycle.png["Übersicht über den Lebenszyklus von Objekten"]

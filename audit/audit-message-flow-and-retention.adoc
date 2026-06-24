@@ -27,7 +27,7 @@ Jeder ADC-Dienst fungiert wiederum als Relais und sendet seine Sammlung von Audi
 
 Jeder Admin-Knoten speichert Überwachungsmeldungen in Textprotokolldateien; die aktive Protokolldatei wird mit dem Namen `audit.log`.
 
-image::../media/audit_message_flow.gif[Diagramm mit der Zusammenfassung des Meldungsflusses durch Relais]
+image:audit_message_flow.gif["Diagramm mit der Zusammenfassung des Meldungsflusses durch Relais"]
 
 
 
@@ -37,7 +37,7 @@ StorageGRID verwendet einen Kopier- und Löschprozess, um sicherzustellen, dass 
 
 Wenn ein Knoten eine Prüfnachricht generiert oder weiterleitet, wird die Nachricht in einer Prüfnachrichtenwarteschlange auf der Systemfestplatte des Grid-Knotens gespeichert.  Eine Kopie der Nachricht wird immer in einer Audit-Nachrichtenwarteschlange aufbewahrt, bis die Nachricht in die Audit-Protokolldatei im Admin-Knoten geschrieben wird. `/var/local/audit/export` Verzeichnis.  Dadurch wird verhindert, dass während des Transports eine Prüfnachricht verloren geht.
 
-image::../media/audit_message_retention.gif[Diagramm mit der Zusammenfassung des Belegs der Prüfmeldung am AMS]
+image:audit_message_retention.gif["Diagramm mit der Zusammenfassung des Belegs der Prüfmeldung am AMS"]
 
 Die Warteschlange der Prüfnachrichten kann aufgrund von Netzwerkverbindungsproblemen oder unzureichender Prüfkapazität vorübergehend größer werden.  Wenn die Warteschlangen größer werden, verbrauchen sie mehr verfügbaren Speicherplatz in den einzelnen Knoten. `/var/local/` Verzeichnis.  Wenn das Problem weiterhin besteht und das Prüfnachrichtenverzeichnis eines Knotens zu voll wird, priorisieren die einzelnen Knoten die Verarbeitung ihres Rückstands und sind vorübergehend für neue Nachrichten nicht verfügbar.
 

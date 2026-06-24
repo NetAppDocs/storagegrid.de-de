@@ -27,7 +27,7 @@ Um zu bestimmen, ob eine Site deaktiviert werden kann, öffnen Sie zunächst den
 Schritt 1 (Standort auswählen) des Assistenten für die Dekommission-Site wird angezeigt. Dieser Schritt enthält eine alphabetische Liste der Sites in Ihrem StorageGRID-System.
 
 +
-image::../media/decommission_site_step_select_site.png[Deaktivieren Sie Site Schritt 1 Select Site]
+image:decommission_site_step_select_site.png["Deaktivieren Sie Site Schritt 1 Select Site"]
 
 . Zeigen Sie die Werte in der Spalte *verwendete Storage-Kapazität* an, um festzustellen, wie viel Storage derzeit für Objektdaten an den einzelnen Standorten verwendet wird.
 +
@@ -54,7 +54,7 @@ NOTE: Wenn es mehr als einen Grund gibt, warum ein Standort nicht stillgelegt we
 
 
  a| 
-Grünes Häkchen (image:../media/icon_alert_green_checkmark.png["Symbol Warnung Grün Häkchen"])
+Grünes Häkchen (image:icon_alert_green_checkmark.png["Symbol Warnung Grün Häkchen"])
  a| 
 Sie können diese Website außer Betrieb nehmen.
  a| 
@@ -83,7 +83,7 @@ Keine. Sie können diesen Vorgang nicht ausführen.
  a| 
 Nein. Alle Knoten an diesem Standort sind getrennt. Wenden Sie sich an Ihren NetApp Account-Ansprechpartner.
  a| 
-Sie können keine verbundene Website-Deaktivierung durchführen, wenn nicht jeder Knoten in der Site verbunden ist (image:../media/icon_alert_green_checkmark.png["Symbol Warnung Grün Häkchen"]).
+Eine Deaktivierung eines verbundenen Standorts ist nur möglich, wenn jeder Knoten im Standort verbunden ist (image:icon_alert_green_checkmark.png["Symbol Warnung Grün Häkchen"]).
  a| 
 Um eine getrennte Website außer Betrieb zu nehmen, müssen Sie sich an Ihren NetApp Ansprechpartner wenden. Dieser überprüft Ihre Anforderungen und aktiviert den Rest des Assistenten zur Decommission Site.
 
@@ -91,7 +91,7 @@ Um eine getrennte Website außer Betrieb zu nehmen, müssen Sie sich an Ihren Ne
 
 |===
 +
-Das Beispiel zeigt ein StorageGRID System mit drei Standorten. Das grüne Häkchen (image:../media/icon_alert_green_checkmark.png["Symbol Warnung Grün Häkchen"]) für die Raleigh- und Sunnyvale-Standorte zeigt an, dass Sie diese Standorte ausmustern können. Sie können die Vancouver-Website jedoch nicht stilllegen, da sie den primären Admin-Knoten enthält.
+Das Beispiel zeigt ein StorageGRID System mit drei Standorten. Das grüne Häkchen (image:icon_alert_green_checkmark.png["Symbol Warnung Grün Häkchen"]) bei den Standorten Raleigh und Sunnyvale zeigt an, dass diese Standorte außer Betrieb genommen werden können. Der Standort Vancouver kann jedoch nicht außer Betrieb genommen werden, da er den primären Admin Node enthält.
 
 
 

@@ -16,7 +16,7 @@ Sie müssen die von Ihnen eingegebenen Konfigurationsinformationen sorgfältig p
 .Schritte
 . Öffnen Sie die Seite *Übersicht*.
 +
-image::../media/11_gmi_installer_summary_page.gif[Die Seite mit der Übersicht zum Grid Manager Installer]
+image:11_gmi_installer_summary_page.gif["Die Seite mit der Übersicht zum Grid Manager Installer"]
 
 . Vergewissern Sie sich, dass alle Informationen zur Grid-Konfiguration korrekt sind. Verwenden Sie die Links zum Ändern auf der Seite Zusammenfassung, um zurück zu gehen und Fehler zu beheben.
 . Klicken Sie Auf *Installieren*.
@@ -38,7 +38,7 @@ CAUTION: Die Recovery Package-Datei muss gesichert sein, weil sie Verschlüsselu
 Wenn die Installation noch läuft, wird die Statusseite angezeigt. Auf dieser Seite wird der Installationsfortschritt für jeden Grid-Knoten angezeigt.
 
 +
-image::../media/12_gmi_installer_status_page.gif[Dieses Bild wird durch den umgebenden Text erläutert.]
+image:12_gmi_installer_status_page.gif["Dieses Bild wird durch den umgebenden Text erläutert."]
 
 +
 Wenn die komplette Phase für alle Grid-Knoten erreicht ist, wird die Anmeldeseite für den Grid Manager angezeigt.

@@ -19,9 +19,9 @@ Wenn Sie während der Installation ein Client-Netzwerk für einen Node konfiguri
 
 In diesem Beispiel wird das Client-Netzwerk für S3-Clientanforderungen und für Administrationsfunktionen verwendet, während das Grid-Netzwerk für interne Objektverwaltungsvorgänge reserviert ist.
 
-image::../media/grid_client_networks.png[Grid Client-Netzwerke]
+image:grid_client_networks.png["Grid Client-Netzwerke"]
 
-image::../media/grid_client_networks_ips.png[Grid Client Networks-IPs]
+image:grid_client_networks_ips.png["Grid Client Networks-IPs"]
 
 .Verwandte Informationen
 link:../maintain/changing-nodes-network-configuration.html["Ändern der Node-Netzwerkkonfiguration"]

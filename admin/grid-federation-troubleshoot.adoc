@@ -104,10 +104,7 @@ Dieses Problem kann auftreten, wenn Aktualisierungen des Verbindungsstatus verz�
 . Wählen Sie den Namen der Serviceeinheit aus, um die Detailseite anzuzeigen.
 . Wählen Sie *Kontoklone wiederholen*.
 +
-image::../media/grid-federation-retry-account-clone.png[Screenshot mit einer Fehlermeldung und der Schaltfläche Kontoklonen wiederholen]
-
-+
-Wenn der Fehler behoben wurde, wird das Mandantenkonto jetzt in das andere Raster geklont.
+image:grid-federation-retry-account-clone.png["Screenshot mit einer Fehlermeldung und der Schaltfläche Kontoklonen wiederholen"]Wenn der Fehler behoben wurde, wird das Mandantenkonto nun in das andere Grid geklont.
 
 
 
@@ -122,7 +119,7 @@ Wenn der Fehler behoben wurde, wird das Mandantenkonto jetzt in das andere Raste
 .Problem
 Wenn link:../monitor/grid-federation-monitor-connections.html["Anzeigen einer Netzverbundverbindung"] (oder wann link:grid-federation-manage-tenants.html["Verwalten der zulässigen Mandanten"] für eine Verbindung) Sie einen Fehler in der Spalte *Last error* auf der Seite mit den Verbindungsdetails bemerken. Beispiel:
 
-image::../media/grid-federation-last-error.png[Screenshot mit einer Meldung in der Spalte Letzter Fehler einer Grid Federation-Verbindung]
+image:grid-federation-last-error.png["Screenshot mit einer Meldung in der Spalte Letzter Fehler einer Grid Federation-Verbindung"]
 
 .Details
 Für jede Grid-Föderationsverbindung zeigt die Spalte *Letzter Fehler* den letzten Fehler an, der ggf. beim Replizieren der Daten eines Mandanten in das andere Grid aufgetreten ist.  In dieser Spalte wird nur der letzte aufgetretene Fehler bei der Cross-Grid-Replikation angezeigt. Eventuell zuvor aufgetretene Fehler werden nicht angezeigt.  Ein Fehler in dieser Spalte kann aus einem der folgenden Gründe auftreten:

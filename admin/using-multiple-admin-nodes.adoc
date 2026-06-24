@@ -15,7 +15,7 @@ Ein StorageGRID-System kann mehrere Admin-Knoten enthalten, damit Sie Ihr Storag
 
 Wenn ein Administratorknoten nicht mehr verfügbar ist, wird die Attributverarbeitung fortgesetzt, Warnmeldungen werden weiterhin ausgelöst und E-Mail-Benachrichtigungen und AutoSupport-Pakete werden weiterhin gesendet. Wenn Sie jedoch mehrere Administratorknoten haben, bietet dieser keinen Failover-Schutz außer Benachrichtigungen und AutoSupport-Paketen.
 
-image::../media/admin_node_redundancy.png[Admin-Node-Redundanzdiagramm]
+image:admin_node_redundancy.png["Admin-Node-Redundanzdiagramm"]
 
 Es gibt zwei Optionen, um das StorageGRID-System weiterhin anzuzeigen und zu konfigurieren, wenn ein Admin-Knoten ausfällt:
 

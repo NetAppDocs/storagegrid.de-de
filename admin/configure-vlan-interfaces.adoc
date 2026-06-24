@@ -85,7 +85,7 @@ In der Tabelle sind die verfügbaren Schnittstellen für alle Admin-Nodes und Ga
 Sie möchten beispielsweise ein VLAN an die Schnittstelle „Client Network“ (eth2) für einen Gateway-Node und einen Admin-Node anschließen.
 
 +
-image::../media/vlan-create-parent-interfaces.png[Übergeordnete Schnittstellen des Assistenten zur Erstellung von VLANs]
+image:vlan-create-parent-interfaces.png["Übergeordnete Schnittstellen des Assistenten zur Erstellung von VLANs"]
 
 . Wählen Sie *Weiter*.
 
@@ -99,7 +99,7 @@ image::../media/vlan-create-parent-interfaces.png[Übergeordnete Schnittstellen 
 +
 ** Wenn Sie die VLAN-ID oder Beschreibung ändern möchten, wählen Sie oben auf der Seite *VLAN-Details eingeben* aus.
 ** Wenn Sie eine übergeordnete Schnittstelle ändern möchten, wählen Sie oben auf der Seite die Option *übergeordnete Schnittstellen auswählen* aus, oder wählen Sie *Zurück*.
-** Wenn Sie eine übergeordnete Schnittstelle entfernen möchten, wählen Sie den Papierkorb ausimage:../media/icon-trash-can.png["Papierkorb-Symbol"].
+** Wenn Sie eine übergeordnete Schnittstelle entfernen müssen, wählen Sie den Papierkorb image:icon-trash-can.png["Papierkorb-Symbol"] aus.
 
 
 . Wählen Sie *Speichern*.

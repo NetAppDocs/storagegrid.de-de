@@ -104,7 +104,7 @@ Beispiel für das MAC-Klonen bei einem Host mit einer MAC-Adresse von 11:22:33:4
 
 In Beispiel 1 wird eine einfache Zuordnung von physischen Schnittstellen beschrieben, wofür nur wenig oder keine Host-seitige Konfiguration erforderlich ist.
 
-image::../media/rhel_install_vlan_diag_1.gif[VLAN-Diagramm installieren]
+image:rhel_install_vlan_diag_1.gif["VLAN-Diagramm installieren"]
 
 Das Linux-Betriebssystem erstellt die `ensXYZ` Schnittstellen automatisch während der Installation oder beim Booten oder wenn die Schnittstellen im laufenden Betrieb hinzugefügt werden.  Es ist keine Konfiguration erforderlich, außer sicherzustellen, dass die Schnittstellen so eingestellt sind, dass sie nach dem Booten automatisch hochgefahren werden.  Sie müssen feststellen, welches ensXYZ welchem ​​StorageGRID Netzwerk (Grid, Admin oder Client) entspricht, damit Sie später im Konfigurationsprozess die richtigen Zuordnungen bereitstellen können.
 
@@ -125,7 +125,7 @@ Um dieses Beispiel zu verstehen, stellen Sie vor, Sie verfügen über drei separ
 
 Wenn für Node-Netzwerke auf demselben Host separate VLANs und Subnetze erforderlich sind, können Sie auf der Verbindung VLAN-Schnittstellen hinzufügen und sie dem Host zuordnen (in der Abbildung als bond0.1004 dargestellt).
 
-image::../media/rhel_install_vlan_diag_2.gif[VLAN-Schnittstellen]
+image:rhel_install_vlan_diag_2.gif["VLAN-Schnittstellen"]
 
 .Schritte
 . Aggregieren Sie alle physischen Netzwerkschnittstellen, die für die StorageGRID-Netzwerkverbindung in einer einzigen LACP-Verbindung verwendet werden.

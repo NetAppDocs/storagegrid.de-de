@@ -23,7 +23,7 @@ Jede Anweisung für die Platzierung kann mehrere Zeilen haben, wenn Sie verschie
 
 In diesem Beispiel speichert die ILM-Regel eine replizierte Kopie an Standort 1 und eine replizierte Kopie am Standort 2 im ersten Jahr. Nach einem Jahr wird eine 2+1-Kopie mit Erasure-Coding-Verfahren an nur einem Standort erstellt und gespeichert.
 
-image::../media/ilm_create_ilm_rule_wizard_2.png[Assistent zum Erstellen einer ILM-Regel, Schritt 2]
+image:ilm_create_ilm_rule_wizard_2.png["Assistent zum Erstellen einer ILM-Regel, Schritt 2"]
 
 .Schritte
 . Wählen Sie unter *Referenzzeit* den Zeittyp aus, der bei der Berechnung der Startzeit für eine Platzierungsanweisung verwendet werden soll.
@@ -170,7 +170,7 @@ Im Abschnitt Regelanalyse des Aufbewahrungsdiagramms steht Folgendes:
 Siehe link:using-multiple-storage-pools-for-cross-site-replication.html["Schutz vor Standortausfällen"]
 
 +
-image::../media/ilm_rule_retention_diagram.png[Diagramm zur Aufbewahrung von ILM-Regeln]
+image:ilm_rule_retention_diagram.png["Diagramm zur Aufbewahrung von ILM-Regeln"]
 
 
 

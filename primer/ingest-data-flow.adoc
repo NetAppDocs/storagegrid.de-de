@@ -19,7 +19,7 @@ Ein Aufnahme- oder Speichervorgang besteht aus einem definierten Datenfluss zwis
 
 Wenn ein Client ein Objekt in das StorageGRID-System einspeist, verarbeitet der LDR-Service auf Storage-Nodes die Anforderung und speichert die Metadaten und Daten auf der Festplatte.
 
-image::../media/ingest_data_flow.png[Datenaufnahme mit synchroner Platzierung]
+image:ingest_data_flow.png["Datenaufnahme mit synchroner Platzierung"]
 
 . Die Client-Applikation erstellt das Objekt und sendet es über eine HTTP PUT-Anforderung an das StorageGRID System.
 . Das Objekt wird anhand der ILM-Richtlinie des Systems bewertet.

@@ -77,7 +77,7 @@ Da ILM-Regel 1 für alle Versionen des Objekts gilt, müssen Sie eine weitere Re
 
 Um eine Regel zu erstellen, die als Referenzzeit „nicht aktuelle Zeit“ verwendet, wählen Sie *Ja* für die Frage „Diese Regel nur auf ältere Objektversionen anwenden (in S3 Buckets mit aktivierter Versionierung)?“ aus. Gehen Sie in Schritt 1 (Details eingeben) des Assistenten zum Erstellen einer ILM-Regel vor. Wenn Sie *Yes* auswählen, wird _noncurrent time_ automatisch für die Referenzzeit ausgewählt, und Sie können keine andere Referenzzeit auswählen.
 
-image::../media/ilm-rule-apply-only-to-older-object-verions.png[Wenden Sie ILM-Regel nur auf ältere Objektversionen an (nicht aktuelle Zeit).]
+image:ilm-rule-apply-only-to-older-object-verions.png["Wenden Sie ILM-Regel nur auf ältere Objektversionen an (nicht aktuelle Zeit)."]
 
 In diesem Beispiel werden nur zwei Kopien der nicht aktuellen Versionen gespeichert und diese Kopien für zwei Jahre gespeichert.
 

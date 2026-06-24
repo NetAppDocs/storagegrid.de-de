@@ -91,7 +91,7 @@ Wenn Sie einen Namen entfernen, der von S3-Anwendungen verwendet wird, schlagen 
 
 .Schritte
 . Wählen Sie *Konfiguration* > *Netzwerk* > *S3-Endpunktdomänennamen*.
-. Wählen Sie das Löschsymbol image:../media/icon-x-to-remove.png["Symbol Löschen"] neben dem Domänennamen aus.
+. Das Löschsymbol image:icon-x-to-remove.png["Symbol Löschen"] neben dem Domänennamen auswählen.
 . Wählen Sie *Ja*, um den Löschvorgang zu bestätigen.
 
 

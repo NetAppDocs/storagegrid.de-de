@@ -26,7 +26,7 @@ Sie können den S3-Einrichtungsassistenten verwenden, um StorageGRID für die Ve
 . Melden Sie sich mit einem beim Grid-Manager anlink:web-browser-requirements.html["Unterstützter Webbrowser"].
 . Wenn das Banner *FabricPool and S3 Setup Wizard* auf dem Dashboard angezeigt wird, wählen Sie den Link im Banner aus. Wenn das Banner nicht mehr angezeigt wird, wählen Sie in der Kopfzeile des Grid-Managers das Hilfesymbol aus und wählen Sie *FabricPool und S3-Setup-Assistent* aus.
 +
-image::../media/help_menu.png[Hilfe-Menü]
+image:help_menu.png["Hilfe-Menü"]
 
 . Wählen Sie im Abschnitt S3-Anwendung der Seite FabricPool und S3-Setup-Assistent *Jetzt konfigurieren* aus.
 
@@ -409,7 +409,7 @@ Im Schritt zum Herunterladen von Daten können Sie eine oder zwei Dateien herunt
 . Wenn Sie *Root-Benutzer S3-Zugriffsschlüssel automatisch erstellen* ausgewählt haben, führen Sie einen oder beide der folgenden Schritte aus:
 +
 ** Wählen Sie *Zugriffsschlüssel herunterladen*, um eine Datei herunterzuladen `.csv`, die den Namen des Mandantenkontos, die Zugriffsschlüssel-ID und den geheimen Zugriffsschlüssel enthält.
-** Wählen Sie das Kopiersymbol (image:../media/icon_tenant_copy_url.png["Symbol kopieren"]), um die Zugriffsschlüssel-ID und den geheimen Zugriffsschlüssel in die Zwischenablage zu kopieren.
+** Wählen Sie das Kopiersymbol (image:icon_tenant_copy_url.png["Symbol kopieren"]), um die Zugriffsschlüssel-ID und den geheimen Zugriffsschlüssel in die Zwischenablage zu kopieren.
 
 
 . Wählen Sie *Konfigurationswerte herunterladen*, um eine Datei herunterzuladen `.txt`, die die Einstellungen für den Load Balancer-Endpunkt, den Mandanten, den Bucket und den Root-Benutzer enthält.

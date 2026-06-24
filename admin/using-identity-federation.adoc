@@ -48,7 +48,7 @@ Sie können eine Identitätsquelle für den Grid Manager konfigurieren, wenn Sie
 . Wählen Sie *Identitätsföderation aktivieren*.
 . Wählen Sie im Abschnitt LDAP-Servicetyp den Typ des LDAP-Dienstes aus, den Sie konfigurieren möchten.
 +
-image::../media/ldap_service_type.png[Seite „Identity Federation“ mit Optionen für LDAP-Diensttypen]
+image:ldap_service_type.png["Seite „Identity Federation“ mit Optionen für LDAP-Diensttypen"]
 
 +
 Wählen Sie *Other* aus, um Werte für einen LDAP-Server zu konfigurieren, der Oracle Directory Server verwendet.
@@ -159,7 +159,7 @@ Nachdem Sie alle Werte eingegeben haben, müssen Sie die Verbindung testen, bevo
 Geben Sie beispielsweise Ihren eigenen Benutzernamen und Ihr Kennwort ein. Geben Sie keine Sonderzeichen in den Benutzernamen ein, z. B. @ oder /.
 
 +
-image::../media/identity_federation_test_connection.png[Identity Federation fordert zur Validierung des BIND-Benutzernamens-Formats auf]
+image:identity_federation_test_connection.png["Identity Federation fordert zur Validierung des BIND-Benutzernamens-Formats auf"]
 
 +
 ** Wenn die Verbindungseinstellungen gültig sind, wird die Meldung „Verbindung erfolgreich testen“ angezeigt. Wählen Sie *Speichern*, um die Konfiguration zu speichern.

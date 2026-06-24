@@ -28,7 +28,7 @@ In diesem Beispiel wird die *Beispiel ILM-Richtlinie* für die aufgenommene Obje
 
 Bestätigen Sie nach der Simulation der Richtlinie, dass jedes Objekt mit der richtigen Regel abgeglichen wurde.
 
-image::../media/simulate_policy_screen.png[Richtlinienergebnisse simulieren]
+image:simulate_policy_screen.png["Richtlinienergebnisse simulieren"]
 
 In diesem Beispiel:
 
@@ -57,7 +57,7 @@ In diesem Beispiel wird die *Demo*-Richtlinie simuliert. Diese Richtlinie, die z
 Die Simulationsergebnisse werden angezeigt und zeigen an, dass das `Havok.png` Objekt mit der Regel *PNGs* abgeglichen wurde.
 
 +
-image::../media/simulate_reorder_rules_pngs_result.png[Beispiel 2: Neuanordnung von Regeln bei der Simulation einer ILM-Richtlinie]
+image:simulate_reorder_rules_pngs_result.png["Beispiel 2: Neuanordnung von Regeln bei der Simulation einer ILM-Richtlinie"]
 
 +
 Allerdings `Havok.png` sollte die *X-Men*-Regel getestet werden.
@@ -75,7 +75,7 @@ Allerdings `Havok.png` sollte die *X-Men*-Regel getestet werden.
 Die zuvor getesteten Objekte werden anhand der aktualisierten Richtlinie neu bewertet und die neuen Simulationsergebnisse angezeigt. In dem Beispiel zeigt die Spalte Rule Matched, dass das `Havok.png` Objekt nun wie erwartet mit der X-men-Metadatenregel übereinstimmt. In der Spalte Vorheriger Abgleich wird angezeigt, dass die PNGs-Regel mit dem Objekt in der vorherigen Simulation übereinstimmt.
 
 +
-image::../media/simulate_reorder_rules_correct_result.png[Beispiel 2: Neuanordnung von Regeln bei der Simulation einer ILM-Richtlinie]
+image:simulate_reorder_rules_correct_result.png["Beispiel 2: Neuanordnung von Regeln bei der Simulation einer ILM-Richtlinie"]
 
 
 
@@ -87,7 +87,7 @@ Dieses Beispiel zeigt, wie eine Richtlinie simuliert, eine Regel in der Richtlin
 
 In diesem Beispiel wird die *Demo*-Richtlinie simuliert. Diese Richtlinie zielt darauf ab, Objekte zu finden, für die `series=x-men` Benutzermetadaten vorhanden sind. Bei der Simulation dieser Richtlinie gegen das Objekt traten jedoch unerwartete Ergebnisse auf `Beast.jpg`. Anstatt die X-Men-Metadatenregel zu entsprechen, kopiert das Objekt die Standardregel. Zwei Rechenzentren werden kopiert.
 
-image::../media/simulate_results_for_object_wrong_metadata.png[Beispiel 3: Korrigieren von Regeln bei der Simulation einer ILM-Richtlinie]
+image:simulate_results_for_object_wrong_metadata.png["Beispiel 3: Korrigieren von Regeln bei der Simulation einer ILM-Richtlinie"]
 
 Wenn ein Testobjekt nicht mit der erwarteten Regel in der Richtlinie übereinstimmt, müssen Sie jede Regel in der Richtlinie überprüfen und eventuelle Fehler korrigieren.
 
@@ -108,6 +108,6 @@ Angenommen, die Metadaten für die X-men-Regel wurden als „x-men01“ anstelle
 In diesem Beispiel entspricht die korrigierte X-Men-Regel nun wie erwartet dem `Beast.jpg` Objekt basierend auf den `series=x-men` Benutzermetadaten.
 
 +
-image::../media/simulate_results_for_object_corrected_metadata.png[Beispiel 3: Korrigieren von Regeln bei der Simulation einer ILM-Richtlinie]
+image:simulate_results_for_object_corrected_metadata.png["Beispiel 3: Korrigieren von Regeln bei der Simulation einer ILM-Richtlinie"]
 
 

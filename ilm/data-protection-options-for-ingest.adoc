@@ -21,7 +21,7 @@ Je nach Ihrer Wahl erstellt StorageGRID später vorläufige Kopien und Warteschl
 
 Das Flussdiagramm zeigt, was passiert, wenn Objekte mit einer ILM-Regel abgeglichen werden, die jede der drei Aufnahmeoptionen nutzt.
 
-image::../media/ingest_object_lifecycle.png[Diagramm, das die Objektaufnahme für die einzelnen Aufnahmeoptionen zeigt]
+image:ingest_object_lifecycle.png["Diagramm, das die Objektaufnahme für die einzelnen Aufnahmeoptionen zeigt"]
 
 
 

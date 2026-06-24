@@ -32,7 +32,7 @@ Sie können den FabricPool-Einrichtungsassistenten abschließen, wenn Sie den St
 . Melden Sie sich mit einem beim Grid-Manager anlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
 . Wenn das Banner *FabricPool and S3 Setup Wizard* auf dem Dashboard angezeigt wird, wählen Sie den Link im Banner aus. Wenn das Banner nicht mehr angezeigt wird, wählen Sie in der Kopfzeile des Grid-Managers das Hilfesymbol aus und wählen Sie *FabricPool und S3-Setup-Assistent* aus.
 +
-image::../media/help_menu.png[Hilfe-Menü]
+image:help_menu.png["Hilfe-Menü"]
 
 . Wählen Sie im Abschnitt FabricPool der Seite mit dem FabricPool- und S3-Setup-Assistenten *Jetzt konfigurieren* aus.
 +
@@ -432,7 +432,7 @@ NOTE: Wählen Sie keinen Bucket aus, für den die S3-Objektsperrung zur Verwendu
 In diesem Schritt laden Sie eine Datei herunter, mit der Sie Werte in den ONTAP System Manager eingeben können.
 
 .Schritte
-. Wählen Sie optional das Kopiersymbol (image:../media/icon_tenant_copy_url.png["Symbol kopieren"]), um sowohl die Zugriffsschlüssel-ID als auch den geheimen Zugriffsschlüssel in die Zwischenablage zu kopieren.
+. Optional kann das Kopiersymbol (image:icon_tenant_copy_url.png["Symbol kopieren"]) ausgewählt werden, um sowohl die Zugriffsschlüssel-ID als auch den geheimen Zugriffsschlüssel in die Zwischenablage zu kopieren.
 +
 Diese Werte sind in der Download-Datei enthalten, sollten jedoch separat gespeichert werden.
 

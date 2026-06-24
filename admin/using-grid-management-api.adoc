@@ -43,7 +43,7 @@ CAUTION: Alle API-Operationen, die Sie mit der API-Dokumentations-Webseite durch
 .Schritte
 . Wählen Sie im Grid Manager Header das Hilfesymbol aus und wählen Sie *API documentation*.
 +
-image::../media/help_menu.png[Hilfe-Menü]
+image:help_menu.png["Hilfe-Menü"]
 
 . Um eine Operation mit der privaten API durchzuführen, wählen Sie auf der StorageGRID Management API-Seite *Gehe zur privaten API-Dokumentation* aus.
 +
@@ -55,7 +55,7 @@ Wenn Sie einen API-Vorgang erweitern, werden die verfügbaren HTTP-Aktionen ange
 
 . Wählen Sie eine HTTP-Aktion aus, um die Anforderungsdetails anzuzeigen, einschließlich der Endpunkt-URL, einer Liste aller erforderlichen oder optionalen Parameter, einem Beispiel für den Anforderungskörper (falls erforderlich) und den möglichen Antworten.
 +
-image::../media/swagger_example.png[Beispiel aus Swagger UI]
+image:swagger_example.png["Beispiel aus Swagger UI"]
 
 . Stellen Sie fest, ob für die Anforderung zusätzliche Parameter erforderlich sind, z. B. eine Gruppe oder eine Benutzer-ID. Dann erhalten Sie diese Werte. Sie müssen möglicherweise zuerst eine andere API-Anfrage stellen, um die Informationen zu erhalten, die Sie benötigen.
 . Bestimmen Sie, ob Sie den Text für die Beispielanforderung ändern müssen. In diesem Fall können Sie *Modell* wählen, um die Anforderungen für jedes Feld zu erfahren.

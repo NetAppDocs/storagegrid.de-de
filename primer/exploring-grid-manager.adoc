@@ -28,9 +28,9 @@ Wenn Sie sich zum ersten Mal beim Grid Manager anmelden, haben Sie im Dashboard 
 
 Das Dashboard enthält Informationen zu Systemzustand und Performance, Storage-Nutzung, ILM-Prozessen, S3-Vorgängen und den Nodes im Grid. Sie können link:../monitor/viewing-dashboard.html["Konfigurieren Sie das Dashboard"]aus einer Sammlung von Karten auswählen, die die Informationen enthalten, die Sie zur effektiven Überwachung Ihres Systems benötigen.
 
-image::../media/grid_manager_dashboard_and_menu.png[Dashboard im Grid Manager]
+image:grid_manager_dashboard_and_menu.png["Dashboard im Grid Manager"]
 
-Um eine Erklärung der auf jeder Karte angezeigten Informationen zu erhalten, wählen Sie das Hilfesymbol image:../media/icon_nms_question.png["Fragezeichen-Symbol"]für diese Karte aus.
+Eine Erklärung der auf den einzelnen Karten angezeigten Informationen findet sich durch Auswahl des Hilfesymbols image:icon_nms_question.png["Fragezeichen-Symbol"] für die jeweilige Karte.
 
 
 
@@ -44,7 +44,7 @@ Sie können *Suche* verwenden, um Einträge in der Seitenleiste des Grid Manager
 
 == Hilfe-Menü
 
-Über das Hilfemenü image:../media/icon-help-menu-bar.png["Hilfe-Symbol in der Menüleiste"]können Sie auf Folgendes zugreifen:
+Das Hilfemenü image:icon-help-menu-bar.png["Hilfe-Symbol in der Menüleiste"] bietet Zugriff auf:
 
 * Derlink:../fabricpool/use-fabricpool-setup-wizard.html["FabricPool"] Undlink:../admin/use-s3-setup-wizard.html["S3-Einrichtung"] Zauberer
 * Die StorageGRID -Dokumentationsseite für die aktuelle Version

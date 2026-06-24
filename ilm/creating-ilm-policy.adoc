@@ -194,7 +194,7 @@ Simulieren Sie eine Richtlinie für Testobjekte, bevor Sie die Richtlinie aktivi
 CAUTION: Prüfen Sie alle Änderungen an der Platzierung vorhandener replizierter und Erasure Coded Objekte. Das Ändern des Speicherorts eines vorhandenen Objekts kann zu vorübergehenden Ressourcenproblemen führen, wenn die neuen Platzierungen ausgewertet und implementiert werden.
 
 .Ergebnisse
-Alle Änderungen an den Regeln der Richtlinie werden in den Simulationsergebnissen angezeigt und zeigen den neuen Match und den vorherigen Match an. Das Fenster Richtlinie simulieren behält die getesteten Objekte bei, bis Sie entweder *Alle löschen* oder das Symbol Entfernen für jedes Objekt in der Liste Simulationsergebnisse auswählenimage:../media/icon-x-to-remove.png["Symbol entfernen"].
+Änderungen an den Richtlinienregeln werden in den Simulationsergebnissen angezeigt und zeigen die neue und die vorherige Übereinstimmung an. Das Fenster „Richtlinie simulieren“ behält die getesteten Objekte bei, bis entweder *Alle löschen* oder das Entfernungssymbol image:icon-x-to-remove.png["Symbol entfernen"] für jedes Objekt in der Liste der Simulationsergebnisse ausgewählt wird.
 
 .Verwandte Informationen
 link:simulating-ilm-policy-examples.html["Beispiele für ILM-Richtliniensimulationen"]

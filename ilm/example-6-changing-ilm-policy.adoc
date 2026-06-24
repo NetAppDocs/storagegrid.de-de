@@ -47,7 +47,7 @@ NOTE: StorageGRID erachtet jedes Erasure Coding-Profil als einzigartig und verwe
 
 In diesem Beispiel wurde die aktive ILM-Richtlinie ursprünglich für ein StorageGRID System mit zwei Standorten konzipiert und verwendet zwei ILM-Regeln.
 
-image::../media/policy_6_active_policy.png[Beispiel für eine aktive ILM-Richtlinie 6]
+image:policy_6_active_policy.png["Beispiel für eine aktive ILM-Richtlinie 6"]
 
 In dieser ILM-Richtlinie werden Objekte, die von Mandanten A gehören, durch Erasure Coding von 2+1 an einem Standort geschützt, während Objekte, die zu allen anderen Mandanten gehören, durch die Replizierung mit zwei Kopien über zwei Standorte hinweg geschützt sind.
 

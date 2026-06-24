@@ -32,14 +32,14 @@ CAUTION: Seien Sie vorsichtig, wenn Sie sich entscheiden, eine Alarmregel zu stu
 Die Seite „Stille“ wird angezeigt.
 
 +
-image::../media/alerts_silences_page.png[Alarme > Stille]
+image:alerts_silences_page.png["Benachrichtigungen > Stummschaltungsseite"]
 
 . Wählen Sie *Erstellen*.
 +
 Das Dialogfeld Stille erstellen wird angezeigt.
 
 +
-image::../media/alerts_create_silence.png[Alarme > Quittieren Erzeugen]
+image:alerts_create_silence.png["Benachrichtigungen > Stille erstellen"]
 
 . Wählen Sie die folgenden Informationen aus, oder geben Sie sie ein:
 +

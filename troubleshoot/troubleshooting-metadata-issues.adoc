@@ -21,7 +21,7 @@ Befolgen Sie die empfohlenen Aktionen für jede Metadatenbezogene Warnmeldung, d
 
 StorageGRID reserviert eine bestimmte Menge an Speicherplatz auf Volume 0 jedes Storage-Nodes für Objekt-Metadaten. Dieser als _actual reserved space_ bekannte Speicherplatz wird in den für Objektmetadaten erlaubten Speicherplatz (den erlaubten Metadatenraum) und den für wichtige Datenbankvorgänge wie Data-Compaction und Repair erforderlichen Speicherplatz unterteilt. Der zulässige Metadatenspeicherplatz bestimmt die gesamte Objektkapazität.
 
-image::../media/metadata_allowed_space_volume_0.png[Metadaten Zulässig Speicherplatz Volume 0]
+image:metadata_allowed_space_volume_0.png["Metadaten Zulässig Speicherplatz Volume 0"]
 
 Wenn Objektmetadaten mehr als 100 % des für Metadaten zulässigen Speicherplatzes verbrauchen, können Datenbankvorgänge nicht effizient ausgeführt werden und es treten Fehler auf.
 

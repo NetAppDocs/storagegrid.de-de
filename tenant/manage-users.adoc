@@ -40,7 +40,7 @@ S3-Benutzer, die keiner Gruppe angehören, haben keine Managementberechtigungen 
 Wenn Ihr Mandantenkonto die Berechtigung *Grid Federation connection* verwenden hat, zeigt ein blaues Banner an, dass dies das Quellraster des Mandanten ist. Alle lokalen Benutzer, die Sie in diesem Raster erstellen, werden in das andere Raster der Verbindung geklont.
 
 +
-image::../media/grid-federation-tenant-user-banner.png[Abbildung des blauen Banners auf der Benutzerseite, wenn es sich um das Quellenraster des Mandanten handelt]
+image:grid-federation-tenant-user-banner.png["Abbildung des blauen Banners auf der Benutzerseite, wenn es sich um das Quellenraster des Mandanten handelt"]
 
 . Wählen Sie *Benutzer erstellen*.
 
@@ -157,7 +157,7 @@ Wenn das Mandantenkonto über die Berechtigung *Grid Federation connection* verw
 
 . Bearbeiten Sie die Benutzereinstellungen nach Bedarf. Einzelheiten dazu, was Sie eingeben müssen, finden Sie unter<<create-user,Erstellen Sie einen lokalen Benutzer>>.
 +
-.. Ändern Sie im Abschnitt Übersicht den vollständigen Namen, indem Sie den Namen oder das Bearbeiten-Symbol auswählenimage:../media/icon_edit_tm.png["Symbol bearbeiten"].
+.. Im Abschnitt „Übersicht“ den vollständigen Namen ändern, indem der Name oder das Bearbeitungssymbol image:icon_edit_tm.png["Symbol bearbeiten"] ausgewählt wird.
 +
 Sie können den Benutzernamen nicht ändern.
 

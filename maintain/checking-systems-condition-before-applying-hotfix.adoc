@@ -16,7 +16,7 @@ Sie müssen überprüfen, ob das System bereit ist, um den Hotfix aufzunehmen.
 . Melden Sie sich mit einem beim Grid-Manager anlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
 . Stellen Sie, falls möglich, sicher, dass das System ordnungsgemäß ausgeführt wird und dass alle Grid-Nodes mit dem Grid verbunden sind.
 +
-Verbundene Knoten haben grüne Häkchen image:../media/icon_alert_green_checkmark.png["Symbol Warnung grünes Häkchen"]auf der Seite Knoten.
+Verbundene Knoten haben grüne Häkchen image:icon_alert_green_checkmark.png["Symbol Warnung grünes Häkchen"] auf der Seite „Knoten“.
 
 . Überprüfen Sie, ob und beheben Sie alle aktuellen Warnmeldungen, wenn möglich.
 . Stellen Sie sicher, dass keine weiteren Wartungsverfahren wie Upgrades, Wiederherstellungen, Erweiterungen oder Stillstandsmaßnahmen ausgeführt werden.

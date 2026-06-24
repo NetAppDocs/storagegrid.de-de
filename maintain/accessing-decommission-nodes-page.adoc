@@ -36,7 +36,7 @@ Die Seite Decommission Nodes wird angezeigt. Auf dieser Seite können Sie:
 In diesem Beispiel zeigt die Spalte Decommission possible an, dass Sie den Gateway Node und einen der vier Storage Nodes stilllegen können.
 
 +
-image::../media/decommission_nodes_page_all_connected.png[Die Seite Knoten ausmustern]
+image:decommission_nodes_page_all_connected.png["Die Seite Knoten ausmustern"]
 
 
 
@@ -68,8 +68,8 @@ Ein verbundener Grid-Node kann nicht stillgelegt werden, wenn ein Grid-Node getr
 
 Die Spalte *Health* enthält eines der folgenden Symbole für getrennte Grid-Knoten:
 
-** image:../media/icon_alarm_gray_administratively_down.png["Graues Fragensymbol"] (Grau): Administrativ nach unten
-** image:../media/icon_alarm_blue_unknown.png["Blaues Fragezeichen-Symbol"] (Blau): Unbekannt
+** image:icon_alarm_gray_administratively_down.png["Graues Fragensymbol"] (grau): Administrativ deaktiviert
+** image:icon_alarm_blue_unknown.png["Blaues Fragezeichen-Symbol"] (blau): Unbekannt
 
  a| 
 Sie müssen alle getrennten Knoten wieder online schalten oder link:decommissioning-disconnected-grid-nodes.html["Alle getrennten Nodes werden deaktiviert"] bevor Sie einen verbundenen Knoten entfernen können.

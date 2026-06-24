@@ -62,7 +62,7 @@ Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `
 Das Hauptmenü wird angezeigt.
 
 +
-image::../media/change_ip_tool_main_menu.png[Screenshot mit Willkommensbildschirm des Change IP-Tools]
+image:change_ip_tool_main_menu.png["Screenshot mit Willkommensbildschirm des Change IP-Tools"]
 
 . Optional können Sie auch die Netzwerke/Nodes begrenzen, auf denen Vorgänge ausgeführt werden. Folgenden Optionen wählbar:
 +
@@ -101,7 +101,7 @@ TIP: Sie können die erforderliche Eingabe reduzieren, indem Sie mit dem Aufwär
 
 Im folgenden Beispiel werden Subnetze zur Subnetz-Liste des Admin-Netzwerks hinzugefügt:
 
-image::../media/change_ip_tool_aesl_sample_input.gif[Beispiel für das ip-Tool ändern]
+image:change_ip_tool_aesl_sample_input.gif["Beispiel für das ip-Tool ändern"]
 
 --
 . Wenn Sie bereit sind, geben Sie *q* ein, um zum Hauptmenü-Bildschirm zurückzukehren. Ihre Änderungen werden so lange gespeichert, bis sie gelöscht oder angewendet wurden.
@@ -113,7 +113,7 @@ NOTE: Wenn Sie in Schritt 3 einen der Knotenauswahlmodi „Alle“ ausgewählt h
 +
 ** Wählen Sie die Option *5*, um Änderungen in der Ausgabe anzuzeigen, die isoliert sind, um nur das geänderte Element anzuzeigen. Änderungen werden grün (Zusätze) oder rot (Löschungen) hervorgehoben, wie in der Beispielausgabe unten gezeigt:
 +
-image::../media/change_ip_tool_aesl_sample_output.png[Screenshot, der durch umgebenden Text beschrieben wird]
+image:change_ip_tool_aesl_sample_output.png["Screenshot, der durch umgebenden Text beschrieben wird"]
 
 ** Wählen Sie die Option *6*, um Änderungen in der Ausgabe anzuzeigen, die die vollständige Konfiguration anzeigen. Änderungen werden grün (Ergänzungen) oder rot (Löschungen) markiert. *Hinweis:* bestimmte Terminalemulatoren könnten Ergänzungen und Löschungen mit durchgestrickter Formatierung anzeigen.
 +

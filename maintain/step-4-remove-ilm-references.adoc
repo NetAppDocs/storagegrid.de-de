@@ -25,7 +25,7 @@ NOTE: Wenn StorageGRID die Site dekomprimiert, werden alle ungenutzten Erasure C
 . Bearbeiten oder Löschen jeder nicht verwendeten Regel:
 +
 ** Um eine Regel zu bearbeiten, aktualisieren Sie auf der Seite ILM-Regeln alle Platzierungen, die ein Erasure-Coding-Profil oder einen Storage-Pool verwenden, das auf den Standort verweist. Kehren Sie dann zu *Schritt 4 (ILM-Referenzen entfernen)* zurück.
-** Um eine Regel zu löschen, wählen Sie das Papierkorb-Symbol image:../media/icon_trash_can.png["Symbol Papierkorb Kann"] und dann *OK*.
+** Um eine Regel zu löschen, das Papierkorbsymbol image:icon_trash_can.png["Symbol Papierkorb Kann"] auswählen und *OK* wählen.
 +
 
 NOTE: Sie müssen die Regel *make 2 copies* löschen, bevor Sie eine Site stilllegen können.

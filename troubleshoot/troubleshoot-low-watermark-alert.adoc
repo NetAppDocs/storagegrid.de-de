@@ -88,7 +88,7 @@ Sie können die Warnung *Low read-only Watermark override* lösen, indem Sie ben
 . Erweitern Sie für jeden Standort im Raster die Liste der Nodes.
 . Überprüfen Sie die Prozentwerte, die in der Spalte *Objektdaten verwendet* für jeden Speicherknoten an jedem Standort angezeigt werden.
 +
-image::../media/nodes_page_object_data_used_with_alert.png[Seite Knoten mit Objektdaten, die für 3 SNS verwendet werden]
+image:nodes_page_object_data_used_with_alert.png["Seite Knoten mit Objektdaten, die für 3 SNS verwendet werden"]
 
 . Befolgen Sie den entsprechenden Schritt:
 +

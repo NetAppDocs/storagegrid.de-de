@@ -23,7 +23,7 @@ Die Standardregel ist die letzte Regel, die in einer ILM-Richtlinie evaluiert we
 
 In diesem Beispiel gilt die erste Regel nur für Objekte, die zu Test-Tenant-1 gehören. Die letzte Standardregel gilt für Objekte, die zu allen anderen Mandantenkonten gehören.
 
-image::../media/ilm_policies_page_default_rule.png[Standardregel für ILM-Richtlinien]
+image:ilm_policies_page_default_rule.png["Standardregel für ILM-Richtlinien"]
 
 Beachten Sie beim Erstellen der Standardregel die folgenden Anforderungen:
 

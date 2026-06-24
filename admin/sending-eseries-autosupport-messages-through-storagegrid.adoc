@@ -44,21 +44,21 @@ NOTE: Dieses Verfahren gilt nur für die Konfiguration eines StorageGRID-Proxyse
 Die Startseite von SANtricity System Manager wird angezeigt.
 
 +
-image::../media/autosupport_santricity_home_page.png[Startseite von AutoSupport SANtricity]
+image:autosupport_santricity_home_page.png["Startseite von AutoSupport SANtricity"]
 
 . Wählen Sie *Support* > *Supportcenter* > * AutoSupport*.
 +
 Die Seite AutoSupport-Vorgänge wird angezeigt.
 
 +
-image::../media/autosupport_santricity_operations.png[AutoSupport SANtricity AutoSupport Betrieb]
+image:autosupport_santricity_operations.png["AutoSupport SANtricity AutoSupport Betrieb"]
 
 . Wählen Sie *AutoSupport-Bereitstellungsmethode konfigurieren*.
 +
 Die Seite AutoSupport-Bereitstellungsmethode konfigurieren wird angezeigt.
 
 +
-image::../media/autosupport_configure_delivery_santricity.png[AutoSupport konfigurieren AutoSupport-Bereitstellungsmethode SANtricity]
+image:autosupport_configure_delivery_santricity.png["AutoSupport konfigurieren AutoSupport-Bereitstellungsmethode SANtricity"]
 
 . Wählen Sie *HTTPS* für die Liefermethode aus.
 +

@@ -24,6 +24,6 @@ In diesem Beispiel wird für jeden Datenverkehr dasselbe Netzwerk verwendet, ein
 
 NOTE: Diese Topologie eignet sich für Implementierungen an einem einzigen Standort, die nicht extern verfügbar sind, Proof-of-Concept- oder Testbereitstellungen oder wenn ein Load Balancer eines Drittanbieters als Grenze für den Client-Zugriff fungiert. Wenn möglich, sollte das Grid-Netzwerk ausschließlich für den internen Datenverkehr verwendet werden. Sowohl das Admin-Netzwerk als auch das Client-Netzwerk haben zusätzliche Firewall-Einschränkungen, die externen Datenverkehr zu internen Diensten blockieren. Die Verwendung des Grid-Netzwerks für externen Client-Datenverkehr wird unterstützt, aber diese Verwendung bietet weniger Schutzebenen.
 
-image::../media/grid_network.png[Grid-Netzwerk]
+image:grid_network.png["Grid-Netzwerk"]
 
-image::../media/grid_network_ips.png[Grid-Netzwerk-IPs]
+image:grid_network_ips.png["Grid-Netzwerk-IPs"]

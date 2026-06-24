@@ -75,7 +75,7 @@ StorageGRID verhindert, dass Sie ein Erasure Coding-Profil deaktivieren, wenn ei
 Sie können ein Profil für Erasure Coding nicht deaktivieren, wenn es in einer ILM-Regel verwendet wird. In diesem Beispiel wird das Profil 2+1 Rechenzentrum 1 in mindestens einer ILM-Regel verwendet.
 
 +
-image::../media/ec_profile_used_in_ilm_rule.png[In der ILM-Regel verwendetes EC-Profil]
+image:ec_profile_used_in_ilm_rule.png["In der ILM-Regel verwendetes EC-Profil"]
 
 . Wenn das Profil in einer ILM-Regel verwendet wird, führen Sie die folgenden Schritte aus:
 +

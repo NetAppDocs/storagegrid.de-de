@@ -27,11 +27,11 @@ Wenn die Dateien korrekt sind, zeigt die Ausgabe *BESTANDEN* für jede Konfigura
 
 NOTE: Wenn nur eine LUN auf Nodes mit nur Metadaten verwendet wird, erhalten Sie möglicherweise eine Warnmeldung, die ignoriert werden kann.
 
-image::../media/rhel_node_configuration_file_output.gif[Dieses Bild wird durch den umgebenden Text erläutert.]
+image:rhel_node_configuration_file_output.gif["Dieses Bild wird durch den umgebenden Text erläutert."]
 
 
 TIP: Für eine automatisierte Installation können Sie diese Ausgabe unterdrücken, indem Sie die Optionen oder `--quiet` im `storagegrid` Befehl verwenden `-q` (z.B. `storagegrid --quiet...` ). Wenn Sie die Ausgabe unterdrücken, hat der Befehl einen Wert ungleich null Exit, wenn Konfigurationswarnungen oder Fehler erkannt wurden.
 
 Wenn die Konfigurationsdateien nicht korrekt sind, werden die Probleme wie im Beispiel gezeigt als *WARNUNG* und *FEHLER* angezeigt. Wenn Konfigurationsfehler gefunden werden, müssen Sie sie korrigieren, bevor Sie mit der Installation fortfahren.
 
-image::../media/rhel_node_configuration_file_output_with_errors.gif[Dieses Bild wird durch den umgebenden Text erläutert.]
+image:rhel_node_configuration_file_output_with_errors.gif["Dieses Bild wird durch den umgebenden Text erläutert."]

@@ -18,13 +18,13 @@ NOTE: Der Grid Manager wird mit jeder Version aktualisiert und stimmt möglicher
 
 Die Registerkarte Hardware wird für alle Nodes angezeigt.
 
-image::../media/nodes_page_hardware_tab_graphs.png[Registerkarte Knoten Hardware]
+image:nodes_page_hardware_tab_graphs.png["Registerkarte Knoten Hardware"]
 
 Um ein anderes Zeitintervall anzuzeigen, wählen Sie eines der Steuerelemente oberhalb des Diagramms oder Diagramms aus. Sie können die verfügbaren Informationen für Intervalle von 1 Stunde, 1 Tag, 1 Woche oder 1 Monat anzeigen. Sie können auch ein benutzerdefiniertes Intervall festlegen, mit dem Sie Datum und Zeitbereiche festlegen können.
 
 Um Details zur CPU-Auslastung und Speicherauslastung anzuzeigen, setzen Sie den Mauszeiger auf die einzelnen Diagramme.
 
-image::../media/nodes_page_memory_usage_details.png[Seite „Nodes“ > „Hardware > Speichernutzung“]
+image:nodes_page_memory_usage_details.png["Knotenseite > Hardware > Speichernutzungsdetails"]
 
 Wenn der Knoten ein Appliance-Node ist, enthält diese Registerkarte auch einen Abschnitt mit weiteren Informationen zur Appliance-Hardware.
 
@@ -45,7 +45,7 @@ Im Abschnitt Node-Informationen auf der Registerkarte Übersicht werden zusammen
 ** *Hic*: Einer der physischen 10-, 25- oder 100-GbE-Ports auf dem Gerät. Diese Ports können miteinander verbunden und mit dem StorageGRID-Grid-Netzwerk (eth0) und dem Client-Netzwerk (eth2) verbunden werden.
 ** *mtc*: Einer der physischen 1-GbE-Ports auf der Appliance. Eine oder mehrere mtc-Schnittstellen bilden die StorageGRID Admin-Netzwerkschnittstelle (eth1). Für den Techniker im Rechenzentrum können Sie andere mtc-Schnittstellen zur temporären lokalen Konnektivität zur Verfügung stellen.
 +
-image::../media/nodes_page_overview_tab_extended.png[Knotenübersicht Erweitert]
+image:nodes_page_overview_tab_extended.png["Knotenübersicht Erweitert"]
 
 +
 Im Abschnitt „Meldungen“ der Registerkarte „Übersicht“ werden alle aktiven Meldungen für den Node angezeigt.
@@ -56,7 +56,7 @@ Im Abschnitt „Meldungen“ der Registerkarte „Übersicht“ werden alle akti
 +
 .. Sehen Sie sich die CPU-Auslastung und die Speicherdiagramme an, um den Prozentsatz der CPU- und Arbeitsspeicherauslastung im Laufe der Zeit zu ermitteln. Um ein anderes Zeitintervall anzuzeigen, wählen Sie eines der Steuerelemente oberhalb des Diagramms oder Diagramms aus. Sie können die verfügbaren Informationen für Intervalle von 1 Stunde, 1 Tag, 1 Woche oder 1 Monat anzeigen. Sie können auch ein benutzerdefiniertes Intervall festlegen, mit dem Sie Datum und Zeitbereiche festlegen können.
 +
-image::../media/nodes_page_hardware_tab_graphs.png[Hardware-Grafiken]
+image:nodes_page_hardware_tab_graphs.png["Hardware-Grafiken"]
 
 .. Blättern Sie nach unten, um die Komponententabelle für das Gerät anzuzeigen. Diese Tabelle enthält Informationen, z. B. den Modellnamen der Appliance, Controller-Namen, Seriennummern und IP-Adressen und den Status der einzelnen Komponenten.
 +
@@ -67,7 +67,7 @@ NOTE: Einige Felder, wie BMC IP- und Computing-Hardware des Rechencontrollers, w
 Komponenten für Storage-Shelfs und Erweiterungs-Shelfs, wenn sie Teil der Installation sind, werden in einer separaten Tabelle unter der Appliance-Tabelle aufgeführt.
 
 +
-image::../media/nodes_page_hardware_tab_for_appliance.png[Registerkarte Knoten Hardware für Appliance]
+image:nodes_page_hardware_tab_for_appliance.png["Registerkarte Knoten Hardware für Appliance"]
 
 +
 [cols="1a,2a"]
@@ -375,12 +375,12 @@ Wenn ein Status nicht „nominal“ lautet, prüfen Sie alle aktuellen Warnmeldu
 Das Diagramm „Netzwerkverkehr“ bietet eine Zusammenfassung des gesamten Netzwerkverkehr.
 
 +
-image::../media/nodes_page_network_traffic_graph.png[Knoten Seite Netzwerk Verkehr Diagramm]
+image:nodes_page_network_traffic_graph.png["Knoten Seite Netzwerk Verkehr Diagramm"]
 
 +
 .. Lesen Sie den Abschnitt Netzwerkschnittstellen.
 +
-image::../media/nodes_page_network_interfaces.png[Knoten Seite Netzwerkschnittstellen]
+image:nodes_page_network_interfaces.png["Knoten Seite Netzwerkschnittstellen"]
 
 +
 Verwenden Sie die folgende Tabelle mit den Werten in der Spalte *Geschwindigkeit* in der Tabelle Netzwerkschnittstellen, um festzustellen, ob die 10/25-GbE-Netzwerkanschlüsse auf dem Gerät für den aktiven/Backup-Modus oder den LACP-Modus konfiguriert wurden.
@@ -468,16 +468,16 @@ Weitere Informationen zum Konfigurieren der 10/25-GbE-Ports finden Sie unter htt
 Die Tabellen „Empfangen und Senden“ zeigen, wie viele Bytes und Pakete über jedes Netzwerk empfangen und gesendet wurden, sowie andere Empfangs- und Übertragungs-Metriken.
 
 +
-image::../media/nodes_page_network_communication.png[Knoten Seite Netzwerk Komm]
+image:nodes_page_network_communication.png["Knoten Seite Netzwerk Komm"]
 
 
 
 . Wählen Sie *Storage* aus, um Diagramme anzuzeigen, die den Prozentsatz des im Zeitverlauf für Objektdaten und Objektmetadaten verwendeten Speichers sowie Informationen zu Festplattengeräten, Volumes und Objektspeichern anzeigen.
 +
-image::../media/nodes_page_storage_used_object_data.png[Speicher Verwendet - Objektdaten]
+image:nodes_page_storage_used_object_data.png["Speicher Verwendet - Objektdaten"]
 
 +
-image::../media/storage_used_object_metadata.png[Verwendeter Storage: Objekt-Metadaten]
+image:storage_used_object_metadata.png["Verwendeter Storage: Objekt-Metadaten"]
 
 +
 .. Blättern Sie nach unten, um die verfügbaren Speichermengen für jedes Volume und jeden Objektspeicher anzuzeigen.
@@ -488,7 +488,7 @@ Der weltweite Name jeder Festplatte stimmt mit der WWID (World-Wide Identifier) 
 Um Ihnen bei der Auswertung von Datenträger-Lese- und Schreibstatistiken zu Volume-Mount-Punkten zu helfen, entspricht der erste Teil des Namens, der in der Spalte *Name* der Tabelle Disk Devices (d. h. _sdc_, _sdd_, _sde_ usw.) in der Spalte *Gerät* der Tabelle Volumes angezeigt wird.
 
 +
-image::../media/nodes_page_storage_tables.png[Knoten Seitentabellen]
+image:nodes_page_storage_tables.png["Knoten Seitentabellen"]
 
 
 
@@ -512,7 +512,7 @@ Im Abschnitt Node-Informationen auf der Registerkarte Übersicht werden zusammen
 ** *Hic*: Einer der physischen 10-, 25- oder 100-GbE-Ports auf dem Gerät. Diese Ports können miteinander verbunden und mit dem StorageGRID-Grid-Netzwerk (eth0) und dem Client-Netzwerk (eth2) verbunden werden.
 ** *mtc*: Einer der physischen 1-GbE-Ports auf der Appliance. Eine oder mehrere mtc-Schnittstellen bilden die Admin-Netzwerkschnittstelle (eth1). Für den Techniker im Rechenzentrum können Sie andere mtc-Schnittstellen zur temporären lokalen Konnektivität zur Verfügung stellen.
 +
-image::../media/nodes_page_overview_tab_services_appliance.png[Registerkarte Knoten der Registerkarte Überblick für Services Appliance]
+image:nodes_page_overview_tab_services_appliance.png["Registerkarte Knoten der Registerkarte Überblick für Services Appliance"]
 
 
 
@@ -523,11 +523,11 @@ Im Abschnitt „Meldungen“ der Registerkarte „Übersicht“ werden alle akti
 +
 .. Sehen Sie sich die CPU-Auslastung und die Speicherdiagramme an, um den Prozentsatz der CPU- und Arbeitsspeicherauslastung im Laufe der Zeit zu ermitteln. Um ein anderes Zeitintervall anzuzeigen, wählen Sie eines der Steuerelemente oberhalb des Diagramms oder Diagramms aus. Sie können die verfügbaren Informationen für Intervalle von 1 Stunde, 1 Tag, 1 Woche oder 1 Monat anzeigen. Sie können auch ein benutzerdefiniertes Intervall festlegen, mit dem Sie Datum und Zeitbereiche festlegen können.
 +
-image::../media/nodes_page_hardware_tab_graphs_services_appliance.png[Knoten Seite Hardware Registerkarte Diagramme für Services Appliance]
+image:nodes_page_hardware_tab_graphs_services_appliance.png["Knoten Seite Hardware Registerkarte Diagramme für Services Appliance"]
 
 .. Blättern Sie nach unten, um die Komponententabelle für das Gerät anzuzeigen. Diese Tabelle enthält Informationen, z. B. den Modellnamen, die Seriennummer, die Controller-Firmware-Version und den Status jeder Komponente.
 +
-image::../media/nodes_page_hardware_tab_services_appliance.png[Registerkarte Knoten Hardware für Service Appliance]
+image:nodes_page_hardware_tab_services_appliance.png["Registerkarte Knoten Hardware für Service Appliance"]
 
 +
 [cols="1a,2a"]
@@ -624,12 +624,12 @@ Wenn ein Status nicht „nominal“ lautet, prüfen Sie alle aktuellen Warnmeldu
 Das Diagramm „Netzwerkverkehr“ bietet eine Zusammenfassung des gesamten Netzwerkverkehr.
 
 +
-image::../media/nodes_page_network_traffic_graph.png[Knoten Seite Netzwerk Verkehr Diagramm]
+image:nodes_page_network_traffic_graph.png["Knoten Seite Netzwerk Verkehr Diagramm"]
 
 +
 .. Lesen Sie den Abschnitt Netzwerkschnittstellen.
 +
-image::../media/nodes_page_hardware_tab_network_services_appliance.png[Registerkarte Knoten Hardware Network Services Appliance]
+image:nodes_page_hardware_tab_network_services_appliance.png["Registerkarte Knoten Hardware Network Services Appliance"]
 
 +
 Verwenden Sie die folgende Tabelle mit den Werten in der Spalte *Geschwindigkeit* in der Tabelle Netzwerkschnittstellen, um festzustellen, ob die vier 40/100-GbE-Netzwerkanschlüsse auf der Appliance für den aktiven/Backup-Modus oder den LACP-Modus konfiguriert wurden.
@@ -714,12 +714,12 @@ Aktiv/Backup
 Die Tabellen „Empfangen und Senden“ zeigen, wie viele Bytes und Pakete über jedes Netzwerk empfangen und gesendet wurden, sowie andere Empfangs- und Übertragungstabellen.
 
 +
-image::../media/nodes_page_network_communication.png[Knoten Seite Netzwerk Komm]
+image:nodes_page_network_communication.png["Knoten Seite Netzwerk Komm"]
 
 
 
 . Wählen Sie *Storage* aus, um Informationen zu den Festplattengeräten und Volumes auf der Services Appliance anzuzeigen.
 +
-image::../media/nodes_page_storage_tab_services_appliance.png[Knoten Seite Speicher Registerkarte Dienste Appliance]
+image:nodes_page_storage_tab_services_appliance.png["Knoten Seite Speicher Registerkarte Dienste Appliance"]
 
 

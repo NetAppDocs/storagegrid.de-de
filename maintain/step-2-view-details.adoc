@@ -27,19 +27,19 @@ CAUTION: Wenn Sie eine nicht verbundene Website-Stilllegung durchführen, kann I
 .Schritte
 . Überprüfen Sie ab Schritt 2 (Details anzeigen) alle Warnungen im Zusammenhang mit dem zu entfernenden Standort.
 +
-image::../media/decommission_site_step_2_site_warnings.png[Deaktivieren Sie Die Warnungen Zu Standortschritt 2]
+image:decommission_site_step_2_site_warnings.png["Deaktivieren Sie Die Warnungen Zu Standortschritt 2"]
 
 +
 In diesen Fällen wird eine Warnung angezeigt:
 
 +
 ** Der Standort enthält einen Gateway-Node. Wenn derzeit S3-Clients eine Verbindung zu diesem Node herstellen, müssen Sie einen gleichwertigen Node an einem anderen Standort konfigurieren. Vergewissern Sie sich, dass Clients eine Verbindung zum Ersatz-Node herstellen können, bevor Sie die Deaktivierung durchführen.
-** Die Site enthält eine Mischung aus verbundenen (image:../media/icon_alert_green_checkmark.png["Symbol Warnung Grün Häkchen"]) und getrennten Knoten (image:../media/icon_alarm_gray_administratively_down.png["Icon Alarm Grau Administrativ Nach Unten"] oder image:../media/icon_alarm_blue_unknown.png["Symbolalarm Blau Unbekannt"]). Bevor Sie diesen Standort entfernen können, müssen Sie alle Offline-Nodes wieder in den Online-Modus versetzen.
+** Die Website enthält eine Mischung aus verbundenen (image:icon_alert_green_checkmark.png["Symbol Warnung Grün Häkchen"]) und getrennten Knoten (image:icon_alarm_gray_administratively_down.png["Icon Alarm Grau Administrativ Nach Unten"] oder image:icon_alarm_blue_unknown.png["Symbolalarm Blau Unbekannt"]). Vor dem Entfernen dieser Website müssen alle Offline-Knoten wieder online sein.
 
 
 . Überprüfen Sie die Details der zu entfernenden Site.
 +
-image::../media/decommission_site_step_2_view_details.png[Deaktivieren Sie Die Option Site Schritt 2 Anzeigen Details]
+image:decommission_site_step_2_view_details.png["Deaktivieren Sie Die Option Site Schritt 2 Anzeigen Details"]
 
 +
 Für den ausgewählten Standort sind folgende Informationen enthalten:
@@ -54,9 +54,9 @@ Für den ausgewählten Standort sind folgende Informationen enthalten:
 
 ** Node-Namen, -Typen und -Verbindungsstatus:
 +
-*** image:../media/icon_alert_green_checkmark.png["Symbol Warnung Grün Häkchen"] (Verbunden)
-*** image:../media/icon_alarm_gray_administratively_down.png["Icon Alarm Grau Administrativ Nach Unten"] (Administrativ Abwärts)
-*** image:../media/icon_alarm_blue_unknown.png["Symbolalarm Blau Unbekannt"] (Unbekannt)
+*** image:icon_alert_green_checkmark.png["Symbol Warnung Grün Häkchen"] (Verbunden)
+*** image:icon_alarm_gray_administratively_down.png["Icon Alarm Grau Administrativ Nach Unten"] (Administrativ eingestellt)
+*** image:icon_alarm_blue_unknown.png["Symbolalarm Blau Unbekannt"] (Unbekannt)
 
 
 ** Details zu jedem Node:
@@ -69,7 +69,7 @@ Für den ausgewählten Standort sind folgende Informationen enthalten:
 
 . Bewerten Sie im Abschnitt Details für andere Standorte auf der Seite, wie viel Platz auf den anderen Standorten in Ihrem Raster verfügbar ist.
 +
-image::../media/decommission_site_step_2_view_details_for_other_sites.png[Deaktivieren Sie Site Schritt 2 Anzeigen Details für andere Standorte]
+image:decommission_site_step_2_view_details_for_other_sites.png["Deaktivieren Sie Site Schritt 2 Anzeigen Details für andere Standorte"]
 
 +
 Wenn Sie eine verbundene Website ausmustern und mithilfe von ILM Objektdaten von der ausgewählten Site verschieben (statt sie zu löschen), müssen Sie sicherstellen, dass die anderen Standorte über genügend Kapazität für die verschobenen Daten verfügen und dass genügend Kapazität für zukünftiges Wachstum verfügbar ist.

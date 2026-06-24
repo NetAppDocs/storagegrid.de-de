@@ -17,7 +17,7 @@ Die Registerkarte Load Balancer wird für Admin-Nodes und Gateway-Nodes, jeden S
 
 Wenn kein I/O durch den Load Balancer-Service ausgeführt wird oder kein Load Balancer konfiguriert ist, wird in den Diagrammen „Keine Daten“ angezeigt.
 
-image::../media/nodes_page_load_balancer_tab.png[Registerkarte „Balancer Für Knoten“]
+image:nodes_page_load_balancer_tab.png["Registerkarte „Balancer Für Knoten“"]
 
 
 

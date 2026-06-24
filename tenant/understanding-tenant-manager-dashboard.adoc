@@ -18,7 +18,7 @@ NOTE: Die logische Größe aller Objekte, die zu diesem Mandanten gehören, umfa
 
 Wenn Objekte hochgeladen wurden, sieht das Dashboard wie das folgende Beispiel aus:
 
-image::../media/tenant_dashboard_with_buckets.png[Dashboard – Bucket-Liste]
+image:tenant_dashboard_with_buckets.png["Dashboard – Bucket-Liste"]
 
 
 
@@ -48,11 +48,11 @@ CAUTION: Die Quotennutzung basiert auf internen Schätzungen und kann in einigen
 Sie können den Mauszeiger über eines der Diagrammsegmente platzieren, um den gesamten Speicherplatz anzuzeigen, der von diesem Bucket oder Container verbraucht wird.
 
 +
-image::../media/tenant_dashboard_storage_usage_segment.png[Balkendiagramm Segment]
+image:tenant_dashboard_storage_usage_segment.png["Balkendiagramm Segment"]
 
 * Zur Übereinstimmung mit dem Balkendiagramm, eine Liste der größten Buckets oder Container, einschließlich der Gesamtzahl der Objektdaten und der Anzahl der Objekte für jeden Bucket oder Container.
 +
-image::../media/tenant_dashboard_buckets.png[Mandanten-Dashboard-Buckets]
+image:tenant_dashboard_buckets.png["Mandanten-Dashboard-Buckets"]
 
 +
 Wenn ein Mandant mehr als neun Buckets oder Container enthält, werden alle anderen Buckets oder Container zu einem Eintrag im unteren Teil der Liste zusammengefasst.
@@ -89,6 +89,6 @@ Wenn für einen Bucket keine Begrenzung festgelegt ist, ist seine Kapazität unb
 
 Wenn Sie mit Grid Manager einen oder mehrere Endpunkte für die Verwendung mit Plattformdiensten konfiguriert haben, zeigt das Tenant Manager-Dashboard eine Warnmeldung an, wenn in den letzten sieben Tagen Endpunktfehler aufgetreten sind.
 
-image::../media/tenant_dashboard_endpoint_error.png[Dashboard mit Endpunkt-Meldung]
+image:tenant_dashboard_endpoint_error.png["Dashboard mit Endpunkt-Meldung"]
 
 Um Details zu sehenlink:troubleshooting-platform-services-endpoint-errors.html["Fehler am Endpunkt der Plattformdienste"], wählen Sie *Endpoints*, um die Seite Endpoints anzuzeigen.

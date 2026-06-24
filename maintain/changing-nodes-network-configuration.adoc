@@ -60,7 +60,7 @@ Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `
 Das Hauptmenü wird angezeigt.
 
 +
-image::../media/change_ip_tool_main_menu.png[Screenshot mit Willkommensbildschirm des Change IP-Tools]
+image:change_ip_tool_main_menu.png["Screenshot mit Willkommensbildschirm des Change IP-Tools"]
 
 . Wählen Sie optional *1* aus, um die zu aktualisierenden Knoten auszuwählen. Wählen Sie dann eine der folgenden Optionen aus:
 +
@@ -111,7 +111,7 @@ Ihre Änderungen werden so lange gespeichert, bis sie gelöscht oder angewendet 
 +
 ** *5*: Zeigt Edits in der Ausgabe an, die isoliert sind, um nur das geänderte Element anzuzeigen. Änderungen werden grün (Ergänzungen) oder rot (Löschungen) hervorgehoben, wie in der Beispielausgabe dargestellt:
 +
-image::../media/change_ip_tool_edit_ip_mask_sample_output.png[Screenshot, der durch umgebenden Text beschrieben wird]
+image:change_ip_tool_edit_ip_mask_sample_output.png["Screenshot, der durch umgebenden Text beschrieben wird"]
 
 ** *6*: Zeigt Änderungen in der Ausgabe an, die die vollständige Konfiguration anzeigen. Änderungen werden grün (Ergänzungen) oder rot (Löschungen) markiert.
 +
@@ -128,13 +128,13 @@ Durch diese Validierung wird sichergestellt, dass die Regeln für Grid-, Admin- 
 In diesem Beispiel ergab die Validierung Fehler.
 
 +
-image::../media/change_ip_tool_validate_sample_error_messages.gif[Screenshot, der durch umgebenden Text beschrieben wird]
+image:change_ip_tool_validate_sample_error_messages.gif["Screenshot, der durch umgebenden Text beschrieben wird"]
 
 +
 In diesem Beispiel wurde die Validierung erfolgreich bestanden.
 
 +
-image::../media/change_ip_tool_validate_sample_passed_messages.gif[Screenshot, der durch umgebenden Text beschrieben wird]
+image:change_ip_tool_validate_sample_passed_messages.gif["Screenshot, der durch umgebenden Text beschrieben wird"]
 
 . Wählen Sie nach Abschluss der Validierung eine der folgenden Optionen:
 +

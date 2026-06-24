@@ -20,7 +20,7 @@ Sie müssen mindestens einen Standort erstellen, wenn Sie StorageGRID installier
 Fügen Sie so viele zusätzliche Standorte wie für Ihre Grid-Topologie hinzu. Sie können bis zu 16 Standorte hinzufügen.
 
 +
-image::../media/3_gmi_installer_sites_page.gif[Dieses Bild wird durch den umgebenden Text erläutert.]
+image:3_gmi_installer_sites_page.gif["Dieses Bild wird durch den umgebenden Text erläutert."]
 
 . Klicken Sie Auf *Weiter*.
 

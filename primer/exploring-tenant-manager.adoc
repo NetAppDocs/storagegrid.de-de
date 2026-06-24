@@ -28,7 +28,7 @@ Nachdem ein Grid-Administrator ein Mandantenkonto erstellt hat, indem er den Gri
 
 Der über dem Balkendiagramm angezeigte Wert ist eine Summe des Speicherplatzes, der für alle Buckets oder Container des Mandanten verwendet wird. Wurde zum Zeitpunkt der Kontoerstellung die maximale Anzahl an Gigabyte, Terabyte oder Petabyte angegeben, so wird auch die Menge des verwendeten Kontingents und der verbleibenden Menge angezeigt.
 
-image::../media/tenant_dashboard_with_buckets.png[Mandanten-Manager Dashboard]
+image:tenant_dashboard_with_buckets.png["Mandanten-Manager Dashboard"]
 
 
 

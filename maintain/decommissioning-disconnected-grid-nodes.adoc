@@ -24,7 +24,7 @@ Möglicherweise müssen Sie einen Knoten außer Betrieb setzen, der derzeit nich
 
 
 .Über diese Aufgabe
-Sie können getrennte Knoten identifizieren, indem Sie in der Spalte *Health* nach dem blauen Symbol Unbekannt oder dem grauen Symbol administrativ unten image:../media/icon_alarm_gray_administratively_down.png["Symbol administrativ nicht verfügbar"]suchenimage:../media/icon_alarm_blue_unknown.png["Symbol Unbekannt"].
+Nicht verbundene Knoten lassen sich anhand des blauen Symbols „Unbekannt“ image:icon_alarm_blue_unknown.png["Symbol Unbekannt"] oder des grauen Symbols „Administrativ deaktiviert“ image:icon_alarm_gray_administratively_down.png["Symbol administrativ nicht verfügbar"] in der Spalte *Status* erkennen.
 
 Beachten Sie vor dem Stilllegen getrennter Nodes Folgendes:
 

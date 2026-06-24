@@ -18,7 +18,7 @@ Das StorageGRID System kann weiter betrieben werden, wenn Teile des Grids nicht 
 
 Um Benachrichtigungen zu erhalten, sobald sie ausgelöst werden, können Sie https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/setting-up-email-notifications-for-alerts.html["Richten Sie E-Mail-Benachrichtigungen für Warnmeldungen ein"^] oder link:using-snmp-monitoring.html["Konfigurieren Sie SNMP-Traps"].
 
-image::../media/health_status_card.png[Zustandskarte – Dashboard]
+image:health_status_card.png["Zustandskarte – Dashboard"]
 
 Wenn Probleme bestehen, werden Links angezeigt, mit denen Sie weitere Details anzeigen können:
 
@@ -66,7 +66,7 @@ Wenn ein oder mehrere Nodes vom Grid getrennt werden, können kritische StorageG
 
 
  a| 
-image:../media/icon_alarm_blue_unknown.png["Blaues Fragezeichen-Symbol"]
+image:icon_alarm_blue_unknown.png["Blaues Fragezeichen-Symbol"]
  a| 
 *Nicht verbunden - Unbekannt*
 
@@ -83,7 +83,7 @@ Beispielsweise müssen Sie einen Dienst neu starten, der angehalten wurde, oder 
 
 
  a| 
-image:../media/icon_alarm_gray_administratively_down.png["Graues Fragensymbol"]
+image:icon_alarm_gray_administratively_down.png["Graues Fragensymbol"]
  a| 
 *Nicht verbunden - Administrativ unten*
 
@@ -100,7 +100,7 @@ Wenn eine oder mehrere Warnungen aktiv sind, <<Anzeige aktueller und aufgelöste
 
 
  a| 
-image:../media/icon_alert_green_checkmark.png["Symbol Warnung grünes Häkchen"]
+image:icon_alert_green_checkmark.png["Symbol Warnung grünes Häkchen"]
  a| 
 * Verbunden*
 
@@ -140,11 +140,11 @@ Schweregrad
  a| 
 Der Schweregrad der Meldung. Wenn bei aktuellen Warnmeldungen mehrere Warnmeldungen gruppiert werden, zeigt die Titelzeile an, wie viele Instanzen dieser Warnmeldung bei jedem Schweregrad auftreten.
 
-image:../media/icon_alert_red_critical.png["Symbol Warnung Rot Kritisch"] *Kritisch*: Es existiert eine anormale Bedingung, die den normalen Betrieb eines StorageGRID-Knotens oder -Dienstes gestoppt hat. Sie müssen das zugrunde liegende Problem sofort lösen. Wenn das Problem nicht behoben ist, kann es zu Serviceunterbrechungen und Datenverlusten kommen.
+image:icon_alert_red_critical.png["Symbol Warnung Rot Kritisch"]*Kritisch*: Es liegt ein anormaler Zustand vor, der den normalen Betrieb eines StorageGRID Knotens oder Dienstes gestoppt hat. Das zugrunde liegende Problem muss umgehend behoben werden. Kommt es zu keiner Lösung, können Dienstausfälle und Datenverlust die Folge sein.
 
-image:../media/icon_alert_orange_major.png["Icon Alert Orange Major"] *Major*: Es gibt einen anormalen Zustand, der entweder den aktuellen Betrieb beeinträchtigt oder sich dem Schwellenwert für einen kritischen Alarm nähert. Sie sollten größere Warnmeldungen untersuchen und alle zugrunde liegenden Probleme beheben, um sicherzustellen, dass die anormale Bedingung den normalen Betrieb eines StorageGRID Node oder Service nicht beendet.
+image:icon_alert_orange_major.png["Icon Alert Orange Major"]*Schwerwiegend*: Es liegt ein anormaler Zustand vor, der entweder den laufenden Betrieb beeinträchtigt oder sich dem Schwellenwert für eine kritische Warnung nähert. Es empfiehlt sich, schwerwiegende Warnungen zu untersuchen und zugrunde liegende Probleme zu beheben, damit der anormale Zustand den normalen Betrieb eines StorageGRID Knotens oder Dienstes nicht unterbricht.
 
-image:../media/icon_alert_yellow_minor.png["Symbol Alarm Gelb Minor"] *Minor*: Das System funktioniert normal, aber es gibt einen ungewöhnlichen Zustand, der die Fähigkeit des Systems beeinflussen könnte, wenn es weitergeht. Sie sollten kleinere Warnmeldungen überwachen und beheben, die nicht von selbst geklärt werden, um sicherzustellen, dass sie nicht zu einem schwerwiegenderen Problem führen.
+image:icon_alert_yellow_minor.png["Symbol Alarm Gelb Minor"]*Geringfügig*: Das System funktioniert normal, es besteht jedoch eine Störung, die die Funktionsfähigkeit des Systems beeinträchtigen könnte, wenn sie anhält. Geringfügige Warnmeldungen, die nicht von selbst verschwinden, sollten überwacht und behoben werden, damit daraus kein schwerwiegenderes Problem entsteht.
 
 
 
@@ -208,9 +208,9 @@ Die Seite Aktuelle Warnmeldungen wird alle zwei Minuten aktualisiert.
 
 
 
-. Wählen Sie zum erweitern von Warengruppen das Menü ausimage:../media/icon_alert_caret_down.png["Nach unten fahrlässiges Symbol"]. Um einzelne Warnungen in einer Gruppe auszublenden, wählen Sie das up-Caret ausimage:../media/icon_alert_caret_up.png["Nach-oben-Symbol"], oder wählen Sie den Namen der Gruppe aus.
+. Um Gruppen von Benachrichtigungen zu erweitern, wählen Sie den Pfeil nach unten image:icon_alert_caret_down.png["Nach unten fahrlässiges Symbol"]. Um einzelne Benachrichtigungen in einer Gruppe zu reduzieren, wählen Sie den Pfeil nach oben image:icon_alert_caret_up.png["Nach-oben-Symbol"] oder den Namen der Gruppe.
 . Um einzelne Warnungen anstelle von Warengruppen anzuzeigen, deaktivieren Sie das Kontrollkästchen *Gruppenwarnungen*.
-. Um aktuelle Warnmeldungen oder Warnungsgruppen zu sortieren, wählen Sie die nach-oben-/nach-unten-Pfeile image:../media/icon_alert_sort_column.png["Sortieren Sie das Symbol für die Pfeile"] in jeder Spaltenüberschrift aus.
+. Um aktuelle Benachrichtigungen oder Benachrichtigungsgruppen zu sortieren, die Auf-/Abwärtspfeile image:icon_alert_sort_column.png["Sortieren Sie das Symbol für die Pfeile"] in den jeweiligen Spaltenüberschriften auswählen.
 +
 ** Wenn *Group Alerts* ausgewählt ist, werden sowohl die Warnungsgruppen als auch die einzelnen Alarme innerhalb jeder Gruppe sortiert. Sie können beispielsweise die Warnungen in einer Gruppe nach *Zeit ausgelöst* sortieren, um die aktuellste Instanz eines bestimmten Alarms zu finden.
 ** Wenn *Group Alerts* gelöscht wird, wird die gesamte Liste der Alerts sortiert. Beispielsweise können Sie alle Warnungen nach *Node/Site* sortieren, um alle Warnungen anzuzeigen, die einen bestimmten Knoten betreffen.

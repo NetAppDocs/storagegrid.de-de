@@ -82,7 +82,7 @@ Nach ein paar Minuten:
 
 
 +
-image::../media/delete-bucket-objects-in-progress.png[Screenshot mit den zu löschenden Bucket-Objekten]
+image:delete-bucket-objects-in-progress.png["Screenshot mit den zu löschenden Bucket-Objekten"]
 
 . Wählen Sie, wie erforderlich, während der Vorgang ausgeführt wird, *Löschen von Objekten stoppen*, um den Prozess anzuhalten. Wählen Sie dann optional *Objekte im Bucket löschen* aus, um den Prozess fortzusetzen.
 +
@@ -93,7 +93,7 @@ Wenn Sie *Löschen von Objekten stoppen* auswählen, wird der Bucket in den Schr
 Wenn der Bucket leer ist, wird das Statusbanner aktualisiert, der Bucket bleibt jedoch weiterhin schreibgeschützt.
 
 +
-image::../media/delete-bucket-objects-complete.png[Screenshot mit allen gelöschten Bucket-Objekten]
+image:delete-bucket-objects-complete.png["Screenshot mit allen gelöschten Bucket-Objekten"]
 
 . Führen Sie einen der folgenden Schritte aus:
 +

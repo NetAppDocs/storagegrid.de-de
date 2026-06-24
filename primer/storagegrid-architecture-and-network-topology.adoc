@@ -29,7 +29,7 @@ Das StorageGRID -System kann an einem einzelnen oder an mehreren Rechenzentrumss
 
 Bei einer Implementierung über einen einzigen Standort werden die Infrastruktur und der Betrieb des StorageGRID Systems zentralisiert.
 
-image::../media/data_center_site_single.png[Einzelner Datacenter-Standort]
+image:data_center_site_single.png["Einzelner Datacenter-Standort"]
 
 
 
@@ -39,7 +39,7 @@ In einer Implementierung mit mehreren Standorten können an jedem Standort unter
 
 Die Standorte befinden sich häufig an geografisch unterschiedlichen Standorten in unterschiedlichen Störungsbereichen, beispielsweise an einer Erdbebenverwerfungslinie oder in einem Überschwemmungsgebiet.  Datenfreigabe und Notfallwiederherstellung werden durch die automatisierte Verteilung der Daten an andere Standorte erreicht.
 
-image::../media/data_center_sites_multiple.png[Mehrere Datacenter-Standorte]
+image:data_center_sites_multiple.png["Mehrere Datacenter-Standorte"]
 
 Innerhalb eines einzigen Rechenzentrums können auch mehrere logische Standorte vorhanden sein, um die Verwendung verteilter Replikation und Erasure Coding für eine höhere Verfügbarkeit und Ausfallsicherheit zu ermöglichen.
 
@@ -55,7 +55,7 @@ Bei einer Implementierung an einem Standort oder an mehreren Standorten können 
 
 Dieses Diagramm zeigt, wie Grid-Nodes innerhalb eines StorageGRID Systems angeordnet sind.
 
-image::../media/grid_nodes_and_components.png[Diagramm mit umgebenden Text beschrieben]
+image:grid_nodes_and_components.png["Diagramm mit umgebenden Text beschrieben"]
 
 S3 Clients speichern Objekte in StorageGRID und rufen sie ab. Andere Clients werden verwendet, um E-Mail-Benachrichtigungen zu senden, auf die StorageGRID-Managementoberfläche zuzugreifen und optional auf die Audit-Freigabe zuzugreifen.
 

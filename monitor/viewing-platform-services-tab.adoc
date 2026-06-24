@@ -15,6 +15,6 @@ Die Registerkarte Plattformdienste enthält Informationen über alle S3-Plattfor
 
 Die Registerkarte Plattformdienste wird für jede Site angezeigt. Diese Registerkarte enthält Informationen zu S3-Plattformdiensten wie CloudMirror-Replizierung und den Suchintegrationsdienst. In Diagrammen auf dieser Registerkarte werden Metriken angezeigt, z. B. die Anzahl der ausstehenden Anfragen, die Abschlussrate der Anfrage und die Rate bei Ausfällen von Anfragen.
 
-image::../media/nodes_page_site_level_platform_services.gif[Knoten Seiten Plattform-Services auf Standort-Ebene]
+image:nodes_page_site_level_platform_services.gif["Knoten Seiten Plattform-Services auf Standort-Ebene"]
 
 Weitere Informationen zu S3-Plattformservices, einschließlich Details zur Fehlerbehebung, finden Sie im link:../admin/index.html["Anweisungen für die Administration von StorageGRID"].

@@ -26,6 +26,6 @@ Informationen zum Ändern von IP-Adressen finden Sie unter link:../maintain/conf
 Die IP-Adressen für diesen Grid-Node werden in einer Tabelle aufgeführt.
 
 +
-image::../media/nodes_page_overview_tab_extended.png[Knoten Seite IP-Adressen]
+image:nodes_page_overview_tab_extended.png["Knoten Seite IP-Adressen"]
 
 

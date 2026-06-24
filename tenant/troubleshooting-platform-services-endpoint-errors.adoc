@@ -19,13 +19,13 @@ Wenn StorageGRID versucht, mit einem Endpunkt für Plattformdienste zu kommunizi
 
 Wenn in den letzten 7 Tagen Fehler am Endpunkt der Plattformdienste aufgetreten sind, zeigt das Mandantenmanager-Dashboard eine Warnmeldung an. Auf der Seite Plattform-Services-Endpunkte finden Sie weitere Details zum Fehler.
 
-image::../media/tenant_dashboard_endpoint_error.png[endpunktfehlermeldung auf dem Dashboard]
+image:tenant_dashboard_endpoint_error.png["endpunktfehlermeldung auf dem Dashboard"]
 
 Der gleiche Fehler, der auf dem Dashboard angezeigt wird, wird auch oben auf der Seite „Endpunkte für Plattformdienste“ angezeigt. So zeigen Sie eine detailliertere Fehlermeldung an:
 
 .Schritte
 . Wählen Sie in der Liste der Endpunkte den Endpunkt aus, der den Fehler hat.
-. Wählen Sie auf der Seite Details zum Endpunkt die Option *Verbindung* aus. Auf dieser Registerkarte wird nur der letzte Fehler für einen Endpunkt angezeigt und gibt an, wie lange der Fehler aufgetreten ist. Fehler, die das rote X-Symbol enthaltenimage:../media/icon_alert_red_critical.png["Rotes X-Symbol"], traten innerhalb der letzten 7 Tage auf.
+. Auf der Seite mit den Endpunktdetails die Option *Verbindung* auswählen. Diese Registerkarte zeigt nur den letzten Fehler für einen Endpunkt an und gibt an, wie lange der Fehler zurückliegt. Fehler, die das rote X-Symbol image:icon_alert_red_critical.png["Rotes X-Symbol"] enthalten, sind innerhalb der letzten 7 Tage aufgetreten.
 
 
 

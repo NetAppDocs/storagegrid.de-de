@@ -39,7 +39,7 @@ Die Seite Grid Federation wird angezeigt.
 
 
 +
-image::../media/grid-federation-connections-tab.png[Registerkarte „Netzverbundverbindungen“]
+image:grid-federation-connections-tab.png["Registerkarte „Netzverbundverbindungen“"]
 
 . Um grundlegende Informationen für alle Mandantenkonten in diesem Raster anzuzeigen, die über die Berechtigung *Grid Federation connection* verfügen, wählen Sie die Registerkarte *zulässige Mieter*.
 +
@@ -51,7 +51,7 @@ image::../media/grid-federation-connections-tab.png[Registerkarte „Netzverbund
 ** Wählen Sie einen zulässigen Mandanten und link:../admin/grid-federation-manage-tenants.html["Entfernen Sie die Berechtigung"].
 ** Überprüfen Sie die Grid-übergreifende Replikation, und löschen Sie ggf. den letzten Fehler. Siehe link:../admin/grid-federation-troubleshoot.html["Fehler beim Grid-Verbund beheben"].
 +
-image::../media/grid-federation-permitted-tenants-tab.png[Registerkarte „Grid Federation Permitted Tenants“]
+image:grid-federation-permitted-tenants-tab.png["Registerkarte „Grid Federation Permitted Tenants“"]
 
 
 
@@ -82,7 +82,7 @@ Auf der Detailseite für die Verbindung können Sie:
 ** link:../admin/grid-federation-manage-tenants.html["Entfernen Sie die Berechtigung eines Mandanten"] Um die Verbindung zu verwenden.
 ** Überprüfen Sie auf Grid-übergreifende Replikationsfehler, und löschen Sie den letzten Fehler. Siehe link:../admin/grid-federation-troubleshoot.html["Fehler beim Grid-Verbund beheben"].
 +
-image::../media/grid-federation-permitted-tenants-tab-for-connection.png[Grid-Federation-allouned-Tenants-tab-for-connection]
+image:grid-federation-permitted-tenants-tab-for-connection.png["Grid-Federation-allouned-Tenants-tab-for-connection"]
 
 
 
@@ -94,7 +94,7 @@ image::../media/grid-federation-permitted-tenants-tab-for-connection.png[Grid-Fe
 ** link:../admin/grid-federation-manage-connection.html["Verbindungszertifikate drehen"].
 ** Wählen Sie *Server* oder *Client*, um das zugehörige Zertifikat anzuzeigen oder herunterzuladen oder das Zertifikat PEM zu kopieren.
 +
-image::../media/grid-federation-certificates-tab.png[Grid-Federation-Certificates-tab]
+image:grid-federation-certificates-tab.png["Grid-Federation-Certificates-tab"]
 
 
 

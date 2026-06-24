@@ -37,7 +37,7 @@ NOTE: Sie müssen über SANtricity-Firmware 8.70 oder höher verfügen, um mit d
 
 Die Registerkarte zeigt die Startseite von SANtricity System Manager an.
 
-image::../media/nodes_page_santricity_tab.png[Knoten Seite SANtricity Registerkarte]
+image:nodes_page_santricity_tab.png["Knoten Seite SANtricity Registerkarte"]
 
 
 NOTE: Über den Link SANtricity System Manager können Sie den SANtricity System Manager in einem neuen Browser-Fenster öffnen und so die Ansicht erleichtern.

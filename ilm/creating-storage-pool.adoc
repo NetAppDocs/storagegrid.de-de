@@ -64,7 +64,7 @@ Die Speicherklasse _umfasst alle Speicherklassen_ und umfasst alle Speicher-Node
 NOTE: Sie werden gewarnt, wenn Sie mehr als einen Eintrag mit unterschiedlichen Speicherqualitäten für einen Standort hinzufügen.
 
 +
-Um einen Eintrag zu entfernen, wählen Sie das Löschen-Symbol image:../media/icon-x-to-remove.png["Symbol Löschen"].
+Um einen Eintrag zu entfernen, das Löschsymbol image:icon-x-to-remove.png["Symbol Löschen"] auswählen.
 
 . Wenn Sie mit Ihrer Auswahl zufrieden sind, wählen Sie *Speichern*.
 +

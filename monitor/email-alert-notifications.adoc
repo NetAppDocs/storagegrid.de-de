@@ -77,7 +77,7 @@ Beispiel: `storagegrid-alerts@example.com`
 
 .. Geben Sie im Abschnitt Empfänger eine E-Mail-Adresse für jede E-Mail-Liste oder Person ein, die beim Auftreten einer Warnmeldung eine E-Mail erhalten soll.
 +
-Wählen Sie das Plus-Symbolimage:../media/icon_plus_sign_black_on_white.gif["Plus-Symbol"], um Empfänger hinzuzufügen.
+Das Plus-Symbol image:icon_plus_sign_black_on_white.gif["Plus-Symbol"] auswählen, um Empfänger hinzuzufügen.
 
 
 
@@ -101,7 +101,7 @@ Sie können den Inhalt in dieses Feld kopieren und einfügen, oder wählen Sie *
 
 +
 
-NOTE: Wenn Sie das E-Mail-Setup bearbeiten müssen, wählen Sie das Bleistiftsymbol image:../media/icon_edit_tm.png["Symbol bearbeiten"]aus, um dieses Feld zu aktualisieren.
+NOTE: Wenn Sie die E-Mail-Einstellungen bearbeiten müssen, wählen Sie das Stiftsymbol image:icon_edit_tm.png["Symbol bearbeiten"] , um dieses Feld zu aktualisieren.
 
 
 
@@ -167,7 +167,7 @@ Nachdem Sie den SMTP-E-Mail-Server konfiguriert haben, werden beim Auslösen ein
 
 E-Mail-Benachrichtigungen enthalten die folgenden Informationen:
 
-image::../media/alerts_email_notification.png[Benachrichtigung Per E-Mail]
+image:alerts_email_notification.png["Benachrichtigung Per E-Mail"]
 
 [cols="1a,6a"]
 |===

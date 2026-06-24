@@ -79,15 +79,15 @@ Jede Regel kann mehrere Platzierungen für einen einzigen Zeitraum und verschied
 
 Das Beispiel zeigt zwei Platzierungsanweisungen auf der Seite Platzierungen definieren des Assistenten zum Erstellen einer ILM-Regel.
 
-image::../media/ilm_rule_multiple_placements_in_single_time_period.png[Bildschirm ILM-Platzierungen im Grid Manager]
+image:ilm_rule_multiple_placements_in_single_time_period.png["Bildschirm ILM-Platzierungen im Grid Manager"]
 
-Der erste Einstufungsunterricht image:../media/icon_number_1.png["Symbol Nummer 1"] hat zwei Linien für das erste Jahr:
+Die erste Einstufungsanweisung image:icon_number_1.png["Symbol Nummer 1"] hat für das erste Jahr zwei Zeilen:
 
 * In der ersten Zeile werden zwei replizierte Objektkopien an zwei Datacenter-Standorten erstellt.
 * Die zweite Zeile erstellt eine Kopie, die unter Verwendung aller Datacenter-Standorte nach der Erasure-Coded-Funktion 6+3 enthält.
 
 
-Die zweite Einstufungsanweisung image:../media/icon_number_2.png["Symbol Nummer 1"] erstellt zwei Kopien nach einem Jahr und speichert diese Kopien für immer.
+Die zweite Platzierungsanweisung image:icon_number_2.png["Symbol Nummer 1"] erstellt nach einem Jahr zwei Kopien und bewahrt diese Kopien dauerhaft auf.
 
 Wenn Sie den Satz von Anweisungen zur Platzierung für eine Regel definieren, müssen Sie sicherstellen, dass mindestens eine Platzierungsanweisung an Tag 0 beginnt, dass zwischen den von Ihnen definierten Zeiträumen keine Lücken bestehen. Und dass die abschließende Anweisung zum Platzieren entweder für immer oder bis Sie keine Objektkopien mehr benötigen.
 

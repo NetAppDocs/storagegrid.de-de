@@ -19,7 +19,7 @@ Wenn Ihrem Mandantenkonto bei der Erstellung die Berechtigung *Grid Federation c
 
 Das Workflow-Diagramm fasst die Schritte zusammen, die Sie zum Konfigurieren der Cross-Grid-Replikation zwischen Buckets auf zwei Grids ausführen.  Diese Schritte werden unterhalb des Diagramms ausführlicher beschrieben.
 
-image::../media/grid-federation-cgr-workflow.png[Workflow für Grid-übergreifende Replizierung]
+image:grid-federation-cgr-workflow.png["Workflow für Grid-übergreifende Replizierung"]
 
 
 
@@ -86,7 +86,7 @@ Sie müssen diese Schritte ausführen, bevor Sie Objekte zu einem Bucket hinzuf�
 *** *Ja* (Standard): Ein Löschmarker wird zum Quell-Bucket hinzugefügt und in den Ziel-Bucket repliziert.
 *** *Nein*: Dem Quell-Bucket wird eine Löschmarkierung hinzugefügt, die jedoch nicht in den Ziel-Bucket repliziert wird.
 +
-image::../media/grid-federation-cross-grid-replication-client-deletes.png[Abbildung zeigt, wie der Replikate-Client auf beiden Rastern gelöscht wird]
+image:grid-federation-cross-grid-replication-client-deletes.png["Abbildung zeigt, wie der Replikate-Client auf beiden Rastern gelöscht wird"]
 
 +
 

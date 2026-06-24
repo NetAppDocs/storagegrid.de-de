@@ -33,7 +33,7 @@ Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `
 Beispielsweise zeigt die Ausgabe für den primären Admin-Node den aktuellen Status der AMS-, CMN- und NMS-Dienste als ausgeführt an. Diese Ausgabe wird sofort aktualisiert, wenn sich der Status eines Dienstes ändert.
 
 +
-image::../media/storagegrid_status_output.gif[Screenshot der Ausgabe von Storage-Grid-Befehlen]
+image:storagegrid_status_output.gif["Screenshot der Ausgabe von Storage-Grid-Befehlen"]
 
 . Kehren Sie zur Befehlszeile zurück und drücken Sie *Strg*+*C*.
 . Optional können Sie einen statischen Bericht für alle Dienste anzeigen, die auf dem Grid-Knoten ausgeführt werden: `/usr/local/servermanager/reader.rb`

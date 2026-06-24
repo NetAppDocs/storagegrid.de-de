@@ -17,6 +17,6 @@ Wenn Sie Kennzahlen überwachen möchten, die nicht auf einer vorhandenen Seite 
 
 Über ein externes Monitoring-Tool wie Grafana können Sie auch direkt auf die Prometheus Metriken zugreifen. Zur Verwendung eines externen Tools müssen Sie ein Administrator-Clientzertifikat hochladen oder erstellen, damit StorageGRID das Tool für die Sicherheit authentifizieren kann. Siehe link:../admin/index.html["Anweisungen für die Administration von StorageGRID"].
 
-Informationen zu den Kennzahlen-API-Vorgängen, einschließlich der vollständigen Liste der verfügbaren Metriken, finden Sie im Grid Manager. Wählen Sie oben auf der Seite das Hilfesymbol aus und wählen Sie *API-Dokumentation* > *metrics*. image:../media/help_api_docs_metrics.png["Abschnitt „Metriken der Hilfe-API-Dokumentation“"]
+Um die API-Operationen für Metriken, einschließlich der vollständigen Liste der verfügbaren Metriken, anzuzeigen, zum Grid Manager wechseln. Oben auf der Seite das Hilfesymbol auswählen und dann *API documentation* > *metrics* wählen. image:help_api_docs_metrics.png["Abschnitt „Metriken der Hilfe-API-Dokumentation“"]
 
 Die Einzelheiten zur Implementierung einer benutzerdefinierten Überwachungsanwendung liegen über dem Umfang dieser Dokumentation hinaus.

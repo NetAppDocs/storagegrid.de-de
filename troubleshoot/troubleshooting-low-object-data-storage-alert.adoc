@@ -67,7 +67,7 @@ Die folgenden Werte werden angezeigt:
 
 
 +
-image::../media/nodes_page_storage_used_object_data.png[Knoten Seite Speicher Verwendete Objektdaten]
+image:nodes_page_storage_used_object_data.png["Knoten Seite Speicher Verwendete Objektdaten"]
 
 . Wählen Sie die Zeitsteuerelemente über dem Diagramm aus, um die Speichernutzung über verschiedene Zeiträume anzuzeigen.
 +

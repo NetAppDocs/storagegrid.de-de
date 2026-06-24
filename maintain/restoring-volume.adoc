@@ -20,7 +20,7 @@ Mithilfe von Grid Manager können Sie Objektdaten für ein fehlerhaftes Speicher
 ** link:../maintain/remounting-and-reformatting-storage-volumes-manual-steps.html["Speicher-Volumes neu einbinden und formatieren (manuelle Schritte)"]
 
 
-* Sie haben bestätigt, dass der Speicherknoten, auf dem Sie Objekte wiederherstellen, den Verbindungsstatus *Verbunden* hat.image:../media/icon_alert_green_checkmark.png["Symbol Warnung grünes Häkchen"] auf der Registerkarte *Knoten* > *Übersicht* im Grid Manager.
+* Sie haben bestätigt, dass der Storage Node, auf dem Sie Objekte wiederherstellen, im Grid Manager auf der Registerkarte *Nodes* > *Overview* den Connection State *Connected* image:icon_alert_green_checkmark.png["Symbol Warnung grünes Häkchen"] aufweist.
 * Sie haben Folgendes bestätigt:
 +
 ** Eine Grid-Erweiterung zum Hinzufügen eines Storage-Knotens wird nicht ausgeführt.

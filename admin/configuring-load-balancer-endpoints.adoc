@@ -429,7 +429,7 @@ Sie können Details zu vorhandenen Load Balancer-Endpunkten anzeigen, einschlie�
 * Um grundlegende Informationen für alle Lastausgleichsendpunkte anzuzeigen, lesen Sie die Tabellen auf der Seite Lastausgleichsendpunkte.
 * Um alle Details zu einem bestimmten Endpunkt einschließlich Zertifikatmetadaten anzuzeigen, wählen Sie in der Tabelle den Namen des Endpunkts aus. Die angezeigten Informationen variieren je nach Endpunkttyp und Konfiguration.
 +
-image::../media/load_balancer_endpoint_details.png[Details zum Endpunkt der Load Balancer]
+image:load_balancer_endpoint_details.png["Details zum Endpunkt der Load Balancer"]
 
 * Um einen Endpunkt zu bearbeiten, verwenden Sie das Menü *actions* auf der Seite Load Balancer Endpoints.
 +
@@ -456,7 +456,7 @@ Endpunktname bearbeiten
 
  a| 
 .. Wählen Sie den Endpunktnamen aus, um die Details anzuzeigen.
-.. Wählen Sie das Symbol Bearbeiten image:../media/icon_edit_tm.png["Symbol bearbeiten"].
+.. Das Bearbeitungssymbol image:icon_edit_tm.png["Symbol bearbeiten"] auswählen.
 .. Geben Sie den neuen Namen ein.
 .. Wählen Sie *Speichern*.
 

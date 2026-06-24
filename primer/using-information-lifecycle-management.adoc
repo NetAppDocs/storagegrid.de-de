@@ -81,7 +81,7 @@ Eine ILM-Richtlinie könnte beispielsweise drei ILM-Regeln enthalten, die Folgen
 
 
 
-image::../media/ilm_policy_and_rules.png[ILM-Richtlinie und -Regeln]
+image:ilm_policy_and_rules.png["ILM-Richtlinie und -Regeln"]
 
 .Verwandte Informationen
 * link:../ilm/index.html["Objektmanagement mit ILM"]

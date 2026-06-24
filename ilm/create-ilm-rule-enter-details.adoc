@@ -201,8 +201,8 @@ Wenn Sie die erweiterte Filterung definieren, können Sie mehrere Metadatentypen
 * Der zweite Metadatenwert gibt Objekte an, die kleiner als oder gleich 100 MB sind.
 
 
-image::../media/advanced_filtering_size_between.png[Erweitertes Filterbeispiel für Objektgröße]
+image:advanced_filtering_size_between.png["Erweitertes Filterbeispiel für Objektgröße"]
 
 Durch die Verwendung mehrerer Einträge können Sie genau steuern, welche Objekte abgeglichen werden. Im folgenden Beispiel gilt die Regel für Objekte, die Marke A oder Marke B als Wert der Benutzermetadaten Camera_type haben. Die Regel gilt jedoch nur für Objekte der Marke B, die kleiner als 10 MB sind.
 
-image::../media/advanced_filtering_multiple_rows.png[Beispiel für die erweiterte Filterung von Benutzermetadaten]
+image:advanced_filtering_multiple_rows.png["Beispiel für die erweiterte Filterung von Benutzermetadaten"]

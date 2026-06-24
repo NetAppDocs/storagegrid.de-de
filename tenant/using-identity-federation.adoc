@@ -34,7 +34,7 @@ NOTE: Wenn Sie einen LDAP v3-Dienst verwenden möchten, der nicht aufgeführt is
 .Über diese Aufgabe
 Ob Sie einen Identitätsföderationsdienst für Ihren Mandanten konfigurieren können, hängt davon ab, wie Ihr Mandantenkonto eingerichtet wurde. Der Mandant kann sich möglicherweise den für den Grid Manager konfigurierten Identitätsföderationsdienst teilen. Wenn diese Meldung angezeigt wird, wenn Sie auf die Seite Identity Federation zugreifen, können Sie keine separate föderierte Identitätsquelle für diesen Mandanten konfigurieren.
 
-image::../media/tenant_shares_identity_federation.png[Mandanten Teilen Sich Die Identitätsföderation]
+image:tenant_shares_identity_federation.png["Mandanten Teilen Sich Die Identitätsföderation"]
 
 
 
@@ -47,7 +47,7 @@ Wenn Sie Identifizieren Verbund konfigurieren, geben Sie die Werte an, die Stora
 . Wählen Sie *Identitätsföderation aktivieren*.
 . Wählen Sie im Abschnitt LDAP-Servicetyp den Typ des LDAP-Dienstes aus, den Sie konfigurieren möchten.
 +
-image::../media/ldap_service_type.png[Seite „Identity Federation“ mit Optionen für LDAP-Diensttypen]
+image:ldap_service_type.png["Seite „Identity Federation“ mit Optionen für LDAP-Diensttypen"]
 
 +
 Wählen Sie *Other* aus, um Werte für einen LDAP-Server zu konfigurieren, der Oracle Directory Server verwendet.
@@ -158,7 +158,7 @@ Nachdem Sie alle Werte eingegeben haben, müssen Sie die Verbindung testen, bevo
 Geben Sie beispielsweise Ihren eigenen Benutzernamen und Ihr Kennwort ein. Geben Sie keine Sonderzeichen in den Benutzernamen ein, z. B. @ oder /.
 
 +
-image::../media/identity_federation_test_connection.png[Identity Federation fordert zur Validierung des BIND-Benutzernamens-Formats auf]
+image:identity_federation_test_connection.png["Identity Federation fordert zur Validierung des BIND-Benutzernamens-Formats auf"]
 
 +
 ** Wenn die Verbindungseinstellungen gültig sind, wird die Meldung „Verbindung erfolgreich testen“ angezeigt. Wählen Sie *Speichern*, um die Konfiguration zu speichern.

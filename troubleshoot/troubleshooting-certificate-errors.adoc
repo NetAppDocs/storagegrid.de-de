@@ -24,7 +24,7 @@ Wenn Sie mit einem Domänennamen anstelle einer IP-Adresse auf den Grid Manager 
 
 Im folgenden Beispiel ist ein Zertifikatfehler angezeigt, wenn das Zertifikat der benutzerdefinierten Managementoberfläche abgelaufen ist:
 
-image::../media/certificate_error.png[Beispielfehler mit Zertifikat]
+image:certificate_error.png["Beispielfehler mit Zertifikat"]
 
 Um sicherzustellen, dass der Betrieb nicht durch ein fehlerhaftes Serverzertifikat unterbrochen wird, wird die Warnmeldung *Ablauf des Serverzertifikats für die Managementoberfläche* ausgelöst, wenn das Serverzertifikat abläuft.
 

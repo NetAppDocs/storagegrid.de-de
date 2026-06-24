@@ -44,7 +44,7 @@ Wenn das EC-Ausgleichverfahren abgeschlossen ist:
 Angenommen, drei 200-TB-Nodes werden jeweils zu 80 % gefüllt (200 &#215; 0.8 = 160 TB auf jedem Node oder 480 TB für den Standort). Wenn Sie einen 400-TB-Node hinzufügen und das Ausgleichs-Verfahren ausführen, verfügen alle Nodes nun über ungefähr die gleiche Menge an Daten aus dem Löschcode (480/4 = 120 TB). Der verwendete Wert (%) für den größeren Knoten ist jedoch kleiner als der verwendete Wert (%) für die kleineren Knoten.
 
 +
-image::../media/used_space_with_larger_node.png[Vor der Erweiterung verwendeter Speicherplatz]
+image:used_space_with_larger_node.png["Vor der Erweiterung verwendeter Speicherplatz"]
 
 
 
@@ -64,7 +64,7 @@ Betrachten wir das folgende Szenario:
 * Die ILM-Richtlinie verwendet eine 2+1-Regel zur Einhaltung von Datenkonsistenz für alle Objekte, die größer als 1.0 MB sind, und eine Replizierungsregel mit 2 Kopien für kleinere Objekte.
 * Alle Storage-Nodes sind vollständig voll geworden. Der Alarm *Low Object Storage* wurde auf dem Hauptschweregrad ausgelöst.
 +
-image::../media/used_space_before_expansion.png[Vor der Erweiterung verwendeter Speicherplatz]
+image:used_space_before_expansion.png["Vor der Erweiterung verwendeter Speicherplatz"]
 
 
 
@@ -74,7 +74,7 @@ image::../media/used_space_before_expansion.png[Vor der Erweiterung verwendeter 
 
 Um zu verstehen, wann EC-Lastausgleich nicht erforderlich ist, nehmen wir an, Sie haben drei (oder mehr) neue Storage-Nodes hinzugefügt. In diesem Fall müssen Sie keine EC-Ausbalancierung durchführen. Die ursprünglichen Speicher-Nodes bleiben voll, aber neue Objekte verwenden nun die drei neuen Knoten für 2+1 Erasure Coding&#8212;die beiden Datenfragmente und das eine Parity Fragment können jeweils auf einem anderen Knoten gespeichert werden.
 
-image::../media/used_space_after_3_node_expansion.png[Genutzter Speicherplatz nach Erweiterung mit 3 Nodes]
+image:used_space_after_3_node_expansion.png["Genutzter Speicherplatz nach Erweiterung mit 3 Nodes"]
 
 
 CAUTION: In diesem Fall können Sie zwar das Verfahren zum Lastausgleich der EC ausführen, jedoch wird durch das Verschieben der vorhandenen Daten, die nach der Löschung codiert wurden, die Performance des Grids vorübergehend beeinträchtigt, was sich auf die Client-Operationen auswirken kann.
@@ -85,11 +85,11 @@ CAUTION: In diesem Fall können Sie zwar das Verfahren zum Lastausgleich der EC 
 
 Um zu verstehen, wann EC-Lastausgleich erforderlich ist, nehmen wir an, dass Sie nur zwei Storage Nodes anstelle von drei hinzufügen können. Da für das Schema 2+1 mindestens drei Speicher-Nodes Speicherplatz verfügbar sein muss, können die leeren Knoten nicht für neue mit Löschcode codierte Daten verwendet werden.
 
-image::../media/used_space_after_2_node_expansion.png[Genutzter Speicherplatz nach Erweiterung mit 2 Nodes]
+image:used_space_after_2_node_expansion.png["Genutzter Speicherplatz nach Erweiterung mit 2 Nodes"]
 
 Um die neuen Storage-Nodes zu verwenden, sollten Sie das EC-Neuausgleich-Verfahren ausführen. Wenn dieses Verfahren ausgeführt wird, verteilt StorageGRID vorhandene Daten und Paritätsfragmente über alle Storage Nodes am Standort. In diesem Beispiel sind alle fünf Nodes nach Abschluss des EC-Ausgleichs nur zu 60 % voll, und Objekte können weiterhin auf allen Storage Nodes in das Erasure Coding-Schema 2+1 aufgenommen werden.
 
-image::../media/used_space_after_ec_rebalance.png[Genutzter Speicherplatz nach EC-Ausgleich]
+image:used_space_after_ec_rebalance.png["Genutzter Speicherplatz nach EC-Ausgleich"]
 
 
 

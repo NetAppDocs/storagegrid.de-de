@@ -141,7 +141,7 @@ Anzeigename bearbeiten (nur lokale Gruppen)
 
  a| 
 .. Wählen Sie den Gruppennamen aus, um die Details anzuzeigen.
-.. Wählen Sie das Symbol Bearbeiten image:../media/icon_edit_tm.png["Symbol bearbeiten"].
+.. Das Bearbeitungssymbol image:icon_edit_tm.png["Symbol bearbeiten"] auswählen.
 .. Geben Sie den neuen Namen ein.
 .. Wählen Sie *Änderungen speichern*.
 

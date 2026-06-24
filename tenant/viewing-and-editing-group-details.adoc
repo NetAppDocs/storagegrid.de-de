@@ -28,7 +28,7 @@ Alternativ können Sie *Aktionen* > *Gruppendetails anzeigen* wählen.
 Die Seite Gruppendetails wird angezeigt. Im folgenden Beispiel wird die Seite mit den S3-Gruppendetails angezeigt.
 
 +
-image::../media/tenant_group_details.png[Gruppendetails Anzeigen]
+image:tenant_group_details.png["Gruppendetails Anzeigen"]
 
 . Nehmen Sie bei Bedarf Änderungen an den Gruppeneinstellungen vor.
 +
@@ -36,7 +36,7 @@ image::../media/tenant_group_details.png[Gruppendetails Anzeigen]
 TIP: Um sicherzustellen, dass Ihre Änderungen gespeichert werden, wählen Sie *Änderungen speichern* aus, nachdem Sie Änderungen in jedem Abschnitt vorgenommen haben. Wenn Ihre Änderungen gespeichert sind, wird oben rechts auf der Seite eine Bestätigungsmeldung angezeigt.
 
 +
-.. Wählen Sie optional den Anzeigenamen oder das Bearbeitungssymbol ausimage:../media/icon_edit_tm.png["Symbol bearbeiten"], um den Anzeigenamen zu aktualisieren.
+.. Optional kann der Anzeigename ausgewählt oder das Bearbeitungssymbol image:icon_edit_tm.png["Symbol bearbeiten"] verwendet werden, um den Anzeigenamen zu aktualisieren.
 +
 Sie können den eindeutigen Namen einer Gruppe nicht ändern. Der Anzeigename für eine verbundene Gruppe kann nicht bearbeitet werden.
 

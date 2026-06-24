@@ -24,7 +24,7 @@ Für Storage-Nodes, jeden Standort und das gesamte Raster enthält die Registerk
 
 NOTE: Wenn ein Knoten nicht mit dem Raster verbunden ist, z. B. während eines Upgrades oder eines getrennten Status, sind bestimmte Metriken möglicherweise nicht verfügbar oder von den Gesamtsummen des Standorts und des Rasters ausgeschlossen. Nachdem sich ein Node wieder mit dem Grid verbunden hat, warten Sie einige Minuten, bis sich die Werte stabilisieren.
 
-image::../media/nodes_storage_node_storage_tab.png[„Nodes“ > „Storage Node“ > Registerkarte „Storage“]
+image:nodes_storage_node_storage_tab.png["Knoten > Speicherknoten > Registerkarte Speicher"]
 
 
 
@@ -32,7 +32,7 @@ image::../media/nodes_storage_node_storage_tab.png[„Nodes“ > „Storage Node
 
 Für alle Nodes enthält die Registerkarte Storage Details zu den Festplattengeräten und Volumes auf dem Node. Für Speicherknoten bietet die Objektspeichertabelle Informationen über jedes Speichervolumen.
 
-image::../media/nodes_page_storage_tables.png[Knoten Seitentabellen]
+image:nodes_page_storage_tables.png["Knoten Seitentabellen"]
 
 .Verwandte Informationen
 link:monitoring-storage-capacity.html["Monitoring der Storage-Kapazität"]

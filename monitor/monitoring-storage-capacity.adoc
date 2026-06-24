@@ -35,11 +35,11 @@ Mithilfe des Grid Manager Dashboards können Sie schnell bewerten, wie viel Stor
 NOTE: Die Zusammenfassung enthält keine Archivierungsmedien.
 
 +
-image::../media/dashboard_data_and_metadata_space_usage_breakdown.png[Aufschlüsselung der Speicherplatznutzung von Daten und Metadaten]
+image:dashboard_data_and_metadata_space_usage_breakdown.png["Aufschlüsselung der Speicherplatznutzung von Daten und Metadaten"]
 
 .. Notieren Sie sich das Diagramm auf der Karte „Speicher im Zeitverlauf“. Anhand der Dropdown-Liste „Zeitraum“ können Sie ermitteln, wie schnell Storage verbraucht wird.
 +
-image::../media/dashboard_storage_over_time.png[Diagramm Storage im Zeitverlauf]
+image:dashboard_storage_over_time.png["Diagramm Storage im Zeitverlauf"]
 
 
 
@@ -48,7 +48,7 @@ image::../media/dashboard_storage_over_time.png[Diagramm Storage im Zeitverlauf]
 .. Wählen Sie *Knoten* aus.
 .. Wählen Sie *_Grid_* > *Storage* aus.
 +
-image::../media/nodes_deployment_storage_tab.png[Registerkarte Nodes Deployment Storage]
+image:nodes_deployment_storage_tab.png["Registerkarte Nodes Deployment Storage"]
 
 .. Bewegen Sie den Cursor über die *Storage Used - Object Data* und die *Storage Used - Object metadata* Diagramme, um zu sehen, wie viel Objektspeicher und Objektmetadaten-Speicher für das gesamte Grid verfügbar sind und wie viel im Laufe der Zeit genutzt wurde.
 +
@@ -79,7 +79,7 @@ Weitere Informationen zur Planung einer Speichererweiterung finden Sie im link:.
 .Über diese Aufgabe
 Der nutzbare Speicherplatz ist der Speicherplatz, der zum Speichern von Objekten zur Verfügung steht. Der insgesamt nutzbare Speicherplatz für einen Storage-Node wird berechnet, indem der verfügbare Speicherplatz in allen Objektspeichern innerhalb des Node hinzugefügt wird.
 
-image::../media/calculating_watermarks.gif[Konzeptzeichnung für den insgesamt nutzbaren Speicherplatz]
+image:calculating_watermarks.gif["Konzeptzeichnung für den insgesamt nutzbaren Speicherplatz"]
 
 .Schritte
 . Wählen Sie *Knoten* > *_Speicherknoten_* > *Speicher*.
@@ -97,17 +97,17 @@ Die folgenden Werte werden angezeigt:
 ** *Erasure-codierte Daten*: Eine Schätzung der Menge der mit der Löschung codierten Objektdaten auf diesem Knoten, Standort oder Grid.
 ** *Gesamt*: Die Gesamtmenge an nutzbarem Speicherplatz auf diesem Knoten, Standort oder Grid. Der verwendete Wert ist die `storagegrid_storage_utilization_data_bytes` Metrik.
 +
-image::../media/nodes_page_storage_used_object_data.png[Knoten Seite Speicher Verwendete Objektdaten]
+image:nodes_page_storage_used_object_data.png["Knoten Seite Speicher Verwendete Objektdaten"]
 
 
 
 . Überprüfen Sie die verfügbaren Werte in den Tabellen Volumes und Objektspeichern unter den Diagrammen.
 +
 
-NOTE: Um Diagramme dieser Werte anzuzeigen, klicken Sie in den verfügbaren Spalten auf die Diagrammsymboleimage:../media/icon_chart_new_for_11_5.png["Diagrammsymbol"].
+NOTE: Zum Anzeigen von Diagrammen dieser Werte auf die Diagrammsymbole image:icon_chart_new_for_11_5.png["Diagrammsymbol"] in den verfügbaren Spalten klicken.
 
 +
-image::../media/nodes_page_storage_tables.png[Im Objekt werden Tabellen gespeichert]
+image:nodes_page_storage_tables.png["Im Objekt werden Tabellen gespeichert"]
 
 . Überwachen Sie die Werte im Zeitbereich, um die Rate abzuschätzen, mit der der nutzbare Speicherplatz belegt wird.
 . Um normale Systemvorgänge aufrechtzuerhalten, fügen Sie Storage-Nodes hinzu, fügen Storage Volumes oder Archivdaten hinzu, bevor der nutzbare Speicherplatz verbraucht wird.
@@ -143,7 +143,7 @@ Zu den Faktoren, die die Metadatennutzung steigern können, gehören die Größe
 . Wählen Sie *Knoten* > *_Speicherknoten_* > *Speicher*.
 . Bewegen Sie den Mauszeiger über das Diagramm Speicher verwendet – Objekt-Metadaten, um die Werte für eine bestimmte Zeit anzuzeigen.
 +
-image::../media/storage_used_object_metadata.png[Verwendeter Storage: Objekt-Metadaten]
+image:storage_used_object_metadata.png["Verwendeter Storage: Objekt-Metadaten"]
 
 +
 Nutzung (%):: Der Prozentsatz des zulässigen Metadaten-Speicherplatzes, der auf diesem Storage-Node verwendet wurde.
@@ -202,4 +202,4 @@ Falls Sie eine neue StorageGRID-Installation besitzen, lassen Sie vor der Evalui
 . Verwenden Sie diese Werte, um zu schätzen, wann Sie neue Storage-Nodes für den Daten- und Metadatenspeicher hinzufügen müssen.
 
 
-image::../media/forecast-metadata-usage.png[Prognose der Metadatennutzung nach Standort]
+image:forecast-metadata-usage.png["Prognose der Metadatennutzung nach Standort"]

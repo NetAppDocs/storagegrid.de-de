@@ -25,7 +25,7 @@ Eine Grid-Verbundverbindung ist eine bidirektionale, zuverlässige und sichere V
 
 Das Workflow-Diagramm fasst die Schritte zur Konfiguration einer Grid Federation-Verbindung zwischen zwei Grids zusammen.
 
-image::../media/grid-federation-workflow.png[Workflow der Grid-Föderation-Verbindung]
+image:grid-federation-workflow.png["Workflow der Grid-Föderation-Verbindung"]
 
 
 
@@ -85,7 +85,7 @@ Wenn Sie eine Grid-Federation-Verbindung konfigurieren, generiert StorageGRID au
 * Server- und Client-Zertifikate zur Authentifizierung und Verschlüsselung von Informationen, die von Grid 2 an Grid 1 gesendet werden
 
 
-image::../media/grid-federation-certificates.png[Zertifikate für Grid Federation]
+image:grid-federation-certificates.png["Zertifikate für Grid Federation"]
 
 Standardmäßig sind die Zertifikate 730 Tage (2 Jahre) gültig. Wenn diese Zertifikate in der Nähe ihres Ablaufdatums liegen, erinnert die Warnung *Ablauf des Grid Federation Certificate* Sie daran, die Zertifikate zu drehen, was Sie mit dem Grid Manager tun können.
 

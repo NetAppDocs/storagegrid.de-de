@@ -23,7 +23,7 @@ Das Klonen von Mandanten-Kontoinformationen ist für Bucket-Objekte erforderlich
 
 Wenn Ihr Mandantenkonto über die Berechtigung *Grid Federation connection* verwenden verfügt, sehen Sie sich im Workflow-Diagramm die Schritte an, die Sie zum Klonen von Gruppen, Benutzern und S3-Zugriffsschlüsseln durchführen werden.
 
-image::../media/grid-federation-account-clone-workflow-tm.png[Der Workflow des Mandanten für den Kontoklon. Die Schritte werden im folgenden Text beschrieben.]
+image:grid-federation-account-clone-workflow-tm.png["Der Workflow des Mandanten für den Kontoklon. Die Schritte werden im folgenden Text beschrieben."]
 
 Das sind die primären Schritte im Workflow:
 
@@ -69,7 +69,7 @@ Nachdem ein Mandantenkonto erstellt und in das Zielraster repliziert wurde, klon
 
 Sowohl die ursprüngliche Gruppe als auch der zugehörige Klon weisen den gleichen Zugriffsmodus, die gleichen Gruppenberechtigungen und die S3-Gruppenrichtlinie auf. Anweisungen hierzu finden Sie unter link:creating-groups-for-s3-tenant.html["Gruppen für S3 Mandanten erstellen"].
 
-image::../media/grid-federation-account-clone.png[Bild, das zeigt, dass lokale Gruppen vom Quell- zum Zielraster geklont werden]
+image:grid-federation-account-clone.png["Bild, das zeigt, dass lokale Gruppen vom Quell- zum Zielraster geklont werden"]
 
 
 NOTE: Alle Benutzer, die Sie beim Erstellen einer lokalen Gruppe im Quellraster auswählen, werden nicht berücksichtigt, wenn die Gruppe im Zielraster geklont wird. Wählen Sie aus diesem Grund keine Benutzer aus, wenn Sie die Gruppe erstellen. Wählen Sie stattdessen die Gruppe aus, wenn Sie die Benutzer erstellen.
@@ -82,7 +82,7 @@ Wenn Sie einen neuen lokalen Benutzer im Quell-Grid erstellen, klont StorageGRID
 
 Aus Sicherheitsgründen werden lokale Benutzerkennwörter nicht in das Zielraster geklont.  Wenn ein lokaler Benutzer auf den Mandantenmanager im Zielraster zugreifen muss, muss der Root-Benutzer für das Mandantenkonto ein Kennwort für diesen Benutzer im Zielraster hinzufügen. Anweisungen hierzu finden Sie unterlink:manage-users.html["Benutzer managen"] .
 
-image::../media/grid-federation-local-user-clone.png[Bild, das zeigt, dass lokale Benutzer vom Quell- zum Zielraster geklont werden]
+image:grid-federation-local-user-clone.png["Bild, das zeigt, dass lokale Benutzer vom Quell- zum Zielraster geklont werden"]
 
 
 
@@ -94,7 +94,7 @@ Beide Gruppen verfügen über denselben Zugriffsmodus, dieselben Gruppenberechti
 
 Nachdem für den Quellmandanten gebündelte Gruppen erstellt und für den Zielmandanten geklont wurden, können sich föderierte Benutzer in beiden Grids beim Mandanten anmelden.
 
-image::../media/grid-federation-federated-group-clone.png[Abbildung, die zeigt, dass föderierte Gruppen vom Quell- zum Zielraster geklont werden]
+image:grid-federation-federated-group-clone.png["Abbildung, die zeigt, dass föderierte Gruppen vom Quell- zum Zielraster geklont werden"]
 
 
 
@@ -108,7 +108,7 @@ Zum Verwalten der Zugriffsschlüssel in den beiden Grids haben Sie folgende Mög
 * Wenn Sie dieselben Schlüssel auf beiden Rastern verwenden müssen, können Sie Schlüssel im Quellraster erstellen und dann die Mandanten-Manager-API für die manuelle Eingabe in das Zielraster verwendenlink:../tenant/grid-federation-clone-keys-with-api.html["Schlüssel klonen"].
 
 
-image::../media/grid-federation-s3-access-key.png[Abbildung, die zeigt, dass s3-Zugriffsschlüssel optional vom Quell- zum Zielraster geklont werden können]
+image:grid-federation-s3-access-key.png["Abbildung, die zeigt, dass s3-Zugriffsschlüssel optional vom Quell- zum Zielraster geklont werden können"]
 
 
 NOTE: Wenn Sie S3-Zugriffsschlüssel für einen föderierten Benutzer klonen, werden sowohl der Benutzer als auch die S3-Zugriffsschlüssel zum Zielmandanten geklont.
@@ -119,7 +119,7 @@ NOTE: Wenn Sie S3-Zugriffsschlüssel für einen föderierten Benutzer klonen, we
 
 Das Klonen erfolgt nur vom Quell-Grid des Mandanten zum Ziel-Grid des Mandanten. Wenn Sie Gruppen und Benutzer im Zielraster des Mandanten erstellen oder importieren, werden diese Elemente von StorageGRID nicht im Quellraster des Mandanten geklont.
 
-image::../media/grid-federation-account-not-cloned.png[Bild, das zeigt, dass Details im Zielraster nicht im Quellraster geklont werden]
+image:grid-federation-account-not-cloned.png["Bild, das zeigt, dass Details im Zielraster nicht im Quellraster geklont werden"]
 
 
 
@@ -129,4 +129,4 @@ Das Klonen erfolgt nur, wenn Sie neue Gruppen und Benutzer erstellen.
 
 Wenn Sie Gruppen, Benutzer oder Zugriffsschlüssel in einer der beiden Raster bearbeiten oder löschen, werden die Änderungen nicht in der anderen Tabelle geklont.
 
-image::../media/grid-federation-account-clone-edit-delete.png[Bild, das zeigt, dass bearbeitete oder gelöschte Details nicht geklont werden]
+image:grid-federation-account-clone-edit-delete.png["Bild, das zeigt, dass bearbeitete oder gelöschte Details nicht geklont werden"]

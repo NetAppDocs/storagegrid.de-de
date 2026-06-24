@@ -35,13 +35,13 @@ NOTE: Erstellen Sie nicht mehr Storage-Klassen als erforderlich. Erstellen Sie b
 . Wählen Sie *ILM* > *Speicherklassen*.
 . Benutzerdefinierte Storage-Klassen definieren:
 +
-.. Wählen Sie für jede benutzerdefinierte Speicherklasse, die Sie hinzufügen möchten, *Einfügen*image:../media/icon_nms_insert.gif["Symbol einfügen"], um eine Zeile hinzuzufügen.
+.. Für jede benutzerdefinierte Speicherkategorie, die Sie hinzufügen möchten, *Einfügen* image:icon_nms_insert.gif["Symbol einfügen"] auswählen, um eine Zeile hinzuzufügen.
 .. Geben Sie eine beschreibende Bezeichnung ein.
 +
-image::../media/editing_storage_grades.gif[Seite „Speicherstufen“]
+image:editing_storage_grades.gif["Seite „Speicherstufen“"]
 
 .. Wählen Sie *Änderungen Anwenden*.
-.. Wenn Sie ein gespeichertes Label ändern möchten, wählen Sie optional *Bearbeiten*  und dann *Änderungen übernehmen*image:../media/icon_nms_edit.gif["Symbol bearbeiten"].
+.. Optional: Falls eine gespeicherte Bezeichnung geändert werden muss, *Bearbeiten* image:icon_nms_edit.gif["Symbol bearbeiten"] auswählen und *Änderungen anwenden* wählen.
 +
 
 NOTE: Speicherqualitäten können nicht gelöscht werden.
@@ -50,10 +50,10 @@ NOTE: Speicherqualitäten können nicht gelöscht werden.
 
 . Storage-Nodes neue Storage-Klassen zuweisen:
 +
-.. Suchen Sie den Storage Node in der LDR-Liste und wählen Sie das entsprechende Symbol ausimage:../media/icon_nms_edit.gif["Symbol bearbeiten"].
+.. Den Speicherknoten in der LDR-Liste suchen und dessen *Bearbeiten*-Symbol image:icon_nms_edit.gif["Symbol bearbeiten"] auswählen.
 .. Wählen Sie den entsprechenden Speichergrad aus der Liste aus.
 +
-image::../media/assigning_storage_grades_to_storage_nodes.gif[Seite „Speicherstufen“]
+image:assigning_storage_grades_to_storage_nodes.gif["Seite „Speicherstufen“"]
 
 +
 

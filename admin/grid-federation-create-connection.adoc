@@ -15,7 +15,7 @@ Sie können eine Grid-Verbundverbindung zwischen zwei StorageGRID Systemen erste
 
 Wie in der Abbildung gezeigt, umfasst das Erstellen einer Netzverbundverbindung Schritte auf beiden Grids. Sie fügen die Verbindung auf einem Raster hinzu und schließen sie auf dem anderen Raster ab. Sie können von beiden Rastergitten aus starten.
 
-image::../media/grid-federation-create-connection.png[Grafische Übersicht über die Schritte zum Erstellen einer Verbindung auf zwei Rastern]
+image:grid-federation-create-connection.png["Grafische Übersicht über die Schritte zum Erstellen einer Verbindung auf zwei Rastern"]
 
 .Bevor Sie beginnen
 * Sie haben das  für die Konfiguration von Grid Federation-Verbindungen überprüftlink:grid-federation-overview.html["Überlegungen und Anforderungen"].

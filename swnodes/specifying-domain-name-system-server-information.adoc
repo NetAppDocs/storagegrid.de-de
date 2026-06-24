@@ -24,7 +24,7 @@ Verwenden Sie nach Möglichkeit DNS-Server, auf die jeder Standort lokal zugreif
 . Geben Sie die IPv4-Adresse für mindestens einen DNS-Server im Textfeld *Server 1* an.
 . Wählen Sie bei Bedarf das Pluszeichen neben dem letzten Eintrag aus, um zusätzliche Servereinträge hinzuzufügen.
 +
-image::../media/9_gmi_installer_dns_page.gif[Dieses Bild wird durch den umgebenden Text erläutert.]
+image:9_gmi_installer_dns_page.gif["Dieses Bild wird durch den umgebenden Text erläutert."]
 
 +
 Als Best Practice empfehlen wir, mindestens zwei DNS-Server anzugeben. Sie können bis zu sechs DNS-Server angeben.

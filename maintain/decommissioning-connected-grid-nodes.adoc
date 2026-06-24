@@ -30,7 +30,7 @@ NOTE: Die Stilllegung wird nicht gestartet, wenn ein oder mehrere Volumes offlin
 
 NOTE: Wenn ein oder mehrere Volumes offline geschaltet werden, während eine Deaktivierung durchgeführt wird, wird die Deaktivierung durchgeführt, nachdem diese Volumes wieder online geschaltet wurden.
 
-* Alle Grid-Nodes weisen einen normalen (grünen) Zustand image:../media/icon_alert_green_checkmark.png["Grünes Häkchen"]auf. Wenn eines dieser Symbole in der Spalte *Gesundheit* angezeigt wird, müssen Sie versuchen, das Problem zu lösen:
+* Alle Grid-Knoten haben einen normalen (grünen) Zustand image:icon_alert_green_checkmark.png["Grünes Häkchen"]. Wenn eines dieser Symbole in der Spalte *Zustand* angezeigt wird, sollte das Problem behoben werden:
 +
 [cols="1a,1a,3a"]
 |===
@@ -38,7 +38,7 @@ NOTE: Wenn ein oder mehrere Volumes offline geschaltet werden, während eine Dea
 
 
  a| 
-image:../media/icon_alarm_yellow_notice.gif["Gelbes Quadrat-Symbol"]
+image:icon_alarm_yellow_notice.gif["Gelbes Quadrat-Symbol"]
  a| 
 Gelb
  a| 
@@ -47,7 +47,7 @@ Hinweis
 
 
  a| 
-image:../media/icon_alert_yellow_minor.png["Hellorangefarbenes Diamantsymbol"]
+image:icon_alert_yellow_minor.png["Hellorangefarbenes Diamantsymbol"]
  a| 
 Hellorange
  a| 
@@ -56,7 +56,7 @@ Gering
 
 
  a| 
-image:../media/icon_alert_orange_major.png["Dunkles orangefarbenes Diamantsymbol"]
+image:icon_alert_orange_major.png["Dunkles orangefarbenes Diamantsymbol"]
  a| 
 Dunkelorange
  a| 
@@ -65,7 +65,7 @@ Major
 
 
  a| 
-image:../media/icon_alert_red_critical.png["Rotes X-Symbol"]
+image:icon_alert_red_critical.png["Rotes X-Symbol"]
  a| 
 Rot
  a| 

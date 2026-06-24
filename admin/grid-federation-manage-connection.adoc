@@ -205,7 +205,7 @@ Verwenden Sie im Allgemeinen die gleiche Anzahl von Tagen für die Zertifikate a
 
 Sie können eine Netzverbundverbindung aus jedem Raster der Verbindung entfernen. Wie in der Abbildung gezeigt, müssen Sie auf beiden Rastern erforderliche Schritte ausführen, um zu bestätigen, dass die Verbindung nicht von einem Mandanten in einem der beiden Raster verwendet wird.
 
-image::../media/grid-federation-remove-connection.png[Schritte zum Entfernen der Netzverbundverbindung]
+image:grid-federation-remove-connection.png["Schritte zum Entfernen der Netzverbundverbindung"]
 
 Beachten Sie vor dem Entfernen einer Verbindung Folgendes:
 

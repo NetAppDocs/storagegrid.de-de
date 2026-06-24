@@ -13,7 +13,7 @@ summary: StorageGRID verwendet drei Storage-Volume-Wasserzeichen, um sicherzuste
 [role="lead"]
 StorageGRID verwendet drei Storage-Volume-Wasserzeichen, um sicherzustellen, dass Storage-Nodes sicher in einen schreibgeschützten Zustand überführt werden, bevor deren Speicherplatz kritisch knapp wird. Damit können Storage-Nodes, die aus einem schreibgeschützten Zustand migriert wurden, erneut Lese- und Schreibvorgänge werden.
 
-image::../media/storage_volume_watermarks.png[Wasserzeichen für Storage-Volumes]
+image:storage_volume_watermarks.png["Wasserzeichen für Storage-Volumes"]
 
 
 NOTE: Storage Volume-Wasserzeichen gelten nur für den Speicherplatz, der für replizierte und nach Datenkonsistenz (Erasure Coding) verwendet wird. Informationen über den für Objektmetadaten reservierten Speicherplatz auf Volume 0 finden Sie unter link:managing-object-metadata-storage.html["Management von Objekt-Metadaten-Storage"].

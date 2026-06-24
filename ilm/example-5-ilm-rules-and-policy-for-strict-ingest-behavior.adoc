@@ -84,7 +84,7 @@ Aufnahmeverhalten
 Streng. Verwenden Sie bei der Einspeisung immer die Platzierungen dieser Regel. Die Aufnahme schlägt fehl, wenn es nicht möglich ist, zwei Kopien des Objekts im Pariser Rechenzentrum zu speichern.
 
 |===
-image::../media/ilm_rule_1_example_5_strict_ingest.png[ILM-Regel 1, Beispiel 5, strikte Aufnahme]
+image:ilm_rule_1_example_5_strict_ingest.png["ILM-Regel 1, Beispiel 5, strikte Aufnahme"]
 
 
 

@@ -34,7 +34,7 @@ Der Node ist möglicherweise für einen kurzen Zeitraum nicht verfügbar, wenn S
 .Schritte
 . Fügen Sie in vCenter einen neuen Netzwerkadapter (Typ VMXNET3) zu einer Admin-Node- und Gateway-Node-VM hinzu. Aktivieren Sie die Kontrollkästchen * Verbunden* und * Verbinden beim Einschalten*.
 +
-image::../media/vcenter.png[VCenter]
+image:vcenter.png["VCenter"]
 
 . Verwenden Sie SSH, um sich beim Admin-Node oder Gateway-Node anzumelden.
 . Mit `ip link show` bestätigen Sie, dass die neue Netzwerkschnittstelle ens256 erkannt wird.

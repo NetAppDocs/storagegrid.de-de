@@ -27,7 +27,7 @@ NOTE: Wenn ein Grid-Knoten fehlt, vergewissern Sie sich, dass er erfolgreich ber
 
 . Aktivieren Sie das Optionsfeld neben einem Knoten, der noch nicht genehmigt werden soll.
 +
-image::../media/5_gmi_installer_grid_nodes_pending.gif[Dieses Bild wird durch den umgebenden Text erläutert.]
+image:5_gmi_installer_grid_nodes_pending.gif["Dieses Bild wird durch den umgebenden Text erläutert."]
 
 . Klicken Sie Auf *Genehmigen*.
 . Ändern Sie unter Allgemeine Einstellungen die Einstellungen für die folgenden Eigenschaften, falls erforderlich:
@@ -125,7 +125,7 @@ Weitere Informationen finden Sie unter, um die https://docs.netapp.com/us-en/sto
 Der Eintrag des Rasterknoten wird in die Liste der genehmigten Knoten verschoben.
 
 +
-image::../media/7_gmi_installer_grid_nodes_approved.gif[Dieses Bild wird durch den umgebenden Text erläutert.]
+image:7_gmi_installer_grid_nodes_approved.gif["Dieses Bild wird durch den umgebenden Text erläutert."]
 
 . Wiederholen Sie diese Schritte für jeden ausstehenden Rasterknoten, den Sie genehmigen möchten.
 +

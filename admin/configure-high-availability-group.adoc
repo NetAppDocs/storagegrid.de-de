@@ -69,7 +69,7 @@ Eine Schnittstelle muss lauten, damit ein Gateway-Node oder ein Admin-Node in ei
 Verwenden Sie die Spaltenüberschriften, um die Zeilen zu sortieren, oder geben Sie einen Suchbegriff ein, um Schnittstellen schneller zu finden.
 
 +
-image::../media/ha_group_add_interfaces.png[HA Groups Add Interfaces]
+image:ha_group_add_interfaces.png["HA Groups Add Interfaces"]
 
 +
 
@@ -84,7 +84,7 @@ NOTE: Warten Sie nach dem Erstellen einer VLAN-Schnittstelle bis zu 5 Minuten, b
 ** Wenn Sie Schnittstellen für verschiedene Node-Typen auswählen, wird ein Informationshinweis angezeigt. Sie werden daran erinnert, dass bei einem Failover Dienste, die vom zuvor aktiven Knoten bereitgestellt werden, möglicherweise auf dem neu aktiven Knoten nicht verfügbar sind. Ein Backup-Gateway-Node kann beispielsweise keinen HA-Schutz für Admin-Node-Services bereitstellen. Ebenso kann ein Backup-Admin-Node nicht alle Wartungsverfahren durchführen, die der primäre Admin-Node bereitstellen kann.
 ** Wenn Sie keine Schnittstelle auswählen können, ist das Kontrollkästchen deaktiviert. Der QuickInfo enthält weitere Informationen.
 +
-image::../media/vlan_parent_interface_tooltip.png[Tipp des VLAN Interface-Tools]
+image:vlan_parent_interface_tooltip.png["Tipp des VLAN Interface-Tools"]
 
 ** Eine Schnittstelle kann nicht ausgewählt werden, wenn ihr Subnetzwert oder Gateway mit einer anderen ausgewählten Schnittstelle in Konflikt steht.
 ** Sie können keine konfigurierte Schnittstelle auswählen, wenn diese keine statische IP-Adresse hat.
@@ -105,7 +105,7 @@ Wenn die HA-Gruppe mehr als eine Schnittstelle umfasst, können Sie feststellen,
 Die erste Schnittstelle in der Liste ist die primäre Schnittstelle. Die primäre Schnittstelle ist die aktive Schnittstelle, sofern kein Fehler auftritt.
 
 +
-image::../media/ha_group_determine_failover.png[HA-Gruppen bestimmen die Prioritätsreihenfolge]
+image:ha_group_determine_failover.png["HA-Gruppen bestimmen die Prioritätsreihenfolge"]
 
 +
 
@@ -128,7 +128,7 @@ Die Netzwerkadresse darf keine Host-Bits festgelegt haben.  `192.16.0.0/22`Beisp
 NOTE: Wenn Sie ein 32-Bit-Präfix verwenden, dient die VIP-Netzwerkadresse auch als Gateway-Adresse und VIP-Adresse.
 
 +
-image::../media/ha_group_select_virtual_ips.png[HA-Gruppen geben VIPs ein]
+image:ha_group_select_virtual_ips.png["HA-Gruppen geben VIPs ein"]
 
 . Wenn irgendwelche S3-Administrator- oder Mandanten-Clients von einem anderen Subnetz aus auf diese VIP-Adressen zugreifen, geben Sie optional die *Gateway-IP-Adresse* ein. Die Gateway-Adresse muss sich im VIP-Subnetz befinden.
 +

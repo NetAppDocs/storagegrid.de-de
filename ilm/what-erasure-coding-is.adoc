@@ -19,15 +19,15 @@ Beim Erstellen von ILM-Regeln erstellt StorageGRID Profile zur Einhaltung von Da
 
 Im folgenden Beispiel wird der Algorithmus zur Einhaltung von Datenkonsistenz (Erasure Coding) für Objektdaten dargestellt. In diesem Beispiel verwendet die ILM-Regel ein 4+2-Schema zur Einhaltung von Datenkonsistenz. Jedes Objekt wird in vier gleiche Datenfragmente geteilt und aus den Objektdaten werden zwei Paritätsfragmente berechnet. Jedes der sechs Fragmente wird auf einem anderen Node über drei Datacenter-Standorte gespeichert, um Daten bei Node-Ausfällen oder Standortausfällen zu sichern.
 
-image::../media/ec_three_sites_4_plus_2.png[Verfahren Zur Einhaltung Von Datenkonsistenz An Drei Standorten 4 Plus 2]
+image:ec_three_sites_4_plus_2.png["Verfahren Zur Einhaltung Von Datenkonsistenz An Drei Standorten 4 Plus 2"]
 
 Das 4+2 Erasure Coding-Schema kann auf verschiedene Weise konfiguriert werden. Sie können beispielsweise einen Speicherpool mit einem Standort konfigurieren, der sechs Storage-Nodes enthält. Für link:using-multiple-storage-pools-for-cross-site-replication.html["Schutz vor Standortausfällen"]können Sie einen Speicherpool verwenden, der drei Standorte mit drei Storage-Nodes an jedem Standort enthält. Ein Objekt kann abgerufen werden, solange vier der sechs Fragmente (Daten oder Parität) verfügbar sind. Bis zu zwei Fragmente können ohne Verlust der Objektdaten verloren gehen. Wenn ein ganzer Standort verloren geht, kann das Objekt dennoch abgerufen oder repariert werden, solange alle anderen Fragmente zugänglich bleiben.
 
-image::../media/ec_recoverable_4_plus_2.png[Erasure Coding Wiederherstellbar 4 Plus 2]
+image:ec_recoverable_4_plus_2.png["Erasure Coding Wiederherstellbar 4 Plus 2"]
 
 Wenn mehr als zwei Speicherknoten verloren gehen, kann das Objekt nicht abgerufen werden.
 
-image::../media/ec_unrecoverable_4_plus_2.png[Erasure Coding Nicht Behebbar 4 Plus 2]
+image:ec_unrecoverable_4_plus_2.png["Erasure Coding Nicht Behebbar 4 Plus 2"]
 
 .Verwandte Informationen
 * link:what-replication-is.html["Was ist Replikation"]

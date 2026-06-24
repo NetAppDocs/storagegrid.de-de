@@ -70,4 +70,4 @@ Die folgende Abbildung zeigt, wie StorageGRID Objektmetadaten neu verteilt, wenn
 
 Die rechte Seite der Abbildung zeigt, wie die vorhandenen Metadaten nach dem Hinzufügen von zwei Storage-Nodes zum Standort neu verteilt werden. Die Menge der Metadaten auf jedem Node ist gesunken, die Warnung * Storage mit niedrigen Metadaten* wird nicht mehr ausgelöst, und der für Metadaten verfügbare Platz hat sich erhöht.
 
-image::../media/metadata_space_after_expansion.png[Diagramm der neu verteilten Metadaten nach dem Hinzufügen von zwei Storage-Nodes]
+image:metadata_space_after_expansion.png["Diagramm der neu verteilten Metadaten nach dem Hinzufügen von zwei Storage-Nodes"]

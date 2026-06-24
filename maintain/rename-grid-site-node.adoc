@@ -108,7 +108,7 @@ Führen Sie die folgenden Schritte aus, um für jedes Element, das Sie umbenenne
 +
 Unter finden Sie link:../maintain/rename-grid-site-node-overview.html["Benennen Sie Raster, Standorte und Nodes um"]weitere Informationen zu den Namensanforderungen.
 
-. Um Elemente zu entfernen, die Sie nicht umbenennen möchten, wählen Sie image:../media/icon-x-to-remove.png["X-Symbol"] in der Spalte *aus Liste entfernen* aus.
+. Um Elemente zu entfernen, die Sie nicht umbenennen möchten, wählen Sie image:icon-x-to-remove.png["X-Symbol"] in der Spalte *Aus Liste entfernen* aus.
 +
 Wenn Sie keinen neuen Namen für ein Element vorschlagen, müssen Sie es aus der Tabelle entfernen.
 
@@ -132,12 +132,12 @@ Die Vorschau *Umbenennen* enthält alle Elemente, die für den Schritt *Neue Nam
 +
 Während der Eingabe wird Ihr Text überall dort hervorgehoben, wo er in den Namen auf der linken Seite zu finden ist.
 
-. Wählen Sie diese Option ausimage:../media/icon-x-to-remove.png["X-Symbol"], um alle Elemente zu entfernen, die Sie mit diesem Tool nicht umbenennen möchten.
+. Wählen Sie image:icon-x-to-remove.png["X-Symbol"] aus, um alle Elemente zu entfernen, die Sie mit diesem Tool nicht umbenennen möchten.
 +
-Angenommen, Sie möchten alle Knoten umbenennen, die den String enthalten `Data-Center-1`, aber Sie möchten den Standort nicht selbst umbenennen `Data-Center-1`. Wählen Sie diese Option image:../media/icon-x-to-remove.png["X-Symbol"]aus, um die Site aus der Vorschau zum Umbenennen zu entfernen.
+Angenommen, Sie möchten beispielsweise alle Knoten umbenennen, die die Zeichenfolge  `Data-Center-1` enthalten, aber die  `Data-Center-1` Site selbst nicht umbenennen. Wählen Sie image:icon-x-to-remove.png["X-Symbol"] aus, um die Site aus der Umbenennungsvorschau zu entfernen.
 
 +
-image::../media/rename-bulk-rename-tool.png[Tool zum Umbenennen mehrerer Dateien vorher]
+image:rename-bulk-rename-tool.png["Tool zum Umbenennen mehrerer Dateien vorher"]
 
 . Geben Sie im Feld *New string* den Ersatzstring ein, den Sie stattdessen verwenden möchten. Geben Sie beispielsweise *DC1* ein.
 +
@@ -147,10 +147,10 @@ Unter finden Sie link:../maintain/rename-grid-site-node-overview.html["Benennen 
 Wenn Sie die Ersatzzeichenfolge eingeben, werden die Namen auf der linken Seite aktualisiert, sodass Sie überprüfen können, ob die neuen Namen korrekt sind.
 
 +
-image::../media/rename-bulk-rename-tool-after.png[Tool zum Umbenennen von Massen nach]
+image:rename-bulk-rename-tool-after.png["Tool zum Umbenennen von Massen nach"]
 
 . Wenn Sie mit den in der Vorschau angezeigten Namen zufrieden sind, wählen Sie *Namen hinzufügen*, um die Namen der Tabelle für den Schritt *Neue Namen vorschlagen* hinzuzufügen.
-. Nehmen Sie zusätzliche Änderungen vor, oder entfernen Sie image:../media/icon-x-to-remove.png["X-Symbol"]alle Elemente, die Sie nicht umbenennen möchten.
+. Nehmen Sie alle erforderlichen zusätzlichen Änderungen vor oder wählen Sie image:icon-x-to-remove.png["X-Symbol"] aus, um alle Elemente zu entfernen, die Sie nicht umbenennen möchten.
 . Wenn Sie alle Elemente in der Tabelle umbenennen möchten, wählen Sie *Umbenennen*.
 +
 Eine Erfolgsmeldung wird angezeigt. Die neuen Anzeigenamen werden nun im gesamten Grid Manager verwendet.
@@ -196,7 +196,7 @@ Sie können ein umbenanntes Raster, eine Site oder einen Node auf den ursprüngl
 ====
 .Individuelle Wiederherstellung auf Systemnamen
 --
-.. Kopieren Sie den ursprünglichen Systemnamen jedes Elements und fügen Sie ihn in das Feld *Anzeigename* ein, oder wählen Sie ausimage:../media/icon-x-to-remove.png["X-Symbol"], um alle Elemente zu entfernen, die Sie nicht zurücksetzen möchten.
+.. Kopieren Sie den ursprünglichen Systemnamen jedes Elements und fügen Sie ihn in das Feld *Anzeigename* ein, oder wählen Sie image:icon-x-to-remove.png["X-Symbol"] aus, um Elemente zu entfernen, die Sie nicht wiederherstellen möchten.
 +
 Um einen Anzeigenamen rückgängig zu machen, muss der Systemname im Feld *Anzeigename* angezeigt werden, der Name muss jedoch nicht zwischen Groß- und Kleinschreibung unterschieden werden.
 
@@ -213,7 +213,7 @@ Eine Erfolgsmeldung wird angezeigt. Die Anzeigenamen für diese Elemente werden 
 .. Geben Sie in das Feld *existing string* den anzuzeigenden Namensstring ein, den Sie ersetzen möchten.
 .. Geben Sie im Feld *New string* den Systemnamen ein, den Sie stattdessen verwenden möchten.
 .. Wählen Sie *Namen hinzufügen*, um die Namen der Tabelle für den Schritt *Neue Namen vorschlagen* hinzuzufügen.
-.. Bestätigen Sie, dass jeder Eintrag im Feld *Anzeigename* mit dem Namen im Feld *Systemname* übereinstimmt. Nehmen Sie Änderungen vor, oder image:../media/icon-x-to-remove.png["X-Symbol"]entfernen Sie alle Elemente, die Sie nicht zurücksetzen möchten.
+.. Bestätigen Sie, dass jeder Eintrag im Feld *Anzeigename* mit dem Namen im Feld *Systemname* übereinstimmt. Nehmen Sie gegebenenfalls Änderungen vor oder wählen Sie image:icon-x-to-remove.png["X-Symbol"] aus, um Elemente zu entfernen, die Sie nicht zurücksetzen möchten.
 +
 Um einen Anzeigenamen rückgängig zu machen, muss der Systemname im Feld *Anzeigename* angezeigt werden, der Name muss jedoch nicht zwischen Groß- und Kleinschreibung unterschieden werden.
 

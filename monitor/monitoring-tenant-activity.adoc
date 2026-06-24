@@ -35,10 +35,10 @@ Für jeden Mandanten werden der genutzte logische Speicherplatz, die Kontingentn
 NOTE: Die logische Größe aller Objekte, die zu diesem Mandanten gehören, umfasst unvollständige und laufende mehrteilige Uploads.  Die Größe umfasst nicht den zusätzlichen physischen Speicherplatz, der für ILM-Richtlinien verwendet wird.  Bei den Werten für den belegten Speicherplatz handelt es sich um Schätzungen.  Diese Schätzungen werden durch den Zeitpunkt der Aufnahme, die Netzwerkkonnektivität und den Knotenstatus beeinflusst.
 
 +
-image::../media/tenant_accounts_page.png[Seite „Mandantenkonten“]
+image:tenant_accounts_page.png["Seite „Mandantenkonten“"]
 
-. Melden Sie sich optional bei einem Mandantenkonto an, indem Sie den Anmeldelink  in der Spalte *Anmelden/URL kopieren* auswählenimage:../media/icon_tenant_sign_in.png["Symbol für die Anmeldung beim Mandanten"].
-. Kopieren Sie optional die URL für die Anmeldeseite eines Mandanten, indem Sie den Link URL kopieren in der Spalte *Anmelden/URL kopieren* auswählenimage:../media/icon_tenant_copy_url.png["URL-Symbol für das Kopieren von Mandanten"].
+. Optional ist eine Anmeldung bei einem Mandantenkonto möglich, indem der Sign in-Link image:icon_tenant_sign_in.png["Symbol für die Anmeldung beim Mandanten"] in der Spalte *Sign in/Copy URL* ausgewählt wird.
+. Optional kann die URL der Sign in-Seite eines Mandanten kopiert werden, indem der Link „URL kopieren image:icon_tenant_copy_url.png["URL-Symbol für das Kopieren von Mandanten"]“ in der Spalte *Sign in/Copy URL* ausgewählt wird.
 . Wählen Sie optional *Export to CSV*, um eine Datei mit den Nutzungswerten für alle Mandanten anzuzeigen und zu exportieren `.csv`.
 +
 Sie werden aufgefordert, die Datei zu öffnen oder zu speichern `.csv`.
@@ -47,7 +47,7 @@ Sie werden aufgefordert, die Datei zu öffnen oder zu speichern `.csv`.
 Der Inhalt der `.csv` Datei sieht wie im folgenden Beispiel aus:
 
 +
-image::../media/tenant_accounts_example_csv.png[Mandantenkonten, Beispiel .csv]
+image:tenant_accounts_example_csv.png["Mandantenkonten, Beispiel .csv"]
 
 +
 Sie können die Datei in einer Tabellenkalkulationsanwendung öffnen `.csv` oder in der Automatisierung verwenden.
@@ -70,7 +70,7 @@ Sie können Details zu einem bestimmten Mandanten anzeigen.
 Die Seite mit den Mandantendetails wird angezeigt.
 
 +
-image::../media/tenant_usage_modal.png[Nutzung von Mandanten modal]
+image:tenant_usage_modal.png["Nutzung von Mandanten modal"]
 
 . Überprüfen Sie oben auf der Seite die Übersicht über die Serviceeinheiten.
 +
@@ -91,7 +91,7 @@ Wenn für diesen Mandanten ein Kontingent festgelegt wurde, wird die Menge des v
 Sie können den Cursor über das Balkendiagramm platzieren, um den von jedem Bucket oder Container verwendeten Speicher anzuzeigen. Sie können den Cursor über das Segment freier Speicherplatz platzieren, um die verbleibende Menge an Speicherplatz anzuzeigen.
 
 +
-image::../media/tenant_bucket_space_consumption_GM.png[Balkendiagramm für die Bucket-Nutzung von Mandanten]
+image:tenant_bucket_space_consumption_GM.png["Balkendiagramm für die Bucket-Nutzung von Mandanten"]
 
 +
 
@@ -114,7 +114,7 @@ In dieser Tabelle werden die S3-Buckets für den Mandanten aufgeführt. Der verw
 Die Inhalte der Datei eines einzelnen S3-Mandanten `.csv` sehen im folgenden Beispiel aus:
 
 +
-image::../media/tenant_bucket_details_csv.png[Beispiel für die Bucket-Details des Mandanten (CSV]
+image:tenant_bucket_details_csv.png["Beispiel für die Bucket-Details des Mandanten (CSV"]
 
 +
 Sie können die Datei in einer Tabellenkalkulationsanwendung öffnen `.csv` oder in der Automatisierung verwenden.

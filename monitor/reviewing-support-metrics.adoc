@@ -30,7 +30,7 @@ NOTE: Die auf der Seite Metriken verfügbaren Tools sind für den technischen Su
 Ein Beispiel für die Seite Metriken ist hier aufgeführt:
 
 +
-image::../media/metrics_page.png[Seite „Kennzahlen“]
+image:metrics_page.png["Seite „Kennzahlen“"]
 
 . Um die aktuellen Werte der StorageGRID-Metriken abzufragen und Diagramme der Werte im Zeitverlauf anzuzeigen, klicken Sie im Abschnitt Prometheus auf den Link.
 +
@@ -45,6 +45,6 @@ NOTE: Metriken, die _privat_ in ihren Namen enthalten, sind nur zur internen Ver
 Die Grafana-Schnittstelle für den ausgewählten Link wird angezeigt.
 
 +
-image::../media/metrics_page_grafana.png[Seite „Kennzahlen“ Grafana]
+image:metrics_page_grafana.png["Seite „Kennzahlen“ Grafana"]
 
 

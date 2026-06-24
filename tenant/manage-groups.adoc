@@ -68,7 +68,7 @@ Wenn das Mandantenkonto über die Berechtigung *Grid Federation connection* verw
 
 . Bearbeiten Sie die Gruppeneinstellungen nach Bedarf.  Siehelink:creating-groups-for-s3-tenant.html["Erstellen von Gruppen für einen S3-Mandanten"] für Details zu den einzugebenden Informationen.
 +
-.. Ändern Sie im Abschnitt Übersicht den Anzeigenamen, indem Sie den Namen oder das Bearbeiten-Symbol auswählenimage:../media/icon_edit_tm.png["Symbol bearbeiten"].
+.. Im Abschnitt „Übersicht“ lässt sich der Anzeigename ändern, indem der Name oder das Bearbeitungssymbol image:icon_edit_tm.png["Symbol bearbeiten"] ausgewählt wird.
 .. Aktualisieren Sie auf der Registerkarte *Gruppenberechtigungen* die Berechtigungen und wählen Sie *Änderungen speichern*.
 .. Nehmen Sie auf der Registerkarte *Gruppenrichtlinie* Änderungen vor und wählen Sie *Änderungen speichern*.
 +
@@ -80,7 +80,7 @@ Wählen Sie optional eine andere S3-Gruppenrichtlinie aus oder geben Sie bei Bed
 +
 .. Wählen Sie die Registerkarte Benutzer aus.
 +
-image::../media/manage_users.png[Benutzer managen]
+image:manage_users.png["Benutzer managen"]
 
 .. Wählen Sie *Benutzer hinzufügen*.
 .. Wählen Sie die vorhandenen Benutzer aus, die Sie hinzufügen möchten, und wählen Sie *Benutzer hinzufügen*.

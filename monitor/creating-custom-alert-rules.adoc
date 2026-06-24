@@ -48,7 +48,7 @@ Die Seite Alarmregeln wird angezeigt.
 Das Dialogfeld „Benutzerdefinierte Regel erstellen“ wird angezeigt.
 
 +
-image::../media/alerts_create_custom_rule.png[Alarme > Benutzerdefinierte Regel Erstellen]
+image:alerts_create_custom_rule.png["Benachrichtigungen > Benutzerdefinierte Regel erstellen"]
 
 . Aktivieren oder deaktivieren Sie das Kontrollkästchen *enabled*, um zu bestimmen, ob diese Warnungsregel aktuell aktiviert ist.
 +
@@ -98,7 +98,7 @@ Dieser Ausdruck bewirkt, dass eine Warnung ausgelöst wird, wenn die Menge des i
 `node_memory_MemTotal_bytes < 24000000000`
 
 +
-Um die verfügbaren Metriken anzuzeigen und Prometheus-Ausdrücke zu testen, wählen Sie das Hilfesymbol aus image:../media/icon_nms_question.png["Fragezeichen-Symbol"]und folgen dem Link zum Abschnitt „Metriken“ der Grid Management API.
+Um verfügbare Metriken anzuzeigen und Prometheus-Ausdrücke zu testen, das Hilfesymbol image:icon_nms_question.png["Fragezeichen-Symbol"] auswählen und dem Link zum Abschnitt Metriken der Grid Management API folgen.
 
 . Geben Sie im Feld *Dauer* den Zeitraum ein, den eine Bedingung kontinuierlich wirksam bleiben muss, bevor die Warnung ausgelöst wird, und wählen Sie eine Zeiteinheit aus.
 +

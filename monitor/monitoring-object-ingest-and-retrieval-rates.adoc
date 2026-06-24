@@ -29,6 +29,6 @@ Das Diagramm zeigt die S3-Aufnahme- und -Abrufraten Ihres gesamten StorageGRID S
 Im Diagramm werden die Aufnahme- und Abrufraten des Node angezeigt. Die Registerkarte enthält außerdem Kennzahlen für die Anzahl der Objekte, Metadatenabfragen und Verifizierungsvorgänge.
 
 +
-image::../media/nodes_storage_node_objects_help.png[Screenshot von Nodes > _Storage Node_ > Objects > Attributhilfe]
+image:nodes_storage_node_objects_help.png["Screenshot von Nodes > _Storage Node_ > Objects > Attributhilfe"]
 
 

@@ -45,14 +45,14 @@ Sie sollten die Ergebnisse aus Hintergrundverifizierungen und Objektprüfungen r
 +
 *** Um die Verifizierung replizierter Objektdaten zu prüfen, sehen Sie sich die Attribute im Abschnitt Überprüfung an.
 +
-image::../media/nodes_storage_node_object_verification.png[Nodes > Storage Node > Objekt > Verifizierung]
+image:nodes_storage_node_object_verification.png["Knoten > Speicherknoten > Objekt > Verifizierung"]
 
 *** Um die Überprüfung von Fragment mit Löschungscode zu überprüfen, wählen Sie *_Storage Node_* > *ILM* aus, und sehen Sie sich die Attribute im Abschnitt zur Verifizierung von Erasure-Coding an.
 +
-image::../media/nodes_storage_node_ilm_ec_verification.png[Nodes > Storage Node > ILM > EC-Überprüfung]
+image:nodes_storage_node_ilm_ec_verification.png["Knoten > Speicherknoten > ILM > EC Verifizierung"]
 
 +
-Wählen Sie das Fragezeichen  neben dem Namen eines Attributs ausimage:../media/icon_nms_question.png["Fragezeichen"], um Hilfetext anzuzeigen.
+Das Fragezeichen image:icon_nms_question.png["Fragezeichen"] neben dem Namen eines Attributs zeigt einen Hilfetext an.
 
 
 
@@ -63,7 +63,7 @@ Wählen Sie das Fragezeichen  neben dem Namen eines Attributs ausimage:../media/
 .. Wählen Sie *Wartung* > *Objektexistenzprüfung* > *Auftragsverlauf*.
 .. Scannen Sie die Spalte „Fehlende Objektkopien erkannt“.  Wenn bei einem Auftrag 100 oder mehr Objektkopien fehlen und die Warnung „Möglicherweise verlorene Objekte“ ausgelöst wurde, wenden Sie sich an den technischen Support.
 +
-image::../media/oec_job_history.png[Jobverlauf der Objektexistenz-Prüfung]
+image:oec_job_history.png["Jobverlauf der Objektexistenz-Prüfung"]
 
 
 

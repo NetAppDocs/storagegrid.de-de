@@ -38,7 +38,7 @@ CAUTION: Vergewissern Sie sich, dass mindestens zwei Nodes an jedem Standort auf
 . Geben Sie die IPv4-Adressen für mindestens vier NTP-Server in den Textfeldern *Server 1* bis *Server 4* an.
 . Wählen Sie bei Bedarf das Pluszeichen neben dem letzten Eintrag aus, um zusätzliche Servereinträge hinzuzufügen.
 +
-image::../media/8_gmi_installer_ntp_page.gif[Dieses Bild wird durch den umgebenden Text erläutert.]
+image:8_gmi_installer_ntp_page.gif["Dieses Bild wird durch den umgebenden Text erläutert."]
 
 . Wählen Sie *Weiter*.
 

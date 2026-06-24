@@ -42,7 +42,7 @@ CAUTION: Einige Erweiterungsschritte und -Phasen können eine erhebliche Zeit in
 Die Seite Rastererweiterung wird angezeigt. Im Abschnitt Ausstehende Knoten werden die Knoten aufgeführt, die zum Hinzufügen bereit sind.
 
 +
-image::../media/grid_expansion_page.png[Screenshot mit der Seite „Rastererweiterung“]
+image:grid_expansion_page.png["Screenshot mit der Seite „Rastererweiterung“"]
 
 . Wählen Sie *Erweiterung Konfigurieren*.
 +
@@ -60,7 +60,7 @@ Das Dialogfeld Standortauswahl wird angezeigt.
 Bei Bedarf können Sie den Cursor über die MAC-Adresse des *Grid Network* eines Knotens platzieren, um Details zu diesem Knoten anzuzeigen.
 
 +
-image::../media/grid_node_details.png[Screenshot mit Grid Node-Details]
+image:grid_node_details.png["Screenshot mit Grid Node-Details"]
 
 +
 

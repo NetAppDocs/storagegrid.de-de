@@ -62,7 +62,7 @@ Wählen Sie die Knoten aus, die neu gestartet werden sollen, überprüfen Sie Ih
 . Überprüfen Sie den Verbindungsstatus und die Warnsymbole in der Spalte *Knotenname*.
 +
 
-TIP: Sie können einen Node nicht neu booten, wenn er vom Grid getrennt ist. Die Kontrollkästchen sind für Knoten mit den folgenden Symbolen deaktiviert: image:../media/icon_alarm_gray_administratively_down.png["Graues Fragezeichen-Symbol"] Oder image:../media/icon_alarm_blue_unknown.png["Blaues Fragezeichen-Symbol"].
+TIP: Ein Knoten kann nicht neu gestartet werden, wenn er vom Grid getrennt ist. Die Kontrollkästchen sind für Knoten mit diesen Symbolen deaktiviert: image:icon_alarm_gray_administratively_down.png["Graues Fragezeichen-Symbol"] oder image:icon_alarm_blue_unknown.png["Blaues Fragezeichen-Symbol"].
 
 . Wenn Knoten aktive Warnungen haben, überprüfen Sie die Liste der Warnungen in der Spalte *Alert summary*.
 +

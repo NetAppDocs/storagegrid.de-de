@@ -21,7 +21,7 @@ Der Lebenszyklus eines Objekts umfasst das Aufnehmen, das Kopieren-Management, d
 * *Löschen*: Der Vorgang, bei dem alle Objektkopien aus dem Raster entfernt werden. Objekte können entweder gelöscht werden, wenn eine Client-Applikation eine Löschanfrage an das StorageGRID System sendet, oder infolge eines automatischen Prozesses, der StorageGRID nach Ablauf der Nutzungsdauer des Objekts durchführt.
 
 
-image::../media/object_lifecycle.png[Diagramm mit der Lebensdauer eines Objekts]
+image:object_lifecycle.png["Diagramm mit der Lebensdauer eines Objekts"]
 
 .Verwandte Informationen
 * link:../ilm/index.html["Objektmanagement mit ILM"]

@@ -30,7 +30,7 @@ Rufen Sie als ersten Schritt den Assistenten zum Erstellen von Gruppen auf.
 . Wählen Sie *Zugriffsverwaltung* > *Gruppen*.
 . Wenn Ihr Mandantenkonto über die Berechtigung *Grid Federation connection* verfügt, bestätigen Sie, dass ein blaues Banner erscheint, das anzeigt, dass neue Gruppen, die in diesem Raster erstellt werden, auf demselben Mandanten auf dem anderen Raster der Verbindung geklont werden. Wenn dieses Banner nicht angezeigt wird, werden Sie möglicherweise im Zielraster des Mandanten angemeldet.
 +
-image::../media/grid-federation-tenant-group-banner.png[Abbildung des blauen Banners auf der Seite Gruppen des Quellenrasters für Mandanten]
+image:grid-federation-tenant-group-banner.png["Abbildung des blauen Banners auf der Seite Gruppen des Quellenrasters für Mandanten"]
 
 . Wählen Sie *Gruppe erstellen*.
 

@@ -15,6 +15,6 @@ Der zugrunde liegende Storage auf einem Storage-Node ist in Objektspeicher unter
 
 Sie können Objektspeicherinformationen für jeden Speicherknoten anzeigen.  Wählen Sie *Knoten* > *_Speicherknoten_* > *Speicher*.
 
-image::../media/nodes_page_storage_nodes_storage_tables.png[Knoten Seite Speicher Knoten Speichertabellen]
+image:nodes_page_storage_nodes_storage_tables.png["Knoten Seite Speicher Knoten Speichertabellen"]
 
 Je nach Art des Ausfalls können Fehler bei einem Speicher-Volume in dargestellt werdenlink:../monitor/alerts-reference.html["Warnmeldungen zu Storage-Volumes"]. Wenn ein Speichervolume ausfällt, sollten Sie das ausgefallene Speichervolume reparieren, um den Speicherknoten so bald wie möglich wieder voll zu machen. Bei Bedarf können Sie auf die Registerkarte *Konfiguration* gehenlink:../maintain/checking-storage-state-after-recovering-storage-volumes.html["Setzen Sie den Speicher-Node in einen schreibgeschützten Status‐"], damit das StorageGRID-System es für den Datenabruf nutzen kann, während Sie sich auf eine vollständige Wiederherstellung des Servers vorbereiten.

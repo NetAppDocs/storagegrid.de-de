@@ -40,7 +40,7 @@ Die Seite Decommission Nodes wird angezeigt. Wenn die Deaktivierung eine der fol
 Die aktuelle Phase wird angehalten, und die Schaltfläche *Fortsetzen* ist aktiviert.
 
 +
-image::../media/decommission_nodes_procedure_paused.png[Verfahren Für Die Deaktivierung Von Knoten Angehalten]
+image:decommission_nodes_procedure_paused.png["Verfahren Für Die Deaktivierung Von Knoten Angehalten"]
 
 . Nachdem der andere Wartungsvorgang abgeschlossen ist, wählen Sie *Fortsetzen* aus, um mit der Stilllegung fortzufahren.
 

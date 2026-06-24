@@ -76,7 +76,7 @@ NOTE: In dieser Spalte wird nur der letzte gitterübergreifende Replikationsfehl
 Dieser Fehler zeigt beispielsweise an, dass der Ziel-Bucket für die Grid-übergreifende Replizierung in einem ungültigen Status war, möglicherweise weil die Versionierung ausgesetzt oder S3 Object Lock aktiviert wurde.
 
 +
-image::../media/grid-federation-cgr-object-example-last-error.png[Grid-Federation-cgr-object-example-Last-error]
+image:grid-federation-cgr-object-example-last-error.png["Grid-Federation-cgr-object-example-Last-error"]
 
 . Führen Sie alle empfohlenen Aktionen aus. Wenn beispielsweise die Versionierung auf dem Ziel-Bucket für die Grid-übergreifende Replizierung angehalten wurde, aktivieren Sie die Versionierung für diesen Bucket neu.
 . Wählen Sie die Verbindung aus der Tabelle aus.

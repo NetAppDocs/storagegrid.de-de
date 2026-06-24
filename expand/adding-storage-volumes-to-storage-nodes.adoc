@@ -39,7 +39,7 @@ Bei Appliance-Storage-Nodes entspricht der weltweite Name jeder Festplatte der W
 Um Ihnen bei der Auswertung von Datenträger-Lese- und Schreibstatistiken zu Volume-Mount-Punkten zu helfen, entspricht der erste Teil des Namens, der in der Spalte *Name* der Tabelle Disk Devices (d. h. _sdc_, _sdd_, _sde_ usw.) in der Spalte *Gerät* der Tabelle Volumes angezeigt wird.
 
 +
-image::../media/nodes_page_storage_tables_vol_expansion.png[Knoten Seitentabellen]
+image:nodes_page_storage_tables_vol_expansion.png["Knoten Seitentabellen"]
 
 . Befolgen Sie die Anweisungen, mit denen Ihre Plattform dem Storage-Node neue Storage Volumes hinzufügen kann.
 +

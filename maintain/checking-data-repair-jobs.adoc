@@ -37,7 +37,7 @@ Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `
 ** Wenn Sie noch nie einen Datenreparaturauftrag ausgeführt haben, lautet die Ausgabe `No job found` . Sie müssen keine Reparaturjobs neu starten.
 ** Wenn der Datenreparaturauftrag zuvor ausgeführt wurde oder derzeit ausgeführt wird, listet die Ausgabe Informationen für die Reparatur auf. Jede Reparatur hat eine eindeutige Reparatur-ID.
 +
-image::../media/repair-data-status.png[Reparaturdatenstatus]
+image:repair-data-status.png["Reparaturdatenstatus"]
 
 
 

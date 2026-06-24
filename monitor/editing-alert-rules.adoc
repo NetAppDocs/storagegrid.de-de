@@ -35,7 +35,7 @@ Die Seite Alarmregeln wird angezeigt.
 Das Dialogfeld Regel bearbeiten wird angezeigt. Dieses Beispiel zeigt eine Standard-Alarmregel: Die Felder eindeutiger Name, Beschreibung und Empfohlene Aktionen sind deaktiviert und können nicht bearbeitet werden.
 
 +
-image::../media/alert_rules_edit_rule.png[Alarme > Regel Bearbeiten]
+image:alert_rules_edit_rule.png["Benachrichtigungen > Regel bearbeiten"]
 
 . Aktivieren oder deaktivieren Sie das Kontrollkästchen *enabled*, um zu bestimmen, ob diese Warnungsregel aktuell aktiviert ist.
 +
@@ -86,7 +86,7 @@ Optional sind die zu ergriffenen Maßnahmen verfügbar, wenn diese Meldung ausge
 NOTE: Wenn Sie eine Bedingung für eine bearbeitete Standardwarnregel auf ihren ursprünglichen Wert zurücksetzen möchten, wählen Sie die drei Punkte rechts neben der geänderten Bedingung aus.
 
 +
-image::../media/alert_rules_edit_revert_to_default.png[Meldungsregeln: Zurücksetzen einer bearbeiteten Bedingung auf den Standardwert]
+image:alert_rules_edit_revert_to_default.png["Meldungsregeln: Zurücksetzen einer bearbeiteten Bedingung auf den Standardwert"]
 
 +
 

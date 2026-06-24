@@ -36,7 +36,7 @@ Der Ersatzknoten muss als primärer Admin-Node für Ihr StorageGRID System konfi
 
 . Klicken Sie auf *Wiederherstellen eines fehlgeschlagenen primären Admin-Knotens*.
 +
-image::../media/install_or_recover_primary_admin_node.png[Installieren oder Wiederherstellen des primären Admin-Knotens]
+image:install_or_recover_primary_admin_node.png["Installieren oder Wiederherstellen des primären Admin-Knotens"]
 
 . Laden Sie die aktuellste Sicherung des Wiederherstellungspakets hoch:
 +

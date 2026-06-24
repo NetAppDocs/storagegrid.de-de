@@ -386,7 +386,7 @@ Wenn Sie das Problem nicht alleine lösen können, wenden Sie sich an den techni
 
 [cols="1a,2a,4a"]
 |===
-| image:../media/feature_checkmark.gif["Häkchen"] | Element | Hinweise 
+| image:feature_checkmark.gif["Häkchen"] | Element | Hinweise 
 
 
  a| 

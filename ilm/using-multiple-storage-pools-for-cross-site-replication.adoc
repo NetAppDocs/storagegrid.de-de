@@ -40,9 +40,9 @@ Standardmäßig wird während der StorageGRID-Installation ein Speicherpool für
 
 ILM-Regelplatzierungen:
 
-image::../media/ilm_replication_at_2_sites.png[Es wird jeweils 1 Kopie an 2 Standorten repliziert]
+image:ilm_replication_at_2_sites.png["Es wird jeweils 1 Kopie an 2 Standorten repliziert"]
 
-image::../media/ilm_replication_make_2_copies_2_pools_2_sites.png[Erstellen Sie 1 Kopie an jedem der 2 Standorte – standortspezifischer Speicherpool]
+image:ilm_replication_make_2_copies_2_pools_2_sites.png["Erstellen Sie 1 Kopie an jedem der 2 Standorte – standortspezifischer Speicherpool"]
 
 Wenn ein Standort verloren geht, sind Kopien der Objekte am anderen Standort verfügbar.
 
@@ -58,7 +58,7 @@ Wenn Storage-Pools aus mehr als einem Standort pro Storage-Pool bestehen, könne
 
 ILM-Regelplatzierungen:
 
-image::../media/ilm_erasure_coding_site_loss_protection_4+2.png[EC 1 Storage-Pool 9 Storage-Nodes 3 Standorte]
+image:ilm_erasure_coding_site_loss_protection_4+2.png["EC 1 Storage-Pool 9 Storage-Nodes 3 Standorte"]
 
 In diesem Beispiel:
 
@@ -72,8 +72,8 @@ NOTE: Erasure Coding ist in Speicherpools erlaubt, die eine beliebige Anzahl von
 
 ILM-Regel gemäß 4+2 Erasure-Coding-Schema:
 
-image::../media/ec_three_sites_4_plus_2_site_loss_example_template.png[Speichern Sie Objekte durch Erasure Coding mithilfe eines 4+2-EC-Schemas an 3 Standorten]
+image:ec_three_sites_4_plus_2_site_loss_example_template.png["Speichern Sie Objekte durch Erasure Coding mithilfe eines 4+2-EC-Schemas an 3 Standorten"]
 
 Wenn ein Standort verloren geht, können die Daten immer noch wiederhergestellt werden:
 
-image::../media/ec_three_sites_4_plus_2_site_loss_example.png[Erasure Coding 4+2 EG-Schema 1 Standort verloren]
+image:ec_three_sites_4_plus_2_site_loss_example.png["Erasure Coding 4+2 EG-Schema 1 Standort verloren"]

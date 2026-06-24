@@ -25,7 +25,7 @@ Wenn Sie mehrere Grid-Subnetze haben, ist das Grid Network-Gateway erforderlich.
 ** Wenn Sie bereits mindestens einen Knoten bereitgestellt haben, klicken Sie auf *Netznetze-Subnetze ermitteln*, um die Netznetzwerksubnetz-Liste automatisch mit den Subnetzen zu füllen, die von Grid-Nodes gemeldet wurden, die beim Grid Manager registriert sind.
 ** Sie müssen manuell Subnetze für NTP, DNS, LDAP oder andere externe Server hinzufügen, auf die über das Grid-Netzwerk-Gateway zugegriffen wird.
 +
-image::../media/4_gmi_installer_grid_network_page.gif[Geben Sie Subnetze an]
+image:4_gmi_installer_grid_network_page.gif["Geben Sie Subnetze an"]
 
 
 

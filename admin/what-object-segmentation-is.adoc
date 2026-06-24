@@ -15,7 +15,7 @@ Bei der Objektsegmentierung wird ein Objekt in eine Sammlung kleinerer Objekte f
 
 Wenn ein Objekt in das StorageGRID-System aufgenommen wird, teilt der LDR-Service das Objekt in Segmente auf und erstellt einen Segment-Container, der die Header-Informationen aller Segmente als Inhalt auflistet.
 
-image::../media/object_segmentation_diagram.gif[Objektsegmentierungsworkflow]
+image:object_segmentation_diagram.gif["Objektsegmentierungsworkflow"]
 
 Beim Abruf eines Segment-Containers fasst der LDR-Service das ursprüngliche Objekt aus seinen Segmenten zusammen und gibt das Objekt dem Client zurück.
 

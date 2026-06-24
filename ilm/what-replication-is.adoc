@@ -17,7 +17,7 @@ Wenn Sie eine ILM-Regel zum Erstellen replizierter Kopien konfigurieren, geben S
 
 Im folgenden Beispiel gibt die ILM-Regel an, dass zwei replizierte Kopien jedes Objekts in einem Storage-Pool mit drei Storage-Nodes platziert werden.
 
-image::../media/ilm_replication_make_2_copies.png[Regel für 2 Kopien erstellen]
+image:ilm_replication_make_2_copies.png["Regel für 2 Kopien erstellen"]
 
 Wenn StorageGRID Objekte mit dieser Regel übereinstimmt, werden zwei Kopien des Objekts erstellt, wobei jede Kopie auf einem anderen Storage-Node im Storage-Pool platziert wird. Die beiden Kopien können auf zwei der drei verfügbaren Storage-Nodes platziert werden. In diesem Fall wurden in der Regel Objektkopien auf Speicherknoten 2 und 3 platziert. Da es zwei Kopien gibt, kann das Objekt abgerufen werden, wenn einer der Nodes im Speicherpool ausfällt.
 

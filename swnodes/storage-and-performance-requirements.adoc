@@ -395,7 +395,7 @@ NOTE: Ein Appliance-Speicherknoten kann außerdem über bis zu 48 Speichervolume
 
 Wie in der Abbildung dargestellt, reserviert StorageGRID Speicherplatz für Objekt-Metadaten auf dem Storage Volume 0 jedes Storage-Nodes. Alle verbleibenden Speicherplatz auf dem Storage-Volume 0 und anderen Storage-Volumes im Storage-Node werden ausschließlich für Objektdaten verwendet.
 
-image::../media/metadata_space_storage_node.png[Metadaten-Speicherplatz-Storage-Node]
+image:metadata_space_storage_node.png["Metadaten-Speicherplatz-Storage-Node"]
 
 Um Redundanz zu gewährleisten und Objekt-Metadaten vor Verlust zu schützen, speichert StorageGRID drei Kopien der Metadaten für alle Objekte im System an jedem Standort. Die drei Kopien der Objektmetadaten werden gleichmäßig auf alle Storage-Nodes an jedem Standort verteilt.
 

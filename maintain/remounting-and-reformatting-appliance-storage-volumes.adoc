@@ -215,7 +215,7 @@ NOTE: Einige StorageGRID-Wiederherstellungsverfahren verwenden Reaper für die B
 Der Fortschrittsbalken und die Spalte Stufe auf der Seite Wiederherstellung geben einen übergeordneten Status des `sn-recovery-postinstall.sh` Skripts an.
 
 +
-image::../media/recovering_cassandra.png[Screenshot zeigt den Wiederherstellungsfortschritt in der Grid-Verwaltungsschnittstelle]
+image:recovering_cassandra.png["Screenshot zeigt den Wiederherstellungsfortschritt in der Grid-Verwaltungsschnittstelle"]
 
 . Nachdem das `sn-recovery-postinstall.sh` Skript Dienste auf dem Node gestartet hat, können Sie Objektdaten auf allen Speichervolumes wiederherstellen, die mit dem Skript formatiert wurden.
 +
