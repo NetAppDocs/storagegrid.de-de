@@ -20,6 +20,7 @@ Wenn sich Ihre Speicheranforderungen ändern, müssen Sie möglicherweise zusät
 
 
 
+[[view-ilm-policies]]
 == ILM-Richtlinien anzeigen
 
 So zeigen Sie aktive und inaktive ILM-Richtlinien und den Verlauf der Richtlinienaktivierung an:
@@ -36,6 +37,8 @@ NOTE: Wenn Sie die Details einer Richtlinie anzeigen, deren Status bearbeitet od
 
 
 
+[[edit-an-ilm-policy]]
+[[edit-ilm-policy]]
 == Bearbeiten Sie eine ILM-Richtlinie
 
 Sie können nur eine inaktive Richtlinie bearbeiten. Wenn Sie eine aktive Richtlinie bearbeiten möchten, deaktivieren Sie sie, oder erstellen Sie einen Klon, und bearbeiten Sie den Klon.
@@ -53,6 +56,8 @@ CAUTION: Eine falsch konfigurierte ILM-Richtlinie kann zu nicht wiederherstellba
 
 
 
+[[clone-an-ilm-policy]]
+[[clone-ilm-policy]]
 == Klonen einer ILM-Richtlinie
 
 So klonen Sie eine ILM-Richtlinie:
@@ -67,6 +72,8 @@ CAUTION: Eine falsch konfigurierte ILM-Richtlinie kann zu nicht wiederherstellba
 
 
 
+[[remove-an-ilm-policy]]
+[[remove-ilm-policy]]
 == Entfernen einer ILM-Richtlinie
 
 Sie können eine ILM-Richtlinie nur entfernen, wenn sie inaktiv ist. So entfernen Sie eine Richtlinie:
@@ -78,6 +85,7 @@ Sie können eine ILM-Richtlinie nur entfernen, wenn sie inaktiv ist. So entferne
 
 
 
+[[view-ilm-rule-details]]
 == Zeigen Sie Einzelheiten zur ILM-Regel an
 
 So zeigen Sie die Details für eine ILM-Regel an, einschließlich des Aufbewahrungsdiagramms und der Anweisungen zur Platzierung der Regel:
@@ -93,6 +101,8 @@ Darüber hinaus können Sie auf der Detailseite eine Regel klonen, bearbeiten od
 
 
 
+[[clone-an-ilm-rule]]
+[[clone-ilm-rule]]
 == Klonen einer ILM-Regel
 
 Sie können eine vorhandene Regel klonen, wenn Sie eine neue Regel erstellen möchten, die einige der Einstellungen der vorhandenen Regel verwendet. Wenn Sie eine Regel bearbeiten müssen, die in einer Richtlinie verwendet wird, klonen Sie stattdessen die Regel und nehmen Änderungen am Klon vor. Nachdem Sie Änderungen am Klon vorgenommen haben, können Sie die ursprüngliche Regel aus der Richtlinie entfernen und sie bei Bedarf durch die geänderte Version ersetzen.
@@ -111,6 +121,7 @@ Beim Klonen einer ILM-Regel müssen Sie einen neuen Namen eingeben.
 
 
 
+[[edit-an-ilm-rule]]
 == Bearbeiten einer ILM-Regel
 
 Möglicherweise müssen Sie eine ILM-Regel bearbeiten, um einen Filter oder eine Platzierungsanweisung zu ändern.
@@ -132,6 +143,7 @@ Beim Bearbeiten einer ILM-Regel können Sie ihren Namen nicht ändern.
 
 
 
+[[remove-an-ilm-rule]]
 == Entfernen einer ILM-Regel
 
 Um die Liste der aktuellen ILM-Regeln kontrollierbar zu halten, entfernen Sie alle ILM-Regeln, die Sie wahrscheinlich nicht verwenden werden.
@@ -162,6 +174,7 @@ So entfernen Sie eine derzeit nicht verwendete ILM-Regel:
 
 
 
+[[view-ilm-metrics]]
 == Anzeigen von ILM-Metriken
 
 Sie können Metriken für ILM anzeigen, z. B. die Anzahl der Objekte in der Warteschlange und die Evaluierungsrate. Sie können diese Kennzahlen überwachen, um die Systemperformance zu ermitteln. Eine große Warteschlange oder Evaluierungsrate zeigt möglicherweise an, dass das System nicht mit der Aufnahmerate Schritt halten kann, die Auslastung der Client-Applikationen zu hoch ist oder dass ein ungewöhnlicher Zustand vorliegt.

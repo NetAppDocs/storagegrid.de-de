@@ -15,6 +15,7 @@ Prüfen Sie die Überlegungen für die Stilllegung eines Admin-Node oder Gateway
 
 
 
+[[considerations-for-admin-node]]
 == Überlegungen zu Admin-Knoten
 
 * Der primäre Admin-Node kann nicht stillgelegt werden.
@@ -27,6 +28,7 @@ Prüfen Sie die Überlegungen für die Stilllegung eines Admin-Node oder Gateway
 
 
 
+[[considerations-for-gateway-node]]
 == Überlegungen zu Gateway Node
 
 * Sie können einen Gateway-Node nicht stilllegen, wenn eine seiner Netzwerkschnittstellen Teil einer HA-Gruppe (High Availability, Hochverfügbarkeit) ist. Sie müssen zuerst die Netzwerkschnittstellen aus der HA-Gruppe entfernen. Siehe die Anleitung für link:../admin/managing-high-availability-groups.html["Verwalten von HA-Gruppen"].

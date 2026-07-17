@@ -30,6 +30,7 @@ Sie können ein benutzerdefiniertes S3-API-Zertifikat hochladen oder generieren.
 
 
 
+[[add-a-custom-s3-api-certificate]]
 == Fügen Sie ein benutzerdefiniertes S3-API-Zertifikat hinzu
 
 .Schritte
@@ -159,6 +160,7 @@ NOTE: Nachdem Sie ein Zertifikat hochgeladen oder generiert haben, lassen Sie si
 
 
 
+[[restore-the-default-s3-api-certificate]]
 == Stellen Sie das standardmäßige S3-API-Zertifikat wieder her
 
 Sie können auf die Verwendung des standardmäßigen S3-API-Zertifikats für S3-Client-Verbindungen zu Storage-Nodes zurücksetzen. Sie können jedoch das S3-API-Standardzertifikat nicht für einen Load Balancer-Endpunkt verwenden.
@@ -179,6 +181,7 @@ Wenn Sie über Root-Zugriffsberechtigungen verfügen und das benutzerdefinierte 
 
 
 
+[[download-or-copy-the-s3-api-certificate]]
 == Laden Sie das S3-API-Zertifikat herunter oder kopieren Sie es
 
 Sie können den Inhalt des S3-API-Zertifikats speichern oder kopieren und an anderer Stelle verwenden.

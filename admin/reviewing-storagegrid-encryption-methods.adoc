@@ -15,6 +15,7 @@ StorageGRID bietet verschiedene Optionen zur Datenverschlüsselung. Anhand der v
 
 Die Tabelle bietet eine allgemeine Zusammenfassung der in StorageGRID verfügbaren Verschlüsselungsmethoden.
 
+[[bucket-encryption-table]]
 [cols="1a,1a,1a"]
 |===
 | Verschlüsselungsoption | So funktioniert es | Gilt für 
@@ -135,6 +136,7 @@ https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingClientSideEncryption.html["
 |===
 
 
+[[use-multiple-encryption-methods]]
 == Verwendung mehrerer Verschlüsselungsmethoden
 
 Je nach Ihren Anforderungen können Sie mehrere Verschlüsselungsmethoden gleichzeitig verwenden. Beispiel:

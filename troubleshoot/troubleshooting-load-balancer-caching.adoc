@@ -15,6 +15,7 @@ Informieren Sie sich über mögliche Probleme beim Load Balancer-Caching und wie
 
 
 
+[[determine-if-a-request-was-a-cache-hit]]
 == Ermitteln, ob eine Anfrage ein Cache-Treffer war
 
 * Der X-Cache-Header wird in der Antwort auf vom Cache-Dienst verarbeitete Anfragen gesetzt.  Mögliche Codes:
@@ -31,6 +32,7 @@ Informieren Sie sich über mögliche Probleme beim Load Balancer-Caching und wie
 
 
 
+[[low-cache-hit-rate]]
 == Niedrige Cache-Trefferquote
 
 * Niedrige Cache-Trefferraten sind möglicherweise zu erwarten, wenn eine neue Arbeitslast hinzugefügt wird oder sich der Arbeitssatz ändert, auf den eine Arbeitslast zugreift.  In diesen Situationen wird erwartet, dass die Trefferquote mit der Zeit steigt.
@@ -41,6 +43,7 @@ Informieren Sie sich über mögliche Probleme beim Load Balancer-Caching und wie
 
 
 
+[[low-performance]]
 == Geringe Leistung
 
 * Bewerten Sie die Cache-Trefferquote.  Niedrige Cache-Trefferraten können zu einer geringen Gesamtleistung führen.

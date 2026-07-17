@@ -21,12 +21,14 @@ Sie können Administratorgruppen erstellen, um die Sicherheitsberechtigungen fü
 
 
 
+[[create-an-admin-group]]
 == Erstellen einer Admin-Gruppe
 
 Administratorgruppen ermöglichen es Ihnen, festzulegen, welche Benutzer auf welche Funktionen und Vorgänge im Grid Manager und in der Grid Management API zugreifen können.
 
 
 
+[[access-the-wizard]]
 === Greifen Sie auf den Assistenten zu
 
 .Schritte
@@ -36,6 +38,7 @@ Administratorgruppen ermöglichen es Ihnen, festzulegen, welche Benutzer auf wel
 
 
 
+[[choose-a-group-type]]
 === Wählen Sie einen Gruppentyp aus
 
 Sie können eine lokale Gruppe erstellen oder eine föderierte Gruppe importieren.
@@ -74,6 +77,7 @@ Sie können eine lokale Gruppe erstellen oder eine föderierte Gruppe importiere
 ====
 
 
+[[manage-group-permissions]]
 === Gruppenberechtigungen verwalten
 
 .Schritte
@@ -96,6 +100,7 @@ Sie müssen jeder Gruppe mindestens eine Berechtigung zuweisen. Andernfalls kön
 
 
 
+[[add-users-local-groups-only]]
 === Benutzer hinzufügen (nur lokale Gruppen)
 
 .Schritte
@@ -108,6 +113,7 @@ Wenn Sie noch keine lokalen Benutzer erstellt haben, können Sie die Gruppe spei
 
 
 
+[[view-and-edit-admin-groups]]
 == Anzeigen und Bearbeiten von Admin-Gruppen
 
 Sie können Details für vorhandene Gruppen anzeigen, eine Gruppe ändern oder eine Gruppe duplizieren.
@@ -169,6 +175,7 @@ Zugriffsmodus oder Berechtigungen bearbeiten
 
 
 
+[[duplicate-a-group]]
 == Duplizieren einer Gruppe
 
 .Schritte
@@ -179,6 +186,7 @@ Zugriffsmodus oder Berechtigungen bearbeiten
 
 
 
+[[delete-a-group]]
 == Gruppe löschen
 
 Sie können eine Admin-Gruppe löschen, wenn Sie die Gruppe aus dem System entfernen möchten, und alle mit der Gruppe verknüpften Berechtigungen entfernen. Durch das Löschen einer Admin-Gruppe werden alle Benutzer aus der Gruppe entfernt, die Benutzer jedoch nicht gelöscht.

@@ -18,6 +18,7 @@ NOTE: Wenn Sie Ihre Protokolle an einen externen Syslog-Server senden oder das Z
 
 
 
+[[general-storagegrid-logs]]
 == Allgemeine StorageGRID-Protokolle
 
 [cols="3a,3a,2a"]
@@ -49,6 +50,7 @@ Alle Nodes
 |===
 
 
+[[cipher-related-logs]]
 == Verschlüsselungsbezogene Protokolle
 
 [cols="3a,3a,2a"]
@@ -85,6 +87,7 @@ Alle Nodes
 |===
 
 
+[[grid-federation-logs]]
 == Protokolle der Grid-Föderation
 
 [cols="3a,3a,2a"]
@@ -100,6 +103,7 @@ Alle Nodes
 |===
 
 
+[[nms-logs]]
 == NMS-Protokolle
 
 [cols="3a,3a,2a"]
@@ -113,6 +117,7 @@ Alle Nodes
 * Enthält XML-Paketaktualisierungen, die aus Konfigurationsänderungen im System resultieren.
 * Enthält Fehlermeldungen zum Attribut Downsampling, das einmal täglich ausgeführt wird.
 * Enthält Java-Web-Server-Fehlermeldungen, z. B. Fehler beim Generieren der Seite und HTTP-Status 500-Fehler.
+* Enthält Protokolle im Zusammenhang mit AutoSupport.
 
  a| 
 Admin-Nodes
@@ -136,6 +141,7 @@ Admin-Nodes
 |===
 
 
+[[server-manager-logs]]
 == Server Manager-Protokolle
 
 [cols="3a,3a,2a"]
@@ -165,6 +171,7 @@ Alle Nodes
 |===
 
 
+[[storagegrid-services-logs]]
 == StorageGRID Serviceprotokolle
 
 [cols="3a,3a,2a"]

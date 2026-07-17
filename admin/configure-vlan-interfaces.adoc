@@ -15,6 +15,7 @@ Erstellen Sie virtuelle LAN-Schnittstellen (VLAN) auf Admin-Knoten und Gateway-K
 
 
 
+[[considerations-for-vlan-interfaces]]
 == Überlegungen zu VLAN-Schnittstellen
 
 * Sie erstellen eine VLAN-Schnittstelle, indem Sie eine VLAN-ID eingeben und eine übergeordnete Schnittstelle auf einem oder mehreren Nodes auswählen.
@@ -37,6 +38,7 @@ NOTE: „Linux“ bezieht sich auf eine RHEL-, Ubuntu- oder Debian-Bereitstellun
 
 
 
+[[create-a-vlan-interface]]
 == Erstellen einer VLAN-Schnittstelle
 
 .Bevor Sie beginnen
@@ -53,6 +55,7 @@ Sie können den Grid-Manager verwenden, um VLAN-Schnittstellen zu erstellen, die
 
 
 
+[[access-the-wizard]]
 === Greifen Sie auf den Assistenten zu
 
 .Schritte
@@ -62,6 +65,7 @@ Sie können den Grid-Manager verwenden, um VLAN-Schnittstellen zu erstellen, die
 
 
 
+[[enter-details-for-the-vlan-interfaces]]
 === Geben Sie Details zu den VLAN-Schnittstellen ein
 
 .Schritte
@@ -75,6 +79,7 @@ VLAN-IDs müssen nicht eindeutig sein. Beispielsweise können Sie die VLAN-ID 20
 
 
 
+[[choose-parent-interfaces]]
 === Wählen Sie übergeordnete Schnittstellen
 
 In der Tabelle sind die verfügbaren Schnittstellen für alle Admin-Nodes und Gateway-Nodes an jedem Standort im Raster aufgeführt. Schnittstellen des Admin-Netzwerks (eth1) können nicht als übergeordnete Schnittstellen verwendet werden und werden nicht angezeigt.
@@ -92,6 +97,7 @@ image:vlan-create-parent-interfaces.png["Übergeordnete Schnittstellen des Assis
 
 
 
+[[confirm-the-settings]]
 === Bestätigen Sie die Einstellungen
 
 .Schritte
@@ -108,6 +114,7 @@ image:vlan-create-parent-interfaces.png["Übergeordnete Schnittstellen des Assis
 
 
 
+[[edit-a-vlan-interface]]
 == Bearbeiten Sie eine VLAN-Schnittstelle
 
 Wenn Sie eine VLAN-Schnittstelle bearbeiten, können Sie die folgenden Arten von Änderungen vornehmen:
@@ -141,6 +148,7 @@ Sie können keine VLAN-ID aktualisieren, wenn das VLAN in einer HA-Gruppe verwen
 
 
 
+[[remove-a-vlan-interface]]
 == Entfernen Sie eine VLAN-Schnittstelle
 
 Sie können eine oder mehrere VLAN-Schnittstellen entfernen.

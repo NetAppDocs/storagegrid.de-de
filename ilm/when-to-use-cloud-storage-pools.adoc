@@ -15,6 +15,7 @@ Mit Cloud Storage Pools können Sie Daten an einem externen Ort sichern oder per
 
 
 
+[[back-up-storagegrid-data-to-external-location]]
 == Backup von StorageGRID Daten an einem externen Speicherort
 
 Sie können einen Cloud-Speicherpool verwenden, um StorageGRID Objekte an einem externen Ort zu sichern.
@@ -32,6 +33,7 @@ So implementieren Sie eine Backup-Lösung:
 
 
 
+[[tier-data-from-storagegrid-to-external-location]]
 == Daten-Tiering von StorageGRID auf externen Standort
 
 Sie können einen Cloud-Speicherpool verwenden, um Objekte außerhalb des StorageGRID Systems zu speichern. Angenommen, Sie haben eine große Anzahl von Objekten, die Sie aufbewahren müssen, aber Sie erwarten, dass Sie auf diese Objekte selten zugreifen, wenn überhaupt. Mit einem Cloud-Storage-Pool können Sie die Objekte auf kostengünstigeren Storage verschieben und Speicherplatz in StorageGRID freigeben.
@@ -45,6 +47,7 @@ So implementieren Sie eine Tiering-Lösung:
 
 
 
+[[maintain-multiple-cloud-endpoints]]
 == Diverse Cloud-Endpunkte beibehalten
 
 Sie können diverse Cloud-Storage-Pool-Endpunkte konfigurieren, wenn Objektdaten in mehr als einer Cloud verschoben oder gesichert werden sollen. Mit den Filtern Ihrer ILM-Regeln können Sie festlegen, welche Objekte in den einzelnen Cloud Storage-Pools gespeichert werden. Beispielsweise können Sie Objekte von einigen Mandanten oder Buckets in Amazon S3 Glacier und Objekte von anderen Mandanten oder Buckets im Azure Blob Storage speichern. Alternativ können Sie Daten zwischen Amazon S3 Glacier und Azure Blob Storage verschieben.

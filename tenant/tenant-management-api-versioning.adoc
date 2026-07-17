@@ -69,6 +69,7 @@ Received call to deprecated v2 API at POST "/api/v2/authorize"
 
 
 
+[[determine-which-api-versions-are-supported-in-the-current-release]]
 == Legen Sie fest, welche API-Versionen in der aktuellen Version unterstützt werden
 
 Verwenden Sie die `GET /versions` API-Anforderung, um eine Liste der unterstützten API-Hauptversionen zurückzugeben. Diese Anfrage befindet sich im Abschnitt *config* der Swagger API-Dokumentation.
@@ -89,6 +90,7 @@ GET https://{{IP-Address}}/api/versions
 ----
 
 
+[[specify-an-api-version-for-a-request]]
 == Geben Sie eine API-Version für eine Anforderung an
 
 Sie können die API-Version mit einem PATH-Parameter (`Api-Version: 4`)(`/api/v4` oder einem Header ) angeben. Wenn Sie beide Werte angeben, überschreibt der Kopfzeilenwert den Pfadwert.

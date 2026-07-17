@@ -24,6 +24,7 @@ NOTE: Unterstützung für Archive Nodes wurde entfernt. Das Verschieben von Obje
 
 
 
+[[storagegrid-benefits]]
 == Vorteile von StorageGRID
 
 Das StorageGRID System bietet unter anderem folgende Vorteile:

@@ -24,6 +24,7 @@ Jede HA-Gruppe bietet Zugriff auf die Shared Services auf den ausgewählten Node
 
 
 
+[[how-do-you-create-an-ha-group]]
 == Wie erstellen Sie eine HA-Gruppe?
 
 . Sie wählen eine Netzwerkschnittstelle für einen oder mehrere Admin-Nodes oder Gateway-Knoten aus. Sie können eine Grid Network (eth0)-Schnittstelle, eine eth2-Schnittstelle (Client Network), eine VLAN-Schnittstelle oder eine Access-Interface verwenden, die Sie dem Node hinzugefügt haben.
@@ -40,6 +41,7 @@ Anweisungen hierzu finden Sie unter link:configure-high-availability-group.html[
 
 
 
+[[what-is-the-active-interface]]
 == Was ist die aktive Schnittstelle?
 
 Im normalen Betrieb werden alle VIP-Adressen für die HA-Gruppe der primären Schnittstelle hinzugefügt, die die erste Schnittstelle in der Prioritätsreihenfolge ist. Solange die primäre Schnittstelle verfügbar bleibt, wird sie verwendet, wenn sich Clients mit einer beliebigen VIP-Adresse für die Gruppe verbinden. Das heißt, während des normalen Betriebs ist die primäre Schnittstelle die „aktive“ Schnittstelle für die Gruppe.
@@ -48,6 +50,7 @@ Ebenso fungieren alle Schnittstellen mit niedriger Priorität für die HA-Gruppe
 
 
 
+[[view-the-current-ha-group-status-of-a-node]]
 == Anzeigen des aktuellen HA-Gruppen-Status eines Node
 
 Um zu sehen, ob ein Knoten einer HA-Gruppe zugewiesen ist, und um seinen aktuellen Status zu bestimmen, wählen Sie *Knoten* > *_Knoten_*.
@@ -72,6 +75,7 @@ image:ha_group_primary_interface.png["Primäre Schnittstelle DER HA-Gruppe"]
 
 
 
+[[what-happens-when-the-active-interface-fails]]
 == Was geschieht, wenn die aktive Schnittstelle ausfällt?
 
 Die Schnittstelle, die derzeit die VIP-Adressen hostet, ist die aktive Schnittstelle. Wenn die HA-Gruppe mehrere Schnittstellen umfasst und die aktive Schnittstelle ausfällt, verschieben sich die VIP-Adressen auf die erste verfügbare Backup-Schnittstelle in der Prioritätsreihenfolge. Wenn diese Schnittstelle ausfällt, wechseln die VIP-Adressen zur nächsten verfügbaren Backup-Schnittstelle usw.

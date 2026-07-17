@@ -15,6 +15,7 @@ Bevor Sie Single Sign-On (SSO) für ein StorageGRID-System aktivieren, lesen Sie
 
 
 
+[[identity-provider-requirements]]
 == Anforderungen an Identitätsanbieter
 
 StorageGRID unterstützt die folgenden SSO-Identitätsanbieter (IdP):
@@ -49,6 +50,7 @@ Entra-ID
 |===
 
 
+[[ad-fs-requirements]]
 === AD-FS-Anforderungen
 
 Sie können eine der folgenden Versionen von AD FS verwenden:
@@ -63,6 +65,7 @@ NOTE: Windows Server 2016 sollte , oder höher verwenden https://support.microso
 
 
 
+[[additional-requirements]]
 === Zusätzlichen Anforderungen
 
 * Transport Layer Security (TLS) 1.2 oder 1.3
@@ -71,12 +74,14 @@ NOTE: Windows Server 2016 sollte , oder höher verwenden https://support.microso
 
 
 
+[[considerations-for-entra-id]]
 === Überlegungen zur Entra-ID
 
 Wenn Sie Entra ID als SSO-Typ verwenden und Benutzer über Benutzerprinzipalnamen verfügen, die nicht sAMAccountName als Präfix verwenden, können Anmeldeprobleme auftreten, wenn StorageGRID die Verbindung zum LDAP-Server verliert.  Um Benutzern die Anmeldung zu ermöglichen, müssen Sie die Verbindung zum LDAP-Server wiederherstellen.
 
 
 
+[[server-certificate-requirements]]
 == Serverzertifikate-Anforderungen
 
 Standardmäßig verwendet StorageGRID auf jedem Admin-Knoten ein Verwaltungsschnittstellenzertifikat, um den Zugriff auf den Grid Manager, den Tenant Manager, die Grid Management API und die Tenant Management API zu sichern.  Wenn Sie Vertrauensstellungen der vertrauenden Seite (AD FS), Unternehmensanwendungen (Entra ID) oder Dienstanbieterverbindungen (PingFederate) für StorageGRID konfigurieren, verwenden Sie das Serverzertifikat als Signaturzertifikat für StorageGRID Anfragen.
@@ -90,6 +95,7 @@ Sie können auf das Serverzertifikat eines Admin-Knotens zugreifen, indem Sie si
 
 
 
+[[port-requirements]]
 == Port-Anforderungen
 
 Single Sign-On (SSO) ist auf den Ports Restricted Grid Manager oder Tenant Manager nicht verfügbar. Sie müssen den Standard-HTTPS-Port (443) verwenden, wenn Benutzer sich mit Single Sign-On authentifizieren möchten. Siehe link:controlling-access-through-firewalls.html["Kontrolle des Zugriffs über externe Firewall"].

@@ -15,12 +15,14 @@ Sie können die S3-CopyObject-Anforderung verwenden, um eine Kopie eines Objekts
 
 
 
+[[resolve-conflicts]]
 == Konflikte lösen
 
 Widersprüchliche Clientanforderungen, wie z. B. zwei Clients, die in denselben Schlüssel schreiben, werden auf der Grundlage der „neuesten Wins“ gelöst. Der Zeitpunkt für die Bewertung „neuester Erfolge“ basiert auf dem Zeitpunkt, an dem das StorageGRID System eine bestimmte Anforderung abgeschlossen hat und nicht auf dem Zeitpunkt, an dem S3-Clients einen Vorgang starten.
 
 
 
+[[object-size]]
 == Objektgröße
 
 Die maximale _recommended_ Größe für eine einzelne PutObject-Operation beträgt 5 gib (5,368,709,120 Bytes). Falls Objekte größer als 5 gib sind, verwenden Sie link:operations-for-multipart-uploads.html["Mehrteiliges Hochladen"] stattdessen.
@@ -32,6 +34,7 @@ NOTE: Wenn Sie ein Upgrade von StorageGRID 11.6 oder einer älteren Version durc
 
 
 
+[[utf-8-characters-in-user-metadata]]
 == UTF-8 Zeichen in Benutzermetadaten
 
 Wenn eine Anfrage UTF-8-Werte im Schlüsselnamen oder -Wert der benutzerdefinierten Metadaten enthält, ist das StorageGRID-Verhalten nicht definiert.
@@ -44,6 +47,7 @@ StorageGRID parst oder interpretiert keine entgangenen UTF-8-Zeichen, die im Sch
 
 
 
+[[supported-request-headers]]
 == Unterstützte Anfrageheader
 
 Die folgenden Anfragezeilen werden unterstützt:
@@ -92,6 +96,7 @@ Siehe <<Anforderungsheader für serverseitige Verschlüsselung>>
 
 
 
+[[unsupported-request-headers]]
 == Nicht unterstützte Anforderungsheader
 
 Die folgenden Anforderungsheader werden nicht unterstützt:
@@ -118,6 +123,7 @@ Wenn Sie ein Objekt kopieren und das Quellobjekt eine Prüfsumme hat, kopiert St
 
 
 
+[[storage-class-options]]
 == Optionen der Storage-Klasse
 
 Der `x-amz-storage-class` Anforderungsheader wird unterstützt und beeinflusst, wie viele Objektkopien StorageGRID erstellt, wenn die passende ILM-Regel den doppelten Commit oder den ausgewogenen verwendetlink:../ilm/data-protection-options-for-ingest.html["Aufnahme-Option"].
@@ -138,6 +144,7 @@ NOTE: Wenn Sie ein Objekt in einen Bucket mit aktivierter S3-Objektsperrung aufn
 
 
 
+[[using-x-amz-copy-source-in-copyobject]]
 == Verwenden von x-amz-copy-source in CopyObject
 
 Wenn sich Quell-Bucket und Schlüssel, wie in der Kopfzeile angegeben `x-amz-copy-source`, vom Ziel-Bucket und Schlüssel unterscheiden, wird eine Kopie der Quell-Objektdaten auf das Ziel geschrieben.
@@ -153,6 +160,7 @@ Das heißt, wenn die ILM-Regel die strikte Option für das Aufnahmeverhalten ver
 
 
 
+[[request-headers-for-server-side-encryption]]
 == Anforderungsheader für serverseitige Verschlüsselung
 
 Wenn Sie link:using-server-side-encryption.html["Serverseitige Verschlüsselung verwenden"], die Anfrage Header Sie angeben, hängt davon ab, ob das Quellobjekt verschlüsselt ist und ob Sie planen, das Zielobjekt zu verschlüsseln.
@@ -188,6 +196,7 @@ NOTE: Der `server-side-encryption` Wert des Objekts kann nicht aktualisiert werd
 
 
 
+[[versioning]]
 == Versionierung
 
 Wenn der Quell-Bucket versioniert ist, können Sie die Kopfzeile verwenden `x-amz-copy-source`, um die neueste Version eines Objekts zu kopieren. Um eine bestimmte Version eines Objekts zu kopieren, müssen Sie explizit die Version angeben, die mit der Unterressource kopiert werden soll `versionId`. Wenn der Ziel-Bucket versioniert ist, wird die generierte Version im Antwortheader zurückgegeben `x-amz-version-id`. Wenn die Versionierung für den Ziel-Bucket unterbrochen wird, `x-amz-version-id` gibt der Wert „Null“ zurück.

@@ -34,6 +34,7 @@ NOTE: „Linux“ bezieht sich auf eine RHEL-, Ubuntu- oder Debian-Bereitstellun
 
 
 
+[[create-a-high-availability-group]]
 == Erstellen Sie eine Hochverfügbarkeitsgruppe
 
 Wenn Sie eine Hochverfügbarkeitsgruppe erstellen, wählen Sie eine oder mehrere Schnittstellen aus und organisieren sie in Prioritätsreihenfolge. Anschließend weisen Sie der Gruppe eine oder mehrere VIP-Adressen zu.
@@ -42,6 +43,7 @@ Eine Schnittstelle muss lauten, damit ein Gateway-Node oder ein Admin-Node in ei
 
 
 
+[[access-the-wizard]]
 === Greifen Sie auf den Assistenten zu
 
 .Schritte
@@ -51,6 +53,7 @@ Eine Schnittstelle muss lauten, damit ein Gateway-Node oder ein Admin-Node in ei
 
 
 
+[[enter-details-for-the-ha-group]]
 === Geben Sie Details für die HA-Gruppe ein
 
 .Schritte
@@ -61,6 +64,7 @@ Eine Schnittstelle muss lauten, damit ein Gateway-Node oder ein Admin-Node in ei
 
 
 
+[[add-interfaces-to-the-ha-group]]
 === Fügen Sie der HA-Gruppe Schnittstellen hinzu
 
 .Schritte
@@ -95,6 +99,7 @@ image:vlan_parent_interface_tooltip.png["Tipp des VLAN Interface-Tools"]
 
 
 
+[[determine-the-priority-order]]
 === Legen Sie die Prioritätsreihenfolge fest
 
 Wenn die HA-Gruppe mehr als eine Schnittstelle umfasst, können Sie feststellen, welche primäre Schnittstelle und welche Backup-Schnittstellen (Failover) sind. Wenn die primäre Schnittstelle fehlschlägt, werden die VIP-Adressen zur Schnittstelle mit der höchsten Priorität verschoben, die verfügbar ist. Wenn diese Schnittstelle ausfällt, werden die VIP-Adressen zur nächsten verfügbaren Schnittstelle mit der höchsten Priorität usw. verschoben.
@@ -116,6 +121,7 @@ TIP: Wenn die HA-Gruppe Zugriff auf den Grid Manager bietet, müssen Sie eine Sc
 
 
 
+[[enter-ip-addresses]]
 === Geben Sie die IP-Adressen ein
 
 .Schritte
@@ -146,12 +152,14 @@ Die HA-Gruppe wird erstellt. Sie können jetzt die konfigurierten virtuellen IP-
 
 
 
+[[next-steps]]
 === Nächste Schritte
 
 Wenn Sie diese HA-Gruppe zum Lastausgleich verwenden möchten, erstellen Sie einen Endpunkt zum Load Balancer, um den Port und das Netzwerkprotokoll zu ermitteln und die erforderlichen Zertifikate anzuschließen. Siehe link:configuring-load-balancer-endpoints.html["Konfigurieren von Load Balancer-Endpunkten"].
 
 
 
+[[edit-a-high-availability-group]]
 == Bearbeiten Sie eine Hochverfügbarkeitsgruppe
 
 Sie können eine HA-Gruppe (High Availability, Hochverfügbarkeit) bearbeiten, um ihren Namen und ihre Beschreibung zu ändern, Schnittstellen hinzuzufügen oder zu entfernen, die Prioritätsreihenfolge zu ändern oder virtuelle IP-Adressen hinzuzufügen oder zu aktualisieren.
@@ -194,6 +202,7 @@ NOTE: Wenn die HA-Gruppe Zugriff auf den Grid Manager bietet, müssen Sie eine S
 
 
 
+[[remove-a-high-availability-group]]
 == Entfernen Sie eine Hochverfügbarkeitsgruppe
 
 Sie können eine oder mehrere HA-Gruppen (High Availability, Hochverfügbarkeit) gleichzeitig entfernen.

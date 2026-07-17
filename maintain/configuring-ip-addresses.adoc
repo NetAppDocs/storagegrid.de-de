@@ -26,6 +26,7 @@ TIP: Wenn Sie die IP-Adresse des Grid-Netzwerks für alle Knoten in der Tabelle 
 
 
 
+[[ethernet-interfaces]]
 == Ethernet-Schnittstellen
 
 Die eth0 zugewiesene IP-Adresse ist immer die Grid-Netzwerk-IP-Adresse des Grid-Node. Die eth1 zugewiesene IP-Adresse ist immer die Admin-Netzwerk-IP-Adresse des Grid-Node. Die eth2 zugewiesene IP-Adresse ist immer die Client-Netzwerk-IP-Adresse des Grid-Node.
@@ -34,12 +35,14 @@ Beachten Sie, dass auf einigen Plattformen, z. B. StorageGRID Appliances, eth0, 
 
 
 
+[[dhcp]]
 == DHCP
 
 Sie können DHCP nur während der Bereitstellungsphase einrichten. DHCP kann während der Konfiguration nicht eingerichtet werden. Sie müssen die Änderungsverfahren für die IP-Adresse verwenden, wenn Sie IP-Adressen, Subnetzmaske und Standard-Gateways für einen Grid-Node ändern möchten. Wenn Sie das Tool IP ändern verwenden, werden DHCP-Adressen statisch.
 
 
 
+[[high-availability-ha-groups]]
 == Hochverfügbarkeitsgruppen (High Availability groups, HA-Gruppen
 
 * Wenn eine Client-Netzwerkschnittstelle in einer HA-Gruppe enthalten ist, können Sie die Client-Netzwerk-IP-Adresse für diese Schnittstelle nicht in eine Adresse ändern, die sich außerhalb des für die HA-Gruppe konfigurierten Subnetzes befindet.

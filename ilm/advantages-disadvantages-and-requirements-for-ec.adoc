@@ -15,6 +15,7 @@ Bevor Sie sich entscheiden, ob Sie zum Schutz von Objektdaten mithilfe von Repli
 
 
 
+[[advantages-of-erasure-coding]]
 == Vorteile von Erasure Coding
 
 Im Vergleich zur Replizierung bietet das Verfahren zur Einhaltung von Datenkonsistenz (Erasure Coding) verbesserte Zuverlässigkeit, Verfügbarkeit und Storage-Effizienz.
@@ -35,6 +36,7 @@ NOTE: Der Festplattenspeicher für Objekte, die mit Erasure-Coding-Verfahren cod
 
 
 
+[[disadvantages-of-erasure-coding]]
 == Nachteile des Erasure Coding
 
 Im Vergleich zur Replizierung hat das Verfahren zur Einhaltung von Datenkonsistenz folgende Nachteile:
@@ -49,6 +51,7 @@ Im Vergleich zur Replizierung hat das Verfahren zur Einhaltung von Datenkonsiste
 
 
 
+[[when-to-use-erasure-coding]]
 == Wann sollte das Erasure Coding verwendet werden
 
 Verwenden Sie Erasure Coding für die folgenden Anforderungen:

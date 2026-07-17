@@ -15,6 +15,7 @@ Bevor Sie StorageGRID als Cloud-Tier für FabricPool hinzufügen können, müsse
 
 
 
+[[what-values-do-i-need]]
 == Welche Werte brauche ich?
 
 Die folgende Tabelle zeigt die Werte, die Sie in StorageGRID konfigurieren müssen und wie diese Werte von ONTAP und dem DNS-Server verwendet werden.
@@ -79,6 +80,7 @@ ONTAP System Manager > Cloud Tiering hinzufügen
 |===
 
 
+[[how-do-i-get-these-values]]
 == Wie erhalte ich diese Werte?
 
 Je nach Ihren Anforderungen können Sie eine der folgenden Möglichkeiten nutzen, um die benötigten Informationen zu erhalten:

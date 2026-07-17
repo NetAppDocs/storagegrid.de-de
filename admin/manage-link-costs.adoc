@@ -15,6 +15,7 @@ Durch die Verbindungskosten können Sie festlegen, welcher Datacenter-Standort e
 
 
 
+[[what-are-link-costs]]
 == Was sind Verbindungskosten?
 
 * Die Link-Kosten werden verwendet, um Prioritäten zu setzen, welche Objektkopie für die Bearbeitung von Objektabrufungen verwendet wird.
@@ -62,6 +63,7 @@ Logische Rechenzentren befinden sich in demselben physischen Gebäude oder Campu
 |===
 
 
+[[update-link-costs]]
 == Verbindungskosten aktualisieren
 
 Sie können die Verbindungskosten zwischen Datacenter-Standorten aktualisieren, um die Latenz zwischen Standorten wiederzugeben.

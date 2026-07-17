@@ -15,6 +15,7 @@ Möglicherweise müssen Sie die StorageGRID S3 REST-API zum Management von Bucke
 
 
 
+[[compliance-feature-deprecated]]
 == Compliance-Funktion veraltet
 
 Die in früheren StorageGRID-Versionen verfügbare Funktion für die StorageGRID-Konformität ist veraltet und wurde durch S3-Objektsperre ersetzt.

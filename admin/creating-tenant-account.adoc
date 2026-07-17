@@ -39,6 +39,7 @@ TIP: Wenn diese Administratorgruppe vor dem Erstellen des Mandanten nicht auf be
 
 
 
+[[access-the-wizard]]
 == Greifen Sie auf den Assistenten zu
 
 .Schritte
@@ -48,6 +49,7 @@ TIP: Wenn diese Administratorgruppe vor dem Erstellen des Mandanten nicht auf be
 
 
 
+[[enter-details]]
 == Geben Sie Details ein
 
 .Schritte
@@ -92,6 +94,7 @@ Wenn Sie möchten, dass dieser Mandant über ein Speicherkontingent, einen numer
 
 
 
+[[admin-tenant-select-permissionsselect-permissions]]
 == [[admin-Tenant-select-permissions]]Wählen Sie Berechtigungen aus
 
 .Schritte
@@ -163,6 +166,7 @@ Dem Mandanten erlauben, bestimmte Funktionen von S3 Object Lock zu verwenden:
 
 
 
+[[define-root-access-and-create-tenant]]
 == Root-Zugriff definieren und Mandanten erstellen
 
 .Schritte
@@ -221,12 +225,14 @@ TIP: Ein lokaler Root-Benutzer kann sich erst bei Tenant Manager im Zielraster a
 
 
 
+[[sign-in-to-tenant-optional]]
 == Beim Mandanten anmelden (optional)
 
 Sie können sich nach Bedarf jetzt beim neuen Mandanten anmelden, um die Konfiguration abzuschließen, oder sich später beim Mandanten anmelden. Die Schritte zur Anmeldung hängen davon ab, ob Sie über den Standardport (443) oder einen eingeschränkten Port beim Grid Manager angemeldet sind. Siehe link:controlling-access-through-firewalls.html["Kontrolle des Zugriffs über externe Firewall"].
 
 
 
+[[sign-in-now]]
 === Jetzt anmelden
 
 [cols="1a,3a"]
@@ -278,6 +284,7 @@ Die URL für den Tenant Manager weist folgendes Format auf:
 |===
 
 
+[[sign-in-later]]
 === Melden Sie sich später an
 
 [cols="1a,3a"]
@@ -321,6 +328,7 @@ Ein eingeschränkter Port
 |===
 
 
+[[configure-the-tenant]]
 == Konfigurieren Sie den Mandanten
 
 Folgen Sie den Anweisungen inlink:../tenant/index.html["Verwenden Sie ein Mandantenkonto"], um Mandantengruppen und -Benutzer, S3-Zugriffsschlüssel, Buckets, Plattformservices sowie Account-Klone und Grid-übergreifende Replizierung zu managen.

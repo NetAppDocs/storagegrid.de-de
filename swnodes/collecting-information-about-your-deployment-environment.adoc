@@ -18,6 +18,7 @@ NOTE: Es ist effizienter, eine einzelne Installation aller Nodes durchzuführen,
 
 
 
+[[vmware-information]]
 == VMware Informationen
 
 Sie müssen in die Bereitstellungsumgebung zugreifen und Informationen über die VMware Umgebung, die für Grid, Administrator und Client-Netzwerke erstellten Netzwerke und die Storage-Volume-Typen, die Sie für Storage-Nodes verwenden möchten, sammeln.
@@ -33,6 +34,7 @@ NOTE: VMware Live vMotion bewirkt, dass die Taktzeit der Virtual Machine zu spri
 
 
 
+[[grid-network-information]]
 == Informationen zum Grid-Netzwerk
 
 Sie müssen Informationen über das für das StorageGRID Grid-Netzwerk erstellte VMware-Netzwerk erfassen (erforderlich), darunter:
@@ -48,6 +50,7 @@ Sie müssen Informationen über das für das StorageGRID Grid-Netzwerk erstellte
 
 
 
+[[admin-network-information]]
 == Informationen zum Admin-Netzwerk
 
 Bei Nodes, die mit dem optionalen StorageGRID-Admin-Netzwerk verbunden werden sollen, müssen Sie Informationen über das für dieses Netzwerk erstellte VMware-Netzwerk erfassen. Dazu gehören:
@@ -64,6 +67,7 @@ Bei Nodes, die mit dem optionalen StorageGRID-Admin-Netzwerk verbunden werden so
 
 
 
+[[client-network-information]]
 == Informationen zum Client-Netzwerk
 
 Bei Nodes, die mit dem optionalen StorageGRID-Clientnetzwerk verbunden werden sollen, müssen Sie Informationen über das für dieses Netzwerk erstellte VMware-Netzwerk erfassen. Dazu gehören:
@@ -75,6 +79,7 @@ Bei Nodes, die mit dem optionalen StorageGRID-Clientnetzwerk verbunden werden so
 
 
 
+[[information-about-additional-interfaces]]
 == Informationen zu zusätzlichen Schnittstellen
 
 Nach der Installation des Node können Sie optional Trunk oder Zugriffschnittstellen zur VM in vCenter hinzufügen. Beispielsweise möchten Sie einem Admin oder Gateway Node eine Trunk-Schnittstelle hinzufügen, sodass Sie den Datenverkehr zwischen verschiedenen Applikationen oder Mandanten über VLAN-Schnittstellen trennen können. Oder auch, wenn Sie eine Access-Schnittstelle hinzufügen möchten, um sie in einer HA-Gruppe (High Availability, Hochverfügbarkeit) zu verwenden.
@@ -87,6 +92,7 @@ Die Schnittstellen, die Sie hinzufügen, werden auf der Seite VLAN-Schnittstelle
 
 
 
+[[storage-volumes-for-virtual-storage-nodes]]
 == Storage Volumes für virtuelle Storage-Nodes
 
 Sie müssen die folgenden Informationen für virtuelle Maschinen-basierte Speicherknoten sammeln:
@@ -96,6 +102,7 @@ Sie müssen die folgenden Informationen für virtuelle Maschinen-basierte Speich
 
 
 
+[[grid-configuration-information]]
 == Informationen zur Grid-Konfiguration
 
 Sie müssen Informationen erfassen, um Ihr Raster zu konfigurieren:

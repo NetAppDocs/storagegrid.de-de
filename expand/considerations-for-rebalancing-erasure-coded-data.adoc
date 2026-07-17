@@ -17,6 +17,7 @@ Nachdem Sie diese Überlegungen überprüft haben, führen Sie die Erweiterung d
 
 
 
+[[what-is-ec-rebalancing]]
 == Was ist die Neuausrichtung der EG?
 
 Bei der EC-Ausbalancierung handelt es sich um ein StorageGRID-Verfahren, das nach einer Erweiterung des Storage-Nodes erforderlich sein kann. Das Verfahren wird als Kommandozeilenskript vom primären Admin-Knoten ausgeführt. Beim Ausführen des EC-Ausgleichs verteilt StorageGRID Fragmente, die mit Löschvorgängen codiert wurden, auf die vorhandenen und die neu hinzugefügten Storage-Nodes an einem Standort.
@@ -52,6 +53,7 @@ image:used_space_with_larger_node.png["Vor der Erweiterung verwendeter Speicherp
 
 
 
+[[when-to-rebalance-erasure-coded-data]]
 == Zeitpunkt für den Ausgleich von Daten, die mit Erasure Coding codiert wurden
 
 Das EC-Neuausgleichsverfahren verteilt vorhandene Erasure-Codierte-Daten neu, um sicherzustellen, dass Knoten nicht voll werden oder voll bleiben.  Das Verfahren trägt dazu bei, dass die EC-Kodierung auf der Site fortgesetzt werden kann.
@@ -70,6 +72,7 @@ image:used_space_before_expansion.png["Vor der Erweiterung verwendeter Speicherp
 
 
 
+[[rebalance-is-not-required-if-you-add-enough-nodes]]
 === Eine Neuverteilung ist nicht erforderlich, wenn genügend Nodes hinzugefügt werden
 
 Um zu verstehen, wann EC-Lastausgleich nicht erforderlich ist, nehmen wir an, Sie haben drei (oder mehr) neue Storage-Nodes hinzugefügt. In diesem Fall müssen Sie keine EC-Ausbalancierung durchführen. Die ursprünglichen Speicher-Nodes bleiben voll, aber neue Objekte verwenden nun die drei neuen Knoten für 2+1 Erasure Coding&#8212;die beiden Datenfragmente und das eine Parity Fragment können jeweils auf einem anderen Knoten gespeichert werden.
@@ -81,6 +84,7 @@ CAUTION: In diesem Fall können Sie zwar das Verfahren zum Lastausgleich der EC 
 
 
 
+[[rebalance-is-required-if-you-cant-add-enough-nodes]]
 === Eine Neuverteilung ist erforderlich, wenn nicht genügend Nodes hinzugefügt werden können
 
 Um zu verstehen, wann EC-Lastausgleich erforderlich ist, nehmen wir an, dass Sie nur zwei Storage Nodes anstelle von drei hinzufügen können. Da für das Schema 2+1 mindestens drei Speicher-Nodes Speicherplatz verfügbar sein muss, können die leeren Knoten nicht für neue mit Löschcode codierte Daten verwendet werden.
@@ -93,6 +97,7 @@ image:used_space_after_ec_rebalance.png["Genutzter Speicherplatz nach EC-Ausglei
 
 
 
+[[recommendations-for-ec-rebalancing]]
 == Empfehlungen für eine Neuverteilung der EG
 
 NetApp erfordert eine Ausbalancierung anhand von EC-Vorgaben, wenn _alle_ der folgenden Aussagen treffen:
@@ -107,6 +112,7 @@ Sie können optional das EC-Ausgleichverfahren ausführen, wenn Storage Nodes au
 
 
 
+[[how-ec-rebalance-procedure-interacts-with-other-maintenance-tasks]]
 == Wie EC-Ausgleichs-Verfahren mit anderen Wartungsaufgaben interagiert
 
 Sie können bestimmte Wartungsverfahren nicht gleichzeitig durchführen, während Sie das EC-Ausgleichs-Verfahren ausführen.
@@ -184,6 +190,7 @@ Sie müssen das EC-Ausgleichverfahren beenden, bevor Sie andere Wartungsverfahre
 |===
 
 
+[[how-ec-rebalance-procedure-interacts-with-ilm]]
 == Wechselwirkungen zwischen EC-Ausgleichsoperationen und ILM
 
 Während des EC-Ausgleichs ausgeführt wird, vermeiden Sie ILM-Änderungen, die den Standort vorhandener Objekte, die mit Erasure-Coding-Verfahren codiert wurden, ändern könnten. Verwenden Sie beispielsweise nicht eine ILM-Regel mit einem anderen Profil für Erasure Coding. Wenn Sie solche ILM-Änderungen vornehmen müssen, sollten Sie das EC-Neuausgleich-Verfahren beenden.

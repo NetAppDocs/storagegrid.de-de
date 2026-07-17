@@ -19,6 +19,7 @@ Sie können link:viewing-storage-tab.html["Informationen zur Storage-Kapazität 
 
 
 
+[[monitor-storage-capacity-for-the-entire-grid]]
 == Überwachung der Speicherkapazität für das gesamte Grid
 
 Überwachen Sie die Gesamt-Storage-Kapazität Ihres Grids, um sicherzustellen, dass ausreichend freier Speicherplatz für Objektdaten und Objektmetadaten verbleibt. Wenn Sie verstehen, wie sich die Storage-Kapazität im Laufe der Zeit verändert, können Sie Storage-Nodes oder Storage-Volumes planen, bevor die nutzbare Storage-Kapazität des Grid verbraucht wird.
@@ -72,6 +73,7 @@ Weitere Informationen zur Planung einer Speichererweiterung finden Sie im link:.
 
 
 
+[[monitor-storage-capacity-for-each-storage-node]]
 == Überwachen Sie die Storage-Kapazität für jeden Storage-Node
 
 Überwachen Sie den insgesamt nutzbaren Speicherplatz für jeden Storage-Node, um sicherzustellen, dass der Node über ausreichend Speicherplatz für neue Objektdaten verfügt.
@@ -128,6 +130,7 @@ Die link:../troubleshoot/troubleshooting-low-object-data-storage-alert.html["Nie
 
 
 
+[[monitor-object-metadata-capacity-for-each-storage-node]]
 == Überwachen der Objekt-Metadaten-Kapazität für jeden Storage Node
 
 Überwachen Sie die Metadatennutzung für jeden Storage-Node, um sicherzustellen, dass ausreichend Speicherplatz für wichtige Datenbankvorgänge verfügbar ist. Sie müssen an jedem Standort neue Storage-Nodes hinzufügen, bevor die Objektmetadaten 100 % des zulässigen Metadaten-Speicherplatzes übersteigen.
@@ -188,6 +191,7 @@ Wenn Sie die neuen Nodes hinzufügen, gleicht das System die Objektmetadaten aut
 
 
 
+[[monitor-space-usage-forecasts]]
 == Prognosen zur Speicherplatznutzung überwachen
 
 Überwachen Sie die Prognosen zur Speicherplatznutzung für Benutzerdaten und Metadaten, um abzuschätzen, wann Sie dies benötigenlink:../expand/index.html["Erweitern Sie ein Raster"].

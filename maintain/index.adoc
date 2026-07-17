@@ -18,6 +18,7 @@ NOTE: In diesen Anweisungen bezieht sich „Linux“ auf eine Bereitstellung von
 
 
 
+[[before-you-begin]]
 == Bevor Sie beginnen
 
 * Sie verfügen über ein umfassendes Verständnis des StorageGRID Systems.
@@ -28,6 +29,7 @@ NOTE: In diesen Anweisungen bezieht sich „Linux“ auf eine Bereitstellung von
 
 
 
+[[maintenance-procedures-for-appliances]]
 == Wartungsverfahren für Geräte
 
 Informationen zu Hardware-Verfahren finden Sie im https://docs.netapp.com/us-en/storagegrid-appliances/commonhardware/index.html["Wartungsanleitung für Ihr StorageGRID-Gerät"^].

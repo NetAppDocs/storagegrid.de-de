@@ -17,6 +17,7 @@ Sie müssen über die berechtigung s3:GetBucketMetadataNotification verfügen od
 
 
 
+[[request-example]]
 == Anforderungsbeispiel
 
 Diese Anforderung ruft die Metadaten-Benachrichtigungskonfiguration für den Bucket namens `bucket`ab.
@@ -30,6 +31,7 @@ Host: _host_
 ----
 
 
+[[response]]
 == Antwort
 
 Der Response Body umfasst die Konfiguration der Metadaten-Benachrichtigung für den Bucket. Anhand der Konfiguration der Metadatenbenachrichtigung können Sie festlegen, wie der Bucket für die Suchintegration konfiguriert ist. So können Unternehmen ermitteln, welche Objekte indiziert sind und an welche Endpunkte ihre Objektmetadaten gesendet werden.
@@ -153,6 +155,7 @@ Ja.
 |===
 
 
+[[response-example]]
 == Antwortbeispiel
 
 Die XML-Datei zwischen den  `<MetadataNotificationConfiguration></MetadataNotificationConfiguration>` Tags zeigt, wie die Integration mit einem Endpunkt für die Suchintegration für den Bucket konfiguriert ist. In diesem Beispiel werden Objektmetadaten an einen Elasticsearch-Index mit dem Namen und dem Typ `2017` gesendet `current`, der in einer AWS-Domäne mit dem Namen gehostet wird `records`.

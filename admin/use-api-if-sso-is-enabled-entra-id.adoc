@@ -15,6 +15,7 @@ Wenn Sielink:../admin/how-sso-works.html["Konfiguration und Aktivierung von Sing
 
 
 
+[[sign-in-to-the-api-if-entra-id-single-sign-on-is-enabled]]
 == Sign in , wenn die einmalige Anmeldung bei Entra ID aktiviert ist.
 
 Diese Anweisungen gelten, wenn Sie Entra ID als SSO-Identitätsanbieter verwenden

@@ -15,6 +15,7 @@ Bevor Sie StorageGRID als FabricPool-Cloud-Tier hinzuf체gen, erfahren Sie mehr �
 
 
 
+[[what-is-an-ha-group]]
 == Was ist eine HA-Gruppe?
 
 Eine HA-Gruppe (High Availability, Hochverf체gbarkeit) ist eine Sammlung von Schnittstellen aus mehreren StorageGRID Gateway-Nodes, Admin-Nodes oder beidem. Eine HA-Gruppe hilft, Client-Datenverbindungen verf체gbar zu halten. Wenn die aktive Schnittstelle in der HA-Gruppe ausf채llt, kann eine Backup-Schnittstelle den Workload mit geringer Auswirkung auf die FabricPool-Vorg채nge managen.
@@ -25,6 +26,7 @@ Weitere Informationen zu Hochverf체gbarkeitsgruppen finden Sie unter link:../adm
 
 
 
+[[using-ha-groups]]
 == Verwenden von HA-Gruppen
 
 Die Best Practices f체r die Erstellung einer StorageGRID HA-Gruppe f체r FabricPool h채ngen von den Workloads ab.

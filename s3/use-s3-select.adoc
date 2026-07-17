@@ -22,6 +22,7 @@ Nur Mandantenkonten, für die S3 Select aktiviert ist, können SelectObjectConte
 
 
 
+[[clauses]]
 == Klauseln
 
 * Wählen Sie die Liste aus
@@ -32,6 +33,7 @@ Nur Mandantenkonten, für die S3 Select aktiviert ist, können SelectObjectConte
 
 
 
+[[data-types]]
 == Datentypen
 
 * bool
@@ -44,10 +46,12 @@ Nur Mandantenkonten, für die S3 Select aktiviert ist, können SelectObjectConte
 
 
 
+[[operators]]
 == Operatoren
 
 
 
+[[logical-operators]]
 === Logische Operatoren
 
 * UND
@@ -57,6 +61,7 @@ Nur Mandantenkonten, für die S3 Select aktiviert ist, können SelectObjectConte
 
 
 
+[[comparison-operators]]
 === Vergleichsoperatoren
 
 * <
@@ -73,6 +78,7 @@ Nur Mandantenkonten, für die S3 Select aktiviert ist, können SelectObjectConte
 
 
 
+[[pattern-matching-operators]]
 === Operatoren für die Musteranpassung
 
 * GEFÄLLT MIR
@@ -82,6 +88,7 @@ Nur Mandantenkonten, für die S3 Select aktiviert ist, können SelectObjectConte
 
 
 
+[[unitary-operators]]
 === Einheitliche Operatoren
 
 * IST NULL
@@ -90,6 +97,7 @@ Nur Mandantenkonten, für die S3 Select aktiviert ist, können SelectObjectConte
 
 
 
+[[math-operators]]
 === Mathematische Operatoren
 
 * +
@@ -103,6 +111,7 @@ StorageGRID folgt der Priorität des Amazon S3 Select-Operators.
 
 
 
+[[aggregate-functions]]
 == Aggregatfunktionen
 
 * DURCHSCHN.()
@@ -114,6 +123,7 @@ StorageGRID folgt der Priorität des Amazon S3 Select-Operators.
 
 
 
+[[conditional-functions]]
 == Bedingte Funktionen
 
 * FALL
@@ -123,6 +133,7 @@ StorageGRID folgt der Priorität des Amazon S3 Select-Operators.
 
 
 
+[[conversion-functions]]
 == Konvertierungsfunktionen
 
 * CAST (für unterstützten Datentyp)
@@ -130,6 +141,7 @@ StorageGRID folgt der Priorität des Amazon S3 Select-Operators.
 
 
 
+[[date-functions]]
 == Datumsfunktionen
 
 * DATUM_HINZUFÜGEN
@@ -142,6 +154,7 @@ StorageGRID folgt der Priorität des Amazon S3 Select-Operators.
 
 
 
+[[string-functions]]
 == Zeichenfolgenfunktionen
 
 * CHAR_LENGTH, CHARACTER_LENGTH

@@ -15,6 +15,7 @@ Das StorageGRID System unterstützt alle zutreffenden S3-REST-API-Standardfehler
 
 
 
+[[supported-s3-api-error-codes]]
 == Unterstützte S3-API-Fehlercodes
 
 [cols="1a,1a"]
@@ -289,6 +290,7 @@ UserKeyMustBespezifiziert
 |===
 
 
+[[storagegrid-custom-error-codes]]
 == Benutzerdefinierte StorageGRID-Fehlercodes
 
 [cols="2a,2a,1a"]

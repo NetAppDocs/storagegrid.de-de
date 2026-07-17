@@ -15,6 +15,7 @@ Die in den Plattformdiensten verwendeten Endpunkte werden von Mandantenbenutzern
 
 
 
+[[issues-with-new-endpoints]]
 == Probleme mit neuen Endpunkten
 
 Bevor ein Mandant Plattform-Services nutzen kann, muss er mithilfe des Mandanten-Manager einen oder mehrere Endpunkte erstellen. Jeder Endpunkt ist ein externes Ziel für einen Plattformservice, z. B. einen StorageGRID S3-Bucket, einen Amazon Web Services-Bucket, ein Thema „Amazon Simple Notification Service“, ein Kafka-Thema oder ein Elasticsearch-Cluster, das lokal oder in AWS gehostet wird. Jeder Endpunkt umfasst sowohl den Standort der externen Ressource als auch die für den Zugriff auf diese Ressource erforderlichen Zugangsdaten.
@@ -28,6 +29,7 @@ NOTE: Die Erstellung von Endpunkten schlägt fehl, wenn Plattformdienste für da
 
 
 
+[[issues-with-existing-endpoints]]
 == Probleme mit vorhandenen Endpunkten
 
 Wenn ein Fehler auftritt, wenn StorageGRID versucht, einen vorhandenen Endpunkt zu erreichen, wird im Mandantenmanager eine Meldung auf dem Dashboard angezeigt.
@@ -43,18 +45,21 @@ NOTE: Einige Fehlermeldungen in der Spalte *Letzter Fehler* können eine LOGID i
 
 
 
+[[issues-related-to-proxy-servers]]
 == Probleme im Zusammenhang mit Proxy-Servern
 
 Wenn Sie einelink:configuring-storage-proxy-settings.html["Storage-Proxy"] zwischen Speicherknoten und Plattformdienst-Endpunkten können Fehler auftreten, wenn Ihr Proxydienst keine Nachrichten von StorageGRID zulässt.  Um diese Probleme zu beheben, überprüfen Sie die Einstellungen Ihres Proxyservers, um sicherzustellen, dass plattformdienstbezogene Nachrichten nicht blockiert werden.
 
 
 
+[[determine-if-an-error-has-occurred]]
 == Ermitteln Sie, ob ein Fehler aufgetreten ist
 
 Wenn in den letzten 7 Tagen Endpunktfehler aufgetreten sind, zeigt das Dashboard im Tenant Manager eine Warnmeldung an. Sie können die Seite Endpoints aufrufen, um weitere Details über den Fehler zu sehen.
 
 
 
+[[client-operations-fail]]
 == Client-Betrieb schlägt fehl
 
 Einige Probleme bei Plattform-Services können zum Ausfall von Client-Operationen auf dem S3-Bucket führen. Beispielsweise schlägt der S3-Client-Betrieb fehl, wenn der interne RSM-Service (Replicated State Machine) ausfällt oder es zu viele Plattformservices-Nachrichten in Warteschlange für die Lieferung gibt.
@@ -68,6 +73,7 @@ So überprüfen Sie den Status der Dienste:
 
 
 
+[[recoverable-and-unrecoverable-endpoint-errors]]
 == Behebbare und nicht wiederherstellbare Endpunktfehler
 
 Nach der Erstellung von Endpunkten können Fehler bei Plattformservice-Anfragen aus verschiedenen Gründen auftreten. Einige Fehler lassen sich durch Benutzereingriffe wiederherstellen. Beispielsweise können behebbare Fehler aus den folgenden Gründen auftreten:
@@ -94,6 +100,7 @@ Wenn bei StorageGRID ein nicht behebbarer Endpunktfehler auftritt:
 
 
 
+[[platform-services-messages-cant-be-delivered]]
 == Nachrichten zu Plattform-Services können nicht bereitgestellt werden
 
 Wenn beim Ziel ein Problem auftritt, das die Annahme von Plattformdienstnachrichten verhindert, ist der Clientvorgang für den Bucket zwar erfolgreich, die Plattformdienstnachricht wird jedoch nicht zugestellt.  Dieser Fehler kann beispielsweise auftreten, wenn die Anmeldeinformationen am Ziel aktualisiert werden, sodass StorageGRID sich nicht mehr beim Zieldienst authentifizieren kann.
@@ -102,6 +109,7 @@ Prüfen Sie, ob entsprechende Warnmeldungen vorhanden sind.
 
 
 
+[[slower-performance-for-platform-service-requests]]
 == Langsamere Performance für Plattform-Service-Anfragen
 
 StorageGRID kann eingehende S3-Anfragen für einen Bucket drosseln, wenn die Rate, mit der die Anforderungen gesendet werden, die Rate übersteigt, mit der der Zielendpunkt die Anforderungen empfangen kann. Eine Drosselung tritt nur auf, wenn ein Rückstand von Anfragen besteht, die auf den Zielendpunkt warten.
@@ -112,6 +120,7 @@ CloudMirror-Anforderungen sind wahrscheinlicher von der Performance des Zielendp
 
 
 
+[[platform-service-requests-fail]]
 == Plattformdienstanfragen schlagen fehl
 
 So zeigen Sie die Ausfallrate der Anfrage für Plattformdienste an:
@@ -126,6 +135,7 @@ image:nodes_page_site_level_platform_services.gif["Knoten Seitenplattform-Servic
 
 
 
+[[platform-services-unavailable-alert]]
 == Plattformdienste – Warnung nicht verfügbar
 
 Die Warnmeldung *Platform Services nicht verfügbar* zeigt an, dass an einem Standort keine Plattformservicevorgänge ausgeführt werden können, da zu wenige Speicherknoten mit dem RSM-Dienst ausgeführt oder verfügbar sind.
@@ -139,6 +149,7 @@ NOTE: Wenn mehr als ein Speicherknoten, der den RSM-Dienst enthält, an einem St
 
 
 
+[[additional-troubleshooting-guidance-for-platform-services-endpoints]]
 == Zusätzliche Anleitung zur Fehlerbehebung für Endpunkte von Plattformservices
 
 Weitere Informationen finden Sie unter link:../tenant/troubleshooting-platform-services-endpoint-errors.html["Verwenden Sie ein Mandantenkonto > Troubleshooting der Endpunkte für Plattformservices"].

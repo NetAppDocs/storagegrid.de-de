@@ -99,6 +99,7 @@ Wenn Sie diese Einstellung auswählen, kopieren Sie das benutzerdefinierte Siche
 
 
 
+[[test-the-connection-and-save-the-configuration]]
 === Testen Sie die Verbindung und speichern Sie die Konfiguration
 
 Nachdem Sie alle Werte eingegeben haben, müssen Sie die Verbindung testen, bevor Sie die Konfiguration speichern können. StorageGRID überprüft die Verbindungseinstellungen für den LDAP-Server und das BIND-Username-Format, wenn Sie es angegeben haben.

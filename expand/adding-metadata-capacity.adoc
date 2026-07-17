@@ -27,6 +27,7 @@ Weitere Informationen finden Sie im Folgenden:
 
 
 
+[[guidelines-for-increasing-metadata-capacity]]
 == Richtlinien zur Erhöhung der Metadaten-Kapazität
 
 Bevor Sie Storage-Nodes hinzufügen, um die Metadatenkapazität zu steigern, lesen Sie die folgenden Richtlinien und Einschränkungen:
@@ -62,6 +63,7 @@ Siehe link:../admin/managing-object-metadata-storage.html["beschreibung des rese
 
 
 
+[[how-metadata-is-redistributed-when-you-add-storage-nodes]]
 == Verteilung von Metadaten beim Hinzufügen von Storage-Nodes
 
 Wenn Sie Storage-Nodes zu einer Erweiterung hinzufügen, verteilt StorageGRID die vorhandenen Objekt-Metadaten an die neuen Nodes an jedem Standort, wodurch die allgemeine Metadaten des Grid erhöht werden. Es ist keine Benutzeraktion erforderlich.

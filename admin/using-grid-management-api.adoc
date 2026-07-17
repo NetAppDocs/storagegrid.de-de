@@ -15,6 +15,7 @@ Sie können Systemmanagementaufgaben mithilfe der Grid Management REST-API anste
 
 
 
+[[top-level-resources]]
 == Allgemeine Ressourcen
 
 Die Grid Management API bietet die folgenden Ressourcen auf oberster Ebene:
@@ -26,6 +27,7 @@ Die Grid Management API bietet die folgenden Ressourcen auf oberster Ebene:
 
 
 
+[[issue-api-requests]]
 == API-Anforderungen ausgeben
 
 Die Grid Management API verwendet die Swagger Open-Source-API-Plattform. Swagger bietet eine intuitive Benutzeroberfläche, die es Entwicklern und nicht-Entwicklern ermöglicht, mit der API Echtzeit-Operationen in StorageGRID durchzuführen.

@@ -15,6 +15,7 @@ Der Vorgang UploadPart lädt ein Teil in einem mehrteiligen Upload für ein Obje
 
 
 
+[[supported-request-headers]]
 == Unterstützte Anfrageheader
 
 Die folgenden Anfragezeilen werden unterstützt:
@@ -26,6 +27,7 @@ Die folgenden Anfragezeilen werden unterstützt:
 
 
 
+[[request-headers-for-server-side-encryption]]
 == Anforderungsheader für serverseitige Verschlüsselung
 
 Wenn Sie die SSE-C-Verschlüsselung für die CreateMultipartUpload-Anforderung angegeben haben, müssen Sie auch die folgenden Anforderungsheader in jede UploadPart-Anforderung einschließen:
@@ -45,6 +47,7 @@ Wenn Sie während der CreateMultipartUpload-Anforderung eine SHA-256-Prüfsumme 
 
 
 
+[[unsupported-request-headers]]
 == Nicht unterstützte Anforderungsheader
 
 Die folgenden Anforderungsheader werden nicht unterstützt:
@@ -55,6 +58,7 @@ Die folgenden Anforderungsheader werden nicht unterstützt:
 
 
 
+[[versioning]]
 == Versionierung
 
 Mehrteilige Uploads bestehen aus separaten Vorgängen zum Initiieren des Uploads, Auflisten von Uploads, Hochladen von Teilen, Zusammenbauen der hochgeladenen Teile und Abschließen des Uploads. Objekte werden erstellt (und ggf. versioniert), wenn der CompleteMultipartUpload-Vorgang ausgeführt wird.

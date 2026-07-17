@@ -22,12 +22,14 @@ Siehe dielink:../swnodes/index.html["Installationsanweisungen"] .
 
 
 
+[[host-network-configuration-for-container-engine-deployments]]
 == Hostnetzwerkkonfiguration für Container-Engine-Implementierungen
 
 Bevor Sie Ihre StorageGRID-Implementierung auf einer Container-Engine-Plattform starten, ermitteln Sie, welche Netzwerke (Grid, Administrator, Client) jeder Node verwenden wird. Sie müssen sicherstellen, dass die Netzwerkschnittstelle jedes Node auf der richtigen virtuellen oder physischen Host-Schnittstelle konfiguriert ist und dass jedes Netzwerk über ausreichende Bandbreite verfügt.
 
 
 
+[[physical-hosts]]
 === Physische Hosts
 
 Wenn Sie physische Hosts zur Unterstützung von Grid-Nodes verwenden:
@@ -52,6 +54,7 @@ NOTE: „Linux“ bezieht sich auf eine RHEL-, Ubuntu- oder Debian-Bereitstellun
 
 
 
+[[minimum-bandwidth-recommendations]]
 === Empfehlungen für die minimale Bandbreite
 
 Die folgende Tabelle enthält die Empfehlungen für die minimale LAN-Bandbreite für jeden StorageGRID-Node-Typ und jeden Netzwerktyp. Sie müssen jeden physischen oder virtuellen Host mit ausreichender Netzwerkbandbreite bereitstellen, um die Mindestanforderungen an die Bandbreite für das Aggregat für die Gesamtzahl und den Typ der StorageGRID Nodes, die auf diesem Host ausgeführt werden sollen, zu erfüllen.

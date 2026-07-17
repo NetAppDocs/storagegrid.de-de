@@ -20,6 +20,7 @@ Sie können die Details für ein Erasure-Coding-Profil anzeigen und bei Bedarf e
 
 
 
+[[view-erasure-coding-profile-details]]
 == Profildetails zum Erasure Coding anzeigen
 
 Sie können die Details eines Profils zur Fehlerkorrektur anzeigen, um dessen Status, das verwendete Schema zur Fehlerkorrektur sowie weitere Informationen zu bestimmen.
@@ -33,6 +34,7 @@ Sie können die Details eines Profils zur Fehlerkorrektur anzeigen, um dessen St
 
 
 
+[[rename-an-erasure-coding-profile]]
 == Umbenennen eines Profils für die Erasure Coding
 
 Möglicherweise möchten Sie ein Erasure Coding-Profil umbenennen, um die Funktionen des Profils offensichtlicher zu machen.
@@ -54,6 +56,7 @@ NOTE: Profilnamen für das Erasure Coding müssen eindeutig sein. Ein Validierun
 
 
 
+[[deactivate-an-erasure-coding-profile]]
 == Deaktivieren Sie ein Erasure Coding-Profil
 
 Sie können ein Profil zur Einhaltung von Datenkonsistenz deaktivieren, wenn Sie dessen Verwendung nicht mehr planen und das Profil derzeit in keiner ILM-Regel verwendet wird.

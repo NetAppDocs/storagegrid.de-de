@@ -18,6 +18,7 @@ CAUTION: Die folgenden ILM-Regeln und -Richtlinien sind nur Beispiele. Es gibt v
 
 
 
+[[ilm-rule-1-for-example-3-use-ec-for-image-files-greater-than-1-mb]]
 == ILM-Regel 1 beispielsweise 3: Verwenden Sie EC für Bilddateien über 1 MB
 
 Diese Beispiel ILM-Regel verwendet erweiterte Filterung zur Löschung von Code aller Bilddateien größer als 1 MB.
@@ -72,6 +73,7 @@ Da diese Regel als erste Regel in der Richtlinie konfiguriert ist, gilt die Anwe
 
 
 
+[[ilm-rule-2-for-example-3-create-2-replicated-copies-for-all-remaining-image-files]]
 == ILM-Regel 2 beispielsweise 3: Erstellen Sie 2 replizierte Kopien für alle verbleibenden Image-Dateien
 
 Diese Beispiel-ILM-Regel verwendet erweiterte Filterung, um anzugeben, dass kleinere Bilddateien repliziert werden. Da die erste Regel in der Richtlinie bereits Bilddateien mit einer Größe von mehr als 1 MB übereinstimmt, gilt diese Regel für Bilddateien mit einer Größe von 1 MB.
@@ -112,6 +114,7 @@ Erstellung von 2 replizierten Kopien in zwei Storage Pools
 |===
 
 
+[[ilm-policy-for-example-3-better-protection-for-image-files]]
 == ILM-Richtlinie beispielsweise 3: Besserer Schutz für Image-Dateien
 
 Dieses Beispiel enthält drei Regeln für die ILM-Richtlinie:

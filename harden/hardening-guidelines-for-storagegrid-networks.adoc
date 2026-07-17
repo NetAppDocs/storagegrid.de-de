@@ -17,6 +17,7 @@ Ausführliche Informationen zu StorageGRID-Netzwerken finden Sie im link:../netw
 
 
 
+[[guidelines-for-grid-network]]
 == Richtlinien für Grid Network
 
 Sie müssen ein Grid-Netzwerk für den gesamten internen StorageGRID-Datenverkehr konfigurieren. Alle Grid-Nodes sind im Grid-Netzwerk und müssen mit allen anderen Nodes kommunizieren können.
@@ -31,6 +32,7 @@ Befolgen Sie bei der Konfiguration des Grid-Netzwerks die folgenden Richtlinien:
 
 
 
+[[guidelines-for-admin-network]]
 == Richtlinien für Admin Network
 
 Das Admin-Netzwerk wird normalerweise für administrative Aufgaben verwendet (vertrauenswürdige Mitarbeiter, die den Grid Manager oder SSH verwenden) und für die Kommunikation mit anderen vertrauenswürdigen Services wie LDAP, DNS, NTP oder KMS (oder KMIP Server). StorageGRID ist jedoch nicht intern durchsetzen.
@@ -43,6 +45,7 @@ Wenn Sie das Admin-Netzwerk verwenden, befolgen Sie die folgenden Richtlinien:
 
 
 
+[[guidelines-for-client-network]]
 == Richtlinien für Client Network
 
 Das Client-Netzwerk wird typischerweise für Mandanten und zur Kommunikation mit externen Services wie dem CloudMirror Replikationsservice oder einem anderen Plattformservice verwendet. StorageGRID ist jedoch nicht intern durchsetzen.

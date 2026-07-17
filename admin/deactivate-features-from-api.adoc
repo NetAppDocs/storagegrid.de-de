@@ -36,6 +36,7 @@ Nach Abschluss der Anforderung ist die Funktion Root-Passwort ändern deaktivier
 
 
 
+[[reactivate-deactivated-features]]
 == Deaktivieren Funktionen erneut aktivieren
 
 Standardmäßig können Sie mit der Grid Management API eine deaktivierte Funktion reaktivieren. Wenn Sie jedoch verhindern möchten, dass deaktivierte Funktionen jemals wieder aktiviert werden, können Sie die *activateFeatures*-Funktion selbst deaktivieren.

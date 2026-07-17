@@ -20,6 +20,7 @@ Sie können einen Cloud-Speicherpool entfernen, wenn er nicht in einer ILM-Regel
 
 
 
+[[if-needed-use-ilm-to-move-object-data]]
 == Verwenden Sie bei Bedarf ILM, um Objektdaten zu verschieben
 
 Wenn der Cloud Storage Pool, den Sie entfernen möchten, Objektdaten enthält, müssen Sie ILM verwenden, um die Daten an einen anderen Speicherort zu verschieben. Sie können die Daten beispielsweise in Storage Nodes in Ihrem Grid oder in einen anderen Cloud-Storage-Pool verschieben.
@@ -47,6 +48,7 @@ Wählen Sie für Schritt 2 des Assistenten zum Erstellen von ILM-Regeln den neue
 
 
 
+[[delete-cloud-storage-pool]]
 == Cloud Storage-Pool Löschen
 
 Wenn der Cloud Storage Pool leer ist und in keiner ILM-Regel verwendet wird, können Sie ihn löschen.

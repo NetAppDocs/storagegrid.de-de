@@ -32,6 +32,7 @@ Befolgen Sie immer das Recovery-Verfahren für den spezifischen Typ des Grid-Nod
 
 
 
+[[preconditions-for-recovering-grid-nodes]]
 == Voraussetzungen für die Wiederherstellung von Grid-Nodes
 
 Bei der Wiederherstellung der Grid-Nodes werden alle folgenden Bedingungen vorausgesetzt:
@@ -44,12 +45,14 @@ Bei der Wiederherstellung der Grid-Nodes werden alle folgenden Bedingungen vorau
 
 
 
+[[order-of-node-recovery-if-a-server-hosting-more-than-one-grid-node-fails]]
 == Reihenfolge der Knotenwiederherstellung, wenn ein Server, der mehr als einen Grid-Knoten hostet, ausfällt
 
 Wenn ein Server ausfällt, auf dem mehr als ein Grid-Knoten gehostet wird, können Sie die Knoten in beliebiger Reihenfolge wiederherstellen. Wenn der ausgefallene Server jedoch den primären Admin-Knoten hostet, müssen Sie diesen Knoten zuerst wiederherstellen.
 
 
 
+[[ip-addresses-for-recovered-nodes]]
 == IP-Adressen für wiederhergestellte Knoten
 
 Versuchen Sie nicht, einen Node mit einer IP-Adresse wiederherzustellen, die derzeit einem anderen Node zugewiesen ist. Wenn Sie den neuen Node implementieren, verwenden Sie die aktuelle IP-Adresse des ausgefallenen Nodes oder eine nicht genutzte IP-Adresse.

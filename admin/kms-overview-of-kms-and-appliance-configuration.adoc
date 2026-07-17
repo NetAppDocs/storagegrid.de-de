@@ -21,6 +21,7 @@ Das Flussdiagramm zeigt die parallele Einrichtung von KMS und die Einrichtung de
 
 
 
+[[set-up-the-key-management-server-kms]]
 == Einrichten des Verschlüsselungsmanagement-Servers (KMS)
 
 Die Einrichtung eines Schlüsselverwaltungsservers umfasst die folgenden grundlegenden Schritte.
@@ -52,6 +53,7 @@ link:kms-adding.html["Hinzufügen eines Verschlüsselungsmanagement-Servers (KMS
 |===
 
 
+[[set-up-the-appliance]]
 == Richten Sie das Gerät ein
 
 Die Einrichtung eines Appliance-Nodes für die KMS-Nutzung umfasst die folgenden grundlegenden Schritte.
@@ -74,6 +76,7 @@ Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/storagegrid
 
 
 
+[[key-management-encryption-process-occurs-automatically]]
 == Verschlüsselungsmanagementprozess (wird automatisch durchgeführt)
 
 Die Verschlüsselung des Verschlüsselungsmanagement umfasst die folgenden grundlegenden Schritte, die automatisch durchgeführt werden.

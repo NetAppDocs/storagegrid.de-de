@@ -32,6 +32,7 @@ CAUTION: Nachdem Sie einen Branch-Bucket konfiguriert und erstellt haben, könne
 
 
 
+[[create-branch-bucket]]
 == Branch-Bucket erstellen
 
 .Schritte
@@ -45,6 +46,7 @@ Die Schaltfläche *Branch-Bucket erstellen* ist deaktiviert, wenn für den Basis
 
 
 
+[[enter-details]]
 == Geben Sie Details ein
 
 .Schritte
@@ -106,6 +108,7 @@ Zweigschaufeltyp
 
 
 
+[[manage-object-settings-optional]]
 == Objekteinstellungen verwalten (optional)
 
 Die Objekteinstellungen für einen Zweig-Bucket wirken sich nicht auf die Objektversionen im Basis-Bucket aus.

@@ -17,6 +17,7 @@ Einzelheiten zu behobenen und bekannten Problemen in den aktuellen StorageGRID 1
 
 
 
+[[appliances]]
 == Appliances
 
 * Speicherkapazität und Kosteneffizienz haben sich deutlich erhöht.
@@ -25,6 +26,7 @@ Einzelheiten zu behobenen und bekannten Problemen in den aktuellen StorageGRID 1
 
 
 
+[[artificial-intelligence-ai-and-machine-learning-ml]]
 == Künstliche Intelligenz (KI) und maschinelles Lernen (ML)
 
 * link:../tenant/what-is-branch-bucket.html["Zweigeimer"]Ermöglichen Sie Point-in-Time-Versionen von Buckets, die eine schnellere Ransomware-Wiederherstellung und isolierte Datensätze für Tests und Experimente ermöglichen.
@@ -33,12 +35,14 @@ Einzelheiten zu behobenen und bekannten Problemen in den aktuellen StorageGRID 1
 
 
 
+[[capacity]]
 == Kapazität
 
 StorageGRID unterstützt jetzt eine Billion Objekte, was mehr als das Doppelte des vorherigen Limits ist.  Weitere Informationen finden Sie im https://fusion.netapp.com/["NetApp Fusion -Tool"^] zur Dimensionierung und Gestaltung von StorageGRID.
 
 
 
+[[cassandra-updates]]
 == Cassandra-Updates
 
 StorageGRID verwendet jetzt eine neuere Version von Cassandra zur Metadatenspeicherung.  Diese Version von Cassandra nutzt den Speicherplatz effizienter, um mehr Metadaten zu speichern.
@@ -49,6 +53,7 @@ Weitere Informationen finden Sie unter link:../upgrade/performing-upgrade.html#u
 
 
 
+[[federation]]
 == Föderation
 
 * Sie können jetztlink:../admin/managing-users.html#import-federated-users["Importieren Sie bis zu 100 föderierte Benutzer"] in StorageGRID.
@@ -61,6 +66,7 @@ NetApp empfiehlt, diese Funktion nur zwischen Quell- und Ziel-Buckets von Storag
 
 
 
+[[manageability]]
 == Verwaltbarkeit
 
 * Verbessertlink:../maintain/decommission-procedure.html["Stilllegungsverfahren"] reduziert Zeit und Komplexität und steigert so die Betriebseffizienz.
@@ -85,6 +91,7 @@ NOTE: Wenn Sie zum vorherigen Verhalten zurückkehren müssen, um eine starke gl
 
 
 
+[[security]]
 == Sicherheit
 
 * Stärkere Datenverschlüsselung und Integritätsschutz sorgen für verbesserte Sicherheit und Leistung.
@@ -94,6 +101,7 @@ NOTE: Wenn Sie zum vorherigen Verhalten zurückkehren müssen, um eine starke gl
 
 
 
+[[tenant-groups]]
 == Mandantengruppen
 
 * Sie können jetztlink:../tenant/manage-groups.html["Konfigurieren Sie eine neue S3-Vertrauensrichtlinie"] zur Unterstützung der AssumeRole-API.  Die Funktion „AssumeRole“ bietet kurzfristige Anmeldeinformationen für verbesserte Sicherheit und flexible Zugriffskontrolle.
@@ -102,6 +110,7 @@ NOTE: Wenn Sie zum vorherigen Verhalten zurückkehren müssen, um eine starke gl
 
 
 
+[[user-interface]]
 == Benutzeroberfläche
 
 * Die Einstellungen für dunkle Designs und Systemdesigns sind im Benutzermenü des Grid Managers und des Tenant Managers verfügbar.

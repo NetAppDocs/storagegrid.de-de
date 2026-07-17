@@ -23,6 +23,7 @@ Wenn Sie ein Upgrade auf StorageGRID 11.6 oder höher durchführen, werden die o
 
 
 
+[[understand-the-alert]]
 == Analysieren Sie die Meldung
 
 Wenn Sie benutzerdefinierte Werte für Speichervolumen-Wasserzeichen verwenden, wird möglicherweise für einen oder mehrere Speicherknoten die Warnung *Low read-only Watermark override* ausgelöst.
@@ -66,6 +67,7 @@ Die Warnung *Low read-only Watermark override* wird für Storage Node A ausgelö
 
 
 
+[[resolve-the-alert]]
 == Beheben Sie die Meldung
 
 Befolgen Sie diese Schritte, wenn eine oder mehrere *Low Read-Only-Wasserzeichen überschreiben*-Warnungen ausgelöst wurden. Sie können diese Anweisungen auch verwenden, wenn Sie derzeit benutzerdefinierte Wasserzeichen-Einstellungen verwenden und optimierte Einstellungen auch dann verwenden möchten, wenn keine Warnungen ausgelöst wurden.
@@ -81,6 +83,7 @@ Sie können die Warnung *Low read-only Watermark override* lösen, indem Sie ben
 
 
 
+[[assess-object-data-usage-for-entire-grid]]
 === Bewertung der Nutzung von Objektdaten für das gesamte Grid
 
 .Schritte
@@ -100,6 +103,7 @@ image:nodes_page_object_data_used_with_alert.png["Seite Knoten mit Objektdaten, 
 
 
 
+[[view-optimized-watermarksview-optimized-storage-watermarks]]
 === [[View-optimized-Watermarks]]Anzeigen optimierter Storage-Wasserzeichen
 
 StorageGRID verwendet zwei Prometheus-Kennzahlen, um die optimierten Werte anzuzeigen, die es für das schreibgeschützte weiche Wasserzeichen des Storage-Volumes berechnet hat. Sie können die minimalen und maximalen optimierten Werte für jeden Speicherknoten in Ihrem Raster anzeigen.
@@ -126,6 +130,7 @@ In der letzten Spalte wird der maximale optimierte Wert des weichen schreibgesch
 
 
 
+[[determine-optimized-watermarksdetermine-if-you-can-use-optimized-watermarks]]
 === [[Bestimmen-optimiert-Wasserzeichen]]Bestimmen Sie, ob Sie optimierte Wasserzeichen verwenden können
 
 .Schritte
@@ -150,6 +155,7 @@ NOTE: Auf jedes Storage Volume auf jedem Storage Node werden dieselben benutzerd
 
 
 
+[[use-optimized-watermarksuse-optimized-watermarks]]
 === [[use-optimized-Watermarks]]optimierte Wasserzeichen verwenden
 
 .Schritte

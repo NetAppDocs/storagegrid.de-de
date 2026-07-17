@@ -15,6 +15,7 @@ Unter Umständen müssen Sie Warnmeldungen und Fehler in Bezug auf Grid-Verbindu
 
 
 
+[[grid-federation-errorsgrid-federation-connection-alerts-and-errors]]
 == [[Grid-Federation-errors]]Warnungen und Fehler der Grid Federation-Verbindung
 
 Möglicherweise erhalten Sie Warnmeldungen oder Fehler bei den Verbindungen des Grid-Verbunds.
@@ -23,6 +24,7 @@ Nachdem Sie Änderungen vorgenommen haben, um ein Verbindungsproblem zu beheben,
 
 
 
+[[grid-federation-connection-failure-alert]]
 === Warnmeldung bei Ausfall der Grid-Verbindung
 
 .Problem
@@ -40,6 +42,7 @@ Diese Warnung zeigt an, dass die Verbindung zwischen den Rastern nicht funktioni
 
 
 
+[[expiration-of-grid-federation-certificate-alert]]
 === Ablauf der Warnmeldung für das Grid-Verbundzertifikat
 
 .Problem
@@ -53,6 +56,7 @@ Siehe die Anleitung für rotierende Verbindungszertifikate in link:grid-federati
 
 
 
+[[error-editing-a-grid-federation-connection]]
 === Fehler beim Bearbeiten einer Verbindung zum Grid Federation
 
 .Problem
@@ -69,10 +73,12 @@ Wenn Sie eine Grid-Federation-Verbindung bearbeiten, versucht StorageGRID, eine 
 
 
 
+[[account-clone-errors]]
 == Fehler beim Klonen des Kontos
 
 
 
+[[cant-sign-in-to-a-cloned-tenant-account]]
 === Keine Anmeldung bei einem geklonten Mandantenkonto möglich
 
 .Problem
@@ -88,6 +94,7 @@ Bevor sich ein geklonter lokaler Benutzer beim Zielraster des Mandanten anmelden
 
 
 
+[[tenant-created-without-a-clone]]
 === Mandant wird ohne Klon erstellt
 
 .Problem
@@ -110,10 +117,12 @@ image:grid-federation-retry-account-clone.png["Screenshot mit einer Fehlermeldun
 
 
 
+[[cross-grid-replication-alerts-and-errors]]
 == Grid-übergreifende Replizierungswarnungen und Fehler
 
 
 
+[[last-error-shown-for-connection-or-tenant]]
 === Letzter Fehler für Verbindung oder Mandant
 
 .Problem
@@ -156,6 +165,7 @@ TIP: Nachdem Sie den Fehler gelöscht haben, kann ein neuer *Last error* auftret
 
 
 
+[[cross-grid-replication-permanent-failure-alert]]
 === Grid-übergreifende Replizierung mit permanenter Fehlerwarnung
 
 .Problem
@@ -204,6 +214,7 @@ NOTE: Es kann bis zu einem Tag dauern, bis die Warnmeldung gelöscht wird, nachd
 
 
 
+[[cross-grid-replication-resource-unavailable-alert]]
 === Warnung: Grid-übergreifende Replikationsressource nicht verfügbar
 
 .Problem

@@ -17,6 +17,7 @@ StorageGRID Hotfixes enthalten Software-Änderungen, die außerhalb einer Featur
 
 
 
+[[considerations-for-applying-a-hotfix]]
 == Überlegungen für die Anwendung eines Hotfix
 
 Ein StorageGRID-Hotfix kann nicht angewendet werden, wenn ein anderer Wartungsvorgang ausgeführt wird. Sie können beispielsweise keinen Hotfix anwenden, während eine Stilllegung, Erweiterung oder Wiederherstellung ausgeführt wird.
@@ -32,6 +33,7 @@ Während die Grid-Knoten mit der neuen Hotfix-Version aktualisiert werden, könn
 
 
 
+[[how-hotfixes-are-applied-for-recovery-and-expansion]]
 == Wie Hotfixes für die Wiederherstellung und Erweiterung eingesetzt werden
 
 Nachdem ein Hotfix auf das Grid angewendet wurde, installiert der primäre Admin-Knoten automatisch die gleiche Hotfix-Version auf alle Knoten, die durch Wiederherstellungsvorgänge wiederhergestellt oder in einer Erweiterung hinzugefügt werden.

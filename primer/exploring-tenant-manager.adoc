@@ -20,6 +20,7 @@ Wenn sich Mandantenbenutzer beim Mandanten-Manager anmelden, stellen sie eine Ve
 
 
 
+[[tenant-manager-dashboard]]
 == Mandanten-Manager Dashboard
 
 Nachdem ein Grid-Administrator ein Mandantenkonto erstellt hat, indem er den Grid Manager oder die Grid Management API verwendet, können sich Mandantenbenutzer beim Mandanten-Manager anmelden.
@@ -32,6 +33,7 @@ image:tenant_dashboard_with_buckets.png["Mandanten-Manager Dashboard"]
 
 
 
+[[storage-menu-s3]]
 == Speichermenü (S3)
 
 Über dieses Menü können S3-Benutzer:
@@ -44,6 +46,7 @@ image:tenant_dashboard_with_buckets.png["Mandanten-Manager Dashboard"]
 
 
 
+[[my-access-keys]]
 === Meine Zugriffsschlüssel
 
 S3-Mandantenbenutzer können die Zugriffschlüssel wie folgt managen:
@@ -58,6 +61,7 @@ NOTE: Die Verwaltung der Zugriffsschlüssel für andere Benutzer erfolgt über d
 
 
 
+[[buckets]]
 === Buckets
 
 S3-Mandantenbenutzer mit entsprechenden Berechtigungen können für ihre Buckets die folgenden Aufgaben ausführen:
@@ -83,18 +87,21 @@ Wenn ein Grid-Administrator die Nutzung von Plattform-Services für das Mandante
 
 
 
+[[platform-services-endpoints]]
 === Plattform-Services-Endpunkte
 
 Wenn ein Grid-Administrator die Nutzung von Plattformservices für das Mandantenkonto aktiviert hat, kann ein S3-Mandantenbenutzer mit der Berechtigung zum Verwalten von Endpunkten für jeden Plattformservice einen Zielendpunkt konfigurieren.
 
 
 
+[[grid-federation-connections]]
 === Netzverbundverbindungen
 
 Wenn ein Grid-Administrator die Verwendung einer Grid-Verbundverbindung für das Mandantenkonto aktiviert hat, kann ein S3-Mandantenbenutzer mit Root-Zugriffsberechtigungen den Verbindungsnamen anzeigen und die Seite mit Bucket-Details für jeden Bucket aufrufen, für den die Grid-übergreifende Replizierung aktiviert ist, Und zeigen Sie den letzten Fehler an, der beim Replizieren von Bucket-Daten in das andere Grid in der Verbindung auftritt. Siehe link:../tenant/grid-federation-view-connections-tenant.html["Anzeigen von Verbindungen mit Grid Federation"].
 
 
 
+[[access-management-menu]]
 == Öffnen Sie das Menü Management
 
 Über das Menü Zugriffsmanagement können StorageGRID-Mandanten Benutzergruppen aus einer föderierten Identitätsquelle importieren und Verwaltungsberechtigungen zuweisen. Außerdem können Mandanten lokale Mandantengruppen und Benutzer managen, es sei denn, Single Sign On (SSO) gilt für das gesamte StorageGRID System.

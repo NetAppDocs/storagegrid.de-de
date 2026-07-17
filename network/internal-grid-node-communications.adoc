@@ -20,6 +20,7 @@ Zusätzlich zu ICMP und den in der Tabelle aufgeführten Ports verwendet Storage
 
 
 
+[[guidelines-for-linux-based-nodes]]
 == Richtlinien für Linux-basierte Knoten
 
 Wenn die Netzwerkrichtlinien des Unternehmens den Zugriff auf diese Ports einschränken, können Sie die Ports zum Zeitpunkt der Bereitstellung mithilfe eines Bereitstellungskonfigurationsparameters neu zuordnen.  Weitere Informationen zur Portneuzuordnung und zu den Bereitstellungskonfigurationsparametern finden Sie unterlink:../swnodes/index.html["Installieren Sie StorageGRID auf softwarebasierten Knoten"] .
@@ -29,6 +30,7 @@ NOTE: Die Unterstützung für die Neuzuordnung von Ports ist veraltet und wird i
 
 
 
+[[guidelines-for-vmware-based-nodes]]
 == Richtlinien für VMware-basierte Nodes
 
 Konfigurieren Sie die folgenden Ports nur dann, wenn Sie Firewall-Einschränkungen definieren müssen, die sich außerhalb des VMware-Netzwerks befinden.
@@ -40,6 +42,7 @@ NOTE: Die Unterstützung für die Neuzuordnung von Ports ist veraltet und wird i
 
 
 
+[[guidelines-for-appliance-nodes]]
 == Richtlinien für Appliance-Nodes
 
 Wenn Netzwerkrichtlinien des Unternehmens den Zugriff auf eine dieser Ports einschränken, können Sie Ports mithilfe des StorageGRID Appliance Installer neu zuordnen. Siehe https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/optional-remapping-network-ports-for-appliance.html["Optional: Netzwerkports für Appliance neu zuordnen"^].
@@ -49,6 +52,7 @@ NOTE: Die Unterstützung für die Neuzuordnung von Ports ist veraltet und wird i
 
 
 
+[[storagegrid-internal-ports]]
 == Interne StorageGRID-Ports
 
 [cols="1a,1a,1a,1a,4a"]

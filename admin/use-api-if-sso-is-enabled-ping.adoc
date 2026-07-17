@@ -15,6 +15,7 @@ Wenn Sielink:../admin/how-sso-works.html["Konfiguration und Aktivierung von Sing
 
 
 
+[[sign-in-to-the-api-if-single-sign-on-is-enabled]]
 == Melden Sie sich bei der API an, wenn Single Sign-On aktiviert ist
 
 Diese Anweisungen gelten, wenn Sie PingFederate als SSO-Identitäts-Provider verwenden
@@ -204,6 +205,7 @@ Sie können jetzt `MYTOKEN` für andere Anfragen verwenden, ähnlich wie Sie die
 
 
 
+[[sign-out-of-the-api-if-single-sign-on-is-enabled]]
 == Melden Sie sich von der API ab, wenn Single Sign-On aktiviert ist
 
 Wenn Single Sign-On (SSO) aktiviert ist, müssen Sie eine Reihe von API-Anforderungen zum Abzeichnen der Grid Management API oder der Mandantenmanagement-API ausstellen. Diese Anweisungen gelten, wenn Sie PingFederate als SSO-Identitäts-Provider verwenden

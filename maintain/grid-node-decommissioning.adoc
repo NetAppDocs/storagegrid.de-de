@@ -15,6 +15,7 @@ Mithilfe der Node-Deaktivierung können Sie einen oder mehrere Grid-Nodes an ein
 
 
 
+[[when-to-decommission-a-node]]
 == Wann ein Node stillgelegt werden soll
 
 Wenn einer der folgenden Optionen zutrifft, wird das Verfahren zur Deaktivierung des Nodes ausgeführt:
@@ -33,6 +34,7 @@ TIP: Wenn Sie eine ältere Appliance durch eine neuere Appliance ersetzen möcht
 
 
 
+[[how-to-decommission-a-node]]
 == Deaktivieren eines Node
 
 Verbundene Grid-Nodes oder getrennte Grid-Nodes können deaktiviert werden.
@@ -53,6 +55,7 @@ Anweisungen hierzu finden Sie unter link:decommissioning-disconnected-grid-nodes
 
 
 
+[[what-to-consider-before-decommissioning-a-node]]
 == Was vor der Stilllegung eines Knotens zu beachten ist
 
 Bevor Sie eines der beiden Verfahren durchführen, sollten Sie die Überlegungen für jeden Node-Typ überprüfen:

@@ -26,6 +26,7 @@ Optional können Sielink:../monitor/considerations-for-external-syslog-server.ht
 
 
 
+[[change-audit-message-levels]]
 == Meldungsebenen ändern
 
 Sie können für jede der folgenden Meldungskategorien im Prüfprotokoll eine andere Überwachungsstufe festlegen:
@@ -148,6 +149,7 @@ NOTE: Wenn Sie keine detaillierte Aufzeichnung der Client-Lesevorgänge für Ihr
 
 
 
+[[define-http-request-headers]]
 == Definieren Sie HTTP-Anforderungsheader
 
 Sie können optional alle HTTP-Anforderungsheader definieren, die Sie in die Prüfnachrichten zum Lesen und Schreiben des Clients aufnehmen möchten.
@@ -170,6 +172,7 @@ NOTE: Anforderungsheader des Prüfprotokolls werden nur protokolliert, wenn die 
 
 
 
+[[configure-log-location]]
 == Konfigurieren des Protokollspeicherorts
 
 Standardmäßig werden Prüfmeldungen und Protokolle auf den Knoten gespeichert, auf denen sie generiert werden.  Sie werden regelmäßig rotiert und schließlich gelöscht, um zu verhindern, dass sie übermäßig viel Speicherplatz belegen.  Wenn Sie Auditmeldungen und eine Teilmenge der Protokolle extern speichern möchten,<<use-external-syslog-server,Verwenden Sie einen externen Syslog-Server>> .
@@ -178,6 +181,7 @@ Wenn Sie die Protokolldateien intern speichern möchten, wählen Sie einen Manda
 
 
 
+[[use-external-syslog-serveruse-an-external-syslog-server]]
 === [[use-external-syslog-Server]]Verwenden Sie einen externen syslog-Server
 
 Optional können Sie einen externen Syslog-Server konfigurieren, um Audit-Protokolle, Anwendungsprotokolle und Sicherheitsereignisprotokolle an einem Ort außerhalb des Grids zu speichern.
@@ -579,6 +583,7 @@ NOTE: StorageGRID Auditinformationen werden erst an den externen Syslog-Server g
 
 
 
+[[select-log-location]]
 === Protokollspeicherort auswählen
 
 Sie können angeben, wo Überwachungsprotokolle, Sicherheitsereignisprotokolle,link:../monitor/storagegrid-software-logs.html["StorageGRID -Anwendungsprotokolle"] , und Zugriffsprotokolle werden gesendet.
@@ -650,6 +655,7 @@ Neue Protokolle werden an die ausgewählten Ziele gesendet. Vorhandene Protokoll
 
 
 
+[[use-bucketuse-a-bucket]]
 === [[use-bucket]]Verwenden Sie einen Eimer
 
 Die Protokolle werden regelmäßig rotiert.  Verwenden Sie einen S3-Bucket im selben Grid, um Protokolle über einen längeren Zeitraum zu speichern.

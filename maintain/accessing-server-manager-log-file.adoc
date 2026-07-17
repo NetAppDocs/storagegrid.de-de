@@ -19,6 +19,7 @@ Prüfen Sie diese Datei auf Fehlermeldungen zu Fehlern. Eskalieren des Problems 
 
 
 
+[[service-with-an-error-state]]
 == Dienst mit Fehlerstatus
 
 Wenn Sie feststellen, dass ein Dienst einen Fehlerstatus eingegeben hat, versuchen Sie, den Dienst neu zu starten.

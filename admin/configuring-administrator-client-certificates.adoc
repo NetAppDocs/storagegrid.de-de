@@ -44,6 +44,7 @@ NOTE: Wenn Sie einen Schlüsselverwaltungsserver (KMS) zum Schutz der Daten auf 
 
 
 
+[[add-client-certificates]]
 == Fügen Sie Client-Zertifikate hinzu
 
 Gehen Sie wie folgt vor, um das Clientzertifikat hinzuzufügen:
@@ -55,6 +56,7 @@ Gehen Sie wie folgt vor, um das Clientzertifikat hinzuzufügen:
 
 
 
+[[management-interface-certificate-already-configured]]
 === Das Zertifikat der Managementoberfläche ist bereits konfiguriert
 
 Verwenden Sie diese Vorgehensweise, um ein Clientzertifikat hinzuzufügen, wenn bereits ein Zertifikat für eine Managementoberfläche mit einer vom Kunden bereitgestellten CA, einem Clientzertifikat und einem privaten Schlüssel konfiguriert wurde.
@@ -85,6 +87,7 @@ Das neue Zertifikat wird auf der Registerkarte Client angezeigt.
 
 
 
+[[ca-issued-client-certificate]]
 === KANN Client-Zertifikat AUSGESTELLT haben
 
 Verwenden Sie dieses Verfahren, um ein Administrator-Client-Zertifikat hinzuzufügen, wenn ein Zertifikat der Verwaltungsschnittstelle nicht konfiguriert wurde und Sie planen, ein Client-Zertifikat für Prometheus hinzuzufügen, das ein vom Zertifizierungsstellen ausgestelltes Clientzertifikat und einen privaten Schlüssel verwendet.
@@ -116,6 +119,7 @@ Die neuen Zertifikate werden auf der Registerkarte Client angezeigt.
 
 
 
+[[generated-certificate-from-grid-manager]]
 === Zertifikat vom Grid Manager generiert
 
 Verwenden Sie dieses Verfahren, um ein Administrator-Client-Zertifikat hinzuzufügen, wenn ein Zertifikat der Verwaltungsschnittstelle nicht konfiguriert wurde und Sie planen, ein Clientzertifikat für Prometheus hinzuzufügen, das die Funktion Zertifikat generieren in Grid Manager verwendet.
@@ -185,6 +189,7 @@ Das neue Zertifikat wird auf der Zertifikatsseite der Verwaltungsschnittstelle a
 
 
 
+[[configure-external-monitoring-toolconfigure-an-external-monitoring-tool]]
 === [[configure-external-Monitoring-Tool]]Konfigurieren Sie ein externes Monitoring-Tool
 
 .Schritte
@@ -223,6 +228,7 @@ Informationen zu den Metriken finden Sie im link:../monitor/index.html["Anweisun
 
 
 
+[[edit-client-certificates]]
 == Client-Zertifikate bearbeiten
 
 Sie können ein Administrator-Clientzertifikat bearbeiten, um seinen Namen zu ändern, Prometheus-Zugriff zu aktivieren oder zu deaktivieren oder ein neues Zertifikat hochzuladen, wenn das aktuelle Zertifikat abgelaufen ist.
@@ -244,6 +250,7 @@ Das aktualisierte Zertifikat wird auf der Registerkarte Client angezeigt.
 
 
 
+[[attach-new-client-certificate]]
 == Verbinden Sie das neue Clientzertifikat
 
 Sie können ein neues Zertifikat hochladen, wenn das aktuelle Zertifikat abgelaufen ist.
@@ -338,6 +345,7 @@ Das neue Zertifikat wird auf der Registerkarte Client angezeigt.
 
 
 
+[[download-or-copy-client-certificates]]
 == Herunterladen oder Kopieren von Clientzertifikaten
 
 Sie können ein Clientzertifikat zur Verwendung an anderer Stelle herunterladen oder kopieren.
@@ -379,6 +387,7 @@ Beispiel: `storagegrid_certificate.pem`
 
 
 
+[[remove-client-certificates]]
 == Entfernen Sie Client-Zertifikate
 
 Wenn Sie kein Administrator-Clientzertifikat mehr benötigen, können Sie es entfernen.

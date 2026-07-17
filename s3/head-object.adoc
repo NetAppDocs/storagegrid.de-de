@@ -15,6 +15,7 @@ Sie können die S3 HeadObject-Anforderung verwenden, um Metadaten von einem Obje
 
 
 
+[[headobject-and-multipart-objects]]
 == HeadObject- und mehrteilige Objekte
 
 Mit dem Anforderungsparameter können Sie `partNumber` Metadaten für einen bestimmten Teil eines mehrteiligen oder segmentierten Objekts abrufen. Das `x-amz-mp-parts-count` Antwortelement gibt an, wie viele Teile das Objekt hat.
@@ -23,12 +24,14 @@ Sie können sowohl für segmentierte/mehrteilige Objekte als auch für nicht seg
 
 
 
+[[utf-8-characters-in-user-metadata]]
 == UTF-8 Zeichen in Benutzermetadaten
 
 StorageGRID parst oder interpretiert die entgangenen UTF-8-Zeichen nicht in benutzerdefinierten Metadaten. HEAD Requests for an object with escaped UTF-8 characters in user-defined metadata liefern den Header nicht zurück `x-amz-missing-meta`, wenn der Schlüsselname oder -Wert nicht druckbare Zeichen enthält.
 
 
 
+[[supported-request-header]]
 == Unterstützte Anforderungsheader
 
 Der folgende Anforderungskopf wird unterstützt:
@@ -41,6 +44,7 @@ Der folgende Anforderungskopf wird unterstützt:
 
 
 
+[[unsupported-request-header]]
 == Nicht unterstützte Anforderungsüberschrift
 
 Der folgende Anforderungsheader wird nicht unterstützt und gibt zurück `XNotImplemented`:
@@ -50,12 +54,14 @@ Der folgende Anforderungsheader wird nicht unterstützt und gibt zurück `XNotIm
 
 
 
+[[versioning]]
 == Versionierung
 
 Wenn `versionId` keine Unterressource angegeben wird, ruft der Vorgang die aktuellste Version des Objekts in einem versionierten Bucket ab. Wenn es sich bei der aktuellen Version des Objekts um eine Löschmarkierung handelt, wird der Status „nicht gefunden“ zurückgegeben, wobei der `x-amz-delete-marker` Antwortkopf auf gesetzt `true` ist.
 
 
 
+[[request-headers-for-server-side-encryption-with-customer-provided-encryption-keys-sse-c]]
 == Kopfzeilen zur serverseitigen Verschlüsselung mit vom Kunden bereitgestellten Verschlüsselungsschlüsseln anfordern (SSE-C)
 
 Verwenden Sie alle drei dieser Kopfzeilen, wenn das Objekt mit einem eindeutigen Schlüssel verschlüsselt ist, den Sie angegeben haben.
@@ -70,6 +76,7 @@ CAUTION: Die von Ihnen zur Verfügung gelegten Schlüssel werden niemals gespeic
 
 
 
+[[headobject-responses-for-cloud-storage-pool-objects]]
 == HeadObject-Antworten für Cloud-Storage-Pool-Objekte
 
 Wenn das Objekt in einem gespeichert istlink:../ilm/what-cloud-storage-pool-is.html["Cloud-Storage-Pool"], werden die folgenden Antwortkopfzeilen zurückgegeben:
@@ -154,12 +161,14 @@ Das `expiry-date` gibt an, wann das Objekt im Cloud-Speicherpool in einen nicht 
 |===
 
 
+[[multipart-or-segmented-objects-in-cloud-storage-pool]]
 === Mehrteilige oder segmentierte Objekte in Cloud Storage Pool
 
 Wenn Sie ein mehrteilige Objekt hochgeladen StorageGRID oder ein großes Objekt in Segmente aufgeteilt haben, bestimmt StorageGRID, ob das Objekt im Cloud-Storage-Pool verfügbar ist, indem Sie eine Teilmenge der Teile oder Segmente des Objekts testen. In einigen Fällen kann eine HeadObject-Anforderung falsch zurückgegeben werden `x-amz-restore: ongoing-request="false"`, wenn einige Teile des Objekts bereits in einen nicht abrufbaren Status überführt wurden oder wenn Teile des Objekts noch nicht wiederhergestellt wurden.
 
 
 
+[[headobject-and-cross-grid-replication]]
 == HeadObject- und Grid-übergreifende Replikation
 
 Wenn Sie und link:../tenant/grid-federation-manage-cross-grid-replication.html["Grid-übergreifende Replizierung"]für einen Bucket verwendenlink:../admin/grid-federation-overview.html["Grid-Verbund"], kann der S3-Client mit einer HeadObject-Anforderung den Replikationsstatus eines Objekts überprüfen. Die Antwort enthält den StorageGRID-spezifischen `x-ntap-sg-cgr-replication-status` Antwortheader, der einen der folgenden Werte enthält:

@@ -17,6 +17,7 @@ Wenn Sie ein Raster erweitern, müssen die hinzugefügten Nodes nicht den vorhan
 
 
 
+[[vmware-deploy-grid-nodes]]
 == VMware: Grid-Nodes implementieren
 
 Sie müssen für jeden VMware Node, den Sie der Erweiterung hinzufügen möchten, eine Virtual Machine in VMware vSphere implementieren.
@@ -31,6 +32,7 @@ Bei der Implementierung des Node können Sie optional Node-Ports neu zuordnen od
 
 
 
+[[linux-deploy-grid-nodes]]
 == Linux: Grid-Nodes implementieren
 
 Die Grid-Nodes können auf neuen Linux-Hosts oder auf vorhandenen Linux-Hosts implementiert werden. Wenn Sie zusätzliche Linux-Hosts benötigen, um die CPU-, RAM- und Storage-Anforderungen der StorageGRID-Nodes, die Sie dem Grid hinzufügen möchten, zu unterstützen, bereiten Sie sie auf die gleiche Weise vor, wie Sie die Hosts bei der ersten Installation vorbereitet haben. Anschließend implementieren Sie die Erweiterungs-Nodes auf dieselbe Weise wie bei der Installation die Grid-Nodes.
@@ -59,6 +61,7 @@ Nach der Bereitstellung aller neuen Grid-Nodes können Sie link:performing-expan
 
 
 
+[[appliances-deploying-storage-gateway-or-non-primary-admin-nodes]]
 == Appliances: Implementierung von Storage-, Gateway- oder nicht-primären Admin-Nodes
 
 Um die StorageGRID-Software auf einem Appliance-Knoten zu installieren, verwenden Sie das Installationsprogramm für StorageGRID-Appliances, das in der Appliance enthalten ist. Jede Storage-Appliance arbeitet als einzelner Storage-Node in einer Erweiterung und jede Services-Appliance fungiert als einzelner Gateway-Node oder als nicht-primärer Admin-Node. Jede Appliance kann eine Verbindung zum Grid-Netzwerk, dem Admin-Netzwerk und dem Client-Netzwerk herstellen.

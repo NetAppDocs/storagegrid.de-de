@@ -15,6 +15,7 @@ Informieren Sie sich über die in StorageGRID 12.0 entfernten oder als veraltet 
 
 
 
+[[definitions]]
 == Begriffsbestimmung
 
 Veraltet:: Das Feature *sollte nicht* in neuen Produktionsumgebungen verwendet werden. Vorhandene Produktionsumgebungen können die Funktion weiterhin nutzen.
@@ -24,6 +25,7 @@ Entfernt:: Erste Version, die *das Feature nicht unterstützt.
 
 
 
+[[storagegrid-end-of-feature-support]]
 == StorageGRID Support-Einstellung des Features
 
 Veraltete Funktionen werden in den Hauptversionen von N+2 entfernt. Wenn beispielsweise ein Feature in Version N veraltet ist (z. B. 6.3), ist die letzte Version, in der das Feature vorhanden ist, N+1 (z. B. 6.4). Version N+2 (z. B. 6.5) ist die erste Version, wenn das Feature im Produkt nicht vorhanden ist.

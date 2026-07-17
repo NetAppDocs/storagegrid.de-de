@@ -15,6 +15,7 @@ Wenn Ihrem Mandantenkonto bei der Erstellung die Berechtigung *Grid Federation c
 
 
 
+[[workflow-for-cross-grid-replication]]
 == Workflow für Grid-übergreifende Replizierung
 
 Das Workflow-Diagramm fasst die Schritte zusammen, die Sie zum Konfigurieren der Cross-Grid-Replikation zwischen Buckets auf zwei Grids ausführen.  Diese Schritte werden unterhalb des Diagramms ausführlicher beschrieben.
@@ -23,6 +24,7 @@ image:grid-federation-cgr-workflow.png["Workflow für Grid-übergreifende Repliz
 
 
 
+[[configure-cross-grid-replication]]
 == Konfiguration der Grid-übergreifenden Replizierung
 
 Bevor Sie die Cross-Grid-Replikation verwenden können, müssen Sie sich bei den entsprechenden Mandantenkonten auf jedem Grid anmelden und zwei Buckets erstellen.  Anschließend können Sie die Cross-Grid-Replikation für einen oder beide Buckets aktivieren.
@@ -37,6 +39,7 @@ Bevor Sie die Cross-Grid-Replikation verwenden können, müssen Sie sich bei den
 
 
 
+[[create-two-buckets]]
 === Erstellen Sie zwei Buckets
 
 Melden Sie sich als ersten Schritt bei den entsprechenden Mandantenkonten in jedem Raster an und erstellen Sie in jedem Raster einen Bucket.
@@ -68,6 +71,7 @@ TIP: Je nach Bedarf kann jeder Bucket einen anderen Bereich verwenden.
 
 
 
+[[enable-cross-grid-replication]]
 === Grid-übergreifende Replizierung
 
 Sie müssen diese Schritte ausführen, bevor Sie Objekte zu einem Bucket hinzufügen.
@@ -115,6 +119,7 @@ Nach einigen Augenblicken erscheint eine Erfolgsmeldung.  Zu diesem Bucket hinzu
 
 
 
+[[test-replication-between-grids]]
 == Testen Sie die Replikation zwischen Grids
 
 Wenn die Grid-übergreifende Replizierung für einen Bucket aktiviert ist, müssen Sie möglicherweise überprüfen, ob die Verbindung und die Grid-übergreifende Replizierung ordnungsgemäß funktionieren und dass die Quell- und Ziel-Buckets nach wie vor alle Anforderungen erfüllen (beispielsweise ist die Versionierung weiterhin aktiviert).
@@ -138,6 +143,7 @@ Wenn die Verbindung in Ordnung ist, wird ein Erfolgsbanner angezeigt.  Andernfal
 
 
 
+[[disable-cross-grid-replication]]
 == Deaktivieren Sie die Grid-übergreifende Replizierung
 
 Sie können die Grid-übergreifende Replikation dauerhaft beenden, wenn Sie keine Objekte mehr in das andere Raster kopieren möchten.

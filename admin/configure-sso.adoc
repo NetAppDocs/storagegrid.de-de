@@ -60,6 +60,7 @@ Der Sandbox-Modus erleichtert die Durchführung dieser Hin- und Her-Konfiguratio
 
 
 
+[[access-the-wizard]]
 == Greifen Sie auf den Assistenten zu
 
 .Schritte
@@ -73,6 +74,7 @@ NOTE: Wenn die Schaltfläche „SSO-Einstellungen konfigurieren“ deaktiviert i
 
 
 
+[[provide-identity-provider-details]]
 == Geben Sie die Details des Identitätsanbieters an
 
 .Schritte
@@ -101,6 +103,7 @@ CAUTION: Wenn Sie das Zertifizierungsstellenzertifikat ändern, führen Sie sofo
 
 
 
+[[enter-sandbox-modeprovide-relying-party-identifier]]
 == [[enter-sandbox-mode]]Geben Sie die Kennung der vertrauenden Partei an
 
 . Füllen Sie die Felder auf der Seite „Identifikator der vertrauenden Seite angeben“ basierend auf dem von Ihnen ausgewählten SSO-Typ aus.
@@ -171,6 +174,7 @@ https://<Federation Service Name>:<port>/pf/federation_metadata.ping?PartnerSpId
 
 
 
+[[configure-relying-party-trusts-enterprise-applications-or-sp-connections]]
 == Konfigurieren Sie Vertrauensstellungen von Drittanbietern, Unternehmensanwendungen oder SP-Verbindungen
 
 Nachdem Sie die Konfiguration gespeichert und in den Sandbox-Modus gewechselt haben, können Sie die Konfiguration für den ausgewählten SSO-Typ abschließen und testen.
@@ -231,6 +235,7 @@ Für jeden in der Tabelle aufgeführten Admin-Node müssen Sie eine SP-Verbindun
 ====
 
 
+[[test-ssotest-configuration]]
 == [[test-sso]]Testkonfiguration
 
 Bevor Sie die Verwendung von Single Sign-On für Ihr gesamtes StorageGRID System erzwingen, bestätigen Sie, dass Single Sign-On und Single Logout für jeden Admin-Knoten richtig konfiguriert sind.
@@ -294,6 +299,7 @@ Wenn eine Nachricht mit abgelaufener Seite angezeigt wird, wählen Sie in Ihrem 
 ====
 
 
+[[enable-single-sign-on]]
 == Aktivieren Sie Single Sign On
 
 Wenn Sie bestätigt haben, dass Sie sich mit SSO bei jedem Admin-Node anmelden können, können Sie SSO für Ihr gesamtes StorageGRID System aktivieren.

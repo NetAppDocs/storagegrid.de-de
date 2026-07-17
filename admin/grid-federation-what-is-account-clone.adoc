@@ -17,6 +17,7 @@ Kontoklone ist für erforderlichlink:grid-federation-what-is-cross-grid-replicat
 
 
 
+[[workflow-for-account-clone]]
 == Workflow für Konto-Klon
 
 Das Workflow-Diagramm zeigt die Schritte, die Grid-Administratoren und berechtigte Mandanten zum Einrichten des Kontoklons durchführen. Diese Schritte werden nach dem durchgeführtlink:grid-federation-create-connection.html["Die Grid-Federation-Verbindung ist konfiguriert"].
@@ -25,12 +26,14 @@ image:grid-federation-account-clone-workflow.png["Workflow für Konto-Klon"]
 
 
 
+[[grid-admin-workflow]]
 == Grid-Administrator-Workflow
 
 Die Schritte, die Grid-Administratoren durchführen, hängen davon ab, ob die StorageGRID-Systeme in der link:grid-federation-overview.html["Netzverbundverbindung"]Single Sign-On (SSO) oder Identity Federation verwenden.
 
 
 
+[[account-clone-ssoconfigure-sso-for-account-clone-optional]]
 === [[Account-Clone-sso]]SSO für Kontoklone konfigurieren (optional)
 
 Wenn eines der StorageGRID-Systeme in der Grid-Federation-Verbindung SSO verwendet, müssen beide Grids SSO verwenden. Vor dem Erstellen der Mandantenkonten für den Grid-Verbund müssen die Grid-Administratoren der Quell- und Zielraster des Mandanten die folgenden Schritte durchführen.
@@ -50,6 +53,7 @@ NOTE: Wenn diese Administratorgruppe vor dem Erstellen des Mandanten nicht auf b
 
 
 
+[[account-clone-identity-federationconfigure-grid-level-identity-federation-for-account-clone-optional]]
 === [[Account-Clone-Identity-Federation]]Konfigurieren der Identity Federation auf Grid-Ebene für Kontoklone (optional)
 
 Wenn eines der StorageGRID-Systeme Identitätsföderation ohne SSO verwendet, müssen beide Grids Identitätsföderation verwenden. Vor dem Erstellen der Mandantenkonten für den Grid-Verbund müssen die Grid-Administratoren der Quell- und Zielraster des Mandanten die folgenden Schritte durchführen.
@@ -66,6 +70,7 @@ NOTE: Wenn Sie einer föderierten Gruppe Root-Zugriffsberechtigungen zuweisen, d
 
 
 
+[[create-permitted-s3-tenant-account]]
 === Zulässiges S3-Mandantenkonto erstellen
 
 Nach der optionalen Konfiguration von SSO oder Identity Federation führt ein Grid-Administrator diese Schritte aus, um zu ermitteln, welche Mandanten Bucket-Objekte auf andere StorageGRID-Systeme replizieren können.
@@ -98,6 +103,7 @@ Weitere Informationen finden Sie unter link:grid-federation-manage-tenants.html[
 
 
 
+[[permitted-tenant-account-workflow]]
 == Zulässiger Mandantenkonto-Workflow
 
 Nachdem ein Mandant mit der Berechtigung *use Grid Federation connection* in das Zielraster repliziert wurde, können zugelassene Mandantenkonten diese Schritte durchführen, um Mandantengruppen, Benutzer und S3-Zugriffsschlüssel zu klonen.

@@ -15,6 +15,7 @@ Admin Nodes stellen Managementservices wie Systemkonfiguration, Monitoring und P
 
 
 
+[[differences-between-primary-and-non-primary-admin-nodes]]
 == Unterschiede zwischen primären und nicht primären Admin-Nodes
 
 Wenn Sie sich beim Grid Manager oder Tenant Manager anmelden, stellen Sie eine Verbindung zu einem Admin-Knoten her.  Sie können eine Verbindung zu jedem Admin-Knoten herstellen und jeder Admin-Knoten zeigt eine ähnliche Ansicht des StorageGRID Systems an.  Der primäre Admin-Knoten bietet jedoch mehr Funktionen als nicht-primäre Admin-Knoten.  Beispielsweise müssen die meisten Wartungsvorgänge vom primären Admin-Knoten aus durchgeführt werden.
@@ -162,6 +163,7 @@ Ja. Fungiert als Standby-Sender.
 |===
 
 
+[[preferred-senderpreferred-sender-admin-node]]
 == [[Preferred-Sender]]Administratorknoten des bevorzugten Absenders
 
 Wenn Ihre StorageGRID-Bereitstellung mehrere Administratorknoten umfasst, ist der primäre Administratorknoten der bevorzugte Absender für Warnmeldungen, AutoSupport-Pakete und SNMP-Traps und -Benachrichtigungen.
@@ -180,6 +182,7 @@ NOTE: Wenn Sie AutoSupport-Pakete testen, senden alle Admin-Knoten den Test. Wen
 
 
 
+[[primary-services-for-admin-nodes]]
 == Primäre Dienste für Admin-Nodes
 
 Die folgende Tabelle zeigt die primären Dienste für Admin-Nodes. Diese Tabelle enthält jedoch nicht alle Node-Services.

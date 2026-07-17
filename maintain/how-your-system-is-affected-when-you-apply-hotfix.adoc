@@ -15,6 +15,7 @@ Wenn Sie einen Hotfix anwenden, müssen Sie verstehen, wie sich Ihr StorageGRID-
 
 
 
+[[storagegrid-hotfixes-are-non-disruptive]]
 == StorageGRID Hotfixes sind unterbrechungsfrei
 
 Das StorageGRID-System kann während des Hotfix-Prozesses Daten von Client-Anwendungen aufnehmen und abrufen. Wenn Sie alle Knoten des gleichen Typs für Hotfix genehmigen (z. B. Storage Nodes), werden die Knoten einzeln nach dem anderen heruntergefahren, sodass es keine Zeit gibt, wenn alle Grid-Knoten oder alle Grid-Knoten eines bestimmten Typs nicht verfügbar sind.
@@ -29,6 +30,7 @@ Um die kontinuierliche Verfügbarkeit zu gewährleisten, stellen Sie sicher, das
 
 
 
+[[client-applications-might-experience-short-term-disruptions]]
 == Bei Client-Applikationen kommt es unter Umständen zu kurzfristigen Unterbrechungen
 
 Das StorageGRID System kann während des Hotfix-Prozesses Daten von Client-Applikationen aufnehmen und abrufen. Client-Verbindungen zu einzelnen Gateway-Nodes oder Storage-Nodes können jedoch vorübergehend unterbrochen werden, wenn der Hotfix Dienste auf diesen Knoten neu starten muss. Die Verbindung wird wiederhergestellt, sobald der Hotfix-Prozess abgeschlossen ist und die Dienste auf den einzelnen Knoten wieder aufgenommen werden.
@@ -40,12 +42,14 @@ NOTE: Dank mehrerer Gateways und Hochverfügbarkeitsgruppen (HA-Gruppen) lassen 
 
 
 
+[[alerts-and-snmp-notifications-might-be-triggered]]
 == Warnmeldungen und SNMP-Benachrichtigungen können ausgelöst werden
 
 Warnmeldungen und SNMP-Benachrichtigungen können ausgelöst werden, wenn Dienste neu gestartet werden und das StorageGRID System als Umgebung mit gemischten Versionen funktioniert (einige Grid-Nodes mit einer früheren Version, während andere auf eine neuere Version aktualisiert wurden). Im Allgemeinen werden diese Warnungen und Benachrichtigungen gelöscht, wenn der Hotfix abgeschlossen ist.
 
 
 
+[[configuration-changes-are-restricted]]
 == Konfigurationsänderungen sind eingeschränkt
 
 Beim Anwenden eines Hotfix auf StorageGRID:

@@ -17,18 +17,21 @@ Jedes StorageGRID System umfasst einen primären Admin-Node und eine beliebige A
 
 
 
+[[connect-to-ha-group]]
 === Stellen Sie eine Verbindung mit der HA-Gruppe her
 
 Wenn Admin-Nodes in einer HA-Gruppe (High Availability, Hochverfügbarkeit) enthalten sind, stellen Sie eine Verbindung über die virtuelle IP-Adresse der HA-Gruppe oder einen vollständig qualifizierten Domänennamen her, der der der virtuellen IP-Adresse zugeordnet ist. Der primäre Admin-Node sollte als primäre Schnittstelle der Gruppe ausgewählt werden, sodass Sie beim Zugriff auf den Grid Manager auf den primären Admin-Knoten zugreifen, wenn der primäre Admin-Node nicht verfügbar ist. Siehe link:managing-high-availability-groups.html["Management von Hochverfügbarkeitsgruppen"].
 
 
 
+[[use-sso]]
 === Verwenden Sie SSO
 
 Die Anmeldeschritte sind etwas anders, wennlink:how-sso-works.html["Single Sign-On (SSO) wurde konfiguriert"] .
 
 
 
+[[sign-in-to-grid-manager-on-first-admin-node]]
 == Melden Sie sich beim Grid-Manager beim ersten Admin-Node an
 
 .Bevor Sie beginnen
@@ -100,6 +103,7 @@ Wenn Sie angemeldet sind, wird die Startseite des Grid-Managers angezeigt, die d
 
 
 
+[[sign-into-another-admin-node]]
 == Melden Sie sich bei einem anderen Admin-Node an
 
 Führen Sie die folgenden Schritte aus, um sich bei einem anderen Admin-Node anzumelden.

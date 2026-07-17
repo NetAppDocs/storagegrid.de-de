@@ -15,6 +15,7 @@ Bei der Implementierung der S3-REST-API zur Verwendung mit StorageGRID sollten S
 
 
 
+[[recommendations-for-heads-to-non-existent-objects]]
 == Empfehlungen für Köpfe zu nicht vorhandenen Objekten
 
 Wenn Ihre Anwendung routinemäßig prüft, ob ein Objekt an einem Pfad existiert, an dem Sie das Objekt nicht erwarten, sollten Sie die Option "Verfügbar" verwenden.link:consistency.html["Konsistenz"] .  Sie sollten beispielsweise die Konsistenz „Verfügbar“ verwenden, wenn Ihre Anwendung einen HEAD für einen Speicherort vor dem PUT anwendet.
@@ -25,6 +26,7 @@ Sie können die „verfügbare“ Konsistenz für jeden Bucket mithilfe der  Anf
 
 
 
+[[recommendations-for-object-keys]]
 == Empfehlungen für Objektschlüssel
 
 Befolgen Sie diese Empfehlungen für Objektschlüsselnamen auf Basis des ersten Erstells des Buckets.
@@ -51,6 +53,7 @@ TIP: Eine Ausnahme ist ein S3-Workload, der nach kurzer Zeit kontinuierlich alle
 
 
 
+[[recommendations-for-range-reads]]
 == Empfehlungen für „Range Reads“
 
 Wenn der link:../admin/configuring-stored-object-compression.html["Globale Option zum Komprimieren gespeicherter Objekte"]aktiviert ist, sollten S3-Client-Anwendungen die Ausführung von GetObject-Operationen vermeiden, die einen Bereich von Bytes angeben, die zurückgegeben werden sollen. Diese Vorgänge beim Lesen von Range sind ineffizient, da StorageGRID Objekte effektiv dekomprimieren muss, um auf die angeforderten Bytes zuzugreifen. GetObject Operationen, die einen kleinen Bereich von Bytes von einem sehr großen Objekt anfordern, sind besonders ineffizient; zum Beispiel ist es ineffizient, einen 10 MB Bereich von einem 50 GB komprimierten Objekt zu lesen.

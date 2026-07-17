@@ -18,6 +18,7 @@ NOTE: Ihr Grid-Administrator muss Ihnen die Berechtigung erteilen, bestimmte Fun
 
 
 
+[[what-is-s3-object-lock]]
 == Was ist S3 Object Lock?
 
 Die Funktion StorageGRID S3 Object Lock ist eine Objektschutzlösung, die der S3 Object Lock in Amazon Simple Storage Service (Amazon S3) entspricht.
@@ -34,6 +35,7 @@ Tatsächlich verfügen alle neu aufgenommenen Objekte über Aufbewahrungseinstel
 
 
 
+[[retention-modes]]
 === Aufbewahrungsmodi
 
 Die Objektsperrfunktion StorageGRID S3 unterstützt zwei Aufbewahrungsmodi, um verschiedene Schutzstufen auf Objekte anzuwenden. Diese Modi entsprechen den Amazon S3 Aufbewahrungsmodi.
@@ -56,6 +58,7 @@ Die Objektsperrfunktion StorageGRID S3 unterstützt zwei Aufbewahrungsmodi, um v
 
 
 
+[[retention-settings-for-object-versions]]
 === Aufbewahrungseinstellungen für Objektversionen
 
 Wenn ein Bucket mit aktivierter S3-Objektsperrung erstellt wird, können Benutzer mithilfe der S3-Client-Applikation optional die folgenden Aufbewahrungseinstellungen für jedes Objekt angeben, das dem Bucket hinzugefügt wird:
@@ -74,6 +77,7 @@ Details zu den Objekteinstellungen finden Sie unter link:../s3/use-s3-api-for-s3
 
 
 
+[[default-retention-setting-for-buckets]]
 === Standardeinstellung für die Aufbewahrung von Buckets
 
 Wenn ein Bucket mit aktivierter S3-Objektsperrung erstellt wurde, können Benutzer optional die folgenden Standardeinstellungen für den Bucket angeben:
@@ -88,6 +92,7 @@ Siehe link:../tenant/creating-s3-bucket.html["Erstellen eines S3-Buckets"] und l
 
 
 
+[[s3-object-lock-tasks]]
 == S3 Objektsperraufgaben
 
 Die folgenden Listen für Grid-Administratoren und Mandantenbenutzer enthalten die allgemeinen Aufgaben für die Verwendung der S3 Objektsperrfunktion.
@@ -127,6 +132,7 @@ Mandantenbenutzer::
 
 
 
+[[requirements-for-buckets-with-s3-object-lock-enabled]]
 == Anforderungen für Buckets, bei denen die S3-Objektsperre aktiviert ist
 
 * Wenn die globale S3-Objektsperre für das StorageGRID System aktiviert ist, können Sie die Buckets mit aktivierter S3-Objektsperre über den Mandantenmanager, die Mandantenmanagement-API oder die S3-REST-API erstellen.
@@ -139,6 +145,7 @@ Mandantenbenutzer::
 
 
 
+[[requirements-for-objects-in-buckets-with-s3-object-lock-enabled]]
 == Anforderungen für Objekte in Buckets, bei denen die S3-Objektsperre aktiviert ist
 
 * Zum Schutz einer Objektversion können Sie Standardaufbewahrungseinstellungen für den Bucket angeben oder Aufbewahrungseinstellungen für jede Objektversion angeben. Aufbewahrungseinstellungen auf Objektebene können mit der S3-Client-Applikation oder der S3-REST-API angegeben werden.
@@ -147,6 +154,7 @@ Mandantenbenutzer::
 
 
 
+[[lifecycle-of-objects-in-buckets-with-s3-object-lock-enabled]]
 == Lebenszyklus von Objekten in Buckets, wobei S3 Objektsperre aktiviert ist
 
 Jedes in einem Bucket gespeicherte Objekt mit aktivierter S3 Object Lock durchlaufen die folgenden Phasen:
@@ -176,6 +184,7 @@ Von jedem geschützten Objekt werden innerhalb StorageGRID des angegebenen Aufbe
 
 
 
+[[can-i-still-manage-legacy-compliant-buckets]]
 == Kann ich auch ältere konforme Buckets verwalten?
 
 Die S3-Objektsperre ersetzt die in früheren StorageGRID-Versionen verfügbare Compliance-Funktion. Wenn Sie mithilfe einer früheren Version von StorageGRID konforme Buckets erstellt haben, können Sie die Einstellungen dieser Buckets weiterhin verwalten. Sie können jedoch keine neuen, konformen Buckets mehr erstellen. Anweisungen hierzu finden Sie unter https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["NetApp Knowledge Base: Management älterer, konformer Buckets für StorageGRID 11.5"^].

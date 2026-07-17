@@ -15,36 +15,42 @@ Wenn beim Durchführen eines Upgrades etwas schief geht, können Sie das Problem
 
 
 
+[[upgrade-does-not-complete]]
 == Upgrade wurde nicht abgeschlossen
 
 In den folgenden Abschnitten wird die Wiederherstellung in Situationen beschrieben, in denen das Upgrade teilweise fehlgeschlagen ist.
 
 
 
+[[upgrade-precheck-errors]]
 === Fehler bei der Vorabprüfung des Upgrades
 
 Zur Erkennung und Behebung von Problemen können Sie die Vorabprüfungen manuell durchführen, bevor Sie das tatsächliche Upgrade starten. Die meisten Vorprüffehler enthalten Informationen zur Behebung des Problems.
 
 
 
+[[provisioning-failures]]
 === Provisionierungsfehler
 
 Wenden Sie sich an den technischen Support, wenn der automatische Bereitstellungsprozess fehlschlägt.
 
 
 
+[[grid-node-crashes-or-fails-to-start]]
 === Der Grid-Node stürzt ab oder kann nicht gestartet werden
 
 Wenn ein Grid-Node während des Upgrade-Prozesses abstürzt oder nicht erfolgreich gestartet werden kann, nachdem das Upgrade abgeschlossen wurde, wenden Sie sich an den technischen Support, um eventuelle Probleme zu untersuchen und zu beheben.
 
 
 
+[[ingest-or-data-retrieval-is-interrupted]]
 === Aufnahme oder Datenabfrage wird unterbrochen
 
 Wenn die Aufnahme oder der Abruf von Daten unerwartet unterbrochen wird, wenn Sie kein Upgrade eines Grid-Node durchführen, wenden Sie sich an den technischen Support von.
 
 
 
+[[database-upgrade-errors]]
 === Fehler beim Datenbank-Upgrade
 
 Wenn das Datenbank-Upgrade mit einem Fehler fehlschlägt, versuchen Sie es erneut. Wenden Sie sich an den technischen Support, wenn dieser erneut fehlschlägt.
@@ -54,12 +60,14 @@ link:checking-systems-condition-before-upgrading-software.html["Überprüfen Sie
 
 
 
+[[user-interface-issues]]
 == Probleme bei der Benutzeroberfläche
 
 Möglicherweise treten während oder nach dem Upgrade Probleme mit dem Grid Manager oder dem Tenant Manager auf.
 
 
 
+[[grid-manager-displays-multiple-error-messages-during-upgrade]]
 === Der Grid Manager zeigt während des Upgrades mehrere Fehlermeldungen an
 
 Wenn Sie Ihren Browser aktualisieren oder zu einer anderen Grid-Manager-Seite navigieren, während der primäre Admin-Knoten aktualisiert wird, werden möglicherweise mehrere Meldungen „503: Service nicht verfügbar“ und „Problem beim Verbinden mit dem Server“ angezeigt. Sie können diese Meldungen ohne Bedenken ignorieren – sie werden nicht mehr angezeigt, sobald der Knoten aktualisiert wird.
@@ -68,6 +76,7 @@ Wenn diese Meldungen länger als eine Stunde nach dem Start des Upgrades angezei
 
 
 
+[[web-interface-does-not-respond-as-expected]]
 === Web-Oberfläche reagiert nicht wie erwartet
 
 Der Grid-Manager oder der Mandantenmanager reagieren nach einem Upgrade der StorageGRID-Software möglicherweise nicht wie erwartet.
@@ -87,6 +96,7 @@ Beim Löschen des Caches werden veraltete Ressourcen entfernt, die von der vorhe
 
 
 
+[[docker-image-availability-check-error-messages]]
 == Fehlermeldungen „Docker Image Availability Check“
 
 Beim Versuch, den Upgrade-Prozess zu starten, erhalten Sie möglicherweise eine Fehlermeldung mit der Meldung „die folgenden Probleme wurden von der Docker Image Availability Check Validation Suite identifiziert“. Alle Probleme müssen behoben werden, bevor Sie das Upgrade abschließen können.

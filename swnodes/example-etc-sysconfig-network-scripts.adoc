@@ -15,6 +15,7 @@ Sie können die Beispieldateien verwenden, um vier physische Linux-Schnittstelle
 
 
 
+[[physical-interfaces]]
 == Physische Schnittstellen
 
 Beachten Sie, dass die Switches an den anderen Enden der Links auch die vier Ports als einzelnen LACP-Trunk oder Port-Kanal behandeln müssen und mindestens drei referenzierte VLANs mit Tags übergeben werden müssen.
@@ -69,6 +70,7 @@ SLAVE=yes
 ----
 
 
+[[bond-interface]]
 == Bond-Schnittstelle
 
 `*/etc/sysconfig/network-scripts/ifcfg-bond0*`
@@ -84,6 +86,7 @@ BONDING_OPTS=mode=802.3ad
 ----
 
 
+[[vlan-interfaces]]
 == VLAN-Schnittstellen
 
 `*/etc/sysconfig/network-scripts/ifcfg-bond0.1001*`

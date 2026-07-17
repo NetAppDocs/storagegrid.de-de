@@ -107,6 +107,7 @@ Wenn die Aufgabe *Letzte Aktualisierungsschritte* abgeschlossen ist, können Sie
 |===
 
 
+[[estimate-time-to-upgrade]]
 == Geschätzte Zeit bis zum Upgrade
 
 .Schritte
@@ -125,6 +126,7 @@ In der Regel dauert das Upgrade von Appliance-Nodes länger als softwarebasierte
 
 
 
+[[example-estimated-time-to-upgrade-to-storagegrid-12-0]]
 == Beispiel: Geschätzte Zeit für das Upgrade auf StorageGRID 12.0
 
 Angenommen, Ihr System verfügt über 14 Grid-Nodes, von denen 8 Linux-Nodes sind.

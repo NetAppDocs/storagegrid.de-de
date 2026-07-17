@@ -15,6 +15,7 @@ Die Regeln für Information Lifecycle Management (ILM) einer ILM-Richtlinie erl�
 
 
 
+[[about-these-instructions]]
 == Informationen zu diesen Anweisungen
 
 Die Entwicklung und Implementierung von ILM-Regeln und -Richtlinien erfordert eine sorgfältige Planung. Betriebliche Anforderungen, die Topologie des StorageGRID Systems, die Anforderungen an die Objektsicherung und die verfügbaren Storage-Typen sind unbedingt bekannt. Anschließend müssen Sie festlegen, wie unterschiedliche Objekttypen kopiert, verteilt und gespeichert werden sollen.
@@ -29,6 +30,7 @@ Mithilfe dieser Anweisungen können Sie:
 
 
 
+[[learn-more]]
 == Weitere Informationen .
 
 Sehen Sie sich die folgenden Videos an, um mehr zu erfahren:

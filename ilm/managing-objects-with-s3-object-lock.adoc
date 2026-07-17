@@ -15,6 +15,7 @@ Als Grid-Administrator können Sie S3 Object Lock für Ihr StorageGRID System ak
 
 
 
+[[what-is-s3-object-lock]]
 == Was ist S3 Object Lock?
 
 Die Funktion StorageGRID S3 Object Lock ist eine Objektschutzlösung, die der S3 Object Lock in Amazon Simple Storage Service (Amazon S3) entspricht.
@@ -31,6 +32,7 @@ Tatsächlich verfügen alle neu aufgenommenen Objekte über Aufbewahrungseinstel
 
 
 
+[[retention-modes]]
 === Aufbewahrungsmodi
 
 Die Objektsperrfunktion StorageGRID S3 unterstützt zwei Aufbewahrungsmodi, um verschiedene Schutzstufen auf Objekte anzuwenden. Diese Modi entsprechen den Amazon S3 Aufbewahrungsmodi.
@@ -53,6 +55,7 @@ Die Objektsperrfunktion StorageGRID S3 unterstützt zwei Aufbewahrungsmodi, um v
 
 
 
+[[retention-settings-for-object-versions]]
 === Aufbewahrungseinstellungen für Objektversionen
 
 Wenn ein Bucket mit aktivierter S3-Objektsperrung erstellt wird, können Benutzer mithilfe der S3-Client-Applikation optional die folgenden Aufbewahrungseinstellungen für jedes Objekt angeben, das dem Bucket hinzugefügt wird:
@@ -71,6 +74,7 @@ Details zu den Objekteinstellungen finden Sie unter link:../s3/use-s3-api-for-s3
 
 
 
+[[default-retention-setting-for-buckets]]
 === Standardeinstellung für die Aufbewahrung von Buckets
 
 Wenn ein Bucket mit aktivierter S3-Objektsperrung erstellt wurde, können Benutzer optional die folgenden Standardeinstellungen für den Bucket angeben:
@@ -85,6 +89,7 @@ Siehe link:../tenant/creating-s3-bucket.html["Erstellen eines S3-Buckets"] und l
 
 
 
+[[comparing-s3-object-lock-to-legacy-compliance]]
 == Vergleich der S3-Objektsperre mit älterer Compliance
 
 Die S3-Objektsperre ersetzt die in früheren StorageGRID-Versionen verfügbare Compliance-Funktion. Da die S3-Objektsperrfunktion den Anforderungen von Amazon S3 entspricht, ist die proprietäre StorageGRID-Compliance-Funktion, die jetzt als „Legacy-Compliance“ bezeichnet wird, veraltet.

@@ -15,18 +15,21 @@ Sie können die S3-Wiederherstellungs-Objekt-Anforderung verwenden, um ein Objek
 
 
 
+[[supported-request-type]]
 == Unterstützter Anforderungstyp
 
 StorageGRID unterstützt nur RestoreObject-Anfragen zur Wiederherstellung eines Objekts. Die Art der Wiederherstellung wird nicht unterstützt `SELECT`. Wählen Sie Rückgabeanforderungen `XNotImplemented`.
 
 
 
+[[versioning]]
 == Versionierung
 
 Optional können Sie angeben `versionId`, eine bestimmte Version eines Objekts in einem versionierten Bucket wiederherzustellen. Wenn Sie nicht angeben `versionId`, wird die neueste Version des Objekts wiederhergestellt
 
 
 
+[[behavior-of-restoreobject-on-cloud-storage-pool-objects]]
 == Verhalten von RestoreObject auf Cloud-Storage-Pool-Objekten
 
 Wenn ein Objekt in einem gespeichert wurdelink:../ilm/what-cloud-storage-pool-is.html["Cloud-Storage-Pool"], hat eine RestoreObject-Anforderung das folgende Verhalten, basierend auf dem Zustand des Objekts. Weitere Informationen finden Sie unterlink:head-object.html["HeadObject"].

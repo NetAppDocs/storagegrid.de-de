@@ -31,6 +31,7 @@ Andere Node-Typen, wie beispielsweise Admin-Nodes oder Gateway-Nodes, können au
 ====
 
 
+[[export-node-from-source-host]]
 == Knoten vom Quellhost exportieren
 
 Fahren Sie zunächst den Grid-Knoten herunter und exportieren Sie ihn vom Linux-Quellhost.
@@ -91,6 +92,7 @@ Im nächsten Schritt führen Sie diesen Befehl auf dem Zielhost aus.
 
 
 
+[[import-node-on-target-host]]
 == Knoten auf Zielhost importieren
 
 Nachdem Sie den Node vom Quellhost exportiert haben, importieren und validieren Sie den Node auf dem Zielhost. Die Validierung bestätigt, dass der Knoten Zugriff auf denselben Block-Speicher und Netzwerkschnittstellengeräte hat, wie er auf dem Quell-Host hatte.
@@ -133,6 +135,7 @@ Informationen zur Fehlerbehebung finden Sie im StorageGRIDlink:../swnodes/index.
 
 
 
+[[start-migrated-node]]
 == Migrierten Knoten starten
 
 Nachdem Sie den migrierten Node validiert haben, starten Sie den Node, indem Sie einen Befehl auf dem _target Host_ ausführen.

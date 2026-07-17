@@ -17,6 +17,7 @@ Informationen zum Verbinden von S3-Clients finden Sie unterlink:configuring-clie
 
 
 
+[[default-storagegrid-networks]]
 == Standard-StorageGRID-Netzwerke
 
 Standardmäßig unterstützt StorageGRID drei Netzwerkschnittstellen pro Grid Node. So können Sie das Netzwerk für jeden einzelnen Grid Node so konfigurieren, dass er Ihren Sicherheits- und Zugriffsanforderungen entspricht.
@@ -25,24 +26,28 @@ Weitere Informationen zur Netzwerktopologie finden Sie unter link:../network/ind
 
 
 
+[[grid-network]]
 === Grid-Netzwerk
 
 Erforderlich. Das Grid-Netzwerk wird für den gesamten internen StorageGRID-Datenverkehr verwendet. Das System bietet Konnektivität zwischen allen Nodes im Grid und allen Standorten und Subnetzen.
 
 
 
+[[admin-network]]
 === Admin-Netzwerk
 
 Optional Das Admin-Netzwerk wird in der Regel für die Systemadministration und -Wartung verwendet. Sie kann auch für den Zugriff auf das Client-Protokoll verwendet werden. Das Admin-Netzwerk ist in der Regel ein privates Netzwerk und muss nicht zwischen Standorten routingfähig sein.
 
 
 
+[[client-network]]
 === Client-Netzwerk
 
 Optional Das Client-Netzwerk ist ein offenes Netzwerk, das normalerweise für den Zugriff auf S3-Client-Anwendungen verwendet wird, sodass das Grid-Netzwerk isoliert und gesichert werden kann. Das Client-Netzwerk kann mit jedem Subnetz kommunizieren, das über das lokale Gateway erreichbar ist.
 
 
 
+[[guidelines]]
 == Richtlinien
 
 * Jeder StorageGRID-Knoten benötigt für jedes Netzwerk, dem er zugewiesen ist, eine dedizierte Netzwerkschnittstelle, eine IP-Adresse, eine Subnetzmaske und ein Gateway.
@@ -83,6 +88,7 @@ eth2
 
 
 
+[[optional-interfaces]]
 == Optionale Schnittstellen
 
 Optional können Sie einem Node zusätzliche Schnittstellen hinzufügen. Sie können beispielsweise eine Trunk-Schnittstelle zu einem Administrator- oder Gateway-Knoten hinzufügen, link:../admin/configure-vlan-interfaces.html["VLAN-Schnittstellen"]um den Datenverkehr verschiedener Anwendungen oder Mandanten zu trennen. Sie können auch eine Zugriffsschnittstelle hinzufügen, die in einem verwendet link:../admin/configure-high-availability-group.html["Hochverfügbarkeitsgruppe (High Availability Group, HA-Gruppe"]werden soll.

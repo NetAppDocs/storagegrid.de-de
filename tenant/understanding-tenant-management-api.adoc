@@ -27,6 +27,7 @@ So greifen Sie auf die Swagger-Dokumentation für die Mandantenmanagement-API zu
 
 
 
+[[api-operations]]
 == API-Vorgänge
 
 Die Mandantenmanagement-API organisiert die verfügbaren API-Vorgänge in die folgenden Abschnitte:
@@ -59,6 +60,7 @@ NOTE: Wenn Single Sign-On (SSO) für das StorageGRID-System aktiviert ist, müss
 
 
 
+[[operation-details]]
 == Betriebsdetails
 
 Wenn Sie die einzelnen API-Operationen erweitern, können Sie die HTTP-Aktion, die Endpunkt-URL, eine Liste aller erforderlichen oder optionalen Parameter, ein Beispiel des Anforderungskörpers (falls erforderlich) und die möglichen Antworten sehen.
@@ -67,6 +69,7 @@ image:tenant_api_swagger_example.gif["Beispiel für DIE FUNKTION GET Groups in S
 
 
 
+[[issue-api-requests]]
 == API-Anforderungen ausgeben
 
 

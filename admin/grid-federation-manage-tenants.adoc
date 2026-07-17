@@ -23,6 +23,7 @@ Sie können S3-Mandantenkonten die Verwendung einer Grid-Federation-Verbindung z
 
 
 
+[[create-a-permitted-tenant]]
 == Erstellen Sie eine zulässige Serviceeinheit
 
 Wenn Sie einem neuen oder vorhandenen Mandantenkonto die Verwendung einer Grid-Federation-Verbindung für Account-Klonen und Grid-Replizierung erlauben möchten, befolgen Sie die allgemeinen Anweisungen zu link:creating-tenant-account.html["Erstellen Sie einen neuen S3-Mandanten"] bzw. link:editing-tenant-account.html["Bearbeiten Sie ein Mandantenkonto"] und beachten Sie Folgendes:
@@ -47,6 +48,7 @@ TIP: Bevor ein lokaler Root-Benutzer sich beim replizierten Mandanten im Zielras
 
 
 
+[[view-a-permitted-tenant]]
 == Zeigen Sie eine zulässige Serviceeinheit an
 
 Sie können Details zu einem Mandanten anzeigen, der eine Verbindung mit dem Grid Federation verwenden darf.
@@ -65,6 +67,7 @@ image:grid-federation-tenant-detail.png["Registerkarte „Grid Federation“ auf
 
 
 
+[[edit-a-permitted-tenant]]
 == Bearbeiten Sie eine zulässige Serviceeinheit
 
 Wenn Sie einen Mandanten bearbeiten müssen, der über die Berechtigung *Grid Federation connection* verfügt, befolgen Sie die allgemeinen Anweisungen für link:editing-tenant-account.html["Bearbeiten eines Mandantenkontos"] und beachten Sie Folgendes:
@@ -76,6 +79,7 @@ Wenn Sie einen Mandanten bearbeiten müssen, der über die Berechtigung *Grid Fe
 
 
 
+[[delete-a-permitted-tenant]]
 == Löschen Sie eine zulässige Serviceeinheit
 
 Wenn Sie einen Mandanten entfernen müssen, der über die Berechtigung *Grid Federation connection* verfügt, befolgen Sie die allgemeinen Anweisungen für link:deleting-tenant-account.html["Löschen eines Mandantenkontos"] und beachten Sie Folgendes:
@@ -92,6 +96,7 @@ Um diese Fehler zu vermeiden, entfernen Sie die Berechtigung des Mandanten zur V
 
 
 
+[[remove-grid-federation-connection-permissionremove-use-grid-federation-connection-permission]]
 == [[remove-Grid-Federation-connection-permission]]Remove Use Grid Federation connection permission
 
 Um zu verhindern, dass ein Mandant eine Netzverbundverbindung verwendet, müssen Sie die Berechtigung *Grid Federation Connection* verwenden entfernen.
@@ -115,6 +120,7 @@ NOTE: Durch die erneute Aktivierung der Berechtigung *use Grid Federation connec
 
 
 
+[[disable-replication-for-tenant-buckets]]
 === Deaktivieren Sie die Replizierung für Mandanten-Buckets
 
 Deaktivieren Sie als ersten Schritt die Grid-übergreifende Replizierung für alle Mandanten-Buckets.
@@ -133,6 +139,7 @@ TIP: Sie können die Berechtigung *use Grid Federation connection* nicht entfern
 
 
 
+[[remove-permission-for-tenant]]
 === Berechtigung für Serviceeinheit entfernen
 
 Nachdem die Grid-übergreifende Replizierung für Mandanten-Buckets deaktiviert ist, können Sie die Berechtigung des Mandanten zur Verwendung der Grid-Verbundverbindung entfernen.
@@ -184,6 +191,7 @@ Sie können eine der folgenden Aktionen ausführen:
 
 
 
+[[forceremovepermissionremove-the-permission-by-force]]
 == [[Force_remove_permission]]Entfernen Sie die Berechtigung mit Gewalt
 
 Bei Bedarf können Sie das Entfernen der Berechtigung eines Mandanten zur Verwendung einer Grid-Verbundverbindung erzwingen, selbst wenn für Mandanten-Buckets die Grid-übergreifende Replizierung aktiviert ist.

@@ -56,6 +56,7 @@ Es liegt ein Problem mit der Softwarelizenz für dieses StorageGRID-System vor. 
 |===
 
 
+[[monitor-node-connection-states]]
 == Überwachen Sie die Status der Node-Verbindung
 
 Wenn ein oder mehrere Nodes vom Grid getrennt werden, können kritische StorageGRID-Vorgänge beeinträchtigt werden. Überwachen Sie den Verbindungsstatus des Knotens, und beheben Sie alle Probleme umgehend.
@@ -111,6 +112,7 @@ Keine Aktion erforderlich.
 |===
 
 
+[[view-current-and-resolved-alerts]]
 == Anzeige aktueller und aufgelöster Warnmeldungen
 
 *Aktuelle Alarme*: Wenn ein Alarm ausgelöst wird, wird ein Warnsymbol auf dem Dashboard angezeigt. Auf der Seite Knoten wird auch ein Warnungssymbol für den Knoten angezeigt. Wenn link:email-alert-notifications.html["Benachrichtigungen für Warnmeldungen sind konfiguriert"], wird auch eine E-Mail-Benachrichtigung gesendet, es sei denn, die Benachrichtigung wurde stummgeschaltet.

@@ -15,6 +15,7 @@ Wenn Sie einen Cloud Storage Pool zum Verschieben von Objekten aus dem StorageGR
 
 
 
+[[general-considerations]]
 == Allgemeine Überlegungen
 
 * Im Allgemeinen ist Cloud-Archiv-Storage, wie Amazon S3 Glacier oder Azure Blob Storage, ein kostengünstiger Ort für die Speicherung von Objektdaten. Die Kosten für den Abruf von Daten aus dem Cloud-Archiv-Storage sind jedoch relativ hoch. Um die niedrigsten Gesamtkosten zu erreichen, müssen Sie berücksichtigen, wann und wie oft Sie auf die Objekte im Cloud Storage Pool zugreifen. Die Verwendung eines Cloud-Storage-Pools wird nur für Inhalte empfohlen, auf die Sie voraussichtlich nur selten zugreifen.
@@ -31,6 +32,7 @@ Wenn Sie einen Cloud Storage Pool zum Verschieben von Objekten aus dem StorageGR
 
 
 
+[[considerations-for-the-ports-used-for-cloud-storage-pools]]
 == Überlegungen zu den Ports, die für Cloud-Storage-Pools verwendet werden
 
 Um sicherzustellen, dass die ILM-Regeln Objekte in den und aus dem angegebenen Cloud Storage-Pool verschieben können, müssen Sie das Netzwerk oder die Netzwerke konfigurieren, die Storage-Nodes Ihres Systems enthalten. Sie müssen sicherstellen, dass die folgenden Ports mit dem Cloud-Speicherpool kommunizieren können.
@@ -47,6 +49,7 @@ Wenn Sie einen nicht transparenten Proxy-Server verwenden, müssen Sie auch link
 
 
 
+[[considerations-for-costs]]
 == Überlegungen zu Kosten
 
 Der Zugriff auf den Storage in der Cloud mit einem Cloud Storage Pool erfordert Netzwerkkonnektivität zur Cloud. Dabei müssen die Kosten der Netzwerkinfrastruktur berücksichtigt werden, die für den Zugriff auf die Cloud und die entsprechende Bereitstellung gemäß der Datenmenge verwendet werden, die Sie voraussichtlich zwischen StorageGRID und der Cloud mithilfe des Cloud-Storage-Pools verschieben möchten.
@@ -64,6 +67,7 @@ NOTE: Wenn Objekte von einem Cloud-Storage-Pool aus zurück zu StorageGRID versc
 
 
 
+[[s3-permissions-required-for-the-cloud-storage-pool-bucket]]
 == S3: Für den Cloud Storage Pool Bucket sind Berechtigungen erforderlich
 
 Die Richtlinien für den externen S3-Bucket, der für einen Cloud-Storage-Pool verwendet wird, müssen StorageGRID die Berechtigung erteilen, ein Objekt in den Bucket zu verschieben, den Status eines Objekts zu abrufen oder bei Bedarf ein Objekt aus Glacier-Storage wiederherzustellen usw. Idealerweise sollte StorageGRID vollen Kontrollzugriff auf den Bucket haben (`s3:*`); sollte dies jedoch nicht möglich sein, muss die Bucket-Richtlinie StorageGRID die folgenden S3-Berechtigungen erteilen:
@@ -80,6 +84,7 @@ Die Richtlinien für den externen S3-Bucket, der für einen Cloud-Storage-Pool v
 
 
 
+[[s3-considerations-for-the-external-buckets-lifecycle]]
 == S3: Überlegungen für den Lebenszyklus externer Buckets
 
 Das Verschieben von Objekten zwischen StorageGRID und dem im Cloud Storage Pool angegebenen externen S3 Bucket wird über ILM-Regeln und die aktiven ILM-Richtlinien in StorageGRID gesteuert. Im Gegensatz dazu wird die Transition von Objekten vom im Cloud Storage Pool angegebenen externen S3-Bucket auf Amazon S3 Glacier oder S3 Glacier Deep Archive (oder auf eine Storage-Lösung, die die Glacier Storage-Klasse implementiert) über die Lifecycle-Konfiguration dieses Buckets gesteuert.
@@ -113,12 +118,14 @@ Wenn Sie Objekte im Cloud-Storage-Pool auf das S3-Glacier-Deep Archive übertrag
 
 
 
+[[azure-considerations-for-access-tier]]
 == Azure: Überlegungen für Zugriffsebene
 
 Wenn Sie ein Azure-Speicherkonto konfigurieren, können Sie die Standard-Zugriffsebene auf „Hot“ oder „Cool“ festlegen. Wenn Sie ein Speicherkonto für die Verwendung mit einem Cloud-Speicherpool erstellen, sollten Sie den Hot-Tier als Standardebene verwenden. Auch wenn StorageGRID beim Verschieben von Objekten in den Cloud-Speicherpool sofort den Tier auf Archivierung setzt, stellt mit einer Standardeinstellung von Hot sicher, dass für Objekte, die vor dem 30-Tage-Minimum aus dem Cool Tier entfernt wurden, keine Gebühr für vorzeitiges Löschen berechnet wird.
 
 
 
+[[azure-lifecycle-management-not-supported]]
 == Azure: Lifecycle-Management nicht unterstützt
 
 Verwenden Sie das Azure Blob Storage-Lifecycle-Management nicht für den Container, der mit einem Cloud-Storage-Pool verwendet wird. Lifecycle-Operationen beeinträchtigen möglicherweise Cloud-Storage-Pool-Vorgänge.

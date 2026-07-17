@@ -20,6 +20,7 @@ NOTE: „Linux“ bezieht sich auf eine RHEL-, Ubuntu- oder Debian-Bereitstellun
 
 
 
+[[storage-categories]]
 == Speicherkategorien
 
 StorageGRID Nodes erfordern drei logische Storage-Kategorien:
@@ -33,6 +34,7 @@ Sie müssen RAID-gestützte Blockgeräte für alle Speicherkategorien verwenden.
 
 
 
+[[performance-requirements]]
 == Performance-Anforderungen erfüllt
 
 Die Performance der für den Container-Pool verwendeten Volumes, Systemdaten und Objektmetadaten wirkt sich erheblich auf die Gesamt-Performance des Systems aus. Sie sollten Performance-Tier-Storage (10.000 SAS oder SSD) für diese Volumes verwenden, um eine angemessene Festplatten-Performance in Bezug auf Latenz, Input/Output Operations per Second (IOPS) und Durchsatz sicherzustellen. Sie können Capacity-Tier (NL-SAS/SATA)-Storage für den persistenten Storage von Objektdaten verwenden.
@@ -41,6 +43,7 @@ Für die Volumes, die für den Container-Pool, Systemdaten und Objektdaten verwe
 
 
 
+[[requirements-for-hosts-that-use-netapp-ontap-storage]]
 == Anforderungen für Hosts, die NetApp ONTAP-Speicher verwenden
 
 Wenn der StorageGRID Node Storage verwendet, der aus einem NetApp ONTAP System zugewiesen wurde, vergewissern Sie sich, dass auf dem Volume keine FabricPool-Tiering-Richtlinie aktiviert ist. Das Deaktivieren von FabricPool Tiering für Volumes, die in Verbindung mit StorageGRID Nodes verwendet werden, vereinfacht die Fehlerbehebung und Storage-Vorgänge.
@@ -50,6 +53,7 @@ NOTE: Verwenden Sie FabricPool niemals, um StorageGRID-bezogene Daten in das Tie
 
 
 
+[[number-of-hosts-required]]
 == Anzahl der erforderlichen Hosts
 
 Jeder StorageGRID Standort erfordert mindestens drei Storage-Nodes.
@@ -64,6 +68,7 @@ NOTE: Disk Snapshots können nicht zur Wiederherstellung von Grid Nodes verwende
 
 
 
+[[number-of-storage-volumes-for-each-node]]
 == Anzahl der Speichervolumes für jeden Knoten
 
 In der folgenden Tabelle ist die Anzahl der für jeden Host erforderlichen Storage Volumes (LUNs) und die Mindestgröße für jede LUN angegeben, basierend darauf, welche Nodes auf diesem Host implementiert werden.
@@ -159,6 +164,7 @@ NOTE: Abhängig von der konfigurierten Prüfebene, der Größe der Benutzereinga
 
 
 
+[[minimum-storage-space-for-a-host]]
 == Minimaler Speicherplatz für einen Host
 
 In der folgenden Tabelle ist der erforderliche Mindestspeicherplatz für jeden Node-Typ aufgeführt. Anhand dieser Tabelle können Sie bestimmen, welcher Storage-Mindestbetrag für den Host in jeder Storage-Kategorie bereitgestellt werden muss. Dabei können Sie festlegen, welche Nodes auf diesem Host implementiert werden.
@@ -204,6 +210,7 @@ _Nicht zutreffend_
 |===
 
 
+[[example-calculating-the-storage-requirements-for-a-host-or-virtual-machine]]
 == Beispiel: Berechnen des Speicherbedarfs für einen Host oder eine virtuelle Maschine
 
 Angenommen, Sie planen, drei Knoten auf demselben Host oder derselben virtuellen Maschine bereitzustellen: einen Speicherknoten, einen Admin-Knoten und einen Gateway-Knoten.  Sie sollten dem Host mindestens neun Speichervolumes zur Verfügung stellen.  Sie benötigen mindestens 300 GB Performance-Tier-Speicher für die Knotencontainer, 700 GB Performance-Tier-Speicher für Systemdaten und Transaktionsprotokolle und 12 TB Capacity-Tier-Speicher für Objektdaten.
@@ -380,6 +387,8 @@ Betriebssystem-Volume
 ====
 
 
+[[specific-storage-requirements-for-storage-nodes]]
+[[storage_req_SN]]
 == Spezifische Speicheranforderungen für Speicherknoten
 
 Linux und VMware haben unterschiedliche Speicheranforderungen für Speicherknoten:

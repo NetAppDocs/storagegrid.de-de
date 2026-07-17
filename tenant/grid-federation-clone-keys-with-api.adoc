@@ -27,6 +27,7 @@ NOTE: Wenn Sie S3-Zugriffsschlüssel für einen föderierten Benutzer klonen, we
 
 
 
+[[clone-your-own-access-keys]]
 == Eigene Zugriffsschlüssel klonen
 
 Sie können Ihre eigenen Zugriffsschlüssel klonen, wenn Sie auf dieselben Buckets in beiden Rastern zugreifen müssen.
@@ -56,6 +57,7 @@ image:grid-federation-clone-access-key.png["Die Mandanten-Manager-API gibt Werte
 
 
 
+[[clone-another-users-access-keys]]
 == Die Zugriffsschlüssel eines anderen Benutzers klonen
 
 Sie können die Zugriffsschlüssel eines anderen Benutzers klonen, wenn er auf dieselben Buckets in beiden Rastern zugreifen muss.

@@ -21,12 +21,14 @@ image:object_conceptual_drawing.png["Objekt"]
 
 
 
+[[what-is-object-data]]
 == Was sind Objektdaten?
 
 Objektdaten können alles sein, z. B. ein Foto, ein Film oder eine medizinische Aufzeichnung.
 
 
 
+[[what-is-object-metadata]]
 == Was sind Objekt-Metadaten?
 
 Objektmetadaten sind alle Informationen, die ein Objekt beschreiben. StorageGRID verwendet Objektmetadaten, um die Standorte aller Objekte im Grid zu verfolgen und den Lebenszyklus eines jeden Objekts mit der Zeit zu managen.
@@ -44,12 +46,14 @@ Detaillierte Informationen darüber, wie und wo StorageGRID Objektmetadaten spei
 
 
 
+[[how-is-object-data-protected]]
 == Wie werden Objektdaten gesichert?
 
 Das StorageGRID System bietet zwei Mechanismen zum Schutz von Objektdaten vor Verlust: Replizierung und Erasure Coding.
 
 
 
+[[replication]]
 === Replizierung
 
 Wenn StorageGRID Objekte einer ILM-Regel (Information Lifecycle Management) zuordnet, die zum Erstellen replizierter Kopien konfiguriert ist, erstellt das System exakte Kopien von Objektdaten und speichert diese auf Storage-Nodes oder Cloud Storage Pools. ILM-Regeln bestimmen die Anzahl der Kopien, die erstellt werden, wo diese Kopien gespeichert werden und wie lange sie vom System aufbewahrt werden. Falls eine Kopie verloren geht, beispielsweise aufgrund des Verlusts eines Storage-Nodes, ist das Objekt nach wie vor verfügbar, wenn eine Kopie davon an einer anderen Stelle im StorageGRID System vorhanden ist.
@@ -60,6 +64,7 @@ image:ilm_replication_make_2_copies.png["Regel für 2 Kopien erstellen"]
 
 
 
+[[erasure-coding]]
 === Erasure Coding
 
 Wenn StorageGRID Objekte mit einer ILM-Regel übereinstimmt, die zur Erstellung von mit Datenkonsistenz versehenen Kopien konfiguriert ist, werden Objektdaten in Datenfragmente zerlegt, zusätzliche Paritätsfragmente berechnet und jedes Fragment auf einem anderen Storage Node gespeichert. Wenn auf ein Objekt zugegriffen wird, wird es anhand der gespeicherten Fragmente neu zusammengesetzt. Wenn ein Daten oder ein Paritätsfragment beschädigt wird oder verloren geht, kann der Algorithmus zum Erasure Coding diese Fragmente mit einer Teilmenge der verbleibenden Daten und Paritätsfragmente neu erstellen. Das verwendete Erasure Coding-Schema wird durch ILM-Regeln und Erasure Coding-Profile bestimmt.

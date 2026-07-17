@@ -28,6 +28,7 @@ Wenn Sie eine PUT Bucket-Compliance-Anforderung ausgeben, müssen Sie für jedes
 
 
 
+[[request-example]]
 == Anforderungsbeispiel
 
 In dieser Beispielanforderung werden die Compliance-Einstellungen für den Bucket mit dem Namen geändert `mybucket`. In diesem Beispiel werden Objekte in nun für zwei Jahre (1,051,200 Minuten) statt für ein Jahr aufbewahrt, beginnend bei der Aufnahme des Objekts in `mybucket` das Raster. Es gibt keine gesetzliche Aufbewahrungspflichten auf diesem Bucket. Jedes Objekt wird nach zwei Jahren automatisch gelöscht.
@@ -79,6 +80,7 @@ Automatisches Löschen
 |===
 
 
+[[consistency-for-compliance-settings]]
 == Konsistenz für Compliance-Einstellungen
 
 Wenn Sie die Compliance-Einstellungen für einen S3-Bucket mit EINER PUT-Bucket-Compliance-Anforderung aktualisieren, versucht StorageGRID, die Metadaten des Buckets im Grid zu aktualisieren. Standardmäßig verwendet StorageGRID die *strong-global*-Konsistenz, um sicherzustellen, dass alle Datacenter-Standorte und alle Speicher-Nodes, die Bucket-Metadaten enthalten, für die geänderten Compliance-Einstellungen eine Lese-nach-Schreiben-Konsistenz aufweisen.
@@ -101,6 +103,7 @@ Consistency-Control: strong-site
 ----
 
 
+[[error-responses]]
 == Fehlerantworten
 
 * Wenn der Bucket nicht für die Konformität erstellt wurde, lautet der HTTP-Statuscode für die Antwort `404 Not Found` .

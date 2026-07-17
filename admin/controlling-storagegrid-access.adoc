@@ -15,6 +15,7 @@ Sie steuern, wer auf StorageGRID zugreifen kann und welche Aufgaben Benutzer aus
 
 
 
+[[control-access-to-the-grid-manager]]
 == Den Zugriff auf den Grid Manager steuern
 
 Sie bestimmen, wer auf den Grid Manager und die Grid Management API zugreifen kann, indem Sie Gruppen und Benutzer von einem Identitätsverbundservice aus importieren oder lokale Gruppen und lokale Benutzer einrichten.
@@ -30,18 +31,21 @@ Optional können Sie eine Gruppe als schreibgeschützt konfigurieren. Benutzer i
 
 
 
+[[enable-single-sign-on]]
 == Aktivieren Sie Single Sign On
 
 Das StorageGRID -System unterstützt Single Sign-On (SSO) mithilfe des Standards Security Assertion Markup Language 2.0 (SAML 2.0).  Nach Ihnenlink:how-sso-works.html["Konfigurieren und aktivieren Sie SSO"] müssen alle Benutzer von einem externen Identitätsanbieter authentifiziert werden, bevor sie auf den Grid Manager, den Tenant Manager, die Grid Management API oder die Tenant Management API zugreifen können.  Lokale Benutzer können sich nicht bei StorageGRID anmelden.
 
 
 
+[[change-provisioning-passphrase]]
 == Provisionierungs-Passphrase ändern
 
 Die Bereitstellungspassphrase wird für viele Installations- und Wartungsverfahren sowie zum Herunterladen des StorageGRID -Wiederherstellungspakets benötigt.  Die Passphrase ist auch zum Herunterladen von Backups der Grid-Topologieinformationen und Verschlüsselungsschlüssel für das StorageGRID -System erforderlich.  Du kannstlink:changing-provisioning-passphrase.html["Ändern Sie die Passphrase"] nach Bedarf.
 
 
 
+[[change-node-console-passwords]]
 == Ändern der Passwörter für die Node-Konsole
 
 Jeder Knoten in Ihrem Grid verfügt über ein Knotenkonsolenkennwort, das Sie benötigen, um sich per SSH als „Admin“ beim Knoten oder bei einer VM-/physischen Konsolenverbindung als Root-Benutzer anzumelden.  Bei Bedarf können Sielink:change-node-console-password.html["Ändern Sie das Passwort für die Node-Konsole"] für jeden Knoten.

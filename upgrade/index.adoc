@@ -20,6 +20,7 @@ CAUTION: Starten Sie das Upgrade nicht, wenn Sie Ihren Speicher dringend erweite
 
 
 
+[[before-you-upgrade]]
 == Vor dem Upgrade
 
 Lesen Sie diese Themen, um mehr über die neuen Funktionen und Verbesserungen in StorageGRID 12.0 zu erfahren, festzustellen, ob Funktionen veraltet sind oder entfernt wurden, und sich über Änderungen an den StorageGRID -APIs zu informieren.

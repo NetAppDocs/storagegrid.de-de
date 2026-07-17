@@ -15,6 +15,7 @@ Audit-Meldungen werden von StorageGRID-Diensten generiert und in Text-Log-Dateie
 
 
 
+[[bucket-operations-tracked-in-the-audit-logs]]
 == Bucket-Vorgänge werden in den Audit-Protokollen protokolliert
 
 * CreateBucket
@@ -32,6 +33,7 @@ Audit-Meldungen werden von StorageGRID-Diensten generiert und in Text-Log-Dateie
 
 
 
+[[object-operations-tracked-in-the-audit-logs]]
 == Objektvorgänge werden in den Audit-Protokollen protokolliert
 
 * CompleteMultipartUpload

@@ -19,12 +19,14 @@ Weitere Informationen zur StorageGRID -Netzwerktopologie, den Anforderungen und 
 
 
 
+[[deployment-topologies]]
 == Implementierungstopologien
 
 Das StorageGRID -System kann an einem einzelnen oder an mehreren Rechenzentrumsstandorten bereitgestellt werden.  Die maximale Anzahl von Sites pro Bereitstellung beträgt 16.
 
 
 
+[[single-site]]
 === Ein Standort
 
 Bei einer Implementierung über einen einzigen Standort werden die Infrastruktur und der Betrieb des StorageGRID Systems zentralisiert.
@@ -33,6 +35,7 @@ image:data_center_site_single.png["Einzelner Datacenter-Standort"]
 
 
 
+[[multiple-sites]]
 === Mehrere Standorte
 
 In einer Implementierung mit mehreren Standorten können an jedem Standort unterschiedliche Typen und eine unterschiedliche Anzahl von StorageGRID Ressourcen installiert werden. So könnte beispielsweise mehr Storage für ein Datacenter als für ein anderes erforderlich sein.
@@ -45,12 +48,14 @@ Innerhalb eines einzigen Rechenzentrums können auch mehrere logische Standorte 
 
 
 
+[[grid-node-redundancy]]
 === Redundanz des Grid-Nodes
 
 Bei einer Implementierung an einem Standort oder an mehreren Standorten können Sie optional mehrere Admin-Nodes oder Gateway-Nodes enthalten, um Redundanz zu gewährleisten. Sie können beispielsweise mehr als einen Admin-Node an einem einzelnen Standort oder an mehreren Standorten installieren. Allerdings kann jedes StorageGRID System nur einen primären Admin-Node haben.
 
 
 
+[[system-architecture]]
 == Systemarchitektur
 
 Dieses Diagramm zeigt, wie Grid-Nodes innerhalb eines StorageGRID Systems angeordnet sind.

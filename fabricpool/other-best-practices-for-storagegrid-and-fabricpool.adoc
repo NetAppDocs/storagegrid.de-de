@@ -15,6 +15,7 @@ Wenn Sie ein StorageGRID-System für die Verwendung mit FabricPool konfigurieren
 
 
 
+[[audit-message-and-log-destinations]]
 == Überwachungsmeldung und Protokollziele
 
 FabricPool-Workloads verfügen oft über eine hohe Rate an Lesevorgängen, die ein hohes Volumen an Audit-Nachrichten erzeugen können.
@@ -25,30 +26,35 @@ FabricPool-Workloads verfügen oft über eine hohe Rate an Lesevorgängen, die e
 
 
 
+[[object-encryption]]
 == Objektverschlüsselung
 
 Bei der Konfiguration von StorageGRID können Sie optional den aktivierenlink:../admin/changing-network-options-object-encryption.html["Globale Option für Verschlüsselung gespeicherter Objekte"], wenn eine Datenverschlüsselung für andere StorageGRID-Clients erforderlich ist. Die Daten, die von FabricPool zu StorageGRID verschoben werden, sind bereits verschlüsselt, d. h. die Aktivierung der StorageGRID-Einstellung ist nicht erforderlich. Die Client-seitige Verschlüsselung ist Eigentum von ONTAP.
 
 
 
+[[object-compression]]
 == Objektkomprimierung
 
 Aktivieren Sie beim Konfigurieren von StorageGRID nicht link:../admin/configuring-stored-object-compression.html["Globale Option zum Komprimieren gespeicherter Objekte"]. Die Daten, die von FabricPool zu StorageGRID verschoben werden, werden bereits komprimiert. Durch Verwendung der Option StorageGRID wird die Größe eines Objekts nicht weiter reduziert.
 
 
 
+[[s3-object-lock]]
 == S3-Objektsperre
 
 Wenn die globale S3-Objektsperre für Ihr StorageGRID System aktiviert ist, aktivieren Sie nichtlink:../s3/use-s3-api-for-s3-object-lock.html["S3-Objektsperre"] wenn Sie FabricPool Buckets erstellen.  S3 Object Lock wird für FabricPool Buckets nicht unterstützt.
 
 
 
+[[bucket-consistency]]
 == Bucket-Konsistenz
 
 Für FabricPool-Buckets lautet die empfohlene Bucket-Konsistenz *Read-after-New-write*, was die Standardkonsistenz für einen neuen Bucket ist. Bearbeiten Sie FabricPool Buckets nicht, um *available* oder *strong-site* zu verwenden.
 
 
 
+[[fabricpool-tiering]]
 == FabricPool Tiering
 
 Wenn ein StorageGRID Node Storage verwendet, der von einem NetApp ONTAP System zugewiesen wurde, vergewissern Sie sich, dass auf dem Volume keine FabricPool-Tiering-Richtlinie aktiviert ist. Wenn beispielsweise ein StorageGRID Node auf einem VMware Host ausgeführt wird, stellen Sie sicher, dass für das Volume, das den Datastore für den StorageGRID Node unterstützt, keine FabricPool-Tiering-Richtlinie aktiviert ist. Das Deaktivieren von FabricPool Tiering für Volumes, die in Verbindung mit StorageGRID Nodes verwendet werden, vereinfacht die Fehlerbehebung und Storage-Vorgänge.

@@ -22,6 +22,7 @@ Mit diesem Verfahren können Sie die Anzeigenamen für Ihr Raster, Ihre Standort
 
 
 
+[[how-to-rename-grid-sites-or-nodes]]
 == Umbenennen von Rastergitten, Standorten oder Nodes
 
 Sie können das StorageGRID-System, einen oder mehrere Standorte oder einen oder mehrere Nodes umbenennen.
@@ -30,6 +31,7 @@ Sie können einen Anzeigenamen verwenden, der zuvor von einem anderen Node verwe
 
 
 
+[[select-items-to-rename]]
 === Wählen Sie die umzubenennenden Elemente aus
 
 Wählen Sie zum Starten die Elemente aus, die Sie umbenennen möchten.
@@ -93,6 +95,7 @@ Aktivieren Sie das Kontrollkästchen für den Knoten.
 
 
 
+[[propose-new-names]]
 === Schlagen Sie neue Namen vor
 
 Für den Schritt *Neue Namen vorschlagen* können Sie einen Anzeigenamen für jedes Element einzeln eingeben oder Elemente in großen Mengen umbenennen.
@@ -161,6 +164,7 @@ Eine Erfolgsmeldung wird angezeigt. Die neuen Anzeigenamen werden nun im gesamte
 ====
 
 
+[[download-recovery-packagedownload-the-recovery-package]]
 === [[download-recovery-package]]Laden Sie das Wiederherstellungspaket herunter
 
 Wenn Sie mit dem Umbenennen der Elemente fertig sind, laden Sie ein neues Wiederherstellungspaket herunter und speichern Sie es.  Die neuen Anzeigenamen für die umbenannten Elemente sind in der `Passwords.txt` Datei.
@@ -182,6 +186,7 @@ CAUTION: Die Wiederherstellungspaketdatei muss gesichert werden, da sie Verschl�
 
 
 
+[[revert-display-names-back-to-system-names]]
 == Zurücksetzen der Anzeigenamen auf Systemnamen
 
 Sie können ein umbenanntes Raster, eine Site oder einen Node auf den ursprünglichen Systemnamen zurücksetzen. Wenn Sie ein Element auf seinen Systemnamen zurücksetzen, werden auf den Seiten des Grid-Managers und anderen StorageGRID-Speicherorten kein *Anzeigename* für dieses Element mehr angezeigt. Es wird nur der Systemname des Elements angezeigt.

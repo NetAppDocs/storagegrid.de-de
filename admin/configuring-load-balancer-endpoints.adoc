@@ -36,12 +36,15 @@ NOTE: Änderungen an einem Endpunktzertifikat können bis zu 15 Minuten dauern, 
 
 
 
+[[create-a-load-balancer-endpoint]]
+[[create-lb-endpoint]]
 == Erstellen Sie einen Endpunkt für den Load Balancer
 
 Jeder S3-Client-Load-Balancer-Endpunkt gibt einen Port, einen Clienttyp (S3) und ein Netzwerkprotokoll (HTTP oder HTTPS) an.  Die Endpunkte des Lastenausgleichsmoduls der Verwaltungsschnittstelle geben einen Port, einen Schnittstellentyp und ein nicht vertrauenswürdiges Clientnetzwerk an.
 
 
 
+[[access-the-wizard]]
 === Greifen Sie auf den Assistenten zu
 
 .Schritte
@@ -53,6 +56,7 @@ Jeder S3-Client-Load-Balancer-Endpunkt gibt einen Port, einen Clienttyp (S3) und
 
 
 
+[[enter-endpoint-details]]
 === Geben Sie Details zu Endpunkten ein
 
 .Schritte
@@ -163,6 +167,7 @@ Wenn Sie *Yes* auswählen, ist der Port auf allen nicht vertrauenswürdigen Clie
 
 
 
+[[select-a-binding-mode]]
 === Wählen Sie einen Bindungsmodus aus
 
 .Schritte
@@ -230,6 +235,7 @@ Wenn Sie Endpunkte für die Managementoberfläche erstellen, wählen Sie VIPs au
 
 
 
+[[control-tenant-access]]
 === Kontrolle des Mandantenzugriffs
 
 
@@ -270,6 +276,7 @@ Die ausgewählten Mandantenkonten können diesen Endpunkt nicht für den Zugriff
 
 
 
+[[attach-certificate]]
 === Zertifikat anhängen
 
 .Schritte
@@ -396,6 +403,7 @@ Der Endpunkt des Load Balancer wird erstellt. Das benutzerdefinierte Zertifikat 
 
 
 
+[[after-you-finish]]
 === Nachdem Sie fertig sind
 
 .Schritte
@@ -422,6 +430,7 @@ Außerdem müssen Sie sicherstellen, dass der DNS-Datensatz alle erforderlichen 
 
 
 
+[[view-and-edit-load-balancer-endpoints]]
 == Load Balancer-Endpunkte anzeigen und bearbeiten
 
 Sie können Details zu vorhandenen Load Balancer-Endpunkten anzeigen, einschließlich der Zertifikatmetadaten für einen gesicherten Endpunkt. Sie können bestimmte Einstellungen für einen Endpunkt ändern.
@@ -532,6 +541,7 @@ Bearbeiten Sie den Mandantenzugriff
 
 
 
+[[remove-load-balancer-endpoints]]
 == Entfernen Sie Load Balancer-Endpunkte
 
 Sie können einen oder mehrere Endpunkte über das Menü *Aktionen* entfernen oder einen einzelnen Endpunkt von der Detailseite entfernen.

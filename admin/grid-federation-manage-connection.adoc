@@ -20,6 +20,7 @@ Das Management von Grid-Verbindungen zwischen StorageGRID Systemen umfasst das B
 
 
 
+[[editgridfedconnectionedit-a-grid-federation-connection]]
 == [[edit_Grid_Fed_Connection]]Bearbeiten einer Verbindung zum Grid Federation
 
 Sie können eine Grid Federation-Verbindung bearbeiten, indem Sie sich beim primären Admin-Node auf einem der beiden Raster der Verbindung anmelden. Nachdem Sie Änderungen am ersten Raster vorgenommen haben, müssen Sie eine neue Überprüfungsdatei herunterladen und in das andere Raster hochladen.
@@ -29,6 +30,7 @@ NOTE: Während die Verbindung bearbeitet wird, werden Kontoklone- oder Grid-übe
 
 
 
+[[start-editing-the-connection]]
 === Beginnen Sie mit der Bearbeitung der Verbindung
 
 .Schritte
@@ -85,6 +87,7 @@ NOTE: Wenn der Verbindungsstatus etwas anderes als *Verbunden* war, als Sie mit 
 
 
 
+[[finish-editing-the-connection]]
 === Schließen Sie die Bearbeitung der Verbindung ab
 
 Schließen Sie die Bearbeitung der Verbindung ab, indem Sie die Überprüfungsdatei auf das andere Raster hochladen.
@@ -107,6 +110,7 @@ Wenn die Verbindung über die bearbeiteten Werte hergestellt werden kann, wird e
 
 
 
+[[testgridfedconnectiontest-a-grid-federation-connection]]
 == [[Test_Grid_Fed_Connection]]Testen einer Netzverbundverbindung
 
 .Schritte
@@ -177,6 +181,7 @@ Die Verbindung befindet sich in einem unbekannten Zustand, möglicherweise aufgr
 
 
 
+[[rotategridfedcertificatesrotate-connection-certificates]]
 == [[roate_Grid_Fed_certificates]]Verbindungszertifikate drehen
 
 Jede Grid Federation-Verbindung verwendet vier automatisch generierte SSL-Zertifikate, um die Verbindung zu sichern. Wenn die beiden Zertifikate für jedes Raster in der Nähe ihres Ablaufdatums liegen, erinnert die Warnung *Ablauf des Grid Federation Certificate* Sie daran, die Zertifikate zu drehen.
@@ -201,6 +206,7 @@ Verwenden Sie im Allgemeinen die gleiche Anzahl von Tagen für die Zertifikate a
 
 
 
+[[removegridfedconnectionremove-a-grid-federation-connection]]
 == [[remove_Grid_Fed_Connection]]Entfernen Sie eine Netzverbundverbindung
 
 Sie können eine Netzverbundverbindung aus jedem Raster der Verbindung entfernen. Wie in der Abbildung gezeigt, müssen Sie auf beiden Rastern erforderliche Schritte ausführen, um zu bestätigen, dass die Verbindung nicht von einem Mandanten in einem der beiden Raster verwendet wird.
@@ -215,6 +221,7 @@ Beachten Sie vor dem Entfernen einer Verbindung Folgendes:
 
 
 
+[[disable-replication-for-all-tenant-buckets]]
 === Deaktivieren Sie die Replizierung für alle Mandanten-Buckets
 
 .Schritte
@@ -231,6 +238,7 @@ TIP: Sie können die Berechtigung *use Grid Federation connection* nicht entfern
 
 
 
+[[remove-permission-for-each-tenant]]
 === Berechtigung für jeden Mandanten entfernen
 
 Nachdem die Grid-übergreifende Replikation für alle Mandanten-Buckets deaktiviert wurde, entfernen Sie die *use Grid Federation permission* von allen Mandanten auf beiden Grids.
@@ -244,6 +252,7 @@ Nachdem die Grid-übergreifende Replikation für alle Mandanten-Buckets deaktivi
 
 
 
+[[remove-connection]]
 === Verbindung entfernen
 
 .Schritte
@@ -263,6 +272,7 @@ Nachdem die Grid-übergreifende Replikation für alle Mandanten-Buckets deaktivi
 
 
 
+[[force-removegridfedconnectionremove-a-grid-federation-connection-by-force]]
 == [[Force-remove_Grid_Fed_Connection]]Entfernen Sie eine Verbindung zum Grid-Verbund mit Gewalt
 
 Bei Bedarf können Sie das Entfernen einer Verbindung erzwingen, die nicht den Status *Verbunden* hat.

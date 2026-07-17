@@ -15,6 +15,7 @@ Die `/etc/network/interfaces` Datei enthält drei Abschnitte, in denen die physi
 
 
 
+[[physical-interfaces]]
 == Physische Schnittstellen
 
 Beachten Sie, dass die Switches an den anderen Enden der Links auch die vier Ports als einzelnen LACP-Trunk oder Port-Kanal behandeln müssen und mindestens drei referenzierte VLANs mit Tags übergeben werden müssen.
@@ -48,6 +49,7 @@ iface ens256 inet manual
 ----
 
 
+[[bond-interface]]
 == Bond-Schnittstelle
 
 [listing]
@@ -61,6 +63,7 @@ iface bond0 inet manual
 ----
 
 
+[[vlan-interfaces]]
 == VLAN-Schnittstellen
 
 [listing]

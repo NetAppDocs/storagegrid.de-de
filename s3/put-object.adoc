@@ -15,12 +15,14 @@ Sie können die S3 PutObject-Anforderung verwenden, um einem Bucket ein Objekt h
 
 
 
+[[resolve-conflicts]]
 == Konflikte lösen
 
 Widersprüchliche Clientanforderungen, wie z. B. zwei Clients, die in denselben Schlüssel schreiben, werden auf der Grundlage der „neuesten Wins“ gelöst. Der Zeitpunkt für die Bewertung „neuester Erfolge“ basiert auf dem Zeitpunkt, an dem das StorageGRID System eine bestimmte Anforderung abgeschlossen hat und nicht auf dem Zeitpunkt, an dem S3-Clients einen Vorgang starten.
 
 
 
+[[object-size]]
 == Objektgröße
 
 Die maximale _recommended_ Größe für eine einzelne PutObject-Operation beträgt 5 gib (5,368,709,120 Bytes). Falls Objekte größer als 5 gib sind, verwenden Sie link:operations-for-multipart-uploads.html["Mehrteiliges Hochladen"] stattdessen.
@@ -32,12 +34,14 @@ NOTE: Wenn Sie ein Upgrade von StorageGRID 11.6 oder einer älteren Version durc
 
 
 
+[[user-metadata-size]]
 == Größe der Benutzer-Metadaten
 
 Amazon S3 begrenzt die Größe der benutzerdefinierten Metadaten innerhalb jeder PUT-Anforderung-Kopfzeile auf 2 KB. StorageGRID begrenzt die Benutzermetadaten auf 24 KiB. Die Größe der benutzerdefinierten Metadaten wird gemessen, indem die Summe der Anzahl Bytes in der UTF-8-Codierung jedes Schlüssels und jeden Wert angegeben wird.
 
 
 
+[[utf-8-characters-in-user-metadata]]
 == UTF-8 Zeichen in Benutzermetadaten
 
 Wenn eine Anfrage UTF-8-Werte im Schlüsselnamen oder -Wert der benutzerdefinierten Metadaten enthält, ist das StorageGRID-Verhalten nicht definiert.
@@ -50,18 +54,21 @@ StorageGRID parst oder interpretiert keine entgangenen UTF-8-Zeichen, die im Sch
 
 
 
+[[object-tag-limits]]
 == Grenzwerte für Objekt-Tags
 
 Sie können neue Objekte mit Tags hinzufügen, wenn Sie sie hochladen, oder Sie können sie zu vorhandenen Objekten hinzufügen. StorageGRID und Amazon S3 unterstützen bis zu 10 Tags für jedes Objekt. Tags, die einem Objekt zugeordnet sind, müssen über eindeutige Tag-Schlüssel verfügen. Ein Tag-Schlüssel kann bis zu 128 Unicode-Zeichen lang sein, und Tag-Werte können bis zu 256 Unicode-Zeichen lang sein. Bei den Schlüsseln und Werten wird die Groß-/Kleinschreibung beachtet.
 
 
 
+[[object-ownership]]
 == Objekteigentümer
 
 In StorageGRID sind alle Objekte Eigentum des Bucket-Besitzers-Kontos, einschließlich der Objekte, die von einem Konto ohne Eigentümer oder einem anonymen Benutzer erstellt wurden.
 
 
 
+[[supported-request-headers]]
 == Unterstützte Anfrageheader
 
 Die folgenden Anfragezeilen werden unterstützt:
@@ -137,6 +144,7 @@ Siehe <<Anforderungsheader für serverseitige Verschlüsselung>>
 
 
 
+[[unsupported-request-headers]]
 == Nicht unterstützte Anforderungsheader
 
 Die folgenden Anforderungsheader werden nicht unterstützt:
@@ -160,6 +168,7 @@ Der `x-amz-website-redirect-location` Header gibt zurück `XNotImplemented`.
 
 
 
+[[storage-class-options]]
 == Optionen der Storage-Klasse
 
 Der `x-amz-storage-class` Anforderungskopf wird unterstützt. Der für eingereichte Wert `x-amz-storage-class` hat einen Einfluss darauf, wie StorageGRID Objektdaten bei der Aufnahme schützt, und nicht darauf, wie viele persistente Kopien des Objekts im StorageGRID System gespeichert werden (durch ILM bestimmt).
@@ -198,6 +207,7 @@ NOTE: Wenn Sie ein Objekt in einen Bucket mit aktivierter S3-Objektsperrung aufn
 
 
 
+[[request-headers-for-server-side-encryption]]
 == Anforderungsheader für serverseitige Verschlüsselung
 
 Sie können die folgenden Anforderungsheader verwenden, um ein Objekt mit serverseitiger Verschlüsselung zu verschlüsseln. Die Optionen SSE und SSE-C schließen sich gegenseitig aus.
@@ -227,6 +237,7 @@ NOTE: Wenn ein Objekt mit SSE oder SSE-C verschlüsselt wird, werden sämtliche 
 
 
 
+[[versioning]]
 == Versionierung
 
 Wenn die Versionierung für einen Bucket aktiviert ist, wird automatisch ein eindeutiges `versionId` Objekt für die Version des gespeicherten Objekts generiert. Dies `versionId` wird auch in der Antwort über den Antwortheader zurückgegeben `x-amz-version-id`.
@@ -235,6 +246,7 @@ Wenn die Versionierung unterbrochen wird, wird die Objektversion mit einer Null 
 
 
 
+[[signature-calculations-for-the-authorization-header]]
 == Signaturberechnungen für den Autorisierungskopf
 
 Bei der Verwendung des `Authorization` Headers zur Authentifizierung von Anfragen unterscheidet sich StorageGRID von AWS folgendermaßen:

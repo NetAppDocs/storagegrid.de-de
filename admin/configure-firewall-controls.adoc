@@ -35,6 +35,8 @@ Weitere Informationen zu externen Firewalls und Netzwerksicherheit finden Sie un
 
 
 
+[[access-firewall-controls]]
+[[Access-firewall-controls]]
 == Firewall-Kontrollen für den Zugriff
 
 .Schritte
@@ -50,6 +52,7 @@ Sie können diese Registerkarten in beliebiger Reihenfolge verwenden. Die Konfig
 
 
 
+[[privileged-address-list]]
 == Liste privilegierter Adressen
 
 Sie verwenden die Registerkarte Liste der privilegierten Adressen, um Hosts Zugriff auf Ports zu gewähren, die standardmäßig geschlossen oder durch Einstellungen auf der Registerkarte externen Zugriff verwalten geschlossen sind.
@@ -76,6 +79,7 @@ TIP: Diese Option entfernt einige Schutzmaßnahmen für interne Dienste. Lassen 
 
 
 
+[[manage-external-access]]
 == Management des externen Zugriffs
 
 Wenn ein Port auf der Registerkarte externen Zugriff verwalten geschlossen wird, kann keine IP-Adresse ohne Grid auf den Port zugegriffen werden, es sei denn, Sie fügen die IP-Adresse der Liste privilegierter Adressen hinzu. Sie können nur Ports schließen, die standardmäßig geöffnet sind, und Sie können nur Ports öffnen, die Sie geschlossen haben.
@@ -105,6 +109,7 @@ NOTE: Verwenden Sie die Bildlaufleiste auf der rechten Seite der Tabelle, um sic
 
 
 
+[[untrusted-client-network]]
 == Nicht Vertrauenswürdiges Client-Netzwerk
 
 Wenn das Client-Netzwerk für einen Knoten nicht vertrauenswürdig ist, akzeptiert der Knoten nur eingehenden Datenverkehr an Ports, die als Load Balancer-Endpunkte konfiguriert sind, und optional zusätzliche Ports, die Sie auf dieser Registerkarte auswählen. Auf dieser Registerkarte können Sie auch die Standardeinstellung für neue Knoten festlegen, die in einer Erweiterung hinzugefügt wurden.

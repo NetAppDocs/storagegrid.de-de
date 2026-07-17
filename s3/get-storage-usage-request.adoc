@@ -21,6 +21,7 @@ Sie müssen über die s3:ListAllMyBuchets-Berechtigung verfügen oder als Kontos
 
 
 
+[[request-example]]
 == Anforderungsbeispiel
 
 [listing, subs="specialcharacters,quotes"]
@@ -32,6 +33,7 @@ Host: _host_
 ----
 
 
+[[response-example]]
 == Antwortbeispiel
 
 Dieses Beispiel zeigt ein Konto, das vier Objekte und 12 Bytes Daten in zwei Buckets enthält. Jeder Bucket enthält zwei Objekte und sechs Bytes Daten.
@@ -67,6 +69,7 @@ Content-Type: application/xml
 ----
 
 
+[[versioning]]
 == Versionierung
 
 Jede gespeicherte Objektversion trägt zu den `ObjectCount` Werten und `DataBytes` in der Antwort bei. Löschmarkierungen werden nicht zur Gesamtmenge hinzugefügt `ObjectCount`.

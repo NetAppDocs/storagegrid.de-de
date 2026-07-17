@@ -17,6 +17,7 @@ Die Warnung *Grid-übergreifende Replikation Permanent Failure* weist darauf hin
 
 
 
+[[determine-if-any-objects-failed-to-be-replicated]]
 == Ermitteln Sie, ob Objekte nicht repliziert werden konnten
 
 Um festzustellen, ob Objekte oder Löschmarkierungen nicht in das andere Raster repliziert wurden, können Sie das Überwachungsprotokoll nach  Meldungen durchsuchenlink:../audit/cgrr-cross-grid-replication-request.html["CGRR (Grid-übergreifende Replikationsanforderung)"]. Diese Meldung wird dem Protokoll hinzugefügt, wenn StorageGRID ein Objekt, ein mehrteiliges Objekt oder eine Löschmarkierung nicht in den Ziel-Bucket repliziert.
@@ -116,6 +117,7 @@ Der Fehlertyp. Wenn die Grid-übergreifende Replikation fehlgeschlagen ist, laut
 
 
 
+[[retry-failed-replications]]
 == Wiederholen Sie fehlgeschlagene Replikationen
 
 Nach dem Generieren einer Liste von Objekten und Löschen von Markierungen, die nicht in den Ziel-Bucket repliziert wurden, und dem Beheben der zugrunde liegenden Probleme können Sie die Replikation auf zwei Arten wiederholen:
@@ -150,6 +152,7 @@ NOTE: Ausstehend bedeutet, dass die Grid-übergreifende Replikationsanforderung 
 
 
 
+[[monitor-replication-retries]]
 == Überwachen Sie Wiederholungen der Replikation
 
 Sie sollten die Wiederholungen der Replikation überwachen, um sicherzustellen, dass sie abgeschlossen sind.

@@ -39,6 +39,7 @@ NOTE: Verwenden Sie keine Bond- oder Bridge-Geräte direkt als Container-Netzwer
 
 
 
+[[considerations-and-recommendations-for-mac-address-cloning]]
 == Überlegungen und Empfehlungen zum Klonen von MAC-Adressen
 
 .[[Klonen von MAC-Adressen]]
@@ -46,6 +47,7 @@ Das Klonen VON MAC-Adressen bewirkt, dass der Container die MAC-Adresse des Host
 
 
 
+[[enabling-mac-cloning]]
 === Aktivieren des MAC-Klonens
 
 In bestimmten Umgebungen kann die Sicherheit durch das Klonen von MAC-Adressen erhöht werden, da es Ihnen ermöglicht, eine dedizierte virtuelle NIC für das Admin-Netzwerk, das Grid-Netzwerk und das Client-Netzwerk zu verwenden. Wenn der Container die MAC-Adresse der dedizierten NIC auf dem Host nutzen soll, können Sie keine Kompromissmodus-Netzwerkkonfigurationen mehr verwenden.
@@ -72,6 +74,7 @@ NOTE: Wenn das MAC-Klonen auf einem virtuellen Host aktiviert wird, ohne dass gl
 
 
 
+[[mac-cloning-use-cases]]
 === Anwendungsfälle für DAS Klonen VON MAC
 
 Es gibt zwei Anwendungsfälle, die beim Klonen von MAC berücksichtigt werden müssen:
@@ -87,6 +90,7 @@ Informationen zum Aktivieren des MAC-Klonens finden Sie im link:creating-node-co
 
 
 
+[[mac-cloning-example]]
 === BEISPIEL FÜR DAS Klonen VON MAC
 
 Beispiel für das MAC-Klonen bei einem Host mit einer MAC-Adresse von 11:22:33:44:55:66 für die Schnittstelle ensens256 und die folgenden Schlüssel in der Node-Konfigurationsdatei:
@@ -100,6 +104,7 @@ Beispiel für das MAC-Klonen bei einem Host mit einer MAC-Adresse von 11:22:33:4
 
 
 
+[[example-1-1-to-1-mapping-to-physical-or-virtual-nics]]
 == Beispiel 1: 1-zu-1-Zuordnung zu physischen oder virtuellen NICs
 
 In Beispiel 1 wird eine einfache Zuordnung von physischen Schnittstellen beschrieben, wofür nur wenig oder keine Host-seitige Konfiguration erforderlich ist.
@@ -114,6 +119,7 @@ Wenn Switch 1 ein physischer Switch ist, sollten Sie die mit den Schnittstellen 
 
 
 
+[[example-2-lacp-bond-carrying-vlans]]
 == Beispiel 2: LACP Bond mit VLANs
 
 Beispiel 2 geht davon aus, dass Sie mit der Verbindung von Netzwerkschnittstellen und der Erstellung von VLAN-Schnittstellen auf der von Ihnen verwendeten Linux-Distribution vertraut sind.

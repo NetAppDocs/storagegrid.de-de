@@ -30,6 +30,7 @@ Wenn der Knoten ein Appliance-Node ist, enthält diese Registerkarte auch einen 
 
 
 
+[[view-information-about-appliance-storage-nodes]]
 == Zeigen Sie Informationen zu Appliance Storage Nodes an
 
 Auf der Seite Nodes werden Informationen zum Serviczustand sowie alle Computing-, Festplattengeräte- und Netzwerkressourcen für jeden Appliance Storage Node aufgeführt. Außerdem können Sie den Arbeitsspeicher, die Storage-Hardware, die Controller-Firmware-Version, Netzwerkressourcen, Netzwerkschnittstellen, Netzwerkadressen und empfangen und übertragen Daten.
@@ -496,6 +497,7 @@ image:nodes_page_storage_tables.png["Knoten Seitentabellen"]
 
 
 
+[[view-information-about-appliance-admin-nodes-and-gateway-nodes]]
 == Zeigen Sie Informationen zu Appliance Admin Nodes und Gateway Nodes an
 
 Auf der Seite Nodes werden Informationen zum Serviczustand sowie alle Computing-, Festplatten- und Netzwerkressourcen für jede Service-Appliance, die als Admin-Node oder Gateway-Node verwendet wird, aufgeführt. Außerdem können Sie Arbeitsspeicher, Storage-Hardware, Netzwerkressourcen, Netzwerkschnittstellen, Netzwerkadressen, Daten empfangen und übertragen.

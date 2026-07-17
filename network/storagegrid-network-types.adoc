@@ -15,6 +15,7 @@ Die Grid-Nodes in einem StorageGRID-Systemprozess _Grid Traffic_, _admin Traffic
 
 
 
+[[traffic-types]]
 == Verkehrstypen
 
 [cols="1a,4a,2a"]
@@ -62,6 +63,7 @@ Auf interne Ports kann nur über das Grid-Netzwerk zugegriffen werden. Auf exter
 
 
 
+[[network-interfaces]]
 == Netzwerkschnittstellen
 
 StorageGRID-Nodes sind über die folgenden spezifischen Schnittstellen mit jedem Netzwerk verbunden:
@@ -105,6 +107,7 @@ Weitere Informationen zum Zuordnen virtueller oder physischer Ports zu Knotennet
 
 
 
+[[network-information-for-each-node]]
 === Netzwerkinformationen für jeden Node
 
 Sie müssen für jedes auf einem Node zu konfigurierende Netzwerk Folgendes konfigurieren:
@@ -118,12 +121,14 @@ Sie können nur eine IP-Adresse/Maske/Gateway-Kombination für jedes der drei Ne
 
 
 
+[[high-availability-groups]]
 === Hochverfügbarkeitsgruppen
 
 Hochverfügbarkeitsgruppen (High Availability groups, HA-Gruppen) bieten die Möglichkeit, virtuelle IP-Adressen (VIP) zur Grid- oder Client-Netzwerkschnittstelle hinzuzufügen. Weitere Informationen finden Sie unter link:../admin/managing-high-availability-groups.html["Management von Hochverfügbarkeitsgruppen"].
 
 
 
+[[grid-network]]
 == Grid-Netzwerk
 
 Das Grid-Netzwerk ist erforderlich. Er wird für den gesamten internen StorageGRID-Datenverkehr verwendet. Das Grid-Netzwerk bietet Konnektivität zwischen allen Nodes im Grid über alle Standorte und Subnetze hinweg. Alle Knoten im Grid-Netzwerk müssen in der Lage sein, mit allen anderen Knoten zu kommunizieren. Das Grid-Netzwerk kann aus mehreren Subnetzen bestehen. Netzwerke, die kritische Grid-Services wie NTP enthalten, können auch als Grid-Subnetze hinzugefügt werden.
@@ -146,6 +151,7 @@ Beachten Sie die folgenden Anforderungen und Details für das Grid Network Gatew
 
 
 
+[[admin-network]]
 == Admin-Netzwerk
 
 Das Admin-Netzwerk ist optional. Bei der Konfiguration kann diese für die Systemadministration und für den Wartungs-Traffic verwendet werden. Das Admin-Netzwerk ist in der Regel ein privates Netzwerk und muss nicht zwischen Knoten routingfähig sein.
@@ -170,6 +176,7 @@ Beachten Sie die folgenden Anforderungen und Details für das Admin Network Gate
 
 
 
+[[client-network]]
 == Client-Netzwerk
 
 Das Client-Netzwerk ist optional. Bei entsprechender Konfiguration wird er für den Zugriff auf Grid-Services für Client-Applikationen wie S3 verwendet. Wenn Sie StorageGRID Daten für eine externe Ressource zugänglich machen möchten (z. B. einen Cloud-Speicherpool oder den StorageGRID CloudMirror Replikationsservice), kann die externe Ressource auch das Client-Netzwerk nutzen. Grid-Knoten können mit jedem Subnetz kommunizieren, das über das Client-Netzwerk-Gateway erreichbar ist.
@@ -193,6 +200,7 @@ Beachten Sie Folgendes für das Client-Netzwerk-Gateway:
 
 
 
+[[optional-vlan-networks]]
 == Optionale VLAN-Netzwerke
 
 Bei Bedarf können Sie optional Virtual LAN-Netzwerke (VLAN) für den Client-Datenverkehr und für einige Arten von Admin-Traffic verwenden. Grid Traffic kann jedoch keine VLAN-Schnittstelle verwenden. Der interne StorageGRID-Datenverkehr zwischen den Nodes muss immer das Grid-Netzwerk auf eth0 verwenden.

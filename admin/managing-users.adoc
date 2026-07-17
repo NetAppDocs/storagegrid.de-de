@@ -20,6 +20,7 @@ Sie können lokale und föderierte Benutzer anzeigen. Sie können auch lokale Be
 
 
 
+[[create-a-local-user]]
 == Erstellen Sie einen lokalen Benutzer
 
 Sie können einen oder mehrere lokale Benutzer erstellen und jedem Benutzer einer oder mehreren lokalen Gruppen zuweisen. Die Berechtigungen der Gruppe steuern, auf welche Grid Manager- und Grid Management API-Funktionen der Benutzer zugreifen kann.
@@ -33,6 +34,7 @@ NOTE: Wenn Single Sign-On (SSO) aktiviert ist, können sich lokale Benutzer nich
 
 
 
+[[access-the-wizard]]
 === Greifen Sie auf den Assistenten zu
 
 .Schritte
@@ -42,6 +44,7 @@ NOTE: Wenn Single Sign-On (SSO) aktiviert ist, können sich lokale Benutzer nich
 
 
 
+[[enter-user-credentials]]
 === Geben Sie die Anmeldedaten des Benutzers ein
 
 .Schritte
@@ -52,6 +55,7 @@ NOTE: Wenn Single Sign-On (SSO) aktiviert ist, können sich lokale Benutzer nich
 
 
 
+[[assign-to-groups]]
 === Zu Gruppen zuweisen
 
 .Schritte
@@ -67,6 +71,7 @@ Wenn ein Benutzer zu mehreren Gruppen gehört, werden die Berechtigungen kumulat
 
 
 
+[[view-and-edit-local-users]]
 == Lokale Benutzer anzeigen und bearbeiten
 
 Details zu vorhandenen lokalen und föderierten Benutzern können angezeigt werden. Sie können einen lokalen Benutzer ändern, um den vollständigen Namen, das Kennwort oder die Gruppenmitgliedschaft des Benutzers zu ändern. Sie können auch vorübergehend verhindern, dass ein Benutzer auf den Grid Manager und die Grid Management API zugreift.
@@ -175,6 +180,7 @@ Gruppen ändern (nur lokale Benutzer)
 
 
 
+[[import-federated-users]]
 == Importieren von Verbundbenutzern
 
 Sie können einen oder mehrere Verbundbenutzer (bis zu maximal 100 Benutzer) direkt in die Seite „Benutzer“ importieren.
@@ -202,6 +208,7 @@ Nachdem Sie das Dialogfeld *Verbundbenutzer importieren* geschlossen haben, werd
 
 
 
+[[duplicate-a-user]]
 == Duplizieren eines Benutzers
 
 Sie können einen vorhandenen Benutzer duplizieren, um einen neuen Benutzer mit denselben Berechtigungen zu erstellen.
@@ -214,6 +221,7 @@ Sie können einen vorhandenen Benutzer duplizieren, um einen neuen Benutzer mit 
 
 
 
+[[delete-a-user]]
 == Löschen Sie einen Benutzer
 
 Sie können einen lokalen Benutzer löschen, um diesen Benutzer dauerhaft aus dem System zu entfernen.

@@ -34,6 +34,7 @@ Wenn Sie mit einem Domänennamen anstelle einer IP-Adresse auf den Grid Manager 
 ====
 
 
+[[add-a-custom-management-interface-certificate]]
 == Fügen Sie ein Zertifikat für eine benutzerdefinierte Managementoberfläche hinzu
 
 Zum Hinzufügen eines Zertifikats einer benutzerdefinierten Managementoberfläche können Sie Ihr eigenes Zertifikat bereitstellen oder mit dem Grid Manager ein Zertifikat erstellen.
@@ -161,6 +162,7 @@ NOTE: Nachdem Sie ein Zertifikat hochgeladen oder generiert haben, lassen Sie si
 
 
 
+[[restore-the-default-management-interface-certificate]]
 == Stellen Sie das Standardzertifikat für die Managementoberfläche wieder her
 
 Sie können das Standardzertifikat zur Managementoberfläche für Grid Manager- und Tenant-Manager-Verbindungen wiederherstellen.
@@ -177,6 +179,7 @@ Wenn Sie das Standardzertifikat der Verwaltungsschnittstelle wiederherstellen, w
 
 
 
+[[use-a-script-to-generate-a-new-self-signed-management-interface-certificate]]
 == Erstellen Sie mit einem Skript ein neues Zertifikat für die selbstsignierte Managementoberfläche
 
 Wenn eine strikte Host-Validierung erforderlich ist, können Sie das Zertifikat der Managementoberfläche mithilfe eines Skripts generieren.
@@ -238,6 +241,7 @@ Geben Sie DIE START- und DAS ENDE-Tags in Ihre Auswahl ein.
 
 
 
+[[download-or-copy-the-management-interface-certificate]]
 == Laden Sie das Zertifikat für die Managementoberfläche herunter oder kopieren Sie es
 
 Sie können den Inhalt des Zertifikats der Managementoberfläche speichern oder kopieren, um ihn an einer anderen Stelle zu verwenden.

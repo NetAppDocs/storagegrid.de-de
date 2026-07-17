@@ -35,6 +35,7 @@ Sie können eine beliebige Kombination der folgenden Optionen verwenden, um Auto
 
 
 
+[[specify-protocol-for-autosupport-packagesspecify-the-protocol-for-autosupport-packages]]
 == [[Specify-Protocol-for-AutoSupport-Packages]]Geben Sie das Protokoll für AutoSupport-Pakete an
 
 Sie können jedes der folgenden Protokolle zum Senden von AutoSupport-Paketen verwenden:
@@ -60,6 +61,7 @@ Das von Ihnen festgelegte Protokoll wird zum Senden aller Arten von AutoSupport-
 
 
 
+[[disable-weekly-autosupport]]
 == Wöchentliche AutoSupport deaktivieren
 
 Standardmäßig ist das StorageGRID-System so konfiguriert, dass einmal pro Woche ein AutoSupport-Paket an den technischen Support gesendet wird.
@@ -76,6 +78,7 @@ Sie können das automatische Senden von wöchentlichen AutoSupport-Paketen jeder
 
 
 
+[[disable-event-triggered-autosupport]]
 == Deaktivieren Sie ereignisgesteuerte AutoSupport
 
 Standardmäßig ist das StorageGRID System so konfiguriert, dass jede Stunde ein AutoSupport-Paket an den technischen Support gesendet wird.
@@ -90,6 +93,7 @@ Sie können ereignisgesteuerte AutoSupport jederzeit deaktivieren.
 
 
 
+[[enable-autosupport-on-demand]]
 == AutoSupport-on-Demand aktivieren
 
 AutoSupport On Demand kann Ihnen bei der Lösung von Problemen helfen, an denen der technische Support aktiv arbeitet.
@@ -111,6 +115,7 @@ AutoSupport-on-Demand ist aktiviert, und der technische Support kann AutoSupport
 
 
 
+[[disable-checks-for-software-updates]]
 == Deaktivieren Sie die Prüfung auf Softwareupdates
 
 Standardmäßig wendet sich StorageGRID an NetApp, um zu ermitteln, ob Software-Updates für Ihr System verfügbar sind. Wenn ein StorageGRID-Hotfix oder eine neue Version verfügbar ist, wird die neue Version auf der Seite StorageGRID-Aktualisierung angezeigt.
@@ -125,6 +130,7 @@ Bei Bedarf können Sie optional die Prüfung auf Softwareupdates deaktivieren. W
 
 
 
+[[add-an-additional-autosupport-destination]]
 == Fügen Sie ein weiteres AutoSupport Ziel hinzu
 
 Wenn Sie AutoSupport aktivieren, werden Health- und Statuspakete an den technischen Support gesendet. Sie können ein zusätzliches Ziel für alle AutoSupport-Pakete angeben.
@@ -177,6 +183,7 @@ Alle zukünftigen wöchentlichen, ereignisgetriggerten und vom Benutzer ausgelö
 
 
 
+[[autosupport-for-appliancesconfigure-autosupport-for-appliances]]
 == [[AutoSupport für Appliances]]Konfigurieren von AutoSupport für Appliances
 
 AutoSupport für Appliances meldet StorageGRID Hardwareprobleme und StorageGRID AutoSupport meldet StorageGRID Softwareprobleme. Mit einer Ausnahme meldet StorageGRID AutoSupport sowohl Hardware- als auch Softwareprobleme. Sie müssen AutoSupport auf jeder Appliance konfigurieren, mit Ausnahme der SGF6112, die keine zusätzliche Konfiguration erfordert. AutoSupport wird für Service-Appliances und Storage Appliances anders implementiert.

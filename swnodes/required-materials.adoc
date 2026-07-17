@@ -15,6 +15,7 @@ Sammeln und bereiten Sie vor der Installation von StorageGRID die erforderlichen
 
 
 
+[[required-information]]
 == Erforderliche Informationen
 
 Netzwerkplan:: Welche Netzwerke Sie mit jedem StorageGRID-Node verbinden möchten. StorageGRID unterstützt mehrere Netzwerke für Trennung des Datenverkehrs, Sicherheit und administrativen Komfort.
@@ -37,6 +38,7 @@ Verwandte Informationen:: https://imt.netapp.com/matrix/#welcome["NetApp Interop
 
 
 
+[[required-materials]]
 == Erforderliche Materialien
 
 NetApp StorageGRID Lizenz:: Sie benötigen eine gültige, digital signierte NetApp Lizenz.

@@ -20,6 +20,7 @@ Managen Sie die Mandantengruppen nach Bedarf, um eine Gruppe anzuzeigen, zu bear
 
 
 
+[[view-or-edit-group]]
 == Gruppe anzeigen oder bearbeiten
 
 Sie können die grundlegenden Informationen und Details für jede Gruppe anzeigen und bearbeiten.
@@ -104,6 +105,7 @@ Oben rechts wird eine Erfolgsmeldung angezeigt.
 
 
 
+[[duplicate-group]]
 == Gruppe duplizieren
 
 Sie können eine vorhandene Gruppe duplizieren, um neue Gruppen schneller zu erstellen.
@@ -121,6 +123,7 @@ NOTE: Wenn Ihr Mandantenkonto die Berechtigung *Grid Federation connection* verw
 
 
 
+[[clone-groupsretry-group-clone]]
 == [[Clone-groups]]Gruppenklone erneut versuchen
 
 So wiederholen Sie einen fehlgeschlagenen Klon:
@@ -134,6 +137,7 @@ Weitere Informationen finden Sie unter link:grid-federation-account-clone.html["
 
 
 
+[[delete-one-or-more-groups]]
 == Löschen Sie eine oder mehrere Gruppen
 
 Sie können eine oder mehrere Gruppen löschen. Alle Benutzer, die nur zu einer Gruppe gehören, die gelöscht wurde, können sich nicht mehr beim Tenant Manager anmelden oder das Mandantenkonto verwenden.
@@ -153,6 +157,7 @@ Ein Bestätigungsdialogfeld wird angezeigt.
 
 
 
+[[set-up-assumerole]]
 == Einrichten von AssumeRole
 
 .Bevor Sie beginnen
@@ -176,6 +181,7 @@ Temporäre Sicherheitsanmeldeinformationen, die aus der Annahme dieser Gruppe er
 
 
 
+[[example-of-an-assumerole-s3-trust-policy]]
 === Beispiel einer AssumeRole S3-Vertrauensrichtlinie
 
 [listing]

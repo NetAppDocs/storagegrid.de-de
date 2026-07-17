@@ -24,6 +24,7 @@ CAUTION: Bei der Konfiguration Ihrer StorageGRID -Bereitstellung für den Site-L
 
 
 
+[[replication-example]]
 == Beispiel für die Replikation
 
 Standardmäßig wird während der StorageGRID-Installation ein Speicherpool für jeden Standort erstellt. Wenn Speicherpools nur aus einem Standort bestehen, können Sie ILM-Regeln konfigurieren, die die Replikation für den Schutz vor Standortausfällen verwenden. In diesem Beispiel:
@@ -48,6 +49,7 @@ Wenn ein Standort verloren geht, sind Kopien der Objekte am anderen Standort ver
 
 
 
+[[erasure-coding-example]]
 == Beispiel für Erasure Coding
 
 Wenn Storage-Pools aus mehr als einem Standort pro Storage-Pool bestehen, können Sie ILM-Regeln konfigurieren, die Erasure Coding für Site-Loss-Schutz verwenden. In diesem Beispiel:

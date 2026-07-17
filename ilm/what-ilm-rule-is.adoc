@@ -20,6 +20,7 @@ NOTE: Objektmetadaten werden nicht durch ILM-Regeln gemanagt. Stattdessen werden
 
 
 
+[[elements-of-an-ilm-rule]]
 == Elemente einer ILM-Regel
 
 Eine ILM-Regel besteht aus drei Elementen:
@@ -31,6 +32,7 @@ Eine ILM-Regel besteht aus drei Elementen:
 
 
 
+[[ilm-rule-filtering]]
 == ILM-Regelfilterung
 
 Wenn Sie eine ILM-Regel erstellen, geben Sie Filter an, um zu identifizieren, für welche Objekte die Regel gilt.
@@ -60,6 +62,7 @@ Sie können Filter nach Bedarf in einer einzigen Regel kombinieren. Beispielswei
 
 
 
+[[ilm-rule-placement-instructions]]
 == Anweisungen zur Platzierung von ILM-Regeln
 
 Eine Anleitung zur Platzierung bestimmt, wo, wann und wie Objektdaten gespeichert werden. Eine ILM-Regel kann eine oder mehrere Anweisungen zur Platzierung enthalten. Jede Einstufungsanweisung gilt für einen einzelnen Zeitraum.
@@ -95,6 +98,7 @@ Da jeder Zeitraum in der Regel abläuft, werden die Anweisungen zur Inhaltsplatz
 
 
 
+[[ilm-rule-ingest-behavior]]
 == ILM-Regel Aufnahme-Verhalten
 
 Das Aufnahmeverhalten steuert, ob Objektkopien sofort nach den Anweisungen in der Regel platziert werden oder ob zwischenzeitliche Kopien erstellt und die Speicheranweisungen später angewendet werden. Die folgenden Aufnahmeverhalten stehen für ILM-Regeln zur Verfügung:
@@ -112,6 +116,7 @@ Das Aufnahmeverhalten steuert, ob Objektkopien sofort nach den Anweisungen in de
 
 
 
+[[example-ilm-rule]]
 == Beispiel für eine ILM-Regel
 
 Eine ILM-Regel könnte beispielsweise Folgendes angeben:

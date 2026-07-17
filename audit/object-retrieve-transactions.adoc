@@ -17,6 +17,7 @@ In der folgenden Tabelle sind nicht alle Pr체fmeldungen aufgef체hrt, die w채hren
 
 
 
+[[s3-retrieval-audit-messages]]
 == S3-Abruf von Audit-Meldungen
 
 [cols="1a,1a,2a,1a,1a"]
@@ -38,6 +39,7 @@ link:sget-s3-get.html["SGET S3 ABRUFEN"]
 |===
 
 
+[[example-s3-object-retrieval]]
 == Beispiel: S3-Objektabruf
 
 Wenn ein S3-Client ein Objekt von einem Storage-Node (LDR-Service) abruft, wird eine Audit-Meldung erzeugt und im Revisionsprotokoll gespeichert.
@@ -46,6 +48,7 @@ Beachten Sie, dass nicht alle w채hrend einer Transaktion generierten Audit-Meldu
 
 
 
+[[sget-s3-get]]
 === SGET S3 ABRUFEN
 
 Der Objektabruf beginnt, wenn der Client eine GetObject-Anforderung an einen LDR-Dienst sendet. Die Meldung enth채lt den Bucket, aus dem das Objekt abgerufen werden soll, und den S3-Schl체ssel des Objekts, der zur Identifizierung des Objekts verwendet wird.
@@ -64,6 +67,7 @@ In der folgenden Beispielmeldung sendet der Client eine GetObject-Anforderung f�
 ----
 
 
+[[example-s3-select-on-an-object]]
 == Beispiel: S3 Select auf einem Objekt
 
 Wenn ein S3-Client eine S3-Select-Abfrage f체r ein Objekt ausgibt, werden Audit-Meldungen erzeugt und im Revisionsprotokoll gespeichert.

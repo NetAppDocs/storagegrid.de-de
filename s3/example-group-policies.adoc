@@ -17,6 +17,7 @@ Gruppenrichtlinien legen die Zugriffsberechtigungen für die Gruppe fest, der di
 
 
 
+[[example-set-group-policy-using-tenant-manager]]
 == Beispiel: Legen Sie eine Gruppenrichtlinie mit Tenant Manager fest
 
 Wenn Sie eine Gruppe im Tenant Manager hinzufügen oder bearbeiten, können Sie eine Gruppenrichtlinie auswählen, um festzulegen, über welche S3-Zugriffsberechtigungen die Mitglieder dieser Gruppe verfügen. Siehe link:../tenant/creating-groups-for-s3-tenant.html["Erstellen von Gruppen für einen S3-Mandanten"].
@@ -33,6 +34,7 @@ Mandanten-Manager-Benutzer mit der Berechtigung zum Verwalten aller Buckets kön
 
 
 
+[[example-allow-group-full-access-to-all-buckets]]
 == Beispiel: Vollständigen Zugriff auf alle Buckets zulassen
 
 In diesem Beispiel sind alle Mitglieder der Gruppe berechtigt, vollständigen Zugriff auf alle Buckets des Mandantenkontos zu erhalten, sofern nicht ausdrücklich von der Bucket-Richtlinie abgelehnt wurde.
@@ -51,6 +53,7 @@ In diesem Beispiel sind alle Mitglieder der Gruppe berechtigt, vollständigen Zu
 ----
 
 
+[[example-allow-group-read-only-access-to-all-buckets]]
 == Beispiel: Schreibgeschützter Zugriff auf alle Buckets für Gruppen zulassen
 
 In diesem Beispiel haben alle Mitglieder der Gruppe schreibgeschützten Zugriff auf S3-Ressourcen, sofern nicht ausdrücklich von der Bucket-Richtlinie abgelehnt wird. Benutzer in dieser Gruppe können beispielsweise Objekte auflisten und Objektdaten, Metadaten und Tags lesen.
@@ -78,6 +81,7 @@ In diesem Beispiel haben alle Mitglieder der Gruppe schreibgeschützten Zugriff 
 ----
 
 
+[[example-allow-group-members-full-access-to-only-their-folder-in-a-bucket]]
 == Beispiel: Gruppenmitgliedern vollen Zugriff nur auf ihren "Ordner" in einem Bucket erlauben
 
 In diesem Beispiel dürfen Mitglieder der Gruppe nur ihren spezifischen Ordner (Schlüsselpräfix) im angegebenen Bucket auflisten und darauf zugreifen. Beachten Sie, dass bei der Festlegung der Privatsphäre dieser Ordner Zugriffsberechtigungen aus anderen Gruppenrichtlinien und der Bucket-Richtlinie berücksichtigt werden sollten.

@@ -19,12 +19,14 @@ Details zur Syntax von Prometheus-Abfragen finden Sie unter https://prometheus.i
 
 
 
+[[what-are-prometheus-metrics]]
 == Was sind Prometheus-Kennzahlen?
 
 Prometheus Kennzahlen sind Zeitreihenmessungen. Der Prometheus-Service auf Admin-Nodes erfasst diese Kennzahlen von den Services auf allen Knoten. Metriken werden auf jedem Admin-Node gespeichert, bis der für Prometheus-Daten reservierte Speicherplatz voll ist. Wenn das `/var/local/mysql_ibdata/` Volume die Kapazität erreicht, werden zuerst die ältesten Metriken gelöscht.
 
 
 
+[[where-are-prometheus-metrics-used]]
 == Wo werden Prometheus-Kennzahlen verwendet?
 
 Die von Prometheus gesammelten Kennzahlen werden an mehreren Stellen im Grid Manager verwendet:
@@ -48,6 +50,7 @@ NOTE: Einige Funktionen und Menüelemente auf der Seite Metriken sind absichtlic
 
 
 
+[[list-of-most-common-metrics]]
 == Liste der häufigsten Kennzahlen
 
 Die folgende Liste enthält die am häufigsten verwendeten Prometheus Kennzahlen.
@@ -142,6 +145,7 @@ storagegrid_Tenant_Usage_quota_bytes:: Die maximale Menge an logischem Speicherp
 
 
 
+[[get-a-list-of-all-metrics]]
 == Eine Liste aller Kennzahlen abrufen
 
 [[Alle Metriken abrufen]]um die vollständige Liste der Metriken zu erhalten, verwenden Sie die Grid Management API.

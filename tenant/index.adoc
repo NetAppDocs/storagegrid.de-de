@@ -15,6 +15,7 @@ Ein Mandantenkonto ermöglicht Ihnen die Verwendung der S3-REST-API (Simple Stor
 
 
 
+[[what-is-a-tenant-account]]
 == Was ist ein Mandantenkonto?
 
 Jedes Mandantenkonto verfügt über eigene föderierte oder lokale Gruppen, Benutzer, S3 Buckets und Objekte.
@@ -31,6 +32,7 @@ NOTE: Wenn Sie das S3-Clientprotokoll verwenden, können Sie auch S3-Buckets und
 
 
 
+[[how-to-create-a-tenant-account]]
 == Erstellen eines Mandantenkontos
 
 Mandantenkonten werden von einem erstelltlink:../admin/managing-tenants.html["StorageGRID Grid-Administrator, der den Grid Manager verwendet"]. Beim Erstellen eines Mandantenkontos gibt der Grid-Administrator Folgendes an:
@@ -44,6 +46,7 @@ Grid-Administratoren können zudem die S3-Objektsperreneinstellung für das Stor
 
 
 
+[[configure-s3-tenants]]
 === S3-Mandanten konfigurieren
 
 Nach einem link:../admin/creating-tenant-account.html["S3-Mandantenkonto wird erstellt"]können Sie auf den Tenant Manager zugreifen, um Aufgaben wie die folgenden durchzuführen:

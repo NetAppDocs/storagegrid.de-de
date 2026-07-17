@@ -23,6 +23,7 @@ CAUTION: NetApp empfiehlt dringend, dass Sie vor dem Upgrade auf die nächste Ve
 
 
 
+[[verify-installed-version]]
 == Überprüfen der installierten Version
 
 .Schritte
@@ -37,6 +38,7 @@ Siehe das folgende Upgrade-Beispiel.
 
 
 
+[[example-upgrade-pathexample-upgrade-to-storagegrid-12-0-from-version-11-8]]
 == [[example-upgrade-path]]Beispiel: Upgrade auf StorageGRID 12.0 von Version 11.8
 
 Das folgende Beispiel zeigt die Schritte zum Upgrade von StorageGRID Version 11.8 auf Version 11.9 als Vorbereitung für ein StorageGRID 12.0-Upgrade.

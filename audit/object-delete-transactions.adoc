@@ -17,6 +17,7 @@ In den folgenden Tabellen sind nicht alle während einer Löschtransaktion gener
 
 
 
+[[s3-delete-audit-messages]]
 == S3-Audit-Nachrichten löschen
 
 [cols="1a,1a,2a,1a,2a"]
@@ -38,6 +39,7 @@ link:sdel-s3-delete.html["SDEL: S3 LÖSCHEN"]
 |===
 
 
+[[example-s3-object-deletion]]
 == Beispiel: S3-Objektlöschung
 
 Wenn ein S3-Client ein Objekt aus einem Storage-Node (LDR-Service) löscht, wird eine Überwachungsmeldung generiert und im Revisionsprotokoll gespeichert.
@@ -47,6 +49,7 @@ NOTE: Im folgenden Beispiel sind nicht alle während einer Löschtransaktion gen
 
 
 
+[[sdel-s3-delete]]
 === SDEL: S3 Löschen
 
 Das Löschen von Objekten beginnt, wenn der Client eine DeleteObject-Anforderung an einen LDR-Dienst sendet. Die Meldung enthält den Bucket, aus dem das Objekt gelöscht werden soll, und den S3-Schlüssel des Objekts, der zur Identifizierung des Objekts verwendet wird.

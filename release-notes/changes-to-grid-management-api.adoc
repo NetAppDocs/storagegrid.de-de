@@ -20,6 +20,7 @@ Weitere Informationen finden Sie unter link:../admin/using-grid-management-api.h
 
 
 
+[[new-endpoints-for-branch-buckets]]
 == Neue Endpunkte für Branch-Buckets
 
 Die folgenden Endpunkte wurden hinzugefügt, um Ihnen zu ermöglichen,link:../tenant/what-is-branch-bucket.html["Branch-Buckets verwalten"] :
@@ -30,6 +31,7 @@ Die folgenden Endpunkte wurden hinzugefügt, um Ihnen zu ermöglichen,link:../te
 
 
 
+[[new-private-endpoints-for-move-adc]]
 == Neue private Endpunkte für Move ADC
 
 Die folgenden privaten Endpunkte wurden hinzugefügt, damit Sielink:../maintain/move-adc-service.html["Verschieben Sie den ADC-Dienst"] von einem Speicherknoten zu einem anderen am selben Standort:
@@ -42,6 +44,7 @@ Die folgenden privaten Endpunkte wurden hinzugefügt, damit Sielink:../maintain/
 
 
 
+[[new-private-endpoints-for-convert-to-data-only-node]]
 == Neue private Endpunkte für die Konvertierung in einen Nur-Daten-Knoten
 
 Die folgenden privaten Endpunkte wurden hinzugefügt, damit Sielink:../maintain/convert-to-data-only-node.html["Konvertieren Sie einen oder mehrere kombinierte Speicherknoten"] die den ADC-Dienst nicht enthalten, in reine Datenknoten.

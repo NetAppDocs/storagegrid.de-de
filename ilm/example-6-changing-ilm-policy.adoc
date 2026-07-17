@@ -22,6 +22,7 @@ CAUTION: Die folgenden ILM-Regeln und -Richtlinien sind nur Beispiele. Es gibt v
 
 
 
+[[how-changing-an-ilm-policy-affects-performance]]
 == Wie sich eine Änderung einer ILM-Richtlinie auf die Performance auswirkt
 
 Wenn Sie eine neue ILM-Richtlinie aktivieren, wird die Performance Ihres StorageGRID Systems möglicherweise vorübergehend beeinträchtigt, insbesondere dann, wenn aufgrund der Platzierungsanweisungen in der neuen Richtlinie viele vorhandene Objekte an einen neuen Standort verschoben werden müssen.
@@ -43,6 +44,7 @@ NOTE: StorageGRID erachtet jedes Erasure Coding-Profil als einzigartig und verwe
 
 
 
+[[active-ilm-policy-for-example-6-data-protection-at-two-sites]]
 == Aktive ILM-Richtlinie z. B. 6: Datensicherung an zwei Standorten
 
 In diesem Beispiel wurde die aktive ILM-Richtlinie ursprünglich für ein StorageGRID System mit zwei Standorten konzipiert und verwendet zwei ILM-Regeln.
@@ -53,6 +55,7 @@ In dieser ILM-Richtlinie werden Objekte, die von Mandanten A gehören, durch Era
 
 
 
+[[rule-1-one-site-erasure-coding-for-tenant-a]]
 === Regel 1: Erasure Coding für einen Standort für Mandant A
 
 [cols="1a,2a"]
@@ -89,6 +92,7 @@ Platzierungen
 |===
 
 
+[[rule-2-two-site-replication-for-other-tenants]]
 === Regel 2: Replizierung zwischen zwei Standorten für andere Mandanten
 
 [cols="1a,2a"]
@@ -125,6 +129,7 @@ Zwei replizierte Kopien von Tag 0 auf ewig: Eine Kopie an Standort 1 und eine Ko
 |===
 
 
+[[ilm-policy-for-example-6-data-protection-at-three-sites]]
 == ILM-Richtlinie für Beispiel 6: Datensicherung an drei Standorten
 
 In diesem Beispiel wird die ILM-Richtlinie durch eine neue Richtlinie für ein StorageGRID System mit drei Standorten ersetzt.
@@ -135,6 +140,7 @@ Bei Aktivierung dieser neuen ILM-Richtlinie werden Objekte, die von Mandant A ge
 
 
 
+[[rule-1-three-site-erasure-coding-for-tenant-a]]
 === Regel 1: Erasure Coding für drei Standorte für Mandant A
 
 [cols="1a,2a"]
@@ -171,6 +177,7 @@ Platzierungen
 |===
 
 
+[[rule-2-three-site-replication-for-other-tenants]]
 === Regel 2: Replizierung an drei Standorten für andere Mandanten
 
 [cols="1a,2a"]
@@ -207,6 +214,7 @@ Drei replizierte Kopien von Tag 0 bis ewig: Eine Kopie an Standort 1, eine Kopie
 |===
 
 
+[[activating-the-ilm-policy-for-example-6]]
 == Aktivieren der ILM-Richtlinie, z. B. 6
 
 Wenn Sie eine neue ILM-Richtlinie aktivieren, werden vorhandene Objekte auf Basis der Anweisungen zur Platzierung in neuen oder aktualisierten Regeln möglicherweise an neue Standorte verschoben oder neue Objektkopien für vorhandene Objekte erstellt.
@@ -219,6 +227,7 @@ CAUTION: Bei der Aktivierung einer neuen ILM-Richtlinie verwendet StorageGRID si
 
 
 
+[[what-happens-when-erasure-coding-instructions-change]]
 === Was passiert, wenn sich die Anweisungen zur Einhaltung von Datenkonsistenz ändern
 
 In der derzeit aktiven ILM-Richtlinie für dieses Beispiel sind Objekte, die zu Mandant A gehören, durch den Erasure Coding 2+1 an Standort 1 geschützt. In der neuen ILM-Richtlinie werden Objekte von Mandant A durch Erasure Coding 2+1 an Standorten 1, 2 und 3 geschützt.
@@ -235,6 +244,7 @@ NOTE: Die vorhandenen 2+1-Fragmente an Standort 1 werden nicht wiederverwendet. 
 
 
 
+[[what-happens-when-replication-instructions-change]]
 === Was geschieht, wenn sich Replikationsanweisungen ändern
 
 In der derzeit aktiven ILM-Richtlinie für dieses Beispiel werden Objekte anderer Mandanten mithilfe von zwei replizierten Kopien in Storage Pools an Standorten 1 und 2 geschützt. In der neuen ILM-Richtlinie werden Objekte anderer Mandanten mit drei replizierten Kopien in Storage Pools an Standorten 1, 2 und 3 gesichert.
@@ -247,6 +257,7 @@ Wenn die neue ILM-Richtlinie aktiviert ist, werden die folgenden ILM-Vorgänge d
 
 
 
+[[performance-impact-of-activating-this-policy]]
 === Auswirkungen der Aktivierung dieser Richtlinie auf die Performance
 
 Wenn die ILM-Richtlinie in diesem Beispiel aktiviert ist, wirkt sich dies vorübergehend auf die Gesamtleistung dieses StorageGRID-Systems aus. Wenn die Grid-Ressourcen höher als die normalen Level sind, werden neue Fragmente, die nach der Fehlerkorrektur codiert wurden, für vorhandene Objekte von Mandant A und neue replizierte Kopien an Standort 3 für vorhandene Objekte anderer Mandanten erstellt.

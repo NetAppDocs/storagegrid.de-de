@@ -207,6 +207,7 @@ Nachdem Sie Änderungen angewendet oder bereitgestellt haben, wird aufgrund der 
 
 
 
+[[temporarily-changing-the-lacp-pdu-rate]]
 == Vorübergehende Änderung der LACP-PDU-Rate
 
 Um Wartungsvorgänge an den in Ihrem Gerät installierten Netzwerkkomponenten durchzuführen, z. B. die Aktualisierung der NIC-Firmware, können Sie überprüfen, ob die aktuelle Einstellung der LACP-PDU-Rate den Timing-Anforderungen für die NIC-Kommunikation entspricht.  Sie können die LACP-PDU-Rate bei Bedarf nicht dauerhaft zwischen schnell (1 Sekunde Wartezeit) und langsam (30 Sekunden Wartezeit) umschalten.

@@ -17,6 +17,7 @@ Es gibt zwei Verifizierungsverfahren: Hintergrundüberprüfung und Objektexisten
 
 
 
+[[what-is-background-verification]]
 == Was ist Hintergrundüberprüfung?
 
 Die Hintergrundüberprüfung überprüft Storage Nodes automatisch und kontinuierlich auf beschädigte Kopien von Objektdaten und versucht automatisch, alle gefundenen Probleme zu beheben.
@@ -39,6 +40,7 @@ Die Hintergrundüberprüfung läuft mit einer kontinuierlichen Geschwindigkeit, 
 
 
 
+[[alerts-related-to-background-verification]]
 == Warnmeldungen zur Hintergrundüberprüfung
 
 Wenn das System ein beschädigtes Objekt erkennt, das nicht automatisch korrigiert werden kann (weil die Beschädigung verhindert, dass das Objekt identifiziert wird), wird die Warnmeldung *Unidentified Corrupt Object Detected* ausgelöst.
@@ -47,6 +49,7 @@ Wenn die Hintergrundüberprüfung ein beschädigtes Objekt nicht ersetzen kann, 
 
 
 
+[[what-is-object-existence-check]]
 == Was ist Objektexistenz-Prüfung?
 
 Die ObjektExistenz überprüft, ob alle erwarteten replizierten Kopien von Objekten und mit Erasure Coding verschlüsselten Fragmenten auf einem Storage Node vorhanden sind. Die Objektüberprüfung überprüft nicht die Objektdaten selbst (Hintergrundüberprüfung führt das durch); stattdessen bietet sie eine Möglichkeit, die Integrität von Speichergeräten zu überprüfen, insbesondere wenn ein kürzlich auftretende Hardwareproblem die Datenintegrität beeinträchtigen könnte.
@@ -61,6 +64,7 @@ Die Objektexistenz prüft die Metadaten für jedes in StorageGRID gespeicherte O
 
 
 
+[[run-object-existence-check]]
 == Überprüfung der ObjektExistenz ausführen
 
 Sie erstellen und führen jeweils einen Job für die Überprüfung der Objektexistenz aus. Wenn Sie einen Job erstellen, wählen Sie die Speicherknoten und -Volumes aus, die Sie überprüfen möchten. Sie wählen auch die Konsistenz für den Job aus.

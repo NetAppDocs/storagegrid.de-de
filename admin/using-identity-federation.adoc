@@ -15,6 +15,7 @@ Durch die Verwendung von Identity Federation lassen sich Gruppen und Benutzer sc
 
 
 
+[[configure-identity-federation-for-grid-manager]]
 == Konfigurieren Sie die Identitätsföderation für Grid Manager
 
 Sie können die Identitätsföderation im Grid Manager konfigurieren, wenn Sie möchten, dass Administratorgruppen und Benutzer in einem anderen System wie Active Directory, Microsoft Entra ID, OpenLDAP oder Oracle Directory Server verwaltet werden.
@@ -41,6 +42,7 @@ Sie können eine Identitätsquelle für den Grid Manager konfigurieren, wenn Sie
 
 
 
+[[enter-the-configuration]]
 === Geben Sie die Konfiguration ein
 
 .Schritte
@@ -142,6 +144,7 @@ Wenn Sie diese Einstellung auswählen, kopieren Sie das benutzerdefinierte Siche
 
 
 
+[[test-the-connection-and-save-the-configuration]]
 === Testen Sie die Verbindung und speichern Sie die Konfiguration
 
 Nachdem Sie alle Werte eingegeben haben, müssen Sie die Verbindung testen, bevor Sie die Konfiguration speichern können. StorageGRID überprüft die Verbindungseinstellungen für den LDAP-Server und das BIND-Username-Format, wenn Sie es angegeben haben.
@@ -170,6 +173,7 @@ image:identity_federation_test_connection.png["Identity Federation fordert zur V
 
 
 
+[[force-synchronization-with-the-identity-source]]
 == Synchronisierung mit der Identitätsquelle erzwingen
 
 Das StorageGRID-System synchronisiert regelmäßig föderierte Gruppen und Benutzer von der Identitätsquelle aus. Sie können die Synchronisierung erzwingen, wenn Sie Benutzerberechtigungen so schnell wie möglich aktivieren oder einschränken möchten.
@@ -188,6 +192,7 @@ NOTE: Die Warnmeldung * Identity Federation Failure* wird ausgelöst, wenn es ei
 
 
 
+[[disable-identity-federation]]
 == Deaktivieren Sie den Identitätsverbund
 
 Sie können die Identitätsföderation für Gruppen und Benutzer vorübergehend oder dauerhaft deaktivieren.  Wenn die Identitätsföderation deaktiviert ist, findet keine Kommunikation zwischen StorageGRID und der Identitätsquelle statt.  Alle von Ihnen konfigurierten Einstellungen bleiben jedoch erhalten, sodass Sie die Identitätsföderation in Zukunft problemlos wieder aktivieren können.
@@ -208,6 +213,7 @@ Bevor Sie die Identitätsföderation deaktivieren, sollten Sie Folgendes beachte
 
 
 
+[[guidelines-for-configuring-an-openldap-server]]
 == Richtlinien für die Konfiguration eines OpenLDAP-Servers
 
 Wenn Sie einen OpenLDAP-Server für die Identitätsföderation verwenden möchten, müssen Sie bestimmte Einstellungen auf dem OpenLDAP-Server konfigurieren.
@@ -217,12 +223,14 @@ CAUTION: Bei Identitätsquellen, bei denen es sich nicht um Active Directory ode
 
 
 
+[[memberof-and-refint-overlays]]
 === Überlagerungen in Memberof und Refint
 
 Die Überlagerungen Memberof und Refint sollten aktiviert sein. Weitere Informationen finden Sie in den Anweisungen zur Pflege der umgekehrten Gruppenmitgliedschaft im http://www.openldap.org/doc/admin24/index.html["OpenLDAP-Dokumentation: Version 2.4 Administratorhandbuch"^].
 
 
 
+[[indexing]]
 === Indizierung
 
 Sie müssen die folgenden OpenLDAP-Attribute mit den angegebenen Stichwörtern für den Index konfigurieren:

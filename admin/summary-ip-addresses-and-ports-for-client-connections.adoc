@@ -71,6 +71,7 @@ S3-Standard-Ports:
 |===
 
 
+[[example-urls]]
 == Beispiel-URLs
 
 Um eine Client-Applikation mit dem Endpunkt Load Balancer einer HA-Gruppe von Gateway Nodes zu verbinden, verwenden Sie eine wie unten gezeigt strukturierte URL:
@@ -83,6 +84,7 @@ Wenn beispielsweise die virtuelle IP-Adresse der HA-Gruppe 192.0.2.5 lautet und 
 
 
 
+[[where-to-find-ip-addresses]]
 == Wo finden Sie IP-Adressen
 
 . Melden Sie sich mit einem beim Grid-Manager anlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].

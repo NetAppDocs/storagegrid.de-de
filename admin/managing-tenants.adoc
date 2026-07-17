@@ -34,6 +34,7 @@ Weitere Informationen finden Sie unter link:../tenant/index.html["Verwenden Sie 
 
 
 
+[[how-do-i-create-a-tenant-account]]
 == Wie erstelle ich ein Mandantenkonto?
 
 Verwenden Sie den Grid-Manager, um ein Mandantenkonto zu erstellen. Wenn Sie ein Mandantenkonto erstellen, geben Sie die folgenden Informationen an:
@@ -47,6 +48,7 @@ Darüber hinaus können Sie die S3-Objektsperrung für das StorageGRID-System ak
 
 
 
+[[what-is-tenant-manager-used-for]]
 == Wofür wird Tenant Manager verwendet?
 
 Nachdem Sie das Mandantenkonto erstellt haben, können sich Mandantenbenutzer beim Tenant Manager anmelden, um Aufgaben wie die folgenden auszuführen:

@@ -22,6 +22,7 @@ Sie können die Performance-Vorteile für die folgenden Arten von HTTP-Verbindun
 
 
 
+[[benefits-of-keeping-idle-http-connections-open]]
 == Vorteile, wenn inaktive HTTP-Verbindungen offen gehalten werden
 
 Halten Sie HTTP-Verbindungen offen, wenn Clientanwendungen inaktiv sind, um spätere Transaktionen zu ermöglichen.  Halten Sie eine inaktive HTTP-Verbindung maximal 10 Minuten lang offen.  StorageGRID schließt möglicherweise automatisch eine HTTP-Verbindung, die länger als 10 Minuten geöffnet und inaktiv ist.
@@ -40,6 +41,7 @@ Entscheiden Sie, wie lange eine inaktive Verbindung offen gehalten werden soll, 
 
 
 
+[[benefits-of-active-http-connections]]
 == Vorteile von aktiven HTTP-Verbindungen
 
 Bei Verbindungen direkt zu Storage Nodes sollten Sie die Dauer einer aktiven HTTP-Verbindung auf maximal 10 Minuten begrenzen, selbst wenn die HTTP-Verbindung kontinuierlich Transaktionen durchführt.
@@ -63,6 +65,7 @@ Bei Client-Verbindungen zum Load Balancer-Service kann eine Begrenzung der Dauer
 
 
 
+[[benefits-of-concurrent-http-connections]]
 == Vorteile gleichzeitiger HTTP-Verbindungen
 
 Sie sollten mehrere TCP/IP-Verbindungen zum StorageGRID-System offen halten, um Parallelität zu ermöglichen, was die Performance steigert. Die optimale Anzahl paralleler Verbindungen hängt von einer Vielzahl von Faktoren ab.
@@ -92,6 +95,7 @@ StorageGRID -Systeme unterstützen häufig mehrere Clientanwendungen.  Berücksi
 
 
 
+[[separation-of-http-connection-pools-for-read-and-write-operations]]
 == Trennung von HTTP-Verbindungspools für Lese- und Schreibvorgänge
 
 Es können separate Pools von HTTP-Verbindungen für Lese- und Schreibvorgänge genutzt werden, inklusive Kontrolle darüber, wie viele aus einem Pool jeweils verwendet werden. Separate Pools von HTTP-Verbindungen ermöglichen eine bessere Kontrolle von Transaktionen und einen besseren Lastausgleich.

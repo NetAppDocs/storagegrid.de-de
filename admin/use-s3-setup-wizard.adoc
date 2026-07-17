@@ -15,6 +15,7 @@ Sie können mit dem S3-Einrichtungsassistenten StorageGRID als Objekt-Storage-Sy
 
 
 
+[[when-to-use-the-s3-setup-wizard]]
 == Wann der S3-Einrichtungsassistent verwendet werden soll
 
 Der S3-Einrichtungsassistent führt Sie durch jeden Schritt bei der Konfiguration von StorageGRID für die Verwendung mit einer S3-Applikation. Im Rahmen der Ausführung des Assistenten laden Sie Dateien herunter, mit denen Sie Werte in die S3-Anwendung eingeben können. Mit dem Assistenten konfigurieren Sie Ihr System schneller und stellen sicher, dass Ihre Einstellungen den StorageGRID Best Practices entsprechen.
@@ -23,6 +24,7 @@ Wenn Sie über den verfügenlink:admin-group-permissions.html["Root-Zugriffsbere
 
 
 
+[[before-using-the-wizard]]
 == Bevor Sie den Assistenten verwenden
 
 Vergewissern Sie sich vor der Verwendung des Assistenten, dass Sie diese Voraussetzungen erfüllt haben.

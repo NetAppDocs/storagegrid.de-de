@@ -15,12 +15,14 @@ Rechtliche Hinweise ermöglichen den Zugriff auf Copyright-Erklärungen, Marken,
 
 
 
+[[copyright]]
 == Urheberrecht
 
 link:https://www.netapp.com/company/legal/copyright/["https://www.netapp.com/company/legal/copyright/"^]
 
 
 
+[[trademarks]]
 == Marken
 
 NetApp, das NETAPP Logo und die auf der NetApp Markenseite aufgeführten Marken sind Marken von NetApp Inc. Andere Firmen- und Produktnamen können Marken der jeweiligen Eigentümer sein.
@@ -29,6 +31,7 @@ link:https://www.netapp.com/company/legal/trademarks/["https://www.netapp.com/co
 
 
 
+[[patents]]
 == Patente
 
 Eine aktuelle Liste der NetApp Patente finden Sie unter:
@@ -37,18 +40,21 @@ link:https://www.netapp.com/pdf.html?item=/media/11887-patentspage.pdf["https://
 
 
 
+[[privacy-policy]]
 == Datenschutzrichtlinie
 
 link:https://www.netapp.com/company/legal/privacy-policy/["https://www.netapp.com/company/legal/privacy-policy/"^]
 
 
 
+[[api-license]]
 == API-Lizenz
 
 Diese Dokumentation gewährt keine Lizenz oder sonstige Rechte an der StorageGRID S3 REST API. Jegliche Nutzung oder jeglicher Zugriff auf die StorageGRID S3 REST API erfordert eine separate Lizenzvereinbarung mit NetApp und unterliegt dieser.
 
 
 
+[[open-source]]
 == Open Source
 
 In den Benachrichtigungsdateien finden Sie Informationen zu Urheberrechten und Lizenzen von Drittanbietern, die in der NetApp Software verwendet werden.

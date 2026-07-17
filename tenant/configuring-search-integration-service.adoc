@@ -184,6 +184,7 @@ Bei Bedarf können Sie die Suchintegration für einen Bucket mithilfe einer der 
 
 
 
+[[example-notification-configexample-metadata-notification-configuration-that-applies-to-all-objects]]
 == [[example-notification-config]]Beispiel: Konfiguration der Metadatenbenachrichtigung, die für alle Objekte gilt
 
 In diesem Beispiel werden die Objektmetadaten für alle Objekte an dasselbe Ziel gesendet.
@@ -203,6 +204,7 @@ In diesem Beispiel werden die Objektmetadaten für alle Objekte an dasselbe Ziel
 ----
 
 
+[[example-metadata-notification-configuration-with-two-rules]]
 == Beispiel: Konfiguration der Metadatenbenachrichtigung mit zwei Regeln
 
 In diesem Beispiel werden Objektmetadaten für Objekte mit dem Präfix `/images` an ein Ziel gesendet, während Objektmetadaten für Objekte mit dem Präfix `/videos` an ein zweites Ziel gesendet werden.
@@ -231,6 +233,7 @@ In diesem Beispiel werden Objektmetadaten für Objekte mit dem Präfix `/images`
 ----
 
 
+[[metadata-notification-format]]
 == Benachrichtigungsformat für Metadaten
 
 Wenn Sie den Such-Integrationsservice für einen Bucket aktivieren, wird ein JSON-Dokument generiert und an den Zielendpunkt gesendet, wenn Metadaten oder Tags hinzugefügt, aktualisiert oder gelöscht werden.
@@ -257,6 +260,7 @@ Dieses Beispiel zeigt ein Beispiel für den JSON, der generiert werden könnte, 
 ----
 
 
+[[fields-included-in-the-json-document]]
 === Im JSON-Dokument enthaltene Felder
 
 Der Dokumentname umfasst, falls vorhanden, den Bucket-Namen, den Objektnamen und die Version-ID.
@@ -301,6 +305,7 @@ Tags::
 
 
 
+[[how-to-view-results-in-elasticsearch]]
 === So zeigen Sie Ergebnisse in Elasticsearch an
 
 Für Tags und Benutzer-Metadaten gibt StorageGRID Daten und Nummern an Elasticsearch als Strings oder als S3-Ereignisbenachrichtigungen weiter. Um Elasticsearch so zu konfigurieren, dass diese Strings als Daten oder Zahlen interpretiert werden, befolgen Sie die Elasticsearch-Anweisungen für die dynamische Feldzuordnung und die Zuordnung von Datumsformaten. Aktivieren Sie die dynamischen Feldzuordnungen auf dem Index, bevor Sie den Suchintegrationsdienst konfigurieren. Nachdem ein Dokument indiziert wurde, können Sie die Feldtypen des Dokuments im Index nicht mehr bearbeiten.

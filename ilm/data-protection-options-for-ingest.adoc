@@ -17,6 +17,7 @@ Je nach Ihrer Wahl erstellt StorageGRID später vorläufige Kopien und Warteschl
 
 
 
+[[flowchart-of-ingest-options]]
 == Flussdiagramm der Aufnahmeoptionen
 
 Das Flussdiagramm zeigt, was passiert, wenn Objekte mit einer ILM-Regel abgeglichen werden, die jede der drei Aufnahmeoptionen nutzt.
@@ -25,6 +26,7 @@ image:ingest_object_lifecycle.png["Diagramm, das die Objektaufnahme für die ein
 
 
 
+[[dual-commit]]
 == Doppelte Provisionierung
 
 Wenn Sie die Option „Dual Commit“ auswählen, erstellt StorageGRID sofort Zwischenobjektkopien auf zwei verschiedenen Speicherknoten und gibt eine Meldung „Ingest successful“ an den Client zurück. Das Objekt wird zur ILM-Evaluierung in eine Warteschlange gestellt und Kopien, die den Anweisungen zur Platzierung der Regel entsprechen, werden später erstellt. Wenn die ILM-Richtlinie nicht unmittelbar nach der doppelten Übertragung verarbeitet werden kann, kann der Schutz vor Standortausfällen eine Weile dauern.
@@ -42,6 +44,7 @@ Verwenden Sie in einem der folgenden Fälle die Dual-Commit-Option:
 
 
 
+[[balanced-default]]
 == Ausgeglichen (Standard)
 
 Wenn Sie die Option „Ausgleich“ auswählen, verwendet StorageGRID bei der Aufnahme auch die synchrone Platzierung und erstellt sofort alle Kopien, die in den Anweisungen zur Platzierung der Regel angegeben sind. Wenn StorageGRID nicht sofort alle Kopien erstellen kann, verwendet man im Gegensatz zur strengen Option „Dual Commit“. Wenn die ILM-Richtlinie Platzierungen an mehreren Standorten verwendet und ein sofortiger Schutz vor Standortausfällen nicht erreicht werden kann, wird die Warnung *ILM-Platzierung nicht erreichbar* ausgelöst.
@@ -50,6 +53,7 @@ Die ausgewogene Option erzielt die beste Kombination aus Datensicherung, Grid-Pe
 
 
 
+[[strict]]
 == Streng
 
 Wenn Sie die strenge Option auswählen, verwendet StorageGRID bei der Aufnahme eine synchrone Platzierung und erstellt sofort alle Objektkopien, die in der Plazierung der Regel angegeben sind. Die Aufnahme schlägt fehl, wenn StorageGRID nicht alle Kopien erstellen kann, z. B. weil ein erforderlicher Speicherort vorübergehend nicht verfügbar ist. Der Client muss den Vorgang wiederholen.

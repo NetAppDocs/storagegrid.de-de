@@ -15,6 +15,7 @@ summary: Überlegen Sie vor dem Stilllegen eines Storage-Node, ob Sie stattdesse
 
 
 
+[[when-to-clone-a-node-instead-of-decommissioning-it]]
 == Zeitpunkt zum Klonen eines Node, anstatt ihn stillzulegen
 
 Wenn Sie einen älteren Storage-Node der Appliance durch eine neuere oder größere Appliance ersetzen möchten, sollten Sie das Klonen des Appliance-Node erwägen, anstatt eine neue Appliance in einer Erweiterung hinzuzufügen, und dann die alte Appliance stillzulegen.
@@ -33,6 +34,7 @@ Weitere Informationen finden Sie unter https://docs.netapp.com/us-en/storagegrid
 
 
 
+[[considerations-for-connected-storage-nodes]]
 == Überlegungen zu verbundenen Storage-Nodes
 
 Prüfen Sie die Überlegungen bei der Stilllegung eines verbundenen Storage-Node.
@@ -57,6 +59,8 @@ NOTE: Die Schaltfläche *Pause* ist nur aktiviert, wenn die ILM-Bewertung oder d
 
 
 
+[[considerations-for-disconnected-storage-nodes]]
+[[considerations-disconnected-storage-nodes]]
 == Überlegungen zu getrennten Storage-Nodes
 
 Prüfen Sie die Überlegungen für die Deaktivierung eines getrennten Storage-Node.

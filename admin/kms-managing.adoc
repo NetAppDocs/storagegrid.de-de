@@ -20,6 +20,7 @@ Zum Verwalten eines Schlüsselverwaltungsservers (KMS) gehören das Anzeigen ode
 
 
 
+[[view-kms-details]]
 == KMS-Details anzeigen
 
 Sie können Informationen zu jedem Schlüsselverwaltungsserver (KMS) in Ihrem StorageGRID-System anzeigen, einschließlich der Schlüsseldetails und des aktuellen Status der Server- und Clientzertifikate.
@@ -139,6 +140,7 @@ Versuchen Sie niemals, einen Schlüssel zu drehen, indem Sie den Schlüsselnamen
 
 
 
+[[manage-certificates]]
 == Verwalten von Zertifikaten
 
 Beheben Sie umgehend alle Probleme mit dem Server- oder Client-Zertifikat. Ersetzen Sie nach Möglichkeit Zertifikate, bevor sie ablaufen.
@@ -168,6 +170,7 @@ NOTE: Wenn Sie den Status *Server Certificate Status is unknown* erhalten, stell
 
 
 
+[[view-encrypted-nodes]]
 == Verschlüsselte Nodes anzeigen
 
 Sie können Informationen zu den Appliance-Knoten in Ihrem StorageGRID-System anzeigen, bei denen die Einstellung *Node-Verschlüsselung* aktiviert ist.
@@ -263,6 +266,7 @@ CAUTION: Sämtliche Probleme müssen sofort behoben werden, um einen vollständi
 
 
 
+[[edit-a-kms]]
 == KMS bearbeiten
 
 Möglicherweise müssen Sie die Konfiguration eines Schlüsselverwaltungsservers bearbeiten, z. B. wenn ein Zertifikat kurz vor dem Ablauf steht.
@@ -364,6 +368,7 @@ Die KMS-Konfiguration wird gespeichert, aber die Verbindung zum KMS wird nicht g
 
 
 
+[[remove-a-key-management-server-kms]]
 == Entfernen eines Verschlüsselungsmanagement-Servers (KMS)
 
 In einigen Fällen möchten Sie einen Schlüsselverwaltungsserver entfernen. Sie können beispielsweise einen standortspezifischen KMS entfernen, wenn Sie den Standort deaktiviert haben.

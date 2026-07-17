@@ -17,6 +17,7 @@ Eine Übersicht über die Aufnahmeoptionen finden Sie unter link:data-protection
 
 
 
+[[advantages-of-the-balanced-and-strict-options]]
 == Vorteile der ausgewogenen und strengen Optionen
 
 Im Vergleich zu Dual-Commit, das während der Aufnahme zwischenzeitliche Kopien erstellt, bieten die zwei Optionen zur synchronen Platzierung folgende Vorteile:
@@ -29,6 +30,7 @@ Im Vergleich zu Dual-Commit, das während der Aufnahme zwischenzeitliche Kopien 
 
 
 
+[[disadvantages-of-the-balanced-and-strict-options]]
 == Nachteile der ausgewogenen und strengen Optionen
 
 Im Vergleich zu Dual Commit haben die ausgewogenen und strengen Optionen einige Nachteile:
@@ -46,6 +48,7 @@ Im Vergleich zu Dual Commit haben die ausgewogenen und strengen Optionen einige 
 
 
 
+[[limitations-on-object-placements-with-the-balanced-and-strict-options]]
 == Einschränkungen bei Objektplatzierungen mit den ausgewogenen und strengen Optionen
 
 Die ausgewogenen oder strikten Optionen können nicht für ILM-Regeln verwendet werden, die über eine der folgenden Platzierungsanweisungen verfügen:
@@ -58,6 +61,7 @@ Diese Einschränkungen gibt es, weil StorageGRID nicht synchron Kopien in einen 
 
 
 
+[[how-ilm-rules-and-consistency-interact-to-affect-data-protection]]
 == Wie ILM-Regeln und Konsistenz interagieren, um den Datenschutz zu beeinträchtigen
 
 Sowohl Ihre ILM-Regel als auch Ihre Wahl der Konsistenz beeinflussen die Art und Weise, wie Objekte geschützt werden. Diese Einstellungen können interagieren.
@@ -96,6 +100,7 @@ NOTE: Bevor Sie einen Konsistenzwert auswählen,link:../s3/consistency.html["Les
 
 
 
+[[example-of-how-consistency-and-ilm-rules-can-interact]]
 == Beispiel für die Interaktion von Konsistenz- und ILM-Regeln
 
 Angenommen, Sie haben ein Grid mit drei Standorten mit der folgenden ILM-Regel und der folgenden Konsistenz:

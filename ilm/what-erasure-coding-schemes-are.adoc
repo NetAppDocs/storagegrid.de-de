@@ -17,6 +17,7 @@ Wenn Sie eine ILM-Regel erstellen oder bearbeiten, wählen Sie ein verfügbares 
 
 
 
+[[data-protection]]
 == Datensicherung
 
 Das StorageGRID-System verwendet den Reed-Solomon-Erasure-Coding-Algorithmus. Der Algorithmus unterteilt ein Objekt in `k` Datenfragmente und berechnet `m` Paritätsfragmente.
@@ -31,6 +32,7 @@ Die beste Datensicherung wird durch das Erasure Coding-Schema mit der höchsten 
 
 
 
+[[storage-overhead]]
 == Storage Overhead
 
 Der Speicher-Overhead eines Erasure-Coding-Schemas wird berechnet, indem die Anzahl der Paritäts-Fragmente (`m`durch die Anzahl der Datenfragmente geteilt wird (`k`). Der Storage Overhead lässt sich ermitteln, wie viel Festplattenspeicher jedes mit Erasure-Coding-Objekt benötigt:
@@ -48,6 +50,7 @@ Wählen Sie das Erasure Coding-Schema mit dem niedrigsten Gesamtwert `k+m`, der 
 
 
 
+[[guidelines-for-storage-pools]]
 == Richtlinien für Speicherpools
 
 Verwenden Sie bei der Auswahl des Speicherpools für eine Regel, die eine Kopie mit Verfahren zur Fehlerkorrektur erstellt, die folgenden Richtlinien für Speicherpools:
@@ -75,6 +78,7 @@ Die Mindestanzahl der erforderlichen Storage-Nodes ist `k+m`. Durch mindestens e
 
 
 
+[[erasure-coding-schemes-for-storage-pools-containing-three-or-more-sites]]
 == Verfahren zur Einhaltung von Datenkonsistenz für Storage-Pools mit drei oder mehr Standorten
 
 Die folgende Tabelle beschreibt die von StorageGRID derzeit unterstützten Erasure Coding-Schemata für Storage-Pools, die drei oder mehr Standorte umfassen. Alle diese Maßnahmen bieten einen Standortausfallschutz. Ein Standort kann verloren gehen, und das Objekt ist weiterhin verfügbar.
@@ -238,6 +242,7 @@ NOTE: Wenn Sie sich nicht sicher sind, welches Schema Sie verwenden möchten, w�
 
 
 
+[[erasure-coding-schemes-for-one-site-storage-pools]]
 == Verfahren zur Einhaltung von Datenkonsistenz für Storage-Pools an einem Standort
 
 Ein Storage-Pool an einem Standort unterstützt alle Erasure Coding-Schemata, die für drei oder mehr Standorte definiert sind, sofern der Standort über ausreichend Storage-Nodes verfügt.

@@ -52,6 +52,7 @@ NOTE: Wenn Sie keine S3-Endpunkt-Domänennamen hinzufügen und die Liste leer is
 
 
 
+[[add-an-s3-endpoint-domain-name]]
 == Fügen Sie einen S3-Endpunkt-Domänennamen hinzu
 
 .Schritte
@@ -72,6 +73,7 @@ Wenn Clients nun den Endpunkt verwenden `_bucket.s3.company.com_`, wird der DNS-
 
 
 
+[[rename-an-s3-endpoint-domain-name]]
 == Benennen Sie einen S3-Endpunkt-Domänennamen um
 
 Wenn Sie einen Namen ändern, der von S3-Anwendungen verwendet wird, schlagen Anforderungen im virtuellen Hosted-Stil fehl.
@@ -85,6 +87,7 @@ Wenn Sie einen Namen ändern, der von S3-Anwendungen verwendet wird, schlagen An
 
 
 
+[[delete-an-s3-endpoint-domain-name]]
 == Löschen Sie einen S3-Endpunkt-Domänennamen
 
 Wenn Sie einen Namen entfernen, der von S3-Anwendungen verwendet wird, schlagen Anforderungen im virtuellen Hosted-Stil fehl.

@@ -17,6 +17,7 @@ Die Node-Recovery ist abgeschlossen, wenn Sie keine Korrekturmaßnahmen vornehme
 
 
 
+[[corrective-actions-and-next-steps]]
 == Korrekturmaßnahmen und nächste Schritte
 
 Während des Austauschs von Nodes müssen Sie möglicherweise eine der folgenden Korrekturmaßnahmen ergreifen:

@@ -15,6 +15,7 @@ Nach der Wiederherstellung eines Speicher-Volumes auf einem Speicher-Node, auf d
 
 
 
+[[which-procedure-should-i-use]]
 == Welches Verfahren sollte ich verwenden?
 
 Stellen Sie nach Möglichkeit Objektdaten mithilfe der Seite *Volume-Wiederherstellung* im Grid Manager wieder her.
@@ -31,6 +32,7 @@ NOTE: Das Repair-Data-Skript ist veraltet und wird in einer zukünftigen Version
 
 
 
+[[use-the-repair-data-script-to-restore-object-data]]
 == Verwenden Sie das `repair-data` Skript, um Objektdaten wiederherzustellen
 
 .Bevor Sie beginnen
@@ -48,6 +50,7 @@ Beachten Sie Folgendes:
 
 
 
+[[about-the-repair-data-script]]
 == Informationen zum `repair-data` Skript
 
 Um Objektdaten wiederherzustellen, führen Sie das Skript aus `repair-data`. Dieses Skript startet den Prozess der Wiederherstellung von Objektdaten und arbeitet mit ILM-Scans zusammen, um sicherzustellen, dass ILM-Regeln eingehalten werden.
@@ -97,6 +100,7 @@ NOTE: Der EC-Reparaturauftrag reserviert vorübergehend eine große Menge an Lag
 ====
 
 
+[[find-hostname-for-storage-node]]
 == Suchen Sie nach Hostnamen für Speicherknoten
 
 . Melden Sie sich bei einem beliebigen Admin-Knoten an:
@@ -115,6 +119,7 @@ Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `
 
 
 
+[[repair-data-if-all-volumes-have-failed]]
 == Reparieren Sie Daten, wenn alle Volumes ausgefallen sind
 
 Wenn alle Storage-Volumes ausgefallen sind, reparieren Sie den gesamten Node. Befolgen Sie die Anweisungen für *replizierte Daten*, *Erasure-codierte (EC) Daten* oder beide, je nachdem, ob Sie replizierte Daten, Erasure-codierte (EC) Daten oder beide verwenden.
@@ -154,6 +159,7 @@ Reparaturen von Daten, die auf Löschung codiert wurden, können beginnen, währ
 ====
 
 
+[[repair-data-if-only-some-volumes-have-failed]]
 == Reparieren Sie Daten, wenn nur einige Volumes ausgefallen sind
 
 Wenn nur einige Volumes ausgefallen sind, die betroffenen Volumes reparieren. Befolgen Sie die Anweisungen für *replizierte Daten*, *Erasure-codierte (EC) Daten* oder beide, je nachdem, ob Sie replizierte Daten, Erasure-codierte (EC) Daten oder beide verwenden.
@@ -211,6 +217,7 @@ NOTE: Reparaturen von Daten, die auf Löschung codiert wurden, können beginnen,
 ====
 
 
+[[monitor-repairs]]
 == Überwachen Sie Reparaturen
 
 Überwachen Sie den Status der Reparaturaufträge, je nachdem, ob Sie *replizierte Daten*, *Erasure-codierte (EC) Daten* oder beides verwenden.

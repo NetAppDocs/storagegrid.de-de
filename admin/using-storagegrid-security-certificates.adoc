@@ -23,6 +23,7 @@ Wenn ein Client über HTTPS eine Verbindung zum Server herstellt, antwortet der 
 
 StorageGRID-Funktionen wie der Server für einige Verbindungen (z. B. den Endpunkt des Load Balancer) oder als Client für andere Verbindungen (z. B. den CloudMirror-Replikationsdienst).
 
+[[gridca_details]]
 *Standard Grid CA-Zertifikat*
 
 StorageGRID verfügt über eine integrierte Zertifizierungsstelle (CA), die während der Systeminstallation ein internes Grid-CA-Zertifikat generiert.  Das Grid-CA-Zertifikat wird standardmäßig verwendet, um den internen StorageGRID -Verkehr zu sichern.  Eine externe Zertifizierungsstelle (CA) kann benutzerdefinierte Zertifikate ausstellen, die vollständig mit den Informationssicherheitsrichtlinien Ihres Unternehmens konform sind.
@@ -41,6 +42,7 @@ Varianten der Server- und Client-Zertifikatstypen werden auf verschiedene Weise 
 
 
 
+[[access-security-certificates]]
 == Greifen Sie auf Sicherheitszertifikate zu
 
 Sie haben Zugriff auf Informationen zu allen StorageGRID-Zertifikaten an einer zentralen Stelle, zusammen mit Links zum Konfigurations-Workflow für jedes Zertifikat.
@@ -195,12 +197,15 @@ Ihre Vorteile:
 
 
 
+[[security-certificate-details]]
 == Details zum Sicherheitszertifikat
 
 Jede Art von Sicherheitszertifikat wird unten beschrieben, mit Links zu den Implementierungsanleitungen.
 
 
 
+[[management-interface-certificate]]
+[[adminclientcert_details]]
 === Zertifikat für die Managementoberfläche
 
 [cols="1a,1a,1a,1a"]
@@ -224,6 +229,7 @@ link:configuring-custom-server-certificate-for-grid-manager-tenant-manager.html[
 |===
 
 
+[[s3-api-certificate]]
 === S3-API-Zertifikat
 
 [cols="1a,1a,1a,1a"]
@@ -243,12 +249,14 @@ link:configuring-custom-server-certificate-for-storage-node.html["Konfigurieren 
 |===
 
 
+[[grid-ca-certificate]]
 === Grid-CA-Zertifikat
 
 Siehe <<gridca_details,Beschreibung des Standard Grid CA-Zertifikats>>.
 
 
 
+[[administrator-client-certificate]]
 === Administrator-Client-Zertifikat
 
 [cols="1a,1a,1a,1a"]
@@ -272,6 +280,7 @@ link:configuring-administrator-client-certificates.html["Konfigurieren Sie Clien
 |===
 
 
+[[load-balancer-endpoint-certificate]]
 === Endpunkt-Zertifikat für Load Balancer
 
 [cols="1a,1a,1a,1a"]
@@ -297,6 +306,7 @@ Sie können auch eine benutzerdefinierte Version des globalen  Zertifikats verwe
 |===
 
 
+[[cloud-storage-pool-endpoint-certificate]]
 === Endpunkt-Zertifikat für Cloud Storage Pool
 
 [cols="1a,1a,1a,1a"]
@@ -316,6 +326,7 @@ link:../ilm/creating-cloud-storage-pool.html["Erstellen Sie einen Cloud-Storage-
 |===
 
 
+[[email-alert-notification-certificate]]
 === Zertifikat für eine E-Mail-Benachrichtigung
 
 [cols="1a,1a,1a,1a"]
@@ -339,6 +350,7 @@ link:../monitor/email-alert-notifications.html["Richten Sie E-Mail-Benachrichtig
 |===
 
 
+[[external-syslog-server-certificate]]
 === Externes Syslog-Serverzertifikat
 
 [cols="1a,1a,1a,1a"]
@@ -360,6 +372,7 @@ link:../monitor/configure-log-management.html#use-external-syslog-server["Verwen
 |===
 
 
+[[grid-federation-certificategrid-federation-connection-certificate]]
 === [[Grid-Federation-Certificate]]Verbindungszertifikat für Grid Federation
 
 [cols="1a,1a,1a,1a"]
@@ -381,6 +394,7 @@ Authentifizieren und verschlüsseln Sie Informationen, die zwischen dem aktuelle
 |===
 
 
+[[identity-federation-certificate]]
 === Zertifikat für Identitätsföderation
 
 [cols="1a,1a,1a,1a"]
@@ -400,6 +414,7 @@ link:using-identity-federation.html["Verwenden Sie den Identitätsverbund"]
 |===
 
 
+[[key-management-server-kms-certificate]]
 === KMS-Zertifikat (Key Management Server)
 
 [cols="1a,1a,1a,1a"]
@@ -419,6 +434,7 @@ link:kms-adding.html["Hinzufügen eines Verschlüsselungsmanagement-Servers (KMS
 |===
 
 
+[[platform-services-endpoint-certificate]]
 === Endpoint-Zertifikat für Plattform-Services
 
 [cols="1a,1a,1a,1a"]
@@ -440,6 +456,7 @@ link:../tenant/editing-platform-services-endpoint.html["Endpunkt der Plattformdi
 |===
 
 
+[[single-sign-on-sso-certificate]]
 === SSO-Zertifikat (Single Sign On)
 
 [cols="1a,1a,1a,1a"]
@@ -459,10 +476,12 @@ link:how-sso-works.html["Konfigurieren Sie Single Sign-On"]
 |===
 
 
+[[certificate-examples]]
 == Beispiele für Zertifikate
 
 
 
+[[example-1-load-balancer-service]]
 === Beispiel 1: Load Balancer Service
 
 In diesem Beispiel fungiert StorageGRID als Server.
@@ -477,6 +496,7 @@ In diesem Beispiel fungiert StorageGRID als Server.
 
 
 
+[[example-2-external-key-management-server-kms]]
 === Beispiel 2: Externer KMS (Key Management Server)
 
 In diesem Beispiel fungiert StorageGRID als Client.

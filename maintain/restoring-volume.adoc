@@ -82,6 +82,7 @@ NOTE: Die Volume-Wiederherstellung hängt von der Verfügbarkeit von Ressourcen 
 
 
 
+[[enable-auto-restore-modeenable-automatic-restore-mode]]
 == [[enable-Auto-Restore-Mode]]Aktivieren Sie den automatischen Wiederherstellungsmodus
 
 Wenn Sie den automatischen Wiederherstellungsmodus aktivieren, wird die Volume-Wiederherstellung automatisch gestartet, sobald die Volumes zur Wiederherstellung bereit sind.
@@ -108,6 +109,7 @@ Sie können den automatischen Wiederherstellungsmodus jederzeit deaktivieren.
 
 
 
+[[manually-restoremanually-restore-failed-volume-or-node]]
 == [[Manually-restore]]Manuelles Wiederherstellen fehlerhafter Volumes oder Knoten
 
 Führen Sie die folgenden Schritte aus, um ein ausgefallenes Volume oder einen ausgefallenen Node wiederherzustellen.
@@ -137,6 +139,7 @@ Wenn eine Volume-Wiederherstellung nicht gestartet werden kann, kehrt der Knoten
 
 
 
+[[view-restoration-progressview-restoration-progress]]
 == [[View-Wiederherstellung-progress]]Wiederherstellungsfortschritt anzeigen
 
 Die Registerkarte *Restoration Progress* zeigt den Status des Wiederherstellungsprozesses des Volumes und Informationen über die Volumes für einen wiederherzustellenden Knoten an.
@@ -166,6 +169,7 @@ Im Abschnitt Wiederherstellungsaufträge werden Informationen über die mit Grid
 
 
 
+[[view-restoration-historyview-restoration-history]]
 == [[View-Restore-history]]Wiederherstellungsverlauf anzeigen
 
 Auf der Registerkarte *Restoration history* werden Informationen zu allen erfolgreich abgeschlossenen Volume-Wiederherstellungen angezeigt.

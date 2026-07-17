@@ -19,6 +19,7 @@ Plattformdienste werden nicht unterstützt fürlink:../tenant/what-is-branch-buc
 
 
 
+[[cloudmirror-replication]]
 == Replizierung von CloudMirror
 
 Der StorageGRID CloudMirror Replizierungsservice wird verwendet, um bestimmte Objekte aus einem StorageGRID Bucket auf ein angegebenes externes Ziel zu spiegeln.
@@ -32,6 +33,7 @@ NOTE: Die CloudMirror-Replikation wird nicht unterstützt, wenn im Quell-Bucket 
 
 
 
+[[notifications]]
 == Benachrichtigungen
 
 Bucket-spezifische Ereignisbenachrichtigungen werden verwendet, um Benachrichtigungen über bestimmte an Objekten ausgeführte Aktionen an einen angegebenen externen Kafka-Cluster, Webhook-Endpunkt oder Amazon Simple Notification Service zu senden.
@@ -43,6 +45,7 @@ NOTE: Obwohl die Ereignisbenachrichtigung für einen Bucket konfiguriert werden 
 
 
 
+[[search-integration-service]]
 == Suchintegrations-Service
 
 Über den Suchintegrationsservice werden S3-Objektmetadaten an einen bestimmten Elasticsearch-Index gesendet, wo die Metadaten über den externen Service durchsucht oder analysiert werden können.
@@ -56,6 +59,7 @@ Dank Plattform-Services können Mandanten externe Storage-Ressourcen, Benachrich
 
 
 
+[[recommendations-for-using-platform-services]]
 == Empfehlungen für die Nutzung von Plattform-Services
 
 Vor der Verwendung von Plattform-Services sollten Sie sich der folgenden Empfehlungen bewusst sein:

@@ -18,6 +18,7 @@ CAUTION: FabricPool ist nicht mit den StorageGRID ILM-Regeln oder -Richtlinien b
 
 
 
+[[guidelines-for-using-ilm-with-fabricpool]]
 == Richtlinien für die Verwendung von ILM mit FabricPool
 
 Wenn Sie den FabricPool-Einrichtungsassistenten verwenden, erstellt der Assistent automatisch eine neue ILM-Regel für jeden von Ihnen erstellten S3-Bucket und fügt diese Regel einer inaktiven Richtlinie hinzu. Sie werden aufgefordert, die Richtlinie zu aktivieren. Die automatisch erstellte Regel folgt den empfohlenen Best Practices: Sie verwendet 2+1 Erasure Coding an einem einzigen Standort.

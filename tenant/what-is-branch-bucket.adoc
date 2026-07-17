@@ -33,6 +33,7 @@ Beachten Sie die folgenden Merkmale von Zweig-Buckets:
 
 
 
+[[examples-for-branch-bucket-usage]]
 == Beispiele für die Verwendung von Branch Buckets
 
 * Sie können einen Branch-Bucket verwenden, um beschädigte Objekte zu entfernen, indem Sie einen Branch-Bucket von einem Zeitpunkt vor dem Auftreten der Beschädigung erstellen und dann Anwendungen auf den Branch-Bucket statt auf den Basis-Bucket verweisen, der beschädigte Objekte enthält.
@@ -41,6 +42,7 @@ Beachten Sie die folgenden Merkmale von Zweig-Buckets:
 
 
 
+[[operations-on-objects-in-branch-buckets]]
 == Operationen an Objekten in Branch-Buckets
 
 * Eine PUT-Objektoperation für einen Branch-Bucket erstellt ein Objekt im Branch.

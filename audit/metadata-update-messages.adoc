@@ -15,6 +15,7 @@ Audit-Meldungen werden generiert, wenn ein S3-Client die Metadaten eines Objekts
 
 
 
+[[s3-metadata-update-audit-messages]]
 == Audit-Meldungen zu S3-Metadaten
 
 [cols="1a,1a,2a,1a,2a"]
@@ -36,12 +37,14 @@ link:supd-s3-metadata-updated.html["SUPD: S3-Metadaten wurden aktualisiert"]
 |===
 
 
+[[example-s3-metadata-update]]
 == Beispiel: S3-Metadatenaktualisierung
 
 Das Beispiel zeigt eine erfolgreiche Transaktion zur Aktualisierung der Metadaten für ein vorhandenes S3-Objekt.
 
 
 
+[[supd-s3-metadata-update]]
 === SUPD: S3-Metadatenaktualisierung
 
 Der S3-Client stellt eine Anfrage (SUPD), um die angegebenen Metadaten zu aktualisieren(`x-amz-meta-\*` ) für das S3-Objekt (S3KY).  In diesem Beispiel sind Anforderungsheader im Feld HTRH enthalten, da es als Audit-Protokollheader konfiguriert wurde (*Konfiguration* > *Überwachung* > *Audit- und Syslog-Server*). Sehen link:../monitor/configure-log-management.html["Konfigurieren Sie die Protokollverwaltung und den externen Syslog-Server"] .

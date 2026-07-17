@@ -28,6 +28,7 @@ NOTE: Sie müssen eine Enterprise-Anwendung für jeden Admin-Knoten in Ihrem Sto
 
 
 
+[[access-entra-id]]
 == Zugang zur Entra-ID
 
 .Schritte
@@ -38,6 +39,7 @@ NOTE: Sie müssen eine Enterprise-Anwendung für jeden Admin-Knoten in Ihrem Sto
 
 
 
+[[create-enterprise-applications-and-save-storagegrid-sso-configuration]]
 == Erstellen von Enterprise-Applikationen und Speichern von StorageGRID SSO-Konfiguration
 
 Um die SSO-Konfiguration für Entra ID in StorageGRID zu speichern, müssen Sie Entra ID verwenden, um für jeden Admin-Knoten eine Unternehmensanwendung zu erstellen.  Sie kopieren die URLs der Föderationsmetadaten von Entra ID und fügen sie in die entsprechenden Felder *Föderationsmetadaten-URL* auf der Seite „SSO konfigurieren“ ein.
@@ -61,6 +63,7 @@ Um die SSO-Konfiguration für Entra ID in StorageGRID zu speichern, müssen Sie 
 
 
 
+[[download-saml-metadata-for-every-admin-node]]
 == Laden Sie für jeden Admin-Node SAML-Metadaten herunter
 
 Nachdem die SSO-Konfiguration gespeichert ist, können Sie für jeden Admin-Node in Ihrem StorageGRID-System eine SAML-Metadatendatei herunterladen.
@@ -78,6 +81,7 @@ Nachdem die SSO-Konfiguration gespeichert ist, können Sie für jeden Admin-Node
 
 
 
+[[upload-saml-metadata-to-each-enterprise-application]]
 == Hochladen von SAML-Metadaten in jede Enterprise-Applikation
 
 Nachdem Sie für jeden StorageGRID Admin-Knoten eine SAML-Metadatendatei heruntergeladen haben, führen Sie in Entra ID die folgenden Schritte aus:

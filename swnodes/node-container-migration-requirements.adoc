@@ -30,6 +30,7 @@ Bevor Sie eine Migration oder eine Hypervisor-Wartung durchführen, müssen Sie 
 
 
 
+[[vmware-live-migration-not-supported]]
 == VMware Live Migration wird nicht unterstützt
 
 Bei einer Bare-Metal-Installation auf VMware VMs sorgen OpenStack Live Migration und VMware Live vMotion dafür, dass die Uhr der Virtual Machine sprungbereit wird und für Grid-Nodes jeglicher Art nicht unterstützt wird. Obwohl selten, falsche Uhrzeiten können zum Verlust von Daten oder Konfigurations-Updates führen.
@@ -38,6 +39,7 @@ Cold-Migration wird unterstützt. Bei der „Cold“-Migration sollten Sie die S
 
 
 
+[[consistent-network-interface-names]]
 == Konsistente Namen von Netzwerkschnittstellen
 
 Um einen Knoten von einem Host auf einen anderen zu verschieben, muss der StorageGRID-Hostdienst darauf vertrauen können, dass die externe Netzwerkverbindung, die der Knoten am aktuellen Standort hat, am neuen Standort dupliziert werden kann. Dies schafft Vertrauen durch die Verwendung konsistenter Netzwerk-Interface-Namen in den Hosts.
@@ -54,6 +56,7 @@ Es gibt viele Möglichkeiten, eine konsistente Benennung von Netzwerkschnittstel
 
 
 
+[[shared-storage]]
 == Shared Storage
 
 Für schnelle Node-Migrationen mit geringem Overhead werden Node-Daten mit der StorageGRID Node-Migrationsfunktion nicht physisch verschoben. Stattdessen werden die Node-Migration als Export- und Importpaar durchgeführt:

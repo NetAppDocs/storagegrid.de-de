@@ -15,6 +15,7 @@ Grid-übergreifende Replizierung ist die automatische Replizierung von Objekten 
 
 
 
+[[workflow-for-cross-grid-replication]]
 == Workflow für Grid-übergreifende Replizierung
 
 Das Workflow-Diagramm fasst die Schritte zum Konfigurieren der Cross-Grid-Replikation zwischen Buckets auf zwei Grids zusammen.
@@ -23,6 +24,7 @@ image:grid-federation-cgr-workflow.png["Workflow für Grid-übergreifende Repliz
 
 
 
+[[requirements-for-cross-grid-replication]]
 == Anforderungen für die Grid-übergreifende Replizierung
 
 Wenn ein Mandantenkonto die Berechtigung *Grid-Föderationsverbindung verwenden* hat, um eine oder mehrerelink:grid-federation-overview.html["Netzverbundverbindungen"] , ein Mandantenbenutzer mit Root-Zugriffsberechtigung kann Buckets in den entsprechenden Mandantenkonten auf jedem Raster erstellen.  Diese Eimer:
@@ -40,12 +42,14 @@ link:../tenant/grid-federation-manage-cross-grid-replication.html["Grid-übergre
 
 
 
+[[how-cross-grid-replication-works]]
 == Funktionsweise der Grid-übergreifenden Replizierung
 
 Sie können die Cross-Grid-Replikation so konfigurieren, dass sie in eine oder in beide Richtungen erfolgt.
 
 
 
+[[replication-in-one-direction]]
 === Replikation in eine Richtung
 
 Wenn Sie die Cross-Grid-Replikation für einen Bucket nur auf einem Grid aktivieren, werden die diesem Bucket (dem Quell-Bucket) hinzugefügten Objekte in den entsprechenden Bucket auf dem anderen Grid (dem Ziel-Bucket) repliziert.  Dem Ziel-Bucket hinzugefügte Objekte werden jedoch nicht zurück zur Quelle repliziert.  In der Abbildung ist die Cross-Grid-Replikation aktiviert für `my-bucket` von Raster 1 zu Raster 2, aber in die andere Richtung ist es nicht aktiviert.
@@ -54,6 +58,7 @@ image:grid-federation-cross-grid-replication-one-direction.png["Abbildung zeigt 
 
 
 
+[[replication-in-both-directions]]
 === Replikation in beide Richtungen
 
 Wenn Sie auf beiden Grids die Grid-übergreifende Replizierung für denselben Bucket aktivieren, werden die zu einem Bucket hinzugefügten Objekte in das andere Grid repliziert. In der Abbildung ist die Grid-übergreifende Replizierung für in beide Richtungen aktiviert `my-bucket`.
@@ -62,6 +67,7 @@ image:grid-federation-cross-grid-replication.png["Bild zeigt Replikation in eine
 
 
 
+[[what-happens-when-objects-are-ingested]]
 === Was passiert, wenn Objekte aufgenommen werden?
 
 Wenn ein S3-Client einem Bucket ein Objekt hinzufügt, für das die Grid-übergreifende Replizierung aktiviert ist, geschieht Folgendes:
@@ -101,6 +107,7 @@ NOTE: StorageGRID unterstützt nicht die `x-amz-replication-status` Kopfzeile.
 
 
 
+[[what-happens-when-objects-are-deleted]]
 === Was passiert, wenn Objekte gelöscht werden?
 
 Wie in beschriebenlink:../primer/delete-data-flow.html["Löschen des Datenflusses"], kann StorageGRID ein Objekt aus einem der folgenden Gründe löschen:
@@ -144,6 +151,7 @@ NOTE: Wenn Sie die Objektlöschungen zwischen den Rastern synchronisieren möcht
 
 
 
+[[how-encrypted-objects-are-replicated]]
 === Wie verschlüsselte Objekte repliziert werden
 
 Wenn Sie Objekte zwischen Grids mithilfe von Grid-übergreifender Replizierung verschlüsseln, können Sie einzelne Objekte verschlüsseln, die standardmäßige Bucket-Verschlüsselung verwenden oder die Grid-weite Verschlüsselung konfigurieren. Sie können Standard-Bucket- oder Grid-Verschlüsselungseinstellungen vor oder nach der Grid-übergreifenden Replizierung für einen Bucket hinzufügen, ändern oder entfernen.
@@ -178,6 +186,8 @@ Beim Bestimmen, wie replizierte Objekte verschlüsselt werden, wendet StorageGRI
 
 
 
+[[cross-grid-replication-with-s3-object-lock]]
+[[cgr-with-ol]]
 === Cross-Grid-Replikation mit S3 Object Lock
 
 Sie können die Cross-Grid-Replikation zwischen StorageGRID Buckets mit aktivierter S3-Objektsperre unter den folgenden Umständen konfigurieren.
@@ -230,6 +240,7 @@ Wenn die S3-Objektsperre im Quell-Bucket deaktiviert ist:
 
 
 
+[[putobjecttagging-and-deleteobjecttagging-arent-supported]]
 === PutObjectTagging und DeleteObjectTagging werden nicht unterstützt
 
 PutObjectTagging- und DeleteObjectTagging-Anforderungen werden nicht für Objekte in Buckets unterstützt, für die die Grid-übergreifende Replikation aktiviert ist.
@@ -238,6 +249,7 @@ Wenn ein S3-Client eine PutObjectTagging- oder DeleteObjectTagging-Anforderung a
 
 
 
+[[putobjectretention-and-putobjectlegalhold-arent-supported]]
 === PutObjectRetention und PutObjectLegalHold werden nicht unterstützt
 
 PutObjectRetention- und PutObjectLegalHold-Anfragen werden für Objekte in Buckets, für die die Cross-Grid-Replikation aktiviert ist, nicht vollständig unterstützt.
@@ -246,6 +258,7 @@ Wenn ein S3-Client eine PutObjectRetention- oder PutObjectLegalHold-Anforderung 
 
 
 
+[[how-segmented-objects-are-replicated]]
 === Wie segmentierte Objekte repliziert werden
 
 Die maximale Segmentgröße des Quellrasters gilt für Objekte, die in das Zielraster repliziert werden.  Wenn Objekte in ein anderes Raster repliziert werden, wird die Einstellung *Maximale Segmentgröße* (*Konfiguration* > *System* > *Speicheroptionen*) des Quellrasters auf beiden Rastern verwendet.  Angenommen, die maximale Segmentgröße für das Quellraster beträgt 1 GB, während die maximale Segmentgröße des Zielrasters 50 MB beträgt.  Wenn Sie ein 2-GB-Objekt in das Quellraster aufnehmen, wird dieses Objekt als zwei 1-GB-Segmente gespeichert.  Es wird auch als zwei 1-GB-Segmente in das Zielraster repliziert, obwohl die maximale Segmentgröße dieses Rasters 50 MB beträgt.

@@ -15,6 +15,7 @@ Wenn die globale S3-Objektsperrung für Ihr StorageGRID-System aktiviert ist, k�
 
 
 
+[[how-to-enable-s3-object-lock-for-a-bucket]]
 == Aktivieren der S3-Objektsperre für einen Bucket
 
 Wenn die globale S3-Objektsperreneinstellung für Ihr StorageGRID-System aktiviert ist, können Sie bei der Erstellung jedes Buckets optional die S3-Objektsperre aktivieren.
@@ -31,12 +32,14 @@ S3 Object Lock erfordert eine Bucket-Versionierung, die beim Erstellen des Bucke
 
 
 
+[[default-retention-settings-for-a-bucket]]
 == Standardeinstellungen für die Aufbewahrung eines Buckets
 
 Wenn S3 Object Lock für einen Bucket aktiviert ist, können Sie optional die Standardaufbewahrung für den Bucket aktivieren und einen Standardaufbewahrungsmodus und die Standardaufbewahrungsdauer festlegen.
 
 
 
+[[default-retention-mode]]
 === Standardaufbewahrungsmodus
 
 * Im COMPLIANCE-Modus:
@@ -57,12 +60,14 @@ Wenn S3 Object Lock für einen Bucket aktiviert ist, können Sie optional die St
 
 
 
+[[default-retention-period]]
 === Standardaufbewahrungszeitraum
 
 Für jeden Bucket kann ein Standardaufbewahrungszeitraum in Jahren oder Tagen angegeben werden.
 
 
 
+[[how-to-set-default-retention-for-a-bucket]]
 == Festlegen der Standardaufbewahrung für einen Bucket
 
 Verwenden Sie eine der folgenden Methoden, um die Standardaufbewahrung für einen Bucket festzulegen:
@@ -73,6 +78,7 @@ Verwenden Sie eine der folgenden Methoden, um die Standardaufbewahrung für eine
 
 
 
+[[putobjectlockconfiguration]]
 === PutObjectLockKonfiguration
 
 Mit der PutObjectLockConfiguration-Anforderung können Sie den Standardaufbewahrungsmodus und den Standardaufbewahrungszeitraum für einen Bucket festlegen und ändern, für den S3 Object Lock aktiviert ist. Sie können auch zuvor konfigurierte Standardeinstellungen entfernen.
@@ -115,6 +121,7 @@ Authorization: _authorization-string_
 ----
 
 
+[[how-to-determine-the-default-retention-for-a-bucket]]
 == Bestimmen der Standardaufbewahrung für einen Bucket
 
 Verwenden Sie eine der folgenden Methoden, um zu ermitteln, ob S3 Object Lock für einen Bucket aktiviert ist und den Standardaufbewahrungsmodus und den Standardaufbewahrungszeitraum anzuzeigen:
@@ -125,6 +132,7 @@ Verwenden Sie eine der folgenden Methoden, um zu ermitteln, ob S3 Object Lock f�
 
 
 
+[[getobjectlockconfiguration]]
 === GetObjectLockConfiguration
 
 Mit der GetObjectLockConfiguration-Anforderung können Sie festlegen, ob S3 Object Lock für einen Bucket aktiviert ist. Wenn diese Option aktiviert ist, können Sie prüfen, ob für den Bucket ein Standardaufbewahrungsmodus und eine Aufbewahrungsfrist konfiguriert sind.
@@ -173,6 +181,7 @@ Server: AmazonS3
 ----
 
 
+[[how-to-specify-retention-settings-for-an-object]]
 == Festlegen von Aufbewahrungseinstellungen für ein Objekt
 
 Ein Bucket mit aktivierter S3-Objektsperrung kann eine Kombination von Objekten mit und ohne Aufbewahrungseinstellungen für S3-Objektsperrung enthalten.
@@ -227,6 +236,7 @@ Sie können den Richtlinienkonditionsschlüssel verwenden `s3:object-lock-remain
 
 
 
+[[how-to-update-retention-settings-for-an-object]]
 == Aktualisieren von Aufbewahrungseinstellungen für ein Objekt
 
 Wenn Sie die Einstellungen für die gesetzliche Aufbewahrungs- oder Aufbewahrungseinstellung einer vorhandenen Objektversion aktualisieren müssen, können Sie die folgenden Vorgänge der Unterressource des Objekts ausführen:
@@ -246,6 +256,7 @@ Wenn der neue Legal-Hold-Wert AKTIVIERT ist, wird das Objekt unter einer gesetzl
 
 
 
+[[how-to-use-governance-mode]]
 == So verwenden Sie DEN GOVERNANCE-Modus
 
 Benutzer mit der `s3:BypassGovernanceRetention` Berechtigung können die aktiven Aufbewahrungseinstellungen eines Objekts umgehen, das den GOVERNANCE-Modus verwendet. Alle LÖSCHVORGÄNGE oder PutObjectRetention müssen den Anforderungsheader enthalten `x-amz-bypass-governance-retention:true`. Diese Benutzer können die folgenden zusätzlichen Vorgänge ausführen:

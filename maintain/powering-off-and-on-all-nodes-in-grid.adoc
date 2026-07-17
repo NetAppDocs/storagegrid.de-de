@@ -17,6 +17,7 @@ Wenn Sie alle Nodes an einem Standort oder Grid ausschalten, können Sie nicht a
 
 
 
+[[stop-services-and-shut-down-grid-nodes]]
 == Stoppen Sie Services und fahren Sie die Grid-Nodes herunter
 
 Bevor Sie ein StorageGRID System ausschalten können, müssen Sie alle Services, die auf jedem Grid-Node ausgeführt werden, anhalten und anschließend alle VMware Virtual Machines, Container-Engines und StorageGRID Appliances herunterfahren.
@@ -147,6 +148,7 @@ Das StorageGRID-Grid wurde jetzt heruntergefahren.
 
 
 
+[[start-up-grid-nodes]]
 == Grid-Nodes starten
 
 

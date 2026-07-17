@@ -15,6 +15,7 @@ Die Clients müssen mit den Grid-Nodes kommunizieren, um Inhalte aufzunehmen und
 
 
 
+[[restricted-access-to-ports]]
 == Eingeschränkter Zugriff auf Ports
 
 Wenn die Netzwerkrichtlinien des Unternehmens den Zugriff auf einen der Ports einschränken, können Sie einen der folgenden Schritte ausführen:
@@ -33,6 +34,7 @@ NOTE: Die Unterstützung für die Neuzuordnung von Ports ist veraltet und wird i
 
 
 
+[[ports-used-for-external-communications]]
 == Anschlüsse für externe Kommunikation
 
 In der folgenden Tabelle werden die Ports für den Datenverkehr zu den Nodes aufgeführt.

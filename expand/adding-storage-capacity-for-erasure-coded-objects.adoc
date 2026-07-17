@@ -19,6 +19,7 @@ Die Anzahl der Nodes, die Sie hinzufügen müssen, hängt auch davon ab, wie vol
 
 
 
+[[general-recommendation-for-adding-storage-capacity-for-erasure-coded-objects]]
 == Allgemeine Empfehlung für die Erweiterung der Storage-Kapazität für Objekte mit Erasure-Coding-Verfahren
 
 Wenn detaillierte Berechnungen vermieden werden sollen, können Sie zwei Storage-Nodes pro Standort hinzufügen, wenn vorhandene Storage-Nodes eine Kapazität von 70 % erreichen.

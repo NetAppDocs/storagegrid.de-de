@@ -22,6 +22,8 @@ Falls alle Block-Storage-Volumes vom vorherigen Host erhalten würden, müssen m
 
 
 
+[[restore-and-validate-grid-nodes]]
+[[restore-validate-grid-nodes]]
 == Wiederherstellung und Validierung der Grid Nodes
 
 Sie müssen die Grid-Konfigurationsdateien für alle ausgefallenen Grid-Nodes wiederherstellen, dann die Grid-Konfigurationsdateien validieren und Fehler beheben.
@@ -96,6 +98,7 @@ Sie müssen alle Fehler oder Warnungen beheben, bevor Sie den StorageGRID-Hostdi
 
 
 
+[[fix-missing-network-interface-errors]]
 === Beheben Sie fehlende Fehler an der Netzwerkschnittstelle
 
 Wenn das Hostnetzwerk nicht richtig konfiguriert ist oder ein Name falsch geschrieben wurde, tritt ein Fehler auf, wenn StorageGRID die in der Datei angegebene Zuordnung überprüft `/etc/storagegrid/nodes/_node-name_.conf`.
@@ -118,6 +121,8 @@ Stellen Sie sicher, dass die Host-Schnittstelle Zugriff auf den entsprechenden p
 
 
 
+[[fix-missing-block-device-errors]]
+[[fix-block-errors]]
 === Beheben Sie fehlende Blockgerätfehler
 
 Das System überprüft, ob jeder wiederhergestellte Knoten einer gültigen Blockgerätespezialldatei oder einem gültigen Softlink zu einer speziellen Blockgerätedatei zugeordnet wird. Wenn StorageGRID eine ungültige Zuordnung in der Datei findet `/etc/storagegrid/nodes/_node-name_.conf`, wird ein Fehler bei einem fehlenden Blockgerät angezeigt.
@@ -152,6 +157,7 @@ Führen Sie den folgenden Befehl nur für neue Block Storage-Geräte aus. Führe
 ====
 
 
+[[start-storagegrid-host-service]]
 == Starten Sie den StorageGRID Host Service
 
 Um die StorageGRID Nodes zu starten und sicherzustellen, dass sie nach einem Neustart des Hosts neu gestartet werden, müssen Sie den StorageGRID Host Service aktivieren und starten.
@@ -186,6 +192,8 @@ sudo systemctl reload-or-restart storagegrid
 
 
 
+[[recover-nodes-that-fail-to-start-normally]]
+[[recover-nodes-fail-start]]
 == Wiederherstellung von Nodes, die nicht ordnungsgemäß gestartet werden können
 
 Wenn ein StorageGRID Node nicht normal dem Grid neu beigetreten ist und nicht als wiederherstellbar angezeigt wird, ist er möglicherweise beschädigt. Sie können den Node in den Recovery-Modus erzwingen.

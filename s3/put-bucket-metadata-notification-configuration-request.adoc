@@ -17,6 +17,7 @@ Sie müssen über die berechtigung s3:PutBucketMetadataNotification für einen B
 
 
 
+[[request]]
 == Anfrage
 
 Die Anforderung muss die Konfiguration der Metadatenbenachrichtigung in der Anfraentext enthalten. Jede Konfiguration für die Metadatenbenachrichtigung enthält mindestens ein Regeln. Jede Regel gibt die Objekte an, auf die sie angewendet wird, und das Ziel, an dem StorageGRID Metadaten senden soll.
@@ -146,6 +147,7 @@ Ja.
 |===
 
 
+[[request-examples]]
 == Beispiele anfordern
 
 Dieses Beispiel zeigt die Aktivierung der Integration von Suchvorgängen für einen Bucket. In diesem Beispiel werden die Objektmetadaten für alle Objekte an dasselbe Ziel gesendet.
@@ -198,6 +200,7 @@ Host: _host_
 ----
 
 
+[[json-generated-by-the-search-integration-service]]
 == Vom Suchintegrations-Service generierter JSON
 
 Wenn Sie den Such-Integrationsservice für einen Bucket aktivieren, wird ein JSON-Dokument generiert und an den Zielendpunkt gesendet, wenn Metadaten oder Tags hinzugefügt, aktualisiert oder gelöscht werden.
@@ -224,6 +227,7 @@ Dieses Beispiel zeigt ein Beispiel für den JSON, der generiert werden könnte, 
 ----
 
 
+[[object-metadata-included-in-metadata-notifications]]
 == Objektmetadaten sind in Metadaten-Benachrichtigungen enthalten
 
 In der Tabelle sind alle Felder aufgeführt, die im JSON-Dokument enthalten sind, die beim Aktivierung der Suchintegration an den Zielendpunkt gesendet werden.

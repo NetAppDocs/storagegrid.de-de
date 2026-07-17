@@ -24,6 +24,7 @@ NOTE: Wenn Sie StorageGRID für die Verwendung mit einer anderen S3-Client-Anwen
 
 
 
+[[access-the-wizard]]
 == Greifen Sie auf den Assistenten zu
 
 Sie können den FabricPool-Einrichtungsassistenten abschließen, wenn Sie den StorageGRID Grid-Manager verwenden, oder Sie können den Assistenten zu einem späteren Zeitpunkt aufrufen und abschließen.
@@ -42,6 +43,7 @@ image:help_menu.png["Hilfe-Menü"]
 
 
 
+[[step-1-of-9-configure-ha-group]]
 == Schritt 1 von 9: Konfigurieren Sie die HA-Gruppe
 
 Eine HA-Gruppe (High Availability, Hochverfügbarkeit) ist eine Sammlung von Nodes, die jeweils den StorageGRID Lastausgleich enthalten. Eine HA-Gruppe kann Gateway-Nodes, Admin-Nodes oder beides enthalten.
@@ -144,6 +146,7 @@ Mindestens eine Adresse muss IPv4 sein. Optional können Sie weitere IPv4- und I
 
 
 
+[[step-2-of-9-configure-load-balancer-endpoint]]
 == Schritt 2 von 9: Konfigurieren Sie den Load Balancer-Endpunkt
 
 StorageGRID verwendet einen Load Balancer zum Managen des Workloads von Client-Applikationen wie FabricPool. Load Balancing maximiert Geschwindigkeit und Verbindungskapazität über mehrere Storage Nodes hinweg.
@@ -347,6 +350,7 @@ Kopieren Sie das Serverzertifikat für den externen Load Balancer und fügen Sie
 
 
 
+[[step-3-of-9-tenant-and-bucket]]
 == Schritt 3 von 9: Mieter und Eimer
 
 Ein Mandant ist eine Einheit, die S3-Applikationen zum Speichern und Abrufen von Objekten in StorageGRID verwenden kann. Jeder Mandant verfügt über eigene Benutzer, Zugriffsschlüssel, Buckets, Objekte und bestimmte Funktionen. Sie müssen einen StorageGRID-Mandanten erstellen, bevor Sie den Bucket erstellen können, den FabricPool verwenden wird.
@@ -427,6 +431,7 @@ NOTE: Wählen Sie keinen Bucket aus, für den die S3-Objektsperrung zur Verwendu
 ====
 
 
+[[step-4-of-9-download-ontap-settings]]
 == Schritt 4 von 9: ONTAP-Einstellungen herunterladen
 
 In diesem Schritt laden Sie eine Datei herunter, mit der Sie Werte in den ONTAP System Manager eingeben können.
@@ -457,6 +462,7 @@ CAUTION: Schließen Sie diese Seite erst, wenn Sie beide Zugriffsschlüssel kopi
 
 
 
+[[step-5-of-9-select-a-storage-pool]]
 == Schritt 5 von 9: Wählen Sie einen Speicherpool aus
 
 Ein Speicherpool ist eine Gruppe von Storage-Nodes. Wenn Sie einen Speicherpool auswählen, legen Sie fest, welche Nodes StorageGRID zum Speichern der von ONTAP gestaffelten Daten verwendet.
@@ -474,6 +480,7 @@ Der Speicherpool für einen Standort umfasst alle Storage-Nodes an diesem Stando
 
 
 
+[[step-6-of-9-review-ilm-rule-for-fabricpool]]
 == Schritt 6 von 9: Überprüfen Sie die ILM-Regel für FabricPool
 
 Informationen Lifecycle Management-Regeln (ILM) steuern die Platzierung, Dauer und das Aufnahmeverhalten aller Objekte im StorageGRID System.
@@ -539,6 +546,7 @@ Verwenden Sie 2+1 Erasure Coding
 
 
 
+[[step-7-of-9-review-and-activate-ilm-policy]]
 == Schritt 7 von 9: Prüfen und aktivieren Sie die ILM-Richtlinie
 
 Nachdem der FabricPool Setup-Assistent die ILM-Regel für die Verwendung durch FabricPool erstellt hat, wird eine ILM-Richtlinie erstellt. Sie müssen diese Richtlinie sorgfältig simulieren und prüfen, bevor Sie sie aktivieren.
@@ -578,6 +586,8 @@ CAUTION: Fehler in einer ILM-Richtlinie können zu irreparablen Datenverlusten f
 
 
 
+[[step-8-of-9-create-traffic-classification-policy]]
+[[traffic-classification]]
 == Schritt 8 von 9: Verkehrsklassifizierungsrichtlinie erstellen
 
 Optional kann der FabricPool-Einrichtungsassistent eine Richtlinie zur Verkehrsklassifizierung erstellen, die Sie zur Überwachung des FabricPool-Workloads verwenden können. Die vom System erstellte Richtlinie verwendet eine übereinstimmende Regel, um den gesamten Netzwerkverkehr in Bezug auf den erstellten Bucket zu identifizieren. Diese Richtlinie überwacht nur den Datenverkehr; sie beschränkt nicht den Datenverkehr für FabricPool oder andere Clients.
@@ -595,6 +605,7 @@ Sobald FabricPool mit dem Tiering von Daten in StorageGRID beginnt, können Sie 
 
 
 
+[[step-9-of-9-review-summary]]
 == Schritt 9 von 9: Zusammenfassung überprüfen
 
 Die Zusammenfassung enthält Details zu den von Ihnen konfigurierten Elementen, darunter den Namen des Load Balancer, Mandanten und Buckets, die Richtlinie zur Datenklassifizierung und die aktive ILM-Richtlinie.
@@ -606,6 +617,7 @@ Die Zusammenfassung enthält Details zu den von Ihnen konfigurierten Elementen, 
 
 
 
+[[next-steps]]
 == Nächste Schritte
 
 Führen Sie nach Abschluss des FabricPool-Assistenten die folgenden zusätzlichen Schritte aus.

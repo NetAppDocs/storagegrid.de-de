@@ -20,6 +20,7 @@ Sie können grundlegende Informationen über alle link:../admin/grid-federation-
 
 
 
+[[view-all-connections]]
 == Alle Verbindungen anzeigen
 
 Die Seite Grid Federation enthält grundlegende Informationen zu allen Grid-Verbundverbindungen und zu allen Mandantenkonten, die für die Nutzung von Grid-Verbundverbindungen zugelassen sind.
@@ -59,6 +60,7 @@ image:grid-federation-permitted-tenants-tab.png["Registerkarte „Grid Federatio
 
 
 
+[[view-specific-connectionview-a-specific-connection]]
 == [[view-specific-connection]]eine bestimmte Verbindung anzeigen
 
 Sie können Details für eine bestimmte Grid Federation-Verbindung anzeigen.
@@ -102,6 +104,7 @@ image:grid-federation-certificates-tab.png["Grid-Federation-Certificates-tab"]
 
 
 
+[[review-cross-grid-replication-metrics]]
 == Grid-übergreifende Replizierungsmetriken prüfen
 
 Über das Cross-Grid Replication Dashboard in Grafana können Sie Prometheus-Metriken zu Grid-übergreifenden Replikationsvorgängen auf Ihrem Grid anzeigen.

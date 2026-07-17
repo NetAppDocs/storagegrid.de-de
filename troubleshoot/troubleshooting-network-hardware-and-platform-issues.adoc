@@ -15,6 +15,7 @@ Sie können verschiedene Aufgaben durchführen, um die Ursache von Problemen im 
 
 
 
+[[422-unprocessable-entity-errors]]
 == Fehler „422: Nicht verarbeitbare Entität“
 
 Der Fehler 422: Nicht verarbeitbare Entität kann aus verschiedenen Gründen auftreten. Überprüfen Sie die Fehlermeldung, um festzustellen, welche Ursache Ihr Problem verursacht hat.
@@ -77,6 +78,7 @@ Diese Meldung wird angezeigt, wenn Sie versuchen, eine nicht unterstützte Chiff
 |===
 
 
+[[troubleshootmtualertgrid-network-mtu-mismatch-alert]]
 == [[Troubleshooting_MTU_Alert]]Alarm bei MTU-Nichtübereinstimmung im Grid-Netzwerk
 
 Die Warnung *Grid Network MTU mismatch* wird ausgelöst, wenn sich die MTU-Einstellung (Maximum Transmission Unit) für die Grid Network Interface (eth0) über Knoten im Grid deutlich unterscheidet.
@@ -154,6 +156,7 @@ Der Node. Die Standardeinstellung ist der lokale Knoten.
 
 
 
+[[node-network-reception-frame-error-alert]]
 == Node-Netzwerk-Frame-Fehlerwarnung
 
 *Node Network Reception Frame error* Warnmeldungen können durch Verbindungsprobleme zwischen StorageGRID und Ihrer Netzwerk-Hardware verursacht werden. Diese Warnmeldung wird eigenständig gelöscht, nachdem das zugrunde liegende Problem behoben wurde.
@@ -240,6 +243,7 @@ Der Ruffuffer kann bei Überlastung des StorageGRID-Systems überlaufen werden u
 
 
 
+[[time-synchronization-errors]]
 == Fehler bei der Zeitsynchronisierung
 
 Möglicherweise treten Probleme mit der Zeitsynchronisierung in Ihrem Raster auf.
@@ -251,12 +255,14 @@ NOTE: Wenn link:../maintain/configuring-ntp-servers.html["Angeben der externen N
 
 
 
+[[linux-network-connectivity-issues]]
 == Linux: Probleme mit der Netzwerkverbindung
 
 Möglicherweise werden Probleme mit der Netzwerkverbindung für StorageGRID-Knoten angezeigt, die auf Linux-Hosts gehostet werden.
 
 
 
+[[mac-address-cloning]]
 === Klonen VON MAC Adressen
 
 In einigen Fällen können Netzwerkprobleme durch das Klonen von MAC-Adressen gelöst werden.  Wenn Sie virtuelle Hosts verwenden, setzen Sie den Wert des MAC-Adressklonschlüssels für jedes Ihrer Netzwerke in Ihrer Knotenkonfigurationsdatei auf „true“.  Diese Einstellung bewirkt, dass die MAC-Adresse des StorageGRID -Containers die MAC-Adresse des Hosts verwendet.  Siehe die Anweisungen zulink:../swnodes/creating-node-configuration-files.html["Erstellen Sie Knotenkonfigurationsdateien"] .
@@ -268,6 +274,7 @@ Weitere Informationen finden Sie in der Anleitung fürlink:../swnodes/configurin
 
 
 
+[[promiscuous-mode]]
 === Promiskuous Modus
 
 Wenn Sie das Klonen von MAC-Adressen nicht verwenden möchten und lieber allen Schnittstellen erlauben möchten, Daten für andere MAC-Adressen als die vom Hypervisor zugewiesenen zu empfangen und zu übertragen, Stellen Sie sicher, dass die Sicherheitseigenschaften auf der Ebene des virtuellen Switches und der Portgruppen für den Promiscuous-Modus, MAC-Adressänderungen und Forged-Übertragungen auf *Accept* gesetzt sind. Die auf dem virtuellen Switch eingestellten Werte können von den Werten auf der Portgruppenebene außer Kraft gesetzt werden. Stellen Sie also sicher, dass die Einstellungen an beiden Stellen identisch sind.
@@ -276,6 +283,7 @@ Weitere Informationen zur Verwendung des Promiscuous-Modus finden Sie in den Anw
 
 
 
+[[linux-node-status-is-orphaned]]
 == Linux: Knotenstatus ist „verwaist“
 
 Ein Linux-Node in einem verwaisten Status gibt in der Regel an, dass entweder der StorageGRID-Service oder der StorageGRID-Node-Daemon, der den Container steuert, unerwartet gestorben ist.
@@ -322,6 +330,7 @@ storagegrid node start DC1-S1-172-16-1-172
 
 
 
+[[linux-troubleshoot-ipv6-support]]
 == Linux: Fehlerbehebung bei der IPv6-Unterstützung
 
 Möglicherweise müssen Sie die IPv6-Unterstützung im Kernel aktivieren, wenn Sie StorageGRID-Knoten auf Linux-Hosts installiert haben und Sie bemerken, dass den Knoten-Containern keine IPv6-Adressen wie erwartet zugewiesen wurden.

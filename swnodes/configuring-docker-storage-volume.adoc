@@ -100,6 +100,7 @@ Mit diesem Schritt wird sichergestellt, dass das Storage Volume nach einem Neust
 
 
 
+[[install-docker]]
 == Installation Von Docker
 
 Das StorageGRID -System kann unter Linux als Sammlung von Containern ausgeführt werden.
@@ -141,6 +142,8 @@ Die Client- und Server-Versionen müssen 1.11.0 oder höher sein.
 
 
 
+[[install-podman]]
+[[install-podman-rhel]]
 == Installieren Sie Podman
 
 Das StorageGRID -System wird als Sammlung von Containern ausgeführt.  Wenn Sie sich für die Verwendung der Podman-Container-Engine entschieden haben, befolgen Sie diese Schritte, um Podman zu installieren.  Ansonsten,<<Installation Von Docker,Installation von Docker>> .

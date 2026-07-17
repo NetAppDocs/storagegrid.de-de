@@ -17,6 +17,7 @@ Der Zugriff auf Plattform-Services wird von einem StorageGRID Administrator nach
 
 
 
+[[what-is-a-platform-services-endpoint]]
 == Was ist ein Endpunkt für Plattformservices?
 
 Ein Endpunkt für Plattformdienste gibt die Informationen an, die StorageGRID für den Zugriff auf das externe Ziel benötigt.
@@ -29,12 +30,14 @@ Sie können für mehrere Quell-Buckets denselben Endpunkt wie das Ziel verwenden
 
 
 
+[[endpoints-for-cloudmirror-replication]]
 == Endpunkte für CloudMirror Replizierung
 
 StorageGRID unterstützt Replizierungsendpunkte, die S3-Buckets darstellen. Diese Buckets können unter Umständen auf Amazon Web Services, derselben oder einer Remote-StorageGRID-Implementierung oder einem anderen Service gehostet werden.
 
 
 
+[[endpoints-for-notifications]]
 == Endpunkte für Benachrichtigungen
 
 StorageGRID unterstützt Amazon SNS, Kafka und Webhook-Endpunkte.  Simple Queue Service (SQS) und AWS Lambda-Endpunkte werden nicht unterstützt.
@@ -43,6 +46,7 @@ Für Kafka-Endpunkte wird Mutual TLS nicht unterstützt.  Wenn Sie also `ssl.cli
 
 
 
+[[endpoints-for-the-search-integration-service]]
 == Endpunkte für den Suchintegrations-Service
 
 StorageGRID unterstützt Endpunkte für die Suchintegration, die Elasticsearch-Cluster darstellen. Diese Elasticsearch-Cluster können sich in einem lokalen Datacenter befinden oder in einer AWS Cloud oder an anderen Standorten gehostet werden.

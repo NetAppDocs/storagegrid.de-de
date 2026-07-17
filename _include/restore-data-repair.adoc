@@ -4,6 +4,7 @@
 
 
 
+[[find-hostname-for-storage-node]]
 == Suchen Sie nach Hostnamen für Speicherknoten
 
 . Melden Sie sich bei einem beliebigen Admin-Knoten an:
@@ -22,6 +23,7 @@ Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `
 
 
 
+[[repair-data-if-all-volumes-have-failed]]
 == Reparieren Sie Daten, wenn alle Volumes ausgefallen sind
 
 Wenn alle Storage-Volumes ausgefallen sind, reparieren Sie den gesamten Node. Befolgen Sie die Anweisungen für *replizierte Daten*, *Erasure-codierte (EC) Daten* oder beide, je nachdem, ob Sie replizierte Daten, Erasure-codierte (EC) Daten oder beide verwenden.
@@ -61,6 +63,7 @@ Reparaturen von Daten, die auf Löschung codiert wurden, können beginnen, währ
 ====
 
 
+[[repair-data-if-only-some-volumes-have-failed]]
 == Reparieren Sie Daten, wenn nur einige Volumes ausgefallen sind
 
 Wenn nur einige Volumes ausgefallen sind, die betroffenen Volumes reparieren. Befolgen Sie die Anweisungen für *replizierte Daten*, *Erasure-codierte (EC) Daten* oder beide, je nachdem, ob Sie replizierte Daten, Erasure-codierte (EC) Daten oder beide verwenden.

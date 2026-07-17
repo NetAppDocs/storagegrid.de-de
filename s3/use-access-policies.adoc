@@ -15,6 +15,7 @@ StorageGRID verwendet die Richtliniensprache für Amazon Web Services (AWS), um 
 
 
 
+[[access-policy-overview]]
 == Zugriffsrichtlinien – Überblick
 
 StorageGRID unterstützt drei Arten von Zugriffsrichtlinien:
@@ -137,6 +138,7 @@ Die Bucket-Richtlinie hat eine Größenbeschränkung von 20,480 Byte, und die Gr
 
 
 
+[[consistency-for-policies]]
 == Konsistenz von Richtlinien
 
 Standardmäßig sind alle Aktualisierungen, die Sie an Gruppenrichtlinien vornehmen, letztendlich konsistent. Wenn eine Gruppenrichtlinie konsistent wird, können die Änderungen aufgrund des Caching von Richtlinien weitere 15 Minuten in Anspruch nehmen. Standardmäßig sind alle Updates an Bucket-Richtlinien stark konsistent.
@@ -150,12 +152,14 @@ NOTE: Wenn Sie die Konsistenz auf einen anderen Wert setzen, um eine temporäre 
 
 
 
+[[what-is-session-policy]]
 == Was ist eine Sitzungsrichtlinie?
 
 Eine Sitzungsrichtlinie ist eine Zugriffsrichtlinie, die die während einer bestimmten Sitzung verfügbaren Berechtigungen vorübergehend einschränkt, beispielsweise wenn ein Benutzer eine Gruppe übernimmt.  Eine Sitzungsrichtlinie kann nur eine Teilmenge der Berechtigungen zulassen und keine zusätzlichen Berechtigungen erteilen.  Die Gruppe selbst verfügt möglicherweise über umfassendere Berechtigungen.
 
 
 
+[[use-arn-in-policy-statements]]
 == Verwenden Sie ARN in den Richtlinienerklärungen
 
 In den Richtlinienerklärungen wird das ARN in Haupt- und Ressourcenelementen verwendet.
@@ -193,6 +197,7 @@ Der HTTP-Anforderungskörper für den PutBucketPolicy-Vorgang muss mit charset=U
 
 
 
+[[specify-resources-in-a-policy]]
 == Geben Sie Ressourcen in einer Richtlinie an
 
 In Richtlinienausrechnungen können Sie mithilfe des Elements Ressourcen den Bucket oder das Objekt angeben, für das Berechtigungen zulässig oder verweigert werden.
@@ -215,6 +220,7 @@ In Richtlinienausrechnungen können Sie mithilfe des Elements Ressourcen den Buc
 
 
 
+[[specify-principals-in-a-policy]]
 == Principals in einer Policy angeben
 
 Verwenden Sie das Hauptelement, um das Benutzer-, Gruppen- oder Mandantenkonto zu identifizieren, das über die Richtlinienanweisung Zugriff auf die Ressource erlaubt/verweigert wird.
@@ -272,6 +278,7 @@ Angenommen, Alex verlässt die Organisation und der Benutzername `Alex` wird gel
 
 
 
+[[specify-permissions-in-a-policy]]
 == Legen Sie Berechtigungen in einer Richtlinie fest
 
 In einer Richtlinie wird das Aktionselement verwendet, um Berechtigungen einer Ressource zuzulassen/zu verweigern. Es gibt eine Reihe von Berechtigungen, die Sie in einer Richtlinie festlegen können, die durch das Element „Aktion“ gekennzeichnet sind, oder alternativ durch „NotAction“ für den Ausschluss. Jedes dieser Elemente wird bestimmten S3-REST-API-Operationen zugeordnet.
@@ -286,6 +293,7 @@ NOTE: Ein Löschen wird durchgeführt, wenn ein Put zum Überschreiben eines vor
 
 
 
+[[permissions-that-apply-to-buckets]]
 === Berechtigungen, die für Buckets gelten
 
 [cols="2a,2a,1a"]
@@ -624,6 +632,7 @@ Ja, separate Berechtigungen für PUT und DELETE
 |===
 
 
+[[permissions-that-apply-to-objects]]
 === Berechtigungen, die sich auf Objekte beziehen
 
 [cols="2a,2a,1a"]
@@ -825,6 +834,7 @@ Objekt restoreObject
 |===
 
 
+[[use-putoverwriteobject-permissionuse-putoverwriteobject-permission]]
 == [[use-putoverwriteobject-permission]]PutOverwriteObject-Berechtigung verwenden
 
 die s3:PutOverwriteObject-Berechtigung ist eine benutzerdefinierte StorageGRID-Berechtigung, die für Vorgänge gilt, die Objekte erstellen oder aktualisieren. Durch diese Berechtigung wird festgelegt, ob der Client die Daten, benutzerdefinierte Metadaten oder S3-Objekt-Tagging überschreiben kann.
@@ -852,6 +862,7 @@ NOTE: Wenn die aktuelle S3-Richtlinie das Überschreiben zulässt und die Berech
 
 
 
+[[specify-conditions-in-a-policy]]
 == Legen Sie Bedingungen in einer Richtlinie fest
 
 Die Bedingungen legen fest, wann eine Richtlinie in Kraft sein wird. Die Bedingungen bestehen aus Bedienern und Schlüsselwertpaaren.
@@ -877,6 +888,7 @@ Im folgenden Beispiel verwendet die IPAddress-Bedingung den SourceIp-Bedingungss
 ----
 
 
+[[supported-condition-operators]]
 === Unterstützte Bedingungsoperatoren
 
 Bedingungsoperatoren werden wie folgt kategorisiert:
@@ -1013,6 +1025,7 @@ Wird an jeden Bedingungsoperator außer der Nullbedingung angehängt, um das Feh
 |===
 
 
+[[supported-condition-keys]]
 === Unterstützte Bedingungsschlüssel
 
 [cols="1a,1a,2a"]
@@ -1170,6 +1183,7 @@ Vergleichbar mit dem `sse-customer-algorithm` oder zum `copy-source-sse-customer
 |===
 
 
+[[specify-variables-in-a-policy]]
 == Geben Sie Variablen in einer Richtlinie an
 
 Sie können Variablen in Richtlinien verwenden, um die Richtlinieninformationen auszufüllen, wenn sie verfügbar sind. Sie können Richtlinienvariablen im Element und in Stringvergleiche im `Condition` Element verwenden `Resource`.
@@ -1246,6 +1260,7 @@ Sonderzeichen. Verwendet das Zeichen als Literal USD Zeichen.
 |===
 
 
+[[create-policies-requiring-special-handling]]
 == Erstellen von Richtlinien, die eine spezielle Handhabung erfordern
 
 Manchmal kann eine Richtlinie Berechtigungen erteilen, die für die Sicherheit oder die Gefahr für einen fortgesetzten Betrieb gefährlich sind, z. B. das Sperren des Root-Benutzers des Kontos. Die StorageGRID S3-REST-API-Implementierung ist bei der Richtlinienvalidierung weniger restriktiv als Amazon, aber auch bei der Richtlinienbewertung streng.
@@ -1366,6 +1381,7 @@ Gültig. Der Eigentümer der Objekte ist das Bucket-Owner-Konto. Bucket-Richtlin
 |===
 
 
+[[write-once-read-many-worm-protection]]
 == WORM-Schutz (Write Once, Read Many)
 
 Sie können WORM-Buckets (Write-Once-Read-Many) erstellen, um Daten, benutzerdefinierte Objekt-Metadaten und S3-Objekt-Tagging zu sichern. SIE konfigurieren die WORM-Buckets, um das Erstellen neuer Objekte zu ermöglichen und Überschreibungen oder das Löschen vorhandener Inhalte zu verhindern. Verwenden Sie einen der hier beschriebenen Ansätze.

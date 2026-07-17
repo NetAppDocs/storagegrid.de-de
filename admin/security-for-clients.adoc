@@ -15,6 +15,7 @@ StorageGRID-Mandantenkonten verwenden S3-Client-Applikationen, um Objektdaten in
 
 
 
+[[summary]]
 == Zusammenfassung
 
 In der folgenden Liste wird zusammengefasst, wie Sicherheit für die S3-REST-API implementiert wird:
@@ -27,6 +28,7 @@ Client-Autorisierung:: Eigentümerschaft von Buckets und alle anwendbaren Zugrif
 
 
 
+[[how-storagegrid-provides-security-for-client-applications]]
 == Wie StorageGRID Sicherheit für Client-Anwendungen bietet
 
 S3-Client-Applikationen können sich mit dem Load Balancer-Service auf Gateway-Nodes oder Admin-Nodes oder direkt mit Storage-Nodes verbinden.
@@ -52,6 +54,7 @@ HTTP bietet eine weniger sichere, unverschlüsselte Kommunikation, kann aber opt
 
 
 
+[[security-certificates-and-client-applications]]
 === Sicherheitszertifikate und Clientanwendungen
 
 Clientanwendungen können in jedem Fall TLS-Verbindungen herstellen, indem sie entweder ein vom Grid-Administrator hochgeladenes benutzerdefiniertes Serverzertifikat oder ein vom StorageGRID-System generiertes Zertifikat verwenden:
@@ -67,12 +70,14 @@ Die Clients sollten so konfiguriert werden, dass sie der Zertifizierungsstelle v
 
 
 
+[[supported-hashing-and-encryption-algorithms-for-tls-libraries]]
 == Unterstützte Hashing- und Verschlüsselungsalgorithmen für TLS-Bibliotheken
 
 Das StorageGRID -System unterstützt eine Reihe von Verschlüsselungssammlungen, die Clientanwendungen beim Herstellen einer TLS-Sitzung verwenden können.  Um Verschlüsselungen zu konfigurieren, gehen Sie zu *Konfiguration* > *Sicherheit* > *Sicherheitseinstellungen* und wählen Sie *TLS- und SSH-Richtlinien*.
 
 
 
+[[supported-versions-of-tls]]
 === Unterstützte Versionen von TLS
 
 StorageGRID unterstützt TLS 1.2 und TLS 1.3.

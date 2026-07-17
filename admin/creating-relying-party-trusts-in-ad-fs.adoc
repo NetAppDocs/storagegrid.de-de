@@ -31,6 +31,7 @@ Diese Anweisungen gelten für Windows Server 2016 AD FS. Wenn Sie eine andere Ve
 
 
 
+[[create-a-relying-party-trust-using-windows-powershell]]
 == Erstellen Sie mit Windows PowerShell ein Vertrauensverhältnis, das sich auf die Kunden stützt
 
 Mit Windows PowerShell können Sie schnell ein oder mehrere Vertrauensstellen von vertrauenswürdigen Parteien erstellen.
@@ -93,6 +94,7 @@ Wenn die Metadaten fehlen, überprüfen Sie, ob die Metadatenadresse der Födera
 
 
 
+[[create-a-relying-party-trust-by-importing-federation-metadata]]
 == Erstellen Sie durch den Import von Federationmetadaten ein Vertrauen von Kunden
 
 Sie können die Werte für jedes Vertrauen der betreffenden Anbieter importieren, indem Sie für jeden Admin-Node auf die SAML-Metadaten zugreifen.
@@ -144,6 +146,7 @@ Wenn die Metadaten fehlen, überprüfen Sie, ob die Metadatenadresse der Födera
 
 
 
+[[create-a-relying-party-trust-manually]]
 == Erstellen Sie manuell ein Vertrauen der Vertrauensbasis
 
 Wenn Sie sich entscheiden, die Daten für die Treuhanddienste des Treuhandteils nicht zu importieren, können Sie die Werte manuell eingeben.

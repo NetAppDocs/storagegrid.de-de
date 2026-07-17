@@ -22,6 +22,7 @@ Mithilfe dieser Anweisungen können Sie:
 
 
 
+[[quick-start-for-configuring-storagegrid-for-fabricpool]]
 == Schnellstart für die Konfiguration von StorageGRID für FabricPool
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"] Planen Sie Ihre Konfiguration
@@ -69,6 +70,7 @@ Führen Sie nach der Inbetriebnahme Ihres Systems fortlaufende Aufgaben in ONTAP
 
 
 
+[[what-is-fabricpool]]
 == Was ist FabricPool?
 
 FabricPool ist eine ONTAP Hybrid-Storage-Lösung mit einem hochperformanten Flash-Aggregat als Performance-Tier und einem Objektspeicher als Cloud-Tier. Mit FabricPool-fähigen Aggregaten senken Sie die Storage-Kosten, ohne dabei Einbußen bei Performance, Effizienz oder Sicherung hinnehmen zu müssen.
@@ -79,12 +81,14 @@ Es sind keine Änderungen an der Architektur erforderlich und die Daten- und App
 
 
 
+[[what-is-storagegrid]]
 == Was ist StorageGRID?
 
 NetApp StorageGRID ist eine Storage-Architektur, die Daten als Objekte managt und sich nicht auf andere Storage-Architekturen wie File- oder Block-Storage unterscheidet. Objekte werden in einem einzelnen Container (z. B. Bucket) aufbewahrt und nicht als Dateien in einem Verzeichnis in anderen Verzeichnissen verschachtelt. Obwohl Objekt-Storage im Allgemeinen eine geringere Performance als Datei- oder Block-Storage bietet, ist sie deutlich skalierbarer. StorageGRID Buckets können Daten im Petabyte-Bereich und Milliarden Objekte enthalten.
 
 
 
+[[why-use-storagegrid-as-a-fabricpool-cloud-tier]]
 == Vorteile von StorageGRID als Cloud-Tier von FabricPool
 
 FabricPool kann ONTAP-Daten auf eine Reihe von Objekt-Storage-Providern, einschließlich StorageGRID, verschieben. Im Gegensatz zu Public Clouds, bei denen eine maximale Anzahl unterstützter IOPS (Input/Output Operations per Second) auf Bucket- oder Container-Ebene festgelegt werden kann, lässt sich die StorageGRID-Performance mit der Anzahl der Nodes in einem System skalieren. Durch den Einsatz von StorageGRID als FabricPool Cloud-Tier können kalte Daten in Ihrer eigenen Private Cloud vorgehalten werden, um höchste Performance und vollständige Kontrolle über Ihre Daten zu erzielen.

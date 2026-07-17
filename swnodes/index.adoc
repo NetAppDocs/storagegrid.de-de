@@ -43,6 +43,7 @@ Wenn alle Knoten bereitgestellt wurden, verwenden Sie den Grid Manager für link
 
 
 
+[[automate-the-installation]]
 == Automatisieren Sie die Installation
 
 

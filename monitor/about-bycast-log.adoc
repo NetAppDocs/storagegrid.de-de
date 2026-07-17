@@ -19,6 +19,7 @@ Optional können Sie das Ziel der Überwachungsprotokolle ändern und Überwachu
 
 
 
+[[file-rotation-for-bycast-log]]
 == Dateirotation für bycast.log
 
 Wenn die `bycast.log` Datei 1 GB erreicht, wird die vorhandene Datei gespeichert und eine neue Protokolldatei gestartet.
@@ -39,6 +40,7 @@ link:collecting-log-files-and-system-data.html["Erfassen von Protokolldateien un
 
 
 
+[[messages-in-bycast-log]]
 == Nachrichten in bycast.log
 
 Nachrichten in `bycast.log` werden von der ADE (Asynchronous Distributed Environment) geschrieben. ADE ist die Laufzeitumgebung, die von den Services jedes Grid-Node verwendet wird.
@@ -99,6 +101,7 @@ Nachricht
 |===
 
 
+[[message-severities-in-bycast-log]]
 == Nachrichten-Schweregrade in bycast.log
 
 Den Meldungen in `bycast.log` werden Schweregrade zugewiesen.
@@ -113,6 +116,7 @@ Beispiel:
 
 
 
+[[error-codes-in-bycast-log]]
 == Fehlercodes in `bycast.log`
 
 Die meisten Fehlermeldungen in `bycast.log` enthalten Fehlercodes.

@@ -15,6 +15,7 @@ Bei Bedarf können Sie die Anzeigenamen ändern, die im Grid Manager für das ge
 
 
 
+[[what-is-the-rename-procedure]]
 == Wie lautet das Umbenennungsverfahren?
 
 Wenn Sie StorageGRID von Anfang an installieren, geben Sie einen Namen für das Grid, jeden Standort und jeden Node an. Diese Anfangsnamen werden als _System names_ bezeichnet, und sie sind die Namen, die ursprünglich in StorageGRID angezeigt werden.
@@ -25,6 +26,7 @@ Verwenden Sie das Umbenennungsverfahren, um Tippfehler zu korrigieren, eine ande
 
 
 
+[[where-do-system-and-display-names-appear]]
 == Wo werden System- und Anzeigenamen angezeigt?
 
 Die folgende Tabelle fasst zusammen, wo Systemnamen und Anzeigenamen in der StorageGRID-Benutzeroberfläche und in StorageGRID-Dateien angezeigt werden.
@@ -121,12 +123,14 @@ Leer, es sei denn, Elemente wurden umbenannt; andernfalls werden Raster-, Stando
 |===
 
 
+[[display-name-requirements]]
 == Anforderungen für Anzeigenamen
 
 Bevor Sie dieses Verfahren verwenden, überprüfen Sie die Anforderungen für Anzeigenamen.
 
 
 
+[[display-names-for-nodes]]
 === Namen für Nodes anzeigen
 
 Anzeigenamen für Nodes müssen folgende Regeln einhalten:
@@ -144,6 +148,7 @@ Sie können einen Node mit einem Anzeigenamen umbenennen, der zuvor von einem an
 
 
 
+[[display-names-for-grid-and-sites]]
 === Namen für Raster und Standorte anzeigen
 
 Anzeigenamen für das Raster und Standorte folgen denselben Regeln mit diesen Ausnahmen:
@@ -156,6 +161,7 @@ Anzeigenamen für das Raster und Standorte folgen denselben Regeln mit diesen Au
 
 
 
+[[display-name-best-practices]]
 == Best Practices für Anzeigenamen
 
 Wenn Sie mehrere Elemente umbenennen möchten, dokumentieren Sie Ihr allgemeines Benennungsschema, bevor Sie dieses Verfahren verwenden. Ein System, das dafür sorgt, dass die Namen eindeutig, konsistent und auf einen Blick verständlich sind.
@@ -171,6 +177,7 @@ Sie können beliebige Namenskonventionen verwenden, die Ihren Unternehmensanford
 
 
 
+[[example-display-names]]
 === Beispiel für Anzeigenamen
 
 Angenommen, Ihr StorageGRID System hat drei Datacenter und verfügt in jedem Datacenter über unterschiedliche Nodes. Ihre Anzeigenamen können so einfach sein wie diese:

@@ -15,6 +15,7 @@ Beachten Sie zusätzlich die Hinweise zur Verhärtung von StorageGRID-Netzwerken
 
 
 
+[[temporary-installation-password]]
 == Temporäres Installationspasswort
 
 Um das StorageGRID-System während der Installation zu sichern, legen Sie ein Kennwort auf der Seite für das temporäre Installationspasswort in der StorageGRID-Installationsoberfläche oder in der Installations-API fest. Wenn dieses Kennwort festgelegt ist, gilt es für alle Methoden zur Installation von StorageGRID, einschließlich der Benutzeroberfläche, der Installations-API und `configure-storagegrid.py` des Skripts.
@@ -27,6 +28,7 @@ Weitere Informationen finden Sie unter:
 
 
 
+[[logs-and-audit-messages]]
 == Protokolle und Prüfmeldungen
 
 Sichern Sie StorageGRID-Protokolle und die Ausgabe von Prüfnachrichten sicher. StorageGRID-Protokolle und Audit-Meldungen bieten wertvolle Informationen aus Sicht der Support- und Systemverfügbarkeit. Darüber hinaus handelt es sich bei den Informationen und Details der StorageGRID-Protokolle und der Ausgabe von Audit-Meldungen in der Regel um sensible Daten.
@@ -37,6 +39,7 @@ Im finden link:../monitor/logs-files-reference.html["Referenz für Protokolldate
 
 
 
+[[netapp-autosupport]]
 == NetApp AutoSupport
 
 Mit der AutoSupport Funktion von StorageGRID können Sie den Zustand Ihres Systems proaktiv überwachen und automatisch Pakete an die NetApp Support Website, das interne Support-Team Ihres Unternehmens oder einen Support-Partner senden. Standardmäßig ist das Senden von AutoSupport-Paketen an NetApp aktiviert, wenn StorageGRID zum ersten Mal konfiguriert wird.
@@ -47,6 +50,7 @@ AutoSupport unterstützt HTTPS, HTTP und SMTP für Transportprotokolle. Aufgrund
 
 
 
+[[cross-origin-resource-sharing-cors]]
 == Cross-Origin Resource Sharing (CORS)
 
 Sie können CORS (Cross-Origin Resource Sharing) für einen S3-Bucket konfigurieren, wenn Webapplikationen in anderen Domänen auf diesen Bucket und die Objekte in diesem Bucket zugreifen sollen. Im Allgemeinen sollten Sie CORS nur aktivieren, wenn dies erforderlich ist. Wenn CORS erforderlich ist, beschränken Sie es auf vertrauenswürdige Herkunft.
@@ -55,6 +59,7 @@ Sehen Sie sich die Schritte fürlink:../tenant/configuring-cross-origin-resource
 
 
 
+[[external-security-devices]]
 == Externe Sicherheitsgeräte
 
 Eine vollständige Härtungslösung muss auch Sicherheitsmechanismen außerhalb von StorageGRID berücksichtigen. Der Einsatz zusätzlicher Infrastrukturgeräte zum Filtern und zur Einschränkung des Zugriffs auf StorageGRID ist eine effektive Möglichkeit, eine anspruchsvolle Sicherheit zu schaffen und zu erhalten. Zu diesen externen Sicherheitsgeräten gehören Firewalls, Intrusion Prevention Systems (IPSs) und andere Sicherheitsgeräte.
@@ -63,6 +68,7 @@ Für nicht vertrauenswürdigen Client-Datenverkehr wird ein Load Balancer eines 
 
 
 
+[[ransomware-mitigation]]
 == Ransomware-Minderung
 
 Befolgen Sie die Empfehlungen in, um Ihre Objektdaten vor Ransomware-Angriffen zu schützen https://www.netapp.com/media/69498-tr-4921.pdf["Ransomware-Verteidigung mit StorageGRID"^].

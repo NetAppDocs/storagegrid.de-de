@@ -18,6 +18,7 @@ CAUTION: Die folgenden ILM-Regeln und -Richtlinien sind nur Beispiele. Es gibt v
 
 
 
+[[ilm-rule-1-for-example-2-use-ec-for-objects-greater-than-1-mb]]
 == ILM-Regel 1 beispielsweise 2: Verwenden Sie EC für Objekte über 1 MB
 
 In diesem Beispiel werden Objekte mit einer ILM-Regel gelöscht, die größer als 1 MB sind.
@@ -61,6 +62,7 @@ image:policy_2_rule_1_ec_objects_adv_filtering.png["ILM-Regel 1 beispielsweise 2
 
 
 
+[[ilm-rule-2-for-example-2-two-replicated-copies]]
 == ILM-Regel 2 beispielsweise 2: Zwei replizierte Kopien
 
 Diese Beispiel-ILM-Regel erstellt zwei replizierte Kopien und filtert nicht nach Objektgröße. Diese Regel ist die Standardregel für die Richtlinie. Da die erste Regel alle Objekte mit einer Größe von mehr als 1 MB filtert, gilt diese Regel nur für Objekte, die 1 MB oder kleiner sind.
@@ -99,6 +101,7 @@ Bewahren Sie an Tag 0 bis für immer eine replizierte Kopie an Standort 1 und ei
 |===
 
 
+[[ilm-policy-for-example-2-use-ec-for-objects-greater-than-1-mb]]
 == ILM-Richtlinie beispielsweise 2: Verwenden Sie EC für Objekte über 1 MB
 
 Dieses Beispiel für die ILM-Richtlinie umfasst zwei ILM-Regeln:

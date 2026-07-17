@@ -27,6 +27,7 @@ Standardmäßig kann jeder Benutzer, der zu einer Gruppe mit mindestens einer Be
 
 
 
+[[interaction-between-permissions-and-access-mode]]
 == Interaktion zwischen Berechtigungen und Zugriffsmodus
 
 Für alle Berechtigungen bestimmt die Einstellung *Zugriffsmodus* der Gruppe, ob Benutzer Einstellungen ändern und Vorgänge ausführen können oder ob sie nur die zugehörigen Einstellungen und Funktionen anzeigen können. Wenn ein Benutzer zu mehreren Gruppen gehört und eine beliebige Gruppe auf *schreibgeschützt* gesetzt ist, hat der Benutzer schreibgeschützten Zugriff auf alle ausgewählten Einstellungen und Features.
@@ -35,12 +36,14 @@ In den folgenden Abschnitten werden die Berechtigungen beschrieben, die Sie beim
 
 
 
+[[root-access]]
 == Root-Zugriff
 
 Mit dieser Berechtigung erhalten Sie Zugriff auf alle Grid-Administrationsfunktionen.
 
 
 
+[[change-tenant-root-password]]
 == Root-Passwort des Mandanten ändern
 
 Diese Berechtigung bietet Zugriff auf die Option *Root-Passwort ändern* auf der Seite der Mieter, so dass Sie steuern können, wer das Passwort für den lokalen Root-Benutzer des Mandanten ändern kann. Diese Berechtigung wird auch für die Migration von S3-Schlüsseln verwendet, wenn die S3-Key-Importfunktion aktiviert ist. Benutzer, die diese Berechtigung nicht besitzen, können die Option *root-Passwort ändern* nicht sehen.
@@ -50,6 +53,7 @@ NOTE: Um Zugriff auf die Seite Mieter zu gewähren, die die Option *Root Passwor
 
 
 
+[[ilm]]
 == ILM
 
 Diese Berechtigung bietet Zugriff auf die folgenden *ILM* Menüoptionen:
@@ -68,6 +72,7 @@ NOTE: Benutzer müssen über die Berechtigung *Andere Rasterkonfiguration* verf�
 
 
 
+[[maintenance]]
 == Wartung
 
 Benutzer müssen über die Berechtigung zur Wartung verfügen, um folgende Optionen verwenden zu können:
@@ -136,12 +141,14 @@ Benutzer, die nicht über die Berechtigung Wartung verfügen, können diese Seit
 
 
 
+[[manage-alerts]]
 == Verwalten von Meldungen
 
 Mit dieser Berechtigung erhalten Sie Zugriff auf Optionen zum Verwalten von Warnmeldungen. Benutzer müssen über diese Berechtigung verfügen, um Stille, Warnmeldungen und Alarmregeln zu verwalten.
 
 
 
+[[metrics-query]]
 == Abfrage von Kennzahlen
 
 Diese Berechtigung bietet Zugriff auf:
@@ -153,12 +160,14 @@ Diese Berechtigung bietet Zugriff auf:
 
 
 
+[[object-metadata-lookup]]
 == Suche nach Objektmetadaten
 
 Mit dieser Berechtigung erhalten Sie Zugriff auf die Seite *ILM* > *Objekt-Metadaten-Lookup*.
 
 
 
+[[other-grid-configuration]]
 == Andere Grid-Konfiguration
 
 Diese Berechtigung bietet Zugriff auf diese zusätzlichen Rasterkonfigurationsoptionen:
@@ -178,6 +187,7 @@ Diese Berechtigung bietet Zugriff auf diese zusätzlichen Rasterkonfigurationsop
 
 
 
+[[storage-appliance-administrator]]
 == Storage Appliance-Administrator
 
 Diese Berechtigung bietet:
@@ -188,6 +198,7 @@ Diese Berechtigung bietet:
 
 
 
+[[tenant-accounts]]
 == Mandantenkonten
 
 Mit dieser Berechtigung können Sie:

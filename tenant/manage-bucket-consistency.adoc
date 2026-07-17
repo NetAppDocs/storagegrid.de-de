@@ -20,12 +20,14 @@ Mithilfe von Konsistenzwerten können Änderungen an den Bucket-Einstellungen fe
 
 
 
+[[bucket-consistency-guidelines]]
 == Bucket-Konsistenzrichtlinien
 
 Die Bucket-Konsistenz wird verwendet, um die Konsistenz von Client-Applikationen zu bestimmen, die sich auf Objekte in diesem S3 Bucket auswirken. Im Allgemeinen sollten Sie die Konsistenz *Read-after-New-write* für Ihre Buckets verwenden.
 
 
 
+[[change-bucket-consistencychange-bucket-consistency]]
 == [[Change-Bucket-Consistency]]Bucket-Konsistenz ändern
 
 Wenn die Konsistenz *Read-after-New-write* nicht den Anforderungen der Client-Anwendung entspricht, können Sie die Konsistenz ändern, indem Sie die Bucket-Konsistenz oder den Header festlegen `Consistency-Control`. Die `Consistency-Control` Kopfzeile überschreibt die Bucket-Konsistenz.
@@ -54,6 +56,7 @@ Die Seite mit den Bucket-Details wird angezeigt.
 
 
 
+[[what-happens-when-you-change-bucket-settings]]
 == Was passiert, wenn Sie Bucket-Einstellungen ändern
 
 Buckets verfügen über mehrere Einstellungen, die sich auf das Verhalten der Buckets und der Objekte in diesen Buckets auswirken.

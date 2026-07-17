@@ -22,6 +22,7 @@ Jeder REST-API-Befehl umfasst die URL der API, eine HTTP-Aktion, alle erforderli
 
 
 
+[[storagegrid-installation-api]]
 == StorageGRID Installations-API
 
 Die StorageGRID Installations-API ist nur verfügbar, wenn Sie das StorageGRID-System zu Beginn konfigurieren und eine primäre Wiederherstellung des Admin-Knotens durchführen müssen. Der Zugriff auf die Installations-API erfolgt über HTTPS vom Grid Manager.

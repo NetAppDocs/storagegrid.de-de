@@ -25,6 +25,7 @@ Alle Knoten im Grid verwenden dieselbe SNMP-Konfiguration.
 
 
 
+[[specify-basic-configuration]]
 == Geben Sie die Grundkonfiguration an
 
 Aktivieren Sie als ersten Schritt den StorageGRID-SMNP-Agent und geben Sie grundlegende Informationen an.
@@ -79,6 +80,7 @@ Wenn diese Option ausgewählt ist, sendet der StorageGRID SNMP-Agent Authentifiz
 
 
 
+[[enter-community-strings]]
 == Geben Sie Community-Strings ein
 
 Wenn Sie SNMPv1 oder SNMPv2c verwenden, füllen Sie den Abschnitt Community Strings aus.
@@ -102,6 +104,7 @@ Es sind bis zu fünf Zeichenfolgen zulässig.
 
 
 
+[[selecttrapdestinationcreate-trap-destinations]]
 == [[select_Trap_Destination]]Trap-Ziele erstellen
 
 Verwenden Sie die Registerkarte Trap-Ziele im Abschnitt andere Konfigurationen, um ein oder mehrere Ziele für StorageGRID-Trap- oder Inform-Benachrichtigungen zu definieren. Wenn Sie den SNMP-Agenten aktivieren und *Speichern* auswählen, sendet StorageGRID Benachrichtigungen an jedes definierte Ziel, wenn Warnungen ausgelöst werden. Standardbenachrichtigungen werden auch für die unterstützten MIB-II-Entitäten gesendet (z. B. ifdown und coldstart).
@@ -277,6 +280,7 @@ Das Trap-Ziel wird erstellt und der Tabelle hinzugefügt.
 
 
 
+[[create-agent-addresses]]
 == Erstellen Sie Agentenadressen
 
 Verwenden Sie optional die Registerkarte Agentenadressen im Abschnitt andere Konfigurationen, um eine oder mehrere „Listening-Adressen“ anzugeben. Dies sind die StorageGRID-Adressen, über die der SNMP-Agent Abfragen empfangen kann.
@@ -344,6 +348,7 @@ Die Agentenadresse wird erstellt und der Tabelle hinzugefügt.
 
 
 
+[[create-usm-userscreate-usm-users]]
 == [[create-usm-users]]Erstellen Sie USM-Benutzer
 
 Wenn Sie SNMPv3 verwenden, definieren Sie auf der Registerkarte USM-Benutzer im Abschnitt andere Konfigurationen die USM-Benutzer, die zum Abfragen der MIB oder zum Empfangen von Traps und Informationen berechtigt sind.

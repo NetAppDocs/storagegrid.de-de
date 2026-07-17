@@ -25,6 +25,7 @@ CORS (Cross-Origin Resource Sharing) ist ein Sicherheitsmechanismus, mit dem Cli
 
 
 
+[[enable-cors-for-a-bucket]]
 == CORS für einen Bucket aktivieren
 
 .Schritte
@@ -70,6 +71,7 @@ Die Seite mit den Bucket-Details wird angezeigt.
 
 
 
+[[modify-cors-setting]]
 == CORS-Einstellung ändern
 
 .Schritte
@@ -79,6 +81,7 @@ Die Seite mit den Bucket-Details wird angezeigt.
 
 
 
+[[disable-cors-setting]]
 == Deaktivieren Sie die CORS-Einstellung
 
 .Schritte

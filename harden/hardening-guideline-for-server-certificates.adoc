@@ -15,6 +15,7 @@ Sie sollten den SSH-Zugriff kontrollieren, Standard-TLS-Zertifikate ersetzen und
 
 
 
+[[hardening-guidelines-for-certificates]]
 == Richtlinien für die Härtung von Zertifikaten
 
 Sie sollten die während der Installation erstellten Standardzertifikate durch eigene benutzerdefinierte Zertifikate ersetzen.
@@ -44,6 +45,7 @@ Darüber hinaus sollten Kunden bei der Kommunikation mit StorageGRID strenge Hos
 
 
 
+[[hardening-guidelines-for-tls-and-ssh-policy]]
 == Richtlinien für die Härtung von TLS- und SSH-Richtlinien
 
 Sie können eine Sicherheitsrichtlinie auswählen, um festzulegen, welche Protokolle und Chiffren zum Aufbau sicherer TLS-Verbindungen mit Clientanwendungen und sicherer SSH-Verbindungen zu internen StorageGRID-Diensten verwendet werden.
@@ -54,6 +56,7 @@ Weitere Informationen und Anweisungen finden Sie unterlink:../admin/manage-tls-s
 
 
 
+[[manage-external-ssh-access]]
 == Externen SSH-Zugriff verwalten
 
 Um die Systemsicherheit zu erhöhen, wird der externe SSH-Zugriff standardmäßig blockiert.  Aktivieren Sie den SSH-Zugriff nur, wenn Sie Aufgaben ausführen müssen, die eingehenden SSH-Zugriff erfordern, beispielsweise zur Fehlerbehebung.  Siehelink:../admin/manage-external-ssh-access.html["Externen SSH-Zugriff verwalten"] für Details und Anweisungen.

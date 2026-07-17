@@ -32,6 +32,7 @@ NOTE: Wenn ein Objekt mit SSE oder SSE-C verschlüsselt wird, werden sämtliche 
 
 
 
+[[use-sse]]
 == Verwenden Sie SSE
 
 Um ein Objekt mit einem eindeutigen, von StorageGRID gemanagten Schlüssel zu verschlüsseln, verwenden Sie die folgende Anforderungsüberschrift:
@@ -47,6 +48,7 @@ Der SSE-Anforderungsheader wird durch die folgenden Objektoperationen unterstüt
 
 
 
+[[use-sse-c]]
 == Verwenden Sie SSE-C
 
 Um ein Objekt mit einem eindeutigen Schlüssel zu verschlüsseln, den Sie verwalten, verwenden Sie drei Anforderungsheader:
@@ -89,6 +91,7 @@ Die SSE-C-Anfrageheader werden durch die folgenden Objektoperationen unterstütz
 
 
 
+[[considerations-for-using-server-side-encryption-with-customer-provided-keys-sse-c]]
 == Überlegungen zur Verwendung serverseitiger Verschlüsselung mit vom Kunden bereitgestellten Schlüsseln (SSE-C)
 
 Beachten Sie vor der Verwendung von SSE-C die folgenden Punkte:

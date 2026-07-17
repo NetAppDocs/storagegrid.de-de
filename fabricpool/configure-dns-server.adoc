@@ -17,6 +17,7 @@ Siehe link:../admin/managing-load-balancing.html["Überlegungen zum Lastausgleic
 
 
 
+[[dns-entries-for-storagegrid-server-name]]
 == DNS-Einträge für den StorageGRID-Servernamen
 
 Fügen Sie DNS-Einträge hinzu, um den Namen des StorageGRID-Servers (vollständig qualifizierter Domänenname) jeder verwendeten StorageGRID-IP-Adresse zuzuordnen. Die im DNS eingegebenen IP-Adressen hängen davon ab, ob Sie eine HA-Gruppe der Load-Balancing-Nodes verwenden:
@@ -28,6 +29,7 @@ Fügen Sie DNS-Einträge hinzu, um den Namen des StorageGRID-Servers (vollständ
 
 
 
+[[dns-entries-for-virtual-hosted-style-requests]]
 == DNS-Einträge für Anforderungen im virtuellen Hosted-Stil
 
 Wenn Sie Anforderungen im virtuellen Hosted-Stil definiert haben link:../admin/configuring-s3-api-endpoint-domain-names.html["Domänennamen des S3-Endpunkts"]und verwenden, fügen Sie DNS-Einträge für alle erforderlichen S3-Endpunkt-Domain-Namen hinzu, einschließlich aller Platzhalternamen.

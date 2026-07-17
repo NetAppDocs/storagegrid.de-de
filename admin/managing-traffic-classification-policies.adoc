@@ -17,6 +17,7 @@ Richtlinien zur Traffic-Klassifizierung werden auf Endpunkte im StorageGRID Load
 
 
 
+[[matching-rules]]
 == Übereinstimmungsregeln
 
 Jede Traffic-Klassifizierungsrichtlinie enthält mindestens eine übereinstimmende Regel, um den Netzwerkverkehr zu identifizieren, der mit einer oder mehreren der folgenden Einheiten in Verbindung steht:
@@ -31,6 +32,7 @@ StorageGRID überwacht den Datenverkehr, der mit allen Regeln innerhalb der Rich
 
 
 
+[[traffic-limiting]]
 == Traffic-Beschränkung
 
 Optional können Sie einer Richtlinie die folgenden Begrenzungstypen hinzufügen:
@@ -52,6 +54,7 @@ Im Grid Manager können Sie Traffic-Diagramme anzeigen und überprüfen, ob die 
 
 
 
+[[use-traffic-classification-policies-with-slas]]
 == Richtlinien für die Verkehrsklassifizierung mit SLAs
 
 Sie können Richtlinien für die Traffic-Klassifizierung in Verbindung mit Kapazitätsgrenzen und Datensicherung verwenden, um Service Level Agreements (SLAs) durchzusetzen, die Besonderheiten bei Kapazität, Datensicherung und Performance bieten.

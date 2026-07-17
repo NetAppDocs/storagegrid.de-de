@@ -19,6 +19,7 @@ Wenn Sie StorageGRID mit dem Simple Network Management Protocol (SNMP) überwach
 
 
 
+[[capabilities]]
 == Sorgen
 
 Auf jedem StorageGRID-Knoten wird ein SNMP-Agent oder -Daemon ausgeführt, der eine MIB bereitstellt. Die StorageGRID MIB enthält Tabellen- und Benachrichtigungsdefinitionen für Warnmeldungen. Die MIB enthält auch Informationen zur Systembeschreibung wie Plattform und Modellnummer für jeden Knoten. Jeder StorageGRID-Knoten unterstützt auch eine Untergruppe von MIB-II-Objekten.
@@ -54,6 +55,7 @@ Jeder Alarm wird einem von drei Trap-Typen basierend auf dem Schweregrad des Ala
 
 
 
+[[snmp-version-support]]
 == Unterstützung von SNMP-Versionen
 
 Die Tabelle bietet eine allgemeine Zusammenfassung der unterstützten SNMP-Versionen.
@@ -112,6 +114,7 @@ USM-Benutzer für jedes Trap-Ziel
 |===
 
 
+[[limitations]]
 == Einschränkungen
 
 * StorageGRID unterstützt schreibgeschützten MIB-Zugriff. Lese-Schreibzugriff wird nicht unterstützt.

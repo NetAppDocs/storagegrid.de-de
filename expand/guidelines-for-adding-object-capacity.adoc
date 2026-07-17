@@ -15,6 +15,7 @@ Sie können die Objekt-Storage-Kapazität Ihres StorageGRID Systems erweitern, i
 
 
 
+[[guidelines-for-adding-storage-volumes]]
 == Richtlinien für das Hinzufügen von Storage Volumes
 
 Lesen Sie vor dem Hinzufügen von Storage-Volumes zu vorhandenen Storage-Nodes die folgenden Richtlinien und Einschränkungen:
@@ -38,6 +39,7 @@ Nachdem Sie sich entschieden haben, Storage Volumes hinzuzufügen und festgestel
 
 
 
+[[guidelines-for-adding-storage-nodes]]
 == Richtlinien zum Hinzufügen von Speicherknoten
 
 Lesen Sie vor dem Hinzufügen von Speicherknoten zu vorhandenen Standorten die folgenden Richtlinien und Einschränkungen durch:
@@ -53,6 +55,7 @@ Lesen Sie vor dem Hinzufügen von Speicherknoten zu vorhandenen Standorten die f
 
 
 
+[[guidelines-for-adc-service-on-storage-nodes]]
 == Richtlinien für ADC-Service auf Storage-Nodes
 
 Beim Konfigurieren der Erweiterung müssen Sie festlegen, ob der Dienst Administrative Domain Controller (ADC) auf jedem neuen Speicherknoten enthalten soll. Der ADC-Dienst verfolgt den Standort und die Verfügbarkeit von Grid-Services.

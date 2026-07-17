@@ -21,6 +21,7 @@ Bei Bedarf können Sie die Netzwerkschnittstellen mehrerer Gateway Nodes und Adm
 
 
 
+[[primary-services-for-gateway-nodes]]
 == Primäre Dienste für Gateway-Nodes
 
 In der folgenden Tabelle werden die primären Services für Gateway-Nodes aufgeführt. In dieser Tabelle werden jedoch nicht alle Node-Services aufgeführt.

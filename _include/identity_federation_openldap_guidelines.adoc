@@ -9,12 +9,14 @@ CAUTION: Bei Identitätsquellen, bei denen es sich nicht um Active Directory ode
 
 
 
+[[memberof-and-refint-overlays]]
 === Überlagerungen in Memberof und Refint
 
 Die Überlagerungen Memberof und Refint sollten aktiviert sein. Weitere Informationen finden Sie in den Anweisungen zur Pflege der umgekehrten Gruppenmitgliedschaft im http://www.openldap.org/doc/admin24/index.html["OpenLDAP-Dokumentation: Version 2.4 Administratorhandbuch"^].
 
 
 
+[[indexing]]
 === Indizierung
 
 Sie müssen die folgenden OpenLDAP-Attribute mit den angegebenen Stichwörtern für den Index konfigurieren:

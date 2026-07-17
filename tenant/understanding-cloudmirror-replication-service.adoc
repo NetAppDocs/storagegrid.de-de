@@ -20,18 +20,21 @@ NOTE: Die CloudMirror-Replizierung wird nicht unterstützt, wenn im Quell-Bucket
 
 
 
+[[cloudmirror-and-ilm]]
 == CloudMirror und ILM
 
 Die CloudMirror Replizierung wird unabhängig von den aktiven ILM-Richtlinien des Grids durchgeführt. Der CloudMirror-Service repliziert Objekte, sobald sie im Quell-Bucket gespeichert werden, und liefert sie so schnell wie möglich an den Ziel-Bucket. Die Bereitstellung replizierter Objekte wird ausgelöst, wenn die Objektaufnahme erfolgreich ist.
 
 
 
+[[cloudmirror-and-cross-grid-replication]]
 == CloudMirror und Grid-Replizierung
 
 Die CloudMirror-Replizierung weist wichtige Ähnlichkeiten und Unterschiede zur Grid-übergreifenden Replizierungsfunktion auf. Siehe link:../admin/grid-federation-compare-cgr-to-cloudmirror.html["Vergleichen Sie Grid-Replizierung und CloudMirror Replizierung"].
 
 
 
+[[cloudmirror-and-s3-buckets]]
 == CloudMirror und S3-Buckets
 
 Die CloudMirror-Replizierung wird normalerweise so konfiguriert, dass sie einen externen S3-Bucket als Ziel verwendet. Die Replizierung kann jedoch auch für eine andere StorageGRID Implementierung oder einen beliebigen S3-kompatiblen Service konfiguriert werden.
@@ -49,6 +52,7 @@ Versionierte oder unversionierte Buckets:: Die CloudMirror-Replizierung kann fü
 
 
 
+[[deletion-replication-loops-and-events]]
 == Löschen, Replikations-Loops und Ereignisse
 
 Löschverhalten:: Entspricht dem Löschverhalten des Amazon S3-Dienstes, Cross-Region Replication (CRR). Durch das Löschen eines Objekts in einem Quell-Bucket wird niemals ein repliziertes Objekt auf dem Ziel gelöscht. Wenn sowohl Quell- als auch Ziel-Buckets versioniert sind, wird die Löschmarkierung repliziert. Wenn der Ziel-Bucket nicht versioniert ist, repliziert das Löschen eines Objekts im Quell-Bucket nicht die Löschmarkierung auf den Ziel-Bucket oder löscht das Zielobjekt nicht.

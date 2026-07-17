@@ -19,6 +19,7 @@ Prüfen Sie vor der Aktivierung von Single Sign-On (SSO), wie sich die StorageGR
 
 
 
+[[sign-in-when-sso-is-enabled]]
 == Melden Sie sich an, wenn SSO aktiviert ist
 
 Wenn SSO aktiviert ist und Sie sich bei StorageGRID anmelden, werden Sie zur SSO-Seite Ihres Unternehmens weitergeleitet, um Ihre Anmeldedaten zu validieren.
@@ -69,6 +70,7 @@ Sie müssen Ihre SSO-Anmeldedaten nicht erneut eingeben.
 
 
 
+[[sign-out-when-sso-is-enabled]]
 == Abmelden, wenn SSO aktiviert ist
 
 Wenn SSO für StorageGRID aktiviert ist, hängt dies davon ab, ab, bei welchem Anmeldefenster Sie sich angemeldet haben und von wo Sie sich abmelden.

@@ -18,12 +18,14 @@ NOTE: StorageGRID unterstützt nicht aufeinander folgende Werte in aufsteigender
 
 
 
+[[resolve-conflicts]]
 == Konflikte lösen
 
 Widersprüchliche Clientanforderungen, wie z. B. zwei Clients, die in denselben Schlüssel schreiben, werden auf der Grundlage der „neuesten Wins“ gelöst. Der Zeitpunkt für die Bewertung „neuester Erfolge“ basiert auf dem Zeitpunkt, an dem das StorageGRID System eine bestimmte Anforderung abgeschlossen hat und nicht auf dem Zeitpunkt, an dem S3-Clients einen Vorgang starten.
 
 
 
+[[supported-request-headers]]
 == Unterstützte Anfrageheader
 
 Die folgenden Anfragezeilen werden unterstützt:
@@ -55,6 +57,7 @@ NOTE: Der `ETag` zurückgegebene Wert ist keine MD5-Summe der Daten, sondern fol
 
 
 
+[[unsupported-request-headers]]
 == Nicht unterstützte Anforderungsheader
 
 Die folgenden Anforderungsheader werden nicht unterstützt:
@@ -73,6 +76,7 @@ Das  `If-None-Match header` wird akzeptiert, ist aber nicht funktionsfähig.
 
 
 
+[[versioning]]
 == Versionierung
 
 Durch diesen Vorgang ist ein mehrtei. Upload abgeschlossen. Wenn die Versionierung für einen Bucket aktiviert ist, wird die Objektversion nach Abschluss des mehrteiligen Uploads erstellt.
@@ -86,6 +90,7 @@ NOTE: Wenn die Versionierung für einen Bucket aktiviert ist, erstellt das Absch
 
 
 
+[[failed-replication-notification-or-metadata-notification]]
 == Fehlgeschlagene Replikation, Benachrichtigung oder Metadatenbenachrichtigung
 
 Wenn der Bucket, in dem der mehrteilige Upload stattfindet, für einen Plattformdienst konfiguriert ist, ist der mehrteilige Upload erfolgreich, auch wenn die zugehörige Replizierungs- oder Benachrichtigungsaktion fehlschlägt.

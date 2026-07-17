@@ -15,6 +15,7 @@ Sie müssen Ihr StorageGRID-System und die zugehörigen Services immer auf dem n
 
 
 
+[[upgrades-to-storagegrid-software]]
 == Upgrades auf StorageGRID Software
 
 Sofern möglich, sollten Sie ein Upgrade der StorageGRID Software auf das neueste Hauptversion oder auf das vorherige Hauptversion durchführen. Durch die aktuelle Nutzung von StorageGRID lässt sich die Zeit bis zur aktiven Nutzung bekannter Schwachstellen reduzieren und gleichzeitig die Angriffsfläche insgesamt verringern. Darüber hinaus enthalten die neuesten StorageGRID Versionen häufig Funktionen zur Erhöhung der Sicherheit, die in früheren Versionen nicht enthalten sind.
@@ -28,6 +29,7 @@ Informationen zur Verwendung der StorageGRID-Software finden Sie im https://imt.
 
 
 
+[[upgrades-to-external-services]]
 == Upgrades auf externe Dienste
 
 Externe Dienste können Schwachstellen aufweisen, die StorageGRID indirekt betreffen.  Stellen Sie sicher, dass die Dienste, von denen StorageGRID abhängt, auf dem neuesten Stand gehalten werden.  Zu diesen Diensten gehören LDAP, KMS (oder KMIP-Server), DNS und NTP.
@@ -36,6 +38,7 @@ Eine Liste der unterstützten Versionen finden Sie im https://imt.netapp.com/mat
 
 
 
+[[upgrades-to-hypervisors]]
 == Upgrades auf Hypervisoren
 
 Wenn die StorageGRID-Nodes auf VMware oder einem anderen Hypervisor ausgeführt werden, müssen Sie sicherstellen, dass die Hypervisor-Software und die Firmware auf dem neuesten Stand sind.
@@ -44,6 +47,7 @@ Eine Liste der unterstützten Versionen finden Sie im https://imt.netapp.com/mat
 
 
 
+[[upgrades-to-linux-nodes]]
 == *Upgrades auf Linux-Knoten*
 
 Wenn Ihre StorageGRID-Knoten Linux-Hostplattformen verwenden, müssen Sie sicherstellen, dass Sicherheitsupdates und Kernel-Updates auf das Host-Betriebssystem angewendet werden. Darüber hinaus müssen Sie Firmware-Updates auf anfällige Hardware anwenden, wenn diese Updates verfügbar sind.

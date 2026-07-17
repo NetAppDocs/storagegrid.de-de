@@ -22,6 +22,7 @@ image:tenant_dashboard_with_buckets.png["Dashboard – Bucket-Liste"]
 
 
 
+[[tenant-account-information]]
 == Informationen zum Mandantenkonto
 
 Oben im Dashboard wird die Anzahl der konfigurierten Buckets oder Container, Gruppen und Benutzer angezeigt. Es zeigt auch die Anzahl der Endpunkte der Plattformdienste an, sofern diese konfiguriert wurden. Wählen Sie die Links aus, um die Details anzuzeigen.
@@ -30,6 +31,7 @@ Je nachdemlink:tenant-management-permissions.html["Berechtigungen für Mandanten
 
 
 
+[[storage-and-quota-usage]]
 == Storage- und Kontingentnutzung
 
 Das Fenster Speichernutzung enthält die folgenden Informationen:
@@ -64,6 +66,7 @@ NOTE: Um die Einheiten für die im Tenant Manager angezeigten Speicherwerte zu �
 
 
 
+[[quota-usage-alerts]]
 == Warnmeldungen zur Kontingentnutzung
 
 Wenn im Grid Manager die Quota-Nutzungswarnungen aktiviert wurden, werden diese Warnmeldungen im Tenant Manager angezeigt, wenn die Quota niedrig oder überschritten ist, wie folgt:
@@ -77,6 +80,7 @@ Bitten Sie eventuell Ihren Grid-Administrator, die Quote zu erhöhen.
 
 
 
+[[bucket-capacity-usagecapacity-limit-usage]]
 == [[Bucket-Capacity-usage]]Kapazitätslimit für die Nutzung
 
 Wenn Sie ein Kapazitätslimit für Ihre Buckets festgelegt haben, wird im Dashboard von Tenant Manager eine Liste der wichtigsten Buckets nach Kapazitätslimit angezeigt.
@@ -85,6 +89,7 @@ Wenn für einen Bucket keine Begrenzung festgelegt ist, ist seine Kapazität unb
 
 
 
+[[endpoint-errors]]
 == Endpunktfehler
 
 Wenn Sie mit Grid Manager einen oder mehrere Endpunkte für die Verwendung mit Plattformdiensten konfiguriert haben, zeigt das Tenant Manager-Dashboard eine Warnmeldung an, wenn in den letzten sieben Tagen Endpunktfehler aufgetreten sind.

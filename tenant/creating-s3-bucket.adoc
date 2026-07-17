@@ -30,6 +30,7 @@ NOTE: Jedes Raster kann maximal 100.000 Buckets enthalten, darunterlink:../tenan
 
 
 
+[[access-the-wizard]]
 == Greifen Sie auf den Assistenten zu
 
 .Schritte
@@ -39,6 +40,7 @@ NOTE: Jedes Raster kann maximal 100.000 Buckets enthalten, darunterlink:../tenan
 
 
 
+[[enter-details]]
 == Geben Sie Details ein
 
 .Schritte
@@ -82,6 +84,7 @@ Ihr StorageGRID Administrator verwaltet die verfügbaren Regionen.  Die Region e
 
 
 
+[[manage-settings]]
 == Einstellungen verwalten
 
 .Schritte

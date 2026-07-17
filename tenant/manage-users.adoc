@@ -24,6 +24,7 @@ NOTE: Wenn Single Sign-On (SSO) für Ihr StorageGRID-System aktiviert ist, könn
 
 
 
+[[create-usercreate-a-local-user]]
 == [[create-user]]Erstellen Sie einen lokalen Benutzer
 
 Sie können einen lokalen Benutzer erstellen und diesen einer oder mehreren lokalen Gruppen zuweisen, um ihre Zugriffsberechtigungen zu steuern.
@@ -32,6 +33,7 @@ S3-Benutzer, die keiner Gruppe angehören, haben keine Managementberechtigungen 
 
 
 
+[[access-the-create-user-wizard]]
 === Rufen Sie den Assistenten zum Erstellen von Benutzern auf
 
 .Schritte
@@ -47,6 +49,7 @@ image:grid-federation-tenant-user-banner.png["Abbildung des blauen Banners auf d
 
 
 
+[[enter-credentials]]
 === Geben Sie die Anmeldedaten ein
 
 .Schritte
@@ -93,6 +96,7 @@ Wählen Sie zum Beispiel *Ja*, um die Anmelde-Fähigkeit eines Benutzers vorübe
 
 
 
+[[assign-to-groups]]
 === Zu Gruppen zuweisen
 
 .Schritte
@@ -112,6 +116,7 @@ Wenn Ihr Mandantenkonto die Berechtigung *Grid Federation connection* verwenden 
 
 
 
+[[view-or-edit-local-user]]
 == Lokalen Benutzer anzeigen oder bearbeiten
 
 .Schritte
@@ -172,6 +177,7 @@ Sie können den Benutzernamen nicht ändern.
 
 
 
+[[import-federated-users]]
 == Importieren von Verbundbenutzern
 
 Sie können einen oder mehrere Verbundbenutzer (bis zu maximal 100 Benutzer) direkt in die Seite „Benutzer“ importieren.
@@ -199,6 +205,7 @@ Nachdem Sie das Dialogfeld *Verbundbenutzer importieren* geschlossen haben, werd
 
 
 
+[[duplicate-local-user]]
 == Doppelter lokaler Benutzer
 
 Sie können einen lokalen Benutzer duplizieren, um einen neuen Benutzer schneller zu erstellen.
@@ -216,6 +223,7 @@ NOTE: Wenn Ihr Mandantenkonto über die Berechtigung *Grid Federation connection
 
 
 
+[[clone-usersretry-user-clone]]
 == [[Clone-users]]Benutzerklon wiederholen
 
 So wiederholen Sie einen fehlgeschlagenen Klon:
@@ -229,6 +237,7 @@ Weitere Informationen finden Sie unter link:grid-federation-account-clone.html["
 
 
 
+[[delete-one-or-more-local-users]]
 == Löschen Sie einen oder mehrere lokale Benutzer
 
 Sie können einen oder mehrere lokale Benutzer, die nicht mehr auf das StorageGRID-Mandantenkonto zugreifen müssen, dauerhaft löschen.

@@ -15,6 +15,7 @@ Sie können Ihr StorageGRID System durch Hinzufügen eines neuen Standorts erwei
 
 
 
+[[guidelines-for-adding-a-site]]
 == Richtlinien zum Hinzufügen eines Standorts
 
 Überprüfen Sie vor dem Hinzufügen eines Standorts die folgenden Anforderungen und Einschränkungen:

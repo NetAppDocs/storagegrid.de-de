@@ -17,6 +17,7 @@ Jeder Standort im StorageGRID-System muss über mindestens drei Storage-Nodes ve
 
 
 
+[[types-of-storage-nodes]]
 == Typen von Storage-Nodes
 
 Während der Installation können Sie den Typ des Storage-Node auswählen, den Sie installieren möchten. Diese Typen sind für softwarebasierte Storage Nodes und Appliance-basierte Storage Nodes verfügbar, die die Funktion unterstützen:
@@ -34,12 +35,14 @@ Sie können den Typ des Storage-Node in folgenden Situationen auswählen:
 
 
 
+[[data-and-metadata-storage-node-combined]]
 === Storage Node für Daten und Metadaten (kombiniert)
 
 Standardmäßig werden auf allen neuen Storage-Nodes sowohl Objektdaten als auch Metadaten gespeichert. Dieser Typ von Storage Node wird als _Combined_ Storage Node bezeichnet.
 
 
 
+[[metadata-only-storage-node]]
 === Storage-Node nur für Metadaten
 
 Die ausschließliche Verwendung eines Storage-Knotens für Metadaten kann sinnvoll sein, wenn Ihr Grid eine sehr große Anzahl kleiner Objekte speichert. Die Installation von dedizierten Metadaten bietet ein besseres Gleichgewicht zwischen dem für eine große Anzahl an kleinen Objekten erforderlichen Speicherplatz und dem für diese Objekte erforderlichen Speicherplatz. Darüber hinaus können Storage-Nodes, die auf hochperformanten Appliances gehostet werden, auf nur Metadaten ausgerichtet sind, die Performance steigern.
@@ -67,6 +70,7 @@ NOTE: Obwohl reine Metadaten-Storage-Nodes S3-Client-Anforderungen enthalten <<l
 
 
 
+[[data-only-storage-node]]
 === Rein datenrein Storage-Node
 
 Ein Storage-Node ausschließlich für Daten ist sinnvoll, wenn Ihre Storage-Nodes unterschiedliche Performance-Merkmale aufweisen. Um beispielsweise die Performance potenziell zu steigern, können Sie reine Daten-Storage-Nodes mit einer hohen Kapazität und gleichzeitig hochperformante Storage-Nodes mit Metadaten verwenden.
@@ -77,6 +81,7 @@ Sie können einen Storage Node konvertieren, der nicht die<<adc-service,ADC-Dien
 
 
 
+[[required-storage-nodes-per-grid-and-per-site]]
 == Erforderliche Speicherknoten pro Grid und pro Site
 
 Beachten Sie bei der Auswahl der in Ihrer Topologie zu verwendenden Speicherknoten, dass das Raster bzw. jeder Standort im Raster Folgendes enthalten muss:
@@ -88,6 +93,7 @@ Beachten Sie bei der Auswahl der in Ihrer Topologie zu verwendenden Speicherknot
 
 
 
+[[primary-services-for-storage-nodes]]
 == Primäre Services für Storage-Nodes
 
 Die folgende Tabelle enthält die primären Services für Storage-Nodes. In dieser Tabelle werden jedoch nicht alle Node-Services aufgeführt.

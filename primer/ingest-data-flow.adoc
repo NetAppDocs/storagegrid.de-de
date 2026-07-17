@@ -15,6 +15,7 @@ Ein Aufnahme- oder Speichervorgang besteht aus einem definierten Datenfluss zwis
 
 
 
+[[data-flow]]
 == Datenfluss
 
 Wenn ein Client ein Objekt in das StorageGRID-System einspeist, verarbeitet der LDR-Service auf Storage-Nodes die Anforderung und speichert die Metadaten und Daten auf der Festplatte.

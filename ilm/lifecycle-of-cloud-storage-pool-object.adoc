@@ -15,6 +15,7 @@ summary: Überprüfen Sie vor der Implementierung von Cloud-Storage-Pools den Le
 
 
 
+[[s3-lifecycle-of-a-cloud-storage-pool-object]]
 == S3: Lebenszyklus eines Cloud-Storage-Pool-Objekts
 
 In den Schritten werden die Lebenszyklusphasen eines Objekts beschrieben, das in einem S3-Cloud-Storage-Pool gespeichert ist.
@@ -61,6 +62,7 @@ Nachdem ein Objekt wiederhergestellt wurde, kann die Client-Anwendung eine GetOb
 
 
 
+[[azure-lifecycle-of-a-cloud-storage-pool-object]]
 == Azure: Lebenszyklus eines Cloud-Storage-Pool-Objekts
 
 In den Schritten werden die Lebenszyklusphasen eines Objekts beschrieben, das in einem Azure Cloud Storage-Pool gespeichert ist.

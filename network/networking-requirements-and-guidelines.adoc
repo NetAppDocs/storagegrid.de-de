@@ -15,6 +15,7 @@ Sie müssen überprüfen, ob die aktuelle Netzwerkinfrastruktur und Konfiguratio
 
 
 
+[[general-networking-requirements]]
 == Allgemeine Netzwerkanforderungen
 
 Alle StorageGRID-Bereitstellungen müssen die folgenden Verbindungen unterstützen können.
@@ -45,6 +46,7 @@ Wenn Sie während der Bereitstellung nicht bereit sind, die optionalen Admin- un
 
 
 
+[[wide-area-networks-wans-for-multiple-sites]]
 == Wide Area Networks (WANs) für mehrere Standorte
 
 Bei der Konfiguration eines StorageGRID-Systems mit mehreren Standorten muss die WAN-Verbindung zwischen den Standorten eine Mindestbandbreite von 25 Mbit/s in jeder Richtung aufweisen, bevor der Client-Datenverkehr berücksichtigt wird. Datenreplizierung oder Erasure Coding zwischen Standorten, Erweiterung von Nodes oder Standorten, Recovery von Nodes und anderen Vorgängen oder Konfigurationen erfordern zusätzliche Bandbreite.
@@ -53,6 +55,7 @@ Die tatsächlichen Anforderungen an die WAN-Mindestbandbreite hängen von der Cl
 
 
 
+[[connections-for-admin-nodes-and-gateway-nodes]]
 == Verbindungen für Admin-Nodes und Gateway-Nodes
 
 Admin-Knoten müssen immer von nicht vertrauenswürdigen Clients, wie denen im offenen Internet, gesichert werden. Sie müssen sicherstellen, dass kein nicht vertrauenswürdiger Client auf einen beliebigen Admin-Node im Grid-Netzwerk, auf das Admin-Netzwerk oder auf das Client-Netzwerk zugreifen kann.
@@ -61,6 +64,7 @@ Admin-Nodes und Gateway-Nodes, die Sie zu Hochverfügbarkeitsgruppen hinzufügen
 
 
 
+[[using-network-address-translation-nat]]
 == Verwendung von NAT (Network Address Translation)
 
 Verwenden Sie keine Network Address Translation (NAT) im Grid-Netzwerk zwischen Grid-Knoten oder zwischen StorageGRID-Standorten. Wenn Sie private IPv4-Adressen für das Grid-Netzwerk verwenden, müssen diese Adressen von jedem Grid-Knoten an jedem Standort direkt routingfähig sein. Sie können jedoch bei Bedarf NAT zwischen externen Clients und Grid-Nodes verwenden, beispielsweise um eine öffentliche IP-Adresse für einen Gateway Node bereitzustellen. Die Verwendung von NAT zur Brücke eines öffentlichen Netzwerksegments wird nur unterstützt, wenn Sie eine Tunneling-Anwendung verwenden, die für alle Knoten im Netz transparent ist. Das bedeutet, dass die Grid-Knoten keine Kenntnisse über öffentliche IP-Adressen benötigen.

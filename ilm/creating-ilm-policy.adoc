@@ -19,6 +19,7 @@ Durch mehrere aktive ILM-Richtlinien können Sie die entsprechenden ILM-Regeln a
 
 
 
+[[create-an-ilm-policy]]
 == ILM-Richtlinie erstellen
 
 .Über diese Aufgabe
@@ -172,6 +173,8 @@ NOTE: Sie müssen sich vergewissern, dass die ILM-Regeln in der richtigen Reihen
 
 
 
+[[simulate-a-policy]]
+[[simulate-ilm-policy]]
 == Simulieren Sie eine Richtlinie
 
 Simulieren Sie eine Richtlinie für Testobjekte, bevor Sie die Richtlinie aktivieren und auf Ihre Produktionsdaten anwenden.
@@ -201,6 +204,8 @@ link:simulating-ilm-policy-examples.html["Beispiele für ILM-Richtliniensimulati
 
 
 
+[[activate-a-policy]]
+[[activate-ilm-policy]]
 == Aktivieren Sie eine Richtlinie
 
 Wenn Sie eine einzelne neue ILM-Richtlinie aktivieren, werden vorhandene Objekte und neu aufgenommene Objekte von dieser Richtlinie gemanagt. Wenn Sie mehrere Richtlinien aktivieren, bestimmen die zu verwaltenden Objekte anhand von ILM-Richtlinien-Tags, die Buckets zugewiesen sind.

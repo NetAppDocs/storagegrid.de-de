@@ -15,6 +15,7 @@ Der grundlegende Baustein eines StorageGRID Systems ist der Grid-Node. Nodes ent
 
 
 
+[[types-of-grid-nodes]]
 == Typen von Grid-Nodes
 
 Das StorageGRID -System verwendet drei Arten von Grid-Knoten:
@@ -45,12 +46,14 @@ Siehe link:what-gateway-node-is.html["Was ist ein Gateway Node?"]
 
 
 
+[[hardware-and-software-nodes]]
 == Hardware- und Software-Nodes
 
 StorageGRID Knoten können als StorageGRID Appliance-Knoten oder als softwarebasierte Knoten bereitgestellt werden.  Die maximale Anzahl an Knoten (einschließlich aller Knotentypen) pro System beträgt 220.
 
 
 
+[[storagegrid-appliance-nodes]]
 === StorageGRID Appliance-Nodes
 
 StorageGRID Hardware-Appliances wurden speziell für den Einsatz in einem StorageGRID System entwickelt. Einige Geräte können als Storage-Nodes verwendet werden. Andere Appliances können als Admin-Nodes oder Gateway-Nodes verwendet werden. Die Appliance-Nodes können mit softwarebasierten Nodes kombiniert oder vollständig entwickelten Appliance-Grids ohne Abhängigkeiten von externen Hypervisoren, Storage- oder Computing-Hardware implementiert werden.
@@ -63,6 +66,7 @@ Im Folgenden erfahren Sie mehr über die verfügbaren Appliances:
 
 
 
+[[software-based-nodes]]
 === Softwarebasierte Nodes
 
 Softwarebasierte Grid-Knoten können als virtuelle VMware-Maschinen oder innerhalb von Container-Engines auf einem Linux-Host bereitgestellt werden. Sehen link:../swnodes/index.html["Installieren Sie StorageGRID auf softwarebasierten Knoten"] .
@@ -71,6 +75,7 @@ Verwenden Sie die https://imt.netapp.com/matrix/#welcome["NetApp Interoperabilit
 
 
 
+[[storagegrid-services]]
 == StorageGRID Services
 
 Nachfolgend finden Sie eine vollständige Liste der StorageGRID Services.

@@ -52,6 +52,7 @@ Wenn Sie keine erweiterte Filterung konfigurieren, gilt die Regel für alle Obje
 
 
 
+[[use-advanced-filters-in-ilm-rules]]
 == Verwenden Sie erweiterte Filter in ILM-Regeln
 
 Mit der erweiterten Filterung können Sie ILM-Regeln erstellen, die sich nur auf bestimmte Objekte anwenden lassen, basierend auf ihren Metadaten. Wenn Sie die erweiterte Filterung für eine Regel einrichten, wählen Sie den Metadatentyp aus, der übereinstimmen soll, wählen Sie einen Operator aus und geben einen Metadatenwert an. Wenn Objekte ausgewertet werden, wird die ILM-Regel nur auf Objekte angewendet, die Metadaten enthalten, die dem erweiterten Filter entsprechen.
@@ -193,6 +194,7 @@ Wenn Sie beispielsweise nach Objekten filtern möchten, die ein Objekt-Tag von h
 |===
 
 
+[[specify-multiple-metadata-types-and-values]]
 == Geben Sie mehrere Metadatentypen und -Werte an
 
 Wenn Sie die erweiterte Filterung definieren, können Sie mehrere Metadatentypen und mehrere Metadatenwerte angeben. Wenn Sie beispielsweise eine Regel mit Objekten zwischen 10 MB und 100 MB Größe vergleichen möchten, wählen Sie den Metadatentyp *Objektgröße* aus und geben zwei Metadatenwerte an.

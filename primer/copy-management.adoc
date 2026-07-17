@@ -19,6 +19,7 @@ Objektdaten werden vom LDR-Service gemanagt.
 
 
 
+[[content-protection-replication]]
 == Content-Schutz: Replikation
 
 Wenn für die Anweisungen zur Content-Platzierung einer ILM-Regel replizierte Kopien von Objektdaten erforderlich sind, werden von den Storage-Nodes, die den konfigurierten Storage-Pool bilden, Kopien auf Festplatte erstellt und gespeichert.
@@ -36,6 +37,7 @@ image:replication_data_flow.png["Diagramm mit dem im umgebenden Text beschrieben
 
 
 
+[[content-protection-erasure-coding]]
 == Content Protection: Erasure Coding
 
 Falls eine ILM-Regel Anweisungen zur Erstellung von Kopien von Objektdaten enthält, die nach Erasure-Coding-Verfahren codiert wurden, werden Objektdaten in Daten- und Paritätsfragmente unterteilt und diese Fragmente über die Storage Nodes verteilt, die im Profil zur Fehlerkorrektur konfiguriert sind.
@@ -54,6 +56,7 @@ image:erasure_coding_data_flow.png["Verfahren Zur Einhaltung Von Datenkonsistenz
 
 
 
+[[content-protection-cloud-storage-pool]]
 == Content-Sicherung: Cloud Storage Pool
 
 Wenn für die Anweisungen zur Content-Platzierung einer ILM-Regel eine replizierte Kopie von Objektdaten in einem Cloud Storage-Pool gespeichert wird, werden Objektdaten in den externen S3-Bucket oder Azure Blob-Storage-Container dupliziert, der für den Cloud Storage-Pool angegeben wurde.

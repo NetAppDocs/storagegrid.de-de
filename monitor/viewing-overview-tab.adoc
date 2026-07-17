@@ -17,6 +17,7 @@ Die Registerkarte Übersicht wird für alle Knoten angezeigt.
 
 
 
+[[node-information]]
 == Node-Informationen
 
 Im Abschnitt „Knoteninformationen“ der Registerkarte „Übersicht“ werden grundlegende Informationen zum Knoten aufgeführt.
@@ -53,6 +54,7 @@ NOTE: Ein Node wird möglicherweise während des verwalteten Herunterfahrens als
 
 
 
+[[alerts]]
 == Meldungen
 
 Im Abschnitt Warnungen der Registerkarte Übersicht werden alle aufgelistetlink:monitoring-system-health.html#view-current-and-resolved-alerts["Warnmeldungen, die sich derzeit auf diesen Knoten auswirken, die nicht stummgeschaltet wurden"]. Wählen Sie den Namen der Warnmeldung aus, um weitere Details und empfohlene Aktionen anzuzeigen.

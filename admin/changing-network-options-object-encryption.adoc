@@ -15,6 +15,7 @@ Sie können die Netzwerk- und Objektsicherheit so konfigurieren, dass gespeicher
 
 
 
+[[stored-object-encryption]]
 == Verschlüsselung gespeicherter Objekte
 
 Die gespeicherte Objektverschlüsselung ermöglicht die Verschlüsselung aller Objektdaten bei der Aufnahme über S3. Gespeicherte Objekte werden standardmäßig nicht verschlüsselt, aber Sie können Objekte mit dem AES‐128- oder AES‐256-Verschlüsselungsalgorithmus verschlüsseln. Wenn Sie die Einstellung aktivieren, werden alle neu aufgenommenen Objekte verschlüsselt, aber es werden keine Änderungen an vorhandenen gespeicherten Objekten vorgenommen. Wenn Sie die Verschlüsselung deaktivieren, bleiben derzeit verschlüsselte Objekte verschlüsselt, neu aufgenommene Objekte werden jedoch nicht verschlüsselt.
@@ -25,12 +26,14 @@ Weitere Informationen zu Verschlüsselungsmethoden von StorageGRID finden Sie un
 
 
 
+[[prevent-client-modification]]
 == Client-Änderung verhindern
 
 Die Einstellung „Client-Änderung verhindern“ ist eine systemweite Einstellung. Wenn die Option *Client-Änderung verhindern* ausgewählt ist, werden die folgenden Anfragen abgelehnt.
 
 
 
+[[s3-rest-api]]
 === S3-REST-API
 
 * DeleteBucket-Anforderungen
@@ -39,6 +42,7 @@ Die Einstellung „Client-Änderung verhindern“ ist eine systemweite Einstellu
 
 
 
+[[enable-http-for-storage-node-connections]]
 == Aktivieren Sie HTTP für Storage Node-Verbindungen
 
 Standardmäßig verwenden Clientanwendungen das HTTPS-Netzwerkprotokoll für alle direkten Verbindungen zu Storage-Nodes. Optional können Sie HTTP für diese Verbindungen aktivieren, z. B. beim Testen eines nicht produktiven Grids.
@@ -49,6 +53,7 @@ Unter link:summary-ip-addresses-and-ports-for-client-connections.html["Zusammenf
 
 
 
+[[select-options]]
 == Wählen Sie Optionen aus
 
 .Bevor Sie beginnen
