@@ -1,0 +1,224 @@
+---
+permalink: admin/create-client-keycloak-oidc.html 
+sidebar: sidebar 
+keywords: keycloak, client, single sign on, sso 
+summary: Sie verwenden Keycloak, um für jeden Admin Node in Ihrem System eine Client-Verbindung zu erstellen. 
+---
+= Clients in Keycloak für OIDC in StorageGRID erstellen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Keycloak kann verwendet werden, um für jeden Admin-Knoten in Ihrem StorageGRID System eine Client-Verbindung für OpenID Connect (OIDC) zu erstellen.
+
+.Bevor Sie beginnen
+* Sie haben Erfahrung in der Erstellung von Clients in Keycloak, oder Sie haben Zugriff auf die Keycloak-Dokumentation.
+* Sie verfügen über ein dediziertes Konto (Bind DN) für Verzeichnisabfragen und die Anmeldeinformationen.
+* Sie haben Keycloak Administratorrechte.
+
+
+.Über diese Aufgabe
+Jeder Admin-Knoten in Ihrem StorageGRID System muss über eine Client-Verbindung verfügen. Dadurch wird sichergestellt, dass sich Benutzer sicher an jedem Admin-Knoten an- und abmelden können. Es kann eine einzige Client-Verbindung für alle Admin-Knoten erstellt werden (empfohlen) oder für jeden Admin-Knoten eine eigene Client-Verbindung.
+
+Verwenden Sie die Standardeinstellungen, sofern nicht anders angegeben. In manchen Fällen können die von Ihrer Organisation geforderten Einstellungen verwendet werden.
+
+
+
+[[step-1-optionally-create-a-realm]]
+== Schritt 1: Optional einen Bereich erstellen
+
+Ein Keycloak-Realm kann erstellt werden, um den LDAP-Provider und den OIDC-Client zu konfigurieren, oder der Keycloak-Standardrealm kann verwendet werden.
+
+.Schritte
+. *Realm erstellen* auswählen.
+. Geben Sie einen Namen für den Realm ein.
+. *Aktiviert* auswählen.
+. Wählen Sie *Erstellen*.
+
+
+
+
+[[create-ldap-oidcstep-2-configure-ldap-provider]]
+== [[create-ldap-oidc]]Schritt 2: LDAP-Anbieter konfigurieren
+
+Den LDAP-Anbieter so konfigurieren, dass Keycloak eine Verbindung zum Active Directory Federation Service (AD FS) LDAP-Server herstellt.
+
+.Schritte
+. Wählen Sie *Benutzerföderation* > *LDAP-Anbieter hinzufügen*.
+. Unter dem Tab „Einstellungen“:
++
+.. Die folgenden empfohlenen Werte eingeben:
++
+*** UI-Anzeigename: Ein eindeutiger Wert eingeben.
+*** Anbieter: *Active Directory*
+*** Verbindungs-URL: `ldap://<ldap_IP_address>` oder `ldaps://<ldap_IP_address>`
+*** Connection pooling: *EIN*
+*** Bind DN: Geben Sie Ihr Bind DN ein
+*** Anmeldeinformationen binden: Passwort eingeben
+*** Bearbeitungsmodus: *NUR LESEN*
+*** Benutzer-DN: Zum Beispiel, `CN=Users`, `DC=saml`, `DC=sgws`
+*** LDAP-Attribut für den Benutzernamen: *sAMAccountName*
+*** RDN LDAP-Attribut: *cn*
+*** UUID LDAP-Attribut: *objectGUID*
+*** Benutzerobjektklassen:	`person`, `organizationalPerson`, `user`
+*** Benutzer-LDAP-Filter: `(sAMAccountName=*)`
+*** Suchbereich: *Teilbaum*
+*** Seitennummerierung: *EIN*
+*** Benutzer importieren: *ON*
+*** Synchronisierungsregistrierungen: *EIN*
+*** Ungültige Benutzer während der Suche entfernen: *EIN*
+
+
+.. *Verbindung testen* und *Authentifizierung testen* auswählen.
++
+Alle möglicherweise auftretenden Probleme sollten vor dem Fortfahren behoben werden.
+
+
+
+. Wählen Sie *Speichern*.
+
+
+
+
+[[step-3-configure-ldap-mapping]]
+== Schritt 3: LDAP-Zuordnung konfigurieren
+
+Die LDAP-Zuordnung wird so konfiguriert, dass AD als Attribut zu Keycloak zugeordnet wird.
+
+.Schritte
+. Zu *Benutzerföderation* > *LDAP* wechseln
+. Wählen Sie die <<create-ldap-oidc,LDAP-Anbieter>> aus, die Sie erstellt haben.
+. Auf der Registerkarte „Mapper“ *Mapper hinzufügen* > *Neuen Mapper erstellen* auswählen.
+. Für Mapper-Typ ist *user-attribute-ldap-mapper* auszuwählen.
+. *Speichern* auswählen und anschließend die folgenden Informationen eingeben:
++
+** Benutzermodellattribut: *userPrincipalName*
+** LDAP-Attribut: *userPrincipalName*
+** Schreibgeschützt: *EIN*
+** Wert immer aus LDAP lesen: *ON*
+** Ist in LDAP obligatorisch: *OFF*
+** Standardwert erzwingen: *EIN*
+** Ist Binärattribut: *AUS*
+
+
+. Wählen Sie *Speichern*.
+
+
+
+
+[[create-client-oidcstep-4-create-oidc-client]]
+== [[create-client-oidc]]Schritt 4: OIDC Client erstellen
+
+Erstellen Sie den OIDC Client für Ihr System.
+
+.Schritte
+. Zu *Kunden* > *Kunden erstellen* wechseln.
+. Für die allgemeinen Einstellungen sind folgende Informationen einzugeben:
++
+** Name: Geben Sie einen Anzeigenamen für den Client ein.
+** Clienttyp: *OIDC Connect*
+** Client-ID: Ein eindeutiger Wert ist einzugeben. Dieser Wert sollte für die spätere Verwendung gespeichert werden.
+
+
+. Wählen Sie *Weiter*.
+. Für die Capability Konfiguration sind die folgenden Informationen einzugeben:
++
+** Client-Authentifizierung: *EIN*
+** Standardablauf: *Aktivieren*
+** Direktzugriffsrechte: *Enable*
+** Servicekontorollen: *Aktivieren*
+
+
+. Wählen Sie *Weiter*.
+. Für die Anmeldeeinstellungen die Umleitungs-URIs eingeben:
++
+
+NOTE: Wenn ein oder mehrere Load-Balancer-Endpunkte für die Managementoberfläche konfiguriert sind, sollten die Umleitungs-URIs für jeden Port hinzugefügt werden. Zum Beispiel:  `\https://<Admin_IP_address_or_FQDN>:<port>/api/v4/oidc-callback` und  `\https://<Admin_IP_address_or_FQDN>:<port>/api/v4/oidc-logged-out`
+
++
+** Gültige Redirect-URIs: `\https://<Admin_IP_address_or_FQDN>/api/v4/oidc-callback` und `\https://<Admin_IP_address_or_FQDN>/api/v4/oidc-logged-out`
+** Gültige Redirect-URIs nach dem Logout: `\https://<Admin_IP_address_or_FQDN>/api/v4/oidc-logged-out`
+** Web-Ursprünge: `\https://<Admin_IP_address_or_FQDN>`
+
+
+. Wählen Sie *Speichern*.
+
+
+
+
+[[client-secret-oidcstep-5-generate-client-secret]]
+== Schritt 5: Client Secret generieren
+
+Ein Clientgeheimnis für den erstellten OIDC Client generieren.
+
+.Schritte
+. Wechseln Sie zu *Clients* und wählen Sie dann den <<create-client-oidc,OIDC Client>> von Ihnen erstellten Client aus.
+. Auf der Registerkarte „Anmeldeinformationen“ sind die folgenden Informationen einzugeben:
++
+** Client-Authentifikator: *Client Id und Secret*
+** Clientgeheimnis: *Ein Clientgeheimnis generieren oder festlegen*. Diesen Wert für die spätere Verwendung speichern.
+
+
+
+
+
+
+[[step-6-define-scopes]]
+== Schritt 6: Bereiche definieren
+
+Definieren Sie die Scopes in Keycloak.
+
+.Schritte
+. Zu *Client scopes* > *Create client scope* wechseln und anschließend die folgenden Informationen eingeben:
++
+** Typ: *Keine*
+** Protokoll: *OpenID Connect*
+** Anzeige auf dem Zustimmungsbildschirm: *Enabled*
+** In OpenID Provider-Metadaten aufnehmen: *Aktiviert*
+
+
+. Wählen Sie *Speichern*.
+. Auf der Registerkarte „Mapper“ *Neuen Mapper konfigurieren* > *Benutzerattribut* auswählen und anschließend die folgenden Informationen eingeben:
++
+** Name: Ein eindeutiger Wert wird eingegeben.
+** Benutzerattribut: *userPrincipalName*
+** Token-Anspruchsname: *upn*
+** Anspruch-JSON-Typ: *String*
+** Zum ID-Token hinzufügen: *ON*
+** Zu Zugriffstoken hinzufügen: *ON*
+** Zu Benutzerinformationen hinzufügen: *ON*
+** Zur Token-Introspektion hinzufügen: *EIN*
+
+
+. Wählen Sie *Speichern*.
+. Wechseln Sie zu *Clients* und wählen Sie den <<create-client-oidc,OIDC Client>> von Ihnen erstellten Client aus.
+. *Client Scopes* > *Add client scope* auswählen.
+. Wählen Sie den von Ihnen erstellten Client Scope aus.
+. Wählen Sie *Hinzufügen*.
+
+
+
+
+[[step-7-prepare-to-configure-sso-using-oidc]]
+== Schritt 7: Vorbereitung der Konfiguration von SSO mit OIDC
+
+Die zur Konfiguration von SSO mit OIDC mithilfe von Keycloak in Ihrem StorageGRID System erforderlichen Informationen werden gespeichert.
+
+.Schritte
+. Prüfen Sie, ob Sie die <<create-client-oidc,Client-ID>> und die <<client-secret-oidc,Client Secret>> vom OIDC-Client, den Sie erstellt haben, gespeichert haben.
+. Den OpenID Connect Discovery-Endpunkt für den Realm speichern. Dieser ist im  `well-known` Konfigurationsendpunkt verfügbar:
++
+`\https://<keycloak_host_ip/keycloak_host_name>/realms/<realm_name>/.well-known/openid-configuration`
+
++
+Optional kann der Netzwerkport angegeben werden:
+
++
+`\https://<keycloak_host_ip/keycloak_host_name>:<https_port>/realms/<realm_name>/.well-known/openid-configuration`
+
+
+
+.Was kommt als Nächstes
+Nach der Erstellung von OIDC-Clients, link:configure-sso-oidc.html["SSO mit OIDC konfigurieren"].

@@ -47,13 +47,9 @@ Wenn der Fehler nicht automatisch behoben wird, fahren Sie mit dem nächsten Sch
 
 
 . Ermitteln, ob die Hardware des Node offline ist
-. Wenn Single Sign-On (SSO) für Ihr StorageGRID System aktiviert ist, lesen Sie die Schritte fürlink:../admin/configure-sso.html["Konfigurieren der Single Sign-On-Funktion"] .
+. Wenn Single Sign-On (SSO) für Ihr StorageGRID System aktiviert ist, finden Sie Informationen zur Einrichtung von SSO mit link:../admin/learn-about-setting-up-sso-oidc.html["OIDC"] oder link:../admin/learn-about-setting-up-sso-saml.html["SAML"].
 +
 Unter Umständen müssen Sie SSO für einen einzelnen Admin-Node vorübergehend deaktivieren und erneut aktivieren, um Probleme zu beheben.
-
-+
-
-NOTE: Wenn SSO aktiviert ist, können Sie sich nicht über einen eingeschränkten Port anmelden. Sie müssen Port 443 verwenden.
 
 . Ermitteln Sie, ob das verwendete Konto einem föderierten Benutzer angehört.
 +
@@ -64,7 +60,7 @@ Wenn das verbundene Benutzerkonto nicht funktioniert, melden Sie sich beim Grid 
 +
 ... Prüfen von Warnmeldungen
 ... Wählen Sie *Konfiguration* > *Zugriffskontrolle* > *Identitätsföderation*.
-... Klicken Sie auf *Verbindung testen*, um die Verbindungseinstellungen für den LDAP-Server zu validieren.
+... *Verbindung testen* auswählen, um die Verbindungseinstellungen für den LDAP-Server zu validieren.
 ... Wenn der Test fehlschlägt, beheben Sie alle Konfigurationsfehler.
 
 

@@ -244,3 +244,6 @@ Sie müssen die folgenden OpenLDAP-Attribute mit den angegebenen Stichwörtern f
 Stellen Sie außerdem sicher, dass die in der Hilfe für den Benutzernamen genannten Felder für eine optimale Leistung indiziert sind.
 
 Weitere Informationen zur Pflege der umgekehrten Gruppenmitgliedschaft finden Sie im http://www.openldap.org/doc/admin24/index.html["OpenLDAP-Dokumentation: Version 2.4 Administratorhandbuch"^].
+
+.Verwandte Informationen
+link:../network/external-communications.html["Anschlüsse für externe Kommunikation"]

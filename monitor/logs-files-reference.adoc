@@ -64,6 +64,11 @@ Das Archiv der StorageGRID-Protokolldatei enthält die für jede Kategorie besch
 | Speicherort der Archivierung | Beschreibung 
 
 
+| acct-tunnel.log  a| 
+Protokoll für den Account Tunnel Helper, der mit dem Load Balancer zusammenarbeitet.
+
+
+
 | Prüfung  a| 
 Während des normalen Systembetriebs erzeugte Überwachungsmeldungen.
 
@@ -114,6 +119,11 @@ Hochverfügbarkeitsgruppen – Kennzahlen und Protokolle
 
 
 
+| internal-access.log  a| 
+Internes HTTP-Proxy-Verkehrsprotokoll.
+
+
+
 | Lambda-Schiedsrichter  a| 
 Protokolle in Verbindung mit der S3 Select Proxy-Anforderung.
 
@@ -126,6 +136,11 @@ Protokolle vom Leakd-Dienst.
 
 | lumberjack.log  a| 
 Debug-Meldungen im Zusammenhang mit Protokollerfassung.
+
+
+
+| manage-audit.log  a| 
+`mgmt-api`Auf Überwachungsprotokolle zugreifen.
 
 
 
@@ -174,6 +189,10 @@ Konfigurationsdateien und Protokolle für den Load Balancer und den Grid Federat
 
 
 * `nginx-gw-dns-check.log`: Im Zusammenhang mit der neuen DNS-Check-Warnung.
+* stream-access.log: TCP/TLS-Stream (Schicht 4) Proxy-Sitzungen für den Stream-Block.
++
+*Hinweis*: Dies ist kein HTTP-Anforderungsprotokoll.
+
 
 
 
@@ -220,6 +239,16 @@ Protokolle aus dem in Plattformservices verwendeten Raft-Cluster.
 
 
 
+| revision_history.json  a| 
+Revisionsverlauf.
+
+
+
+| routed-s3-access.log.gz  a| 
+Zugriffsprotokoll für Grid-Federation-Datenverkehr, der wie S3 (globaler Namespace/Federation-URLs) geroutet wird.
+
+
+
 | ssh  a| 
 Protokolle für SSH-Konfiguration und -Dienst.
 
@@ -235,6 +264,11 @@ Sockendaten für Netzwerk-Debug.
 
 
 
+| system-bucket.log  a| 
+`update-system-bucket-configuration.log`: System-Bucket-Protokolle.
+
+
+
 | system-commands.txt  a| 
 Ausgabe von StorageGRID-Containerbefehlen. Enthält Systeminformationen wie z. B. Netzwerk- und Festplattenverwendung.
 
@@ -242,5 +276,15 @@ Ausgabe von StorageGRID-Containerbefehlen. Enthält Systeminformationen wie z. B
 
 | Sync-Recovery-Paket  a| 
 Bezieht sich auf die Aufrechterhaltung der Konsistenz des neuesten Wiederherstellungspakets auf allen Admin-Knoten und Speicherknoten, die den ADC-Dienst hosten.
+
+
+
+| update-cipher-configurations.log  a| 
+`update-cors-configurations.log`: Protokolle im Zusammenhang mit TLS/Verschlüsselungs- und CORS-Änderungen.
+
+
+
+| update-leakd-configurations.log  a| 
+Konfigurationsprotokoll zur Erkennung von Orphans.
 
 |===

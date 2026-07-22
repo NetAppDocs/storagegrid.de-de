@@ -34,25 +34,25 @@ Der Ersatzknoten muss als primärer Admin-Node für Ihr StorageGRID System konfi
 ** Wenn kein Kennwort festgelegt wurde, legen Sie optional ein Kennwort fest, um das StorageGRID-Installationsprogramm zu sichern.
 
 
-. Klicken Sie auf *Wiederherstellen eines fehlgeschlagenen primären Admin-Knotens*.
+. *Ausgefallenen primären Admin-Knoten wiederherstellen* auswählen.
 +
 image:install_or_recover_primary_admin_node.png["Installieren oder Wiederherstellen des primären Admin-Knotens"]
 
 . Laden Sie die aktuellste Sicherung des Wiederherstellungspakets hoch:
 +
-.. Klicken Sie Auf *Durchsuchen*.
-.. Suchen Sie die aktuellste Wiederherstellungspaketdatei für Ihr StorageGRID -System und klicken Sie auf *Öffnen*.
+.. Wählen Sie *Durchsuchen*.
+.. Die aktuellste Wiederherstellungspaketdatei für Ihr StorageGRID System suchen und *Öffnen* auswählen.
 
 
 . Geben Sie die Provisionierungs-Passphrase ein.
-. Klicken Sie Auf *Wiederherstellung Starten*.
+. *Wiederherstellung starten* auswählen.
 +
 Der Wiederherstellungsprozess beginnt. Der Grid Manager ist möglicherweise einige Minuten lang nicht mehr verfügbar, wenn die erforderlichen Dienste gestartet werden. Wenn die Wiederherstellung abgeschlossen ist, wird die Anmeldeseite angezeigt.
 
 . Wenn SSO (Single Sign-On) für Ihr StorageGRID-System aktiviert ist und das Vertrauen der Vertrauensstelle für den wiederhergestellten Admin-Knoten für das Zertifikat der Standardverwaltungsoberfläche konfiguriert wurde, aktualisieren (oder löschen und neu erstellen) das Vertrauen des Node auf die Vertrauensbasis in Active Directory Federation Services (AD FS). Verwenden Sie das neue Standard-Serverzertifikat, das während der Wiederherstellung des Admin-Knotens generiert wurde.
 +
 
-NOTE: Informationen zum Konfigurieren einer Vertrauensstellung der vertrauenden Seite finden Sie unterlink:../admin/configure-sso.html["Konfigurieren Sie Single Sign-On"] .  Um auf das Standardserverzertifikat zuzugreifen, melden Sie sich bei der Befehlsshell des Admin-Knotens an.  Gehen Sie zum `/var/local/mgmt-api` Verzeichnis und wählen Sie das `server.crt` Datei.
+NOTE: Um eine Vertrauensstellung für eine vertrauende Partei zu konfigurieren, siehe Einrichtung von SSO mit link:../admin/learn-about-setting-up-sso-oidc.html["OIDC"] oder link:../admin/learn-about-setting-up-sso-saml.html["SAML"]. Für den Zugriff auf das Standardserverzertifikat ist eine Anmeldung an der Befehlsshell des Admin Node erforderlich. Zum  `/var/local/mgmt-api` Verzeichnis wechseln und die  `server.crt` Datei auswählen.
 
 
 

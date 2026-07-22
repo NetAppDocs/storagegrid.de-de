@@ -2,7 +2,7 @@
 permalink: maintain/selecting-node-recovery-procedure.html 
 sidebar: sidebar 
 keywords: storagegrid, recover, procedure 
-summary: Sie müssen den korrekten Wiederherstellungsvorgang für den Typ des fehlgeschlagenen Knotens auswählen. 
+summary: Das richtige Wiederherstellungsverfahren für den Typ des ausgefallenen Knotens auswählen. 
 ---
 = Wählen Sie das StorageGRID-Knoten-Wiederherstellungsverfahren aus
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Sie müssen den korrekten Wiederherstellungsvorgang für den Typ des fe
 
 
 [role="lead"]
-Sie müssen den korrekten Wiederherstellungsvorgang für den Typ des fehlgeschlagenen Knotens auswählen.
+Das richtige Wiederherstellungsverfahren für den Typ des ausgefallenen Knotens auswählen.
 
 [cols="1a,2a"]
 |===
@@ -19,18 +19,9 @@ Sie müssen den korrekten Wiederherstellungsvorgang für den Typ des fehlgeschla
 
 
  a| 
-Mehr als ein Storage-Node
+Storage-Node
  a| 
-Wenden Sie sich an den technischen Support. Wenn mehrere Storage-Nodes ausgefallen sind, muss der technische Support bei der Recovery Unterstützung leisten, um Inkonsistenzen zu Datenbanken zu vermeiden, die zu Datenverlusten führen können. Möglicherweise ist ein Wiederherstellungsverfahren für Standorte erforderlich.
-
-link:how-site-recovery-is-performed-by-technical-support.html["Wie der technische Support eine Site wiederherstellt"]
-
-
-
- a| 
-Ein einzelner Storage-Node
- a| 
-Das Speicherknoten-Wiederherstellungsverfahren hängt vom Typ und der Dauer des Ausfalls ab.
+Das Wiederherstellungsverfahren für den Storage Node hängt von der Art des Fehlers ab.
 
 link:recovering-from-storage-node-failures.html["Wiederherstellung nach Ausfällen der Storage-Nodes"]
 
@@ -59,4 +50,4 @@ https://docs.netapp.com/us-en/storagegrid-118/maintain/recovering-from-archive-n
 
 |===
 
-NOTE: Wenn ein Server ausfällt, auf dem mehr als ein Grid-Knoten gehostet wird, können Sie die Knoten in beliebiger Reihenfolge wiederherstellen. Wenn der ausgefallene Server jedoch den primären Admin-Knoten hostet, müssen Sie diesen Knoten zuerst wiederherstellen. Durch die Wiederherstellung des primären Admin-Knotens wird zunächst verhindert, dass die Wiederherstellung anderer Knoten angehalten wird, während diese auf die Kontaktaufnahme mit dem primären Admin-Knoten warten.
+NOTE: Fällt ein Server mit mehreren Grid-Knoten aus, können die Knoten in beliebiger Reihenfolge wiederhergestellt werden. Ist der ausgefallene Server jedoch der primäre Admin-Knoten und es existieren keine nicht-primären Admin-Knoten, muss der primäre Admin-Knoten zuerst wiederhergestellt werden. Die Wiederherstellung des primären Admin-Knotens zuerst verhindert, dass die Wiederherstellung anderer Knoten ins Stocken gerät, wenn diese versuchen, den primären Admin-Knoten zu kontaktieren. Ist ein nicht-primärer Admin-Knoten verfügbar, kann dieser auch zur Wiederherstellung anderer Knoten verwendet werden, sodass diese Wiederherstellungen ohne Kontaktaufnahme mit dem primären Admin-Knoten fortgesetzt werden können.

@@ -1,0 +1,96 @@
+---
+permalink: admin/creating-relying-party-trusts-in-ad-fs-oidc.html 
+sidebar: sidebar 
+keywords: application group, active directory, ad fs, single sign on, sso 
+summary: 'Sie müssen Active Directory Federation Services (AD FS) verwenden, um für jeden Admin Node in Ihrem System eine Anwendungsgruppe zu erstellen.' 
+---
+= Anwendungsgruppen in AD FS für OIDC in StorageGRID erstellen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie müssen Active Directory Federation Services (AD FS) verwenden, um für jeden Admin Node für OpenID Connect (OIDC) in Ihrem System eine Anwendungsgruppe zu erstellen.
+
+.Bevor Sie beginnen
+* Sie verfügen über den vollqualifizierten Domainnamen (oder die IP-Adresse) und die Kennung der vertrauenden Partei für jeden Admin Node in Ihrem System.
++
+
+NOTE: Jeder Admin-Knoten in Ihrem StorageGRID System muss eine Anwendungsgruppe haben. Dadurch wird sichergestellt, dass sich Benutzer sicher bei jedem Admin-Knoten an- und abmelden können. Es kann eine einzige Anwendungsgruppe für alle Admin-Knoten erstellt werden (empfohlen) oder eine unterschiedliche Anwendungsgruppe für jeden Admin-Knoten.
+
+* Sie haben Erfahrung mit der Erstellung von Anwendungsgruppen in AD FS oder Zugriff auf die Microsoft AD FS-Dokumentation.
+* Sie verwenden das Snap-in AD FS Management und gehören der Gruppe Administratoren an.
+
+
+.Über diese Aufgabe
+Diese Anleitung gilt für Windows Server 2022 AD FS. Bei Verwendung einer anderen Version von AD FS treten geringfügige Unterschiede im Ablauf auf. In der Microsoft AD FS-Dokumentation finden sich weitere Informationen bei Fragen.
+
+
+
+[[step-1-create-an-application-group]]
+== Schritt 1: Erstellen einer Anwendungsgruppe
+
+Mit Windows PowerShell kann schnell eine Anwendungsgruppe erstellt werden.
+
+.Schritte
+. Wählen Sie im Windows Server Manager *Tools* > *AD FS Management* aus.
+. *Anwendungsgruppen* > *Anwendungsgruppe hinzufügen* auswählen
+. Für *Name* die Kennung der vertrauenden Partei eingeben.
+. Unter Vorlage *Client-Server Anwendungen* > *Serveranwendung, die auf eine Web-API zugreift*, auswählen.
+. Wählen Sie *Weiter*.
+. Den Wert der *Client Identifier* notieren.
+. Geben Sie unter *Umleitungs-URI* den FQDN (oder die IP-Adresse) `callback` und `logged-out` URIs für den Admin-Node ein:
++
+** `https://<FQDN>/api/v4/oidc-callback` oder `https://<IP_address>/api/v4/oidc-callback`
+** `https://<FQDN>/api/v4/oidc-logged-out` oder `https://<IP_address>/api/v4/oidc-logged-out`
+
+
++
+Geben Sie die URIs für jeden Admin Node ein, wenn eine Anwendungsgruppe für alle Admin Nodes verwendet wird. Wenn für jeden Admin Node eine andere Anwendungsgruppe verwendet wird, nur die URIs für den jeweiligen Admin Node eingeben.
+
+. Wählen Sie *Hinzufügen*.
+. Wählen Sie *Gemeinsames Geheimnis generieren*, notieren Sie den Wert für *Geheimnis* und wählen Sie dann *Weiter*.
+. Geben Sie die Client-Kennung für *Identifier* ein.
+. *Hinzufügen* auswählen und dann *Weiter* auswählen.
+. *Allen erlauben* auswählen.
+. Es sollte sichergestellt sein, dass die Serveranwendung unter *Clientanwendung (Aufrufer)* ausgewählt ist.
+. Unter *Zulässige Bereiche* prüfen, dass nur die folgenden Optionen ausgewählt sind:
++
+** allatclaims
+** E-Mail
+** OpenID
+** Profil
+
+
+. *Weiter* > *Weiter* auswählen.
+. Wählen Sie *Schließen*.
+
+
+
+
+[[step-2-configure-issuance-transform-rules]]
+== Schritt 2: Ausgabetransformationsregeln konfigurieren
+
+Die Ausgabetransformationsregeln für jede Anwendungsgruppe konfigurieren.
+
+.Schritte
+. Auf der Seite *AD FS Management* die Anwendungsgruppe mit der rechten Maustaste auswählen und anschließend *Eigenschaften* wählen.
+. Wählen Sie die zuvor erstellte Web-API aus und wählen Sie dann *Bearbeiten*.
+. Wählen Sie *Issuance Transform Rules* > *Add Rule ...*.
+. Unter *Claim rule template:* *Send LDAP Attribute as Claims* auswählen.
+. Wählen Sie *Weiter*.
+. Einen Namen für eine Anspruchsregel eingeben.
+. *Active Directory* als Attributspeicher auswählen.
+. Die LDAP-Attributzuordnungen werden den ausgehenden Anspruchstypen hinzugefügt:
++
+** `E-Mail Addresses - E-Mail Address`
+** `Token-Groups - Unqualified Names - Group`
+
+
+. Wählen Sie *Fertig*.
+. *Anwenden* > *OK* > *OK* auswählen.
+
+
+.Was kommt als Nächstes
+Nach dem Erstellen von Anwendungsgruppen, link:configure-sso-oidc.html["SSO mit OIDC konfigurieren"].

@@ -39,10 +39,10 @@ NOTE: Wenn Sie ein Upgrade von StorageGRID 11.6 oder einer älteren Version durc
 
 Wenn eine Anfrage UTF-8-Werte im Schlüsselnamen oder -Wert der benutzerdefinierten Metadaten enthält, ist das StorageGRID-Verhalten nicht definiert.
 
-StorageGRID parst oder interpretiert keine entgangenen UTF-8-Zeichen, die im Schlüsselnamen oder -Wert der benutzerdefinierten Metadaten enthalten sind. Entgangenen UTF-8 Zeichen werden als ASCII-Zeichen behandelt:
+StorageGRID analysiert oder interpretiert keine maskierten UTF-8-Zeichen, die im Schlüsselnamen oder Wert benutzerdefinierter Metadaten enthalten sind. Maskierte UTF-8-Zeichen werden als ASCII-Zeichen behandelt.
 
 * Anforderungen sind erfolgreich, wenn benutzerdefinierte Metadaten entgangenen UTF-8 Zeichen enthalten.
-* StorageGRID gibt den Header nicht zurück `x-amz-missing-meta`, wenn der interpretierte Wert des Schlüsselnamens oder -Wertes nicht druckbare Zeichen enthält.
+* StorageGRID gibt den  `x-amz-missing-meta` Header nicht zurück, wenn der interpretierte Wert des Schlüsselnamens oder -werts nicht druckbare Zeichen enthält.
 
 
 
@@ -53,6 +53,20 @@ StorageGRID parst oder interpretiert keine entgangenen UTF-8-Zeichen, die im Sch
 Die folgenden Anfragezeilen werden unterstützt:
 
 * `Content-Type`
+* `x-amz-checksum-algorithm`: Geben Sie  `CRC32`, `CRC32C`, `CRC64NVME` oder `SHA256` an
++
+Wenn ein Objekt kopiert wird und das Quellobjekt eine  `checksum` oder  `x-amz-checksum-algorithm` enthält, erhält das kopierte Objekt eine FULL_OBJECT-Prüfsumme.
+
++
+Wenn das Quellobjekt eine Prüfsumme hat, die Anfrage jedoch keine  `x-amz-checksum-algorithm`enthält oder einen nicht unterstützten Prüfsummenwert verwendet, hat das kopierte Objekt denselben Prüfsummtyp wie das Quellobjekt. StorageGRID ignoriert ungültige oder nicht unterstützte  `x-amz-checksum-algorithm`Werte.
+
++
+Wenn das Quellobjekt keine Prüfsumme hat und  `x-amz-checksum-algorithm` nicht enthält oder einen nicht unterstützten Prüfsummenwert verwendet, besitzt das kopierte Objekt keine Prüfsumme.
+
++
+
+NOTE: Wenn in einer CopyObject-Anfrage keine Prüfsumme angegeben ist und das Quellobjekt keine Prüfsumme hat, berechnet StorageGRID keine Standard-CRC-64/NVME-Prüfsumme für ein Objekt.
+
 * `x-amz-copy-source`
 * `x-amz-copy-source-if-match`
 * `x-amz-copy-source-if-none-match`
@@ -108,15 +122,11 @@ Die folgenden Anforderungsheader werden nicht unterstützt:
 * `Expires`
 * `If-Match`
 +
-Das `If-Match header` wird akzeptiert, ist aber nicht funktionsfähig.
+Der  `If-Match`Header verhält sich je nach Ihrer StorageGRID Konfiguration unterschiedlich. Das Bereitstellen dieses Headers kann eine Fehlermeldung (501 Not Implemented) zurückgeben. Wenn der  `If-Match`Header akzeptiert, aber nicht funktionsfähig ist, kann eine Warnung mit Hinweisen zur Aktivierung des strengeren 501 Not Implemented Fehlerverhaltens ausgelöst werden.
 
 * `If-None-Match`
 +
-Das  `If-None-Match header` wird akzeptiert, ist aber nicht funktionsfähig.
-
-* `x-amz-checksum-algorithm`
-+
-Wenn Sie ein Objekt kopieren und das Quellobjekt eine Prüfsumme hat, kopiert StorageGRID diesen Prüfsummenwert nicht auf das neue Objekt. Dieses Verhalten gilt unabhängig davon, ob Sie versuchen, in der Objektanforderung zu verwenden `x-amz-checksum-algorithm`.
+Der  `If-None-Match`Header verhält sich je nach Ihrer StorageGRID Konfiguration unterschiedlich. Das Bereitstellen dieses Headers kann eine Fehlermeldung (501 Not Implemented) zurückgeben. Wenn der  `If-None-Match`Header akzeptiert, aber nicht funktionsfähig ist, kann eine Warnung mit Hinweisen zur Aktivierung des strengeren 501 Not Implemented Fehlerverhaltens ausgelöst werden.
 
 * `x-amz-website-redirect-location`
 
@@ -149,10 +159,10 @@ NOTE: Wenn Sie ein Objekt in einen Bucket mit aktivierter S3-Objektsperrung aufn
 
 Wenn sich Quell-Bucket und Schlüssel, wie in der Kopfzeile angegeben `x-amz-copy-source`, vom Ziel-Bucket und Schlüssel unterscheiden, wird eine Kopie der Quell-Objektdaten auf das Ziel geschrieben.
 
-Wenn die Quelle und das Ziel übereinstimmen und der `x-amz-metadata-directive` Header als angegeben `REPLACE` ist, werden die Metadaten des Objekts mit den in der Anfrage angegebenen Metadatenwerten aktualisiert. In diesem Fall nimmt StorageGRID das Objekt nicht erneut auf. Dies hat zwei wichtige Folgen:
+Stimmen Quelle und Ziel überein und ist der  `x-amz-metadata-directive` Header als  `REPLACE` angegeben, werden die Metadaten des Objekts mit den in der Anfrage übermittelten Metadatenwerten aktualisiert. In diesem Fall wird das Objekt von StorageGRID nicht erneut eingelesen. Dies hat zwei wichtige Konsequenzen:
 
 * Sie können CopyObject nicht verwenden, um ein vorhandenes Objekt zu verschlüsseln oder die Verschlüsselung eines vorhandenen Objekts zu ändern. Wenn Sie den Header oder den `x-amz-server-side-encryption-customer-algorithm` Header liefern `x-amz-server-side-encryption`, lehnt StorageGRID die Anfrage ab und gibt zurück `XNotImplemented`.
-* Die in der übereinstimmenden ILM-Regel angegebene Option für das Aufnahmeverhalten wird nicht verwendet. Sämtliche durch das Update ausgelösten Änderungen an der Objektplatzierung werden vorgenommen, wenn ILM durch normale ILM-Prozesse im Hintergrund neu bewertet wird.
+* Die in der entsprechenden ILM-Regel festgelegte Option für das Aufnahmeverhalten wird nicht verwendet. Alle durch das Update ausgelösten Änderungen an der Objektplatzierung werden vorgenommen, wenn ILM durch normale Hintergrundprozesse erneut ausgewertet wird.
 +
 Das heißt, wenn die ILM-Regel die strikte Option für das Aufnahmeverhalten verwendet, werden keine Maßnahmen ergriffen, wenn die erforderlichen Objektplatzierungen nicht vorgenommen werden können (z. B. weil ein neu erforderlicher Speicherort nicht verfügbar ist). Das aktualisierte Objekt behält seine aktuelle Platzierung bei, bis die erforderliche Platzierung möglich ist.
 

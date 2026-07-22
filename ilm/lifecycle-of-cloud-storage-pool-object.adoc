@@ -73,18 +73,18 @@ Zum Starten des Lebenszyklus speichert eine Client-Applikation ein Objekt in Sto
 
 . *Objekt in Azure Cloud Storage Pool verschoben*
 +
-Wenn das Objekt einer ILM-Regel entspricht, die einen Azure Cloud-Storage-Pool als Speicherort verwendet, verschiebt StorageGRID das Objekt in den externen Azure Blob-Storage-Container, der vom Cloud-Storage-Pool angegeben wird.
+Wenn das Objekt mit einer ILM-Regel übereinstimmt, die einen Azure Cloud Storage Pool als Ablageort verwendet, verschiebt StorageGRID das Objekt in den externen Azure Blob Storage Container, der vom Cloud Storage Pool angegeben wird.
 
 . *Objekt in Archivebene (nicht-Retrieable-Status)* umgestiegen
 +
-Unmittelbar nach dem Verschieben des Objekts in den Azure Cloud Storage Pool überträgt StorageGRID das Objekt automatisch auf die Azure Blob Storage-Archivebene.
+Unmittelbar nach dem Verschieben des Objekts in den Azure Cloud Storage Pool verschiebt StorageGRID das Objekt automatisch in die Azure Blob Storage Archive-Ebene.
 
 . *Objekt vom Archiv Tier* wiederhergestellt
 +
 Wenn ein Objekt in die Archivierungs-Tier migriert wurde, kann die Client-Applikation eine Anfrage für S3-Wiederherstellungs-Objekt ausgeben, um eine abrufbare Kopie im Azure Cloud-Storage-Pool wiederherzustellen.
 
 +
-Wenn StorageGRID das RestoreObject empfängt, wechselt es das Objekt vorübergehend in die Cool-Tier des Azure Blob-Speichers. Sobald das Ablaufdatum in der Anfrage zum Wiederherstellungobjekt erreicht ist, wechselt StorageGRID das Objekt zurück in die Archiv-Tier.
+Wenn StorageGRID die RestoreObject empfängt, wird das Objekt vorübergehend in die Azure Blob Storage Cool-Ebene verschoben. Sobald das Ablaufdatum in der RestoreObject-Anfrage erreicht ist, verschiebt StorageGRID das Objekt zurück in die Archive-Ebene.
 
 +
 

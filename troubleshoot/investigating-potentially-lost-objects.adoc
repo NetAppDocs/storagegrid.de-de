@@ -129,7 +129,12 @@ Standorte = 0
  a| 
 Wenn in der Ausgabe keine Standorte aufgeführt sind, fehlt das Objekt möglicherweise.  Wenden Sie sich an den technischen Support.
 
-Vom technischen Support bitten Sie möglicherweise, zu bestimmen, ob ein Verfahren zur Storage-Recovery durchgeführt wird. Siehe die Informationen über link:../maintain/restoring-volume.html["Wiederherstellen von Objektdaten mit Grid Manager"] und link:../maintain/restoring-object-data-to-storage-volume.html["Wiederherstellung von Objektdaten auf einem Storage-Volume"].
+Der technische Support bittet Sie möglicherweise, zu prüfen, ob ein Storage-Wiederherstellungsverfahren läuft. Weitere Informationen finden Sie unter:
+
+*** link:../maintain/restoring-object-data-to-storage-volume-for-appliance.html["Wiederherstellung von Objektdaten auf Storage Volumes für die Appliance"]
+*** link:../maintain/restoring-object-data-to-storage-volume-where-system-drive-is-intact.html["Wiederherstellung von Objektdaten auf dem Storage Volume, auf dem das Systemlaufwerk intakt ist"]
+*** link:../maintain/restoring-object-data-to-storage-volume.html["Wiederherstellung von Objektdaten auf einem Storage-Volume (Systemausfall)"]
+
 
 |===
 

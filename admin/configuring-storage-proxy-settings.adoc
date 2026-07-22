@@ -44,3 +44,6 @@ NOTE: Änderungen an Proxy können bis zu 10 Minuten in Anspruch nehmen.
 . Überprüfen Sie die Einstellungen Ihres Proxy-Servers, um sicherzustellen, dass für den Plattformdienst bezogene Nachrichten von StorageGRID nicht blockiert werden.
 . Wenn Sie einen Speicher-Proxy deaktivieren müssen, deaktivieren Sie das Kontrollkästchen und wählen Sie *Speichern*.
 
+
+.Verwandte Informationen
+link:../network/external-communications.html["Anschlüsse für externe Kommunikation"]

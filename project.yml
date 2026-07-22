@@ -10,8 +10,10 @@ settings:
     harmony_enabled: false
     hide_language_selector: false
   versions:
-  - version-number: '12.0'
+  - version-number: '12.1'
     url: "/storagegrid"
+  - version-number: '12.0'
+    url: "/storagegrid-120"
   - version-number: '11.9'
     url: "/storagegrid-119"
   - version-number: '11.8'
@@ -25,13 +27,13 @@ settings:
   langs: de-de,us-en,es-es,fr-fr,it-it,pt-br,ja-jp,ko-kr,zh-cn,zh-tw
 sidebar:
   entries:
-  - title: StorageGRID 12.0-Software
+  - title: StorageGRID 12.1 Software
     url: "/index.html"
   - title: StorageGRID Appliances
     url: "/swnodes/storagegrid-hardware.html"
   - title: Versionshinweise
     entries:
-    - title: Was ist neu in StorageGRID 12.0
+    - title: Neues in StorageGRID 12.1
       url: "/release-notes/whats-new.html"
     - title: Entfernte oder veraltete Funktionen und Fähigkeiten
       url: "/release-notes/removed-or-deprecated-features.html"
@@ -39,6 +41,8 @@ sidebar:
       url: "/release-notes/changes-to-grid-management-api.html"
     - title: Änderungen an der Mandantenmanagement-API
       url: "/release-notes/changes-to-tenant-management-api.html"
+    - title: Änderungen an der S3 REST API Unterstützung
+      url: "/release-notes/changes-to-s3-rest-api.html"
   - title: Los geht's
     url: "/landing-get-started/index.html"
     entries:
@@ -273,17 +277,15 @@ sidebar:
         - title: Appliance-Storage-Volumes neu einbinden und formatieren (manuelle
             Schritte)
           url: "/maintain/remounting-and-reformatting-appliance-storage-volumes.html"
-        - title: Wiederherstellung von Objektdaten auf Storage Volumes für die Appliance
+        - title: Objektdaten auf dem Appliance-Speichervolume wiederherstellen
           url: "/maintain/restoring-object-data-to-storage-volume-for-appliance.html"
         - title: Überprüfen Sie den Speicherstatus nach der Wiederherstellung des
             Appliance-Speicherknoten
           url: "/maintain/checking-storage-state-after-recovering-sga.html"
       - title: Wiederherstellung nach einem Storage-Volume-Ausfall bei intaktem Systemlaufwerk
+        pdf-filename: Wiederherstellung nach einem Storage-Volume-Ausfall bei intaktem
+          Systemlaufwerk
         entries:
-        - title: Recovery-Aufgaben
-          pdf-filename: Wiederherstellung nach einem Storage-Volume-Ausfall bei intaktem
-            Systemlaufwerk
-          url: "/maintain/recovering-from-storage-volume-failure-where-system-drive-is-intact.html"
         - title: Warnungen zur Wiederherstellung des Speichervolumens
           url: "/maintain/reviewing-warnings-about-storage-volume-recovery.html"
         - title: Ermitteln und Aufheben fehlgeschlagener Storage Volumes
@@ -291,8 +293,8 @@ sidebar:
         - title: Recovery ausgefallener Storage-Volumes und Wiederherstellung der
             Cassandra-Datenbank
           url: "/maintain/recovering-failed-storage-volumes-and-rebuilding-cassandra-database.html"
-        - title: Wiederherstellung von Objektdaten auf dem Storage Volume, auf dem
-            das Systemlaufwerk intakt ist
+        - title: Objektdaten auf StorageGRID Volume wiederherstellen, auf dem das
+            Systemlaufwerk intakt ist
           url: "/maintain/restoring-object-data-to-storage-volume-where-system-drive-is-intact.html"
         - title: Überprüfen Sie den Speicherstatus nach der Wiederherstellung von
             Storage Volumes
@@ -307,24 +309,22 @@ sidebar:
           url: "/maintain/selecting-start-recovery-to-configure-storage-node.html"
         - title: Speicher-Volumes neu einbinden und formatieren (manuelle Schritte)
           url: "/maintain/remounting-and-reformatting-storage-volumes-manual-steps.html"
-        - title: Wiederherstellung von Objektdaten auf einem Storage-Volume (Systemausfall)
+        - title: Objektdaten auf Speichervolume wiederherstellen
           url: "/maintain/restoring-object-data-to-storage-volume.html"
         - title: Überprüfen Sie den Speicherstatus nach der Wiederherstellung des
             Speicherknoten-Systemlaufwerks
           url: "/maintain/checking-storage-state-after-recovering-storage-node-system-drive.html"
-      - title: Stellen Sie Objektdaten mithilfe von Grid Manager wieder her
-        url: "/maintain/restoring-volume.html"
-      - title: Überwachen Sie Jobs mit Reparaturdaten
-        url: "/maintain/monitor-repairs.html"
     - title: Wiederherstellung bei Ausfällen des Admin-Nodes
       entries:
       - title: Primärer oder nicht primärer Admin-Node
         pdf-filename: Wiederherstellung bei Ausfällen des Admin-Nodes
         url: "/maintain/recovering-from-admin-node-failures.html"
-      - title: Wiederherstellung nach Ausfällen des primären Admin-Nodes
+      - title: Wiederherstellung nach Ausfällen des primären Admin-Knotens mithilfe
+          desselben primären Admin-Knotens
         entries:
-        - title: Primären Admin-Knoten wiederherstellen
-          pdf-filename: Wiederherstellung nach Ausfällen des primären Admin-Nodes
+        - title: Den primären Admin-Node mit demselben primären Admin-Node wiederherstellen
+          pdf-filename: Den primären Admin-Node mit demselben primären Admin-Node
+            wiederherstellen
           url: "/maintain/recovering-from-primary-admin-node-failures.html"
         - title: Prüfprotokolle vom fehlgeschlagenen primären Admin-Node kopieren
           url: "/maintain/copying-audit-logs-from-failed-primary-admin-node.html"
@@ -342,6 +342,28 @@ sidebar:
         - title: Stellen Sie bei der Wiederherstellung des primären Admin-Knotens
             Prometheus-Kennzahlen wieder her
           url: "/maintain/restoring-prometheus-metrics-primary-admin-node.html"
+      - title: Wiederherstellung nach Ausfällen des primären Admin-Knotens mithilfe
+          eines nicht-primären Admin-Knotens
+        entries:
+        - title: Wiederherstellung des primären Admin-Knotens mithilfe eines nicht-primären
+            Admin-Knotens
+          pdf-filename: Wiederherstellung des primären Admin-Knotens mithilfe eines
+            nicht-primären Admin-Knotens
+          url: "/maintain/recovering-from-primary-admin-node-failures-using-npan.html"
+        - title: Prüfprotokolle vom fehlgeschlagenen primären Admin-Node kopieren
+          url: "/maintain/copying-audit-logs-from-failed-primary-admin-node-using-npan.html"
+        - title: Primären Admin-Node ersetzen
+          url: "/maintain/replacing-primary-admin-node-using-npan.html"
+        - title: "„Wiederherstellung starten“ auswählen, um den primären Admin-Node
+            zu konfigurieren."
+          url: "/maintain/selecting-start-recovery-to-configure-primary-admin-node.html"
+        - title: Ermitteln Sie die Hotfix-Anforderung für den primären Admin-Node
+          url: "/maintain/assess-hotfix-requirement-during-primary-admin-node-recovery-using-npan.html"
+        - title: Prüfprotokoll auf wiederhergestellten primären Admin-Knoten wiederherstellen
+          url: "/maintain/restoring-audit-log-on-recovered-primary-admin-node-using-npan.html"
+        - title: Stellen Sie bei der Wiederherstellung des primären Admin-Knotens
+            Prometheus-Kennzahlen wieder her
+          url: "/maintain/restoring-prometheus-metrics-primary-admin-node-using-npan.html"
       - title: Wiederherstellung nach Ausfällen von Admin-Nodes außerhalb des primären
           Standorts
         entries:
@@ -387,8 +409,10 @@ sidebar:
         url: "/maintain/restoring-existing-nodes.html"
       - title: 'Was ist weiter: Führen Sie zusätzliche Recovery-Schritte, wenn erforderlich'
         url: "/maintain/whats-next-performing-additional-recovery-steps-if-required.html"
-    - title: Ersetzen Sie den VMware-Knoten
+    - title: VMware-Knoten durch einen Wiederherstellungsknoten ersetzen
       url: "/maintain/all-node-types-replacing-vmware-node.html"
+    - title: VMware-Knoten durch SG1000 oder SG100 ersetzen
+      url: "/maintain/replace-vmware-node-with-sg1000-sg100.html"
     - title: Austausch eines fehlerhaften Node durch Services Appliance
       entries:
       - title: Richtlinien für den Austausch

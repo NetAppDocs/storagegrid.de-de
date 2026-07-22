@@ -23,12 +23,14 @@ indexpage:
       url: "../monitor/monitoring-storage-capacity.html"
   - title: Verwalten von Warnmeldungen und Benachrichtigungen
     links:
+    - title: Verwenden Sie AutoSupport
+      url: "../monitor/what-is-autosupport.html"
     - title: Verwalten von Meldungen
       url: "../monitor/managing-alerts.html"
     - title: Erstellen benutzerdefinierter Warnmeldungen
       url: "../monitor/creating-custom-alert-rules.html"
-    - title: Verwalten von Warn-E-Mails
-      url: "../monitor/email-alert-notifications.html"
+    - title: E-Mail-Server konfigurieren
+      url: "../monitor/configure-email-server.html"
     - title: Verwenden Sie SNMP-Überwachung
       url: "../monitor/using-snmp-monitoring.html"
   - title: Verwenden Sie Überwachungsmeldungen und andere Protokolle
@@ -43,6 +45,8 @@ indexpage:
       url: "../monitor/logs-files-reference.html"
   - title: Diagnose und Fehlerbehebung
     links:
+    - title: Verwenden Sie AutoSupport
+      url: "../monitor/what-is-autosupport.html"
     - title: Prüfen von Support-Kennzahlen
       url: "../monitor/reviewing-support-metrics.html"
     - title: E/A-Priorisierung ändern

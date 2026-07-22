@@ -13,7 +13,7 @@ summary: Sie können eine S3-Lebenszyklukonfiguration erstellen, um zu steuern, 
 [role="lead"]
 Sie können eine S3-Lebenszyklukonfiguration erstellen, um zu steuern, wann bestimmte Objekte aus dem StorageGRID System gelöscht werden.
 
-Das einfache Beispiel in diesem Abschnitt veranschaulicht, wie eine S3-Lebenszykluskonfiguration das Löschen bestimmter Objekte aus bestimmten S3-Buckets kontrollieren kann. Das Beispiel in diesem Abschnitt dient nur zu Illustrationszwecken. Alle Details zum Erstellen von S3-Lebenszykluskonfigurationen finden Sie unter https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html["Amazon Simple Storage Service User Guide: Objekt-Lifecycle-Management"^]. Beachten Sie, dass StorageGRID nur Aktionen nach Ablauf unterstützt. Es werden keine Aktionen zur Transition unterstützt.
+Das einfache Beispiel in diesem Abschnitt veranschaulicht, wie eine S3-Lifecycle-Konfiguration steuern kann, wann bestimmte Objekte aus bestimmten S3-Buckets gelöscht (abgelaufen) werden. Das Beispiel in diesem Abschnitt dient nur zur Veranschaulichung. Vollständige Informationen zur Erstellung von S3-Lifecycle-Konfigurationen finden sich unter  https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html["Amazon Simple Storage Service User Guide: Verwaltung des Lebenszyklus von Objekten"^]. Es ist zu beachten, dass StorageGRID nur Expiration-Aktionen unterstützt, Transition-Aktionen werden nicht unterstützt.
 
 
 

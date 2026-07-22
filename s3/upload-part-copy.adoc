@@ -17,6 +17,11 @@ Der UploadPartCopy-Vorgang wird mit dem gesamten Amazon S3-REST-API-Verhalten im
 
 Diese Anforderung liest und schreibt die Objektdaten, die in im StorageGRID-System angegeben `x-amz-copy-source-range` sind.
 
+
+
+[[supported-request-headers]]
+== Unterstützte Anfrageheader
+
 Die folgenden Anfragezeilen werden unterstützt:
 
 * `x-amz-copy-source-if-match`
@@ -53,3 +58,10 @@ CAUTION: Die von Ihnen zur Verfügung gelegten Schlüssel werden niemals gespeic
 == Versionierung
 
 Mehrteilige Uploads bestehen aus separaten Vorgängen zum Initiieren des Uploads, Auflisten von Uploads, Hochladen von Teilen, Zusammenbauen der hochgeladenen Teile und Abschließen des Uploads. Objekte werden erstellt (und ggf. versioniert), wenn der CompleteMultipartUpload-Vorgang ausgeführt wird.
+
+
+
+[[s3-checksum-support]]
+== S3 Prüfsummenunterstützung
+
+StorageGRID erkennt automatisch, ob bei einer CreateMultipartUpload-Anfrage eine Prüfsumme angegeben wurde, und verwendet diese Prüfsumme in der UploadPartCopy-Operation. Es ist nicht erforderlich, eine Prüfsumme in einer UploadPartCopy-Anfrage anzugeben. Wenn in einer CreateMultipartUpload-Anfrage keine Prüfsumme angegeben wird, berechnet StorageGRID keine Standard-CRC-64/NVME-Prüfsumme für ein Objekt. StorageGRID fügt keine Prüfsumme für den kopierten Teil hinzu, wenn CreateMultipartUpload keine Prüfsumme angegeben hat.

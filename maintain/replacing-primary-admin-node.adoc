@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, replace primary admin node, replacing primary admin node, primary admin node 
 summary: Um einen primären Admin-Node wiederherzustellen, müssen Sie zuerst die physische oder virtuelle Hardware ersetzen. 
 ---
-= Ersetzen Sie den primären StorageGRID Admin Node
+= Den primären Admin-Node von StorageGRID mit demselben primären Admin-Node ersetzen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,7 +13,12 @@ summary: Um einen primären Admin-Node wiederherzustellen, müssen Sie zuerst di
 [role="lead"]
 Um einen primären Admin-Node wiederherzustellen, müssen Sie zuerst die physische oder virtuelle Hardware ersetzen.
 
-Sie können einen fehlgeschlagenen primären Admin-Node durch einen primären Admin-Node ersetzen, der auf derselben Plattform ausgeführt wird, oder Sie können einen primären Admin-Node, der auf VMware oder einem Linux-Host ausgeführt wird, durch einen primären Admin-Node ersetzen, der auf einer Services-Appliance gehostet wird.
+Um einen primären Admin-Node wiederherzustellen, müssen Sie zuerst die physische oder virtuelle Hardware ersetzen.
+
+* Ein ausgefallener primärer Admin-Knoten kann durch einen primären Admin-Knoten ersetzt werden, der auf derselben Plattform läuft.
+* Sie können einen primären Admin-Knoten, der auf VMware oder einem Linux-Host läuft, durch einen primären Admin-Knoten ersetzen, der auf einer StorageGRID Services Appliance gehostet wird.
+* Ein primärer Admin-Knoten, der auf einem VMware-Host läuft, kann durch eine SG1000- oder SG100-Services-Appliance ersetzt werden.
+
 
 Verwenden Sie das Verfahren, das der für den Node ausgewählten Ersatzplattform entspricht. Nachdem Sie den Knotenaustausch abgeschlossen haben (der für alle Node-Typen geeignet ist), werden Sie durch dieses Verfahren zum nächsten Schritt für die primäre Admin-Knoten-Wiederherstellung geleitet.
 
@@ -25,7 +30,9 @@ Verwenden Sie das Verfahren, das der für den Node ausgewählten Ersatzplattform
  a| 
 VMware
  a| 
-link:all-node-types-replacing-vmware-node.html["Einen VMware-Knoten ersetzen"]
+link:all-node-types-replacing-vmware-node.html["Einen VMware-Knoten durch einen Wiederherstellungsknoten ersetzen"]
+
+link:replace-vmware-node-with-sg1000-sg100.html["Einen VMware-Knoten durch SG1000 oder SG100 ersetzen"]
 
 
 

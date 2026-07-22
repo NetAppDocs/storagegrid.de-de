@@ -14,13 +14,13 @@ summary: Sie müssen mindestens einen Standort erstellen, wenn Sie StorageGRID i
 Sie müssen mindestens einen Standort erstellen, wenn Sie StorageGRID installieren. Sie können weitere Standorte erstellen, um die Zuverlässigkeit und Storage-Kapazität Ihres StorageGRID Systems zu erhöhen.
 
 .Schritte
-. Geben Sie auf der Seite Sites den *Standortnamen* ein.
-. Um weitere Sites hinzuzufügen, klicken Sie auf das Pluszeichen neben dem Eintrag der letzten Site und geben den Namen in das neue Textfeld *Standortname* ein.
+. Auf der Seite „Sites“ den *Site name* eingeben.
+. Um zusätzliche Standorte hinzuzufügen, das Pluszeichen neben dem letzten Standorteintrag auswählen und den Namen im neuen Textfeld *Site name* eingeben.
 +
 Fügen Sie so viele zusätzliche Standorte wie für Ihre Grid-Topologie hinzu. Sie können bis zu 16 Standorte hinzufügen.
 
 +
 image:3_gmi_installer_sites_page.gif["Dieses Bild wird durch den umgebenden Text erläutert."]
 
-. Klicken Sie Auf *Weiter*.
+. Wählen Sie *Weiter*.
 

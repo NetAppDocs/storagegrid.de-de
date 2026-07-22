@@ -38,7 +38,9 @@ Wenn Sie *eine* dieser Korrekturmaßnahmen ergriffen haben, müssen Sie zusätzl
  a| 
 Primärer Admin-Node
  a| 
-link:configuring-replacement-primary-admin-node.html["Primären Ersatzadministrator-Knoten konfigurieren"]
+* link:selecting-start-recovery-to-configure-primary-admin-node.html["„Wiederherstellung starten“ auswählen, um den primären Admin-Node zu konfigurieren."]
+* link:selecting-start-recovery-to-configure-non-primary-admin-node.html["Wiederherstellung des primären Admin-Knotens mithilfe eines nicht-primären Admin-Knotens"]
+
 
 
 
@@ -74,6 +76,6 @@ Storage-Node (softwarebasiert):
 * Wenn für any der Wert der Variablen der `BLOCK_DEVICE_<PURPOSE>` Konfigurationsdatei auf ein Blockgerät verweist, das nicht die gleichen Daten enthält, `<PURPOSE>` die es vor dem Host-Ausfall gemacht hat.
 
  a| 
-link:recovering-from-storage-volume-failure-where-system-drive-is-intact.html["Wiederherstellung nach einem Storage-Volume-Ausfall bei intaktem Systemlaufwerk"]
+link:reviewing-warnings-about-storage-volume-recovery.html["Wiederherstellung nach einem Storage-Volume-Ausfall bei intaktem Systemlaufwerk"]
 
 |===

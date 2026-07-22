@@ -116,7 +116,7 @@ Manuelle IP-Eingabe
  a| 
 .. Deaktivieren Sie das Kontrollkästchen *Admin-Node-Erkennung aktivieren*.
 .. Geben Sie die IP-Adresse manuell ein.
-.. Klicken Sie Auf *Speichern*.
+.. Wählen Sie *Speichern*.
 .. Warten Sie, bis der Verbindungsstatus bereit ist, bis die neue IP-Adresse einsatzbereit ist.
 
 
@@ -128,7 +128,7 @@ Automatische Erkennung aller verbundenen primären Admin-Nodes
 .. Aktivieren Sie das Kontrollkästchen *Admin-Node-Erkennung aktivieren*.
 .. Warten Sie, bis die Liste der erkannten IP-Adressen angezeigt wird.
 .. Wählen Sie den primären Admin-Node für das Grid aus, in dem dieser Appliance-Speicher-Node bereitgestellt werden soll.
-.. Klicken Sie Auf *Speichern*.
+.. Wählen Sie *Speichern*.
 .. Warten Sie, bis der Verbindungsstatus bereit ist, bis die neue IP-Adresse einsatzbereit ist.
 
 
@@ -143,16 +143,16 @@ Wenn die Schaltfläche *Installation starten* nicht aktiviert ist, müssen Sie m
 
 . Wählen Sie auf der Startseite des StorageGRID-Appliance-Installationsprogramms die Option *Installation starten*.
 +
-Der aktuelle Status ändert sich in „Installation wird ausgeführt“, und die Seite Monitorinstallation wird angezeigt.
+Der aktuelle Status ändert sich zu „Installation läuft“, und die Monitor installation Seite wird angezeigt.
 
 . Wenn Ihre Erweiterung mehrere Appliance-Nodes umfasst, wiederholen Sie die vorherigen Schritte für jede Appliance.
 +
 
 NOTE: Wenn Sie mehrere Appliance Storage Nodes gleichzeitig bereitstellen müssen, können Sie den Installationsprozess mithilfe des Installationsskripts für die configure-sga.py Appliance automatisieren.
 
-. Wenn Sie manuell auf die Seite Monitor-Installation zugreifen müssen, wählen Sie in der Menüleiste die Option *Monitor-Installation* aus.
+. Falls Sie die Seite zur Monitor Installation manuell aufrufen müssen, in der Menüleiste *Monitor Installation* auswählen.
 +
-Auf der Seite Monitor-Installation wird der Installationsfortschritt angezeigt.
+Auf der Installationsseite des Monitors wird der Installationsfortschritt angezeigt.
 
 +
 Die blaue Statusleiste zeigt an, welche Aufgabe zurzeit ausgeführt wird. Grüne Statusleisten zeigen Aufgaben an, die erfolgreich abgeschlossen wurden.

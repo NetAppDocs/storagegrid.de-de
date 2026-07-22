@@ -48,9 +48,9 @@ Grenzwerte werden pro Load Balancer erzwungen. Wenn der Datenverkehr gleichzeiti
 
 NOTE: Sie können Richtlinien erstellen, um die aggregierte Bandbreite zu begrenzen oder die Bandbreite nach Bedarf zu begrenzen. StorageGRID kann jedoch nicht beide Bandbreitenarten gleichzeitig einschränken. Eine Einschränkung der Bandbreite im Aggregat kann eine zusätzliche geringfügige Auswirkung auf die Performance des nicht begrenzten Datenverkehrs haben.
 
-Bei Bandbreitenbeschränkungen oder -Anforderungen werden die Anforderungen mit der von Ihnen festgelegten Rate in- oder Out-Streaming übertragen. StorageGRID kann nur eine Geschwindigkeit erzwingen. Daher ist die jeweils spezifischste Richtlinienabgleiche nach Matcher-Typ erzwungen. Die von der Anforderung verbrauchte Bandbreite wird nicht mit anderen weniger spezifischen übereinstimmenden Richtlinien verglichen, die Richtlinien zur Gesamtbandbreite enthalten. Bei allen anderen Grenzwerttypen werden Clientanforderungen um 250 Millisekunden verzögert und bei Anfragen, die die übereinstimmende Richtlinienbegrenzung überschreiten, eine langsame Antwort von 503 erhalten.
+Für Aggregat- oder pro-Anfrage-Bandbreitenbegrenzungen werden die Anfragen mit der von Ihnen festgelegten Geschwindigkeit ein- oder ausgelesen. StorageGRID kann nur eine Geschwindigkeit erzwingen, daher wird die spezifischste Richtlinienübereinstimmung nach Matcher-Typ angewendet. Die von der Anfrage verbrauchte Bandbreite wird nicht auf andere, weniger spezifische übereinstimmende Richtlinien mit Aggregatbandbreitenbegrenzungen angerechnet. Bei allen anderen Begrenzungstypen werden Clientanfragen um 250 Millisekunden verzögert und erhalten eine 503 Slow Down-Antwort für Anfragen, die eine der übereinstimmenden Richtlinienbegrenzungen überschreiten.
 
-Im Grid Manager können Sie Traffic-Diagramme anzeigen und überprüfen, ob die Richtlinien die von Ihnen erwarteten Verkehrsgrenzen durchsetzen.
+Im Grid Manager können Sie Verkehrsdiagramme einsehen und überprüfen, ob die Richtlinien die von Ihnen erwarteten Verkehrsgrenzen durchsetzen.
 
 
 

@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: replace VMware node 
 summary: Wenn Sie einen ausgefallenen StorageGRID-Knoten wiederherstellen, der auf VMware gehostet wurde, entfernen Sie den ausgefallenen Knoten und stellen einen Recovery-Knoten bereit. 
 ---
-= Ersetzen Sie einen VMware-Knoten in StorageGRID
+= Einen VMware-Knoten in StorageGRID durch einen Wiederherstellungsknoten ersetzen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -49,16 +49,9 @@ NOTE: Nach der Bereitstellung des neuen Knotens können Sie entsprechend Ihren S
 
 
  a| 
-Primärer Admin-Node
+Admin-Nodes
  a| 
-link:configuring-replacement-primary-admin-node.html["Primären Ersatzadministrator-Knoten konfigurieren"]
-
-
-
- a| 
-Nicht primärer Admin-Node
- a| 
-link:selecting-start-recovery-to-configure-non-primary-admin-node.html["Wählen Sie Wiederherstellung starten, um einen nicht-primären Admin-Node zu konfigurieren"]
+link:recovering-from-admin-node-failures.html["Wiederherstellung des primären oder nicht-primären Admin-Node in StorageGRID"]
 
 
 

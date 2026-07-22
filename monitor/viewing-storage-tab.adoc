@@ -13,14 +13,10 @@ summary: Die Registerkarte „Storage“ fasst Storage-Verfügbarkeit und andere
 [role="lead"]
 Die Registerkarte „Storage“ fasst Storage-Verfügbarkeit und andere Storage-Metriken zusammen.
 
-Die Registerkarte Storage wird für alle Nodes, jeden Standort und das gesamte Raster angezeigt.
+Die Registerkarte „Speicher“ wird für alle Knoten, jeden Standort und das gesamte Grid angezeigt. Diese Registerkarte enthält die folgenden Informationen:
 
+Verwendete Diagramme im Storage:: Für Storage-Nodes, jeden Standort und das gesamte Raster enthält die Registerkarte Storage Diagramme, die zeigen, wie viel Storage von Objektdaten und Objekt-Metadaten im Laufe der Zeit verwendet wurde.
 
-
-[[storage-used-graphs]]
-== Verwendete Diagramme im Storage
-
-Für Storage-Nodes, jeden Standort und das gesamte Raster enthält die Registerkarte Storage Diagramme, die zeigen, wie viel Storage von Objektdaten und Objekt-Metadaten im Laufe der Zeit verwendet wurde.
 
 
 NOTE: Wenn ein Knoten nicht mit dem Raster verbunden ist, z. B. während eines Upgrades oder eines getrennten Status, sind bestimmte Metriken möglicherweise nicht verfügbar oder von den Gesamtsummen des Standorts und des Rasters ausgeschlossen. Nachdem sich ein Node wieder mit dem Grid verbunden hat, warten Sie einige Minuten, bis sich die Werte stabilisieren.

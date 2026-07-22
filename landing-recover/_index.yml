@@ -31,8 +31,10 @@ indexpage:
     links:
     - title: Ersetzen Sie den Linux-Knoten
       url: "../maintain/all-node-types-replacing-linux-node.html"
-    - title: Ersetzen Sie den VMware-Knoten
+    - title: VMware-Knoten durch einen Wiederherstellungsknoten ersetzen
       url: "../maintain/all-node-types-replacing-vmware-node.html"
+    - title: VMware-Knoten durch SG1000 oder SG100 ersetzen
+      url: "../maintain/replace-vmware-node-with-sg1000-sg100.html"
     - title: Ersetzen Sie Linux oder VMware Node durch Services-Appliance
       url: "../maintain/installing-services-appliance-platform-change-only.html"
     - title: Klon-Appliance-Node

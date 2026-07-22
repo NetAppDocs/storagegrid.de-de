@@ -48,9 +48,6 @@ image:nodes_page_network_interfaces.png["Knoten Seite Netzwerkschnittstellen"]
 +
 Die Tabellen „Empfangen und Senden“ zeigen, wie viele Bytes und Pakete über jedes Netzwerk empfangen und gesendet wurden, sowie andere Empfangs- und Übertragungstabellen.
 
-+
-image:nodes_page_network_communication.png["Knoten Seite Netzwerk Komm"]
-
 
 
 . Verwenden Sie die Metriken für Ihre Traffic-Klassifizierungsrichtlinien zur Überwachung des Netzwerkverkehrs.
@@ -62,7 +59,7 @@ Die Seite Richtlinien zur Klassifizierung von Verkehrsdaten wird angezeigt, und 
 +
 image:traffic_classification_policies_main_screen_w_examples.png["Beispiel für eine Verkehrsrichtlinie für Grafik"]
 
-.. Um Diagramme anzuzeigen, die die mit einer Richtlinie verknüpften Netzwerkmetriken anzeigen, wählen Sie das Optionsfeld links neben der Richtlinie aus, und klicken Sie dann auf *Metriken*.
+.. Zur Anzeige von Diagrammen, die die mit einer Richtlinie verknüpften Netzwerkmetriken darstellen, das Optionsfeld links neben der Richtlinie auswählen und anschließend *Metriken* wählen.
 .. Überprüfen Sie die Diagramme, um den mit der Richtlinie verknüpften Netzwerkverkehr zu verstehen.
 +
 Wenn eine Richtlinie zur Klassifizierung von Verkehrsströmen darauf ausgelegt ist, den Netzwerkverkehr zu begrenzen, analysieren Sie, wie oft der Datenverkehr begrenzt ist, und entscheiden Sie, ob die Richtlinie Ihre Anforderungen weiterhin erfüllt. Von Zeit zu Zeit, link:../admin/managing-traffic-classification-policies.html["Passen Sie jede Richtlinie zur Verkehrsklassifizierung nach Bedarf an"].

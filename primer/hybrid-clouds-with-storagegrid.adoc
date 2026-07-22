@@ -18,7 +18,7 @@ Verwenden Sie StorageGRID in einer Hybrid-Cloud-Konfiguration, indem Sie richtli
 [[cloud-storage-pools]]
 == Cloud-Storage-Pools
 
-Mit Cloud-Storage-Pools können Sie Objekte außerhalb des StorageGRID Systems speichern. Beispielsweise können Sie selten genutzte Objekte auf kostengünstigeren Cloud-Storage verschieben, wie z. B. Amazon S3 Glacier, S3 Glacier Deep Archive, Google Cloud oder die Archiv-Zugriffs-Tier in Microsoft Azure Blob Storage. Oder Sie möchten vielleicht ein Cloud-Backup von StorageGRID Objekten pflegen. Mit dieser können Daten, die aufgrund eines Ausfalls des Storage Volumes oder des Storage-Nodes verloren gingen, wiederhergestellt werden.
+Cloud Storage Pools ermöglichen das Speichern von Objekten außerhalb des StorageGRID-Systems. Beispielsweise kann es sinnvoll sein, selten genutzte Objekte in kostengünstigere Cloud-Speicher wie Amazon S3 Glacier, S3 Glacier Deep Archive, Google Cloud oder die Archivzugriffsebene von Microsoft Azure Blob Storage zu verschieben. Oder es kann ein Cloud-Backup der StorageGRID-Objekte vorgehalten werden, das zur Wiederherstellung von Daten dient, die durch einen Ausfall eines Speichervolumens oder Storage Node verloren gegangen sind.
 
 Zusätzlich wird Storage von Drittanbietern unterstützt, einschließlich Festplatten- und Tape Storage.
 
@@ -34,7 +34,7 @@ Mit S3-Plattform-Services können Unternehmen Remote-Services als Endpunkte zur 
 
 * Der CloudMirror Replizierungsservice spiegelt angegebene Objekte automatisch auf einen S3-Ziel-Bucket, der sich auf Amazon S3 oder auf einem zweiten StorageGRID System befinden kann.
 * Der Ereignisbenachrichtigungsdienst sendet Nachrichten über angegebene Aktionen an einen externen Endpunkt, der den Empfang von Simple Notification Service (Amazon SNS)-Ereignissen unterstützt.
-* Der Such-Integrationsservice sendet Objektmetadaten an einen externen Elasticsearch-Service, sodass Metadaten mit Tools von Drittanbietern durchsucht, visualisiert und analysiert werden können.
+* Der Suchintegrationsdienst sendet Objektmetadaten an einen externen Elasticsearch-Dienst, wodurch die Metadaten mithilfe von Drittanbietertools durchsucht, visualisiert und analysiert werden können.
 
 
 So können Sie beispielsweise CloudMirror Replizierung verwenden, um spezifische Kundendaten in Amazon S3 zu spiegeln und anschließend AWS Services für Analysen Ihrer Daten nutzen.

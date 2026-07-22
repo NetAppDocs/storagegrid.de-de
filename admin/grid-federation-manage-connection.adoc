@@ -26,7 +26,7 @@ Das Management von Grid-Verbindungen zwischen StorageGRID Systemen umfasst das B
 Sie können eine Grid Federation-Verbindung bearbeiten, indem Sie sich beim primären Admin-Node auf einem der beiden Raster der Verbindung anmelden. Nachdem Sie Änderungen am ersten Raster vorgenommen haben, müssen Sie eine neue Überprüfungsdatei herunterladen und in das andere Raster hochladen.
 
 
-NOTE: Während die Verbindung bearbeitet wird, werden Kontoklone- oder Grid-übergreifende Replikationsanforderungen weiterhin die vorhandenen Verbindungseinstellungen verwenden. Alle Änderungen, die Sie am ersten Raster vornehmen, werden lokal gespeichert, aber erst dann verwendet, wenn sie in das zweite Raster hochgeladen, gespeichert und getestet wurden.
+NOTE: Während die Verbindung bearbeitet wird, werden Kontosynchronisierungs- oder netzübergreifende Replikationsanfragen weiterhin mit den bestehenden Verbindungseinstellungen ausgeführt. Es kann jeweils nur eine Verbindung bearbeitet und für jede Verbindung eine Bestätigungsdatei in das Remote-Grid hochgeladen werden. Änderungen werden nach dem Hochladen in die Remote-Grids übernommen.
 
 
 
@@ -211,7 +211,7 @@ Verwenden Sie im Allgemeinen die gleiche Anzahl von Tagen für die Zertifikate a
 
 Sie können eine Netzverbundverbindung aus jedem Raster der Verbindung entfernen. Wie in der Abbildung gezeigt, müssen Sie auf beiden Rastern erforderliche Schritte ausführen, um zu bestätigen, dass die Verbindung nicht von einem Mandanten in einem der beiden Raster verwendet wird.
 
-image:grid-federation-remove-connection.png["Schritte zum Entfernen der Netzverbundverbindung"]
+image:grid_federation_remove_connection.png["Schritte zum Entfernen der Netzverbundverbindung"]
 
 Beachten Sie vor dem Entfernen einer Verbindung Folgendes:
 

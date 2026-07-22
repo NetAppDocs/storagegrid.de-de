@@ -1,21 +1,21 @@
 ---
-permalink: admin/creating-relying-party-trusts-in-ad-fs.html 
+permalink: admin/creating-relying-party-trusts-in-ad-fs-saml.html 
 sidebar: sidebar 
 keywords: relying party trust, active directory, ad fs, single sign on, sso 
 summary: 'Sie müssen Active Directory Federation Services (AD FS) verwenden, um ein Vertrauensverhältnis für jeden Admin-Knoten in Ihrem System zu erstellen. Sie können vertraut mit PowerShell-Befehlen erstellen, SAML-Metadaten von StorageGRID importieren oder die Daten manuell eingeben.' 
 ---
-= Erstellen von Relying-Party-Vertrauensstellungen in AD FS für StorageGRID
+= Erstellen von Vertrauensstellungen für vertrauende Parteien in AD FS für SAML in StorageGRID
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie müssen Active Directory Federation Services (AD FS) verwenden, um ein Vertrauensverhältnis für jeden Admin-Knoten in Ihrem System zu erstellen. Sie können vertraut mit PowerShell-Befehlen erstellen, SAML-Metadaten von StorageGRID importieren oder die Daten manuell eingeben.
+Sie müssen Active Directory Federation Services (AD FS) verwenden, um für jeden Admin Node in Ihrem System eine Vertrauensstellung für SAML zu erstellen. Vertrauensstellungen können mithilfe von PowerShell-Befehlen, durch Importieren von SAML-Metadaten aus StorageGRID oder durch manuelle Dateneingabe erstellt werden.
 
 .Bevor Sie beginnen
 * Sie haben Single Sign-On für StorageGRID konfiguriert und als SSO-Typ *AD FS* ausgewählt.
-* Du hastlink:../admin/configure-sso.html["Sandbox-Modus aufgerufen"] im Grid Manager.
+* Sie haben link:../admin/configure-sso-saml.html["Sandbox-Modus aufgerufen"] im Grid Manager.
 * Sie kennen den vollqualifizierten Domänennamen (oder die IP-Adresse) und die Kennung der vertrauenden Partei für jeden Admin-Knoten in Ihrem System.  Sie finden diese Werte in der Detailtabelle „Admin-Knoten“ auf der StorageGRID -Seite „SSO konfigurieren“.
 +
 
@@ -89,7 +89,7 @@ Wenn die Metadaten fehlen, überprüfen Sie, ob die Metadatenadresse der Födera
 
 
 . Wiederholen Sie diese Schritte, um ein Vertrauensverhältnis für alle Administratorknoten in Ihrem StorageGRID-System zu konfigurieren.
-. Wenn Sie fertig sind, kehren Sie zu StorageGRID zurück undlink:../admin/configure-sso.html#test-sso["Testen Sie alle Vertrauensstellungen der vertrauenden Parteien"] um zu bestätigen, dass sie richtig konfiguriert sind.
+. Wenn Sie fertig sind, kehren Sie zu StorageGRID zurück und link:../admin/configure-sso-saml.html#test-sso["Testen Sie alle Vertrauensstellungen der vertrauenden Parteien"] um zu bestätigen, dass sie korrekt konfiguriert sind.
 
 
 
@@ -141,7 +141,7 @@ Wenn die Metadaten fehlen, überprüfen Sie, ob die Metadatenadresse der Födera
 
 
 . Wiederholen Sie diese Schritte, um ein Vertrauensverhältnis für alle Administratorknoten in Ihrem StorageGRID-System zu konfigurieren.
-. Wenn Sie fertig sind, kehren Sie zu StorageGRID zurück undlink:../admin/configure-sso.html#test-sso["Testen Sie alle Vertrauensstellungen der vertrauenden Parteien"] um zu bestätigen, dass sie richtig konfiguriert sind.
+. Wenn Sie fertig sind, kehren Sie zu StorageGRID zurück und link:../admin/configure-sso-saml.html#test-sso["Testen Sie alle Vertrauensstellungen der vertrauenden Parteien"]um zu bestätigen, dass sie korrekt konfiguriert sind.
 
 
 
@@ -236,5 +236,5 @@ Die Eigenschaften der zu vertrauenden Partei werden gespeichert und geschlossen.
 
 
 . Wiederholen Sie diese Schritte, um ein Vertrauensverhältnis für alle Administratorknoten in Ihrem StorageGRID-System zu konfigurieren.
-. Wenn Sie fertig sind, kehren Sie zu StorageGRID zurück undlink:../admin/configure-sso.html#test-sso["Testen Sie alle Vertrauensstellungen der vertrauenden Parteien"] um zu bestätigen, dass sie richtig konfiguriert sind.
+. Wenn Sie fertig sind, kehren Sie zu StorageGRID zurück und link:../admin/configure-sso-saml.html#test-sso["Testen Sie alle Vertrauensstellungen der vertrauenden Parteien"]um zu bestätigen, dass sie korrekt konfiguriert sind.
 

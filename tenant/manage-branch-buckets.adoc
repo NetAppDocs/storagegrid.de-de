@@ -23,8 +23,27 @@ Verwenden Sie den Mandanten-Manager, um Details für Zweigstellen-Buckets zu ers
 .Über diese Aufgabe
 Beachten Sie die folgenden Informationen zu Branch-Buckets:
 
-* Berechtigungen zum Festlegen von S3 Object Lock-Eigenschaften von Buckets oder Objekten können erteilt werden durchlink:../s3/use-access-policies.html["Bucket-Richtlinie oder Gruppenrichtlinie"] .
-* Wenn Sie die Versionsverwaltung für den Basis-Bucket aussetzen, ist der Inhalt des Basis-Buckets in seinen Zweig-Buckets nicht mehr sichtbar.
+Tiefenbegrenzung des Branch-Buckets:: Ein Branch-Bucket kann maximal 20 Basis-Buckets enthalten. Mit zunehmender Branch-Bucket-Tiefe kann die S3-Zugriffslatenz steigen, insbesondere bei ListObjectVersions-Aufrufen.
++
+--
+* Wenn ein Branch-Bucket aus einem Basis-Bucket erstellt wird, der ein regulärer Bucket ist (ein Bucket, der ursprünglich als Basis-Bucket erstellt wurde), hat der neue Branch-Bucket einen Basis-Bucket.
+* Wenn der Basis-Bucket selbst ein Branch-Bucket ist, erbt der neue Branch-Bucket alle Basis-Buckets dieses Branch-Buckets. Benutzer geben nur einen Basis-Bucket direkt an; die geerbten Basis-Buckets sind implizit.
+* Die Gesamtzahl der Basis-Buckets (explizit und implizit) darf 20 nicht überschreiten.
++
+Beispielsweise ist Bucket *A* ein regulärer Bucket mit aktivierter Versionierung:
+
++
+** Der aus *A* erstellte Branch-Bucket *B* hat einen Base-Bucket: *A*.
+** Der aus *B* erstellte Branch-Bucket *C* hat zwei Basis-Buckets: *B* (explizit) und *A* (implizit).
+** Der aus *C* erstellte Branch-Bucket *D* hat drei Basis-Buckets: *C* (explizit), *B* (implizit) und *A* (implizit).
+** Dieses Muster setzt sich bis zu einer maximalen Tiefe von 20 Basis-Buckets fort.
+
+
+
+
+--
+S3 Object Lock-Berechtigungen:: Berechtigungen zum Festlegen von S3 Object Lock-Eigenschaften von Buckets oder Objekten können durch link:../tenant/using-s3-object-lock.html["Bucket-Richtlinie oder Gruppenrichtlinie"] gewährt werden.
+Ausgesetzte Versionierung:: Wenn Sie die Versionsverwaltung für den Basis-Bucket aussetzen, ist der Inhalt des Basis-Buckets in seinen Zweig-Buckets nicht mehr sichtbar.
 
 
 
@@ -85,15 +104,6 @@ Die Region des Zweig-Buckets muss mit der Region des Basis-Buckets übereinstimm
 
 
  a| 
-Vor der Zeit
- a| 
-Die Frist für den Zugriff auf im Basis-Bucket erstellte Objektversionen vom Zweig-Bucket aus.  Der Branch-Bucket bietet Zugriff auf Objektversionen, die vor dem Zeitpunkt „Before“ erstellt wurden.
-
-„Vor der Zeit“ muss ein Datum und eine Uhrzeit sein, die vergangen sind.  Es kann kein zukünftiges Datum sein.
-
-
-
- a| 
 Zweigschaufeltyp
  a| 
 ** *Lesen/Schreiben*: Sie können Objekte oder Objektversionen im Branch-Bucket hinzufügen oder löschen.
@@ -104,6 +114,24 @@ Zweigschaufeltyp
 
 |===
 . Wählen Sie *Weiter*.
+
+
+
+
+[[time-filter]]
+== Zeitfilter
+
+Wählen Sie den Zeitraum aus, der Objektversionen aus dem Basis-Bucket umfassen soll. Für jeden Zeitfilter kann ein beliebiges Datum innerhalb des folgenden Bereichs ausgewählt werden:
+
+* Mindestdatum: 1. Januar 2010 (UTC)
+* Maximales Datum: Fünf Jahre ab dem heutigen Datum (UTC)
++
+Vor:: Der Branch Bucket ermöglicht den Zugriff auf Objektversionen, die vor dem Zeitpunkt _Before_ erstellt wurden.
+Nach:: Der Branch Bucket ermöglicht den Zugriff auf Objektversionen, die nach dem Zeitpunkt _After_ erstellt wurden.
+Zwischen:: Der Branch Bucket ermöglicht den Zugriff auf Objektversionen, die zwischen den Zeitpunkten _From_ und _To_ erstellt wurden.
+Ausschließen:: Der Branch Bucket bietet keinen Zugriff auf Objektversionen, die zwischen den Zeitpunkten _Exclude from_ und _Exclude to_ erstellt wurden.
+
+
 
 
 

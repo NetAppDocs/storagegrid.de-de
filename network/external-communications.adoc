@@ -315,6 +315,21 @@ Cloud-Storage-Pools-Anfragen werden an AWS-Ziele mit HTTPS gesendet. Grid-Admini
 
 
  a| 
+636
+ a| 
+TCP/UDP
+ a| 
+LDAP
+ a| 
+Storage-Nodes mit ADC
+ a| 
+Active Directory/LDAP
+ a| 
+Wird zur Verbindung mit einem Active Directory- oder LDAP-Server für Identity Federation verwendet.
+
+
+
+ a| 
 5353
  a| 
 UDP

@@ -20,7 +20,7 @@ Als Grid-Administrator können Sie S3 Object Lock für Ihr StorageGRID System ak
 
 Die Funktion StorageGRID S3 Object Lock ist eine Objektschutzlösung, die der S3 Object Lock in Amazon Simple Storage Service (Amazon S3) entspricht.
 
-Wenn die globale S3-Objektsperrung für ein StorageGRID-System aktiviert ist, kann ein S3-Mandantenkonto Buckets mit oder ohne S3-Objektsperrung erstellen. Wenn für einen Bucket die S3 Object Lock aktiviert ist, ist die Bucket-Versionierung erforderlich und wird automatisch aktiviert.
+Wenn die globale S3 Object Lock-Einstellung für ein StorageGRID-System aktiviert ist, kann ein S3-Mandantenkonto Buckets mit oder ohne aktivierte S3 Object Lock-Funktion erstellen. Wenn die Einstellung „S3 Object Lock für bestehende Buckets zulassen“ aktiviert ist, kann ein S3-Mandantenkonto S3 Object Lock für einen bestehenden Bucket aktivieren. Wenn für einen Bucket S3 Object Lock aktiviert ist, ist die Bucket-Versionierung erforderlich und wird automatisch aktiviert. Nachdem ein S3-Mandantenkonto S3 Object Lock für einen neuen oder bestehenden Bucket aktiviert hat, kann diese Einstellung nicht mehr deaktiviert werden.
 
 *Ein Bucket ohne S3 Object Lock* kann nur Objekte ohne Aufbewahrungseinstellungen haben. Keine aufgenommenen Objekte verfügen über Aufbewahrungseinstellungen.
 
@@ -68,7 +68,7 @@ Wenn ein Bucket mit aktivierter S3-Objektsperrung erstellt wird, können Benutze
 NOTE: Befindet sich ein Objekt unter einer Legal Hold-Funktion, kann das Objekt unabhängig vom Aufbewahrungsmodus nicht gelöscht werden.
 
 +
-Details zu den Objekteinstellungen finden Sie unter link:../s3/use-s3-api-for-s3-object-lock.html["Konfigurieren Sie die S3-Objektsperre über die S3-REST-API"].
+Weitere Informationen zu den Objekteinstellungen finden Sie unter link:../s3/use-s3-api-for-s3-object-lock.html["Konfigurieren Sie die S3-Objektsperre über die S3-REST-API"].
 
 
 
@@ -95,7 +95,7 @@ Siehe link:../tenant/creating-s3-bucket.html["Erstellen eines S3-Buckets"] und l
 Die S3-Objektsperre ersetzt die in früheren StorageGRID-Versionen verfügbare Compliance-Funktion. Da die S3-Objektsperrfunktion den Anforderungen von Amazon S3 entspricht, ist die proprietäre StorageGRID-Compliance-Funktion, die jetzt als „Legacy-Compliance“ bezeichnet wird, veraltet.
 
 
-NOTE: Die globale Compliance-Einstellung ist veraltet. Wenn Sie diese Einstellung mit einer früheren Version von StorageGRID aktiviert haben, wird die Einstellung S3 Objektsperre automatisch aktiviert. Sie können die Einstellungen vorhandener konformer Buckets weiterhin mit StorageGRID managen. Es ist jedoch nicht möglich, neue konforme Buckets zu erstellen. Weitere Informationen finden Sie unter https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["NetApp Knowledge Base: Management älterer, konformer Buckets für StorageGRID 11.5"^].
+NOTE: Die globale Compliance-Einstellung ist veraltet. Wenn diese Einstellung in einer früheren Version von StorageGRID aktiviert wurde, wird die S3 Object Lock-Einstellung automatisch aktiviert. Die Verwaltung der Einstellungen bestehender konformer Buckets mit StorageGRID ist weiterhin möglich, das Erstellen neuer konformer Buckets jedoch nicht. Weitere Informationen finden sich unter  https://kb.netapp.com/Advice_and_Troubleshooting/Hybrid_Cloud_Infrastructure/StorageGRID/How_to_manage_legacy_Compliant_buckets_in_StorageGRID_11.5["NetApp Knowledge Base: Management älterer, konformer Buckets für StorageGRID 11.5"^].
 
 Wenn Sie die ältere Compliance-Funktion in einer früheren Version von StorageGRID verwendet haben, lesen Sie die folgende Tabelle, um zu erfahren, wie sie mit der S3-Objektsperrfunktion in StorageGRID verglichen wird.
 

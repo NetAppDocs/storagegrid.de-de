@@ -20,14 +20,14 @@ Wenn Sie mehrere Grid-Subnetze haben, ist das Grid Network-Gateway erforderlich.
 
 .Schritte
 . Geben Sie die CIDR-Netzwerkadresse für mindestens ein Grid-Netzwerk im Textfeld *Subnetz 1* an.
-. Klicken Sie auf das Pluszeichen neben dem letzten Eintrag, um einen zusätzlichen Netzwerkeintrag hinzuzufügen. Sie müssen alle Subnetze für alle Standorte im Grid-Netzwerk angeben.
+. Wählen Sie das Pluszeichen neben dem letzten Eintrag, um einen weiteren Netzwerkeintrag hinzuzufügen. Sie müssen alle Subnetze für alle Standorte im Grid Network angeben.
 +
-** Wenn Sie bereits mindestens einen Knoten bereitgestellt haben, klicken Sie auf *Netznetze-Subnetze ermitteln*, um die Netznetzwerksubnetz-Liste automatisch mit den Subnetzen zu füllen, die von Grid-Nodes gemeldet wurden, die beim Grid Manager registriert sind.
+** Wenn bereits mindestens ein Knoten bereitgestellt wurde, kann mit *Grid Networks-Subnetze ermitteln* die Liste der Grid Network-Subnetze automatisch mit den von den Grid-Knoten gemeldeten Subnetzen ausgefüllt werden, die sich beim Grid Manager registriert haben.
 ** Sie müssen manuell Subnetze für NTP, DNS, LDAP oder andere externe Server hinzufügen, auf die über das Grid-Netzwerk-Gateway zugegriffen wird.
 +
 image:4_gmi_installer_grid_network_page.gif["Geben Sie Subnetze an"]
 
 
 
-. Klicken Sie Auf *Weiter*.
+. Wählen Sie *Weiter*.
 

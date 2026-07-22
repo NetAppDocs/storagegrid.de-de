@@ -2,7 +2,7 @@
 permalink: ilm/what-cloud-storage-pool-is.html 
 sidebar: sidebar 
 keywords: what is a cloud storage pool 
-summary: In einem Cloud Storage Pool können Sie ILM verwenden, um Objektdaten aus Ihrem StorageGRID System zu verschieben. Beispielsweise können Sie selten genutzte Objekte auf kostengünstigeren Cloud-Storage verschieben, wie z. B. Amazon S3 Glacier, S3 Glacier Deep Archive, Google Cloud oder die Archiv-Zugriffs-Tier in Microsoft Azure Blob Storage. Alternativ möchten Sie auch ein Cloud-Backup von StorageGRID Objekten beibehalten, um die Disaster Recovery zu verbessern. 
+summary: Ein Cloud Storage Pool ermöglicht die Nutzung von ILM, um Objektdaten außerhalb Ihres StorageGRID Systems zu verschieben. Beispielsweise kann es sinnvoll sein, selten genutzte Objekte in kostengünstigeren Cloud Storage wie Amazon S3 Glacier, S3 Glacier Deep Archive, Google Cloud oder die Archive-Zugriffsebene in Microsoft Azure Blob Storage zu verschieben. Ebenso kann eine Cloud-Sicherung der StorageGRID Objekte zur Verbesserung der Disaster Recovery erhalten bleiben. 
 ---
 = Erfahren Sie mehr über Cloud Storage Pools in StorageGRID
 :allow-uri-read: 
@@ -11,9 +11,9 @@ summary: In einem Cloud Storage Pool können Sie ILM verwenden, um Objektdaten a
 
 
 [role="lead"]
-In einem Cloud Storage Pool können Sie ILM verwenden, um Objektdaten aus Ihrem StorageGRID System zu verschieben. Beispielsweise können Sie selten genutzte Objekte auf kostengünstigeren Cloud-Storage verschieben, wie z. B. Amazon S3 Glacier, S3 Glacier Deep Archive, Google Cloud oder die Archiv-Zugriffs-Tier in Microsoft Azure Blob Storage. Alternativ möchten Sie auch ein Cloud-Backup von StorageGRID Objekten beibehalten, um die Disaster Recovery zu verbessern.
+Ein Cloud Storage Pool ermöglicht die Nutzung von ILM, um Objektdaten außerhalb Ihres StorageGRID Systems zu verschieben. Beispielsweise kann es sinnvoll sein, selten genutzte Objekte in kostengünstigeren Cloud Storage wie Amazon S3 Glacier, S3 Glacier Deep Archive, Google Cloud oder die Archive-Zugriffsebene in Microsoft Azure Blob Storage zu verschieben. Ebenso kann eine Cloud-Sicherung der StorageGRID Objekte zur Verbesserung der Disaster Recovery erhalten bleiben.
 
-Aus einer ILM-Perspektive ähnelt ein Cloud-Storage-Pool einem Storage-Pool. Um Objekte an beiden Standorten zu speichern, wählen Sie den Pool aus, wenn Sie die Anweisungen zur Platzierung einer ILM-Regel erstellen. Während Storage-Pools jedoch aus Storage-Nodes innerhalb des StorageGRID Systems bestehen, besteht ein Cloud-Storage-Pool aus einem externen Bucket (S3) oder Container (Azure Blob Storage).
+Aus ILM-Sicht ähnelt ein Cloud-Speicherpool einem Speicherpool. Zum Speichern von Objekten an einem der beiden Speicherorte wird der Pool beim Erstellen der Platzierungsanweisungen für eine ILM-Regel ausgewählt. Während Speicherpools jedoch aus Storage Nodes innerhalb des StorageGRID Systems bestehen, besteht ein Cloud-Speicherpool aus einem externen Bucket (S3) oder Container (Azure Blob Storage).
 
 Die Tabelle vergleicht Speicherpools mit Cloud-Speicherpools und zeigt die grundlegenden Ähnlichkeiten und Unterschiede.
 
@@ -47,7 +47,7 @@ Wo werden Objekte gespeichert?
  a| 
 Auf einem oder mehreren Storage-Nodes innerhalb von StorageGRID.
  a| 
-In einem Amazon S3-Bucket, Azure Blob-Storage-Container oder Google Cloud, der außerhalb des StorageGRID-Systems liegt
+In einem Amazon S3 Bucket, einem Azure Blob Storage Container oder einer Google Cloud, die sich außerhalb des StorageGRID Systems befindet.
 
 Wenn der Cloud Storage Pool ein Amazon S3-Bucket ist:
 
@@ -55,9 +55,9 @@ Wenn der Cloud Storage Pool ein Amazon S3-Bucket ist:
 * Sie können Cloud-Storage-Pools zur Verwendung mit AWS Commercial Cloud Services (C2S) erstellen, die die AWS Secret Region unterstützen.
 
 
-Wenn der Cloud-Storage-Pool ein Azure Blob-Storage-Container ist, überträgt StorageGRID das Objekt auf die Archiv-Tier.
+Wenn es sich bei dem Cloud Storage Pool um einen Azure Blob Storage Container handelt, verschiebt StorageGRID das Objekt in die Archivschicht.
 
-*Hinweis:* im Allgemeinen sollten Sie Azure Blob Storage-Lifecycle-Management nicht für den Container konfigurieren, der für einen Cloud-Speicherpool verwendet wird. RestoreObject-Vorgänge für Objekte im Cloud-Storage-Pool können vom konfigurierten Lebenszyklus beeinflusst werden.
+*Hinweis:* Im Allgemeinen sollte die Azure Blob Storage Lebenszyklusverwaltung nicht für den Container konfiguriert werden, der für einen Cloud Storage Pool verwendet wird. RestoreObject-Vorgänge an Objekten im Cloud Storage Pool können durch den konfigurierten Lebenszyklus beeinträchtigt werden.
 
 
 

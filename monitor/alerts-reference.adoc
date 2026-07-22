@@ -114,7 +114,7 @@ Die beiden Controller im Gerät haben unterschiedliche Cache-Größen.
  a| 
 Appliance-CMOS-Batteriefehler
  a| 
-Es wurde ein Problem mit der CMOS-Batterie im Gerät festgestellt.
+Es wurde ein Problem mit einer CMOS-Batterie im Gerät festgestellt.
 
 
 
@@ -255,6 +255,13 @@ Die Leistung eines StorageGRID-Geräts ist von der empfohlenen Betriebsspannung 
 Appliance SANtricity OS-Softwareupdate erforderlich
  a| 
 Die SANtricity -Softwareversion ist niedriger als das empfohlene Minimum für diese Version von StorageGRID.
+
+
+
+ a| 
+Appliance SFP-Fehler erkannt
+ a| 
+Im Compute-Controller eines StorageGRID Geräts wurde ein SFP-Fehler festgestellt.
 
 
 
@@ -427,6 +434,13 @@ Ein FabricPool-Bucket verwendet die verfügbare oder strong-site-Konsistenzstufe
 FabricPool Bucket hat nicht unterstützte Versionierung
  a| 
 In einem FabricPool Bucket ist die Versionierung oder die S3-Objektsperrung aktiviert, die nicht unterstützt werden.
+
+
+
+ a| 
+ListBucket-Berechtigungsprüfung für Get/Head Objekt deaktiviert
+ a| 
+ListBucket-Berechtigungsprüfung für GetObject/HeadObject bei nicht vorhandenen Schlüsseln ist deaktiviert.
 
 |===
 
@@ -669,6 +683,13 @@ In den letzten 24 Stunden hat sich ein Benutzer über die Webkonsole oder SSH an
 
 
  a| 
+Chunk Service mit hoher Goroutinenanzahl
+ a| 
+Der Chunk Service weist eine ungewöhnlich hohe Anzahl von Goroutinen auf, was auf einen Deadlock oder ein Ressourcenleck hindeuten könnte.
+
+
+
+ a| 
 EC-Ausgleichfehler
  a| 
 Das EC-Ausgleichverfahren ist fehlgeschlagen oder wurde gestoppt.
@@ -693,6 +714,13 @@ Ein Reparaturauftrag für EC-Daten ist blockiert.
 Fehler bei der Verifizierung von Fragmenten, die nach der Löschung codiert wurden
  a| 
 Fragmente, die mit der Löschung codiert wurden, können nicht mehr verifiziert werden. Beschädigte Fragmente werden möglicherweise nicht repariert.
+
+
+
+ a| 
+Löschcodierte Gruppen im Status „Reparaturbedürftig“
+ a| 
+Eine oder mehrere Löschcodierungsgruppen befinden sich im Status "Reparatur erforderlich", wenn keine Löschcodierungsdatenreparatur im Gange ist.
 
 |===
 
@@ -807,13 +835,6 @@ Die Netzverbundverbindung zwischen dem lokalen und dem entfernten Netz funktioni
 [cols="1a,2a"]
 |===
 | Alarmname | Beschreibung 
-
-
- a| 
-Hohe Java-Heap-Nutzung
- a| 
-Es wird ein hoher Prozentsatz von Java Heap Space verwendet.
-
 
 
  a| 
@@ -1309,9 +1330,30 @@ Es wurden verwaiste Objekte erkannt.
 
 
  a| 
+S3 Multipart Upload Teilgröße zu groß
+ a| 
+Ein Client versucht einen mehrteiligen Upload-Vorgang, der die Teilgrößenbeschränkung überschreitet.
+
+
+
+ a| 
 S3 PUT Objekt size zu groß
  a| 
 Ein Client versucht, eine PUT-Objekt-Operation durchzuführen, die die S3-Größenlimits überschreitet.
+
+
+
+ a| 
+S3-Anfragen mit nicht unterstützten bedingten Headern
+ a| 
+Ein S3 Client verwendet für bestimmte Vorgänge nicht unterstützte bedingte Header (If-Match oder If-None-Match).
+
+
+
+ a| 
+S3-Anfragen mit falscher Region bei aktiviertem globalem Namensraum
+ a| 
+Ein S3-Client verwendet die falsche Signaturregion, um auf die Buckets dieses Grids zuzugreifen.
 
 
 

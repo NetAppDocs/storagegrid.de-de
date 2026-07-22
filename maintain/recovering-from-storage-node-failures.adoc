@@ -21,16 +21,15 @@ Verwenden Sie diese Tabelle, um das Wiederherstellungsverfahren für einen fehlg
 
 
  a| 
-* Mehr als ein Speicherknoten ist ausgefallen.
-
+Mehr als ein Speicherknoten ist ausgefallen.
  a| 
 Wenden Sie sich an den technischen Support.
  a| 
-Die Wiederherstellung von mehr als einem Speicherknoten kann die Integrität der Cassandra-Datenbank beeinträchtigen und zu Datenverlust führen.
+Wenn mehr als ein Storage Node ausgefallen ist, muss der technische Support bei der Wiederherstellung unterstützen, um Inkonsistenzen in der Cassandra-Datenbank zu verhindern, die zu Datenverlust führen könnten. Möglicherweise ist ein Site-Wiederherstellungsverfahren erforderlich.
 
-Der technische Support kann bestimmen, wann die Wiederherstellung eines zweiten Storage Node sicher gestartet werden kann.
+Der technische Support kann feststellen, wann die Wiederherstellung eines zweiten Storage Node sicher beginnen kann.
 
-*Hinweis*: Wenn mehr als ein Speicherknoten, der den ADC-Dienst enthält, an einem Standort ausfällt, verlieren Sie alle ausstehenden Plattformdienstanfragen für diesen Standort.
+*Hinweis*: Wenn an einem Standort mehr als ein Storage Node, der den ADC-Dienst enthält, ausfällt, gehen alle ausstehenden Plattformdienstanforderungen für diesen Standort verloren.
 
 
 
@@ -55,7 +54,7 @@ Das Wiederherstellungsverfahren für Appliance Storage Nodes ist bei allen Ausf�
  a| 
 Ein oder mehrere Storage-Volumes sind ausgefallen, das Systemlaufwerk ist jedoch intakt
  a| 
-link:recovering-from-storage-volume-failure-where-system-drive-is-intact.html["Wiederherstellung nach einem Storage-Volume-Ausfall bei intaktem Systemlaufwerk"]
+link:reviewing-warnings-about-storage-volume-recovery.html["Wiederherstellung nach einem Storage-Volume-Ausfall bei intaktem Systemlaufwerk"]
  a| 
 Dieses Verfahren wird für softwarebasierte Speicherknoten verwendet.
 

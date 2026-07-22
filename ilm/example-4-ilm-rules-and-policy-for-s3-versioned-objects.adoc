@@ -24,9 +24,6 @@ CAUTION: Die folgenden ILM-Regeln und -Richtlinien sind nur Beispiele. Es gibt v
 
 NOTE: Um eine ILM-Richtliniensimulation für eine nicht aktuelle Version eines Objekts durchzuführen, müssen Sie die UUID oder CBID der Objektversion kennen. Um die UUID und die CBID zu finden, verwenden Sielink:verifying-ilm-policy-with-object-metadata-lookup.html["Objekt-Metadaten-Suche"], solange das Objekt noch aktuell ist.
 
-.Verwandte Informationen
-link:how-objects-are-deleted.html["So werden Objekte gelöscht"]
-
 
 
 [[ilm-rule-1-for-example-4-save-three-copies-for-10-years]]
@@ -79,7 +76,7 @@ Da ILM-Regel 1 für alle Versionen des Objekts gilt, müssen Sie eine weitere Re
 
 Um eine Regel zu erstellen, die als Referenzzeit „nicht aktuelle Zeit“ verwendet, wählen Sie *Ja* für die Frage „Diese Regel nur auf ältere Objektversionen anwenden (in S3 Buckets mit aktivierter Versionierung)?“ aus. Gehen Sie in Schritt 1 (Details eingeben) des Assistenten zum Erstellen einer ILM-Regel vor. Wenn Sie *Yes* auswählen, wird _noncurrent time_ automatisch für die Referenzzeit ausgewählt, und Sie können keine andere Referenzzeit auswählen.
 
-image:ilm-rule-apply-only-to-older-object-verions.png["Wenden Sie ILM-Regel nur auf ältere Objektversionen an (nicht aktuelle Zeit)."]
+image:ilm_rule_apply_only_to_older_object_verions.png["Wenden Sie ILM-Regel nur auf ältere Objektversionen an (nicht aktuelle Zeit)."]
 
 In diesem Beispiel werden nur zwei Kopien der nicht aktuellen Versionen gespeichert und diese Kopien für zwei Jahre gespeichert.
 
@@ -139,3 +136,6 @@ Wenn Sie die Beispielrichtlinie simulieren, erwarten Sie, dass Testobjekte wie f
 * Alle nicht aktuellen Objektversionen würden mit der ersten Regel abgeglichen. Wenn eine nicht aktuelle Objektversion älter als zwei Jahre ist, wird diese durch ILM dauerhaft gelöscht (alle Kopien der nicht aktuellen Version, die aus dem Grid entfernt wurde).
 * Die aktuelle Objektversion würde mit der zweiten Regel abgeglichen. Wenn die aktuelle Objektversion über einen Zeitraum von 10 Jahren gespeichert wurde, fügt der ILM-Prozess eine delete-Markierung als aktuelle Version des Objekts hinzu und macht die vorherige Objektversion „noncurrent“. Bei der nächsten ILM-Evaluierung stimmt diese nicht aktuelle Version mit der ersten Regel überein. Dadurch wird die Kopie an Standort 3 gelöscht und die beiden Kopien an Standort 1 und Standort 2 werden für weitere 2 Jahre gespeichert.
 
+
+.Verwandte Informationen
+link:how-objects-are-deleted.html["So werden Objekte gelöscht"]

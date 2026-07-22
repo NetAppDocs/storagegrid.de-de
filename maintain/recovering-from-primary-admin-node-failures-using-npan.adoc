@@ -1,0 +1,24 @@
+---
+permalink: maintain/recovering-from-primary-admin-node-failures-using-npan.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, primary admin node, non-primary admin node 
+summary: Ein bestimmter Aufgabensatz wird mithilfe eines nicht-primären Admin-Knotens abgeschlossen, um sich von einem Ausfall des primären Admin-Knotens zu erholen. 
+---
+= Wiederherstellung nach StorageGRID Ausfällen des primären Admin-Knotens mithilfe eines nicht-primären Admin-Knotens
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Für die Wiederherstellung nach einem Ausfall des primären Admin-Knotens mithilfe eines nicht-primären Admin-Knotens ist eine bestimmte Reihe von Aufgaben erforderlich. Der primäre Admin-Knoten hostet den Configuration Management Node (CMN)-Dienst für das Grid.
+
+Die folgenden allgemeinen Schritte ermöglichen die Wiederherstellung eines primären Admin-Knotens mithilfe eines nicht-primären Admin-Knotens:
+
+. link:copying-audit-logs-from-failed-primary-admin-node-using-npan.html["Prüfprotokolle vom fehlgeschlagenen primären Admin-Node kopieren"]
+. link:replacing-primary-admin-node-using-npan.html["Primären Admin-Node ersetzen"]
+. link:selecting-start-recovery-to-configure-primary-admin-node.html["„Wiederherstellung starten“ auswählen, um den primären Admin-Node zu konfigurieren."]
+. link:assess-hotfix-requirement-during-primary-admin-node-recovery-using-npan.html["Ermitteln Sie die Hotfix-Anforderung für den primären Admin-Node"]
+. link:restoring-audit-log-on-recovered-primary-admin-node-using-npan.html["Prüfprotokoll auf wiederhergestellten primären Admin-Knoten wiederherstellen"]
+. link:restoring-prometheus-metrics-primary-admin-node-using-npan.html["Stellen Sie bei der Wiederherstellung des primären Admin-Knotens Prometheus-Kennzahlen wieder her"]
+

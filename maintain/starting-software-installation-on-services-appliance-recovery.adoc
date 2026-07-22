@@ -16,7 +16,13 @@ Um einen Gateway-Knoten oder einen Admin-Knoten auf einer Service-Appliance zu i
 .Bevor Sie beginnen
 * Die Appliance ist in einem Rack installiert, mit Ihren Netzwerken verbunden und eingeschaltet.
 * Netzwerkverbindungen und IP-Adressen werden für die Appliance mithilfe des Installationsprogramms für die StorageGRID-Appliance konfiguriert.
-* Wenn Sie einen Gateway-Node oder einen nicht-primären Admin-Node installieren, kennen Sie die IP-Adresse des primären Admin-Nodes für das StorageGRID-Grid.
+* Wenn Sie einen Gateway-Knoten oder einen nicht-primären Admin-Knoten installieren, kennen Sie die IP-Adresse für einen der folgenden Admin-Knoten:
++
+** Der primäre Admin-Node für das StorageGRID Grid
+** Ein nicht-primärer Admin-Knoten, falls einer verfügbar ist und zur Wiederherstellung des Knotens verwendet wird
+
+
+* Wenn Sie einen Knoten (einschließlich des Primary Admin Node) mithilfe eines nicht primären Admin Node wiederherstellen, kann die IP-Adresse dieses Admin Node angegeben werden.
 * Alle auf der Seite „IP-Konfiguration“ des Installationsprogramms für das StorageGRID-Gerät aufgelisteten Netznetzwerksubnetze sind in der Liste für das Netznetz des Grid-Netzwerks auf dem primären Administratorknoten definiert.
 +
 Siehe https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/index.html["Schnellstart für die Hardwareinstallation"^].
@@ -33,7 +39,7 @@ NOTE: Eine aktuelle Version der StorageGRID-Software wird während der Fertigung
 .Über diese Aufgabe
 So installieren Sie die StorageGRID-Software auf einer Service-Appliance:
 
-* Für einen primären Admin-Node geben Sie den Namen des Knotens an und laden dann die entsprechenden Softwarepakete hoch (falls erforderlich).
+* Für einen primären Admin-Knoten geben Sie den Namen des Knotens an und laden anschließend die erforderlichen Softwarepakete hoch (falls erforderlich). Wenn Sie den primären Admin-Knoten wiederherstellen und in Ihrem Grid ein nicht-primärer Admin-Knoten vorhanden ist, besteht die Möglichkeit, den Knoten entweder mithilfe eines nicht-primären Admin-Knotens wiederherzustellen und die IP-Adresse dieses Admin-Knotens anzugeben, oder den Knoten mit Ihrer aktuellen Konfiguration zu installieren bzw. wiederherzustellen.
 * Für einen nicht-primären Admin-Node oder einen Gateway-Node geben Sie die IP-Adresse des primären Admin-Node und den Namen des Node an oder bestätigen Sie diese.
 * Sie starten die Installation und warten, bis Volumes konfiguriert und die Software installiert ist.
 * Durch den Prozess partway, die Installation pausiert. Um die Installation fortzusetzen, müssen Sie sich beim Grid Manager anmelden und den ausstehenden Node als Ersatz für den ausgefallenen Node konfigurieren.
@@ -51,26 +57,38 @@ Die Startseite des StorageGRID-Appliance-Installationsprogramms wird angezeigt.
 . So installieren Sie einen primären Admin-Knoten:
 +
 .. Wählen Sie im Abschnitt This Node für *Node Type* die Option *Primary Admin* aus.
-.. Geben Sie im Feld *Knotenname* den gleichen Namen ein, der für den Knoten verwendet wurde, den Sie wiederherstellen, und klicken Sie auf *Speichern*.
-.. Überprüfen Sie im Abschnitt Installation die unter Aktueller Status aufgeführte Softwareversion
+.. Im Feld *Knotenname* ist derselbe Name einzugeben, der für den wiederherzustellenden Knoten verwendet wurde, und *Speichern* ist auszuwählen.
+.. Wählen Sie im Abschnitt „Installationsmodus“ den passenden Modus aus den beiden verfügbaren Optionen. Es kann entweder die Methode „Knoten installieren oder diesen Knoten mit der aktuellen Konfiguration wiederherstellen“ oder die Methode „Diesen Knoten mithilfe eines nicht-primären Admin Node wiederherstellen“ ausgewählt werden.
 +
-Wenn die Version der Software korrekt ist, die zur Installation bereit ist, fahren sie mit fort<<installation_section_step,Installationsschritt>>.
+[role="tabbed-block"]
+====
+.Aktuelle Konfigurationsmethode
+--
+Einen Knoten installieren oder diesen Knoten mit der aktuellen Konfiguration wiederherstellen.
 
-.. Wenn Sie eine andere Version der Software hochladen möchten, wählen Sie im Menü * Erweitert* die Option *StorageGRID-Software hochladen*.
-+
-Die Seite „StorageGRID -Software hochladen“ wird angezeigt.
+... Im Abschnitt „Installation“ ist die unter „Aktueller Status“ aufgeführte Softwareversion zu überprüfen. Ist die zur Installation bereitstehende Softwareversion korrekt, kann zum <<installation_section_step,Installationsschritt>> übergegangen werden.
+... Falls Sie eine andere Softwareversion hochladen müssen, wählen Sie im Menü *Erweitert* die Option *StorageGRID software hochladen*. Die Seite „StorageGRID software hochladen“ wird angezeigt.
+... Wählen Sie *Durchsuchen*, um das *Softwarepaket* und die *Prüfsummendatei* für StorageGRID Software hochzuladen. Die Dateien werden nach der Auswahl automatisch hochgeladen.
+... *Startseite* auswählen, um zur StorageGRID Appliance Installer Startseite zurückzukehren.
 
-.. Klicken Sie auf *Durchsuchen*, um das *Softwarepaket* und die Checksum-Datei* für die StorageGRID-Software hochzuladen.
-+
-Die Dateien werden nach der Auswahl automatisch hochgeladen.
 
-.. Klicken Sie auf *Startseite*, um zur Startseite des StorageGRID-Appliance-Installationsprogramms zurückzukehren.
+--
+.Methode für nicht-primären Admin-Node
+--
+Dieser Knoten kann mithilfe eines nicht-primären Admin-Knotens wiederhergestellt werden.
+
+... Geben Sie im Feld „IP des nicht-primären Admin-Knotens“ die Grid-Netzwerk-IP-Adresse des nicht-primären Admin-Knotens ein, den Sie für die Wiederherstellung verwenden möchten, und wählen Sie *Speichern*.
+... Wenn die Version der Software korrekt ist, die zur Installation bereit ist, fahren sie mit fort<<installation_section_step,Installationsschritt>>.
+
+
+--
+====
 
 
 . So installieren Sie einen Gateway-Knoten oder einen nicht primären Admin-Knoten:
 +
 .. Wählen Sie im Abschnitt This Node für *Node Type* die Option *Gateway* oder *Non-Primary Admin* aus, je nach Typ des wiederherzustellenden Knotens.
-.. Geben Sie im Feld *Knotenname* den gleichen Namen ein, der für den Knoten verwendet wurde, den Sie wiederherstellen, und klicken Sie auf *Speichern*.
+.. Im Feld *Knotenname* ist derselbe Name einzugeben, der für den wiederherzustellenden Knoten verwendet wurde, und *Speichern* ist auszuwählen.
 .. Legen Sie im Abschnitt primäre Administratorknoten-Verbindung fest, ob Sie die IP-Adresse für den primären Admin-Node angeben müssen.
 +
 Das Installationsprogramm der StorageGRID-Appliance kann diese IP-Adresse automatisch erkennen, wenn der primäre Admin-Node oder mindestens ein anderer Grid-Node mit Admin_IP konfiguriert ist, sich im selben Subnetz befindet.
@@ -89,7 +107,7 @@ Manuelle IP-Eingabe
  a| 
 .. Deaktivieren Sie das Kontrollkästchen *Admin-Node-Erkennung aktivieren*.
 .. Geben Sie die IP-Adresse manuell ein.
-.. Klicken Sie Auf *Speichern*.
+.. Wählen Sie *Speichern*.
 .. Warten Sie, bis der Verbindungsstatus für die neue IP-Adresse „bereit“ lautet.
 
 
@@ -100,7 +118,7 @@ Automatische Erkennung aller verbundenen primären Admin-Nodes
  a| 
 .. Aktivieren Sie das Kontrollkästchen *Admin-Node-Erkennung aktivieren*.
 .. Wählen Sie aus der Liste der ermittelten IP-Adressen den primären Admin-Node für das Grid aus, in dem diese Service-Appliance bereitgestellt wird.
-.. Klicken Sie Auf *Speichern*.
+.. Wählen Sie *Speichern*.
 .. Warten Sie, bis der Verbindungsstatus für die neue IP-Adresse „bereit“ lautet.
 
 
@@ -109,12 +127,12 @@ Automatische Erkennung aller verbundenen primären Admin-Nodes
 +
 Wenn die Schaltfläche *Installation starten* nicht aktiviert ist, müssen Sie möglicherweise die Netzwerkkonfiguration oder die Porteinstellungen ändern.  Beachten Sie die Wartungsanleitung Ihres Geräts.
 
-. Klicken Sie auf der Startseite des StorageGRID-Appliance-Installationsprogramms auf *Installation starten*.
+. Wählen Sie auf der Startseite des StorageGRID Appliance Installers die Option *Installation starten*.
 +
-Der aktuelle Status ändert sich in „Installation wird ausgeführt“, und die Seite Monitorinstallation wird angezeigt.
+Der aktuelle Status ändert sich zu „Installation läuft“, und die Monitor installation Seite wird angezeigt.
 
 +
 
-NOTE: Wenn Sie manuell auf die Seite Monitor-Installation zugreifen müssen, klicken Sie in der Menüleiste auf *Monitor-Installation*.
+NOTE: Falls Sie die Seite zur Monitorinstallation manuell aufrufen müssen, wählen Sie in der Menüleiste *Monitor installation* aus.
 
 

@@ -29,7 +29,7 @@ Vergewissern Sie sich vor dem Erstellen Ihrer eigenen Richtlinie, dass der die l
 NOTE: Verwenden Sie in Testsystemen nur die vom System bereitgestellten Richtlinien, 2 Kopien Policy (für Raster mit einem Standort) oder 1 Kopie pro Standort (für Raster mit mehreren Standorten). Für StorageGRID 11.6 und früher verwendet die Standardregel in dieser Richtlinie den Speicherpool Alle Speicherknoten, der alle Standorte enthält. Wenn Ihr StorageGRID System über mehrere Standorte verfügt, können zwei Kopien eines Objekts an demselben Standort platziert werden.
 
 
-NOTE: Wenn der link:enabling-s3-object-lock-globally.html["Die Einstellung für die globale S3-Objektsperre wurde aktiviert"], müssen Sie sicherstellen, dass die ILM-Richtlinie den Anforderungen von Buckets entspricht, für die S3 Object Lock aktiviert ist. Befolgen Sie in diesem Abschnitt die Anweisungen, die erwähnen, dass S3 Object Lock aktiviert ist.
+NOTE: Wenn link:enabling-s3-object-lock.html["Die Einstellung für die globale S3-Objektsperre wurde aktiviert"] zutrifft, muss sichergestellt werden, dass die ILM-Richtlinie den Anforderungen von Buckets mit aktiviertem S3 Object Lock entspricht. In diesem Abschnitt sind die Anweisungen zu beachten, die die Aktivierung von S3 Object Lock erwähnen.
 
 .Bevor Sie beginnen
 * Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
@@ -47,7 +47,7 @@ NOTE: Wenn der link:enabling-s3-object-lock-globally.html["Die Einstellung für 
 --
 .S3-Objektsperre aktiviert
 --
-** Der link:enabling-s3-object-lock-globally.html["Die Einstellung für die globale S3-Objektsperre ist bereits aktiviert"] für das StorageGRID-System.
+** Das link:enabling-s3-object-lock.html["Die Einstellung für die globale S3-Objektsperre ist bereits aktiviert"] für das StorageGRID System.
 ** Sie müssen link:what-ilm-rule-is.html["Erstellung der konformen und nicht konformen ILM-Regeln"]der Richtlinie hinzufügen. Nach Bedarf können Sie eine Richtlinie speichern, zusätzliche Regeln erstellen und die Richtlinie dann bearbeiten, um die neuen Regeln hinzuzufügen.
 ** Sie haben link:creating-default-ilm-rule.html["Eine Standard-ILM-Regel wurde erstellt"] für die Richtlinie, die konform ist.
 
@@ -180,8 +180,7 @@ NOTE: Sie müssen sich vergewissern, dass die ILM-Regeln in der richtigen Reihen
 Simulieren Sie eine Richtlinie für Testobjekte, bevor Sie die Richtlinie aktivieren und auf Ihre Produktionsdaten anwenden.
 
 .Bevor Sie beginnen
-* Sie kennen den S3-Bucket/Objektschlüssel für jedes Objekt, das Sie testen möchten.
-
+Sie kennen den S3-Bucket/Objektschlüssel für jedes Objekt, das Sie testen möchten.
 
 .Schritte
 . Mit einem S3-Client oder dem link:../tenant/use-s3-console.html["S3-Konsole"], die Objekte aufnehmen, die zum Testen jeder Regel erforderlich sind.
@@ -197,7 +196,7 @@ Simulieren Sie eine Richtlinie für Testobjekte, bevor Sie die Richtlinie aktivi
 CAUTION: Prüfen Sie alle Änderungen an der Platzierung vorhandener replizierter und Erasure Coded Objekte. Das Ändern des Speicherorts eines vorhandenen Objekts kann zu vorübergehenden Ressourcenproblemen führen, wenn die neuen Platzierungen ausgewertet und implementiert werden.
 
 .Ergebnisse
-Änderungen an den Richtlinienregeln werden in den Simulationsergebnissen angezeigt und zeigen die neue und die vorherige Übereinstimmung an. Das Fenster „Richtlinie simulieren“ behält die getesteten Objekte bei, bis entweder *Alle löschen* oder das Entfernungssymbol image:icon-x-to-remove.png["Symbol entfernen"] für jedes Objekt in der Liste der Simulationsergebnisse ausgewählt wird.
+Änderungen an den Richtlinienregeln werden in den Simulationsergebnissen angezeigt und zeigen die neue und die vorherige Übereinstimmung an. Das Fenster „Richtlinie simulieren“ behält die getesteten Objekte bei, bis entweder *Alle löschen* oder das Entfernungssymbol image:icon_x_to_remove.png["Symbol entfernen"] für jedes Objekt in der Liste der Simulationsergebnisse ausgewählt wird.
 
 .Verwandte Informationen
 link:simulating-ilm-policy-examples.html["Beispiele für ILM-Richtliniensimulationen"]

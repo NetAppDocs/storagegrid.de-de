@@ -1,0 +1,285 @@
+---
+permalink: maintain/replace-vmware-node-with-sg1000-sg100.html 
+sidebar: sidebar 
+keywords: storagegrid, recover, primary admin node, SG1000, SG100, appliance, services, prepare, installation, software 
+summary: Ein primärer Admin-Node, der als VMware-Node betrieben wird, kann durch eine SG1000 oder SG100 Services Appliance ersetzt werden. 
+---
+= VMware-Node in StorageGRID durch SG1000 oder SG100 ersetzen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn der primäre Admin-Node als VMware-Node ausgeführt wird, kann er durch eine SG1000 oder SG100 Services Appliance ersetzt werden.
+
+
+CAUTION: Nach Abschluss und Überprüfung des Knotenaustauschs muss der ursprüngliche VMware-Node gelöscht werden. Wenn der alte Node nicht entfernt wird, besteht das Risiko einer erheblichen Grid-Störung, falls er wieder online geht.
+
+.Bevor Sie beginnen
+* Sie haben festgestellt, dass die virtuelle Maschine nicht wiederhergestellt werden kann und ersetzt werden muss.
+* Sie haben bestätigt, dass derzeit keine Wartungsverfahren im Grid durchgeführt werden.
+* Sie haben bestätigt, dass die Version des StorageGRID Appliance Installers auf der SG1000 oder SG100 Services Appliance mit der Softwareversion Ihres StorageGRID Systems übereinstimmt.
+* Sie verfügen über folgende Informationen zum bestehenden primären Admin-Node:
++
+*Node-Name*: Die Services-Appliance muss mit demselben Node-Name wie der vorhandene primäre Admin-Node installiert werden. Der Node-Name ist der Hostname (Systemname).
+
++
+*IP-Adresse*: Sie können der Services Appliance dieselbe IP-Adresse wie dem vorhandenen primären Admin-Node zuweisen (empfohlen), oder Sie können in jedem Netzwerk eine neue, ungenutzte IP-Adresse auswählen.
+
+* Sie haben die Provisionierungs-Passphrase.
+
+
+
+
+[[step-1-replace-the-vmware-node]]
+== Schritt 1: Den VMware-Node ersetzen
+
+Zuerst wird der vorhandene primäre Admin-Node im Grid Manager entfernt. Anschließend wird die SG1000 oder SG100 Services Appliance als neuer primärer Admin-Node mit dem StorageGRID Appliance Installer installiert und der Node wiederhergestellt. Bei Verwendung einer neuen IP-Adresse ist es möglich, die Services Appliance zu installieren, bevor der vorhandene primäre Admin-Node entfernt wird.
+
+[role="tabbed-block"]
+====
+.Vorhandene IP-Adresse verwenden
+--
+Der primäre Admin-Node wird unter Verwendung der vorhandenen IP-Adresse des primären Admin-Nodes ersetzt.
+
+.Schritte
+. [[download-recovery-package-a]]Das Wiederherstellungspaket kann vom Grid Manager heruntergeladen werden:
++
+.. *Wartung* > *Wiederherstellungspaket* auswählen.
+.. Geben Sie die Bereitstellungs-Passphrase ein und laden Sie das Paket herunter.
+
+
+. Anmeldung am bestehenden primären Admin-Knoten:
++
+.. Geben Sie den folgenden Befehl ein: `ssh admin@grid_node_IP`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+.. Zu Root wechseln: `su -`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+
+
++
+Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `#`.
+
+. link:copying-audit-logs-from-failed-primary-admin-node.html["Kopieren der Revisionsprotokolle vom vorhandenen primären Admin-Node"].
+. Server-Manager und alle Dienste auf dem Grid-Node anhalten:
++
+[listing]
+----
+shutdown -h now
+----
++
+Es kann bis zu 15 Minuten dauern, bis die Dienste beendet werden.
+
+. link:https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/installing-appliance-in-cabinet-or-rack-sg100-and-sg1000.html["Installation des SG1000 oder SG100 Services Appliance"^].
+. link:https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/deploying-services-appliance-node.html#deploy-services-appliance-as-primary-admin-node["Die SG1000 oder SG100 Services Appliance bereitstellen"^].
+. Nach Auswahl von *Installation starten* dauert es etwa zehn Minuten, bis die Installation den Schritt *Load StorageGRID installer* erreicht.
++
+Nach sechs bis sieben Minuten leitet der Browser zur Einleitung der Wiederherstellung weiter.
+
+. Es sollte überprüft werden, ob die Uhrzeit des Geräts korrekt ist.
++
+.. SSH für die Verbindung zu Port 8022 verwenden:
++
+... Den Befehl eingeben: `ssh -p 8022 admin@_grid_node_IP_`.
+... Zu Root wechseln: `su -`
+... Drücken Sie  `netapp1!`.
+
+
+.. Überprüfen Sie, ob die Geräteuhr nur wenige Minuten von der aktuellen UTC abweicht. Falls erforderlich, das korrekte Datum und die korrekte Uhrzeit einstellen:
++
+[listing]
+----
+date -s "DD Mon YYYY HH:MM:SS"
+----
+
+
+. Zum Webbrowser zurückkehren und *Ausgefallenen primären Admin-Knoten wiederherstellen* auswählen.
+. Die Datei <<download-recovery-package-a,Das von Ihnen heruntergeladene Wiederherstellungspaket>> hochladen.
+. Geben Sie die Bereitstellungs-Passphrase ein und wählen Sie *Wiederherstellung starten*.
++
+Der Fortschrittsbalken für die Wiederherstellung wird angezeigt. Für den Abschluss der Wiederherstellung und den Start der Dienste sind sechs bis zehn Minuten einzuplanen.
+
+. Melden Sie sich bei Grid Manager an, wenn Sie dazu aufgefordert werden.
+
+
+--
+.Neue IP-Adresse verwenden
+--
+Der primäre Admin-Knoten wird mit einer neuen IP-Adresse ersetzt.
+
+.Schritte
+. link:https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/installing-appliance-in-cabinet-or-rack-sg100-and-sg1000.html["Installation des SG1000 oder SG100 Services Appliance"^].
+. Überprüfen Sie, ob die Geräteuhr korrekt ist, um NTP-Fehler während der Wiederherstellung zu vermeiden.
++
+.. SSH für die Verbindung zu Port 8022 verwenden:
++
+... Den Befehl eingeben: `ssh -p 8022 admin@_grid_node_IP_`.
+... Zu Root wechseln: `su -`
+... Drücken Sie  `netapp1!`.
+
+
+.. Vergewissern Sie sich, dass die Geräteuhr innerhalb weniger Minuten der aktuellen koordinierten Weltzeit (UTC) liegt. Falls erforderlich, das korrekte Datum und die korrekte Uhrzeit einstellen:
++
+[listing]
+----
+date -s "DD Mon YYYY HH:MM:SS"
+----
+
+
+. Zu *Upload StorageGRID Software* im StorageGRID Appliance Installer wechseln und prüfen, ob die auf der Appliance vorinstallierte Softwareversion mit der auf dem Grid ausgeführten StorageGRID Version übereinstimmt. Falls die Versionen nicht übereinstimmen:
++
+.. Das korrekte StorageGRID Debian-Installationspaket steht unter link:https://mysupport.netapp.com/site/["NetApp Support Site"^] zum Download bereit.
+.. *Entfernen* auswählen, um die Installationssoftware zu entfernen.
+.. Laden Sie die  `storagegrid-webscale-images-<sg-version>.deb`- und  `storagegrid-webscale-images-<sgversion>.deb.md5`-Dateien hoch.
+
+
+. Wählen Sie auf der Registerkarte „Startseite“ des StorageGRID Appliance Installers als Node-Typ *Primary Admin (with Load Balancer)* aus.
+. Geben Sie den Node-Name ein. Der Node-Name muss mit dem vorhandenen primären Admin-Node-Namen übereinstimmen.
++
+
+IMPORTANT: *Installation starten* darf nicht ausgewählt werden.
+
+. Prüfen, ob sich das Subnetz der neuen IP-Adresse im Grid-Netzwerk befindet. Falls das neue IP-Subnetz nicht vorhanden ist, wird es dem Grid-Netzwerk hinzugefügt.
++
+.. Im Grid Manager *Wartung* > *Grid Network* auswählen.
+.. Geben Sie die Bereitstellungspassphrase ein, um die Subnetzliste zu aktualisieren.
+
+
+. [[download-recovery-package]]Das Wiederherstellungspaket kann vom GRID Manager heruntergeladen werden:
++
+.. *Wartung* > *Wiederherstellungspaket* auswählen.
+.. Geben Sie die Bereitstellungs-Passphrase ein, dann das Paket herunterladen.
+
+
+. Anmeldung am bestehenden primären Admin-Knoten:
++
+.. Geben Sie den folgenden Befehl ein: `ssh admin@grid_node_IP`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+.. Geben Sie den folgenden Befehl ein, um zu root zu wechseln: `su -`
+.. Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+
+
++
+Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `#`.
+
+. link:copying-audit-logs-from-failed-primary-admin-node.html["Kopieren der Revisionsprotokolle vom vorhandenen Primary Admin Node"].
+. Server-Manager und alle Dienste auf dem Grid-Node anhalten:
++
+[listing]
+----
+service servermanager stop
+----
++
+Es kann bis zu 15 Minuten dauern, bis die Dienste beendet werden.
+
+. Auf der Registerkarte „Startseite“ des StorageGRID Appliance Installers:
++
+.. Folgende Einstellungen sind zu überprüfen:
++
+*** Der Node-Typ ist auf *Primary Admin (mit Load Balancer)* gesetzt.
+*** Der Node-Name stimmt mit dem vorhandenen Primary Admin Node-Name überein.
+
+
+.. Die neue IP-Adresse notieren.
+
+
+. *Installation starten* auswählen.
++
+Die Installation benötigt etwa 10 Minuten, um den Schritt *Load StorageGRID installer* zu erreichen.
+
++
+Nach sechs bis sieben Minuten erfolgt eine Weiterleitung des Browsers, um das Wiederherstellungsverfahren zu beginnen.
+
+. Es sollte überprüft werden, ob die Uhrzeit des Geräts korrekt ist.
++
+.. SSH für die Verbindung zu Port 8022 verwenden:
++
+... Den Befehl eingeben: `ssh -p 8022 admin@_grid_node_IP_`.
+... Zu Root wechseln: `su -`
+... Drücken Sie  `netapp1!`.
+
+
+.. Überprüfen Sie, ob die Geräteuhr nur wenige Minuten von der aktuellen UTC abweicht. Falls erforderlich, das korrekte Datum und die korrekte Uhrzeit einstellen:
++
+[listing]
+----
+date -s "DD Mon YYYY HH:MM:SS"
+----
+
+
+. Zum Webbrowser zurückkehren und dann *Ausgefallenen primären Admin-Node wiederherstellen* auswählen.
+. Laden Sie die <<download-recovery-package,Das von Ihnen heruntergeladene Wiederherstellungspaket>> hoch.
+. Geben Sie die Bereitstellungs-Passphrase ein und wählen Sie *Wiederherstellung starten*.
++
+Die Seite „Wiederherstellung des primären Admin-Knotens“ verschwindet und erscheint dann wieder. Wenn erneut *Wiederherstellung starten* ausgewählt wird, erscheint eine `500: Internal Server Error`, da die Wiederherstellung zwar gestartet wurde, das Update aber nicht an den Grid Manager gesendet werden kann, der die neue IP-Adresse verwendet. Dieses Problem lässt sich beheben, indem die IP-Adresse des primären Admin-Knotens in der `/etc/hosts` Datei aktualisiert wird.
+
++
+.. SSH für die Verbindung zu Port 8022 verwenden:
++
+... Den Befehl eingeben: `ssh -p 8022 admin@_grid_node_IP_`.
+... Zu Root wechseln: `su -`
+... Geben Sie das in der Datei aufgeführte Passwort ein `Passwords.txt`.
+
+
+.. Zugriff auf das Protokoll:
++
+[listing]
+----
+tail /var/local/log/install.log
+----
++
+Folgender Fehler sollte wiederholt angezeigt werden: `curl: (7) Failed to connect to <primary_Admin_Node_name> port9999: No route to host`
+
++
+Dies ist das erwartete Verhalten. StorageGRID versucht, das Update mit der bestehenden IP-Adresse des primären Admin-Node an den primären Admin-Node zu senden.
+
+.. Es sollte überprüft werden, ob der Container ausgeführt wird:
++
+`storagegrid node status`
+
++
+`storagegrid node enter <primary_Admin_Node_name>`
+
+.. In der  `/etc/hosts` Datei innerhalb des Containers ist die vorhandene primäre Admin-Node-IP-Adresse durch die neue IP-Adresse zu ersetzen.
+.. Die Datei speichern.
+.. Zum Webbrowser zurückkehren. Nach wenigen Sekunden erscheint der Fortschrittsbalken für die Wiederherstellung.
++
+Für den Abschluss des Wiederherstellungsprozesses und den Start der Dienste sind sechs bis zehn Minuten einzuplanen.
+
+
+
+. Melden Sie sich bei Grid Manager an, wenn Sie dazu aufgefordert werden.
+. Das Wiederherstellungspaket aktualisieren:
++
+.. Melden Sie sich beim primären Admin-Node an:
++
+... Geben Sie den folgenden Befehl ein: `ssh admin@_primary_Admin_Node_IP_`
+... Zu Root wechseln: `su -`
+... Geben Sie den folgenden Befehl ein: `change-ip`
+
+
+.. Option *3 – Admin-Netzwerk-Subnetzlisten bearbeiten* auswählen und anschließend das neue Subnetz hinzufügen.
+
+
++
+StorageGRID generiert automatisch ein neues Wiederherstellungspaket mit der neuen primären Admin-Node-IP-Adresse.
+
+. Das neueste Wiederherstellungspaket kann vom Grid Manager heruntergeladen werden.
+
+
+--
+====
+
+
+[[step-2-complete-node-recovery]]
+== Schritt 2: Knotenwiederherstellung abschließen
+
+Ein vorhandener, nicht primärer Admin-Node dient als Quell-Admin-Node für die Wiederherstellungsverfahren (Revisionsprotokolle, Admin-Node-Datenbank und Prometheus-Metriken). Ist im Grid kein nicht primärer Admin-Node vorhanden, kann der ursprüngliche VMware-Node verwendet werden, der ersetzt wird, sofern er unter einer anderen IP-Adresse als der wiederhergestellte primäre Admin-Node läuft.
+
+.Schritte
+. link:restoring-audit-log-on-recovered-primary-admin-node.html["Das Revisionsprotokoll wiederherstellen"].
+. link:restoring-admin-node-database-primary-admin-node.html["Die Admin-Node-Datenbank wiederherstellen"].
+. link:restoring-prometheus-metrics-primary-admin-node-using-npan.html["Prometheus Metriken wiederherstellen"].
+. Es sollte überprüft werden, ob der neue primäre Admin Node ordnungsgemäß funktioniert. Anschließend ist der ursprüngliche VM Node oder Bare-Metal-Container umgehend zu löschen.
+

@@ -113,8 +113,8 @@ entries:
     url: "/ilm/workflow-for-s3-object-lock.html"
   - title: Anforderungen für die S3-Objektsperre
     url: "/ilm/requirements-for-s3-object-lock.html"
-  - title: Aktivieren Sie die S3-Objektsperre global
-    url: "/ilm/enabling-s3-object-lock-globally.html"
+  - title: S3 Object Lock aktivieren
+    url: "/ilm/enabling-s3-object-lock.html"
   - title: Beheben Sie die Konsistenzfehler beim Aktualisieren der S3-Objektsperre
       oder der alten Compliance-Konfiguration
     url: "/ilm/resolving-consistency-errors-when-updating-bucket-s3-object-lock-configuration.html"

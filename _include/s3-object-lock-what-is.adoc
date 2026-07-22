@@ -9,7 +9,7 @@
 
 Die Funktion StorageGRID S3 Object Lock ist eine Objektschutzlösung, die der S3 Object Lock in Amazon Simple Storage Service (Amazon S3) entspricht.
 
-Wenn die globale S3-Objektsperrung für ein StorageGRID-System aktiviert ist, kann ein S3-Mandantenkonto Buckets mit oder ohne S3-Objektsperrung erstellen. Wenn für einen Bucket die S3 Object Lock aktiviert ist, ist die Bucket-Versionierung erforderlich und wird automatisch aktiviert.
+Wenn die globale S3 Object Lock-Einstellung für ein StorageGRID-System aktiviert ist, kann ein S3-Mandantenkonto Buckets mit oder ohne aktivierte S3 Object Lock-Funktion erstellen. Wenn die Einstellung „S3 Object Lock für bestehende Buckets zulassen“ aktiviert ist, kann ein S3-Mandantenkonto S3 Object Lock für einen bestehenden Bucket aktivieren. Wenn für einen Bucket S3 Object Lock aktiviert ist, ist die Bucket-Versionierung erforderlich und wird automatisch aktiviert. Nachdem ein S3-Mandantenkonto S3 Object Lock für einen neuen oder bestehenden Bucket aktiviert hat, kann diese Einstellung nicht mehr deaktiviert werden.
 
 *Ein Bucket ohne S3 Object Lock* kann nur Objekte ohne Aufbewahrungseinstellungen haben. Keine aufgenommenen Objekte verfügen über Aufbewahrungseinstellungen.
 
@@ -57,7 +57,7 @@ Wenn ein Bucket mit aktivierter S3-Objektsperrung erstellt wird, können Benutze
 NOTE: Befindet sich ein Objekt unter einer Legal Hold-Funktion, kann das Objekt unabhängig vom Aufbewahrungsmodus nicht gelöscht werden.
 
 +
-Details zu den Objekteinstellungen finden Sie unter link:../s3/use-s3-api-for-s3-object-lock.html["Konfigurieren Sie die S3-Objektsperre über die S3-REST-API"].
+Weitere Informationen zu den Objekteinstellungen finden Sie unter link:../s3/use-s3-api-for-s3-object-lock.html["Konfigurieren Sie die S3-Objektsperre über die S3-REST-API"].
 
 
 

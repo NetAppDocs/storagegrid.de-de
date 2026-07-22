@@ -1,17 +1,17 @@
 ---
-permalink: admin/configure-sso.html 
+permalink: admin/configure-sso-saml.html 
 sidebar: sidebar 
 keywords: use sandbox mode for sso, how to test single sign-on 
-summary: 'Sie können dem Konfigurationsassistenten für SSO folgen und in den Sandbox-Modus wechseln, um Single Sign-On (SSO) zu konfigurieren und zu testen, bevor es für alle StorageGRID Benutzer aktiviert wird. Nach der Aktivierung von SSO besteht die Möglichkeit, bei Bedarf in den Sandbox-Modus zurückzukehren, um die Konfiguration zu ändern oder erneut zu testen.' 
+summary: 'Sie können den Assistenten zum Konfigurieren von SSO für SAML verwenden und in den Sandbox-Modus wechseln, um Single Sign-On (SSO) zu konfigurieren und zu testen, bevor es für alle StorageGRID Benutzer aktiviert wird. Nach der Aktivierung von SSO besteht die Möglichkeit, bei Bedarf in den Sandbox-Modus zurückzukehren, um die Konfiguration zu ändern oder erneut zu testen.' 
 ---
-= SSO in StorageGRID konfigurieren
+= SSO in StorageGRID mit SAML konfigurieren
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie können dem Assistenten „SSO konfigurieren“ folgen und in den Sandbox-Modus wechseln, um Single Sign-On (SSO) zu konfigurieren und zu testen, bevor Sie es für alle StorageGRID Benutzer aktivieren.  Nachdem SSO aktiviert wurde, können Sie bei Bedarf in den Sandbox-Modus zurückkehren, um die Konfiguration zu ändern oder erneut zu testen.
+Mit dem Konfigurationsassistenten für SSO für SAML kann in den Sandbox-Modus gewechselt werden, um Single Sign-On (SSO) zu konfigurieren und zu testen, bevor es für alle StorageGRID Benutzer aktiviert wird. Nach der Aktivierung von SSO besteht die Möglichkeit, bei Bedarf in den Sandbox-Modus zurückzukehren, um die Konfiguration zu ändern oder erneut zu testen.
 
 .Bevor Sie beginnen
 * Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
@@ -49,10 +49,10 @@ Wenn SSO aktiviert ist und ein Benutzer versucht, sich bei einem Admin-Node anzu
 * Die Antwort von Entra ID enthält einen User Principal Name (UPN).
 
 
-Damit StorageGRID (der Dienstanbieter) und der SSO-Identitätsanbieter sicher über Benutzerauthentifizierungsanforderungen kommunizieren können, führen Sie die folgenden Aufgaben aus:
+Damit StorageGRID (der Dienstanbieter) und der SSO-Identitätsanbieter sicher über Benutzerauthentifizierungsanfragen kommunizieren können, sind folgende Aufgaben auszuführen:
 
 . Konfigurieren Sie die Einstellungen in StorageGRID.
-. Verwenden Sie die Software des SSO-Identitätsanbieters, um für jeden Admin-Knoten eine Vertrauensstellung der vertrauenden Partei (AD FS), eine Unternehmensanwendung (Entra ID) oder einen Dienstanbieter (PingFederate) zu erstellen.
+. Verwenden Sie die Software des SSO-Identitätsanbieters, um für jeden Admin-Knoten eine Vertrauensstellung der vertrauenden Seite (AD FS), eine Unternehmensanwendung (Entra ID) oder einen Dienstanbieter (PingFederate) zu erstellen.
 . Kehren Sie zu StorageGRID zurück, um SSO zu aktivieren.
 
 
@@ -60,24 +60,23 @@ Der Sandbox-Modus erleichtert die Durchführung dieser Hin- und Her-Konfiguratio
 
 
 
-[[access-the-wizard]]
-== Greifen Sie auf den Assistenten zu
+[[step-1-provide-identity-provider-details]]
+== Schritt 1: Angaben zum Identitätsanbieter
+
+Öffnen Sie den Assistenten und vervollständigen Sie die Felder auf der Seite „Angaben zum Identitätsanbieter“.
 
 .Schritte
-. Wählen Sie *Konfiguration* > *Zugriffskontrolle* > *Einmaliges Anmelden*.  Die Seite „Single Sign-On“ wird angezeigt.
+. Assistenten aufrufen:
++
+.. Wählen Sie *Konfiguration* > *Zugriffskontrolle* > *Einmaliges Anmelden*.  Die Seite „Single Sign-On“ wird angezeigt.
 +
 
 NOTE: Wenn die Schaltfläche „SSO-Einstellungen konfigurieren“ deaktiviert ist, bestätigen Sie, dass Sie den Identitätsanbieter als Verbundidentitätsquelle konfiguriert haben. Weitere Informationen finden Sie unter link:requirements-for-sso.html["Voraussetzungen und Überlegungen für Single Sign-On"] .
 
-. Wählen Sie *SSO-Einstellungen konfigurieren*.  Die Seite „Identitätsanbieterdetails angeben“ wird angezeigt.
+.. Wählen Sie *SSO-Einstellungen konfigurieren*.  Die Seite „Identitätsanbieterdetails angeben“ wird angezeigt.
 
 
-
-
-[[provide-identity-provider-details]]
-== Geben Sie die Details des Identitätsanbieters an
-
-.Schritte
+. Unter *Protokoll* *SAML* auswählen.
 . Wählen Sie aus der Dropdown-Liste den *SSO-Typ* aus.
 . Wenn Sie Active Directory als SSO-Typ ausgewählt haben, geben Sie den *Verbunddienstnamen* für den Identitätsanbieter genau so ein, wie er im Active Directory Federation Service (AD FS) angezeigt wird.
 +
@@ -91,7 +90,7 @@ NOTE: Um den Namen des Föderationsdienstes zu finden, gehen Sie zu Windows Serv
 +
 Wenn Sie diese Einstellung auswählen, kopieren Sie den Text des benutzerdefinierten Zertifikats und fügen Sie ihn in das Textfeld *CA-Zertifikat* ein.
 
-** *Verwenden Sie keine TLS*: Verwenden Sie kein TLS-Zertifikat, um die Verbindung zu sichern.
+** *Kein TLS verwenden*: Es wird kein TLS-Zertifikat verwendet, um die Verbindung zu sichern.
 +
 
 CAUTION: Wenn Sie das Zertifizierungsstellenzertifikat ändern, führen Sie sofort link:../maintain/starting-or-restarting-service.html["Starten Sie den Management-API-Service auf den Admin-Nodes neu"]eine erfolgreiche SSO-Prüfung im Grid Manager durch.
@@ -103,60 +102,69 @@ CAUTION: Wenn Sie das Zertifizierungsstellenzertifikat ändern, führen Sie sofo
 
 
 
-[[enter-sandbox-modeprovide-relying-party-identifier]]
-== [[enter-sandbox-mode]]Geben Sie die Kennung der vertrauenden Partei an
+[[enter-sandbox-modestep-2-provide-relying-party-trusts-enterprise-applications-or-sp-connections]]
+== [[enter-sandbox-mode]]Schritt 2: Vertrauensstellungen der vertrauenden Seite, Unternehmensanwendungen oder SP Verbindungen bereitstellen
 
-. Füllen Sie die Felder auf der Seite „Identifikator der vertrauenden Seite angeben“ basierend auf dem von Ihnen ausgewählten SSO-Typ aus.
-+
+Füllen Sie die Felder in Schritt 2 des Assistenten entsprechend dem von Ihnen ausgewählten SSO-Typ aus.
+
 [role="tabbed-block"]
 ====
 .Active Directory
 --
-.. Geben Sie die *Relying Party Identifier* für StorageGRID an.  Dieser Wert steuert den Namen, den Sie für jede Vertrauensstellung der vertrauenden Seite in AD FS verwenden.
+Füllen Sie die Felder im Schritt *Angabe der Kennung der vertrauenden Partei* aus.
+
+.Schritte
+. Geben Sie die *Relying Party Identifier* für StorageGRID an.  Dieser Wert steuert den Namen, den Sie für jede Vertrauensstellung der vertrauenden Seite in AD FS verwenden.
 +
-*** Wenn Ihr Grid beispielsweise nur über einen Admin-Knoten verfügt und Sie in Zukunft nicht mehr Admin-Knoten hinzufügen möchten, geben Sie `SG` oder `StorageGRID`ein.
-*** Wenn Ihr Raster mehr als einen Admin-Knoten enthält, fügen Sie die Zeichenfolge ein `[HOSTNAME]` im Bezeichner. Beispiel:  `SG-[HOSTNAME]` .  Durch Einfügen dieser Zeichenfolge wird eine Tabelle erstellt, die die Kennung der vertrauenden Partei für jeden Admin-Knoten im Raster basierend auf dem Hostnamen des Knotens anzeigt.
+** Wenn Ihr Grid beispielsweise nur über einen Admin-Knoten verfügt und Sie in Zukunft nicht mehr Admin-Knoten hinzufügen möchten, geben Sie `SG` oder `StorageGRID`ein.
+** Wenn Ihr Raster mehr als einen Admin-Knoten enthält, fügen Sie die Zeichenfolge ein `[HOSTNAME]` im Bezeichner. Beispiel:  `SG-[HOSTNAME]` .  Durch Einfügen dieser Zeichenfolge wird eine Tabelle erstellt, die die Kennung der vertrauenden Partei für jeden Admin-Knoten im Raster basierend auf dem Hostnamen des Knotens anzeigt.
 +
 
 NOTE: Sie müssen für jeden Admin-Knoten in Ihrem StorageGRID-System ein Vertrauensverhältnis aufbauen. Mit einer Vertrauensbasis für jeden Admin-Knoten wird sichergestellt, dass Benutzer sich sicher bei und aus jedem Admin-Knoten anmelden können.
 
 
 
-.. Wählen Sie *Speichern und Sandbox-Modus aufrufen*.
+. Wählen Sie *Speichern und Sandbox-Modus aufrufen*.
 
 
 --
 .Entra-ID
 --
-.. Geben Sie im Abschnitt „Unternehmensanwendung“ den *Namen der Unternehmensanwendung* für StorageGRID an.  Dieser Wert steuert den Namen, den Sie für jede Unternehmensanwendung in Entra ID verwenden.
+Die Felder im Schritt *Unternehmensanwendungen konfigurieren* ausfüllen.
+
+.Schritte
+. Geben Sie im Abschnitt „Unternehmensanwendung“ den *Namen der Unternehmensanwendung* für StorageGRID an.  Dieser Wert steuert den Namen, den Sie für jede Unternehmensanwendung in Entra ID verwenden.
 +
-*** Wenn Ihr Grid beispielsweise nur über einen Admin-Knoten verfügt und Sie in Zukunft nicht mehr Admin-Knoten hinzufügen möchten, geben Sie `SG` oder `StorageGRID`ein.
-*** Wenn Ihr Raster mehr als einen Admin-Knoten enthält, fügen Sie die Zeichenfolge ein `[HOSTNAME]` im Bezeichner. Beispiel:  `SG-[HOSTNAME]` .  Durch Einfügen dieser Zeichenfolge wird eine Tabelle erstellt, die basierend auf dem Hostnamen des Knotens einen Unternehmensanwendungsnamen für jeden Admin-Knoten in Ihrem System anzeigt.
+** Wenn Ihr Grid beispielsweise nur über einen Admin-Knoten verfügt und Sie in Zukunft nicht mehr Admin-Knoten hinzufügen möchten, geben Sie `SG` oder `StorageGRID`ein.
+** Wenn Ihr Raster mehr als einen Admin-Knoten enthält, fügen Sie die Zeichenfolge ein `[HOSTNAME]` im Bezeichner. Beispiel:  `SG-[HOSTNAME]` .  Durch Einfügen dieser Zeichenfolge wird eine Tabelle erstellt, die basierend auf dem Hostnamen des Knotens einen Unternehmensanwendungsnamen für jeden Admin-Knoten in Ihrem System anzeigt.
 +
 
 NOTE: Sie müssen eine Enterprise-Anwendung für jeden Admin-Knoten in Ihrem StorageGRID-System erstellen. Mit einer Enterprise-Anwendung für jeden Admin-Node wird sichergestellt, dass Benutzer sich sicher bei und aus jedem Admin-Node anmelden können.
 
 
 
-.. Befolgen Sie die Schritte inlink:../admin/creating-enterprise-application-entra-id.html["Erstellen Sie Unternehmensanwendungen in Entra ID"] um für jeden in der Tabelle aufgeführten Admin-Knoten eine Unternehmensanwendung zu erstellen.
-.. Kopieren Sie aus der Entra-ID die URL der Verbundmetadaten für jede Unternehmensanwendung.  Fügen Sie diese URL dann in das entsprechende Feld *Federation metadata URL* in StorageGRID ein.
-.. Nachdem Sie eine Föderationsmetadaten-URL für alle Admin-Knoten kopiert und eingefügt haben, wählen Sie *Speichern und in den Sandbox-Modus wechseln*.
+. Führen Sie die Schritte in link:../admin/creating-enterprise-application-entra-id-saml.html["Erstellen Sie Unternehmensanwendungen in Entra ID"] aus, um für jeden in der Tabelle aufgeführten Admin Node eine Enterprise-Anwendung zu erstellen.
+. Kopieren Sie aus der Entra-ID die URL der Verbundmetadaten für jede Unternehmensanwendung.  Fügen Sie diese URL dann in das entsprechende Feld *Federation metadata URL* in StorageGRID ein.
+. Nachdem Sie eine Föderationsmetadaten-URL für alle Admin-Knoten kopiert und eingefügt haben, wählen Sie *Speichern und in den Sandbox-Modus wechseln*.
 
 
 --
 .PingFederate
 --
-.. Geben Sie im Abschnitt Dienstanbieter (SP) die *SP-Verbindungs-ID* für StorageGRID an. Dieser Wert steuert den Namen, den Sie für jede SP-Verbindung in PingFederate verwenden.
+Die Felder im Schritt *SP-Verbindungs-ID angeben* ausfüllen.
+
+.Schritte
+. Geben Sie im Abschnitt Dienstanbieter (SP) die *SP-Verbindungs-ID* für StorageGRID an. Dieser Wert steuert den Namen, den Sie für jede SP-Verbindung in PingFederate verwenden.
 +
-*** Wenn Ihr Grid beispielsweise nur über einen Admin-Knoten verfügt und Sie in Zukunft nicht mehr Admin-Knoten hinzufügen möchten, geben Sie `SG` oder `StorageGRID`ein.
-*** Wenn Ihr Raster mehr als einen Admin-Knoten enthält, fügen Sie die Zeichenfolge ein `[HOSTNAME]` im Bezeichner. Beispiel:  `SG-[HOSTNAME]` .  Durch Einfügen dieser Zeichenfolge wird eine Tabelle erstellt, die die SP Verbindungs-ID für jeden Admin-Knoten in Ihrem System basierend auf dem Hostnamen des Knotens anzeigt.
+** Wenn Ihr Grid beispielsweise nur über einen Admin-Knoten verfügt und Sie in Zukunft nicht mehr Admin-Knoten hinzufügen möchten, geben Sie `SG` oder `StorageGRID`ein.
+** Wenn Ihr Raster mehr als einen Admin-Knoten enthält, fügen Sie die Zeichenfolge ein `[HOSTNAME]` im Bezeichner. Beispiel:  `SG-[HOSTNAME]` .  Durch Einfügen dieser Zeichenfolge wird eine Tabelle erstellt, die die SP Verbindungs-ID für jeden Admin-Knoten in Ihrem System basierend auf dem Hostnamen des Knotens anzeigt.
 +
 
 NOTE: Sie müssen für jeden Admin-Knoten in Ihrem StorageGRID-System eine SP-Verbindung erstellen. Durch eine SP-Verbindung für jeden Admin-Node wird sichergestellt, dass Benutzer sich sicher bei und aus jedem Admin-Node anmelden können.
 
 
 
-.. Geben Sie im Feld *Federation Metadaten-URL* die URL der Federation Metadaten für jeden Admin-Node an.
+. Geben Sie im Feld *Federation Metadaten-URL* die URL der Federation Metadaten für jeden Admin-Node an.
 +
 Verwenden Sie das folgende Format:
 
@@ -165,17 +173,15 @@ Verwenden Sie das folgende Format:
 ----
 https://<Federation Service Name>:<port>/pf/federation_metadata.ping?PartnerSpId=<SP Connection ID>
 ----
-.. Wählen Sie *Speichern und Sandbox-Modus aufrufen*.
+. Wählen Sie *Speichern und Sandbox-Modus aufrufen*.
 
 
 --
 ====
 
 
-
-
-[[configure-relying-party-trusts-enterprise-applications-or-sp-connections]]
-== Konfigurieren Sie Vertrauensstellungen von Drittanbietern, Unternehmensanwendungen oder SP-Verbindungen
+[[step-3-configure-relying-party-trusts-enterprise-applications-or-sp-connections]]
+== Schritt 3: Konfiguration von Vertrauensstellungen der vertrauenden Seite, Unternehmensanwendungen oder SP Verbindungen
 
 Nachdem Sie die Konfiguration gespeichert und in den Sandbox-Modus gewechselt haben, können Sie die Konfiguration für den ausgewählten SSO-Typ abschließen und testen.
 
@@ -192,7 +198,7 @@ StorageGRID kann so lange wie nötig im Sandbox-Modus bleiben.  Allerdings könn
 Sie müssen für jeden in der Tabelle aufgeführten Admin-Node ein Vertrauen erstellen.
 
 +
-Anweisungen hierzu finden Sie unter link:../admin/creating-relying-party-trusts-in-ad-fs.html["Erstellen Sie Vertrauensstellungen von vertrauenswürdigen Parteien in AD FS"].
+Anweisungen sind unter link:../admin/creating-relying-party-trusts-in-ad-fs-saml.html["Erstellen Sie Vertrauensstellungen von vertrauenswürdigen Parteien in AD FS"] zu finden.
 
 
 
@@ -209,7 +215,7 @@ Anweisungen hierzu finden Sie unter link:../admin/creating-relying-party-trusts-
 
 
 . Wechseln Sie zum Azure-Portal.
-. Befolgen Sie die Schritte inlink:../admin/creating-enterprise-application-entra-id.html["Erstellen Sie Unternehmensanwendungen in Entra ID"] um die SAML-Metadatendatei für jeden Admin-Knoten in die entsprechende Entra ID-Unternehmensanwendung hochzuladen.
+. Führen Sie die Schritte in link:../admin/creating-enterprise-application-entra-id-saml.html["Erstellen Sie Unternehmensanwendungen in Entra ID"] aus, um die SAML-Metadatendatei für jeden Admin Node in die entsprechende Entra ID Enterprise Application hochzuladen.
 
 
 --
@@ -225,7 +231,7 @@ Anweisungen hierzu finden Sie unter link:../admin/creating-relying-party-trusts-
 
 
 . Fahren Sie zur PingFederate.
-. link:../admin/creating-sp-connection-ping.html["Erstellen Sie eine oder mehrere SP-Verbindungen (Service-Provider) für StorageGRID"] . Verwenden Sie die SP Verbindungs-ID für jeden Admin-Knoten (angezeigt in der Tabelle auf der Seite „SSO konfigurieren“) und die SAML-Metadaten, die Sie für diesen Admin-Knoten heruntergeladen haben.
+. link:../admin/creating-sp-connection-ping-saml.html["Erstellen Sie eine oder mehrere SP-Verbindungen (Service-Provider) für StorageGRID"]. Die SP-Verbindungs-ID für jeden Admin-Knoten (angezeigt in der Tabelle auf der Seite „SSO konfigurieren“) und die SAML-Metadaten, die für diesen Admin-Knoten heruntergeladen wurden, sind zu verwenden.
 +
 Für jeden in der Tabelle aufgeführten Admin-Node müssen Sie eine SP-Verbindung erstellen.
 
@@ -235,8 +241,8 @@ Für jeden in der Tabelle aufgeführten Admin-Node müssen Sie eine SP-Verbindun
 ====
 
 
-[[test-ssotest-configuration]]
-== [[test-sso]]Testkonfiguration
+[[test-ssostep-4-test-configuration]]
+== [[test-sso]]Schritt 4: Testkonfiguration
 
 Bevor Sie die Verwendung von Single Sign-On für Ihr gesamtes StorageGRID System erzwingen, bestätigen Sie, dass Single Sign-On und Single Logout für jeden Admin-Knoten richtig konfiguriert sind.
 
@@ -299,10 +305,10 @@ Wenn eine Nachricht mit abgelaufener Seite angezeigt wird, wählen Sie in Ihrem 
 ====
 
 
-[[enable-single-sign-on]]
-== Aktivieren Sie Single Sign On
+[[enable-sso-samlstep-5-enable-single-sign-on]]
+== [[enable-sso-saml]]Schritt 5: Single Sign-On aktivieren
 
-Wenn Sie bestätigt haben, dass Sie sich mit SSO bei jedem Admin-Node anmelden können, können Sie SSO für Ihr gesamtes StorageGRID System aktivieren.
+Sobald bestätigt wurde, dass Sie sich per SSO an jedem Admin-Knoten anmelden können, lässt sich SSO für das gesamte StorageGRID System aktivieren.
 
 
 TIP: Wenn SSO aktiviert ist, müssen alle Benutzer SSO verwenden, um auf den Grid Manager, den Mandanten-Manager, die Grid-Management-API und die Mandanten-Management-API zuzugreifen. Lokale Benutzer können nicht mehr auf StorageGRID zugreifen.
@@ -319,3 +325,32 @@ Single Sign-On ist jetzt aktiviert.  Die Seite „Single Sign-On“ wird angezei
 
 
 TIP: Wenn Sie das Azure-Portal verwenden und von demselben Computer aus auf StorageGRID zugreifen, den Sie für den Zugriff auf Entra ID verwenden, stellen Sie sicher, dass der Azure-Portalbenutzer auch ein autorisierter StorageGRID Benutzer ist (ein Benutzer in einer Verbundgruppe, der in StorageGRID importiert wurde, oder melden Sie sich vom Azure-Portal ab, bevor Sie versuchen, sich bei StorageGRID anzumelden.
+
+.Was kommt als Nächstes?
+Nach der Konfiguration von SSO mit SAML wird der Identitätsanbieter für die Admin-Nodes konfiguriert.
+
+[cols="1a,2a"]
+|===
+| Wenn Ihr Identitätsanbieter... | Sie müssen... 
+
+
+ a| 
+Active Directory
+ a| 
+link:creating-relying-party-trusts-in-ad-fs-saml.html["Für jeden Admin-Knoten eine Anwendungsgruppe erstellen"]
+
+
+
+ a| 
+Entra-ID
+ a| 
+link:creating-enterprise-application-entra-id-saml.html["Eine Anwendung für jeden Admin Node erstellen"]
+
+
+
+ a| 
+PingFederate
+ a| 
+link:creating-sp-connection-ping-saml.html["Eine Dienstanbieterverbindung für jeden Admin Node erstellen"]
+
+|===

@@ -30,7 +30,21 @@ Widersprüchliche Clientanforderungen, wie z. B. zwei Clients, die in denselben 
 
 Die folgenden Anfragezeilen werden unterstützt:
 
-* `x-amz-checksum-sha256`
+* Prüfsummen-Anforderungsheader:
++
+--
+** `x-amz-checksum-crc32`
+** `x-amz-checksum-crc32c`
+** `x-amz-checksum-crc64nvme`
+** `x-amz-checksum-sha256`
+** `x-amz-checksum-type`
+
+
+--
++
+
+NOTE: Wenn in einer CreateMultipartUpload-Anfrage keine Prüfsumme angegeben wird, berechnet StorageGRID keine Standard-CRC-64/NVME-Prüfsumme für ein Objekt.
+
 * `x-amz-storage-class`
 +
 Der `x-amz-storage-class` Header wirkt sich darauf aus, wie viele Objektkopien StorageGRID erstellt, wenn die passende ILM-Regel den angibtlink:../ilm/data-protection-options-for-ingest.html["Doppelte Provisionierung oder ausgewogene Aufnahmeoption"].
@@ -64,14 +78,18 @@ Die folgenden Anforderungsheader werden nicht unterstützt:
 
 * `If-Match`
 +
-Das `If-Match header` wird akzeptiert, ist aber nicht funktionsfähig.
+Der  `If-Match`Header verhält sich je nach Ihrer StorageGRID Konfiguration unterschiedlich. Das Bereitstellen dieses Headers kann eine Fehlermeldung (501 Not Implemented) zurückgeben. Wenn der  `If-Match`Header akzeptiert, aber nicht funktionsfähig ist, kann eine Warnung mit Hinweisen zur Aktivierung des strengeren 501 Not Implemented Fehlerverhaltens ausgelöst werden.
 
 * `If-None-Match`
 +
-Das  `If-None-Match header` wird akzeptiert, ist aber nicht funktionsfähig.
+Der  `If-None-Match`Header verhält sich je nach Ihrer StorageGRID Konfiguration unterschiedlich. Das Bereitstellen dieses Headers kann eine Fehlermeldung (501 Not Implemented) zurückgeben. Wenn der  `If-None-Match`Header akzeptiert, aber nicht funktionsfähig ist, kann eine Warnung mit Hinweisen zur Aktivierung des strengeren 501 Not Implemented Fehlerverhaltens ausgelöst werden.
 
-* `x-amz-sdk-checksum-algorithm`
-* `x-amz-trailer`
+* `x-amz-checksum-md5`
+* `x-amz-checksum-sha1`
+* `x-amz-checksum-sha512`
+* `x-amz-checksum-xxhash3`
+* `x-amz-checksum-xxhash64`
+* `x-amz-checksum-xxhash128`
 
 
 

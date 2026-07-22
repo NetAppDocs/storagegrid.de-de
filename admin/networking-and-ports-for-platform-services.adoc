@@ -45,4 +45,6 @@ NOTE: Wenn eine StorageGRID-Bereitstellung als Ziel für die CloudMirror-Replika
 Wenn Sie einen nicht transparenten Proxy-Server verwenden, müssen Sie auch link:configuring-storage-proxy-settings.html["Konfigurieren Sie Speicher-Proxy-Einstellungen"]zulassen, dass Nachrichten an externe Endpunkte wie z. B. einen Endpunkt im Internet gesendet werden.
 
 .Verwandte Informationen
-link:../tenant/index.html["Verwenden Sie ein Mandantenkonto"]
+* link:../tenant/index.html["Verwenden Sie ein Mandantenkonto"]
+* link:../network/external-communications.html["Anschlüsse für externe Kommunikation"]
+

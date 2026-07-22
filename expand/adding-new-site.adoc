@@ -22,14 +22,14 @@ Sie können Ihr StorageGRID System durch Hinzufügen eines neuen Standorts erwei
 
 * Sie können nur einen Standort pro Erweiterungsvorgang hinzufügen.
 * Sie können einem vorhandenen Standort keine Grid-Nodes im Rahmen derselben Erweiterung hinzufügen.
-* Alle Standorte müssen mindestens drei Storage-Nodes enthalten.
-* Das Hinzufügen eines neuen Standorts erhöht nicht automatisch die Anzahl der zu speichernden Objekte. Die Gesamtkapazität eines Grids hängt von der Menge des verfügbaren Storage, der ILM-Richtlinie und der Metadatenkapazität an jedem Standort ab.
+* Alle Standorte müssen mindestens drei Speicherknoten umfassen. Diese können beliebige Kombinationen aus kombinierten und ausschließlich Metadaten-Speicherknoten sein. Wenn mehr als drei Speicherknoten vorhanden sind, sind beliebige Kombinationen aus kombinierten, ausschließlich Metadaten- und ausschließlich Daten-Speicherknoten möglich, sofern drei ADC-Services verfügbar sind. Weitere Informationen finden sich unter link:../primer/what-storage-node-is.html#required-storage-nodes-per-grid-and-per-site["Erforderliche Speicherknoten pro Grid und pro Site"].
+* Beim Hinzufügen eines neuen Standorts erhöht sich die Anzahl der Objekte, die Sie speichern können, nicht automatisch. Die gesamte Objektkapazität eines Grids hängt von der verfügbaren Speicherkapazität, der ILM-Richtlinie und der Metadatenkapazität an jedem Standort ab.
 * Bei der Dimensionierung eines neuen Standorts müssen Sie sicherstellen, dass dieser genügend Metadaten enthält.
 +
-Bei StorageGRID werden die Kopien aller Objektmetadaten an jedem Standort gespeichert. Wenn Sie einen neuen Standort hinzufügen, müssen Sie sicherstellen, dass dieser ausreichend Metadaten für die vorhandenen Objektmetadaten und genügend Metadaten für Wachstum enthält.
+StorageGRID speichert an jedem Standort eine Kopie aller Objektmetadaten. Beim Hinzufügen eines neuen Standorts ist darauf zu achten, dass ausreichend Metadatenkapazität sowohl für die vorhandenen Objektmetadaten als auch für Wachstum vorhanden ist.
 
 +
-Weitere Informationen finden Sie im Folgenden:
+Weitere Informationen sind unter den folgenden Quellen zu finden:
 
 +
 ** link:../admin/managing-object-metadata-storage.html["Management von Objekt-Metadaten-Storage"]
@@ -37,11 +37,19 @@ Weitere Informationen finden Sie im Folgenden:
 
 
 * Dabei muss die verfügbare Netzwerkbandbreite zwischen Standorten und das Maß der Netzwerklatenz berücksichtigt werden. Metadatenaktualisierungen werden kontinuierlich zwischen Standorten repliziert, selbst wenn alle Objekte nur am Standort gespeichert werden, an dem sie aufgenommen werden.
-* Da Ihr StorageGRID System während der Erweiterung betriebsbereit bleibt, müssen Sie ILM-Regeln prüfen, bevor Sie mit dem Erweiterungsverfahren beginnen. Sie müssen sicherstellen, dass Objektkopien erst am neuen Standort gespeichert werden, wenn der Erweiterungsvorgang abgeschlossen ist.
 +
-Legen Sie z. B. vor Beginn der Erweiterung fest, ob Regeln den Standardspeicherpool (Alle Speicherknoten) verwenden. In diesem Fall müssen Sie einen neuen Speicherpool erstellen, der die vorhandenen Speicherknoten enthält, und Ihre ILM-Regeln aktualisieren, um den neuen Speicherpool zu verwenden. Andernfalls werden Objekte auf den neuen Standort kopiert, sobald der erste Node an diesem Standort aktiv ist.
+Um Leistungseinbußen aufgrund von Latenz zu vermeiden:
 
 +
-Weitere Informationen zum Ändern des ILM beim Hinzufügen eines neuen Standorts finden Sie im link:../ilm/example-6-changing-ilm-policy.html["Beispiel zum Ändern einer ILM-Richtlinie"].
+** Erasure Coding wird zwischen Standorten mit einer Latenz von mehr als 100 ms nicht empfohlen.
+** Die Standorte in Ihrem StorageGRID System sollten sich nicht über große geografische Entfernungen erstrecken, beispielsweise über mehrere Kontinente.
+
+
+* Da Ihr StorageGRID System während der Erweiterung betriebsbereit bleibt, müssen Sie ILM-Regeln prüfen, bevor Sie mit dem Erweiterungsverfahren beginnen. Sie müssen sicherstellen, dass Objektkopien erst am neuen Standort gespeichert werden, wenn der Erweiterungsvorgang abgeschlossen ist.
++
+Beispielsweise sollte vor Beginn der Erweiterung geprüft werden, ob Regeln den Standard-Speicherpool (All Storage Nodes) verwenden. Falls dies der Fall ist, kann ein neuer Speicherpool mit den vorhandenen Storage Nodes erstellt und die ILM-Regeln so aktualisiert werden, dass sie den neuen Speicherpool verwenden. Andernfalls werden Objekte an den neuen Standort kopiert, sobald der erste Knoten an diesem Standort aktiv ist.
+
++
+Weitere Informationen zum Ändern einer ILM-Richtlinie beim Hinzufügen eines neuen Standorts sind in der link:../ilm/example-6-changing-ilm-policy.html["Beispiel zum Ändern einer ILM-Richtlinie"] zu finden.
 
 

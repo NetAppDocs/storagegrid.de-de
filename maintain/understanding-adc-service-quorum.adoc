@@ -2,7 +2,7 @@
 permalink: maintain/understanding-adc-service-quorum.html 
 sidebar: sidebar 
 keywords: storagegrid, recover, adc, adc quorum 
-summary: 'Möglicherweise können Sie bestimmte Speicher-Nodes an einem Standort nicht stilllegen, wenn nach der Stilllegung zu wenige ADC-Dienste (Administrative Domain Controller) verbleiben würden.' 
+summary: 'Das ADC-Quorum stellt sicher, dass an jedem Standort eine Mindestanzahl von Administrative Domain Controller (ADC)-Diensten verfügbar bleibt. StorageGRID verschiebt den ADC-Dienst bei Bedarf während der Außerbetriebnahme automatisch.' 
 ---
 = Was ist das StorageGRID ADC-Quorum?
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 'Möglicherweise können Sie bestimmte Speicher-Nodes an einem Standort
 
 
 [role="lead"]
-Möglicherweise können Sie bestimmte Speicher-Nodes an einem Standort nicht stilllegen, wenn nach der Stilllegung zu wenige ADC-Dienste (Administrative Domain Controller) verbleiben würden.
+Das ADC-Quorum stellt sicher, dass an jedem Standort eine Mindestanzahl von Administrative Domain Controller (ADC)-Diensten verfügbar bleibt. StorageGRID verschiebt den ADC-Dienst bei Bedarf während der Außerbetriebnahme automatisch.
 
 Der ADC-Dienst, der auf einigen Storage Nodes zu finden ist, verwaltet Informationen zur Grid-Topologie und stellt Konfigurationsdienste für das Grid bereit. Das StorageGRID System erfordert, dass an jedem Standort und zu jeder Zeit ein Quorum von ADC-Services verfügbar ist.
 
@@ -26,4 +26,6 @@ Angenommen, ein Standort umfasst derzeit sechs Storage Nodes mit ADC-Diensten un
 * Im zweiten Außerbetriebnahmeverfahren können Sie den dritten Speicherknoten entfernen, da das ADC-Quorum jetzt nur noch drei ADC-Dienste erfordert, um verfügbar zu bleiben: `((0.5 * 4) + 1)` .
 
 
-Wenn Sie einen Speicherknoten außer Betrieb nehmen müssen, können Sie die ADC-Quorumsanforderung weiterhin erfüllen, indem Sie link:../release-notes/changes-to-grid-management-api.html#new-private-endpoints-for-move-adc["Verschieben des ADC-Dienstes auf einen anderen Speicherknoten am selben Standort"] oder einen neuen Speicherknoten in einer link:../expand/index.html["Expansion"] hinzufügen und festlegen, dass dieser über einen ADC-Dienst verfügen soll. Anschließend können Sie den vorhandenen Speicherknoten außer Betrieb nehmen, ohne das Quorum zu beeinträchtigen.
+Wenn ein Speicherknoten mit dem ADC-Dienst außer Betrieb genommen wird, verschiebt StorageGRID den ADC-Dienst automatisch auf einen anderen Speicherknoten am selben Standort, falls die Außerbetriebnahme die Anzahl der ADC-Knoten am Standort unter das Quorum senken würde. Die automatische Verschiebung setzt voraus, dass alle Knoten im Grid verbunden sind und dass am selben Standort Speicherknoten ohne ADC-Dienst verfügbar sind, die den Dienst übernehmen können. Das Außerbetriebnahmeverfahren stellt sicher, dass pro Standort mindestens drei ADC-Speicherknoten vorhanden sind. Wenn beispielsweise vier oder sechs ADC-Knoten an einem Standort außer Betrieb genommen werden, bleiben nach dem Verfahren drei ADC-Speicherknoten übrig, vorausgesetzt, es sind noch Speicherknoten ohne ADC-Dienst am selben Standort verfügbar.
+
+Kann der ADC-Dienst nicht automatisch verschoben werden, besteht die Möglichkeit, link:move-adc-service.html["Den ADC Service manuell verschieben"] auf einen anderen Storage Node am selben Standort zu verschieben oder link:../expand/index.html["einen neuen Storage Node in einer Erweiterung hinzufügen"] und anzugeben, dass dieser einen ADC-Dienst haben soll. Danach kann der bestehende Storage Node außer Betrieb genommen werden, ohne das Quorum zu beeinträchtigen.

@@ -19,6 +19,28 @@ Wenn ein S3-Client eine HEAD-Operation ausgibt, wird eine Anforderung gestellt, 
 
 
  a| 
+ASRS
+ a| 
+URN der angenommenen Rollensitzung
+ a| 
+Die eindeutige Kennung der angenommenen Rollensitzung.
+
+Nur vorhanden, wenn die S3-Anfrage temporäre Sicherheitsanmeldeinformationen aus einer AssumeRole-Anfrage verwendet.
+
+
+
+ a| 
+ASRU
+ a| 
+Angenommene Rolle URN
+ a| 
+Die eindeutige Kennung der übernommenen Rolle.
+
+Nur vorhanden, wenn die S3-Anfrage temporäre Sicherheitsanmeldeinformationen aus einer AssumeRole-Anfrage verwendet.
+
+
+
+ a| 
 CBID
  a| 
 Kennung Für Inhaltsblock

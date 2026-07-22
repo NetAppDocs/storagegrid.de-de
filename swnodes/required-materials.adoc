@@ -21,7 +21,7 @@ Sammeln und bereiten Sie vor der Installation von StorageGRID die erforderlichen
 Netzwerkplan:: Welche Netzwerke Sie mit jedem StorageGRID-Node verbinden möchten. StorageGRID unterstützt mehrere Netzwerke für Trennung des Datenverkehrs, Sicherheit und administrativen Komfort.
 +
 --
-Siehe StorageGRID link:../network/index.html["Netzwerkrichtlinien"].
+Weitere Informationen finden Sie unter link:../network/index.html["Netzwerkrichtlinien"].
 
 --
 Netzwerkinformationen:: IP-Adressen für jeden Grid-Node und die IP-Adressen der DNS- und NTP-Server.
@@ -62,7 +62,7 @@ Der Service-Laptop muss Folgendes haben:
 StorageGRID-Dokumentation::
 +
 --
-* https://library.netapp.com/ecm/ecm_download_file/ECMLP3351267["Versionshinweise"^]. Sie müssen sich mit Ihrem NetApp-Konto anmelden oder ein Konto erstellen, um auf die Versionshinweise zugreifen zu können.
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP3373065["Versionshinweise"^]. Sie müssen sich mit Ihrem NetApp Konto anmelden oder ein Konto erstellen, um auf die Versionshinweise zuzugreifen.
 * link:../admin/index.html["Anweisungen für die Administration von StorageGRID"]
 
 

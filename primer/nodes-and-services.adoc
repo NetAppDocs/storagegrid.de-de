@@ -20,7 +20,7 @@ Der grundlegende Baustein eines StorageGRID Systems ist der Grid-Node. Nodes ent
 
 Das StorageGRID -System verwendet drei Arten von Grid-Knoten:
 
-Admin-Nodes:: Bereitstellen von Managementservices wie Systemkonfiguration, Monitoring und Protokollierung Wenn Sie sich beim Grid Manager anmelden, stellen Sie eine Verbindung zu einem Admin-Node her. Jedes Grid muss über einen primären Admin-Node verfügen und möglicherweise über zusätzliche nicht-primäre Admin-Nodes für Redundanz verfügen. Sie können eine Verbindung zu einem beliebigen Admin-Knoten herstellen, und jeder Admin-Knoten zeigt eine ähnliche Ansicht des StorageGRID-Systems an. Wartungsverfahren müssen jedoch mit dem primären Admin-Node durchgeführt werden.
+Admin-Nodes:: Bereitstellung von Verwaltungsdiensten wie Systemkonfiguration, Überwachung und Protokollierung. Bei der Anmeldung am Grid Manager wird eine Verbindung zu einem Admin Node hergestellt. Jedes Grid muss über einen primären Admin Node verfügen und kann zur Redundanz zusätzliche, nicht-primäre Admin Nodes haben. Eine Verbindung kann zu jedem Admin Node hergestellt werden, und jeder Admin Node zeigt eine ähnliche Ansicht des StorageGRID Systems an. Die meisten Wartungsverfahren sind jedoch mit dem primären Admin Node durchzuführen.
 +
 --
 Admin-Nodes können auch zum Lastausgleich für S3-Client-Traffic verwendet werden.
@@ -31,7 +31,7 @@ Siehe link:what-admin-node-is.html["Was ist ein Admin-Node?"]
 Storage-Nodes:: Management und Speicherung von Objektdaten und Metadaten Jeder Standort im StorageGRID-System muss über mindestens drei Storage-Nodes verfügen.
 +
 --
-Bei der Erstinstallation eines neuen Storage Node können Sie festlegen, dass dieser nur fürlink:../primer/what-storage-node-is.html#types-of-storage-nodes["Speichern von Metadaten"] .
+Während der Erstinstallation eines neuen Storage Node kann festgelegt werden, dass dieser nur für link:../primer/what-storage-node-is.html#types-of-storage-nodes["entweder Metadaten oder Daten speichern"] verwendet wird.
 
 Siehe link:what-storage-node-is.html["Was ist ein Storage-Node?"]
 
@@ -60,7 +60,7 @@ StorageGRID Hardware-Appliances wurden speziell für den Einsatz in einem Storag
 
 Im Folgenden erfahren Sie mehr über die verfügbaren Appliances:
 
-* https://docs.netapp.com/us-en/storagegrid-appliances/["StorageGRID Appliance-Dokumentation"^]
+* https://docs.netapp.com/us-en/storagegrid-appliances/["StorageGRID Appliance Dokumentation"^]
 * https://hwu.netapp.com["NetApp Hardware Universe"^]
 
 
@@ -107,15 +107,6 @@ Mindestens drei Storage Nodes, die den ADC-Dienst an jedem Standort enthalten
 AMS (Audit Management System)
  a| 
 Überwacht und protokolliert alle geprüften Systemereignisse und Transaktionen in einer Textdatei.
- a| 
-Admin-Nodes
-
-
-
- a| 
-Apache Tomcat
- a| 
-Webserver für Java-basierte Anwendungen.
  a| 
 Admin-Nodes
 
@@ -203,6 +194,15 @@ Alle Nodes
 
 
  a| 
+gdu-server
+ a| 
+Der Backend-Task-Runner für Grid-Wartungs- und Bereitstellungsaktionen. Akzeptiert Anfragen von  `mgmt-api` und anderen Hilfsskripten, validiert diese und leitet jede Aktion an den entsprechenden GDU-Task-Handler weiter, wie Bereitstellung, Erweiterung, Stilllegung und Aktualisierungen.
+ a| 
+Admin-Nodes
+
+
+
+ a| 
 Grafana
  a| 
 Wird für die Darstellung von Kennzahlen im Grid Manager verwendet.
@@ -214,7 +214,7 @@ Admin-Nodes
  a| 
 Hochverfügbarkeit
  a| 
-Verwaltet virtuelle Hochverfügbarkeits-IPs auf Knoten, die auf der Seite „Hochverfügbarkeitsgruppen“ konfiguriert sind. Dieser Service wird auch als „Keepalived Service“ bezeichnet.
+Verwaltet hochverfügbare virtuelle IPs auf Knoten, die auf der Seite „High Availability Groups“ konfiguriert sind. Dieser Service ist auch als _keepalived_ Service bekannt.
  a| 
 Admin- und Gateway-Nodes
 
@@ -241,7 +241,7 @@ Alle Nodes
  a| 
 Load Balancer (nginx-gw)
  a| 
-Bietet Lastausgleich für S3-Datenverkehr von Clients zu Storage-Nodes. Der Lastverteilungsservice kann über die Konfigurationsseite Load Balancer Endpoints konfiguriert werden. Dieser Service wird auch als nginx-gw-Service bezeichnet.
+Bietet Lastausgleich für S3-Datenverkehr von Clients zu Storage-Nodes.
  a| 
 Admin- und Gateway-Nodes
 
@@ -253,6 +253,15 @@ LDR (Local Distribution Router)
 Verwaltet die Speicherung und Übertragung von Inhalten innerhalb des Grids.
  a| 
 Storage-Nodes
+
+
+
+ a| 
+mgmt-api
+ a| 
+Die Backend-API des Grid Manager. Stellt authentifizierte REST-Endpunkte für die Administration des Grids (Konfiguration, Überwachung und Wartungsabläufe) bereit, setzt Validierungen und Berechtigungen durch und orchestriert lang andauernde Operationen. Die primäre Control-Plane-API, die von der Grid Manager-Oberfläche und Automatisierungsclients verwendet wird.
+ a| 
+Admin-Nodes
 
 
 
@@ -277,7 +286,7 @@ Alle Nodes
  a| 
 nginx-gw Lastenausgleich
  a| 
-Bietet Lastausgleich für S3-Datenverkehr von Clients zu Storage-Nodes. Der Lastverteilungsservice kann über die Konfigurationsseite Load Balancer Endpoints konfiguriert werden. Dieser Service wird auch als nginx-gw-Service bezeichnet.
+Bietet Lastausgleich für S3-Datenverkehr von Clients zu Storage-Nodes.
  a| 
 Admin- und Gateway-Nodes
 
@@ -302,7 +311,7 @@ Alle Nodes
 
 
  a| 
-ntp
+NTP
  a| 
 Network Time Protocol (NTP)-Dienst.
  a| 

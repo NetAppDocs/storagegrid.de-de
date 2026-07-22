@@ -149,7 +149,7 @@ Kann den primären Admin-Knoten wiederherstellen
  a| 
 Ja.
  a| 
-Nein
+Ja.
 
 
 

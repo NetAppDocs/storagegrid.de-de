@@ -80,7 +80,7 @@ TCP
  a| 
 Appliances
  a| 
-Primärer Admin-Node
+Primärer Admin Node und nicht-primärer Admin Node
  a| 
 Verwendet von StorageGRID-Appliances, um mit dem primären Admin-Knoten zu kommunizieren, um die Installation zu starten.
 
@@ -106,7 +106,7 @@ TCP
  a| 
 Alle Nodes
  a| 
-Primärer Admin-Node
+Primärer Admin Node und nicht-primärer Admin Node
  a| 
 Wird zur Kommunikation des Status an den primären Admin-Knoten während der Installation und anderen Wartungsverfahren verwendet.
 
@@ -119,7 +119,7 @@ TCP
  a| 
 Alle Nodes
  a| 
-Primärer Admin-Node
+Primärer Admin Node und nicht-primärer Admin Node
  a| 
 Interner Datenverkehr für Installations-, Erweiterungs-, Wiederherstellungs- und andere Wartungsverfahren.
 
@@ -277,7 +277,7 @@ TCP
  a| 
 Alle Nodes
  a| 
-Primärer Admin-Node
+Primärer Admin Node und nicht-primärer Admin Node
  a| 
 Interner Datenverkehr für Installation, Erweiterung, Wiederherstellung, andere Wartungsverfahren und Fehlerberichterstattung.
 
@@ -290,7 +290,7 @@ TCP
  a| 
 Alle Nodes
  a| 
-Primärer Admin-Node
+Primärer Admin Node und nicht-primärer Admin Node
  a| 
 Interner Datenverkehr für Installations-, Erweiterungs-, Wiederherstellungs- und andere Wartungsverfahren.
 
@@ -355,7 +355,7 @@ TCP
  a| 
 Alle Nodes
  a| 
-Primärer Admin-Node
+Primärer Admin Node und nicht-primärer Admin Node
  a| 
 Interner Datenverkehr für Installations-, Erweiterungs-, Wiederherstellungs- und andere Wartungsverfahren.
 
@@ -366,7 +366,7 @@ Interner Datenverkehr für Installations-, Erweiterungs-, Wiederherstellungs- un
  a| 
 TCP
  a| 
-Admin/Storage-Nodes
+Alle Nodes
  a| 
 Storage-Nodes mit ADC
  a| 
@@ -379,7 +379,7 @@ Kontodienst, interner Datenverkehr.
  a| 
 TCP
  a| 
-Admin/Storage-Nodes
+Alle Nodes
  a| 
 Storage-Nodes mit ADC
  a| 
@@ -392,7 +392,7 @@ Interner Datenverkehr der Identitätsföderation.
  a| 
 TCP
  a| 
-Admin/Storage-Nodes
+Alle Nodes
  a| 
 Storage-Nodes
  a| 
@@ -405,7 +405,7 @@ Interner API-Traffic im Zusammenhang mit Objektprotokollen.
  a| 
 TCP
  a| 
-Admin/Storage-Nodes
+Alle Nodes
  a| 
 Storage-Nodes mit ADC
  a| 

@@ -31,7 +31,7 @@ Plattform-Services benötigen Zugriff von Storage-Nodes, die den StorageGRID ADC
 [[networking-for-cloud-storage-pools]]
 == Netzwerk für Cloud-Storage-Pools
 
-Cloud-Storage-Pools erfordern außerdem Zugriff von Storage-Nodes auf die Endpunkte, die durch einen externen Service wie Amazon S3 Glacier oder Microsoft Azure Blob Storage bereitgestellt werden. Weitere Informationen finden Sie unter link:../ilm/what-cloud-storage-pool-is.html["Was ist ein Cloud-Storage-Pool"].
+Cloud Storage Pools erfordern ebenfalls Zugriff von den Storage Nodes auf die Endpunkte des verwendeten externen Dienstes, wie beispielsweise Amazon S3 Glacier oder Microsoft Azure Blob Storage. Weitere Informationen sind unter link:../ilm/what-cloud-storage-pool-is.html["Was ist ein Cloud-Storage-Pool"] zu finden.
 
 
 

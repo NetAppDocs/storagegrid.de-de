@@ -66,6 +66,14 @@ Principal/NotPrincipal
  a| 
 Benutzer, Gruppen und Konten können auf bestimmte Ressourcen zugreifen und bestimmte Aktionen ausführen. Wenn in der Anfrage keine S3-Signatur enthalten ist, ist ein anonymer Zugriff durch Angabe des Platzhalterzeichens (*) als Principal zulässig. Standardmäßig hat nur das Konto-Root Zugriff auf Ressourcen, die dem Konto gehören.
 
+Der Principal:
+
+* `"Principal": "*"`Entspricht allen, einschließlich anonymer (nicht signierter) Anfragen
+* `"Principal": { "AWS": "*" }`Entspricht jeder authentifizierten Identität oder jedem Benutzer (entspricht nicht anonymen Anfragen)
+* Gilt nur für Bucket-Richtlinien
+* Der Principal ist das/die Konto(s) bzw. der/die Benutzer, denen Berechtigungen erteilt oder verweigert werden.
+
+
 Sie müssen nur das Hauptelement in einer Bucket-Richtlinie angeben. Bei Gruppenrichtlinien ist die Gruppe, der die Richtlinie zugeordnet ist, das implizite Prinzipalelement.
 
 
@@ -186,7 +194,7 @@ arn:aws:iam::account_id:federated-group/group_name
 Weitere Überlegungen:
 
 * Sie können das Sternchen (*) als Platzhalter verwenden, um Null oder mehr Zeichen im Objektschlüssel zu entsprechen.
-* Internationale Zeichen, die im Objektschlüssel angegeben werden können, sollten mit JSON UTF-8 oder mit JSON \U Escape Sequenzen codiert werden. Die prozentuale Kodierung wird nicht unterstützt.
+* Internationale Zeichen, die im Objektschlüssel angegeben werden können, sollten mit JSON UTF-8 oder mit JSON \u Escape-Sequenzen kodiert werden. Prozentkodierung wird nicht unterstützt.
 +
 https://www.ietf.org/rfc/rfc2141.txt["RFC 2141 URN Syntax"^]
 
@@ -215,7 +223,7 @@ In Richtlinienausrechnungen können Sie mithilfe des Elements Ressourcen den Buc
 ----
 "Resource": "arn:aws:s3:::mybucket/home/${aws:username}/*"
 ----
-* Der Ressourcenwert kann einen Bucket angeben, der beim Erstellen einer Gruppenrichtlinie noch nicht vorhanden ist.
+* Der Ressourcenwert kann einen Bucket angeben, der beim Erstellen einer Gruppenrichtlinie noch nicht existiert.
 
 
 
@@ -273,7 +281,7 @@ arn:aws:iam::27233906934684427525:user-uuid/de305d54-75b4-431b-adb2-eb6b9e546013
 +
 Angenommen, Alex verlässt die Organisation und der Benutzername `Alex` wird gelöscht. Wenn ein neuer Alex der Organisation Beitritt und demselben Benutzernamen zugewiesen wird `Alex`, erbt der neue Benutzer möglicherweise unbeabsichtigt die Berechtigungen, die dem ursprünglichen Benutzer gewährt wurden.
 
-* Der Hauptwert kann einen Gruppen-/Benutzernamen angeben, der beim Erstellen einer Bucket-Richtlinie noch nicht vorhanden ist.
+* Der Principal-Wert kann einen Gruppen-/Benutzernamen angeben, der beim Erstellen einer Bucket-Richtlinie noch nicht existiert.
 
 
 
@@ -486,9 +494,10 @@ Ja, für DIE GET Storage-Nutzung.
  a| 
 s3:ListBucket
  a| 
-* ListObjekte
+* GetObject
 * HeadBucket
-* Objekt restoreObject
+* HeadObject
+* ListObjekte
 
  a| 
 
@@ -498,7 +507,6 @@ s3:ListBucket
 s3:ListBucketMultipartUploads
  a| 
 * ListMultipartUploads
-* Objekt restoreObject
 
  a| 
 
@@ -644,7 +652,6 @@ Ja, separate Berechtigungen für PUT und DELETE
 s3:AbortMehrteilaUpload
  a| 
 * AbortMehrteilaUpload
-* Objekt restoreObject
 
  a| 
 
@@ -666,7 +673,6 @@ s3:DeleteObject
  a| 
 * DeleteObject
 * Objekte deObjekteObjekte
-* Objekt restoreObject
 
  a| 
 
@@ -701,7 +707,6 @@ s3:GetObject
  a| 
 * GetObject
 * HeadObject
-* Objekt restoreObject
 * SelektierObjectContent
 
  a| 
@@ -759,7 +764,7 @@ GetObject (eine spezifische Version des Objekts)
  a| 
 s3:ListeMultipartUploadParts
  a| 
-ListParts, RestoreObject
+ListenTeile
  a| 
 
 
@@ -767,11 +772,10 @@ ListParts, RestoreObject
  a| 
 s3:PutObject
  a| 
-* PutObject
 * CopyObject
-* Objekt restoreObject
-* CreateMultipartUpload
 * CompleteMultipartUpload
+* CreateMultipartUpload
+* PutObject
 * UploadTeil
 * UploadPartCopy
 
@@ -814,11 +818,11 @@ PutObjectTagging (eine spezifische Version des Objekts)
  a| 
 s3:PutOverwrite Object
  a| 
-* PutObject
-* CopyObject
-* PutObjectTagging
-* DeleteObjectTagging
 * CompleteMultipartUpload
+* CopyObject
+* DeleteObjectTagging
+* PutObject
+* PutObjectTagging
 
  a| 
 Ja.
@@ -851,10 +855,10 @@ Mögliche Einstellungen für diese Berechtigung sind:
 *** Wenn die S3-Versionierung aktiviert ist, verhindert die Einstellung Deny, dass PutObjectTagging- oder DeleteObjectTagging-Operationen das TagSet für ein Objekt und seine nicht aktuellen Versionen ändern.
 
 
-** Wenn ein vorhandenes Objekt nicht gefunden wird, hat diese Berechtigung keine Wirkung.
+** Wenn kein vorhandenes Objekt gefunden wird, hat diese Berechtigung keine Auswirkung.
 
 
-* Wenn diese Berechtigung nicht vorhanden ist, ist der Effekt der gleiche, als ob Allow-were gesetzt wurden.
+* Wenn diese Berechtigung nicht vorhanden ist, ist die Wirkung identisch damit, als wäre „Zulassen“ gesetzt.
 
 
 
@@ -1020,7 +1024,7 @@ Null
  a| 
 IfExists
  a| 
-Wird an jeden Bedingungsoperator außer der Nullbedingung angehängt, um das Fehlen dieses Bedingungsschlüssels zu prüfen.  Gibt TRUE zurück, wenn der Bedingungsschlüssel nicht vorhanden ist.
+Wird an jeden Bedingungsoperator angehängt, außer an die Null-Bedingung, um das Fehlen des entsprechenden Bedingungsschlüssels zu prüfen. Gibt TRUE zurück, wenn der Bedingungsschlüssel nicht vorhanden ist.
 
 |===
 
@@ -1038,11 +1042,11 @@ aws:SourceIp
  a| 
 IP-Operatoren
  a| 
-Vergleicht mit der IP-Adresse, von der die Anfrage gesendet wurde. Kann für Bucket- oder Objektvorgänge verwendet werden
+Vergleicht mit der IP-Adresse, von der die Anfrage gesendet wurde. Kann für Bucket- oder Objektoperationen verwendet werden.
 
-*Hinweis:* wurde die S3-Anfrage über den Lastbalancer-Dienst auf Admin-Knoten und Gateways-Knoten gesendet, wird dies mit der IP-Adresse verglichen, die vor dem Load Balancer Service liegt.
+*Hinweis:* Wenn die S3-Anfrage über den Load Balancer Service auf Admin Nodes und Gateways Nodes gesendet wurde, erfolgt der Vergleich mit der IP-Adresse, die stromaufwärts des Load Balancer Service liegt.
 
-*Hinweis*: Wenn ein Drittanbieter-, nicht-transparenter Load Balancer verwendet wird, wird dies mit der IP-Adresse dieses Load Balancer verglichen. Jede `X-Forwarded-For` Kopfzeile wird ignoriert, da ihre Gültigkeit nicht ermittelt werden kann.
+*Hinweis*: Bei Verwendung eines nicht transparenten Load Balancers eines Drittanbieters erfolgt ein Vergleich mit der IP-Adresse dieses Load Balancers. Jeder  `X-Forwarded-For`-Header wird ignoriert, da seine Gültigkeit nicht überprüft werden kann.
 
 
 
@@ -1051,7 +1055,7 @@ aws:Benutzername
  a| 
 Ressource/Identität
  a| 
-Vergleicht mit dem Benutzernamen des Absenders, von dem die Anfrage gesendet wurde. Kann für Bucket- oder Objektvorgänge verwendet werden
+Vergleicht mit dem Benutzernamen des Absenders, von dem die Anfrage gesendet wurde. Kann für Bucket- oder Objektoperationen verwendet werden.
 
 
 
@@ -1062,7 +1066,7 @@ s3:ListBucket und
 
 s3:ListBucketVersions Berechtigungen
  a| 
-Wird mit dem in einer ListObjects- oder ListObjectVersions-Anforderung angegebenen Trennzeichen-Parameter verglichen.
+Vergleicht mit dem Trennzeichenparameter, der in einer ListObjects oder ListObjectVersions Anfrage angegeben ist.
 
 
 
@@ -1093,7 +1097,7 @@ s3:PutObjectVersionAcl
 
 s3:PuttObjectVersionTagging
  a| 
-Erfordert, dass das vorhandene Objekt über den spezifischen Tag-Schlüssel und -Wert verfügt.
+Erfordert, dass das bestehende Objekt den spezifischen Tag-Schlüssel und den spezifischen Tag-Wert besitzt.
 
 
 
@@ -1104,7 +1108,7 @@ s3:ListBucket und
 
 s3:ListBucketVersions Berechtigungen
  a| 
-Wird mit dem Parameter max-keys verglichen, der in einer ListObjects- oder ListObjectVersions-Anforderung angegeben ist.
+Entspricht dem Parameter max-keys, der in einer ListObjects- oder ListObjectVersions-Anfrage angegeben wird.
 
 
 
@@ -1156,7 +1160,7 @@ s3:ListBucket und
 
 s3:ListBucketVersions Berechtigungen
  a| 
-Wird mit dem Präfix-Parameter verglichen, der in einer ListObjects- oder ListObjectVersions-Anforderung angegeben ist.
+Vergleicht mit dem in einer ListObjects oder ListObjectVersions Anfrage angegebenen Präfixparameter oder dem für GetObject oder HeadObject angegebenen Schlüssel.
 
 
 
@@ -1169,7 +1173,16 @@ s3:PuttObjectTagging
 
 s3:PuttObjectVersionTagging
  a| 
-Erfordert einen bestimmten Tag-Schlüssel und einen bestimmten Wert, wenn die Objektanforderung Tagging beinhaltet.
+Erfordert einen spezifischen Tag-Schlüssel und Tag-Wert, wenn die Objektanfrage Tags enthält.
+
+
+
+ a| 
+s3:x-amz-copy-source
+ a| 
+s3:PutObject
+ a| 
+Vergleicht mit dem x-amz-copy-source, der aus dem Anfrageheader in der PutObject und UploadPartCopy Anfrage erweitert wird.
 
 
 
@@ -1374,7 +1387,7 @@ Die Richtlinie gewährt einem Konto ohne Eigentümer (einschließlich anonymer K
  a| 
 Eimer
  a| 
-Gültig. Objekte sind Eigentum des Erstellerkontos, und die Bucket-Richtlinie gilt nicht. Das Ersteller-Konto muss über Objekt-ACLs Zugriffsrechte für das Objekt gewähren.
+Gültig. Die Objekte gehören dem Erstellerkonto, und die Bucket-Richtlinie findet keine Anwendung. Das Erstellerkonto muss die Zugriffsberechtigungen für das Objekt mithilfe von Objekt-ACLs erteilen.
  a| 
 Gültig. Der Eigentümer der Objekte ist das Bucket-Owner-Konto. Bucket-Richtlinie gilt.
 
@@ -1399,7 +1412,7 @@ Um sicherzustellen, dass Überschreibungen immer verweigert werden, können Sie:
 
 
 
-NOTE: Wenn in einer S3-Richtlinie DeleteObject auf DENY festgelegt wird, verhindert dies nicht, dass ILM Objekte löscht, wenn eine Regel wie „Zero Copies after 30 days“ vorhanden ist.
+NOTE: Die Einstellung DeleteObject auf DENY in einer S3-Richtlinie verhindert nicht, dass ILM Objekte löscht, wenn eine Regel wie „null Kopien nach 30 Tagen“ existiert.
 
 
 NOTE: Selbst wenn alle diese Regeln und Richtlinien angewendet werden, schützen sie sich nicht vor gleichzeitigen Schreibvorgängen (siehe Situation A). Sie schützen vor sequenziellen Überschreibungen (siehe Situation B).

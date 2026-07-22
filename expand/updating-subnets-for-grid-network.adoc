@@ -27,7 +27,7 @@ Wenn einer der neuen Knoten eine Grid-Netzwerk-IP-Adresse in einem Subnetz hat, 
 
 [NOTE]
 ====
-Verwenden Sie keine Subnetze, die die folgenden IPv4-Adressen für das Grid-Netzwerk, das Admin-Netzwerk oder das Client-Netzwerk eines Knotens enthalten:
+Für das Grid Network, das Admin Network oder das Client Network eines beliebigen Node sollten keine Subnetze verwendet werden, die die folgenden IPv4-Adressen enthalten:
 
 * 192.168.130.101
 * 192.168.130.121
@@ -41,7 +41,7 @@ Verwenden Sie keine Subnetze, die die folgenden IPv4-Adressen für das Grid-Netz
 * 198.51.100.4
 
 
-Verwenden Sie beispielsweise nicht die folgenden Subnetzbereiche für das Grid-Netzwerk, das Admin-Netzwerk oder das Client-Netzwerk eines Knotens:
+Beispielsweise sollten die folgenden Subnetzbereiche nicht für das Grid Network, das Admin Network oder das Client Network eines beliebigen Knotens verwendet werden:
 
 * 192.168.130.0/24, da dieser Subnetzbereich die IP-Adressen 192.168.130.101 und 192.168.130.102 enthält
 * 192.168.131.0/24, da dieser Subnetzbereich die IP-Adressen 192.168.131.101 und 192.168.131.102 enthält
@@ -59,7 +59,7 @@ Geben Siez. B. `10.96.104.0/22` .
 . Warten Sie, bis die Änderungen übernommen wurden, und laden Sie dann ein neues Wiederherstellungspaket herunter.
 +
 .. Wählen Sie *Wartung* > *System* > *Wiederherstellungspaket*.
-.. Geben Sie die *Provisioning-Passphrase* ein.
+.. Die *Bereitstellungs-Passphrase* eingeben.
 +
 
 CAUTION: Die Wiederherstellungspaketdatei muss gesichert werden, da sie Verschlüsselungsschlüssel und Passwörter enthält, mit denen Daten aus dem StorageGRID -System abgerufen werden können.  Es wird auch verwendet, um den primären Admin-Knoten wiederherzustellen.

@@ -23,10 +23,8 @@ entries:
     url: "/tenant/protecting-against-cross-site-request-forgery-csrf.html"
 - title: Netzverbundverbindungen verwenden
   entries:
-  - title: Klonen von Mandantengruppen und Benutzern
-    url: "/tenant/grid-federation-account-clone.html"
-  - title: Klonen von S3-Zugriffsschlüsseln mithilfe der API
-    url: "/tenant/grid-federation-clone-keys-with-api.html"
+  - title: Mandantengruppen und Benutzer synchronisieren
+    url: "/tenant/grid-federation-account-sync.html"
   - title: Grid-übergreifende Replizierung managen
     url: "/tenant/grid-federation-manage-cross-grid-replication.html"
   - title: Anzeigen von Verbindungen mit Grid Federation

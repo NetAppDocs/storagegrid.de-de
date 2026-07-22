@@ -2,7 +2,7 @@
 permalink: maintain/remounting-and-reformatting-storage-volumes-manual-steps.html 
 sidebar: sidebar 
 keywords: storagegrid, recover, appliance storage volume, appliance volume, remount manually, reformat manually 
-summary: Sie müssen zwei Skripte manuell ausführen, um die erhaltenen Storage Volumes neu einzubinden und ausgefallene Storage Volumes neu zu formatieren. Das erste Skript bindet Volumes wieder ein, die ordnungsgemäß als StorageGRID-Storage-Volumes formatiert sind. Das zweite Skript formatiert alle nicht abgehängt Volumes neu, stellt Cassandra bei Bedarf wieder her und startet Services. 
+summary: Falls die automatische Prozedur zum Wiederherstellen der gesicherten Speichervolumes und zum Neuformatieren fehlerhafter Speichervolumes fehlschlägt, müssen zwei Skripte manuell ausgeführt werden, um diese Vorgänge abzuschließen. Das erste Skript bindet Volumes wieder ein, die ordnungsgemäß als StorageGRID Speichervolumes formatiert sind. Das zweite Skript formatiert alle nicht eingebundenen Volumes neu, stellt die Cassandra Datenbank bei Bedarf wieder her und startet die Dienste. 
 ---
 = StorageGRID-Speichervolumes neu einbinden und neu formatieren (manuelle Schritte)
 :allow-uri-read: 
@@ -11,7 +11,9 @@ summary: Sie müssen zwei Skripte manuell ausführen, um die erhaltenen Storage 
 
 
 [role="lead"]
-Sie müssen zwei Skripte manuell ausführen, um die erhaltenen Storage Volumes neu einzubinden und ausgefallene Storage Volumes neu zu formatieren. Das erste Skript bindet Volumes wieder ein, die ordnungsgemäß als StorageGRID-Storage-Volumes formatiert sind. Das zweite Skript formatiert alle nicht abgehängt Volumes neu, stellt Cassandra bei Bedarf wieder her und startet Services.
+Falls die automatische Prozedur zum Wiederherstellen der gesicherten Speichervolumes und zum Neuformatieren fehlerhafter Speichervolumes fehlschlägt, müssen zwei Skripte manuell ausgeführt werden, um diese Vorgänge abzuschließen. Das erste Skript bindet Volumes wieder ein, die ordnungsgemäß als StorageGRID Speichervolumes formatiert sind. Das zweite Skript formatiert alle nicht eingebundenen Volumes neu, stellt die Cassandra Datenbank bei Bedarf wieder her und startet die Dienste.
+
+Während einer Storage Node-Wiederherstellung erscheint im Grid Manager die Meldung „Warten auf manuelle Schritte“, wenn manuelle Maßnahmen erforderlich sind, um die Speichervolumes erneut einzubinden und zu formatieren. Wenn diese Meldung nicht angezeigt wird, wurden die Einbindungs- und Formatierungsvorgänge automatisch abgeschlossen, sodass dieses Verfahren übersprungen werden kann link:../maintain/restoring-object-data-to-storage-volume.html["Objektdaten wiederherstellen"].
 
 .Bevor Sie beginnen
 * Sie haben bereits die Hardware für alle ausgefallenen Storage Volumes ausgetauscht, die ausgetauscht werden müssen.
@@ -191,9 +193,6 @@ CAUTION: Wenn ein Storage-Volume gemeldet wird, das zu einem anderen Storage Nod
 
 NOTE: Sie müssen Speichergeräte reparieren oder ersetzen, die nicht montiert werden können.
 
-+
-Mit dem Gerätenamen können Sie die Volume-ID nachschlagen. Diese Eingabe ist erforderlich, wenn Sie das Skript ausführen `repair-data`, um Objektdaten auf dem Volume wiederherzustellen (das nächste Verfahren).
-
 .. Führen Sie nach der Reparatur oder dem Austausch aller nicht montierbaren Geräte das Skript erneut aus `sn-remount-volumes`, um zu bestätigen, dass alle Speicher-Volumes, die neu gemountet werden können, neu gemountet wurden.
 +
 
@@ -240,21 +239,8 @@ image:recovering_cassandra.png["Screenshot zeigt den Wiederherstellungsfortschri
 Das Skript fragt Sie, ob Sie den Wiederherstellungsprozess für das Grid Manager-Volume verwenden möchten.
 
 +
-** In den meisten Fällen sollten Sie link:../maintain/restoring-volume.html["Stellen Sie Objektdaten mithilfe von Grid Manager wieder her"]. Beantworten `y`, um den Grid-Manager zu verwenden.
-** In seltenen Fällen, z. B. wenn Sie vom technischen Support angewiesen werden oder wenn Sie wissen, dass für den Ersatz-Node weniger Volumes für Objekt-Storage verfügbar sind als der ursprüngliche Node, müssen Sie link:restoring-object-data-to-storage-volume.html["Manuelles Wiederherstellen von Objektdaten"]das Skript verwenden `repair-data`. Wenn einer dieser Fälle zutrifft, antworten `n`.
-+
-[NOTE]
-====
-Wenn Sie auf die Verwendung des Grid Manager-Volume-Wiederherstellungsprozesses antworten `n` (Objektdaten manuell wiederherstellen):
-
-*** Objektdaten können mit Grid Manager nicht wiederhergestellt werden.
-*** Sie können den Fortschritt manueller Wiederherstellungsaufträge mit Grid Manager überwachen.
-
-
-====
-+
-Nachdem Sie Ihre Auswahl getroffen haben, wird das Skript abgeschlossen und die nächsten Schritte zur Wiederherstellung von Objektdaten werden angezeigt. Drücken Sie nach der Überprüfung dieser Schritte eine beliebige Taste, um zur Befehlszeile zurückzukehren.
-
+** In den meisten Fällen sollte link:../maintain/restoring-object-data-to-storage-volume.html["Stellen Sie Objektdaten mithilfe von Grid Manager wieder her"] verwendet werden. Antwort `y` zur Verwendung des Grid Manager.
+** In seltenen Fällen, beispielsweise wenn bekannt ist, dass der Ersatzknoten weniger Volumes für die Objektspeicherung als der ursprüngliche Knoten zur Verfügung hat, sollte der technische Support kontaktiert werden, um die Objektdaten manuell wiederherzustellen. Wenn einer dieser Fälle zutrifft,  `n` und eine beliebige Taste gedrückt wird, erfolgt die Rückkehr zur Befehlszeile.
 
 
 

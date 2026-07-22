@@ -69,7 +69,7 @@ Wenn Sie Identitätsföderation oder Single Sign-On (SSO) für Ihr StorageGRID S
 === Abrufen und Konfigurieren von Domänennamen
 
 * Sie wissen, welcher vollständig qualifizierte Domänenname (FQDN) für StorageGRID verwendet werden soll. DNS-Einträge (Domain Name Server) weisen diesen FQDN den virtuellen IP-Adressen (VIP) der HA-Gruppe zu, die Sie mit dem Assistenten erstellen. Siehe link:../fabricpool/configure-dns-server.html["DNS-Server konfigurieren"].
-* Wenn Sie Anforderungen im virtuellen Hosted-Style von S3 verwenden möchten, haben Sie link:../admin/configuring-s3-api-endpoint-domain-names.html["Domänennamen des S3-Endpunkts wurden konfiguriert"]. ONTAP verwendet standardmäßig URLs im Pfadstil, es wird jedoch empfohlen, Anforderungen im virtuellen Hosted-Stil zu verwenden.
+* Wenn Sie S3-Anfragen im Virtual-Hosted-Style verwenden möchten, haben Sie link:../admin/configuring-s3-api-endpoint-domain-names.html["Domänennamen des S3-Endpunkts wurden konfiguriert"]. ONTAP verwendet standardmäßig URLs im Path-Style, jedoch wird die Verwendung von Virtual-Hosted-Style-Anfragen empfohlen.
 
 
 

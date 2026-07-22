@@ -29,7 +29,7 @@ NOTE: Wenn ein Grid-Knoten fehlt, vergewissern Sie sich, dass er erfolgreich ber
 +
 image:5_gmi_installer_grid_nodes_pending.gif["Dieses Bild wird durch den umgebenden Text erläutert."]
 
-. Klicken Sie Auf *Genehmigen*.
+. Wählen Sie *Genehmigen*.
 . Ändern Sie unter Allgemeine Einstellungen die Einstellungen für die folgenden Eigenschaften, falls erforderlich:
 +
 ** *Standort*: Der Systemname des Standorts für diesen Grid-Knoten.
@@ -85,7 +85,7 @@ Ein Neustart kann mehrere Minuten dauern.
 
 .. Wählen Sie *Netzwerke konfigurieren* > *Link-Konfiguration* aus, und aktivieren Sie die entsprechenden Netzwerke.
 .. Wählen Sie *Netzwerke konfigurieren* > *IP-Konfiguration* und konfigurieren Sie die aktivierten Netzwerke.
-.. Kehren Sie zur Startseite zurück und klicken Sie auf *Installation starten*.
+.. Zurück zur Startseite und *Installation starten* auswählen.
 .. Entfernen Sie im Grid Manager: Wenn der Knoten in der Tabelle genehmigte Knoten aufgeführt ist, den Knoten.
 .. Entfernen Sie den Knoten aus der Tabelle Ausstehende Knoten.
 .. Warten Sie, bis der Knoten wieder in der Liste Ausstehende Knoten angezeigt wird.
@@ -110,7 +110,7 @@ Ein Neustart kann mehrere Minuten dauern.
 
 .. Wählen Sie *Netzwerke konfigurieren* > *Link-Konfiguration* aus, und aktivieren Sie die entsprechenden Netzwerke.
 .. Wählen Sie *Netzwerke konfigurieren* > *IP-Konfiguration* und konfigurieren Sie die aktivierten Netzwerke.
-.. Kehren Sie zur Startseite zurück und klicken Sie auf *Installation starten*.
+.. Zurück zur Startseite und *Installation starten* auswählen.
 .. Entfernen Sie im Grid Manager: Wenn der Knoten in der Tabelle genehmigte Knoten aufgeführt ist, den Knoten.
 .. Entfernen Sie den Knoten aus der Tabelle Ausstehende Knoten.
 .. Warten Sie, bis der Knoten wieder in der Liste Ausstehende Knoten angezeigt wird.
@@ -120,7 +120,7 @@ Weitere Informationen finden Sie unter, um die https://docs.netapp.com/us-en/sto
 
 
 
-. Klicken Sie Auf *Speichern*.
+. Wählen Sie *Speichern*.
 +
 Der Eintrag des Rasterknoten wird in die Liste der genehmigten Knoten verschoben.
 
@@ -129,7 +129,7 @@ image:7_gmi_installer_grid_nodes_approved.gif["Dieses Bild wird durch den umgebe
 
 . Wiederholen Sie diese Schritte für jeden ausstehenden Rasterknoten, den Sie genehmigen möchten.
 +
-Sie müssen alle Knoten genehmigen, die Sie im Raster benötigen. Sie können jedoch jederzeit zu dieser Seite zurückkehren, bevor Sie auf der Übersichtsseite auf *Installieren* klicken. Sie können die Eigenschaften eines genehmigten Grid-Knotens ändern, indem Sie das entsprechende Optionsfeld auswählen und auf *Bearbeiten* klicken.
+Sie müssen alle Knoten, die Sie im Grid haben möchten, genehmigen. Es ist jedoch möglich, jederzeit zu dieser Seite zurückzukehren, bevor auf der Übersichtsseite *Install* ausgewählt wird. Die Eigenschaften eines genehmigten Grid-Knotens lassen sich ändern, indem dessen Optionsfeld ausgewählt und anschließend *Edit* gewählt wird.
 
-. Wenn Sie die Genehmigung von Gitterknoten abgeschlossen haben, klicken Sie auf *Weiter*.
+. Wenn Sie die Grid-Knoten genehmigt haben, wählen Sie *Weiter*.
 

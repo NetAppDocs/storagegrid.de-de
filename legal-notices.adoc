@@ -60,3 +60,5 @@ Diese Dokumentation gewährt keine Lizenz oder sonstige Rechte an der StorageGRI
 In den Benachrichtigungsdateien finden Sie Informationen zu Urheberrechten und Lizenzen von Drittanbietern, die in der NetApp Software verwendet werden.
 
 https://library.netapp.com/ecm/ecm_download_file/ECMLP3351268[]
+
+https://library.netapp.com/ecm/ecm_download_file/ECMLP3373066[]

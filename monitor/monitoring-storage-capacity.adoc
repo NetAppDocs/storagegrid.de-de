@@ -106,10 +106,7 @@ image:nodes_page_storage_used_object_data.png["Knoten Seite Speicher Verwendete 
 . Überprüfen Sie die verfügbaren Werte in den Tabellen Volumes und Objektspeichern unter den Diagrammen.
 +
 
-NOTE: Zum Anzeigen von Diagrammen dieser Werte auf die Diagrammsymbole image:icon_chart_new_for_11_5.png["Diagrammsymbol"] in den verfügbaren Spalten klicken.
-
-+
-image:nodes_page_storage_tables.png["Im Objekt werden Tabellen gespeichert"]
+NOTE: Zur Anzeige von Diagrammen dieser Werte die Diagrammsymbole in den Spalten „Verfügbar“ auswählen.
 
 . Überwachen Sie die Werte im Zeitbereich, um die Rate abzuschätzen, mit der der nutzbare Speicherplatz belegt wird.
 . Um normale Systemvorgänge aufrechtzuerhalten, fügen Sie Storage-Nodes hinzu, fügen Storage Volumes oder Archivdaten hinzu, bevor der nutzbare Speicherplatz verbraucht wird.
@@ -206,4 +203,4 @@ Falls Sie eine neue StorageGRID-Installation besitzen, lassen Sie vor der Evalui
 . Verwenden Sie diese Werte, um zu schätzen, wann Sie neue Storage-Nodes für den Daten- und Metadatenspeicher hinzufügen müssen.
 
 
-image:forecast-metadata-usage.png["Prognose der Metadatennutzung nach Standort"]
+image:forecast_metadata_usage.png["Prognose der Metadatennutzung nach Standort"]

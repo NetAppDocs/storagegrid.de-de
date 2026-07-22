@@ -13,9 +13,6 @@ summary: Sie können ein Mandantenkonto bearbeiten, um den Anzeigenamen, das Spe
 [role="lead"]
 Sie können ein Mandantenkonto bearbeiten, um den Anzeigenamen, das Speicherkontingent oder die Berechtigungen für Mandanten zu ändern.
 
-
-TIP: Wenn ein Mandant über die Berechtigung *Grid Federation connection* verwenden verfügt, können Sie die Mandantendetails von beiden Rastergittern in der Verbindung bearbeiten. Änderungen, die Sie an einem Raster in der Verbindung vornehmen, werden jedoch nicht in das andere Raster kopiert. Wenn Sie die Details der Serviceeinheit zwischen den Rastern exakt synchronisieren möchten, nehmen Sie die gleichen Änderungen an beiden Rastern vor. Siehe link:grid-federation-manage-tenants.html["Verwalten Sie die zulässigen Mandanten für die Grid Federation-Verbindung"].
-
 .Bevor Sie beginnen
 * Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
 * Sie haben die link:admin-group-permissions.html["Berechtigung für Root-Zugriff oder Mandantenkonten"].
@@ -62,7 +59,8 @@ Wenn *eigene Identitätsquelle verwenden* ist:
 ** Wählen oder deaktivieren Sie die Berechtigung *allow S3 Select* nach Bedarf. Siehe link:manage-s3-select-for-tenant-accounts.html["Management von S3 Select für Mandantenkonten"].
 ** So entfernen Sie die Berechtigung *Grid Federation connection*:
 +
-... Wählen Sie die Registerkarte *Grid Federation* aus.
+... Auf der Seite mit den Mandantendetails befindet sich die Registerkarte Grid federation.
+... Wählen Sie die Verbindung aus, die entfernt werden soll.
 ... Wählen Sie *Berechtigung entfernen*.
 
 
@@ -71,6 +69,10 @@ Wenn *eigene Identitätsquelle verwenden* ist:
 ... Wählen Sie die Registerkarte *Grid Federation* aus.
 ... Aktivieren Sie das Kontrollkästchen *Grid Federation connection* verwenden.
 ... Wählen Sie optional *vorhandene lokale Benutzer und Gruppen klonen* aus, um sie in das Remote Grid zu klonen. Wenn Sie möchten, können Sie den Klonvorgang anhalten oder das Klonen erneut versuchen, wenn einige lokale Benutzer oder Gruppen nach Abschluss des letzten Klonvorgangs nicht geklont wurden.
++
+
+TIP: Falls dies aus Sicherheits- oder Compliance-Gründen erforderlich ist, kann die Option *Enable access key sync* deaktiviert werden.
+
 
 
 ** So legen Sie eine maximale Aufbewahrungsfrist fest oder erlauben Sie den Compliance-Modus:

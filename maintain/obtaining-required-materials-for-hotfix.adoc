@@ -35,7 +35,7 @@ Sie müssen die StorageGRID-Hotfix-Datei herunterladen.
 
 
  a| 
-Wiederherstellungspaket(`.zip` ) Datei
+Wiederherstellungspaket (`.zip`) Datei
  a| 
 Bevor Sie einen Hotfix anwenden,link:downloading-recovery-package.html["Laden Sie die neueste Wiederherstellungspaketdatei herunter"] falls während des Hotfixes Probleme auftreten.  Laden Sie anschließend nach der Anwendung des Hotfixes eine neue Kopie der Wiederherstellungspaketdatei herunter und speichern Sie sie an einem sicheren Ort.  Mit der aktualisierten Wiederherstellungspaketdatei können Sie das System wiederherstellen, wenn ein Fehler auftritt.
 

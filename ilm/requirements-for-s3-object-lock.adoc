@@ -27,6 +27,17 @@ Sie müssen die Anforderungen für die Aktivierung der globalen S3-Objektsperre,
 
 
 
+[[requirements-for-allowing-s3-object-lock-to-be-enabled-on-existing-buckets]]
+[[s3-object-lock-existing-buckets]]
+== Anforderungen für die Aktivierung von S3 Object Lock auf bestehenden Buckets
+
+Wenn die globale S3 Object Lock-Einstellung aktiviert ist, kann optional allen S3-Mandantenkonten oder S3-Benutzern mit Berechtigungen erlaubt werden, S3 Object Lock für bestehende Buckets zu aktivieren. Wenn ein S3-Mandantenkonto oder S3-Benutzer S3 Object Lock für einen bestehenden Bucket aktiviert, kann dies abhängig von Ihren ILM-Regeln zu einer unbeabsichtigten Datenmigration von einem Cloud Storage Pool zurück zu StorageGRID führen.
+
+
+CAUTION: Eine unbeabsichtigte Datenmigration kann nach ihrem Beginn nicht mehr gestoppt werden.
+
+
+
 [[requirements-for-compliant-ilm-rules]]
 == Anforderungen für konforme ILM-Regeln
 
@@ -59,11 +70,9 @@ link:example-7-compliant-ilm-policy-for-s3-object-lock.html["Beispiel einer konf
 == Anforderungen für Buckets, bei denen die S3-Objektsperre aktiviert ist
 
 * Wenn die globale S3-Objektsperre für das StorageGRID System aktiviert ist, können Sie die Buckets mit aktivierter S3-Objektsperre über den Mandantenmanager, die Mandantenmanagement-API oder die S3-REST-API erstellen.
-* Wenn Sie die S3-Objektsperre verwenden möchten, müssen Sie beim Erstellen des Buckets die S3-Objektsperre aktivieren. Sie können die S3-Objektsperre für einen vorhandenen Bucket nicht aktivieren.
 * Wenn die S3-Objektsperre für einen Bucket aktiviert ist, ermöglicht StorageGRID automatisch die Versionierung für diesen Bucket. Sie können S3 Object Lock nicht deaktivieren oder die Versionierung für den Bucket nicht unterbrechen.
 * Optional können Sie mithilfe von Tenant Manager, der Mandanten-Management-API oder der S3-REST-API für jeden Bucket einen Standardaufbewahrungsmodus und einen Aufbewahrungszeitraum angeben. Die Standardaufbewahrungseinstellungen des Buckets gelten nur für neue Objekte, die dem Bucket hinzugefügt wurden und keine eigenen Aufbewahrungseinstellungen haben. Sie können diese Standardeinstellungen außer Kraft setzen, indem Sie einen Aufbewahrungsmodus und das Aufbewahrungsdatum für jede Objektversion festlegen, wenn sie hochgeladen wird.
 * Die Konfiguration des Bucket-Lebenszyklus wird für Buckets unterstützt, für die S3 Object Lock aktiviert ist.
-* Die CloudMirror-Replizierung wird für Buckets nicht unterstützt, wenn S3-Objektsperre aktiviert ist.
 
 
 

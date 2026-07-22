@@ -44,10 +44,14 @@ Einschränkungen::
 +
 --
 * Multi-Faktor-Authentifizierung (MFA) und der Antwortheader `x-amz-mfa` werden nicht unterstützt.
-* Die  `If-None` und  `If-None-Match` Header werden akzeptiert, sind aber nicht funktionsfähig.
+* Die `If-Match` und `If-None-Match` Header verhalten sich je nach StorageGRID Konfiguration unterschiedlich. Das Angeben dieser Header kann eine Fehlermeldung (501 Not Implemented) zurückgeben. Werden die `If-Match` oder `If-None-Match` Header zwar akzeptiert, sind aber nicht funktionsfähig, kann eine Warnung mit Hinweisen zur Aktivierung des strengeren 501 Not Implemented Fehlerverhaltens ausgelöst werden.
 
 
 --
+
+
+Der  `x-amz-bypass-governance-retention`Header hat keine Auswirkung auf Objekte ohne S3 Object Lock.
+
 Versionierung:: Zum Entfernen einer bestimmten Version muss der Anforderer der Bucket-Eigentümer sein und die Unterressource verwenden `versionId`. Durch die Verwendung dieser Unterressource wird die Version dauerhaft gelöscht. Wenn das `versionId` einer Löschmarkierung entspricht, wird die Antwortkopfzeile `x-amz-delete-marker` auf gesetzt zurückgegeben `true`.
 +
 --
@@ -73,6 +77,8 @@ Objekte deObjekteObjekte
 Multi-Faktor-Authentifizierung (MFA) und der Antwortheader `x-amz-mfa` werden nicht unterstützt.
 
 In derselben Anforderungsmeldung können mehrere Objekte gelöscht werden.
+
+Der  `x-amz-bypass-governance-retention`Header hat keine Auswirkung auf Objekte ohne S3 Object Lock.
 
 Weitere Informationen zum Löschen von Objektversionen im GOVERNANCE-Modus finden Sie unterlink:../s3/use-s3-api-for-s3-object-lock.html["Konfigurieren Sie die S3-Objektsperre über die S3-REST-API"].
 

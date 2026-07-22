@@ -20,7 +20,7 @@ NOTE: Dieses Verfahren gilt nur für softwarebasierte Speicherknoten. Sie müsse
 
 *Linux:* Wenn Sie sich nicht sicher sind, ob Ihr Systemlaufwerk ausgefallen ist, folgen Sie den Anweisungen, um den Knoten zu ersetzen, um festzustellen, welche Wiederherstellungsschritte erforderlich sind.
 
-[cols="1a,2a"]
+[cols="1a,3a"]
 |===
 | Plattform | Verfahren 
 

@@ -11,7 +11,7 @@ summary: 'Sie steuern, wer auf StorageGRID zugreifen kann und welche Aufgaben Be
 
 
 [role="lead"]
-Sie steuern, wer auf StorageGRID zugreifen kann und welche Aufgaben Benutzer ausführen können, indem Sie Gruppen und Benutzer erstellen oder importieren und jeder Gruppe Berechtigungen zuweisen. Optional können Sie Single Sign On (SSO) aktivieren, Client-Zertifikate erstellen und Grid-Passwörter ändern.
+Sie steuern, wer auf StorageGRID zugreifen kann und welche Aufgaben Benutzer ausführen dürfen, indem Sie Gruppen und Benutzer erstellen oder importieren und den einzelnen Gruppen Berechtigungen zuweisen. Optional besteht die Möglichkeit, Single Sign-On (SSO) zu aktivieren, Clientzertifikate zu erstellen, Grid-Passwörter zu ändern und die Multi-Admin-Verifizierung zu verwenden.
 
 
 
@@ -34,7 +34,7 @@ Optional können Sie eine Gruppe als schreibgeschützt konfigurieren. Benutzer i
 [[enable-single-sign-on]]
 == Aktivieren Sie Single Sign On
 
-Das StorageGRID -System unterstützt Single Sign-On (SSO) mithilfe des Standards Security Assertion Markup Language 2.0 (SAML 2.0).  Nach Ihnenlink:how-sso-works.html["Konfigurieren und aktivieren Sie SSO"] müssen alle Benutzer von einem externen Identitätsanbieter authentifiziert werden, bevor sie auf den Grid Manager, den Tenant Manager, die Grid Management API oder die Tenant Management API zugreifen können.  Lokale Benutzer können sich nicht bei StorageGRID anmelden.
+Das StorageGRID System unterstützt Single Sign-On (SSO) mithilfe des Security Assertion Markup Language 2.0 (SAML 2.0) oder OpenID Connect (OIDC) Standards. Nachdem Sie link:how-sso-works.html["Konfigurieren und aktivieren Sie SSO"] haben, müssen alle Benutzer von einem externen Identitätsanbieter authentifiziert werden, bevor sie auf den Grid Manager, den Tenant Manager, die Grid Management API oder die Tenant Management API zugreifen können. Lokale Benutzer können sich nicht bei StorageGRID anmelden.
 
 
 
@@ -49,3 +49,10 @@ Die Bereitstellungspassphrase wird für viele Installations- und Wartungsverfahr
 == Ändern der Passwörter für die Node-Konsole
 
 Jeder Knoten in Ihrem Grid verfügt über ein Knotenkonsolenkennwort, das Sie benötigen, um sich per SSH als „Admin“ beim Knoten oder bei einer VM-/physischen Konsolenverbindung als Root-Benutzer anzumelden.  Bei Bedarf können Sielink:change-node-console-password.html["Ändern Sie das Passwort für die Node-Konsole"] für jeden Knoten.
+
+
+
+[[use-multi-admin-verification]]
+== Multi-Admin-Verifizierung
+
+Mithilfe der Multi-Admin-Verifizierung (MAV) kann sichergestellt werden, dass bestimmte StorageGRID Operationen nur nach Genehmigung durch die zuständigen Administratoren durchgeführt werden. MAV verhindert, dass kompromittierte, böswillige oder unerfahrene Administratoren unerwünschte Änderungen vornehmen oder Daten löschen.

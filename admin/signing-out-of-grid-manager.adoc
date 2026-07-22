@@ -15,9 +15,6 @@ Wenn Sie die Arbeit mit dem Grid-Manager abgeschlossen haben, müssen Sie sich a
 
 .Schritte
 . Wählen Sie oben rechts Ihren Benutzernamen aus.
-+
-image:sign_out.png["Link „Abmelden“"]
-
 . Wählen Sie *Abmelden*.
 +
 [cols="1a,2a"]

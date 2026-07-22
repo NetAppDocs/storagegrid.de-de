@@ -1,8 +1,8 @@
 ---
 permalink: admin/grid-federation-overview.html 
 sidebar: sidebar 
-keywords: grid federation, cross-grid replication, account clone, cgr, disaster recovery 
-summary: Mithilfe des Grid-Verbunds können Mandanten geklont und ihre Objekte zwischen zwei StorageGRID Systemen für das Disaster Recovery repliziert werden. 
+keywords: grid federation, cross-grid replication, account sync, cgr, disaster recovery 
+summary: Mit der Grid-Federation ist es möglich, Mandanten zu synchronisieren und deren Objekte zur Notfallwiederherstellung zwischen mehreren StorageGRID-Systemen zu replizieren. 
 ---
 = Erfahren Sie mehr über StorageGRID Grid-Föderation
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Mithilfe des Grid-Verbunds können Mandanten geklont und ihre Objekte z
 
 
 [role="lead"]
-Mithilfe des Grid-Verbunds können Mandanten geklont und ihre Objekte zwischen zwei StorageGRID Systemen für das Disaster Recovery repliziert werden.
+Mit der Grid-Federation ist es möglich, Mandanten zu synchronisieren und deren Objekte zur Notfallwiederherstellung zwischen mehreren StorageGRID-Systemen zu replizieren.
 
 
 
@@ -27,7 +27,7 @@ Eine Grid-Verbundverbindung ist eine bidirektionale, zuverlässige und sichere V
 
 Das Workflow-Diagramm fasst die Schritte zur Konfiguration einer Grid Federation-Verbindung zwischen zwei Grids zusammen.
 
-image:grid-federation-workflow.png["Workflow der Grid-Föderation-Verbindung"]
+image:grid_federation_workflow.png["Workflow der Grid-Föderation-Verbindung"]
 
 
 
@@ -36,11 +36,11 @@ image:grid-federation-workflow.png["Workflow der Grid-Föderation-Verbindung"]
 
 * Auf den Grids, die für den Grid-Verbund verwendet werden, müssen StorageGRID-Versionen ausgeführt werden, die entweder identisch sind oder nicht mehr als einen Hauptversionsunterschied aufweisen.
 +
-Einzelheiten zu den Versionsvoraussetzungen finden Sie in der  https://library.netapp.com/ecm/ecm_download_file/ECMLP3351267["Versionshinweise"^]. Sie müssen sich mit Ihrem NetApp Konto anmelden oder ein Konto erstellen, um auf die Release Notes zuzugreifen.
+Einzelheiten zu den Versionsvoraussetzungen finden Sie in der  https://library.netapp.com/ecm/ecm_download_file/ECMLP3373065["Versionshinweise"^]. Sie müssen sich mit Ihrem NetApp Konto anmelden oder ein Konto erstellen, um auf die Versionshinweise zuzugreifen.
 
 * Ein Grid kann eine oder mehrere Netzverbundverbindungen zu anderen Grids haben. Jede Netzverbundverbindung ist unabhängig von allen anderen Verbindungen. Wenn beispielsweise Grid 1 eine Verbindung mit Grid 2 und eine zweite Verbindung mit Grid 3 hat, besteht keine implizierte Verbindung zwischen Grid 2 und Grid 3.
 * Netzverbundverbindungen sind bidirektional. Nachdem die Verbindung hergestellt wurde, können Sie die Verbindung von beiden Grids aus überwachen und verwalten.
-* Mindestens eine Netzverbundverbindung muss vorhanden sein, bevor Sie oder verwenden könnenlink:grid-federation-what-is-account-clone.html["Konto-Klon"]link:grid-federation-what-is-cross-grid-replication.html["Grid-übergreifende Replizierung"].
+* Mindestens eine Grid Federation-Verbindung muss vorhanden sein, bevor link:grid-federation-what-is-account-sync.html["Kontosynchronisierung"] oder link:grid-federation-what-is-cross-grid-replication.html["Grid-übergreifende Replizierung"] verwendet werden können.
 
 
 
@@ -92,7 +92,7 @@ Wenn Sie eine Grid-Federation-Verbindung konfigurieren, generiert StorageGRID au
 * Server- und Client-Zertifikate zur Authentifizierung und Verschlüsselung von Informationen, die von Grid 2 an Grid 1 gesendet werden
 
 
-image:grid-federation-certificates.png["Zertifikate für Grid Federation"]
+image:grid_federation_certificates.png["Zertifikate für Grid Federation"]
 
 Standardmäßig sind die Zertifikate 730 Tage (2 Jahre) gültig. Wenn diese Zertifikate in der Nähe ihres Ablaufdatums liegen, erinnert die Warnung *Ablauf des Grid Federation Certificate* Sie daran, die Zertifikate zu drehen, was Sie mit dem Grid Manager tun können.
 

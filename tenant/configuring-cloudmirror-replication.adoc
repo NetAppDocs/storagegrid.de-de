@@ -31,8 +31,9 @@ NOTE: Die CloudMirror-Replizierung weist wichtige Ähnlichkeiten und Unterschied
 Beachten Sie bei der Konfiguration der CloudMirror-Replikation die folgenden Anforderungen und Merkmale:
 
 * Wenn Sie eine gültige XML-Bucket-Replizierungskonfiguration erstellen und anwenden, muss diese für jedes Ziel die URN eines S3-Bucket-Endpunkts verwenden.
-* Die Replizierung wird für Quell- oder Ziel-Buckets nicht unterstützt, wenn S3 Object Lock aktiviert ist.
+* Die Replikation wird nur für Quell- oder Ziel-Buckets unterstützt, bei denen die S3 Object Lock-Funktion für Amazon S3 oder StorageGRID S3-Buckets aktiviert ist. Die Object Lock-Header werden nicht auf das Zielobjekt repliziert.
 * Wenn Sie die CloudMirror-Replizierung für einen Bucket aktivieren, der Objekte enthält, werden neue Objekte, die dem Bucket hinzugefügt wurden, repliziert, die vorhandenen Objekte in dem Bucket werden jedoch nicht repliziert. Sie müssen vorhandene Objekte aktualisieren, um die Replikation auszulösen.
+* Wenn Sie die S3-Objektsperre für den Ziel-Bucket aktivieren, nachdem Sie die CloudMirror-Replikation konfiguriert haben, müssen Sie möglicherweise link:../tenant/editing-platform-services-endpoint.html["den Endpunkt erneut speichern"] zulassen, damit die Replikation fortgesetzt werden kann.
 * Wenn Sie in der Replikationskonfiguration-XML eine Storage-Klasse angeben, verwendet StorageGRID diese Klasse, wenn Vorgänge mit dem Ziel-S3-Endpunkt durchgeführt werden. Der Ziel-Endpunkt muss auch die angegebene Storage-Klasse unterstützen. Befolgen Sie unbedingt die Empfehlungen des Zielsystemanbieter.
 
 

@@ -55,7 +55,7 @@ Im Abschnitt „Meldungen“ der Registerkarte „Übersicht“ werden alle akti
 
 . Wählen Sie *Hardware*, um weitere Informationen über das Gerät anzuzeigen.
 +
-.. Sehen Sie sich die CPU-Auslastung und die Speicherdiagramme an, um den Prozentsatz der CPU- und Arbeitsspeicherauslastung im Laufe der Zeit zu ermitteln. Um ein anderes Zeitintervall anzuzeigen, wählen Sie eines der Steuerelemente oberhalb des Diagramms oder Diagramms aus. Sie können die verfügbaren Informationen für Intervalle von 1 Stunde, 1 Tag, 1 Woche oder 1 Monat anzeigen. Sie können auch ein benutzerdefiniertes Intervall festlegen, mit dem Sie Datum und Zeitbereiche festlegen können.
+.. Die Diagramme zur CPU-Auslastung und Speichernutzung zeigen die prozentualen Werte der CPU- und Speichernutzung im Zeitverlauf. Zur Anzeige eines anderen Zeitintervalls steht eines der Steuerelemente oberhalb des Diagramms oder der Grafik zur Auswahl. Die verfügbaren Informationen können für Intervalle von 1 Stunde, 1 Tag, 1 Woche oder 1 Monat angezeigt werden. Ein benutzerdefiniertes Intervall kann ebenfalls festgelegt werden, wodurch sich Datums- und Zeitbereiche angeben lassen.
 +
 image:nodes_page_hardware_tab_graphs.png["Hardware-Grafiken"]
 
@@ -66,9 +66,6 @@ NOTE: Einige Felder, wie BMC IP- und Computing-Hardware des Rechencontrollers, w
 
 +
 Komponenten für Storage-Shelfs und Erweiterungs-Shelfs, wenn sie Teil der Installation sind, werden in einer separaten Tabelle unter der Appliance-Tabelle aufgeführt.
-
-+
-image:nodes_page_hardware_tab_for_appliance.png["Registerkarte Knoten Hardware für Appliance"]
 
 +
 [cols="1a,2a"]
@@ -261,6 +258,20 @@ Temperatur im Computing-Controller-Chassis
  a| 
 Der Temperaturstatus des Compute-Controllers.
 
+
+
+ a| 
+Stromversorgung des Compute Controllers A
+ a| 
+Der Status des Netzteils A für den Rechencontroller.
+
+
+
+ a| 
+Stromversorgung des Compute Controllers B
+ a| 
+Der Status des Netzteils B für den Rechencontroller.
+
 |===
 +
 [cols="1a,2a"]
@@ -379,12 +390,12 @@ Das Diagramm „Netzwerkverkehr“ bietet eine Zusammenfassung des gesamten Netz
 image:nodes_page_network_traffic_graph.png["Knoten Seite Netzwerk Verkehr Diagramm"]
 
 +
-.. Lesen Sie den Abschnitt Netzwerkschnittstellen.
+.. Der Abschnitt Netzwerkschnittstellen sollte überprüft werden.
 +
 image:nodes_page_network_interfaces.png["Knoten Seite Netzwerkschnittstellen"]
 
 +
-Verwenden Sie die folgende Tabelle mit den Werten in der Spalte *Geschwindigkeit* in der Tabelle Netzwerkschnittstellen, um festzustellen, ob die 10/25-GbE-Netzwerkanschlüsse auf dem Gerät für den aktiven/Backup-Modus oder den LACP-Modus konfiguriert wurden.
+Anhand der folgenden Tabelle und der Werte in der Spalte *Speed* in der Tabelle „Netzwerkschnittstellen“ kann ermittelt werden, ob die 10/25-GbE Netzwerkports des Geräts für den active/backup-Modus oder den LACP-Modus konfiguriert wurden.
 
 +
 
@@ -464,12 +475,9 @@ Aktiv/Backup
 +
 Weitere Informationen zum Konfigurieren der 10/25-GbE-Ports finden Sie unter https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/configuring-network-links.html["Netzwerkverbindungen konfigurieren"^].
 
-.. Lesen Sie den Abschnitt Netzwerkkommunikation.
+.. Der Abschnitt Netzwerkkommunikation kann eingesehen werden.
 +
 Die Tabellen „Empfangen und Senden“ zeigen, wie viele Bytes und Pakete über jedes Netzwerk empfangen und gesendet wurden, sowie andere Empfangs- und Übertragungs-Metriken.
-
-+
-image:nodes_page_network_communication.png["Knoten Seite Netzwerk Komm"]
 
 
 
@@ -488,9 +496,6 @@ Der weltweite Name jeder Festplatte stimmt mit der WWID (World-Wide Identifier) 
 +
 Um Ihnen bei der Auswertung von Datenträger-Lese- und Schreibstatistiken zu Volume-Mount-Punkten zu helfen, entspricht der erste Teil des Namens, der in der Spalte *Name* der Tabelle Disk Devices (d. h. _sdc_, _sdd_, _sde_ usw.) in der Spalte *Gerät* der Tabelle Volumes angezeigt wird.
 
-+
-image:nodes_page_storage_tables.png["Knoten Seitentabellen"]
-
 
 
 
@@ -504,7 +509,7 @@ Auf der Seite Nodes werden Informationen zum Serviczustand sowie alle Computing-
 
 .Schritte
 . Wählen Sie auf der Seite Knoten einen Appliance Admin Node oder einen Appliance Gateway Node aus.
-. Wählen Sie *Übersicht*.
+. Wählen Sie die Registerkarte *Übersicht*.
 +
 Im Abschnitt Node-Informationen auf der Registerkarte Übersicht werden zusammenfassende Informationen für den Node, z. B. Name, Typ, ID und Verbindungsstatus des Node, angezeigt. Die Liste der IP-Adressen umfasst den Namen der Schnittstelle für jede Adresse:
 
@@ -521,16 +526,13 @@ image:nodes_page_overview_tab_services_appliance.png["Registerkarte Knoten der R
 +
 Im Abschnitt „Meldungen“ der Registerkarte „Übersicht“ werden alle aktiven Meldungen für den Node angezeigt.
 
-. Wählen Sie *Hardware*, um weitere Informationen über das Gerät anzuzeigen.
+. Die Registerkarte *Hardware* zeigt weitere Informationen zum Gerät.
 +
 .. Sehen Sie sich die CPU-Auslastung und die Speicherdiagramme an, um den Prozentsatz der CPU- und Arbeitsspeicherauslastung im Laufe der Zeit zu ermitteln. Um ein anderes Zeitintervall anzuzeigen, wählen Sie eines der Steuerelemente oberhalb des Diagramms oder Diagramms aus. Sie können die verfügbaren Informationen für Intervalle von 1 Stunde, 1 Tag, 1 Woche oder 1 Monat anzeigen. Sie können auch ein benutzerdefiniertes Intervall festlegen, mit dem Sie Datum und Zeitbereiche festlegen können.
 +
 image:nodes_page_hardware_tab_graphs_services_appliance.png["Knoten Seite Hardware Registerkarte Diagramme für Services Appliance"]
 
-.. Blättern Sie nach unten, um die Komponententabelle für das Gerät anzuzeigen. Diese Tabelle enthält Informationen, z. B. den Modellnamen, die Seriennummer, die Controller-Firmware-Version und den Status jeder Komponente.
-+
-image:nodes_page_hardware_tab_services_appliance.png["Registerkarte Knoten Hardware für Service Appliance"]
-
+.. Scrollen Sie nach unten, um die Komponententabelle für das Gerät anzuzeigen. Die Tabelle enthält Informationen wie den Modellnamen, die Seriennummer, die Controller-Firmware-Version und den Status jeder Komponente.
 +
 [cols="1a,2a"]
 |===
@@ -621,7 +623,7 @@ Wenn ein Status nicht „nominal“ lautet, prüfen Sie alle aktuellen Warnmeldu
 
 
 
-. Wählen Sie *Netzwerk*, um Informationen für jedes Netzwerk anzuzeigen.
+. Die Registerkarte *Netzwerk* zeigt Informationen zu jedem Netzwerk an.
 +
 Das Diagramm „Netzwerkverkehr“ bietet eine Zusammenfassung des gesamten Netzwerkverkehr.
 
@@ -629,12 +631,9 @@ Das Diagramm „Netzwerkverkehr“ bietet eine Zusammenfassung des gesamten Netz
 image:nodes_page_network_traffic_graph.png["Knoten Seite Netzwerk Verkehr Diagramm"]
 
 +
-.. Lesen Sie den Abschnitt Netzwerkschnittstellen.
+.. Der Abschnitt Netzwerkschnittstellen sollte überprüft werden.
 +
-image:nodes_page_hardware_tab_network_services_appliance.png["Registerkarte Knoten Hardware Network Services Appliance"]
-
-+
-Verwenden Sie die folgende Tabelle mit den Werten in der Spalte *Geschwindigkeit* in der Tabelle Netzwerkschnittstellen, um festzustellen, ob die vier 40/100-GbE-Netzwerkanschlüsse auf der Appliance für den aktiven/Backup-Modus oder den LACP-Modus konfiguriert wurden.
+Anhand der folgenden Tabelle und der Werte in der Spalte *Speed* in der Tabelle „Netzwerkschnittstellen“ lässt sich feststellen, ob die vier 40/100-GbE Netzwerkports des Geräts für den Active/Backup-Modus oder den LACP-Modus konfiguriert wurden.
 
 +
 
@@ -711,17 +710,11 @@ Aktiv/Backup
 40
 
 |===
-.. Lesen Sie den Abschnitt Netzwerkkommunikation.
+.. Der Abschnitt Netzwerkkommunikation kann eingesehen werden.
 +
 Die Tabellen „Empfangen und Senden“ zeigen, wie viele Bytes und Pakete über jedes Netzwerk empfangen und gesendet wurden, sowie andere Empfangs- und Übertragungstabellen.
 
-+
-image:nodes_page_network_communication.png["Knoten Seite Netzwerk Komm"]
 
 
-
-. Wählen Sie *Storage* aus, um Informationen zu den Festplattengeräten und Volumes auf der Services Appliance anzuzeigen.
-+
-image:nodes_page_storage_tab_services_appliance.png["Knoten Seite Speicher Registerkarte Dienste Appliance"]
-
+. Die Registerkarte *Speicher* zeigt Informationen über die Datenträger und Volumes auf der Services Appliance an.
 

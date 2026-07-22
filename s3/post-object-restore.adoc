@@ -65,7 +65,7 @@ Das Objekt wurde in einen nicht aufrufbaren Zustand überführt
 
 Verwenden Sie optional das `Tier` Anforderungselement, um festzulegen, wie lange der Wiederherstellungsjob dauern wird(`Expedited` `Standard`, bis er beendet ist, , oder `Bulk`). Wenn Sie nicht angeben `Tier`, wird der `Standard` Tier verwendet.
 
-*Wichtig*: Wenn ein Objekt in S3 Glacier Deep Archive migriert wurde oder der Cloud Storage Pool Azure Blob Storage verwendet, können Sie es nicht mithilfe der Tier wiederherstellen `Expedited`. Der folgende Fehler wird zurückgegeben `403 Forbidden`, `InvalidTier`: `Retrieval option is not supported by this storage class`.
+*Wichtig*: Wenn ein Objekt in S3 Glacier Deep Archive verschoben wurde oder der Cloud Storage Pool Azure Blob Storage verwendet, kann es nicht mit der  `Expedited`-Ebene wiederhergestellt werden. Der folgende Fehler wird zurückgegeben `403 Forbidden`, `InvalidTier`: `Retrieval option is not supported by this storage class`.
 
 
 

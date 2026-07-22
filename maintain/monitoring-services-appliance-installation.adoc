@@ -14,9 +14,9 @@ summary: Das Installationsprogramm der StorageGRID Appliance stellt den Status b
 Das Installationsprogramm der StorageGRID Appliance stellt den Status bereit, bis die Installation abgeschlossen ist. Nach Abschluss der Softwareinstallation wird die Appliance neu gestartet.
 
 .Schritte
-. Um den Installationsfortschritt zu überwachen, klicken Sie in der Menüleiste auf *Installation überwachen*.
+. Der Installationsfortschritt lässt sich in der Menüleiste über *Installation überwachen* einsehen.
 +
-Auf der Seite Monitor-Installation wird der Installationsfortschritt angezeigt.
+Auf der Installationsseite des Monitors wird der Installationsfortschritt angezeigt.
 
 +
 Die blaue Statusleiste zeigt an, welche Aufgabe zurzeit ausgeführt wird. Grüne Statusleisten zeigen Aufgaben an, die erfolgreich abgeschlossen wurden.

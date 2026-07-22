@@ -2,6 +2,19 @@
 section: monitor
 title: Überwachen Sie das StorageGRID-System
 entries:
+- title: Verwenden Sie AutoSupport
+  entries:
+  - title: Was ist AutoSupport
+    pdf-filename: Verwenden Sie AutoSupport
+    url: "/monitor/what-is-autosupport.html"
+  - title: Konfigurieren Sie AutoSupport
+    url: "/monitor/configure-autosupport-grid-manager.html"
+  - title: Starten Sie manuell ein AutoSupport-Paket
+    url: "/monitor/manually-triggering-autosupport-package.html"
+  - title: Wie StorageGRID mit AutoSupport Paketfehlern umgeht
+    url: "/monitor/autosupport-package-failure-handling.html"
+  - title: Senden Sie E-Series AutoSupport-Pakete über StorageGRID
+    url: "/monitor/sending-eseries-autosupport-messages-through-storagegrid.html"
 - title: Überwachungsaufgaben
   pdf-filename: Überwachen Sie das StorageGRID-System
   url: "/monitor/index.html"
@@ -25,7 +38,7 @@ entries:
   - title: Zeigen Sie die Registerkarte ILM an
     url: "/monitor/viewing-ilm-tab.html"
   - title: Verwenden Sie die Registerkarte Aufgaben
-    url: "/monitor/using-task-tab-to-reboot-grid-node.html"
+    url: "/monitor/using-task-tab.html"
   - title: Zeigen Sie die Registerkarte Load Balancer an
     url: "/monitor/viewing-load-balancer-tab.html"
   - title: Zeigen Sie die Registerkarte Plattformdienste an
@@ -97,6 +110,8 @@ entries:
     url: "/monitor/considerations-for-external-syslog-server.html"
   - title: Konfigurieren der Protokollverwaltung
     url: "/monitor/configure-log-management.html"
+- title: E-Mail-Server konfigurieren
+  url: "/monitor/configure-email-server.html"
 - title: Verwenden Sie SNMP-Überwachung
   entries:
   - title: SNMP-Überwachung
@@ -118,8 +133,6 @@ entries:
     url: "/monitor/reviewing-audit-messages.html"
   - title: Erfassen von Protokolldateien und Systemdaten
     url: "/monitor/collecting-log-files-and-system-data.html"
-  - title: Starten Sie manuell ein AutoSupport-Paket
-    url: "/monitor/manually-triggering-autosupport-message.html"
   - title: Prüfen von Support-Kennzahlen
     url: "/monitor/reviewing-support-metrics.html"
   - title: E/A-Priorisierung ändern

@@ -78,7 +78,7 @@ image:decommission_site_step_5_ha_groups.png["Mustern Sie Schritt 5 HA-Gruppen a
 
 
 +
-Wenn alle Nodes verbunden sind und keine Nodes am ausgewählten Standort in einer HA-Gruppe verwendet werden, ist das Feld *Provisioning-Passphrase* aktiviert.
+Wenn alle Knoten verbunden sind und keine Knoten im ausgewählten Standort in einer HA-Gruppe verwendet werden, ist das Feld *Provisioning passphrase* aktiviert.
 
 . Geben Sie die Provisionierungs-Passphrase ein.
 +

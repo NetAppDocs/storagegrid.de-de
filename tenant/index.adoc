@@ -53,7 +53,7 @@ Nach einem link:../admin/creating-tenant-account.html["S3-Mandantenkonto wird er
 
 * Identitätsföderation einrichten (es sei denn, die Identitätsquelle wird mit dem Grid gemeinsam genutzt)
 * Verwalten von Gruppen und Benutzern
-* Grid-Verbund für Account-Klone und Grid-übergreifende Replizierung verwenden
+* Grid Federation für die Kontosynchronisierung und die gridübergreifende Replikation verwenden
 * Managen von S3-Zugriffsschlüsseln
 * S3 Buckets erstellen und managen
 * Verwenden Sie S3-Plattformservices

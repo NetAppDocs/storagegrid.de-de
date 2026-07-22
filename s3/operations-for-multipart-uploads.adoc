@@ -33,7 +33,14 @@ Die folgenden Bedingungen und Hinweise gelten für alle mehrteiligen Uploadvorg�
 * Alle mehrteiligen Upload-Vorgänge unterstützen StorageGRIDlink:consistency.html["Konsistenzwerte"] .
 * Wenn ein Objekt mit mehrteiligen Uploads aufgenommen wird, wird das link:../admin/what-object-segmentation-is.html["Schwellenwert für Objektsegmentierung (1 gib)"]nicht angewendet.
 * Je nach Bedarf können Sie mit mehrteiligen Uploads verwendenlink:using-server-side-encryption.html["Serverseitige Verschlüsselung"]. Um SSE (serverseitige Verschlüsselung mit StorageGRID-verwalteten Schlüsseln) zu verwenden, fügen Sie den `x-amz-server-side-encryption` Anforderungsheader nur in die CreateMultipartUpload-Anforderung ein. Um SSE-C (serverseitige Verschlüsselung mit vom Kunden bereitgestellten Schlüsseln) zu verwenden, geben Sie in der CreateMultipartUpload-Anforderung und in jeder nachfolgenden UploadPart-Anforderung die gleichen drei Verschlüsselungsschlüsselanforderungsheader an.
-* Ein mehrteiliges hochgeladenes Objekt ist in einemlink:../tenant/what-is-branch-bucket.html["Asteimer"] wenn die Aufnahme vor dem „Before“-Zeitstempel des Basis-Buckets begonnen wurde, unabhängig davon, wann der Upload abgeschlossen ist.
+* Ob ein mehrteilig hochgeladenes Objekt in eine link:../tenant/what-is-branch-bucket.html["Asteimer"] aufgenommen wird, hängt vom Zeitpunkt des Ingest-Starts und dem Zeitfilter für den Branch-Bucket ab:
++
+** *Vorher*. Wenn die Aufnahme vor dem _Vorher_-Zeitstempel des Branch-Buckets initiiert wurde, wird das mehrteilige hochgeladene Objekt unabhängig vom Zeitpunkt des Abschlusses des Uploads einbezogen.
+** *Nach*. Wenn die Aufnahme nach dem _Nach_-Zeitstempel des Branch-Buckets initiiert wurde, wird das mehrteilig hochgeladene Objekt einbezogen.
+** *Zwischen*. Wenn die Aufnahme zwischen den Zeitstempeln _From_ und _To_ des Branch Buckets initiiert wurde, wird das mehrteilig hochgeladene Objekt unabhängig vom Zeitpunkt des Abschlusses des Uploads einbezogen.
+** *Ausschließen*. Wenn die Aufnahme vor dem _Ausschluss-von_ Zeitpunkt des Branch-Buckets oder nach dem _Ausschluss-bis_ Zeitpunkt initiiert wurde, wird das mehrteilige hochgeladene Objekt eingeschlossen.
+
+
 
 
 [cols="2a,3a"]

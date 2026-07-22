@@ -1,0 +1,357 @@
+---
+permalink: admin/creating-sp-connection-ping-oidc.html 
+sidebar: sidebar 
+keywords: service provider, sp connection, pingfederate, ping, single sign on, sso 
+summary: 'Sie verwenden PingFederate, um für jeden Admin-Node in Ihrem System eine SP-Verbindung (Service Provider) zu erstellen. Um den Prozess zu beschleunigen, importieren Sie die SAML-Metadaten aus StorageGRID.' 
+---
+= Dienstanbieterverbindungen in PingFederate für OIDC in StorageGRID erstellen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Verwenden Sie PingFederate, um für jeden Admin-Knoten eine Service Provider (SP)-Verbindung für OpenID Connect (OIDC) in Ihrem System zu erstellen.
+
+.Bevor Sie beginnen
+* Sie haben Erfahrung beim Erstellen von SP-Verbindungen in PingFederate Server.
+* Sie haben den https://docs.pingidentity.com/pingfederate/latest/administrators_reference_guide/pf_administrators_reference_guide.html["Administrator's Reference Guide"^] für PingFederate Server. Die PingFederate-Dokumentation bietet detaillierte Schritt-für-Schritt-Anleitungen und Erklärungen.
+* Sie haben dielink:../admin/admin-group-permissions.html["Administratorberechtigung"] für PingFederate Server.
+
+
+.Über diese Aufgabe
+Diese Anleitung fasst zusammen, wie PingFederate Server Version 12.1.10 als SSO-Anbieter für StorageGRID konfiguriert wird. Wenn eine andere Version von PingFederate verwendet wird, müssen diese Anweisungen möglicherweise angepasst werden. In der PingFederate Server-Dokumentation finden sich ausführliche Anweisungen für die jeweilige Version.
+
+Verwenden Sie die Standardeinstellungen, sofern nicht anders angegeben. In einigen Fällen können Einstellungen verwendet werden, die von Ihrer Organisation gefordert werden, wie beispielsweise Einstellungen für das Authentifizierungsverfahren.
+
+
+
+[[step-1-create-data-storedata-store-oidc]]
+== Schritt 1: Datenspeicher erstellen[[data-store-oidc]]
+
+Falls noch nicht geschehen, einen Datenspeicher erstellen, um PingFederate mit dem AD FS LDAP-Server zu verbinden.
+
+.Schritte
+. Zu *System* > *Daten- und Anmeldeinformationsspeicher* wechseln.
+. *Neuen Datenspeicher* auswählen.
+. Für Typ *Verzeichnis (LDAP)* auswählen.
+. Wählen Sie *Weiter*.
+. Unter LDAP-Konfiguration:
++
+** Geben Sie die Werte für *Hostname*, *User DN* (Benutzername) und *Passwort* ein.
++
+Verwenden Sie die Werte, die Sie bei link:../admin/using-identity-federation.html["Identitätsföderation wird konfiguriert"] in StorageGRID verwendet haben.
+
+** Für Active Directory die Option *LDAP Type* auswählen.
+
+
+
+
+
+
+[[step-2-create-password-credential-validatorpassword-validator-oidc]]
+== Schritt 2: Passwort-Credential-Validator erstellen[[password-validator-oidc]]
+
+Wenn Sie noch nicht vorhanden sind, erstellen Sie einen Validierer für Kennwortausweise.
+
+.Schritte
+. Wählen Sie *Password Credential Validators* > *Create New instance*.
+. Auf der Registerkarte „Typ“ sind die folgenden Informationen einzugeben:
++
+.. INSTANZNAME und INSTANZ-ID: Für beide kann derselbe Wert verwendet werden.
+.. Typ: *LDAP Username Password Credential Validator* auswählen.
+
+
+. Wählen Sie *Weiter*.
+. Auf der Registerkarte „Instanzkonfiguration“ sind die folgenden Informationen einzugeben:
++
+** LDAP DATASTORE: Wählen Sie den <<data-store-oidc,Datastore>> von Ihnen erstellten Datenspeicher aus.
+** SUCHBASIS: Geben Sie die Informationen für die <<data-store-oidc,LDAP-Konfiguration>> ein.
+** SUCHFILTER: *sAMAccountName=${username}* eingeben.
+** SUCHEUMFANG: *Subtree* auswählen.
+
+
+. Wählen Sie *Weiter*.
+. Auf der Registerkarte „Erweiterter Vertrag“ die folgenden Attribute hinzufügen:  `memberOf`, `objectGUID`, `sAMAccountName`, `sn` und  `userPrincipalName`
+. *Weiter* > *Speichern* auswählen.
+
+
+
+
+[[step-3-create-idp-adapter-instanceadapter-instance-oidc]]
+== Schritt 3: Erstellen einer IdP-Adapterinstanz[[adapter-instance-oidc]]
+
+Falls noch nicht geschehen, eine IdP-Adapterinstanz (Identity Provider) erstellen.
+
+
+NOTE: Jeder Admin Node in Ihrem StorageGRID System muss über eine IdP-Verbindung verfügen. Dies stellt sicher, dass sich Benutzer sicher bei jedem Admin Node an- und abmelden können. Es kann eine einzelne IdP-Verbindung für alle Admin Nodes erstellt werden (empfohlen) oder eine separate IdP-Verbindung für jeden Admin Node.
+
+.Schritte
+. Gehen Sie zu *Authentifizierung* > *Integration* > *IdP-Adapter*.
+. Wählen Sie *Neue Instanz Erstellen*.
+. Auf der Registerkarte „Typ“ sind die folgenden Informationen einzugeben:
++
+** INSTANZNAME und INSTANZ-ID: Für beide kann derselbe Wert verwendet werden.
+** TYP: *HTML Form IdP Adapter* auswählen.
+
+
+. Wählen Sie *Weiter*.
+. Auf der Registerkarte *IdP Adapter* die Option *Add a new row to 'Credential Validators'* auswählen.
+. Wählen Sie die <<password-validator-oidc,Gültigkeitsprüfung für Kennwortausweise>> aus, die Sie erstellt haben.
+. Wählen Sie *Weiter*.
+. Auf der Registerkarte „Erweiterter Vertrag“ die Attribute hinzufügen, die für den <<password-validator-oidc,Gültigkeitsprüfung für Kennwortausweise>> zugeordnet wurden.
+. Wählen Sie *Weiter*.
+. Auf der Registerkarte Adapterattribute ist das Attribut *username* für Pseudonym auszuwählen.
+. *Weiter* > *Weiter* auswählen.
+. Die Zusammenfassung kann überprüft und *Speichern* ausgewählt werden.
+
+
+
+
+[[step-4-configure-oauth-server-and-authorization-server-settings]]
+== Schritt 4: OAuth-Server- und Autorisierungsservereinstellungen konfigurieren
+
+Der Autorisierungsserver wird so konfiguriert, dass er die von StorageGRID akzeptierten Grant-Typen unterstützt.
+
+.Schritte
+. Zu *System* > *Autorisierungsservereinstellungen* wechseln.
+. Es sollte überprüft werden, ob die folgenden Optionen für „Vorhandene dauerhafte Zugriffsberechtigungen für Berechtigungstypen wiederverwenden“ ausgewählt sind:
++
+** IMPLIZIT
+** AUTORISIERUNGSCODE
+** Ressourceninhaber-Passwort-Zugangsdaten
++
+
+NOTE: Wenn Ihr Unternehmen die Verwendung von RESSOURCENBESITZERPASSWORT-ANMELDEINFORMATIONEN einschränkt, kann nur AUTHORIZATION CODE verwendet werden.
+
+
+
+. Für OAuth Administrative Web Services Settings die von Ihnen erstellte <<password-validator-oidc,Gültigkeitsprüfung für Kennwortausweise>> auswählen.
+
+
+
+
+[[step-5-define-scopes]]
+== Schritt 5: Bereiche definieren
+
+Die Bereiche in PingFederate definieren.
+
+.Schritte
+. Wechseln Sie zu *System* > *OAuth Settings* > *Scope Management*.
+. Auf der Registerkarte „Allgemeine Bereiche“ die Werte für *openid*, *email* und *profile* hinzufügen, falls diese noch nicht vorhanden sind.
+
+
+
+
+[[step-6-configure-idp-adapter-mapping]]
+== Schritt 6: Konfiguration der IdP-Adapterzuordnung
+
+Die IdP-Adapterzuordnung wird so konfiguriert, dass Attribute vom IdP auf persistente Berechtigungen abgebildet werden, die an Clients ausgegeben werden, wie etwa Zugriffstoken oder Aktualisierungstoken.
+
+.Schritte
+. Wechseln Sie zu *Authentifizierung* > *Policy Contract Grant Mapping*.
+. *IdP Adapter Grant Mapping* auswählen.
+. Im Dropdown-Menü SOURCE ADAPTER INSTANCE die von Ihnen erstellte <<adapter-instance-oidc,HTML Form Adapter>> auswählen.
+. Wählen Sie *Zuordnung hinzufügen* > *Vertragserfüllung*.
+. Unter Quelle *Adapter* für USER_KEY und USER_NAME auswählen.
+. Unter „Wert“ ist für USER_KEY *sAMAccountName* und für USER_NAME *username* auszuwählen.
+. *Weiter* > *Weiter* auswählen, um zur Übersichtsseite zu navigieren.
+. Wählen Sie *Speichern*.
+
+
+
+
+[[step-7-set-up-resource-owner-credentials-mapping]]
+== Schritt 7: Zuordnung der Anmeldeinformationen des Ressourceninhabers einrichten
+
+Die Zuordnung der Anmeldeinformationen des Ressourceninhabers wird eingerichtet, damit die Benutzeranmeldeinformationen während der Authentifizierung korrekt validiert werden.
+
+.Schritte
+. Wechseln Sie zu *Authentifizierung* > *Policy Contract Grant Mapping*.
+. *Zuordnung der Berechtigungsvergabe für Ressourceninhaber* auswählen.
+. Im Dropdown-Menü „Quellpasswortvalidierungsinstanz“ die von Ihnen erstellte <<password-validator-oidc,Gültigkeitsprüfung für Kennwortausweise>> auswählen.
+. Wählen Sie *Zuordnung hinzufügen* > *Vertragserfüllung*.
+. Die Zuordnung für USER_KEY hinzufügen:
++
+** Unter Quelle *Password Credential Validator* auswählen.
+** Unter „Wert“ *sAMAccountName* auswählen.
+
+
+. *Weiter* > *Weiter* auswählen, um zur Übersichtsseite zu navigieren.
+. Wählen Sie *Speichern*.
+
+
+
+
+[[step-8-create-or-import-signing-certificatesigning-certificate-oidc]]
+== Schritt 8: Signaturzertifikat erstellen oder importieren[[signing-certificate-oidc]]
+
+Wenn Sie noch nicht, erstellen oder importieren Sie das Signierungszertifikat.
+
+.Schritte
+. Gehen Sie zu *Sicherheit* > *Signieren & Entschlüsseln Schlüssel & Zertifikate*.
+. *Neu erstellen* auswählen und anschließend die folgenden Informationen eingeben:
++
+** Allgemeiner Name (CN): Dies sollte die vollqualifizierte Domain (FQDN) des Servers sein.
+** Organisation (Org): Der Name Ihrer Organisation.
+** Land: Geben Sie den zweistelligen Ländercode an, zum Beispiel US für die Vereinigten Staaten.
+** Schlüsselalgorithmus: Der geeignete Schlüsselalgorithmus, wie zum Beispiel *RSA*, kann ausgewählt werden.
+** Schlüsselgröße: Auf *2048* Bit eingestellt.
+** Signaturalgorithmus: *RSA mit SHA256* als Algorithmus auswählen, um sichere kryptografische Operationen zu gewährleisten.
+
+
+
+
+
+
+[[step-9-configure-access-token-managementaccess-token-oidc]]
+== Schritt 9: Zugriffstoken-Management konfigurieren[[access-token-oidc]]
+
+StorageGRID verwendet Zugriffstoken zur Authentifizierung und Autorisierung von API-Anfragen in PingFederate.
+
+.Schritte
+. Zu *Anwendungen* > *Access Token Management* navigieren.
+. Wählen Sie *Neue Instanz Erstellen*.
+. Auf der Registerkarte „Typ“ sind die folgenden Informationen einzugeben:
++
+** INSTANZNAME und INSTANZ-ID: Für beide kann derselbe Wert verwendet werden.
+** Typ: Es ist zu überprüfen, dass der Wert *JSON Web Tokens* ist.
+
+
+. Wählen Sie *Weiter*.
+. Auf der Registerkarte „Instanzkonfiguration“ sind die folgenden Informationen für Zertifikate einzugeben:
++
+** SCHLÜSSEL-ID: Eine eindeutige Kennung für den Schlüssel eingeben.
+** Zertifikat: Fügen Sie das von Ihnen erstellte <<signing-certificate-oidc,Zertifikat>> hinzu.
+** JWS-Algorithmus: *RSA mit SHA256* auswählen.
+** AKTIVE SIGNATURZERTIFIKAT SCHLÜSSEL-ID: Die *SCHLÜSSEL-ID*, die in diesem Schritt erstellt wurde, auswählen.
+
+
+. *Weiter* > *Weiter* auswählen.
+. Auf der Registerkarte „Access Token Attribute Contract“ ist für „Subject Attribute Name“ *USER_KEY* und für „Extend the Contract“ *username* auszuwählen.
+. Wählen Sie *Hinzufügen*.
+. Wählen Sie *Weiter* > *Weiter* > *Weiter*, um zur Übersichtsseite zu gelangen.
+. Wählen Sie *Speichern*.
+
+
+
+
+[[step-10-configure-access-token-mapping]]
+== Schritt 10: Zugriffstoken-Zuordnung konfigurieren
+
+Die Zugriffstokenzuordnung wird so konfiguriert, dass das erstellte Zugriffstoken verwendet wird.
+
+.Schritte
+. Zu *Anwendungen* > *Access Token Mappings* wechseln.
+. *Access Token Mappings* auswählen.
+. *Zuordnung hinzufügen* auswählen.
+. Für Kontext *Standard* auswählen.
+. Für Access Token Manager den <<access-token-oidc,Zugriffstoken>> ausgewählten Token verwenden.
+. *Weiter* > *Vertragserfüllung* auswählen:
+. Unter Quelle *Persistent Grant* für Benutzernamen auswählen.
+. Unter „Wert“ *USER_KEY* für den Benutzernamen auswählen.
+. *Weiter* > *Speichern* auswählen.
+
+
+
+
+[[step-11-set-up-the-openid-connect-policy]]
+== Schritt 11: OpenID Connect Richtlinie einrichten
+
+Die OpenID Connect Richtlinien für den Clientzugriff auf die Attribute, die gemäß den OpenID Spezifikationen zugeordnet sind, werden definiert.
+
+.Schritte
+. Wechseln Sie zu *Anwendungen* > *OAuth Clients*.
+. *OpenId Connect Policy Management* > *Richtlinie hinzufügen* auswählen.
+. Auf der Registerkarte „Richtlinie verwalten“ sind die folgenden Informationen einzugeben:
++
+** RICHTLINIEN-ID: Eine eindeutige Kennung für die Richtlinie.
+** RICHTLINIENNAME: Ein beschreibender Name für die Richtlinie.
+** ACCESS TOKEN MANAGER: Das von Ihnen erstellte <<access-token-oidc,Zugriffstoken>> auswählen.
+** GÜLTIGKEIT DES ID-TOKENS: Die gewünschte Gültigkeitsdauer des ID-Tokens kann festgelegt werden, zum Beispiel 60 Minuten oder eine Stunde.
+** BENUTZERINFORMATIONEN IM ID-TOKEN EINBEZIEHEN: Das Kontrollkästchen auswählen, um Benutzerdetails im ID-Token einzuschließen.
+
+
+. Wählen Sie *Weiter*.
+. Auf der Registerkarte „Attributvertrag“ alle vorhandenen Attribute entfernen, die für den <<data-store-oidc,Datastore>> erstellt wurden, aber nicht erforderlich sind. Nur die Attribute beibehalten, die von Ping Authentifizierung an StorageGRID übergeben werden sollen.
++
+
+NOTE: Dies ist ein entscheidender Schritt. Er legt fest, welche Attributwerte im ID-Token enthalten sind. StorageGRID übernimmt diese Werte während des Authentifizierungsprozesses.
+
+. *Weiter* > *Weiter* auswählen.
+. Auf der Registerkarte „Attributquelle & Benutzersuche“ die Option *Attributquelle hinzufügen* auswählen. Anschließend die folgenden Informationen eingeben:
++
+** ATTRIBUTE SOURCE ID und ATTRIBUTE SOURCE DESCRIPTION: Sie können für beide den gleichen Wert verwenden.
+** AKTIVER DATENSPEICHER: Wählen Sie den <<data-store-oidc,Datastore>> von Ihnen erstellten Speicherort aus.
+
+
+. Wählen Sie *Weiter*.
+. Auf der Registerkarte LDAP-Verzeichnissuche:
++
+.. Geben Sie den *Basis-DN* ein, der exakt mit dem Wert übereinstimmt, den Sie in StorageGRID für den LDAP-Server eingegeben haben.
+.. Im Dropdown-Menü ROOT OBJECT CLASS ist *objectClass* auszuwählen.
+.. Im Dropdown-Menü ATTRIBUTE wird für jede Objektklasse, die zugeordnet werden soll, ein Attribut hinzugefügt. Beispielsweise:
++
+*** InetOrgPerson: displayName, givenName oder HomePhone hinzufügen.
+*** Benutzer: LocalID oder userPrincipalName (upn) hinzufügen.
+*** oben: memberOf oder Name hinzufügen.
+*** Person: Seriennummer hinzufügen.
+
+
+
+
+. Wählen Sie *Weiter*.
+. Geben Sie auf der Registerkarte LDAP-Filter *sAMAccountName=€{username}* ein.
++
+Der LDAP-Filter ist anzupassen, damit StorageGRID die Benutzerattribute entsprechend der spezifischen Active Directory- oder LDAP-Struktur Ihrer Organisation abruft. Für den passenden Filterausdruck zur eigenen Konfiguration empfiehlt sich die Rücksprache mit dem LDAP/AD-Administrator.
+
+. *Speichern* auswählen und die Zusammenfassung überprüfen.
+. Auf der Registerkarte „Vertragserfüllung“ sind die folgenden Informationen einzugeben:
++
+** Quelle: Wählen Sie die <<data-store-oidc,LDAP Datenspeicher>> von Ihnen erstellte Quelle aus.
+** Wert: Jedem Attribute Contract wird der jeweilige Wert zugeordnet.
+
+
+. *Weiter* > *Weiter* auswählen.
+. Die Zusammenfassung kann überprüft und *Speichern* ausgewählt werden.
+. Zu *Anwendungen* > *OAuth Clients* > *OpenID Connect Policy Management* wechseln.
+. Es sollte überprüft werden, ob die erstellte Richtlinie als Standardrichtlinie festgelegt ist.
+
+
+
+
+[[step-12-create-oauth-client-for-oauth-server]]
+== Schritt 12: OAuth Client für den OAuth Server erstellen
+
+Ein neuer OAuth-Client wird erstellt, um die erforderlichen Client-Anmeldeinformationen zu konfigurieren und Verbindungen zwischen PingFederate und StorageGRID zu autorisieren.
+
+.Schritte
+. Wechseln Sie zu *Anwendungen* > *OAuth Clients*.
+. *Client hinzufügen* auswählen und anschließend die folgenden Informationen eingeben:
++
+** KUNDEN-ID: Ein eindeutiger Wert ist einzugeben.
+** CLIENT AUTHENTIFIZIERUNG: *Client Secret* auswählen.
+** CLIENT SECRET: *Geheimnis ändern* > *Geheimnis generieren* auswählen.
++
+Dadurch wird der geheime Schlüssel für den Client generiert. Dieser Schlüssel sollte für die spätere Verwendung aufbewahrt werden.
+
+** UMLEITUNGS-URIS: Die StorageGRID Rückgabe-URLs sind im Abschnitt *Umleitungs-URI* anzugeben. Diese URLs sollten mit den in StorageGRID für OAuth konfigurierten URLs übereinstimmen, zum Beispiel:
+** `\https://<Admin IP or Hostname>/api/v4/oidc-callback`
+** `\https://<Admin IP or Hostname>/api/v4/oidc-logged-out`
+** ZULÄSSIGE GRANT-TYPEN: Die folgenden Optionen können ausgewählt werden:
++
+*** *Autorisierungscode*: Dies initiiert den OAuth-Ablauf.
+*** *Refresh Token*: Ein neues Token erhalten, wenn ein Zugriffstoken abläuft.
+*** *Anmeldeinformationen des Ressourceninhabers*: Wenn ein direkter Zugriff auf Benutzeranmeldeinformationen für die Authentifizierung erforderlich ist.
+
+
+** OPENID CONNECT: *RSA mit SHA-256* als Signieralgorithmus für ID-Token auswählen.
+** Abmeldemodus: *OIDC Back-Channel* auswählen.
+** Front-Channel Logout URI, Back-Channel Logout URI und Post-Logout Redirect URI: Die StorageGRID Logout-URI hinzufügen: `\https://<Admin IP or Hostname>/api/v4/oidc-logged-out`
+
+
+. Wählen Sie *Speichern*.
+
+
+.Was kommt als Nächstes
+Nach dem Erstellen von SP-Verbindungen link:configure-sso-oidc.html["SSO mit OIDC konfigurieren"].

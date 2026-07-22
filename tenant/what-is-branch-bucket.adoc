@@ -38,6 +38,7 @@ Beachten Sie die folgenden Merkmale von Zweig-Buckets:
 
 * Sie können einen Branch-Bucket verwenden, um beschädigte Objekte zu entfernen, indem Sie einen Branch-Bucket von einem Zeitpunkt vor dem Auftreten der Beschädigung erstellen und dann Anwendungen auf den Branch-Bucket statt auf den Basis-Bucket verweisen, der beschädigte Objekte enthält.
 * Sie speichern Daten in einem versionierten Bucket.  Es gab eine versehentliche Sicherheitslücke, die dazu führte, dass nach der Zeit _T_ viele unerwünschte Objekte aufgenommen wurden.  Sie können einen Branch-Bucket für den Vorher-Zeitwert _T_ erstellen und Clientvorgänge an diesen Branch-Bucket umleiten.  Dann werden den Clients nur Objekte angezeigt, die vor der Vorzeit _T_ aufgenommen wurden.
+* Sie speichern Daten in einem versionierten Bucket. Es gab eine versehentliche Schwachstelle, die dazu führte, dass zwischen den Zeitpunkten _T1_ und _T2_ viele unerwünschte Objekte aufgenommen wurden. Es kann ein Branch-Bucket für die auszuschließenden Zeitwerte _T1_ und _T2_ erstellt und Client-Operationen an diesen Branch-Bucket umgeleitet werden. So werden Clients nur Objekte bereitgestellt, die vor _T1_ und nach _T2_ aufgenommen wurden.
 
 
 

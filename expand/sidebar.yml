@@ -50,8 +50,6 @@ entries:
     url: "/expand/configuring-expanded-storagegrid-system.html"
   - title: Überprüfen Sie, ob die Speicherknoten aktiv sind.
     url: "/expand/verifying-storage-node-is-active.html"
-  - title: Admin-Knoten-Datenbank kopieren
-    url: "/expand/copying-admin-node-database.html"
   - title: Kopieren Sie die Prometheus-Kennzahlen
     url: "/expand/copying-prometheus-metrics.html"
   - title: Prüfprotokolle kopieren

@@ -57,9 +57,9 @@ Verwenden Sie die Common Criteria-Richtlinie, wenn Sie eine Common Criteria-Zert
 --
 .FIPS-strikt
 --
-Verwenden Sie die strikte FIPS-Richtlinie, wenn Sie eine Common Criteria-Zertifizierung benötigen und das NetApp Cryptographic Security Module (NCSM) 3.0.8 oder das NetApp StorageGRID Kernel Crypto API 6.1.129-1-ntap1-amd64-Modul für externe Clientverbindungen zu Load Balancer-Endpunkten, Tenant Manager und Grid Manager verwenden müssen.  Die Verwendung dieser Richtlinie kann die Leistung beeinträchtigen.
+Die FIPS-Richtlinie „Streng“ ist zu verwenden, wenn eine Common Criteria Zertifizierung erforderlich ist und das NetApp Cryptographic Security Module (NCSM) 3.1.2 oder das NetApp StorageGRID Kernel Crypto API 6.12.63-1+ntap1 Modul für externe Clientverbindungen zu Load Balancer Endpunkten, Tenant Manager und Grid Manager benötigt wird. Die Verwendung dieser Richtlinie kann die Leistung beeinträchtigen.
 
-Das NCSM 3.0.8- und NetApp StorageGRID Kernel Crypto API 6.1.129-1-ntap1-amd64-Modul wird in den folgenden Vorgängen verwendet:
+Das NCSM 3.1.2 und das NetApp StorageGRID Kernel Crypto API 6.12.63-1+ntap1 Modul werden in den folgenden Operationen verwendet:
 
 ** NCSM
 +
@@ -71,7 +71,7 @@ Das NCSM 3.0.8- und NetApp StorageGRID Kernel Crypto API 6.1.129-1-ntap1-amd64-M
 
 
 +
-Weitere Informationen finden Sie im NIST Cryptographic Algorithm Validation Program.link:https://csrc.nist.gov/projects/cryptographic-module-validation-program/certificate/4838["Zertifikat Nr. 4838"^] .
+Weitere Informationen sind im NIST Cryptographic Algorithm Validation Program link:https://csrc.nist.gov/projects/cryptographic-algorithm-validation-program/details?validation=40426["Zertifikat Nr. A7816"^] zu finden.
 
 ** NetApp StorageGRID Kernel Crypto API-Modul
 +
@@ -80,10 +80,13 @@ Das NetApp StorageGRID Kernel Crypto API-Modul ist nur auf VM- und StorageGRID A
 +
 *** Entropie-Sammlung
 *** Knotenverschlüsselung
++
+*Hinweis*: Dieses Modul wurde nicht zur Zertifizierung eingereicht.
+
 
 
 +
-Weitere Informationen finden Sie im NIST Cryptographic Algorithm Validation Program.link:https://csrc.nist.gov/projects/cryptographic-algorithm-validation-program/validation-search?searchMode=implementation&product=NetApp+StorageGRID+Kernel+Crypto+API&productType=-1&ipp=50["Zertifikate Nr. A6242 bis Nr. A6257"^] Undlink:https://csrc.nist.gov/projects/cryptographic-module-validation-program/entropy-validations/certificate/223["Entropie-Zertifikat Nr. E223"^] .
+Weitere Informationen sind im NIST Cryptographic Algorithm Validation Program link:https://csrc.nist.gov/projects/cryptographic-module-validation-program/entropy-validations/certificate/223["Entropie-Zertifikat Nr. E223"^] zu finden.
 
 
 
@@ -94,7 +97,7 @@ Weitere Informationen finden Sie im NIST Cryptographic Algorithm Validation Prog
 --
 Erstellen Sie eine benutzerdefinierte Richtlinie, wenn Sie Ihre eigenen Chiffren anwenden müssen.
 
-Wenn Ihr StorageGRID FIPS 140-Kryptografieanforderungen hat, aktivieren Sie optional die FIPS-Modusfunktion, um das NCSM 3.0.8- und NetApp StorageGRID Kernel Crypto API 6.1.129-1-ntap1-amd64-Modul zu verwenden:
+Optional kann, falls für Ihr StorageGRID FIPS 140-Kryptografieanforderungen bestehen, die FIPS-Modus-Funktion aktiviert werden, um das NCSM 3.1.2 und das NetApp StorageGRID Kernel Crypto API 6.12.63-1+ntap1 Modul zu verwenden:
 
 .. Legen Sie die `fipsMode` Parameter auf `true` .
 .. Wenn Sie dazu aufgefordert werden,link:../maintain/rolling-reboot-procedure.html["Führen Sie einen Rolling Reboot durch"] für alle Knoten, um die Kryptografiemodule zu aktivieren.  Verwenden Sie *Wartung* > *Rollierender Neustart*, um Neustarts zu initiieren und zu überwachen.
@@ -121,7 +124,7 @@ Sie können eine benutzerdefinierte Richtlinie erstellen, wenn Sie Ihre eigenen 
 . Wählen Sie auf der Kachel der Richtlinie, die der benutzerdefinierten Richtlinie, die Sie erstellen möchten, am ähnlichsten ist, *Details anzeigen* aus.
 . Wählen Sie *in Zwischenablage kopieren*, und wählen Sie dann *Abbrechen*.
 +
-image:securitysettings-custom-security-policy-copy.png["Kopieren einer vorhandenen Richtlinie zum Erstellen einer benutzerdefinierten Richtlinie"]
+image:securitysettings_custom_security_policy_copy.png["Kopieren einer vorhandenen Richtlinie zum Erstellen einer benutzerdefinierten Richtlinie"]
 
 . Wählen Sie in der Kachel *Benutzerdefinierte Richtlinie* die Option *Konfigurieren und Verwenden* aus.
 . Fügen Sie die JSON ein, die Sie kopiert haben, und nehmen Sie alle erforderlichen Änderungen vor.

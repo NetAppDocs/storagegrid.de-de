@@ -59,7 +59,7 @@ image:erasure_coding_data_flow.png["Verfahren Zur Einhaltung Von Datenkonsistenz
 [[content-protection-cloud-storage-pool]]
 == Content-Sicherung: Cloud Storage Pool
 
-Wenn für die Anweisungen zur Content-Platzierung einer ILM-Regel eine replizierte Kopie von Objektdaten in einem Cloud Storage-Pool gespeichert wird, werden Objektdaten in den externen S3-Bucket oder Azure Blob-Storage-Container dupliziert, der für den Cloud Storage-Pool angegeben wurde.
+Wenn die Inhaltsplatzierungsanweisungen einer ILM-Regel erfordern, dass eine replizierte Kopie der Objektdaten in einem Cloud Storage Pool gespeichert wird, werden die Objektdaten in den externen S3-Bucket oder Azure Blob Storage Container dupliziert, der für den Cloud Storage Pool angegeben wurde.
 
 Die ILM-Engine, die eine Komponente des LDR-Service ist, und der Data Mover-Service steuern die Verschiebung von Objekten in den Cloud-Speicherpool.
 

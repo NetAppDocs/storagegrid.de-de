@@ -47,7 +47,7 @@ Sie können *Suche* verwenden, um Einträge in der Seitenleiste des Grid Manager
 [[help-menu]]
 == Hilfe-Menü
 
-Das Hilfemenü image:icon-help-menu-bar.png["Hilfe-Symbol in der Menüleiste"] bietet Zugriff auf:
+Das Hilfemenü image:icon_help_menu_bar.png["Hilfe-Symbol in der Menüleiste"] bietet Zugriff auf:
 
 * Derlink:../fabricpool/use-fabricpool-setup-wizard.html["FabricPool"] Undlink:../admin/use-s3-setup-wizard.html["S3-Einrichtung"] Zauberer
 * Die StorageGRID -Dokumentationsseite für die aktuelle Version
@@ -68,7 +68,7 @@ Das Menü „Meldungen“ bietet eine benutzerfreundliche Oberfläche zum Erkenn
 * Überprüfen Sie behobene Warnmeldungen
 * Konfigurieren Sie Stille, um Benachrichtigungen zu unterdrücken
 * Definieren Sie Alarmregeln für Bedingungen, die Warnmeldungen auslösen
-* Konfigurieren Sie den E-Mail-Server für Warnmeldungen
+* E-Mail-Benachrichtigungen für StorageGRID Warnungen konfigurieren
 
 
 
@@ -148,7 +148,7 @@ Zu den Sicherheitsaufgaben gehören:
 
 Zu den Systemaufgaben gehören:
 
-* Verwendenlink:../admin/grid-federation-overview.html["Grid-Verbund"] zum Klonen von Mandantenkontoinformationen und Replizieren von Objektdaten zwischen zwei StorageGRID Systemen
+* Verwenden Sie link:../admin/grid-federation-overview.html["Grid-Verbund"], um Mandantenkontoinformationen zu synchronisieren und Objektdaten zwischen zwei StorageGRID Systemen zu replizieren.
 * Aktivieren Sie optional dielink:../admin/configuring-stored-object-compression.html["Gespeicherte Objekte komprimieren"] Option
 * Konfigurieren Sie optional dielink:../s3/consistency.html["Standardeinstellung für die Bucket-Konsistenz"]
 * link:../ilm/managing-objects-with-s3-object-lock.html["S3-Objektsperre verwalten"]
@@ -163,6 +163,7 @@ Zu den Systemaufgaben gehören:
 
 Zu den Überwachungsaufgaben gehören:
 
+* link:../monitor/configure-email-server.html["E-Mail-Server konfigurieren"]
 * link:../monitor/configure-log-management.html["Konfigurieren der Protokollverwaltung"]
 * link:../monitor/using-snmp-monitoring.html["Verwenden Sie SNMP-Überwachung"]
 
@@ -179,6 +180,7 @@ Zu den Aufgaben der Zugriffssteuerung gehören:
 * Ändern Sie dielink:../admin/changing-provisioning-passphrase.html["Provisionierungs-Passphrase"] oderlink:../admin/change-node-console-password.html["Passwörter für die Node-Konsole"]
 * link:../admin/using-identity-federation.html["Verwenden Sie den Identitätsverbund"]
 * link:../admin/how-sso-works.html["SSO konfigurieren"]
+* link:../admin/about-multi-admin-verify.html["Multi-Admin-Verifizierung konfigurieren"]
 
 
 
@@ -201,7 +203,13 @@ Zu den Wartungsarbeiten gehören:
 * link:../maintain/rename-grid-site-node-overview.html["Verfahren umbenennen"] Ändern der Anzeigenamen des Rasters, der Standorte und Knoten
 * link:../troubleshoot/verifying-object-integrity.html["Vorgänge zur Überprüfung der Objektexistenz"] Um das Vorhandensein von Objektdaten (wenn auch nicht die Richtigkeit) zu überprüfen
 * Führen Sie einenlink:../maintain/rolling-reboot-procedure.html["Neustart wird durchgeführt"] um mehrere Grid-Knoten neu zu starten
-* link:../maintain/restoring-volume.html["Volume-Wiederherstellungsvorgänge"]
+* Wiederherstellen der Objektdaten
++
+** link:../maintain/restoring-object-data-to-storage-volume-for-appliance.html["Wiederherstellung von Objektdaten auf Storage Volumes für die Appliance"]
+** link:../maintain/restoring-object-data-to-storage-volume-where-system-drive-is-intact.html["Wiederherstellung von Objektdaten auf dem Storage Volume, auf dem das Systemlaufwerk intakt ist"]
+** link:../maintain/restoring-object-data-to-storage-volume.html["Wiederherstellung von Objektdaten auf einem Storage-Volume (Systemausfall)"]
+
+
 
 
 
@@ -249,7 +257,7 @@ Das Menü Support enthält Optionen, die dem technischen Support bei der Analyse
 
 Im Abschnitt Tools des Menüs Support können Sie folgende Aufgaben ausführen:
 
-* link:../admin/configure-autosupport-grid-manager.html["Konfigurieren Sie AutoSupport"]
+* link:../monitor/configure-autosupport-grid-manager.html["Konfigurieren Sie AutoSupport"]
 * link:../monitor/running-diagnostics.html["Führen Sie eine Diagnose aus"] Auf den aktuellen Zustand des Rasters
 * link:../monitor/collecting-log-files-and-system-data.html["Erfassen von Protokolldateien und Systemdaten"]
 * link:../monitor/reviewing-support-metrics.html["Prüfen von Support-Kennzahlen"]
@@ -267,7 +275,6 @@ NOTE: Die Tools, die über die Option *Metrics* zur Verfügung stehen, sind für
 Im anderen Bereich des Menüs „Support“ haben Sie folgende Möglichkeiten:
 
 * Konfigurierenlink:../monitor/manage-io-prioritization.html["E/A-Priorisierung"]
-* Konfigurierenlink:../admin/configure-autosupport-grid-manager.html["AutoSupport -E-Mail-Setup (Legacy)"]
 * Managen link:../admin/manage-link-costs.html["Verbindungskosten"]
 * Anzeigen von Knotendienst-IDs
 * Managen link:../admin/what-storage-volume-watermarks-are.html["Storage-Wasserzeichen"]

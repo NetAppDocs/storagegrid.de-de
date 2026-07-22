@@ -1,8 +1,8 @@
 ---
 permalink: admin/grid-federation-troubleshoot.html 
 sidebar: sidebar 
-keywords: troubleshoot, grid federation connection, account clone, cross-grid replication, alerts, errors 
-summary: Unter Umständen müssen Sie Warnmeldungen und Fehler in Bezug auf Grid-Verbindungen, Account-Klone und Grid-Replizierung beheben. 
+keywords: troubleshoot, grid federation connection, account sync, cross-grid replication, alerts, errors 
+summary: Möglicherweise treten Warnmeldungen und Fehler im Zusammenhang mit Grid Federation-Verbindungen, Kontosynchronisierung und gridübergreifender Replizierung auf, die eine Fehlerbehebung erfordern. 
 ---
 = Beheben von Grid-Federation-Fehlern in StorageGRID
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Unter Umständen müssen Sie Warnmeldungen und Fehler in Bezug auf Grid
 
 
 [role="lead"]
-Unter Umständen müssen Sie Warnmeldungen und Fehler in Bezug auf Grid-Verbindungen, Account-Klone und Grid-Replizierung beheben.
+Möglicherweise treten Warnmeldungen und Fehler im Zusammenhang mit Grid Federation-Verbindungen, Kontosynchronisierung und gridübergreifender Replizierung auf, die eine Fehlerbehebung erfordern.
 
 
 
@@ -73,32 +73,30 @@ Wenn Sie eine Grid-Federation-Verbindung bearbeiten, versucht StorageGRID, eine 
 
 
 
-[[account-clone-errors]]
-== Fehler beim Klonen des Kontos
+[[account-sync-errors]]
+== Kontosynchronisierungsfehler
 
 
 
-[[cant-sign-in-to-a-cloned-tenant-account]]
-=== Keine Anmeldung bei einem geklonten Mandantenkonto möglich
+[[cant-sign-in-to-a-synced-tenant-account]]
+=== Anmeldung bei einem synchronisierten Mandantenkonto nicht möglich
 
 .Problem
-Sie können sich nicht bei einem geklonten Mandantenkonto anmelden. Die Fehlermeldung auf der Anmeldeseite des Tenant Manager lautet „Ihre Anmeldedaten für dieses Konto waren ungültig. Bitte versuchen Sie es erneut.“
+Sie können sich nicht bei einem synchronisierten Mandantenkonto anmelden. Die Fehlermeldung auf der Anmeldeseite des Tenant Manager lautet: „Ihre Anmeldeinformationen für dieses Konto sind ungültig. Bitte versuchen Sie es erneut.“
 
 .Details
-Wenn ein Mandantenkonto aus dem Quellraster des Mandanten im Zielraster des Mandanten geklont wird, wird aus Sicherheitsgründen das Passwort, das Sie für den lokalen Stammbenutzer des Mandanten festgelegt haben, nicht geklont. Wenn ein Mandant lokale Benutzer in seinem Quellraster erstellt, werden die lokalen Benutzerpasswörter nicht im Zielraster geklont.
+Das für den lokalen Root-Benutzer des Mandanten und andere lokale Benutzer festgelegte Passwort wird automatisch synchronisiert. Es kann jedoch erforderlich sein, das Passwort für den lokalen Root-Benutzer des Mandanten im Ziel-Grid zu ändern, bevor eine Anmeldung am Mandantenkonto auf diesem Grid möglich ist.
 
 .Empfohlene Maßnahmen
 Bevor sich der Root-Benutzer im Zielraster des Mandanten anmelden kann, muss zunächst ein Grid-Administrator link:changing-password-for-tenant-local-root-user.html["Ändern Sie das Passwort für den lokalen Root-Benutzer"]im Zielraster angemeldet werden.
 
-Bevor sich ein geklonter lokaler Benutzer beim Zielraster des Mandanten anmelden kann, muss der Root-Benutzer des geklonten Mandanten ein Kennwort für den Benutzer im Zielraster hinzufügen.  Anweisungen hierzu finden Sie unterlink:../tenant/manage-users.html["Benutzer managen"] in der Anleitung zur Nutzung des Tenant Managers.
 
 
-
-[[tenant-created-without-a-clone]]
-=== Mandant wird ohne Klon erstellt
+[[tenant-created-without-a-sync]]
+=== Mandant ohne Synchronisierung erstellt
 
 .Problem
-Sie sehen die Meldung "Tenant created without a Clone", nachdem Sie einen neuen Tenant mit der Berechtigung *use Grid Federation connection* erstellt haben.
+Nach dem Erstellen eines neuen Mandanten mit der Berechtigung *Grid-Federationsverbindung verwenden* erscheint die Meldung „Mandant ohne Synchronisierung erstellt“.
 
 .Details
 Dieses Problem kann auftreten, wenn Aktualisierungen des Verbindungsstatus verzögert werden, was dazu führen kann, dass eine fehlerhafte Verbindung als *verbunden* aufgeführt wird.
@@ -107,12 +105,9 @@ Dieses Problem kann auftreten, wenn Aktualisierungen des Verbindungsstatus verz�
 . Überprüfen Sie den in der Fehlermeldung aufgeführten Grund, und beheben Sie alle Netzwerk- oder anderen Probleme, die möglicherweise die Funktion der Verbindung verhindern. Siehe <<grid-federation-errors,Warnmeldungen und Fehler bei der Grid-Verbundverbindung>>.
 . Befolgen Sie die Anweisungen zum Testen einer Netzverbundverbindung inlink:grid-federation-manage-connection.html["Grid-Verbindungen verwalten"], um zu bestätigen, dass das Problem behoben wurde.
 . Wählen Sie im Quellraster des Mandanten *Mandanten* aus.
-. Suchen Sie das Mandantenkonto, das nicht geklont werden konnte.
+. Das Mandantenkonto, das nicht synchronisiert werden konnte, ermitteln.
 . Wählen Sie den Namen der Serviceeinheit aus, um die Detailseite anzuzeigen.
-. Wählen Sie *Kontoklone wiederholen*.
-+
-image:grid-federation-retry-account-clone.png["Screenshot mit einer Fehlermeldung und der Schaltfläche Kontoklonen wiederholen"]Wenn der Fehler behoben wurde, wird das Mandantenkonto nun in das andere Grid geklont.
-
+. *Synchronisierung wiederholen* auswählen. Wenn der Fehler behoben wurde, wird das Mandantenkonto nun mit dem anderen Grid synchronisiert.
 
 
 
@@ -128,7 +123,7 @@ image:grid-federation-retry-account-clone.png["Screenshot mit einer Fehlermeldun
 .Problem
 Wenn link:../monitor/grid-federation-monitor-connections.html["Anzeigen einer Netzverbundverbindung"] (oder wann link:grid-federation-manage-tenants.html["Verwalten der zulässigen Mandanten"] für eine Verbindung) Sie einen Fehler in der Spalte *Last error* auf der Seite mit den Verbindungsdetails bemerken. Beispiel:
 
-image:grid-federation-last-error.png["Screenshot mit einer Meldung in der Spalte Letzter Fehler einer Grid Federation-Verbindung"]
+image:grid_federation_last_error.png["Screenshot mit einer Meldung in der Spalte Letzter Fehler einer Grid Federation-Verbindung"]
 
 .Details
 Für jede Grid-Föderationsverbindung zeigt die Spalte *Letzter Fehler* den letzten Fehler an, der ggf. beim Replizieren der Daten eines Mandanten in das andere Grid aufgetreten ist.  In dieser Spalte wird nur der letzte aufgetretene Fehler bei der Cross-Grid-Replikation angezeigt. Eventuell zuvor aufgetretene Fehler werden nicht angezeigt.  Ein Fehler in dieser Spalte kann aus einem der folgenden Gründe auftreten:
@@ -147,7 +142,10 @@ Für jede Grid-Föderationsverbindung zeigt die Spalte *Letzter Fehler* den letz
 Wenn in der Spalte *Last error* eine Fehlermeldung angezeigt wird, gehen Sie wie folgt vor:
 
 . Überprüfen Sie den Nachrichtentext.
-. Führen Sie alle empfohlenen Aktionen aus. Wenn beispielsweise die Versionierung auf dem Ziel-Bucket für die Grid-übergreifende Replizierung angehalten wurde, aktivieren Sie die Versionierung für diesen Bucket neu.
+. Alle empfohlenen Maßnahmen ausführen.
++
+Wenn beispielsweise die Versionierung für den Ziel-Bucket bei der netzübergreifenden Replikation ausgesetzt wurde, sollte die Versionierung für diesen Bucket wieder aktiviert werden. Oder wenn S3 Object Lock für den Ziel-Bucket bei der netzübergreifenden Replikation deaktiviert wurde, sollte S3 Object Lock für diesen Bucket aktiviert werden.
+
 . Wählen Sie das Verbindungs- oder Mandantenkonto aus der Tabelle aus.
 . Wählen Sie *Fehler löschen*.
 . Wählen Sie *Ja*, um die Meldung zu löschen und den Systemstatus zu aktualisieren.

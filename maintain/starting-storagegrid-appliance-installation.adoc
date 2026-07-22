@@ -16,7 +16,12 @@ Um StorageGRID auf einem Appliance-Speicherknoten zu installieren, verwenden Sie
 .Bevor Sie beginnen
 * Die Appliance wurde in einem Rack installiert, mit Ihren Netzwerken verbunden und eingeschaltet.
 * Mithilfe des StorageGRID Appliance Installer wurden Netzwerkverbindungen und IP-Adressen für die Appliance konfiguriert.
-* Sie kennen die IP-Adresse des primären Admin-Knotens für das StorageGRID-Raster.
+* Sie kennen die IP-Adresse eines der folgenden Admin Nodes:
++
+** Der primäre Admin-Node für das StorageGRID Grid
+** Ein nicht-primärer Admin Node, falls verfügbar
+
+
 * Alle Grid-Subnetze, die auf der Seite IP-Konfiguration des Installationsprogramms für StorageGRID-Geräte aufgeführt sind, wurden in der Netznetzwerksubnetz-Liste auf dem primären Admin-Node definiert.
 * Sie haben diese vorausgesetzten Aufgaben ausgeführt, indem Sie die Installationsanweisungen für Ihre Speicher-Appliance befolgen. Siehe https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/index.html["Schnellstart für die Hardwareinstallation"^].
 * Sie verwenden einen link:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
@@ -26,7 +31,7 @@ Um StorageGRID auf einem Appliance-Speicherknoten zu installieren, verwenden Sie
 .Über diese Aufgabe
 So installieren Sie StorageGRID auf einem Appliance-Speicherknoten:
 
-* Sie geben die IP-Adresse des primären Admin-Knotens und den Hostnamen (Systemnamen) des Knotens an oder bestätigen ihn.
+* Sie geben die IP-Adresse des primären Admin-Knotens an. Wenn der primäre Admin-Knoten nicht verfügbar ist, geben Sie die IP-Adresse des nicht-primären Admin-Knotens an, sofern verfügbar. Sie bestätigen außerdem den Hostnamen (Systemnamen) des Knotens.
 * Sie starten die Installation und warten, bis Volumes konfiguriert und die Software installiert ist.
 +
 
@@ -86,17 +91,17 @@ Automatische Erkennung aller verbundenen primären Admin-Nodes
 |===
 
 
-. Geben Sie im Feld *Node Name* den gleichen Hostnamen (Systemnamen) ein, der für den Knoten verwendet wurde, den Sie wiederherstellen, und klicken Sie auf *Save*.
-. Vergewissern Sie sich im Abschnitt Installation, dass der aktuelle Status „bereit zur Installation von in Grid mit primärem Admin-Knoten `_admin_ip_`“ lautet und dass die Schaltfläche *Installation starten* aktiviert ist `_node name_`.
+. Im Feld *Knotenname* ist derselbe Hostname (Systemname) einzugeben, der für den wiederherzustellenden Knoten verwendet wurde, und *Speichern* auszuwählen.
+. Im Abschnitt „Installation“ sollte der aktuelle Status „Bereit zum Starten der Installation von  `_node name_` in das Grid mit Primary Admin Node `_admin_ip_`“ angezeigt werden und die Schaltfläche *Start installation* aktiviert sein.
 +
 Wenn die Schaltfläche *Installation starten* nicht aktiviert ist, müssen Sie möglicherweise die Netzwerkkonfiguration oder die Porteinstellungen ändern. Anweisungen hierzu finden Sie in der Wartungsanleitung Ihres Geräts.
 
-. Klicken Sie auf der Startseite des StorageGRID-Appliance-Installationsprogramms auf *Installation starten*.
+. Wählen Sie auf der Startseite des StorageGRID Appliance Installers die Option *Installation starten*.
 +
-Der aktuelle Status ändert sich in „Installation wird ausgeführt“, und die Seite Monitorinstallation wird angezeigt.
+Der aktuelle Status ändert sich zu „Installation läuft“, und die Monitor installation Seite wird angezeigt.
 
 +
 
-NOTE: Wenn Sie manuell auf die Seite Monitor-Installation zugreifen müssen, klicken Sie in der Menüleiste auf *Monitor-Installation*. Siehe https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/monitoring-appliance-installation.html["Überwachen Sie die Appliance-Installation"^].
+NOTE: Falls Sie die Monitor-Installationsseite manuell aufrufen müssen, wählen Sie in der Menüleiste *Monitor installation* aus. Siehe  https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/monitoring-appliance-installation.html["Überwachen Sie die Appliance-Installation"^].
 
 

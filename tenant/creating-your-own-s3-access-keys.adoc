@@ -59,5 +59,4 @@ CAUTION: Schließen Sie dieses Dialogfeld erst, wenn Sie diese Informationen kop
 +
 Die neue Taste wird auf der Seite eigene Zugriffsschlüssel angezeigt.
 
-. Wenn Ihr Mandantenkonto über die Berechtigung *Grid Federation connection* verwenden verfügt, können Sie optional die Tenant Management API verwenden, um S3-Zugriffsschlüssel vom Mandanten im Quellraster manuell auf den Mandanten im Zielraster zu klonen. Siehe link:grid-federation-clone-keys-with-api.html["Klonen von S3-Zugriffsschlüsseln mithilfe der API"].
 

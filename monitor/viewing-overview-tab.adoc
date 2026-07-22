@@ -49,7 +49,7 @@ NOTE: Ein Node wird möglicherweise während des verwalteten Herunterfahrens als
 
 * *Software-Version*: Die Version von StorageGRID, die auf dem Knoten installiert ist.
 * *HA-Gruppen*: Nur für Admin-Node und Gateway-Nodes. Wird angezeigt, wenn eine Netzwerkschnittstelle auf dem Knoten in einer Hochverfügbarkeitsgruppe enthalten ist und ob diese Schnittstelle die primäre Schnittstelle ist.
-* *IP-Adressen*: Die IP-Adressen des Knotens. Klicken Sie auf *zusätzliche IP-Adressen anzeigen*, um die IPv4- und IPv6-Adressen und Schnittstellenzuordnungen des Knotens anzuzeigen.
+* *IP-Adressen*: Die IP-Adressen des Knotens. *Zusätzliche IP-Adressen anzeigen* ermöglicht die Anzeige der IPv4- und IPv6-Adressen sowie der Schnittstellenzuordnungen des Knotens.
 
 
 

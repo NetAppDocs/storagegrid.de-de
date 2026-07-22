@@ -1,0 +1,143 @@
+---
+permalink: admin/learn-about-global-namespace.html 
+sidebar: sidebar 
+keywords: global namespace, grid federation, S3 endpoint domain names, default region, grid federation connection, multi-grid 
+summary: Ein globaler Namensraum ermöglicht Mandanten den Zugriff auf Buckets über mehrere StorageGRID Systeme hinweg. Wenn der globale Namensraum für Grid-Federationsverbindungen aktiviert ist, können S3 CreateBucket und ListBuckets Anfragen, die auf den globalen Namensraum-Endpunkt abzielen, an den Load-Balancer-Endpunkt eines beliebigen Grids gesendet und anhand der Signaturregion in der Anfrage automatisch an das richtige Grid weitergeleitet werden. 
+---
+= Informationen zum globalen Namensraum für Grid Federation
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ein globaler Namensraum ermöglicht Mandanten den Zugriff auf Buckets über mehrere StorageGRID Systeme hinweg. Wenn der globale Namensraum für Grid-Federationsverbindungen aktiviert ist, können S3 CreateBucket und ListBuckets Anfragen, die auf den globalen Namensraum-Endpunkt abzielen, an den Load-Balancer-Endpunkt eines beliebigen Grids gesendet und anhand der Signaturregion in der Anfrage automatisch an das richtige Grid weitergeleitet werden.
+
+
+
+[[what-is-a-global-namespace]]
+== Was ist ein globaler Namensraum?
+
+Ein globaler Namensraum ermöglicht Mandanten den Zugriff auf Buckets über mehrere StorageGRID Systeme hinweg. Wenn der globale Namensraum für Grid-Federationsverbindungen aktiviert ist, können S3 CreateBucket und ListBuckets Anfragen, die auf den globalen Namensraum-Endpunkt abzielen, an den Load-Balancer-Endpunkt eines beliebigen Grids gesendet und anhand der Signaturregion in der Anfrage automatisch an das richtige Grid weitergeleitet werden.
+
+
+NOTE: Ein DNS-Resolver sollte eingerichtet werden, um die DNS-Zuordnung von Bucket-URLs zu einem bestimmten Grid vorzunehmen. Bei Bedarf kann der Netzwerkadministrator konsultiert werden, um sicherzustellen, dass der DNS-Resolver korrekt eingerichtet ist. Siehe link:../admin/configure-global-namespace.html#config-dns-resolution["DNS-Auflösung konfigurieren"].
+
+StorageGRID erzwingt keine eindeutigen Bucket-Namen über verschiedene Grids hinweg im globalen Namensraum, daher können Buckets mit demselben Namen in unterschiedlichen Grids existieren. Die Signaturregion in der Anfrage wird verwendet, um zu bestimmen, welches Grid den Bucket besitzt und die Anfrage erhalten soll.
+
+Wenn beispielsweise Grid A die Region `us-east-1` und Grid B die Region `us-west-1` verwendet, wird eine CreateBucket-Anfrage, die an ein beliebiges Grid mit der Region `us-west-1` gesendet wird, automatisch an Grid B weitergeleitet.
+
+Weitere Informationen zur Grid Federation sind unter link:grid-federation-overview.html["Was ist Grid Federation?"] zu finden.
+
+
+
+[[gns-exampleglobal-namespace-example]]
+== [[gns-example]]Beispiel für einen globalen Namensraum
+
+.Grid 1
+* Standardregion: `region-1`
+* Standard-CNAME: `s3.region-1.company.com`
+* Globaler Endpunkt: `s3.company.com`
+
+
+.Grid 2
+* Standardregion: `region-2`
+* Standard-CNAME: `s3.region-2.company.com`
+* Globaler Endpunkt: `s3.company.com`
+
+
+.Grid 3
+* Standardregion: `region-3`
+* Standard-CNAME: `s3.region-3.company.com`
+* Globaler Endpunkt: `s3.company.com`
+
+
+
+
+[[createbucket-and-listbuckets-operations]]
+=== CreateBucket und ListBuckets Operationen
+
+Wenn ein Bucket (`bucket123`mit Signaturregion `region-2` erstellt und der globale Endpunkt `s3.company.com` als Ziel verwendet wird, erstellt jedes Grid, das die Anfrage empfängt, den Bucket auf Grid 2.
+
+
+
+[[bucket-specific-and-general-object-operations]]
+=== Bucket-spezifische und allgemeine Objektoperationen
+
+Nachdem ein Bucket in einem bestimmten Grid erstellt wurde, löst Ihr DNS-Resolver die Bucket-URL in den Bucket- und Grid-CNAME auf.
+
+Im <<gns-example,Beispiel oben>> sollte der DNS-Resolver  `bucket123.s3.company.com` auf  `bucket123.s3.grid3.company.com` auflösen (CNAME von Bucket und Grid). Anders ausgedrückt werden alle Anfragen direkt an dieses Grid gesendet, ohne dass zusätzliches Routing erforderlich ist.
+
+.Beispiel
+`PutObject to bucket123.s3.company.com` wird aufgelöst in  `bucket123.s3.grid3.company.com`
+
+
+
+[[s3-behavior-with-global-namespace]]
+== S3 Verhalten mit globalem Namensraum
+
+Nach der vollständigen Konfiguration des globalen Namensraums gilt folgendes S3 Verhalten.
+
+
+
+[[region-enforcement]]
+=== Regionserzwingung
+
+Alle S3-Anfragen an den globalen Namespace-Endpunkt, außer link:../s3/operations-on-buckets.html["CreateBucket"] und link:../s3/operations-on-the-service.html["ListBuchs"], erfordern, dass die Signaturregion im V4-Authentifizierungs-Header mit der Standardregion des Grids übereinstimmt.
+
+* Wenn die Signaturregion nicht übereinstimmt, wird die Anfrage mit folgender Fehlermeldung abgelehnt:
++
+[listing]
+----
+An error occurred (AuthorizationHeaderMalformed) when calling the <operation> operation: The authorization header is malformed; the region '<signing-region>' is wrong; expecting '<grid-default-region>'
+----
+* Die Regionsdurchsetzung gilt für alle Buckets im Grid, einschließlich Buckets, die vor der Aktivierung des globalen Namensraums erstellt wurden.
+* Die Regionsdurchsetzung gilt nur für V4-Authentifizierungsanfragen. Anonyme und V2-Anfragen unterliegen nicht der Regionsdurchsetzung.
+
+
+
+
+[[createbucket-routing]]
+=== CreateBucket Routing
+
+CreateBucket-Anfragen, die an den globalen Namespace-Endpunkt (`s3.company.com` gesendet werden, können an den Load-Balancer-Endpunkt eines beliebigen Grids weitergeleitet werden. Die Anfrage wird automatisch an das Grid weitergeleitet, dessen Standardregion mit der Signaturregion in der Anfrage übereinstimmt.
+
+Beispiel:
+
+* Grid A hat die Standardregion `us-east-1` und Grid B hat die Standardregion `us-west-1`.
+* Ein Client sendet eine CreateBucket-Anfrage an  `s3.company.com` mit Signaturregion  `us-west-1`.
+* Round-robin DNS leitet die Anfrage an Grid A weiter.
+* Grid A leitet die Anfrage an Grid B weiter.
+* Der Bucket wird auf Grid B erstellt.
+
+
+Weitere Überlegungen für CreateBucket:
+
+* Das  `LocationConstraint` Element kann auf jede der Standard- oder Nicht-Standardregionen des Grids festgelegt werden. Dies betrifft nur die ILM-Richtlinie, nicht aber, welches Grid den Bucket erstellt (im Gegensatz zum Verhalten von AWS  `us-east-1`).
+* Die Signaturregion in der Anfrage bestimmt, welches Grid den Bucket erstellt (die Signaturregion muss mit der Standardregion des Zielgrids übereinstimmen).
+* Vorsignierte V4-Anfragen werden unterstützt.
+* Anonyme Anfragen und V2-Anfragen werden für das globale Namespace Routing nicht unterstützt.
+
+
+
+
+[[listbuckets-routing]]
+=== ListBuckets Routing
+
+ListBuckets-Anfragen, die an den globalen Namespace-Endpunkt gesendet werden, werden ähnlich wie CreateBucket-Anfragen weitergeleitet, wobei die Signaturregion verwendet wird, um das richtige Grid zu bestimmen.
+
+Weder HEAD Bucket- noch ListBuckets-Antworten enthalten die Standardregion des Grids. Die Standardregion wird durch die Signaturregion impliziert, die so festgelegt ist, dass sie mit der Standardregion des Grids übereinstimmt.
+
+
+
+[[account-and-access-key-management]]
+=== Konto- und Zugriffsschlüsselverwaltung
+
+Mandantenkonten und S3-Zugriffsschlüssel können mithilfe von link:grid-federation-what-is-account-sync.html["Kontosynchronisierung"] über alle Grids hinweg synchronisiert werden, aber der globale Namensraum funktioniert auch, wenn jedes Grid über einen eigenen Satz von Zugriffsschlüsseln verfügt. Wenn separate Zugriffsschlüssel verwendet werden, ist sicherzustellen, dass der S3-Client beim Senden von Anfragen an jedes Grid den korrekten Zugriffsschlüssel verwendet.
+
+
+
+[[whats-next]]
+== Was kommt als Nächstes?
+
+Jetzt sind Sie bereit link:../admin/configure-global-namespace.html["Globalen Namensraum konfigurieren"].

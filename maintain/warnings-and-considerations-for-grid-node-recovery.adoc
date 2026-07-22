@@ -39,7 +39,7 @@ Bei der Wiederherstellung der Grid-Nodes werden alle folgenden Bedingungen vorau
 
 * Die fehlerhafte physische oder virtuelle Hardware wurde ersetzt und konfiguriert.
 * Die Installationsversion des StorageGRID-Geräts auf der Ersatz-Appliance entspricht der Softwareversion Ihres StorageGRID-Systems, wie unter beschrieben https://docs.netapp.com/us-en/storagegrid-appliances/installconfig/verifying-and-upgrading-storagegrid-appliance-installer-version.html["Überprüfen und Aktualisieren der Installationsversion der StorageGRID Appliance"^].
-* Wenn Sie einen anderen Grid-Knoten als den primären Admin-Knoten wiederherstellen, besteht eine Verbindung zwischen dem wiederherzustellenden Grid-Knoten und dem Admin-Knoten, der das Wiederherstellungsverfahren verwaltet.
+* Wenn ein anderer Grid-Knoten als der primäre Admin-Knoten wiederhergestellt wird, muss eine Verbindung zwischen dem wiederherzustellenden Grid-Knoten und dem Admin-Knoten bestehen, der das Wiederherstellungsverfahren verwaltet.
 * Wenn Sie einen Appliance-Speicherknoten wiederherstellen, müssen Sie während der Appliance-Installation denselben Speichertyp wie bei der ursprünglichen Appliance angeben (kombiniert, nur Metadaten oder nur Daten).  Wenn Sie einen anderen Speichertyp angeben, schlägt die Wiederherstellung fehl und erfordert eine Neuinstallation der Appliance mit dem richtigen angegebenen Speichertyp.
 
 
@@ -48,7 +48,7 @@ Bei der Wiederherstellung der Grid-Nodes werden alle folgenden Bedingungen vorau
 [[order-of-node-recovery-if-a-server-hosting-more-than-one-grid-node-fails]]
 == Reihenfolge der Knotenwiederherstellung, wenn ein Server, der mehr als einen Grid-Knoten hostet, ausfällt
 
-Wenn ein Server ausfällt, auf dem mehr als ein Grid-Knoten gehostet wird, können Sie die Knoten in beliebiger Reihenfolge wiederherstellen. Wenn der ausgefallene Server jedoch den primären Admin-Knoten hostet, müssen Sie diesen Knoten zuerst wiederherstellen.
+Fällt ein Server aus, der mehrere Grid-Knoten hostet, können die Knoten in beliebiger Reihenfolge wiederhergestellt werden. Wenn der ausgefallene Server jedoch den primären Admin Node hostet und keine nicht-primären Admin Nodes existieren, ist zuerst der primäre Admin Node wiederherzustellen.
 
 
 

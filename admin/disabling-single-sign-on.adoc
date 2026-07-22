@@ -23,7 +23,7 @@ Sie können Single Sign-On (SSO) deaktivieren, wenn Sie diese Funktion nicht meh
 +
 Die Seite Single Sign-On wird angezeigt.
 
-. Wählen Sie *SSO deaktivieren*.
+. *Deaktivieren* auswählen.
 . Wählen Sie *Ja*.
 +
 Es wird eine Warnmeldung angezeigt, die darauf hinweist, dass lokale Benutzer sich jetzt anmelden können.

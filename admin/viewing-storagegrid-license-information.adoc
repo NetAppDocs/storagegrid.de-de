@@ -41,7 +41,7 @@ Dieser Link wird nur angezeigt, wenn ein Problem mit der Lizenz vorliegt.
 ** Enddatum der Lizenz. *N/A* erscheint für eine unbefristete Lizenz.
 ** Enddatum des Supports
 +
-Dieses Datum wird aus der aktuellen Lizenzdatei gelesen und ist möglicherweise veraltet, wenn Sie den Supportvertrag nach Erhalt der Lizenzdatei verlängert oder verlängert haben. Informationen zum Aktualisieren dieses Werts finden Sie unter link:updating-storagegrid-license-information.html["Aktualisieren Sie die StorageGRID-Lizenzinformationen"]. Sie können auch das tatsächliche Enddatum des Vertrags mithilfe von Active IQ anzeigen.
+Dieses Datum wird aus der aktuellen Lizenzdatei gelesen und kann veraltet sein, wenn der Supportvertrag nach Erhalt der Lizenzdatei verlängert oder erneuert wurde. Zum Aktualisieren dieses Werts siehe link:updating-storagegrid-license-information.html["Aktualisieren Sie die StorageGRID-Lizenzinformationen"]. Das tatsächliche Vertragsende lässt sich auch mit Digital Advisor anzeigen.
 
 ** Inhalt der Lizenztext-Datei
 

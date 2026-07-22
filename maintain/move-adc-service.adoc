@@ -23,16 +23,17 @@ Sie können den ADC-Dienst auf einen anderen Speicherknoten am selben Standort v
 
 
 .Über diese Aufgabe
-Verwenden Sie das Verfahren „ADC verschieben“, wenn Sie Folgendes möchten:
-
-* Außerbetriebnahme eines Speicherknotens, der den ADC-Dienst hostet
-* Konvertieren Sie einen Speicherknoten, der den ADC-Dienst hostet, in einen Nur-Daten-Speicherknoten
-
-
-Wenn Sie einen Storage Node außer Betrieb nehmen möchten oderlink:../maintain/convert-to-data-only-node.html["Konvertieren Sie einen Speicherknoten in einen Nur-Datenknoten"] , müssen Sie möglicherweise zuerst das Verfahren „ADC verschieben“ verwenden.  Sie müssen sicherstellen, dass dielink:../maintain/understanding-adc-service-quorum.html["ADC-Quorum bleibt erhalten"] .
+Mit dem Verfahren „ADC verschieben“ lässt sich der ADC-Dienst manuell zwischen Storage Nodes verschieben. Zum Beispiel kann eine Umverteilung der ADC-Dienste auf verschiedene Nodes oder das Verschieben des ADC-Dienstes auf einen leistungsfähigeren Node erforderlich sein.
 
 Bei diesem Verfahren werden die Dienste ADC, IDNT, ACCT und RSM von einem Speicherknoten zu einem anderen am selben Standort verschoben.  Die RSM-, IDNT- und ACCT-Dienste sind vom ADC-Dienst abhängig und werden daher automatisch verschoben, wenn der ADC-Dienst verschoben wird.
 
+[NOTE]
+====
+* Sie müssen den ADC-Dienst vor link:../maintain/convert-to-data-only-node.html["Umwandlung eines Storage Node in einen reinen Datenknoten"] oder der Außerbetriebnahme eines Storage Node nicht manuell verschieben. Diese Verfahren verschieben den ADC-Dienst bei Bedarf automatisch. Weitere Informationen zu den Anforderungen finden sich unter link:../maintain/understanding-adc-service-quorum.html["Was ist das ADC Quorum?"].
+* StorageGRID verschiebt den ADC-Dienst auf die neuesten Storage Nodes, die die Anforderungen für das Hosting des Dienstes erfüllen.
+
+
+====
 .Schritte
 . Notieren Sie die Knoten-IDs der Quell- und Zielknoten.
 +

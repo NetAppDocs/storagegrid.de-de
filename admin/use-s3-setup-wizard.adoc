@@ -39,7 +39,7 @@ Konfigurieren Sie Identity Federation und SSO:: Wenn Sie Identitätsföderation 
 Abrufen und Konfigurieren von Domänennamen:: Sie wissen, welcher vollständig qualifizierte Domänenname (FQDN) für StorageGRID verwendet werden soll. DNS-Einträge (Domain Name Server) weisen diesen FQDN den virtuellen IP-Adressen (VIP) der HA-Gruppe zu, die Sie mit dem Assistenten erstellen.
 +
 --
-Wenn Sie Anforderungen im virtuellen gehosteten Stil von S3 verwenden möchten, sollten Sie über verfügenlink:../admin/configuring-s3-api-endpoint-domain-names.html["Domänennamen des S3-Endpunkts wurden konfiguriert"]. Die Verwendung von Anforderungen im virtuellen Hosted-Stil wird empfohlen.
+Wenn Sie S3-Anfragen im Virtual-Hosted-Style verwenden möchten, sollten Sie link:../admin/configuring-s3-api-endpoint-domain-names.html["Domänennamen des S3-Endpunkts wurden konfiguriert"] haben. Die Verwendung von Virtual-Hosted-Style-Anfragen wird empfohlen.
 
 --
 Anforderungen für Load Balancer und Sicherheitszertifikate prüfen:: Wenn Sie den StorageGRID Load Balancer einsetzen möchten, haben Sie die allgemeinen Überlegungen zum Lastausgleich besprochen. Sie verfügen über die hochgeladenen Zertifikate oder die Werte, die Sie zum Generieren eines Zertifikats benötigen.
@@ -48,7 +48,7 @@ Anforderungen für Load Balancer und Sicherheitszertifikate prüfen:: Wenn Sie d
 Wenn Sie einen externen (Drittanbieter-)Load Balancer-Endpunkt verwenden möchten, verfügen Sie über den vollständig qualifizierten Domänennamen (FQDN), den Port und das Zertifikat für diesen Load Balancer.
 
 --
-Konfigurieren Sie alle Verbindungen des Grid-Verbunds:: Wenn Sie es dem S3-Mandanten erlauben möchten, Kontodaten zu klonen und Bucket-Objekte mithilfe einer Grid-Federation-Verbindung in ein anderes Grid zu replizieren, bestätigen Sie Folgendes, bevor Sie den Assistenten starten:
+Konfigurieren Sie alle Verbindungen des Grid-Verbunds:: Wenn Sie dem S3-Mandanten erlauben möchten, Kontodaten zu synchronisieren und Bucket-Objekte mithilfe einer Grid Federation-Verbindung in ein anderes Grid zu replizieren, sollte Folgendes vor dem Start des Assistenten bestätigt werden:
 +
 --
 * Sie haben link:grid-federation-manage-connection.html["Grid Federation-Verbindung konfiguriert"].

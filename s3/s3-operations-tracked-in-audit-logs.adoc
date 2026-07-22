@@ -20,13 +20,18 @@ Audit-Meldungen werden von StorageGRID-Diensten generiert und in Text-Log-Dateie
 
 * CreateBucket
 * DeleteBucket
+* DeleteBucketRichtlinien
 * DeleteBucketTagging
 * Objekte deObjekteObjekte
+* GetBucketLifecycleKonfiguration
+* GetBucketPolicy
 * GetBucketTagging
 * HeadBucket
 * ListObjekte
 * ListObjectVersions
 * BUCKET-Compliance
+* PutBucketLifecycleKonfiguration
+* PutBucketPolicy
 * PutBucketTagging
 * PutBucketVersioning
 

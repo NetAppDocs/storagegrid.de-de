@@ -15,7 +15,7 @@ In dieser Liste der häufig verwendeten Prometheus-Kennzahlen können Sie die Be
 
 Sie können auch <<obtain-all-metrics,Holen Sie sich eine vollständige Liste aller Kennzahlen>>.
 
-Details zur Syntax von Prometheus-Abfragen finden Sie unter https://prometheus.io/docs/prometheus/latest/querying/basics/["Prometheus Wird Abgefragt"^].
+Weitere Informationen zur Syntax von Prometheus-Abfragen finden Sie unter  https://prometheus.io/docs/prometheus/latest/querying/basics/["Grundlagen der Abfrage"^].
 
 
 

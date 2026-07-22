@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: storagegrid, recover, non-primary admin node 
 summary: Nach dem Ersetzen eines nicht-primären Admin-Knotens müssen Sie im Grid-Manager die Option Wiederherstellung starten wählen, um den neuen Knoten als Ersatz für den fehlgeschlagenen Knoten zu konfigurieren. 
 ---
-= Wählen Sie „Wiederherstellung starten“, um den nicht-primären StorageGRID Admin Node zu konfigurieren.
+= Start Recovery auswählen, um den nicht-primären StorageGRID Admin-Node zu konfigurieren.
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -21,23 +21,20 @@ Nach dem Ersetzen eines nicht-primären Admin-Knotens müssen Sie im Grid-Manage
 
 
 .Schritte
-. Wählen Sie im Grid Manager *Wartung* > *Aufgaben* > *Wiederherstellung*.
+. Im Grid Manager *Wartung* > *Aufgaben* > *Knotenwiederherstellung* auswählen.
 . Wählen Sie in der Liste Ausstehende Knoten den Rasterknoten aus, den Sie wiederherstellen möchten.
 +
 Nodes werden in der Liste angezeigt, wenn sie fehlschlagen. Sie können jedoch keinen Node auswählen, bis er neu installiert wurde und für die Wiederherstellung bereit ist.
 
-. Geben Sie die *Provisioning-Passphrase* ein.
-. Klicken Sie Auf *Wiederherstellung Starten*.
+. Die *Bereitstellungs-Passphrase* eingeben.
+. *Wiederherstellung starten* auswählen.
 +
 image:4b_select_recovery_node.png["Screenshot der Seite Wartung > Wiederherstellung"]
 
 . Überwachen Sie den Fortschritt der Wiederherstellung in der Tabelle „Netzknoten wiederherstellen“.
 +
 
-NOTE: Während der Wiederherstellungsvorgang läuft, können Sie auf *Zurücksetzen* klicken, um eine neue Wiederherstellung zu starten. Es wird ein Dialogfeld angezeigt, das anzeigt, dass der Knoten in einem unbestimmten Zustand bleibt, wenn Sie das Verfahren zurücksetzen.
-
-+
-image:recovery_reset_warning.gif["Screenshot mit dem Dialogfeld Warnung zum Zurücksetzen der Wiederherstellung"]
+NOTE: Während der Wiederherstellungsprozedur läuft, kann *Zurücksetzen* ausgewählt werden, um eine neue Wiederherstellung zu starten. Ein Dialogfeld erscheint, das darauf hinweist, dass der Node in einem undefinierten Zustand verbleibt, wenn die Prozedur zurückgesetzt wird.
 
 +
 Wenn Sie die Recovery nach dem Zurücksetzen der Prozedur erneut versuchen möchten, müssen Sie den Node in einen vorinstallierten Status wiederherstellen:

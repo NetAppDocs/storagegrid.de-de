@@ -43,7 +43,7 @@ Sie können eine oder mehrere aktive ILM-Richtlinien gleichzeitig haben.
 
 Wenn Ihr Grid ein einfaches Datensicherungsschema mit wenigen mandantenspezifischen und bucketspezifischen Regeln verwenden wird, verwenden Sie eine einzelne aktive ILM-Richtlinie. Die ILM-Regeln können Filter für das Management verschiedener Buckets oder Mandanten enthalten.
 
-image:ilm-policies-single.png["Einzelnes ILM-Richtliniendiagramm"]
+image:ilm_policies_single.png["Einzelnes ILM-Richtliniendiagramm"]
 
 Wenn sich nur eine Richtlinie und die Anforderungen eines Mandanten ändern, müssen Sie eine neue ILM-Richtlinie erstellen oder die vorhandene Richtlinie klonen, um Änderungen anzuwenden, zu simulieren und dann die neue ILM-Richtlinie zu aktivieren. Änderungen an der ILM-Richtlinie können zu Objektverschiebungen führen, die viele Tage in Anspruch nehmen können und zu Systemlatenz führen.
 
@@ -68,7 +68,7 @@ NOTE: Du kannstlink:../ilm/creating-ilm-policy.html#activate-ilm-policy["Erstell
 Standard-ILM-Richtlinien-Tag:: Bei der Installation von StorageGRID wird automatisch ein Standard-ILM-Richtlinien-Tag erstellt. Jedes Raster muss über eine aktive Richtlinie verfügen, die dem Standard-Tag zugewiesen ist. Die Standardrichtlinie gilt für alle S3-Buckets ohne Tag.
 
 
-image:ilm-policies-tags-conceptual.png["Diagramm mit mehreren ILM-Richtlinien"]
+image:ilm_policies_tags_conceptual.png["Diagramm mit mehreren ILM-Richtlinien"]
 
 
 

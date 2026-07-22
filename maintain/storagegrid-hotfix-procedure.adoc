@@ -36,11 +36,11 @@ Während die Grid-Knoten mit der neuen Hotfix-Version aktualisiert werden, könn
 [[how-hotfixes-are-applied-for-recovery-and-expansion]]
 == Wie Hotfixes für die Wiederherstellung und Erweiterung eingesetzt werden
 
-Nachdem ein Hotfix auf das Grid angewendet wurde, installiert der primäre Admin-Knoten automatisch die gleiche Hotfix-Version auf alle Knoten, die durch Wiederherstellungsvorgänge wiederhergestellt oder in einer Erweiterung hinzugefügt werden.
+Nachdem ein Hotfix auf Ihr Grid angewendet wurde, installiert der primäre Admin-Node oder ein nicht-primärer Admin-Node automatisch dieselbe Hotfix-Version auf allen Nodes, die durch Wiederherstellungsvorgänge wiederhergestellt oder in einer Erweiterung hinzugefügt wurden. Eine Wiederherstellung jedes beliebigen Nodes (einschließlich des primären Admin-Nodes) ist möglich, wenn eine Anmeldung an einem nicht-primären Admin-Node erfolgt ist. Wird ein Node von einem nicht-primären Admin-Node aus wiederhergestellt, wendet dieser Admin-Node den Hotfix auf den wiederhergestellten Node an.
 
-Wenn Sie jedoch den primären Admin-Knoten wiederherstellen müssen, müssen Sie manuell die richtige StorageGRID-Version installieren und dann den Hotfix anwenden. Die endgültige StorageGRID-Version des primären Admin-Knotens muss mit der Version der anderen Nodes im Raster übereinstimmen.
+Wenn Sie den primären Admin Node von seinem eigenen StorageGRID Installer wiederherstellen müssen, muss die korrekte StorageGRID Version manuell installiert und anschließend der Hotfix angewendet werden. Die endgültige StorageGRID Version des primären Admin Node muss mit der Version der anderen Nodes im Grid übereinstimmen.
 
-Das folgende Beispiel zeigt, wie ein Hotfix bei der Wiederherstellung des primären Admin-Knotens angewendet wird:
+Das folgende Beispiel veranschaulicht, wie ein Hotfix angewendet wird, wenn der primäre Admin-Knoten wiederhergestellt wird, während Sie am nicht-primären Admin-Knoten angemeldet sind:
 
 . Angenommen, auf dem Grid wird eine StorageGRID 11._A.B_-Version mit dem neuesten Hotfix ausgeführt. Die "Grid Version" ist 11._A.B.y_.
 . Der primäre Admin-Node schlägt fehl.
@@ -51,5 +51,3 @@ NOTE: Wie zur Anpassung an die Grid-Version erforderlich, können Sie bei der Im
 
 . Anschließend wenden Sie Hotfix 11._A.B.y_ auf den primären Admin-Node an.
 
-
-Weitere Informationen finden Sie unter link:configuring-replacement-primary-admin-node.html["Primären Ersatzadministrator-Knoten konfigurieren"].

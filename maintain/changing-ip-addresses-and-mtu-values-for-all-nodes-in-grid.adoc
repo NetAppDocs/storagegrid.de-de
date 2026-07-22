@@ -36,7 +36,7 @@ NOTE: Wenn die vorhandenen DNS-Server in den neuen IP-Adressen für das Raster n
 
 +
 
-NOTE: Wenn SSO für Ihr StorageGRID -System aktiviert ist und alle Vertrauensstellungen der vertrauenden Seite mithilfe von IP-Adressen des Admin-Knotens konfiguriert wurden (anstelle von vollqualifizierten Domänennamen, wie empfohlen), müssen Sie diese Vertrauensstellungen der vertrauenden Seite in Active Directory Federation Services (AD FS) unmittelbar nach der Änderung der IP-Adressen aktualisieren oder neu konfigurieren. Sehen link:../admin/configure-sso.html["Konfigurieren Sie Single Sign-On"] .
+NOTE: Wenn SSO für Ihr StorageGRID System aktiviert ist und Vertrauensstellungen der vertrauenden Seite mithilfe von Admin-Node-IP-Adressen (anstatt vollqualifizierten Domainnamen, wie empfohlen) konfiguriert wurden, sollte unmittelbar nach einer Änderung der IP-Adressen eine Aktualisierung oder Neukonfiguration dieser Vertrauensstellungen in Active Directory Federation Services (AD FS) erfolgen. Siehe Einrichtung von SSO mit link:../admin/learn-about-setting-up-sso-oidc.html["OIDC"] oder link:../admin/learn-about-setting-up-sso-saml.html["SAML"].
 
 +
 

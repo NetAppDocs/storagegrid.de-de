@@ -2,7 +2,7 @@
 permalink: admin/grid-federation-create-connection.html 
 sidebar: sidebar 
 keywords: grid federation, create connection, configure connection 
-summary: Sie können eine Grid-Verbundverbindung zwischen zwei StorageGRID Systemen erstellen, wenn Sie Mandantendetails klonen und Objektdaten replizieren möchten. 
+summary: Grid-Federation-Verbindungen zwischen StorageGRID-Systemen können erstellt werden, wenn Mandantendetails synchronisiert und Objektdaten repliziert werden sollen. 
 ---
 = StorageGRID Grid-Federationsverbindungen erstellen
 :allow-uri-read: 
@@ -11,11 +11,14 @@ summary: Sie können eine Grid-Verbundverbindung zwischen zwei StorageGRID Syste
 
 
 [role="lead"]
-Sie können eine Grid-Verbundverbindung zwischen zwei StorageGRID Systemen erstellen, wenn Sie Mandantendetails klonen und Objektdaten replizieren möchten.
+Grid-Federation-Verbindungen zwischen StorageGRID-Systemen können erstellt werden, wenn Mandantendetails synchronisiert und Objektdaten repliziert werden sollen.
 
 Wie in der Abbildung gezeigt, umfasst das Erstellen einer Netzverbundverbindung Schritte auf beiden Grids. Sie fügen die Verbindung auf einem Raster hinzu und schließen sie auf dem anderen Raster ab. Sie können von beiden Rastergitten aus starten.
 
-image:grid-federation-create-connection.png["Grafische Übersicht über die Schritte zum Erstellen einer Verbindung auf zwei Rastern"]
+
+TIP: Optional ist es möglich, link:../admin/grid-federation-automate-connections.html["die Erstellung, Bearbeitung und Wartung von Grid Federation-Verbindungen automatisieren"].
+
+image:grid_federation_create_connection.png["Grafische Übersicht über die Schritte zum Erstellen einer Verbindung auf zwei Rastern"]
 
 .Bevor Sie beginnen
 * Sie haben das  für die Konfiguration von Grid Federation-Verbindungen überprüftlink:grid-federation-overview.html["Überlegungen und Anforderungen"].
@@ -35,18 +38,15 @@ Führen Sie diese Schritte auf einem der beiden StorageGRID-Systeme aus.
 . Melden Sie sich über den primären Admin-Node auf beiden Grids beim Grid-Manager an.
 . Wählen Sie *Konfiguration* > *System* > *Grid-Föderation*.
 . Wählen Sie *Verbindung hinzufügen*.
-. Geben Sie Details für die Verbindung ein.
-+
+. Geben Sie einen Verbindungsnamen ein, der eindeutig ist und das Erkennen dieser Verbindung erleichtert. Zum Beispiel  `Grid 1-Grid 2`.
+. Wenn Sie link:../admin/configure-global-namespace.html["Einen globalen Namensraum konfigurieren"] möchten, kann *Globalen Namensraum aktivieren* ausgewählt werden.
+. Wählen Sie *Weiter*.
+. Geben Sie die Grid-Details wie folgt ein:
+
+
 [cols="1a,2a"]
 |===
 | Feld | Beschreibung 
-
-
- a| 
-Verbindungsname
- a| 
-Ein eindeutiger Name, der Ihnen hilft, diese Verbindung zu erkennen, z. B. „Raster 1-Raster 2“.
-
 
 
  a| 
@@ -54,9 +54,9 @@ FQDN oder IP für dieses Raster
  a| 
 Eine der folgenden Optionen:
 
-** Der FQDN des Rasters, bei dem Sie derzeit angemeldet sind
-** Eine VIP-Adresse einer HA-Gruppe in diesem Raster
-** Eine IP-Adresse eines Admin-Knotens oder Gateway-Knotens in diesem Grid. Die IP kann sich auf jedem Netzwerk befinden, das das Zielraster erreichen kann.
+* Der FQDN des Rasters, bei dem Sie derzeit angemeldet sind
+* Eine VIP-Adresse einer HA-Gruppe in diesem Raster
+* Eine IP-Adresse eines Admin-Knotens oder Gateway-Knotens in diesem Grid. Die IP kann sich auf jedem Netzwerk befinden, das das Zielraster erreichen kann.
 
 
 
@@ -91,9 +91,9 @@ FQDN oder IP für das andere Raster
  a| 
 Eine der folgenden Optionen:
 
-** Der FQDN des Rasters, mit dem Sie eine Verbindung herstellen möchten
-** Eine VIP-Adresse einer HA-Gruppe im anderen Raster
-** Eine IP-Adresse eines Admin-Knotens oder Gateway-Knotens im anderen Grid. Die IP kann sich auf jedem Netzwerk befinden, das das Quellraster erreichen kann.
+* Der FQDN des Rasters, mit dem Sie eine Verbindung herstellen möchten
+* Eine VIP-Adresse einer HA-Gruppe im anderen Raster
+* Eine IP-Adresse eines Admin-Knotens oder Gateway-Knotens im anderen Grid. Die IP kann sich auf jedem Netzwerk befinden, das das Quellraster erreichen kann.
 
 
 |===
@@ -155,5 +155,5 @@ Wenn Sie diese Verbindung bearbeiten, wird eine neue Überprüfungsdatei erstell
 * link:creating-tenant-account.html["Erstellen Sie ein oder mehrere neue Mandantenkonten"], Weisen Sie die Berechtigung *use Grid Federation connection* zu und wählen Sie die neue Verbindung aus.
 * link:grid-federation-manage-connection.html["Verwalten Sie die Verbindung"] Nach Bedarf. Sie können Verbindungswerte bearbeiten, eine Verbindung testen, Verbindungszertifikate drehen oder eine Verbindung entfernen.
 * link:../monitor/grid-federation-monitor-connections.html["Überwachen Sie die Verbindung"] Im Rahmen Ihrer normalen StorageGRID-Monitoring-Aktivitäten.
-* link:grid-federation-troubleshoot.html["Beheben Sie die Verbindungsherstellung"], Einschließlich der Behebung von Warnungen und Fehlern im Zusammenhang mit Account-Clone und Grid-Replikation.
+* link:grid-federation-troubleshoot.html["Beheben Sie die Verbindungsherstellung"]einschließlich der Behebung von Warnungen und Fehlern im Zusammenhang mit der Kontosynchronisierung und der gridübergreifenden Replikation.
 

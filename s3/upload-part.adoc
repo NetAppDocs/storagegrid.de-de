@@ -20,7 +20,23 @@ Der Vorgang UploadPart lädt ein Teil in einem mehrteiligen Upload für ein Obje
 
 Die folgenden Anfragezeilen werden unterstützt:
 
-* `x-amz-checksum-sha256`
+* Prüfsummen-Anforderungsheader:
++
+--
+** `x-amz-checksum-crc32`
+** `x-amz-checksum-crc32c`
+** `x-amz-checksum-crc64nvme`
+** `x-amz-checksum-sha256`
+
+
+--
++
+Wenn Sie während der CreateMultipartUpload-Anfrage eine CRC-32-, CRC-32C-, CRC-64/NVME- oder SHA-256-Prüfsumme angegeben haben, muss der Prüfsumme-Anforderungsheader auch in jede UploadPart-Anfrage aufgenommen werden.
+
++
+
+NOTE: Wenn in einer CreateMultipartUpload-Anfrage keine Prüfsumme angegeben wird, berechnet StorageGRID keine Standard-CRC-64/NVME-Prüfsumme für ein Objekt.
+
 * `Content-Length`
 * `Content-MD5`
 
@@ -40,11 +56,6 @@ Wenn Sie die SSE-C-Verschlüsselung für die CreateMultipartUpload-Anforderung a
 
 CAUTION: Die von Ihnen zur Verfügung gelegten Schlüssel werden niemals gespeichert. Wenn Sie einen Verschlüsselungsschlüssel verlieren, verlieren Sie das entsprechende Objekt. Bevor Sie vom Kunden bereitgestellte Schlüssel zum Schutz von Objektdaten verwenden, lesen Sie die Überlegungen in link:using-server-side-encryption.html["Serverseitige Verschlüsselung"].
 
-Wenn Sie während der CreateMultipartUpload-Anforderung eine SHA-256-Prüfsumme angegeben haben, müssen Sie in jeder UploadPart-Anforderung auch den folgenden Anforderungsheader einfügen:
-
-* `x-amz-checksum-sha256`: Geben Sie die SHA-256-Prüfsumme für diesen Teil an.
-
-
 
 
 [[unsupported-request-headers]]
@@ -54,6 +65,12 @@ Die folgenden Anforderungsheader werden nicht unterstützt:
 
 * `x-amz-sdk-checksum-algorithm`
 * `x-amz-trailer`
+* `x-amz-checksum-md5`
+* `x-amz-checksum-sha1`
+* `x-amz-checksum-sha512`
+* `x-amz-checksum-xxhash3`
+* `x-amz-checksum-xxhash64`
+* `x-amz-checksum-xxhash128`
 
 
 

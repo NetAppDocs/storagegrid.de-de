@@ -29,9 +29,9 @@ StorageGRID verfügt über eine interne Firewall auf jedem Node, über die Sie e
 
 Die Beschränkung der Anzahl der offenen Ports auf IP-Adressen außerhalb Ihres Grids auf nur die absolut notwendigen Ports erhöht die Sicherheit Ihres Grids. Mithilfe der Einstellungen auf den drei Registerkarten für die Firewall-Steuerung stellen Sie sicher, dass nur die erforderlichen Ports geöffnet sind.
 
-Weitere Informationen zur Verwendung von Firewall-Kontrollen, einschließlich Beispiele, finden Sie unter link:../admin/manage-firewall-controls.html["Management der Firewall-Kontrollen"].
+Weitere Informationen zur Verwendung von Firewall-Steuerelementen, einschließlich Beispielen, sind unter link:../admin/manage-firewall-controls.html["Management der Firewall-Kontrollen"] zu finden.
 
-Weitere Informationen zu externen Firewalls und Netzwerksicherheit finden Sie unter link:../admin/controlling-access-through-firewalls.html["Kontrolle des Zugriffs über externe Firewall"].
+Weitere Informationen zu externen Firewalls und Netzwerksicherheit sind unter link:../admin/controlling-access-through-firewalls.html["Kontrolle des Zugriffs über externe Firewall"] zu finden.
 
 
 
@@ -60,16 +60,16 @@ Sie verwenden die Registerkarte Liste der privilegierten Adressen, um Hosts Zugr
 Privilegierte IP-Adressen und Subnetze haben standardmäßig keinen internen Grid-Zugriff. Zudem sind die Load Balancer-Endpunkte und zusätzliche Ports, die auf der Registerkarte „privilegierte Adressen“ geöffnet wurden, auch dann verfügbar, wenn sie auf der Registerkarte „externen Zugriff verwalten“ gesperrt sind.
 
 
-NOTE: Einstellungen auf der Registerkarte „Liste privilegierter Adressen“ können die Einstellungen auf der Registerkarte „nicht vertrauenswürdiges Clientnetzwerk“ nicht außer Kraft setzen.
+NOTE: Die Einstellungen auf der Registerkarte „Privilegierte Adressliste“ können die Einstellungen auf der Registerkarte „Nicht vertrauenswürdiges Clientnetzwerk“ überschreiben.
 
 .Schritte
 . Geben Sie auf der Registerkarte Liste der privilegierten Adressen die Adresse oder das IP-Subnetz ein, die Sie Zugriff auf geschlossene Ports gewähren möchten.
-. Wählen Sie optional *Add another IP address or subnet in CIDR Notation* aus, um weitere privilegierte Clients hinzuzufügen.
+. Optional kann *Weitere IP-Adresse oder ein Subnetz in CIDR-Notation hinzufügen* ausgewählt werden, um zusätzliche privilegierte Clients hinzuzufügen.
 +
 
 TIP: Fügen Sie so wenig Adressen wie möglich zur Liste der privilegierten Adressen hinzu.
 
-. Wählen Sie optional *privilegierten IP-Adressen erlauben, auf interne StorageGRID-Ports zuzugreifen*. Siehe link:../network/internal-grid-node-communications.html["Interne StorageGRID-Ports"].
+. Optional kann *Privilegierten IP-Adressen der Zugriff auf interne StorageGRID Ports erlaubt werden*. Weitere Informationen unter link:../network/internal-grid-node-communications.html["Interne StorageGRID-Ports"].
 +
 
 TIP: Diese Option entfernt einige Schutzmaßnahmen für interne Dienste. Lassen Sie sie nach Möglichkeit deaktiviert.
@@ -96,7 +96,7 @@ NOTE: Einstellungen auf der Registerkarte „externen Zugriff verwalten“ könn
 ** Wählen Sie *Alle angezeigten Ports schließen*, um alle in der Tabelle aufgeführten Ports zu schließen.
 +
 
-CAUTION: Wenn Sie die Grid-Manager-Ports 443 oder 8443 schließen, verlieren alle Benutzer, die derzeit an einem blockierten Port verbunden sind, einschließlich Ihnen, den Zugriff auf Grid Manager, es sei denn, ihre IP-Adresse wurde der Liste der privilegierten Adressen hinzugefügt.
+CAUTION: Wenn Sie die Grid Manager Ports 443 oder 8443 schließen, verlieren alle Benutzer, die derzeit über einen blockierten Port verbunden sind, einschließlich Ihnen, den Zugriff auf Grid Manager, es sei denn, ihre IP-Adresse wurde der Liste der privilegierten Adressen hinzugefügt.
 
 +
 
@@ -150,6 +150,6 @@ NOTE: Verwenden Sie die Bildlaufleiste auf der rechten Seite der Tabelle, um sic
 
 . Wählen Sie *Speichern*.
 +
-Die neuen Firewall-Einstellungen werden sofort angewendet und durchgesetzt. Vorhandene Client-Verbindungen können fehlschlagen, wenn die Load Balancer-Endpunkte nicht konfiguriert wurden.
+Die neuen Firewall-Einstellungen werden sofort angewendet und durchgesetzt. Bestehende Client-Verbindungen können fehlschlagen, wenn Load-Balancer-Endpunkte nicht konfiguriert wurden.
 
 

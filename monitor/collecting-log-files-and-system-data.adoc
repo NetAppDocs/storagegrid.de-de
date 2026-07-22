@@ -16,13 +16,14 @@ Sie können StorageGRID -Protokolldateien und Systemdaten, einschließlich Konfi
 .Bevor Sie beginnen
 * Sie sind beim Grid Manager auf einem beliebigen Admin-Knoten mit einemlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"] .
 * Sie haben link:../admin/admin-group-permissions.html["Bestimmte Zugriffsberechtigungen"].
-* Sie haben die Provisionierungs-Passphrase.
 
 
 .Über diese Aufgabe
 Verwenden Sie den Grid Manager, umlink:logs-files-reference.html["Log-Dateien"] , Systemdaten und Konfigurationsdaten von jedem Grid-Knoten für den von Ihnen ausgewählten Zeitraum.  Die Daten werden gesammelt und archiviert in einem `.tar.gz` Datei, die Sie dann auf Ihren lokalen Computer herunterladen oder an den technischen Support senden können.
 
 Optional können Sie das Ziel der Überwachungsprotokolle ändern und Überwachungsinformationen an einen externen Syslog-Server senden.  Wenn ein externer Syslog-Server konfiguriert ist, werden weiterhin lokale Protokolle von Prüfdatensätzen generiert und gespeichert. Sehen link:../monitor/configure-log-management.html["Konfigurieren Sie die Protokollverwaltung und den externen Syslog-Server"] .
+
+Wenn der Admin-Knoten, der zum Starten der Protokollerfassung verwendet wurde, während der Protokollerfassung offline geht, speichert StorageGRID die Ergebnisse nicht. Nach Abschluss des Neustarts ist der Knoten neu zu starten und die Protokollerfassung erneut zu starten.
 
 .Schritte
 . Wählen Sie *Support* > *Tools* > *Protokollsammlung*.  Es wird eine Tabelle mit Knoten angezeigt.
@@ -47,7 +48,6 @@ Wenn Sie einen sehr langen Zeitraum auswählen oder Protokolle von allen Knoten 
 +
 Mithilfe dieser Hinweise können Sie Informationen zum technischen Support über das Problem geben, das Sie zum Erfassen der Protokolldateien aufgefordert hat. Ihre Notizen werden zu einer Datei mit dem Namen, zusammen mit anderen Informationen über die Log-Datei-Sammlung hinzugefügt `info.txt`. Die `info.txt` Datei wird im Archivpaket der Protokolldatei gespeichert.
 
-. Geben Sie im Textfeld *Bereitstellungspassphrase* die Bereitstellungspassphrase für Ihr StorageGRID -System ein.
 . Wählen Sie *Protokolle sammeln*.
 +
 Auf der Seite „Protokollsammlung“ können Sie den Fortschritt der Protokolldateisammlung für jeden Grid-Knoten überwachen.
@@ -57,9 +57,15 @@ Wenn Sie eine Fehlermeldung über die Protokollgröße erhalten, versuchen Sie, 
 
 . Wenn die Protokollerfassung fehlschlägt:
 +
+--
 ** Wenn die Meldung „Protokollerfassung fehlgeschlagen“ angezeigt wird, können Sie die Protokollerfassung erneut versuchen oder die Sitzung ohne erneuten Versuch beenden.
 ** Wenn die Meldung „Protokollerfassung teilweise fehlgeschlagen“ angezeigt wird, können Sie die Protokollerfassung erneut versuchen, die Sitzung beenden, die teilweise Protokolldatei herunterladen oder die teilweise Protokolldatei an AutoSupport senden.
 
+
+--
++
+
+NOTE: Sie können das Feld für die Provisioning Passphrase für einen Standard-Wiederholungsversuch leer lassen oder die Passphrase eingeben, um den Wiederholungsversuch per SSH durchzuführen.
 
 . Wenn die Protokolldateierfassung abgeschlossen ist:
 +

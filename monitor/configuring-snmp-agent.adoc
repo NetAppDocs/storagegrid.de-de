@@ -444,3 +444,6 @@ Der USM-Benutzer wird erstellt und der Tabelle hinzugefügt.
 Die neue SNMP-Agent-Konfiguration wird aktiv.
 
 
+
+.Verwandte Informationen
+link:../network/external-communications.html["Anschlüsse für externe Kommunikation"]

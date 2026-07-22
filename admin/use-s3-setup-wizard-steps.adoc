@@ -25,10 +25,7 @@ Sie können den S3-Einrichtungsassistenten verwenden, um StorageGRID für die Ve
 
 .Schritte
 . Melden Sie sich mit einem beim Grid-Manager anlink:web-browser-requirements.html["Unterstützter Webbrowser"].
-. Wenn das Banner *FabricPool and S3 Setup Wizard* auf dem Dashboard angezeigt wird, wählen Sie den Link im Banner aus. Wenn das Banner nicht mehr angezeigt wird, wählen Sie in der Kopfzeile des Grid-Managers das Hilfesymbol aus und wählen Sie *FabricPool und S3-Setup-Assistent* aus.
-+
-image:help_menu.png["Hilfe-Menü"]
-
+. Wenn das Banner *FabricPool and S3 setup wizard* im Dashboard angezeigt wird, den Link im Banner auswählen. Wenn das Banner nicht mehr angezeigt wird, das Hilfesymbol image:icon_help_menu_bar.png["Hilfesymbol"] in der Kopfzeile des Grid Manager auswählen und *FabricPool and S3 setup wizard* auswählen.
 . Wählen Sie im Abschnitt S3-Anwendung der Seite FabricPool und S3-Setup-Assistent *Jetzt konfigurieren* aus.
 
 

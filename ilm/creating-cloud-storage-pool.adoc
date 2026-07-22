@@ -2,7 +2,7 @@
 permalink: ilm/creating-cloud-storage-pool.html 
 sidebar: sidebar 
 keywords: how to create cloud storage pool 
-summary: Ein Cloud-Storage-Pool gibt einen einzelnen externen Amazon S3-Bucket oder einen anderen S3-kompatiblen Provider oder einen Azure Blob-Storage-Container an. 
+summary: Ein Cloud Storage Pool gibt einen einzelnen externen Amazon S3-Bucket, einen anderen S3-kompatiblen Anbieter oder einen Azure Blob Storage-Container an. 
 ---
 = Erstellen Sie einen Cloud Storage Pool in StorageGRID
 :allow-uri-read: 
@@ -11,9 +11,9 @@ summary: Ein Cloud-Storage-Pool gibt einen einzelnen externen Amazon S3-Bucket o
 
 
 [role="lead"]
-Ein Cloud-Storage-Pool gibt einen einzelnen externen Amazon S3-Bucket oder einen anderen S3-kompatiblen Provider oder einen Azure Blob-Storage-Container an.
+Ein Cloud Storage Pool gibt einen einzelnen externen Amazon S3-Bucket, einen anderen S3-kompatiblen Anbieter oder einen Azure Blob Storage-Container an.
 
-Wenn Sie einen Cloud-Storage-Pool erstellen, geben Sie den Namen und den Speicherort des externen Buckets oder Containers an, den StorageGRID zum Speichern von Objekten verwendet, den Cloud-Provider-Typ (Amazon S3/GCP oder Azure Blob Storage) und die Informationen, die StorageGRID für den Zugriff auf den externen Bucket oder Container benötigt.
+Wenn Sie einen Cloud Storage Pool erstellen, geben Sie den Namen und den Speicherort des externen Buckets oder Containers an, den StorageGRID zum Speichern von Objekten verwendet, den Cloud-Anbietertyp (Amazon S3/GCP oder Azure Blob Storage) sowie die Informationen, die StorageGRID für den Zugriff auf den externen Bucket oder Container benötigt.
 
 StorageGRID validiert den Cloud-Storage-Pool, sobald Sie ihn speichern. Sie müssen also sicherstellen, dass der im Cloud-Speicherpool angegebene Bucket oder Container vorhanden ist und erreichbar ist.
 
@@ -227,3 +227,6 @@ Wenn die Validierung des Cloud-Storage-Pools fehlschlägt, erhalten Sie eine Feh
 
 . Wenn ein Fehler auftritt, lesen Sie die link:troubleshooting-cloud-storage-pools.html["Anweisungen zur Fehlerbehebung bei Cloud Storage Pools"], Beheben Sie alle Probleme, und versuchen Sie dann erneut, den Cloud-Speicherpool zu speichern.
 
+
+.Verwandte Informationen
+link:../network/external-communications.html["Anschlüsse für externe Kommunikation"]

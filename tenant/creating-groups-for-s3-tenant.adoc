@@ -17,7 +17,7 @@ Sie können Berechtigungen für S3-Benutzergruppen managen, indem Sie föderiert
 * Sie sind beim Tenant Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
 * Sie gehören zu einer Benutzergruppe mit dem link:tenant-management-permissions.html["Root-Zugriffsberechtigung"].
 * Wenn Sie planen, eine föderierte Gruppe link:using-identity-federation.html["Konfigurierte Identitätsföderation"]zu importieren, haben Sie , und die föderierte Gruppe ist bereits in der konfigurierten Identitätsquelle vorhanden.
-* Wenn Ihr Mandantenkonto die Berechtigung *Grid Federation connection* verwenden hat, haben Sie den Workflow und die Überlegungen für überprüft link:grid-federation-account-clone.html["Klonen von Mandantengruppen und Benutzern"]und Sie sind im Quellraster des Mandanten angemeldet.
+* Wenn Ihr Mandantenkonto über die Berechtigung *Grid-Federationsverbindung verwenden* verfügt, Sie den Workflow und die Überlegungen für link:grid-federation-account-sync.html["Synchronisierung von Mandantengruppen und Benutzern"] geprüft haben und im Quell-Grid des Mandanten angemeldet sind.
 
 
 
@@ -29,10 +29,6 @@ Rufen Sie als ersten Schritt den Assistenten zum Erstellen von Gruppen auf.
 
 .Schritte
 . Wählen Sie *Zugriffsverwaltung* > *Gruppen*.
-. Wenn Ihr Mandantenkonto über die Berechtigung *Grid Federation connection* verfügt, bestätigen Sie, dass ein blaues Banner erscheint, das anzeigt, dass neue Gruppen, die in diesem Raster erstellt werden, auf demselben Mandanten auf dem anderen Raster der Verbindung geklont werden. Wenn dieses Banner nicht angezeigt wird, werden Sie möglicherweise im Zielraster des Mandanten angemeldet.
-+
-image:grid-federation-tenant-group-banner.png["Abbildung des blauen Banners auf der Seite Gruppen des Quellenrasters für Mandanten"]
-
 . Wählen Sie *Gruppe erstellen*.
 
 
@@ -151,9 +147,6 @@ Ausführliche Informationen zu Gruppenrichtlinien, einschließlich Sprachsyntax 
 
 Sie können die Gruppe speichern, ohne Benutzer hinzuzufügen, oder Sie können optional alle bereits vorhandenen lokalen Benutzer hinzufügen.
 
-
-NOTE: Wenn Ihr Mandantenkonto über die Berechtigung *Grid Federation connection* verfügt, werden alle Benutzer, die Sie beim Erstellen einer lokalen Gruppe im Quellraster auswählen, nicht berücksichtigt, wenn die Gruppe im Zielraster geklont wird. Wählen Sie aus diesem Grund keine Benutzer aus, wenn Sie die Gruppe erstellen. Wählen Sie stattdessen die Gruppe aus, wenn Sie die Benutzer erstellen.
-
 .Schritte
 . Wählen Sie optional einen oder mehrere lokale Benutzer für diese Gruppe aus.
 . Wählen Sie *Gruppe erstellen* und *Fertig stellen*.
@@ -161,6 +154,6 @@ NOTE: Wenn Ihr Mandantenkonto über die Berechtigung *Grid Federation connection
 Die von Ihnen erstellte Gruppe wird in der Gruppenliste angezeigt.
 
 +
-Wenn Ihr Mandantenkonto die Berechtigung *Grid Federation connection* verwenden hat und Sie sich im Quellraster des Mandanten befinden, wird die neue Gruppe im Zielraster des Mandanten geklont. *Success* erscheint als *Klonstatus* im Abschnitt Übersicht der Detailseite der Gruppe.
+Wenn Ihr Mandantenkonto über die Berechtigung *Grid-Verbundverbindung verwenden* verfügt und Sie sich im Quell-Grid des Mandanten befinden, wird die neue Gruppe mit dem Ziel-Grid des Mandanten synchronisiert. *Erfolgreich* erscheint als Synchronisierungsstatus im Abschnitt „Übersicht“ auf der Detailseite der Gruppe.
 
 

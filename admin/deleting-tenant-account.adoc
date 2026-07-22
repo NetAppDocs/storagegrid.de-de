@@ -17,7 +17,7 @@ Sie können ein Mandantenkonto löschen, wenn Sie den Zugriff des Mandanten auf 
 * Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
 * Sie haben link:admin-group-permissions.html["Bestimmte Zugriffsberechtigungen"].
 * Sie haben alle S3-Buckets und Objekte entfernt, die mit dem Mandantenkonto verknüpft sind.
-* Wenn der Mandant eine Grid Federation-Verbindung verwenden darf, haben Sie die Überlegungen für geprüftlink:grid-federation-manage-tenants.html["Löschen eines Mandanten mit der Berechtigung Grid Federation verwenden"].
+* Wenn der Mandant die Verwendung von Grid-Federation-Verbindungen gestattet ist, wurden die Überlegungen für link:../admin/grid-federation-manage-tenants.html["Löschen eines Mandanten mit der Berechtigung Grid Federation verwenden"] geprüft. Löschungen werden synchronisiert, sodass ein Mandant, der in einem Grid gelöscht wird, auch in allen ausgewählten Grids gelöscht wird.
 
 
 .Schritte

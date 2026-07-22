@@ -17,7 +17,7 @@ Nach dem Abschluss der Linux-Installation auf Ihren Hosts müssen Sie möglicher
 NOTE: „Linux“ bezieht sich auf eine RHEL-, Ubuntu- oder Debian-Bereitstellung.  Eine Liste der unterstützten Versionen finden Sie im https://imt.netapp.com/matrix/#welcome["NetApp Interoperabilitäts-Matrix-Tool (IMT)"^] .
 
 .Bevor Sie beginnen
-* Sie haben die überprüftlink:../network/index.html["StorageGRID Netzwerkrichtlinien"].
+* Sie haben die Informationen in link:../network/index.html["Netzwerkrichtlinien"] überprüft.
 * Sie haben die Informationen über überprüftlink:node-container-migration-requirements.html["Anforderungen für die Container-Migration für Nodes"].
 * Wenn Sie virtuelle Hosts verwenden, haben Sie die<<mac_address_cloning,Überlegungen und Empfehlungen zum Klonen von MAC-Adressen>> bevor Sie das Hostnetzwerk konfigurieren.
 
@@ -43,14 +43,14 @@ NOTE: Verwenden Sie keine Bond- oder Bridge-Geräte direkt als Container-Netzwer
 == Überlegungen und Empfehlungen zum Klonen von MAC-Adressen
 
 .[[Klonen von MAC-Adressen]]
-Das Klonen VON MAC-Adressen bewirkt, dass der Container die MAC-Adresse des Hosts verwendet und der Host die MAC-Adresse entweder einer von Ihnen angegebenen oder einer zufällig generierten Adresse verwendet. Verwenden Sie das Klonen von MAC-Adressen, um Netzwerkkonfigurationen im einfach zu vermeiden.
+Durch das Klonen der MAC-Adresse verwendet der Container die MAC-Adresse des Hosts, und der Host verwendet die MAC-Adresse entweder einer von Ihnen angegebenen Adresse oder einer zufällig generierten.
 
 
 
 [[enabling-mac-cloning]]
 === Aktivieren des MAC-Klonens
 
-In bestimmten Umgebungen kann die Sicherheit durch das Klonen von MAC-Adressen erhöht werden, da es Ihnen ermöglicht, eine dedizierte virtuelle NIC für das Admin-Netzwerk, das Grid-Netzwerk und das Client-Netzwerk zu verwenden. Wenn der Container die MAC-Adresse der dedizierten NIC auf dem Host nutzen soll, können Sie keine Kompromissmodus-Netzwerkkonfigurationen mehr verwenden.
+In bestimmten Umgebungen kann die Sicherheit durch MAC-Adressklonen erhöht werden, da dies die Verwendung einer dedizierten virtuellen Netzwerkkarte für das Admin Network, Grid Network und Client Network ermöglicht.
 
 
 NOTE: Das Klonen DER MAC-Adresse wurde für Installationen virtueller Server entwickelt und funktioniert möglicherweise nicht ordnungsgemäß bei allen Konfigurationen der physischen Appliance.
@@ -70,21 +70,18 @@ Für jedes Netzwerk gibt es einen Schlüssel:
 Wenn Sie den Schlüssel auf „true“ setzen, verwendet der Container die MAC-Adresse der NIC des Hosts. Außerdem verwendet der Host dann die MAC-Adresse des angegebenen Containernetzwerks. Standardmäßig ist die Container-Adresse eine zufällig generierte Adresse, aber wenn Sie eine mit dem Node-Konfigurationsschlüssel festgelegt haben, `_NETWORK_MAC` wird diese Adresse verwendet. Host und Container haben immer unterschiedliche MAC-Adressen.
 
 
-NOTE: Wenn das MAC-Klonen auf einem virtuellen Host aktiviert wird, ohne dass gleichzeitig der einfach austauschbare Modus auf dem Hypervisor aktiviert werden muss, kann dies dazu führen, dass Linux-Host-Netzwerke, die die Host-Schnittstelle verwenden, nicht mehr funktionieren.
-
-
 
 [[mac-cloning-use-cases]]
 === Anwendungsfälle für DAS Klonen VON MAC
 
 Es gibt zwei Anwendungsfälle, die beim Klonen von MAC berücksichtigt werden müssen:
 
-* MAC-Klonen nicht aktiviert: Wenn der `_CLONE_MAC` Schlüssel in der Node-Konfigurationsdatei nicht gesetzt oder auf „false“ gesetzt ist, verwendet der Host die Host-NIC-MAC und der Container verfügt über eine StorageGRID-generierte MAC, sofern im Schlüssel kein MAC angegeben ist `_NETWORK_MAC`. Wenn im Schlüssel eine Adresse festgelegt `_NETWORK_MAC` ist, wird die im Schlüssel angegebene Adresse für den Container angegeben `_NETWORK_MAC`. Diese Schlüsselkonfiguration erfordert den Einsatz des promiskuitiven Modus.
-* MAC-Klonen aktiviert: Wenn der `_CLONE_MAC` Schlüssel in der Node-Konfigurationsdatei auf „true“ gesetzt ist, verwendet der Container die Host-NIC-MAC, und der Host verwendet eine StorageGRID-generierte MAC, es sei denn, im Schlüssel ist ein MAC angegeben `_NETWORK_MAC`. Wenn im Schlüssel eine Adresse festgelegt `_NETWORK_MAC` ist, verwendet der Host die angegebene Adresse anstelle einer generierten. In dieser Konfiguration von Schlüsseln sollten Sie nicht den promiskuous Modus verwenden.
+* MAC-Klonen nicht aktiviert: Wenn der  `_CLONE_MAC` Schlüssel in der Konfigurationsdatei nicht gesetzt oder auf „false“ gesetzt ist, verwendet der Host die MAC-Adresse der Host-NIC und der Container erhält eine von StorageGRID generierte MAC-Adresse, sofern im  `_NETWORK_MAC` Schlüssel keine MAC-Adresse angegeben ist. Ist im  `_NETWORK_MAC` Schlüssel eine Adresse angegeben, erhält der Container die im  `_NETWORK_MAC` Schlüssel angegebene Adresse.
+* MAC-Klonen aktiviert: Wenn der  `_CLONE_MAC` Schlüssel in der Konfigurationsdatei auf „true“ gesetzt ist, verwendet der Container die MAC-Adresse der Host-Netzwerkkarte, und der Host verwendet eine von StorageGRID generierte MAC-Adresse, sofern im  `_NETWORK_MAC` Schlüssel keine MAC-Adresse angegeben ist. Wenn im  `_NETWORK_MAC` Schlüssel eine Adresse angegeben ist, verwendet der Host die angegebene Adresse anstelle einer generierten.
 
 
 
-NOTE: Wenn Sie das Klonen von MAC-Adressen nicht verwenden möchten und lieber allen Schnittstellen erlauben möchten, Daten für andere MAC-Adressen als die vom Hypervisor zugewiesenen zu empfangen und zu übertragen, Stellen Sie sicher, dass die Sicherheitseigenschaften auf der Ebene des virtuellen Switches und der Portgruppen für den Promiscuous-Modus, MAC-Adressänderungen und Forged-Übertragungen auf *Accept* gesetzt sind. Die auf dem virtuellen Switch eingestellten Werte können von den Werten auf der Portgruppenebene außer Kraft gesetzt werden. Stellen Sie also sicher, dass die Einstellungen an beiden Stellen identisch sind.
+NOTE: Wenn Sie die MAC-Adressenklonierung nicht verwenden möchten und stattdessen allen Schnittstellen erlauben möchten, Daten für andere MAC-Adressen als die vom Hypervisor zugewiesenen zu empfangen und zu senden, muss sichergestellt sein, dass die Sicherheitseigenschaften auf Ebene des virtuellen Switch und der Portgruppe für MAC-Adressänderungen und Forged Transmits auf *Akzeptieren* gesetzt sind. Die auf dem virtuellen Switch festgelegten Werte können durch die Werte auf Portgruppenebene überschrieben werden, daher sollte sichergestellt sein, dass die Einstellungen an beiden Stellen identisch sind.
 
 Informationen zum Aktivieren des MAC-Klonens finden Sie im link:creating-node-configuration-files.html["Anweisungen zum Erstellen von Node-Konfigurationsdateien"].
 

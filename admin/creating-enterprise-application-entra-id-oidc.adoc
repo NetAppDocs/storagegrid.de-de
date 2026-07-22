@@ -1,0 +1,109 @@
+---
+permalink: admin/creating-enterprise-application-entra-id-oidc.html 
+sidebar: sidebar 
+keywords: enterprise application, entra id, single sign on, sso 
+summary: Verwenden Sie Entra ID, um für jeden Admin Node in Ihrem System eine Anwendung zu erstellen. 
+---
+= Unternehmensanwendungen in Entra ID für OIDC in StorageGRID erstellen
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Entra ID kann verwendet werden, um für jeden Admin-Knoten für OpenID Connect (OIDC) in Ihrem System eine Unternehmensanwendung zu erstellen.
+
+.Bevor Sie beginnen
+* Sie verfügen über die Kennung der vertrauenden Partei und die vollqualifizierte Domain (FQDN) oder die IP-Adresse für jeden Admin-Knoten in Ihrem System.
++
+
+NOTE: Jeder Admin-Knoten in Ihrem StorageGRID-System muss über eine Unternehmensanwendung verfügen. Dadurch wird sichergestellt, dass sich Benutzer sicher an jedem Admin-Knoten an- und abmelden können. Es kann eine einzige Unternehmensanwendung für alle Admin-Knoten erstellt werden (empfohlen) oder eine separate Unternehmensanwendung für jeden Admin-Knoten.
+
+* Sie haben Erfahrung in der Erstellung von Anwendungen in Entra ID.
+* Sie haben ein Entra-ID-Konto mit einem aktiven Abonnement.
+* Sie haben eine der folgenden Rollen im Entra ID-Konto: Globaler Administrator, Cloud-Anwendungsadministrator, Anwendungsadministrator oder Besitzer des Dienstprinzipals.
+
+
+
+
+[[step-1-access-entra-id]]
+== Schritt 1: Zugriff auf Entra ID
+
+.Schritte
+. Melden Sie sich beim an https://portal.azure.com["Azure-Portal"^].
+. Wählen Sie link:https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/Overview["Microsoft Entra ID"^].
+. Wählen Sie link:https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/RegisteredApps["App Registrierungen"^].
+
+
+
+
+[[step-2-register-a-new-application]]
+== Schritt 2: Eine neue Anwendung registrieren
+
+Für jeden Admin-Knoten in Ihrem System wird eine neue Unternehmensanwendung registriert.
+
+.Schritte
+. Im Bereich „Entra ID Enterprise applications“ *Application registrations* > *New registration* auswählen.
+. Für *Name* die Kennung der vertrauenden Partei eingeben.
+. Unter *Unterstützte Kontotypen* werden die Kontotypen ausgewählt, die die Anwendung nutzen oder auf die API zugreifen können, zum Beispiel *Nur Einzelmandant - <tenant_name>*.
+. Unter *Umleitungs-URI* *Plattform auswählen* > *Web* auswählen.
+. Geben Sie die FQDN (oder IP-Adresse) Redirect-URI für den Admin-Node ein:  `https://<FQDN>/api/v4/oidc-callback` oder  `https://<IP_address>/api/v4/oidc-callback`
++
+Geben Sie die URI für jeden Admin Node ein, wenn Sie eine Enterprise-Anwendung für alle Admin Nodes verwenden. Wenn Sie für jeden Admin Node eine andere Enterprise-Anwendung verwenden, geben Sie nur die URI für den jeweiligen Admin Node ein.
+
+. *Registrieren* auswählen.
+. Auf der Übersichtsseite für die Registrierung der neuen Anwendung sind die *Application (client) ID* und die *Directory (tenant) ID* zu notieren.
+
+
+
+
+[[step-3-configure-a-client-secret]]
+== Schritt 3: Ein Clientgeheimnis konfigurieren
+
+Für jede neue Anwendung ein Clientgeheimnis registrieren.
+
+.Schritte
+. Auf der Übersichtsseite für die Registrierung der neuen Anwendung *Verwalten* > *Zertifikate und Geheimnisse* > *Neues Clientgeheimnis* auswählen.
+. Geben Sie das Client-Geheimnis ein und legen Sie ein gewünschtes Ablaufdatum fest.
+. *Hinzufügen* auswählen, um das Clientgeheimnis zu erstellen.
+. Kopieren Sie den geheimen *Wert*.
++
+
+NOTE: Der geheime Wert ist nach dem Aktualisieren oder dem Verlassen der Client-Geheimnisseite nicht mehr sichtbar.
+
+
+
+
+
+[[step-4-set-up-the-api-permissions]]
+== Schritt 4: API-Berechtigungen einrichten
+
+Die API-Berechtigungen für jede neue Anwendung einrichten.
+
+.Schritte
+. Auf der Übersichtsseite für die Registrierung der neuen Anwendung *Verwalten* > *API-Berechtigungen* > *Berechtigung hinzufügen* auswählen.
+. Wählen Sie *Microsoft APIs* > *Microsoft Graph* > *Delegierte Berechtigungen*.
+. *OpenId-Berechtigungen* erweitern, dann *email*, *offline_access*, *openid* und *profile* auswählen.
+. *Berechtigungen hinzufügen* auswählen.
+. Wählen Sie *Administratorzustimmung erteilen für <tenant>*, dann *Ja*.
+
+
+
+
+[[step-5-add-the-logged-out-redirect-uri]]
+== Schritt 5: Die URI für die Umleitung nach dem Abmelden hinzufügen
+
+Fügen Sie für jede neue Anwendung die Abmelde-Weiterleitungs-URI hinzu.
+
+.Schritte
+. Auf der Übersichtsseite der neuen Anwendungsregistrierung *Verwalten* > *Authentifizierung* auswählen.
+. Wählen Sie *Umleitungs-URI hinzufügen* > *Web*.
+. Geben Sie die FQDN (oder IP-Adresse) Redirect-URI für den Admin-Node ein: `https://<FQDN>/api/v4/oidc-logged-out` oder `https://<IP_address>/api/v4/oidc-logged-out`
++
+Geben Sie die URI für jeden Admin Node ein, wenn eine Anwendungsgruppe für alle Admin Nodes verwendet wird. Wenn für jeden Admin Node eine andere Anwendungsgruppe verwendet wird, nur die URI für den jeweiligen Admin Node eingeben.
+
+. *Konfigurieren* auswählen.
+
+
+.Was kommt als Nächstes
+Nach der Erstellung von Unternehmensanwendungen link:configure-sso-oidc.html["SSO mit OIDC konfigurieren"].

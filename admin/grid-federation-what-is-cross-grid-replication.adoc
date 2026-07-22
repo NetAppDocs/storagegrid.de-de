@@ -2,7 +2,7 @@
 permalink: admin/grid-federation-what-is-cross-grid-replication.html 
 sidebar: sidebar 
 keywords: cross-grid replication, cgr, disaster recovery, grid federation 
-summary: Grid-übergreifende Replizierung ist die automatische Replizierung von Objekten zwischen ausgewählten S3 Buckets in zwei StorageGRID Systemen, die über eine Grid-Verbundverbindung verbunden sind. Account-Klon ist für Grid-übergreifende Replizierung erforderlich. 
+summary: Cross-grid replication ist die automatische Replikation von Objekten zwischen ausgewählten S3-Buckets in zwei StorageGRID Systemen, die über eine Grid-Federation-Verbindung verbunden sind. Für die Cross-grid replication ist eine Account-Synchronisierung erforderlich. 
 ---
 = Erfahren Sie mehr über die gitterübergreifende Replikation in StorageGRID
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Grid-übergreifende Replizierung ist die automatische Replizierung von 
 
 
 [role="lead"]
-Grid-übergreifende Replizierung ist die automatische Replizierung von Objekten zwischen ausgewählten S3 Buckets in zwei StorageGRID-Systemen, die in einem verbunden sindlink:grid-federation-overview.html["Netzverbundverbindung"]. link:grid-federation-what-is-account-clone.html["Konto-Klon"] Ist für die Grid-übergreifende Replizierung erforderlich.
+Die Cross-grid-Replikation ist die automatische Replikation von Objekten zwischen ausgewählten S3-Buckets in zwei StorageGRID Systemen, die in einer link:grid-federation-overview.html["Netzverbundverbindung"] verbunden sind. link:grid-federation-what-is-account-sync.html["Kontosynchronisierung"]Für die Cross-grid-Replikation ist eine entsprechende Konfiguration erforderlich.
 
 
 
@@ -20,22 +20,28 @@ Grid-übergreifende Replizierung ist die automatische Replizierung von Objekten 
 
 Das Workflow-Diagramm fasst die Schritte zum Konfigurieren der Cross-Grid-Replikation zwischen Buckets auf zwei Grids zusammen.
 
-image:grid-federation-cgr-workflow.png["Workflow für Grid-übergreifende Replizierung"]
+image:grid_federation_cgr_workflow.png["Workflow für Grid-übergreifende Replizierung"]
 
 
 
 [[requirements-for-cross-grid-replication]]
 == Anforderungen für die Grid-übergreifende Replizierung
 
-Wenn ein Mandantenkonto die Berechtigung *Grid-Föderationsverbindung verwenden* hat, um eine oder mehrerelink:grid-federation-overview.html["Netzverbundverbindungen"] , ein Mandantenbenutzer mit Root-Zugriffsberechtigung kann Buckets in den entsprechenden Mandantenkonten auf jedem Raster erstellen.  Diese Eimer:
+Besitzt ein Mandantenkonto die Berechtigung *Grid-Federationsverbindung verwenden*, um eine oder mehrere link:grid-federation-overview.html["Netzverbundverbindungen"] zu nutzen, kann ein Mandantenbenutzer mit Root-Zugriffsberechtigung Buckets („Source“- und „Destination“-Buckets) in den entsprechenden Mandantenkonten auf jedem Grid erstellen. Diese Buckets:
 
 * Können unterschiedliche Namen haben
 * Kann verschiedene Regionen haben
 * Versionierung muss aktiviert sein
-* Muss leer sein
+* Eine der folgenden S3 Object Lock Konfigurationen muss vorhanden sein:
++
+** Quelle: *deaktiviert*, Ziel: *deaktiviert*
+** Quelle: *aktiviert*, Ziel: *aktiviert*
+** Quelle: *deaktiviert*, Ziel: *aktiviert*
 
 
-Nachdem beide Buckets erstellt wurden, kann die Grid-übergreifende Replizierung für einen oder beide Buckets konfiguriert werden.
+
+
+Nachdem Sie beide Buckets erstellt haben, kann die gridübergreifende Replikation für einen oder beide Buckets konfiguriert werden.
 
 .Weitere Informationen .
 link:../tenant/grid-federation-manage-cross-grid-replication.html["Grid-übergreifende Replizierung managen"]
@@ -54,7 +60,7 @@ Sie können die Cross-Grid-Replikation so konfigurieren, dass sie in eine oder i
 
 Wenn Sie die Cross-Grid-Replikation für einen Bucket nur auf einem Grid aktivieren, werden die diesem Bucket (dem Quell-Bucket) hinzugefügten Objekte in den entsprechenden Bucket auf dem anderen Grid (dem Ziel-Bucket) repliziert.  Dem Ziel-Bucket hinzugefügte Objekte werden jedoch nicht zurück zur Quelle repliziert.  In der Abbildung ist die Cross-Grid-Replikation aktiviert für `my-bucket` von Raster 1 zu Raster 2, aber in die andere Richtung ist es nicht aktiviert.
 
-image:grid-federation-cross-grid-replication-one-direction.png["Abbildung zeigt die Verbindung mit dem Grid Federation in eine Richtung"]
+image:grid_federation_cross_grid_replication_one_direction.png["Abbildung zeigt die Verbindung mit dem Grid Federation in eine Richtung"]
 
 
 
@@ -63,7 +69,7 @@ image:grid-federation-cross-grid-replication-one-direction.png["Abbildung zeigt 
 
 Wenn Sie auf beiden Grids die Grid-übergreifende Replizierung für denselben Bucket aktivieren, werden die zu einem Bucket hinzugefügten Objekte in das andere Grid repliziert. In der Abbildung ist die Grid-übergreifende Replizierung für in beide Richtungen aktiviert `my-bucket`.
 
-image:grid-federation-cross-grid-replication.png["Bild zeigt Replikation in eine Richtung im Vergleich zur Replikation in beide Richtungen"]
+image:grid_federation_cross_grid_replication.png["Bild zeigt Replikation in eine Richtung im Vergleich zur Replikation in beide Richtungen"]
 
 
 
@@ -144,7 +150,7 @@ Wenn ein S3-Client ein Objekt aus einem Bucket löscht, für den die Grid-überg
 
 In der Abbildung wurde *Löschmarkierungen replizieren* auf *Ja* gesetzt, alslink:../tenant/grid-federation-manage-cross-grid-replication.html["Die Grid-übergreifende Replizierung wurde aktiviert"] .  Löschanforderungen für den Quell-Bucket, die eine Versions-ID enthalten, löschen keine Objekte aus dem Ziel-Bucket.  Löschanforderungen für den Quell-Bucket, die keine Versions-ID enthalten, scheinen Objekte im Ziel-Bucket zu löschen.
 
-image:grid-federation-cross-grid-replication-delete.png["Abbildung zeigt, wie der Replikate-Client auf beiden Rastern gelöscht wird"]
+image:grid_federation_cross_grid_replication_delete.png["Abbildung zeigt, wie der Replikate-Client auf beiden Rastern gelöscht wird"]
 
 
 NOTE: Wenn Sie die Objektlöschungen zwischen den Rastern synchronisieren möchten, erstellen Sie für die Planungsperioden auf beiden Rastern entsprechende Objektelink:../s3/create-s3-lifecycle-configuration.html["S3 Lifecycle-Konfigurationen"].
@@ -210,6 +216,12 @@ Deaktiviert
 Ermöglicht
 
 |===
+
+CAUTION: Sie können die S3 Object Lock für bestehende Buckets aktivieren, was später zu einer Fehlkonfiguration führen könnte.
+
+
+NOTE: Wenn S3 Object Lock im Quell-Bucket aktiviert ist, sollte es auch im Ziel-Bucket aktiviert sein. Ist S3 Object Lock im Ziel-Bucket deaktiviert, tritt während der Replikation ein Fehler auf. Siehe link:../admin/grid-federation-troubleshoot.html#cross-grid-replication-alerts-and-errors["Grid-übergreifende Replizierungswarnungen und Fehler"].
+
 Wenn die S3-Objektsperre im Quell-Bucket aktiviert ist:
 
 * Die Objekte werden mit Aufbewahrungseinstellungen am Ziel in dieser Reihenfolge gesperrt:

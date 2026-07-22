@@ -37,7 +37,7 @@ NOTE: S3-API-Operationen zum Hochladen von Objekten (oder Objektteilen) können 
 * *Bedingungen für die Fertigstellung des Jobs*. Das EC-Ausgleichverfahren gilt als abgeschlossen, wenn eine der folgenden Bedingungen erfüllt ist:
 +
 ** Es können keine Daten mit Erasure Coded verschoben werden.
-** Die Daten in allen Knoten liegen innerhalb einer Abweichung von 5% von der Zieldatenpartition.
+** Die Daten in allen Knoten liegen innerhalb einer Abweichung von 5 % von der angestrebten nutzbaren Speicherplatzpartition.
 ** Das Verfahren läuft seit 30 Tagen.
 
 
@@ -105,11 +105,11 @@ Hilfe zum Befehl zum Ausgleich von Daten erhalten:
 Gehen Sie zur Seite „Knoten“, um die Datenverteilung auf den Speicherknoten der Site zu beurteilen.
 
 +
-Der EC-Neuausgleich-Job gilt als abgeschlossen und wird angehalten, wenn sich die Daten in allen Knoten innerhalb einer Abweichung von 5 % von der Zieldatenpartition befinden.
+Der EC Rebalance-Vorgang gilt als abgeschlossen und wird beendet, sobald der nutzbare Speicherplatz auf allen Knoten innerhalb einer Abweichung von 5 % von der Zielaufteilung des nutzbaren Speicherplatzes liegt.
 
 ** Wenn `State` ist `Success`, optional<<review_object_storage,Prüfen von Objekt-Storage>>, um die aktualisierten Details für die Website anzuzeigen.
 +
-Daten mit Erasure-Coding-Verfahren sollten nun besser auf die Storage-Nodes am Standort abgestimmt sein.
+Der nutzbare Speicherplatz sollte nun gleichmäßiger auf die Storage Nodes am Standort verteilt sein.
 
 ** Wenn `State` `Failure`:
 +

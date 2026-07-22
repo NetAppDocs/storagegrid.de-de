@@ -15,7 +15,7 @@ Ein StorageGRID System besteht aus mehreren Typen von Grid-Nodes an einem oder m
 
 Erfahren Sie mehr über dielink:nodes-and-services.html["Rasterknotentypen"] .
 
-Weitere Informationen zur StorageGRID -Netzwerktopologie, den Anforderungen und der Grid-Kommunikation finden Sie imlink:../network/index.html["Netzwerkrichtlinien"] .
+Weitere Informationen zur StorageGRID Netzwerktopologie, zu den Anforderungen und zur Grid-Kommunikation sind unter link:../network/index.html["Netzwerkrichtlinien"] zu finden.
 
 
 
@@ -62,8 +62,8 @@ Dieses Diagramm zeigt, wie Grid-Nodes innerhalb eines StorageGRID Systems angeor
 
 image:grid_nodes_and_components.png["Diagramm mit umgebenden Text beschrieben"]
 
-S3 Clients speichern Objekte in StorageGRID und rufen sie ab. Andere Clients werden verwendet, um E-Mail-Benachrichtigungen zu senden, auf die StorageGRID-Managementoberfläche zuzugreifen und optional auf die Audit-Freigabe zuzugreifen.
+S3-Clients speichern und rufen Objekte in StorageGRID ab. Andere Clients werden verwendet, um auf die StorageGRID Managementoberfläche und optional auf die Audit-Freigabe zuzugreifen. Zusätzlich kann StorageGRID optional E-Mail-Benachrichtigungen über einen externen SMTP-Server versenden.
 
 S3-Clients können eine Verbindung zu einem Gateway-Node oder einem Admin-Node herstellen, um die Load-Balancing-Schnittstelle zu Storage-Nodes zu verwenden. Alternativ können S3-Clients über HTTPS eine direkte Verbindung zu Storage-Nodes herstellen.
 
-Objekte können innerhalb von StorageGRID auf software- oder hardwarebasierten Speicherknoten oder in Cloud-Speicherpools gespeichert werden, die aus externen S3-Buckets oder Azure Blob-Speichercontainern bestehen.
+Objekte können innerhalb von StorageGRID auf software- oder hardwarebasierten Storage Nodes oder in Cloud Storage Pools gespeichert werden, die aus externen S3 Buckets oder Azure Blob Storage Containern bestehen.

@@ -20,7 +20,7 @@ Wenn Ihrem Mandantenkonto bei der Erstellung die Berechtigung *Grid Federation c
 
 Das Workflow-Diagramm fasst die Schritte zusammen, die Sie zum Konfigurieren der Cross-Grid-Replikation zwischen Buckets auf zwei Grids ausführen.  Diese Schritte werden unterhalb des Diagramms ausführlicher beschrieben.
 
-image:grid-federation-cgr-workflow.png["Workflow für Grid-übergreifende Replizierung"]
+image:grid_federation_cgr_workflow.png["Workflow für Grid-übergreifende Replizierung"]
 
 
 
@@ -74,8 +74,6 @@ TIP: Je nach Bedarf kann jeder Bucket einen anderen Bereich verwenden.
 [[enable-cross-grid-replication]]
 === Grid-übergreifende Replizierung
 
-Sie müssen diese Schritte ausführen, bevor Sie Objekte zu einem Bucket hinzufügen.
-
 .Schritte
 . Ausgehend von einem Raster, dessen Objekte Sie replizieren möchten, aktivieren Sielink:../admin/grid-federation-what-is-cross-grid-replication.html["Grid-übergreifende Replizierung in eine Richtung"]:
 +
@@ -90,7 +88,7 @@ Sie müssen diese Schritte ausführen, bevor Sie Objekte zu einem Bucket hinzuf�
 *** *Ja* (Standard): Ein Löschmarker wird zum Quell-Bucket hinzugefügt und in den Ziel-Bucket repliziert.
 *** *Nein*: Dem Quell-Bucket wird eine Löschmarkierung hinzugefügt, die jedoch nicht in den Ziel-Bucket repliziert wird.
 +
-image:grid-federation-cross-grid-replication-client-deletes.png["Abbildung zeigt, wie der Replikate-Client auf beiden Rastern gelöscht wird"]
+image:grid_federation_cross_grid_replication_client_deletes.png["Abbildung zeigt, wie der Replikate-Client auf beiden Rastern gelöscht wird"]
 
 +
 
@@ -107,7 +105,6 @@ Siehelink:../admin/grid-federation-what-is-cross-grid-replication.html["Was ist 
 *** *Normal*: Alle Grid-übergreifenden Replikationsanfragen sind enthalten, was das Volumen der Audit-Ausgabe erheblich erhöht.
 
 
-.. Überprüfen Sie Ihre Auswahl. Sie können diese Einstellungen nur ändern, wenn beide Buckets leer sind.
 .. Wählen Sie *Enable und Test*.
 +
 Nach einigen Augenblicken erscheint eine Erfolgsmeldung.  Zu diesem Bucket hinzugefügte Objekte werden jetzt automatisch in das andere Raster repliziert.  *Cross-Grid-Replikation* wird auf der Bucket-Detailseite als aktivierte Funktion angezeigt.
@@ -153,11 +150,6 @@ Beachten Sie vor dem Deaktivieren der Grid-übergreifenden Replikation Folgendes
 * Durch das Deaktivieren der Cross-Grid-Replikation werden keine Objekte entfernt, die bereits zwischen Grids kopiert wurden.  Beispielsweise können Objekte in `my-bucket` auf Grid 1, die kopiert wurden nach `my-bucket` auf Grid 2 werden nicht entfernt, wenn Sie die Cross-Grid-Replikation für diesen Bucket deaktivieren.  Wenn Sie diese Objekte löschen möchten, müssen Sie sie manuell entfernen.
 * Wenn die Grid-übergreifende Replizierung für jeden Buckets aktiviert wurde (d. h. wenn die Replikation in beide Richtungen erfolgt), können Sie die Grid-übergreifende Replizierung für einen oder beide Buckets deaktivieren. So können Sie beispielsweise die Replikation von Objekten von in Raster 1 nach in `my-bucket` Raster 2 deaktivieren `my-bucket`, während Sie weiterhin Objekte von in Raster 2 nach in Raster `my-bucket` 1 replizieren `my-bucket`.
 * Sie müssen die Cross-Grid-Replikation deaktivieren, bevor Sie einem Mandanten die Berechtigung zur Verwendung der Grid-Föderationsverbindung entziehen können. Weitere Informationen finden Sie unter link:../admin/grid-federation-manage-tenants.html["Management zulässiger Mandanten"] .
-* Wenn Sie die Cross-Grid-Replikation für einen Bucket deaktivieren, der Objekte enthält, können Sie die Cross-Grid-Replikation nicht wieder aktivieren, es sei denn, Sie löschen alle Objekte sowohl aus dem Quell- als auch aus dem Ziel-Bucket.
-+
-
-CAUTION: Die Replikation kann nur dann wieder aktiviert werden, wenn beide Buckets leer sind.
-
 
 
 .Bevor Sie beginnen

@@ -55,8 +55,8 @@ Stellen Sie sicher, dass Ihr Linux-Betriebssystem die Mindestanforderungen von S
  a| 
 StorageGRID-Dokumentation
  a| 
-* https://library.netapp.com/ecm/ecm_download_file/ECMLP3351267["Versionshinweise"^]. Sie müssen sich mit Ihrem NetApp Konto anmelden oder ein Konto erstellen, um auf die Versionshinweise zuzugreifen. Lesen Sie diese bitte sorgfältig durch, bevor Sie mit dem Upgrade beginnen.
-* https://kb.netapp.com/hybrid/StorageGRID/Maintenance/StorageGRID_12.0_software_upgrade_resolution_guide["Lösungsleitfaden für StorageGRID Software-Upgrades"^]für die Hauptversion, auf die Sie aktualisieren (Anmeldung erforderlich)
+* https://library.netapp.com/ecm/ecm_download_file/ECMLP3373065["Versionshinweise"^]. Sie müssen sich mit Ihrem NetApp Konto anmelden oder ein Konto erstellen, um auf die Versionshinweise zuzugreifen. Lesen Sie diese bitte sorgfältig durch, bevor Sie mit dem Upgrade beginnen.
+* https://kb.netapp.com/hybrid/StorageGRID/Maintenance/StorageGRID_12.1_software_upgrade_resolution_guide["Lösungsleitfaden für StorageGRID Software-Upgrades"^] für die Hauptversion, auf die Sie aktualisieren (Anmeldung erforderlich)
 * Andere https://docs.netapp.com/us-en/storagegrid-family/index.html["StorageGRID-Dokumentation"^], nach Bedarf.
 
 

@@ -1,0 +1,56 @@
+---
+permalink: maintain/replacing-primary-admin-node-using-npan.html 
+sidebar: sidebar 
+keywords: storagegrid, replace, primary admin node, non-primary admin node 
+summary: Ein ausgefallener primärer Admin-Knoten kann mithilfe eines nicht-primären Admin-Knotens ersetzt werden. 
+---
+= Austausch des primären StorageGRID Admin-Knotens mithilfe eines nicht-primären Admin-Knotens
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um einen primären Admin-Node wiederherzustellen, müssen Sie zuerst die physische oder virtuelle Hardware ersetzen.
+
+* Ein ausgefallener primärer Admin-Knoten kann durch einen primären Admin-Knoten ersetzt werden, der auf derselben Plattform läuft.
+* Sie können einen primären Admin-Knoten, der auf VMware oder einem Linux-Host läuft, durch einen primären Admin-Knoten ersetzen, der auf einer StorageGRID Services Appliance gehostet wird.
+* Ein primärer Admin-Knoten, der auf einem VMware-Host läuft, kann durch eine SG1000- oder SG100-Services-Appliance ersetzt werden.
+
+
+Verwenden Sie das Verfahren, das der für den Node ausgewählten Ersatzplattform entspricht. Nachdem Sie den Knotenaustausch abgeschlossen haben (der für alle Node-Typen geeignet ist), werden Sie durch dieses Verfahren zum nächsten Schritt für die primäre Admin-Knoten-Wiederherstellung geleitet.
+
+[cols="1a,2a"]
+|===
+| Austauschplattform | Verfahren 
+
+
+ a| 
+VMware
+ a| 
+link:all-node-types-replacing-vmware-node.html["Einen VMware-Knoten durch einen Wiederherstellungsknoten ersetzen"]
+
+link:replace-vmware-node-with-sg1000-sg100.html["VMware-Knoten durch die SG1000 oder SG100 Services Appliance ersetzen"]
+
+
+
+ a| 
+Linux
+ a| 
+link:all-node-types-replacing-linux-node.html["Ersetzen Sie einen Linux-Knoten"]
+
+
+
+ a| 
+Service-Appliances
+ a| 
+link:replacing-failed-node-with-services-appliance.html["Ersetzen Sie eine Service Appliance"]
+
+
+
+ a| 
+OpenStack
+ a| 
+Die von NetApp bereitgestellten Festplattendateien und Skripte für Virtual Machines von OpenStack werden für Recovery-Vorgänge nicht mehr unterstützt. Wenn Sie einen Knoten wiederherstellen müssen, der in einer OpenStack-Implementierung ausgeführt wird, laden Sie die Dateien für Ihr Linux-Betriebssystem herunter. Dann folgen Sie dem Verfahren für link:all-node-types-replacing-linux-node.html["Ersetzen eines Linux-Knotens"].
+
+|===

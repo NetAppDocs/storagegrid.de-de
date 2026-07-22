@@ -97,4 +97,5 @@ restore copies of data.
 
 
 
-Nachdem die Speicher-Volumes neu formatiert und neu gemountet wurden und die erforderlichen Cassandra-Vorgänge abgeschlossen sind, können Sie link:../maintain/restoring-volume.html["Stellen Sie Objektdaten mithilfe von Grid Manager wieder her"].
+.Was kommt als Nächstes?
+Nachdem die Speichervolumes neu formatiert und wieder eingebunden wurden und die notwendigen Cassandra-Operationen abgeschlossen sind, können Sie link:../maintain/restoring-object-data-to-storage-volume-where-system-drive-is-intact.html["Stellen Sie Objektdaten mithilfe von Grid Manager wieder her"].

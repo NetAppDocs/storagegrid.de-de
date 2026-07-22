@@ -38,9 +38,24 @@ Wenn das zugrunde liegende Problem behoben wurde, wird die Fehlermeldung nicht m
 [[error-health-check-failed-error-from-endpoint]]
 == Fehler: Integritätsprüfung fehlgeschlagen. Fehler vom Endpunkt
 
-Dieser Fehler kann auftreten, wenn Sie S3-Objektsperre mit Standardaufbewahrung für Ihren Amazon S3-Bucket aktivieren, nachdem Sie diesen Bucket für einen Cloud-Storage-Pool verwenden. Dieser Fehler tritt auf, wenn der PUT-Vorgang keinen HTTP-Header mit einem Payload-Prüfsummenwert wie hat `Content-MD5`. Dieser Header-Wert wird von AWS für DAS PUT von Vorgängen in Buckets benötigt, für die S3 Object Lock aktiviert ist.
+Dieser Fehler kann in einem der folgenden Fälle auftreten:
 
-Um dieses Problem zu beheben, führen Sie die Schritte unter link:editing-cloud-storage-pool.html["Bearbeiten eines Cloud-Speicherpools"]aus, ohne Änderungen vorzunehmen. Diese Aktion löst die Validierung der Cloud-Storage-Pool-Konfiguration aus, die das S3 Object Lock-Flag auf einer Cloud-Storage-Pool-Endpunktkonfiguration automatisch erkennt und aktualisiert.
+* Wenn Sie die S3 Object Lock-Funktion mit der Standardaufbewahrung für Ihren Amazon S3-Bucket aktivieren, nachdem Sie diesen Bucket für einen Cloud Storage Pool verwendet haben. Dieser Fehler tritt auf, wenn der PUT-Vorgang keinen HTTP-Header mit einem Nutzlast-Prüfsummenwert wie  `Content-MD5` enthält. Dieser Headerwert ist von AWS für PUT-Vorgänge in Buckets mit aktivierter S3 Object Lock-Funktion erforderlich.
++
+Um dieses Problem zu beheben, die Schritte in link:../ilm/editing-cloud-storage-pool.html["Bearbeiten eines Cloud-Speicherpools"] ausführen, ohne Änderungen vorzunehmen. Dadurch wird die Validierung der Cloud Storage Pool Konfiguration ausgelöst, die das S3 Object Lock Flag in einer Cloud Storage Pool Endpunktkonfiguration automatisch erkennt und aktualisiert.
+
+* Wenn die S3-Objektsperre mit der Standardaufbewahrungsdauer für den StorageGRID S3-Bucket aktiviert wird, nachdem dieser Bucket für einen Cloud Storage Pool verwendet wurde.
++
+Um dieses Problem zu beheben:
+
++
+** Bei Verwendung von HTTP: Cloud Storage Pools mit aktiviertem S3 Object Lock werden nicht unterstützt. Die Endpunktverbindung kann stattdessen auf HTTPS umgestellt werden.
+** Wenn Sie HTTPS verwenden: Die Schritte in link:../ilm/editing-cloud-storage-pool.html["Bearbeiten eines Cloud-Speicherpools"]ausführen, ohne Änderungen vorzunehmen. Dadurch wird die Validierung der Cloud Storage Pool Konfiguration ausgelöst, die das S3 Object Lock Flag in einer Cloud Storage Pool Endpunktkonfiguration automatisch erkennt und aktualisiert.
+
+
+
+
+Wenn weitere Probleme auftreten, kann der technische Support kontaktiert werden.
 
 
 

@@ -16,7 +16,7 @@ Sie können die CloudMirror-Replizierung für einen S3-Bucket aktivieren, wenn S
 So können Sie beispielsweise CloudMirror Replizierung verwenden, um spezifische Kundendaten in Amazon S3 zu spiegeln und anschließend AWS Services für Analysen Ihrer Daten nutzen.
 
 
-NOTE: Die CloudMirror-Replizierung wird nicht unterstützt, wenn im Quell-Bucket S3-Objektsperre aktiviert ist.
+NOTE: CloudMirror Replikation wird nur unterstützt, wenn für den Quell-Bucket die S3 Object Lock-Funktion aktiviert ist und der Endpunkt ein Amazon oder StorageGRID S3 Bucket ist. Object Lock-Einstellungen werden nicht an den Bucket-Endpunkt repliziert.
 
 
 

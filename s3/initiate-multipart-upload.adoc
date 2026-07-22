@@ -55,10 +55,12 @@ NOTE: Wenn Sie ein Objekt in einen Bucket mit aktivierter S3-Objektsperrung aufn
 Die folgenden Anfragezeilen werden unterstützt:
 
 * `Content-Type`
-* `x-amz-checksum-algorithm`
+* `x-amz-checksum-algorithm`: Geben Sie  `CRC32`, `CRC32C`, `CRC64NVME` oder `SHA256` an
 +
-Derzeit wird nur der SHA256-Wert für `x-amz-checksum-algorithm` unterstützt.
 
+NOTE: Wenn die CreateMultipartUpload-Anfrage keine Prüfsumme angibt, berechnet StorageGRID keine Standard-CRC-64/NVME-Prüfsumme für ein Objekt. StorageGRID ignoriert ungültige oder nicht unterstützte  `x-amz-checksum-algorithm` Werte.
+
+* `x-amz-checksum-type`
 * `x-amz-meta-`, Gefolgt von einem Name-Wert-Paar, das benutzerdefinierte Metadaten enthält
 +
 Verwenden Sie bei der Angabe des Name-value-Paars für benutzerdefinierte Metadaten dieses allgemeine Format:

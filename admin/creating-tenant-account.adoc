@@ -19,7 +19,7 @@ Die Schritte zum Erstellen eines Mandantenkontos variieren je nachdem, oblink:us
 * Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
 * Sie haben die link:admin-group-permissions.html["Berechtigung für Root-Zugriff oder Mandantenkonten"].
 * Wenn das Mandantenkonto die für den Grid Manager konfigurierte Identitätsquelle verwendet und Sie einer föderierten Gruppe Root-Zugriffsberechtigungen für das Mandantenkonto gewähren möchten, haben Sie diese föderierte Gruppe in den Grid Manager importiert. Sie müssen dieser Administratorgruppe keine Grid Manager-Berechtigungen zuweisen. Siehe link:managing-admin-groups.html["Managen von Admin-Gruppen"].
-* Wenn Sie einem S3-Mandanten das Klonen von Kontodaten und das Replizieren von Bucket-Objekten in einem anderen Grid über eine Grid-Federation-Verbindung ermöglichen möchten:
+* Wenn einem S3-Mandanten das Synchronisieren von Kontodaten und das Replizieren von Bucket-Objekten mithilfe einer Grid-Federation-Verbindung in ein anderes Grid ermöglicht werden soll:
 +
 ** Sie haben link:grid-federation-create-connection.html["Grid Federation-Verbindung konfiguriert"].
 ** Der Status der Verbindung lautet *connected*.
@@ -141,9 +141,13 @@ Der Mandant kann S3 SelectObjectContent API-Anforderungen ausgeben, um Objektdat
  a| 
 Netzverbundverbindung
  a| 
-Der Mandant kann eine Grid Federation-Verbindung verwenden, die:
+Der Mieter kann Grid Federation Verbindungen nutzen, die Folgendes ermöglichen:
 
-** Bewirkt, dass dieser Mandant und alle dem Konto hinzugefügten Mandantengruppen und Benutzer aus diesem Raster (das _source Grid_) in das andere Raster der ausgewählten Verbindung (das _Destination Grid_) geklont werden.
+** Bewirkt, dass dieses Mandantenkonto sowie alle Mandantengruppen, Benutzer und S3-Zugriffsschlüssel zwischen diesem Grid und den anderen Grids in den ausgewählten Verbindungen synchronisiert werden.
++
+
+TIP: Falls dies aus Sicherheits- oder Compliance-Gründen erforderlich ist, kann die Option *Enable access key sync* deaktiviert werden.
+
 ** Ermöglicht diesem Mandanten, die Grid-übergreifende Replizierung zwischen entsprechenden Buckets in jedem Grid zu konfigurieren.
 
 
@@ -207,19 +211,10 @@ Eine Erfolgsmeldung wird angezeigt, und die neue Serviceeinheit wird auf der Sei
 
 NOTE: Das Anwenden von Mandanteneinstellungen für das Grid kann je nach Netzwerkkonnektivität, Node-Status und Cassandra-Vorgängen 15 Minuten oder länger dauern.
 
-. Wenn Sie die Berechtigung *Grid Federation connection* für den Mieter verwenden ausgewählt haben:
-+
-.. Vergewissern Sie sich, dass ein identischer Mandant auf das andere Grid in der Verbindung repliziert wurde. Die Mandanten in beiden Grids haben die gleiche 20-stellige Konto-ID, den gleichen Namen, die gleiche Beschreibung, das gleiche Kontingent und die gleichen Berechtigungen.
+. Wenn Sie für den Mandanten die Berechtigung *Use grid federation connection* ausgewählt haben, vergewissern Sie sich, dass ein identischer Mandant in der Verbindung in das andere Grid repliziert wurde. Die Mandanten in beiden Grids verfügen über dieselbe 20-stellige Konto-ID, denselben Namen, dieselbe Beschreibung, dasselbe Kontingent und dieselben Berechtigungen.
 +
 
-NOTE: Wenn die Fehlermeldung „Tenant created without a Clone“ angezeigt wird, lesen Sie die Anweisungen in link:grid-federation-troubleshoot.html["Fehler beim Grid-Verbund beheben"].
-
-.. Wenn Sie beim Definieren des Root-Zugriffs ein lokales Root-Benutzerpasswort für den replizierten Mandanten angegeben link:changing-password-for-tenant-local-root-user.html["Ändern Sie das Passwort für den lokalen Root-Benutzer"]haben.
-+
-
-TIP: Ein lokaler Root-Benutzer kann sich erst bei Tenant Manager im Zielraster anmelden, wenn das Passwort geändert wurde.
-
-
+NOTE: Wenn eine Fehlermeldung angezeigt wird, die darauf hinweist, dass das Mandantenkonto auf diesem Grid erstellt wurde, aber nicht mit den anderen Grids synchronisiert wurde, finden sich Anweisungen in link:grid-federation-troubleshoot.html["Fehler beim Grid-Verbund beheben"].
 
 
 
@@ -331,4 +326,4 @@ Ein eingeschränkter Port
 [[configure-the-tenant]]
 == Konfigurieren Sie den Mandanten
 
-Folgen Sie den Anweisungen inlink:../tenant/index.html["Verwenden Sie ein Mandantenkonto"], um Mandantengruppen und -Benutzer, S3-Zugriffsschlüssel, Buckets, Plattformservices sowie Account-Klone und Grid-übergreifende Replizierung zu managen.
+In link:../tenant/index.html["Verwenden Sie ein Mandantenkonto"] finden sich Anweisungen zur Verwaltung von Mandantengruppen und Benutzern, S3-Zugriffsschlüsseln, Buckets, Plattformdiensten sowie zur Kontosynchronisierung und netzübergreifenden Replikation.

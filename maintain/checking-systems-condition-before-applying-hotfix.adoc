@@ -13,6 +13,7 @@ summary: Sie müssen überprüfen, ob das System bereit ist, um den Hotfix aufzu
 [role="lead"]
 Sie müssen überprüfen, ob das System bereit ist, um den Hotfix aufzunehmen.
 
+.Schritte
 . Melden Sie sich mit einem beim Grid-Manager anlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
 . Stellen Sie, falls möglich, sicher, dass das System ordnungsgemäß ausgeführt wird und dass alle Grid-Nodes mit dem Grid verbunden sind.
 +

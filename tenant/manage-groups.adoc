@@ -32,8 +32,7 @@ Sie können die grundlegenden Informationen und Details für jede Gruppe anzeige
 Wenn das Mandantenkonto über die Berechtigung *Grid Federation connection* verwenden verfügt und Sie Gruppen im Quellraster des Mandanten anzeigen:
 
 +
-** Eine Banner-Meldung zeigt an, dass Ihre Änderungen nicht mit dem anderen Raster synchronisiert werden, wenn Sie eine Gruppe bearbeiten oder entfernen.
-** Bei Bedarf gibt eine Banner-Meldung an, ob Gruppen nicht für den Mandanten im Zielraster geklont wurden. Sie können <<clone-groups,Wiederholen Sie einen Gruppenklon>> das gescheitert.
+** Falls Gruppen nicht mit dem Mandanten im Zielraster synchronisiert wurden, sind die folgenden Schritte zu <<sync-groups,Gruppensynchronisierung wiederholen>>.
 
 
 . Wenn Sie den Namen der Gruppe ändern möchten:
@@ -61,8 +60,8 @@ Wenn das Mandantenkonto über die Berechtigung *Grid Federation connection* verw
 ** Anzahl der Benutzer in dieser Gruppe
 ** Zusätzliche Felder, wenn das Mandantenkonto die Berechtigung *Grid Federation connection* verwenden hat und Sie die Gruppe im Quellraster des Mandanten anzeigen:
 +
-*** Klonstatus, entweder *success* oder *failure*
-*** Ein blaues Banner, das darauf hinweist, dass Ihre Änderungen nicht mit dem anderen Raster synchronisiert werden, wenn Sie diese Gruppe bearbeiten oder löschen.
+*** Synchronisierungsstatus, entweder *Erfolgreich* oder *Fehlgeschlagen*
+*** Bei föderierten Gruppen zeigt ein blaues Banner an, dass Änderungen, die Sie an dieser Gruppe vornehmen oder wenn Sie diese Gruppe löschen, nicht mit dem anderen Grid synchronisiert werden.
 
 
 
@@ -111,7 +110,7 @@ Oben rechts wird eine Erfolgsmeldung angezeigt.
 Sie können eine vorhandene Gruppe duplizieren, um neue Gruppen schneller zu erstellen.
 
 
-NOTE: Wenn Ihr Mandantenkonto die Berechtigung *Grid Federation connection* verwenden hat und Sie eine Gruppe aus dem Quellraster des Mandanten duplizieren, wird die duplizierte Gruppe im Zielraster des Mandanten geklont.
+NOTE: Wenn Ihr Mandantenkonto über die Berechtigung *Grid-Federationsverbindung verwenden* verfügt und Sie eine Gruppe aus dem Quell-Grid des Mandanten duplizieren, wird die duplizierte Gruppe mit dem Ziel-Grid des Mandanten synchronisiert.
 
 .Schritte
 . Wählen Sie *Zugriffsverwaltung* > *Gruppen*.
@@ -123,17 +122,22 @@ NOTE: Wenn Ihr Mandantenkonto die Berechtigung *Grid Federation connection* verw
 
 
 
-[[clone-groupsretry-group-clone]]
-== [[Clone-groups]]Gruppenklone erneut versuchen
+[[sync-groupsretry-group-sync]]
+== [[sync-groups]]Gruppensynchronisierung wiederholen
 
-So wiederholen Sie einen fehlgeschlagenen Klon:
+Wenn die Synchronisierung einer Gruppe fehlgeschlagen ist, wird in der Spalte „Synchronisierungsstatus“ für diese Gruppe „Fehlgeschlagen“ angezeigt. Über der Tabelle erscheint ein Banner, das darauf hinweist, dass die Synchronisierung einer oder mehrerer Gruppen fehlgeschlagen ist.
 
-. Wählen Sie jede Gruppe aus, die _(Klonen fehlgeschlagen)_ unter dem Gruppennamen anzeigt.
-. Wählen Sie *actions* > *Clone groups*.
-. Zeigen Sie den Status des Klonvorgangs auf der Detailseite jeder Gruppe an, die Sie klonen.
+.Schritte
+So kann die Synchronisierung erneut versucht werden:
+
+. Im Banner die Option *Synchronisierung wiederholen* auswählen. Mit diesem Vorgang wird die Synchronisierung für alle Gruppen erneut versucht, bei denen die Synchronisierung fehlgeschlagen ist.
+. Um die Synchronisierung einer einzelnen Gruppe erneut zu versuchen, den Gruppennamen auswählen. Auf der Seite mit den Gruppendetails die Option *Synchronisierung erneut versuchen* auswählen.
+. Der Status des Synchronisierungsvorgangs ist auf der Detailseite jeder Gruppe ersichtlich, die synchronisiert wird.
 
 
-Weitere Informationen finden Sie unter link:grid-federation-account-clone.html["Klonen von Mandantengruppen und Benutzern"].
+Wenn der Wiederholungsversuch erfolgreich ist, erscheint in der Spalte „Sync-Status“ für jede erfolgreich synchronisierte Gruppe „Succeeded“, und das Banner verschwindet.
+
+Weitere Informationen sind unter link:grid-federation-account-sync.html["Mandantengruppen und Benutzer synchronisieren"] zu finden.
 
 
 
@@ -141,9 +145,6 @@ Weitere Informationen finden Sie unter link:grid-federation-account-clone.html["
 == Löschen Sie eine oder mehrere Gruppen
 
 Sie können eine oder mehrere Gruppen löschen. Alle Benutzer, die nur zu einer Gruppe gehören, die gelöscht wurde, können sich nicht mehr beim Tenant Manager anmelden oder das Mandantenkonto verwenden.
-
-
-NOTE: Wenn Ihr Mandantenkonto über die Berechtigung *Grid Federation connection* verwenden verfügt und Sie eine Gruppe löschen, wird StorageGRID die entsprechende Gruppe im anderen Raster nicht löschen. Wenn Sie diese Informationen synchron halten müssen, müssen Sie dieselbe Gruppe aus beiden Rastern löschen.
 
 .Schritte
 . Wählen Sie *Zugriffsverwaltung* > *Gruppen*.
@@ -170,7 +171,7 @@ Temporäre Sicherheitsanmeldeinformationen, die aus der Annahme dieser Gruppe er
 
 .Schritte
 . Wählen Sie *Zugriffsverwaltung* > *Gruppen*.
-. Klicken Sie auf den Gruppennamen.
+. Wählen Sie den Gruppennamen aus.
 . Wählen Sie die Registerkarte *S3-Vertrauensrichtlinie*.
 . Fügen Sie Ihre S3-Vertrauensrichtlinie hinzu, einschließlich einer Liste von Benutzern, die AssumeRole ausführen können.
 . Wählen Sie *Änderungen speichern*.
@@ -201,4 +202,12 @@ Temporäre Sicherheitsanmeldeinformationen, die aus der Annahme dieser Gruppe er
     ]
 }
 ----
+Der Principal:
+
+* `"Principal": "*"`Entspricht allen, einschließlich anonymer (nicht signierter) Anfragen
+* `"Principal": { "AWS": "*" }`Entspricht jeder authentifizierten Identität oder jedem Benutzer (entspricht nicht anonymen Anfragen)
+* Gilt nur für Bucket-Richtlinien
+* Der Principal ist das/die Konto(s) bzw. der/die Benutzer, denen Berechtigungen erteilt oder verweigert werden.
+
+
 Nachdem die Konfiguration abgeschlossen ist, können in der S3-Vertrauensrichtlinie aufgeführte Benutzer AssumeRole ausführen und Anmeldeinformationen erhalten.  Die endgültigen Berechtigungen werden durch Gruppenrichtlinien, Bucket-Richtlinien und Sitzungsrichtlinien bestimmt. Weitere Informationen finden Sie unter link:../s3/use-access-policies.html["Verwenden von Zugriffsrichtlinien"] .

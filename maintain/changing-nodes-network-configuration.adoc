@@ -1,8 +1,8 @@
 ---
 permalink: maintain/changing-nodes-network-configuration.html 
 sidebar: sidebar 
-keywords: storagegrid, network configuration, node network configuration 
-summary: Mit dem Change IP-Tool können Sie die Netzwerkkonfiguration für einen oder mehrere Knoten ändern. Sie können die Konfiguration des Grid-Netzwerks ändern oder den Administrator- oder Client-Netzwerk hinzufügen, ändern oder entfernen. 
+keywords: storagegrid, network configuration, node network configuration, bmc ip 
+summary: Mit dem Tool „IP ändern“ kann die Netzwerkkonfiguration eines oder mehrerer Knoten geändert werden. Die Konfiguration des Grid Network kann geändert oder die Admin- oder Client-Netzwerke hinzugefügt, geändert oder entfernt werden. Auch die LAN-IP-Einstellungen für einen Appliance-Knoten BMC können geändert werden. 
 ---
 = Netzwerkkonfiguration des Knotens in StorageGRID ändern
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: Mit dem Change IP-Tool können Sie die Netzwerkkonfiguration für einen
 
 
 [role="lead"]
-Mit dem Change IP-Tool können Sie die Netzwerkkonfiguration für einen oder mehrere Knoten ändern. Sie können die Konfiguration des Grid-Netzwerks ändern oder den Administrator- oder Client-Netzwerk hinzufügen, ändern oder entfernen.
+Mit dem Tool „IP ändern“ kann die Netzwerkkonfiguration eines oder mehrerer Knoten geändert werden. Die Konfiguration des Grid Network kann geändert oder die Admin- oder Client-Netzwerke hinzugefügt, geändert oder entfernt werden. Auch die LAN-IP-Einstellungen für einen Appliance-Knoten BMC können geändert werden.
 
 .Bevor Sie beginnen
 Sie haben die `Passwords.txt` Datei.
@@ -36,7 +36,7 @@ Knoten können nicht aus dem Grid-Netzwerk entfernt werden.
 NOTE: Das Austauschen von IP-Adressen ist nicht zulässig. Wenn Sie IP-Adressen zwischen Grid-Nodes austauschen müssen, müssen Sie eine temporäre IP-Adresse verwenden.
 
 
-NOTE: Wenn Single Sign-On (SSO) für Ihr StorageGRID System aktiviert ist und Sie die IP-Adresse eines Admin-Knotens ändern, beachten Sie, dass alle Vertrauensstellungen der vertrauenden Seite, die mit der IP-Adresse des Admin-Knotens (anstelle des vollqualifizierten Domänennamens, wie empfohlen) konfiguriert wurden, ungültig werden.  Sie können sich nicht mehr beim Knoten anmelden.  Unmittelbar nach der Änderung der IP-Adresse müssen Sie die Vertrauensstellung der vertrauenden Seite des Knotens in Active Directory Federation Services (AD FS) mit der neuen IP-Adresse aktualisieren oder neu konfigurieren.  Siehe die Anweisungen fürlink:../admin/configure-sso.html["SSO wird konfiguriert"] .
+NOTE: Wenn Single Sign-On (SSO) für Ihr StorageGRID System aktiviert ist und Sie die IP-Adresse eines Admin Node ändern, ist zu beachten, dass jede relying party trust, die mit der IP-Adresse des Admin Node (anstatt mit seinem vollqualifizierten Domainnamen, wie empfohlen) konfiguriert wurde, ungültig wird. Eine Anmeldung an diesem Node ist dann nicht mehr möglich. Unmittelbar nach der Änderung der IP-Adresse muss die relying party trust des Node in Active Directory Federation Services (AD FS) mit der neuen IP-Adresse aktualisiert oder neu konfiguriert werden. Es wird auf die Anweisungen zur Einrichtung von SSO unter link:../admin/learn-about-setting-up-sso-oidc.html["OIDC"] oder link:../admin/learn-about-setting-up-sso-saml.html["SAML"] verwiesen.
 
 
 NOTE: Alle Änderungen, die Sie mit dem Change IP-Tool an das Netzwerk vornehmen, werden an die Installer-Firmware für die StorageGRID-Appliances übertragen. Auf diese Weise wird bei einer erneuten Installation der StorageGRID Software auf einer Appliance oder beim Einsatz einer Appliance in den Wartungsmodus die Netzwerkkonfiguration korrekt ausgeführt.
@@ -246,3 +246,18 @@ Wo `_<speed>_` Ist `fast` oder `slow` .
 
 
 Beim nächsten Neustart des Geräts wird die LACP-PDU-Rate auf die vorherige Einstellung zurückgesetzt.
+
+
+
+[[change-appliance-node-bmc-lan-ip-settings]]
+== BMC LAN-IP-Einstellungen des Appliance-Knotens ändern
+
+Die LAN-IP-Einstellungen für einen Appliance-Knoten BMC können geändert werden.
+
+. Im Grid Manager zu *Knoten* > *_grid node_* > *BMC settings* navigieren.
+. Im Abschnitt LAN-IP-Einstellungen einen IP-Zuweisungstyp von *Statisch* oder *DHCP* auswählen.
+. Die MAC-Adresse, die IPv4-Adresse (CIDR) und das Standardgateway für den BMC eingeben.
+. Wählen Sie *Speichern*.
+
+
+Sie können die BMC LAN IP-Einstellungen auch über die  `PUT /bmc-configuration/root-password` oder  `GET /bmc-configuration/root-password` API ändern oder anzeigen.

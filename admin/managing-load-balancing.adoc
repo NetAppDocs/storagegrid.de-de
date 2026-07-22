@@ -176,7 +176,7 @@ Subject DN: /C=Country/ST=State/O=Company,Inc./CN=s3.storagegrid.example.com
 ----
 Bei Bedarf kann das Zertifikat Platzhalter verwenden, um die vollständig qualifizierten Domänennamen aller Admin-Nodes und Gateway-Nodes darzustellen, auf denen der Load Balancer-Dienst ausgeführt wird. Zum Beispiel `*.storagegrid._example_.com` verwendet den Platzhalter * für `adm1.storagegrid._example_.com` und `gn1.storagegrid._example_.com`.
 
-Wenn Sie virtuelle Anfragen im Hosted-Stil von S3 verwenden möchten, muss das Zertifikat für jeden konfigurierten Eintrag einen Eintrag *alternativer Name* enthaltenlink:../admin/configuring-s3-api-endpoint-domain-names.html["Der Domänenname des S3-Endpunkts"], einschließlich aller Platzhalternamen. Beispiel:
+Wenn S3-Anfragen im Virtual-Hosted-Style verwendet werden sollen, muss das Zertifikat auch einen *Alternative Name*-Eintrag für jede von Ihnen konfigurierte link:../admin/configuring-s3-api-endpoint-domain-names.html["Der Domänenname des S3-Endpunkts"] enthalten, einschließlich aller Platzhalternamen. Beispielsweise:
 
 [listing]
 ----

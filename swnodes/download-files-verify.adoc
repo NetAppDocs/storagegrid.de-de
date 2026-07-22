@@ -19,7 +19,7 @@ Du hastlink:../swnodes/downloading-and-extracting-storagegrid-installation-files
 .Schritte
 . Extrahieren Sie die Artefakte aus dem Verifizierungspaket:
 +
-`tar -xf StorageGRID_12.0.0_Code_Signature_Verification_Package.tar.gz`
+`tar -xf StorageGRID_12.1.0_Code_Signature_Verification_Package.tar.gz`
 
 . Stellen Sie sicher, dass diese Artefakte extrahiert wurden:
 +

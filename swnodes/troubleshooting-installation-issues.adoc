@@ -60,7 +60,7 @@ Wenn Sie sicher sind, dass der VM-Host über ausreichende Ressourcen für jeden 
 .. Wählen Sie *Speicher*, und passen Sie mit dem Schieberegler Reservierung die für diese virtuelle Maschine reservierten MB an.
 
 
-. Klicken Sie auf *OK*.
+. Wählen Sie *OK*.
 . Wiederholen Sie diesen Vorgang für andere virtuelle Maschinen, die auf demselben VM-Host gehostet werden.
 
 

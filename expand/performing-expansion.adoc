@@ -37,12 +37,9 @@ CAUTION: Einige Erweiterungsschritte und -Phasen können eine erhebliche Zeit in
 
 
 .Schritte
-. Wählen Sie *Wartung* > *Aufgaben* > *Erweiterung*.
+. Wählen Sie *Wartung* > *Aufgaben* > *Grid-Erweiterung*.
 +
-Die Seite Rastererweiterung wird angezeigt. Im Abschnitt Ausstehende Knoten werden die Knoten aufgeführt, die zum Hinzufügen bereit sind.
-
-+
-image:grid_expansion_page.png["Screenshot mit der Seite „Rastererweiterung“"]
+Die Seite zur Grid-Erweiterung wird angezeigt. Im Abschnitt „Ausstehende Knoten“ sind die Knoten aufgeführt, die zum Hinzufügen bereit sind.
 
 . Wählen Sie *Erweiterung Konfigurieren*.
 +
@@ -166,7 +163,7 @@ NOTE: Wenn möglich, sollten Sie alle ausstehenden Grid-Notizen genehmigen und e
 
 
 
-. Wenn Sie alle Grid-Nodes genehmigt haben, geben Sie die *Provisioning-Passphrase* ein, und wählen Sie *Expand*.
+. Wenn alle Grid-Knoten genehmigt wurden, die *Bereitstellungs-Passphrase* eingeben und *Erweitern* auswählen.
 +
 Nach einigen Minuten wird diese Seite aktualisiert, um den Status des Erweiterungsverfahrens anzuzeigen. Wenn Aufgaben ausgeführt werden, die sich auf einzelne Grid-Knoten auswirken, wird im Abschnitt Grid Node Status der aktuelle Status für jeden Grid-Knoten aufgeführt.
 

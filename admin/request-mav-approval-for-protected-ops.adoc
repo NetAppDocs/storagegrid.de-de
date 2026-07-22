@@ -1,0 +1,40 @@
+---
+permalink: admin/request-mav-approval-for-protected-ops.html 
+sidebar: sidebar 
+keywords: multi-admin verification, mav 
+summary: Als StorageGRID-Administrator oder -Benutzer wird beim Initiieren einer MAV-geschützten Operation in StorageGRID automatisch eine Anfrage generiert. Eine Meldung erscheint, die darüber informiert, dass die Operation genehmigt werden muss. 
+---
+= Genehmigung für MAV-geschützte Vorgänge in StorageGRID anfordern
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Als StorageGRID-Administrator oder -Benutzer wird beim Initiieren einer MAV-geschützten Operation in StorageGRID automatisch eine Anfrage generiert. Eine Meldung erscheint, die darüber informiert, dass die Operation genehmigt werden muss.
+
+Das StorageGRID System definiert, welche Operationen durch MAV geschützt sind. Wenn eine durch MAV geschützte Operation initiiert wird, wird die Anfrage zur Genehmigung an die MAV Administratoren gesendet.
+
+.Schritte
+Das StorageGRID System informiert Sie darüber, dass Sie einen MAV-geschützten Vorgang initiiert haben.
+
+. Bei Bedarf können eine oder mehrere der folgenden Aufgaben ausgeführt werden:
++
+.. Der Status Ihrer Anfrage ist unter *Konfiguration* > *Zugriffskontrolle* > *Multi-Admin-Verifizierung* > *Meine Anfragen* einsehbar.
++
+*** *Ausstehend*. Die Anfrage wurde eingeleitet.
+*** *Abgelaufen*. Die Anfrage wurde nicht innerhalb von 30 Tagen bearbeitet. Oder ein Benutzer mit Root-Zugriffsberechtigung hat MAV deaktiviert, wodurch alle ausstehenden Anfragen abgelaufen sind.
+*** *Zurückgezogen*. Ein Nutzer hat seine Anfrage zurückgezogen.
+*** *Genehmigt*. Ein MAV-Administrator hat den ausstehenden Antrag genehmigt.
+*** *Abgelehnt*. Ein MAV-Administrator hat die ausstehende Anfrage abgelehnt.
+
+
+.. Die ausstehenden Anfragen anderer Benutzer sind unter *Konfiguration* > *Zugriffskontrolle* > *Multi-Admin-Verifizierung* > *Andere Anfragen* einsehbar.
+.. Zum Abbrechen eines Vorgangs *Meine Anfragen* > *die Anfrage, die Sie abbrechen möchten* > *Zurückziehen* auswählen.
+
+
+
+
+Nachdem ein MAV-Administrator die Anfrage genehmigt hat, wird der Vorgang automatisch ausgeführt.
+
+Wird Ihre Anfrage abgelehnt, wird die Operation nicht ausgeführt, und Sie können bei Bedarf eine neue Anfrage einreichen.

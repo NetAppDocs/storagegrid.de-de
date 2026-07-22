@@ -43,10 +43,7 @@ Die Swagger-Benutzeroberfläche bietet vollständige Details und Dokumentation f
 CAUTION: Alle API-Operationen, die Sie mit der API-Dokumentations-Webseite durchführen, sind Live-Operationen. Achten Sie darauf, dass Konfigurationsdaten oder andere Daten nicht versehentlich erstellt, aktualisiert oder gelöscht werden.
 
 .Schritte
-. Wählen Sie im Grid Manager Header das Hilfesymbol aus und wählen Sie *API documentation*.
-+
-image:help_menu.png["Hilfe-Menü"]
-
+. Im Header des Grid Manager das Hilfesymbol image:icon_help_menu_bar.png["Hilfesymbol"] auswählen und *API documentation* wählen.
 . Um eine Operation mit der privaten API durchzuführen, wählen Sie auf der StorageGRID Management API-Seite *Gehe zur privaten API-Dokumentation* aus.
 +
 Die privaten APIs können ohne Vorankündigung geändert werden. Private StorageGRID-Endpunkte ignorieren auch die API-Version der Anforderung.

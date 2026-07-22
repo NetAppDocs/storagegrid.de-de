@@ -13,7 +13,7 @@ summary: Möglicherweise müssen Sie Ihr gesamtes StorageGRID System herunterfah
 [role="lead"]
 Möglicherweise müssen Sie Ihr gesamtes StorageGRID System herunterfahren, wenn Sie ein Datacenter verschieben. Diese Schritte bieten einen allgemeinen Überblick über die empfohlene Sequenz für ein kontrolliertes Herunterfahren und Starten.
 
-Wenn Sie alle Nodes an einem Standort oder Grid ausschalten, können Sie nicht auf aufgenommene Objekte zugreifen, während die Storage-Nodes offline sind.
+Wenn alle Knoten an einem Standort oder im Grid ausgeschaltet sind, ist kein Zugriff auf die aufgenommenen Objekte möglich, solange die Storage Nodes offline sind.
 
 
 
@@ -23,7 +23,7 @@ Wenn Sie alle Nodes an einem Standort oder Grid ausschalten, können Sie nicht a
 Bevor Sie ein StorageGRID System ausschalten können, müssen Sie alle Services, die auf jedem Grid-Node ausgeführt werden, anhalten und anschließend alle VMware Virtual Machines, Container-Engines und StorageGRID Appliances herunterfahren.
 
 .Über diese Aufgabe
-Beenden Sie zuerst Dienste auf Admin-Nodes und Gateway-Nodes, und beenden Sie dann Dienste auf Storage-Nodes.
+Zuerst die Dienste auf den Admin-Knoten und Gateway-Knoten beenden, anschließend die Dienste auf den Storage Nodes stoppen.
 
 Dieser Ansatz ermöglicht Ihnen, den primären Admin-Knoten so lange wie möglich zu verwenden, um den Status der anderen Grid-Knoten zu überwachen.
 
@@ -151,9 +151,6 @@ Das StorageGRID-Grid wurde jetzt heruntergefahren.
 [[start-up-grid-nodes]]
 == Grid-Nodes starten
 
-
-CAUTION: Wenn das gesamte Grid seit mehr als 15 Tagen heruntergefahren wurde, müssen Sie sich an den technischen Support wenden, bevor Sie die Grid-Nodes starten. Versuchen Sie nicht, die Wiederherstellungsverfahren zu verwenden, mit denen Cassandra-Daten wiederhergestellt werden. Dies kann zu Datenverlust führen.
-
 Schalten Sie die Netzknoten nach Möglichkeit in dieser Reihenfolge ein:
 
 * Zuerst die Administratorknoten mit Strom versorgen.
@@ -161,13 +158,13 @@ Schalten Sie die Netzknoten nach Möglichkeit in dieser Reihenfolge ein:
 
 
 
-NOTE: Wenn ein Host mehrere Grid-Nodes enthält, werden die Nodes automatisch wieder online geschaltet, wenn Sie den Host einschalten.
+NOTE: Wenn ein Host mehrere Grid-Knoten umfasst, gehen die Knoten beim Einschalten des Hosts automatisch wieder online.
 
 .Schritte
 . Schalten Sie die Hosts für den primären Admin-Node und alle nicht-primären Admin-Nodes ein.
 +
 
-NOTE: Sie können sich erst bei den Admin-Knoten anmelden, wenn die Speicherknoten neu gestartet wurden.
+NOTE: Sie können sich erst dann bei den Admin-Knoten anmelden, wenn die Storage Nodes neu gestartet wurden.
 
 . Schalten Sie die Hosts für alle Storage-Nodes ein.
 +

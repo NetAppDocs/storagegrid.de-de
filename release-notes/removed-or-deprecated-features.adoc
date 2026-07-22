@@ -2,7 +2,7 @@
 permalink: release-notes/removed-or-deprecated-features.html 
 sidebar: sidebar 
 keywords:  
-summary: Informieren Sie sich über die in StorageGRID 12.0 entfernten oder als veraltet markierten Funktionen und Möglichkeiten. Prüfen Sie vor dem Upgrade, ob entfernte oder veraltete Funktionen Ihre Clientanwendungen oder die Grid-Konfiguration beeinträchtigen. 
+summary: Informationen zu Funktionen und Möglichkeiten, die in StorageGRID 12.1.0 entfernt oder als veraltet eingestuft wurden. Vor einem Upgrade empfiehlt es sich zu prüfen, ob entfernte oder veraltete Funktionen Auswirkungen auf Ihre Clientanwendungen oder die Grid-Konfiguration haben. 
 ---
 = Entfernte oder veraltete Funktionen und Fähigkeiten in StorageGRID
 :allow-uri-read: 
@@ -11,14 +11,14 @@ summary: Informieren Sie sich über die in StorageGRID 12.0 entfernten oder als 
 
 
 [role="lead"]
-Informieren Sie sich über die in StorageGRID 12.0 entfernten oder als veraltet markierten Funktionen und Möglichkeiten. Prüfen Sie vor dem Upgrade, ob entfernte oder veraltete Funktionen Ihre Clientanwendungen oder die Grid-Konfiguration beeinträchtigen.
+Informationen zu Funktionen und Möglichkeiten, die in StorageGRID 12.1.0 entfernt oder als veraltet eingestuft wurden. Vor einem Upgrade empfiehlt es sich zu prüfen, ob entfernte oder veraltete Funktionen Auswirkungen auf Ihre Clientanwendungen oder die Grid-Konfiguration haben.
 
 
 
 [[definitions]]
 == Begriffsbestimmung
 
-Veraltet:: Das Feature *sollte nicht* in neuen Produktionsumgebungen verwendet werden. Vorhandene Produktionsumgebungen können die Funktion weiterhin nutzen.
+Veraltet:: Sie *sollten* diese Funktion nicht in neuen Produktionsumgebungen verwenden. In bestehenden Produktionsumgebungen kann die Funktion weiterhin genutzt werden.
 Ende des Supports:: Zuletzt ausgelieferte Version, die das Feature unterstützt. In einigen Fällen kann die Dokumentation für das Feature zu diesem Zeitpunkt entfernt werden.
 Entfernt:: Erste Version, die *das Feature nicht unterstützt.
 
@@ -38,6 +38,19 @@ NOTE: In bestimmten Situationen stellt NetApp den Support für bestimmte Funktio
 [cols="2a,1a,1a,1a,3a"]
 |===
 | Funktion | Veraltet | Ende des Supports | Entfernt | Links zu früheren Dokumenten 
+
+
+ a| 
+Globale SSE Einstellung für AES-128 Verschlüsselung
+ a| 
+12,1
+ a| 
+12,2
+ a| 
+12,3
+ a| 
+Ab StorageGRID 12.1.0 ist die Unterstützung für die AES-128-Verschlüsselung neu gespeicherter Objektdaten im Ruhezustand veraltet. Die Unterstützung für das Abrufen gespeicherter Objekte, die ursprünglich mit AES-128 verschlüsselt wurden, bleibt bestehen.
+
 
 
  a| 
@@ -66,8 +79,8 @@ https://docs.netapp.com/us-en/storagegrid-118/maintain/considerations-for-decomm
 
 *Hinweis*: Vor dem Upgrade müssen Sie:
 
-. Alle Archive Nodes werden stillgelegt. Siehe https://docs.netapp.com/us-en/storagegrid-118/maintain/grid-node-decommissioning.html["Stilllegung von Grid-Nodes (StorageGRID 11.8-Dokumentstandort)"^].
-. Entfernen Sie alle Archive Node-Referenzen aus Speicherpools und ILM-Richtlinien. Siehe https://kb.netapp.com/hybrid/StorageGRID/Maintenance/StorageGRID_11.9_software_upgrade_resolution_guide["NetApp Knowledge Base: Leitfaden zur Lösung von StorageGRID 11.9-Software-Upgrades"^].
+. Alle Archivknoten außer Betrieb nehmen. Siehe  https://docs.netapp.com/us-en/storagegrid-118/maintain/grid-node-decommissioning.html["Stilllegung von Grid-Nodes (StorageGRID 11.8-Dokumentstandort)"^].
+. Alle Archivknotenverweise aus Speicherpools und ILM-Richtlinien entfernen. Siehe  https://kb.netapp.com/hybrid/StorageGRID/Maintenance/StorageGRID_11.9_software_upgrade_resolution_guide["NetApp Knowledge Base: Leitfaden zur Lösung von StorageGRID 11.9-Software-Upgrades"^].
 
 
 

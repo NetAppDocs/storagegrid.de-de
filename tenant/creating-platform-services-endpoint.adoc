@@ -363,9 +363,9 @@ Verwenden Sie das auf dem Betriebssystem installierte Standard-Grid-CA-Zertifika
 
 |===
 --
-.Nur Webhook-Endpunkte
+.Webhook und Kafka Endpunkte
 --
-Überprüfen Sie die TLS-Verbindung für Webhook-Endpunkte.
+Die TLS-Verbindung für Webhook- oder Kafka-Endpunkte wird überprüft.
 
 [cols="1a,2a"]
 |===
@@ -397,6 +397,15 @@ Die Zertifikatsüberprüfung ist deaktiviert.  Diese Option ist nicht sicher.
 Benutzerdefiniertes CA-Zertifikat verwenden
  a| 
 Das benutzerdefinierte CA-Zertifikat wird verwendet, um die Identität des Servers beim Herstellen einer Verbindung mit dem Endpunkt zu überprüfen.
+
+
+
+ a| 
+Verwenden Sie das CA-Zertifikat für das Betriebssystem
+ a| 
+Verwenden Sie das auf dem Betriebssystem installierte Standard-Grid-CA-Zertifikat, um Verbindungen zu sichern.
+
+*Hinweis*: Webhook-Endpunkte verfügen nicht über diese Option.
 
 |===
 Wenn Sie *mTLS* auswählen, werden diese Optionen verfügbar.
@@ -454,4 +463,5 @@ Nachdem Sie einen Endpunkt konfiguriert haben, können Sie mit seinem URN einen 
 * link:configuring-cloudmirror-replication.html["CloudMirror-Replizierung konfigurieren"]
 * link:configuring-event-notifications.html["Konfigurieren Sie Ereignisbenachrichtigungen"]
 * link:configuring-search-integration-service.html["Konfigurieren Sie den Suchintegrationsdienst"]
+* link:../network/external-communications.html["Anschlüsse für externe Kommunikation"]
 

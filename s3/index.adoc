@@ -67,10 +67,37 @@ https://datatracker.ietf.org/doc/html/rfc2616["IETF RFC 2616: Hypertext Transfer
 
 
  a| 
+12.1.0
+ a| 
+* `If-Match`
++
+Der  `If-Match`Header verhält sich je nach Ihrer StorageGRID Konfiguration unterschiedlich. Das Bereitstellen dieses Headers kann eine Fehlermeldung (501 Not Implemented) zurückgeben. Wenn der  `If-Match`Header akzeptiert, aber nicht funktionsfähig ist, kann eine Warnung mit Hinweisen zur Aktivierung des strengeren 501 Not Implemented Fehlerverhaltens ausgelöst werden.
+
+* `If-None-Match`
++
+Der  `If-None-Match`Header verhält sich je nach Ihrer StorageGRID Konfiguration unterschiedlich. Das Bereitstellen dieses Headers kann eine Fehlermeldung (501 Not Implemented) zurückgeben. Wenn der  `If-None-Match`Header akzeptiert, aber nicht funktionsfähig ist, kann eine Warnung mit Hinweisen zur Aktivierung des strengeren 501 Not Implemented Fehlerverhaltens ausgelöst werden.
+
+* Unterstützung für vorab berechnete Prüfsummenwerte für die folgenden Anfragen und unterstützten Header hinzugefügt:
++
+** CompleteMultipartUpload: `x-amz-checksum-crc32`, `x-amz-checksum-crc32c` und `x-amz-checksum-crc64nvme`
+** CreateMultipartUpload: `CRC32`, `CRC32C`, und `CRC64NVME` für `x-amz-checksum-algorithm`
+** CopyObject: `CRC32`, `CRC32C`, `CRC64NVME`, und `SHA256` für `x-amz-checksum-algorithm`
+** PutObject: `x-amz-checksum-crc32`, `x-amz-checksum-crc32c`, und `x-amz-checksum-crc64nvme`
+** UploadPart: `x-amz-checksum-crc32`, `x-amz-checksum-crc32c`, und `x-amz-checksum-crc64nvme`
+
+
+* Unterstützung für  `x-amz-checksum-type` für CreateMultipartUpload und CompleteMultipartUpload hinzugefügt.
+* Unterstützung für den  `s3:x-amz-copy-source`Richtlinienbedingungsschlüssel wurde hinzugefügt.
+* Die S3-Objektsperre kann für bestehende Buckets aktiviert werden.
+
+
+
+
+ a| 
 12,0
  a| 
 * Unterstützung für Cross-Origin Resource Sharing (CORS) für eine Verwaltungsschnittstelle hinzugefügt, die es einer anderen Domäne ermöglicht, mithilfe von Verwaltungs-APIs auf Daten in StorageGRID zuzugreifen. link:../admin/enable-cross-origin-resource-sharing-for-management-interface.html["Weitere Informationen ."] .
-* Unterstützung für STS AssumeRole und Sitzungsrichtlinie hinzugefügt. Sehen link:example-session-policies.html["ein Beispiel für eine Sitzungsrichtlinie"] .  Sie können AssumeRole unter Mandantengruppen einrichten.
+* Unterstützung für STS AssumeRole und Sitzungsrichtlinien wurde hinzugefügt. Siehe link:../s3/example-session-policies.html["ein Beispiel für eine Sitzungsrichtlinie"]. AssumeRole kann unter Mandantengruppen eingerichtet werden.
 
 
 
@@ -115,7 +142,7 @@ Die Namen der S3-Vorgänge wurden aktualisiert, um sie mit den in der verwendete
  a| 
 11,7
  a| 
-* Hinzugefügt link:quick-reference-support-for-aws-apis.html["Schnelle Referenz: Unterstützte S3-API-Anforderungen"].
+* Hinzugefügt link:../s3/quick-reference-support-for-aws-apis.html["Schnelle Referenz: Unterstützte S3-API-Anforderungen"].
 * Zusätzliche Unterstützung für die Verwendung DES GOVERNANCE-Modus mit S3 Object Lock.
 * Unterstützung für den StorageGRID-spezifischen Antwortheader für GET Object- und HEAD-Objektanforderungen wurde hinzugefügt `x-ntap-sg-cgr-replication-status`. Dieser Header stellt den Replikationsstatus eines Objekts für die Grid-übergreifende Replikation bereit.
 * SelectObjectContent Requests unterstützen nun Parkett-Objekte.
@@ -215,7 +242,7 @@ Unterstützung für Gruppen- und Bucket-Zugriffsrichtlinien und für mehrteilige
  a| 
 10,1
  a| 
-Unterstützung für mehrteilige Uploads, virtuelle Hosted-Style-Anforderungen und v4 Authentifizierung
+Unterstützung für Multipart-Upload, Virtual-Hosted-Anfragen und v4-Authentifizierung wurde hinzugefügt.
 
 
 

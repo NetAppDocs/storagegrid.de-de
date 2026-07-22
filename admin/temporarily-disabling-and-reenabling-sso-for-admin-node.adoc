@@ -37,7 +37,21 @@ Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `
 
 
 
-. Führen Sie den folgenden Befehl aus:``disable-saml``
+. Je nach Ihrer SSO-Konfiguration ist einer der folgenden Befehle auszuführen:
++
+[role="tabbed-block"]
+====
+.SAML
+--
+`disable-saml`
+
+--
+.OIDC
+--
+`disable-oidc`
+
+--
+====
 +
 Eine Meldung gibt an, dass der Befehl nur für diesen Admin-Knoten gilt.
 

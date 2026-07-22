@@ -24,6 +24,14 @@ Bucket-Richtlinien geben die Zugriffsberechtigungen für den Bucket an, mit dem 
 ----
 
 
+In StorageGRID ist der Principal:
+
+* `"Principal": "*"`Entspricht allen, einschließlich anonymer (nicht signierter) Anfragen
+* `"Principal": { "AWS": "*" }`Entspricht jeder authentifizierten Identität oder jedem Benutzer (entspricht nicht anonymen Anfragen)
+* Gilt nur für Bucket-Richtlinien
+* Der Principal ist das/die Konto(s) bzw. der/die Benutzer, denen Berechtigungen erteilt oder verweigert werden.
+
+
 
 
 [[example-allow-everyone-read-only-access-to-a-bucket]]

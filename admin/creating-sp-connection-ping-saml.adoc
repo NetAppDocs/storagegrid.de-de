@@ -1,21 +1,21 @@
 ---
-permalink: admin/creating-sp-connection-ping.html 
+permalink: admin/creating-sp-connection-ping-saml.html 
 sidebar: sidebar 
 keywords: service provider, sp connection, pingfederate, ping, single sign on, sso 
 summary: 'Sie verwenden PingFederate, um für jeden Admin-Node in Ihrem System eine SP-Verbindung (Service Provider) zu erstellen. Um den Prozess zu beschleunigen, importieren Sie die SAML-Metadaten aus StorageGRID.' 
 ---
-= Erstellen Sie Dienstanbieterverbindungen in PingFederate für StorageGRID
+= Dienstanbieterverbindungen in PingFederate für SAML in StorageGRID erstellen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie verwenden PingFederate, um für jeden Admin-Node in Ihrem System eine SP-Verbindung (Service Provider) zu erstellen. Um den Prozess zu beschleunigen, importieren Sie die SAML-Metadaten aus StorageGRID.
+Mit PingFederate wird für jeden Admin Node in Ihrem System eine Service Provider (SP) Verbindung für SAML erstellt. Zur Beschleunigung des Prozesses werden die SAML-Metadaten aus StorageGRID importiert.
 
 .Bevor Sie beginnen
 * Sie haben Single Sign-On für StorageGRID konfiguriert und als SSO-Typ * Ping föderate* ausgewählt.
-* Du hastlink:../admin/configure-sso.html#enter-sandbox-mode["Sandbox-Modus aufgerufen"] im Grid Manager.
+* Sie haben link:../admin/configure-sso-saml.html#enter-sandbox-mode["Sandbox-Modus aufgerufen"] im Grid Manager.
 * Sie haben die * SP Verbindungs-ID* für jeden Admin-Knoten in Ihrem System.  Sie finden diese Werte in der Detailtabelle „Admin-Knoten“ auf der Seite „SSO konfigurieren“.
 * Sie haben die *SAML-Metadaten* für jeden Admin-Knoten in Ihrem System heruntergeladen.
 * Sie haben Erfahrung beim Erstellen von SP-Verbindungen in PingFederate Server.

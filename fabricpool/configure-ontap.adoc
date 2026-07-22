@@ -57,9 +57,9 @@ Geben Sie einen eindeutigen Namen für diese Cloud-Tier ein. Sie können den Sta
  a| 
 URL-Stil
  a| 
-Wenn Sie link:../admin/configuring-s3-api-endpoint-domain-names.html["Domänennamen des S3-Endpunkts wurden konfiguriert"], wählen Sie *Virtual Hosted-Style URL*.
+Wenn Sie link:../admin/configuring-s3-api-endpoint-domain-names.html["Domänennamen des S3-Endpunkts wurden konfiguriert"], wählen Sie *Virtual-Hosted-Style URL* aus.
 
-*Pfad-Stil-URL* ist der Standard für ONTAP, aber die Verwendung von virtuellen Hosted-Stil-Anforderungen wird für StorageGRID empfohlen. Sie müssen *Pfad-Stil-URL* verwenden, wenn Sie eine IP-Adresse anstelle eines Domänennamens für das Feld *Servername (FQDN)* angeben.
+*Path-Style URL* ist die Standardeinstellung für ONTAP, jedoch wird für StorageGRID die Verwendung von virtual-hosted-style-Anfragen empfohlen. *Path-Style URL* muss verwendet werden, wenn im Feld *Server name (FQDN)* eine IP-Adresse anstelle eines Domänennamens angegeben wird.
 
 
 

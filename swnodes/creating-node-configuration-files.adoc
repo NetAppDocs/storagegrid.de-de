@@ -88,8 +88,6 @@ Die folgende Tabelle definiert die Werte für alle unterstützten Schlüssel. Je
 Grid-Netzwerk-IPv4-Adresse des Admin-Knotens, den Sie zum Installieren des Linux-basierten Knotens verwenden möchten.  Verwenden Sie zur Wiederherstellung die IP des primären Admin-Knotens, falls verfügbar. Andernfalls verwenden Sie die IP eines nicht primären Admin-Knotens.  Wenn Sie diesen Parameter weglassen, versucht der Knoten, mithilfe von mDNS einen primären Admin-Knoten zu ermitteln.
 
 link:how-grid-nodes-discover-primary-admin-node.html["Ermitteln der primären Admin-Node durch Grid-Nodes"]
-
-*Hinweis*: Dieser Wert wird auf dem primären Admin-Node ignoriert und kann möglicherweise nicht verwendet werden.
  a| 
 Best Practices in sich
 
@@ -274,7 +272,7 @@ Best Practices in sich
 
 
  a| 
-Schnittstelle (Dies ist der einzige unterstützte Wert.)
+DedicatedInterface (Dies ist der einzig unterstützte Wert.)
  a| 
 Optional
 
@@ -292,8 +290,6 @@ Optional
 Richtig oder falsch
 
 Setzen Sie den Schlüssel auf „true“, damit der StorageGRID-Container die MAC-Adresse der Host-Zielschnittstelle im Admin-Netzwerk verwendet.
-
-*Best Practice:* in Netzwerken, in denen der promiskuious-Modus erforderlich wäre, verwenden Sie stattdessen DEN ADMIN_NETWORK_TARGET_TYPE_INTERFACE_CLONE_MAC-Schlüssel.
 
 Weitere Informationen zum MAC-Klonen für Linux finden Sie unterlink:../swnodes/configuring-host-network.html#considerations-and-recommendations-for-mac-address-cloning["Überlegungen und Empfehlungen zum Klonen von MAC-Adressen"]
  a| 
@@ -634,7 +630,7 @@ Best Practices in sich
 
 
  a| 
-Schnittstelle (dieser Wert wird nur unterstützt.)
+DedicatedInterface (Dies ist der einzig unterstützte Wert.)
  a| 
 Optional
 
@@ -652,8 +648,6 @@ Optional
 Richtig oder falsch
 
 Setzen Sie den Schlüssel auf „true“, damit der StorageGRID-Container die MAC-Adresse der Host-Zielschnittstelle im Client-Netzwerk verwenden kann.
-
-*Best Practice:* in Netzwerken, in denen der promiskuious-Modus erforderlich wäre, verwenden Sie stattdessen DEN CLIENT_NETWORK_TARGET_TYPE_INTERFACE_CLONE_MAC-Schlüssel.
 
 Weitere Informationen zum MAC-Klonen für Linux finden Sie unterlink:../swnodes/configuring-host-network.html#considerations-and-recommendations-for-mac-address-cloning["Überlegungen und Empfehlungen zum Klonen von MAC-Adressen"]
  a| 
@@ -826,7 +820,7 @@ Erforderlich
 
 
  a| 
-Schnittstelle (Dies ist der einzige unterstützte Wert.)
+DedicatedInterface (Dies ist der einzig unterstützte Wert.)
  a| 
 Optional
 
@@ -844,8 +838,6 @@ Optional
 Richtig oder falsch
 
 Setzen Sie den Wert des Schlüssels auf „true“, um den StorageGRID-Container dazu zu bringen, die MAC-Adresse der Host-Zielschnittstelle im Grid-Netzwerk zu verwenden.
-
-*Best Practice:* in Netzwerken, in denen der promiskuious-Modus erforderlich wäre, verwenden Sie stattdessen DEN GRID_NETWORK_TARGET_TYPE_INTERFACE_CLONE_MAC-Schlüssel.
 
 Weitere Informationen zum MAC-Klonen für Linux finden Sie unterlink:../swnodes/configuring-host-network.html#considerations-and-recommendations-for-mac-address-cloning["Überlegungen und Empfehlungen zum Klonen von MAC-Adressen"]
  a| 

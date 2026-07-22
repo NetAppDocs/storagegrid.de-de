@@ -33,10 +33,10 @@ Die Seite Decommission Nodes wird angezeigt. Auf dieser Seite können Sie:
 ** Sortieren Sie die Liste in aufsteigender oder absteigender Reihenfolge nach *Name*, *Standort*, *Typ* oder *hat ADC*.
 ** Geben Sie Suchbegriffe ein, um bestimmte Nodes schnell zu finden.
 +
-In diesem Beispiel zeigt die Spalte Decommission possible an, dass Sie den Gateway Node und einen der vier Storage Nodes stilllegen können.
+In diesem Beispiel zeigt ein grünes Häkchen in der Spalte „Decommission Possible“ an, dass der API Gateway Node und der data-only Storage Node deaktiviert werden können. Die anderen Nodes können aus verschiedenen Gründen nicht deaktiviert werden. Beispielsweise kann der primäre Admin Node nicht deaktiviert werden, da die Deaktivierung dieses Node-Typs nicht unterstützt wird. Der metadata-only Storage Node kann nicht deaktiviert werden, da der Standort dann die link:../maintain/understanding-adc-service-quorum.html["ADC-Quorum"] nicht mehr erfüllen würde.
 
 +
-image:decommission_nodes_page_all_connected.png["Die Seite Knoten ausmustern"]
+image:decommission_nodes_page.png["Die Seite Knoten ausmustern"]
 
 
 
@@ -106,11 +106,11 @@ Bearbeiten Sie die HA-Gruppe, um die Schnittstelle des Node zu entfernen, oder e
 
 
  a| 
-Nein, Standort _x_ erfordert mindestens _n_ Storage Nodes mit ADC-Services.
+Nein, Standort _x_ benötigt mindestens 3 Storage Nodes mit ADC-Diensten oder verfügbare Nicht-ADC-Knoten, auf die die ADC-Dienste verlagert werden können. Die Außerbetriebnahme von ADC-Knoten ist nicht möglich, wenn Knoten offline sind.
  a| 
-*Nur Speicherknoten* (kombinierte oder reine Metadaten-Speicherknoten).  Sie können einen Speicherknoten nicht außer Betrieb nehmen, wenn am Standort nicht genügend Knoten verbleiben, um die ADC-Quorumanforderungen zu erfüllen.  Sie können den ADC-Dienst jedoch auf einen anderen Speicherknoten verschieben.
+*Nur Speicherknoten* (kombinierte oder reine Metadaten-Speicherknoten). Ein Speicherknoten kann nicht außer Betrieb genommen werden, wenn am Standort nicht genügend Knoten verbleiben, um die Quorum-Anforderungen des ADC zu erfüllen und der ADC-Dienst nicht automatisch verschoben werden kann. Für die automatische Verschiebung müssen mehr als zwei ADC-Speicherknoten im gesamten Grid online sein und am selben Standort Nicht-ADC-Speicherknoten verfügbar sein.
  a| 
-link:../maintain/move-adc-service.html["Verschieben Sie den ADC-Dienst auf einen anderen Speicherknoten am selben Standort"], oder führen Sie eine Erweiterung durch, indem Sie der Site einen neuen Speicherknoten hinzufügen und angeben, dass dieser über einen ADC-Dienst verfügen soll. Weitere Informationen finden Sie unter link:understanding-adc-service-quorum.html["ADC-Quorum"] .
+Es muss sichergestellt sein, dass die Bedingungen für die automatische ADC-Dienstverschiebung erfüllt sind (siehe link:../maintain/understanding-adc-service-quorum.html["ADC-Quorum"]), oder link:../maintain/move-adc-service.html["Den ADC Service manuell verschieben"] auf einen anderen Storage Node am selben Standort verschieben. Eine Erweiterung ist auch möglich, indem dem Standort ein neuer Storage Node hinzugefügt und festgelegt wird, dass dieser einen ADC-Dienst haben soll. Siehe link:../expand/adding-grid-nodes-to-existing-site-or-adding-new-site.html["Workflow-Zusammenfassung für das Hinzufügen von Grid-Knoten zu StorageGRID"].
 
 
 

@@ -24,7 +24,7 @@ Sie müssen vier NTP-Serverreferenzen von Stratum 3 oder besser angeben, um Prob
 ====
 Wenn Sie die externe NTP-Quelle für eine StorageGRID-Installation auf Produktionsebene angeben, verwenden Sie den Windows Time-Dienst (W32Time) nicht auf einer älteren Windows-Version als Windows Server 2016. Der Zeitdienst für ältere Windows Versionen ist nicht ausreichend genau und wird von Microsoft nicht für die Verwendung in Umgebungen mit hoher Genauigkeit, wie z. B. StorageGRID, unterstützt.
 
-https://support.microsoft.com/en-us/help/939322/support-boundary-to-configure-the-windows-time-service-for-high-accura["Begrenzung des Supports, um Windows Time Service für hochpräzise Umgebungen zu konfigurieren"^]
+https://learn.microsoft.com/en-us/troubleshoot/windows-server/active-directory/support-boundary-high-accuracy-time["Support-Grenze für hochgenaue Zeit"^]
 
 ====
 Die externen NTP-Server werden von den Nodes verwendet, denen Sie zuvor primäre NTP-Rollen zugewiesen haben.

@@ -245,7 +245,7 @@ CAUTION: Seien Sie vorsichtig, wenn Sie sich entscheiden, eine Alarmregel zu stu
 +
 Es wird ein Popup-Fenster mit dem Prometheus-Ausdruck für jeden definierten Schweregrad angezeigt.
 
-.. Um das Popup-Fenster zu schließen, klicken Sie außerhalb des Popup-Dialogfenster auf eine beliebige Stelle.
+.. Zum Schließen des Pop-ups kann eine beliebige Stelle außerhalb des Pop-ups ausgewählt werden.
 
 
 . Wählen Sie optional *Regel bearbeiten*, um die Warnungsregel zu bearbeiten, die diese Warnung ausgelöst hat.

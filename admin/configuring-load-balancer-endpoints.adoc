@@ -86,6 +86,8 @@ Der StorageGRID-Port, den Sie für den Lastausgleich verwenden möchten. Dieses 
 
 Wenn Sie *80* oder *8443* eingeben, wird der Endpunkt nur auf Gateway Nodes konfiguriert, es sei denn, Sie haben Port 8443 freigegeben. Anschließend können Sie Port 8443 als S3-Endpunkt verwenden, und der Port wird sowohl auf dem Gateway als auch auf den Admin-Nodes konfiguriert.
 
+Wenn Sie Load-Balancer-Endpunkte für einen link:../admin/configure-global-namespace.html["globaler Namensraum"] konfigurieren, sollte für jeden Endpunkt derselbe Port verwendet werden.
+
 
 
  a| 

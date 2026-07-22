@@ -2,7 +2,7 @@
 permalink: tenant/manage-users.html 
 sidebar: sidebar 
 keywords: how to create local tenant users, manage users 
-summary: Sie können lokale Benutzer erstellen und sie lokalen Gruppen zuweisen, um festzulegen, auf welche Funktionen diese Benutzer zugreifen können. Der Tenant Manager enthält einen vordefinierten lokalen Benutzer namens root. Obwohl Sie lokale Benutzer hinzufügen und entfernen können, kann der Root-Benutzer nicht entfernt werden. 
+summary: Sie können lokale Benutzer erstellen und diese lokalen Gruppen zuweisen, um festzulegen, auf welche Funktionen diese Benutzer zugreifen können. Der Tenant Manager enthält einen vordefinierten lokalen Benutzer namens root. Obwohl lokale Benutzer hinzugefügt und entfernt werden können, kann der Root-Benutzer nicht entfernt werden. 
 ---
 = StorageGRID-Mandantenbenutzer verwalten
 :allow-uri-read: 
@@ -11,15 +11,15 @@ summary: Sie können lokale Benutzer erstellen und sie lokalen Gruppen zuweisen,
 
 
 [role="lead"]
-Sie können lokale Benutzer erstellen und sie lokalen Gruppen zuweisen, um festzulegen, auf welche Funktionen diese Benutzer zugreifen können.  Sie können auch föderierte Benutzer importieren.  Der Tenant Manager umfasst einen vordefinierten lokalen Benutzer mit dem Namen „root“.  Obwohl Sie lokale Benutzer hinzufügen und entfernen können, können Sie den Root-Benutzer nicht entfernen.
+Sie können lokale Benutzer erstellen und sie lokalen Gruppen zuweisen, um festzulegen, auf welche Funktionen diese Benutzer zugreifen können. Es können auch Verbundbenutzer importiert werden. Der Tenant Manager enthält einen vordefinierten lokalen Benutzer mit dem Namen _root_. Obwohl lokale Benutzer hinzugefügt und entfernt werden können, kann der Root-Benutzer nicht entfernt werden.
 
 
-NOTE: Wenn Single Sign-On (SSO) für Ihr StorageGRID-System aktiviert ist, können sich lokale Benutzer nicht beim Tenant Manager oder der Mandanten-Management-API anmelden, obwohl sie Clientanwendungen verwenden können, um basierend auf Gruppenberechtigungen auf die Ressourcen des Mandanten zuzugreifen.
+NOTE: Wenn Single Sign-On (SSO) für Ihr StorageGRID System aktiviert ist, können sich lokale Benutzer nicht beim Tenant Manager oder der Tenant Management API anmelden, obwohl sie Clientanwendungen verwenden können, um auf die Ressourcen des Mandanten zuzugreifen, basierend auf Gruppenberechtigungen.
 
 .Bevor Sie beginnen
 * Sie sind beim Tenant Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
 * Sie gehören zu einer Benutzergruppe mit dem link:tenant-management-permissions.html["Root-Zugriffsberechtigung"].
-* Wenn Ihr Mandantenkonto die Berechtigung *Grid Federation connection* verwenden hat, haben Sie den Workflow und die Überlegungen für überprüft link:grid-federation-account-clone.html["Klonen von Mandantengruppen und Benutzern"]und Sie sind im Quellraster des Mandanten angemeldet.
+* Wenn Ihr Mandantenkonto über die Berechtigung *Grid-Federationsverbindung verwenden* verfügt, Sie den Workflow und die Überlegungen für link:grid-federation-account-sync.html["Synchronisierung von Mandantengruppen und Benutzern"] geprüft haben und im Quell-Grid des Mandanten angemeldet sind.
 
 
 
@@ -38,12 +38,6 @@ S3-Benutzer, die keiner Gruppe angehören, haben keine Managementberechtigungen 
 
 .Schritte
 . Wählen Sie *Zugriffsverwaltung* > *Benutzer*.
-+
-Wenn Ihr Mandantenkonto die Berechtigung *Grid Federation connection* verwenden hat, zeigt ein blaues Banner an, dass dies das Quellraster des Mandanten ist. Alle lokalen Benutzer, die Sie in diesem Raster erstellen, werden in das andere Raster der Verbindung geklont.
-
-+
-image:grid-federation-tenant-user-banner.png["Abbildung des blauen Banners auf der Benutzerseite, wenn es sich um das Quellenraster des Mandanten handelt"]
-
 . Wählen Sie *Benutzer erstellen*.
 
 
@@ -109,7 +103,7 @@ Benutzer, die keiner Gruppe angehören, haben keine Verwaltungsberechtigungen. B
 
 . Wählen Sie *Benutzer erstellen*.
 +
-Wenn Ihr Mandantenkonto die Berechtigung *Grid Federation connection* verwenden hat und Sie sich im Quellraster des Mandanten befinden, wird der neue lokale Benutzer im Zielraster des Mandanten geklont. *Success* erscheint als *Klonstatus* im Abschnitt Übersicht der Detailseite des Benutzers.
+Wenn Ihr Mandantenkonto über die Berechtigung *Grid-Verbundverbindung verwenden* verfügt und Sie sich im Quell-Grid des Mandanten befinden, wird der neue lokale Benutzer mit dem Ziel-Grid des Mandanten synchronisiert. *Erfolgreich* erscheint als *Synchronisierungsstatus* im Abschnitt Übersicht auf der Benutzerdetailseite.
 
 . Wählen Sie *Fertig*, um zur Benutzerseite zurückzukehren.
 
@@ -122,14 +116,6 @@ Wenn Ihr Mandantenkonto die Berechtigung *Grid Federation connection* verwenden 
 .Schritte
 . Wählen Sie *Zugriffsverwaltung* > *Benutzer*.
 . Überprüfen Sie die Informationen auf der Seite Benutzer, auf der grundlegende Informationen für alle lokalen und föderierten Benutzer dieses Mandantenkontos aufgeführt sind.
-+
-Wenn das Mandantenkonto über die Berechtigung *Grid Federation connection* verwenden verfügt und Sie den Benutzer im Quellraster des Mandanten anzeigen:
-
-+
-** Wenn Sie einen Benutzer bearbeiten oder entfernen, werden Ihre Änderungen nicht mit dem anderen Raster synchronisiert.
-** Bei Bedarf gibt eine Banner-Meldung an, ob Benutzer nicht für den Mandanten im Zielraster geklont wurden. Sie können <<clone-users,Wiederholen Sie einen fehlgeschlagenen Benutzerklon>>.
-
-
 . Wenn Sie den vollständigen Namen des Benutzers ändern möchten:
 +
 .. Aktivieren Sie das Kontrollkästchen für den Benutzer.
@@ -152,12 +138,6 @@ Wenn das Mandantenkonto über die Berechtigung *Grid Federation connection* verw
 ** Zugriff verweigert
 ** Zugriffsmodus
 ** Gruppenmitgliedschaft
-** Zusätzliche Felder, wenn das Mandantenkonto die Berechtigung *Grid Federation connection* verwenden hat und Sie den Benutzer im Quellraster des Mandanten anzeigen:
-+
-*** Klonstatus, entweder *success* oder *failure*
-*** Ein blaues Banner, das darauf hinweist, dass Ihre Änderungen nicht mit dem anderen Raster synchronisiert werden, wenn Sie diesen Benutzer bearbeiten.
-
-
 
 
 . Bearbeiten Sie die Benutzereinstellungen nach Bedarf. Einzelheiten dazu, was Sie eingeben müssen, finden Sie unter<<create-user,Erstellen Sie einen lokalen Benutzer>>.
@@ -211,7 +191,7 @@ Nachdem Sie das Dialogfeld *Verbundbenutzer importieren* geschlossen haben, werd
 Sie können einen lokalen Benutzer duplizieren, um einen neuen Benutzer schneller zu erstellen.
 
 
-NOTE: Wenn Ihr Mandantenkonto über die Berechtigung *Grid Federation connection* verwenden verfügt und Sie einen Benutzer aus dem Quellraster des Mandanten duplizieren, wird der duplizierte Benutzer im Zielraster des Mandanten geklont.
+NOTE: Wenn Ihr Mandantenkonto über die Berechtigung *Use grid federation connection* verfügt und Sie einen Benutzer aus dem Quell-Grid des Mandanten duplizieren, wird der duplizierte Benutzer mit dem Ziel-Grid des Mandanten synchronisiert.
 
 .Schritte
 . Wählen Sie *Zugriffsverwaltung* > *Benutzer*.
@@ -223,17 +203,22 @@ NOTE: Wenn Ihr Mandantenkonto über die Berechtigung *Grid Federation connection
 
 
 
-[[clone-usersretry-user-clone]]
-== [[Clone-users]]Benutzerklon wiederholen
+[[sync-usersretry-user-sync]]
+== [[sync-users]]Benutzersynchronisierung wiederholen
 
-So wiederholen Sie einen fehlgeschlagenen Klon:
+Wenn die Synchronisierung eines Benutzers fehlgeschlagen ist, wird in der Spalte „Synchronisierungsstatus“ für diesen Benutzer „Fehlgeschlagen“ angezeigt. Über der Tabelle wird ein Banner angezeigt, das darauf hinweist, dass die Synchronisierung eines oder mehrerer Benutzer fehlgeschlagen ist.
 
-. Wählen Sie jeden Benutzer aus, der _(Klonen fehlgeschlagen)_ unter dem Benutzernamen anzeigt.
-. Wählen Sie *actions* > *Clone users*.
-. Den Status des Klonvorgangs können Sie auf der Detailseite jedes Benutzers, den Sie klonen, anzeigen.
+.Schritte
+So kann die Synchronisierung erneut versucht werden:
+
+. Wählen Sie im Banner *Synchronisierung wiederholen*. Mit diesem Vorgang wird die Synchronisierung für alle Benutzer erneut versucht, bei denen die Synchronisierung fehlgeschlagen ist.
+. Um die Synchronisierung eines einzelnen Benutzers erneut zu versuchen, wählen Sie den Benutzernamen aus. Auf der Benutzerdetailseite die Option *Synchronisierung wiederholen* auswählen.
+. Der Status des Synchronisierungsvorgangs ist auf der Detailseite jedes Benutzers ersichtlich, den Sie synchronisieren.
 
 
-Weitere Informationen finden Sie unter link:grid-federation-account-clone.html["Klonen von Mandantengruppen und Benutzern"].
+Wenn der Wiederholungsversuch erfolgreich ist, erscheint in der Spalte „Sync-Status“ für jeden Benutzer, der erfolgreich synchronisiert wurde, „Succeeded“, und das Banner verschwindet.
+
+Weitere Informationen sind unter link:grid-federation-account-sync.html["Mandantengruppen und Benutzer synchronisieren"] zu finden.
 
 
 
@@ -243,10 +228,7 @@ Weitere Informationen finden Sie unter link:grid-federation-account-clone.html["
 Sie können einen oder mehrere lokale Benutzer, die nicht mehr auf das StorageGRID-Mandantenkonto zugreifen müssen, dauerhaft löschen.
 
 
-NOTE: Wenn Ihr Mandantenkonto über die Berechtigung *Grid Federation connection* verwenden verfügt und Sie einen lokalen Benutzer löschen, wird StorageGRID den entsprechenden Benutzer im anderen Raster nicht löschen. Wenn Sie diese Informationen synchron halten müssen, müssen Sie denselben Benutzer aus beiden Rastern löschen.
-
-
-NOTE: Sie müssen die föderierte Identitätsquelle verwenden, um verbundene Benutzer zu löschen.
+NOTE: Wenn Ihr Mandantenkonto über die Berechtigung *Use grid federation connection* verfügt und Sie einen lokalen Benutzer löschen, löscht StorageGRID den entsprechenden Benutzer auch in den anderen Grids der Verbindung, es sei denn, dieser Benutzer ist ein Verbundbenutzer in einem Ziel-Grid. Zum Löschen von Verbundbenutzern muss die Verbundidentitätsquelle verwendet werden.
 
 .Schritte
 . Wählen Sie *Zugriffsverwaltung* > *Benutzer*.

@@ -58,15 +58,15 @@ CAUTION: Seien Sie vorsichtig, wenn Sie mehrere getrennte Grid-Nodes gleichzeiti
 +
 Die Schaltfläche *Start Decommission* ist aktiviert.
 
-. Klicken Sie Auf *Start Decommission*.
+. *Stilllegung starten* auswählen.
 +
 Es wird eine Warnung angezeigt, die angibt, dass Sie einen nicht verbundenen Knoten ausgewählt haben und dass Objektdaten verloren gehen, wenn der Knoten die einzige Kopie eines Objekts hat.
 
-. Überprüfen Sie die Liste der Knoten, und klicken Sie auf *OK*.
+. Die Liste der Knoten kann überprüft und *OK* ausgewählt werden.
 +
 Der Außerbetriebnahmevorgang wird gestartet und der Fortschritt wird für jeden Knoten angezeigt.  Während des Vorgangs wird ein neues Wiederherstellungspaket generiert, das die Änderung der Netzkonfiguration enthält.
 
-. Sobald das neue Wiederherstellungspaket verfügbar ist, klicken Sie auf den Link oder wählen Sie *Wartung* > *System* > *Wiederherstellungspaket*, um auf die Seite mit dem Wiederherstellungspaket zuzugreifen.  Laden Sie dann die `.zip` Datei.
+. Sobald das neue Wiederherstellungspaket verfügbar ist, kann über den Link oder über *Wartung* > *System* > *Wiederherstellungspaket* auf die Seite mit dem Wiederherstellungspaket zugegriffen werden. Anschließend die  `.zip` Datei herunterladen.
 +
 Siehe die Anweisungen fürlink:downloading-recovery-package.html["Herunterladen des Wiederherstellungspakets"] .
 
@@ -87,41 +87,36 @@ Storage-Nodes können Tage oder Wochen ausmustern. Wenn alle Aufgaben abgeschlos
 
 CAUTION: Führen Sie diesen Schritt erst aus, wenn die Nodes automatisch heruntergefahren wurden.
 
-. Wenn Sie einen Storage Node außer Betrieb nehmen, überwachen Sie den Status der Reparatur-Jobs mit *replizierten Daten* und *Erasure-codierten (EC) Daten*, die während des Stilllegungsprozesses automatisch gestartet werden.
-
-
+. Wenn ein Storage Node außer Betrieb genommen wird, sollte der Status der *replizierten Daten* und der *erasure-coded (EC) Daten* Reparaturaufträge überwacht werden, die während des Außerbetriebnahmeprozesses automatisch gestartet werden.
++
 [role="tabbed-block"]
 ====
 .Replizierte Daten
 --
-* Um einen geschätzten Fertigstellungsgrad für die replizierte Reparatur zu erhalten, fügen Sie die Option zum Befehl Repair-Data hinzu `show-replicated-repair-status`.
+** So stellen Sie fest, ob Reparaturen abgeschlossen sind:
 +
-`repair-data show-replicated-repair-status`
-
-* So stellen Sie fest, ob Reparaturen abgeschlossen sind:
-+
-.. Wählen Sie *Knoten* > *_Speicherknoten wird repariert_* > *ILM*.
-.. Prüfen Sie die Attribute im Abschnitt Bewertung. Wenn die Reparaturen abgeschlossen sind, weist das Attribut *wartet - Alle* 0 Objekte an.
+... Wählen Sie *Knoten* > *_Speicherknoten wird repariert_* > *ILM*.
+... Prüfen Sie die Attribute im Abschnitt Bewertung. Wenn die Reparaturen abgeschlossen sind, weist das Attribut *wartet - Alle* 0 Objekte an.
 
 
-* So überwachen Sie die Reparatur genauer:
+** So überwachen Sie die Reparatur genauer:
 +
-.. Wählen Sie *Knoten* aus.
-.. Wählen Sie *_Grid Name_* > *ILM* aus.
-.. Positionieren Sie den Cursor über dem ILM-Warteschlangendiagramm, um den Wert des Attributs *Scanrate (Objekte/Sek.)* anzuzeigen. Dies ist die Rate, mit der Objekte im Raster gescannt und für ILM in die Warteschlange gestellt werden.
-.. Sehen Sie sich im Abschnitt „ILM-Warteschlange“ die folgenden Attribute an:
+... Wählen Sie *Knoten* aus.
+... Wählen Sie *_Grid Name_* > *ILM* aus.
+... Positionieren Sie den Cursor über dem ILM-Warteschlangendiagramm, um den Wert des Attributs *Scanrate (Objekte/Sek.)* anzuzeigen. Dies ist die Rate, mit der Objekte im Raster gescannt und für ILM in die Warteschlange gestellt werden.
+... Sehen Sie sich im Abschnitt „ILM-Warteschlange“ die folgenden Attribute an:
 +
-*** *Scan-Zeitraum - geschätzt*: Die geschätzte Zeit, um einen vollständigen ILM-Scan aller Objekte durchzuführen.
+**** *Scan-Zeitraum - geschätzt*: Die geschätzte Zeit, um einen vollständigen ILM-Scan aller Objekte durchzuführen.
 +
 Ein vollständiger Scan garantiert nicht, dass ILM auf alle Objekte angewendet wurde.
 
-*** *Reparaturversuche*: Die Gesamtzahl der versuchten Objektreparaturvorgänge für replizierte Daten, die als hohes Risiko gelten.  Objekte mit hohem Risiko sind alle Objekte, von denen eine Kopie übrig bleibt, unabhängig davon, ob dies durch die ILM-Richtlinie festgelegt ist oder aufgrund verlorener Kopien.  Dieser Zähler erhöht sich jedes Mal, wenn ein Speicherknoten versucht, ein Hochrisikoobjekt zu reparieren.  Bei einer Netzüberlastung werden ILM-Reparaturen mit hohem Risiko priorisiert.
+**** *Reparaturversuche*: Die Gesamtzahl der versuchten Objektreparaturvorgänge für replizierte Daten, die als hohes Risiko gelten.  Objekte mit hohem Risiko sind alle Objekte, von denen eine Kopie übrig bleibt, unabhängig davon, ob dies durch die ILM-Richtlinie festgelegt ist oder aufgrund verlorener Kopien.  Dieser Zähler erhöht sich jedes Mal, wenn ein Speicherknoten versucht, ein Hochrisikoobjekt zu reparieren.  Bei einer Netzüberlastung werden ILM-Reparaturen mit hohem Risiko priorisiert.
 +
 Die gleiche Objektreparatur kann erneut inkrementiert werden, wenn die Replikation nach der Reparatur fehlgeschlagen ist.  + Diese Attribute können nützlich sein, wenn Sie den Fortschritt der Wiederherstellung des Storage Node-Volumes überwachen.  Wenn die Anzahl der Reparaturversuche nicht mehr zunimmt und ein vollständiger Scan abgeschlossen wurde, ist die Reparatur wahrscheinlich abgeschlossen.
 
 
 
-.. Alternativ senden Sie eine Prometheus-Abfrage für `storagegrid_ilm_scan_period_estimated_minutes` Und `storagegrid_ilm_repairs_attempted` .
+... Alternativ senden Sie eine Prometheus-Abfrage für `storagegrid_ilm_scan_period_estimated_minutes` Und `storagegrid_ilm_repairs_attempted` .
 
 
 
@@ -129,41 +124,12 @@ Die gleiche Objektreparatur kann erneut inkrementiert werden, wenn die Replikati
 --
 .EC-Daten (Erasure Coded)
 --
-So überwachen Sie die Reparatur von Daten mit Verfahren zur Einhaltung von Datenkonsistenz und versuchen Sie es erneut, eventuell fehlgeschlagene Anfragen zu senden:
-
-. Status von Datenreparaturen mit Löschungscode ermitteln:
-+
-** Wählen Sie *Support* > *Tools* > *Metriken*, um die geschätzte Zeit bis zur Fertigstellung und den Fertigstellungsgrad für den aktuellen Auftrag anzuzeigen.  Wählen Sie dann im Abschnitt „Grafana“ die Option „EC-Übersicht“ aus.  Sehen Sie sich die Dashboards *Geschätzte Zeit bis zur Fertigstellung des Grid EC-Jobs* und *Prozentsatz der Fertigstellung des Grid EC-Jobs* an.
-** Mit diesem Befehl können Sie den Status einer bestimmten Operation anzeigen `repair-data`:
-+
-`repair-data show-ec-repair-status --repair-id repair ID`
-
-** Verwenden Sie diesen Befehl, um alle Reparaturen aufzulisten:
-+
-`repair-data show-ec-repair-status`
-
-+
-Die Ausgabe listet Informationen auf, einschließlich `repair ID`, für alle zuvor ausgeführten und aktuell laufenden Reparaturen.
-
-
-
-. Wenn die Ausgabe zeigt, dass der Reparaturvorgang fehlgeschlagen ist, verwenden Sie `--repair-id` die Option, um die Reparatur erneut zu versuchen.
-+
-Mit diesem Befehl wird eine fehlerhafte Node-Reparatur mithilfe der Reparatur-ID 6949309319275667690 erneut versucht:
-
-+
-`repair-data start-ec-node-repair --repair-id 6949309319275667690`
-
-+
-Mit diesem Befehl wird eine fehlerhafte Volume-Reparatur mithilfe der Reparatur-ID 6949309319275667690 wiederholt:
-
-+
-`repair-data start-ec-volume-repair --repair-id 6949309319275667690`
-
-
+Zur Überwachung der Reparatur von erasure-codierten Daten und zum erneuten Versuch eventuell fehlgeschlagener Anfragen kann unter *Support* > *Tools* > *Metrics* die geschätzte Zeit bis zum Abschluss sowie der Fertigstellungsprozentsatz des aktuellen Auftrags eingesehen werden. Anschließend steht im Grafana-Bereich *EC Overview* zur Verfügung. Die Dashboards *Grid EC Job Estimated Time to Completion* und *Grid EC Job Percentage Completed* liefern die entsprechenden Informationen.
 
 --
 ====
+
+
 .Nachdem Sie fertig sind
 Sobald die getrennten Nodes außer Betrieb genommen und alle Reparatur-Jobs abgeschlossen sind, können Sie alle verbundenen Grid-Nodes je nach Bedarf ausmustern.
 

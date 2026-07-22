@@ -1,0 +1,55 @@
+---
+permalink: admin/learn-about-setting-up-sso-saml.html 
+sidebar: sidebar 
+keywords: use sandbox mode for sso, how to test single sign-on 
+summary: 'Die Einrichtung von Single Sign-On (SSO) in StorageGRID ermöglicht es StorageGRID (dem Dienstanbieter) und dem SSO-Identitätsanbieter, sicher über Benutzerauthentifizierungsanfragen zu kommunizieren.' 
+---
+= Informationen zur Einrichtung von SSO in StorageGRID mit SAML
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Die Einrichtung von Single Sign-On (SSO) in StorageGRID ermöglicht es StorageGRID (dem Dienstanbieter) und dem SSO-Identitätsanbieter, sicher über Benutzerauthentifizierungsanfragen zu kommunizieren.
+
+Sie können SSO in StorageGRID mithilfe von OpenID Connect (OIDC) oder SAML einrichten. Die folgenden allgemeinen Schritte zeigen, wie SSO in StorageGRID mithilfe von SAML eingerichtet wird, oder es sind Informationen zu link:learn-about-setting-up-sso-oidc.html["SSO mit OIDC einrichten"] verfügbar.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"]SSO konfigurieren
+[role="quick-margin-para"]
+Den Assistenten „SSO konfigurieren“ für SAML auswählen. Anschließend SSO mit dem Identitätsanbieter konfigurieren und in den Sandbox-Modus wechseln.
+
+[role="quick-margin-para"]
+Erfahren Sie mehr überlink:configure-sso-saml.html["Konfiguration von SSO mit SAML"]
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"]Identitätsanbieter konfigurieren
+[role="quick-margin-para"]
+Je nachdem, welchen SSO-Identitätsanbieter Sie verwenden möchten, können Sie entweder Active Directory oder Entra ID als LDAP-Diensttyp für die Identitätsföderation auswählen.
+
+[role="quick-margin-list"]
+* Für Active Directory Federation Service (AD FS) kann der AD FS, Entra ID oder PingFederate Identitätsanbieter verwendet werden.
+* Für Entra ID kann ausschließlich der Entra ID Identity Provider verwendet werden.
+
+
+[role="quick-margin-para"]
+Verwenden Sie die Software des SSO-Identitätsanbieters, um SAML für jeden Admin-Knoten in Ihrem Grid zu konfigurieren.
+
+[role="quick-margin-list"]
+* Informationen zu link:creating-relying-party-trusts-in-ad-fs-saml.html["Erstellung einer Anwendungsgruppe für jeden Admin Node"]in Active Directory
+* Informationen zu link:creating-enterprise-application-entra-id-saml.html["Erstellung einer Anwendung für jeden Admin Node"] in Entra ID
+* Informationen zu link:creating-sp-connection-ping-saml.html["Erstellung einer Dienstanbieterverbindung für jeden Admin-Knoten"] in PingFederate
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"]Testkonfiguration
+[role="quick-margin-para"]
+Nachdem SAML für jeden Admin-Knoten konfiguriert wurde, erfolgt die Rückkehr zum Assistenten „SSO konfigurieren“ und die Konfiguration kann getestet werden.
+
+[role="quick-margin-para"]
+Erfahren Sie mehr überlink:configure-sso-saml.html#test-sso["Testen der SSO-Konfiguration"]
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"]SSO aktivieren
+[role="quick-margin-para"]
+SSO für alle StorageGRID Benutzer aktivieren.
+
+[role="quick-margin-para"]
+Erfahren Sie mehr überlink:configure-sso-saml.html#enable-sso-saml["SSO für StorageGRID Benutzer aktivieren"]

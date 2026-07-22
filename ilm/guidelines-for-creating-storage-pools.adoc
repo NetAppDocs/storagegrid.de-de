@@ -13,7 +13,7 @@ summary: Konfiguration und Verwendung von Speicherpools zur Absicherung gegen Da
 [role="lead"]
 Konfiguration und Verwendung von Speicherpools zur Absicherung gegen Datenverluste durch Verteilung von Daten über mehrere Standorte hinweg Für replizierte Kopien und Kopien, die zur Fehlerkorrektur codiert wurden, sind unterschiedliche Konfigurationen von Storage-Pools erforderlich.
 
-Siehe link:using-multiple-storage-pools-for-cross-site-replication.html["Beispiele für den Schutz vor Standortausfällen durch Replikation und Erasure Coding"].
+Weitere Informationen finden Sie unter link:using-multiple-storage-pools-for-cross-site-replication.html["Beispiele für den Schutz vor Standortausfällen durch Replikation und Erasure Coding"].
 
 
 
@@ -54,7 +54,7 @@ Durch die Verwendung eines Storage Pools für jeden Standort wird sichergestellt
 * Verteilen Sie Storage Nodes so gleichmäßig wie möglich auf Standorte. Um beispielsweise ein 6+3 Erasure Coding-Schema zu unterstützen, konfigurieren Sie einen Storage-Pool, der mindestens drei Storage-Nodes an drei Standorten enthält.
 * Wenn Sie hohe Durchsatzanforderungen haben, wird die Verwendung eines Speicherpools mit mehreren Standorten nicht empfohlen, wenn die Netzwerklatenz zwischen Standorten mehr als 100 ms beträgt. Mit steigender Latenz sinkt auch die Rate, mit der StorageGRID Objektfragmente erstellen, platzieren und abrufen kann, aufgrund des geringeren TCP-Netzwerkdurchsatzes erheblich.
 +
-Der Rückgang des Durchsatzes wirkt sich auf die maximal erreichbaren Raten bei der Aufnahme und dem Abruf von Objekten aus (wenn Balance oder Strict als Aufnahmeverhalten ausgewählt werden) oder kann zu ILM-Warteschlangen-Backlogs führen (wenn Dual Commit als Aufnahmeverhalten ausgewählt wird). Siehe link:what-ilm-rule-is.html#ilm-rule-ingest-behavior["ILM-Regel Aufnahme-Verhalten"].
+Die Verringerung des Durchsatzes beeinträchtigt die maximal erreichbaren Raten für die Objektaufnahme und -abfrage (wenn Balanced oder Strict als Aufnahmeverhalten ausgewählt sind) oder kann zu Rückständen in der ILM-Warteschlange führen (wenn Dual commit als Aufnahmeverhalten ausgewählt ist). Siehe link:what-ilm-rule-is.html#ilm-rule-ingest-behavior["ILM-Regel Aufnahme-Verhalten"].
 
 +
 

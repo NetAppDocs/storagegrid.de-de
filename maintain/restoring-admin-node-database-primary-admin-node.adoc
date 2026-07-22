@@ -59,7 +59,6 @@ NOTE: Das Kopieren der Admin-Node-Datenbank kann mehrere Stunden dauern. Einige 
 .. Stoppen Sie den Management-API-Service: `service mgmt-api stop`
 .. Fügen Sie den SSH-privaten Schlüssel zum SSH-Agenten hinzu. Eingabe:``ssh-add``
 .. Geben Sie das in der Datei aufgeführte SSH-Zugriffspasswort ein `Passwords.txt`.
-.. Kopieren Sie die Datenbank vom Quell-Admin-Node auf den wiederhergestellten Admin-Node: `/usr/local/mi/bin/mi-clone-db.sh Source_Admin_Node_IP`
 .. Wenn Sie dazu aufgefordert werden, bestätigen Sie, dass Sie die MI-Datenbank auf dem wiederhergestellten Admin-Knoten überschreiben möchten.
 +
 Die Datenbank und ihre historischen Daten werden auf den wiederhergestellten Admin-Knoten kopiert. Wenn der Kopiervorgang abgeschlossen ist, startet das Skript den wiederhergestellten Admin-Knoten.

@@ -21,10 +21,10 @@ Sie können im Mandanten-Manager S3-Buckets für Objektdaten erstellen.
 NOTE: Berechtigungen zum Festlegen oder Ändern der S3 Object Lock-Eigenschaften von Buckets oder Objekten können erteilt werden durchlink:../s3/use-access-policies.html["Bucket-Richtlinie oder Gruppenrichtlinie"] .
 
 * Wenn Sie die S3-Objektsperrung für einen Bucket aktivieren möchten, hat ein Grid-Administrator die globale S3-Objektsperrung für das StorageGRID-System aktiviert, und Sie haben die Anforderungen für S3-Objektsperrbuckets und -Objekte geprüft.
-* Wenn jeder Mandant 5,000 Buckets hat, verfügt jeder Storage-Node im Grid über mindestens 64 GB RAM.
+* Wenn mehrere Mandanten jeweils bis zu 5.000 Buckets haben, verfügt jeder Storage Node im Grid über mindestens 64 GB RAM.
 +
 
-NOTE: Jedes Raster kann maximal 100.000 Buckets enthalten, darunterlink:../tenant/what-is-branch-bucket.html["Zweigeimer"] .
+NOTE: Das StorageGRID System unterstützt maximal 20.000 Buckets pro S3-Tenant-Konto. Jedes Grid kann maximal 100.000 Buckets enthalten, einschließlich link:../tenant/what-is-branch-bucket.html["Zweigeimer"]. Es gibt außerdem eine Begrenzung für link:../tenant/manage-branch-buckets.html["Branch-Bucket-Tiefe"].
 
 
 
@@ -63,7 +63,7 @@ Ein Name für den Bucket, der die folgenden Regeln erfüllt:
 ** Darf keine Punkte in Virtual-Hosted-Style-Anforderungen enthalten. Perioden verursachen Probleme bei der Überprüfung des Server-Platzhalterzertifikats.
 
 
-Weitere Informationen finden Sie im https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html["Dokumentation der Amazon Web Services (AWS) zu den Bucket-Benennungsregeln"^].
+Weitere Informationen sind im  https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html["Dokumentation der Amazon Web Services (AWS) zu den Bucket-Benennungsregeln"^] zu finden.
 
 *Hinweis*: Sie können den Bucket-Namen nicht ändern, nachdem Sie den Bucket erstellt haben.
 

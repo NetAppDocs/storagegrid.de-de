@@ -22,9 +22,8 @@ Beim Konvertieren von Nur-Daten-Knoten muss das Raster mindestens drei kombinier
 .Bevor Sie beginnen
 * Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
 * Sie haben die link:../admin/admin-group-permissions.html["Berechtigung für Wartung oder Root-Zugriff"].
-* Der Storage Node, den Sie konvertieren möchten, enthält den ADC-Dienst nicht, oder Sie habenlink:../maintain/move-adc-service.html["den ADC-Dienst verschoben"] zu einem anderen Knoten.
 * Der Speicherknoten ist kein reiner Metadatenknoten oder reiner Datenknoten.
-* Der Storage Node, den Sie konvertieren möchten, enthält den ADC-Dienst nicht, oder Sie habenlink:../maintain/move-adc-service.html["den ADC-Dienst verschoben"] zu einem anderen Knoten.
+* Wenn der Speicherknoten den ADC-Dienst enthält, mehr als zwei ADC-Speicherknoten im gesamten Grid online sind und Nicht-ADC-Speicherknoten am selben Standort zur Verfügung stehen, um den ADC-Dienst zu hosten.
 * Es gibt genügend Metadatenspeicher auf anderen Knoten der Site (oder Sie habenlink:../expand/index.html["Ihr Raster erweitert"] ), um die Metadaten aufzunehmen, die vom Speicherknoten, den Sie konvertieren, migriert werden.
 +
 [CAUTION]
@@ -37,12 +36,15 @@ Beim Konvertieren von Nur-Daten-Knoten muss das Raster mindestens drei kombinier
 
 
 .Über diese Aufgabe
-Verwenden Sie dieses Verfahren, um einen oder mehrere kombinierte Speicherknoten, die den ADC-Dienst nicht enthalten, in reine Datenknoten umzuwandeln.
+Dieses Verfahren dient dazu, einen oder mehrere kombinierte Storage Nodes in reine Datenknoten umzuwandeln. Wenn ein Storage Node den ADC-Service enthält, wird der Service während der Umwandlung automatisch auf einen anderen Storage Node am selben Standort verschoben.
 
 Zusätzlich zur Konvertierung des Speicherknotens wird bei diesem Verfahren Cassandra vom Knoten außer Betrieb gesetzt.  Alle Metadaten werden auf kombinierte oder reine Metadaten-Speicherknoten migriert.  Je nach der Menge der zu migrierenden Metadaten kann dieser Vorgang pro Knoten mehrere Tage dauern.
 
 
 TIP: Im Allgemeinen können Sie bis zu 10 Knoten gleichzeitig konvertieren, wenn die Metadatennutzung pro Knoten weniger als 1 TB beträgt.  Wenn die Metadatennutzung pro Knoten mehr als 1 TB beträgt, konvertieren Sie stattdessen bis zu 5 Knoten pro Prozedur.
+
+
+NOTE: StorageGRID verschiebt den ADC-Dienst auf die neuesten Storage Nodes, die die Anforderungen für das Hosting des Dienstes erfüllen.
 
 .Schritte
 . Notieren Sie die Knoten-IDs der Nicht-ADC-Speicherknoten, die Sie konvertieren möchten.

@@ -14,6 +14,9 @@ summary: Wenn die globale S3-Objektsperrung für Ihr StorageGRID-System aktivier
 Wenn die globale S3-Objektsperrung für Ihr StorageGRID-System aktiviert ist, können Sie Buckets mit aktivierter S3-Objektsperrung erstellen. Sie können für jeden Bucket oder die Aufbewahrungseinstellungen für jede Objektversion die Standardaufbewahrung festlegen.
 
 
+NOTE: StorageGRID unterstützt den  `x-amz-sdk-checksum-algorithm` Anfrageheader nicht.
+
+
 
 [[how-to-enable-s3-object-lock-for-a-bucket]]
 == Aktivieren der S3-Objektsperre für einen Bucket
@@ -22,10 +25,11 @@ Wenn die globale S3-Objektsperreneinstellung für Ihr StorageGRID-System aktivie
 
 S3 Object Lock ist eine permanente Einstellung, die nur beim Erstellen eines Buckets aktiviert werden kann. Sie können S3-Objektsperre nicht hinzufügen oder deaktivieren, nachdem ein Bucket erstellt wurde.
 
-Verwenden Sie eine der folgenden Methoden, um S3 Object Lock für einen Bucket zu aktivieren:
+Um die S3-Objektsperre für einen Bucket zu aktivieren, kann eine der folgenden Methoden genutzt werden:
 
 * Erstellen Sie den Bucket mit Tenant Manager. Siehe link:../tenant/creating-s3-bucket.html["S3-Bucket erstellen"].
 * Erstellen Sie den Bucket mithilfe einer CreateBucket-Anforderung mit dem `x-amz-bucket-object-lock-enabled` Anforderungsheader. Siehe link:operations-on-buckets.html["Operationen auf Buckets"].
+* Bucket-Einstellungen können im Tenant Manager verwaltet werden. Weitere Informationen unter link:../tenant/update-default-retention-settings.html["Aktualisieren Sie die S3 Object Lock-Standardaufbewahrung"].
 
 
 S3 Object Lock erfordert eine Bucket-Versionierung, die beim Erstellen des Buckets automatisch aktiviert wird. Die Versionierung für den Bucket kann nicht unterbrochen werden. Siehe link:object-versioning.html["Objektversionierung"].
@@ -83,19 +87,27 @@ Verwenden Sie eine der folgenden Methoden, um die Standardaufbewahrung für eine
 
 Mit der PutObjectLockConfiguration-Anforderung können Sie den Standardaufbewahrungsmodus und den Standardaufbewahrungszeitraum für einen Bucket festlegen und ändern, für den S3 Object Lock aktiviert ist. Sie können auch zuvor konfigurierte Standardeinstellungen entfernen.
 
-Wenn neue Objektversionen in den Bucket aufgenommen werden, wird der Standardaufbewahrungsmodus angewendet, sofern `x-amz-object-lock-mode` diese `x-amz-object-lock-retain-until-date` nicht angegeben sind. Der Standardaufbewahrungszeitraum wird verwendet, um das Aufbewahrungsdatum zu berechnen, wenn `x-amz-object-lock-retain-until-date` nicht angegeben ist.
+Wenn neue Objektversionen in den Bucket aufgenommen werden, wird der Standardaufbewahrungsmodus angewendet, wenn  `x-amz-object-lock-mode` und  `x-amz-object-lock-retain-until-date` nicht angegeben sind. Die Standardaufbewahrungsdauer wird zur Berechnung des Aufbewahrungsdatums verwendet, wenn  `x-amz-object-lock-retain-until-date` nicht angegeben ist.
 
-Wenn der Standardaufbewahrungszeitraum nach der Aufnahme einer Objektversion geändert wird, bleibt das „bis-Aufbewahrung“-Datum der Objektversion identisch und wird im neuen Standardaufbewahrungszeitraum nicht neu berechnet.
+Wird die Standardaufbewahrungsfrist nach der Aufnahme einer Objektversion geändert, bleibt das Aufbewahrungsdatum der Objektversion gleich und wird nicht anhand der neuen Standardaufbewahrungsfrist neu berechnet.
 
 Sie müssen über die Berechtigung verfügen oder Konto root sein, um `s3:PutBucketObjectLockConfiguration` diesen Vorgang abzuschließen.
 
-Der `Content-MD5` Anforderungskopf muss in der PUT-Anforderung angegeben werden.
+Einer der folgenden Anfrageheader ist in der PutObjectLockConfiguration-Anfrage anzugeben:
+
+[listing]
+----
+Content-MD5
+x-amz-checksum-*
+----
+
+NOTE: StorageGRID validiert den Inhalt des x-amz-checksum-* Headers für diese Operation nicht.
 
 
 
 ==== Anforderungsbeispiel
 
-In diesem Beispiel wird S3 Object Lock für einen Bucket aktiviert und der Standardaufbewahrungsmodus auf COMPLIANCE und der Standardaufbewahrungszeitraum auf 6 Jahre festgelegt.
+Dieses Beispiel aktiviert S3 Object Lock für einen Bucket (sofern Ihr Grid-Administrator die Berechtigung erteilt hat) und legt den Standard-Aufbewahrungsmodus auf COMPLIANCE und die Standard-Aufbewahrungsdauer auf 6 Jahre fest.
 
 [listing, subs="specialcharacters,quotes"]
 ----
@@ -137,7 +149,7 @@ Verwenden Sie eine der folgenden Methoden, um zu ermitteln, ob S3 Object Lock f�
 
 Mit der GetObjectLockConfiguration-Anforderung können Sie festlegen, ob S3 Object Lock für einen Bucket aktiviert ist. Wenn diese Option aktiviert ist, können Sie prüfen, ob für den Bucket ein Standardaufbewahrungsmodus und eine Aufbewahrungsfrist konfiguriert sind.
 
-Wenn neue Objektversionen in den Bucket aufgenommen werden, wird der Standardaufbewahrungsmodus angewendet, wenn `x-amz-object-lock-mode` nicht angegeben ist. Der Standardaufbewahrungszeitraum wird verwendet, um das Aufbewahrungsdatum zu berechnen, wenn `x-amz-object-lock-retain-until-date` nicht angegeben ist.
+Wenn neue Objektversionen in den Bucket aufgenommen werden, wird der Standardaufbewahrungsmodus angewendet, wenn  `x-amz-object-lock-mode`nicht angegeben ist. Die Standardaufbewahrungsdauer wird zur Berechnung des Aufbewahrungsdatums verwendet, wenn  `x-amz-object-lock-retain-until-date`nicht angegeben ist.
 
 Sie müssen über die Berechtigung verfügen oder Konto root sein, um `s3:GetBucketObjectLockConfiguration` diesen Vorgang abzuschließen.
 
@@ -226,8 +238,17 @@ Wenn die gesetzliche Aufbewahrungspflichten LIEGEN (Groß-/Kleinschreibung muss 
 
 Wenn Sie eine dieser Anfrageheadern verwenden, beachten Sie die folgenden Einschränkungen:
 
-* Der `Content-MD5` Anforderungsheader ist erforderlich, wenn `x-amz-object-lock-*` in der PutObject-Anforderung ein Anforderungsheader vorhanden ist. `Content-MD5` Ist für CopyObject oder CreateMultipartUpload nicht erforderlich.
-* Wenn im Bucket die S3-Objektsperre nicht aktiviert ist und eine `x-amz-object-lock-*` Anforderungsheader vorhanden ist, wird ein Fehler 400 Bad Request (InvalidRequest) zurückgegeben.
+* Einer der folgenden Anfrageheader muss angegeben werden, wenn ein x-amz-object-lock-* Anfrageheader in der PutObject Anfrage vorhanden ist:
++
+[listing]
+----
+Content-MD5
+x-amz-checksum-*
+----
++
+Diese Header sind für CopyObject oder CreateMultipartUpload nicht erforderlich.
+
+* Wenn für den Bucket die S3 Object Lock-Funktion nicht aktiviert ist und ein x-amz-object-lock-* Anforderungsheader vorhanden ist, wird ein 400 Bad Request (InvalidRequest) Fehler zurückgegeben.
 * Die PutObject-Anfrage unterstützt die Verwendung von `x-amz-storage-class: REDUCED_REDUNDANCY`, um AWS-Verhalten abzugleichen. Wird ein Objekt jedoch mit aktivierter S3-Objektsperre in einen Bucket aufgenommen, führt StorageGRID immer eine Dual-Commit-Aufnahme durch.
 * Eine nachfolgende GET- oder HeadObject-Versionsantwort enthält die Header `x-amz-object-lock-mode`, , `x-amz-object-lock-retain-until-date` und `x-amz-object-lock-legal-hold`, sofern konfiguriert und der Absender der Anfrage die richtigen Berechtigungen hat `s3:Get*`.
 
@@ -254,6 +275,16 @@ Wenn der neue Legal-Hold-Wert AKTIVIERT ist, wird das Objekt unter einer gesetzl
 
 
 
+Einer der folgenden Anfrageheader muss in der Anfrage angegeben werden:
+
+[listing]
+----
+Content-MD5
+x-amz-checksum-*
+----
+
+NOTE: StorageGRID validiert bei diesen Operationen nicht den Inhalt des x-amz-checksum-* Headers.
+
 
 
 [[how-to-use-governance-mode]]
@@ -264,6 +295,9 @@ Benutzer mit der `s3:BypassGovernanceRetention` Berechtigung können die aktiven
 * Führen Sie DeleteObject- oder DeleteObjects-Vorgänge durch, um eine Objektversion vor Ablauf des Aufbewahrungszeitraums zu löschen.
 +
 Objekte, die sich unter einem Legal Hold befinden, können nicht gelöscht werden. Legal Hold muss DEAKTIVIERT sein.
+
++
+Der  `x-amz-bypass-governance-retention`Header hat keine Auswirkung auf Objekte ohne S3 Object Lock.
 
 * Führen Sie PutObjectRetention-Vorgänge durch, die den Modus einer Objektversion vor Ablauf DER Aufbewahrungsfrist von GOVERNANCE in COMPLIANCE ändern.
 +

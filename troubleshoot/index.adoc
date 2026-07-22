@@ -202,7 +202,7 @@ Datenerfassung für technischen Support
 Vom technischen Support werden Sie möglicherweise aufgefordert, Daten zu sammeln oder bestimmte Informationen zu überprüfen, um Probleme zu beheben.
  a| 
 * link:../monitor/collecting-log-files-and-system-data.html["Erfassen von Protokolldateien und Systemdaten"]
-* link:../monitor/manually-triggering-autosupport-message.html["Starten Sie manuell ein AutoSupport-Paket"]
+* link:../monitor/manually-triggering-autosupport-package.html["Starten Sie manuell ein AutoSupport-Paket"]
 * link:../monitor/reviewing-support-metrics.html["Prüfen von Support-Kennzahlen"]
 
 

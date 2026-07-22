@@ -180,10 +180,6 @@ NOTE: Das temporäre Installationspasswort wird nur während der Node-Installati
 
 .. Geben Sie im Feld *Primary Admin IP* die IP-Adresse des primären Admin-Knotens für das Grid Network ein.
 +
-
-NOTE: Dieser Schritt gilt nicht, wenn der Knoten, den Sie bereitstellen, der primäre Admin-Node ist.
-
-+
 Wenn Sie die IP-Adresse des primären Admin-Knotens auslassen, wird die IP-Adresse automatisch erkannt, wenn der primäre Admin-Node oder mindestens ein anderer Grid-Node mit konfigurierter ADMIN_IP im selben Subnetz vorhanden ist. Es wird jedoch empfohlen, hier die IP-Adresse des primären Admin-Knotens festzulegen.
 
 .. Wählen Sie im Abschnitt *Admin-Netzwerk (eth1)* DIE Option STATISCH, DHCP oder DEAKTIVIERT für die *Admin-Netzwerk-IP-Konfiguration* aus.
@@ -222,7 +218,7 @@ Beachten Sie die folgenden wichtigen Richtlinien:
 
 . [[vmware-remap-Ports]]Wenn Sie die von diesem Knoten verwendeten Ports neu zuordnen müssen, gehen Sie wie folgt vor.
 +
-Möglicherweise müssen Sie einen Port neu zuordnen, wenn Ihre Unternehmensrichtlinien den Zugriff auf einen oder mehrere von StorageGRID verwendete Ports einschränken. Informationen zu den von StorageGRID verwendeten Ports finden Sie imlink:../network/index.html["Netzwerkrichtlinien"].
+Möglicherweise ist eine Neuzuordnung eines Ports erforderlich, wenn die Netzwerkrichtlinien Ihres Unternehmens den Zugriff auf einen oder mehrere von StorageGRID verwendete Ports einschränken. Siehe link:../network/index.html["Netzwerkrichtlinien"] für die von StorageGRID verwendeten Ports.
 
 +
 

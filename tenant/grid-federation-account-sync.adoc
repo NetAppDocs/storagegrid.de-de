@@ -1,0 +1,125 @@
+---
+permalink: tenant/grid-federation-account-sync.html 
+sidebar: sidebar 
+keywords: account sync, tenant sync, grid federation, cross-grid replication 
+summary: 'Wurde ein Mandant für die Nutzung von Grid-Federation-Verbindungen erstellt oder bearbeitet, wird dieser Mandant von einem StorageGRID System (dem Quellmandanten) auf alle anderen verbundenen StorageGRID Systeme (die Replikatmandanten) repliziert. Nach der Replikation des Mandanten werden Mandantengruppen, Benutzer und S3-Zugriffsschlüssel zwischen den verbundenen Grids synchronisiert.' 
+---
+= Mandantengruppen und Benutzer in StorageGRID synchronisieren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wurde ein Mandant für die Nutzung von Grid-Federation-Verbindungen erstellt oder bearbeitet, wird dieser Mandant von einem StorageGRID System (dem Quellmandanten) auf alle anderen verbundenen StorageGRID Systeme (die Replikatmandanten) repliziert. Nach der Replikation des Mandanten werden Mandantengruppen, Benutzer und S3-Zugriffsschlüssel zwischen den verbundenen Grids synchronisiert.
+
+Das StorageGRID System, in dem der Mandant ursprünglich erstellt wurde, ist das Quell-Grid des Mandanten. Der Mandant wird auf ein oder mehrere Ziel-Grids repliziert. Die Mandantenkonten auf allen verbundenen Grids haben dieselbe Konto-ID, denselben Namen, dieselbe Beschreibung, dasselbe Speicherkontingent, dieselben zugewiesenen Berechtigungen und dasselbe Root-Benutzer Passwort. Weitere Informationen finden sich unter link:../admin/grid-federation-what-is-account-sync.html["Informationen zur Kontosynchronisierung für Grid Federation"] und link:../admin/grid-federation-manage-tenants.html["Management zulässiger Mandanten"].
+
+Die Synchronisierung der Mandantenkontoinformationen ist für link:../admin/grid-federation-what-is-cross-grid-replication.html["Grid-übergreifende Replizierung"] von Bucket-Objekten erforderlich. Die Verwendung derselben Mandantengruppen und Benutzer auf allen Grids stellt sicher, dass auf die entsprechenden Buckets und Objekte in jedem verbundenen Grid zugegriffen werden kann.
+
+
+
+[[tenant-workflow-for-account-sync]]
+== Mandanten-Workflow für die Kontosynchronisierung
+
+Wenn Ihr Mandantenkonto über die Berechtigung *Grid-Federationsverbindung verwenden* verfügt, zeigt das Workflow-Diagramm die Schritte, die zum Synchronisieren von Gruppen, Benutzern und S3-Zugriffsschlüsseln durchgeführt werden.
+
+image:grid_federation_account_sync_workflow_tm.png["Der Workflow des Mandanten für die Kontosynchronisierung. Die Schritte werden im folgenden Text beschrieben."]
+
+Das sind die primären Schritte im Workflow:
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Eins"] Melden Sie sich beim Mandanten an
+[role="quick-margin-para"]
+Melden Sie sich beim Mieterkonto auf einem beliebigen verbundenen Grid an.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Zwei"] Optional können Sie die Identity Federation konfigurieren
+[role="quick-margin-para"]
+Wenn Ihr Mandantenkonto über die Berechtigung „Eigene Identitätsquelle verwenden“ verfügt, um föderierte Gruppen und Benutzer zu nutzen, muss für das Quell- und ein oder mehrere Zielmandantenkonten dieselbe Identitätsquelle (mit denselben Einstellungen) konfiguriert werden. Föderierte Gruppen werden zum Zeitpunkt der Erstellung geklont, und föderierte Benutzer werden geklont, wenn ein Schlüssel erstellt wird. Damit das Klonen erfolgen kann, muss auf allen Grids dieselbe Identitätsquelle konfiguriert sein. Anweisungen finden sich unter link:using-identity-federation.html["Verwenden Sie den Identitätsverbund"].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Drittens"] Erstellen Sie Gruppen und Benutzer
+[role="quick-margin-para"]
+Gruppen und Benutzer können aus jedem verbundenen Grid erstellt werden. Beim Hinzufügen einer neuen lokalen Gruppe wird diese von StorageGRID automatisch mit allen verbundenen Grids synchronisiert. Änderungen an lokalen Gruppen (Bearbeiten, Löschen) werden ebenfalls fortlaufend synchronisiert. Föderierte Gruppen werden bei der Erstellung einmalig geklont.
+
+[role="quick-margin-list"]
+* Wenn die Identity Federation für das gesamte StorageGRID System oder für Ihr Mandantenkonto konfiguriert wurdelink:creating-groups-for-s3-tenant.html["Erstellen neuer Mandantengruppen"], importieren Sie gebündelte Gruppen von der Identitätsquelle.
+
+
+[role="quick-margin-list"]
+* Wenn Sie keine Identitätsföderation verwenden,link:creating-groups-for-s3-tenant.html["Erstellen Sie neue lokale Gruppen"] und dannlink:manage-users.html["Erstellen Sie lokale Benutzer"] .
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Vier"] Erstellen von S3 Zugriffsschlüsseln
+[role="quick-margin-para"]
+Sie können link:creating-your-own-s3-access-keys.html["Erstellen Sie Ihre eigenen Zugriffsschlüssel"] oder zu link:creating-another-users-s3-access-keys.html["Erstellen Sie die Zugriffsschlüssel eines anderen Benutzers"] auf jedem Grid wechseln, um auf Buckets in allen verbundenen Grids zuzugreifen.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Fünf"]Sync S3-Zugriffsschlüssel
+[role="quick-margin-para"]
+Wenn Sie auf Buckets mit denselben Zugriffsschlüsseln in allen Grids zugreifen müssen, erstellen Sie die Zugriffsschlüssel in einem der Grids. Für lokale Benutzer werden die Zugriffsschlüssel standardmäßig automatisch synchronisiert. Für Verbundbenutzer ist es erforderlich, S3-Zugriffsschlüssel im Quell-Grid zu erstellen und *Zugriffsschlüsselsynchronisierung aktivieren* auszuwählen, damit die Schlüssel mit allen Ziel-Grids synchronisiert werden.
+
+
+
+[[how-are-groups-users-and-s3-access-keys-synced]]
+== Wie werden Gruppen, Benutzer und S3-Zugriffsschlüssel synchronisiert?
+
+In diesem Abschnitt wird erläutert, wie Gruppen, Benutzer und S3-Zugriffsschlüssel über verbundene Grids hinweg synchronisiert werden.
+
+
+
+[[local-groups-are-continuously-synced]]
+=== Lokale Gruppen werden kontinuierlich synchronisiert
+
+Nachdem ein Mandantenkonto erstellt und in das Ziel-Grid repliziert wurde, synchronisiert StorageGRID kontinuierlich lokale Gruppen über alle verbundenen Grids hinweg. Alle Änderungen an lokalen Gruppen, einschließlich Erstellungs-, Bearbeitungs- und Löschvorgängen, die in einem beliebigen Grid vorgenommen werden, werden automatisch in alle anderen verbundenen Grids repliziert.
+
+Sowohl die ursprüngliche Gruppe als auch ihre synchronisierten Kopien haben denselben Zugriffsmodus, dieselben Gruppenberechtigungen und dieselbe S3 Gruppenrichtlinie. Anleitungen finden sich unter link:creating-groups-for-s3-tenant.html["Gruppen für S3 Mandanten erstellen"].
+
+
+
+[[local-users-are-continuously-synced]]
+=== Lokale Benutzer werden kontinuierlich synchronisiert
+
+Wenn ein neuer lokaler Benutzer in einem verbundenen Grid erstellt wird, synchronisiert StorageGRID diesen Benutzer automatisch mit allen anderen verbundenen Grids. Nachfolgende Änderungen, einschließlich Bearbeitungen, Löschungen und Passwortzurücksetzungen, werden ebenfalls kontinuierlich synchronisiert. Der ursprüngliche Benutzer und seine synchronisierten Kopien haben denselben vollständigen Namen, Benutzernamen und dieselbe *Zugriff verweigern*-Einstellung. Die gleichen Benutzer gehören auf jedem Grid auch zu denselben Gruppen. Anleitungen finden sich unter link:manage-users.html["Benutzer managen"].
+
+
+
+[[federated-groups-are-synced-once-at-creation]]
+=== Verbundene Gruppen werden einmalig bei ihrer Erstellung synchronisiert
+
+Sofern die Voraussetzungen für die Verwendung der Kontosynchronisierung mit link:../admin/grid-federation-what-is-account-sync.html#account-sync-sso["Single Sign On"] und link:../admin/grid-federation-what-is-account-sync.html#account-sync-identity-federation["Identitätsföderation"] erfüllt sind, werden föderierte Gruppen, die Sie für den Mandanten in einem Grid erstellen (importieren), automatisch mit dem Mandanten in allen anderen verbundenen Grids synchronisiert.
+
+Beide Gruppen haben denselben Zugriffsmodus, dieselben Gruppenberechtigungen und dieselbe S3-Gruppenrichtlinie.
+
+Nachdem föderierte Gruppen für den Quellmandanten erstellt und mit anderen Grids synchronisiert wurden, können sich föderierte Benutzer bei dem Mandanten auf jedem verbundenen Grid anmelden. Nachfolgende Änderungen an föderierten Gruppen werden nicht automatisch zwischen den Grids synchronisiert.
+
+
+
+[[s3-access-keys-can-be-automatically-or-manually-synced]]
+=== S3-Zugriffsschlüssel können automatisch oder manuell synchronisiert werden
+
+StorageGRID synchronisiert standardmäßig S3-Zugriffsschlüssel automatisch. Aus Sicherheitsgründen kann die automatische Synchronisierung der S3-Zugriffsschlüssel für jeden Mandanten deaktiviert werden, sodass für jeden Mandanten in jedem Grid unterschiedliche Schlüssel verwendet werden können.
+
+Zur Verwaltung von Zugriffsschlüsseln in verbundenen Grids können Sie Folgendes tun:
+
+* Wenn nicht für jedes Grid die gleichen Schlüssel verwendet werden müssen, kann die automatische Synchronisierung der Zugriffsschlüssel und link:creating-your-own-s3-access-keys.html["Erstellen Sie Ihre eigenen Zugriffsschlüssel"] oder link:creating-another-users-s3-access-keys.html["Erstellen Sie die Zugriffsschlüssel eines anderen Benutzers"] auf jedem Grid deaktiviert werden.
+
+
+
+NOTE: Wenn S3-Zugriffsschlüssel für einen Verbundbenutzer synchronisiert werden, werden sowohl der Benutzer als auch die S3-Zugriffsschlüssel mit den Zielmandanten synchronisiert.
+
+
+NOTE: S3-Zugriffsschlüssel, die lokalen Benutzern gehören, werden kontinuierlich über alle verbundenen Grids hinweg synchronisiert, auch wenn Schlüssel gelöscht werden. S3-Zugriffsschlüssel, die Verbundbenutzern gehören, werden einmalig bei der Erstellung synchronisiert; nachfolgende Änderungen, einschließlich Löschungen, werden nicht repliziert. Für jede Mandantenverbindung kann die Synchronisierung der Zugriffsschlüssel aktiviert oder deaktiviert werden.
+
+
+
+[[groups-and-users-added-to-destination-grid-are-synced]]
+=== Gruppen und Benutzer, die dem Ziel-Grid hinzugefügt werden, werden synchronisiert.
+
+Änderungen, die in einem verbundenen Grid vorgenommen werden, einschließlich des Erstellens oder Importierens lokaler Gruppen und Benutzer, werden automatisch mit allen anderen verbundenen Grids synchronisiert.
+
+
+
+[[edited-or-deleted-local-groups-users-and-access-keys-are-synced]]
+=== Bearbeitete oder gelöschte lokale Gruppen, Benutzer und Zugriffsschlüssel sind synchronisiert
+
+Änderungen an lokalen Gruppen, lokalen Benutzern und S3-Zugriffsschlüsseln lokaler Benutzer werden kontinuierlich über alle verbundenen Grids hinweg synchronisiert. Zu den synchronisierten Vorgängen gehören Bearbeitungen, Löschungen und Passwortzurücksetzungen.
+
+Änderungen an föderierten Gruppen und S3-Zugriffsschlüsseln, die föderierten Benutzern gehören, werden nach der erstmaligen Erstellung nicht synchronisiert.

@@ -186,7 +186,7 @@ Ihre Vorteile:
 *** link:grid-federation-manage-connection.html#rotate-connection-certificates["Verbindungszertifikate für Netzverbund drehen"]
 *** link:using-identity-federation.html["Anzeigen und Bearbeiten eines Zertifikats für die Identitätsföderation"]
 *** link:kms-adding.html["Laden Sie den KMS-Server (Key Management Server) und die Clientzertifikate hoch"]
-*** link:creating-relying-party-trusts-in-ad-fs.html#create-a-relying-party-trust-manually["Geben Sie manuell ein SSO-Zertifikat für eine vertrauenswürdige Partei an"]
+*** link:creating-relying-party-trusts-in-ad-fs-saml.html#create-a-relying-party-trust-manually["Geben Sie manuell ein SSO-Zertifikat für eine vertrauenswürdige Partei an"]
 
 
 --
@@ -317,7 +317,7 @@ Sie können auch eine benutzerdefinierte Version des globalen  Zertifikats verwe
  a| 
 Server
  a| 
-Authentifiziert die Verbindung von einem StorageGRID Cloud Storage Pool auf einem externen Storage-Standort wie S3 Glacier oder Microsoft Azure Blob Storage. Für jeden Cloud-Provider-Typ ist ein anderes Zertifikat erforderlich.
+Authentifiziert die Verbindung von einem StorageGRID Cloud Storage Pool zu einem externen Speicherort, wie S3 Glacier oder Microsoft Azure Blob Storage. Für jeden Cloud-Anbietertyp ist ein separates Zertifikat erforderlich.
  a| 
 *ILM* > *Speicherpools*
  a| 

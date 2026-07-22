@@ -1,0 +1,73 @@
+---
+permalink: monitor/configure-email-server.html 
+sidebar: sidebar 
+keywords: notifications, email, system events, technical support 
+summary: Als StorageGRID Administrator ist die Konfiguration eines E-Mail-Servers erforderlich, um Benachrichtigungen von den StorageGRID Alert- und Überwachungssystemen zu senden, die Sie, andere Administratoren und den technischen Support über Systemereignisse und Probleme informieren. 
+---
+= E-Mail-Server konfigurieren
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Als StorageGRID Administrator ist die Konfiguration eines E-Mail-Servers erforderlich, um Benachrichtigungen von den StorageGRID Alert- und Überwachungssystemen zu senden, die Sie, andere Administratoren und den technischen Support über Systemereignisse und Probleme informieren.
+
+Zu den StorageGRID-Funktionen, die den E-Mail-Server für Benachrichtigungen nutzen, gehören Warnmeldungen, AutoSupport und die Multi-Admin-Verifizierung (MAV). Es kann für alle Benachrichtigungen derselbe E-Mail-Server verwendet werden.
+
+.Bevor Sie beginnen
+* Sie haben die link:../admin/admin-group-permissions.html["Root-Zugriffsberechtigung"].
+* Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
+
+
+.Schritte
+. *Konfiguration* > *Überwachung* > *E-Mail-Server* auswählen.
++
+Die E-Mail-Serverseite wird angezeigt.
+
+. Wählen Sie das Dropdown-Menü *Funktionen anzeigen, die möglicherweise einen E-Mail-Server benötigen*. Wenn Details und erforderliche Informationen zur Konfiguration von E-Mail-Benachrichtigungen für eine Funktion angezeigt werden sollen, *Anzeigen* auswählen.
++
+Sie werden zur Konfigurationsseite der jeweiligen Funktion im Grid Manager weitergeleitet. Die Konfigurationsseite jeder Funktion enthält einen Hinweis, dass ein E-Mail-Server erforderlich ist, um E-Mail-Benachrichtigungen zu senden.
+
+. Einen E-Mail-Server über die Seite „E-Mail-Server“ konfigurieren:
++
+.. Geben Sie die IP-Adresse oder den FQDN des E-Mail-Servers ein.
+.. Wählen Sie die vom E-Mail-Server verwendete Portnummer aus. Der Standardwert ist 25.
+.. Um Authentifizierung zu verlangen, *Authentifizierung verwenden* auswählen und den Benutzernamen sowie das Passwort eingeben.
+.. Um die Überprüfung der Identität des SMTP-Servers zu verlangen, *Transport Layer Security (TLS) verwenden* auswählen. Dann:
++
+... Ein CA-Paket bereitstellen.
+... Wenn der SMTP-E-Mail-Server von Absendern verlangt, Clientzertifikate zur Authentifizierung bereitzustellen, ist *Clientzertifikat senden* auszuwählen. Anschließend sind das Clientzertifikat und der private Schlüssel bereitzustellen.
+
+
+.. Um sicherzustellen, dass Ihre E-Mail-Einstellungen korrekt sind, wird eine Test-E-Mail gesendet, indem Absender und Empfänger eingegeben werden. *Senden* auswählen.
++
+Es wird eine Bestätigungsmeldung angezeigt, die angibt, dass eine Test-E-Mail gesendet wurde.
+
+.. Aktivieren Sie die Kontrollkästchen aller E-Mail-Empfänger, und bestätigen Sie, dass eine Test-E-Mail empfangen wurde.
++
+
+NOTE: Wenn die E-Mail nicht innerhalb weniger Minuten empfangen wird oder wenn die Meldung *E-Mail-Benachrichtigung Fehler* ausgelöst wird, überprüfen Sie Ihre Einstellungen und versuchen Sie es erneut.
+
+.. Melden Sie sich bei anderen Admin-Knoten an und senden Sie eine Test-E-Mail, um die Verbindung von allen Standorten zu überprüfen.
++
+
+NOTE: Wenn Sie die Warnbenachrichtigungen testen, müssen Sie sich bei jedem Admin-Knoten anmelden, um die Verbindung zu überprüfen. Dies steht im Gegensatz zum Testen von AutoSupport-Paketen, bei denen alle Admin-Knoten die Test-E-Mail senden.
+
+
+
+. Wählen Sie *Speichern*.
++
+Das Senden einer Test-E-Mail speichert Ihre Einstellungen nicht. *Speichern* muss ausgewählt werden.
+
++
+Die E-Mail-Einstellungen werden gespeichert.
+
+. Öffnen Sie die Konfigurationsseiten der Funktionen, die den E-Mail-Server verwenden, und vervollständigen Sie die Einstellungen für die E-Mail-Benachrichtigung.
++
+** link:../monitor/email-alert-notifications.html["Meldungen"]. Für Benachrichtigungen kann auch link:../monitor/snmp-alert-notifications.html["SNMP-Benachrichtigungen einrichten"] verwendet werden.
+** link:../monitor/configure-autosupport-grid-manager.html["AutoSupport"]. Es besteht die Möglichkeit, AutoSupport-Pakete per E-Mail, HTTPS oder HTTP zu senden (HTTP wird nicht empfohlen).
+** link:../admin/configure-multi-admin-verify.html["Multi-Admin-Verifizierung (MAV)"].
+
+
+

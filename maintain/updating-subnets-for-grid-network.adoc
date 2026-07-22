@@ -62,7 +62,7 @@ Geben Siez. B. `10.96.104.0/22` .
 . Warten Sie, bis die Änderungen übernommen wurden, und laden Sie dann ein neues Wiederherstellungspaket herunter.
 +
 .. Wählen Sie *Wartung* > *System* > *Wiederherstellungspaket*.
-.. Geben Sie die *Provisioning-Passphrase* ein.
+.. Die *Bereitstellungs-Passphrase* eingeben.
 +
 
 CAUTION: Die Wiederherstellungspaketdatei muss gesichert werden, da sie Verschlüsselungsschlüssel und Passwörter enthält, mit denen Daten aus dem StorageGRID -System abgerufen werden können.  Es wird auch verwendet, um den primären Admin-Knoten wiederherzustellen.
@@ -86,7 +86,7 @@ Die angegebenen Subnetze werden automatisch für Ihr StorageGRID System konfigur
 . Warten Sie, bis die Änderungen übernommen wurden, und laden Sie dann ein neues Wiederherstellungspaket herunter.
 +
 .. Wählen Sie *Wartung* > *System* > *Wiederherstellungspaket*.
-.. Geben Sie die *Provisioning-Passphrase* ein.
+.. Die *Bereitstellungs-Passphrase* eingeben.
 
 
 
@@ -98,13 +98,13 @@ Die angegebenen Subnetze werden automatisch für Ihr StorageGRID System konfigur
 
 .Schritte
 . Wählen Sie *Wartung* > *Netzwerk* > *Grid-Netzwerk*.
-. Das Löschsymbol image:icon-x-to-remove.png["Symbol Löschen"] neben dem Subnetz auswählen.
+. Das Löschsymbol image:icon_x_to_remove.png["Symbol Löschen"] neben dem Subnetz auswählen.
 . Geben Sie die Provisionierungs-Passphrase ein, und wählen Sie *Speichern*.
 . Wählen Sie im Bestätigungsdialogfeld * Ja* aus.
 . Warten Sie, bis die Änderungen übernommen wurden, und laden Sie dann ein neues Wiederherstellungspaket herunter.
 +
 .. Wählen Sie *Wartung* > *System* > *Wiederherstellungspaket*.
-.. Geben Sie die *Provisioning-Passphrase* ein.
+.. Die *Bereitstellungs-Passphrase* eingeben.
 
 
 

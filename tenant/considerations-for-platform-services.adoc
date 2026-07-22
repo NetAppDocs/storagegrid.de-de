@@ -24,7 +24,7 @@ Die StorageGRID Plattform-Services unterstützen Sie bei der Implementierung ein
 
 Da der Zielspeicherort für Plattformservices normalerweise außerhalb Ihrer StorageGRID-Implementierung liegt, erhalten Sie bei Plattform-Services die Leistung und Flexibilität, die sich aus der Nutzung externer Storage-Ressourcen, Benachrichtigungsservices und Such- oder Analyseservices für Ihre Daten ergibt.
 
-Jede Kombination von Plattform-Services kann für einen einzelnen S3-Bucket konfiguriert werden. Beispielsweise können Sie sowohl die  als auch link:../tenant/understanding-notifications-for-buckets.html["Benachrichtigungen"]einen StorageGRID S3 Bucket konfigurieren, damit Sie bestimmte Objekte auf den Amazon Simple Storage Service (S3) spiegeln können. Gleichzeitig könnten link:../tenant/understanding-cloudmirror-replication-service.html["CloudMirror Service"]Sie eine Benachrichtigung über jedes dieser Objekte an die Monitoring-Applikation eines Drittanbieters senden, um Ihre AWS Ausgaben nachzuverfolgen.
+Für einen einzelnen S3-Bucket kann jede beliebige Kombination von Plattformdiensten konfiguriert werden. Beispielsweise lässt sich sowohl die link:../tenant/understanding-cloudmirror-replication-service.html["CloudMirror Service"] als auch die link:../tenant/understanding-notifications-for-buckets.html["Benachrichtigungen"] auf einem StorageGRID S3-Bucket konfigurieren, sodass bestimmte Objekte in den Amazon Simple Storage Service (S3) gespiegelt werden, während gleichzeitig eine Benachrichtigung über jedes dieser Objekte an eine Drittanbieter-Überwachungsanwendung gesendet wird, um die AWS-Kosten nachzuverfolgen.
 
 
 TIP: Die Nutzung von Plattformdiensten muss für jedes Mandantenkonto durch einen StorageGRID-Administrator aktiviert werden, der den Grid Manager oder die Grid Management API verwendet.
@@ -139,8 +139,6 @@ Suchintegrationsanfragen werden dagegen gesendet, wenn Objekte aufgrund von ILM 
  a| 
 Kafka-Endpunkte werden verwendet
  a| 
-Bei Kafka-Endpunkten wird gegenseitiges TLS nicht unterstützt. Wenn Sie daher in Ihrer Kafka-Broker-Konfiguration auf festgelegt `required` haben `ssl.client.auth`, kann dies zu Problemen mit der Konfiguration von Kafka-Endpunkten führen.
-
 Für die Authentifizierung von Kafka-Endpunkten werden die folgenden Authentifizierungstypen verwendet. Diese Typen unterscheiden sich von denen, die für die Authentifizierung anderer Endpunkte verwendet werden, z. B. Amazon SNS, und erfordern Benutzername und Kennwort-Anmeldeinformationen.
 
 * SASL/PLAIN
@@ -182,7 +180,7 @@ Bucket-Versionierung und VersionIDs
  a| 
 Wenn die Versionierung im S3-Quell-Bucket von StorageGRID aktiviert ist, sollten Sie auch die Versionierung für den Ziel-Bucket aktivieren.
 
-Beachten Sie bei der Verwendung der Versionierung, dass die Bestellung von Objektversionen im Ziel-Bucket am besten ist und vom CloudMirror Service nicht garantiert wird, da Einschränkungen im S3-Protokoll bestehen.
+Bei Verwendung der Versionierung ist zu beachten, dass die Reihenfolge der Objektversionen im Ziel-Bucket vom CloudMirror-Dienst aufgrund von Einschränkungen des S3-Protokolls nach bestem Wissen und Gewissen erfolgt und nicht garantiert wird. Zudem behalten Ziel-Buckets ihre eigenen Einstellungen bei und bieten möglicherweise keine Versionierung an.
 
 *Hinweis*: Versions-IDs für den Quell-Bucket in StorageGRID hängen nicht mit den Versions-IDs für den Ziel-Bucket zusammen.
 
@@ -214,6 +212,8 @@ Der CloudMirror-Dienst unterstützt keine Objekte, die mit SSE-C verschlüsselt 
  a| 
 Bucket mit S3-Objektsperre aktiviert
  a| 
-Die Replizierung wird für Quell- oder Ziel-Buckets nicht unterstützt, wenn S3 Object Lock aktiviert ist.
+Wenn für den Quell-S3-Bucket in StorageGRID die S3-Objektsperre aktiviert ist, sollte die S3-Objektsperre auch für den Ziel-Bucket mit konfigurierter Standardaufbewahrung aktiviert werden.
+
+Die Replikation von _Objektdaten_ wird für Quell- und Ziel-Buckets mit aktiviertem S3 Object Lock unterstützt. Ziel-Buckets behalten jedoch ihre eigenen Einstellungen für die Objektaufbewahrung bei und bieten möglicherweise keine Compliance oder Versionierung.
 
 |===

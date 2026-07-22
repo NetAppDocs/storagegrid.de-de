@@ -46,3 +46,7 @@ Wenn Sie als root angemeldet sind, wechselt die Eingabeaufforderung von `$` zu `
 . Wiederholen Sie diese Schritte auf jedem Admin-Node und Gateway-Node mit gegensätzlichen neu zugeordneten Ports.
 . Wenn Sie externen SSH-Zugriff zugelassen haben,link:../admin/manage-external-ssh-access.html["Zugriff blockieren"] wenn Sie mit dem Entfernen der Port-Neuzuordnungen fertig sind.
 
+
+.Verwandte Informationen
+* link:../network/external-communications.html["Anschlüsse für externe Kommunikation"]
+

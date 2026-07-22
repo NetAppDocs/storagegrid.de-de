@@ -1,21 +1,21 @@
 ---
-permalink: admin/creating-enterprise-application-entra-id.html 
+permalink: admin/creating-enterprise-application-entra-id-saml.html 
 sidebar: sidebar 
 keywords: enterprise application, entra id, single sign on, sso 
 summary: Sie verwenden die Entra-ID, um für jeden Admin-Knoten in Ihrem System eine Unternehmensanwendung zu erstellen. 
 ---
-= Erstellen Sie Unternehmensanwendungen in Entra ID für StorageGRID
+= Unternehmensanwendungen in Entra ID für SAML in StorageGRID erstellen
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Sie verwenden die Entra-ID, um für jeden Admin-Knoten in Ihrem System eine Unternehmensanwendung zu erstellen.
+Entra ID kann verwendet werden, um für jeden Admin-Knoten für SAML in Ihrem System eine Unternehmensanwendung zu erstellen.
 
 .Bevor Sie beginnen
 * Sie haben mit der Konfiguration der einmaligen Anmeldung für StorageGRID begonnen und *Entra ID* als SSO-Typ ausgewählt.
-* Du hastlink:../admin/configure-sso.html#enter-sandbox-mode["Sandbox-Modus aufgerufen"] im Grid Manager.
+* Sie haben link:../admin/configure-sso-saml.html#enter-sandbox-mode["Sandbox-Modus aufgerufen"] im Grid Manager.
 * Sie haben den *Namen der Unternehmensanwendung* für jeden Admin-Knoten in Ihrem System.  Sie können diese Werte aus der Detailtabelle des Admin-Knotens auf der Seite „SSO konfigurieren“ kopieren.
 +
 
@@ -28,8 +28,8 @@ NOTE: Sie müssen eine Enterprise-Anwendung für jeden Admin-Knoten in Ihrem Sto
 
 
 
-[[access-entra-id]]
-== Zugang zur Entra-ID
+[[step-1-access-entra-id]]
+== Schritt 1: Zugriff auf Entra ID
 
 .Schritte
 . Melden Sie sich beim an https://portal.azure.com["Azure-Portal"^].
@@ -39,8 +39,8 @@ NOTE: Sie müssen eine Enterprise-Anwendung für jeden Admin-Knoten in Ihrem Sto
 
 
 
-[[create-enterprise-applications-and-save-storagegrid-sso-configuration]]
-== Erstellen von Enterprise-Applikationen und Speichern von StorageGRID SSO-Konfiguration
+[[step-2-create-enterprise-applications-and-save-storagegrid-sso-configuration]]
+== Schritt 2: Unternehmensanwendungen erstellen und StorageGRID SSO-Konfiguration speichern
 
 Um die SSO-Konfiguration für Entra ID in StorageGRID zu speichern, müssen Sie Entra ID verwenden, um für jeden Admin-Knoten eine Unternehmensanwendung zu erstellen.  Sie kopieren die URLs der Föderationsmetadaten von Entra ID und fügen sie in die entsprechenden Felder *Föderationsmetadaten-URL* auf der Seite „SSO konfigurieren“ ein.
 
@@ -63,8 +63,8 @@ Um die SSO-Konfiguration für Entra ID in StorageGRID zu speichern, müssen Sie 
 
 
 
-[[download-saml-metadata-for-every-admin-node]]
-== Laden Sie für jeden Admin-Node SAML-Metadaten herunter
+[[step-3-download-saml-metadata-for-every-admin-node]]
+== Schritt 3: SAML-Metadaten für jeden Admin-Node herunterladen
 
 Nachdem die SSO-Konfiguration gespeichert ist, können Sie für jeden Admin-Node in Ihrem StorageGRID-System eine SAML-Metadatendatei herunterladen.
 
@@ -81,8 +81,8 @@ Nachdem die SSO-Konfiguration gespeichert ist, können Sie für jeden Admin-Node
 
 
 
-[[upload-saml-metadata-to-each-enterprise-application]]
-== Hochladen von SAML-Metadaten in jede Enterprise-Applikation
+[[step-4-upload-saml-metadata-to-each-enterprise-application]]
+== Schritt 4: SAML-Metadaten in jede Unternehmensanwendung hochladen
 
 Nachdem Sie für jeden StorageGRID Admin-Knoten eine SAML-Metadatendatei heruntergeladen haben, führen Sie in Entra ID die folgenden Schritte aus:
 
@@ -102,5 +102,5 @@ NOTE: Möglicherweise müssen Sie die Seite Enterprise-Applikationen aktualisier
 .. Nachdem die Datei geladen wurde, wählen Sie *Speichern* und dann *X* aus, um das Fenster zu schließen. Sie gelangen zurück zur Seite Single Sign-On mit SAML einrichten.
 
 
-. link:../admin/configure-sso.html#test-sso["Testen Sie jede Anwendung"] .
+. link:../admin/configure-sso-saml.html#test-sso["Testen Sie jede Anwendung"].
 

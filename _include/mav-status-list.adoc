@@ -1,0 +1,10 @@
+= 
+:allow-uri-read: 
+
+
+* *Ausstehend*. Die Anfrage wurde eingeleitet.
+* *Abgelaufen*. Die Anfrage wurde nicht innerhalb von 30 Tagen bearbeitet. Oder ein Benutzer mit Root-Zugriffsberechtigung hat MAV deaktiviert, wodurch alle ausstehenden Anfragen abgelaufen sind.
+* *Zurückgezogen*. Ein Nutzer hat seine Anfrage zurückgezogen.
+* *Genehmigt*. Ein MAV-Administrator hat den ausstehenden Antrag genehmigt.
+* *Abgelehnt*. Ein MAV-Administrator hat die ausstehende Anfrage abgelehnt.
+

@@ -31,10 +31,14 @@ StorageGRID parst oder interpretiert die entgangenen UTF-8-Zeichen nicht in benu
 
 
 
-[[supported-request-header]]
-== Unterstützte Anforderungsheader
+[[supported-request-headers]]
+== Unterstützte Anfrageheader
 
-Der folgende Anforderungskopf wird unterstützt:
+Die folgenden Anfragezeilen werden unterstützt:
+
+* `Accept-Encoding`
++
+Wenn ein Objekt keine gespeicherte `Content-Encoding` hat, wird bei einer GET-Anfrage mit `Accept-Encoding: gzip` die Komprimierung der Antwort dynamisch angewendet. Nur `gzip` beeinflusst die Kodierung der GET-Antwort; `deflate`, `br` und `identity` haben keinen Einfluss. Für Objekte, die bereits eine gespeicherte `Content-Encoding` haben, gibt StorageGRID die gespeicherte Kodierung zurück und wendet keine zusätzliche dynamische Komprimierung basierend auf `Accept-Encoding` an. StorageGRID unterstützt keine Bereichslesevorgänge für GET-Anfragen mit `Accept-Encoding: gzip`.
 
 * `x-amz-checksum-mode`: Spezifizieren `ENABLED`
 +

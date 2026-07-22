@@ -29,9 +29,6 @@ So können Sie beispielsweise CloudMirror Replizierung verwenden, um spezifische
 Die CloudMirror-Replizierung weist einige wichtige Ähnlichkeiten und Unterschiede zur Grid-übergreifenden Replizierungsfunktion auf. Weitere Informationen finden Sie unter link:../admin/grid-federation-compare-cgr-to-cloudmirror.html["Vergleichen Sie Grid-Replizierung und CloudMirror Replizierung"].
 
 
-NOTE: Die CloudMirror-Replikation wird nicht unterstützt, wenn im Quell-Bucket die S3-Objektsperre aktiviert ist.
-
-
 
 [[notifications]]
 == Benachrichtigungen

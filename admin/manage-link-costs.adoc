@@ -20,12 +20,12 @@ Durch die Verbindungskosten können Sie festlegen, welcher Datacenter-Standort e
 
 * Die Link-Kosten werden verwendet, um Prioritäten zu setzen, welche Objektkopie für die Bearbeitung von Objektabrufungen verwendet wird.
 * Die Link-Kosten werden von der Grid-Management-API und der Mandanten-Management-API verwendet, um festzustellen, welche internen StorageGRID-Services verwendet werden sollen.
-* Verbindungskosten werden vom Load Balancer-Service auf Admin-Nodes und Gateway-Nodes zum direkten Client-Verbindungen verwendet. Siehe link:../admin/managing-load-balancing.html["Überlegungen zum Lastausgleich"].
+* Die Verbindungskosten werden vom Load Balancer-Dienst auf Admin-Knoten und Gateway-Knoten verwendet, um Clientverbindungen zu steuern. Siehe link:../admin/managing-load-balancing.html["Überlegungen zum Lastausgleich"].
 
 
-Das Diagramm zeigt ein drei Standortraster mit Verbindungskosten, die zwischen Standorten konfiguriert sind:
+Das Diagramm zeigt ein Grid mit drei Standorten, bei dem die Verbindungskosten zwischen den Standorten konfiguriert sind:
 
-image:link_costs.gif["Konzeptdiagramm für die Verknüpfung von Kosten zwischen Datacentern"]
+image:link_costs.png["Konzeptdiagramm für die Verknüpfung von Kosten zwischen Datacentern"]
 
 * Der Load Balancer auf Admin-Nodes und Gateway-Nodes verteilt Client-Verbindungen zu allen Storage-Nodes am selben Datacenter-Standort und zu allen Datacenter-Standorten, für die keine Linkkosten anfallen.
 +
@@ -70,20 +70,19 @@ Sie können die Verbindungskosten zwischen Datacenter-Standorten aktualisieren, 
 
 .Bevor Sie beginnen
 * Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
-* Sie haben dielink:admin-group-permissions.html["Andere Rasterkonfigurationsberechtigung"] .
+* Sie haben die link:../admin/admin-group-permissions.html["Root-Zugriffsberechtigung"].
 
 
 .Schritte
 . Wählen Sie *Support* > *Sonstiges* > *Linkkosten*.
-+
-image:configuring_link_costs.png["Verbindungskosten"]
-
-. Wählen Sie eine Website unter *Link Source* aus, und geben Sie unter *Link Destination* einen Kostenwert zwischen 0 und 100 ein.
+. Für jede in der Spalte „Site/Link cost“ aufgeführte Site einen Kostenwert von 0 bis 100 für die anderen Sites eingeben.
 +
 Sie können die Verbindungskosten nicht ändern, wenn die Quelle mit dem Ziel identisch ist.
 
+. Änderungen verwerfen oder speichern:
 +
-Um Änderungen zu verwerfen, image:nms_revert.gif["Symbol rückgängig machen"]*Revert* auswählen.
+** Zum Verwerfen von Änderungen *Änderungen löschen* auswählen.
+** Zum Speichern der Änderungen *Speichern* auswählen.
 
-. Wählen Sie *Änderungen Anwenden*.
+
 

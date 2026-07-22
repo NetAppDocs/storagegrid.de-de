@@ -77,17 +77,17 @@ NOTE: Benutzer müssen über die Berechtigung *Andere Rasterkonfiguration* verf�
 
 Benutzer müssen über die Berechtigung zur Wartung verfügen, um folgende Optionen verwenden zu können:
 
-* *Konfiguration* > *Zugriffskontrolle*:
+* *Konfiguration* > *Zugriffskontrolle*
 +
 ** Grid-Passwörter
 
 
-* *Konfiguration* > *Netzwerk*:
+* *Konfiguration* > *Netzwerk*
 +
 ** Domänennamen des S3-Endpunkts
 
 
-* *Wartung* > *Aufgaben*:
+* *Wartung* > *Aufgaben*
 +
 ** Ausmustern
 ** Erweiterung
@@ -95,13 +95,13 @@ Benutzer müssen über die Berechtigung zur Wartung verfügen, um folgende Optio
 ** Recovery
 
 
-* *Wartung* > *System*:
+* *Wartung* > *System*
 +
 ** Recovery-Paket
 ** Software-Update
 
 
-* *Support* > *Tools*:
+* *Support* > *Tools*
 +
 ** Protokolle
 
@@ -110,29 +110,29 @@ Benutzer müssen über die Berechtigung zur Wartung verfügen, um folgende Optio
 
 Benutzer, die nicht über die Berechtigung Wartung verfügen, können diese Seiten anzeigen, aber nicht bearbeiten:
 
-* *Wartung* > *Netzwerk*:
+* *Wartung* > *Netzwerk*
 +
 ** DNS-Server
 ** Grid-Netzwerk
 ** NTP-Server
 
 
-* *Wartung* > *System*:
+* *Wartung* > *System*
 +
 ** Lizenz
 
 
-* *Konfiguration* > *Netzwerk*:
+* *Konfiguration* > *Netzwerk*
 +
 ** Domänennamen des S3-Endpunkts
 
 
-* *Konfiguration* > *Sicherheit*:
+* *Konfiguration* > *Sicherheit*
 +
 ** Zertifikate
 
 
-* *Konfiguration* > *Überwachung*:
+* *Konfiguration* > *Überwachung*
 +
 ** Audit- und Syslog-Server
 
@@ -172,18 +172,23 @@ Mit dieser Berechtigung erhalten Sie Zugriff auf die Seite *ILM* > *Objekt-Metad
 
 Diese Berechtigung bietet Zugriff auf diese zusätzlichen Rasterkonfigurationsoptionen:
 
-* *ILM*:
+* *ILM*
 +
 ** Lagergüten
 
 
-* *Konfiguration* > *System*:
-* *Support* > *Sonstiges*:
+* *Konfiguration* > *System*
+* *Unterstützung* > *Sonstiges*
 +
-** Verbindungskosten
+** E/A-Priorisierung
+** Knotendienste
+** Speicher-Wasserzeichen
 
 
 
+
+
+NOTE: Für die Link-Kosten ist Root-Zugriff erforderlich.
 
 
 

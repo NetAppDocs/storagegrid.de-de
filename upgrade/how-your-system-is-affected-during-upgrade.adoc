@@ -59,12 +59,12 @@ Wenn das Grid Knoten mit unterschiedlichen Versionen enthält, werden während d
 [[appliance-firmware-is-upgraded]]
 == Die Appliance-Firmware wird aktualisiert
 
-Während des StorageGRID 12.0-Upgrades:
+Während des StorageGRID 12.1 Upgrades:
 
-* Alle StorageGRID Appliance-Knoten werden automatisch auf die StorageGRID Appliance Installer-Firmwareversion 12.0 aktualisiert.
+* Alle StorageGRID Appliance Knoten werden automatisch auf StorageGRID Appliance Installer Firmware Version 12.1 aktualisiert.
 * SG6060- und SGF6024-Geräte werden automatisch auf die BIOS-Firmware-Version 3B08.EX und die BMC -Firmware-Version 4.01.07 aktualisiert.
 * SG100- und SG1000-Geräte werden automatisch auf die BIOS-Firmware-Version 3B13.EC und die BMC -Firmware-Version 4.75.07 aktualisiert.
-* Die Geräte SGF6112, SG6160, SG110 und SG1100 werden automatisch auf die BIOS-Firmware-Version 3A14.QD und die BMC -Firmware-Version 3.19.07 aktualisiert.
+* Die Appliances SGF6112, SG6160, SG110 und SG1100 werden automatisch auf die BIOS-Firmware-Version 3A14.QD und die BMC-Firmware-Version 3.21.07 aktualisiert.
 
 
 
@@ -84,9 +84,9 @@ Während des StorageGRID 12.0-Upgrades:
 
 Warnmeldungen können ausgelöst werden, wenn Services gestartet und beendet werden und wenn das StorageGRID System als Umgebung mit gemischten Versionen funktioniert (einige Grid-Nodes mit einer früheren Version, während andere auf eine neuere Version aktualisiert wurden). Nach Abschluss des Upgrades können weitere Warnmeldungen ausgelöst werden.
 
-Beispielsweise wird möglicherweise die Warnung *Kommunikation mit Knoten nicht möglich* angezeigt, wenn Dienste gestoppt werden, oder die Warnung *Cassandra-Kommunikationsfehler*, wenn einige Knoten auf StorageGRID 12.0 aktualisiert wurden, auf anderen Knoten jedoch noch StorageGRID 11.9 ausgeführt wird.  Im Allgemeinen werden diese Warnungen gelöscht, wenn das Upgrade abgeschlossen ist.
+Beispielsweise kann die Warnung „Kommunikation mit Knoten nicht möglich“ angezeigt werden, wenn Dienste gestoppt sind, oder die Warnung „Cassandra-Kommunikationsfehler“, wenn einige Knoten auf StorageGRID 12.0 oder höher aktualisiert wurden, andere Knoten jedoch noch eine ältere Version von StorageGRID ausführen. Im Allgemeinen werden diese Warnungen nach Abschluss des Upgrades gelöscht.
 
-Die Warnung *ILM-Platzierung nicht erreichbar* kann ausgelöst werden, wenn Speicherknoten während des Upgrades auf StorageGRID 12.0 angehalten werden.  Diese Warnung bleibt möglicherweise noch einen Tag nach Abschluss des Upgrades bestehen.
+Die Warnung „ILM-Platzierung nicht möglich“ kann ausgelöst werden, wenn Storage Nodes während des Upgrades auf StorageGRID 12.0 oder höher angehalten werden. Diese Warnung kann bis zu einem Tag nach Abschluss des Upgrades bestehen bleiben.
 
 Nachdem das Upgrade abgeschlossen ist, können Sie alle Upgrade-bezogenen Warnmeldungen überprüfen, indem Sie im Grid Manager-Dashboard *Kürzlich aufgelöste Warnmeldungen* oder *Aktuelle Warnmeldungen* auswählen.
 
@@ -96,7 +96,7 @@ Nachdem das Upgrade abgeschlossen ist, können Sie alle Upgrade-bezogenen Warnme
 == Konfigurationsänderungen sind eingeschränkt
 
 
-NOTE: Diese Liste gilt speziell für Upgrades von StorageGRID 11.9 auf StorageGRID 12.0.  Wenn Sie auf eine andere StorageGRID Version aktualisieren, lesen Sie die Liste der eingeschränkten Änderungen in den Upgrade-Anweisungen für diese Version.
+NOTE: Die Einschränkungen bei Konfigurationsänderungen sind versionsspezifisch. Beim Upgrade auf eine andere StorageGRID Version ist die Liste der eingeschränkten Änderungen in den Upgrade-Anweisungen für diese Version zu beachten.
 
 Bis die Aufgabe *Neues Feature* aktivieren abgeschlossen ist:
 
@@ -108,8 +108,8 @@ Bis die Aufgabe *Neues Feature* aktivieren abgeschlossen ist:
 
 NOTE: Wenden Sie sich an den technischen Support, wenn Sie einen Node während des Upgrades wiederherstellen müssen.
 
-* Sie sollten während des Upgrades auf StorageGRID 12.0 keine HA-Gruppen, VLAN-Schnittstellen oder Load Balancer-Endpunkte verwalten.
-* Löschen Sie keine HA-Gruppen, bis das Upgrade auf StorageGRID 12.0 abgeschlossen ist.  Auf virtuelle IP-Adressen in anderen HA-Gruppen kann möglicherweise nicht mehr zugegriffen werden.
+* Während des Upgrades sollten Sie keine HA Gruppen, VLAN-Schnittstellen oder Load Balancer-Endpunkte verwalten.
+* Löschen Sie keine HA-Gruppen, bis das Upgrade abgeschlossen ist. Virtuelle IP-Adressen in anderen HA-Gruppen könnten nicht mehr erreichbar sein.
 
 
 Bis die Aufgabe * Final Upgrade Steps* abgeschlossen ist:

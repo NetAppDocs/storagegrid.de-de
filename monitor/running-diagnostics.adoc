@@ -43,7 +43,7 @@ In diesem Beispiel hat eine Diagnose den Status „Achtung“ und drei Diagnosen
 +
 image:support_diagnostics_page.png["Support Diagnostics Seite"]
 
-. Wenn Sie mehr über eine bestimmte Diagnose erfahren möchten, klicken Sie auf eine beliebige Stelle in der Zeile.
+. Weitere Informationen zu einer bestimmten Diagnose sind durch Auswahl der entsprechenden Zeile verfügbar.
 +
 Details zur Diagnose und ihren aktuellen Ergebnissen werden angezeigt. Folgende Details sind aufgelistet:
 
@@ -75,7 +75,7 @@ NOTE: Sie können auch über den Abschnitt „Grafana“ auf der Seite *Support*
 +
 image:grafana_dashboard_nodes.png["Grafana Dashboard-Knoten"]
 
-. *Optional*: Um ein Diagramm des Prometheus-Ausdrucks über die Zeit zu sehen, klicken Sie auf *Anzeigen in Prometheus*.
+. *Optional*: Ein Diagramm des Prometheus-Ausdrucks im Zeitverlauf ist über *In Prometheus anzeigen* einsehbar.
 +
 Es wird ein Prometheus-Diagramm des in der Diagnose verwendeten Ausdrucks angezeigt.
 

@@ -26,6 +26,8 @@ Falls alle Block-Storage-Volumes vom vorherigen Host erhalten würden, müssen m
 [[restore-validate-grid-nodes]]
 == Wiederherstellung und Validierung der Grid Nodes
 
+Wenn ein Knoten von einem nicht-primären Admin Node wiederhergestellt wird, ist ADMIN_IP auf die Grid Network-IP-Adresse des _non-primary Admin Node_ zu setzen, sodass sich der wiederhergestellte Knoten beim nicht-primären Admin Node und nicht beim primären Admin Node registriert. Die Regeln für Admin Network-Schlüssel sind unter link:../swnodes/creating-node-configuration-files.html["Erstellen Sie StorageGRID-Knotenkonfigurationsdateien für Linux-Bereitstellungen"] zu finden.
+
 Sie müssen die Grid-Konfigurationsdateien für alle ausgefallenen Grid-Nodes wiederherstellen, dann die Grid-Konfigurationsdateien validieren und Fehler beheben.
 
 .Über diese Aufgabe

@@ -50,7 +50,7 @@ So implementieren Sie eine Tiering-Lösung:
 [[maintain-multiple-cloud-endpoints]]
 == Diverse Cloud-Endpunkte beibehalten
 
-Sie können diverse Cloud-Storage-Pool-Endpunkte konfigurieren, wenn Objektdaten in mehr als einer Cloud verschoben oder gesichert werden sollen. Mit den Filtern Ihrer ILM-Regeln können Sie festlegen, welche Objekte in den einzelnen Cloud Storage-Pools gespeichert werden. Beispielsweise können Sie Objekte von einigen Mandanten oder Buckets in Amazon S3 Glacier und Objekte von anderen Mandanten oder Buckets im Azure Blob Storage speichern. Alternativ können Sie Daten zwischen Amazon S3 Glacier und Azure Blob Storage verschieben.
+Sie können mehrere Cloud Storage Pool-Endpunkte konfigurieren, wenn Sie Objektdaten in mehr als einer Cloud stufen oder sichern möchten. Die Filter in Ihren ILM-Regeln ermöglichen die Angabe, welche Objekte in welchem Cloud Storage Pool gespeichert werden. Beispielsweise kann es gewünscht sein, Objekte bestimmter Mandanten oder Buckets in Amazon S3 Glacier und Objekte anderer Mandanten oder Buckets in Azure Blob Storage zu speichern. Oder es kann erforderlich sein, Daten zwischen Amazon S3 Glacier und Azure Blob Storage zu verschieben.
 
 
 NOTE: Bei der Nutzung mehrerer Cloud-Storage-Pool-Endpunkte sollte berücksichtigt werden, dass ein Objekt nur in einem Cloud-Storage-Pool gleichzeitig gespeichert werden kann.

@@ -36,8 +36,8 @@ Die CloudMirror-Replikation erstellt eine unabhängige Kopie eines Objekts in ei
 Wie ist es eingerichtet?
  a| 
 . Konfigurieren Sie eine Grid Federation-Verbindung zwischen zwei Grids.
-. Fügen Sie neue Mandantenkonten hinzu, die automatisch in der anderen Tabelle geklont werden.
-. Fügen Sie neue Mandantengruppen und -Benutzer hinzu, die ebenfalls geklont werden.
+. Neue Mandantenkonten hinzufügen, die automatisch mit dem anderen Grid synchronisiert werden.
+. Neue Mandantengruppen und Benutzer werden hinzugefügt und ebenfalls synchronisiert.
 . Erstellen Sie entsprechende Buckets in jedem Grid und ermöglichen Sie die Grid-übergreifende Replizierung in eine oder beide Richtungen.
 
  a| 

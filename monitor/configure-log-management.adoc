@@ -11,11 +11,11 @@ summary: Konfigurieren Sie nach Bedarf Prüfebenen, Protokollheader und den Spei
 
 
 [role="lead"]
-Konfigurieren Sie nach Bedarf Prüfebenen, Protokollheader und den Speicherort von Prüfmeldungen und -protokollen.
+Bei Bedarf können Audit-Stufen, Protokoll-Header, der Speicherort von Audit-Meldungen und Protokollen sowie die Protokollaufbewahrung konfiguriert werden.
 
 Alle StorageGRID -Knoten generieren Prüfmeldungen und Protokolle, um Systemaktivitäten und Ereignisse zu verfolgen.  Prüfmeldungen und -protokolle sind wichtige Tools zur Überwachung und Fehlerbehebung.
 
-Optional können Sielink:../monitor/considerations-for-external-syslog-server.html["Konfigurieren Sie einen externen Syslog-Server"] um Auditinformationen remote zu speichern.  Durch die Verwendung eines externen Servers werden die Auswirkungen der Protokollierung von Prüfnachrichten auf die Leistung minimiert, ohne die Vollständigkeit der Prüfdaten zu verringern.  Ein externer Syslog-Server ist besonders nützlich, wenn Sie über ein großes Grid verfügen, mehrere Arten von S3-Anwendungen verwenden oder alle Auditdaten behalten möchten.
+Optional können Sie link:../monitor/considerations-for-external-syslog-server.html["Konfigurieren Sie einen externen Syslog-Server"] verwenden, um Auditinformationen remote zu speichern. Die Leistungsbeeinträchtigung durch die Protokollierung von Auditmeldungen lässt sich minimieren, ohne die Vollständigkeit der Auditdaten zu reduzieren, wenn ein externer Server verwendet wird. Ein externer Syslog Server ist besonders nützlich, wenn ein großes Grid vorhanden ist, mehrere Typen von S3-Anwendungen genutzt werden oder alle Auditdaten aufbewahrt werden sollen.
 
 .Bevor Sie beginnen
 * Sie sind im Grid Manager mit einem angemeldetlink:../admin/web-browser-requirements.html["Unterstützter Webbrowser"].
@@ -161,7 +161,7 @@ Verwenden Sie ein Sternchen (\*) als Platzhalter, um Null oder mehr Zeichen zu e
 
 . Wählen Sie *Einen anderen Header hinzufügen* aus, um ggf. zusätzliche Header zu erstellen.
 +
-Wenn HTTP-Header in einer Anfrage gefunden werden, sind sie in der Überwachungsmeldung unter dem Feld HTRH enthalten.
+Wenn StorageGRID HTTP-Header in einer Anfrage findet, werden diese im Prüfprotokoll unter dem Feld HTRH aufgeführt.
 
 +
 
@@ -175,7 +175,7 @@ NOTE: Anforderungsheader des Prüfprotokolls werden nur protokolliert, wenn die 
 [[configure-log-location]]
 == Konfigurieren des Protokollspeicherorts
 
-Standardmäßig werden Prüfmeldungen und Protokolle auf den Knoten gespeichert, auf denen sie generiert werden.  Sie werden regelmäßig rotiert und schließlich gelöscht, um zu verhindern, dass sie übermäßig viel Speicherplatz belegen.  Wenn Sie Auditmeldungen und eine Teilmenge der Protokolle extern speichern möchten,<<use-external-syslog-server,Verwenden Sie einen externen Syslog-Server>> .
+Standardmäßig werden Audit-Meldungen und Protokolle auf den Knoten gespeichert, auf denen sie generiert werden. StorageGRID rotiert und löscht Audit-Meldungen und Protokolle regelmäßig, um zu verhindern, dass sie übermäßig viel Speicherplatz belegen. Um Audit-Meldungen und eine Teilmenge der Protokolle extern zu speichern, <<use-external-syslog-server,Verwenden Sie einen externen Syslog-Server>>.
 
 Wenn Sie die Protokolldateien intern speichern möchten, wählen Sie einen Mandanten und einen Bucket für die Protokollspeicherung aus und aktivieren Sie die Protokollarchivierung.
 
@@ -262,7 +262,7 @@ Durch das Festlegen von Schweregraden und Einrichtungswerten können Sie die Pro
 +
 .. Wählen Sie für *Severity* *Passthrough* aus, oder wählen Sie einen Schweregrad zwischen 0 und 7 aus.
 +
-Wenn Sie einen Wert auswählen, wird der ausgewählte Wert auf alle Nachrichten dieses Typs angewendet. Informationen über verschiedene Schweregrade gehen verloren, wenn Sie den Schweregrad mit einem festen Wert überschreiben.
+Wenn Sie einen Wert auswählen, wendet StorageGRID den ausgewählten Wert auf alle Nachrichten dieses Typs an. Details zu verschiedenen Schweregraden gehen verloren, wenn der Schweregrad durch einen festen Wert überschrieben wird.
 
 +
 [cols="1a,3a"]
@@ -547,7 +547,7 @@ local7
 
 ==== Versenden von Testmeldungen
 
-Bevor Sie beginnen, einen externen Syslog-Server zu verwenden, sollten Sie anfordern, dass alle Knoten im Raster Testmeldungen an den externen Syslog-Server senden. Sie sollten diese Testmeldungen verwenden, um Sie bei der Validierung Ihrer gesamten Protokollierungs-Infrastruktur zu unterstützen, bevor Sie Daten an den externen Syslog-Server senden.
+Bevor ein externer Syslog-Server verwendet wird, sollte veranlasst werden, dass alle Knoten im Grid Testnachrichten an den externen Syslog-Server senden. Diese Testnachrichten unterstützen die Validierung der gesamten Protokollerfassungsinfrastruktur, bevor die Übertragung von Daten an den externen Syslog-Server festgelegt wird.
 
 
 CAUTION: Verwenden Sie die Konfiguration des externen Syslog-Servers erst, wenn Sie bestätigen, dass der externe Syslog-Server von jedem Knoten in Ihrem Raster eine Testmeldung erhalten hat und dass die Nachricht erwartungsgemäß verarbeitet wurde.
@@ -704,3 +704,52 @@ Beispiel:
 system-logs/DC1-SN1/var/local/log/localaudit.log--2025-05-12_13:41:44.gz
 ----
 
+
+
+
+[[manage-log-retention]]
+== Protokollaufbewahrung verwalten
+
+Sie können steuern, wie lange StorageGRID Protokolle aufbewahrt, indem Sie eine ILM-Regel erstellen oder eine S3-Bucket-Lebenszyklusrichtlinie konfigurieren.
+
+[role="tabbed-block"]
+====
+.ILM-Regel
+--
+Eine ILM-Regel für den Bucket erstellen und diese Regel zur aktiven ILM-Richtlinie hinzufügen.
+
+.Schritte
+. Wählen Sie *ILM* > *Regeln*.
+. *Erstellen* auswählen. link:../ilm/create-ilm-rule-enter-details.html["Schritt 1 (Details eingeben)"]Der Assistent zum Erstellen einer ILM-Regel wird angezeigt:
++
+.. Geben Sie einen eindeutigen Namen für die Regel ein. Zum Beispiel: ILM Regel für archivierte Protokolle.
+.. Das S3-Mandantenkonto für die Protokollarchivierung auswählen.
+.. Geben Sie den S3-Bucket für die Protokollarchivierung an.
+
+
+. Weiter zu link:../ilm/create-ilm-rule-define-placements.html["Schritt 2 (Platzierungen definieren)"] und die Platzierung für die Regel für archivierte Protokolle definieren. Beispielsweise speichert die ILM-Regel im ersten Jahr eine replizierte Kopie an Standort 1 und eine replizierte Kopie an Standort 2. Nach einem Jahr wird eine 2+1-Löschcodierungskopie erstellt und nur an einem Standort gespeichert.
+. Nach dem Erstellen der Regel wird sie einer aktiven ILM-Richtlinie hinzugefügt.
+
+
+--
+.S3 Bucket Lebenszyklus
+--
+Eine S3-Bucket-Lebenszyklusrichtlinie für den S3-Bucket zur Protokollarchivierung konfigurieren:
+
+[listing]
+----
+{
+      "Rules": [
+        {
+            "ID": "Retain logs forever",
+            "Filter": {},
+            "Status": "Enabled"，
+            "Expiration": {}
+        }
+      ]
+}
+----
+Wenn Sie eine S3-Bucket-Lifecycle-Richtlinie für den S3-Bucket zur Protokollarchivierung konfigurieren, überschreiben die Ablaufaktionen die ILM-Richtlinie für Objekte, die dem Bucket-Lifecycle-Filter entsprechen. Objekte, die dem Bucket-Lifecycle-Filter nicht entsprechen, verwenden die Aufbewahrungseinstellungen der ILM-Richtlinie. Wenn ein Objekt einem Bucket-Lifecycle-Filter entspricht und keine Ablaufaktionen explizit angegeben sind, werden die Aufbewahrungseinstellungen der ILM-Richtlinie nicht verwendet, und es gilt, dass Objektversionen unbegrenzt aufbewahrt werden.
+
+--
+====

@@ -13,7 +13,7 @@ summary: 'Wenn Single Sign-On (SSO) aktiviert ist, können Benutzer nur dann auf
 [role="lead"]
 Wenn Single Sign-On (SSO) aktiviert ist, können Benutzer nur dann auf den Grid Manager, den Tenant Manager, die Grid Management API oder die Tenant Management API zugreifen, wenn ihre Anmeldeinformationen mithilfe des von Ihrer Organisation implementierten SSO-Anmeldevorgangs autorisiert sind.  Lokale Benutzer können sich nicht bei StorageGRID anmelden.
 
-Das StorageGRID-System unterstützt Single Sign-On (SSO) unter Verwendung des Security Assertion Markup Language 2.0 (SAML 2.0)-Standards.
+Das StorageGRID System unterstützt Single Sign-On (SSO) mit dem Security Assertion Markup Language 2.0 (SAML 2.0) Standard oder OpenID Connect.
 
 Prüfen Sie vor der Aktivierung von Single Sign-On (SSO), wie sich die StorageGRID-Anmelde- und -Abmelde-Prozesse bei Aktivierung von SSO auswirken.
 

@@ -138,7 +138,7 @@ In der letzten Spalte wird der maximale optimierte Wert des weichen schreibgesch
 . Wiederholen Sie diese Schritte für jeden Online-Speicherknoten:
 +
 .. Wählen Sie *_Storage-Node_* > *Storage* Aus.
-.. Scrollen Sie nach unten zur Tabelle „Objektspeichern“.
+.. Scrollen Sie nach unten zur Tabelle „Objektspeicher“.
 .. Vergleichen Sie den *verfügbaren*-Wert für jeden Objektspeicher (Volumen) mit dem für diesen Speicherknoten angegebenen maximalen optimierten Wasserzeichen.
 
 

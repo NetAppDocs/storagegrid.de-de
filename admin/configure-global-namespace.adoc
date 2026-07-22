@@ -1,0 +1,212 @@
+---
+permalink: admin/configure-global-namespace.html 
+sidebar: sidebar 
+keywords: global namespace, grid federation, S3 endpoint domain names, default region, grid federation connection, multi-grid 
+summary: Ein globaler Namespace kann so konfiguriert werden, dass Mandanten Zugriff auf Buckets über mehrere StorageGRID Systeme hinweg erhalten. 
+---
+= Ein globaler Namensraum für die Grid-Federation wird konfiguriert.
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ein globaler Namespace kann so konfiguriert werden, dass Mandanten Zugriff auf Buckets über mehrere StorageGRID Systeme hinweg erhalten.
+
+Weitere Informationen zum globalen Namensraum sind unter link:learn-about-global-namespace.html["Informationen zum globalen Namensraum für Grid Federation"] zu finden.
+
+.Bevor Sie beginnen
+* Sie sind auf jedem Grid Manager mit einem link:../admin/web-browser-requirements.html["Unterstützter Webbrowser"] angemeldet.
+* Sie haben das link:../admin/admin-group-permissions.html["Root-Zugriffsberechtigung"] für jedes Grid.
+* Sie haben die link:../admin/grid-federation-overview.html["Überlegungen und Anforderungen"] für Grid Federation-Verbindungen überprüft.
+
+
+
+
+[[requirements-for-configuring-global-namespace]]
+== Anforderungen für die Konfiguration des globalen Namensraums
+
+* Alle Grids im globalen Namensraum müssen Grid Federation-Verbindungen mit aktiviertem globalen Namensraum zwischen jedem Grid-Paar aufweisen.
+* Die maximale Anzahl von Grids, die an einem einzigen globalen Namensraum teilnehmen können, beträgt 11 (das lokale Grid und 10 entfernte Grids).
++
+
+CAUTION: Die Beschränkung auf 10 Grids ist durch die maximale Gesamtzahl der von einer StorageGRID-Bereitstellung unterstützten Grid-Federation-Verbindungen begrenzt. Die Gesamtbeschränkung gilt für *alle* Grid-Federation-Verbindungen in der Bereitstellung, einschließlich solcher ohne aktivierten globalen Namespace, sodass sichergestellt sein muss, dass der vollständig verbundene globale Namespace und alle zusätzlichen Grid-Federation-Verbindungen zusammen diese Gesamtbeschränkung nicht überschreiten.
+
+* S3-Clients müssen die Authentifizierung mit Signaturversion 4 (SigV4) verwenden. Anonyme Anfragen und Anfragen mit Signaturversion 2 werden für Routing-Operationen im globalen Namensraum nicht unterstützt.
++
+** Normale signierte Anfragen werden wie unter  https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-auth-using-authorization-header.html["Authentifizierung von Anfragen: Verwendung des Authorization-Headers (AWS Signature Version 4)"] beschrieben spezifiziert.
+** Vorsignierte Anfragen werden wie unter  https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html["Authentifizierung von Anfragen: Verwendung von Abfrageparametern (AWS Signature Version 4)"] beschrieben spezifiziert.
+
+
+
+
+
+
+[[number-of-required-connectionsnumber-of-required-connections]]
+== [[number-of-required-connections]]Anzahl der erforderlichen Verbindungen
+
+In einem globalen Namensraum muss jedes Paar von Grids miteinander verbunden sein. Die Anzahl der erforderlichen Verbindungen hängt von der Anzahl der Grids ab:
+
+[cols="1a,1a"]
+|===
+| Anzahl der Grids | Anzahl der benötigten Verbindungen 
+
+
+ a| 
+2
+ a| 
+1
+
+
+
+ a| 
+3
+ a| 
+3
+
+
+
+ a| 
+4
+ a| 
+6
+
+
+
+ a| 
+5
+ a| 
+10
+
+
+
+ a| 
+_n_
+ a| 
+_n_ × (_n_ − 1) / 2
+
+|===
+
+
+[[step-1-set-a-unique-default-region-for-each-grid]]
+[[configure-default-region]]
+== Schritt 1: Für jedes Grid eine eindeutige Standardregion festlegen
+
+Jedes Grid im globalen Namensraum muss eine eindeutige Standardregion haben. Die Standardregion identifiziert das Grid, dem ein Bucket gehört.
+
+CreateBucket und ListBuckets Anfragen werden auf Basis dieser Region weitergeleitet, und alle anderen Anfragen müssen mit der Standardregion übereinstimmen, an die sie gesendet werden.
+
+Weitere Informationen sind unter link:../ilm/configuring-regions-optional-and-s3-only.html["Konfigurieren von S3-Regionen"] zu finden.
+
+.Schritte
+. Auf jedem Grid link:../ilm/configuring-regions-optional-and-s3-only.html["Die Standardregion auf einen eindeutigen Wert festlegen"]. Beispielsweise Grid A auf  `us-east-1` und Grid B auf  `us-west-1` setzen.
++
+
+NOTE: Sie können weiterhin nicht standardmäßige Regionen verwenden, die mit dem  `LocationConstraint`-Element in link:../s3/operations-on-buckets.html["CreateBucket-Anfragen"] für ILM-Richtlinienzwecke festgelegt werden. Nicht standardmäßige Regionen werden nicht auf Eindeutigkeit über alle Grids im globalen Namensraum hinweg geprüft.
+
+. Für jedes Grid im globalen Namensraum ist dieser Vorgang zu wiederholen. Jedes Grid muss eine andere Standardregion haben.
+. Zusätzliche Regionen können bei Bedarf eingerichtet werden.
+
+
+
+
+[[step-2-configure-s3-global-namespace-settings]]
+== Schritt 2: Konfigurieren der globalen S3-Namespace-Einstellungen
+
+In jedem Grid im globalen Namensraum werden zwei S3-Endpunkt-Domänennamen hinzugefügt:
+
+* Ein globaler Namespace-Endpunkt, der auf allen Grids identisch ist
+* Ein eindeutiger CNAME für das Grid
+
+
+Sie konfigurieren Ihr externes DNS so, dass der globale Namespace Endpunkt auf einen oder mehrere der Grids aufgelöst wird und die eindeutigen CNAME Endpunkte auf das jeweilige Grid aufgelöst werden.
+
+
+CAUTION: Sie müssen <<configure-default-region,die Standardregion konfigurieren>> bevor Sie die globalen Namespace-Einstellungen von S3 konfigurieren. Wenn globale Namespace-Einstellungen aktiviert sind, schlagen S3-Anfragen fehl, wenn sie nicht die korrekte Region angeben. Alle S3-Anfragen müssen mit der Standardregion des Grids signiert werden.
+
+.Schritte
+. In jedem Grid *Konfiguration* > *Netzwerk* > *S3 endpoint domain names* > *Domain names* auswählen.
+. Fügen Sie einen globalen Namespace-Endpunkt-Domänennamen hinzu, der in allen Grids identisch ist. Zum Beispiel:  `s3.example.com`.
+. Fügen Sie einen eindeutigen CNAME für das Grid hinzu. Zum Beispiel  `s3.company.com`.
+. Wählen Sie *Speichern*.
+. *Globale Namespace-Einstellungen* auswählen.
++
+.. Den globalen Namespace Endpunkt auswählen.
+.. Wählen Sie den eindeutigen CNAME-Domänennamen des Grids aus.
+
+
+. Wählen Sie *Speichern*.
+. Es ist sicherzustellen, dass die von den Clients verwendeten Serverzertifikate die neuen S3-Endpunktdomänennamen enthalten.
++
+** Wenn Clients eine Verbindung zu einem Load Balancer-Endpunkt herstellen, der ein eigenes Zertifikat verwendet, link:../admin/configuring-load-balancer-endpoints.html["Aktualisieren Sie das dem Endpunkt zugeordnete Zertifikat"].
+** Wenn Clients eine Verbindung zu einem Load Balancer-Endpunkt herstellen, der das globale S3-API-Zertifikat oder direkt zu Storage Nodes verwendet, link:../admin/use-s3-setup-wizard-steps.html["Aktualisieren Sie das globale S3-API-Zertifikat"].
+
+
+. Diese Schritte sind auf jedem Grid im globalen Namensraum zu wiederholen.
+
+
+Weitere Informationen finden Sie unter link:../admin/configuring-s3-api-endpoint-domain-names.html["Konfigurieren Sie die Domänennamen des S3-Endpunkts"].
+
+
+
+[[step-3-create-grid-federation-connections-with-global-namespace-enabled]]
+== Schritt 3: Grid Federation Verbindungen mit aktiviertem globalen Namensraum erstellen
+
+Nachdem die S3-Endpunktdomänennamen und Standardregionen auf allen Grids konfiguriert wurden, können Grid Federation Verbindungen mit aktiviertem globalen Namensraum erstellt werden.
+
+.Über diese Aufgabe
+Wenn Sie eine Grid Federation-Verbindung erstellen und den globalen Namensraum aktivieren, werden die Felder für den globalen Namensraum-Endpunkt, den CNAME und die Standardregion automatisch mit den in den vorherigen Schritten konfigurierten Werten ausgefüllt. Der Grid Manager verhindert die Aktivierung des globalen Namensraums, wenn diese Felder nicht korrekt gesetzt sind.
+
+
+CAUTION: Nach der Erstellung einer Grid Federation-Verbindung mit globalem Namespace können der globale Namespace-Endpunkt, der CNAME und die Standardregion für die Grids in dieser Verbindung nicht mehr geändert werden.
+
+.Schritte
+. Im ersten Grid sind die in link:../admin/grid-federation-create-connection.html["Erstellen von Grid Federation-Verbindungen"] beschriebenen Schritte auszuführen.
+. Bei der Eingabe der Verbindungsdetails *Globalen Namensraum aktivieren* auswählen.
++
+Die Felder für den globalen Namespace-Endpunkt, den CNAME und die Standardregion werden automatisch mit den Werten ausgefüllt, die Sie in den vorherigen Schritten konfiguriert haben. Wenn Werte fehlen oder ungültig sind, kann der globale Namespace erst aktiviert werden, nachdem die Probleme behoben wurden.
+
+. Vervollständigen Sie die Verbindung, indem Sie die Verifizierungsdatei herunterladen und im anderen Grid hochladen.
+. Wiederholen Sie die vorherigen Schritte für jedes Paar von Grids im globalen Namensraum.
++
+Beispielsweise werden bei 3 Grids 3 Verbindungen benötigt (Grid A–Grid B, Grid A–Grid C, Grid B–Grid C). Bei 4 Grids werden 6 Verbindungen benötigt. In einem globalen Namensraum sind maximal 10 Grids möglich. Siehe <<number-of-required-connections,Anzahl der erforderlichen Verbindungen>>.
+
+
+
+
+
+[[step-4-configure-load-balancer-endpoints]]
+== Schritt 4: Load Balancer Endpunkte konfigurieren
+
+link:../admin/configuring-load-balancer-endpoints.html["Einen Load Balancer-Endpunkt konfigurieren"] Für jedes Grid im globalen Namensraum. Für jeden dieser Endpunkte wird derselbe Port verwendet.
+
+
+NOTE: Die Load Balancer-Endpunkte sollten vor der Konfiguration der DNS-Auflösung eingerichtet werden.
+
+
+
+[[config-dns-resolutionstep-5-configure-dns-resolution]]
+== [[config-dns-resolution]]Schritt 5: DNS-Auflösung konfigurieren
+
+StorageGRID bietet keinen integrierten DNS-Resolver für den globalen Namensraum. Die externe DNS-Infrastruktur muss so konfiguriert werden, dass S3-Anfragen an das richtige Grid weitergeleitet werden.
+
+Ihr DNS-Resolver sollte:
+
+. Der globale Namespace-Endpunkt (zum Beispiel  `s3.example.com`) wird auf die Load Balancer-Endpunkte eines oder mehrerer Grids aufgelöst, typischerweise mithilfe von Round-Robin-DNS.
+. Jeder eindeutige CNAME eines Grids (zum Beispiel  `s3.grid-a.example.com`) wird auf die Load-Balancer-Endpunkte für das jeweilige Grid aufgelöst.
+. Bei Anfragen im virtual-hosted-style für Buckets (zum Beispiel  `_bucket_.s3.example.com`) ist die Routing-Richtlinie Ihrer Organisation zu verwenden, um Bucket-Namen dem entsprechenden CNAME des Grids zuzuordnen.
++
+StorageGRID bietet keinen DNS-basierten Mechanismus, um zu ermitteln, welches Grid einen Bucket besitzt. Wenn automatisches Routing basierend auf dem Bucket-Besitz erforderlich ist, sollte die link:../tenant/understanding-tenant-management-api.html["Mandantenmanagement-API"] verwendet werden, um ListBucket-Anfragen zu stellen, die die Bucket-UUIDs zurückgeben. Eine interne Zuordnung von Bucket-UUIDs zu Grids sollte gepflegt werden. Die externe DNS-Lösung sollte diese Zuordnung nutzen, anstatt StorageGRID direkt abzufragen.
+
+
+
+
+
+[[related-information]]
+== Verwandte Informationen
+
+* link:grid-federation-overview.html["Was ist Grid Federation?"]
+* link:grid-federation-create-connection.html["Erstellen von Grid Federation-Verbindungen"]
+* link:configuring-s3-api-endpoint-domain-names.html["Konfigurieren Sie die Domänennamen des S3-Endpunkts"]
+* link:grid-federation-manage-connection.html["Grid-Verbindungen verwalten"]
+
