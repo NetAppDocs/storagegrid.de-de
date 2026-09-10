@@ -22,7 +22,7 @@ Mit dem Tenant Manager können Sie eine oder mehrere leere S3-Buckets löschen.
 .Über diese Aufgabe
 Diese Anweisungen beschreiben das Löschen eines S3-Buckets mithilfe von Tenant Manager. Sie können auch S3-Buckets mithilfe der  oder der löschenlink:understanding-tenant-management-api.html["Mandantenmanagement-API"]link:../s3/operations-on-buckets.html["S3-REST-API"].
 
-Sie können einen S3-Bucket nicht löschen, wenn er Objekte, nicht aktuelle Objektversionen enthält oder Markierungen löscht. Informationen zum Löschen von S3 versionierten Objekten finden Sie unter link:../ilm/how-objects-are-deleted.html["So werden Objekte gelöscht"].
+Ein S3-Bucket kann nicht gelöscht werden, wenn er Objekte, nicht aktuelle Objektversionen oder Löschmarkierungen enthält. Informationen darüber, wie S3-versionierte Objekte gelöscht werden, finden sich unter link:../ilm/how-objects-and-delete-markers-are-deleted.html["Wie Objekte und Löschmarkierungen gelöscht werden"].
 
 .Schritte
 . Wählen Sie *View Buckets* aus dem Dashboard, oder wählen Sie *STORAGE (S3)* > *Buckets*.

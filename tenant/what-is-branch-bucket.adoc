@@ -44,6 +44,7 @@ Beachten Sie die folgenden Merkmale von Zweig-Buckets:
 
 
 [[operations-on-objects-in-branch-buckets]]
+[[operations-in-branch-buckets]]
 == Operationen an Objekten in Branch-Buckets
 
 * Eine PUT-Objektoperation für einen Branch-Bucket erstellt ein Objekt im Branch.
@@ -110,4 +111,4 @@ HEAD/GET gibt zurück, dass die Objektversion nicht existiert
 |===
 
 
-Siehe auchlink:../ilm/how-objects-are-deleted.html#delete-s3-versioned-objects["Löschen von S3-versionierten Objekten"] .
+Siehe auch link:../ilm/how-objects-and-delete-markers-are-deleted.html#delete-s3-versioned-objects["Löschen von S3-versionierten Objekten"].

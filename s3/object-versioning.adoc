@@ -34,7 +34,19 @@ Bei S3-Objekten in versionierungsfähigen Buckets ermöglicht die Versionsunters
 
 NOTE: Wenn Sie eine neue Version eines Objekts über einen mehrteiligen Upload-Vorgang hochladen, wird der nicht aktuelle Zeitpunkt für die Originalversion des Objekts angezeigt, wenn der mehrteilige Upload für die neue Version erstellt wurde, nicht erst nach Abschluss des mehrteiligen Uploads. In begrenzten Fällen kann die nicht aktuelle Zeit der ursprünglichen Version Stunden oder Tage früher als die Zeit für die aktuelle Version sein.
 
+
+
+[[how-object-versioning-uses-storage-capacity-in-storagegrid]]
+== Wie die Objektversionierung die Speicherkapazität in StorageGRID nutzt
+
+Der für die Objektversionierung verwendete Speicherplatz hängt von der Anzahl der Objekt-Uploads, Ihren ILM-Richtlinienregeln und der Ansammlung nicht aktueller Versionen ab:
+
+* Wenn die Versionierung für einen Bucket aktiviert ist, wird jede Version eines Objekts als vollständiges, separates Objekt gespeichert. Wenn eine 1 GB große Datei fünfmal hochgeladen wird, speichert StorageGRID 5 GB Rohdaten (5 x 1 GB) für dieses Objekt.
+* Die ILM-Richtlinie wird für jede Objektversion ausgewertet. Bei einer ILM-Regel mit zwei Replikaten speichert StorageGRID beispielsweise zwei replizierte Kopien jeder Objektversion (aktuelle und nicht aktuelle). Wird diese ILM-Regel auf einen Bucket mit 10 Versionen eines 1 GB großen Objekts angewendet, werden 20 GB physischer Speicher verwendet.
+* Ohne eine S3-Bucket-Lebenszyklusrichtlinie oder eine ILM-Regel, die auf nicht aktuelle Versionen abzielt, behält StorageGRID alle alten Versionen unbegrenzt und sie belegen weiterhin Speicherplatz. Dies ist die häufigste Ursache für unerwartetes Speicherwachstum in versionierten Buckets.
+
+
 .Verwandte Informationen
-* link:../ilm/how-objects-are-deleted.html#delete-s3-versioned-objects["Löschen von S3-versionierten Objekten"]
+* link:../ilm/how-objects-and-delete-markers-are-deleted.html#delete-s3-versioned-objects["Löschen von S3-versionierten Objekten"]
 * link:../ilm/example-4-ilm-rules-and-policy-for-s3-versioned-objects.html["ILM-Regeln und Richtlinien für versionierte S3-Objekte (Beispiel 4)"].
 

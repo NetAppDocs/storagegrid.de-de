@@ -88,6 +88,7 @@ Löschmarkierungen, die mit „docs/“ beginnen, werden entfernt, wenn sie abge
 
 
 [[example-of-using-bucket-lifecycle-to-duplicate-ilm-and-clean-up-expired-delete-markers]]
+[[use-bucket-to-lifecycle-remove-expired-delete-markers]]
 == Beispiel für die Verwendung von Bucket-Lebenszyklus zur Duplizierung von ILM und zur Bereinigung abgelaufener Löschmarkierungen
 
 ILM-Richtlinie::

@@ -138,4 +138,4 @@ Wenn Sie die Beispielrichtlinie simulieren, erwarten Sie, dass Testobjekte wie f
 
 
 .Verwandte Informationen
-link:how-objects-are-deleted.html["So werden Objekte gelöscht"]
+link:how-objects-and-delete-markers-are-deleted.html["Wie Objekte und Löschmarkierungen gelöscht werden"]

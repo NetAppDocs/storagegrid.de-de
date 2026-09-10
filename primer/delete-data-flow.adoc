@@ -38,7 +38,7 @@ NOTE: Wenn ein S3-Bucket-Lebenszyklus konfiguriert ist, überschreiben die Lifec
 
 
 
-Weitere Informationen finden Sie unter link:../ilm/how-objects-are-deleted.html["So werden Objekte gelöscht"] .
+Siehe link:../ilm/how-objects-and-delete-markers-are-deleted.html["Wie Objekte und Löschmarkierungen gelöscht werden"] für weitere Informationen.
 
 
 

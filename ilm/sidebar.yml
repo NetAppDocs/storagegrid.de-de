@@ -29,8 +29,8 @@ entries:
       url: "/ilm/advantages-disadvantages-and-requirements-for-ec.html"
   - title: Wie die Aufbewahrung von Objekten bestimmt wird
     url: "/ilm/how-object-retention-is-determined.html"
-  - title: So werden Objekte gelöscht
-    url: "/ilm/how-objects-are-deleted.html"
+  - title: Wie Objekte und Löschmarkierungen gelöscht werden
+    url: "/ilm/how-objects-and-delete-markers-are-deleted.html"
 - title: Speicherklassen erstellen und zuweisen
   url: "/ilm/creating-and-assigning-storage-grades.html"
 - title: Nutzung von Speicherpools
@@ -136,3 +136,6 @@ entries:
     url: "/ilm/example-7-compliant-ilm-policy-for-s3-object-lock.html"
   - title: 'Beispiel 8: Prioritäten für den S3-Bucket-Lebenszyklus und die ILM-Richtlinie'
     url: "/ilm/example-8-priorities-for-s3-bucket-lifecycle-and-ilm-policy.html"
+  - title: 'Beispiel 9: Nicht aktuelle Versionen und Löschmarkierungen nach dem Anhalten
+      der Versionsverwaltung löschen'
+    url: "/ilm/example-9-delete-noncurrent-versions-and-expired-delete-markers.html"
