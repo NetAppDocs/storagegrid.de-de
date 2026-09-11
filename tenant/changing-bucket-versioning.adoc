@@ -31,7 +31,7 @@ Weitere Informationen finden Sie im Folgenden:
 
 * link:../s3/object-versioning.html["Objektversionierung"]
 * link:../ilm/example-4-ilm-rules-and-policy-for-s3-versioned-objects.html["ILM-Regeln und Richtlinien für versionierte S3-Objekte (Beispiel 4)"]
-* link:../ilm/how-objects-and-delete-markers-are-deleted.html["Wie Objekte und Löschvorgänge gelöscht werden"]
+* link:../ilm/how-objects-and-delete-markers-are-deleted.html["Wie Objekte und Löschmarkierungen gelöscht werden"]
 
 
 .Schritte
