@@ -133,7 +133,7 @@ Bei Bedarf können Sie optional die Prüfung auf Softwareupdates deaktivieren. W
 [[add-an-additional-autosupport-destination]]
 == Fügen Sie ein weiteres AutoSupport Ziel hinzu
 
-Wenn Sie AutoSupport aktivieren, werden Health- und Statuspakete an den technischen Support gesendet. Sie können ein zusätzliches Ziel für alle AutoSupport-Pakete angeben.
+Wenn Sie AutoSupport aktivieren, werden Systemstatus- und Statuspakete an den technischen Support gesendet. Sie können ein zusätzliches Ziel für alle AutoSupport Pakete angeben.
 
 Informationen zum Überprüfen oder Ändern des Protokolls zum Senden von AutoSupport-Paketen finden Sie in den Anweisungen an <<specify-protocol-for-autosupport-packages,Geben Sie das Protokoll für AutoSupport-Pakete an>>.
 
